@@ -3215,6 +3215,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PropIdl", "PropIdl", "{7305
 		generation\Windows\um\PropIdl\um-PropIdl.h = generation\Windows\um\PropIdl\um-PropIdl.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "strsafe", "strsafe", "{569D2D0D-DD00-4449-B0D2-9961B649F58C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\shared\strsafe\generate.rsp = generation\Windows\shared\strsafe\generate.rsp
+		generation\Windows\shared\strsafe\header.txt = generation\Windows\shared\strsafe\header.txt
+		generation\Windows\shared\strsafe\shared-strsafe.h = generation\Windows\shared\strsafe\shared-strsafe.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3709,6 +3716,7 @@ Global
 		{6DE29036-2A24-476F-8C1A-23FD05A2EC34} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
 		{AC2FBDD1-6B86-4F80-A8C5-17130D9B4A73} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{7305CE91-7BD6-4BBE-BBF6-D64B0254E755} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{569D2D0D-DD00-4449-B0D2-9961B649F58C} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
