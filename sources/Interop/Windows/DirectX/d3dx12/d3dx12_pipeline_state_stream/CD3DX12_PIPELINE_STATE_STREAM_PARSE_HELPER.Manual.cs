@@ -68,7 +68,7 @@ public unsafe struct CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER : ID3DX12Pipelin
         PipelineStream.PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE;
 
         // Depth disabled if no DSV format specified.
-        PipelineStream.DepthStencilState.Value.DepthEnable = false;
+        PipelineStream.DepthStencilState.pssInner.DepthEnable = false;
     }
 
     [VtblIndex(0)]
@@ -211,7 +211,7 @@ public unsafe struct CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER : ID3DX12Pipelin
         if (!pThis->SeenDSS && (DSVFormat != DXGI_FORMAT_UNKNOWN))
         {
             // Re-enable depth for the default state.
-            pThis->PipelineStream.DepthStencilState.Value.DepthEnable = true;
+            pThis->PipelineStream.DepthStencilState.pssInner.DepthEnable = true;
         }
     }
 

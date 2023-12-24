@@ -74,16 +74,16 @@ public unsafe struct CD3DX12_PIPELINE_MESH_STATE_STREAM
             AS = AS,
             MS = MS,
             BlendState = BlendState,
-            DepthStencilState = (D3D12_DEPTH_STENCIL_DESC)(DepthStencilState.Value),
+            DepthStencilState = (D3D12_DEPTH_STENCIL_DESC)(DepthStencilState.pssInner),
             DSVFormat = DSVFormat,
             RasterizerState = RasterizerState,
-            NumRenderTargets = RTVFormats.Value.NumRenderTargets,
+            NumRenderTargets = RTVFormats.pssInner.NumRenderTargets,
             SampleDesc = SampleDesc,
             SampleMask = SampleMask,
             CachedPSO = CachedPSO,
         };
 
-        fixed (DXGI_FORMAT* pFormat = &RTVFormats.Value.RTFormats[0])
+        fixed (DXGI_FORMAT* pFormat = &RTVFormats.pssInner.RTFormats[0])
         {
             NativeMemory.Copy(&D.RTVFormats[0], pFormat, 8 * sizeof(DXGI_FORMAT));
         }

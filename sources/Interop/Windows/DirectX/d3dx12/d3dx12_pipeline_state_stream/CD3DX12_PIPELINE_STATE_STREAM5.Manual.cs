@@ -121,7 +121,7 @@ public unsafe struct CD3DX12_PIPELINE_STATE_STREAM5
         pRootSignature = Desc.pRootSignature;
         CS = Desc.CS;
         CachedPSO = Desc.CachedPSO;
-        DepthStencilState.Value.DepthEnable = false;
+        DepthStencilState.pssInner.DepthEnable = false;
     }
 
     public readonly D3D12_GRAPHICS_PIPELINE_STATE_DESC GraphicsDescV0()
@@ -140,16 +140,16 @@ public unsafe struct CD3DX12_PIPELINE_STATE_STREAM5
             DS = DS,
             PS = PS,
             BlendState = BlendState,
-            DepthStencilState = (D3D12_DEPTH_STENCIL_DESC)(DepthStencilState.Value),
+            DepthStencilState = (D3D12_DEPTH_STENCIL_DESC)(DepthStencilState.pssInner),
             DSVFormat = DSVFormat,
-            RasterizerState = (D3D12_RASTERIZER_DESC)(RasterizerState.Value),
-            NumRenderTargets = RTVFormats.Value.NumRenderTargets,
+            RasterizerState = (D3D12_RASTERIZER_DESC)(RasterizerState.pssInner),
+            NumRenderTargets = RTVFormats.pssInner.NumRenderTargets,
             SampleDesc = SampleDesc,
             SampleMask = SampleMask,
             CachedPSO = CachedPSO,
         };
 
-        fixed (DXGI_FORMAT* pFormat = &RTVFormats.Value.RTFormats[0])
+        fixed (DXGI_FORMAT* pFormat = &RTVFormats.pssInner.RTFormats[0])
         {
             NativeMemory.Copy(&D.RTVFormats[0], pFormat, 8 * sizeof(DXGI_FORMAT));
         }
