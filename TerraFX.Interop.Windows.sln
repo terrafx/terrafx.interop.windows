@@ -3201,6 +3201,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "d3d9caps", "d3d9caps", "{6D
 		generation\DirectX\shared\d3d9caps\shared-d3d9caps.h = generation\DirectX\shared\d3d9caps\shared-d3d9caps.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "propvarutil", "propvarutil", "{AC2FBDD1-6B86-4F80-A8C5-17130D9B4A73}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\propvarutil\generate.rsp = generation\Windows\um\propvarutil\generate.rsp
+		generation\Windows\um\propvarutil\header.txt = generation\Windows\um\propvarutil\header.txt
+		generation\Windows\um\propvarutil\um-propvarutil.h = generation\Windows\um\propvarutil\um-propvarutil.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PropIdl", "PropIdl", "{7305CE91-7BD6-4BBE-BBF6-D64B0254E755}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\PropIdl\generate.rsp = generation\Windows\um\PropIdl\generate.rsp
+		generation\Windows\um\PropIdl\header.txt = generation\Windows\um\PropIdl\header.txt
+		generation\Windows\um\PropIdl\um-PropIdl.h = generation\Windows\um\PropIdl\um-PropIdl.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3693,6 +3707,8 @@ Global
 		{7C6D428E-BCEA-4E3E-8B1D-708DF46493CD} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
 		{02E82ECB-A7AD-4AC8-85A2-48B3967DC6E3} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
 		{6DE29036-2A24-476F-8C1A-23FD05A2EC34} = {1DA11388-02AD-43F4-B67B-2CA69F60B1C7}
+		{AC2FBDD1-6B86-4F80-A8C5-17130D9B4A73} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{7305CE91-7BD6-4BBE-BBF6-D64B0254E755} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

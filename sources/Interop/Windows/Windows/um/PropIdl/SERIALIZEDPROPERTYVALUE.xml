@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SERIALIZEDPROPERTYVALUE">
+    <summary>A range of memory of arbitrary type that represents a serialized <see cref="PROPVARIANT" /> structure. Programs should not inspect the contents of a <b>SERIALIZEDPROPERTYVALUE</b>; instead, they should manipulate it with the <see cref="StgSerializePropVariant" /> and <see cref="StgDeserializePropVariant" /> functions.</summary>
+  </member>
+  <member name="SERIALIZEDPROPERTYVALUE.dwType">
+    <summary>Encodes type information about the serialized <see cref="PROPVARIANT" /> structure. Programs should not inspect this member directly; instead, they should use the <see cref="StgDeserializePropVariant" /> function and inspect the <b>vt</b> member of the resulting <b>PROPVARIANT</b> structure.</summary>
+  </member>
+  <member name="SERIALIZEDPROPERTYVALUE.rgb">
+    <summary>A variable-length additional data that depends on the type passed in <b>dwType</b>.</summary>
+  </member>
+</doc>

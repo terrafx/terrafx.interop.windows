@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPropertySetStorage.Create">
+    <summary>The <b>Create</b> method creates and opens a new property set in the property set storage object.</summary>
+    <param name="rfmtid">The FMTID of the property set to be created. For information about FMTIDs that are well-known and predefined in the Platform SDK, see<a href="https://docs.microsoft.com//windows/desktop/Stg/predefined-property-set-format-identifiers">Predefined Property Set Format Identifiers</a>.</param>
+    <param name="pclsid">A pointer to the initial class identifier CLSID for this property set. May be <b>NULL</b>, in which case it is set to all zeroes. The CLSID is the CLSID of a class that displays and/or provides programmatic access to the property values. If there is no such class, it is recommended that the FMTID be used.</param>
+    <param name="grfFlags">The values from <a href="https://docs.microsoft.com//windows/desktop/Stg/propsetflag-constants">PROPSETFLAG Constants</a>.</param>
+    <param name="grfMode">An access mode in which the newly created property set is to be opened, taken from certain values of <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM_Constants</a>, as described in the following Remarks section.</param>
+    <param name="ppprstg">A pointer to the output variable that receives the <see cref="IPropertyStorage" /> interface pointer.</param>
+    <returns>This method supports the standard return value E_UNEXPECTED, as well as the following:</returns>
+  </member>
+  <member name="IPropertySetStorage.Delete">
+    <summary>The <b>Delete</b> method deletes one of the property sets contained in the property set storage object.</summary>
+    <param name="rfmtid">FMTID of the property set to be deleted.</param>
+    <returns>This method supports the standard return value E_UNEXPECTED, in addition to the following:</returns>
+  </member>
+  <member name="IPropertySetStorage.Enum">
+    <summary>The <b>Enum</b> method creates an enumerator object which contains information on the property sets stored in this property set storage. On return, this method supplies a pointer to the<see cref="IEnumSTATPROPSETSTG" /> pointer on the enumerator object.</summary>
+    <param name="ppenum">Pointer to<see cref="IEnumSTATPROPSETSTG" /> pointer variable that receives the interface pointer to the newly created enumerator object.</param>
+    <returns>This method can return one of these values.</returns>
+  </member>
+  <member name="IPropertySetStorage.Open">
+    <summary>The <b>Open</b> method opens a property set contained in the property set storage object.</summary>
+    <param name="rfmtid">The format identifier (FMTID) of the property set to be opened. For more information about well-known and predefined FMTIDs in the Platform SDK, see<a href="https://docs.microsoft.com//windows/desktop/Stg/predefined-property-set-format-identifiers">Predefined Property Set Format Identifiers</a>.</param>
+    <param name="grfMode">The access mode in which the newly created property set is to be opened. These flags are taken from <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM Constants</a>. Flags that may be used and their meanings in the context of this method are described in the following Remarks section.</param>
+    <param name="ppprstg">A pointer to the<see cref="IPropertyStorage" /> pointer variable that receives the interface pointer to the requested property storage subobject.</param>
+    <returns>This method supports the standard return value E_UNEXPECTED, in addition to the following:</returns>
+  </member>
+</doc>
