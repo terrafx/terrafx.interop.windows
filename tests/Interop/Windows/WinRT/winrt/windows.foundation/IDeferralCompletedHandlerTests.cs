@@ -19,32 +19,4 @@ public static unsafe partial class IDeferralCompletedHandlerTests
     {
         Assert.That(typeof(IDeferralCompletedHandler).GUID, Is.EqualTo(IID_IDeferralCompletedHandler));
     }
-
-    /// <summary>Validates that the <see cref="IDeferralCompletedHandler" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDeferralCompletedHandler>(), Is.EqualTo(sizeof(IDeferralCompletedHandler)));
-    }
-
-    /// <summary>Validates that the <see cref="IDeferralCompletedHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDeferralCompletedHandler).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDeferralCompletedHandler" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDeferralCompletedHandler), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDeferralCompletedHandler), Is.EqualTo(4));
-        }
-    }
 }

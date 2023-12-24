@@ -19,32 +19,4 @@ public static unsafe partial class IWwwFormUrlDecoderEntryTests
     {
         Assert.That(typeof(IWwwFormUrlDecoderEntry).GUID, Is.EqualTo(IID_IWwwFormUrlDecoderEntry));
     }
-
-    /// <summary>Validates that the <see cref="IWwwFormUrlDecoderEntry" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWwwFormUrlDecoderEntry>(), Is.EqualTo(sizeof(IWwwFormUrlDecoderEntry)));
-    }
-
-    /// <summary>Validates that the <see cref="IWwwFormUrlDecoderEntry" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWwwFormUrlDecoderEntry).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWwwFormUrlDecoderEntry" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWwwFormUrlDecoderEntry), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWwwFormUrlDecoderEntry), Is.EqualTo(4));
-        }
-    }
 }

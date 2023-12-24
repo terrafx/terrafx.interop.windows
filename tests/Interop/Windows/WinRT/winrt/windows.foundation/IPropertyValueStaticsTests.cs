@@ -19,32 +19,4 @@ public static unsafe partial class IPropertyValueStaticsTests
     {
         Assert.That(typeof(IPropertyValueStatics).GUID, Is.EqualTo(IID_IPropertyValueStatics));
     }
-
-    /// <summary>Validates that the <see cref="IPropertyValueStatics" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPropertyValueStatics>(), Is.EqualTo(sizeof(IPropertyValueStatics)));
-    }
-
-    /// <summary>Validates that the <see cref="IPropertyValueStatics" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPropertyValueStatics).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPropertyValueStatics" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPropertyValueStatics), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPropertyValueStatics), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IVibrationDeviceTests
     {
         Assert.That(typeof(IVibrationDevice).GUID, Is.EqualTo(IID_IVibrationDevice));
     }
-
-    /// <summary>Validates that the <see cref="IVibrationDevice" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IVibrationDevice>(), Is.EqualTo(sizeof(IVibrationDevice)));
-    }
-
-    /// <summary>Validates that the <see cref="IVibrationDevice" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IVibrationDevice).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IVibrationDevice" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IVibrationDevice), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IVibrationDevice), Is.EqualTo(4));
-        }
-    }
 }

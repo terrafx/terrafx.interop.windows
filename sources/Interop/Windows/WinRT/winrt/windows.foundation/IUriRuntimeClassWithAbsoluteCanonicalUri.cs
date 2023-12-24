@@ -26,7 +26,7 @@ public unsafe partial struct IUriRuntimeClassWithAbsoluteCanonicalUri : IUriRunt
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUriRuntimeClassWithAbsoluteCanonicalUri*, Guid*, void**, int>)(lpVtbl[0]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUriRuntimeClassWithAbsoluteCanonicalUri*, Guid*, void**, int>)(lpVtbl[0]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IUriRuntimeClassWithAbsoluteCanonicalUri : IUriRunt
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUriRuntimeClassWithAbsoluteCanonicalUri*, uint>)(lpVtbl[1]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUriRuntimeClassWithAbsoluteCanonicalUri*, uint>)(lpVtbl[1]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IUriRuntimeClassWithAbsoluteCanonicalUri : IUriRunt
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUriRuntimeClassWithAbsoluteCanonicalUri*, uint>)(lpVtbl[2]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUriRuntimeClassWithAbsoluteCanonicalUri*, uint>)(lpVtbl[2]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IUriRuntimeClassWithAbsoluteCanonicalUri : IUriRunt
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IUriRuntimeClassWithAbsoluteCanonicalUri*, uint*, Guid**, int>)(lpVtbl[3]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IUriRuntimeClassWithAbsoluteCanonicalUri*, uint*, Guid**, int>)(lpVtbl[3]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IUriRuntimeClassWithAbsoluteCanonicalUri : IUriRunt
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IUriRuntimeClassWithAbsoluteCanonicalUri*, HSTRING*, int>)(lpVtbl[4]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IUriRuntimeClassWithAbsoluteCanonicalUri*, HSTRING*, int>)(lpVtbl[4]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IUriRuntimeClassWithAbsoluteCanonicalUri : IUriRunt
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IUriRuntimeClassWithAbsoluteCanonicalUri*, TrustLevel*, int>)(lpVtbl[5]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IUriRuntimeClassWithAbsoluteCanonicalUri*, TrustLevel*, int>)(lpVtbl[5]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IUriRuntimeClassWithAbsoluteCanonicalUri.xml' path='doc/member[@name="IUriRuntimeClassWithAbsoluteCanonicalUri.get_AbsoluteCanonicalUri"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IUriRuntimeClassWithAbsoluteCanonicalUri : IUriRunt
     [VtblIndex(6)]
     public HRESULT get_AbsoluteCanonicalUri(HSTRING* value)
     {
-        return ((delegate* unmanaged<IUriRuntimeClassWithAbsoluteCanonicalUri*, HSTRING*, int>)(lpVtbl[6]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IUriRuntimeClassWithAbsoluteCanonicalUri*, HSTRING*, int>)(lpVtbl[6]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IUriRuntimeClassWithAbsoluteCanonicalUri.xml' path='doc/member[@name="IUriRuntimeClassWithAbsoluteCanonicalUri.get_DisplayIri"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IUriRuntimeClassWithAbsoluteCanonicalUri : IUriRunt
     [VtblIndex(7)]
     public HRESULT get_DisplayIri(HSTRING* value)
     {
-        return ((delegate* unmanaged<IUriRuntimeClassWithAbsoluteCanonicalUri*, HSTRING*, int>)(lpVtbl[7]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IUriRuntimeClassWithAbsoluteCanonicalUri*, HSTRING*, int>)(lpVtbl[7]))((IUriRuntimeClassWithAbsoluteCanonicalUri*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -100,27 +100,27 @@ public unsafe partial struct IUriRuntimeClassWithAbsoluteCanonicalUri : IUriRunt
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> get_AbsoluteCanonicalUri;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_AbsoluteCanonicalUri;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> get_DisplayIri;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_DisplayIri;
     }
 }

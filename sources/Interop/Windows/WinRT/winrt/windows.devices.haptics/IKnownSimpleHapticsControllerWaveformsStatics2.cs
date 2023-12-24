@@ -26,7 +26,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics2*, Guid*, void**, int>)(lpVtbl[0]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics2*, Guid*, void**, int>)(lpVtbl[0]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics2*, uint>)(lpVtbl[1]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics2*, uint>)(lpVtbl[1]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics2*, uint>)(lpVtbl[2]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics2*, uint>)(lpVtbl[2]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics2*, uint*, Guid**, int>)(lpVtbl[3]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics2*, uint*, Guid**, int>)(lpVtbl[3]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics2*, HSTRING*, int>)(lpVtbl[4]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics2*, HSTRING*, int>)(lpVtbl[4]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics2*, TrustLevel*, int>)(lpVtbl[5]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics2*, TrustLevel*, int>)(lpVtbl[5]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IKnownSimpleHapticsControllerWaveformsStatics2.xml' path='doc/member[@name="IKnownSimpleHapticsControllerWaveformsStatics2.get_BrushContinuous"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
     [VtblIndex(6)]
     public HRESULT get_BrushContinuous([NativeTypeName("UINT16 *")] ushort* value)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[6]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[6]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IKnownSimpleHapticsControllerWaveformsStatics2.xml' path='doc/member[@name="IKnownSimpleHapticsControllerWaveformsStatics2.get_ChiselMarkerContinuous"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
     [VtblIndex(7)]
     public HRESULT get_ChiselMarkerContinuous([NativeTypeName("UINT16 *")] ushort* value)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[7]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[7]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IKnownSimpleHapticsControllerWaveformsStatics2.xml' path='doc/member[@name="IKnownSimpleHapticsControllerWaveformsStatics2.get_EraserContinuous"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
     [VtblIndex(8)]
     public HRESULT get_EraserContinuous([NativeTypeName("UINT16 *")] ushort* value)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[8]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[8]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IKnownSimpleHapticsControllerWaveformsStatics2.xml' path='doc/member[@name="IKnownSimpleHapticsControllerWaveformsStatics2.get_Error"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
     [VtblIndex(9)]
     public HRESULT get_Error([NativeTypeName("UINT16 *")] ushort* value)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[9]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[9]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IKnownSimpleHapticsControllerWaveformsStatics2.xml' path='doc/member[@name="IKnownSimpleHapticsControllerWaveformsStatics2.get_GalaxyPenContinuous"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
     [VtblIndex(10)]
     public HRESULT get_GalaxyPenContinuous([NativeTypeName("UINT16 *")] ushort* value)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[10]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[10]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IKnownSimpleHapticsControllerWaveformsStatics2.xml' path='doc/member[@name="IKnownSimpleHapticsControllerWaveformsStatics2.get_Hover"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
     [VtblIndex(11)]
     public HRESULT get_Hover([NativeTypeName("UINT16 *")] ushort* value)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[11]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[11]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IKnownSimpleHapticsControllerWaveformsStatics2.xml' path='doc/member[@name="IKnownSimpleHapticsControllerWaveformsStatics2.get_InkContinuous"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
     [VtblIndex(12)]
     public HRESULT get_InkContinuous([NativeTypeName("UINT16 *")] ushort* value)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[12]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[12]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IKnownSimpleHapticsControllerWaveformsStatics2.xml' path='doc/member[@name="IKnownSimpleHapticsControllerWaveformsStatics2.get_MarkerContinuous"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
     [VtblIndex(13)]
     public HRESULT get_MarkerContinuous([NativeTypeName("UINT16 *")] ushort* value)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[13]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[13]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IKnownSimpleHapticsControllerWaveformsStatics2.xml' path='doc/member[@name="IKnownSimpleHapticsControllerWaveformsStatics2.get_PencilContinuous"]/*' />
@@ -140,7 +140,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
     [VtblIndex(14)]
     public HRESULT get_PencilContinuous([NativeTypeName("UINT16 *")] ushort* value)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[14]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[14]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IKnownSimpleHapticsControllerWaveformsStatics2.xml' path='doc/member[@name="IKnownSimpleHapticsControllerWaveformsStatics2.get_Success"]/*' />
@@ -148,7 +148,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
     [VtblIndex(15)]
     public HRESULT get_Success([NativeTypeName("UINT16 *")] ushort* value)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[15]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics2*, ushort*, int>)(lpVtbl[15]))((IKnownSimpleHapticsControllerWaveformsStatics2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -188,51 +188,51 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics2 : IK
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_BrushContinuous;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_BrushContinuous;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_ChiselMarkerContinuous;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_ChiselMarkerContinuous;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_EraserContinuous;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_EraserContinuous;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_Error;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_Error;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_GalaxyPenContinuous;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_GalaxyPenContinuous;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_Hover;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_Hover;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_InkContinuous;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_InkContinuous;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_MarkerContinuous;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_MarkerContinuous;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_PencilContinuous;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_PencilContinuous;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_Success;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_Success;
     }
 }

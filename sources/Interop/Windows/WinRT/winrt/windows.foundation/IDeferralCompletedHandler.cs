@@ -26,7 +26,7 @@ public unsafe partial struct IDeferralCompletedHandler : IDeferralCompletedHandl
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDeferralCompletedHandler*, Guid*, void**, int>)(lpVtbl[0]))((IDeferralCompletedHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDeferralCompletedHandler*, Guid*, void**, int>)(lpVtbl[0]))((IDeferralCompletedHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDeferralCompletedHandler : IDeferralCompletedHandl
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDeferralCompletedHandler*, uint>)(lpVtbl[1]))((IDeferralCompletedHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeferralCompletedHandler*, uint>)(lpVtbl[1]))((IDeferralCompletedHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDeferralCompletedHandler : IDeferralCompletedHandl
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDeferralCompletedHandler*, uint>)(lpVtbl[2]))((IDeferralCompletedHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeferralCompletedHandler*, uint>)(lpVtbl[2]))((IDeferralCompletedHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDeferralCompletedHandler.xml' path='doc/member[@name="IDeferralCompletedHandler.Invoke"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDeferralCompletedHandler : IDeferralCompletedHandl
     [VtblIndex(3)]
     public HRESULT Invoke()
     {
-        return ((delegate* unmanaged<IDeferralCompletedHandler*, int>)(lpVtbl[3]))((IDeferralCompletedHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeferralCompletedHandler*, int>)(lpVtbl[3]))((IDeferralCompletedHandler*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -65,15 +65,15 @@ public unsafe partial struct IDeferralCompletedHandler : IDeferralCompletedHandl
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Invoke;
     }
 }

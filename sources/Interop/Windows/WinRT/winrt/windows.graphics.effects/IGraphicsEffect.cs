@@ -26,7 +26,7 @@ public unsafe partial struct IGraphicsEffect : IGraphicsEffect.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IGraphicsEffect*, Guid*, void**, int>)(lpVtbl[0]))((IGraphicsEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IGraphicsEffect*, Guid*, void**, int>)(lpVtbl[0]))((IGraphicsEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IGraphicsEffect : IGraphicsEffect.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IGraphicsEffect*, uint>)(lpVtbl[1]))((IGraphicsEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGraphicsEffect*, uint>)(lpVtbl[1]))((IGraphicsEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IGraphicsEffect : IGraphicsEffect.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IGraphicsEffect*, uint>)(lpVtbl[2]))((IGraphicsEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGraphicsEffect*, uint>)(lpVtbl[2]))((IGraphicsEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IGraphicsEffect : IGraphicsEffect.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IGraphicsEffect*, uint*, Guid**, int>)(lpVtbl[3]))((IGraphicsEffect*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IGraphicsEffect*, uint*, Guid**, int>)(lpVtbl[3]))((IGraphicsEffect*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IGraphicsEffect : IGraphicsEffect.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IGraphicsEffect*, HSTRING*, int>)(lpVtbl[4]))((IGraphicsEffect*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IGraphicsEffect*, HSTRING*, int>)(lpVtbl[4]))((IGraphicsEffect*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IGraphicsEffect : IGraphicsEffect.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IGraphicsEffect*, TrustLevel*, int>)(lpVtbl[5]))((IGraphicsEffect*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IGraphicsEffect*, TrustLevel*, int>)(lpVtbl[5]))((IGraphicsEffect*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IGraphicsEffect.xml' path='doc/member[@name="IGraphicsEffect.get_Name"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IGraphicsEffect : IGraphicsEffect.Interface, INativ
     [VtblIndex(6)]
     public HRESULT get_Name(HSTRING* name)
     {
-        return ((delegate* unmanaged<IGraphicsEffect*, HSTRING*, int>)(lpVtbl[6]))((IGraphicsEffect*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged[MemberFunction]<IGraphicsEffect*, HSTRING*, int>)(lpVtbl[6]))((IGraphicsEffect*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <include file='IGraphicsEffect.xml' path='doc/member[@name="IGraphicsEffect.put_Name"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IGraphicsEffect : IGraphicsEffect.Interface, INativ
     [VtblIndex(7)]
     public HRESULT put_Name(HSTRING name)
     {
-        return ((delegate* unmanaged<IGraphicsEffect*, HSTRING, int>)(lpVtbl[7]))((IGraphicsEffect*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged[MemberFunction]<IGraphicsEffect*, HSTRING, int>)(lpVtbl[7]))((IGraphicsEffect*)Unsafe.AsPointer(ref this), name);
     }
 
     public interface Interface : IInspectable.Interface
@@ -100,27 +100,27 @@ public unsafe partial struct IGraphicsEffect : IGraphicsEffect.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> get_Name;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_Name;
 
         [NativeTypeName("HRESULT (HSTRING) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, int> put_Name;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_Name;
     }
 }

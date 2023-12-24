@@ -26,7 +26,7 @@ public unsafe partial struct IUriEscapeStatics : IUriEscapeStatics.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUriEscapeStatics*, Guid*, void**, int>)(lpVtbl[0]))((IUriEscapeStatics*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUriEscapeStatics*, Guid*, void**, int>)(lpVtbl[0]))((IUriEscapeStatics*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IUriEscapeStatics : IUriEscapeStatics.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUriEscapeStatics*, uint>)(lpVtbl[1]))((IUriEscapeStatics*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUriEscapeStatics*, uint>)(lpVtbl[1]))((IUriEscapeStatics*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IUriEscapeStatics : IUriEscapeStatics.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUriEscapeStatics*, uint>)(lpVtbl[2]))((IUriEscapeStatics*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUriEscapeStatics*, uint>)(lpVtbl[2]))((IUriEscapeStatics*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IUriEscapeStatics : IUriEscapeStatics.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IUriEscapeStatics*, uint*, Guid**, int>)(lpVtbl[3]))((IUriEscapeStatics*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IUriEscapeStatics*, uint*, Guid**, int>)(lpVtbl[3]))((IUriEscapeStatics*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IUriEscapeStatics : IUriEscapeStatics.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IUriEscapeStatics*, HSTRING*, int>)(lpVtbl[4]))((IUriEscapeStatics*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IUriEscapeStatics*, HSTRING*, int>)(lpVtbl[4]))((IUriEscapeStatics*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IUriEscapeStatics : IUriEscapeStatics.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IUriEscapeStatics*, TrustLevel*, int>)(lpVtbl[5]))((IUriEscapeStatics*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IUriEscapeStatics*, TrustLevel*, int>)(lpVtbl[5]))((IUriEscapeStatics*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IUriEscapeStatics.xml' path='doc/member[@name="IUriEscapeStatics.UnescapeComponent"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IUriEscapeStatics : IUriEscapeStatics.Interface, IN
     [VtblIndex(6)]
     public HRESULT UnescapeComponent(HSTRING toUnescape, HSTRING* value)
     {
-        return ((delegate* unmanaged<IUriEscapeStatics*, HSTRING, HSTRING*, int>)(lpVtbl[6]))((IUriEscapeStatics*)Unsafe.AsPointer(ref this), toUnescape, value);
+        return ((delegate* unmanaged[MemberFunction]<IUriEscapeStatics*, HSTRING, HSTRING*, int>)(lpVtbl[6]))((IUriEscapeStatics*)Unsafe.AsPointer(ref this), toUnescape, value);
     }
 
     /// <include file='IUriEscapeStatics.xml' path='doc/member[@name="IUriEscapeStatics.EscapeComponent"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IUriEscapeStatics : IUriEscapeStatics.Interface, IN
     [VtblIndex(7)]
     public HRESULT EscapeComponent(HSTRING toEscape, HSTRING* value)
     {
-        return ((delegate* unmanaged<IUriEscapeStatics*, HSTRING, HSTRING*, int>)(lpVtbl[7]))((IUriEscapeStatics*)Unsafe.AsPointer(ref this), toEscape, value);
+        return ((delegate* unmanaged[MemberFunction]<IUriEscapeStatics*, HSTRING, HSTRING*, int>)(lpVtbl[7]))((IUriEscapeStatics*)Unsafe.AsPointer(ref this), toEscape, value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -100,27 +100,27 @@ public unsafe partial struct IUriEscapeStatics : IUriEscapeStatics.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, HSTRING*, int> UnescapeComponent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING*, int> UnescapeComponent;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, HSTRING*, int> EscapeComponent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING*, int> EscapeComponent;
     }
 }

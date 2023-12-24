@@ -26,7 +26,7 @@ public unsafe partial struct IClosable : IClosable.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IClosable*, Guid*, void**, int>)(lpVtbl[0]))((IClosable*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IClosable*, Guid*, void**, int>)(lpVtbl[0]))((IClosable*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IClosable : IClosable.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IClosable*, uint>)(lpVtbl[1]))((IClosable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IClosable*, uint>)(lpVtbl[1]))((IClosable*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IClosable : IClosable.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IClosable*, uint>)(lpVtbl[2]))((IClosable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IClosable*, uint>)(lpVtbl[2]))((IClosable*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IClosable : IClosable.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IClosable*, uint*, Guid**, int>)(lpVtbl[3]))((IClosable*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IClosable*, uint*, Guid**, int>)(lpVtbl[3]))((IClosable*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IClosable : IClosable.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IClosable*, HSTRING*, int>)(lpVtbl[4]))((IClosable*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IClosable*, HSTRING*, int>)(lpVtbl[4]))((IClosable*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IClosable : IClosable.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IClosable*, TrustLevel*, int>)(lpVtbl[5]))((IClosable*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IClosable*, TrustLevel*, int>)(lpVtbl[5]))((IClosable*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IClosable.xml' path='doc/member[@name="IClosable.Close"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IClosable : IClosable.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Close()
     {
-        return ((delegate* unmanaged<IClosable*, int>)(lpVtbl[6]))((IClosable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IClosable*, int>)(lpVtbl[6]))((IClosable*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IInspectable.Interface
@@ -89,24 +89,24 @@ public unsafe partial struct IClosable : IClosable.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Close;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Close;
     }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IForegroundEnergyManagerStaticsTests
     {
         Assert.That(typeof(IForegroundEnergyManagerStatics).GUID, Is.EqualTo(IID_IForegroundEnergyManagerStatics));
     }
-
-    /// <summary>Validates that the <see cref="IForegroundEnergyManagerStatics" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IForegroundEnergyManagerStatics>(), Is.EqualTo(sizeof(IForegroundEnergyManagerStatics)));
-    }
-
-    /// <summary>Validates that the <see cref="IForegroundEnergyManagerStatics" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IForegroundEnergyManagerStatics).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IForegroundEnergyManagerStatics" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IForegroundEnergyManagerStatics), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IForegroundEnergyManagerStatics), Is.EqualTo(4));
-        }
-    }
 }

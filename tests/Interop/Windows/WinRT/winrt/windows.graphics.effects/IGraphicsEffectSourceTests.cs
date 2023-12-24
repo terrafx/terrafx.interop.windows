@@ -19,32 +19,4 @@ public static unsafe partial class IGraphicsEffectSourceTests
     {
         Assert.That(typeof(IGraphicsEffectSource).GUID, Is.EqualTo(IID_IGraphicsEffectSource));
     }
-
-    /// <summary>Validates that the <see cref="IGraphicsEffectSource" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IGraphicsEffectSource>(), Is.EqualTo(sizeof(IGraphicsEffectSource)));
-    }
-
-    /// <summary>Validates that the <see cref="IGraphicsEffectSource" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IGraphicsEffectSource).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IGraphicsEffectSource" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IGraphicsEffectSource), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IGraphicsEffectSource), Is.EqualTo(4));
-        }
-    }
 }

@@ -26,7 +26,7 @@ public unsafe partial struct IBattery : IBattery.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBattery*, Guid*, void**, int>)(lpVtbl[0]))((IBattery*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBattery*, Guid*, void**, int>)(lpVtbl[0]))((IBattery*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IBattery : IBattery.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBattery*, uint>)(lpVtbl[1]))((IBattery*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBattery*, uint>)(lpVtbl[1]))((IBattery*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IBattery : IBattery.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBattery*, uint>)(lpVtbl[2]))((IBattery*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBattery*, uint>)(lpVtbl[2]))((IBattery*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IBattery : IBattery.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IBattery*, uint*, Guid**, int>)(lpVtbl[3]))((IBattery*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IBattery*, uint*, Guid**, int>)(lpVtbl[3]))((IBattery*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IBattery : IBattery.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IBattery*, HSTRING*, int>)(lpVtbl[4]))((IBattery*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IBattery*, HSTRING*, int>)(lpVtbl[4]))((IBattery*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IBattery : IBattery.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IBattery*, TrustLevel*, int>)(lpVtbl[5]))((IBattery*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IBattery*, TrustLevel*, int>)(lpVtbl[5]))((IBattery*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IBattery.xml' path='doc/member[@name="IBattery.get_DeviceId"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IBattery : IBattery.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT get_DeviceId(HSTRING* value)
     {
-        return ((delegate* unmanaged<IBattery*, HSTRING*, int>)(lpVtbl[6]))((IBattery*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBattery*, HSTRING*, int>)(lpVtbl[6]))((IBattery*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBattery.xml' path='doc/member[@name="IBattery.GetReport"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IBattery : IBattery.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetReport([NativeTypeName("ABI::Windows::Devices::Power::IBatteryReport **")] IBatteryReport** result)
     {
-        return ((delegate* unmanaged<IBattery*, IBatteryReport**, int>)(lpVtbl[7]))((IBattery*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IBattery*, IBatteryReport**, int>)(lpVtbl[7]))((IBattery*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IBattery.xml' path='doc/member[@name="IBattery.add_ReportUpdated"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IBattery : IBattery.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT add_ReportUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPower__CBattery_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged<IBattery*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IBattery*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBattery*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IBattery*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBattery.xml' path='doc/member[@name="IBattery.remove_ReportUpdated"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IBattery : IBattery.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT remove_ReportUpdated(EventRegistrationToken token)
     {
-        return ((delegate* unmanaged<IBattery*, EventRegistrationToken, int>)(lpVtbl[9]))((IBattery*)Unsafe.AsPointer(ref this), token);
+        return ((delegate* unmanaged[MemberFunction]<IBattery*, EventRegistrationToken, int>)(lpVtbl[9]))((IBattery*)Unsafe.AsPointer(ref this), token);
     }
 
     public interface Interface : IInspectable.Interface
@@ -122,33 +122,33 @@ public unsafe partial struct IBattery : IBattery.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> get_DeviceId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_DeviceId;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Power::IBatteryReport **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBatteryReport**, int> GetReport;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBatteryReport**, int> GetReport;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPower__CBattery_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ReportUpdated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ReportUpdated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, EventRegistrationToken, int> remove_ReportUpdated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ReportUpdated;
     }
 }

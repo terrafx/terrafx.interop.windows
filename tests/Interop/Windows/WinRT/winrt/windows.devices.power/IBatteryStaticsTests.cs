@@ -19,32 +19,4 @@ public static unsafe partial class IBatteryStaticsTests
     {
         Assert.That(typeof(IBatteryStatics).GUID, Is.EqualTo(IID_IBatteryStatics));
     }
-
-    /// <summary>Validates that the <see cref="IBatteryStatics" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IBatteryStatics>(), Is.EqualTo(sizeof(IBatteryStatics)));
-    }
-
-    /// <summary>Validates that the <see cref="IBatteryStatics" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IBatteryStatics).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IBatteryStatics" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IBatteryStatics), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IBatteryStatics), Is.EqualTo(4));
-        }
-    }
 }

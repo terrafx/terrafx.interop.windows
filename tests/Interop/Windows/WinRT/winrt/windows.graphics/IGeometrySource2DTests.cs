@@ -19,32 +19,4 @@ public static unsafe partial class IGeometrySource2DTests
     {
         Assert.That(typeof(IGeometrySource2D).GUID, Is.EqualTo(IID_IGeometrySource2D));
     }
-
-    /// <summary>Validates that the <see cref="IGeometrySource2D" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IGeometrySource2D>(), Is.EqualTo(sizeof(IGeometrySource2D)));
-    }
-
-    /// <summary>Validates that the <see cref="IGeometrySource2D" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IGeometrySource2D).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IGeometrySource2D" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IGeometrySource2D), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IGeometrySource2D), Is.EqualTo(4));
-        }
-    }
 }

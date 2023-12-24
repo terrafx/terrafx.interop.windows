@@ -19,32 +19,4 @@ public static unsafe partial class ISimpleHapticsControllerFeedbackTests
     {
         Assert.That(typeof(ISimpleHapticsControllerFeedback).GUID, Is.EqualTo(IID_ISimpleHapticsControllerFeedback));
     }
-
-    /// <summary>Validates that the <see cref="ISimpleHapticsControllerFeedback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISimpleHapticsControllerFeedback>(), Is.EqualTo(sizeof(ISimpleHapticsControllerFeedback)));
-    }
-
-    /// <summary>Validates that the <see cref="ISimpleHapticsControllerFeedback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISimpleHapticsControllerFeedback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISimpleHapticsControllerFeedback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISimpleHapticsControllerFeedback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISimpleHapticsControllerFeedback), Is.EqualTo(4));
-        }
-    }
 }

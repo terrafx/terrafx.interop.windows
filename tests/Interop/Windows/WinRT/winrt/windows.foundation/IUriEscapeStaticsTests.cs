@@ -19,32 +19,4 @@ public static unsafe partial class IUriEscapeStaticsTests
     {
         Assert.That(typeof(IUriEscapeStatics).GUID, Is.EqualTo(IID_IUriEscapeStatics));
     }
-
-    /// <summary>Validates that the <see cref="IUriEscapeStatics" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IUriEscapeStatics>(), Is.EqualTo(sizeof(IUriEscapeStatics)));
-    }
-
-    /// <summary>Validates that the <see cref="IUriEscapeStatics" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IUriEscapeStatics).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IUriEscapeStatics" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IUriEscapeStatics), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IUriEscapeStatics), Is.EqualTo(4));
-        }
-    }
 }

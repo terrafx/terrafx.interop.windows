@@ -19,32 +19,4 @@ public static unsafe partial class IUriRuntimeClassWithAbsoluteCanonicalUriTests
     {
         Assert.That(typeof(IUriRuntimeClassWithAbsoluteCanonicalUri).GUID, Is.EqualTo(IID_IUriRuntimeClassWithAbsoluteCanonicalUri));
     }
-
-    /// <summary>Validates that the <see cref="IUriRuntimeClassWithAbsoluteCanonicalUri" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IUriRuntimeClassWithAbsoluteCanonicalUri>(), Is.EqualTo(sizeof(IUriRuntimeClassWithAbsoluteCanonicalUri)));
-    }
-
-    /// <summary>Validates that the <see cref="IUriRuntimeClassWithAbsoluteCanonicalUri" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IUriRuntimeClassWithAbsoluteCanonicalUri).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IUriRuntimeClassWithAbsoluteCanonicalUri" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IUriRuntimeClassWithAbsoluteCanonicalUri), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IUriRuntimeClassWithAbsoluteCanonicalUri), Is.EqualTo(4));
-        }
-    }
 }

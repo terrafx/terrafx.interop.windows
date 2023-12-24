@@ -26,7 +26,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics : IKn
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics*, Guid*, void**, int>)(lpVtbl[0]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics*, Guid*, void**, int>)(lpVtbl[0]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics : IKn
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics*, uint>)(lpVtbl[1]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics*, uint>)(lpVtbl[1]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics : IKn
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics*, uint>)(lpVtbl[2]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics*, uint>)(lpVtbl[2]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics : IKn
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics*, uint*, Guid**, int>)(lpVtbl[3]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics*, uint*, Guid**, int>)(lpVtbl[3]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics : IKn
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics*, HSTRING*, int>)(lpVtbl[4]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics*, HSTRING*, int>)(lpVtbl[4]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics : IKn
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics*, TrustLevel*, int>)(lpVtbl[5]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics*, TrustLevel*, int>)(lpVtbl[5]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IKnownSimpleHapticsControllerWaveformsStatics.xml' path='doc/member[@name="IKnownSimpleHapticsControllerWaveformsStatics.get_Click"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics : IKn
     [VtblIndex(6)]
     public HRESULT get_Click([NativeTypeName("UINT16 *")] ushort* value)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics*, ushort*, int>)(lpVtbl[6]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics*, ushort*, int>)(lpVtbl[6]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IKnownSimpleHapticsControllerWaveformsStatics.xml' path='doc/member[@name="IKnownSimpleHapticsControllerWaveformsStatics.get_BuzzContinuous"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics : IKn
     [VtblIndex(7)]
     public HRESULT get_BuzzContinuous([NativeTypeName("UINT16 *")] ushort* value)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics*, ushort*, int>)(lpVtbl[7]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics*, ushort*, int>)(lpVtbl[7]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IKnownSimpleHapticsControllerWaveformsStatics.xml' path='doc/member[@name="IKnownSimpleHapticsControllerWaveformsStatics.get_RumbleContinuous"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics : IKn
     [VtblIndex(8)]
     public HRESULT get_RumbleContinuous([NativeTypeName("UINT16 *")] ushort* value)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics*, ushort*, int>)(lpVtbl[8]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics*, ushort*, int>)(lpVtbl[8]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IKnownSimpleHapticsControllerWaveformsStatics.xml' path='doc/member[@name="IKnownSimpleHapticsControllerWaveformsStatics.get_Press"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics : IKn
     [VtblIndex(9)]
     public HRESULT get_Press([NativeTypeName("UINT16 *")] ushort* value)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics*, ushort*, int>)(lpVtbl[9]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics*, ushort*, int>)(lpVtbl[9]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IKnownSimpleHapticsControllerWaveformsStatics.xml' path='doc/member[@name="IKnownSimpleHapticsControllerWaveformsStatics.get_Release"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics : IKn
     [VtblIndex(10)]
     public HRESULT get_Release([NativeTypeName("UINT16 *")] ushort* value)
     {
-        return ((delegate* unmanaged<IKnownSimpleHapticsControllerWaveformsStatics*, ushort*, int>)(lpVtbl[10]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IKnownSimpleHapticsControllerWaveformsStatics*, ushort*, int>)(lpVtbl[10]))((IKnownSimpleHapticsControllerWaveformsStatics*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -133,36 +133,36 @@ public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics : IKn
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_Click;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_Click;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_BuzzContinuous;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_BuzzContinuous;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_RumbleContinuous;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_RumbleContinuous;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_Press;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_Press;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_Release;
     }
 }

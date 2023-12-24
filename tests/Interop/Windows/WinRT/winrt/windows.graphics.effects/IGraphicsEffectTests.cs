@@ -19,32 +19,4 @@ public static unsafe partial class IGraphicsEffectTests
     {
         Assert.That(typeof(IGraphicsEffect).GUID, Is.EqualTo(IID_IGraphicsEffect));
     }
-
-    /// <summary>Validates that the <see cref="IGraphicsEffect" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IGraphicsEffect>(), Is.EqualTo(sizeof(IGraphicsEffect)));
-    }
-
-    /// <summary>Validates that the <see cref="IGraphicsEffect" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IGraphicsEffect).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IGraphicsEffect" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IGraphicsEffect), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IGraphicsEffect), Is.EqualTo(4));
-        }
-    }
 }

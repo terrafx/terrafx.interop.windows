@@ -26,7 +26,7 @@ public unsafe partial struct IUriRuntimeClassFactory : IUriRuntimeClassFactory.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUriRuntimeClassFactory*, Guid*, void**, int>)(lpVtbl[0]))((IUriRuntimeClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUriRuntimeClassFactory*, Guid*, void**, int>)(lpVtbl[0]))((IUriRuntimeClassFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IUriRuntimeClassFactory : IUriRuntimeClassFactory.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUriRuntimeClassFactory*, uint>)(lpVtbl[1]))((IUriRuntimeClassFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUriRuntimeClassFactory*, uint>)(lpVtbl[1]))((IUriRuntimeClassFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IUriRuntimeClassFactory : IUriRuntimeClassFactory.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUriRuntimeClassFactory*, uint>)(lpVtbl[2]))((IUriRuntimeClassFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUriRuntimeClassFactory*, uint>)(lpVtbl[2]))((IUriRuntimeClassFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IUriRuntimeClassFactory : IUriRuntimeClassFactory.I
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IUriRuntimeClassFactory*, uint*, Guid**, int>)(lpVtbl[3]))((IUriRuntimeClassFactory*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IUriRuntimeClassFactory*, uint*, Guid**, int>)(lpVtbl[3]))((IUriRuntimeClassFactory*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IUriRuntimeClassFactory : IUriRuntimeClassFactory.I
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IUriRuntimeClassFactory*, HSTRING*, int>)(lpVtbl[4]))((IUriRuntimeClassFactory*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IUriRuntimeClassFactory*, HSTRING*, int>)(lpVtbl[4]))((IUriRuntimeClassFactory*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IUriRuntimeClassFactory : IUriRuntimeClassFactory.I
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IUriRuntimeClassFactory*, TrustLevel*, int>)(lpVtbl[5]))((IUriRuntimeClassFactory*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IUriRuntimeClassFactory*, TrustLevel*, int>)(lpVtbl[5]))((IUriRuntimeClassFactory*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IUriRuntimeClassFactory.xml' path='doc/member[@name="IUriRuntimeClassFactory.CreateUri"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IUriRuntimeClassFactory : IUriRuntimeClassFactory.I
     [VtblIndex(6)]
     public HRESULT CreateUri(HSTRING uri, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass **")] IUriRuntimeClass** instance)
     {
-        return ((delegate* unmanaged<IUriRuntimeClassFactory*, HSTRING, IUriRuntimeClass**, int>)(lpVtbl[6]))((IUriRuntimeClassFactory*)Unsafe.AsPointer(ref this), uri, instance);
+        return ((delegate* unmanaged[MemberFunction]<IUriRuntimeClassFactory*, HSTRING, IUriRuntimeClass**, int>)(lpVtbl[6]))((IUriRuntimeClassFactory*)Unsafe.AsPointer(ref this), uri, instance);
     }
 
     /// <include file='IUriRuntimeClassFactory.xml' path='doc/member[@name="IUriRuntimeClassFactory.CreateWithRelativeUri"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IUriRuntimeClassFactory : IUriRuntimeClassFactory.I
     [VtblIndex(7)]
     public HRESULT CreateWithRelativeUri(HSTRING baseUri, HSTRING relativeUri, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass **")] IUriRuntimeClass** instance)
     {
-        return ((delegate* unmanaged<IUriRuntimeClassFactory*, HSTRING, HSTRING, IUriRuntimeClass**, int>)(lpVtbl[7]))((IUriRuntimeClassFactory*)Unsafe.AsPointer(ref this), baseUri, relativeUri, instance);
+        return ((delegate* unmanaged[MemberFunction]<IUriRuntimeClassFactory*, HSTRING, HSTRING, IUriRuntimeClass**, int>)(lpVtbl[7]))((IUriRuntimeClassFactory*)Unsafe.AsPointer(ref this), baseUri, relativeUri, instance);
     }
 
     public interface Interface : IInspectable.Interface
@@ -100,27 +100,27 @@ public unsafe partial struct IUriRuntimeClassFactory : IUriRuntimeClassFactory.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::IUriRuntimeClass **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, IUriRuntimeClass**, int> CreateUri;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IUriRuntimeClass**, int> CreateUri;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, ABI::Windows::Foundation::IUriRuntimeClass **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, HSTRING, IUriRuntimeClass**, int> CreateWithRelativeUri;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IUriRuntimeClass**, int> CreateWithRelativeUri;
     }
 }

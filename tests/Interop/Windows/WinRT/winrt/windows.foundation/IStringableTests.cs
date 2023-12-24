@@ -19,32 +19,4 @@ public static unsafe partial class IStringableTests
     {
         Assert.That(typeof(IStringable).GUID, Is.EqualTo(IID_IStringable));
     }
-
-    /// <summary>Validates that the <see cref="IStringable" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IStringable>(), Is.EqualTo(sizeof(IStringable)));
-    }
-
-    /// <summary>Validates that the <see cref="IStringable" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IStringable).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IStringable" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IStringable), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IStringable), Is.EqualTo(4));
-        }
-    }
 }

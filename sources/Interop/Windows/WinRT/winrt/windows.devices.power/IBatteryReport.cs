@@ -26,7 +26,7 @@ public unsafe partial struct IBatteryReport : IBatteryReport.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBatteryReport*, Guid*, void**, int>)(lpVtbl[0]))((IBatteryReport*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryReport*, Guid*, void**, int>)(lpVtbl[0]))((IBatteryReport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IBatteryReport : IBatteryReport.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBatteryReport*, uint>)(lpVtbl[1]))((IBatteryReport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBatteryReport*, uint>)(lpVtbl[1]))((IBatteryReport*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IBatteryReport : IBatteryReport.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBatteryReport*, uint>)(lpVtbl[2]))((IBatteryReport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBatteryReport*, uint>)(lpVtbl[2]))((IBatteryReport*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IBatteryReport : IBatteryReport.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IBatteryReport*, uint*, Guid**, int>)(lpVtbl[3]))((IBatteryReport*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryReport*, uint*, Guid**, int>)(lpVtbl[3]))((IBatteryReport*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IBatteryReport : IBatteryReport.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IBatteryReport*, HSTRING*, int>)(lpVtbl[4]))((IBatteryReport*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryReport*, HSTRING*, int>)(lpVtbl[4]))((IBatteryReport*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IBatteryReport : IBatteryReport.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IBatteryReport*, TrustLevel*, int>)(lpVtbl[5]))((IBatteryReport*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryReport*, TrustLevel*, int>)(lpVtbl[5]))((IBatteryReport*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IBatteryReport.xml' path='doc/member[@name="IBatteryReport.get_ChargeRateInMilliwatts"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IBatteryReport : IBatteryReport.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT get_ChargeRateInMilliwatts([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_int_t **")] IReference<int>** value)
     {
-        return ((delegate* unmanaged<IBatteryReport*, IReference<int>**, int>)(lpVtbl[6]))((IBatteryReport*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryReport*, IReference<int>**, int>)(lpVtbl[6]))((IBatteryReport*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBatteryReport.xml' path='doc/member[@name="IBatteryReport.get_DesignCapacityInMilliwattHours"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IBatteryReport : IBatteryReport.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT get_DesignCapacityInMilliwattHours([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_int_t **")] IReference<int>** value)
     {
-        return ((delegate* unmanaged<IBatteryReport*, IReference<int>**, int>)(lpVtbl[7]))((IBatteryReport*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryReport*, IReference<int>**, int>)(lpVtbl[7]))((IBatteryReport*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBatteryReport.xml' path='doc/member[@name="IBatteryReport.get_FullChargeCapacityInMilliwattHours"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IBatteryReport : IBatteryReport.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT get_FullChargeCapacityInMilliwattHours([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_int_t **")] IReference<int>** value)
     {
-        return ((delegate* unmanaged<IBatteryReport*, IReference<int>**, int>)(lpVtbl[8]))((IBatteryReport*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryReport*, IReference<int>**, int>)(lpVtbl[8]))((IBatteryReport*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBatteryReport.xml' path='doc/member[@name="IBatteryReport.get_RemainingCapacityInMilliwattHours"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IBatteryReport : IBatteryReport.Interface, INativeG
     [VtblIndex(9)]
     public HRESULT get_RemainingCapacityInMilliwattHours([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_int_t **")] IReference<int>** value)
     {
-        return ((delegate* unmanaged<IBatteryReport*, IReference<int>**, int>)(lpVtbl[9]))((IBatteryReport*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryReport*, IReference<int>**, int>)(lpVtbl[9]))((IBatteryReport*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBatteryReport.xml' path='doc/member[@name="IBatteryReport.get_Status"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IBatteryReport : IBatteryReport.Interface, INativeG
     [VtblIndex(10)]
     public HRESULT get_Status([NativeTypeName("ABI::Windows::System::Power::BatteryStatus *")] BatteryStatus* value)
     {
-        return ((delegate* unmanaged<IBatteryReport*, BatteryStatus*, int>)(lpVtbl[10]))((IBatteryReport*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryReport*, BatteryStatus*, int>)(lpVtbl[10]))((IBatteryReport*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -133,36 +133,36 @@ public unsafe partial struct IBatteryReport : IBatteryReport.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIReference_1_int_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IReference<int>**, int> get_ChargeRateInMilliwatts;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IReference<int>**, int> get_ChargeRateInMilliwatts;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIReference_1_int_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IReference<int>**, int> get_DesignCapacityInMilliwattHours;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IReference<int>**, int> get_DesignCapacityInMilliwattHours;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIReference_1_int_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IReference<int>**, int> get_FullChargeCapacityInMilliwattHours;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IReference<int>**, int> get_FullChargeCapacityInMilliwattHours;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIReference_1_int_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IReference<int>**, int> get_RemainingCapacityInMilliwattHours;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IReference<int>**, int> get_RemainingCapacityInMilliwattHours;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::Power::BatteryStatus *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BatteryStatus*, int> get_Status;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BatteryStatus*, int> get_Status;
     }
 }

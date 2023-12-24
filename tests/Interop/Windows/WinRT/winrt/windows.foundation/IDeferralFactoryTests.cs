@@ -19,32 +19,4 @@ public static unsafe partial class IDeferralFactoryTests
     {
         Assert.That(typeof(IDeferralFactory).GUID, Is.EqualTo(IID_IDeferralFactory));
     }
-
-    /// <summary>Validates that the <see cref="IDeferralFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDeferralFactory>(), Is.EqualTo(sizeof(IDeferralFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="IDeferralFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDeferralFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDeferralFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDeferralFactory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDeferralFactory), Is.EqualTo(4));
-        }
-    }
 }

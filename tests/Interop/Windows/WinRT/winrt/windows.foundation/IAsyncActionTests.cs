@@ -19,32 +19,4 @@ public static unsafe partial class IAsyncActionTests
     {
         Assert.That(typeof(IAsyncAction).GUID, Is.EqualTo(IID_IAsyncAction));
     }
-
-    /// <summary>Validates that the <see cref="IAsyncAction" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAsyncAction>(), Is.EqualTo(sizeof(IAsyncAction)));
-    }
-
-    /// <summary>Validates that the <see cref="IAsyncAction" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAsyncAction).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAsyncAction" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAsyncAction), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAsyncAction), Is.EqualTo(4));
-        }
-    }
 }

@@ -26,7 +26,7 @@ public unsafe partial struct IDeferralFactory : IDeferralFactory.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDeferralFactory*, Guid*, void**, int>)(lpVtbl[0]))((IDeferralFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDeferralFactory*, Guid*, void**, int>)(lpVtbl[0]))((IDeferralFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDeferralFactory : IDeferralFactory.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDeferralFactory*, uint>)(lpVtbl[1]))((IDeferralFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeferralFactory*, uint>)(lpVtbl[1]))((IDeferralFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDeferralFactory : IDeferralFactory.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDeferralFactory*, uint>)(lpVtbl[2]))((IDeferralFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeferralFactory*, uint>)(lpVtbl[2]))((IDeferralFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDeferralFactory : IDeferralFactory.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IDeferralFactory*, uint*, Guid**, int>)(lpVtbl[3]))((IDeferralFactory*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IDeferralFactory*, uint*, Guid**, int>)(lpVtbl[3]))((IDeferralFactory*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IDeferralFactory : IDeferralFactory.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IDeferralFactory*, HSTRING*, int>)(lpVtbl[4]))((IDeferralFactory*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IDeferralFactory*, HSTRING*, int>)(lpVtbl[4]))((IDeferralFactory*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IDeferralFactory : IDeferralFactory.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IDeferralFactory*, TrustLevel*, int>)(lpVtbl[5]))((IDeferralFactory*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IDeferralFactory*, TrustLevel*, int>)(lpVtbl[5]))((IDeferralFactory*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IDeferralFactory.xml' path='doc/member[@name="IDeferralFactory.Create"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDeferralFactory : IDeferralFactory.Interface, INat
     [VtblIndex(6)]
     public HRESULT Create([NativeTypeName("ABI::Windows::Foundation::IDeferralCompletedHandler *")] IDeferralCompletedHandler* handler, [NativeTypeName("ABI::Windows::Foundation::IDeferral **")] IDeferral** result)
     {
-        return ((delegate* unmanaged<IDeferralFactory*, IDeferralCompletedHandler*, IDeferral**, int>)(lpVtbl[6]))((IDeferralFactory*)Unsafe.AsPointer(ref this), handler, result);
+        return ((delegate* unmanaged[MemberFunction]<IDeferralFactory*, IDeferralCompletedHandler*, IDeferral**, int>)(lpVtbl[6]))((IDeferralFactory*)Unsafe.AsPointer(ref this), handler, result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -89,24 +89,24 @@ public unsafe partial struct IDeferralFactory : IDeferralFactory.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IDeferralCompletedHandler *, ABI::Windows::Foundation::IDeferral **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDeferralCompletedHandler*, IDeferral**, int> Create;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDeferralCompletedHandler*, IDeferral**, int> Create;
     }
 }

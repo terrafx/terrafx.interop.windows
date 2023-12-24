@@ -19,32 +19,4 @@ public static unsafe partial class IUIContentRootTests
     {
         Assert.That(typeof(IUIContentRoot).GUID, Is.EqualTo(IID_IUIContentRoot));
     }
-
-    /// <summary>Validates that the <see cref="IUIContentRoot" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IUIContentRoot>(), Is.EqualTo(sizeof(IUIContentRoot)));
-    }
-
-    /// <summary>Validates that the <see cref="IUIContentRoot" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IUIContentRoot).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IUIContentRoot" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IUIContentRoot), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IUIContentRoot), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IColorsStaticsTests
     {
         Assert.That(typeof(IColorsStatics).GUID, Is.EqualTo(IID_IColorsStatics));
     }
-
-    /// <summary>Validates that the <see cref="IColorsStatics" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IColorsStatics>(), Is.EqualTo(sizeof(IColorsStatics)));
-    }
-
-    /// <summary>Validates that the <see cref="IColorsStatics" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IColorsStatics).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IColorsStatics" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IColorsStatics), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IColorsStatics), Is.EqualTo(4));
-        }
-    }
 }

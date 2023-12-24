@@ -26,7 +26,7 @@ public unsafe partial struct IVibrationDeviceStatics : IVibrationDeviceStatics.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVibrationDeviceStatics*, Guid*, void**, int>)(lpVtbl[0]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVibrationDeviceStatics*, Guid*, void**, int>)(lpVtbl[0]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IVibrationDeviceStatics : IVibrationDeviceStatics.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVibrationDeviceStatics*, uint>)(lpVtbl[1]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVibrationDeviceStatics*, uint>)(lpVtbl[1]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IVibrationDeviceStatics : IVibrationDeviceStatics.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVibrationDeviceStatics*, uint>)(lpVtbl[2]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVibrationDeviceStatics*, uint>)(lpVtbl[2]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IVibrationDeviceStatics : IVibrationDeviceStatics.I
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IVibrationDeviceStatics*, uint*, Guid**, int>)(lpVtbl[3]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IVibrationDeviceStatics*, uint*, Guid**, int>)(lpVtbl[3]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IVibrationDeviceStatics : IVibrationDeviceStatics.I
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IVibrationDeviceStatics*, HSTRING*, int>)(lpVtbl[4]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IVibrationDeviceStatics*, HSTRING*, int>)(lpVtbl[4]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IVibrationDeviceStatics : IVibrationDeviceStatics.I
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IVibrationDeviceStatics*, TrustLevel*, int>)(lpVtbl[5]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IVibrationDeviceStatics*, TrustLevel*, int>)(lpVtbl[5]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IVibrationDeviceStatics.xml' path='doc/member[@name="IVibrationDeviceStatics.RequestAccessAsync"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IVibrationDeviceStatics : IVibrationDeviceStatics.I
     [VtblIndex(6)]
     public HRESULT RequestAccessAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CHaptics__CVibrationAccessStatus_t **")] IAsyncOperation<VibrationAccessStatus>** operation)
     {
-        return ((delegate* unmanaged<IVibrationDeviceStatics*, IAsyncOperation<VibrationAccessStatus>**, int>)(lpVtbl[6]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IVibrationDeviceStatics*, IAsyncOperation<VibrationAccessStatus>**, int>)(lpVtbl[6]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IVibrationDeviceStatics.xml' path='doc/member[@name="IVibrationDeviceStatics.GetDeviceSelector"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IVibrationDeviceStatics : IVibrationDeviceStatics.I
     [VtblIndex(7)]
     public HRESULT GetDeviceSelector(HSTRING* result)
     {
-        return ((delegate* unmanaged<IVibrationDeviceStatics*, HSTRING*, int>)(lpVtbl[7]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IVibrationDeviceStatics*, HSTRING*, int>)(lpVtbl[7]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IVibrationDeviceStatics.xml' path='doc/member[@name="IVibrationDeviceStatics.FromIdAsync"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IVibrationDeviceStatics : IVibrationDeviceStatics.I
     [VtblIndex(8)]
     public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CHaptics__CVibrationDevice_t **")] IAsyncOperation<IntPtr>** operation)
     {
-        return ((delegate* unmanaged<IVibrationDeviceStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), deviceId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IVibrationDeviceStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), deviceId, operation);
     }
 
     /// <include file='IVibrationDeviceStatics.xml' path='doc/member[@name="IVibrationDeviceStatics.GetDefaultAsync"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IVibrationDeviceStatics : IVibrationDeviceStatics.I
     [VtblIndex(9)]
     public HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CHaptics__CVibrationDevice_t **")] IAsyncOperation<IntPtr>** operation)
     {
-        return ((delegate* unmanaged<IVibrationDeviceStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IVibrationDeviceStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IVibrationDeviceStatics.xml' path='doc/member[@name="IVibrationDeviceStatics.FindAllAsync"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IVibrationDeviceStatics : IVibrationDeviceStatics.I
     [VtblIndex(10)]
     public HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CHaptics__CVibrationDevice_t **")] IAsyncOperation<IntPtr>** operation)
     {
-        return ((delegate* unmanaged<IVibrationDeviceStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IVibrationDeviceStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IVibrationDeviceStatics*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -133,36 +133,36 @@ public unsafe partial struct IVibrationDeviceStatics : IVibrationDeviceStatics.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CHaptics__CVibrationAccessStatus_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAsyncOperation<VibrationAccessStatus>**, int> RequestAccessAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<VibrationAccessStatus>**, int> RequestAccessAsync;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetDeviceSelector;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetDeviceSelector;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CHaptics__CVibrationDevice_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CHaptics__CVibrationDevice_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAsyncOperation<IntPtr>**, int> GetDefaultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetDefaultAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CHaptics__CVibrationDevice_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAsyncOperation<IntPtr>**, int> FindAllAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindAllAsync;
     }
 }

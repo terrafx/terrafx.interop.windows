@@ -26,7 +26,7 @@ public unsafe partial struct IBatteryStatics : IBatteryStatics.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBatteryStatics*, Guid*, void**, int>)(lpVtbl[0]))((IBatteryStatics*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryStatics*, Guid*, void**, int>)(lpVtbl[0]))((IBatteryStatics*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IBatteryStatics : IBatteryStatics.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBatteryStatics*, uint>)(lpVtbl[1]))((IBatteryStatics*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBatteryStatics*, uint>)(lpVtbl[1]))((IBatteryStatics*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IBatteryStatics : IBatteryStatics.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBatteryStatics*, uint>)(lpVtbl[2]))((IBatteryStatics*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBatteryStatics*, uint>)(lpVtbl[2]))((IBatteryStatics*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IBatteryStatics : IBatteryStatics.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IBatteryStatics*, uint*, Guid**, int>)(lpVtbl[3]))((IBatteryStatics*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryStatics*, uint*, Guid**, int>)(lpVtbl[3]))((IBatteryStatics*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IBatteryStatics : IBatteryStatics.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IBatteryStatics*, HSTRING*, int>)(lpVtbl[4]))((IBatteryStatics*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryStatics*, HSTRING*, int>)(lpVtbl[4]))((IBatteryStatics*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IBatteryStatics : IBatteryStatics.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IBatteryStatics*, TrustLevel*, int>)(lpVtbl[5]))((IBatteryStatics*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryStatics*, TrustLevel*, int>)(lpVtbl[5]))((IBatteryStatics*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IBatteryStatics.xml' path='doc/member[@name="IBatteryStatics.get_AggregateBattery"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IBatteryStatics : IBatteryStatics.Interface, INativ
     [VtblIndex(6)]
     public HRESULT get_AggregateBattery([NativeTypeName("ABI::Windows::Devices::Power::IBattery **")] IBattery** result)
     {
-        return ((delegate* unmanaged<IBatteryStatics*, IBattery**, int>)(lpVtbl[6]))((IBatteryStatics*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryStatics*, IBattery**, int>)(lpVtbl[6]))((IBatteryStatics*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IBatteryStatics.xml' path='doc/member[@name="IBatteryStatics.FromIdAsync"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IBatteryStatics : IBatteryStatics.Interface, INativ
     [VtblIndex(7)]
     public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPower__CBattery_t **")] IAsyncOperation<IntPtr>** result)
     {
-        return ((delegate* unmanaged<IBatteryStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IBatteryStatics*)Unsafe.AsPointer(ref this), deviceId, result);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IBatteryStatics*)Unsafe.AsPointer(ref this), deviceId, result);
     }
 
     /// <include file='IBatteryStatics.xml' path='doc/member[@name="IBatteryStatics.GetDeviceSelector"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IBatteryStatics : IBatteryStatics.Interface, INativ
     [VtblIndex(8)]
     public HRESULT GetDeviceSelector(HSTRING* result)
     {
-        return ((delegate* unmanaged<IBatteryStatics*, HSTRING*, int>)(lpVtbl[8]))((IBatteryStatics*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryStatics*, HSTRING*, int>)(lpVtbl[8]))((IBatteryStatics*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -111,30 +111,30 @@ public unsafe partial struct IBatteryStatics : IBatteryStatics.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Power::IBattery **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBattery**, int> get_AggregateBattery;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBattery**, int> get_AggregateBattery;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPower__CBattery_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetDeviceSelector;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetDeviceSelector;
     }
 }

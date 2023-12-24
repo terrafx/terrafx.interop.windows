@@ -26,7 +26,7 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IApiInformationStatics*, Guid*, void**, int>)(lpVtbl[0]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IApiInformationStatics*, Guid*, void**, int>)(lpVtbl[0]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IApiInformationStatics*, uint>)(lpVtbl[1]))((IApiInformationStatics*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IApiInformationStatics*, uint>)(lpVtbl[1]))((IApiInformationStatics*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IApiInformationStatics*, uint>)(lpVtbl[2]))((IApiInformationStatics*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IApiInformationStatics*, uint>)(lpVtbl[2]))((IApiInformationStatics*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IApiInformationStatics*, uint*, Guid**, int>)(lpVtbl[3]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IApiInformationStatics*, uint*, Guid**, int>)(lpVtbl[3]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IApiInformationStatics*, HSTRING*, int>)(lpVtbl[4]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IApiInformationStatics*, HSTRING*, int>)(lpVtbl[4]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IApiInformationStatics*, TrustLevel*, int>)(lpVtbl[5]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IApiInformationStatics*, TrustLevel*, int>)(lpVtbl[5]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IApiInformationStatics.xml' path='doc/member[@name="IApiInformationStatics.IsTypePresent"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
     [VtblIndex(6)]
     public HRESULT IsTypePresent(HSTRING typeName, [NativeTypeName("boolean *")] byte* result)
     {
-        return ((delegate* unmanaged<IApiInformationStatics*, HSTRING, byte*, int>)(lpVtbl[6]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), typeName, result);
+        return ((delegate* unmanaged[MemberFunction]<IApiInformationStatics*, HSTRING, byte*, int>)(lpVtbl[6]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), typeName, result);
     }
 
     /// <include file='IApiInformationStatics.xml' path='doc/member[@name="IApiInformationStatics.IsMethodPresent"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
     [VtblIndex(7)]
     public HRESULT IsMethodPresent(HSTRING typeName, HSTRING methodName, [NativeTypeName("boolean *")] byte* result)
     {
-        return ((delegate* unmanaged<IApiInformationStatics*, HSTRING, HSTRING, byte*, int>)(lpVtbl[7]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), typeName, methodName, result);
+        return ((delegate* unmanaged[MemberFunction]<IApiInformationStatics*, HSTRING, HSTRING, byte*, int>)(lpVtbl[7]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), typeName, methodName, result);
     }
 
     /// <include file='IApiInformationStatics.xml' path='doc/member[@name="IApiInformationStatics.IsMethodPresentWithArity"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
     [VtblIndex(8)]
     public HRESULT IsMethodPresentWithArity(HSTRING typeName, HSTRING methodName, [NativeTypeName("UINT32")] uint inputParameterCount, [NativeTypeName("boolean *")] byte* result)
     {
-        return ((delegate* unmanaged<IApiInformationStatics*, HSTRING, HSTRING, uint, byte*, int>)(lpVtbl[8]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), typeName, methodName, inputParameterCount, result);
+        return ((delegate* unmanaged[MemberFunction]<IApiInformationStatics*, HSTRING, HSTRING, uint, byte*, int>)(lpVtbl[8]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), typeName, methodName, inputParameterCount, result);
     }
 
     /// <include file='IApiInformationStatics.xml' path='doc/member[@name="IApiInformationStatics.IsEventPresent"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
     [VtblIndex(9)]
     public HRESULT IsEventPresent(HSTRING typeName, HSTRING eventName, [NativeTypeName("boolean *")] byte* result)
     {
-        return ((delegate* unmanaged<IApiInformationStatics*, HSTRING, HSTRING, byte*, int>)(lpVtbl[9]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), typeName, eventName, result);
+        return ((delegate* unmanaged[MemberFunction]<IApiInformationStatics*, HSTRING, HSTRING, byte*, int>)(lpVtbl[9]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), typeName, eventName, result);
     }
 
     /// <include file='IApiInformationStatics.xml' path='doc/member[@name="IApiInformationStatics.IsPropertyPresent"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
     [VtblIndex(10)]
     public HRESULT IsPropertyPresent(HSTRING typeName, HSTRING propertyName, [NativeTypeName("boolean *")] byte* result)
     {
-        return ((delegate* unmanaged<IApiInformationStatics*, HSTRING, HSTRING, byte*, int>)(lpVtbl[10]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), typeName, propertyName, result);
+        return ((delegate* unmanaged[MemberFunction]<IApiInformationStatics*, HSTRING, HSTRING, byte*, int>)(lpVtbl[10]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), typeName, propertyName, result);
     }
 
     /// <include file='IApiInformationStatics.xml' path='doc/member[@name="IApiInformationStatics.IsReadOnlyPropertyPresent"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
     [VtblIndex(11)]
     public HRESULT IsReadOnlyPropertyPresent(HSTRING typeName, HSTRING propertyName, [NativeTypeName("boolean *")] byte* result)
     {
-        return ((delegate* unmanaged<IApiInformationStatics*, HSTRING, HSTRING, byte*, int>)(lpVtbl[11]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), typeName, propertyName, result);
+        return ((delegate* unmanaged[MemberFunction]<IApiInformationStatics*, HSTRING, HSTRING, byte*, int>)(lpVtbl[11]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), typeName, propertyName, result);
     }
 
     /// <include file='IApiInformationStatics.xml' path='doc/member[@name="IApiInformationStatics.IsWriteablePropertyPresent"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
     [VtblIndex(12)]
     public HRESULT IsWriteablePropertyPresent(HSTRING typeName, HSTRING propertyName, [NativeTypeName("boolean *")] byte* result)
     {
-        return ((delegate* unmanaged<IApiInformationStatics*, HSTRING, HSTRING, byte*, int>)(lpVtbl[12]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), typeName, propertyName, result);
+        return ((delegate* unmanaged[MemberFunction]<IApiInformationStatics*, HSTRING, HSTRING, byte*, int>)(lpVtbl[12]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), typeName, propertyName, result);
     }
 
     /// <include file='IApiInformationStatics.xml' path='doc/member[@name="IApiInformationStatics.IsEnumNamedValuePresent"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
     [VtblIndex(13)]
     public HRESULT IsEnumNamedValuePresent(HSTRING enumTypeName, HSTRING valueName, [NativeTypeName("boolean *")] byte* result)
     {
-        return ((delegate* unmanaged<IApiInformationStatics*, HSTRING, HSTRING, byte*, int>)(lpVtbl[13]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), enumTypeName, valueName, result);
+        return ((delegate* unmanaged[MemberFunction]<IApiInformationStatics*, HSTRING, HSTRING, byte*, int>)(lpVtbl[13]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), enumTypeName, valueName, result);
     }
 
     /// <include file='IApiInformationStatics.xml' path='doc/member[@name="IApiInformationStatics.IsApiContractPresentByMajor"]/*' />
@@ -140,7 +140,7 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
     [VtblIndex(14)]
     public HRESULT IsApiContractPresentByMajor(HSTRING contractName, [NativeTypeName("UINT16")] ushort majorVersion, [NativeTypeName("boolean *")] byte* result)
     {
-        return ((delegate* unmanaged<IApiInformationStatics*, HSTRING, ushort, byte*, int>)(lpVtbl[14]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), contractName, majorVersion, result);
+        return ((delegate* unmanaged[MemberFunction]<IApiInformationStatics*, HSTRING, ushort, byte*, int>)(lpVtbl[14]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), contractName, majorVersion, result);
     }
 
     /// <include file='IApiInformationStatics.xml' path='doc/member[@name="IApiInformationStatics.IsApiContractPresentByMajorAndMinor"]/*' />
@@ -148,7 +148,7 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
     [VtblIndex(15)]
     public HRESULT IsApiContractPresentByMajorAndMinor(HSTRING contractName, [NativeTypeName("UINT16")] ushort majorVersion, [NativeTypeName("UINT16")] ushort minorVersion, [NativeTypeName("boolean *")] byte* result)
     {
-        return ((delegate* unmanaged<IApiInformationStatics*, HSTRING, ushort, ushort, byte*, int>)(lpVtbl[15]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), contractName, majorVersion, minorVersion, result);
+        return ((delegate* unmanaged[MemberFunction]<IApiInformationStatics*, HSTRING, ushort, ushort, byte*, int>)(lpVtbl[15]))((IApiInformationStatics*)Unsafe.AsPointer(ref this), contractName, majorVersion, minorVersion, result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -188,51 +188,51 @@ public unsafe partial struct IApiInformationStatics : IApiInformationStatics.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, byte*, int> IsTypePresent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, byte*, int> IsTypePresent;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, HSTRING, byte*, int> IsMethodPresent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, byte*, int> IsMethodPresent;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, UINT32, boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, HSTRING, uint, byte*, int> IsMethodPresentWithArity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, uint, byte*, int> IsMethodPresentWithArity;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, HSTRING, byte*, int> IsEventPresent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, byte*, int> IsEventPresent;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, HSTRING, byte*, int> IsPropertyPresent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, byte*, int> IsPropertyPresent;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, HSTRING, byte*, int> IsReadOnlyPropertyPresent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, byte*, int> IsReadOnlyPropertyPresent;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, HSTRING, byte*, int> IsWriteablePropertyPresent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, byte*, int> IsWriteablePropertyPresent;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, HSTRING, byte*, int> IsEnumNamedValuePresent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, byte*, int> IsEnumNamedValuePresent;
 
         [NativeTypeName("HRESULT (HSTRING, UINT16, boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, ushort, byte*, int> IsApiContractPresentByMajor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, ushort, byte*, int> IsApiContractPresentByMajor;
 
         [NativeTypeName("HRESULT (HSTRING, UINT16, UINT16, boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING, ushort, ushort, byte*, int> IsApiContractPresentByMajorAndMinor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, ushort, ushort, byte*, int> IsApiContractPresentByMajorAndMinor;
     }
 }

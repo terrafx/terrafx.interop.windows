@@ -3,6 +3,8 @@
 // Ported from winrt/windows.system.power.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
@@ -17,11 +19,11 @@ public static partial class WinRT
     public const string InterfaceName_Windows_System_Power_IPowerManagerStatics = "Windows.System.Power.IPowerManagerStatics";
 
     [NativeTypeName("const WCHAR[45]")]
-    [Obsolete("Background Energy Manager has been deprecated. For more info, see MSDN")]
+    [Obsolete("Background Energy Manager has been deprecated. For more info, see MSDN.")]
     public const string RuntimeClass_Windows_System_Power_BackgroundEnergyManager = "Windows.System.Power.BackgroundEnergyManager";
 
     [NativeTypeName("const WCHAR[45]")]
-    [Obsolete("Foreground Energy Manager has been deprecated. For more info, see MSDN")]
+    [Obsolete("Foreground Energy Manager has been deprecated. For more info, see MSDN.")]
     public const string RuntimeClass_Windows_System_Power_ForegroundEnergyManager = "Windows.System.Power.ForegroundEnergyManager";
 
     [NativeTypeName("const WCHAR[34]")]

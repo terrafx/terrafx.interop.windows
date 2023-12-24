@@ -26,7 +26,7 @@ public unsafe partial struct IMemoryBufferReference : IMemoryBufferReference.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMemoryBufferReference*, Guid*, void**, int>)(lpVtbl[0]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMemoryBufferReference*, Guid*, void**, int>)(lpVtbl[0]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IMemoryBufferReference : IMemoryBufferReference.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMemoryBufferReference*, uint>)(lpVtbl[1]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMemoryBufferReference*, uint>)(lpVtbl[1]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IMemoryBufferReference : IMemoryBufferReference.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMemoryBufferReference*, uint>)(lpVtbl[2]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMemoryBufferReference*, uint>)(lpVtbl[2]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IMemoryBufferReference : IMemoryBufferReference.Int
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IMemoryBufferReference*, uint*, Guid**, int>)(lpVtbl[3]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IMemoryBufferReference*, uint*, Guid**, int>)(lpVtbl[3]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IMemoryBufferReference : IMemoryBufferReference.Int
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IMemoryBufferReference*, HSTRING*, int>)(lpVtbl[4]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IMemoryBufferReference*, HSTRING*, int>)(lpVtbl[4]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IMemoryBufferReference : IMemoryBufferReference.Int
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IMemoryBufferReference*, TrustLevel*, int>)(lpVtbl[5]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IMemoryBufferReference*, TrustLevel*, int>)(lpVtbl[5]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IMemoryBufferReference.xml' path='doc/member[@name="IMemoryBufferReference.get_Capacity"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IMemoryBufferReference : IMemoryBufferReference.Int
     [VtblIndex(6)]
     public HRESULT get_Capacity([NativeTypeName("UINT32 *")] uint* value)
     {
-        return ((delegate* unmanaged<IMemoryBufferReference*, uint*, int>)(lpVtbl[6]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMemoryBufferReference*, uint*, int>)(lpVtbl[6]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMemoryBufferReference.xml' path='doc/member[@name="IMemoryBufferReference.add_Closed"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IMemoryBufferReference : IMemoryBufferReference.Int
     [VtblIndex(7)]
     public HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CFoundation__CIMemoryBufferReference_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged<IMemoryBufferReference*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMemoryBufferReference*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMemoryBufferReference.xml' path='doc/member[@name="IMemoryBufferReference.remove_Closed"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IMemoryBufferReference : IMemoryBufferReference.Int
     [VtblIndex(8)]
     public HRESULT remove_Closed(EventRegistrationToken cookie)
     {
-        return ((delegate* unmanaged<IMemoryBufferReference*, EventRegistrationToken, int>)(lpVtbl[8]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this), cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMemoryBufferReference*, EventRegistrationToken, int>)(lpVtbl[8]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this), cookie);
     }
 
     public interface Interface : IInspectable.Interface
@@ -111,30 +111,30 @@ public unsafe partial struct IMemoryBufferReference : IMemoryBufferReference.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_Capacity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_Capacity;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CFoundation__CIMemoryBufferReference_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Closed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Closed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, EventRegistrationToken, int> remove_Closed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Closed;
     }
 }

@@ -26,7 +26,7 @@ public unsafe partial struct IColorHelperStatics : IColorHelperStatics.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IColorHelperStatics*, Guid*, void**, int>)(lpVtbl[0]))((IColorHelperStatics*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IColorHelperStatics*, Guid*, void**, int>)(lpVtbl[0]))((IColorHelperStatics*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IColorHelperStatics : IColorHelperStatics.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IColorHelperStatics*, uint>)(lpVtbl[1]))((IColorHelperStatics*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IColorHelperStatics*, uint>)(lpVtbl[1]))((IColorHelperStatics*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IColorHelperStatics : IColorHelperStatics.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IColorHelperStatics*, uint>)(lpVtbl[2]))((IColorHelperStatics*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IColorHelperStatics*, uint>)(lpVtbl[2]))((IColorHelperStatics*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IColorHelperStatics : IColorHelperStatics.Interface
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IColorHelperStatics*, uint*, Guid**, int>)(lpVtbl[3]))((IColorHelperStatics*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IColorHelperStatics*, uint*, Guid**, int>)(lpVtbl[3]))((IColorHelperStatics*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IColorHelperStatics : IColorHelperStatics.Interface
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IColorHelperStatics*, HSTRING*, int>)(lpVtbl[4]))((IColorHelperStatics*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IColorHelperStatics*, HSTRING*, int>)(lpVtbl[4]))((IColorHelperStatics*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IColorHelperStatics : IColorHelperStatics.Interface
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IColorHelperStatics*, TrustLevel*, int>)(lpVtbl[5]))((IColorHelperStatics*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IColorHelperStatics*, TrustLevel*, int>)(lpVtbl[5]))((IColorHelperStatics*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IColorHelperStatics.xml' path='doc/member[@name="IColorHelperStatics.FromArgb"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IColorHelperStatics : IColorHelperStatics.Interface
     [VtblIndex(6)]
     public HRESULT FromArgb(byte a, byte r, byte g, byte b, [NativeTypeName("ABI::Windows::UI::Color *")] Color* returnValue)
     {
-        return ((delegate* unmanaged<IColorHelperStatics*, byte, byte, byte, byte, Color*, int>)(lpVtbl[6]))((IColorHelperStatics*)Unsafe.AsPointer(ref this), a, r, g, b, returnValue);
+        return ((delegate* unmanaged[MemberFunction]<IColorHelperStatics*, byte, byte, byte, byte, Color*, int>)(lpVtbl[6]))((IColorHelperStatics*)Unsafe.AsPointer(ref this), a, r, g, b, returnValue);
     }
 
     public interface Interface : IInspectable.Interface
@@ -89,24 +89,24 @@ public unsafe partial struct IColorHelperStatics : IColorHelperStatics.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (BYTE, BYTE, BYTE, BYTE, ABI::Windows::UI::Color *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte, byte, byte, byte, Color*, int> FromArgb;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte, byte, byte, byte, Color*, int> FromArgb;
     }
 }

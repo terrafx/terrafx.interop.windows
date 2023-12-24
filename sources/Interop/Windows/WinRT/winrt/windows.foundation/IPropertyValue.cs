@@ -26,7 +26,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPropertyValue*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyValue*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyValue*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint>)(lpVtbl[1]))((IPropertyValue*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint>)(lpVtbl[1]))((IPropertyValue*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint>)(lpVtbl[2]))((IPropertyValue*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint>)(lpVtbl[2]))((IPropertyValue*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, Guid**, int>)(lpVtbl[3]))((IPropertyValue*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, Guid**, int>)(lpVtbl[3]))((IPropertyValue*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IPropertyValue*, HSTRING*, int>)(lpVtbl[4]))((IPropertyValue*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, HSTRING*, int>)(lpVtbl[4]))((IPropertyValue*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IPropertyValue*, TrustLevel*, int>)(lpVtbl[5]))((IPropertyValue*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, TrustLevel*, int>)(lpVtbl[5]))((IPropertyValue*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.get_Type"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT get_Type([NativeTypeName("ABI::Windows::Foundation::PropertyType *")] PropertyType* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, PropertyType*, int>)(lpVtbl[6]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, PropertyType*, int>)(lpVtbl[6]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.get_IsNumericScalar"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT get_IsNumericScalar([NativeTypeName("boolean *")] byte* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, byte*, int>)(lpVtbl[7]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, byte*, int>)(lpVtbl[7]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetUInt8"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT GetUInt8(byte* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, byte*, int>)(lpVtbl[8]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, byte*, int>)(lpVtbl[8]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetInt16"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(9)]
     public HRESULT GetInt16([NativeTypeName("INT16 *")] short* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, short*, int>)(lpVtbl[9]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, short*, int>)(lpVtbl[9]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetUInt16"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(10)]
     public HRESULT GetUInt16([NativeTypeName("UINT16 *")] ushort* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, ushort*, int>)(lpVtbl[10]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, ushort*, int>)(lpVtbl[10]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetInt32"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(11)]
     public HRESULT GetInt32([NativeTypeName("INT32 *")] int* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, int*, int>)(lpVtbl[11]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, int*, int>)(lpVtbl[11]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetUInt32"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(12)]
     public HRESULT GetUInt32([NativeTypeName("UINT32 *")] uint* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, int>)(lpVtbl[12]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, int>)(lpVtbl[12]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetInt64"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(13)]
     public HRESULT GetInt64([NativeTypeName("INT64 *")] long* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, long*, int>)(lpVtbl[13]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, long*, int>)(lpVtbl[13]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetUInt64"]/*' />
@@ -140,7 +140,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(14)]
     public HRESULT GetUInt64([NativeTypeName("UINT64 *")] ulong* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, ulong*, int>)(lpVtbl[14]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, ulong*, int>)(lpVtbl[14]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetSingle"]/*' />
@@ -148,7 +148,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(15)]
     public HRESULT GetSingle(float* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, float*, int>)(lpVtbl[15]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, float*, int>)(lpVtbl[15]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetDouble"]/*' />
@@ -156,15 +156,15 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(16)]
     public HRESULT GetDouble(double* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, double*, int>)(lpVtbl[16]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, double*, int>)(lpVtbl[16]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetChar16"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT GetChar16([NativeTypeName("WCHAR *")] ushort* value)
+    public HRESULT GetChar16([NativeTypeName("WCHAR *")] char* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, ushort*, int>)(lpVtbl[17]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, char*, int>)(lpVtbl[17]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetBoolean"]/*' />
@@ -172,7 +172,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(18)]
     public HRESULT GetBoolean([NativeTypeName("boolean *")] byte* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, byte*, int>)(lpVtbl[18]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, byte*, int>)(lpVtbl[18]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetString"]/*' />
@@ -180,7 +180,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(19)]
     public HRESULT GetString(HSTRING* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, HSTRING*, int>)(lpVtbl[19]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, HSTRING*, int>)(lpVtbl[19]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetGuid"]/*' />
@@ -188,7 +188,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(20)]
     public HRESULT GetGuid(Guid* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, Guid*, int>)(lpVtbl[20]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, Guid*, int>)(lpVtbl[20]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetDateTime"]/*' />
@@ -196,7 +196,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(21)]
     public HRESULT GetDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, DateTime*, int>)(lpVtbl[21]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, DateTime*, int>)(lpVtbl[21]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetTimeSpan"]/*' />
@@ -204,7 +204,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(22)]
     public HRESULT GetTimeSpan([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, TimeSpan*, int>)(lpVtbl[22]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, TimeSpan*, int>)(lpVtbl[22]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetPoint"]/*' />
@@ -212,7 +212,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(23)]
     public HRESULT GetPoint([NativeTypeName("ABI::Windows::Foundation::Point *")] Point* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, Point*, int>)(lpVtbl[23]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, Point*, int>)(lpVtbl[23]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetSize"]/*' />
@@ -220,7 +220,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(24)]
     public HRESULT GetSize([NativeTypeName("ABI::Windows::Foundation::Size *")] Size* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, Size*, int>)(lpVtbl[24]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, Size*, int>)(lpVtbl[24]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetRect"]/*' />
@@ -228,7 +228,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(25)]
     public HRESULT GetRect([NativeTypeName("ABI::Windows::Foundation::Rect *")] Rect* value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, Rect*, int>)(lpVtbl[25]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, Rect*, int>)(lpVtbl[25]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetUInt8Array"]/*' />
@@ -236,7 +236,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(26)]
     public HRESULT GetUInt8Array([NativeTypeName("UINT32 *")] uint* valueLength, byte** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, byte**, int>)(lpVtbl[26]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, byte**, int>)(lpVtbl[26]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetInt16Array"]/*' />
@@ -244,7 +244,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(27)]
     public HRESULT GetInt16Array([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("INT16 **")] short** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, short**, int>)(lpVtbl[27]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, short**, int>)(lpVtbl[27]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetUInt16Array"]/*' />
@@ -252,7 +252,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(28)]
     public HRESULT GetUInt16Array([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("UINT16 **")] ushort** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, ushort**, int>)(lpVtbl[28]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, ushort**, int>)(lpVtbl[28]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetInt32Array"]/*' />
@@ -260,7 +260,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(29)]
     public HRESULT GetInt32Array([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("INT32 **")] int** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, int**, int>)(lpVtbl[29]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, int**, int>)(lpVtbl[29]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetUInt32Array"]/*' />
@@ -268,7 +268,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(30)]
     public HRESULT GetUInt32Array([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("UINT32 **")] uint** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, uint**, int>)(lpVtbl[30]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, uint**, int>)(lpVtbl[30]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetInt64Array"]/*' />
@@ -276,7 +276,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(31)]
     public HRESULT GetInt64Array([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("INT64 **")] long** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, long**, int>)(lpVtbl[31]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, long**, int>)(lpVtbl[31]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetUInt64Array"]/*' />
@@ -284,7 +284,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(32)]
     public HRESULT GetUInt64Array([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("UINT64 **")] ulong** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, ulong**, int>)(lpVtbl[32]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, ulong**, int>)(lpVtbl[32]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetSingleArray"]/*' />
@@ -292,7 +292,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(33)]
     public HRESULT GetSingleArray([NativeTypeName("UINT32 *")] uint* valueLength, float** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, float**, int>)(lpVtbl[33]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, float**, int>)(lpVtbl[33]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetDoubleArray"]/*' />
@@ -300,15 +300,15 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(34)]
     public HRESULT GetDoubleArray([NativeTypeName("UINT32 *")] uint* valueLength, double** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, double**, int>)(lpVtbl[34]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, double**, int>)(lpVtbl[34]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetChar16Array"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
-    public HRESULT GetChar16Array([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("WCHAR **")] ushort** value)
+    public HRESULT GetChar16Array([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("WCHAR **")] char** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, ushort**, int>)(lpVtbl[35]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, char**, int>)(lpVtbl[35]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetBooleanArray"]/*' />
@@ -316,7 +316,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(36)]
     public HRESULT GetBooleanArray([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("boolean **")] byte** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, byte**, int>)(lpVtbl[36]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, byte**, int>)(lpVtbl[36]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetStringArray"]/*' />
@@ -324,7 +324,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(37)]
     public HRESULT GetStringArray([NativeTypeName("UINT32 *")] uint* valueLength, HSTRING** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, HSTRING**, int>)(lpVtbl[37]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, HSTRING**, int>)(lpVtbl[37]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetInspectableArray"]/*' />
@@ -332,7 +332,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(38)]
     public HRESULT GetInspectableArray([NativeTypeName("UINT32 *")] uint* valueLength, IInspectable*** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, IInspectable***, int>)(lpVtbl[38]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, IInspectable***, int>)(lpVtbl[38]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetGuidArray"]/*' />
@@ -340,7 +340,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(39)]
     public HRESULT GetGuidArray([NativeTypeName("UINT32 *")] uint* valueLength, Guid** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, Guid**, int>)(lpVtbl[39]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, Guid**, int>)(lpVtbl[39]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetDateTimeArray"]/*' />
@@ -348,7 +348,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(40)]
     public HRESULT GetDateTimeArray([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("ABI::Windows::Foundation::DateTime **")] DateTime** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, DateTime**, int>)(lpVtbl[40]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, DateTime**, int>)(lpVtbl[40]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetTimeSpanArray"]/*' />
@@ -356,7 +356,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(41)]
     public HRESULT GetTimeSpanArray([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("ABI::Windows::Foundation::TimeSpan **")] TimeSpan** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, TimeSpan**, int>)(lpVtbl[41]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, TimeSpan**, int>)(lpVtbl[41]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetPointArray"]/*' />
@@ -364,7 +364,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(42)]
     public HRESULT GetPointArray([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("ABI::Windows::Foundation::Point **")] Point** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, Point**, int>)(lpVtbl[42]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, Point**, int>)(lpVtbl[42]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetSizeArray"]/*' />
@@ -372,7 +372,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(43)]
     public HRESULT GetSizeArray([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("ABI::Windows::Foundation::Size **")] Size** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, Size**, int>)(lpVtbl[43]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, Size**, int>)(lpVtbl[43]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetRectArray"]/*' />
@@ -380,7 +380,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     [VtblIndex(44)]
     public HRESULT GetRectArray([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("ABI::Windows::Foundation::Rect **")] Rect** value)
     {
-        return ((delegate* unmanaged<IPropertyValue*, uint*, Rect**, int>)(lpVtbl[44]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, Rect**, int>)(lpVtbl[44]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -419,7 +419,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
         HRESULT GetDouble(double* value);
 
         [VtblIndex(17)]
-        HRESULT GetChar16([NativeTypeName("WCHAR *")] ushort* value);
+        HRESULT GetChar16([NativeTypeName("WCHAR *")] char* value);
 
         [VtblIndex(18)]
         HRESULT GetBoolean([NativeTypeName("boolean *")] byte* value);
@@ -473,7 +473,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
         HRESULT GetDoubleArray([NativeTypeName("UINT32 *")] uint* valueLength, double** value);
 
         [VtblIndex(35)]
-        HRESULT GetChar16Array([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("WCHAR **")] ushort** value);
+        HRESULT GetChar16Array([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("WCHAR **")] char** value);
 
         [VtblIndex(36)]
         HRESULT GetBooleanArray([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("boolean **")] byte** value);
@@ -507,138 +507,138 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::PropertyType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PropertyType*, int> get_Type;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PropertyType*, int> get_Type;
 
         [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, int> get_IsNumericScalar;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsNumericScalar;
 
         [NativeTypeName("HRESULT (BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, int> GetUInt8;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> GetUInt8;
 
         [NativeTypeName("HRESULT (INT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> GetInt16;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> GetInt16;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> GetUInt16;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> GetUInt16;
 
         [NativeTypeName("HRESULT (INT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetInt32;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetInt32;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetUInt32;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetUInt32;
 
         [NativeTypeName("HRESULT (INT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, int> GetInt64;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, int> GetInt64;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetUInt64;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetUInt64;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> GetSingle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> GetSingle;
 
         [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> GetDouble;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> GetDouble;
 
         [NativeTypeName("HRESULT (WCHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> GetChar16;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> GetChar16;
 
         [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, int> GetBoolean;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> GetBoolean;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetString;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetGuid;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetGuid;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DateTime*, int> GetDateTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> GetDateTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::TimeSpan *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TimeSpan*, int> GetTimeSpan;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> GetTimeSpan;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Point *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Point*, int> GetPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Point*, int> GetPoint;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Size *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Size*, int> GetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Size*, int> GetSize;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Rect *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Rect*, int> GetRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Rect*, int> GetRect;
 
         [NativeTypeName("HRESULT (UINT32 *, BYTE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, byte**, int> GetUInt8Array;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, byte**, int> GetUInt8Array;
 
         [NativeTypeName("HRESULT (UINT32 *, INT16 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, short**, int> GetInt16Array;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, short**, int> GetInt16Array;
 
         [NativeTypeName("HRESULT (UINT32 *, UINT16 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, ushort**, int> GetUInt16Array;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, ushort**, int> GetUInt16Array;
 
         [NativeTypeName("HRESULT (UINT32 *, INT32 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int**, int> GetInt32Array;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int**, int> GetInt32Array;
 
         [NativeTypeName("HRESULT (UINT32 *, UINT32 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint**, int> GetUInt32Array;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint**, int> GetUInt32Array;
 
         [NativeTypeName("HRESULT (UINT32 *, INT64 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, long**, int> GetInt64Array;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, long**, int> GetInt64Array;
 
         [NativeTypeName("HRESULT (UINT32 *, UINT64 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, ulong**, int> GetUInt64Array;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, ulong**, int> GetUInt64Array;
 
         [NativeTypeName("HRESULT (UINT32 *, FLOAT **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, float**, int> GetSingleArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, float**, int> GetSingleArray;
 
         [NativeTypeName("HRESULT (UINT32 *, DOUBLE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, double**, int> GetDoubleArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, double**, int> GetDoubleArray;
 
         [NativeTypeName("HRESULT (UINT32 *, WCHAR **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, ushort**, int> GetChar16Array;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, char**, int> GetChar16Array;
 
         [NativeTypeName("HRESULT (UINT32 *, boolean **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, byte**, int> GetBooleanArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, byte**, int> GetBooleanArray;
 
         [NativeTypeName("HRESULT (UINT32 *, HSTRING **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, HSTRING**, int> GetStringArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, HSTRING**, int> GetStringArray;
 
         [NativeTypeName("HRESULT (UINT32 *, IInspectable ***) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, IInspectable***, int> GetInspectableArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, IInspectable***, int> GetInspectableArray;
 
         [NativeTypeName("HRESULT (UINT32 *, GUID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetGuidArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetGuidArray;
 
         [NativeTypeName("HRESULT (UINT32 *, ABI::Windows::Foundation::DateTime **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, DateTime**, int> GetDateTimeArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, DateTime**, int> GetDateTimeArray;
 
         [NativeTypeName("HRESULT (UINT32 *, ABI::Windows::Foundation::TimeSpan **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, TimeSpan**, int> GetTimeSpanArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, TimeSpan**, int> GetTimeSpanArray;
 
         [NativeTypeName("HRESULT (UINT32 *, ABI::Windows::Foundation::Point **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Point**, int> GetPointArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Point**, int> GetPointArray;
 
         [NativeTypeName("HRESULT (UINT32 *, ABI::Windows::Foundation::Size **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Size**, int> GetSizeArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Size**, int> GetSizeArray;
 
         [NativeTypeName("HRESULT (UINT32 *, ABI::Windows::Foundation::Rect **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Rect**, int> GetRectArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Rect**, int> GetRectArray;
     }
 }
