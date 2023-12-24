@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DIndexBuffer9.GetDesc">
+    <summary>Retrieves a description of the index buffer resource.</summary>
+    <param name="pDesc">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dindexbuffer-desc">D3DINDEXBUFFER_DESC</a> structure, describing the returned index buffer.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL is returned if the argument is invalid.</returns>
+  </member>
+  <member name="IDirect3DIndexBuffer9.Lock">
+    <summary>Locks a range of index data and obtains a pointer to the index buffer memory.</summary>
+    <param name="OffsetToLock">Offset into the index data to lock, in bytes. Lock the entire index buffer by specifying 0 for both parameters, SizeToLock and OffsetToLock.</param>
+    <param name="SizeToLock">Size of the index data to lock, in bytes. Lock the entire index buffer by specifying 0 for both parameters, SizeToLock and OffsetToLock.</param>
+    <param name="ppbData">VOID* pointer to a memory buffer containing the returned index data.</param>
+    <param name="Flags">
+      <para>Combination of zero or more locking flags that describe the type of lock to perform. For this method, the valid flags are:</para>
+      <list type="bullet">
+        <item>
+          <description>D3DLOCK_DISCARD</description>
+        </item>
+        <item>
+          <description>D3DLOCK_NO_DIRTY_UPDATE</description>
+        </item>
+        <item>
+          <description>D3DLOCK_NOSYSLOCK</description>
+        </item>
+        <item>
+          <description>D3DLOCK_READONLY</description>
+        </item>
+        <item>
+          <description>D3DLOCK_NOOVERWRITE</description>
+        </item>
+      </list>For a description of the flags, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dlock">D3DLOCK</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DIndexBuffer9.Unlock">
+    <summary>Unlocks index data.</summary>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DIndexBuffer9">
+    <summary>Applications use the methods of the IDirect3DIndexBuffer9 interface to manipulate an index buffer resource.</summary>
+  </member>
+</doc>

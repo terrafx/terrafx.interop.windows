@@ -9,7 +9,7 @@
     <summary>Requests that the statistics include the <b>pwcsName</b> member of the<see cref="STATSTG" /> structure.</summary>
   </member>
   <member name="STATFLAG.STATFLAG_NONAME">
-    <summary>Requests that the statistics not include the <b>pwcsName</b> member of the<see cref="STATSTG" /> structure. If the name is omitted, there is no need for the<see cref="ILockBytes.Stat" />,<see cref="IStorage.Stat" />, and<see cref="IStream.Stat" /> methods methods to allocate and free memory for the string value of the name, therefore the method reduces time and resources used in an allocation and free operation.</summary>
+    <summary>Requests that the statistics not include the <b>pwcsName</b> member of the<see cref="STATSTG" /> structure. If the name is omitted, there is no need for the<see cref="ILockBytes.Stat" />,<see cref="IStorage.Stat" />, and<see cref="IStream.Stat" /> methods to allocate and free memory for the string value of the name, therefore the method reduces time and resources used in an allocation and free operation.</summary>
   </member>
   <member name="STATFLAG.STATFLAG_NOOPEN">
     <summary>Not implemented.</summary>

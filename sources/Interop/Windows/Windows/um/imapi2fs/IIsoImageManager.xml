@@ -41,6 +41,13 @@
     <param name="data">The <b>IStream</b> object associated with the .iso image.</param>
     <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation.</returns>
   </member>
+  <member name="IIsoImageManager.Validate">
+    <summary>Determines if the provided .iso image is valid.</summary>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <para>| Return code | Description | |-------------|-------------| | <b>IMAPI_E_IMAGEMANAGER_IMAGE_NOT_ALIGNED</b> | The image is not aligned on a 2kb sector boundary. | | <b>IMAPI_E_IMAGEMANAGER_NO_VALID_VD_FOUND</b> | The image does not contain a valid volume descriptor. | | <b>IMAPI_E_IMAGEMANAGER_NO_IMAGE</b> | The image has not been set using the <see cref="SetPath" /> or <see cref="SetStream" /> method prior to calling this method. | | <b>IMAPI_E_IMAGEMANAGER_IMAGE_TOO_BIG</b> | The provided image is too large to be validated as the size exceeds MAXLONG. |</para>
+    </returns>
+  </member>
   <member name="IIsoImageManager">
     <summary>Use this interface to verify if an existing .iso file contains a valid file system for burning.</summary>
   </member>

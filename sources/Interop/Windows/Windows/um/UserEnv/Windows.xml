@@ -3,15 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.CreateAppContainerProfile">
-    <summary>Creates a per-user, per-app profile for Windows Store apps.</summary>
-    <param name="pszAppContainerName">The name of the app container. To ensure uniqueness, it is recommended that this string contains the app name as well as the publisher. This string can be up to 64 characters in length. Further, it must fit into the pattern described by the regular expression "[-_. A-Za-z0-9]+".</param>
+    <summary>Creates a per-user, per-app profile for an AppContainer.</summary>
+    <param name="pszAppContainerName">The name of the app container. To ensure uniqueness, this string should ideally contain the app name as well as the publisher. This string can be up to 64 characters in length. Further, it must fit into the pattern described by the regular expression "[-_. A-Za-z0-9]+".</param>
     <param name="pszDisplayName">The display name. This string can be up to 512 characters in length.</param>
     <param name="pszDescription">A description for the app container. This string can be up to 2048 characters in length.</param>
-    <param name="pCapabilities">The SIDs that define the requested capabilities.</param>
+    <param name="pCapabilities">The SIDs that define the requested UWP capabilities (if applicable).</param>
     <param name="dwCapabilityCount">The number of SIDs in <i>pCapabilities</i>.</param>
-    <param name="ppSidAppContainerSid">The SID for the profile. This buffer must be freed using the <see cref="FreeSid" /> function.</param>
+    <param name="ppSidAppContainerSid">The SID for the profile. This buffer must be freed using the <see cref="FreeSid" />function.</param>
     <returns>
-      <para>If this function succeeds, it returns a standard HRESULT code, including the following:</para>
+      <para>If this function succeeds, then it returns a standard HRESULT code, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
@@ -39,7 +39,7 @@
               </listheader>
             </list>
           </description>
-          <description>The caller does not have permission to create the profile.</description>
+          <description>The caller doesn't have permission to create the profile.</description>
         </listheader>
         <listheader>
           <description>

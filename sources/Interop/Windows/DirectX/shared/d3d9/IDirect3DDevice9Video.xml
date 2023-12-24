@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DDevice9Video.CreateAuthenticatedChannel">
+    <summary>Creates a channel to communicate with the Direct3D device or the graphics driver.</summary>
+    <param name="ChannelType">Specifies the type of channel, as a member of the <a href="https://docs.microsoft.com//windows/desktop/medfound/d3dauthenticatedchanneltype">D3DAUTHENTICATEDCHANNELTYPE</a> enumeration.</param>
+    <param name="ppAuthenticatedChannel">Receives a pointer to the <see cref="IDirect3DAuthenticatedChannel9" /> interface. The caller must release the interface.</param>
+    <param name="pChannelHandle">Receives a pointer to a handle for the channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDirect3DDevice9Video.CreateCryptoSession">
+    <summary>Creates a cryptographic session to encrypt video content that is sent to the display driver.</summary>
+    <param name="pCryptoType">
+      <para>Pointer to a GUID that specifies the type of encryption to use. The following GUIDs are defined.</para>
+      <para>
+        <b>pDecodeProfile</b>
+      </para>
+      <para>A pointer to a GUID that specifies the DirectX Video Acceleration 2 (DXVA-2) decoding profile. For a list of possible values, see IDirectXVideoDecoderService.GetDecoderDeviceGuids. If DXVA-2 decoding will not be used, set this parameter to NULL.</para>
+      <para>
+        <b>pCaps</b>
+      </para>
+      <para>A pointer to a D3DCONTENTPROTECTIONCAPS structure. The method fills in this structure with the driver's content protection capabilities.</para>
+    </param>
+    <param name="pDecodeProfile">Pointer to a GUID that specifies the DirectX Video Acceleration 2 (DXVA-2) decoding profile. For a list of possible values, see <see cref="IDirectXVideoDecoderService.GetDecoderDeviceGuids" />. If DXVA-2 decoding will not be used, set this parameter to <b>NULL</b>.</param>
+    <param name="ppCryptoSession">Receives a pointer to the <see cref="IDirect3DCryptoSession9" /> interface. The caller must release the interface.</param>
+    <param name="pCryptoHandle">Receives a handle for the session.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDirect3DDevice9Video.GetContentProtectionCaps">
+    <summary>Queries the display driver for its content protection capabilities.</summary>
+    <param name="pCryptoType">
+      <para>A pointer to a GUID that specifies the type of encryption to use. The following GUIDs are defined.</para>
+      <para>
+        <b>D3DCRYPTOTYPE_AES128_CTR</b>
+      </para>
+      <para>128-bit Advanced Encryption Standard CTR mode (AES-CTR) block cipher.</para>
+      <para>
+        <b>D3DCRYPTOTYPE_PROPRIETARY</b>
+      </para>
+      <para>Proprietary encryption algorithm.</para>
+    </param>
+    <param name="pDecodeProfile">A pointer to a GUID that specifies the DirectX Video Acceleration 2 (DXVA-2) decoding profile. For a list of possible values, see <see cref="IDirectXVideoDecoderService.GetDecoderDeviceGuids" />. If DXVA-2 decoding will not be used, set this parameter to <b>NULL</b>.</param>
+    <param name="pCaps">A pointer to a <see cref="D3DCONTENTPROTECTIONCAPS" /> structure. The method fills in this structure with the driver's content protection capabilities.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDirect3DDevice9Video">
+    <summary>
+      <para>Enables an application to use content protection and encryption services implemented by a graphics driver.</para>
+      <para>To get a pointer to this interface, call <b>QueryInterface</b> on a D3D9Ex device.</para>
+    </summary>
+  </member>
+</doc>

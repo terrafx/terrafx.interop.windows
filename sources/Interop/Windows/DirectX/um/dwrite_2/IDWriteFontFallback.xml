@@ -20,7 +20,7 @@
   <member name="IDWriteFontFallback">
     <summary>
       <para>Allows you to access fallback fonts from the font list.</para>
-      <para>The <b>IDWriteFontFallback</b> interface defines a fallback sequence to map character ranges to fonts, which is either created via <a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefontfallbackbuilder">IDWriteFontFallbackBuilder</a> or retrieved from <a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefactory2-getsystemfontfallback">IDWriteFactory2.GetSystemFontFallback</a>.</para>
+      <para>The <b>IDWriteFontFallback</b> interface defines a fallback sequence to map character ranges to fonts, which is either created via <see cref="IDWriteFontFallbackBuilder" /> or retrieved from <see cref="IDWriteFactory2.GetSystemFontFallback" />.</para>
     </summary>
   </member>
 </doc>

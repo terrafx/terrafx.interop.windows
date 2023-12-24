@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DSwapChain9Ex.GetDisplayModeEx">
+    <summary>Retrieves the display mode's spatial resolution, color resolution, refresh frequency, and rotation settings.</summary>
+    <param name="pMode">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddisplaymodeex">D3DDISPLAYMODEEX</a> structure containing data about the display mode of the adapter. As opposed to the display mode of the device, which may not be active if the device does not own full-screen mode.</param>
+    <param name="pRotation">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddisplayrotation">D3DDISPLAYROTATION</a> indicating the type of screen rotation the application will do. The value returned through this pointer is important when the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpresentflag">D3DPRESENTFLAG_NOAUTOROTATE</a> flag is used; otherwise, it can be set to <b>NULL</b>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DSwapChain9Ex.GetLastPresentCount">
+    <summary>Returns the number of times the swapchain has been processed.</summary>
+    <param name="pLastPresentCount">Pointer to a UINT to be filled with the number of times the <see cref="IDirect3DDevice9Ex.PresentEx" /> method has been called. The count will also be incremented by calling some other APIs such as <see cref="IDirect3DDevice9.SetDialogBoxMode" />.</param>
+    <returns>S_OK the method was successful.</returns>
+  </member>
+  <member name="IDirect3DSwapChain9Ex">
+    <summary>Applications use the methods of the <b>IDirect3DSwapChain9Ex</b> interface to manipulate a swap chain.</summary>
+  </member>
+</doc>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DVolume9.FreePrivateData">
+    <summary>Frees the specified private data associated with this volume.</summary>
+    <param name="refguid">Reference to the globally unique identifier that identifies the private data to free.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL, D3DERR_NOTFOUND.</returns>
+  </member>
+  <member name="IDirect3DVolume9.GetContainer">
+    <summary>Provides access to the parent volume texture object, if this surface is a child level of a volume texture.</summary>
+    <param name="riid">Reference identifier of the volume being requested.</param>
+    <param name="ppContainer">Address of a pointer to fill with the container pointer, if the query succeeds.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DVolume9.GetDesc">
+    <summary>Retrieves a description of the volume.</summary>
+    <param name="pDesc">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dvolume-desc">D3DVOLUME_DESC</a> structure, describing the volume.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL is returned if the argument is invalid.</returns>
+  </member>
+  <member name="IDirect3DVolume9.GetDevice">
+    <summary>Retrieves the device associated with a volume.</summary>
+    <param name="ppDevice">Address of a pointer to an <see cref="IDirect3DDevice9" /> interface to fill with the device pointer, if the query succeeds.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DVolume9.GetPrivateData">
+    <summary>Copies the private data associated with the volume to a provided buffer.</summary>
+    <param name="refguid">Reference to (C++) or address of (C) the globally unique identifier that identifies the private data to retrieve.</param>
+    <param name="pData">Pointer to a previously allocated buffer to fill with the requested private data if the call succeeds. The application calling this method is responsible for allocating and releasing this buffer. If this parameter is <b>NULL</b>, this method will return the buffer size in pSizeOfData.</param>
+    <param name="pSizeOfData">Pointer to the size of the buffer at pData, in bytes. If this value is less than the actual size of the private data, such as 0, the method sets this parameter to the required buffer size, and the method returns D3DERR_MOREDATA.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL, D3DERR_MOREDATA, D3DERR_NOTFOUND.</returns>
+  </member>
+  <member name="IDirect3DVolume9.LockBox">
+    <summary>Locks a box on a volume resource.</summary>
+    <param name="pLockedVolume">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dlocked-box">D3DLOCKED_BOX</a> structure, describing the locked region.</param>
+    <param name="pBox">Pointer to a box to lock. Specified by a pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dbox">D3DBOX</a> structure. Specifying <b>NULL</b> for this parameter locks the entire volume.</param>
+    <param name="Flags">
+      <para>Combination of zero or more locking flags that describe the type of lock to perform. For this method, the valid flags are:</para>
+      <list type="bullet">
+        <item>
+          <description>D3DLOCK_DISCARD</description>
+        </item>
+        <item>
+          <description>D3DLOCK_NO_DIRTY_UPDATE</description>
+        </item>
+        <item>
+          <description>D3DLOCK_NOSYSLOCK</description>
+        </item>
+        <item>
+          <description>D3DLOCK_READONLY</description>
+        </item>
+      </list>For a description of the flags, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dlock">D3DLOCK</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DVolume9.SetPrivateData">
+    <summary>Associates data with the volume that is intended for use by the application, not by Direct3D.</summary>
+    <param name="refguid">Reference to the globally unique identifier that identifies the private data to set.</param>
+    <param name="pData">Pointer to a buffer that contains the data to associate with the volume.</param>
+    <param name="SizeOfData">Size of the buffer at pData in bytes.</param>
+    <param name="Flags">
+      <para>Value that describes the type of data being passed, or indicates to the application that the data should be invalidated when the resource changes.</para>
+      <list type="table">
+        <listheader>
+          <description>Item</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>(none)</description>
+          <description>If no flags are specified, Direct3D allocates memory to hold the data within the buffer and copies the data into the new buffer. The buffer allocated by Direct3D is automatically freed, as appropriate.</description>
+        </listheader>
+        <listheader>
+          <description>D3DSPD_IUNKNOWN</description>
+          <description>The data at pData is a pointer to an <see cref="IUnknown" /> interface. SizeOfData must be set to the size of a pointer to an <b>IUnknown</b> interface, sizeof(IUnknown*). Direct3D automatically calls <b>IUnknown</b> through pData and IUnknown when the private data is destroyed. Private data will be destroyed by a subsequent call to <b>IDirect3DVolume9.SetPrivateData</b> with the same GUID, a subsequent call to <see cref="IDirect3DVolume9.FreePrivateData" />, or when the <see cref="IDirect3D9" /> object is released. For more information, see Remarks.</description>
+        </listheader>
+      </list>
+    </param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL, E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="IDirect3DVolume9.UnlockBox">
+    <summary>Unlocks a box on a volume resource.</summary>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DVolume9">
+    <summary>Applications use the methods of the <b>IDirect3DVolume9</b> interface to manipulate volume resources.</summary>
+  </member>
+</doc>

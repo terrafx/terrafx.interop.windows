@@ -11,7 +11,7 @@
     <param name="brush">Describes how the stroke is painted.</param>
     <param name="strokeWidth">The 'context-value' for the 'stroke-width' property.</param>
     <param name="dashes">The 'context-value' for the 'stroke-dasharray' property.</param>
-    <param name="dashesCount">The the number of dashes in the dash array.</param>
+    <param name="dashesCount">The number of dashes in the dash array.</param>
     <param name="dashOffset">The 'context-value' for the 'stroke-dashoffset' property.</param>
   </member>
   <member name="ID2D1SvgGlyphStyle.GetStrokeDashesCount">
@@ -28,7 +28,7 @@
     <param name="brush">Describes how the stroke is painted. A null brush will cause the context-stroke value to be none.</param>
     <param name="strokeWidth">Specifies the 'context-value' for the 'stroke-width' property.</param>
     <param name="dashes">Specifies the 'context-value' for the 'stroke-dasharray' property. A null value will cause the stroke-dasharray to be set to 'none'.</param>
-    <param name="dashesCount">The the number of dashes in the dash array.</param>
+    <param name="dashesCount">The number of dashes in the dash array.</param>
     <param name="dashOffset">Specifies the 'context-value' for the 'stroke-dashoffset' property.</param>
     <returns>This method returns an HRESULT success or error code.</returns>
   </member>

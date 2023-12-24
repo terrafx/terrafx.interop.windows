@@ -2,7 +2,14 @@
 <!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
+  <member name="IIsolatedAppLauncher.Launch">
+    <summary>Launches an app inside the container.</summary>
+    <param name="appUserModelId">The application user model ID (AUMID) of the app to launch.</param>
+    <param name="arguments">The arguments to pass to the app.</param>
+    <param name="telemetryParameters">The telemetry parameters to pass to the app.</param>
+    <returns>Returns an <b>HRESULT</b> success or error code.</returns>
+  </member>
   <member name="IIsolatedAppLauncher">
-    <summary>Enables apps to determine whether they are running in a Windows Defender Application Guard container (VM container environment).</summary>
+    <summary>Enables apps to determine whether they are running in a Microsoft Defender Application Guard container (VM container environment).</summary>
   </member>
 </doc>

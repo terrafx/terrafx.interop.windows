@@ -23,7 +23,7 @@
   </member>
   <member name="IDWriteTextLayout2.SetFontFallback">
     <summary>Apply a custom font fallback onto layout. If none is specified, the layout uses the system fallback list.</summary>
-    <param name="fontFallback">Custom font fallback created from <see cref="IDWriteFontFallbackBuilder.CreateFontFallback" /> or <a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefactory2-getsystemfontfallback">IDWriteFactory2.GetSystemFontFallback</a>.</param>
+    <param name="fontFallback">Custom font fallback created from <see cref="IDWriteFontFallbackBuilder.CreateFontFallback" /> or <see cref="IDWriteFactory2.GetSystemFontFallback" />.</param>
     <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextLayout2.SetLastLineWrapping">

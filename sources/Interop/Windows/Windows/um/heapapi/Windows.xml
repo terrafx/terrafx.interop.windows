@@ -394,6 +394,74 @@
         </listheader>
       </list>  The alignment of memory returned by <b>HeapReAlloc</b> is <b>MEMORY_ALLOCATION_ALIGNMENT</b> in WinNT.h:<code>#if defined(_WIN64) || defined(_M_ALPHA) #define MEMORY_ALLOCATION_ALIGNMENT 16 #else #define MEMORY_ALLOCATION_ALIGNMENT 8 #endif</code><para>If the function fails, it does not call <see cref="SetLastError" />. An application cannot call <see cref="GetLastError" /> for extended error information.</para></returns>
   </member>
+  <member name="Windows.HeapSetInformation">
+    <summary>Enables features for a specified heap.</summary>
+    <param name="HeapHandle">A handle to the heap where information is to be set. This handle is returned by either the<see cref="HeapCreate" /> or<see cref="GetProcessHeap" /> function.</param>
+    <param name="HeapInformationClass">
+      <para>The class of information to be set. This parameter can be one of the following values from the<b>HEAP_INFORMATION_CLASS</b> enumeration type.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HeapCompatibilityInformation</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Enables heap features. Only the <a href="https://docs.microsoft.com//windows/desktop/Memory/low-fragmentation-heap">low-fragmentation heap</a> (LFH) is supported. However, it is not necessary for applications to enable the LFH because the system uses the LFH as needed to service memory allocation requests. <para><b>Windows XP and Windows Server 2003:  </b>The LFH is not enabled by default. To enable the LFH for the specified heap, set the variable pointed to by the <i>HeapInformation</i> parameter to 2. After the LFH is enabled for a heap, it cannot be disabled.</para><para>The LFH cannot be enabled for heaps created with <b>HEAP_NO_SERIALIZE</b> or for heaps created with a fixed size. The LFH also cannot be enabled if you are using the heap debugging tools in<a href="https://docs.microsoft.com//windows-hardware/drivers/debugger/">Debugging Tools for Windows</a>or<a href="https://docs.microsoft.com//windows-hardware/drivers/devtest/application-verifier">Microsoft Application Verifier</a>.</para><para>When a process is run under any debugger, certain heap debug options are automatically enabled for all heaps in the process. These heap debug options prevent the use of the LFH. To enable the low-fragmentation heap when running under a debugger, set the _NO_DEBUG_HEAP environment variable to 1.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HeapEnableTerminationOnCorruption</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Enables the terminate-on-corruption feature. If the heap manager detects an error in any heap used by the process, it calls the Windows Error Reporting service and terminates the process.<para>After a process enables this feature, it cannot be disabled.</para><para><b>Windows Server 2003 and Windows XP:  </b>This value is not supported until Windows Vista and Windows XP with SP3. The function succeeds but the <b>HeapEnableTerminationOnCorruption</b> value is ignored.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HeapOptimizeResources</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If HeapSetInformation is called with <i>HeapHandle</i> set to NULL, then all heaps in the process with a <a href="https://docs.microsoft.com//windows/desktop/Memory/low-fragmentation-heap">low-fragmentation heap</a> (LFH) will have their caches optimized, and the memory will be decommitted if possible. <para>If a heap pointer is supplied in <i>HeapHandle</i>, then only that heap will be optimized.</para><para>Note that the HEAP_OPTIMIZE_RESOURCES_INFORMATION structure passed in <i>HeapInformation</i> must be properly initialized.</para><para><b>Note</b>  This value was added in Windows 8.1.</para></description>
+        </listheader>
+      </list>
+    </param>
+    <param name="HeapInformation">
+      <para>The heap information buffer. The format of this data depends on the value of the<i>HeapInformationClass</i> parameter.</para>
+      <para>If the <i>HeapInformationClass</i> parameter is<b>HeapCompatibilityInformation</b>, the <i>HeapInformation</i>parameter is a pointer to a <b>ULONG</b> variable.</para>
+      <para>If the <i>HeapInformationClass</i> parameter is<b>HeapEnableTerminationOnCorruption</b>, the <i>HeapInformation</i>parameter should be <b>NULL</b> and <i>HeapInformationLength</i> should be 0</para>
+    </param>
+    <param name="HeapInformationLength">The size of the <i>HeapInformation</i> buffer, in bytes.</param>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>If the function fails, the return value is 0 (zero). To get extended error information, call<see cref="GetLastError" />.</para>
+    </returns>
+  </member>
   <member name="Windows.HeapSize">
     <summary>Retrieves the size of a memory block allocated from a heap by the<see cref="HeapAlloc" /> or<see cref="HeapReAlloc" /> function.</summary>
     <param name="hHeap">A handle to the heap in which the memory block resides. This handle is returned by either the<see cref="HeapCreate" /> or<see cref="GetProcessHeap" /> function.</param>

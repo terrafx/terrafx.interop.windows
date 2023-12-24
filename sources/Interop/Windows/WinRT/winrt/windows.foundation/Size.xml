@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Size">
+    <summary>Represents an ordered pair of floating-point numbers that specify a height and width.</summary>
+  </member>
+  <member name="Size.Size.Width"></member>
+  <member name="Size.Size.Height"></member>
+  <member name="Size.Height">
+    <summary>The height.</summary>
+  </member>
+  <member name="Size.Width">
+    <summary>The width.</summary>
+  </member>
+</doc>

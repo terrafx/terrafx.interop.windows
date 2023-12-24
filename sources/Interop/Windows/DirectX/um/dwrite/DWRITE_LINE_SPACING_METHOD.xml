@@ -14,8 +14,7 @@
   <member name="DWRITE_LINE_SPACING_METHOD.DWRITE_LINE_SPACING_METHOD_PROPORTIONAL">
     <summary>
       <para>Line spacing and baseline distances are proportional to the computed values based on the content, the size of the fonts and inline objects.</para>
-      <div>
-        <b>Note</b>  This value is only available on Windows 10 or later and it can be used with <a href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritetextlayout3-setlinespacing">IDWriteTextLayout3.SetLineSpacing</a>, but can not be used with <see cref="IDWriteTextFormat.SetLineSpacing" />.</div>
+      <blockquote>[!NOTE] This value is available only on Windows 10 or later, and it can be used with <see cref="IDWriteTextLayout3.SetLineSpacing" />, but it can't be used with <see cref="IDWriteTextFormat.SetLineSpacing" />.</blockquote>
     </summary>
   </member>
 </doc>

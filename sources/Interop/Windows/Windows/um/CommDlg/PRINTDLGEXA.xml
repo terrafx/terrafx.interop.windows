@@ -26,7 +26,7 @@
     </summary>
   </member>
   <member name="PRINTDLGEXA.hDC">
-    <summary>A handle to a device context or an information context, depending on whether the <b>Flags</b> member specifies the <b>PD_RETURNDC</b> or <b>PC_RETURNIC</b> flag. If neither flag is specified, the value of this member is undefined. If both flags are specified, <b>PD_RETURNDC</b> has priority.</summary>
+    <summary>A handle to a device context or an information context, depending on whether the <b>Flags</b> member specifies the <b>PD_RETURNDC</b> or <b>PC_RETURNIC</b> flag. If neither flag is specified, then the value of this member is undefined. If both flags are specified, then <b>PD_RETURNDC</b> has priority. If <b>hDC</b> isn't <b>NULL</b>, then you must call <see cref="DeleteDC" /> to free the GDI object after you no longer need it; otherwise you'll leak GDI objects whenever you call <a href="https://docs.microsoft.com//windows/win32/api/commdlg/nc-commdlg-printdlgw"> PrintDlgw</a> APIs.</summary>
   </member>
   <member name="PRINTDLGEXA.Flags">
     <summary>

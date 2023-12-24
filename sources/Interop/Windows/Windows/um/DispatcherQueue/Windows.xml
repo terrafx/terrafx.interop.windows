@@ -3,7 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.CreateDispatcherQueueController">
-    <summary>Creates a <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a> on the caller's thread. Use the created <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a> to create and manage the lifetime of a <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueue">DispatcherQueue</a> to run queued tasks in priority order on the Dispatcher queue's thread.</summary>
+    <summary>Creates a <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a>. Use the created <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a> to create and manage the lifetime of a <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueue">DispatcherQueue</a> to run queued tasks in priority order on the dispatcher queue's thread.</summary>
     <param name="options">The threading affinity and type of COM apartment for the created <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a>. See remarks for details.</param>
     <param name="dispatcherQueueController">
       <para>The created dispatcher queue controller.</para>

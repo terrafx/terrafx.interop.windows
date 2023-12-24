@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DBaseTexture9.GenerateMipSubLevels">
+    <summary>Generate mipmap sublevels.</summary>
+  </member>
+  <member name="IDirect3DBaseTexture9.GetAutoGenFilterType">
+    <summary>Get the filter type that is used for automatically generated mipmap sublevels.</summary>
+    <returns>Filter type. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dtexturefiltertype">D3DTEXTUREFILTERTYPE</a>. A texture must be created with <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dusage">D3DUSAGE_AUTOGENMIPMAP</a> to use this method. Any other usage value will cause this method to return D3DTEXF_NONE.</returns>
+  </member>
+  <member name="IDirect3DBaseTexture9.GetLevelCount">
+    <summary>Returns the number of texture levels in a multilevel texture.</summary>
+    <returns>A <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a> value that indicates the number of texture levels in a multilevel texture.</returns>
+  </member>
+  <member name="IDirect3DBaseTexture9.GetLOD">
+    <summary>Returns a value clamped to the maximum level-of-detail set for a managed texture (this method is not supported for an unmanaged texture).</summary>
+    <returns>A DWORD value, clamped to the maximum level-of-detail value (one less than the total number of levels). Calling <b>GetLOD</b> on an unmanaged texture is not supported and will result in a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3derr">D3DERR</a> error code being returned.</returns>
+  </member>
+  <member name="IDirect3DBaseTexture9.SetAutoGenFilterType">
+    <summary>Set the filter type that is used for automatically generated mipmap sublevels.</summary>
+    <param name="FilterType">Filter type. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dtexturefiltertype">D3DTEXTUREFILTERTYPE</a>. This method will fail if the filter type is invalid or not supported.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DBaseTexture9.SetLOD">
+    <summary>Sets the most detailed level-of-detail for a managed texture.</summary>
+    <param name="LODNew">Most detailed level-of-detail value to set for the mipmap chain.</param>
+    <returns>A DWORD value, clamped to the maximum level-of-detail value (one less than the total number of levels). Subsequent calls to this method will return the clamped value, not the level-of-detail value that was previously set.</returns>
+  </member>
+  <member name="IDirect3DBaseTexture9">
+    <summary>Applications use the methods of the IDirect3DBaseTexture9 interface to manipulate texture resources including cube and volume textures.</summary>
+  </member>
+</doc>

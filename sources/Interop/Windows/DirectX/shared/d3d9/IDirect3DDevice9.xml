@@ -1,0 +1,914 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DDevice9.BeginScene">
+    <summary>Begins a scene.</summary>
+    <returns>If the method succeeds, the return value is D3D_OK. The method will fail with D3DERR_INVALIDCALL if <b>IDirect3DDevice9.BeginScene</b> is called while already in a <b>IDirect3DDevice9.BeginScene</b>/<see cref="IDirect3DDevice9.EndScene" /> pair. This happens only when <b>IDirect3DDevice9.BeginScene</b> is called twice without first calling <b>IDirect3DDevice9.EndScene</b>.</returns>
+  </member>
+  <member name="IDirect3DDevice9.BeginStateBlock">
+    <summary>Signals Direct3D to begin recording a device-state block.</summary>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL, E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="IDirect3DDevice9.Clear">
+    <summary>Clears one or more surfaces such as a render target, <a href="https://docs.microsoft.com//windows/desktop/direct3d9/multiple-render-targets">multiple render targets</a>, a stencil buffer, and a depth buffer.</summary>
+    <param name="Count">Number of rectangles in the array at pRects. Must be set to 0 if pRects is <b>NULL</b>. May not be 0 if pRects is a valid pointer.</param>
+    <param name="pRects">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3drect">D3DRECT</a> structures that describe the rectangles to clear. Set a rectangle to the dimensions of the rendering target to clear the entire surface. Each rectangle uses screen coordinates that correspond to points on the render target. Coordinates are clipped to the bounds of the viewport rectangle. To indicate that the entire viewport rectangle is to be cleared, set this parameter to <b>NULL</b> and Count to 0.</param>
+    <param name="Flags">Combination of one or more <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dclear">D3DCLEAR</a> flags that specify the surface(s) that will be cleared.</param>
+    <param name="Color">Clear a render target to this ARGB color.</param>
+    <param name="Z">Clear the depth buffer to this new z value which ranges from 0 to 1. See remarks.</param>
+    <param name="Stencil">Clear the stencil buffer to this new value which ranges from 0 to 2ⁿ-1 (n is the bit depth of the stencil buffer). See remarks.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.ColorFill">
+    <summary>Allows an application to fill a rectangular area of a D3DPOOL_DEFAULT surface with a specified color.</summary>
+    <param name="pSurface">Pointer to the surface to be filled.</param>
+    <param name="pRect">Pointer to the source rectangle. Using <b>NULL</b> means that the entire surface will be filled.</param>
+    <param name="color">Color used for filling.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.CreateAdditionalSwapChain">
+    <summary>Creates an additional swap chain for rendering multiple views.</summary>
+    <param name="pPresentationParameters">
+      <para>Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpresent-parameters">D3DPRESENT_PARAMETERS</a> structure, containing the presentation parameters for the new swap chain. This value cannot be <b>NULL</b>.</para>
+      <para>Calling this method changes the value of members of the D3DPRESENT_PARAMETERS structure.</para>
+      <list type="bullet">
+        <item>
+          <description>If BackBufferCount == 0, calling CreateAdditionalSwapChain will increase it to 1.</description>
+        </item>
+        <item>
+          <description>If the application is in windowed mode, and if either the BackBufferWidth or the BackBufferHeight == 0, they will be set to the client area width and height of the hwnd.</description>
+        </item>
+      </list>
+    </param>
+    <param name="pSwapChain">Address of a pointer to an <see cref="IDirect3DSwapChain9" /> interface, representing the additional swap chain.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_NOTAVAILABLE, D3DERR_DEVICELOST, D3DERR_INVALIDCALL, D3DERR_OUTOFVIDEOMEMORY, E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="IDirect3DDevice9.CreateCubeTexture">
+    <summary>Creates a cube texture resource.</summary>
+    <param name="EdgeLength">Size of the edges of all the top-level faces of the cube texture. The pixel dimensions of subsequent levels of each face will be the truncated value of half of the previous level's pixel dimension (independently). Each dimension clamps at a size of 1 pixel. Thus, if the division by 2 results in 0 (zero), 1 will be taken instead.</param>
+    <param name="Levels">Number of levels in each face of the cube texture. If this is zero, Direct3D will generate all cube texture sublevels down to 1x1 pixels for each face for hardware that supports mipmapped cube textures. Call <see cref="IDirect3DBaseTexture9.GetLevelCount" /> to see the number of levels generated.</param>
+    <param name="Usage">Usage can be 0, which indicates no usage value. However, if usage is desired, use a combination of one or more <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dusage">D3DUSAGE</a> constants. It is good practice to match the usage parameter in CreateCubeTexture with the behavior flags in <see cref="IDirect3D9.CreateDevice" />. For more information, see Remarks.</param>
+    <param name="Format">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a> enumerated type, describing the format of all levels in all faces of the cube texture.</param>
+    <param name="Pool">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpool">D3DPOOL</a> enumerated type, describing the memory class into which the cube texture should be placed.</param>
+    <param name="ppCubeTexture">Address of a pointer to an <see cref="IDirect3DCubeTexture9" /> interface, representing the created cube texture resource.</param>
+    <param name="pSharedHandle">Reserved. Set this parameter to <b>NULL</b>. This parameter can be used in Direct3D 9 for Windows Vista to <a href="https://docs.microsoft.com//windows/desktop/direct3d9/dx9lh">share resources</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL, D3DERR_OUTOFVIDEOMEMORY, E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="IDirect3DDevice9.CreateDepthStencilSurface">
+    <summary>Creates a depth-stencil resource.</summary>
+    <param name="Width">Width of the depth-stencil surface, in pixels.</param>
+    <param name="Height">Height of the depth-stencil surface, in pixels.</param>
+    <param name="Format">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a> enumerated type, describing the format of the depth-stencil surface. This value must be one of the enumerated depth-stencil formats for this device.</param>
+    <param name="MultiSample">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dmultisample-type">D3DMULTISAMPLE_TYPE</a> enumerated type, describing the multisampling buffer type. This value must be one of the allowed multisample types. When this surface is passed to <see cref="IDirect3DDevice9.SetDepthStencilSurface" />, its multisample type must be the same as that of the render target set by <see cref="IDirect3DDevice9.SetRenderTarget" />.</param>
+    <param name="MultisampleQuality">Quality level. The valid range is between zero and one less than the level returned by pQualityLevels used by <see cref="IDirect3D9.CheckDeviceMultiSampleType" />. Passing a larger value returns the error D3DERR_INVALIDCALL. The MultisampleQuality values of paired render targets, depth stencil surfaces, and the MultiSample type must all match.</param>
+    <param name="Discard">
+      <para>Set this flag to <b>TRUE</b> to enable z-buffer discarding, and <b>FALSE</b> otherwise.				 If this flag is set, the contents of the depth stencil buffer will be invalid after calling either <see cref="IDirect3DDevice9.Present" /> or <see cref="IDirect3DDevice9.SetDepthStencilSurface" /> with a different depth surface.</para>
+      <para>This flag has the same behavior as the constant, D3DPRESENTFLAG_DISCARD_DEPTHSTENCIL, in <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpresentflag">D3DPRESENTFLAG</a>.</para>
+    </param>
+    <param name="ppSurface">Address of a pointer to an <see cref="IDirect3DSurface9" /> interface, representing the created depth-stencil surface resource.</param>
+    <param name="pSharedHandle">Reserved. Set this parameter to <b>NULL</b>. This parameter can be used in Direct3D 9 for Windows Vista to <a href="https://docs.microsoft.com//windows/desktop/direct3d9/dx9lh">share resources</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_NOTAVAILABLE, D3DERR_INVALIDCALL, D3DERR_OUTOFVIDEOMEMORY, E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="IDirect3DDevice9.CreateIndexBuffer">
+    <summary>Creates an index buffer.</summary>
+    <param name="Length">Size of the index buffer, in bytes.</param>
+    <param name="Usage">Usage can be 0, which indicates no usage value. However, if usage is desired, use a combination of one or more <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dusage">D3DUSAGE</a> constants. It is good practice to match the usage parameter in CreateIndexBuffer with the behavior flags in <see cref="IDirect3D9.CreateDevice" />. For more information, see Remarks.</param>
+    <param name="Format">
+      <para>Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a> enumerated type, describing the format of the index buffer. For more information, see Remarks. The valid settings are the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Item</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>D3DFMT_INDEX16</description>
+          <description>Indices are 16 bits each.</description>
+        </listheader>
+        <listheader>
+          <description>D3DFMT_INDEX32</description>
+          <description>Indices are 32 bits each.</description>
+        </listheader>
+      </list>
+    </param>
+    <param name="Pool">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpool">D3DPOOL</a> enumerated type, describing a valid memory class into which to place the resource.</param>
+    <param name="ppIndexBuffer">Address of a pointer to an <see cref="IDirect3DIndexBuffer9" /> interface, representing the created index buffer resource.</param>
+    <param name="pSharedHandle">This parameter can be used in Direct3D 9 for Windows Vista to <a href="https://docs.microsoft.com//windows/desktop/direct3d9/dx9lh">share resources</a>; set it to <b>NULL</b> to not share a resource. This parameter is not used in Direct3D 9 for operating systems earlier than Windows Vista; set it to <b>NULL</b>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL, D3DERR_OUTOFVIDEOMEMORY, D3DXERR_INVALIDDATA, E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="IDirect3DDevice9.CreateOffscreenPlainSurface">
+    <summary>Create an off-screen surface.</summary>
+    <param name="Width">Width of the surface.</param>
+    <param name="Height">Height of the surface.</param>
+    <param name="Format">Format of the surface. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a>.</param>
+    <param name="Pool">Surface pool type. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpool">D3DPOOL</a>.</param>
+    <param name="ppSurface">Pointer to the <see cref="IDirect3DSurface9" /> interface created.</param>
+    <param name="pSharedHandle">Reserved. Set this parameter to <b>NULL</b>. This parameter can be used in Direct3D 9 for Windows Vista to <a href="https://docs.microsoft.com//windows/desktop/direct3d9/dx9lh">share resources</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be the following: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.CreatePixelShader">
+    <summary>Creates a pixel shader.</summary>
+    <param name="pFunction">Pointer to the pixel shader function token array, specifying the blending operations. This value cannot be <b>NULL</b>.</param>
+    <param name="ppShader">Pointer to the returned pixel shader interface. See <see cref="IDirect3DPixelShader9" />.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL, D3DERR_OUTOFVIDEOMEMORY, E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="IDirect3DDevice9.CreateQuery">
+    <summary>Creates a status query.</summary>
+    <param name="Type">Identifies the query type. For more information, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dquerytype">D3DQUERYTYPE</a>.</param>
+    <param name="ppQuery">
+      <para>Returns a pointer to the query interface that manages the query object. See <see cref="IDirect3DQuery9" />.</para>
+      <para>This parameter can be set to <b>NULL</b> to see if a query is supported. If the query is not supported, the method returns D3DERR_NOTAVAILABLE.</para>
+    </param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_NOTAVAILABLE or E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="IDirect3DDevice9.CreateRenderTarget">
+    <summary>Creates a render-target surface.</summary>
+    <param name="Width">Width of the render-target surface, in pixels.</param>
+    <param name="Height">Height of the render-target surface, in pixels.</param>
+    <param name="Format">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a> enumerated type, describing the format of the render target.</param>
+    <param name="MultiSample">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dmultisample-type">D3DMULTISAMPLE_TYPE</a> enumerated type, which describes the multisampling buffer type. This parameter specifies the antialiasing type for this render target. When this surface is passed to <see cref="IDirect3DDevice9.SetRenderTarget" />, its multisample type must be the same as that of the depth-stencil set by <see cref="IDirect3DDevice9.SetDepthStencilSurface" />.</param>
+    <param name="MultisampleQuality">Quality level. The valid range is between zero and one less than the level returned by pQualityLevels used by <see cref="IDirect3D9.CheckDeviceMultiSampleType" />. Passing a larger value returns the error, D3DERR_INVALIDCALL. The MultisampleQuality values of paired render targets, depth stencil surfaces, and the multisample type must all match.</param>
+    <param name="Lockable">
+      <para>Render targets are not lockable unless the application specifies <b>TRUE</b> for Lockable.</para>
+      <para>Note that lockable render targets reduce performance on some graphics hardware. The readback performance (moving data from video memory to system memory) depends on the type of hardware used (AGP vs. PCI Express) and is usually far lower than upload performance (moving data from system to video memory). If you need read access to render targets, use <see cref="GetRenderTargetData" /> instead of lockable render targets.</para>
+    </param>
+    <param name="ppSurface">Address of a pointer to an <see cref="IDirect3DSurface9" /> interface.</param>
+    <param name="pSharedHandle">Reserved. Set this parameter to <b>NULL</b>. This parameter can be used in Direct3D 9 for Windows Vista to <a href="https://docs.microsoft.com//windows/desktop/direct3d9/dx9lh">share resources</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_NOTAVAILABLE, D3DERR_INVALIDCALL, D3DERR_OUTOFVIDEOMEMORY, E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="IDirect3DDevice9.CreateStateBlock">
+    <summary>Creates a new state block that contains the values for all device states, vertex-related states, or pixel-related states.</summary>
+    <param name="Type">Type of state data that the method should capture. This parameter can be set to a value defined in the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dstateblocktype">D3DSTATEBLOCKTYPE</a> enumerated type.</param>
+    <param name="ppSB">Pointer to a state block interface. See <see cref="IDirect3DStateBlock9" />.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL, D3DERR_OUTOFVIDEOMEMORY, E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="IDirect3DDevice9.CreateTexture">
+    <summary>Creates a texture resource.</summary>
+    <param name="Width">Width of the top-level of the texture, in pixels. The pixel dimensions of subsequent levels will be the truncated value of half of the previous level's pixel dimension (independently). Each dimension clamps at a size of 1 pixel. Thus, if the division by 2 results in 0, 1 will be taken instead.</param>
+    <param name="Height">Height of the top-level of the texture, in pixels. The pixel dimensions of subsequent levels will be the truncated value of half of the previous level's pixel dimension (independently). Each dimension clamps at a size of 1 pixel. Thus, if the division by 2 results in 0, 1 will be taken instead.</param>
+    <param name="Levels">Number of levels in the texture. If this is zero, Direct3D will generate all texture sublevels down to 1 by 1 pixels for hardware that supports mipmapped textures. Call <see cref="IDirect3DBaseTexture9.GetLevelCount" /> to see the number of levels generated.</param>
+    <param name="Usage">Usage can be 0, which indicates no usage value. However, if usage is desired, use a combination of one or more <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dusage">D3DUSAGE</a> constants. It is good practice to match the usage parameter with the behavior flags in <see cref="IDirect3D9.CreateDevice" />.</param>
+    <param name="Format">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a> enumerated type, describing the format of all levels in the texture.</param>
+    <param name="Pool">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpool">D3DPOOL</a> enumerated type, describing the memory class into which the texture should be placed.</param>
+    <param name="ppTexture">Pointer to an <see cref="IDirect3DTexture9" /> interface, representing the created texture resource.</param>
+    <param name="pSharedHandle">Reserved. Set this parameter to <b>NULL</b>. This parameter can be used in Direct3D 9 for Windows Vista to<a href="https://docs.microsoft.com//windows/desktop/direct3d9/dx9lh">share resources</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL, D3DERR_OUTOFVIDEOMEMORY, E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="IDirect3DDevice9.CreateVertexBuffer">
+    <summary>Creates a vertex buffer.</summary>
+    <param name="Length">Size of the vertex buffer, in bytes. For FVF vertex buffers, Length must be large enough to contain at least one vertex, but it need not be a multiple of the vertex size. Length is not validated for non-FVF buffers. See Remarks.</param>
+    <param name="Usage">Usage can be 0, which indicates no usage value. However, if usage is desired, use a combination of one or more <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dusage">D3DUSAGE</a> constants. It is good practice to match the usage parameter in CreateVertexBuffer with the behavior flags in <see cref="IDirect3D9.CreateDevice" />. For more information, see Remarks.</param>
+    <param name="FVF">Combination of <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dfvf">D3DFVF</a>, a usage specifier that describes the vertex format of the vertices in this buffer. If this parameter is set to a valid FVF code, the created vertex buffer is an FVF vertex buffer (see Remarks). Otherwise, if this parameter is set to zero, the vertex buffer is a non-FVF vertex buffer.</param>
+    <param name="Pool">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpool">D3DPOOL</a> enumerated type, describing a valid memory class into which to place the resource. Do not set to D3DPOOL_SCRATCH.</param>
+    <param name="ppVertexBuffer">Address of a pointer to an <see cref="IDirect3DVertexBuffer9" /> interface, representing the created vertex buffer resource.</param>
+    <param name="pSharedHandle">Reserved. Set this parameter to <b>NULL</b>. This parameter can be used in Direct3D 9 for Windows Vista to <a href="https://docs.microsoft.com//windows/desktop/direct3d9/dx9lh">share resources</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL, D3DERR_OUTOFVIDEOMEMORY, E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="IDirect3DDevice9.CreateVertexDeclaration">
+    <summary>Create a vertex shader declaration from the device and the vertex elements.</summary>
+    <param name="pVertexElements">An array of <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dvertexelement9">D3DVERTEXELEMENT9</a> vertex elements.</param>
+    <param name="ppDecl">Pointer to an <see cref="IDirect3DVertexDeclaration9" /> pointer that returns the created vertex shader declaration.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.CreateVertexShader">
+    <summary>Creates a vertex shader.</summary>
+    <param name="pFunction">
+      <para>Pointer to an array of tokens that represents the vertex shader, including any embedded debug and symbol table information.</para>
+      <list type="bullet">
+        <item>
+          <description>Use a function such as <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dxcompileshader">D3DXCompileShader</a> to create the array from a HLSL shader.</description>
+        </item>
+        <item>
+          <description>Use a function like <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dxassembleshader">D3DXAssembleShader</a> to create the token array from an assembly language shader.</description>
+        </item>
+        <item>
+          <description>Use a function like <a href="https://docs.microsoft.com//windows/desktop/direct3d9/id3dxeffectcompiler--compileshader">ID3DXEffectCompiler.CompileShader</a> to create the array from an effect.</description>
+        </item>
+      </list>
+    </param>
+    <param name="ppShader">Pointer to the returned vertex shader interface (see <see cref="IDirect3DVertexShader9" />).</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL, D3DERR_OUTOFVIDEOMEMORY, E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="IDirect3DDevice9.CreateVolumeTexture">
+    <summary>Creates a volume texture resource.</summary>
+    <param name="Width">Width of the top-level of the volume texture, in pixels. This value must be a power of two if the D3DPTEXTURECAPS_VOLUMEMAP_POW2 member of <see cref="D3DCAPS9" /> is set. The pixel dimensions of subsequent levels will be the truncated value of half of the previous level's pixel dimension (independently). Each dimension clamps at a size of 1 pixel. Thus, if the division by two results in 0 (zero), 1 will be taken instead. The maximum dimension that a driver supports (for width, height, and depth) can be found in MaxVolumeExtent in <b>D3DCAPS9</b>.</param>
+    <param name="Height">Height of the top-level of the volume texture, in pixels. This value must be a power of two if the D3DPTEXTURECAPS_VOLUMEMAP_POW2 member of <see cref="D3DCAPS9" /> is set. The pixel dimensions of subsequent levels will be the truncated value of half of the previous level's pixel dimension (independently). Each dimension clamps at a size of 1 pixel. Thus, if the division by 2 results in 0 (zero), 1 will be taken instead. The maximum dimension that a driver supports (for width, height, and depth) can be found in MaxVolumeExtent in <b>D3DCAPS9</b>.</param>
+    <param name="Depth">Depth of the top-level of the volume texture, in pixels. This value must be a power of two if the D3DPTEXTURECAPS_VOLUMEMAP_POW2 member of <see cref="D3DCAPS9" /> is set. The pixel dimensions of subsequent levels will be the truncated value of half of the previous level's pixel dimension (independently). Each dimension clamps at a size of 1 pixel. Thus, if the division by 2 results in 0 (zero), 1 will be taken instead. The maximum dimension that a driver supports (for width, height, and depth) can be found in MaxVolumeExtent in <b>D3DCAPS9</b>.</param>
+    <param name="Levels">Number of levels in the texture. If this is zero, Direct3D will generate all texture sublevels down to 1x1 pixels for hardware that supports mipmapped volume textures. Call <see cref="IDirect3DBaseTexture9.GetLevelCount" /> to see the number of levels generated.</param>
+    <param name="Usage">Usage can be 0, which indicates no usage value. If usage is desired, use D3DUSAGE_DYNAMIC or D3DUSAGE_SOFTWAREPROCESSING. For more information, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dusage">D3DUSAGE</a>.</param>
+    <param name="Format">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a> enumerated type, describing the format of all levels in the volume texture.</param>
+    <param name="Pool">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpool">D3DPOOL</a> enumerated type, describing the memory class into which the volume texture should be placed.</param>
+    <param name="ppVolumeTexture">Address of a pointer to an <see cref="IDirect3DVolumeTexture9" /> interface, representing the created volume texture resource.</param>
+    <param name="pSharedHandle">Reserved. Set this parameter to <b>NULL</b>. This parameter can be used in Direct3D 9 for Windows Vista to <a href="https://docs.microsoft.com//windows/desktop/direct3d9/dx9lh">share resources</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL, D3DERR_OUTOFVIDEOMEMORY, E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="IDirect3DDevice9.DeletePatch">
+    <summary>Frees a cached high-order patch.</summary>
+    <param name="Handle">Handle of the cached high-order patch to delete.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.DrawIndexedPrimitive">
+    <summary>Based on indexing, renders the specified geometric primitive into an array of vertices.</summary>
+    <param name="unnamedParam1">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dprimitivetype">D3DPRIMITIVETYPE</a> enumerated type, describing the type of primitive to render. D3DPT_POINTLIST is not supported with this method. See Remarks.</param>
+    <param name="BaseVertexIndex">Offset from the start of the vertex buffer to the first vertex. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/rendering-from-vertex-and-index-buffers">Scenario 4</a>.</param>
+    <param name="MinVertexIndex">Minimum vertex index for vertices used during this call. This is a zero based index relative to BaseVertexIndex.</param>
+    <param name="NumVertices">Number of vertices used during this call. The first vertex is located at index: BaseVertexIndex + MinIndex.</param>
+    <param name="startIndex">Index of the first index to use when accessing the vertex buffer. Beginning at StartIndex to index vertices from the vertex buffer.</param>
+    <param name="primCount">Number of primitives to render. The number of vertices used is a function of the primitive count and the primitive type. The maximum number of primitives allowed is determined by checking the MaxPrimitiveCount member of the <see cref="D3DCAPS9" /> structure.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be the following: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.DrawIndexedPrimitiveUP">
+    <summary>Renders the specified geometric primitive with data specified by a user memory pointer.</summary>
+    <param name="PrimitiveType">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dprimitivetype">D3DPRIMITIVETYPE</a> enumerated type, describing the type of primitive to render.</param>
+    <param name="MinVertexIndex">Minimum vertex index. This is a zero-based index.</param>
+    <param name="NumVertices">Number of vertices used during this call. The first vertex is located at index: MinVertexIndex.</param>
+    <param name="PrimitiveCount">Number of primitives to render. The maximum number of primitives allowed is determined by checking the MaxPrimitiveCount member of the <see cref="D3DCAPS9" /> structure (the number of indices is a function of the primitive count and the primitive type).</param>
+    <param name="pIndexData">User memory pointer to the index data.</param>
+    <param name="IndexDataFormat">
+      <para>Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a> enumerated type, describing the format of the index data. The valid settings are either:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFMT_INDEX16</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFMT_INDEX32</a>
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pVertexStreamZeroData">User memory pointer to the vertex data. The vertex data must be in stream 0.</param>
+    <param name="VertexStreamZeroStride">The number of bytes of data for each vertex. This value may not be 0.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be the following: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.DrawPrimitive">
+    <summary>Renders a sequence of nonindexed, geometric primitives of the specified type from the current set of data input streams.</summary>
+    <param name="PrimitiveType">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dprimitivetype">D3DPRIMITIVETYPE</a> enumerated type, describing the type of primitive to render.</param>
+    <param name="StartVertex">Index of the first vertex to load. Beginning at StartVertex the correct number of vertices will be read out of the vertex buffer.</param>
+    <param name="PrimitiveCount">Number of primitives to render. The maximum number of primitives allowed is determined by checking the MaxPrimitiveCount member of the <see cref="D3DCAPS9" /> structure. PrimitiveCount is the number of primitives as determined by the primitive type. If it is a line list, each primitive has two vertices. If it is a triangle list, each primitive has three vertices.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.DrawPrimitiveUP">
+    <summary>Renders data specified by a user memory pointer as a sequence of geometric primitives of the specified type.</summary>
+    <param name="PrimitiveType">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dprimitivetype">D3DPRIMITIVETYPE</a> enumerated type, describing the type of primitive to render.</param>
+    <param name="PrimitiveCount">Number of primitives to render. The maximum number of primitives allowed is determined by checking the MaxPrimitiveCount member of the <see cref="D3DCAPS9" /> structure.</param>
+    <param name="pVertexStreamZeroData">User memory pointer to the vertex data.</param>
+    <param name="VertexStreamZeroStride">The number of bytes of data for each vertex. This value may not be 0.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.DrawRectPatch">
+    <summary>Draws a rectangular patch using the currently set streams.</summary>
+    <param name="Handle">Handle to the rectangular patch to draw.</param>
+    <param name="pNumSegs">Pointer to an array of four floating-point values that identify the number of segments each edge of the rectangle patch should be divided into when tessellated. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3drectpatch-info">D3DRECTPATCH_INFO</a>.</param>
+    <param name="pRectPatchInfo">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3drectpatch-info">D3DRECTPATCH_INFO</a> structure, describing the rectangular patch to draw.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.DrawTriPatch">
+    <summary>Draws a triangular patch using the currently set streams.</summary>
+    <param name="Handle">Handle to the triangular patch to draw.</param>
+    <param name="pNumSegs">Pointer to an array of three floating-point values that identify the number of segments each edge of the triangle patch should be divided into when tessellated. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dtripatch-info">D3DTRIPATCH_INFO</a>.</param>
+    <param name="pTriPatchInfo">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dtripatch-info">D3DTRIPATCH_INFO</a> structure, describing the triangular high-order patch to draw.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.EndScene">
+    <summary>Ends a scene that was begun by calling <see cref="IDirect3DDevice9.BeginScene" />.</summary>
+    <returns>If the method succeeds, the return value is D3D_OK. The method will fail with D3DERR_INVALIDCALL if <see cref="IDirect3DDevice9.BeginScene" /> is called while already in a <b>IDirect3DDevice9.BeginScene</b>/<b>IDirect3DDevice9.EndScene</b> pair. This happens only when <b>IDirect3DDevice9.BeginScene</b> is called twice without first calling <b>IDirect3DDevice9.EndScene</b>.</returns>
+  </member>
+  <member name="IDirect3DDevice9.EndStateBlock">
+    <summary>Signals Direct3D to stop recording a device-state block and retrieve a pointer to the state block interface.</summary>
+    <param name="ppSB">Pointer to a state block interface. See <see cref="IDirect3DStateBlock9" />.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.EvictManagedResources">
+    <summary>Evicts all managed resources, including both Direct3D and driver-managed resources.</summary>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_OUTOFVIDEOMEMORY, D3DERR_COMMAND_UNPARSED.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetAvailableTextureMem">
+    <summary>Returns an estimate of the amount of available texture memory.</summary>
+    <returns>The function returns an estimate of the available texture memory.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetBackBuffer">
+    <summary>Retrieves a back buffer from the device's swap chain.</summary>
+    <param name="iSwapChain">An unsigned integer specifying the swap chain.</param>
+    <param name="iBackBuffer">Index of the back buffer object to return. Back buffers are numbered from 0 to the total number of back buffers minus one. A value of 0 returns the first back buffer, not the front buffer. The front buffer is not accessible through this method. Use <see cref="IDirect3DDevice9.GetFrontBufferData" /> to retrieve a copy of the front buffer.</param>
+    <param name="Type">Stereo view is not supported in Direct3D 9, so the only valid value for this parameter is D3DBACKBUFFER_TYPE_MONO.</param>
+    <param name="ppBackBuffer">Address of a pointer to an <see cref="IDirect3DSurface9" /> interface, representing the returned back buffer surface.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If BackBuffer equals or exceeds the total number of back buffers, then the function fails and returns D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetClipPlane">
+    <summary>Retrieves the coefficients of a user-defined clipping plane for the device.</summary>
+    <param name="Index">Index of the clipping plane for which the plane equation coefficients are retrieved.</param>
+    <param name="pPlane">Pointer to a four-element array of values that represent the coefficients of the clipping plane in the form of the general plane equation. See Remarks.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value is D3DERR_INVALIDCALL. This error indicates that the value in Index exceeds the maximum clipping plane index supported by the device, or that the array at pPlane is not large enough to contain four floating-point values.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetClipStatus">
+    <summary>Retrieves the clip status.</summary>
+    <param name="pClipStatus">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dclipstatus9">D3DCLIPSTATUS9</a> structure that describes the clip status.</param>
+    <returns>
+      <para>If the method succeeds, the return value is D3D_OK.</para>
+      <para>D3DERR_INVALIDCALL is returned if the argument is invalid.</para>
+    </returns>
+  </member>
+  <member name="IDirect3DDevice9.GetCreationParameters">
+    <summary>Retrieves the creation parameters of the device.</summary>
+    <param name="pParameters">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddevice-creation-parameters">D3DDEVICE_CREATION_PARAMETERS</a> structure, describing the creation parameters of the device.</param>
+    <returns>
+      <para>If the method succeeds, the return value is D3D_OK.</para>
+      <para>D3DERR_INVALIDCALL is returned if the argument is invalid.</para>
+    </returns>
+  </member>
+  <member name="IDirect3DDevice9.GetCurrentTexturePalette">
+    <summary>Retrieves the current texture palette.</summary>
+    <param name="PaletteNumber">Pointer to a returned value that identifies the current texture palette.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetDepthStencilSurface">
+    <summary>Gets the depth-stencil surface owned by the Direct3DDevice object.</summary>
+    <param name="ppZStencilSurface">Address of a pointer to an <see cref="IDirect3DSurface9" /> interface, representing the returned depth-stencil surface.</param>
+    <returns>If the method succeeds, the return value is D3D_OK.If the device doesn't have a depth stencil buffer associated with it, the return value will be D3DERR_NOTFOUND. Otherwise, if the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetDeviceCaps">
+    <summary>Retrieves the capabilities of the rendering device.</summary>
+    <param name="pCaps">Pointer to a <see cref="D3DCAPS9" /> structure, describing the returned device.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetDirect3D">
+    <summary>Returns an interface to the instance of the Direct3D object that created the device.</summary>
+    <param name="ppD3D9">Address of a pointer to an <see cref="IDirect3D9" /> interface, representing the interface of the Direct3D object that created the device.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetDisplayMode">
+    <summary>Retrieves the display mode's spatial resolution, color resolution, and refresh frequency.</summary>
+    <param name="iSwapChain">An unsigned integer specifying the swap chain.</param>
+    <param name="pMode">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddisplaymode">D3DDISPLAYMODE</a> structure containing data about the display mode of the adapter. As opposed to the display mode of the device, which may not be active if the device does not own full-screen mode.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetFrontBufferData">
+    <summary>Generates a copy of the device's front buffer and places that copy in a system memory buffer provided by the application.</summary>
+    <param name="iSwapChain">An unsigned integer specifying the swap chain.</param>
+    <param name="pDestSurface">
+      <para>Pointer to an <see cref="IDirect3DSurface9" /> interface that will receive a copy of the contents of the front buffer. The data is returned in successive rows with no intervening space, starting from the vertically highest row on the device's output to the lowest.</para>
+      <para>For windowed mode, the size of the destination surface should be the size of the desktop. For full-screen mode, the size of the destination surface should be the screen size.</para>
+    </param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_DRIVERINTERNALERROR, D3DERR_DEVICELOST, D3DERR_INVALIDCALL</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetFVF">
+    <summary>Gets the fixed vertex function declaration.</summary>
+    <param name="pFVF">A DWORD pointer to the fixed function vertex type. For more information, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dfvf">D3DFVF</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetGammaRamp">
+    <summary>Retrieves the gamma correction ramp for the swap chain.</summary>
+    <param name="iSwapChain">An unsigned integer specifying the swap chain.</param>
+    <param name="pRamp">Pointer to an application-supplied <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dgammaramp">D3DGAMMARAMP</a> structure to fill with the gamma correction ramp.</param>
+  </member>
+  <member name="IDirect3DDevice9.GetIndices">
+    <summary>Retrieves index data.</summary>
+    <param name="ppIndexData">Address of a pointer to an <see cref="IDirect3DIndexBuffer9" /> interface, representing the returned index data.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetLight">
+    <summary>Retrieves a set of lighting properties that this device uses.</summary>
+    <param name="Index">Zero-based index of the lighting property set to retrieve. This method will fail if a lighting property has not been set for this index by calling the <see cref="IDirect3DDevice9.SetLight" /> method.</param>
+    <param name="unnamedParam2">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dlight9">D3DLIGHT9</a> structure that is filled with the retrieved lighting-parameter set.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetLightEnable">
+    <summary>Retrieves the activity status - enabled or disabled - for a set of lighting parameters within a device.</summary>
+    <param name="Index">Zero-based index of the set of lighting parameters that are the target of this method.</param>
+    <param name="pEnable">Pointer to a variable to fill with the status of the specified lighting parameters. After the call, a nonzero value at this address indicates that the specified lighting parameters are enabled; a value of 0 indicates that they are disabled.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetMaterial">
+    <summary>Retrieves the current material properties for the device.</summary>
+    <param name="pMaterial">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dmaterial9">D3DMATERIAL9</a> structure to fill with the currently set material properties.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL if the pMaterial parameter is invalid.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetNPatchMode">
+    <summary>Gets the N-patch mode segments.</summary>
+    <returns>Specifies the number of subdivision segments. If the number of segments is less than 1.0, N-patches are disabled. The default value is 0.0.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetNumberOfSwapChains">
+    <summary>Gets the number of implicit swap chains.</summary>
+    <returns>Number of implicit swap chains. See Remarks.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetPaletteEntries">
+    <summary>Retrieves palette entries.</summary>
+    <param name="PaletteNumber">An ordinal value identifying the particular palette to retrieve.</param>
+    <param name="pEntries">Pointer to a <see cref="PALETTEENTRY" /> structure, representing the returned palette entries.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetPixelShader">
+    <summary>Retrieves the currently set pixel shader.</summary>
+    <param name="ppShader">Pointer to a pixel shader interface.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetPixelShaderConstantB">
+    <summary>Gets a Boolean shader constant.</summary>
+    <param name="StartRegister">Register number that will contain the first constant value.</param>
+    <param name="pConstantData">Pointer to an array of constants.</param>
+    <param name="BoolCount">Number of Boolean values in the array of constants.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetPixelShaderConstantF">
+    <summary>Gets a floating-point shader constant.</summary>
+    <param name="StartRegister">Register number that will contain the first constant value.</param>
+    <param name="pConstantData">Pointer to an array of constants.</param>
+    <param name="Vector4fCount">Number of four float vectors in the array of constants.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetPixelShaderConstantI">
+    <summary>Gets an integer shader constant.</summary>
+    <param name="StartRegister">Register number that will contain the first constant value.</param>
+    <param name="pConstantData">Pointer to an array of constants.</param>
+    <param name="Vector4iCount">Number of four integer vectors in the array of constants.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetRasterStatus">
+    <summary>Returns information describing the raster of the monitor on which the swap chain is presented.</summary>
+    <param name="iSwapChain">An unsigned integer specifying the swap chain.</param>
+    <param name="pRasterStatus">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3draster-status">D3DRASTER_STATUS</a> structure filled with information about the position or other status of the raster on the monitor driven by this adapter.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL is returned if pRasterStatus is invalid or if the device does not support reading the current scan line. To determine if the device supports reading the scan line, check for the D3DCAPS_READ_SCANLINE flag in the Caps member of <see cref="D3DCAPS9" />.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetRenderState">
+    <summary>Retrieves a render-state value for a device.</summary>
+    <param name="State">Device state variable that is being queried. This parameter can be any member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3drenderstatetype">D3DRENDERSTATETYPE</a> enumerated type.</param>
+    <param name="pValue">Pointer to a variable that receives the value of the queried render state variable when the method returns.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL if one of the arguments is invalid.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetRenderTarget">
+    <summary>Retrieves a render-target surface.</summary>
+    <param name="RenderTargetIndex">Index of the render target. See Remarks.</param>
+    <param name="ppRenderTarget">Address of a pointer to an <see cref="IDirect3DSurface9" /> interface, representing the returned render-target surface for this device.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL if one of the arguments is invalid, or D3DERR_NOTFOUND if there's no render target available for the given index.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetRenderTargetData">
+    <summary>Copies the render-target data from device memory to system memory.</summary>
+    <param name="pRenderTarget">Pointer to an <see cref="IDirect3DSurface9" /> object, representing a render target.</param>
+    <param name="pDestSurface">Pointer to an <see cref="IDirect3DSurface9" /> object, representing a destination surface.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_DRIVERINTERNALERROR, D3DERR_DEVICELOST, D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetSamplerState">
+    <summary>Gets the sampler state value.</summary>
+    <param name="Sampler">The sampler stage index.</param>
+    <param name="Type">This parameter can be any member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dsamplerstatetype">D3DSAMPLERSTATETYPE</a> enumerated type.</param>
+    <param name="pValue">State value to get. The meaning of this value is determined by the Type parameter.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetScissorRect">
+    <summary>Gets the scissor rectangle.</summary>
+    <param name="pRect">Returns a pointer to a <see cref="RECT" /> structure that defines the rendering area within the render target if scissor test is enabled.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be the following: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetSoftwareVertexProcessing">
+    <summary>Gets the vertex processing (hardware or software) mode.</summary>
+    <returns>Returns <b>TRUE</b> if software vertex processing is set. Otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetStreamSource">
+    <summary>Retrieves a vertex buffer bound to the specified data stream.</summary>
+    <param name="StreamNumber">Specifies the data stream, in the range from 0 to the maximum number of streams minus one.</param>
+    <param name="ppStreamData">Address of a pointer to an <see cref="IDirect3DVertexBuffer9" /> interface, representing the returned vertex buffer bound to the specified data stream.</param>
+    <param name="pOffsetInBytes">Pointer containing the offset from the beginning of the stream to the beginning of the vertex data. The offset is measured in bytes. See Remarks.</param>
+    <param name="pStride">Pointer to a returned stride of the component, in bytes. See Remarks.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetStreamSourceFreq">
+    <summary>Gets the stream source frequency divider value.</summary>
+    <param name="StreamNumber">
+      <para>Stream source number.</para>
+      <h4>- Divider</h4>
+      <para>Returns the frequency divider value.</para>
+    </param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetSwapChain">
+    <summary>Gets a pointer to a swap chain.</summary>
+    <param name="iSwapChain">The swap chain ordinal value. For more information, see NumberOfAdaptersInGroup in <see cref="D3DCAPS9" />.</param>
+    <param name="pSwapChain">Pointer to an <see cref="IDirect3DSwapChain9" /> interface that will receive a copy of swap chain.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetTexture">
+    <summary>Retrieves a texture assigned to a stage for a device.</summary>
+    <param name="Stage">Stage identifier of the texture to retrieve. Stage identifiers are zero-based.</param>
+    <param name="ppTexture">Address of a pointer to an <see cref="IDirect3DBaseTexture9" /> interface, representing the returned texture.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetTextureStageState">
+    <summary>Retrieves a state value for an assigned texture.</summary>
+    <param name="Stage">Stage identifier of the texture for which the state is retrieved. Stage identifiers are zero-based. Devices can have up to eight set textures, so the maximum value allowed for Stage is 7.</param>
+    <param name="Type">Texture state to retrieve. This parameter can be any member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dtexturestagestatetype">D3DTEXTURESTAGESTATETYPE</a> enumerated type.</param>
+    <param name="pValue">Pointer a variable to fill with the retrieved state value. The meaning of the retrieved value is determined by the Type parameter.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetTransform">
+    <summary>Retrieves a matrix describing a transformation state.</summary>
+    <param name="State">Device state variable that is being modified. This parameter can be any member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dtransformstatetype">D3DTRANSFORMSTATETYPE</a> enumerated type, or the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dts-worldmatrix">D3DTS_WORLDMATRIX</a> macro.</param>
+    <param name="pMatrix">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dmatrix">D3DMATRIX</a> structure, describing the returned transformation state.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL if one of the arguments is invalid.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetVertexDeclaration">
+    <summary>Gets a vertex shader declaration.</summary>
+    <param name="ppDecl">Pointer to an <see cref="IDirect3DVertexDeclaration9" /> object that is returned.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. The return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetVertexShader">
+    <summary>Retrieves the currently set vertex shader.</summary>
+    <param name="ppShader">Pointer to a vertex shader interface.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If ppShader is invalid, D3DERR_INVALIDCALL is returned.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetVertexShaderConstantB">
+    <summary>Gets a Boolean vertex shader constant.</summary>
+    <param name="StartRegister">Register number that will contain the first constant value.</param>
+    <param name="pConstantData">Pointer to an array of constants.</param>
+    <param name="BoolCount">Number of Boolean values in the array of constants.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetVertexShaderConstantF">
+    <summary>Gets a floating-point vertex shader constant.</summary>
+    <param name="StartRegister">Register number that will contain the first constant value.</param>
+    <param name="pConstantData">Pointer to an array of constants.</param>
+    <param name="Vector4fCount">Number of four float vectors in the array of constants.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetVertexShaderConstantI">
+    <summary>Gets an integer vertex shader constant.</summary>
+    <param name="StartRegister">Register number that will contain the first constant value.</param>
+    <param name="pConstantData">Pointer to an array of constants.</param>
+    <param name="Vector4iCount">Number of four integer vectors in the array of constants.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.GetViewport">
+    <summary>Retrieves the viewport parameters currently set for the device.</summary>
+    <param name="pViewport">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dviewport9">D3DVIEWPORT9</a> structure, representing the returned viewport parameters.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL is returned if the pViewport parameter is invalid.</returns>
+  </member>
+  <member name="IDirect3DDevice9.LightEnable">
+    <summary>Enables or disables a set of lighting parameters within a device.</summary>
+    <param name="Index">Zero-based index of the set of lighting parameters that are the target of this method.</param>
+    <param name="Enable">Value that indicates if the set of lighting parameters are being enabled or disabled. Set this parameter to <b>TRUE</b> to enable lighting with the parameters at the specified index, or <b>FALSE</b> to disable it.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.MultiplyTransform">
+    <summary>Multiplies a device's world, view, or projection matrices by a specified matrix.</summary>
+    <param name="unnamedParam1">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dtransformstatetype">D3DTRANSFORMSTATETYPE</a> enumerated type, or the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dts-worldmatrix">D3DTS_WORLDMATRIX</a> macro that identifies which device matrix is to be modified. The most common setting, <b>D3DTS_WORLDMATRIX</b>(0), modifies the world matrix, but you can specify that the method modify the view or projection matrices, if needed.</param>
+    <param name="unnamedParam2">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dmatrix">D3DMATRIX</a> structure that modifies the current transformation.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL if one of the arguments is invalid.</returns>
+  </member>
+  <member name="IDirect3DDevice9.Present">
+    <summary>Presents the contents of the next buffer in the sequence of back buffers owned by the device.</summary>
+    <param name="pSourceRect">Pointer to a value that must be <b>NULL</b> unless the swap chain was created with D3DSWAPEFFECT_COPY. pSourceRect is a pointer to a <see cref="RECT" /> structure containing the source rectangle. If <b>NULL</b>, the entire source surface is presented. If the rectangle exceeds the source surface, the rectangle is clipped to the source surface.</param>
+    <param name="pDestRect">Pointer to a value that must be <b>NULL</b> unless the swap chain was created with D3DSWAPEFFECT_COPY. pDestRect is a pointer to a <see cref="RECT" /> structure containing the destination rectangle, in window client coordinates. If <b>NULL</b>, the entire client area is filled. If the rectangle exceeds the destination client area, the rectangle is clipped to the destination client area.</param>
+    <param name="hDestWindowOverride">Pointer to a destination window whose client area is taken as the target for this presentation. If this value is <b>NULL</b>, the runtime uses the <b>hDeviceWindow</b> member of <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpresent-parameters">D3DPRESENT_PARAMETERS</a> for the presentation.</param>
+    <param name="pDirtyRegion">Value must be <b>NULL</b> unless the swap chain was created with D3DSWAPEFFECT_COPY. For more information about swap chains, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/flipping-surfaces">Flipping Surfaces (Direct3D 9)</a> and <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dswapeffect">D3DSWAPEFFECT</a>. If this value is non-<b>NULL</b>, the contained region is expressed in back buffer coordinates. The rectangles within the region are the minimal set of pixels that need to be updated. This method takes these rectangles into account when optimizing the presentation by copying only the pixels within the region, or some suitably expanded set of rectangles. This is an aid to optimization only, and the application should not rely on the region being copied exactly. The implementation can choose to copy the whole source rectangle.</param>
+    <returns>Possible return values include: D3D_OK or D3DERR_DEVICEREMOVED (see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3derr">D3DERR</a>).</returns>
+  </member>
+  <member name="IDirect3DDevice9.ProcessVertices">
+    <summary>Applies the vertex processing defined by the vertex shader to the set of input data streams, generating a single stream of interleaved vertex data to the destination vertex buffer.</summary>
+    <param name="SrcStartIndex">Index of first vertex to load.</param>
+    <param name="DestIndex">Index of first vertex in the destination vertex buffer into which the results are placed.</param>
+    <param name="VertexCount">Number of vertices to process.</param>
+    <param name="pDestBuffer">Pointer to an <see cref="IDirect3DVertexBuffer9" /> interface, the destination vertex buffer representing the stream of interleaved vertex data.</param>
+    <param name="pVertexDecl">Pointer to an <see cref="IDirect3DVertexDeclaration9" /> interface that represents the output vertex data declaration. When vertex shader 3.0 or above is set as the current vertex shader, the output vertex declaration must be present.</param>
+    <param name="Flags">Processing options. Set this parameter to 0 for default processing. Set to D3DPV_DONOTCOPYDATA to prevent the system from copying vertex data not affected by the vertex operation into the destination buffer. The D3DPV_DONOTCOPYDATA value may be combined with one or more <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dlock">D3DLOCK</a> values appropriate for the destination buffer.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.Reset">
+    <summary>Resets the type, size, and format of the swap chain.</summary>
+    <param name="pPresentationParameters">
+      <para>Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpresent-parameters">D3DPRESENT_PARAMETERS</a> structure, describing the new presentation parameters. This value cannot be <b>NULL</b>.</para>
+      <para>When switching to full-screen mode, Direct3D will try to find a desktop format that matches the back buffer format, so that back buffer and front buffer formats will be identical (to eliminate the need for color conversion).</para>
+      <para>When this method returns:</para>
+      <list type="bullet">
+        <item>
+          <description>BackBufferCount, BackBufferWidth, and BackBufferHeight are set to zero.</description>
+        </item>
+        <item>
+          <description>BackBufferFormat is set to <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFMT_UNKNOWN</a> for windowed mode only; a full-screen mode must specify a format.</description>
+        </item>
+      </list>
+    </param>
+    <returns>Possible return values include: D3D_OK, D3DERR_DEVICELOST, D3DERR_DEVICEREMOVED, D3DERR_DRIVERINTERNALERROR, or D3DERR_OUTOFVIDEOMEMORY (see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3derr">D3DERR</a>).</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetClipPlane">
+    <summary>Sets the coefficients of a user-defined clipping plane for the device.</summary>
+    <param name="Index">Index of the clipping plane for which the plane equation coefficients are to be set.</param>
+    <param name="pPlane">Pointer to an address of a four-element array of values that represent the clipping plane coefficients to be set, in the form of the general plane equation. See Remarks.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value is D3DERR_INVALIDCALL. This error indicates that the value in Index exceeds the maximum clipping plane index supported by the device or that the array at pPlane is not large enough to contain four floating-point values.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetClipStatus">
+    <summary>Sets the clip status.</summary>
+    <param name="pClipStatus">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dclipstatus9">D3DCLIPSTATUS9</a> structure, describing the clip status settings to be set.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If one of the arguments is invalid, the return value is D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetCurrentTexturePalette">
+    <summary>Sets the current texture palette.</summary>
+    <param name="PaletteNumber">Value that specifies the texture palette to set as the current texture palette.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetCursorPosition">
+    <summary>Sets the cursor position and update options.</summary>
+    <param name="X">The new X-position of the cursor in virtual desktop coordinates. See Remarks.</param>
+    <param name="Y">The new Y-position of the cursor in virtual desktop coordinates. See Remarks.</param>
+    <param name="Flags">
+      <para>Specifies the update options for the cursor. Currently, only one flag is defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DCURSOR_IMMEDIATE_UPDATE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Update cursor at the refresh rate.<para>If this flag is specified, the system guarantees that the cursor will be updated at a minimum of half the display refresh rate, but never more frequently than the display refresh rate. Otherwise, the method delays cursor updates until the next <see cref="IDirect3DDevice9.Present" /> call. Not setting this flag usually results in better performance than if the flag is set. However, applications should set this flag if the rate of calls to Present is low enough that users would notice a significant delay in cursor motion. This flag has no effect in a windowed-mode application. Some video cards implement hardware color cursors. This flag does not have an effect on these cards.</para></description>
+        </listheader>
+      </list>
+    </param>
+  </member>
+  <member name="IDirect3DDevice9.SetCursorProperties">
+    <summary>Sets properties for the cursor.</summary>
+    <param name="XHotSpot">X-coordinate offset (in pixels) that marks the center of the cursor. The offset is relative to the upper-left corner of the cursor. When the cursor is given a new position, the image is drawn at an offset from this new position determined by subtracting the hot spot coordinates from the position.</param>
+    <param name="YHotSpot">Y-coordinate offset (in pixels) that marks the center of the cursor. The offset is relative to the upper-left corner of the cursor. When the cursor is given a new position, the image is drawn at an offset from this new position determined by subtracting the hot spot coordinates from the position.</param>
+    <param name="pCursorBitmap">Pointer to an <see cref="IDirect3DSurface9" /> interface. This parameter must point to an 8888 ARGB surface (format D3DFMT_A8R8G8B8). The contents of this surface will be copied and potentially format-converted into an internal buffer from which the cursor is displayed. The dimensions of this surface must be less than the dimensions of the display mode, and must be a power of two in each direction, although not necessarily the same power of two. The alpha channel must be either 0.0 or 1.0.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetDepthStencilSurface">
+    <summary>Sets the depth stencil surface.</summary>
+    <param name="pNewZStencil">Address of a pointer to an <see cref="IDirect3DSurface9" /> interface representing the depth stencil surface. Setting this to <b>NULL</b> disables the depth stencil operation.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If pZStencilSurface is other than <b>NULL</b>, the return value is D3DERR_INVALIDCALL when the stencil surface is invalid.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetDialogBoxMode">
+    <summary>This method allows the use of GDI dialog boxes in full-screen mode applications.</summary>
+    <param name="bEnableDialogs">
+      <b>TRUE</b> to enable GDI dialog boxes, and <b>FALSE</b> to disable them.</param>
+    <returns>
+      <para>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL unless all of the following are true.</para>
+      <list type="bullet">
+        <item>
+          <description>The application specified a back buffer format compatible with GDI, in other words, one of D3DFMT_X1R5G5B5, D3DFMT_R5G6B5, or D3DFMT_X8R8G8B8.</description>
+        </item>
+        <item>
+          <description>The application specified no multisampling.</description>
+        </item>
+        <item>
+          <description>The application specified D3DSWAPEFFECT_DISCARD.</description>
+        </item>
+        <item>
+          <description>The application specified D3DPRESENTFLAG_LOCKABLE_BACKBUFFER.</description>
+        </item>
+        <item>
+          <description>The application did not specify D3DCREATE_ADAPTERGROUP_DEVICE.</description>
+        </item>
+        <item>
+          <description>The application is not between BeginScene and EndScene.</description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IDirect3DDevice9.SetFVF">
+    <summary>Sets the current vertex stream declaration.</summary>
+    <param name="FVF">DWORD containing the fixed function vertex type. For more information, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dfvf">D3DFVF</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetGammaRamp">
+    <summary>Sets the gamma correction ramp for the implicit swap chain. This method will affect the entire screen (not just the active window if you are running in windowed mode).</summary>
+    <param name="iSwapChain">Unsigned integer specifying the swap chain.</param>
+    <param name="Flags">
+      <para>Indicates whether correction should be applied. Gamma correction results in a more consistent display, but can incur processing overhead and should not be used frequently. Short-duration effects, such as flashing the whole screen red, should not be calibrated, but long-duration gamma changes should be calibrated. One of the following values can be set:</para>
+      <list type="table">
+        <listheader>
+          <description>Item</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>D3DSGR_CALIBRATE</description>
+          <description>If a gamma calibrator is installed, the ramp will be modified before being sent to the device to account for the system and monitor response curves. If a calibrator is not installed, the ramp will be passed directly to the device.</description>
+        </listheader>
+        <listheader>
+          <description>D3DSGR_NO_CALIBRATION</description>
+          <description>No gamma correction is applied. The supplied gamma table is transferred directly to the device.</description>
+        </listheader>
+      </list>
+    </param>
+    <param name="pRamp">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dgammaramp">D3DGAMMARAMP</a> structure, representing the gamma correction ramp to be set for the implicit swap chain.</param>
+  </member>
+  <member name="IDirect3DDevice9.SetIndices">
+    <summary>Sets index data.</summary>
+    <param name="pIndexData">Pointer to an <see cref="IDirect3DIndexBuffer9" /> interface, representing the index data to be set.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetLight">
+    <summary>Assigns a set of lighting properties for this device.</summary>
+    <param name="Index">Zero-based index of the set of lighting properties to set. If a set of lighting properties exists at this index, it is overwritten by the new properties specified in pLight.</param>
+    <param name="unnamedParam2">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dlight9">D3DLIGHT9</a> structure, containing the lighting parameters to set.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetMaterial">
+    <summary>Sets the material properties for the device.</summary>
+    <param name="pMaterial">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dmaterial9">D3DMATERIAL9</a> structure, describing the material properties to set.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL if the pMaterial parameter is invalid.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetNPatchMode">
+    <summary>Enable or disable N-patches.</summary>
+    <param name="nSegments">Specifies the number of subdivision segments. If the number of segments is less than 1.0, N-patches are disabled. The default value is 0.0.</param>
+    <returns>If the method succeeds, the return value is D3D_OK.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetPaletteEntries">
+    <summary>Sets palette entries.</summary>
+    <param name="PaletteNumber">An ordinal value identifying the particular palette upon which the operation is to be performed.</param>
+    <param name="pEntries">Pointer to a <see cref="PALETTEENTRY" /> structure, representing the palette entries to set. The number of <b>PALETTEENTRY</b> structures pointed to by pEntries is assumed to be 256. See Remarks.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetPixelShader">
+    <summary>Sets the current pixel shader to a previously created pixel shader.</summary>
+    <param name="pShader">Pixel shader interface.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetPixelShaderConstantB">
+    <summary>Sets a Boolean shader constant.</summary>
+    <param name="StartRegister">Register number that will contain the first constant value.</param>
+    <param name="pConstantData">Pointer to an array of constants.</param>
+    <param name="BoolCount">Number of boolean values in the array of constants.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetPixelShaderConstantF">
+    <summary>Sets a floating-point shader constant.</summary>
+    <param name="StartRegister">Register number that will contain the first constant value.</param>
+    <param name="pConstantData">Pointer to an array of constants.</param>
+    <param name="Vector4fCount">Number of four float vectors in the array of constants.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetPixelShaderConstantI">
+    <summary>Sets an integer shader constant.</summary>
+    <param name="StartRegister">Register number that will contain the first constant value.</param>
+    <param name="pConstantData">Pointer to an array of constants.</param>
+    <param name="Vector4iCount">Number of four integer vectors in the array of constants.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetRenderState">
+    <summary>Sets a single device render-state parameter.</summary>
+    <param name="State">Device state variable that is being modified. This parameter can be any member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3drenderstatetype">D3DRENDERSTATETYPE</a> enumerated type.</param>
+    <param name="Value">New value for the device render state to be set. The meaning of this parameter is dependent on the value specified for <i>State</i>. For example, if <i>State</i> were D3DRS_SHADEMODE, the second parameter would be one member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dshademode">D3DSHADEMODE</a> enumerated type.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL is returned if one of the arguments is invalid.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetRenderTarget">
+    <summary>Sets a new color buffer for the device.</summary>
+    <param name="RenderTargetIndex">Index of the render target. See Remarks.</param>
+    <param name="pRenderTarget">Pointer to a new color buffer. If <b>NULL</b>, the color buffer for the corresponding RenderTargetIndex is disabled. Devices always must be associated with a color buffer. The new render-target surface must have at least D3DUSAGE_RENDERTARGET specified.</param>
+    <returns>
+      <para>If the method succeeds, the return value is D3D_OK. This method will return D3DERR_INVALIDCALL if either:</para>
+      <list type="bullet">
+        <item>
+          <description>pRenderTarget = <b>NULL</b> and RenderTargetIndex = 0</description>
+        </item>
+        <item>
+          <description>pRenderTarget is != <b>NULL</b> and the render target is invalid.</description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IDirect3DDevice9.SetSamplerState">
+    <summary>Sets the sampler state value.</summary>
+    <param name="Sampler">The sampler stage index. For more info about sampler stage, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/vertex-textures-in-vs-3-0">Sampling Stage Registers in vs_3_0 (DirectX HLSL)</a>.</param>
+    <param name="Type">This parameter can be any member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dsamplerstatetype">D3DSAMPLERSTATETYPE</a> enumerated type.</param>
+    <param name="Value">State value to set. The meaning of this value is determined by the Type parameter.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetScissorRect">
+    <summary>Sets the scissor rectangle.</summary>
+    <param name="pRect">Pointer to a <see cref="RECT" /> structure that defines the rendering area within the render target if scissor test is enabled. This parameter may not be <b>NULL</b>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetSoftwareVertexProcessing">
+    <summary>Use this method to switch between software and hardware vertex processing.</summary>
+    <param name="bSoftware">
+      <b>TRUE</b> to specify software vertex processing; <b>FALSE</b> to specify hardware vertex processing.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetStreamSource">
+    <summary>Binds a vertex buffer to a device data stream. For more information, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/setting-the-stream-source">Setting the Stream Source (Direct3D 9)</a>.</summary>
+    <param name="StreamNumber">Specifies the data stream, in the range from 0 to the maximum number of streams -1.</param>
+    <param name="pStreamData">Pointer to an <see cref="IDirect3DVertexBuffer9" /> interface, representing the vertex buffer to bind to the specified data stream.</param>
+    <param name="OffsetInBytes">Offset from the beginning of the stream to the beginning of the vertex data, in bytes. To find out if the device supports stream offsets, see the D3DDEVCAPS2_STREAMOFFSET constant in <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddevcaps2">D3DDEVCAPS2</a>.</param>
+    <param name="Stride">Stride of the component, in bytes. See Remarks.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetStreamSourceFreq">
+    <summary>Sets the stream source frequency divider value. This may be used to draw several instances of geometry.</summary>
+    <param name="StreamNumber">Stream source number.</param>
+    <param name="Divider">This parameter may have two different values. See remarks.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetTexture">
+    <summary>Assigns a texture to a stage for a device.</summary>
+    <param name="Stage">
+      <para>Zero based sampler number. Textures are bound to samplers; samplers define sampling state such as the filtering mode and the address wrapping mode. Textures are referenced differently by the programmable and the fixed function pipeline:</para>
+      <list type="bullet">
+        <item>
+          <description>Programmable shaders reference textures using the sampler number. The number of samplers available to a programmable shader is dependent on the shader version. For vertex shaders, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx9-graphics-reference-asm-vs-registers-sampler">Sampler (Direct3D 9 asm-vs)</a>. For pixel shaders see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx9-graphics-reference-asm-ps-registers-sampler">Sampler (Direct3D 9 asm-ps)</a>.</description>
+        </item>
+        <item>
+          <description>The fixed function pipeline on the other hand, references textures by texture stage number. The maximum number of samplers is determined from two caps: MaxSimultaneousTextures and MaxTextureBlendStages of the <see cref="D3DCAPS9" /> structure.</description>
+        </item>
+      </list>There are two other special cases for stage/sampler numbers.<list type="bullet"><item><description>A special number called D3DDMAPSAMPLER is used for <a href="https://docs.microsoft.com//windows/desktop/direct3d9/displacement-mapping">Displacement Mapping (Direct3D 9)</a>.</description></item><item><description>A programmable vertex shader uses a special number defined by a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dvertextexturesampler">D3DVERTEXTEXTURESAMPLER</a> when accessing <a href="https://docs.microsoft.com//windows/desktop/direct3d9/vertex-textures-in-vs-3-0">Vertex Textures in vs_3_0 (DirectX HLSL)</a>.</description></item></list></param>
+    <param name="pTexture">Pointer to an <see cref="IDirect3DBaseTexture9" /> interface, representing the texture being set.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetTextureStageState">
+    <summary>Sets the state value for the currently assigned texture.</summary>
+    <param name="Stage">Stage identifier of the texture for which the state value is set. Stage identifiers are zero-based. Devices can have up to eight set textures, so the maximum value allowed for Stage is 7.</param>
+    <param name="Type">Texture state to set. This parameter can be any member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dtexturestagestatetype">D3DTEXTURESTAGESTATETYPE</a> enumerated type.</param>
+    <param name="Value">State value to set. The meaning of this value is determined by the Type parameter.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetTransform">
+    <summary>Sets a single device transformation-related state.</summary>
+    <param name="State">Device-state variable that is being modified. This parameter can be any member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dtransformstatetype">D3DTRANSFORMSTATETYPE</a> enumerated type, or the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dts-worldmatrix">D3DTS_WORLDMATRIX</a> macro.</param>
+    <param name="pMatrix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dmatrix">D3DMATRIX</a> structure that modifies the current transformation.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL is returned if one of the arguments is invalid.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetVertexDeclaration">
+    <summary>Sets a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/vertex-declaration">Vertex Declaration (Direct3D 9)</a>.</summary>
+    <param name="pDecl">Pointer to an <see cref="IDirect3DVertexDeclaration9" /> object, which contains the vertex declaration.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. The return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetVertexShader">
+    <summary>Sets the vertex shader.</summary>
+    <param name="pShader">Vertex shader interface. For more information, see <see cref="IDirect3DVertexShader9" />.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetVertexShaderConstantB">
+    <summary>Sets a Boolean vertex shader constant.</summary>
+    <param name="StartRegister">Register number that will contain the first constant value.</param>
+    <param name="pConstantData">Pointer to an array of constants.</param>
+    <param name="BoolCount">Number of boolean values in the array of constants.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetVertexShaderConstantF">
+    <summary>Sets a floating-point vertex shader constant.</summary>
+    <param name="StartRegister">Register number that will contain the first constant value.</param>
+    <param name="pConstantData">Pointer to an array of constants.</param>
+    <param name="Vector4fCount">Number of four float vectors in the array of constants.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetVertexShaderConstantI">
+    <summary>Sets an integer vertex shader constant.</summary>
+    <param name="StartRegister">Register number that will contain the first constant value.</param>
+    <param name="pConstantData">Pointer to an array of constants.</param>
+    <param name="Vector4iCount">Number of four integer vectors in the array of constants.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.SetViewport">
+    <summary>Sets the viewport parameters for the device.</summary>
+    <param name="pViewport">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dviewport9">D3DVIEWPORT9</a> structure, specifying the viewport parameters to set.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, it will return D3DERR_INVALIDCALL. This will happen if pViewport is invalid, or if pViewport describes a region that cannot exist within the render target surface.</returns>
+  </member>
+  <member name="IDirect3DDevice9.ShowCursor">
+    <summary>Displays or hides the cursor.</summary>
+    <param name="bShow">If bShow is <b>TRUE</b>, the cursor is shown. If bShow is <b>FALSE</b>, the cursor is hidden.</param>
+    <returns>Value indicating whether the cursor was previously visible. <b>TRUE</b> if the cursor was previously visible, or <b>FALSE</b> if the cursor was not previously visible.</returns>
+  </member>
+  <member name="IDirect3DDevice9.StretchRect">
+    <summary>Copy the contents of the source rectangle to the destination rectangle. The source rectangle can be stretched and filtered by the copy. This function is often used to change the aspect ratio of a video stream.</summary>
+    <param name="pSourceSurface">Pointer to the source surface. See <see cref="IDirect3DSurface9" />.</param>
+    <param name="pSourceRect">Pointer to the source rectangle. A <b>NULL</b> for this parameter causes the entire source surface to be used.</param>
+    <param name="pDestSurface">Pointer to the destination surface. See <see cref="IDirect3DSurface9" />.</param>
+    <param name="pDestRect">Pointer to the destination rectangle. A <b>NULL</b> for this parameter causes the entire destination surface to be used.</param>
+    <param name="Filter">Filter type. Allowable values are D3DTEXF_NONE, D3DTEXF_POINT, or D3DTEXF_LINEAR. For more information, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dtexturefiltertype">D3DTEXTUREFILTERTYPE</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.TestCooperativeLevel">
+    <summary>Reports the current cooperative-level status of the Direct3D device for a windowed or full-screen application.</summary>
+    <returns>If the method succeeds, the return value is D3D_OK, indicating that the device is operational and the calling application can continue. If the method fails, the return value can be one of the following values: D3DERR_DEVICELOST, D3DERR_DEVICENOTRESET, D3DERR_DRIVERINTERNALERROR.</returns>
+  </member>
+  <member name="IDirect3DDevice9.UpdateSurface">
+    <summary>Copies rectangular subsets of pixels from one surface to another.</summary>
+    <param name="pSourceSurface">Pointer to an <see cref="IDirect3DSurface9" /> interface, representing the source surface. This parameter must point to a different surface than pDestinationSurface.</param>
+    <param name="pSourceRect">Pointer to a rectangle on the source surface. Specifying <b>NULL</b> for this parameter causes the entire surface to be copied.</param>
+    <param name="pDestinationSurface">Pointer to an <see cref="IDirect3DSurface9" /> interface, representing the destination surface.</param>
+    <param name="pDestPoint">Pointer to the upper left corner of the destination rectangle. Specifying <b>NULL</b> for this parameter causes the entire surface to be copied.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.UpdateTexture">
+    <summary>Updates the dirty portions of a texture.</summary>
+    <param name="pSourceTexture">Pointer to an <see cref="IDirect3DBaseTexture9" /> interface, representing the source texture. The source texture must be in system memory (D3DPOOL_SYSTEMMEM).</param>
+    <param name="pDestinationTexture">Pointer to an <see cref="IDirect3DBaseTexture9" /> interface, representing the destination texture. The destination texture must be in the D3DPOOL_DEFAULT memory pool.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DDevice9.ValidateDevice">
+    <summary>Reports the device's ability to render the current texture-blending operations and arguments in a single pass.</summary>
+    <param name="pNumPasses">Pointer to a DWORD value to fill with the number of rendering passes needed to complete the desired effect through multipass rendering.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_CONFLICTINGRENDERSTATE, D3DERR_CONFLICTINGTEXTUREFILTER, D3DERR_DEVICELOST, D3DERR_DRIVERINTERNALERROR, D3DERR_TOOMANYOPERATIONS, D3DERR_UNSUPPORTEDALPHAARG, D3DERR_UNSUPPORTEDALPHAOPERATION, D3DERR_UNSUPPORTEDCOLORARG, D3DERR_UNSUPPORTEDCOLOROPERATION, D3DERR_UNSUPPORTEDFACTORVALUE, D3DERR_UNSUPPORTEDTEXTUREFILTER, D3DERR_WRONGTEXTUREFORMAT,.</returns>
+  </member>
+  <member name="IDirect3DDevice9">
+    <summary>Applications use the methods of the IDirect3DDevice9 interface to perform DrawPrimitive-based rendering, create resources, work with system-level variables, adjust gamma ramp levels, work with palettes, and create shaders.</summary>
+  </member>
+</doc>

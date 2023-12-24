@@ -14,6 +14,8 @@
   </member>
   <member name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterPartitionHandle"></member>
   <member name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterUserPhysicalHandle"></member>
-  <member name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterAttributeFlags"></member>
+  <member name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterAttributeFlags">
+    <summary>This extended parameter type is used to specify additional flags for new memory allocations created by <see cref="VirtualAlloc2" /> and <see cref="MapViewOfFile3" />.</summary>
+  </member>
   <member name="MEM_EXTENDED_PARAMETER_TYPE.MemExtendedParameterMax"></member>
 </doc>

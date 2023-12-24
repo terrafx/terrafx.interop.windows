@@ -6,7 +6,7 @@
     <summary>
       <para>Performs a logical AND on each pair of corresponding elements of the input tensors, placing the result (1 for true, 0 for false) into the corresponding element of <i>OutputTensor</i>.</para>
       <code>f(a, b) = (a &amp;&amp; b)</code>
-      <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias one of the the input tensors during binding.</para>
+      <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias one of the input tensors during binding.</para>
     </summary>
   </member>
   <member name="DML_ELEMENT_WISE_LOGICAL_AND_OPERATOR_DESC.ATensor">

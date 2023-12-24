@@ -1,0 +1,1933 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3DCAPS9">
+    <summary>Represents the capabilities of the hardware exposed through the Direct3D object.</summary>
+  </member>
+  <member name="D3DCAPS9.DeviceType">
+    <summary>Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddevtype">D3DDEVTYPE</a> enumerated type, which identifies what type of resources are used for processing vertices.</summary>
+  </member>
+  <member name="D3DCAPS9.AdapterOrdinal">
+    <summary>Adapter on which this Direct3D device was created. This ordinal is valid only to pass to methods of the <see cref="IDirect3D9" /> interface that created this Direct3D device. The <b>IDirect3D9</b> interface can always be retrieved by calling <see cref="GetDirect3D" />.</summary>
+  </member>
+  <member name="D3DCAPS9.Caps">
+    <summary>
+      <para>The following driver-specific capability.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DCAPS_READ_SCANLINE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Display hardware is capable of returning the current scan line.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DCAPS_OVERLAY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The display driver supports an overlay DDI that allows for verification of overlay capabilities. For more information about the overlay DDI, see <a href="https://www.microsoft.com/?ref=go">Overlay DDI</a>.<list type="table"><listheader><description>Differences between Direct3D 9 and Direct3D 9Ex:<para>This flag is available in Direct3D 9Ex only.</para></description></listheader></list> </description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.Caps2">
+    <summary>Driver-specific capabilities identified in <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dcaps2">D3DCAPS2</a>.</summary>
+  </member>
+  <member name="D3DCAPS9.Caps3">
+    <summary>Driver-specific capabilities identified in <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dcaps3">D3DCAPS3</a>.</summary>
+  </member>
+  <member name="D3DCAPS9.PresentationIntervals">
+    <summary>
+      <para>Bit mask of values representing what presentation swap intervals are available.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRESENT_INTERVAL_IMMEDIATE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The driver supports an immediate presentation swap interval.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRESENT_INTERVAL_ONE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The driver supports a presentation swap interval of every screen refresh.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRESENT_INTERVAL_TWO</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The driver supports a presentation swap interval of every second screen refresh.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRESENT_INTERVAL_THREE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The driver supports a presentation swap interval of every third screen refresh.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRESENT_INTERVAL_FOUR</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The driver supports a presentation swap interval of every fourth screen refresh.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.CursorCaps">
+    <summary>
+      <para>Bit mask indicating what hardware support is available for cursors. Direct3D 9 does not define alpha-blending cursor capabilities.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DCURSORCAPS_COLOR</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A full-color cursor is supported in hardware. Specifically, this flag indicates that the driver supports at least a hardware color cursor in high-resolution modes (with scan lines greater than or equal to 400).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DCURSORCAPS_LOWRES</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A full-color cursor is supported in hardware. Specifically, this flag indicates that the driver supports a hardware color cursor in both high-resolution and low-resolution modes (with scan lines less than 400).</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.DevCaps">
+    <summary>
+      <para>Flags identifying the capabilities of the device.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_CANBLTSYSTONONLOCAL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports blits from system-memory textures to nonlocal video-memory textures.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_CANRENDERAFTERFLIP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can queue rendering commands after a page flip. Applications do not change their behavior if this flag is set; this capability means that the device is relatively fast.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_DRAWPRIMITIVES2</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can support at least a DirectX 5-compliant driver.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_DRAWPRIMITIVES2EX</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can support at least a DirectX 7-compliant driver.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_DRAWPRIMTLVERTEX</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device exports an <see cref="IDirect3DDevice9.DrawPrimitive" />-aware hal.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_EXECUTESYSTEMMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can use execute buffers from system memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_EXECUTEVIDEOMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can use execute buffers from video memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_HWRASTERIZATION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device has hardware acceleration for scene rasterization.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_HWTRANSFORMANDLIGHT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can support transformation and lighting in hardware.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_NPATCHES</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports N patches.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_PUREDEVICE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can support rasterization, transform, lighting, and shading in hardware.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_QUINTICRTPATCHES</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports quintic Bézier curves and B-splines.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_RTPATCHES</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports rectangular and triangular patches.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_RTPATCHHANDLEZERO</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>When this device capability is set, the hardware architecture does not require caching of any information, and uncached patches (handle zero) will be drawn as efficiently as cached ones. Note that setting D3DDEVCAPS_RTPATCHHANDLEZERO does not mean that a patch with handle zero can be drawn. A handle-zero patch can always be drawn whether this cap is set or not.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_SEPARATETEXTUREMEMORIES</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device is texturing from separate memory pools.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_TEXTURENONLOCALVIDMEM</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can retrieve textures from non-local video memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_TEXTURESYSTEMMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can retrieve textures from system memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_TEXTUREVIDEOMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can retrieve textures from device memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_TLVERTEXSYSTEMMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can use buffers from system memory for transformed and lit vertices.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DDEVCAPS_TLVERTEXVIDEOMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can use buffers from video memory for transformed and lit vertices.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.PrimitiveMiscCaps">
+    <summary>Miscellaneous driver primitive capabilities. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpmisccaps">D3DPMISCCAPS</a>.</summary>
+  </member>
+  <member name="D3DCAPS9.RasterCaps">
+    <summary>
+      <para>Information on raster-drawing capabilities. This member can be one or more of the following flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRASTERCAPS_ANISOTROPY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports anisotropic filtering.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRASTERCAPS_COLORPERSPECTIVE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device iterates colors perspective correctly.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRASTERCAPS_DITHER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can dither to improve color resolution.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRASTERCAPS_DEPTHBIAS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports legacy depth bias. For true depth bias, see D3DPRASTERCAPS_SLOPESCALEDEPTHBIAS.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRASTERCAPS_FOGRANGE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports range-based fog. In range-based fog, the distance of an object from the viewer is used to compute fog effects, not the depth of the object (that is, the z-coordinate) in the scene.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRASTERCAPS_FOGTABLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device calculates the fog value by referring to a lookup table containing fog values that are indexed to the depth of a given pixel.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRASTERCAPS_FOGVERTEX</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device calculates the fog value during the lighting operation and interpolates the fog value during rasterization.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRASTERCAPS_MIPMAPLODBIAS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports level-of-detail bias adjustments. These bias adjustments enable an application to make a mipmap appear crisper or less sharp than it normally would. For more information about level-of-detail bias in mipmaps, see D3DSAMP_MIPMAPLODBIAS.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRASTERCAPS_MULTISAMPLE_TOGGLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports toggling multisampling on and off between <see cref="IDirect3DDevice9.BeginScene" /> and <see cref="IDirect3DDevice9.EndScene" /> (using D3DRS_MULTISAMPLEANTIALIAS).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRASTERCAPS_SCISSORTEST</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports scissor test. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/scissor-test">Scissor Test (Direct3D 9)</a>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRASTERCAPS_SLOPESCALEDEPTHBIAS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device performs true slope-scale based depth bias. This is in contrast to the legacy style depth bias.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRASTERCAPS_WBUFFER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports depth buffering using w.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRASTERCAPS_WFOG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports w-based fog. W-based fog is used when a perspective projection matrix is specified, but affine projections still use z-based fog. The system considers a projection matrix that contains a nonzero value in the [3][4] element to be a perspective projection matrix.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRASTERCAPS_ZBUFFERLESSHSR</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can perform hidden-surface removal (HSR) without requiring the application to sort polygons and without requiring the allocation of a depth-buffer. This leaves more video memory for textures. The method used to perform HSR is hardware-dependent and is transparent to the application.<para>Z-bufferless HSR is performed if no depth-buffer surface is associated with the rendering-target surface and the depth-buffer comparison test is enabled (that is, when the state value associated with the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3drenderstatetype">D3DRS_ZENABLE</a> enumeration constant is set to <b>TRUE</b>).</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRASTERCAPS_ZFOG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports z-based fog.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPRASTERCAPS_ZTEST</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can perform z-test operations. This effectively renders a primitive and indicates whether any z pixels have been rendered.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.ZCmpCaps">
+    <summary>
+      <para>Z-buffer comparison capabilities. This member can be one or more of the following flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPCMPCAPS_ALWAYS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Always pass the z-test.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPCMPCAPS_EQUAL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Pass the z-test if the new z equals the current z.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPCMPCAPS_GREATER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Pass the z-test if the new z is greater than the current z.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPCMPCAPS_GREATEREQUAL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Pass the z-test if the new z is greater than or equal to the current z.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPCMPCAPS_LESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Pass the z-test if the new z is less than the current z.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPCMPCAPS_LESSEQUAL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Pass the z-test if the new z is less than or equal to the current z.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPCMPCAPS_NEVER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Always fail the z-test.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPCMPCAPS_NOTEQUAL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Pass the z-test if the new z does not equal the current z.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.SrcBlendCaps">
+    <summary>
+      <para>Source-blending capabilities. This member can be one or more of the following flags. (The RGBA values of the source and destination are indicated by the subscripts s and d.)</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPBLENDCAPS_BLENDFACTOR</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The driver supports both D3DBLEND_BLENDFACTOR and D3DBLEND_INVBLENDFACTOR. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dblend">D3DBLEND</a>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPBLENDCAPS_BOTHINVSRCALPHA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Source blend factor is (1 - Aₛ, 1 - Aₛ, 1 - Aₛ, 1 - Aₛ) and destination blend factor is (Aₛ, Aₛ, Aₛ, Aₛ); the destination blend selection is overridden.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPBLENDCAPS_BOTHSRCALPHA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The driver supports the D3DBLEND_BOTHSRCALPHA blend mode. (This blend mode is obsolete. For more information, see D3DBLEND.)</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPBLENDCAPS_DESTALPHA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Blend factor is (A<sub>d</sub>, A<sub>d</sub>, A<sub>d</sub>, A<sub>d</sub>).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPBLENDCAPS_DESTCOLOR</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Blend factor is (R<sub>d</sub>, G<sub>d</sub>, B<sub>d</sub>, A<sub>d</sub>).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPBLENDCAPS_INVDESTALPHA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Blend factor is (1 - A<sub>d</sub>, 1 - A<sub>d</sub>, 1 - A<sub>d</sub>, 1 - A<sub>d</sub>).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPBLENDCAPS_INVDESTCOLOR</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Blend factor is (1 - R<sub>d</sub>, 1 - G<sub>d</sub>, 1 - B<sub>d</sub>, 1 - A<sub>d</sub>).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPBLENDCAPS_INVSRCALPHA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Blend factor is (1 - Aₛ, 1 - Aₛ, 1 - Aₛ, 1 - Aₛ).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPBLENDCAPS_INVSRCCOLOR</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Blend factor is (1 - Rₛ, 1 - Gₛ, 1 - Bₛ, 1 - Aₛ).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPBLENDCAPS_INVSRCCOLOR2</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Blend factor is (1 - PSOutColor[1]<sub>r</sub>, 1 - PSOutColor[1]<sub>g</sub>, 1 - PSOutColor[1]<sub>b</sub>, not used)). See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dblend">Render Target Blending</a>.<list type="table"><listheader><description>Differences between Direct3D 9 and Direct3D 9Ex:<para>This flag is available in Direct3D 9Ex only.</para></description></listheader></list> </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPBLENDCAPS_ONE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Blend factor is (1, 1, 1, 1).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPBLENDCAPS_SRCALPHA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Blend factor is (Aₛ, Aₛ, Aₛ, Aₛ).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPBLENDCAPS_SRCALPHASAT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Blend factor is (f, f, f, 1); f = min(Aₛ, 1 - A<sub>d</sub>).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPBLENDCAPS_SRCCOLOR</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Blend factor is (Rₛ, Gₛ, Bₛ, Aₛ).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPBLENDCAPS_SRCCOLOR2</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Blend factor is (PSOutColor[1]<sub>r</sub>, PSOutColor[1]<sub>g</sub>, PSOutColor[1]<sub>b</sub>, not used). See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dblend">Render Target Blending</a>.<list type="table"><listheader><description>Differences between Direct3D 9 and Direct3D 9Ex:<para>This flag is available in Direct3D 9Ex only.</para></description></listheader></list> </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPBLENDCAPS_ZERO</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Blend factor is (0, 0, 0, 0).</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.DestBlendCaps">
+    <summary>Destination-blending capabilities. This member can be the same capabilities that are defined for the SrcBlendCaps member.</summary>
+  </member>
+  <member name="D3DCAPS9.AlphaCmpCaps">
+    <summary>Alpha-test comparison capabilities. This member can include the same capability flags defined for the ZCmpCaps member. If this member contains only the D3DPCMPCAPS_ALWAYS capability or only the D3DPCMPCAPS_NEVER capability, the driver does not support alpha tests. Otherwise, the flags identify the individual comparisons that are supported for alpha testing.</summary>
+  </member>
+  <member name="D3DCAPS9.ShadeCaps">
+    <summary>
+      <para>Shading operations capabilities. It is assumed, in general, that if a device supports a given command at all, it supports the D3DSHADE_FLAT mode (as specified in the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dshademode">D3DSHADEMODE</a> enumerated type). This flag specifies whether the driver can also support Gouraud shading and whether alpha color components are supported. When alpha components are not supported, the alpha value of colors generated is implicitly 255. This is the maximum possible alpha (that is, the alpha component is at full intensity).</para>
+      <para>The color, specular highlights, fog, and alpha interpolants of a triangle each have capability flags that an application can use to find out how they are implemented by the device driver.</para>
+      <para>This member can be one or more of the following flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPSHADECAPS_ALPHAGOURAUDBLEND</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can support an alpha component for Gouraud-blended transparency (the D3DSHADE_GOURAUD state for the D3DSHADEMODE enumerated type). In this mode, the alpha color component of a primitive is provided at vertices and interpolated across a face along with the other color components.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPSHADECAPS_COLORGOURAUDRGB</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can support colored Gouraud shading. In this mode, the per-vertex color components (red, green, and blue) are interpolated across a triangle face.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPSHADECAPS_FOGGOURAUD</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can support fog in the Gouraud shading mode.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPSHADECAPS_SPECULARGOURAUDRGB</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports Gouraud shading of specular highlights.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.TextureCaps">
+    <summary>
+      <para>Miscellaneous texture-mapping capabilities. This member can be one or more of the following flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTEXTURECAPS_ALPHA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Alpha in texture pixels is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTEXTURECAPS_ALPHAPALETTE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can draw alpha from texture palettes.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTEXTURECAPS_CUBEMAP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Supports cube textures.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTEXTURECAPS_CUBEMAP_POW2</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device requires that cube texture maps have dimensions specified as powers of two.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTEXTURECAPS_MIPCUBEMAP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports mipmapped cube textures.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTEXTURECAPS_MIPMAP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports mipmapped textures.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTEXTURECAPS_MIPVOLUMEMAP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports mipmapped volume textures.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTEXTURECAPS_NONPOW2CONDITIONAL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>D3DPTEXTURECAPS_POW2 is also set, conditionally supports the use of 2D textures with dimensions that are not powers of two. A device that exposes this capability can use such a texture if all of the following requirements are met.<list type="bullet"><item><description>The texture addressing mode for the texture stage is set to D3DTADDRESS_CLAMP.</description></item><item><description>Texture wrapping for the texture stage is disabled (<a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3drenderstatetype">D3DRS_WRAP</a> n set to 0).</description></item><item><description>Mipmapping is not in use (use magnification filter only).</description></item><item><description>Texture formats must not be <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFMT_DXT1</a> through D3DFMT_DXT5.</description></item></list><para>If this flag is not set, and D3DPTEXTURECAPS_POW2 is also not set, then unconditional support is provided for 2D textures with dimensions that are not powers of two.</para><para>A texture that is not a power of two cannot be set at a stage that will be read based on a shader computation (such as the <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/bem---ps">bem - ps</a> and <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/texm3x3---ps">texm3x3 - ps</a> instructions in pixel shaders versions 1_0 to 1_3). For example, these textures can be used to store bumps that will be fed into texture reads, but not the environment maps that are used in <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/texbem---ps">texbem - ps</a>, <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/texbeml---ps">texbeml - ps</a>, and <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/texm3x3spec---ps">texm3x3spec - ps</a>. This means that a texture with dimensions that are not powers of two cannot be addressed or sampled using texture coordinates computed within the shader. This type of operation is known as a dependent read and cannot be performed on these types of textures.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTEXTURECAPS_NOPROJECTEDBUMPENV</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device does not support a projected bump-environment lookup operation in programmable and fixed function shaders.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTEXTURECAPS_PERSPECTIVE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Perspective correction texturing is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTEXTURECAPS_POW2</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>If D3DPTEXTURECAPS_NONPOW2CONDITIONAL is not set, all textures must have widths and heights specified as powers of two. This requirement does not apply to either cube textures or volume textures.<para>If D3DPTEXTURECAPS_NONPOW2CONDITIONAL is also set, conditionally supports the use of 2D textures with dimensions that are not powers of two. See D3DPTEXTURECAPS_NONPOW2CONDITIONAL description.</para><para>If this flag is not set, and D3DPTEXTURECAPS_NONPOW2CONDITIONAL is also not set, then unconditional support is provided for 2D textures with dimensions that are not powers of two.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTEXTURECAPS_PROJECTED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Supports the D3DTTFF_PROJECTED texture transformation flag. When applied, the device divides transformed texture coordinates by the last texture coordinate. If this capability is present, then the projective divide occurs per pixel. If this capability is not present, but the projective divide needs to occur anyway, then it is performed on a per-vertex basis by the Direct3D runtime.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTEXTURECAPS_SQUAREONLY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>All textures must be square.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTEXTURECAPS_TEXREPEATNOTSCALEDBYSIZE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Texture indices are not scaled by the texture size prior to interpolation.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTEXTURECAPS_VOLUMEMAP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports volume textures.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTEXTURECAPS_VOLUMEMAP_POW2</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device requires that volume texture maps have dimensions specified as powers of two.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.TextureFilterCaps">
+    <summary>Texture-filtering capabilities for a texture. Per-stage filtering capabilities reflect which filtering modes are supported for texture stages when performing multiple-texture blending. This member can be any combination of the per-stage texture-filtering flags defined in <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dptfiltercaps">D3DPTFILTERCAPS</a>.</summary>
+  </member>
+  <member name="D3DCAPS9.CubeTextureFilterCaps">
+    <summary>Texture-filtering capabilities for a cube texture. Per-stage filtering capabilities reflect which filtering modes are supported for texture stages when performing multiple-texture blending. This member can be any combination of the per-stage texture-filtering flags defined in <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dptfiltercaps">D3DPTFILTERCAPS</a>.</summary>
+  </member>
+  <member name="D3DCAPS9.VolumeTextureFilterCaps">
+    <summary>Texture-filtering capabilities for a volume texture. Per-stage filtering capabilities reflect which filtering modes are supported for texture stages when performing multiple-texture blending. This member can be any combination of the per-stage texture-filtering flags defined in <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dptfiltercaps">D3DPTFILTERCAPS</a>.</summary>
+  </member>
+  <member name="D3DCAPS9.TextureAddressCaps">
+    <summary>
+      <para>Texture-addressing capabilities for texture objects. This member can be one or more of the following flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTADDRESSCAPS_BORDER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device supports setting coordinates outside the range [0.0, 1.0] to the border color, as specified by the D3DSAMP_BORDERCOLOR texture-stage state.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTADDRESSCAPS_CLAMP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can clamp textures to addresses.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTADDRESSCAPS_INDEPENDENTUV</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can separate the texture-addressing modes of the u and v coordinates of the texture. This ability corresponds to the D3DSAMP_ADDRESSU and D3DSAMP_ADDRESSV render-state values.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTADDRESSCAPS_MIRROR</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can mirror textures to addresses.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTADDRESSCAPS_MIRRORONCE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can take the absolute value of the texture coordinate (thus, mirroring around 0) and then clamp to the maximum value.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DPTADDRESSCAPS_WRAP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Device can wrap textures to addresses.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.VolumeTextureAddressCaps">
+    <summary>Texture-addressing capabilities for a volume texture. This member can be one or more of the flags defined for the TextureAddressCaps member.</summary>
+  </member>
+  <member name="D3DCAPS9.LineCaps">
+    <summary>
+      <para>Defines the capabilities for line-drawing primitives.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DLINECAPS_ALPHACMP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Supports alpha-test comparisons.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DLINECAPS_ANTIALIAS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Antialiased lines are supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DLINECAPS_BLEND</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Supports source-blending.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DLINECAPS_FOG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Supports fog.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DLINECAPS_TEXTURE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Supports texture-mapping.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DLINECAPS_ZTEST</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Supports z-buffer comparisons.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.MaxTextureWidth">
+    <summary>Maximum texture width for this device.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxTextureHeight">
+    <summary>Maximum texture height for this device.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxVolumeExtent">
+    <summary>Maximum value for any of the three dimensions (width, height, and depth) of a volume texture.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxTextureRepeat">
+    <summary>
+      <para>This number represents the maximum range of the integer bits of the post-normalized texture coordinates. A texture coordinate is stored as a 32-bit signed integer using 27 bits to store the integer part and 5 bits for the floating point fraction. The maximum integer index, 2²⁷, is used to determine the maximum texture coordinate, depending on how the hardware does texture-coordinate scaling.</para>
+      <para>Some hardware reports the cap D3DPTEXTURECAPS_TEXREPEATNOTSCALEDBYSIZE. For this case, the device defers scaling texture coordinates by the texture size until after interpolation and application of the texture address mode, so the number of times a texture can be wrapped is given by the integer value in MaxTextureRepeat.</para>
+      <para>Less desirably, on some hardware D3DPTEXTURECAPS_TEXREPEATNOTSCALEDBYSIZE is not set and the device scales the texture coordinates by the texture size (using the highest level of detail) prior to interpolation. This limits the number of times a texture can be wrapped to MaxTextureRepeat / texture size.</para>
+      <para>For example, assume that MaxTextureRepeat is equal to 32k and the size of the texture is 4k. If the hardware sets D3DPTEXTURECAPS_TEXREPEATNOTSCALEDBYSIZE, then the number of times a texture can be wrapped is equal to MaxTextureRepeat, which is 32k in this example. Otherwise, the number of times a texture can be wrapped is equal to MaxTextureRepeat divided by texture size, which is 32k/4k in this example.</para>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.MaxTextureAspectRatio">
+    <summary>Maximum texture aspect ratio supported by the hardware, typically a power of 2.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxAnisotropy">
+    <summary>Maximum valid value for the D3DSAMP_MAXANISOTROPY texture-stage state.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxVertexW">
+    <summary>Maximum W-based depth value that the device supports.</summary>
+  </member>
+  <member name="D3DCAPS9.GuardBandLeft">
+    <summary>Screen-space coordinate of the guard-band clipping region. Coordinates inside this rectangle but outside the viewport rectangle are automatically clipped.</summary>
+  </member>
+  <member name="D3DCAPS9.GuardBandTop">
+    <summary>Screen-space coordinate of the guard-band clipping region. Coordinates inside this rectangle but outside the viewport rectangle are automatically clipped.</summary>
+  </member>
+  <member name="D3DCAPS9.GuardBandRight">
+    <summary>Screen-space coordinate of the guard-band clipping region. Coordinates inside this rectangle but outside the viewport rectangle are automatically clipped.</summary>
+  </member>
+  <member name="D3DCAPS9.GuardBandBottom">
+    <summary>Screen-space coordinate of the guard-band clipping region. Coordinates inside this rectangle but outside the viewport rectangle are automatically clipped.</summary>
+  </member>
+  <member name="D3DCAPS9.ExtentsAdjust">
+    <summary>Number of pixels to adjust the extents rectangle outward to accommodate antialiasing kernels.</summary>
+  </member>
+  <member name="D3DCAPS9.StencilCaps">
+    <summary>
+      <para>Flags specifying supported stencil-buffer operations. Stencil operations are assumed to be valid for all three stencil-buffer operation render states (D3DRS_STENCILFAIL, D3DRS_STENCILPASS, and D3DRS_STENCILZFAIL).</para>
+      <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dstencilcaps">D3DSTENCILCAPS</a>.</para>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.FVFCaps">
+    <summary>
+      <para>Flexible vertex format capabilities.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DFVFCAPS_DONOTSTRIPELEMENTS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>It is preferable that vertex elements not be stripped. That is, if the vertex format contains elements that are not used with the current render states, there is no need to regenerate the vertices. If this capability flag is not present, stripping extraneous elements from the vertex format provides better performance.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DFVFCAPS_PSIZE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Point size is determined by either the render state or the vertex data. If an FVF is used, point size can come from point size data in the vertex declaration. Otherwise, point size is determined by the render state D3DRS_POINTSIZE. If the application provides point size in both (the render state and the vertex declaration), the vertex data overrides the render-state data.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DFVFCAPS_TEXCOORDCOUNTMASK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Masks the low WORD of FVFCaps. These bits, cast to the WORD data type, describe the total number of texture coordinate sets that the device can simultaneously use for multiple texture blending. (You can use up to eight texture coordinate sets for any vertex, but the device can blend using only the specified number of texture coordinate sets.)</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.TextureOpCaps">
+    <summary>
+      <para>Combination of flags describing the texture operations supported by this device. The following flags are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_ADD</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_ADD texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_ADDSIGNED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_ADDSIGNED texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_ADDSIGNED2X</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_ADDSIGNED2X texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_ADDSMOOTH</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_ADDSMOOTH texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_BLENDCURRENTALPHA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_BLENDCURRENTALPHA texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_BLENDDIFFUSEALPHA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_BLENDDIFFUSEALPHA texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_BLENDFACTORALPHA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_BLENDFACTORALPHA texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_BLENDTEXTUREALPHA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_BLENDTEXTUREALPHA texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_BLENDTEXTUREALPHAPM</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_BLENDTEXTUREALPHAPM texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_BUMPENVMAP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_BUMPENVMAP texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_BUMPENVMAPLUMINANCE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_BUMPENVMAPLUMINANCE texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_DISABLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_DISABLE texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_DOTPRODUCT3</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_DOTPRODUCT3 texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_LERP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_LERP texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_MODULATE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_MODULATE texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_MODULATE2X</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_MODULATE2X texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_MODULATE4X</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_MODULATE4X texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_MODULATEALPHA_ADDCOLOR</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_MODULATEALPHA_ADDCOLOR texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_MODULATECOLOR_ADDALPHA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_MODULATECOLOR_ADDALPHA texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_MODULATEINVALPHA_ADDCOLOR</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_MODULATEINVALPHA_ADDCOLOR texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_MODULATEINVCOLOR_ADDALPHA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_MODULATEINVCOLOR_ADDALPHA texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_MULTIPLYADD</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_MULTIPLYADD texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_PREMODULATE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_PREMODULATE texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_SELECTARG1</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_SELECTARG1 texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_SELECTARG2</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_SELECTARG2 texture-blending operation is supported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DTEXOPCAPS_SUBTRACT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The D3DTOP_SUBTRACT texture-blending operation is supported.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.MaxTextureBlendStages">
+    <summary>Maximum number of texture-blending stages supported in the fixed function pipeline. This value is the number of blenders available. In the programmable pixel pipeline, this corresponds to the number of unique texture registers used by pixel shader instructions.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxSimultaneousTextures">
+    <summary>
+      <para>Maximum number of textures that can be simultaneously bound to the fixed-function pipeline sampler stages. If the same texture is bound to two sampler stages, it counts as two textures.</para>
+      <para>This value has no meaning in the programmable pipeline where the number of sampler stages is determined by each pixel shader version. Each pixel shader version also determines the number of texture declaration instructions. See <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx9-graphics-reference-asm-ps">Pixel Shaders</a>.</para>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.VertexProcessingCaps">
+    <summary>Vertex processing capabilities. For a given physical device, this capability might vary across Direct3D devices depending on the parameters supplied to <see cref="CreateDevice" />. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dvtxpcaps">D3DVTXPCAPS</a>.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxActiveLights">
+    <summary>Maximum number of lights that can be active simultaneously. For a given physical device, this capability might vary across Direct3D devices depending on the parameters supplied to <see cref="CreateDevice" />.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxUserClipPlanes">
+    <summary>Maximum number of user-defined clipping planes supported. This member can be 0. For a given physical device, this capability may vary across Direct3D devices depending on the parameters supplied to <see cref="CreateDevice" />.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxVertexBlendMatrices">
+    <summary>Maximum number of matrices that this device can apply when performing multimatrix vertex blending. For a given physical device, this capability may vary across Direct3D devices depending on the parameters supplied to <see cref="CreateDevice" />.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxVertexBlendMatrixIndex">
+    <summary>
+      <para>DWORD value that specifies the maximum matrix index that can be indexed into using the per-vertex indices. The number of matrices is MaxVertexBlendMatrixIndex + 1, which is the size of the matrix palette. If normals are present in the vertex data that needs to be blended for lighting, then the number of matrices is half the number specified by this capability flag. If MaxVertexBlendMatrixIndex is set to zero, the driver does not support indexed vertex blending. If this value is not zero then the valid range of indices is zero through MaxVertexBlendMatrixIndex.</para>
+      <para>A zero value for MaxVertexBlendMatrixIndex indicates that the driver does not support indexed matrices.</para>
+      <para>When software vertex processing is used, 256 matrices could be used for indexed vertex blending, with or without normal blending.</para>
+      <para>For a given physical device, this capability may vary across Direct3D devices depending on the parameters supplied to <see cref="CreateDevice" />.</para>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.MaxPointSize">
+    <summary>Maximum size of a point primitive. If set to 1.0f then device does not support point size control. The range is greater than or equal to 1.0f.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxPrimitiveCount">
+    <summary>
+      <para>Maximum number of primitives for each <see cref="DrawPrimitive" /> call. There are two cases:</para>
+      <list type="bullet">
+        <item>
+          <description>If MaxPrimitiveCount is not equal to 0xffff, you can draw at most MaxPrimitiveCount primitives with each draw call.</description>
+        </item>
+        <item>
+          <description>However, if MaxPrimitiveCount equals 0xffff, you can still draw at most MaxPrimitiveCount primitive, but you may also use no more than MaxPrimitiveCount unique vertices (since each primitive can potentially use three different vertices).</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.MaxVertexIndex">
+    <summary>Maximum size of indices supported for hardware vertex processing. It is possible to create 32-bit index buffers; however, you will not be able to render with the index buffer unless this value is greater than 0x0000FFFF.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxStreams">
+    <summary>Maximum number of concurrent data streams for <see cref="SetStreamSource" />. The valid range is 1 to 16. Note that if this value is 0, then the driver is not a Direct3D 9 driver.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxStreamStride">
+    <summary>Maximum stride for <see cref="SetStreamSource" />.</summary>
+  </member>
+  <member name="D3DCAPS9.VertexShaderVersion">
+    <summary>Two numbers that represent the vertex shader main and sub versions. For more information about the instructions supported for each vertex shader version, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx9-graphics-reference-asm-vs-instructions-vs-1-1">Version 1_x</a>, <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx9-graphics-reference-asm-vs-instructions-vs-2-0">Version 2_0</a>, <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx9-graphics-reference-asm-vs-instructions-vs-2-x">Version 2_0 Extended</a>, or <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx9-graphics-reference-asm-vs-instructions-vs-3-0">Version 3_0</a>.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxVertexShaderConst">
+    <summary>The number of vertex shader <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx9-graphics-reference-asm-vs-registers">Vertex Shader Registers</a> that are reserved for constants.</summary>
+  </member>
+  <member name="D3DCAPS9.PixelShaderVersion">
+    <summary>Two numbers that represent the pixel shader main and sub versions. For more information about the instructions supported for each pixel shader version, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx9-graphics-reference-asm-ps-instructions-ps-1-x">Version 1_x</a>, <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx9-graphics-reference-asm-ps-instructions-ps-2-0">Version 2_0</a>, <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx9-graphics-reference-asm-ps-instructions-ps-2-x">Version 2_0 Extended</a>, or <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx9-graphics-reference-asm-ps-instructions-ps-3-0">Version 3_0</a>.</summary>
+  </member>
+  <member name="D3DCAPS9.PixelShader1xMaxValue">
+    <summary>Maximum value of pixel shader arithmetic component. This value indicates the internal range of values supported for pixel color blending operations. Within the range that they report to, implementations must allow data to pass through pixel processing unmodified (unclamped). Normally, the value of this member is an absolute value. For example, a 1.0 indicates that the range is -1.0 to 1, and an 8.0 indicates that the range is -8.0 to 8.0. The value must be &gt;= 1.0 for any hardware that supports pixel shaders.</summary>
+  </member>
+  <member name="D3DCAPS9.DevCaps2">
+    <summary>Device driver capabilities for adaptive tessellation. For more information, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddevcaps2">D3DDEVCAPS2</a></summary>
+  </member>
+  <member name="D3DCAPS9.MaxNpatchTessellationLevel">
+    <summary>TBD</summary>
+  </member>
+  <member name="D3DCAPS9.Reserved5">
+    <summary>TBD</summary>
+  </member>
+  <member name="D3DCAPS9.MasterAdapterOrdinal">
+    <summary>
+      <para>This number indicates which device is the master for this subordinate. This number is taken from the same space as the adapter values.</para>
+      <para>For multihead support, one head will be denoted the master head, and all other heads on the same card will be denoted subordinate heads. If more than one multihead adapter is present in a system, the master and its subordinates from one multihead adapter are called a group.</para>
+    </summary>
+  </member>
+  <member name="D3DCAPS9.AdapterOrdinalInGroup">
+    <summary>This number indicates the order in which heads are referenced by the API. The value for the master adapter is always 0. These values do not correspond to the adapter ordinals. They apply only to heads within a group.</summary>
+  </member>
+  <member name="D3DCAPS9.NumberOfAdaptersInGroup">
+    <summary>Number of adapters in this adapter group (only if master). This will be 1 for conventional adapters. The value will be greater than 1 for the master adapter of a multihead card. The value will be 0 for a subordinate adapter of a multihead card. Each card can have at most one master, but may have many subordinates.</summary>
+  </member>
+  <member name="D3DCAPS9.DeclTypes">
+    <summary>A combination of one or more data types contained in a vertex declaration. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddtcaps">D3DDTCAPS</a>.</summary>
+  </member>
+  <member name="D3DCAPS9.NumSimultaneousRTs">
+    <summary>Number of simultaneous render targets. This number must be at least one.</summary>
+  </member>
+  <member name="D3DCAPS9.StretchRectFilterCaps">
+    <summary>
+      <para>Combination of constants that describe the operations supported by <see cref="StretchRect" />. The flags that may be set in this field are:</para>
+      <list type="table">
+        <listheader>
+          <description>Constant</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>D3DPTFILTERCAPS_MINFPOINT</description>
+          <description>Device supports point-sample filtering for minifying rectangles. This filter type is requested by calling <see cref="StretchRect" /> using D3DTEXF_POINT.</description>
+        </listheader>
+        <listheader>
+          <description>D3DPTFILTERCAPS_MAGFPOINT</description>
+          <description>Device supports point-sample filtering for magnifying rectangles. This filter type is requested by calling <see cref="StretchRect" /> using D3DTEXF_POINT.</description>
+        </listheader>
+        <listheader>
+          <description>D3DPTFILTERCAPS_MINFLINEAR</description>
+          <description>Device supports bilinear interpolation filtering for minifying rectangles. This filter type is requested by calling <see cref="StretchRect" /> using D3DTEXF_LINEAR.</description>
+        </listheader>
+        <listheader>
+          <description>D3DPTFILTERCAPS_MAGFLINEAR</description>
+          <description>Device supports bilinear interpolation filtering for magnifying rectangles. This filter type is requested by calling <see cref="StretchRect" /> using D3DTEXF_LINEAR.</description>
+        </listheader>
+      </list> <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dtexturefiltertype">D3DTEXTUREFILTERTYPE</a> and <b>D3DTEXTUREFILTERTYPE</b>.</para></summary>
+  </member>
+  <member name="D3DCAPS9.VS20Caps">
+    <summary>Device supports vertex shader version 2_0 extended capability. See <see cref="D3DVSHADERCAPS2_0" />.</summary>
+  </member>
+  <member name="D3DCAPS9.PS20Caps">
+    <summary>Device supports pixel shader version 2_0 extended capability. See <see cref="D3DPSHADERCAPS2_0" />.</summary>
+  </member>
+  <member name="D3DCAPS9.VertexTextureFilterCaps">
+    <summary>Device supports vertex shader texture filter capability. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dptfiltercaps">D3DPTFILTERCAPS</a>.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxVShaderInstructionsExecuted">
+    <summary>Maximum number of vertex shader instructions that can be run when using flow control. The maximum number of instructions that can be programmed is MaxVertexShader30InstructionSlots.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxPShaderInstructionsExecuted">
+    <summary>Maximum number of pixel shader instructions that can be run when using flow control. The maximum number of instructions that can be programmed is MaxPixelShader30InstructionSlots.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxVertexShader30InstructionSlots">
+    <summary>Maximum number of vertex shader instruction slots supported. The maximum value that can be set on this cap is 32768. Devices that support vs_3_0 are required to support at least 512 instruction slots.</summary>
+  </member>
+  <member name="D3DCAPS9.MaxPixelShader30InstructionSlots">
+    <summary>Maximum number of pixel shader instruction slots supported. The maximum value that can be set on this cap is 32768. Devices that support ps_3_0 are required to support at least 512 instruction slots.</summary>
+  </member>
+</doc>

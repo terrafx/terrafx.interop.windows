@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3D9Ex.CreateDeviceEx">
+    <summary>Creates a device to represent the display adapter.</summary>
+    <param name="Adapter">Ordinal number that denotes the display adapter. <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dadapter-default">D3DADAPTER_DEFAULT</a> is always the primary display adapter.</param>
+    <param name="DeviceType">Specifies the type of device. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddevtype">D3DDEVTYPE</a>. If the desired device type is not available, the method will fail.</param>
+    <param name="hFocusWindow">The focus window alerts Direct3D when an application switches from foreground mode to background mode. For full-screen mode, the window specified must be a top-level window. For windowed mode, this parameter may be <b>NULL</b> only if the hDeviceWindow member of pPresentationParameters is set to a valid, non-<b>NULL</b> value.</param>
+    <param name="BehaviorFlags">Combination of one or more options (see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dcreate">D3DCREATE</a>) that control device creation.</param>
+    <param name="pPresentationParameters">
+      <para>Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpresent-parameters">D3DPRESENT_PARAMETERS</a> structure, describing the presentation parameters for the device to be created. If <i>BehaviorFlags</i> specifies <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dcreate">D3DCREATE_ADAPTERGROUP_DEVICE</a>, this parameter is an array. Regardless of the number of heads that exist, only one depth/stencil surface is automatically created.</para>
+      <para>This parameter is both an input and an output parameter. Calling this method may change several members including:</para>
+      <list type="bullet">
+        <item>
+          <description>If BackBufferCount, BackBufferWidth, and BackBufferHeight are 0 before the method is called, they will be changed when the method returns.</description>
+        </item>
+        <item>
+          <description>If BackBufferFormat equals <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFMT_UNKNOWN</a> before the method is called, it will be changed when the method returns.</description>
+        </item>
+      </list>
+    </param>
+    <param name="pFullscreenDisplayMode">The display mode for when the device is set to fullscreen. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddisplaymodeex">D3DDISPLAYMODEEX</a>. If <i>BehaviorFlags</i> specifies <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dcreate">D3DCREATE_ADAPTERGROUP_DEVICE</a>, this parameter is an array. This parameter must be <b>NULL</b> for windowed mode.</param>
+    <param name="ppReturnedDeviceInterface">Address of a pointer to the returned <see cref="IDirect3DDevice9Ex" />, which represents the created device.</param>
+    <returns>This method returns S_OK when rendering device along with swapchain buffers are created successfully. D3DERR_DEVICELOST is returned when any error other than invalid caller input is encountered.</returns>
+  </member>
+  <member name="IDirect3D9Ex.EnumAdapterModesEx">
+    <summary>This method returns the actual display mode info based on the given mode index.</summary>
+    <param name="Adapter">Ordinal number denoting the display adapter to enumerate. D3DADAPTER_DEFAULT is always the primary display adapter. This method returns D3DERR_INVALIDCALL when this value equals or exceeds the number of display adapters in the system.</param>
+    <param name="pFilter">See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddisplaymodefilter">D3DDISPLAYMODEFILTER</a>.</param>
+    <param name="Mode">Represents the display-mode index which is an unsigned integer between zero and the value returned by GetAdapterModeCount minus one.</param>
+    <param name="pMode">A pointer to the available display mode of type <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddisplaymodeex">D3DDISPLAYMODEEX</a>.</param>
+    <returns>
+      <list type="bullet">
+        <item>
+          <description>If the device can be used on this adapter, D3D_OK is returned.</description>
+        </item>
+        <item>
+          <description>If the Adapter equals or exceeds the number of display adapters in the system, D3DERR_INVALIDCALL is returned.</description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IDirect3D9Ex.GetAdapterDisplayModeEx">
+    <summary>Retrieves the current display mode and rotation settings of the adapter.</summary>
+    <param name="Adapter">Ordinal number that denotes the display adapter to query. D3DADAPTER_DEFAULT is always the primary display adapter.</param>
+    <param name="pMode">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddisplaymodeex">D3DDISPLAYMODEEX</a> structure containing data about the display mode of the adapter. As opposed to the display mode of the device, which may not be active if the device does not own full-screen mode. Can be set to <b>NULL</b>.</param>
+    <param name="pRotation">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddisplayrotation">D3DDISPLAYROTATION</a> structure indicating the type of screen rotation the application will do. The value returned through this pointer is important when the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpresentflag">D3DPRESENTFLAG_NOAUTOROTATE</a> flag is used; otherwise, it can be set to <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, the return value is D3D_OK.</para>
+      <para>If <i>Adapter</i> is out of range or <i>pMode</i> is invalid, this method returns D3DERR_INVALIDCALL.</para>
+    </returns>
+  </member>
+  <member name="IDirect3D9Ex.GetAdapterLUID">
+    <summary>This method returns a unique identifier for the adapter that is specific to the adapter hardware. Applications can use this identifier to define robust mappings across various APIs (Direct3D 9, DXGI).</summary>
+    <param name="Adapter">Ordinal number denoting the display adapter from which to retrieve the LUID.</param>
+    <param name="pLUID">A unique identifier for the given adapter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDirect3D9Ex.GetAdapterModeCountEx">
+    <summary>Returns the number of display modes available.</summary>
+    <param name="Adapter">Ordinal number denoting the display adapter from which to retrieve the display mode count.</param>
+    <param name="pFilter">Specifies the characteristics of the desired display mode. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddisplaymodefilter">D3DDISPLAYMODEFILTER</a>.</param>
+    <returns>The number of display modes available. A return of value zero from this method is an indication that no such display mode is supported or simply this monitor is no longer available.</returns>
+  </member>
+  <member name="IDirect3D9Ex">
+    <summary>Applications use the methods of the <b>IDirect3D9Ex</b> interface (which inherits from <see cref="IDirect3D9" />) to create Microsoft Direct3D 9Ex objects and set up the environment. This interface includes methods for enumerating and retrieving capabilities of the device and is available when the underlying device implementation is compliant with Windows Vista.</summary>
+  </member>
+</doc>

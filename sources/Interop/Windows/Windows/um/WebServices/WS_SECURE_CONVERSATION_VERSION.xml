@@ -6,9 +6,9 @@
     <summary>Defines the WS-SecureConversation specification version to be used with message security and mixed-mode security.</summary>
   </member>
   <member name="WS_SECURE_CONVERSATION_VERSION.WS_SECURE_CONVERSATION_VERSION_FEBRUARY_2005">
-    <summary>WS-SecureConversation with the specification URI of http://schemas.xmlsoap.org/ws/2005/02/sc</summary>
+    <summary>WS-SecureConversation with the specification URI of <code>http://schemas.xmlsoap.org/ws/2005/02/sc</code>.</summary>
   </member>
   <member name="WS_SECURE_CONVERSATION_VERSION.WS_SECURE_CONVERSATION_VERSION_1_3">
-    <summary>WS-SecureConversation 1.3 with the specification URI of http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512</summary>
+    <summary>WS-SecureConversation 1.3 with the specification URI of <code>http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512</code>.</summary>
   </member>
 </doc>

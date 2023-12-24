@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1Factory8.CreateDevice">
+    <summary>Creates a new Direct2D device from the given <b>IDXGIDevice</b>.</summary>
+    <param name="dxgiDevice">The IDXGIDevice from which to create the Direct2D device.</param>
+    <param name="d2dDevice6">The created device.</param>
+  </member>
+  <member name="ID2D1Factory8">
+    <summary>
+      <para>Creates Direct2D resources. This interface also enables the creation of <see cref="ID2D1Device7" /> objects.</para>
+      <para>The <b>ID2D1Factory8</b> interface derives from <see cref="ID2D1Factory7" />.</para>
+    </summary>
+  </member>
+</doc>

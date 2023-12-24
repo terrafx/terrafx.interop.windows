@@ -870,6 +870,10 @@
       </list>
     </returns>
   </member>
+  <member name="Windows.GetDeveloperDriveEnablementState">
+    <summary>Gets a value indicating whether the developer drive is enabled.</summary>
+    <returns>Returns a <see cref="DEVELOPER_DRIVE_ENABLEMENT_STATE" /> value indicating the developer drive enablement state.</returns>
+  </member>
   <member name="Windows.GetIntegratedDisplaySize">
     <summary>Retrieves the best estimate of the diagonal size of the built-in screen, in inches.</summary>
     <param name="sizeInInches">The best estimate of the diagonal size of the built-in screen, in inches.</param>
@@ -2745,12 +2749,12 @@
       <para>Applications not manifested for Windows 8.1 or Windows 10 will return the Windows 8 OS version value (6.2). Once an application is manifested for a given operating system version, <b>GetVersionEx</b> will always return the version that the application is manifested for in future releases. To manifest your applications for Windows 8.1 or Windows 10, refer to <a href="https://docs.microsoft.com//windows/desktop/SysInfo/targeting-your-application-at-windows-8-1">Targeting your application for Windows</a>.</para>
     </summary>
     <param name="lpVersionInformation">
-      <para>An<see cref="OSVERSIONINFO" /> or <see cref="OSVERSIONINFOEX" /> structure that receives the operating system information.</para>
+      <para>An<see cref="OSVERSIONINFOA" /> or <see cref="OSVERSIONINFOEXA" /> structure that receives the operating system information.</para>
       <para>Before calling the<b>GetVersionEx</b> function, set the <b>dwOSVersionInfoSize</b> member of the structure as appropriate to indicate which data structure is being passed to this function.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is a nonzero value.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The function fails if you specify an invalid value for the <b>dwOSVersionInfoSize</b> member of the<see cref="OSVERSIONINFO" /> or<see cref="OSVERSIONINFOEX" /> structure.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The function fails if you specify an invalid value for the <b>dwOSVersionInfoSize</b> member of the<see cref="OSVERSIONINFOA" /> or<see cref="OSVERSIONINFOEXA" /> structure.</para>
     </returns>
   </member>
   <member name="Windows.GetVersionExA">
@@ -2761,12 +2765,12 @@
       <para>Applications not manifested for Windows 8.1 or Windows 10 will return the Windows 8 OS version value (6.2). Once an application is manifested for a given operating system version, <b>GetVersionEx</b> will always return the version that the application is manifested for in future releases. To manifest your applications for Windows 8.1 or Windows 10, refer to <a href="https://docs.microsoft.com//windows/desktop/SysInfo/targeting-your-application-at-windows-8-1">Targeting your application for Windows</a>.</para>
     </summary>
     <param name="lpVersionInformation">
-      <para>An<see cref="OSVERSIONINFO" /> or <see cref="OSVERSIONINFOEX" /> structure that receives the operating system information.</para>
+      <para>An<see cref="OSVERSIONINFOA" /> or <see cref="OSVERSIONINFOEXA" /> structure that receives the operating system information.</para>
       <para>Before calling the<b>GetVersionEx</b> function, set the <b>dwOSVersionInfoSize</b> member of the structure as appropriate to indicate which data structure is being passed to this function.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is a nonzero value.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The function fails if you specify an invalid value for the <b>dwOSVersionInfoSize</b> member of the<see cref="OSVERSIONINFO" /> or<see cref="OSVERSIONINFOEX" /> structure.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The function fails if you specify an invalid value for the <b>dwOSVersionInfoSize</b> member of the<see cref="OSVERSIONINFOA" /> or<see cref="OSVERSIONINFOEXA" /> structure.</para>
     </returns>
   </member>
   <member name="Windows.GetVersionExW">
@@ -2777,12 +2781,12 @@
       <para>Applications not manifested for Windows 8.1 or Windows 10 will return the Windows 8 OS version value (6.2). Once an application is manifested for a given operating system version, <b>GetVersionEx</b> will always return the version that the application is manifested for in future releases. To manifest your applications for Windows 8.1 or Windows 10, refer to <a href="https://docs.microsoft.com//windows/desktop/SysInfo/targeting-your-application-at-windows-8-1">Targeting your application for Windows</a>.</para>
     </summary>
     <param name="lpVersionInformation">
-      <para>An<see cref="OSVERSIONINFO" /> or <see cref="OSVERSIONINFOEX" /> structure that receives the operating system information.</para>
+      <para>An<see cref="OSVERSIONINFOA" /> or <see cref="OSVERSIONINFOEXA" /> structure that receives the operating system information.</para>
       <para>Before calling the<b>GetVersionEx</b> function, set the <b>dwOSVersionInfoSize</b> member of the structure as appropriate to indicate which data structure is being passed to this function.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is a nonzero value.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The function fails if you specify an invalid value for the <b>dwOSVersionInfoSize</b> member of the<see cref="OSVERSIONINFO" /> or<see cref="OSVERSIONINFOEX" /> structure.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />. The function fails if you specify an invalid value for the <b>dwOSVersionInfoSize</b> member of the<see cref="OSVERSIONINFOA" /> or<see cref="OSVERSIONINFOEXA" /> structure.</para>
     </returns>
   </member>
   <member name="Windows.GetWindowsDirectory">

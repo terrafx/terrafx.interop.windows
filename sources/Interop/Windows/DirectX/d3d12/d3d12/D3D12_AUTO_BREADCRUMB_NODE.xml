@@ -30,7 +30,7 @@
     <summary>A <b>UINT32</b> containing the count of <see cref="D3D12_AUTO_BREADCRUMB_OP" /> values in the array pointed to by <code>pCommandHistory</code>.</summary>
   </member>
   <member name="D3D12_AUTO_BREADCRUMB_NODE.pLastBreadcrumbValue">
-    <summary>A pointer to a constant <b>UINT32</b> containing the index (within the array pointed to by <code>pCommandHistory</code>) of the last render/compute operation that was completed by the GPU while executing the associated command list.</summary>
+    <summary>A pointer to a constant <b>UINT32</b> containing the number of <i>pCommandHistory</i> breadcrumbs ops completed. As such, the last successfully completed breadcrumb op is at index <code>(*pLastBreadcrumbValue - 1)</code> in <i>pCommandHistory</i>.</summary>
   </member>
   <member name="D3D12_AUTO_BREADCRUMB_NODE.pCommandHistory">
     <summary>A pointer to a constant array of <see cref="D3D12_AUTO_BREADCRUMB_OP" /> values representing all of the render/compute operations recorded into the associated command list.</summary>

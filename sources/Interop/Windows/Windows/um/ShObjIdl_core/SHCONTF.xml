@@ -36,7 +36,7 @@
     <summary>0x02000. <b>Windows Vista and later</b>. The calling application is looking for resources that can be enumerated quickly.</summary>
   </member>
   <member name="SHCONTF.SHCONTF_FLATLIST">
-    <summary>0x04000. <b>Windows Vista and later</b>. Enumerate items as a simple list even if the folder itself is not structured in that way.</summary>
+    <summary>0x04000. <b>Windows Vista and later</b>. Obsolete. Do not use.</summary>
   </member>
   <member name="SHCONTF.SHCONTF_ENABLE_ASYNC">
     <summary>0x08000. <b>Windows Vista and later</b>. The calling application is monitoring for change notifications. This means that the enumerator does not have to return all results. Items can be reported through change notifications.</summary>

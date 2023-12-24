@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DirectX.Direct3DCreate9">
+    <summary>Create an IDirect3D9 object and return an interface to it.</summary>
+    <param name="SDKVersion">The value of this parameter should be D3D_SDK_VERSION. See Remarks.</param>
+    <returns>If successful, this function returns a pointer to an <see cref="IDirect3D9" /> interface; otherwise, a <b>NULL</b> pointer is returned.</returns>
+  </member>
+  <member name="DirectX.Direct3DCreate9Ex">
+    <summary>Creates an <see cref="IDirect3D9Ex" /> object and returns an interface to it.</summary>
+    <param name="SDKVersion">The value of this parameter should be <b>D3D_SDK_VERSION</b>. See Remarks.</param>
+    <param name="unnamedParam2">Address of a pointer to an <see cref="IDirect3D9Ex" /> interface, representing the created <b>IDirect3D9Ex</b> object. If the function fails, <b>NULL</b> is inserted here.</param>
+    <returns>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>D3DERR_NOTAVAILABLE</b> if Direct3DEx features are not supported (no WDDM driver is installed) or if the <b>SDKVersion</b> does not match the version of the DLL.</description>
+        </item>
+        <item>
+          <description>
+            <b>D3DERR_OUTOFMEMORY</b> if out-of-memory conditions are detected when creating the enumerator object.</description>
+        </item>
+        <item>
+          <description>
+            <b>S_OK</b> if the creation of the enumerator object is successful.</description>
+        </item>
+      </list>
+    </returns>
+  </member>
+</doc>

@@ -9447,8 +9447,8 @@
     <param name="yHotSpot">The vertical position of the cursor's hot spot.</param>
     <param name="nWidth">The width of the cursor, in pixels.</param>
     <param name="nHeight">The height of the cursor, in pixels.</param>
-    <param name="pvANDPlane">An array of bytes that contains the bit values for the AND mask of the cursor, as in a <a href="https://docs.microsoft.com//windows/win32/gdi/device-dependent-bitmaps">device-dependent</a> monochrome bitmap.</param>
-    <param name="pvXORPlane">An array of bytes that contains the bit values for the XOR mask of the cursor, as in a <a href="https://docs.microsoft.com//windows/win32/gdi/device-dependent-bitmaps">device-dependent</a> monochrome bitmap.</param>
+    <param name="pvANDPlane">An array of bytes that contains the bit values for the AND mask of the cursor, as in a monochrome bitmap. See remarks.</param>
+    <param name="pvXORPlane">An array of bytes that contains the bit values for the XOR mask of the cursor, as in a monochrome bitmap. See remarks.</param>
     <returns>
       <para>If the function succeeds, the return value is a handle to the cursor.</para>
       <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call <see cref="GetLastError" />.</para>
@@ -10282,12 +10282,12 @@
       <para>To create a colored icon at run time you can use the <see cref="CreateIconIndirect" /> function, which creates a icon based on the content of an <see cref="ICONINFO" /> structure.</para>
     </summary>
     <param name="hInstance">A handle to the instance of the module creating the icon.</param>
-    <param name="nWidth">The width, in pixels, of the icon.</param>
-    <param name="nHeight">The height, in pixels, of the icon.</param>
-    <param name="cPlanes">The number of planes in the XOR bitmask of the icon.</param>
+    <param name="nWidth">The width, in pixels, of the icon. See remarks.</param>
+    <param name="nHeight">The height, in pixels, of the icon. See remarks.</param>
+    <param name="cPlanes">The number of planes in the XOR bitmask of the icon. See remarks.</param>
     <param name="cBitsPixel">The number of bits-per-pixel in the XOR bitmask of the icon.</param>
-    <param name="lpbANDbits">An array of bytes that contains the bit values for the AND bitmask of the icon. This bitmask describes a monochrome bitmap.</param>
-    <param name="lpbXORbits">An array of bytes that contains the bit values for the XOR bitmask of the icon. This bitmask describes a monochrome or device-dependent color bitmap.</param>
+    <param name="lpbANDbits">An array of bytes that contains the bit values for the AND bitmask of the icon. This bitmask describes a monochrome bitmap. See remarks.</param>
+    <param name="lpbXORbits">An array of bytes that contains the bit values for the XOR bitmask of the icon. This bitmask describes a monochrome or color bitmap. See remarks.</param>
     <returns>
       <para>If the function succeeds, the return value is a handle to an icon.</para>
       <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call <see cref="GetLastError" />.</para>
@@ -10316,7 +10316,7 @@
   <member name="Windows.CreateIconFromResourceEx">
     <summary>Creates an icon or cursor from resource bits describing the icon.</summary>
     <param name="presbits">
-      <para>The DWORD-aligned buffer pointer containing the icon or cursor resource bits. These bits are typically loaded by calls to the <see cref="LookupIconIdFromDirectoryEx" /> and <see cref="LoadResource" /> functions.</para>
+      <para>The DWORD-aligned buffer pointer containing the icon (<b>RT_ICON</b>) or cursor (<b>RT_CURSOR</b>) resource bits. These bits are typically loaded by calls to the <see cref="LookupIconIdFromDirectoryEx" /> and <see cref="LoadResource" /> functions.</para>
       <para>See <a href="https://docs.microsoft.com//windows/win32/menurc/resource-file-formats#cursor-and-icon-resources">Cursor and Icon Resources</a> for more info on icon and cursor resource format.</para>
     </param>
     <param name="dwResSize">The size, in bytes, of the set of bits pointed to by the <i>pbIconBits</i> parameter.</param>
@@ -10324,7 +10324,7 @@
       <para>Indicates whether an icon or a cursor is to be created. If this parameter is <b>TRUE</b>, an icon is to be created. If it is <b>FALSE</b>, a cursor is to be created.</para>
       <para>The <a href="https://docs.microsoft.com//windows/win32/menurc/localheader">LOCALHEADER</a> structure defines cursor hotspot and is the first data read from the cursor resource bits.</para>
     </param>
-    <param name="dwVer">The version number of the icon or cursor format for the resource bits pointed to by the <i>pbIconBits</i> parameter. The value must be greater than or equal to 0x00020000 and less than or equal to 0x00030000. This parameter is generally set to 0x00030000.</param>
+    <param name="dwVer">The version number of the icon or cursor format for the resource bits pointed to by the <i>presbits</i> parameter. The value must be greater than or equal to 0x00020000 and less than or equal to 0x00030000. This parameter is generally set to 0x00030000.</param>
     <param name="cxDesired">The width, in pixels, of the icon or cursor. If this parameter is zero and the <i>Flags</i> parameter is <b>LR_DEFAULTSIZE</b>, the function uses the <b>SM_CXICON</b> or <b>SM_CXCURSOR</b> system metric value to set the width. If this parameter is zero and <b>LR_DEFAULTSIZE</b> is not used, the function uses the actual resource width.</param>
     <param name="cyDesired">The height, in pixels, of the icon or cursor. If this parameter is zero and the <i>Flags</i> parameter is <b>LR_DEFAULTSIZE</b>, the function uses the <b>SM_CYICON</b> or <b>SM_CYCURSOR</b> system metric value to set the height. If this parameter is zero and <b>LR_DEFAULTSIZE</b> is not used, the function uses the actual resource height.</param>
     <param name="Flags">
@@ -10362,7 +10362,7 @@
               </listheader>
             </list>
           </description>
-          <description>Uses the width or height specified by the system metric values for cursors or icons, if the <i>cxDesired</i> or <i>cyDesired</i> values are set to zero. If this flag is not specified and <i>cxDesired</i> and <i>cyDesired</i> are set to zero, the function uses the actual resource size. If the resource contains multiple images, the function uses the size of the first image.</description>
+          <description>Uses the width or height specified by the system metric values for cursors or icons, if the <i>cxDesired</i> or <i>cyDesired</i> values are set to zero. If this flag is not specified and <i>cxDesired</i> and <i>cyDesired</i> are set to zero, the function uses the actual resource size.</description>
         </listheader>
         <listheader>
           <description>
@@ -10392,7 +10392,7 @@
               </listheader>
             </list>
           </description>
-          <description>Shares the icon or cursor handle if the icon or cursor is created multiple times. If <b>LR_SHARED</b> is not set, a second call to <b>CreateIconFromResourceEx</b> for the same resource will create the icon or cursor again and return a different handle.<para>When you use this flag, the system will destroy the resource when it is no longer needed.</para><para>Do not use <b>LR_SHARED</b> for icons or cursors that have non-standard sizes, that may change after loading, or that are loaded from a file.</para><para>When loading a system icon or cursor, you must use <b>LR_SHARED</b> or the function will fail to load the resource.</para></description>
+          <description>Shares the icon or cursor handle if the icon or cursor is created multiple times. If <b>LR_SHARED</b> is not set, a second call to <b>CreateIconFromResourceEx</b> for the same resource will create the icon or cursor again and return a different handle.<para>When you use this flag, the system will destroy the resource when it is no longer needed.</para><para>Do not use <b>LR_SHARED</b> for icons or cursors that have non-standard sizes, that may change after loading, or that are loaded from a file.</para></description>
         </listheader>
       </list>
     </param>
@@ -15428,7 +15428,7 @@
       </list>
     </param>
     <returns>
-      <para>If the function succeeds, the return value is the height of the text in logical units. If DT_VCENTER or DT_BOTTOM is specified, the return value is the offset from <code>lpRect-&gt;top</code> to the bottom of the drawn text</para>
+      <para>If the function succeeds, the return value is the height of the text in logical units. If DT_VCENTER or DT_BOTTOM is specified, the return value is the offset from <code>lpRect-&gt;top</code> to the bottom of the drawn text.</para>
       <para>If the function fails, the return value is zero.</para>
     </returns>
   </member>
@@ -15742,7 +15742,7 @@
       </list>
     </param>
     <returns>
-      <para>If the function succeeds, the return value is the height of the text in logical units. If DT_VCENTER or DT_BOTTOM is specified, the return value is the offset from <code>lpRect-&gt;top</code> to the bottom of the drawn text</para>
+      <para>If the function succeeds, the return value is the height of the text in logical units. If DT_VCENTER or DT_BOTTOM is specified, the return value is the offset from <code>lpRect-&gt;top</code> to the bottom of the drawn text.</para>
       <para>If the function fails, the return value is zero.</para>
     </returns>
   </member>
@@ -16056,7 +16056,7 @@
       </list>
     </param>
     <returns>
-      <para>If the function succeeds, the return value is the height of the text in logical units. If DT_VCENTER or DT_BOTTOM is specified, the return value is the offset from <code>lpRect-&gt;top</code> to the bottom of the drawn text</para>
+      <para>If the function succeeds, the return value is the height of the text in logical units. If DT_VCENTER or DT_BOTTOM is specified, the return value is the offset from <code>lpRect-&gt;top</code> to the bottom of the drawn text.</para>
       <para>If the function fails, the return value is zero.</para>
     </returns>
   </member>
@@ -16067,10 +16067,10 @@
     </summary>
     <param name="hdc">A handle to the device context.</param>
     <param name="lpchText">
-      <para>A pointer to the string that specifies the text to be drawn. If the <i>nCount</i> parameter is -1, the string must be null-terminated.</para>
+      <para>A pointer to the string that specifies the text to be drawn. If the <i>cchText</i> parameter is -1, the string must be null-terminated.</para>
       <para>If <i>uFormat</i> includes DT_MODIFYSTRING, the function could add up to four additional characters to this string. The buffer containing the string should be large enough to accommodate these extra characters.</para>
     </param>
-    <param name="cchText">The length, in characters, of the string. If <i>nCount</i> is -1, then the <i>lpchText</i> parameter is assumed to be a pointer to a null-terminated string and <b>DrawText</b> computes the character count automatically.</param>
+    <param name="cchText">The length, in characters, of the string. If <i>cchText</i> is -1, then the <i>lpchText</i> parameter is assumed to be a pointer to a null-terminated string and <b>DrawText</b> computes the character count automatically.</param>
     <param name="lprc">A pointer to a <see cref="RECT" /> structure that contains the rectangle (in logical coordinates) in which the text is to be formatted.</param>
     <param name="format">
       <para>The method of formatting the text. This parameter can be one or more of the following values.</para>
@@ -16381,10 +16381,10 @@
     </summary>
     <param name="hdc">A handle to the device context.</param>
     <param name="lpchText">
-      <para>A pointer to the string that specifies the text to be drawn. If the <i>nCount</i> parameter is -1, the string must be null-terminated.</para>
+      <para>A pointer to the string that specifies the text to be drawn. If the <i>cchText</i> parameter is -1, the string must be null-terminated.</para>
       <para>If <i>uFormat</i> includes DT_MODIFYSTRING, the function could add up to four additional characters to this string. The buffer containing the string should be large enough to accommodate these extra characters.</para>
     </param>
-    <param name="cchText">The length, in characters, of the string. If <i>nCount</i> is -1, then the <i>lpchText</i> parameter is assumed to be a pointer to a null-terminated string and <b>DrawText</b> computes the character count automatically.</param>
+    <param name="cchText">The length, in characters, of the string. If <i>cchText</i> is -1, then the <i>lpchText</i> parameter is assumed to be a pointer to a null-terminated string and <b>DrawText</b> computes the character count automatically.</param>
     <param name="lprc">A pointer to a <see cref="RECT" /> structure that contains the rectangle (in logical coordinates) in which the text is to be formatted.</param>
     <param name="format">
       <para>The method of formatting the text. This parameter can be one or more of the following values.</para>
@@ -16695,10 +16695,10 @@
     </summary>
     <param name="hdc">A handle to the device context.</param>
     <param name="lpchText">
-      <para>A pointer to the string that specifies the text to be drawn. If the <i>nCount</i> parameter is -1, the string must be null-terminated.</para>
+      <para>A pointer to the string that specifies the text to be drawn. If the <i>cchText</i> parameter is -1, the string must be null-terminated.</para>
       <para>If <i>uFormat</i> includes DT_MODIFYSTRING, the function could add up to four additional characters to this string. The buffer containing the string should be large enough to accommodate these extra characters.</para>
     </param>
-    <param name="cchText">The length, in characters, of the string. If <i>nCount</i> is -1, then the <i>lpchText</i> parameter is assumed to be a pointer to a null-terminated string and <b>DrawText</b> computes the character count automatically.</param>
+    <param name="cchText">The length, in characters, of the string. If <i>cchText</i> is -1, then the <i>lpchText</i> parameter is assumed to be a pointer to a null-terminated string and <b>DrawText</b> computes the character count automatically.</param>
     <param name="lprc">A pointer to a <see cref="RECT" /> structure that contains the rectangle (in logical coordinates) in which the text is to be formatted.</param>
     <param name="format">
       <para>The method of formatting the text. This parameter can be one or more of the following values.</para>
@@ -18246,7 +18246,7 @@
     </param>
     <param name="lpdtp">A pointer to a <see cref="DRAWTEXTPARAMS" /> structure that specifies additional formatting options. This parameter can be <b>NULL</b>.</param>
     <returns>
-      <para>If the function succeeds, the return value is the text height in logical units. If DT_VCENTER or DT_BOTTOM is specified, the return value is the offset from <code>lprc-&gt;top</code> to the bottom of the drawn text</para>
+      <para>If the function succeeds, the return value is the text height in logical units. If DT_VCENTER or DT_BOTTOM is specified, the return value is the offset from <code>lprc-&gt;top</code> to the bottom of the drawn text.</para>
       <para>If the function fails, the return value is zero.</para>
     </returns>
   </member>
@@ -18558,7 +18558,7 @@
     </param>
     <param name="lpdtp">A pointer to a <see cref="DRAWTEXTPARAMS" /> structure that specifies additional formatting options. This parameter can be <b>NULL</b>.</param>
     <returns>
-      <para>If the function succeeds, the return value is the text height in logical units. If DT_VCENTER or DT_BOTTOM is specified, the return value is the offset from <code>lprc-&gt;top</code> to the bottom of the drawn text</para>
+      <para>If the function succeeds, the return value is the text height in logical units. If DT_VCENTER or DT_BOTTOM is specified, the return value is the offset from <code>lprc-&gt;top</code> to the bottom of the drawn text.</para>
       <para>If the function fails, the return value is zero.</para>
     </returns>
   </member>
@@ -18870,7 +18870,7 @@
     </param>
     <param name="lpdtp">A pointer to a <see cref="DRAWTEXTPARAMS" /> structure that specifies additional formatting options. This parameter can be <b>NULL</b>.</param>
     <returns>
-      <para>If the function succeeds, the return value is the text height in logical units. If DT_VCENTER or DT_BOTTOM is specified, the return value is the offset from <code>lprc-&gt;top</code> to the bottom of the drawn text</para>
+      <para>If the function succeeds, the return value is the text height in logical units. If DT_VCENTER or DT_BOTTOM is specified, the return value is the offset from <code>lprc-&gt;top</code> to the bottom of the drawn text.</para>
       <para>If the function fails, the return value is zero.</para>
     </returns>
   </member>
@@ -25640,6 +25640,36 @@
     <returns>
       <b>TRUE</b> indicates success, <b>FALSE</b> indicates failure.</returns>
   </member>
+  <member name="Windows.GetIconInfoEx">
+    <summary>Retrieves information about the specified icon or cursor. <b>GetIconInfoEx</b> extends <see cref="GetIconInfo" /> by using the newer <see cref="ICONINFOEX" /> structure.</summary>
+    <param name="hicon">
+      <para>A handle to the icon or cursor.</para>
+      <para>To retrieve information about a standard icon or cursor, specify the <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">identifier beginning with the IDI_ prefix</a> or the <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">identifier beginning with the IDC_ prefix</a> in this parameter.</para>
+    </param>
+    <param name="piconinfo">When this method returns, contains a pointer to an <see cref="ICONINFOEX" /> structure. The function fills in the structure's members.</param>
+    <returns>
+      <b>TRUE</b> indicates success, <b>FALSE</b> indicates failure.</returns>
+  </member>
+  <member name="Windows.GetIconInfoExA">
+    <summary>Retrieves information about the specified icon or cursor. <b>GetIconInfoEx</b> extends <see cref="GetIconInfo" /> by using the newer <see cref="ICONINFOEX" /> structure.</summary>
+    <param name="hicon">
+      <para>A handle to the icon or cursor.</para>
+      <para>To retrieve information about a standard icon or cursor, specify the <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">identifier beginning with the IDI_ prefix</a> or the <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">identifier beginning with the IDC_ prefix</a> in this parameter.</para>
+    </param>
+    <param name="piconinfo">When this method returns, contains a pointer to an <see cref="ICONINFOEX" /> structure. The function fills in the structure's members.</param>
+    <returns>
+      <b>TRUE</b> indicates success, <b>FALSE</b> indicates failure.</returns>
+  </member>
+  <member name="Windows.GetIconInfoExW">
+    <summary>Retrieves information about the specified icon or cursor. <b>GetIconInfoEx</b> extends <see cref="GetIconInfo" /> by using the newer <see cref="ICONINFOEX" /> structure.</summary>
+    <param name="hicon">
+      <para>A handle to the icon or cursor.</para>
+      <para>To retrieve information about a standard icon or cursor, specify the <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">identifier beginning with the IDI_ prefix</a> or the <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">identifier beginning with the IDC_ prefix</a> in this parameter.</para>
+    </param>
+    <param name="piconinfo">When this method returns, contains a pointer to an <see cref="ICONINFOEX" /> structure. The function fills in the structure's members.</param>
+    <returns>
+      <b>TRUE</b> indicates success, <b>FALSE</b> indicates failure.</returns>
+  </member>
   <member name="Windows.GetInputState">
     <summary>Determines whether there are mouse-button or keyboard messages in the calling thread's message queue.</summary>
     <returns>
@@ -25670,7 +25700,7 @@
     </returns>
   </member>
   <member name="Windows.GetKeyboardLayoutName">
-    <summary>Retrieves the name of the active input locale identifier (formerly called the keyboard layout) for the system.</summary>
+    <summary>Retrieves the name of the active input locale identifier (formerly called the keyboard layout) for the calling thread.</summary>
     <param name="pwszKLID">
       <para>The buffer (of at least <b>KL_NAMELENGTH</b> characters in length) that receives the name of the input locale identifier, including the terminating null character. This will be a copy of the string provided to the <see cref="LoadKeyboardLayout" /> function, unless layout substitution took place.</para>
       <para>For a list of the input layouts that are supplied with Windows, see <a href="https://docs.microsoft.com//windows-hardware/manufacture/desktop/windows-language-pack-default-values">Keyboard Identifiers and Input Method Editors for Windows</a>.</para>
@@ -25681,7 +25711,7 @@
     </returns>
   </member>
   <member name="Windows.GetKeyboardLayoutNameA">
-    <summary>Retrieves the name of the active input locale identifier (formerly called the keyboard layout) for the system.</summary>
+    <summary>Retrieves the name of the active input locale identifier (formerly called the keyboard layout) for the calling thread.</summary>
     <param name="pwszKLID">
       <para>The buffer (of at least <b>KL_NAMELENGTH</b> characters in length) that receives the name of the input locale identifier, including the terminating null character. This will be a copy of the string provided to the <see cref="LoadKeyboardLayout" /> function, unless layout substitution took place.</para>
       <para>For a list of the input layouts that are supplied with Windows, see <a href="https://docs.microsoft.com//windows-hardware/manufacture/desktop/windows-language-pack-default-values">Keyboard Identifiers and Input Method Editors for Windows</a>.</para>
@@ -25692,7 +25722,7 @@
     </returns>
   </member>
   <member name="Windows.GetKeyboardLayoutNameW">
-    <summary>Retrieves the name of the active input locale identifier (formerly called the keyboard layout) for the system.</summary>
+    <summary>Retrieves the name of the active input locale identifier (formerly called the keyboard layout) for the calling thread.</summary>
     <param name="pwszKLID">
       <para>The buffer (of at least <b>KL_NAMELENGTH</b> characters in length) that receives the name of the input locale identifier, including the terminating null character. This will be a copy of the string provided to the <see cref="LoadKeyboardLayout" /> function, unless layout substitution took place.</para>
       <para>For a list of the input layouts that are supplied with Windows, see <a href="https://docs.microsoft.com//windows-hardware/manufacture/desktop/windows-language-pack-default-values">Keyboard Identifiers and Input Method Editors for Windows</a>.</para>
@@ -25703,7 +25733,7 @@
     </returns>
   </member>
   <member name="Windows.GetKeyboardLayoutName">
-    <summary>Retrieves the name of the active input locale identifier (formerly called the keyboard layout) for the system.</summary>
+    <summary>Retrieves the name of the active input locale identifier (formerly called the keyboard layout) for the calling thread.</summary>
     <param name="pwszKLID">
       <para>The buffer (of at least <b>KL_NAMELENGTH</b> characters in length) that receives the name of the input locale identifier, including the terminating null character. This will be a copy of the string provided to the <see cref="LoadKeyboardLayout" /> function, unless layout substitution took place.</para>
       <para>For a list of the input layouts that are supplied with Windows, see <a href="https://docs.microsoft.com//windows-hardware/manufacture/desktop/windows-language-pack-default-values">Keyboard Identifiers and Input Method Editors for Windows</a>.</para>
@@ -25714,7 +25744,7 @@
     </returns>
   </member>
   <member name="Windows.GetKeyboardLayoutNameA">
-    <summary>Retrieves the name of the active input locale identifier (formerly called the keyboard layout) for the system.</summary>
+    <summary>Retrieves the name of the active input locale identifier (formerly called the keyboard layout) for the calling thread.</summary>
     <param name="pwszKLID">
       <para>The buffer (of at least <b>KL_NAMELENGTH</b> characters in length) that receives the name of the input locale identifier, including the terminating null character. This will be a copy of the string provided to the <see cref="LoadKeyboardLayout" /> function, unless layout substitution took place.</para>
       <para>For a list of the input layouts that are supplied with Windows, see <a href="https://docs.microsoft.com//windows-hardware/manufacture/desktop/windows-language-pack-default-values">Keyboard Identifiers and Input Method Editors for Windows</a>.</para>
@@ -25725,7 +25755,7 @@
     </returns>
   </member>
   <member name="Windows.GetKeyboardLayoutNameW">
-    <summary>Retrieves the name of the active input locale identifier (formerly called the keyboard layout) for the system.</summary>
+    <summary>Retrieves the name of the active input locale identifier (formerly called the keyboard layout) for the calling thread.</summary>
     <param name="pwszKLID">
       <para>The buffer (of at least <b>KL_NAMELENGTH</b> characters in length) that receives the name of the input locale identifier, including the terminating null character. This will be a copy of the string provided to the <see cref="LoadKeyboardLayout" /> function, unless layout substitution took place.</para>
       <para>For a list of the input layouts that are supplied with Windows, see <a href="https://docs.microsoft.com//windows-hardware/manufacture/desktop/windows-language-pack-default-values">Keyboard Identifiers and Input Method Editors for Windows</a>.</para>
@@ -28819,7 +28849,7 @@
               </listheader>
             </list>
           </description>
-          <description>The width of the virtual screen, in pixels. The virtual screen is the bounding rectangle of all display monitors. The SM_XVIRTUALSCREEN metric is the coordinates for the left side of the virtual screen.</description>
+          <description>The width of the <a href="https://docs.microsoft.com//windows/win32/gdi/the-virtual-screen">virtual screen</a>, in pixels. The virtual screen is the bounding rectangle of all display monitors. The SM_XVIRTUALSCREEN metric is the coordinates for the left side of the virtual screen.</description>
         </listheader>
         <listheader>
           <description>
@@ -29299,7 +29329,7 @@
               </listheader>
             </list>
           </description>
-          <description>The height of the virtual screen, in pixels. The virtual screen is the bounding rectangle of all display monitors. The SM_YVIRTUALSCREEN metric is the coordinates for the top of the virtual screen.</description>
+          <description>The height of the <a href="https://docs.microsoft.com//windows/win32/gdi/the-virtual-screen">virtual screen</a>, in pixels. The virtual screen is the bounding rectangle of all display monitors. The SM_YVIRTUALSCREEN metric is the coordinates for the top of the virtual screen.</description>
         </listheader>
         <listheader>
           <description>
@@ -29719,7 +29749,7 @@
               </listheader>
             </list>
           </description>
-          <description>The coordinates for the left side of the virtual screen. The virtual screen is the bounding rectangle of all display monitors. The SM_CXVIRTUALSCREEN metric is the width of the virtual screen.</description>
+          <description>The coordinates for the left side of the <a href="https://docs.microsoft.com//windows/win32/gdi/the-virtual-screen">virtual screen</a>. The virtual screen is the bounding rectangle of all display monitors. The SM_CXVIRTUALSCREEN metric is the width of the virtual screen.</description>
         </listheader>
         <listheader>
           <description>
@@ -29734,7 +29764,7 @@
               </listheader>
             </list>
           </description>
-          <description>The coordinates for the top of the virtual screen. The virtual screen is the bounding rectangle of all display monitors. The SM_CYVIRTUALSCREEN metric is the height of the virtual screen.</description>
+          <description>The coordinates for the top of the <a href="https://docs.microsoft.com//windows/win32/gdi/the-virtual-screen">virtual screen</a>. The virtual screen is the bounding rectangle of all display monitors. The SM_CYVIRTUALSCREEN metric is the height of the virtual screen.</description>
         </listheader>
       </list>
     </param>
@@ -32565,7 +32595,7 @@
     <param name="lParam">The value to be converted.</param>
   </member>
   <member name="Windows.GET_DEVICE_LPARAM">
-    <summary>Retrieves the input device type from the specified<b>LPARAM</b> value.</summary>
+    <summary>Retrieves the input device type from the specified <b>LPARAM</b> value.</summary>
     <param name="lParam">The value to be converted.</param>
   </member>
   <member name="Windows.GET_FLAGS_LPARAM">
@@ -34277,16 +34307,16 @@
   </member>
   <member name="Windows.LoadCursor">
     <summary>
-      <para>Loads the specified cursor resource from the executable (.exe) file associated with an application instance.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set.</blockquote>
+      <para>Loads the specified cursor resource from the executable (.EXE) file associated with an application instance.</para>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set).</blockquote>
     </summary>
     <param name="hInstance">
       <para>A handle to the module of either a DLL or executable (.exe) file that contains the cursor to be loaded. For more information, see <see cref="GetModuleHandle" />.</para>
       <para>To load a predefined system cursor, set this parameter to <b>NULL</b>.</para>
     </param>
     <param name="lpCursorName">
-      <para>If <i>hInstance</i> is non-<b>NULL</b>, <i>lpIconName</i> specifies the cursor resource either by name or ordinal. This ordinal must be packaged by using the <see cref="MAKEINTRESOURCE" /> macro.</para>
-      <para>If <i>hInstance</i> is <b>NULL</b>, <i>lpIconName</i> specifies the <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">identifier (beginning with the IDC_ prefix)</a> of a predefined system cursor to load.</para>
+      <para>If <i>hInstance</i> is non-<b>NULL</b>, <i>lpCursorName</i> specifies the cursor resource either by name or ordinal. This ordinal must be packaged by using the <see cref="MAKEINTRESOURCE" /> macro.</para>
+      <para>If <i>hInstance</i> is <b>NULL</b>, <i>lpCursorName</i> specifies the <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">identifier (beginning with the IDC_ prefix)</a> of a predefined system cursor to load.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is the handle to the newly loaded cursor.</para>
@@ -34295,16 +34325,16 @@
   </member>
   <member name="Windows.LoadCursorA">
     <summary>
-      <para>Loads the specified cursor resource from the executable (.exe) file associated with an application instance.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set.</blockquote>
+      <para>Loads the specified cursor resource from the executable (.EXE) file associated with an application instance.</para>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set).</blockquote>
     </summary>
     <param name="hInstance">
       <para>A handle to the module of either a DLL or executable (.exe) file that contains the cursor to be loaded. For more information, see <see cref="GetModuleHandle" />.</para>
       <para>To load a predefined system cursor, set this parameter to <b>NULL</b>.</para>
     </param>
     <param name="lpCursorName">
-      <para>If <i>hInstance</i> is non-<b>NULL</b>, <i>lpIconName</i> specifies the cursor resource either by name or ordinal. This ordinal must be packaged by using the <see cref="MAKEINTRESOURCE" /> macro.</para>
-      <para>If <i>hInstance</i> is <b>NULL</b>, <i>lpIconName</i> specifies the <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">identifier (beginning with the IDC_ prefix)</a> of a predefined system cursor to load.</para>
+      <para>If <i>hInstance</i> is non-<b>NULL</b>, <i>lpCursorName</i> specifies the cursor resource either by name or ordinal. This ordinal must be packaged by using the <see cref="MAKEINTRESOURCE" /> macro.</para>
+      <para>If <i>hInstance</i> is <b>NULL</b>, <i>lpCursorName</i> specifies the <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">identifier (beginning with the IDC_ prefix)</a> of a predefined system cursor to load.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is the handle to the newly loaded cursor.</para>
@@ -34313,16 +34343,16 @@
   </member>
   <member name="Windows.LoadCursorW">
     <summary>
-      <para>Loads the specified cursor resource from the executable (.exe) file associated with an application instance.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set.</blockquote>
+      <para>Loads the specified cursor resource from the executable (.EXE) file associated with an application instance.</para>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set).</blockquote>
     </summary>
     <param name="hInstance">
       <para>A handle to the module of either a DLL or executable (.exe) file that contains the cursor to be loaded. For more information, see <see cref="GetModuleHandle" />.</para>
       <para>To load a predefined system cursor, set this parameter to <b>NULL</b>.</para>
     </param>
     <param name="lpCursorName">
-      <para>If <i>hInstance</i> is non-<b>NULL</b>, <i>lpIconName</i> specifies the cursor resource either by name or ordinal. This ordinal must be packaged by using the <see cref="MAKEINTRESOURCE" /> macro.</para>
-      <para>If <i>hInstance</i> is <b>NULL</b>, <i>lpIconName</i> specifies the <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">identifier (beginning with the IDC_ prefix)</a> of a predefined system cursor to load.</para>
+      <para>If <i>hInstance</i> is non-<b>NULL</b>, <i>lpCursorName</i> specifies the cursor resource either by name or ordinal. This ordinal must be packaged by using the <see cref="MAKEINTRESOURCE" /> macro.</para>
+      <para>If <i>hInstance</i> is <b>NULL</b>, <i>lpCursorName</i> specifies the <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">identifier (beginning with the IDC_ prefix)</a> of a predefined system cursor to load.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is the handle to the newly loaded cursor.</para>
@@ -34332,7 +34362,7 @@
   <member name="Windows.LoadCursorFromFile">
     <summary>
       <para>Creates a cursor based on data contained in a file.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_LOADFROMFILE</b> flags set.</blockquote>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_LOADFROMFILE</b> flags set).</blockquote>
     </summary>
     <param name="lpFileName">
       <para>The source of the file data to be used to create the cursor. The data in the file must be in either .CUR or .ANI format.</para>
@@ -34364,7 +34394,7 @@
   <member name="Windows.LoadCursorFromFileA">
     <summary>
       <para>Creates a cursor based on data contained in a file.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_LOADFROMFILE</b> flags set.</blockquote>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_LOADFROMFILE</b> flags set).</blockquote>
     </summary>
     <param name="lpFileName">
       <para>The source of the file data to be used to create the cursor. The data in the file must be in either .CUR or .ANI format.</para>
@@ -34396,7 +34426,7 @@
   <member name="Windows.LoadCursorFromFileW">
     <summary>
       <para>Creates a cursor based on data contained in a file.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_LOADFROMFILE</b> flags set.</blockquote>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_LOADFROMFILE</b> flags set).</blockquote>
     </summary>
     <param name="lpFileName">
       <para>The source of the file data to be used to create the cursor. The data in the file must be in either .CUR or .ANI format.</para>
@@ -34428,7 +34458,7 @@
   <member name="Windows.LoadCursorFromFile">
     <summary>
       <para>Creates a cursor based on data contained in a file.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_LOADFROMFILE</b> flags set.</blockquote>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_LOADFROMFILE</b> flags set).</blockquote>
     </summary>
     <param name="lpFileName">
       <para>The source of the file data to be used to create the cursor. The data in the file must be in either .CUR or .ANI format.</para>
@@ -34460,7 +34490,7 @@
   <member name="Windows.LoadCursorFromFileA">
     <summary>
       <para>Creates a cursor based on data contained in a file.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_LOADFROMFILE</b> flags set.</blockquote>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_LOADFROMFILE</b> flags set).</blockquote>
     </summary>
     <param name="lpFileName">
       <para>The source of the file data to be used to create the cursor. The data in the file must be in either .CUR or .ANI format.</para>
@@ -34492,7 +34522,7 @@
   <member name="Windows.LoadCursorFromFileW">
     <summary>
       <para>Creates a cursor based on data contained in a file.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_LOADFROMFILE</b> flags set.</blockquote>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_LOADFROMFILE</b> flags set).</blockquote>
     </summary>
     <param name="lpFileName">
       <para>The source of the file data to be used to create the cursor. The data in the file must be in either .CUR or .ANI format.</para>
@@ -34524,15 +34554,15 @@
   <member name="Windows.LoadCursor">
     <summary>
       <para>Loads the specified cursor resource from the executable (.exe) file associated with an application instance.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set.</blockquote>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set).</blockquote>
     </summary>
     <param name="hInstance">
       <para>A handle to the module of either a DLL or executable (.exe) file that contains the cursor to be loaded. For more information, see <see cref="GetModuleHandle" />.</para>
       <para>To load a predefined system cursor, set this parameter to <b>NULL</b>.</para>
     </param>
     <param name="lpCursorName">
-      <para>If <i>hInstance</i> is non-<b>NULL</b>, <i>lpIconName</i> specifies the cursor resource either by name or ordinal. This ordinal must be packaged by using the <see cref="MAKEINTRESOURCE" /> macro.</para>
-      <para>If <i>hInstance</i> is <b>NULL</b>, <i>lpIconName</i> specifies the <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">identifier begin with the IDC_ prefix</a> of a predefined system cursor to load.</para>
+      <para>If <i>hInstance</i> is non-<b>NULL</b>, <i>lpCursorName</i> specifies the cursor resource either by name or ordinal. This ordinal must be packaged by using the <see cref="MAKEINTRESOURCE" /> macro.</para>
+      <para>If <i>hInstance</i> is <b>NULL</b>, <i>lpCursorName</i> specifies the identifier that begins with the <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">IDC_ prefix</a> of a predefined system cursor to load.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is the handle to the newly loaded cursor.</para>
@@ -34542,15 +34572,15 @@
   <member name="Windows.LoadCursorA">
     <summary>
       <para>Loads the specified cursor resource from the executable (.exe) file associated with an application instance.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set.</blockquote>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set).</blockquote>
     </summary>
     <param name="hInstance">
       <para>A handle to the module of either a DLL or executable (.exe) file that contains the cursor to be loaded. For more information, see <see cref="GetModuleHandle" />.</para>
       <para>To load a predefined system cursor, set this parameter to <b>NULL</b>.</para>
     </param>
     <param name="lpCursorName">
-      <para>If <i>hInstance</i> is non-<b>NULL</b>, <i>lpIconName</i> specifies the cursor resource either by name or ordinal. This ordinal must be packaged by using the <see cref="MAKEINTRESOURCE" /> macro.</para>
-      <para>If <i>hInstance</i> is <b>NULL</b>, <i>lpIconName</i> specifies the <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">identifier begin with the IDC_ prefix</a> of a predefined system cursor to load.</para>
+      <para>If <i>hInstance</i> is non-<b>NULL</b>, <i>lpCursorName</i> specifies the cursor resource either by name or ordinal. This ordinal must be packaged by using the <see cref="MAKEINTRESOURCE" /> macro.</para>
+      <para>If <i>hInstance</i> is <b>NULL</b>, <i>lpCursorName</i> specifies the identifier that begins with the <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">IDC_ prefix</a> of a predefined system cursor to load.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is the handle to the newly loaded cursor.</para>
@@ -34560,15 +34590,15 @@
   <member name="Windows.LoadCursorW">
     <summary>
       <para>Loads the specified cursor resource from the executable (.exe) file associated with an application instance.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set.</blockquote>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set).</blockquote>
     </summary>
     <param name="hInstance">
       <para>A handle to the module of either a DLL or executable (.exe) file that contains the cursor to be loaded. For more information, see <see cref="GetModuleHandle" />.</para>
       <para>To load a predefined system cursor, set this parameter to <b>NULL</b>.</para>
     </param>
     <param name="lpCursorName">
-      <para>If <i>hInstance</i> is non-<b>NULL</b>, <i>lpIconName</i> specifies the cursor resource either by name or ordinal. This ordinal must be packaged by using the <see cref="MAKEINTRESOURCE" /> macro.</para>
-      <para>If <i>hInstance</i> is <b>NULL</b>, <i>lpIconName</i> specifies the <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">identifier begin with the IDC_ prefix</a> of a predefined system cursor to load.</para>
+      <para>If <i>hInstance</i> is non-<b>NULL</b>, <i>lpCursorName</i> specifies the cursor resource either by name or ordinal. This ordinal must be packaged by using the <see cref="MAKEINTRESOURCE" /> macro.</para>
+      <para>If <i>hInstance</i> is <b>NULL</b>, <i>lpCursorName</i> specifies the identifier that begins with the <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">IDC_ prefix</a> of a predefined system cursor to load.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is the handle to the newly loaded cursor.</para>
@@ -34578,7 +34608,7 @@
   <member name="Windows.LoadIcon">
     <summary>
       <para>Loads the specified icon resource from the executable (.exe) file associated with an application instance.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set.</blockquote>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set).</blockquote>
     </summary>
     <param name="hInstance">
       <para>A handle to the module of either a DLL or executable (.exe) file that contains the icon to be loaded. For more information, see <see cref="GetModuleHandle" />.</para>
@@ -34596,7 +34626,7 @@
   <member name="Windows.LoadIconA">
     <summary>
       <para>Loads the specified icon resource from the executable (.exe) file associated with an application instance.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set.</blockquote>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set).</blockquote>
     </summary>
     <param name="hInstance">
       <para>A handle to the module of either a DLL or executable (.exe) file that contains the icon to be loaded. For more information, see <see cref="GetModuleHandle" />.</para>
@@ -34614,7 +34644,7 @@
   <member name="Windows.LoadIconW">
     <summary>
       <para>Loads the specified icon resource from the executable (.exe) file associated with an application instance.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set.</blockquote>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set).</blockquote>
     </summary>
     <param name="hInstance">
       <para>A handle to the module of either a DLL or executable (.exe) file that contains the icon to be loaded. For more information, see <see cref="GetModuleHandle" />.</para>
@@ -34632,7 +34662,7 @@
   <member name="Windows.LoadIcon">
     <summary>
       <para>Loads the specified icon resource from the executable (.exe) file associated with an application instance.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set.</blockquote>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set).</blockquote>
     </summary>
     <param name="hInstance">
       <para>A handle to the module of either a DLL or executable (.exe) file that contains the icon to be loaded. For more information, see <see cref="GetModuleHandle" />.</para>
@@ -34650,7 +34680,7 @@
   <member name="Windows.LoadIconA">
     <summary>
       <para>Loads the specified icon resource from the executable (.exe) file associated with an application instance.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set.</blockquote>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set).</blockquote>
     </summary>
     <param name="hInstance">
       <para>A handle to the module of either a DLL or executable (.exe) file that contains the icon to be loaded. For more information, see <see cref="GetModuleHandle" />.</para>
@@ -34668,7 +34698,7 @@
   <member name="Windows.LoadIconW">
     <summary>
       <para>Loads the specified icon resource from the executable (.exe) file associated with an application instance.</para>
-      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set.</blockquote>
+      <blockquote>[!NOTE] This function has been superseded by the <see cref="LoadImage" /> function (with <b>LR_DEFAULTSIZE</b> and <b>LR_SHARED</b> flags set).</blockquote>
     </summary>
     <param name="hInstance">
       <para>A handle to the module of either a DLL or executable (.exe) file that contains the icon to be loaded. For more information, see <see cref="GetModuleHandle" />.</para>
@@ -34691,13 +34721,15 @@
     </param>
     <param name="name">
       <para>The image to be loaded.</para>
-      <para>If the <i>hinst</i> parameter is non-<b>NULL</b> and the <i>fuLoad</i> parameter omits <b>LR_LOADFROMFILE</b>, <i>lpszName</i> specifies the image resource in the <i>hinst</i> module.</para>
-      <para>If the image resource is to be loaded by name from the module, the <i>lpszName</i> parameter is a pointer to a null-terminated string that contains the name of the image resource.</para>
+      <para>If the <i>hInst</i> parameter is non-<b>NULL</b> and the <i>fuLoad</i> parameter omits <b>LR_LOADFROMFILE</b>, <i>name</i> specifies the image resource in the <i>hInst</i> module.</para>
+      <para>If the image resource is to be loaded by name from the module, the <i>name</i> parameter is a pointer to a null-terminated string that contains the name of the image resource.</para>
       <para>If the image resource is to be loaded by ordinal from the module, use the <see cref="MAKEINTRESOURCE" /> macro to convert the image ordinal into a form that can be passed to the <b>LoadImage</b> function.</para>
+      <para>If the <i>hInst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter omits the <b>LR_LOADFROMFILE</b> value, the <i>name</i> specifies the predefined image to load.</para>
+      <para>The predefined image identifiers are defined in <code>Winuser.h</code> and have the following prefixes:</para>
+      <para>| Prefix | Meaning | |---|---| | <b>OBM_</b> | OEM bitmaps. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>OIC_</b> | OEM icons. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>OCR_</b> | OEM cursors. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>IDI_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">Standard icons</a> | | <b>IDC_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">Standard cursors</a> |</para>
+      <para>To pass OEM image identifiers constants to the <b>LoadImage</b> function, use the <see cref="MAKEINTRESOURCE" /> macro. For example, to load the <b>OCR_NORMAL</b> cursor, pass <code>MAKEINTRESOURCE(OCR_NORMAL)</code> as the <i>name</i> parameter, <b>NULL</b> as the <i>hInst</i> parameter, and <b>LR_SHARED</b> as one of the flags to the <i>fuLoad</i> parameter.</para>
+      <para>If the <i>hInst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter includes the <b>LR_LOADFROMFILE</b> value, <i>name</i> is the name of the file that contains the standalone resource (icon, cursor, or bitmap file), - for example, <code>c:\myicon.ico</code>.</para>
       <para>For more information, see the Remarks section below.</para>
-      <para>If the <i>hinst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter omits the <b>LR_LOADFROMFILE</b> value, the <i>lpszName</i> specifies the predefined image to load. The predefined image identifiers are defined in <code>Winuser.h</code> and have the following prefixes:</para>
-      <para>| Prefix | Meaning | |---|---| | <b>OBM_</b> | OEM bitmaps | | <b>OIC_</b> | OEM icons | | <b>OCR_</b> | OEM cursors | | <b>IDI_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">Standard icons</a> | | <b>IDC_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">Standard cursors</a> |   To pass OEM image identifiers constants to the <b>LoadImage</b> function, use the <see cref="MAKEINTRESOURCE" /> macro. For example, to load the <b>OCR_NORMAL</b> cursor, pass <code>MAKEINTRESOURCE(OCR_NORMAL)</code> as the <i>lpszName</i> parameter, <b>NULL</b> as the <i>hinst</i> parameter, and <b>LR_SHARED</b> as one of the flags to the <i>fuLoad</i> parameter.</para>
-      <para>If the <i>hinst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter includes the <b>LR_LOADFROMFILE</b> value, <i>lpszName</i> is the name of the file that contains the standalone resource (icon, cursor, or bitmap file), - for example, <code>c:\myicon.ico</code>.</para>
     </param>
     <param name="type">
       <para>The type of image to be loaded.</para>
@@ -34771,7 +34803,7 @@
               </listheader>
             </list>
           </description>
-          <description>Loads the standalone image from the file specified by <i>lpszName</i> (icon, cursor, or bitmap file).</description>
+          <description>Loads the standalone image from the file specified by <i>name</i> (icon, cursor, or bitmap file).</description>
         </listheader>
         <listheader>
           <description>
@@ -34863,13 +34895,15 @@
     </param>
     <param name="name">
       <para>The image to be loaded.</para>
-      <para>If the <i>hinst</i> parameter is non-<b>NULL</b> and the <i>fuLoad</i> parameter omits <b>LR_LOADFROMFILE</b>, <i>lpszName</i> specifies the image resource in the <i>hinst</i> module.</para>
-      <para>If the image resource is to be loaded by name from the module, the <i>lpszName</i> parameter is a pointer to a null-terminated string that contains the name of the image resource.</para>
+      <para>If the <i>hInst</i> parameter is non-<b>NULL</b> and the <i>fuLoad</i> parameter omits <b>LR_LOADFROMFILE</b>, <i>name</i> specifies the image resource in the <i>hInst</i> module.</para>
+      <para>If the image resource is to be loaded by name from the module, the <i>name</i> parameter is a pointer to a null-terminated string that contains the name of the image resource.</para>
       <para>If the image resource is to be loaded by ordinal from the module, use the <see cref="MAKEINTRESOURCE" /> macro to convert the image ordinal into a form that can be passed to the <b>LoadImage</b> function.</para>
+      <para>If the <i>hInst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter omits the <b>LR_LOADFROMFILE</b> value, the <i>name</i> specifies the predefined image to load.</para>
+      <para>The predefined image identifiers are defined in <code>Winuser.h</code> and have the following prefixes:</para>
+      <para>| Prefix | Meaning | |---|---| | <b>OBM_</b> | OEM bitmaps. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>OIC_</b> | OEM icons. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>OCR_</b> | OEM cursors. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>IDI_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">Standard icons</a> | | <b>IDC_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">Standard cursors</a> |</para>
+      <para>To pass OEM image identifiers constants to the <b>LoadImage</b> function, use the <see cref="MAKEINTRESOURCE" /> macro. For example, to load the <b>OCR_NORMAL</b> cursor, pass <code>MAKEINTRESOURCE(OCR_NORMAL)</code> as the <i>name</i> parameter, <b>NULL</b> as the <i>hInst</i> parameter, and <b>LR_SHARED</b> as one of the flags to the <i>fuLoad</i> parameter.</para>
+      <para>If the <i>hInst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter includes the <b>LR_LOADFROMFILE</b> value, <i>name</i> is the name of the file that contains the standalone resource (icon, cursor, or bitmap file), - for example, <code>c:\myicon.ico</code>.</para>
       <para>For more information, see the Remarks section below.</para>
-      <para>If the <i>hinst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter omits the <b>LR_LOADFROMFILE</b> value, the <i>lpszName</i> specifies the predefined image to load. The predefined image identifiers are defined in <code>Winuser.h</code> and have the following prefixes:</para>
-      <para>| Prefix | Meaning | |---|---| | <b>OBM_</b> | OEM bitmaps | | <b>OIC_</b> | OEM icons | | <b>OCR_</b> | OEM cursors | | <b>IDI_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">Standard icons</a> | | <b>IDC_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">Standard cursors</a> |   To pass OEM image identifiers constants to the <b>LoadImage</b> function, use the <see cref="MAKEINTRESOURCE" /> macro. For example, to load the <b>OCR_NORMAL</b> cursor, pass <code>MAKEINTRESOURCE(OCR_NORMAL)</code> as the <i>lpszName</i> parameter, <b>NULL</b> as the <i>hinst</i> parameter, and <b>LR_SHARED</b> as one of the flags to the <i>fuLoad</i> parameter.</para>
-      <para>If the <i>hinst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter includes the <b>LR_LOADFROMFILE</b> value, <i>lpszName</i> is the name of the file that contains the standalone resource (icon, cursor, or bitmap file), - for example, <code>c:\myicon.ico</code>.</para>
     </param>
     <param name="type">
       <para>The type of image to be loaded.</para>
@@ -34943,7 +34977,7 @@
               </listheader>
             </list>
           </description>
-          <description>Loads the standalone image from the file specified by <i>lpszName</i> (icon, cursor, or bitmap file).</description>
+          <description>Loads the standalone image from the file specified by <i>name</i> (icon, cursor, or bitmap file).</description>
         </listheader>
         <listheader>
           <description>
@@ -35035,13 +35069,15 @@
     </param>
     <param name="name">
       <para>The image to be loaded.</para>
-      <para>If the <i>hinst</i> parameter is non-<b>NULL</b> and the <i>fuLoad</i> parameter omits <b>LR_LOADFROMFILE</b>, <i>lpszName</i> specifies the image resource in the <i>hinst</i> module.</para>
-      <para>If the image resource is to be loaded by name from the module, the <i>lpszName</i> parameter is a pointer to a null-terminated string that contains the name of the image resource.</para>
+      <para>If the <i>hInst</i> parameter is non-<b>NULL</b> and the <i>fuLoad</i> parameter omits <b>LR_LOADFROMFILE</b>, <i>name</i> specifies the image resource in the <i>hInst</i> module.</para>
+      <para>If the image resource is to be loaded by name from the module, the <i>name</i> parameter is a pointer to a null-terminated string that contains the name of the image resource.</para>
       <para>If the image resource is to be loaded by ordinal from the module, use the <see cref="MAKEINTRESOURCE" /> macro to convert the image ordinal into a form that can be passed to the <b>LoadImage</b> function.</para>
+      <para>If the <i>hInst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter omits the <b>LR_LOADFROMFILE</b> value, the <i>name</i> specifies the predefined image to load.</para>
+      <para>The predefined image identifiers are defined in <code>Winuser.h</code> and have the following prefixes:</para>
+      <para>| Prefix | Meaning | |---|---| | <b>OBM_</b> | OEM bitmaps. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>OIC_</b> | OEM icons. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>OCR_</b> | OEM cursors. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>IDI_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">Standard icons</a> | | <b>IDC_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">Standard cursors</a> |</para>
+      <para>To pass OEM image identifiers constants to the <b>LoadImage</b> function, use the <see cref="MAKEINTRESOURCE" /> macro. For example, to load the <b>OCR_NORMAL</b> cursor, pass <code>MAKEINTRESOURCE(OCR_NORMAL)</code> as the <i>name</i> parameter, <b>NULL</b> as the <i>hInst</i> parameter, and <b>LR_SHARED</b> as one of the flags to the <i>fuLoad</i> parameter.</para>
+      <para>If the <i>hInst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter includes the <b>LR_LOADFROMFILE</b> value, <i>name</i> is the name of the file that contains the standalone resource (icon, cursor, or bitmap file), - for example, <code>c:\myicon.ico</code>.</para>
       <para>For more information, see the Remarks section below.</para>
-      <para>If the <i>hinst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter omits the <b>LR_LOADFROMFILE</b> value, the <i>lpszName</i> specifies the predefined image to load. The predefined image identifiers are defined in <code>Winuser.h</code> and have the following prefixes:</para>
-      <para>| Prefix | Meaning | |---|---| | <b>OBM_</b> | OEM bitmaps | | <b>OIC_</b> | OEM icons | | <b>OCR_</b> | OEM cursors | | <b>IDI_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">Standard icons</a> | | <b>IDC_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">Standard cursors</a> |   To pass OEM image identifiers constants to the <b>LoadImage</b> function, use the <see cref="MAKEINTRESOURCE" /> macro. For example, to load the <b>OCR_NORMAL</b> cursor, pass <code>MAKEINTRESOURCE(OCR_NORMAL)</code> as the <i>lpszName</i> parameter, <b>NULL</b> as the <i>hinst</i> parameter, and <b>LR_SHARED</b> as one of the flags to the <i>fuLoad</i> parameter.</para>
-      <para>If the <i>hinst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter includes the <b>LR_LOADFROMFILE</b> value, <i>lpszName</i> is the name of the file that contains the standalone resource (icon, cursor, or bitmap file), - for example, <code>c:\myicon.ico</code>.</para>
     </param>
     <param name="type">
       <para>The type of image to be loaded.</para>
@@ -35115,7 +35151,7 @@
               </listheader>
             </list>
           </description>
-          <description>Loads the standalone image from the file specified by <i>lpszName</i> (icon, cursor, or bitmap file).</description>
+          <description>Loads the standalone image from the file specified by <i>name</i> (icon, cursor, or bitmap file).</description>
         </listheader>
         <listheader>
           <description>
@@ -35207,13 +35243,15 @@
     </param>
     <param name="name">
       <para>The image to be loaded.</para>
-      <para>If the <i>hinst</i> parameter is non-<b>NULL</b> and the <i>fuLoad</i> parameter omits <b>LR_LOADFROMFILE</b>, <i>lpszName</i> specifies the image resource in the <i>hinst</i> module.</para>
-      <para>If the image resource is to be loaded by name from the module, the <i>lpszName</i> parameter is a pointer to a null-terminated string that contains the name of the image resource.</para>
+      <para>If the <i>hInst</i> parameter is non-<b>NULL</b> and the <i>fuLoad</i> parameter omits <b>LR_LOADFROMFILE</b>, <i>name</i> specifies the image resource in the <i>hInst</i> module.</para>
+      <para>If the image resource is to be loaded by name from the module, the <i>name</i> parameter is a pointer to a null-terminated string that contains the name of the image resource.</para>
       <para>If the image resource is to be loaded by ordinal from the module, use the <see cref="MAKEINTRESOURCE" /> macro to convert the image ordinal into a form that can be passed to the <b>LoadImage</b> function.</para>
+      <para>If the <i>hInst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter omits the <b>LR_LOADFROMFILE</b> value, the <i>name</i> specifies the predefined image to load.</para>
+      <para>The predefined image identifiers are defined in <code>Winuser.h</code> and have the following prefixes:</para>
+      <para>| Prefix | Meaning | |---|---| | <b>OBM_</b> | OEM bitmaps. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>OIC_</b> | OEM icons. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>OCR_</b> | OEM cursors. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>IDI_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">Standard icons</a> | | <b>IDC_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">Standard cursors</a> |</para>
+      <para>To pass OEM image identifiers constants to the <b>LoadImage</b> function, use the <see cref="MAKEINTRESOURCE" /> macro. For example, to load the <b>OCR_NORMAL</b> cursor, pass <code>MAKEINTRESOURCE(OCR_NORMAL)</code> as the <i>name</i> parameter, <b>NULL</b> as the <i>hInst</i> parameter, and <b>LR_SHARED</b> as one of the flags to the <i>fuLoad</i> parameter.</para>
+      <para>If the <i>hInst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter includes the <b>LR_LOADFROMFILE</b> value, <i>name</i> is the name of the file that contains the standalone resource (icon, cursor, or bitmap file), - for example, <code>c:\myicon.ico</code>.</para>
       <para>For more information, see the Remarks section below.</para>
-      <para>If the <i>hinst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter omits the <b>LR_LOADFROMFILE</b> value, the <i>lpszName</i> specifies the predefined image to load. The predefined image identifiers are defined in <code>Winuser.h</code> and have the following prefixes:</para>
-      <para>| Prefix | Meaning | |---|---| | <b>OBM_</b> | OEM bitmaps | | <b>OIC_</b> | OEM icons | | <b>OCR_</b> | OEM cursors | | <b>IDI_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">Standard icons</a> | | <b>IDC_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">Standard cursors</a> |   To pass OEM image identifiers constants to the <b>LoadImage</b> function, use the <see cref="MAKEINTRESOURCE" /> macro. For example, to load the <b>OCR_NORMAL</b> cursor, pass <code>MAKEINTRESOURCE(OCR_NORMAL)</code> as the <i>lpszName</i> parameter, <b>NULL</b> as the <i>hinst</i> parameter, and <b>LR_SHARED</b> as one of the flags to the <i>fuLoad</i> parameter.</para>
-      <para>If the <i>hinst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter includes the <b>LR_LOADFROMFILE</b> value, <i>lpszName</i> is the name of the file that contains the standalone resource (icon, cursor, or bitmap file), - for example, <code>c:\myicon.ico</code>.</para>
     </param>
     <param name="type">
       <para>The type of image to be loaded.</para>
@@ -35287,7 +35325,7 @@
               </listheader>
             </list>
           </description>
-          <description>Loads the standalone image from the file specified by <i>lpszName</i> (icon, cursor, or bitmap file).</description>
+          <description>Loads the standalone image from the file specified by <i>name</i> (icon, cursor, or bitmap file).</description>
         </listheader>
         <listheader>
           <description>
@@ -35379,13 +35417,15 @@
     </param>
     <param name="name">
       <para>The image to be loaded.</para>
-      <para>If the <i>hinst</i> parameter is non-<b>NULL</b> and the <i>fuLoad</i> parameter omits <b>LR_LOADFROMFILE</b>, <i>lpszName</i> specifies the image resource in the <i>hinst</i> module.</para>
-      <para>If the image resource is to be loaded by name from the module, the <i>lpszName</i> parameter is a pointer to a null-terminated string that contains the name of the image resource.</para>
+      <para>If the <i>hInst</i> parameter is non-<b>NULL</b> and the <i>fuLoad</i> parameter omits <b>LR_LOADFROMFILE</b>, <i>name</i> specifies the image resource in the <i>hInst</i> module.</para>
+      <para>If the image resource is to be loaded by name from the module, the <i>name</i> parameter is a pointer to a null-terminated string that contains the name of the image resource.</para>
       <para>If the image resource is to be loaded by ordinal from the module, use the <see cref="MAKEINTRESOURCE" /> macro to convert the image ordinal into a form that can be passed to the <b>LoadImage</b> function.</para>
+      <para>If the <i>hInst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter omits the <b>LR_LOADFROMFILE</b> value, the <i>name</i> specifies the predefined image to load.</para>
+      <para>The predefined image identifiers are defined in <code>Winuser.h</code> and have the following prefixes:</para>
+      <para>| Prefix | Meaning | |---|---| | <b>OBM_</b> | OEM bitmaps. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>OIC_</b> | OEM icons. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>OCR_</b> | OEM cursors. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>IDI_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">Standard icons</a> | | <b>IDC_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">Standard cursors</a> |</para>
+      <para>To pass OEM image identifiers constants to the <b>LoadImage</b> function, use the <see cref="MAKEINTRESOURCE" /> macro. For example, to load the <b>OCR_NORMAL</b> cursor, pass <code>MAKEINTRESOURCE(OCR_NORMAL)</code> as the <i>name</i> parameter, <b>NULL</b> as the <i>hInst</i> parameter, and <b>LR_SHARED</b> as one of the flags to the <i>fuLoad</i> parameter.</para>
+      <para>If the <i>hInst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter includes the <b>LR_LOADFROMFILE</b> value, <i>name</i> is the name of the file that contains the standalone resource (icon, cursor, or bitmap file), - for example, <code>c:\myicon.ico</code>.</para>
       <para>For more information, see the Remarks section below.</para>
-      <para>If the <i>hinst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter omits the <b>LR_LOADFROMFILE</b> value, the <i>lpszName</i> specifies the predefined image to load. The predefined image identifiers are defined in <code>Winuser.h</code> and have the following prefixes:</para>
-      <para>| Prefix | Meaning | |---|---| | <b>OBM_</b> | OEM bitmaps | | <b>OIC_</b> | OEM icons | | <b>OCR_</b> | OEM cursors | | <b>IDI_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">Standard icons</a> | | <b>IDC_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">Standard cursors</a> |   To pass OEM image identifiers constants to the <b>LoadImage</b> function, use the <see cref="MAKEINTRESOURCE" /> macro. For example, to load the <b>OCR_NORMAL</b> cursor, pass <code>MAKEINTRESOURCE(OCR_NORMAL)</code> as the <i>lpszName</i> parameter, <b>NULL</b> as the <i>hinst</i> parameter, and <b>LR_SHARED</b> as one of the flags to the <i>fuLoad</i> parameter.</para>
-      <para>If the <i>hinst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter includes the <b>LR_LOADFROMFILE</b> value, <i>lpszName</i> is the name of the file that contains the standalone resource (icon, cursor, or bitmap file), - for example, <code>c:\myicon.ico</code>.</para>
     </param>
     <param name="type">
       <para>The type of image to be loaded.</para>
@@ -35459,7 +35499,7 @@
               </listheader>
             </list>
           </description>
-          <description>Loads the standalone image from the file specified by <i>lpszName</i> (icon, cursor, or bitmap file).</description>
+          <description>Loads the standalone image from the file specified by <i>name</i> (icon, cursor, or bitmap file).</description>
         </listheader>
         <listheader>
           <description>
@@ -35551,13 +35591,15 @@
     </param>
     <param name="name">
       <para>The image to be loaded.</para>
-      <para>If the <i>hinst</i> parameter is non-<b>NULL</b> and the <i>fuLoad</i> parameter omits <b>LR_LOADFROMFILE</b>, <i>lpszName</i> specifies the image resource in the <i>hinst</i> module.</para>
-      <para>If the image resource is to be loaded by name from the module, the <i>lpszName</i> parameter is a pointer to a null-terminated string that contains the name of the image resource.</para>
+      <para>If the <i>hInst</i> parameter is non-<b>NULL</b> and the <i>fuLoad</i> parameter omits <b>LR_LOADFROMFILE</b>, <i>name</i> specifies the image resource in the <i>hInst</i> module.</para>
+      <para>If the image resource is to be loaded by name from the module, the <i>name</i> parameter is a pointer to a null-terminated string that contains the name of the image resource.</para>
       <para>If the image resource is to be loaded by ordinal from the module, use the <see cref="MAKEINTRESOURCE" /> macro to convert the image ordinal into a form that can be passed to the <b>LoadImage</b> function.</para>
+      <para>If the <i>hInst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter omits the <b>LR_LOADFROMFILE</b> value, the <i>name</i> specifies the predefined image to load.</para>
+      <para>The predefined image identifiers are defined in <code>Winuser.h</code> and have the following prefixes:</para>
+      <para>| Prefix | Meaning | |---|---| | <b>OBM_</b> | OEM bitmaps. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>OIC_</b> | OEM icons. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>OCR_</b> | OEM cursors. Use the <see cref="MAKEINTRESOURCE" /> macro to pass these. | | <b>IDI_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">Standard icons</a> | | <b>IDC_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">Standard cursors</a> |</para>
+      <para>To pass OEM image identifiers constants to the <b>LoadImage</b> function, use the <see cref="MAKEINTRESOURCE" /> macro. For example, to load the <b>OCR_NORMAL</b> cursor, pass <code>MAKEINTRESOURCE(OCR_NORMAL)</code> as the <i>name</i> parameter, <b>NULL</b> as the <i>hInst</i> parameter, and <b>LR_SHARED</b> as one of the flags to the <i>fuLoad</i> parameter.</para>
+      <para>If the <i>hInst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter includes the <b>LR_LOADFROMFILE</b> value, <i>name</i> is the name of the file that contains the standalone resource (icon, cursor, or bitmap file), - for example, <code>c:\myicon.ico</code>.</para>
       <para>For more information, see the Remarks section below.</para>
-      <para>If the <i>hinst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter omits the <b>LR_LOADFROMFILE</b> value, the <i>lpszName</i> specifies the predefined image to load. The predefined image identifiers are defined in <code>Winuser.h</code> and have the following prefixes:</para>
-      <para>| Prefix | Meaning | |---|---| | <b>OBM_</b> | OEM bitmaps | | <b>OIC_</b> | OEM icons | | <b>OCR_</b> | OEM cursors | | <b>IDI_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">Standard icons</a> | | <b>IDC_</b> | <a href="https://docs.microsoft.com//windows/win32/menurc/about-cursors">Standard cursors</a> |   To pass OEM image identifiers constants to the <b>LoadImage</b> function, use the <see cref="MAKEINTRESOURCE" /> macro. For example, to load the <b>OCR_NORMAL</b> cursor, pass <code>MAKEINTRESOURCE(OCR_NORMAL)</code> as the <i>lpszName</i> parameter, <b>NULL</b> as the <i>hinst</i> parameter, and <b>LR_SHARED</b> as one of the flags to the <i>fuLoad</i> parameter.</para>
-      <para>If the <i>hinst</i> parameter is <b>NULL</b> and the <i>fuLoad</i> parameter includes the <b>LR_LOADFROMFILE</b> value, <i>lpszName</i> is the name of the file that contains the standalone resource (icon, cursor, or bitmap file), - for example, <code>c:\myicon.ico</code>.</para>
     </param>
     <param name="type">
       <para>The type of image to be loaded.</para>
@@ -35631,7 +35673,7 @@
               </listheader>
             </list>
           </description>
-          <description>Loads the standalone image from the file specified by <i>lpszName</i> (icon, cursor, or bitmap file).</description>
+          <description>Loads the standalone image from the file specified by <i>name</i> (icon, cursor, or bitmap file).</description>
         </listheader>
         <listheader>
           <description>
@@ -35764,7 +35806,7 @@
             </list>
           </description>
           <description>
-            <b>Prior to Windows 8:</b> Prevents a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644991(v=vs.85)">ShellProc</a> hook procedure from receiving an <b>HSHELL_LANGUAGE</b> hook code when the new input locale identifier is loaded. This value is typically used when an application loads multiple input locale identifiers one after another. Applying this value to all but the last input locale identifier delays the shell's processing until all input locale identifiers have been added.<para><b>Beginning in Windows 8:</b> In this scenario, the last input locale identifier is set for the entire system.</para></description>
+            <b>Prior to Windows 8:</b> Prevents a <a href="https://docs.microsoft.com//windows/win32/winmsg/shellproc">ShellProc</a> hook procedure from receiving an <b>HSHELL_LANGUAGE</b> hook code when the new input locale identifier is loaded. This value is typically used when an application loads multiple input locale identifiers one after another. Applying this value to all but the last input locale identifier delays the shell's processing until all input locale identifiers have been added.<para><b>Beginning in Windows 8:</b> In this scenario, the last input locale identifier is set for the entire system.</para></description>
         </listheader>
         <listheader>
           <description>
@@ -35897,7 +35939,7 @@
             </list>
           </description>
           <description>
-            <b>Prior to Windows 8:</b> Prevents a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644991(v=vs.85)">ShellProc</a> hook procedure from receiving an <b>HSHELL_LANGUAGE</b> hook code when the new input locale identifier is loaded. This value is typically used when an application loads multiple input locale identifiers one after another. Applying this value to all but the last input locale identifier delays the shell's processing until all input locale identifiers have been added.<para><b>Beginning in Windows 8:</b> In this scenario, the last input locale identifier is set for the entire system.</para></description>
+            <b>Prior to Windows 8:</b> Prevents a <a href="https://docs.microsoft.com//windows/win32/winmsg/shellproc">ShellProc</a> hook procedure from receiving an <b>HSHELL_LANGUAGE</b> hook code when the new input locale identifier is loaded. This value is typically used when an application loads multiple input locale identifiers one after another. Applying this value to all but the last input locale identifier delays the shell's processing until all input locale identifiers have been added.<para><b>Beginning in Windows 8:</b> In this scenario, the last input locale identifier is set for the entire system.</para></description>
         </listheader>
         <listheader>
           <description>
@@ -36030,7 +36072,7 @@
             </list>
           </description>
           <description>
-            <b>Prior to Windows 8:</b> Prevents a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644991(v=vs.85)">ShellProc</a> hook procedure from receiving an <b>HSHELL_LANGUAGE</b> hook code when the new input locale identifier is loaded. This value is typically used when an application loads multiple input locale identifiers one after another. Applying this value to all but the last input locale identifier delays the shell's processing until all input locale identifiers have been added.<para><b>Beginning in Windows 8:</b> In this scenario, the last input locale identifier is set for the entire system.</para></description>
+            <b>Prior to Windows 8:</b> Prevents a <a href="https://docs.microsoft.com//windows/win32/winmsg/shellproc">ShellProc</a> hook procedure from receiving an <b>HSHELL_LANGUAGE</b> hook code when the new input locale identifier is loaded. This value is typically used when an application loads multiple input locale identifiers one after another. Applying this value to all but the last input locale identifier delays the shell's processing until all input locale identifiers have been added.<para><b>Beginning in Windows 8:</b> In this scenario, the last input locale identifier is set for the entire system.</para></description>
         </listheader>
         <listheader>
           <description>
@@ -36163,7 +36205,7 @@
             </list>
           </description>
           <description>
-            <b>Prior to Windows 8:</b> Prevents a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644991(v=vs.85)">ShellProc</a> hook procedure from receiving an <b>HSHELL_LANGUAGE</b> hook code when the new input locale identifier is loaded. This value is typically used when an application loads multiple input locale identifiers one after another. Applying this value to all but the last input locale identifier delays the shell's processing until all input locale identifiers have been added.<para><b>Beginning in Windows 8:</b> In this scenario, the last input locale identifier is set for the entire system.</para></description>
+            <b>Prior to Windows 8:</b> Prevents a <a href="https://docs.microsoft.com//windows/win32/winmsg/shellproc">ShellProc</a> hook procedure from receiving an <b>HSHELL_LANGUAGE</b> hook code when the new input locale identifier is loaded. This value is typically used when an application loads multiple input locale identifiers one after another. Applying this value to all but the last input locale identifier delays the shell's processing until all input locale identifiers have been added.<para><b>Beginning in Windows 8:</b> In this scenario, the last input locale identifier is set for the entire system.</para></description>
         </listheader>
         <listheader>
           <description>
@@ -36296,7 +36338,7 @@
             </list>
           </description>
           <description>
-            <b>Prior to Windows 8:</b> Prevents a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644991(v=vs.85)">ShellProc</a> hook procedure from receiving an <b>HSHELL_LANGUAGE</b> hook code when the new input locale identifier is loaded. This value is typically used when an application loads multiple input locale identifiers one after another. Applying this value to all but the last input locale identifier delays the shell's processing until all input locale identifiers have been added.<para><b>Beginning in Windows 8:</b> In this scenario, the last input locale identifier is set for the entire system.</para></description>
+            <b>Prior to Windows 8:</b> Prevents a <a href="https://docs.microsoft.com//windows/win32/winmsg/shellproc">ShellProc</a> hook procedure from receiving an <b>HSHELL_LANGUAGE</b> hook code when the new input locale identifier is loaded. This value is typically used when an application loads multiple input locale identifiers one after another. Applying this value to all but the last input locale identifier delays the shell's processing until all input locale identifiers have been added.<para><b>Beginning in Windows 8:</b> In this scenario, the last input locale identifier is set for the entire system.</para></description>
         </listheader>
         <listheader>
           <description>
@@ -36429,7 +36471,7 @@
             </list>
           </description>
           <description>
-            <b>Prior to Windows 8:</b> Prevents a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644991(v=vs.85)">ShellProc</a> hook procedure from receiving an <b>HSHELL_LANGUAGE</b> hook code when the new input locale identifier is loaded. This value is typically used when an application loads multiple input locale identifiers one after another. Applying this value to all but the last input locale identifier delays the shell's processing until all input locale identifiers have been added.<para><b>Beginning in Windows 8:</b> In this scenario, the last input locale identifier is set for the entire system.</para></description>
+            <b>Prior to Windows 8:</b> Prevents a <a href="https://docs.microsoft.com//windows/win32/winmsg/shellproc">ShellProc</a> hook procedure from receiving an <b>HSHELL_LANGUAGE</b> hook code when the new input locale identifier is loaded. This value is typically used when an application loads multiple input locale identifiers one after another. Applying this value to all but the last input locale identifier delays the shell's processing until all input locale identifiers have been added.<para><b>Beginning in Windows 8:</b> In this scenario, the last input locale identifier is set for the entire system.</para></description>
         </listheader>
         <listheader>
           <description>
@@ -46681,7 +46723,6 @@ Events</a>.</param>
   </member>
   <member name="Windows.SetAdditionalForegroundBoostProcesses">
     <summary>
-      <blockquote>[!WARNING]<b>SetAdditionalForegroundBoostProcesses</b> is a <a href="https://docs.microsoft.com/uwp/api/windows.applicationmodel.limitedaccessfeatures">limited access feature</a>. Contact for more information.</blockquote>
       <para>
         <b>SetAdditionalForegroundBoostProcesses</b> is a performance assist API to help applications with a multi-process application model where multiple processes contribute to a foreground experience, either as data or rendering. Examples include browsers (with the browser manager or frame, tabs, plugins, etc. hosted in different processes) and IDEs (which spawn processes for compilation and other tasks).</para>
       <para>Applications can use this API to provide a foreground priority boost to worker processes that help support the main application. Such applications can have a uniform priority boost applied to all of their constituent processes when the application's top level window is in the foreground.</para>
@@ -48880,7 +48921,7 @@ Events</a>.</param>
     <summary>Sets the cursor shape.</summary>
     <param name="hCursor">
       <para>A handle to the cursor.</para>
-      <para>The cursor must have been created by either the <see cref="CreateCursor" /> or the <a href="https://docs.microsoft.com//win32/api/winuser/nf-winuser-createiconindirect">CreateIconIndirect</a> function, or loaded by either the <see cref="LoadCursor" /> or the <see cref="LoadImage" /> function.</para>
+      <para>The cursor must have been created by either the <see cref="CreateCursor" /> or the <see cref="CreateIconIndirect" /> function, or loaded by either the <see cref="LoadCursor" /> or the <see cref="LoadImage" /> function.</para>
       <para>If this parameter is <b>NULL</b>, the cursor is removed from the screen.</para>
     </param>
     <returns>
@@ -52213,7 +52254,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages before the system sends them to the destination window procedure. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644975(v=vs.85)">CallWndProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages before the system sends them to the destination window procedure. For more information, see the <see cref="CallWindowProcW function" />/<see cref="CallWindowProcA function" /> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52228,7 +52269,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages after they have been processed by the destination window procedure. For more information, see the <a href="https://docs.microsoft.com//windows/desktop/api/winuser/nc-winuser-hookproc">CallWndRetProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages after they have been processed by the destination window procedure. For more information, see the [HOOKPROC callback function](nc-winuser-hookproc.md) hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52243,7 +52284,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that receives notifications useful to a CBT application. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644977(v=vs.85)">CBTProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that receives notifications useful to a CBT application. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/cbtproc">CBTProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52258,7 +52299,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure useful for debugging other hook procedures. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a> hook procedure.</description>
+          <description>Installs a hook procedure useful for debugging other hook procedures. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/debugproc">DebugProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52273,7 +52314,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that will be called when the application's foreground thread is about to become idle. This hook is useful for performing low priority tasks during idle time. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644980(v=vs.85)">ForegroundIdleProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that will be called when the application's foreground thread is about to become idle. This hook is useful for performing low priority tasks during idle time. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/foregroundidleproc">ForegroundIdleProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52288,7 +52329,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages posted to a message queue. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644981(v=vs.85)">GetMsgProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages posted to a message queue. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/getmsgproc">GetMsgProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52304,8 +52345,8 @@ Events</a>.</param>
             </list>
           </description>
           <description>
-            <blockquote>[!WARNING] Journaling Hooks APIs are unsupported starting in Windows 11 and will be removed in a future release. Because of this, we highly recommend calling the <see cref="SendInput" /> TextInput API instead.</blockquote>
-            <para>Installs a hook procedure that posts messages previously recorded by a <a href="https://docs.microsoft.com//windows/desktop/winmsg/about-hooks">WH_JOURNALRECORD</a> hook procedure. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644982(v=vs.85)">JournalPlaybackProc</a> hook procedure.</para>
+            <blockquote>[!WARNING]<b>Windows 11 and newer</b>: Journaling hook APIs are not supported. We recommend using the <see cref="SendInput" /> TextInput API instead.</blockquote>
+            <para>Installs a hook procedure that posts messages previously recorded by a <a href="https://docs.microsoft.com//windows/desktop/winmsg/about-hooks">WH_JOURNALRECORD</a> hook procedure. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/journalplaybackproc">JournalPlaybackProc</a> hook procedure.</para>
           </description>
         </listheader>
         <listheader>
@@ -52322,8 +52363,8 @@ Events</a>.</param>
             </list>
           </description>
           <description>
-            <blockquote>[!WARNING] Journaling Hooks APIs are unsupported starting in Windows 11 and will be removed in a future release. Because of this, we highly recommend calling the <see cref="SendInput" /> TextInput API instead.</blockquote>
-            <para>Installs a hook procedure that records input messages posted to the system message queue. This hook is useful for recording macros. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644983(v=vs.85)">JournalRecordProc</a> hook procedure.</para>
+            <blockquote>[!WARNING]<b>Windows 11 and newer</b>: Journaling hook APIs are not supported. We recommend using the <see cref="SendInput" /> TextInput API instead.</blockquote>
+            <para>Installs a hook procedure that records input messages posted to the system message queue. This hook is useful for recording macros. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/journalrecordproc">JournalRecordProc</a> hook procedure.</para>
           </description>
         </listheader>
         <listheader>
@@ -52339,7 +52380,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors keystroke messages. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644984(v=vs.85)">KeyboardProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors keystroke messages. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/keyboardproc">KeyboardProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52354,7 +52395,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description> Installs a hook procedure that monitors low-level keyboard input events. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644985(v=vs.85)">LowLevelKeyboardProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors low-level keyboard input events. For more information, see the [LowLevelKeyboardProc](/windows/win32/winmsg/lowlevelkeyboardproc) hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52369,7 +52410,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors mouse messages. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644988(v=vs.85)">MouseProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors mouse messages. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/mouseproc">MouseProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52384,7 +52425,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description> Installs a hook procedure that monitors low-level mouse input events. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644986(v=vs.85)">LowLevelMouseProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors low-level mouse input events. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/lowlevelmouseproc">LowLevelMouseProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52399,7 +52440,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644987(v=vs.85)">MessageProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/messageproc">MessageProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52414,7 +52455,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that receives notifications useful to shell applications. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644991(v=vs.85)">ShellProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that receives notifications useful to shell applications. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/shellproc">ShellProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52429,7 +52470,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. The hook procedure monitors these messages for all applications in the same desktop as the calling thread. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644992(v=vs.85)">SysMsgProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. The hook procedure monitors these messages for all applications in the same desktop as the calling thread. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/sysmsgproc">SysMsgProc</a> hook procedure.</description>
         </listheader>
       </list>
     </param>
@@ -52463,7 +52504,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages before the system sends them to the destination window procedure. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644975(v=vs.85)">CallWndProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages before the system sends them to the destination window procedure. For more information, see the <see cref="CallWindowProcW function" />/<see cref="CallWindowProcA function" /> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52478,7 +52519,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages after they have been processed by the destination window procedure. For more information, see the <a href="https://docs.microsoft.com//windows/desktop/api/winuser/nc-winuser-hookproc">CallWndRetProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages after they have been processed by the destination window procedure. For more information, see the [HOOKPROC callback function](nc-winuser-hookproc.md) hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52493,7 +52534,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that receives notifications useful to a CBT application. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644977(v=vs.85)">CBTProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that receives notifications useful to a CBT application. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/cbtproc">CBTProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52508,7 +52549,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure useful for debugging other hook procedures. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a> hook procedure.</description>
+          <description>Installs a hook procedure useful for debugging other hook procedures. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/debugproc">DebugProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52523,7 +52564,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that will be called when the application's foreground thread is about to become idle. This hook is useful for performing low priority tasks during idle time. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644980(v=vs.85)">ForegroundIdleProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that will be called when the application's foreground thread is about to become idle. This hook is useful for performing low priority tasks during idle time. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/foregroundidleproc">ForegroundIdleProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52538,7 +52579,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages posted to a message queue. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644981(v=vs.85)">GetMsgProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages posted to a message queue. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/getmsgproc">GetMsgProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52554,8 +52595,8 @@ Events</a>.</param>
             </list>
           </description>
           <description>
-            <blockquote>[!WARNING] Journaling Hooks APIs are unsupported starting in Windows 11 and will be removed in a future release. Because of this, we highly recommend calling the <see cref="SendInput" /> TextInput API instead.</blockquote>
-            <para>Installs a hook procedure that posts messages previously recorded by a <a href="https://docs.microsoft.com//windows/desktop/winmsg/about-hooks">WH_JOURNALRECORD</a> hook procedure. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644982(v=vs.85)">JournalPlaybackProc</a> hook procedure.</para>
+            <blockquote>[!WARNING]<b>Windows 11 and newer</b>: Journaling hook APIs are not supported. We recommend using the <see cref="SendInput" /> TextInput API instead.</blockquote>
+            <para>Installs a hook procedure that posts messages previously recorded by a <a href="https://docs.microsoft.com//windows/desktop/winmsg/about-hooks">WH_JOURNALRECORD</a> hook procedure. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/journalplaybackproc">JournalPlaybackProc</a> hook procedure.</para>
           </description>
         </listheader>
         <listheader>
@@ -52572,8 +52613,8 @@ Events</a>.</param>
             </list>
           </description>
           <description>
-            <blockquote>[!WARNING] Journaling Hooks APIs are unsupported starting in Windows 11 and will be removed in a future release. Because of this, we highly recommend calling the <see cref="SendInput" /> TextInput API instead.</blockquote>
-            <para>Installs a hook procedure that records input messages posted to the system message queue. This hook is useful for recording macros. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644983(v=vs.85)">JournalRecordProc</a> hook procedure.</para>
+            <blockquote>[!WARNING]<b>Windows 11 and newer</b>: Journaling hook APIs are not supported. We recommend using the <see cref="SendInput" /> TextInput API instead.</blockquote>
+            <para>Installs a hook procedure that records input messages posted to the system message queue. This hook is useful for recording macros. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/journalrecordproc">JournalRecordProc</a> hook procedure.</para>
           </description>
         </listheader>
         <listheader>
@@ -52589,7 +52630,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors keystroke messages. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644984(v=vs.85)">KeyboardProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors keystroke messages. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/keyboardproc">KeyboardProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52604,7 +52645,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description> Installs a hook procedure that monitors low-level keyboard input events. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644985(v=vs.85)">LowLevelKeyboardProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors low-level keyboard input events. For more information, see the [LowLevelKeyboardProc](/windows/win32/winmsg/lowlevelkeyboardproc) hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52619,7 +52660,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors mouse messages. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644988(v=vs.85)">MouseProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors mouse messages. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/mouseproc">MouseProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52634,7 +52675,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description> Installs a hook procedure that monitors low-level mouse input events. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644986(v=vs.85)">LowLevelMouseProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors low-level mouse input events. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/lowlevelmouseproc">LowLevelMouseProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52649,7 +52690,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644987(v=vs.85)">MessageProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/messageproc">MessageProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52664,7 +52705,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that receives notifications useful to shell applications. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644991(v=vs.85)">ShellProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that receives notifications useful to shell applications. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/shellproc">ShellProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52679,7 +52720,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. The hook procedure monitors these messages for all applications in the same desktop as the calling thread. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644992(v=vs.85)">SysMsgProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. The hook procedure monitors these messages for all applications in the same desktop as the calling thread. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/sysmsgproc">SysMsgProc</a> hook procedure.</description>
         </listheader>
       </list>
     </param>
@@ -52713,7 +52754,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages before the system sends them to the destination window procedure. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644975(v=vs.85)">CallWndProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages before the system sends them to the destination window procedure. For more information, see the <see cref="CallWindowProcW function" />/<see cref="CallWindowProcA function" /> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52728,7 +52769,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages after they have been processed by the destination window procedure. For more information, see the <a href="https://docs.microsoft.com//windows/desktop/api/winuser/nc-winuser-hookproc">CallWndRetProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages after they have been processed by the destination window procedure. For more information, see the [HOOKPROC callback function](nc-winuser-hookproc.md) hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52743,7 +52784,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that receives notifications useful to a CBT application. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644977(v=vs.85)">CBTProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that receives notifications useful to a CBT application. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/cbtproc">CBTProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52758,7 +52799,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure useful for debugging other hook procedures. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a> hook procedure.</description>
+          <description>Installs a hook procedure useful for debugging other hook procedures. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/debugproc">DebugProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52773,7 +52814,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that will be called when the application's foreground thread is about to become idle. This hook is useful for performing low priority tasks during idle time. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644980(v=vs.85)">ForegroundIdleProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that will be called when the application's foreground thread is about to become idle. This hook is useful for performing low priority tasks during idle time. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/foregroundidleproc">ForegroundIdleProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52788,7 +52829,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages posted to a message queue. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644981(v=vs.85)">GetMsgProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages posted to a message queue. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/getmsgproc">GetMsgProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52804,8 +52845,8 @@ Events</a>.</param>
             </list>
           </description>
           <description>
-            <blockquote>[!WARNING] Journaling Hooks APIs are unsupported starting in Windows 11 and will be removed in a future release. Because of this, we highly recommend calling the <see cref="SendInput" /> TextInput API instead.</blockquote>
-            <para>Installs a hook procedure that posts messages previously recorded by a <a href="https://docs.microsoft.com//windows/desktop/winmsg/about-hooks">WH_JOURNALRECORD</a> hook procedure. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644982(v=vs.85)">JournalPlaybackProc</a> hook procedure.</para>
+            <blockquote>[!WARNING]<b>Windows 11 and newer</b>: Journaling hook APIs are not supported. We recommend using the <see cref="SendInput" /> TextInput API instead.</blockquote>
+            <para>Installs a hook procedure that posts messages previously recorded by a <a href="https://docs.microsoft.com//windows/desktop/winmsg/about-hooks">WH_JOURNALRECORD</a> hook procedure. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/journalplaybackproc">JournalPlaybackProc</a> hook procedure.</para>
           </description>
         </listheader>
         <listheader>
@@ -52822,8 +52863,8 @@ Events</a>.</param>
             </list>
           </description>
           <description>
-            <blockquote>[!WARNING] Journaling Hooks APIs are unsupported starting in Windows 11 and will be removed in a future release. Because of this, we highly recommend calling the <see cref="SendInput" /> TextInput API instead.</blockquote>
-            <para>Installs a hook procedure that records input messages posted to the system message queue. This hook is useful for recording macros. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644983(v=vs.85)">JournalRecordProc</a> hook procedure.</para>
+            <blockquote>[!WARNING]<b>Windows 11 and newer</b>: Journaling hook APIs are not supported. We recommend using the <see cref="SendInput" /> TextInput API instead.</blockquote>
+            <para>Installs a hook procedure that records input messages posted to the system message queue. This hook is useful for recording macros. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/journalrecordproc">JournalRecordProc</a> hook procedure.</para>
           </description>
         </listheader>
         <listheader>
@@ -52839,7 +52880,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors keystroke messages. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644984(v=vs.85)">KeyboardProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors keystroke messages. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/keyboardproc">KeyboardProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52854,7 +52895,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description> Installs a hook procedure that monitors low-level keyboard input events. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644985(v=vs.85)">LowLevelKeyboardProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors low-level keyboard input events. For more information, see the [LowLevelKeyboardProc](/windows/win32/winmsg/lowlevelkeyboardproc) hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52869,7 +52910,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors mouse messages. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644988(v=vs.85)">MouseProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors mouse messages. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/mouseproc">MouseProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52884,7 +52925,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description> Installs a hook procedure that monitors low-level mouse input events. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644986(v=vs.85)">LowLevelMouseProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors low-level mouse input events. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/lowlevelmouseproc">LowLevelMouseProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52899,7 +52940,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644987(v=vs.85)">MessageProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/messageproc">MessageProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52914,7 +52955,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that receives notifications useful to shell applications. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644991(v=vs.85)">ShellProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that receives notifications useful to shell applications. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/shellproc">ShellProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52929,7 +52970,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. The hook procedure monitors these messages for all applications in the same desktop as the calling thread. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644992(v=vs.85)">SysMsgProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. The hook procedure monitors these messages for all applications in the same desktop as the calling thread. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/sysmsgproc">SysMsgProc</a> hook procedure.</description>
         </listheader>
       </list>
     </param>
@@ -52963,7 +53004,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages before the system sends them to the destination window procedure. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644975(v=vs.85)">CallWndProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages before the system sends them to the destination window procedure. For more information, see the <see cref="CallWindowProcW function" />/<see cref="CallWindowProcA function" /> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52978,7 +53019,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages after they have been processed by the destination window procedure. For more information, see the <a href="https://docs.microsoft.com//windows/desktop/api/winuser/nc-winuser-hookproc">CallWndRetProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages after they have been processed by the destination window procedure. For more information, see the <a href="https://docs.microsoft.com/nc-winuser-hookproc.md">HOOKPROC callback function</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -52993,7 +53034,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that receives notifications useful to a CBT application. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644977(v=vs.85)">CBTProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that receives notifications useful to a CBT application. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/cbtproc">CBTProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53008,7 +53049,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure useful for debugging other hook procedures. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a> hook procedure.</description>
+          <description>Installs a hook procedure useful for debugging other hook procedures. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/debugproc">DebugProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53023,7 +53064,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that will be called when the application's foreground thread is about to become idle. This hook is useful for performing low priority tasks during idle time. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644980(v=vs.85)">ForegroundIdleProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that will be called when the application's foreground thread is about to become idle. This hook is useful for performing low priority tasks during idle time. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/foregroundidleproc">ForegroundIdleProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53038,7 +53079,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages posted to a message queue. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644981(v=vs.85)">GetMsgProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages posted to a message queue. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/getmsgproc">GetMsgProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53055,7 +53096,7 @@ Events</a>.</param>
           </description>
           <description>
             <blockquote>[!WARNING] Journaling Hooks APIs are unsupported starting in Windows 11 and will be removed in a future release. Because of this, we highly recommend calling the <see cref="SendInput" /> TextInput API instead.</blockquote>
-            <para>Installs a hook procedure that posts messages previously recorded by a <a href="https://docs.microsoft.com//windows/desktop/winmsg/about-hooks">WH_JOURNALRECORD</a> hook procedure. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644982(v=vs.85)">JournalPlaybackProc</a> hook procedure.</para>
+            <para>Installs a hook procedure that posts messages previously recorded by a <a href="https://docs.microsoft.com//windows/desktop/winmsg/about-hooks">WH_JOURNALRECORD</a> hook procedure. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/journalplaybackproc">JournalPlaybackProc</a> hook procedure.</para>
           </description>
         </listheader>
         <listheader>
@@ -53073,7 +53114,7 @@ Events</a>.</param>
           </description>
           <description>
             <blockquote>[!WARNING] Journaling Hooks APIs are unsupported starting in Windows 11 and will be removed in a future release. Because of this, we highly recommend calling the <see cref="SendInput" /> TextInput API instead.</blockquote>
-            <para>Installs a hook procedure that records input messages posted to the system message queue. This hook is useful for recording macros. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644983(v=vs.85)">JournalRecordProc</a> hook procedure.</para>
+            <para>Installs a hook procedure that records input messages posted to the system message queue. This hook is useful for recording macros. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/journalrecordproc">JournalRecordProc</a> hook procedure.</para>
           </description>
         </listheader>
         <listheader>
@@ -53089,7 +53130,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors keystroke messages. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644984(v=vs.85)">KeyboardProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors keystroke messages. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/keyboardproc">KeyboardProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53104,7 +53145,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description> Installs a hook procedure that monitors low-level keyboard input events. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644985(v=vs.85)">LowLevelKeyboardProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors low-level keyboard input events. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/lowlevelkeyboardproc">LowLevelKeyboardProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53119,7 +53160,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors mouse messages. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644988(v=vs.85)">MouseProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors mouse messages. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/mouseproc">MouseProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53134,7 +53175,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description> Installs a hook procedure that monitors low-level mouse input events. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644986(v=vs.85)">LowLevelMouseProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors low-level mouse input events. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/lowlevelmouseproc">LowLevelMouseProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53149,7 +53190,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644987(v=vs.85)">MessageProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/messageproc">MessageProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53164,7 +53205,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that receives notifications useful to shell applications. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644991(v=vs.85)">ShellProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that receives notifications useful to shell applications. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/shellproc">ShellProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53179,7 +53220,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. The hook procedure monitors these messages for all applications in the same desktop as the calling thread. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644992(v=vs.85)">SysMsgProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. The hook procedure monitors these messages for all applications in the same desktop as the calling thread. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/sysmsgproc">SysMsgProc</a> hook procedure.</description>
         </listheader>
       </list>
     </param>
@@ -53213,7 +53254,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages before the system sends them to the destination window procedure. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644975(v=vs.85)">CallWndProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages before the system sends them to the destination window procedure. For more information, see the <see cref="CallWindowProcW function" />/<see cref="CallWindowProcA function" /> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53228,7 +53269,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages after they have been processed by the destination window procedure. For more information, see the <a href="https://docs.microsoft.com//windows/desktop/api/winuser/nc-winuser-hookproc">CallWndRetProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages after they have been processed by the destination window procedure. For more information, see the <a href="https://docs.microsoft.com/nc-winuser-hookproc.md">HOOKPROC callback function</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53243,7 +53284,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that receives notifications useful to a CBT application. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644977(v=vs.85)">CBTProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that receives notifications useful to a CBT application. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/cbtproc">CBTProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53258,7 +53299,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure useful for debugging other hook procedures. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a> hook procedure.</description>
+          <description>Installs a hook procedure useful for debugging other hook procedures. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/debugproc">DebugProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53273,7 +53314,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that will be called when the application's foreground thread is about to become idle. This hook is useful for performing low priority tasks during idle time. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644980(v=vs.85)">ForegroundIdleProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that will be called when the application's foreground thread is about to become idle. This hook is useful for performing low priority tasks during idle time. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/foregroundidleproc">ForegroundIdleProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53288,7 +53329,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages posted to a message queue. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644981(v=vs.85)">GetMsgProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages posted to a message queue. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/getmsgproc">GetMsgProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53305,7 +53346,7 @@ Events</a>.</param>
           </description>
           <description>
             <blockquote>[!WARNING] Journaling Hooks APIs are unsupported starting in Windows 11 and will be removed in a future release. Because of this, we highly recommend calling the <see cref="SendInput" /> TextInput API instead.</blockquote>
-            <para>Installs a hook procedure that posts messages previously recorded by a <a href="https://docs.microsoft.com//windows/desktop/winmsg/about-hooks">WH_JOURNALRECORD</a> hook procedure. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644982(v=vs.85)">JournalPlaybackProc</a> hook procedure.</para>
+            <para>Installs a hook procedure that posts messages previously recorded by a <a href="https://docs.microsoft.com//windows/desktop/winmsg/about-hooks">WH_JOURNALRECORD</a> hook procedure. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/journalplaybackproc">JournalPlaybackProc</a> hook procedure.</para>
           </description>
         </listheader>
         <listheader>
@@ -53323,7 +53364,7 @@ Events</a>.</param>
           </description>
           <description>
             <blockquote>[!WARNING] Journaling Hooks APIs are unsupported starting in Windows 11 and will be removed in a future release. Because of this, we highly recommend calling the <see cref="SendInput" /> TextInput API instead.</blockquote>
-            <para>Installs a hook procedure that records input messages posted to the system message queue. This hook is useful for recording macros. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644983(v=vs.85)">JournalRecordProc</a> hook procedure.</para>
+            <para>Installs a hook procedure that records input messages posted to the system message queue. This hook is useful for recording macros. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/journalrecordproc">JournalRecordProc</a> hook procedure.</para>
           </description>
         </listheader>
         <listheader>
@@ -53339,7 +53380,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors keystroke messages. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644984(v=vs.85)">KeyboardProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors keystroke messages. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/keyboardproc">KeyboardProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53354,7 +53395,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description> Installs a hook procedure that monitors low-level keyboard input events. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644985(v=vs.85)">LowLevelKeyboardProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors low-level keyboard input events. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/lowlevelkeyboardproc">LowLevelKeyboardProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53369,7 +53410,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors mouse messages. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644988(v=vs.85)">MouseProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors mouse messages. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/mouseproc">MouseProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53384,7 +53425,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description> Installs a hook procedure that monitors low-level mouse input events. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644986(v=vs.85)">LowLevelMouseProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors low-level mouse input events. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/lowlevelmouseproc">LowLevelMouseProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53399,7 +53440,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644987(v=vs.85)">MessageProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/messageproc">MessageProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53414,7 +53455,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that receives notifications useful to shell applications. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644991(v=vs.85)">ShellProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that receives notifications useful to shell applications. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/shellproc">ShellProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53429,7 +53470,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. The hook procedure monitors these messages for all applications in the same desktop as the calling thread. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644992(v=vs.85)">SysMsgProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. The hook procedure monitors these messages for all applications in the same desktop as the calling thread. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/sysmsgproc">SysMsgProc</a> hook procedure.</description>
         </listheader>
       </list>
     </param>
@@ -53463,7 +53504,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages before the system sends them to the destination window procedure. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644975(v=vs.85)">CallWndProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages before the system sends them to the destination window procedure. For more information, see the <see cref="CallWindowProcW function" />/<see cref="CallWindowProcA function" /> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53478,7 +53519,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages after they have been processed by the destination window procedure. For more information, see the <a href="https://docs.microsoft.com//windows/desktop/api/winuser/nc-winuser-hookproc">CallWndRetProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages after they have been processed by the destination window procedure. For more information, see the <a href="https://docs.microsoft.com/nc-winuser-hookproc.md">HOOKPROC callback function</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53493,7 +53534,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that receives notifications useful to a CBT application. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644977(v=vs.85)">CBTProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that receives notifications useful to a CBT application. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/cbtproc">CBTProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53508,7 +53549,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure useful for debugging other hook procedures. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a> hook procedure.</description>
+          <description>Installs a hook procedure useful for debugging other hook procedures. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/debugproc">DebugProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53523,7 +53564,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that will be called when the application's foreground thread is about to become idle. This hook is useful for performing low priority tasks during idle time. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644980(v=vs.85)">ForegroundIdleProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that will be called when the application's foreground thread is about to become idle. This hook is useful for performing low priority tasks during idle time. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/foregroundidleproc">ForegroundIdleProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53538,7 +53579,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages posted to a message queue. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644981(v=vs.85)">GetMsgProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages posted to a message queue. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/getmsgproc">GetMsgProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53555,7 +53596,7 @@ Events</a>.</param>
           </description>
           <description>
             <blockquote>[!WARNING] Journaling Hooks APIs are unsupported starting in Windows 11 and will be removed in a future release. Because of this, we highly recommend calling the <see cref="SendInput" /> TextInput API instead.</blockquote>
-            <para>Installs a hook procedure that posts messages previously recorded by a <a href="https://docs.microsoft.com//windows/desktop/winmsg/about-hooks">WH_JOURNALRECORD</a> hook procedure. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644982(v=vs.85)">JournalPlaybackProc</a> hook procedure.</para>
+            <para>Installs a hook procedure that posts messages previously recorded by a <a href="https://docs.microsoft.com//windows/desktop/winmsg/about-hooks">WH_JOURNALRECORD</a> hook procedure. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/journalplaybackproc">JournalPlaybackProc</a> hook procedure.</para>
           </description>
         </listheader>
         <listheader>
@@ -53573,7 +53614,7 @@ Events</a>.</param>
           </description>
           <description>
             <blockquote>[!WARNING] Journaling Hooks APIs are unsupported starting in Windows 11 and will be removed in a future release. Because of this, we highly recommend calling the <see cref="SendInput" /> TextInput API instead.</blockquote>
-            <para>Installs a hook procedure that records input messages posted to the system message queue. This hook is useful for recording macros. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644983(v=vs.85)">JournalRecordProc</a> hook procedure.</para>
+            <para>Installs a hook procedure that records input messages posted to the system message queue. This hook is useful for recording macros. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/journalrecordproc">JournalRecordProc</a> hook procedure.</para>
           </description>
         </listheader>
         <listheader>
@@ -53589,7 +53630,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors keystroke messages. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644984(v=vs.85)">KeyboardProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors keystroke messages. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/keyboardproc">KeyboardProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53604,7 +53645,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description> Installs a hook procedure that monitors low-level keyboard input events. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644985(v=vs.85)">LowLevelKeyboardProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors low-level keyboard input events. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/lowlevelkeyboardproc">LowLevelKeyboardProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53619,7 +53660,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors mouse messages. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644988(v=vs.85)">MouseProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors mouse messages. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/mouseproc">MouseProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53634,7 +53675,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description> Installs a hook procedure that monitors low-level mouse input events. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644986(v=vs.85)">LowLevelMouseProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors low-level mouse input events. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/lowlevelmouseproc">LowLevelMouseProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53649,7 +53690,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644987(v=vs.85)">MessageProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/messageproc">MessageProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53664,7 +53705,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that receives notifications useful to shell applications. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644991(v=vs.85)">ShellProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that receives notifications useful to shell applications. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/shellproc">ShellProc</a> hook procedure.</description>
         </listheader>
         <listheader>
           <description>
@@ -53679,7 +53720,7 @@ Events</a>.</param>
               </listheader>
             </list>
           </description>
-          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. The hook procedure monitors these messages for all applications in the same desktop as the calling thread. For more information, see the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644992(v=vs.85)">SysMsgProc</a> hook procedure.</description>
+          <description>Installs a hook procedure that monitors messages generated as a result of an input event in a dialog box, message box, menu, or scroll bar. The hook procedure monitors these messages for all applications in the same desktop as the calling thread. For more information, see the <a href="https://docs.microsoft.com//windows/win32/winmsg/sysmsgproc">SysMsgProc</a> hook procedure.</description>
         </listheader>
       </list>
     </param>
@@ -54180,7 +54221,7 @@ Events</a>.</param>
       <para>A pointer to a 256-byte array that contains the current keyboard state. Each element (byte) in the array contains the state of one key. If the high-order bit of a byte is set, the key is down (pressed).</para>
       <para>The low bit, if set, indicates that the key is toggled on. In this function, only the toggle bit of the CAPS LOCK key is relevant. The toggle state of the NUM LOCK and SCROLL LOCK keys is ignored.</para>
     </param>
-    <param name="lpChar">The buffer that receives the translated character or characters. The low-order byte contains first character and the high-order byte contains second character, if present.</param>
+    <param name="lpChar">A pointer to the buffer that receives the translated character (or two characters packed into a single <b>WORD</b> value, where the low-order byte contains the first character and the high-order byte contains the second character).</param>
     <param name="uFlags">This parameter must be 1 if a menu is active, or 0 otherwise.</param>
     <returns>
       <para>The return value is one of the following values.</para>
@@ -54233,7 +54274,7 @@ Events</a>.</param>
       <para>A pointer to a 256-byte array that contains the current keyboard state. Each element (byte) in the array contains the state of one key. If the high-order bit of a byte is set, the key is down (pressed).</para>
       <para>The low bit, if set, indicates that the key is toggled on. In this function, only the toggle bit of the CAPS LOCK key is relevant. The toggle state of the NUM LOCK and SCOLL LOCK keys is ignored.</para>
     </param>
-    <param name="lpChar">A pointer to the buffer that receives the translated character or characters. The low-order byte contains first character and the high-order byte contains second character, if present.</param>
+    <param name="lpChar">A pointer to the buffer that receives the translated character (or two characters packed into a single <b>WORD</b> value, where the low-order byte contains the first character and the high-order byte contains the second character).</param>
     <param name="uFlags">This parameter must be 1 if a menu is active, zero otherwise.</param>
     <param name="dwhkl">Input locale identifier to use to translate the code. This parameter can be any input locale identifier previously returned by the <see cref="LoadKeyboardLayout" /> function.</param>
     <returns>

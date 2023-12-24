@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DEVELOPER_DRIVE_ENABLEMENT_STATE">
+    <summary>An enum of possible values for the developer drive enablement state.</summary>
+  </member>
+  <member name="DEVELOPER_DRIVE_ENABLEMENT_STATE.DeveloperDriveEnablementStateError">
+    <summary>Indicates that there was an error determining the developer drive enablement state. After this is returned, call <see cref="GetLastError" /> to get the error value.</summary>
+  </member>
+  <member name="DEVELOPER_DRIVE_ENABLEMENT_STATE.DeveloperDriveEnabled">
+    <summary>Indicates that the developer drive is enabled.</summary>
+  </member>
+  <member name="DEVELOPER_DRIVE_ENABLEMENT_STATE.DeveloperDriveDisabledBySystemPolicy">
+    <summary>Indicates that the developer drive is disabled by system policy.</summary>
+  </member>
+  <member name="DEVELOPER_DRIVE_ENABLEMENT_STATE.DeveloperDriveDisabledByGroupPolicy">
+    <summary>Indicates that the developer drive is disabled by group policy.</summary>
+  </member>
+</doc>

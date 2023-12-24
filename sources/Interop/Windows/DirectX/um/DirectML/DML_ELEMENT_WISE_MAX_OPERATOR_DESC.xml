@@ -6,7 +6,7 @@
     <summary>
       <para>Takes the greater of two corresponding elements from the input tensors, and places the result into the corresponding element of the output tensor.</para>
       <code>f(a, b) = max(a, b)</code>
-      <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias one of the the input tensors during binding.</para>
+      <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias one of the input tensors during binding.</para>
     </summary>
   </member>
   <member name="DML_ELEMENT_WISE_MAX_OPERATOR_DESC.ATensor">

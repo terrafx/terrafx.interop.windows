@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.IsProcessInIsolatedContainer">
+    <summary>Determines if a process is running in an isolated container.</summary>
+    <param name="isProcessInIsolatedContainer">Indicates whether the process is running in an isolated container.</param>
+    <returns>Returns an <b>HRESULT</b> success or error code.</returns>
+  </member>
+  <member name="Windows.IsProcessInWDAGContainer">
+    <summary>Determines if a process is running in a Microsoft Defender Application Guard (MDAG) container.</summary>
+    <param name="Reserved">This parameter is reserved for future use.</param>
+    <param name="isProcessInWDAGContainer">This indicates whether the process is running in a MDAG container.</param>
+    <returns>Returns an <b>HRESULT</b> success or error code.</returns>
+  </member>
+</doc>

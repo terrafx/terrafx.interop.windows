@@ -12,7 +12,7 @@
     <summary>[out] A pointer to the beginning of the protocol part of the URL.</summary>
   </member>
   <member name="PARSEDURLA.cchProtocol">
-    <summary>The number of characters in the URL's protocol section.</summary>
+    <summary>[out] The number of characters in the URL's protocol section.</summary>
   </member>
   <member name="PARSEDURLA.pszSuffix">
     <summary>[out] A pointer to the section of the URL that follows the protocol and colon (':'). For file URLs, the function also skips the leading "//" characters.</summary>
@@ -33,7 +33,7 @@
     <summary>[out] A pointer to the beginning of the protocol part of the URL.</summary>
   </member>
   <member name="PARSEDURLA.cchProtocol">
-    <summary>The number of characters in the URL's protocol section.</summary>
+    <summary>[out] The number of characters in the URL's protocol section.</summary>
   </member>
   <member name="PARSEDURLA.pszSuffix">
     <summary>[out] A pointer to the section of the URL that follows the protocol and colon (':'). For file URLs, the function also skips the leading "//" characters.</summary>

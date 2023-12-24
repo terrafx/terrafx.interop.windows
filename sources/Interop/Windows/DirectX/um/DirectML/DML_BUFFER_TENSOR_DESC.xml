@@ -12,14 +12,14 @@
     <summary>Specifies additional options for the tensor.</summary>
   </member>
   <member name="DML_BUFFER_TENSOR_DESC.DimensionCount">
-    <summary>The number of dimensions of the tensor. This member determines the size of the <i>Sizes</i> and <i>Strides</i> arrays (if provided). In DirectML, all buffer tensors must have a <i>DimensionCount</i> of either 4 or 5. Not all operators support a <i>DimensionCount</i> of 5.</summary>
+    <summary>The number of dimensions of the tensor. This member determines the size of the <i>Sizes</i> and <i>Strides</i> arrays (if provided). In DirectML, the dimension count may range from 1 up to 8, depending on the operator. Most operators support at least 4 dimensions.</summary>
   </member>
   <member name="DML_BUFFER_TENSOR_DESC.Sizes">
-    <summary>The size, in elements, of each dimension in the tensor. Specifying a size of zero in any dimension is invalid, and will result in an error. The <i>Sizes</i> member is always specified in the order {N, C, H, W} if <i>DimensionCount</i> is 4, and {N, C, D, H, W} if <i>DimensionCount</i> is 5.</summary>
+    <summary>The size, in elements, of each dimension in the tensor. Specifying a size of zero in any dimension is invalid, and will result in an error. For operators where the axes have semantic meaning (for example, batch, channel, depth, height, width), the <i>Sizes</i> member is always specified in the order {N, C, H, W} if <i>DimensionCount</i> is 4, and {N, C, D, H, W} if <i>DimensionCount</i> is 5. Otherwise, the dimensions generally have no particular meaning.</summary>
   </member>
   <member name="DML_BUFFER_TENSOR_DESC.Strides">
     <summary>
-      <para>Optional. Determines the number of elements (not bytes) to linearly traverse in order to reach the next element in that dimension. For example, a stride of 5 in dimension 1 means that the distance between elements (n) and (n+1) in that dimension is 5 elements when traversing the buffer linearly. The <i>Strides</i> member is always specified in the order {N, C, H, W} if <i>DimensionCount</i> is 4, and {N, C, D, H, W} if <i>DimensionCount</i> is 5.</para>
+      <para>Optional. Determines the number of elements (not bytes) to linearly traverse in order to reach the next element in that dimension. For example, a stride of 5 in dimension 1 means that the distance between elements (n) and (n+1) in that dimension is 5 elements when traversing the buffer linearly. For operators where the axes have semantic meaning (for example, batch, channel, depth, height, width), the <i>Strides</i> member is always specified in the order {N, C, H, W} if <i>DimensionCount</i> is 4, and {N, C, D, H, W} if <i>DimensionCount</i> is 5.</para>
       <para>
         <i>Strides</i> can be used to express broadcasting (by specifying a stride of 0) as well as padding (for example, by using a stride larger than the physical size of a row, to pad the end of a row).</para>
       <para>If <i>Strides</i> is not specified, each dimension in the tensor is considered to be contiguously packed, with no additional padding.</para>

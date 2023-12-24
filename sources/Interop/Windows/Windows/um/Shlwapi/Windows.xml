@@ -188,14 +188,24 @@
     <param name="str">The <see cref="ASSOCSTR" /> value that specifies the type of string that is to be returned.</param>
     <param name="pszAssoc">
       <para>A pointer to a null-terminated string that is used to determine the root key. The following four types of strings can be used.</para>
-      <h4>File name extension</h4>
-      <para>A file name extension, such as .txt.</para>
-      <h4>CLSID</h4>
-      <para>A CLSID GUID in the standard "{GUID}" format.</para>
-      <h4>ProgID</h4>
-      <para>An application's ProgID, such as <b>Word.Document.8</b>.</para>
-      <h4>Executable name</h4>
-      <para>The name of an application's .exe file. The <see cref="ASSOCF_OPEN_BYEXENAME" /> flag must be set in <i>flags</i>.</para>
+      <list type="number">
+        <item>
+          <description>
+            <b>File name extension</b>: A file name extension, such as .txt.</description>
+        </item>
+        <item>
+          <description>
+            <b>CLSID</b>: A CLSID GUID in the standard "{GUID}" format.</description>
+        </item>
+        <item>
+          <description>
+            <b>ProgID</b>: An application's ProgID, such as <a href="https://docs.microsoft.com//windows/win32/shell/fa-progids">Word.Document.8</a>.</description>
+        </item>
+        <item>
+          <description>
+            <b>Executable name</b>: The name of an application's .exe file. The <see cref="ASSOCF_OPEN_BYEXENAME" /> flag must be set in <i>flags</i>.</description>
+        </item>
+      </list>
     </param>
     <param name="pszExtra">An optional null-terminated string with additional information about the location of the string. It is typically set to a Shell verb such as <b>open</b>. Set this parameter to <b>NULL</b> if it is not used.</param>
     <param name="pszOut">Pointer to a null-terminated string that, when this function returns successfully, receives the requested string. Set this parameter to <b>NULL</b> to retrieve the required buffer size.</param>
@@ -233,14 +243,24 @@
     <param name="str">The <see cref="ASSOCSTR" /> value that specifies the type of string that is to be returned.</param>
     <param name="pszAssoc">
       <para>A pointer to a null-terminated string that is used to determine the root key. The following four types of strings can be used.</para>
-      <h4>File name extension</h4>
-      <para>A file name extension, such as .txt.</para>
-      <h4>CLSID</h4>
-      <para>A CLSID GUID in the standard "{GUID}" format.</para>
-      <h4>ProgID</h4>
-      <para>An application's ProgID, such as <b>Word.Document.8</b>.</para>
-      <h4>Executable name</h4>
-      <para>The name of an application's .exe file. The <see cref="ASSOCF_OPEN_BYEXENAME" /> flag must be set in <i>flags</i>.</para>
+      <list type="number">
+        <item>
+          <description>
+            <b>File name extension</b>: A file name extension, such as .txt.</description>
+        </item>
+        <item>
+          <description>
+            <b>CLSID</b>: A CLSID GUID in the standard "{GUID}" format.</description>
+        </item>
+        <item>
+          <description>
+            <b>ProgID</b>: An application's ProgID, such as <a href="https://docs.microsoft.com//windows/win32/shell/fa-progids">Word.Document.8</a>.</description>
+        </item>
+        <item>
+          <description>
+            <b>Executable name</b>: The name of an application's .exe file. The <see cref="ASSOCF_OPEN_BYEXENAME" /> flag must be set in <i>flags</i>.</description>
+        </item>
+      </list>
     </param>
     <param name="pszExtra">An optional null-terminated string with additional information about the location of the string. It is typically set to a Shell verb such as <b>open</b>. Set this parameter to <b>NULL</b> if it is not used.</param>
     <param name="pszOut">Pointer to a null-terminated string that, when this function returns successfully, receives the requested string. Set this parameter to <b>NULL</b> to retrieve the required buffer size.</param>
@@ -278,14 +298,24 @@
     <param name="str">The <see cref="ASSOCSTR" /> value that specifies the type of string that is to be returned.</param>
     <param name="pszAssoc">
       <para>A pointer to a null-terminated string that is used to determine the root key. The following four types of strings can be used.</para>
-      <h4>File name extension</h4>
-      <para>A file name extension, such as .txt.</para>
-      <h4>CLSID</h4>
-      <para>A CLSID GUID in the standard "{GUID}" format.</para>
-      <h4>ProgID</h4>
-      <para>An application's ProgID, such as <b>Word.Document.8</b>.</para>
-      <h4>Executable name</h4>
-      <para>The name of an application's .exe file. The <see cref="ASSOCF_OPEN_BYEXENAME" /> flag must be set in <i>flags</i>.</para>
+      <list type="number">
+        <item>
+          <description>
+            <b>File name extension</b>: A file name extension, such as .txt.</description>
+        </item>
+        <item>
+          <description>
+            <b>CLSID</b>: A CLSID GUID in the standard "{GUID}" format.</description>
+        </item>
+        <item>
+          <description>
+            <b>ProgID</b>: An application's ProgID, such as <a href="https://docs.microsoft.com//windows/win32/shell/fa-progids">Word.Document.8</a>.</description>
+        </item>
+        <item>
+          <description>
+            <b>Executable name</b>: The name of an application's .exe file. The <see cref="ASSOCF_OPEN_BYEXENAME" /> flag must be set in <i>flags</i>.</description>
+        </item>
+      </list>
     </param>
     <param name="pszExtra">An optional null-terminated string with additional information about the location of the string. It is typically set to a Shell verb such as <b>open</b>. Set this parameter to <b>NULL</b> if it is not used.</param>
     <param name="pszOut">Pointer to a null-terminated string that, when this function returns successfully, receives the requested string. Set this parameter to <b>NULL</b> to retrieve the required buffer size.</param>

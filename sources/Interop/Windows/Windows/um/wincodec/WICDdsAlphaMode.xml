@@ -3,7 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICDdsAlphaMode">
-    <summary>Specifies the the meaning of pixel color component values contained in the DDS image.</summary>
+    <summary>Specifies the meaning of pixel color component values contained in the DDS image.</summary>
   </member>
   <member name="WICDdsAlphaMode.WICDdsAlphaModeUnknown">
     <summary>Alpha behavior is unspecified and must be determined by the reader.</summary>

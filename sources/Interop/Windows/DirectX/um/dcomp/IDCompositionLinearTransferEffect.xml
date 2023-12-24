@@ -24,7 +24,7 @@
   </member>
   <member name="IDCompositionLinearTransferEffect.SetAlphaYIntercept">
     <summary>Sets the Y-intercept of the linear function for the Alpha channel.</summary>
-    <param name="animation">An animation that represents how the the Y-intercept of the linear function for the alpha channel. changes over time. This parameter must not be NULL.</param>
+    <param name="animation">An animation that represents how the Y-intercept of the linear function for the alpha channel. changes over time. This parameter must not be NULL.</param>
     <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionLinearTransferEffect.SetBlueDisable">

@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3DCONTENTPROTECTIONCAPS">
+    <summary>Describes the content protection capabilities of a display driver. To get the capabilities, call <see cref="IDirect3DDevice9Video.GetContentProtectionCaps" />.</summary>
+  </member>
+  <member name="D3DCONTENTPROTECTIONCAPS.Caps">
+    <summary>
+      <para>Bitwise <b>OR</b> of zero or more flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DCPCAPS_SOFTWARE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The encryption is implemented in software by the driver.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DCPCAPS_HARDWARE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The encryption is implemented in hardware by the GPU.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DCPCAPS_PROTECTIONALWAYSON</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Content protection is always applied to a protected Direct3D surface, regardless of whether the application explicitly enables content protection.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DCPCAPS_PARTIALDECRYPTION</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The driver can use partially encrypted buffers. If this capability is not present, the entire buffer must be either encrypted or clear.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DCPCAPS_CONTENTKEY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The driver can encrypt data using a separate content key that is encrypted using the session key. For more information, see <see cref="IDirect3DCryptoSession9.DecryptionBlt" />.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DCPCAPS_FRESHENSESSIONKEY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The driver can refresh the session key without renegotiating the key. To refresh the session key, call <see cref="IDirect3DCryptoSession9.StartSessionKeyRefresh" />.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DCPCAPS_ENCRYPTEDREADBACK</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The driver can read back encrypted data from a protected surface, using the <see cref="IDirect3DCryptoSession9.EncryptionBlt" /> method.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DCPCAPS_ENCRYPTEDREADBACKKEY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The driver requires a separate key to read encrypted data from a protected surface. To get this second key, call <see cref="IDirect3DCryptoSession9.GetEncryptionBltKey" />.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DCPCAPS_SEQUENTIAL_CTR_IV</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>If the encryption type is <b>D3DCRYPTOTYPE_AES128_CTR</b>, the application must use a sequential count in the <see cref="DXVA2_AES_CTR_IV" /> structure. For more information, see the remarks for <b>DXVA2_AES_CTR_IV</b>.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DCONTENTPROTECTIONCAPS.KeyExchangeType">
+    <summary>
+      <para>Specifies the type of key exchange required to negotiate the session key. The following GUIDs are defined.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DKEYEXCHANGE_RSAES_OAEP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The decoder encrypts the session key using RSA Encryption Scheme - Optimal Asymmetric Encryption Padding (RSAES-OAEP).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DKEYEXCHANGE_DXVA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Use the key exchange mechanism defined for DirectX Video Acceleration 2 (DXVA-2).</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DCONTENTPROTECTIONCAPS.BufferAlignmentStart">
+    <summary>The memory alignment required for buffers used by the GPU cryptographic engine. If the application uses a system memory buffer to pass encrypted content to the GPU, or to read back encrypted content from the GPU, the buffer's starting address must be a multiple of this value.</summary>
+  </member>
+  <member name="D3DCONTENTPROTECTIONCAPS.BlockAlignmentSize">
+    <summary>The block alignment required by the GPU cryptographic engine. The size of data to be encrypted must be a multiple of this value.</summary>
+  </member>
+  <member name="D3DCONTENTPROTECTIONCAPS.ProtectedMemorySize">
+    <summary>The total amount of memory that can be used to hold protected surfaces.</summary>
+  </member>
+</doc>

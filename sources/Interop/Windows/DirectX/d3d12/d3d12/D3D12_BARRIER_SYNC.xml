@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_BARRIER_SYNC"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_NONE"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_ALL"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_DRAW"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_INPUT_ASSEMBLER"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_VERTEX_SHADING"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_PIXEL_SHADING"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_DEPTH_STENCIL"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_RENDER_TARGET"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_COMPUTE_SHADING"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_RAYTRACING"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_COPY"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_RESOLVE"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_EXECUTE_INDIRECT"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_PREDICATION"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_ALL_SHADING"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_NON_PIXEL_SHADING"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_EMIT_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_VIDEO_DECODE"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_VIDEO_PROCESS"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_VIDEO_ENCODE"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_BUILD_RAYTRACING_ACCELERATION_STRUCTURE"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_COPY_RAYTRACING_ACCELERATION_STRUCTURE"></member>
+  <member name="D3D12_BARRIER_SYNC.D3D12_BARRIER_SYNC_SPLIT"></member>
+</doc>

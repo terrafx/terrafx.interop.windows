@@ -3,7 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionDevice4.CheckCompositionTextureSupport">
-    <summary>Queries whether the Direct3D device that you're using to render supports composition textures (without having to first allocate a Direct3D texture on that device). Before you attempt to create composition textures for Direct3D textures backed by a given Direct3D device, you should call <b>CheckCompositionTextureSupport</b>, passing that backing device.</summary>
+    <summary>
+      <para>Queries whether the Direct3D device that you're using to render supports composition textures (without having to first allocate a Direct3D texture on that device). Before you attempt to create composition textures for Direct3D textures backed by a given Direct3D device, you should call <b>CheckCompositionTextureSupport</b>, passing that backing device.</para>
+      <para>Generally speaking, a rendering device that reports support for monitored fences via <see cref="DXGI_ADAPTER_FLAG3" /> is able to support composition textures. But in rare cases, the operating system (OS) itself can disable the composition textures feature; in which case <b>CheckCompositionTextureSupport</b> will also report unsupported.</para>
+    </summary>
     <param name="renderingDevice">The backing Direct3D device.</param>
     <param name="supportsCompositionTextures">Points to a value of <code>true</code> if <i>renderingDevice</i> supports composition textures; otherwise 'false`.</param>
     <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">HRESULT</a> error code.</returns>

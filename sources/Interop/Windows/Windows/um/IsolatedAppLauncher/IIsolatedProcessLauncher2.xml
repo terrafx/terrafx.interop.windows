@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IIsolatedProcessLauncher2.LaunchProcess2">
+    <summary>Launches a process in an isolated environment.</summary>
+    <param name="process">The process to launch.</param>
+    <param name="workingDirectory">The working directory of the process.</param>
+    <param name="correlationGuid">The correlation GUID to associate with the process.</param>
+    <returns>Returns an <b>HRESULT</b> success or error code.</returns>
+  </member>
+  <member name="IIsolatedProcessLauncher2">
+    <summary>Enables apps to determine whether processes are running in a Microsoft Defender Application Guard (MDAG) container (VM container environment).</summary>
+  </member>
+</doc>

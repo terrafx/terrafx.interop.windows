@@ -5795,7 +5795,7 @@
     <param name="pszName">
       <para>A pointer to a null-terminated, Unicode buffer that contains location information about the icon to load.</para>
       <para>If <i>hinst</i> is non-<b>NULL</b>, <i>pszName</i> specifies the icon resource either by name or ordinal. This ordinal must be packaged by using the <see cref="MAKEINTRESOURCE" /> macro.</para>
-      <para>If <i>hinst</i> is <b>NULL</b>, <i>pszName</i> specifies either the name of a standalone icon (.ico) file or the <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">identifier (beginning with the IDI_ prefix)</a> of a predefined system icon to load.</para>
+      <para>If <i>hinst</i> is <b>NULL</b>, <i>pszName</i> specifies the <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">identifier (beginning with the IDI_ prefix)</a> of a predefined system icon to load.</para>
     </param>
     <param name="lims">
       <para>The desired metric. One of the following values:</para>
@@ -5862,7 +5862,7 @@
     <param name="pszName">
       <para>A pointer to a null-terminated, Unicode buffer that contains location information about the icon to load.</para>
       <para>If <i>hinst</i> is non-<b>NULL</b>, <i>pszName</i> specifies the icon resource either by name or ordinal. This ordinal must be packaged by using the <see cref="MAKEINTRESOURCE" /> macro.</para>
-      <para>If <i>hinst</i> is <b>NULL</b>, <i>pszName</i> specifies either the name of a standalone icon (.ico) file or the <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">identifier (beginning with the IDI_ prefix)</a> of a predefined system icon to load.</para>
+      <para>If <i>hinst</i> is <b>NULL</b>, <i>pszName</i> specifies the <a href="https://docs.microsoft.com//windows/win32/menurc/about-icons">identifier (beginning with the IDI_ prefix)</a> of a predefined system icon to load.</para>
     </param>
     <param name="cx">The desired width, in pixels, of the icon.</param>
     <param name="cy">The desired height, in pixels, of the icon.</param>
@@ -6783,6 +6783,13 @@
           </description>
           <description>
             <b>Yes</b> button was selected.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <b>IDCLOSE</b>
+          </description>
+          <description>
+            <b>Close</b> button was selected.</description>
         </listheader>
       </list> <para>If this value is <b>NULL</b>, no value is returned.</para></param>
     <returns>

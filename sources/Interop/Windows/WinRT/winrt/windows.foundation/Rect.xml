@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Rect">
+    <summary>Contains a set of four floating-point numbers that represent the location and size of a rectangle.</summary>
+  </member>
+  <member name="Rect.Rect.X"></member>
+  <member name="Rect.Rect.Y"></member>
+  <member name="Rect.Rect.Width"></member>
+  <member name="Rect.Rect.Height"></member>
+  <member name="Rect.Height">
+    <summary>The height of the rectangle.</summary>
+  </member>
+  <member name="Rect.Width">
+    <summary>The width of the rectangle.</summary>
+  </member>
+  <member name="Rect.X">
+    <summary>The x-coordinate of the upper-left corner of the rectangle.</summary>
+  </member>
+  <member name="Rect.Y">
+    <summary>The y-coordinate of the upper-left corner of the rectangle.</summary>
+  </member>
+</doc>

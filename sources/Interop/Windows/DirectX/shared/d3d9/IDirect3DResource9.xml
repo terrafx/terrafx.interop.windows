@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DResource9.FreePrivateData">
+    <summary>Frees the specified private data associated with this resource.</summary>
+    <param name="refguid">Reference to the globally unique identifier that identifies the private data to free.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL, D3DERR_NOTFOUND.</returns>
+  </member>
+  <member name="IDirect3DResource9.GetDevice">
+    <summary>Retrieves the device associated with a resource.</summary>
+    <param name="ppDevice">Address of a pointer to an <see cref="IDirect3DDevice9" /> interface to fill with the device pointer, if the query succeeds.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DResource9.GetPriority">
+    <summary>Retrieves the priority for this resource.</summary>
+    <returns>Returns a DWORD value, indicating the priority of the resource.</returns>
+  </member>
+  <member name="IDirect3DResource9.GetPrivateData">
+    <summary>Copies the private data associated with the resource to a provided buffer.</summary>
+    <param name="refguid">The globally unique identifier that identifies the private data to retrieve.</param>
+    <param name="pData">Pointer to a previously allocated buffer to fill with the requested private data if the call succeeds. The application calling this method is responsible for allocating and releasing this buffer. If this parameter is <b>NULL</b>, this method will return the buffer size in pSizeOfData.</param>
+    <param name="pSizeOfData">Pointer to the size of the buffer at pData, in bytes. If this value is less than the actual size of the private data (such as 0), the method sets this parameter to the required buffer size and the method returns D3DERR_MOREDATA.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL, D3DERR_MOREDATA, D3DERR_NOTFOUND.</returns>
+  </member>
+  <member name="IDirect3DResource9.GetType">
+    <summary>Returns the type of the resource.</summary>
+    <returns>Returns a member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dresourcetype">D3DRESOURCETYPE</a> enumerated type, identifying the type of the resource.</returns>
+  </member>
+  <member name="IDirect3DResource9.PreLoad">
+    <summary>Preloads a managed resource.</summary>
+  </member>
+  <member name="IDirect3DResource9.SetPriority">
+    <summary>Assigns the priority of a resource for scheduling purposes.</summary>
+    <param name="PriorityNew">
+      <para>Priority to assign to a resource.</para>
+      <list type="table">
+        <listheader>
+          <description>Differences between Direct3D 9 and Direct3D 9 for Windows Vista<para>The priority can be any DWORD value; Direct3D 9 for Windows Vista also supports any of these pre-defined values <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3d9-resource-priority">D3D9_RESOURCE_PRIORITY</a>.</para></description>
+        </listheader>
+      </list>
+    </param>
+    <returns>Returns the previous priority value for the resource.</returns>
+  </member>
+  <member name="IDirect3DResource9.SetPrivateData">
+    <summary>Associates data with the resource that is intended for use by the application, not by Direct3D. Data is passed by value, and multiple sets of data can be associated with a single resource.</summary>
+    <param name="refguid">Reference to the globally unique identifier that identifies the private data to set.</param>
+    <param name="pData">Pointer to a buffer that contains the data to be associated with the resource.</param>
+    <param name="SizeOfData">Size of the buffer at pData, in bytes.</param>
+    <param name="Flags">
+      <para>Value that describes the type of data being passed, or indicates to the application that the data should be invalidated when the resource changes.</para>
+      <list type="table">
+        <listheader>
+          <description>Item</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>(none)</description>
+          <description>If no flags are specified, Direct3D allocates memory to hold the data within the buffer and copies the data into the new buffer. The buffer allocated by Direct3D is automatically freed, as appropriate.</description>
+        </listheader>
+        <listheader>
+          <description>D3DSPD_IUNKNOWN</description>
+          <description>The data at pData is a pointer to an <see cref="IUnknown" /> interface. SizeOfData must be set to the size of a pointer to IUnknown, that is, sizeof(IUnknown*). Direct3D automatically callsIUnknown through pData when the private data is destroyed. Private data will be destroyed by a subsequent call to <b>IDirect3DResource9.SetPrivateData</b> with the same GUID, a subsequent call to <see cref="IDirect3DResource9.FreePrivateData" />, or when the <see cref="IDirect3D9" /> object is released. For more information, see Remarks.</description>
+        </listheader>
+      </list>
+    </param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL, E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="IDirect3DResource9">
+    <summary>Applications use the methods of the <b>IDirect3DResource9</b> interface to query and prepare resources.</summary>
+  </member>
+</doc>

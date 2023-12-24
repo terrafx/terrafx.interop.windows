@@ -476,7 +476,7 @@
               </listheader>
             </list>
           </description>
-          <description>Creates a new file, always.<para>If the specified file exists and is writable, the function overwrites the file, the function succeeds, and last-error code is set to <b>ERROR_ALREADY_EXISTS</b> (183).</para><para>If the specified file does not exist and is a valid path, a new file is created, the function succeeds, and the last-error code is set to zero.</para><para>For more information, see the Remarks section of this topic.</para></description>
+          <description>Creates a new file, always.<para>If the specified file exists and is writable, the function truncates the file, the function succeeds, and last-error code is set to <b>ERROR_ALREADY_EXISTS</b> (183).</para><para>If the specified file does not exist and is a valid path, a new file is created, the function succeeds, and the last-error code is set to zero.</para><para>For more information, see the Remarks section of this topic.</para></description>
         </listheader>
         <listheader>
           <description>
@@ -672,7 +672,7 @@
               </listheader>
             </list>
           </description>
-          <description>Creates a new file, always.<para>If the specified file exists and is writable, the function overwrites the file, the function succeeds, and last-error code is set to <b>ERROR_ALREADY_EXISTS</b> (183).</para><para>If the specified file does not exist and is a valid path, a new file is created, the function succeeds, and the last-error code is set to zero.</para><para>For more information, see the Remarks section of this topic.</para></description>
+          <description>Creates a new file, always.<para>If the specified file exists and is writable, the function truncates the file, the function succeeds, and last-error code is set to <b>ERROR_ALREADY_EXISTS</b> (183).</para><para>If the specified file does not exist and is a valid path, a new file is created, the function succeeds, and the last-error code is set to zero.</para><para>For more information, see the Remarks section of this topic.</para></description>
         </listheader>
         <listheader>
           <description>
@@ -880,7 +880,7 @@
               </listheader>
             </list>
           </description>
-          <description>Creates a new file, always.<para>If the specified file exists and is writable, the function overwrites the file, the function succeeds, and last-error code is set to <b>ERROR_ALREADY_EXISTS</b> (183).</para><para>If the specified file does not exist and is a valid path, a new file is created, the function succeeds, and the last-error code is set to zero.</para><para>For more information, see the Remarks section of this topic.</para></description>
+          <description>Creates a new file, always.<para>If the specified file exists and is writable, the function truncates the file, the function succeeds, and last-error code is set to <b>ERROR_ALREADY_EXISTS</b> (183).</para><para>If the specified file does not exist and is a valid path, a new file is created, the function succeeds, and the last-error code is set to zero.</para><para>For more information, see the Remarks section of this topic.</para></description>
         </listheader>
         <listheader>
           <description>
@@ -1088,7 +1088,7 @@
               </listheader>
             </list>
           </description>
-          <description>Creates a new file, always.<para>If the specified file exists and is writable, the function overwrites the file, the function succeeds, and last-error code is set to <b>ERROR_ALREADY_EXISTS</b> (183).</para><para>If the specified file does not exist and is a valid path, a new file is created, the function succeeds, and the last-error code is set to zero.</para><para>For more information, see the Remarks section of this topic.</para></description>
+          <description>Creates a new file, always.<para>If the specified file exists and is writable, the function truncates the file, the function succeeds, and last-error code is set to <b>ERROR_ALREADY_EXISTS</b> (183).</para><para>If the specified file does not exist and is a valid path, a new file is created, the function succeeds, and the last-error code is set to zero.</para><para>For more information, see the Remarks section of this topic.</para></description>
         </listheader>
         <listheader>
           <description>
@@ -6837,46 +6837,46 @@
   <member name="Windows.RemoveDirectory">
     <summary>
       <para>Deletes an existing empty directory.</para>
-      <para>To perform this operation as a transacted operation, use the<see cref="RemoveDirectoryTransacted" /> function.</para>
+      <para>To perform this operation as a transacted operation, use the <see cref="RemoveDirectoryTransacted" /> function.</para>
     </summary>
     <param name="lpPathName">
       <para>The path of the directory to be removed. This path must specify an empty directory, and the calling process must have delete access to the directory.</para>
-      <para>By default, the name is limited to MAX_PATH characters. To extend this limit to 32,767 wide characters, prepend "\\?\" to the path. For more information, see <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a>.</para>
-      <blockquote>[!TIP] Starting with Windows 10, Version 1607, you can opt-in to remove the MAX_PATH limitation without prepending "\\?\". See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</blockquote>
+      <para>By default, the name is limited to <b>MAX_PATH</b> characters. To extend this limit to 32,767 wide characters, prepend "\\?\" to the path. For more information, see <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a>.</para>
+      <blockquote>[!TIP] Starting with Windows 10, Version 1607, you can opt-in to remove the <b>MAX_PATH</b> limitation without prepending "\\?\". See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</blockquote>
     </param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</para>
     </returns>
   </member>
   <member name="Windows.RemoveDirectoryA">
     <summary>
       <para>Deletes an existing empty directory.</para>
-      <para>To perform this operation as a transacted operation, use the<see cref="RemoveDirectoryTransacted" /> function.</para>
+      <para>To perform this operation as a transacted operation, use the <see cref="RemoveDirectoryTransacted" /> function.</para>
     </summary>
     <param name="lpPathName">
       <para>The path of the directory to be removed. This path must specify an empty directory, and the calling process must have delete access to the directory.</para>
-      <para>By default, the name is limited to MAX_PATH characters. To extend this limit to 32,767 wide characters, prepend "\\?\" to the path. For more information, see <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a>.</para>
-      <blockquote>[!TIP] Starting with Windows 10, Version 1607, you can opt-in to remove the MAX_PATH limitation without prepending "\\?\". See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</blockquote>
+      <para>By default, the name is limited to <b>MAX_PATH</b> characters. To extend this limit to 32,767 wide characters, prepend "\\?\" to the path. For more information, see <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a>.</para>
+      <blockquote>[!TIP] Starting with Windows 10, Version 1607, you can opt-in to remove the <b>MAX_PATH</b> limitation without prepending "\\?\". See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</blockquote>
     </param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</para>
     </returns>
   </member>
   <member name="Windows.RemoveDirectoryW">
     <summary>
       <para>Deletes an existing empty directory.</para>
-      <para>To perform this operation as a transacted operation, use the<see cref="RemoveDirectoryTransacted" /> function.</para>
+      <para>To perform this operation as a transacted operation, use the <see cref="RemoveDirectoryTransacted" /> function.</para>
     </summary>
     <param name="lpPathName">
       <para>The path of the directory to be removed. This path must specify an empty directory, and the calling process must have delete access to the directory.</para>
-      <para>By default, the name is limited to MAX_PATH characters. To extend this limit to 32,767 wide characters, prepend "\\?\" to the path. For more information, see <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a>.</para>
-      <blockquote>[!TIP] Starting with Windows 10, Version 1607, you can opt-in to remove the MAX_PATH limitation without prepending "\\?\". See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</blockquote>
+      <para>By default, the name is limited to <b>MAX_PATH</b> characters. To extend this limit to 32,767 wide characters, prepend "\\?\" to the path. For more information, see <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a>.</para>
+      <blockquote>[!TIP] Starting with Windows 10, Version 1607, you can opt-in to remove the <b>MAX_PATH</b> limitation without prepending "\\?\". See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</blockquote>
     </param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call <see cref="GetLastError" />.</para>
     </returns>
   </member>
   <member name="Windows.RemoveDirectory">

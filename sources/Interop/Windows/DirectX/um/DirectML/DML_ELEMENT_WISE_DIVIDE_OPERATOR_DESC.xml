@@ -7,7 +7,7 @@
       <para>Computes the quotient of each element of <i>ATensor</i> over the corresponding element of <i>BTensor</i>, placing the result into the corresponding element of <i>OutputTensor</i>.</para>
       <code>f(a, b) = a / b</code>
       <para>For integer divisions, the result is truncated.</para>
-      <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias one of the the input tensors during binding.</para>
+      <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias one of the input tensors during binding.</para>
     </summary>
   </member>
   <member name="DML_ELEMENT_WISE_DIVIDE_OPERATOR_DESC.ATensor">

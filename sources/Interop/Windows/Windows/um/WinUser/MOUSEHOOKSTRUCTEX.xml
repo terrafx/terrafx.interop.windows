@@ -4,7 +4,7 @@
 <doc>
   <member name="MOUSEHOOKSTRUCTEX">
     <summary>
-      <para>Contains information about a mouse event passed to a <b>WH_MOUSE</b> hook procedure, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644988(v=vs.85)">MouseProc</a>.</para>
+      <para>Contains information about a mouse event passed to a <b>WH_MOUSE</b> hook procedure, <a href="https://docs.microsoft.com//windows/win32/winmsg/mouseproc">MouseProc</a>.</para>
       <para>This is an extension of the <see cref="MOUSEHOOKSTRUCT" /> structure that includes information about wheel movement or the use of the X button.</para>
     </summary>
   </member>

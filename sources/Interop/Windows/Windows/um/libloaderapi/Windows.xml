@@ -1533,6 +1533,17 @@
     </param>
     <param name="dwExitCode">The exit code for the calling thread.</param>
   </member>
+  <member name="Windows.FreeResource">
+    <summary>
+      <blockquote>[!Note] This function is obsolete and is only supported for backward compatibility with 16-bit Windows. For 32-bit Windows applications, it is not necessary to free the resources loaded using <see cref="LoadResource" />. For modern versions of Windows this function always returns <b>FALSE</b>.</blockquote>
+      <para>Decrements (decreases by one) the reference count of a loaded resource. When the reference count reaches zero, the memory occupied by the resource is freed.</para>
+    </summary>
+    <param name="hResData">A handle of the resource. It is assumed that <i>hglbResource</i> was created by <see cref="LoadResource" />.</param>
+    <returns>
+      <para>If the function succeeds, the return value is zero.</para>
+      <para>If the function fails, the return value is nonzero, which indicates that the resource has not been freed.</para>
+    </returns>
+  </member>
   <member name="Windows.GetModuleFileName">
     <summary>
       <para>Retrieves the fully qualified path for the file that contains the specified module. The module must have been loaded by the current process.</para>

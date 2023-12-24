@@ -78,6 +78,6 @@
     </returns>
   </member>
   <member name="ITfSystemLangBarItem">
-    <summary>The <b>ITfSystemLangBarItem</b> interface is implemented by a system language bar menu and is used by a system language bar extension to modify the icon and/or tooltip string displayed for the menu. The extension can obtain an instance of this interface by by calling QueryInterface on the <see cref="ITfLangBarItem" /> object with IID_ITfSystemLangBarItem.</summary>
+    <summary>The <b>ITfSystemLangBarItem</b> interface is implemented by a system language bar menu and is used by a system language bar extension to modify the icon and/or tooltip string displayed for the menu. The extension can obtain an instance of this interface by calling QueryInterface on the <see cref="ITfLangBarItem" /> object with IID_ITfSystemLangBarItem.</summary>
   </member>
 </doc>

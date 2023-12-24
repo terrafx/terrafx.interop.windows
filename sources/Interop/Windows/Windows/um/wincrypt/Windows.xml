@@ -6287,7 +6287,44 @@
   <member name="Windows.CertOpenServerOcspResponse">
     <summary>The <b>CertOpenServerOcspResponse</b> function opens a handle to an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) response associated with a server certificate chain.</summary>
     <param name="pChainContext">The address of a <see cref="CERT_CHAIN_CONTEXT" /> structure that contains the certificate chain.</param>
-    <param name="dwFlags">This parameter is not used and must be zero.</param>
+    <param name="dwFlags">
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>0</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>This API will try to retrieve an initial OCSP response before returning, which means it will block during the retrieval.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_SERVER_OCSP_RESPONSE_ASYNC_FLAG</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Set this flag to return immediately without making the initial synchronous retrieval. 	</description>
+        </listheader>
+      </list>
+    </param>
     <param name="pOpenPara">This parameter is not used and must be <b>NULL</b>.</param>
     <returns>
       <para>Returns a handle to the OCSP response associated with a server certificate chain if successful; otherwise, <b>NULL</b>. This handle must be passed to the <see cref="CertCloseServerOcspResponse" /> function when it is no longer needed.</para>

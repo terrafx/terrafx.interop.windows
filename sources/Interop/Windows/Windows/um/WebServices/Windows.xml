@@ -368,7 +368,7 @@
   <member name="Windows.WsAddMappedHeader">
     <summary>Adds a specified mapped header to the <a href="https://docs.microsoft.com//windows/desktop/wsw/message">message</a>.</summary>
     <param name="message">
-      <para>Pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-message">WS_MESSAGE</a> structure representing the <a href="https://docs.microsoft.com//windows/desktop/wsw/message">message</a> to to which to add the mapped header.</para>
+      <para>Pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-message">WS_MESSAGE</a> structure representing the <a href="https://docs.microsoft.com//windows/desktop/wsw/message">message</a> to which to add the mapped header.</para>
       <para>The message can be in any state except <b>WS_MESSAGE_STATE_EMPTY</b> (see the <see cref="WS_MESSAGE_STATE" /> enumeration.</para>
     </param>
     <param name="headerName">Pointer to a <see cref="WS_XML_STRING" /> containing the name of the header.</param>
@@ -9605,7 +9605,7 @@
     <param name="channel">A pointer to the <b>Channel</b> on which to set the property and may not be <b>NULL</b>.</param>
     <param name="id">Identifier of the property to set.</param>
     <param name="value">A void pointer to the property value to set. The pointer must have an alignment compatible with the type of the property.</param>
-    <param name="valueSize">The size in bytes of of the property value.</param>
+    <param name="valueSize">The size in bytes of the property value.</param>
     <param name="error">A pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-error">WS_ERROR</a> object where additional information about the error should be stored if the function fails.</param>
     <returns>
       <para>This function can return one of these values.</para>
@@ -11923,7 +11923,7 @@
     </returns>
   </member>
   <member name="Windows.WsWriteStartAttribute">
-    <summary>This operation starts writing an attribute to the current element.<see cref="WsWriteStartElement" /> must be called before an attribute can be written. After the attribute has been started, the attribute value can be written using <see cref="WsWriteChars" />, <see cref="WsWriteBytes" />, or <see cref="WsWriteValue" />. The attribute must be completed using using <see cref="WsWriteEndAttribute" />.</summary>
+    <summary>This operation starts writing an attribute to the current element.<see cref="WsWriteStartElement" /> must be called before an attribute can be written. After the attribute has been started, the attribute value can be written using <see cref="WsWriteChars" />, <see cref="WsWriteBytes" />, or <see cref="WsWriteValue" />. The attribute must be completed using <see cref="WsWriteEndAttribute" />.</summary>
     <param name="writer">A pointer to the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-writer">WS_XML_WRITER</a> object to which the attribute is written. The pointer must reference a valid <b>XML Writer</b> object.</param>
     <param name="prefix">A WS_XML_STRING pointer to the prefix to use for the attribute. If the value referenced by this parameter is <b>NULL</b> the Writer will choose a attribute.</param>
     <param name="localName">A WS_XML_STRING pointer to the local name used by the attribute. It must be at least one character long.</param>

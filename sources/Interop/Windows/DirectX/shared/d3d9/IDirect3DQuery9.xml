@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DQuery9.GetData">
+    <summary>Polls a queried resource to get the query state or a query result. For more information about queries, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/queries">Queries (Direct3D 9)</a>.</summary>
+    <param name="pData">Pointer to a buffer containing the query data. The user is responsible for allocating this. <i>pData</i> may be <b>NULL</b> only if dwSize is 0.</param>
+    <param name="dwSize">Number of bytes of data in <i>pData</i>. If you set dwSize to zero, you can use this method to poll the resource for the query status. See remarks.</param>
+    <param name="dwGetDataFlags">Data flags specifying the query type. Valid values are either 0 or <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dgetdata-flush">D3DGETDATA_FLUSH</a>. Use 0 to avoid flushing batched queries to the driver and use D3DGETDATA_FLUSH to go ahead and flush them. For applications writing their own version of waiting, a query result is not realized until the driver receives a flush.</param>
+    <returns>The return type identifies the query state (see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/queries">Queries (Direct3D 9)</a>). The method returns S_OK if the query data is available and S_FALSE if it is not. These are considered successful return values. If the method fails when <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dgetdata-flush">D3DGETDATA_FLUSH</a> is used, the return value can be D3DERR_DEVICELOST.</returns>
+  </member>
+  <member name="IDirect3DQuery9.GetDataSize">
+    <summary>Gets the number of bytes in the query data.</summary>
+    <returns>Returns the number of bytes of query data.</returns>
+  </member>
+  <member name="IDirect3DQuery9.GetDevice">
+    <summary>Gets the device that is being queried.</summary>
+    <param name="ppDevice">Pointer to the device being queried. See <see cref="IDirect3DDevice9" />.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DQuery9.GetType">
+    <summary>Gets the query type.</summary>
+    <returns>Returns the query type. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dquerytype">D3DQUERYTYPE</a>.</returns>
+  </member>
+  <member name="IDirect3DQuery9.Issue">
+    <summary>Issue a query.</summary>
+    <param name="dwIssueFlags">Query flags specify the type of state change for the query. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dissue-begin">D3DISSUE_BEGIN</a> and <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dissue-end">D3DISSUE_END</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DQuery9">
+    <summary>Applications use the methods of the IDirect3DQuery9 interface to perform asynchronous queries on a driver.</summary>
+  </member>
+</doc>

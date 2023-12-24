@@ -12,7 +12,7 @@
     <summary>Specifies a zero byte of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">padding</a> that aligns the <b>AclRevision</b> member on a 16-bit boundary.</summary>
   </member>
   <member name="ACL.AclSize">
-    <summary>Specifies the size, in bytes, of the ACL. This value includes both the <b>ACL</b> structure and all the ACEs.</summary>
+    <summary>Specifies the size, in bytes, of the ACL. This value includes the <b>ACL</b> structure, all the ACEs, and the potential unused memory.</summary>
   </member>
   <member name="ACL.AceCount">
     <summary>Specifies the number of ACEs stored in the ACL.</summary>

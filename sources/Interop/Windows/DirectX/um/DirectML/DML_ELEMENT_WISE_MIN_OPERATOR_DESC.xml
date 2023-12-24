@@ -6,7 +6,7 @@
     <summary>
       <para>Takes the lesser of two corresponding elements from the input tensors, and places the result into the corresponding element of <i>OutputTensor</i>.</para>
       <code>f(a, b) = min(a, b)</code>
-      <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias one of the the input tensors during binding.</para>
+      <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias one of the input tensors during binding.</para>
     </summary>
   </member>
   <member name="DML_ELEMENT_WISE_MIN_OPERATOR_DESC.ATensor">

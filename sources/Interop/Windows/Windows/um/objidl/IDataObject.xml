@@ -26,7 +26,7 @@
         </listheader>
         <listheader>
           <description>ADVF_DATAONSTOP</description>
-          <description>When specified with ADVF_NODATA, this flag causes a last notification with the data included to to be sent before the data object is destroyed.<para>If used without ADVF_NODATA, <b>DAdvise</b> can be implemented in one of the following ways:</para><list type="bullet"><item><description>The ADVF_DATAONSTOP can be ignored.</description></item><item><description>The object can behave as if ADVF_NODATA was specified.</description></item></list>A change notification is sent only in the shutdown case. Data changes prior to shutdown do not cause a notification to be sent.</description>
+          <description>When specified with ADVF_NODATA, this flag causes a last notification with the data included to be sent before the data object is destroyed.<para>If used without ADVF_NODATA, <b>DAdvise</b> can be implemented in one of the following ways:</para><list type="bullet"><item><description>The ADVF_DATAONSTOP can be ignored.</description></item><item><description>The object can behave as if ADVF_NODATA was specified.</description></item></list>A change notification is sent only in the shutdown case. Data changes prior to shutdown do not cause a notification to be sent.</description>
         </listheader>
       </list>
     </param>
