@@ -1,0 +1,26 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IColorHelper
+IID_IColorHelperStatics
+IID_IColorHelperStatics2
+IID_IColors
+IID_IColorsStatics
+IID_IUIContentRoot
+IID_IUIContext
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.ui.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.ui
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.ui
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.ui.h
