@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.IID;
 
@@ -15,6 +16,7 @@ namespace TerraFX.Interop.WinRT;
 [Guid("3628E81B-3CAC-4C60-B7F4-23CE0E0C3356")]
 [NativeTypeName("struct IGraphicsCaptureItemInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct IGraphicsCaptureItemInterop : IGraphicsCaptureItemInterop.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IGraphicsCaptureItemInterop));

@@ -14,3 +14,6 @@ TerraFX.Interop.WinRT
 ../../../../tests/Interop/Windows/WinRT/winrt/WeakReference
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/WeakReference.h
+--with-attribute
+IWeakReference=SupportedOSPlatform("windows6.2")
+IWeakReferenceSource=SupportedOSPlatform("windows6.2")

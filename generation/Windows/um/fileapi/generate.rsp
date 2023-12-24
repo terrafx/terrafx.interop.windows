@@ -15,6 +15,9 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/fileapi.h
 --with-attribute
 CreateFile2=SupportedOSPlatform("windows6.2")
 CREATEFILE2_EXTENDED_PARAMETERS=SupportedOSPlatform("windows6.2")
+GetDiskSpaceInformation=SupportedOSPlatform("windows10.0.17763.0")
+GetDiskSpaceInformationA=SupportedOSPlatform("windows10.0.17763.0")
+GetDiskSpaceInformationW=SupportedOSPlatform("windows10.0.17763.0")
 GetTempPath2=SupportedOSPlatform("windows10.0.19043.0")
 GetTempPath2A=SupportedOSPlatform("windows10.0.19043.0")
 GetTempPath2W=SupportedOSPlatform("windows10.0.19043.0")
@@ -158,6 +161,7 @@ WriteFile=kernel32
 WriteFileEx=kernel32
 WriteFileGather=kernel32
 --with-setlasterror
+AreShortNamesEnabled
 CreateDirectory
 CreateDirectoryA
 CreateDirectoryW
@@ -211,6 +215,9 @@ GetDiskFreeSpaceEx
 GetDiskFreeSpaceExA
 GetDiskFreeSpaceExW
 GetDiskFreeSpaceW
+GetDiskSpaceInformation
+GetDiskSpaceInformationA
+GetDiskSpaceInformationW
 GetFileAttributes
 GetFileAttributesA
 GetFileAttributesEx

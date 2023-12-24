@@ -24,3 +24,6 @@ HSTRING_UserSize=combase
 HSTRING_UserSize64=combase
 HSTRING_UserUnmarshal=combase
 HSTRING_UserUnmarshal64=combase
+--with-attribute
+IInputPaneInterop=SupportedOSPlatform("windows6.2")
+IInspectable=SupportedOSPlatform("windows6.2")

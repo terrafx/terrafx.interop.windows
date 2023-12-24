@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.IID;
 
@@ -15,6 +16,7 @@ namespace TerraFX.Interop.WinRT;
 [Guid("64338358-366A-471B-BD56-DD8EF48E439B")]
 [NativeTypeName("struct IDisplayDeviceInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct IDisplayDeviceInterop : IDisplayDeviceInterop.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDisplayDeviceInterop));

@@ -31,19 +31,20 @@ TerraFX.Interop.Windows
 ../../../../sources/Interop/Windows/Windows/um/combaseapi
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/combaseapi
---with-attribute
-COINITBASE=Flags
-COWAIT_FLAGS=Flags
-CWMO_FLAGS=Flags
-REGCLS=Flags
-STDMSHLFLAGS=Flags
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/combaseapi.h
 --with-attribute
 AgileReferenceOptions=SupportedOSPlatform("windows6.3")
 CoAllowUnmarshalerCLSID=SupportedOSPlatform("windows6.2")
 CoCreateInstanceFromApp=SupportedOSPlatform("windows6.2")
+COINITBASE=Flags
+CoRegisterDeviceCatalog=SupportedOSPlatform("windows10.0.19041.0")
+CoRevokeDeviceCatalog=SupportedOSPlatform("windows10.0.19041.0")
+COWAIT_FLAGS=Flags
+CWMO_FLAGS=Flags
+REGCLS=Flags
 RoGetAgileReference=SupportedOSPlatform("windows6.3")
+STDMSHLFLAGS=Flags
 --with-librarypath
 CLSIDFromProgID=ole32
 CLSIDFromProgIDEx=ole32

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.IID;
 
@@ -15,6 +16,7 @@ namespace TerraFX.Interop.WinRT;
 [Guid("30D5A829-7FA4-4026-83BB-D75BAE4EA99E")]
 [NativeTypeName("struct IClosable : IInspectable")]
 [NativeInheritance("IInspectable")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IClosable : IClosable.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IClosable));

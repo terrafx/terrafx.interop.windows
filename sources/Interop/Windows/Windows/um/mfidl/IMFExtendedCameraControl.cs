@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
@@ -14,6 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("38E33520-FCA1-4845-A27A-68B7C6AB3789")]
 [NativeTypeName("struct IMFExtendedCameraControl : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct IMFExtendedCameraControl : IMFExtendedCameraControl.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFExtendedCameraControl));

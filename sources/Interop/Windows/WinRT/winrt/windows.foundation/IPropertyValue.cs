@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.IID;
 
@@ -15,6 +16,7 @@ namespace TerraFX.Interop.WinRT;
 [Guid("4BD682DD-7554-40E9-9A9B-82654EDE7E62")]
 [NativeTypeName("struct IPropertyValue : IInspectable")]
 [NativeInheritance("IInspectable")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPropertyValue));

@@ -23,3 +23,6 @@ EventWriteEx=Advapi32
 EventWriteString=Advapi32
 EventActivityIdControl=Advapi32
 EventSetInformation=Advapi32
+--with-attribute
+EtwSetInformation=SupportedOSPlatform("windows6.2")
+EventSetInformation=SupportedOSPlatform("windows6.2")

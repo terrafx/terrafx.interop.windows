@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="IMFExtendedCameraController" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.19043.0")]
 public static unsafe partial class IMFExtendedCameraControllerTests
 {
     /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IMFExtendedCameraController" /> struct is correct.</summary>

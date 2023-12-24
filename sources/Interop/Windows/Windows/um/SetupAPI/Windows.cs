@@ -52,18 +52,22 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetInfDriverStoreLocationA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupGetInfDriverStoreLocationA([NativeTypeName("PCSTR")] sbyte* FileName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] SP_ALTPLATFORM_INFO_V2* AlternatePlatformInfo, [NativeTypeName("PCSTR")] sbyte* LocaleName, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetInfDriverStoreLocationW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupGetInfDriverStoreLocationW([NativeTypeName("PCWSTR")] char* FileName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] SP_ALTPLATFORM_INFO_V2* AlternatePlatformInfo, [NativeTypeName("PCWSTR")] char* LocaleName, [NativeTypeName("PWSTR")] char* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetInfPublishedNameA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupGetInfPublishedNameA([NativeTypeName("PCSTR")] sbyte* DriverStoreLocation, [NativeTypeName("PSTR")] sbyte* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetInfPublishedNameW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupGetInfPublishedNameW([NativeTypeName("PCWSTR")] char* DriverStoreLocation, [NativeTypeName("PWSTR")] char* ReturnBuffer, [NativeTypeName("DWORD")] uint ReturnBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupGetInfFileListA"]/*' />
@@ -894,10 +898,12 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateDeviceInfoListExA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HDEVINFO SetupDiCreateDeviceInfoListExA([NativeTypeName("const GUID *")] Guid* ClassGuid, HWND hwndParent, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateDeviceInfoListExW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HDEVINFO SetupDiCreateDeviceInfoListExW([NativeTypeName("const GUID *")] Guid* ClassGuid, HWND hwndParent, [NativeTypeName("PCWSTR")] char* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceInfoListClass"]/*' />
@@ -907,34 +913,42 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceInfoListDetailA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDeviceInfoListDetailA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_LIST_DETAIL_DATA_A")] SP_DEVINFO_LIST_DETAIL_DATA_A* DeviceInfoSetDetailData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceInfoListDetailW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDeviceInfoListDetailW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_LIST_DETAIL_DATA_W")] SP_DEVINFO_LIST_DETAIL_DATA_W* DeviceInfoSetDetailData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateDeviceInfoA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiCreateDeviceInfoA(HDEVINFO DeviceInfoSet, [NativeTypeName("PCSTR")] sbyte* DeviceName, [NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCSTR")] sbyte* DeviceDescription, HWND hwndParent, [NativeTypeName("DWORD")] uint CreationFlags, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateDeviceInfoW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiCreateDeviceInfoW(HDEVINFO DeviceInfoSet, [NativeTypeName("PCWSTR")] char* DeviceName, [NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCWSTR")] char* DeviceDescription, HWND hwndParent, [NativeTypeName("DWORD")] uint CreationFlags, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiOpenDeviceInfoA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiOpenDeviceInfoA(HDEVINFO DeviceInfoSet, [NativeTypeName("PCSTR")] sbyte* DeviceInstanceId, HWND hwndParent, [NativeTypeName("DWORD")] uint OpenFlags, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiOpenDeviceInfoW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiOpenDeviceInfoW(HDEVINFO DeviceInfoSet, [NativeTypeName("PCWSTR")] char* DeviceInstanceId, HWND hwndParent, [NativeTypeName("DWORD")] uint OpenFlags, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceInstanceIdA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDeviceInstanceIdA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSTR")] sbyte* DeviceInstanceId, [NativeTypeName("DWORD")] uint DeviceInstanceIdSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceInstanceIdW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDeviceInstanceIdW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PWSTR")] char* DeviceInstanceId, [NativeTypeName("DWORD")] uint DeviceInstanceIdSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiDeleteDeviceInfo"]/*' />
@@ -959,18 +973,22 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateDeviceInterfaceA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiCreateDeviceInterfaceA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("const GUID *")] Guid* InterfaceClassGuid, [NativeTypeName("PCSTR")] sbyte* ReferenceString, [NativeTypeName("DWORD")] uint CreationFlags, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateDeviceInterfaceW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiCreateDeviceInterfaceW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("const GUID *")] Guid* InterfaceClassGuid, [NativeTypeName("PCWSTR")] char* ReferenceString, [NativeTypeName("DWORD")] uint CreationFlags, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiOpenDeviceInterfaceA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiOpenDeviceInterfaceA(HDEVINFO DeviceInfoSet, [NativeTypeName("PCSTR")] sbyte* DevicePath, [NativeTypeName("DWORD")] uint OpenFlags, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiOpenDeviceInterfaceW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiOpenDeviceInterfaceW(HDEVINFO DeviceInfoSet, [NativeTypeName("PCWSTR")] char* DevicePath, [NativeTypeName("DWORD")] uint OpenFlags, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceInterfaceAlias"]/*' />
@@ -990,10 +1008,12 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceInterfaceDetailA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDeviceInterfaceDetailA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData, [NativeTypeName("PSP_DEVICE_INTERFACE_DETAIL_DATA_A")] SP_DEVICE_INTERFACE_DETAIL_DATA_A* DeviceInterfaceDetailData, [NativeTypeName("DWORD")] uint DeviceInterfaceDetailDataSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceInterfaceDetailW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDeviceInterfaceDetailW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData, [NativeTypeName("PSP_DEVICE_INTERFACE_DETAIL_DATA_W")] SP_DEVICE_INTERFACE_DETAIL_DATA_W* DeviceInterfaceDetailData, [NativeTypeName("DWORD")] uint DeviceInterfaceDetailDataSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiInstallDeviceInterfaces"]/*' />
@@ -1023,34 +1043,42 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiEnumDriverInfoA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiEnumDriverInfoA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("DWORD")] uint DriverType, [NativeTypeName("DWORD")] uint MemberIndex, [NativeTypeName("PSP_DRVINFO_DATA_A")] SP_DRVINFO_DATA_V2_A* DriverInfoData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiEnumDriverInfoW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiEnumDriverInfoW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("DWORD")] uint DriverType, [NativeTypeName("DWORD")] uint MemberIndex, [NativeTypeName("PSP_DRVINFO_DATA_W")] SP_DRVINFO_DATA_V2_W* DriverInfoData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetSelectedDriverA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetSelectedDriverA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_A")] SP_DRVINFO_DATA_V2_A* DriverInfoData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetSelectedDriverW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetSelectedDriverW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] SP_DRVINFO_DATA_V2_W* DriverInfoData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetSelectedDriverA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSetSelectedDriverA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_A")] SP_DRVINFO_DATA_V2_A* DriverInfoData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetSelectedDriverW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSetSelectedDriverW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] SP_DRVINFO_DATA_V2_W* DriverInfoData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDriverInfoDetailA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDriverInfoDetailA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_A")] SP_DRVINFO_DATA_V2_A* DriverInfoData, [NativeTypeName("PSP_DRVINFO_DETAIL_DATA_A")] SP_DRVINFO_DETAIL_DATA_A* DriverInfoDetailData, [NativeTypeName("DWORD")] uint DriverInfoDetailDataSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDriverInfoDetailW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDriverInfoDetailW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] SP_DRVINFO_DATA_V2_W* DriverInfoData, [NativeTypeName("PSP_DRVINFO_DETAIL_DATA_W")] SP_DRVINFO_DETAIL_DATA_W* DriverInfoDetailData, [NativeTypeName("DWORD")] uint DriverInfoDetailDataSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiDestroyDriverInfoList"]/*' />
@@ -1070,18 +1098,22 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassDevsExA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HDEVINFO SetupDiGetClassDevsExA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCSTR")] sbyte* Enumerator, HWND hwndParent, [NativeTypeName("DWORD")] uint Flags, HDEVINFO DeviceInfoSet, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassDevsExW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HDEVINFO SetupDiGetClassDevsExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PCWSTR")] char* Enumerator, HWND hwndParent, [NativeTypeName("DWORD")] uint Flags, HDEVINFO DeviceInfoSet, [NativeTypeName("PCWSTR")] char* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetINFClassA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetINFClassA([NativeTypeName("PCSTR")] sbyte* InfName, [NativeTypeName("LPGUID")] Guid* ClassGuid, [NativeTypeName("PSTR")] sbyte* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetINFClassW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetINFClassW([NativeTypeName("PCWSTR")] char* InfName, [NativeTypeName("LPGUID")] Guid* ClassGuid, [NativeTypeName("PWSTR")] char* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiBuildClassInfoList"]/*' />
@@ -1091,26 +1123,32 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiBuildClassInfoListExA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiBuildClassInfoListExA([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiBuildClassInfoListExW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiBuildClassInfoListExW([NativeTypeName("DWORD")] uint Flags, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] char* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassDescriptionA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetClassDescriptionA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PSTR")] sbyte* ClassDescription, [NativeTypeName("DWORD")] uint ClassDescriptionSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassDescriptionW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetClassDescriptionW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PWSTR")] char* ClassDescription, [NativeTypeName("DWORD")] uint ClassDescriptionSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassDescriptionExA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetClassDescriptionExA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PSTR")] sbyte* ClassDescription, [NativeTypeName("DWORD")] uint ClassDescriptionSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassDescriptionExW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetClassDescriptionExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PWSTR")] char* ClassDescription, [NativeTypeName("DWORD")] uint ClassDescriptionSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] char* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCallClassInstaller"]/*' />
@@ -1165,18 +1203,22 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiInstallClassA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiInstallClassA(HWND hwndParent, [NativeTypeName("PCSTR")] sbyte* InfFileName, [NativeTypeName("DWORD")] uint Flags, HSPFILEQ FileQueue);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiInstallClassW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiInstallClassW(HWND hwndParent, [NativeTypeName("PCWSTR")] char* InfFileName, [NativeTypeName("DWORD")] uint Flags, HSPFILEQ FileQueue);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiInstallClassExA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiInstallClassExA(HWND hwndParent, [NativeTypeName("PCSTR")] sbyte* InfFileName, [NativeTypeName("DWORD")] uint Flags, HSPFILEQ FileQueue, [NativeTypeName("const GUID *")] Guid* InterfaceClassGuid, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiInstallClassExW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiInstallClassExW(HWND hwndParent, [NativeTypeName("PCWSTR")] char* InfFileName, [NativeTypeName("DWORD")] uint Flags, HSPFILEQ FileQueue, [NativeTypeName("const GUID *")] Guid* InterfaceClassGuid, [NativeTypeName("PVOID")] void* Reserved1, [NativeTypeName("PVOID")] void* Reserved2);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiOpenClassRegKey"]/*' />
@@ -1186,18 +1228,22 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiOpenClassRegKeyExA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HKEY SetupDiOpenClassRegKeyExA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiOpenClassRegKeyExW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HKEY SetupDiOpenClassRegKeyExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("REGSAM")] uint samDesired, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("PCWSTR")] char* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateDeviceInterfaceRegKeyA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HKEY SetupDiCreateDeviceInterfaceRegKeyA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("REGSAM")] uint samDesired, HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* InfSectionName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateDeviceInterfaceRegKeyW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HKEY SetupDiCreateDeviceInterfaceRegKeyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVICE_INTERFACE_DATA")] SP_DEVICE_INTERFACE_DATA* DeviceInterfaceData, [NativeTypeName("DWORD")] uint Reserved, [NativeTypeName("REGSAM")] uint samDesired, HINF InfHandle, [NativeTypeName("PCWSTR")] char* InfSectionName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiOpenDeviceInterfaceRegKey"]/*' />
@@ -1212,10 +1258,12 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateDevRegKeyA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HKEY SetupDiCreateDevRegKeyA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("DWORD")] uint Scope, [NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("DWORD")] uint KeyType, HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* InfSectionName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiCreateDevRegKeyW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern HKEY SetupDiCreateDevRegKeyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("DWORD")] uint Scope, [NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("DWORD")] uint KeyType, HINF InfHandle, [NativeTypeName("PCWSTR")] char* InfSectionName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiOpenDevRegKey"]/*' />
@@ -1235,10 +1283,12 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetHwProfileListExA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetHwProfileListExA([NativeTypeName("PDWORD")] uint* HwProfileList, [NativeTypeName("DWORD")] uint HwProfileListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PDWORD")] uint* CurrentlyActiveIndex, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetHwProfileListExW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetHwProfileListExW([NativeTypeName("PDWORD")] uint* HwProfileList, [NativeTypeName("DWORD")] uint HwProfileListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PDWORD")] uint* CurrentlyActiveIndex, [NativeTypeName("PCWSTR")] char* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDevicePropertyKeys"]/*' />
@@ -1253,6 +1303,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetDevicePropertyW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSetDevicePropertyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE")] uint PropertyType, [NativeTypeName("const PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("DWORD")] uint Flags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceInterfacePropertyKeys"]/*' />
@@ -1287,6 +1338,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetClassPropertyW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSetClassPropertyW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("const DEVPROPKEY *")] DEVPROPKEY* PropertyKey, [NativeTypeName("DEVPROPTYPE")] uint PropertyType, [NativeTypeName("const PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("DWORD")] uint Flags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetClassPropertyExW"]/*' />
@@ -1295,82 +1347,102 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceRegistryPropertyA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDeviceRegistryPropertyA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceRegistryPropertyW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDeviceRegistryPropertyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassRegistryPropertyA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetClassRegistryPropertyA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassRegistryPropertyW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetClassRegistryPropertyW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("PDWORD")] uint* PropertyRegDataType, [NativeTypeName("PBYTE")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] char* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetDeviceRegistryPropertyA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSetDeviceRegistryPropertyA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("const BYTE *")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetDeviceRegistryPropertyW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSetDeviceRegistryPropertyW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("const BYTE *")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetClassRegistryPropertyA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSetClassRegistryPropertyA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("const BYTE *")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetClassRegistryPropertyW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSetClassRegistryPropertyW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("DWORD")] uint Property, [NativeTypeName("const BYTE *")] byte* PropertyBuffer, [NativeTypeName("DWORD")] uint PropertyBufferSize, [NativeTypeName("PCWSTR")] char* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceInstallParamsA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDeviceInstallParamsA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_DEVINSTALL_PARAMS_A")] SP_DEVINSTALL_PARAMS_A* DeviceInstallParams);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDeviceInstallParamsW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDeviceInstallParamsW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_DEVINSTALL_PARAMS_W")] SP_DEVINSTALL_PARAMS_W* DeviceInstallParams);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassInstallParamsA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetClassInstallParamsA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_CLASSINSTALL_HEADER")] SP_CLASSINSTALL_HEADER* ClassInstallParams, [NativeTypeName("DWORD")] uint ClassInstallParamsSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassInstallParamsW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetClassInstallParamsW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_CLASSINSTALL_HEADER")] SP_CLASSINSTALL_HEADER* ClassInstallParams, [NativeTypeName("DWORD")] uint ClassInstallParamsSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetDeviceInstallParamsA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSetDeviceInstallParamsA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_DEVINSTALL_PARAMS_A")] SP_DEVINSTALL_PARAMS_A* DeviceInstallParams);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetDeviceInstallParamsW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSetDeviceInstallParamsW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_DEVINSTALL_PARAMS_W")] SP_DEVINSTALL_PARAMS_W* DeviceInstallParams);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetClassInstallParamsA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSetClassInstallParamsA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_CLASSINSTALL_HEADER")] SP_CLASSINSTALL_HEADER* ClassInstallParams, [NativeTypeName("DWORD")] uint ClassInstallParamsSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetClassInstallParamsW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSetClassInstallParamsW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_CLASSINSTALL_HEADER")] SP_CLASSINSTALL_HEADER* ClassInstallParams, [NativeTypeName("DWORD")] uint ClassInstallParamsSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDriverInstallParamsA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDriverInstallParamsA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_A")] SP_DRVINFO_DATA_V2_A* DriverInfoData, [NativeTypeName("PSP_DRVINSTALL_PARAMS")] SP_DRVINSTALL_PARAMS* DriverInstallParams);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetDriverInstallParamsW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetDriverInstallParamsW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] SP_DRVINFO_DATA_V2_W* DriverInfoData, [NativeTypeName("PSP_DRVINSTALL_PARAMS")] SP_DRVINSTALL_PARAMS* DriverInstallParams);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetDriverInstallParamsA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSetDriverInstallParamsA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_A")] SP_DRVINFO_DATA_V2_A* DriverInfoData, [NativeTypeName("PSP_DRVINSTALL_PARAMS")] SP_DRVINSTALL_PARAMS* DriverInstallParams);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiSetDriverInstallParamsW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiSetDriverInstallParamsW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("PSP_DRVINFO_DATA_W")] SP_DRVINFO_DATA_V2_W* DriverInfoData, [NativeTypeName("PSP_DRVINSTALL_PARAMS")] SP_DRVINSTALL_PARAMS* DriverInstallParams);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiLoadClassIcon"]/*' />
@@ -1399,10 +1471,12 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassImageListExA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetClassImageListExA([NativeTypeName("PSP_CLASSIMAGELIST_DATA")] SP_CLASSIMAGELIST_DATA* ClassImageListData, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassImageListExW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetClassImageListExW([NativeTypeName("PSP_CLASSIMAGELIST_DATA")] SP_CLASSIMAGELIST_DATA* ClassImageListData, [NativeTypeName("PCWSTR")] char* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassImageIndex"]/*' />
@@ -1417,10 +1491,12 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassDevPropertySheetsA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetClassDevPropertySheetsA(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("LPPROPSHEETHEADERA")] PROPSHEETHEADERA_V2* PropertySheetHeader, [NativeTypeName("DWORD")] uint PropertySheetHeaderPageListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("DWORD")] uint PropertySheetType);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetClassDevPropertySheetsW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetClassDevPropertySheetsW(HDEVINFO DeviceInfoSet, [NativeTypeName("PSP_DEVINFO_DATA")] SP_DEVINFO_DATA* DeviceInfoData, [NativeTypeName("LPPROPSHEETHEADERW")] PROPSHEETHEADERW_V2* PropertySheetHeader, [NativeTypeName("DWORD")] uint PropertySheetHeaderPageListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("DWORD")] uint PropertySheetType);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiAskForOEMDisk"]/*' />
@@ -1435,50 +1511,62 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiClassNameFromGuidA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiClassNameFromGuidA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PSTR")] sbyte* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiClassNameFromGuidW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiClassNameFromGuidW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PWSTR")] char* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiClassNameFromGuidExA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiClassNameFromGuidExA([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PSTR")] sbyte* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiClassNameFromGuidExW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiClassNameFromGuidExW([NativeTypeName("const GUID *")] Guid* ClassGuid, [NativeTypeName("PWSTR")] char* ClassName, [NativeTypeName("DWORD")] uint ClassNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] char* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiClassGuidsFromNameA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiClassGuidsFromNameA([NativeTypeName("PCSTR")] sbyte* ClassName, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiClassGuidsFromNameW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiClassGuidsFromNameW([NativeTypeName("PCWSTR")] char* ClassName, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiClassGuidsFromNameExA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiClassGuidsFromNameExA([NativeTypeName("PCSTR")] sbyte* ClassName, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiClassGuidsFromNameExW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiClassGuidsFromNameExW([NativeTypeName("PCWSTR")] char* ClassName, [NativeTypeName("LPGUID")] Guid* ClassGuidList, [NativeTypeName("DWORD")] uint ClassGuidListSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] char* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetHwProfileFriendlyNameA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetHwProfileFriendlyNameA([NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("PSTR")] sbyte* FriendlyName, [NativeTypeName("DWORD")] uint FriendlyNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetHwProfileFriendlyNameW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetHwProfileFriendlyNameW([NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("PWSTR")] char* FriendlyName, [NativeTypeName("DWORD")] uint FriendlyNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetHwProfileFriendlyNameExA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetHwProfileFriendlyNameExA([NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("PSTR")] sbyte* FriendlyName, [NativeTypeName("DWORD")] uint FriendlyNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCSTR")] sbyte* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetHwProfileFriendlyNameExW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetHwProfileFriendlyNameExW([NativeTypeName("DWORD")] uint HwProfile, [NativeTypeName("PWSTR")] char* FriendlyName, [NativeTypeName("DWORD")] uint FriendlyNameSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PCWSTR")] char* MachineName, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetWizardPage"]/*' />
@@ -1497,26 +1585,32 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetActualModelsSectionA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetActualModelsSectionA([NativeTypeName("PINFCONTEXT")] INFCONTEXT* Context, [NativeTypeName("PSP_ALTPLATFORM_INFO")] SP_ALTPLATFORM_INFO_V2* AlternatePlatformInfo, [NativeTypeName("PSTR")] sbyte* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetActualModelsSectionW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetActualModelsSectionW([NativeTypeName("PINFCONTEXT")] INFCONTEXT* Context, [NativeTypeName("PSP_ALTPLATFORM_INFO")] SP_ALTPLATFORM_INFO_V2* AlternatePlatformInfo, [NativeTypeName("PWSTR")] char* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetActualSectionToInstallA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetActualSectionToInstallA(HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* InfSectionName, [NativeTypeName("PSTR")] sbyte* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PSTR *")] sbyte** Extension);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetActualSectionToInstallW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetActualSectionToInstallW(HINF InfHandle, [NativeTypeName("PCWSTR")] char* InfSectionName, [NativeTypeName("PWSTR")] char* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PWSTR *")] char** Extension);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetActualSectionToInstallExA"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetActualSectionToInstallExA(HINF InfHandle, [NativeTypeName("PCSTR")] sbyte* InfSectionName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] SP_ALTPLATFORM_INFO_V2* AlternatePlatformInfo, [NativeTypeName("PSTR")] sbyte* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PSTR *")] sbyte** Extension, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupDiGetActualSectionToInstallExW"]/*' />
     [DllImport("setupapi", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL SetupDiGetActualSectionToInstallExW(HINF InfHandle, [NativeTypeName("PCWSTR")] char* InfSectionName, [NativeTypeName("PSP_ALTPLATFORM_INFO")] SP_ALTPLATFORM_INFO_V2* AlternatePlatformInfo, [NativeTypeName("PWSTR")] char* InfSectionWithExt, [NativeTypeName("DWORD")] uint InfSectionWithExtSize, [NativeTypeName("PDWORD")] uint* RequiredSize, [NativeTypeName("PWSTR *")] char** Extension, [NativeTypeName("PVOID")] void* Reserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupEnumInfSectionsA"]/*' />

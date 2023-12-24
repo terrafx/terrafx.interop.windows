@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.IID;
 
@@ -15,6 +16,7 @@ namespace TerraFX.Interop.WinRT;
 [Guid("41E64AAE-98C0-4239-8E95-A330DD6AA18B")]
 [NativeTypeName("struct ICompositionDrawingSurfaceInterop2 : ABI::Windows::UI::Composition::ICompositionDrawingSurfaceInterop")]
 [NativeInheritance("ICompositionDrawingSurfaceInterop")]
+[SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct ICompositionDrawingSurfaceInterop2 : ICompositionDrawingSurfaceInterop2.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICompositionDrawingSurfaceInterop2));

@@ -36,3 +36,5 @@ UnhandledExceptionFilter=kernel32
 GetLastError
 SetLastError
 SetThreadErrorMode
+--with-setlasterror
+SetThreadErrorMode

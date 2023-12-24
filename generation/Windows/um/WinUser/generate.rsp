@@ -119,15 +119,13 @@ TerraFX.Interop.Windows
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/WinUser.h
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/WinUser.inl
 --with-attribute
-AR_STATE=Flags
-DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS=Flags
-DIALOG_DPI_CHANGE_BEHAVIORS=Flags
-ORIENTATION_PREFERENCE=Flags
---with-attribute
 AdjustWindowRectExForDpi=SupportedOSPlatform("windows10.0.14393.0")
 AreDpiAwarenessContextsEqual=SupportedOSPlatform("windows10.0.14393.0")
+AR_STATE=Flags
 CreateSyntheticPointerDevice=SupportedOSPlatform("windows10.0.17763.0")
 DestroySyntheticPointerDevice=SupportedOSPlatform("windows10.0.17763.0")
+DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS=Flags
+DIALOG_DPI_CHANGE_BEHAVIORS=Flags
 DIALOG_DPI_CHANGE_BEHAVIORS=SupportedOSPlatform("windows10.0.15063.0")
 DIALOG_SCALING_BEHAVIOR=SupportedOSPlatform("windows10.0.15063.0")
 EnableMouseInPointer=SupportedOSPlatform("windows6.2")
@@ -142,6 +140,7 @@ GetCurrentInputMessageSource=SupportedOSPlatform("windows6.2")
 GetDialogControlDpiChangeBehavior=SupportedOSPlatform("windows10.0.15063.0")
 GetDialogDpiChangeBehavior=SupportedOSPlatform("windows10.0.15063.0")
 GetDisplayAutoRotationPreferences=SupportedOSPlatform("windows6.2")
+GetDpiAwarenessContextForProcess=SupportedOSPlatform("windows10.0.17134.0")
 GetDpiForSystem=SupportedOSPlatform("windows10.0.14393.0")
 GetDpiForWindow=SupportedOSPlatform("windows10.0.14393.0")
 GetDpiFromDpiAwarenessContext=SupportedOSPlatform("windows10.0.17134.0")
@@ -176,6 +175,7 @@ GetWindowDpiHostingBehavior=SupportedOSPlatform("windows10.0.17134.0")
 GetWindowFeedbackSetting=SupportedOSPlatform("windows6.2")
 GET_POINTERID_WPARAM=SupportedOSPlatform("windows6.2")
 HAS_POINTER_CONFIDENCE_WPARAM=SupportedOSPlatform("windows6.2")
+InheritWindowMonitor=SupportedOSPlatform("windows10.0.17134.0")
 InitializeTouchInjection=SupportedOSPlatform("windows6.2")
 InjectSyntheticPointerInput=SupportedOSPlatform("windows10.0.17763.0")
 InjectTouchInput=SupportedOSPlatform("windows6.2")
@@ -183,9 +183,12 @@ INPUT_INJECTION_VALUE=SupportedOSPlatform("windows10.0.17763.0")
 INPUT_MESSAGE_DEVICE_TYPE=SupportedOSPlatform("windows6.2")
 INPUT_MESSAGE_ORIGIN_ID=SupportedOSPlatform("windows6.2")
 INPUT_MESSAGE_SOURCE=SupportedOSPlatform("windows6.2")
+IsCharLower=SupportedOSPlatform("windows10.0.19043.0")
+IsCharLowerW=SupportedOSPlatform("windows10.0.19043.0")
 IsImmersiveProcess=SupportedOSPlatform("windows6.2")
 IsMouseInPointerEnabled=SupportedOSPlatform("windows6.2")
 IsValidDpiAwarenessContext=SupportedOSPlatform("windows10.0.14393.0")
+IsWindowArranged=SupportedOSPlatform("windowsWindows 10, version 1903")
 IS_POINTER_CANCELED_WPARAM=SupportedOSPlatform("windows6.2")
 IS_POINTER_FIRSTBUTTON_WPARAM=SupportedOSPlatform("windows6.2")
 IS_POINTER_FLAG_SET_WPARAM=SupportedOSPlatform("windows6.2")
@@ -194,6 +197,7 @@ IS_POINTER_INRANGE_WPARAM=SupportedOSPlatform("windows6.2")
 IS_POINTER_NEW_WPARAM=SupportedOSPlatform("windows6.2")
 IS_POINTER_SECONDBUTTON_WPARAM=SupportedOSPlatform("windows6.2")
 LogicalToPhysicalPointForPerMonitorDPI=SupportedOSPlatform("windows6.3")
+ORIENTATION_PREFERENCE=Flags
 PackTouchHitTestingProximityEvaluation=SupportedOSPlatform("windows6.2")
 PhysicalToLogicalPointForPerMonitorDPI=SupportedOSPlatform("windows6.3")
 POINTER_BUTTON_CHANGE_TYPE=SupportedOSPlatform("windows6.2")
@@ -220,6 +224,7 @@ SetDialogDpiChangeBehavior=SupportedOSPlatform("windows10.0.15063.0")
 SetDialogResizeBehavior=SupportedOSPlatform("windows10.0.15063.0")
 SetProcessDpiAwarenessContext=SupportedOSPlatform("windows10.0.15063.0")
 SetProcessRestrictionExemption=SupportedOSPlatform("windows6.2")
+SetThreadCursorCreationScaling=SupportedOSPlatform("windows10.0.22000.0")
 SetThreadDpiAwarenessContext=SupportedOSPlatform("windows10.0.14393.0")
 SetThreadDpiHostingBehavior=SupportedOSPlatform("windows10.0.17134.0")
 SetWindowFeedbackSetting=SupportedOSPlatform("windows6.2")
@@ -1365,6 +1370,8 @@ GetWindowTextLength
 GetWindowTextLengthA
 GetWindowTextLengthW
 GetWindowTextW
+GetWindowThreadProcessId
+GetWindowWord
 HideCaret
 InitializeTouchInjection
 InjectSyntheticPointerInput

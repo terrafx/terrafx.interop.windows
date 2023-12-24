@@ -2891,16 +2891,16 @@ public static unsafe partial class Windows
     public static delegate*<HDC, char*, int, ushort*, uint, uint> GetGlyphIndices => &GetGlyphIndicesW;
 
     [NativeTypeName("#define STAMP_DESIGNVECTOR (0x8000000 + 'd' + ('v' << 8))")]
-    public const int STAMP_DESIGNVECTOR = (0x8000000 + 'd' + ('v' << 8));
+    public const int STAMP_DESIGNVECTOR = (0x8000000 + (sbyte)('d') + ((sbyte)('v') << 8));
 
     [NativeTypeName("#define STAMP_AXESLIST (0x8000000 + 'a' + ('l' << 8))")]
-    public const int STAMP_AXESLIST = (0x8000000 + 'a' + ('l' << 8));
+    public const int STAMP_AXESLIST = (0x8000000 + (sbyte)('a') + ((sbyte)('l') << 8));
 
     [NativeTypeName("#define STAMP_TRUETYPE_VARIATION (0x8000000 + 't' + ('v' << 8))")]
-    public const int STAMP_TRUETYPE_VARIATION = (0x8000000 + 't' + ('v' << 8));
+    public const int STAMP_TRUETYPE_VARIATION = (0x8000000 + (sbyte)('t') + ((sbyte)('v') << 8));
 
     [NativeTypeName("#define STAMP_CFF2 (0x8000000 + 'c' + ('v' << 8))")]
-    public const int STAMP_CFF2 = (0x8000000 + 'c' + ('v' << 8));
+    public const int STAMP_CFF2 = (0x8000000 + (sbyte)('c') + ((sbyte)('v') << 8));
 
     [NativeTypeName("#define AddFontResourceEx AddFontResourceExW")]
     public static delegate*<char*, uint, void*, int> AddFontResourceEx => &AddFontResourceExW;

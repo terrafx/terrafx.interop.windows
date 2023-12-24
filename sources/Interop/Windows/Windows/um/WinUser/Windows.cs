@@ -1145,6 +1145,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharLowerW"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL IsCharLowerW([NativeTypeName("WCHAR")] char ch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetFocus"]/*' />
@@ -2399,6 +2400,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowWord"]/*' />
     [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [return: NativeTypeName("WORD")]
     public static extern ushort GetWindowWord(HWND hWnd, int nIndex);
 
@@ -2553,6 +2555,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowThreadProcessId"]/*' />
     [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetWindowThreadProcessId(HWND hWnd, [NativeTypeName("LPDWORD")] uint* lpdwProcessId);
 
@@ -2698,6 +2701,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetThreadCursorCreationScaling"]/*' />
     [DllImport("user32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern uint SetThreadCursorCreationScaling(uint cursorDpi);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadImageA"]/*' />
@@ -3088,6 +3092,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InheritWindowMonitor"]/*' />
     [DllImport("user32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.17134.0")]
     public static extern BOOL InheritWindowMonitor(HWND hwnd, HWND hwndInherit);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetProcessDpiAwarenessContext"]/*' />
@@ -3098,6 +3103,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDpiAwarenessContextForProcess"]/*' />
     [DllImport("user32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.17134.0")]
     public static extern DPI_AWARENESS_CONTEXT GetDpiAwarenessContextForProcess(HANDLE hProcess);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetThreadDpiHostingBehavior"]/*' />
@@ -4242,6 +4248,7 @@ public static unsafe partial class Windows
     public static delegate*<char, BOOL> IsCharUpper => &IsCharUpperW;
 
     [NativeTypeName("#define IsCharLower IsCharLowerW")]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static delegate*<char, BOOL> IsCharLower => &IsCharLowerW;
 
     [NativeTypeName("#define GetKeyNameText GetKeyNameTextW")]

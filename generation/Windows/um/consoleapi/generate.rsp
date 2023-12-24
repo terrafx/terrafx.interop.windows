@@ -25,9 +25,9 @@ GetNumberOfConsoleInputEvents
 PeekConsoleInputA
 PeekConsoleInputW
 ReadConsoleA
-ReadConsoleW
 ReadConsoleInputA
 ReadConsoleInputW
+ReadConsoleW
 SetConsoleCtrlHandler
 SetConsoleMode
 WriteConsoleA

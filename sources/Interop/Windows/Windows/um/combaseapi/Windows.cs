@@ -358,10 +358,12 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoRegisterDeviceCatalog"]/*' />
     [DllImport("combase", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19041.0")]
     public static extern HRESULT CoRegisterDeviceCatalog([NativeTypeName("PCWSTR")] char* deviceInstanceId, CO_DEVICE_CATALOG_COOKIE* cookie);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoRevokeDeviceCatalog"]/*' />
     [DllImport("combase", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19041.0")]
     public static extern HRESULT CoRevokeDeviceCatalog(CO_DEVICE_CATALOG_COOKIE cookie);
 
     [NativeTypeName("#define CLSCTX_INPROC (CLSCTX_INPROC_SERVER|CLSCTX_INPROC_HANDLER)")]

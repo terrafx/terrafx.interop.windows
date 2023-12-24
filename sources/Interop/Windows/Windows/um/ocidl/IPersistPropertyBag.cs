@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
@@ -14,6 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("37D84F60-42CB-11CE-8135-00AA004BB851")]
 [NativeTypeName("struct IPersistPropertyBag : IPersist")]
 [NativeInheritance("IPersist")]
+[SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct IPersistPropertyBag : IPersistPropertyBag.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPersistPropertyBag));

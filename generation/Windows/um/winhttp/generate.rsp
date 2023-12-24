@@ -17,13 +17,18 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winhttp.h
 --with-attribute
+WinHttpAddRequestHeadersEx=SupportedOSPlatform("windows10.0.19043.0")
 WinHttpCreateProxyResolver=SupportedOSPlatform("windows6.2")
 WinHttpFreeProxyResult=SupportedOSPlatform("windows6.2")
 WinHttpFreeProxySettingsEx=SupportedOSPlatform("windows10.0.22621.0")
+WinHttpFreeQueryConnectionGroupResult=SupportedOSPlatform("windows10.0.22000.0")
 WinHttpGetProxyForUrlEx=SupportedOSPlatform("windows6.2")
 WinHttpGetProxyResult=SupportedOSPlatform("windows6.2")
 WinHttpGetProxySettingsEx=SupportedOSPlatform("windows10.0.22621.0")
 WinHttpGetProxySettingsResultEx=SupportedOSPlatform("windows10.0.22621.0")
+WinHttpQueryConnectionGroup=SupportedOSPlatform("windows10.0.22000.0")
+WinHttpQueryHeadersEx=SupportedOSPlatform("windows10.0.19043.0")
+WinHttpReadDataEx=SupportedOSPlatform("windows10.0.19043.0")
 WinHttpRegisterProxyChangeNotification=SupportedOSPlatform("windows10.0.22621.0")
 WinHttpResetAutoProxy=SupportedOSPlatform("windows6.2")
 WinHttpUnregisterProxyChangeNotification=SupportedOSPlatform("windows10.0.22621.0")

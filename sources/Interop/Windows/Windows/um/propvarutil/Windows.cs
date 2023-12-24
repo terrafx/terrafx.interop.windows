@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.VARENUM;
 
 namespace TerraFX.Interop.Windows;
 

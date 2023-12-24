@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.IID;
 
@@ -15,6 +16,7 @@ namespace TerraFX.Interop.WinRT;
 [Guid("F4B8E804-811E-4436-B69C-44CB67B72084")]
 [NativeTypeName("struct IWebAuthenticationCoreManagerInterop : IInspectable")]
 [NativeInheritance("IInspectable")]
+[SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct IWebAuthenticationCoreManagerInterop : IWebAuthenticationCoreManagerInterop.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWebAuthenticationCoreManagerInterop));

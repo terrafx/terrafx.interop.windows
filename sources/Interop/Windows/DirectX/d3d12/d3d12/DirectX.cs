@@ -7,6 +7,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
@@ -93,5 +94,6 @@ public static unsafe partial class DirectX
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12GetInterface"]/*' />
     [DllImport("d3d12", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern HRESULT D3D12GetInterface([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, void** ppvDebug);
 }

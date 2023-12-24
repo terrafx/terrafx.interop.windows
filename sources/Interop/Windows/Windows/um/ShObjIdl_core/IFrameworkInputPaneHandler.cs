@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
@@ -14,6 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("226C537B-1E76-4D9E-A760-33DB29922F18")]
 [NativeTypeName("struct IFrameworkInputPaneHandler : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IFrameworkInputPaneHandler : IFrameworkInputPaneHandler.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFrameworkInputPaneHandler));

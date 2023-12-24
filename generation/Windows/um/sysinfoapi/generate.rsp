@@ -19,6 +19,7 @@ GetSystemTimeAdjustmentPrecise=SupportedOSPlatform("windows10.0")
 GetSystemTimePreciseAsFileTime=SupportedOSPlatform("windows6.2")
 GetVersionEx=Obsolete
 InstallELAMCertificateInfo=SupportedOSPlatform("windows6.3")
+IsUserCetAvailableInEnvironment=SupportedOSPlatform("windows10.0.19043.0")
 SetSystemTimeAdjustmentPrecise=SupportedOSPlatform("windows10.0")
 --with-librarypath
 DnsHostnameToComputerNameExW=kernel32

@@ -72,6 +72,7 @@ COPYFILE2_EXTENDED_PARAMETERS=SupportedOSPlatform("windows6.2")
 COPYFILE2_MESSAGE=SupportedOSPlatform("windows6.2")
 COPYFILE2_MESSAGE_ACTION=SupportedOSPlatform("windows6.2")
 COPYFILE2_MESSAGE_TYPE=SupportedOSPlatform("windows6.2")
+EnableProcessOptionalXStateFeatures=SupportedOSPlatform("windows10.0.22000.0")
 FILE_ALIGNMENT_INFO=SupportedOSPlatform("windows6.2")
 FILE_FULL_DIR_INFO=SupportedOSPlatform("windows6.2")
 FILE_STORAGE_INFO=SupportedOSPlatform("windows6.2")
@@ -80,6 +81,8 @@ GetFirmwareEnvironmentVariableEx=SupportedOSPlatform("windows6.2")
 GetFirmwareEnvironmentVariableExA=SupportedOSPlatform("windows6.2")
 GetFirmwareEnvironmentVariableExW=SupportedOSPlatform("windows6.2")
 GetFirmwareType=SupportedOSPlatform("windows6.2")
+GetThreadEnabledXStateFeatures=SupportedOSPlatform("windows10.0.22000.0")
+InitializeContext2=SupportedOSPlatform("windows10.0.19043.0")
 IsNativeVhdBoot=SupportedOSPlatform("windows6.2")
 LoadPackagedLibrary=SupportedOSPlatform("windows6.2")
 OpenCommPort=SupportedOSPlatform("windows10.0.16299.0")
@@ -92,6 +95,7 @@ ReadDirectoryChangesExW=SupportedOSPlatform("windows10.0.16299.0")
 SetFirmwareEnvironmentVariableEx=SupportedOSPlatform("windows6.2")
 SetFirmwareEnvironmentVariableExA=SupportedOSPlatform("windows6.2")
 SetFirmwareEnvironmentVariableExW=SupportedOSPlatform("windows6.2")
+SetHandleCount=SupportedOSPlatform("windows10.0.19043.0")
 --with-librarypath
 AccessCheckAndAuditAlarm=advapi32
 AccessCheckAndAuditAlarmA=advapi32
@@ -913,6 +917,7 @@ DnsHostnameToComputerName
 DnsHostnameToComputerNameA
 DnsHostnameToComputerNameW
 DosDateTimeToFileTime
+EnableProcessOptionalXStateFeatures
 EncryptFile
 EncryptFileA
 EncryptFileW
@@ -1099,6 +1104,7 @@ GlobalReAlloc
 GlobalSize
 GlobalUnlock
 InitializeContext
+InitializeContext2
 IsBadCodePtr
 IsNativeVhdBoot
 LoadPackagedLibrary

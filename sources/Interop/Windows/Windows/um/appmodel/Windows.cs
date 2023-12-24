@@ -189,32 +189,32 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.TryCreatePackageDependency"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
-    [SupportedOSPlatform("windows10.0.22621.0")]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern HRESULT TryCreatePackageDependency([NativeTypeName("PSID")] void* user, [NativeTypeName("PCWSTR")] char* packageFamilyName, PACKAGE_VERSION minVersion, PackageDependencyProcessorArchitectures packageDependencyProcessorArchitectures, PackageDependencyLifetimeKind lifetimeKind, [NativeTypeName("PCWSTR")] char* lifetimeArtifact, CreatePackageDependencyOptions options, [NativeTypeName("PWSTR *")] char** packageDependencyId);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DeletePackageDependency"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
-    [SupportedOSPlatform("windows10.0.22621.0")]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern HRESULT DeletePackageDependency([NativeTypeName("PCWSTR")] char* packageDependencyId);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AddPackageDependency"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
-    [SupportedOSPlatform("windows10.0.22621.0")]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern HRESULT AddPackageDependency([NativeTypeName("PCWSTR")] char* packageDependencyId, [NativeTypeName("INT32")] int rank, AddPackageDependencyOptions options, PACKAGEDEPENDENCY_CONTEXT* packageDependencyContext, [NativeTypeName("PWSTR *")] char** packageFullName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RemovePackageDependency"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
-    [SupportedOSPlatform("windows10.0.22621.0")]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern HRESULT RemovePackageDependency(PACKAGEDEPENDENCY_CONTEXT packageDependencyContext);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetResolvedPackageFullNameForPackageDependency"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
-    [SupportedOSPlatform("windows10.0.22621.0")]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern HRESULT GetResolvedPackageFullNameForPackageDependency([NativeTypeName("PCWSTR")] char* packageDependencyId, [NativeTypeName("PWSTR *")] char** packageFullName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetIdForPackageDependencyContext"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
-    [SupportedOSPlatform("windows10.0.22621.0")]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern HRESULT GetIdForPackageDependencyContext(PACKAGEDEPENDENCY_CONTEXT packageDependencyContext, [NativeTypeName("PWSTR *")] char** packageDependencyId);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPackageGraphRevisionId"]/*' />

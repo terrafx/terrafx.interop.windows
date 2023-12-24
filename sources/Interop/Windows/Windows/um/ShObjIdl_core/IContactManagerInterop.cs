@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
@@ -14,6 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("99EACBA7-E073-43B6-A896-55AFE48A0833")]
 [NativeTypeName("struct IContactManagerInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IContactManagerInterop : IContactManagerInterop.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IContactManagerInterop));

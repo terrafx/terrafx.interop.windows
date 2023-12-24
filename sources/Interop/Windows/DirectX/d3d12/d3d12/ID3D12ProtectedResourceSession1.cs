@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.IID;
 
@@ -15,6 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("D6F12DD6-76FB-406E-8961-4296EEFC0409")]
 [NativeTypeName("struct ID3D12ProtectedResourceSession1 : ID3D12ProtectedResourceSession")]
 [NativeInheritance("ID3D12ProtectedResourceSession")]
+[SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct ID3D12ProtectedResourceSession1 : ID3D12ProtectedResourceSession1.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12ProtectedResourceSession1));

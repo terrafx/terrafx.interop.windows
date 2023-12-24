@@ -853,6 +853,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateCameraOcclusionStateMonitor"]/*' />
     [DllImport("mfsensorgroup", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern HRESULT MFCreateCameraOcclusionStateMonitor([NativeTypeName("LPCWSTR")] char* symbolicLink, IMFCameraOcclusionStateReportCallback* callback, IMFCameraOcclusionStateMonitor** occlusionStateMonitor);
 
     [NativeTypeName("const IID")]

@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.IID;
 
@@ -15,6 +16,7 @@ namespace TerraFX.Interop.WinRT;
 [Guid("96369F54-8EB6-48F0-ABCE-C1B211E627C3")]
 [NativeTypeName("struct IStringable : IInspectable")]
 [NativeInheritance("IInspectable")]
+[SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IStringable : IStringable.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IStringable));

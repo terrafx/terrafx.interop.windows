@@ -148,6 +148,9 @@ MsiViewGetErrorA=msi
 MsiViewGetErrorW=msi
 MsiViewModify=msi
 --with-setlasterror
+MsiDatabaseOpenView
+MsiDatabaseOpenViewA
+MsiDatabaseOpenViewW
 MsiGetLastErrorRecord
 --with-type
 MSIDBOPEN_PATCHFILE=uint

@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop.DirectX;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.Windows;
@@ -20,6 +21,7 @@ public static unsafe partial class WinRT
         return inspectableSurface;
     }
 
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static HRESULT GetDXGIInterfaceFromObject(IInspectable* @object, Guid* iid, void** p)
     {
         IDirect3DDxgiInterfaceAccess* dxgiInterfaceAccess;
@@ -35,6 +37,7 @@ public static unsafe partial class WinRT
         return hr;
     }
 
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static HRESULT GetDXGIInterface<DXGI_TYPE>(IInspectable* @object, DXGI_TYPE** dxgi)
         where DXGI_TYPE : unmanaged, IUnknown.Interface
     {

@@ -35,3 +35,6 @@ IEnumVARIANT.Next=stdole
 IEnumVARIANT.Reset=stdole
 IEnumVARIANT.Skip=stdole
 IEnumVARIANT=stdole
+--with-attribute
+IErrorLog=SupportedOSPlatform("windows10.0.19043.0")
+IPropertyBag=SupportedOSPlatform("windows10.0.19043.0")

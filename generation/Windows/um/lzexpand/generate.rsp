@@ -25,3 +25,14 @@ LZRead=lz32
 LZSeek=lz32
 LZStart=lz32
 LZDone=lz32
+--with-setlasterror
+GetExpandedName
+GetExpandedNameA
+GetExpandedNameW
+LZCopy
+LZInit
+LZOpenFile
+LZOpenFileA
+LZOpenFileW
+LZRead
+LZSeek

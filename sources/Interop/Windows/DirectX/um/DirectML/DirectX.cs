@@ -34,6 +34,7 @@ public static unsafe partial class DirectX
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DMLCreateDevice1"]/*' />
     [DllImport("directml", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern HRESULT DMLCreateDevice1(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, DML_FEATURE_LEVEL minimumFeatureLevel, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
     [NativeTypeName("#define DML_TARGET_VERSION 0x4000")]

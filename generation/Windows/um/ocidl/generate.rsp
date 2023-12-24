@@ -12,3 +12,5 @@ TerraFX.Interop.Windows
 ../../../../tests/Interop/Windows/Windows/um/ocidl
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ocidl.h
+--with-attribute
+IPersistPropertyBag=SupportedOSPlatform("windows10.0.19043.0")

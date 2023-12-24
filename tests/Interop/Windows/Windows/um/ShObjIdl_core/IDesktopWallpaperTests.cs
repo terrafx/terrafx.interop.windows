@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="IDesktopWallpaper" /> struct.</summary>
+[SupportedOSPlatform("windows6.2")]
 public static unsafe partial class IDesktopWallpaperTests
 {
     /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IDesktopWallpaper" /> struct is correct.</summary>

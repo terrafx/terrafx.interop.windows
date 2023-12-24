@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
@@ -14,6 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("F27C3930-8029-4AD1-94E3-3DBA417810C1")]
 [NativeTypeName("struct IPackageDebugSettings : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IPackageDebugSettings : IPackageDebugSettings.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPackageDebugSettings));

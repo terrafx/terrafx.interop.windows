@@ -334,30 +334,30 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetInterfaceActiveTimestampCapabilities"]/*' />
     [DllImport("iphlpapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    [SupportedOSPlatform("windows10.0.22621.0")]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern uint GetInterfaceActiveTimestampCapabilities([NativeTypeName("const NET_LUID *")] NET_LUID_LH* InterfaceLuid, [NativeTypeName("PINTERFACE_TIMESTAMP_CAPABILITIES")] INTERFACE_TIMESTAMP_CAPABILITIES* TimestampCapabilites);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetInterfaceSupportedTimestampCapabilities"]/*' />
     [DllImport("iphlpapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    [SupportedOSPlatform("windows10.0.22621.0")]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern uint GetInterfaceSupportedTimestampCapabilities([NativeTypeName("const NET_LUID *")] NET_LUID_LH* InterfaceLuid, [NativeTypeName("PINTERFACE_TIMESTAMP_CAPABILITIES")] INTERFACE_TIMESTAMP_CAPABILITIES* TimestampCapabilites);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CaptureInterfaceHardwareCrossTimestamp"]/*' />
     [DllImport("iphlpapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    [SupportedOSPlatform("windows10.0.22621.0")]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern uint CaptureInterfaceHardwareCrossTimestamp([NativeTypeName("const NET_LUID *")] NET_LUID_LH* InterfaceLuid, [NativeTypeName("PINTERFACE_HARDWARE_CROSSTIMESTAMP")] INTERFACE_HARDWARE_CROSSTIMESTAMP* CrossTimestamp);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterInterfaceTimestampConfigChange"]/*' />
     [DllImport("iphlpapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    [SupportedOSPlatform("windows10.0.22621.0")]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern uint RegisterInterfaceTimestampConfigChange([NativeTypeName("PINTERFACE_TIMESTAMP_CONFIG_CHANGE_CALLBACK")] delegate* unmanaged<void*, void> Callback, [NativeTypeName("PVOID")] void* CallerContext, HIFTIMESTAMPCHANGE* NotificationHandle);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterInterfaceTimestampConfigChange"]/*' />
     [DllImport("iphlpapi", ExactSpelling = true)]
-    [SupportedOSPlatform("windows10.0.22621.0")]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern void UnregisterInterfaceTimestampConfigChange(HIFTIMESTAMPCHANGE NotificationHandle);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetInterfaceCurrentTimestampCapabilities"]/*' />

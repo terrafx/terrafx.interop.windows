@@ -65,10 +65,12 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDeviceManagementConfigInfo"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern HRESULT GetDeviceManagementConfigInfo([NativeTypeName("PCWSTR")] char* providerID, [NativeTypeName("DWORD *")] uint* configStringBufferLength, [NativeTypeName("PWSTR")] char* configString);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetDeviceManagementConfigInfo"]/*' />
     [DllImport("mdmregistration", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern HRESULT SetDeviceManagementConfigInfo([NativeTypeName("PCWSTR")] char* providerID, [NativeTypeName("PCWSTR")] char* configString);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetManagementAppHyperlink"]/*' />

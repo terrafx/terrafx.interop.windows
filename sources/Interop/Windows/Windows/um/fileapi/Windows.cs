@@ -157,10 +157,14 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDiskSpaceInformationA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.17763.0")]
     public static extern HRESULT GetDiskSpaceInformationA([NativeTypeName("LPCSTR")] sbyte* rootPath, DISK_SPACE_INFORMATION* diskSpaceInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDiskSpaceInformationW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.17763.0")]
     public static extern HRESULT GetDiskSpaceInformationW([NativeTypeName("LPCWSTR")] char* rootPath, DISK_SPACE_INFORMATION* diskSpaceInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDriveTypeA"]/*' />
@@ -270,6 +274,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AreShortNamesEnabled"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern BOOL AreShortNamesEnabled(HANDLE Handle, BOOL* Enabled);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetShortPathNameW"]/*' />
@@ -563,6 +568,7 @@ public static unsafe partial class Windows
     public static delegate*<char*, ULARGE_INTEGER*, ULARGE_INTEGER*, ULARGE_INTEGER*, BOOL> GetDiskFreeSpaceEx => &GetDiskFreeSpaceExW;
 
     [NativeTypeName("#define GetDiskSpaceInformation GetDiskSpaceInformationW")]
+    [SupportedOSPlatform("windows10.0.17763.0")]
     public static delegate*<char*, DISK_SPACE_INFORMATION*, HRESULT> GetDiskSpaceInformation => &GetDiskSpaceInformationW;
 
     [NativeTypeName("#define GetDriveType GetDriveTypeW")]

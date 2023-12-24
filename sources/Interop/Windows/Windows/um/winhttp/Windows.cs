@@ -74,6 +74,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpReadDataEx"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern uint WinHttpReadDataEx(HINTERNET hRequest, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("DWORD")] uint dwNumberOfBytesToRead, [NativeTypeName("LPDWORD")] uint* lpdwNumberOfBytesRead, [NativeTypeName("ULONGLONG")] ulong ullFlags, [NativeTypeName("DWORD")] uint cbProperty, [NativeTypeName("PVOID")] void* pvProperty);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpWriteData"]/*' />
@@ -114,6 +115,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpAddRequestHeadersEx"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern uint WinHttpAddRequestHeadersEx(HINTERNET hRequest, [NativeTypeName("DWORD")] uint dwModifiers, [NativeTypeName("ULONGLONG")] ulong ullFlags, [NativeTypeName("ULONGLONG")] ulong ullExtra, [NativeTypeName("DWORD")] uint cHeaders, WINHTTP_EXTENDED_HEADER* pHeaders);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpSendRequest"]/*' />
@@ -144,15 +146,18 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpQueryHeadersEx"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern uint WinHttpQueryHeadersEx(HINTERNET hRequest, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("ULONGLONG")] ulong ullFlags, uint uiCodePage, [NativeTypeName("PDWORD")] uint* pdwIndex, [NativeTypeName("PWINHTTP_HEADER_NAME")] WINHTTP_HEADER_NAME* pHeaderName, [NativeTypeName("PVOID")] void* pBuffer, [NativeTypeName("PDWORD")] uint* pdwBufferLength, [NativeTypeName("PWINHTTP_EXTENDED_HEADER *")] WINHTTP_EXTENDED_HEADER** ppHeaders, [NativeTypeName("PDWORD")] uint* pdwHeadersCount);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpQueryConnectionGroup"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern uint WinHttpQueryConnectionGroup(HINTERNET hInternet, [NativeTypeName("const GUID *")] Guid* pGuidConnection, [NativeTypeName("ULONGLONG")] ulong ullFlags, [NativeTypeName("PWINHTTP_QUERY_CONNECTION_GROUP_RESULT *")] WINHTTP_QUERY_CONNECTION_GROUP_RESULT** ppResult);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpFreeQueryConnectionGroupResult"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern void WinHttpFreeQueryConnectionGroupResult(WINHTTP_QUERY_CONNECTION_GROUP_RESULT* pResult);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpDetectAutoProxyConfigUrl"]/*' />

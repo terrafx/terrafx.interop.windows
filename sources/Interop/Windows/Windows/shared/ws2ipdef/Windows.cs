@@ -76,16 +76,16 @@ public static unsafe partial class Windows
     public const int IN6ADDR_TEREDOPREFIX_LENGTH = 32;
 
     [NativeTypeName("#define SIOCSIPMSFILTER SIO_SET_MULTICAST_FILTER")]
-    public const uint SIOCSIPMSFILTER = unchecked(0x80000000 | (((int)(4) & 0x7f) << 16) | (('t') << 8) | (125));
+    public const uint SIOCSIPMSFILTER = unchecked(0x80000000 | (((int)(4) & 0x7f) << 16) | (((sbyte)('t')) << 8) | (125));
 
     [NativeTypeName("#define SIOCGIPMSFILTER SIO_GET_MULTICAST_FILTER")]
-    public const uint SIOCGIPMSFILTER = unchecked(0x80000000 | (((int)(4) & 0x7f) << 16) | (('t') << 8) | (124 | 0x80000000));
+    public const uint SIOCGIPMSFILTER = unchecked(0x80000000 | (((int)(4) & 0x7f) << 16) | (((sbyte)('t')) << 8) | (124 | 0x80000000));
 
     [NativeTypeName("#define SIOCSMSFILTER _IOW('t', 126, ULONG)")]
-    public const uint SIOCSMSFILTER = unchecked(0x80000000 | (((int)(4) & 0x7f) << 16) | (('t') << 8) | (126));
+    public const uint SIOCSMSFILTER = unchecked(0x80000000 | (((int)(4) & 0x7f) << 16) | (((sbyte)('t')) << 8) | (126));
 
     [NativeTypeName("#define SIOCGMSFILTER _IOW('t', 127 | IOC_IN, ULONG)")]
-    public const uint SIOCGMSFILTER = unchecked(0x80000000 | (((int)(4) & 0x7f) << 16) | (('t') << 8) | (127 | 0x80000000));
+    public const uint SIOCGMSFILTER = unchecked(0x80000000 | (((int)(4) & 0x7f) << 16) | (((sbyte)('t')) << 8) | (127 | 0x80000000));
 
     [NativeTypeName("#define INET6_ADDRSTRLEN 65")]
     public const int INET6_ADDRSTRLEN = 65;

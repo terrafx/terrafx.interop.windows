@@ -35,6 +35,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsUserCetAvailableInEnvironment"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL IsUserCetAvailableInEnvironment([NativeTypeName("DWORD")] uint UserCetEnvironment);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemLeapSecondInformation"]/*' />

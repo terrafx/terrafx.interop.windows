@@ -6,11 +6,13 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="IInkD2DRenderer2" /> struct.</summary>
+[SupportedOSPlatform("windows10.0.22000.0")]
 public static unsafe partial class IInkD2DRenderer2Tests
 {
     /// <summary>Validates that the <see cref="Guid" /> of the <see cref="IInkD2DRenderer2" /> struct is correct.</summary>

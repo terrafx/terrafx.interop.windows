@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
@@ -14,6 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("18B21AA9-E184-4FF0-9F5E-F882D03771B3")]
 [NativeTypeName("struct IExecuteCommandApplicationHostEnvironment : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IExecuteCommandApplicationHostEnvironment : IExecuteCommandApplicationHostEnvironment.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IExecuteCommandApplicationHostEnvironment));

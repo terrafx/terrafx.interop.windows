@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using static TerraFX.Interop.Windows.IID;
 
 namespace TerraFX.Interop.Windows;
@@ -14,6 +15,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("3A3DCD6C-3EAB-43DC-BCDE-45671CE800C8")]
 [NativeTypeName("struct IDataTransferManagerInterop : IUnknown")]
 [NativeInheritance("IUnknown")]
+[SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDataTransferManagerInterop : IDataTransferManagerInterop.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDataTransferManagerInterop));

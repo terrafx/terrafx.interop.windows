@@ -12,3 +12,5 @@ TerraFX.Interop.WinRT
 ../../../../tests/Interop/Windows/WinRT/winrt/EventToken
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/EventToken.h
+--with-attribute
+DECLSPEC_XFGVIRT=SupportedOSPlatform("windows6.2")

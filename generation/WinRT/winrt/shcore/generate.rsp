@@ -16,3 +16,7 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/shcore.h
 CreateRandomAccessStreamOnFile=shcore
 CreateRandomAccessStreamOverStream=shcore
 CreateStreamOverRandomAccessStream=shcore
+--with-attribute
+CreateRandomAccessStreamOnFile=SupportedOSPlatform("windows6.2")
+CreateRandomAccessStreamOverStream=SupportedOSPlatform("windows6.2")
+CreateStreamOverRandomAccessStream=SupportedOSPlatform("windows6.2")

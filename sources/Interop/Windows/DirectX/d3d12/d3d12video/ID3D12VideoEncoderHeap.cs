@@ -6,6 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.Windows.IID;
 
@@ -15,6 +16,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("22B35D96-876A-44C0-B25E-FB8C9C7F1C4A")]
 [NativeTypeName("struct ID3D12VideoEncoderHeap : ID3D12Pageable")]
 [NativeInheritance("ID3D12Pageable")]
+[SupportedOSPlatform("windows10.0.22000.0")]
 public unsafe partial struct ID3D12VideoEncoderHeap : ID3D12VideoEncoderHeap.Interface, INativeGuid
 {
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12VideoEncoderHeap));

@@ -24,36 +24,44 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LZCopy"]/*' />
     [DllImport("lz32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [return: NativeTypeName("LONG")]
     public static extern int LZCopy(int hfSource, int hfDest);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LZInit"]/*' />
     [DllImport("lz32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern int LZInit(int hfSource);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetExpandedNameA"]/*' />
     [DllImport("lz32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern int GetExpandedNameA([NativeTypeName("LPSTR")] sbyte* lpszSource, [NativeTypeName("LPSTR")] sbyte* lpszBuffer);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetExpandedNameW"]/*' />
     [DllImport("lz32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern int GetExpandedNameW([NativeTypeName("LPWSTR")] char* lpszSource, [NativeTypeName("LPWSTR")] char* lpszBuffer);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LZOpenFileA"]/*' />
     [DllImport("lz32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern int LZOpenFileA([NativeTypeName("LPSTR")] sbyte* lpFileName, [NativeTypeName("LPOFSTRUCT")] OFSTRUCT* lpReOpenBuf, [NativeTypeName("WORD")] ushort wStyle);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LZOpenFileW"]/*' />
     [DllImport("lz32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern int LZOpenFileW([NativeTypeName("LPWSTR")] char* lpFileName, [NativeTypeName("LPOFSTRUCT")] OFSTRUCT* lpReOpenBuf, [NativeTypeName("WORD")] ushort wStyle);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LZSeek"]/*' />
     [DllImport("lz32", ExactSpelling = true)]
+    [SetsLastSystemError]
     [return: NativeTypeName("LONG")]
     public static extern int LZSeek(int hFile, [NativeTypeName("LONG")] int lOffset, int iOrigin);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LZRead"]/*' />
     [DllImport("lz32", ExactSpelling = true)]
+    [SetsLastSystemError]
     public static extern int LZRead(int hFile, [NativeTypeName("CHAR *")] sbyte* lpBuffer, int cbRead);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LZClose"]/*' />
