@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DSurface9.GetContainer">
+    <summary>Provides access to the parent cube texture or texture (mipmap) object, if this surface is a child level of a cube texture or a mipmap. This method can also provide access to the parent swap chain if the surface is a back-buffer child.</summary>
+    <param name="riid">Reference identifier of the container being requested.</param>
+    <param name="ppContainer">Address of a pointer to fill with the container pointer if the query succeeds. See Remarks.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DSurface9.GetDC">
+    <summary>Retrieves a device context.</summary>
+    <param name="phdc">Pointer to the device context for the surface.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL is returned if the argument is invalid.</returns>
+  </member>
+  <member name="IDirect3DSurface9.GetDesc">
+    <summary>Retrieves a description of the surface.</summary>
+    <param name="pDesc">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dsurface-desc">D3DSURFACE_DESC</a> structure, describing the surface.</param>
+    <returns>
+      <para>If the method succeeds, the return value is D3D_OK.</para>
+      <para>D3DERR_INVALIDCALL is returned if the argument is invalid.</para>
+    </returns>
+  </member>
+  <member name="IDirect3DSurface9.LockRect">
+    <summary>Locks a rectangle on a surface.</summary>
+    <param name="pLockedRect">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dlocked-rect">D3DLOCKED_RECT</a> structure that describes the locked region.</param>
+    <param name="pRect">Pointer to a rectangle to lock. Specified by a pointer to a <see cref="RECT" /> structure. Specifying <b>NULL</b> for this parameter expands the dirty region to cover the entire surface.</param>
+    <param name="Flags">
+      <para>Combination of zero or more locking flags that describe the type of lock to perform. For this method, the valid flags are:</para>
+      <list type="bullet">
+        <item>
+          <description>D3DLOCK_DISCARD</description>
+        </item>
+        <item>
+          <description>D3DLOCK_DONOTWAIT</description>
+        </item>
+        <item>
+          <description>D3DLOCK_NO_DIRTY_UPDATE</description>
+        </item>
+        <item>
+          <description>D3DLOCK_NOSYSLOCK</description>
+        </item>
+        <item>
+          <description>D3DLOCK_READONLY</description>
+        </item>
+      </list>You may not specify a subrect when using D3DLOCK_DISCARD. For a description of the flags, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dlock">D3DLOCK</a>.</param>
+    <returns>
+      <para>If the method succeeds, the return value is D3D_OK.</para>
+      <para>If the method fails, the return value can be D3DERR_INVALIDCALL or D3DERR_WASSTILLDRAWING.</para>
+    </returns>
+  </member>
+  <member name="IDirect3DSurface9.ReleaseDC">
+    <summary>Release a device context handle.</summary>
+    <param name="hdc">Handle to a device context.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL is returned if the argument is invalid.</returns>
+  </member>
+  <member name="IDirect3DSurface9.UnlockRect">
+    <summary>Unlocks a rectangle on a surface.</summary>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DSurface9">
+    <summary>Applications use the methods of the IDirect3DSurface9 interface to query and prepare surfaces.</summary>
+  </member>
+</doc>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DVertexDeclaration9.GetDeclaration">
+    <summary>Gets the vertex shader declaration.</summary>
+    <param name="pElement">Array of vertex elements (see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dvertexelement9">D3DVERTEXELEMENT9</a>) that make up a vertex shader declaration. The application needs to allocate enough room for this. The vertex element array ends with the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddecl-end">D3DDECL_END</a> macro.</param>
+    <param name="pNumElements">Number of elements in the array. The application needs to allocate enough room for this.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DVertexDeclaration9.GetDevice">
+    <summary>Gets the current device.</summary>
+    <param name="ppDevice">Pointer to the IDirect3DDevice9 interface that is returned.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DVertexDeclaration9">
+    <summary>Applications use the methods of the IDirect3DVertexDeclaration9 interface to encapsulate the vertex shader declaration.</summary>
+  </member>
+</doc>

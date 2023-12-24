@@ -34,7 +34,7 @@
     <summary>Called by a Shell view to notify the common dialog box hosting it that an event has occurred.</summary>
     <param name="ppshv">A pointer to the <see cref="IShellView" /> interface of the hosted view.</param>
     <param name="dwNotifyType">
-      <para>A flag that can can take one of the following two values.</para>
+      <para>A flag that can take one of the following two values.</para>
       <h4>CDB2N_CONTEXTMENU_START</h4>
       <para>Indicates that the shortcut menu is about to be displayed.</para>
       <h4>CDB2N_CONTEXTMENU_DONE</h4>

@@ -3,7 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DEBUGHOOKINFO">
-    <summary>Contains debugging information passed to a <b>WH_DEBUG</b> hook procedure, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a>.</summary>
+    <summary>Contains debugging information passed to a <b>WH_DEBUG</b> hook procedure, <a href="https://docs.microsoft.com//windows/win32/winmsg/debugproc">DebugProc</a>.</summary>
   </member>
   <member name="DEBUGHOOKINFO.idThread">
     <summary>A handle to the thread containing the filter function.</summary>
@@ -12,12 +12,12 @@
     <summary>A handle to the thread that installed the debugging filter function.</summary>
   </member>
   <member name="DEBUGHOOKINFO.lParam">
-    <summary>The value to be passed to the hook in the<i>lParam</i> parameter of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a> callback function.</summary>
+    <summary>The value to be passed to the hook in the <i>lParam</i> parameter of the <a href="https://docs.microsoft.com//windows/win32/winmsg/debugproc">DebugProc</a> callback function.</summary>
   </member>
   <member name="DEBUGHOOKINFO.wParam">
-    <summary>The value to be passed to the hook in the<i>wParam</i> parameter of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a> callback function.</summary>
+    <summary>The value to be passed to the hook in the <i>wParam</i> parameter of the <a href="https://docs.microsoft.com//windows/win32/winmsg/debugproc">DebugProc</a> callback function.</summary>
   </member>
   <member name="DEBUGHOOKINFO.code">
-    <summary>The value to be passed to the hook in the<i>nCode</i> parameter of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644978(v=vs.85)">DebugProc</a> callback function.</summary>
+    <summary>The value to be passed to the hook in the <i>nCode</i> parameter of the <a href="https://docs.microsoft.com//windows/win32/winmsg/debugproc">DebugProc</a> callback function.</summary>
   </member>
 </doc>

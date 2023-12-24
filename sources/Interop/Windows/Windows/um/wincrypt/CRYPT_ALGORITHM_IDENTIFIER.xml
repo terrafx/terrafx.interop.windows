@@ -7,8 +7,7 @@
   </member>
   <member name="CRYPT_ALGORITHM_IDENTIFIER.pszObjId">
     <summary>
-      <para>An OID of an algorithm. This member can be one of the following values. This list is only representative. New algorithms are being defined by</para>
-      <para>various users.</para>
+      <para>An OID of an algorithm. This member can be one of the following values. This list is only representative. New algorithms are being defined by various users.</para>
       <list type="table">
         <listheader>
           <description>Value</description>

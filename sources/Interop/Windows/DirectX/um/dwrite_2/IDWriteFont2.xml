@@ -3,7 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFont2.IsColorFont">
-    <summary>Enables determining if a color rendering path is potentially necessary.</summary>
+    <summary>Enables determining whether a color rendering path is potentially necessary.</summary>
     <returns>Returns <b>TRUE</b> if the font has color information (COLR and CPAL tables); otherwise <b>FALSE</b>.</returns>
   </member>
   <member name="IDWriteFont2">

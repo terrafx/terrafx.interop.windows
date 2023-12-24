@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3D9ExOverlayExtension.CheckDeviceOverlayType">
+    <summary>Queries the overlay hardware capabilities of a Direct3D device.</summary>
+    <param name="Adapter">An ordinal number that denotes the display adapter. <b>D3DADAPTER_DEFAULT</b> is always the primary display adapter.</param>
+    <param name="DevType">Specifies the Direct3D device type as a member of the <b>D3DDEVTYPE</b> enumerated type.</param>
+    <param name="OverlayWidth">The width of the overlay to create, in pixels.</param>
+    <param name="OverlayHeight">The height of the overlay to create, in pixels.</param>
+    <param name="OverlayFormat">The surface format of the overlay.</param>
+    <param name="pDisplayMode">A pointer to a <b>D3DDISPLAYMODEEX</b> structure that specifies the display mode that will be used. If this parameter is <b>NULL</b>, the current display mode is assumed.</param>
+    <param name="DisplayRotation">Specifies the display rotation mode as a member of the <b>D3DDISPLAYROTATION</b> enumerated type.</param>
+    <param name="pOverlayCaps">A pointer to a <see cref="D3DOVERLAYCAPS" /> structure. If the driver supports the overlay settings specified in the input parameters, the method fills this structure with the capabilities of the overlay hardware.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DERR_INVALIDCALL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid parameter, or the device does not support hardware overlay.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DERR_UNSUPPORTEDOVERLAY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The device does not support overlay for the specified size or display mode.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DERR_UNSUPPORTEDOVERLAYFORMAT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The device does not support overlay for the specified surface format.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IDirect3D9ExOverlayExtension">
+    <summary>
+      <para>Queries the overlay hardware capabilities of a Direct3D device.</para>
+      <para>To get a pointer to this interface, call <b>QueryInterface</b> on an <b>IDirect3D9Ex</b> interface pointer.</para>
+    </summary>
+  </member>
+</doc>

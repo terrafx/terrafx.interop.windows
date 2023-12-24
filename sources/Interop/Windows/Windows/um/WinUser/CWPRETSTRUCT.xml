@@ -3,7 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CWPRETSTRUCT">
-    <summary>Defines the message parameters passed to a <b>WH_CALLWNDPROCRET</b> hook procedure, <a href="https://docs.microsoft.com//windows/desktop/api/winuser/nc-winuser-hookproc">CallWndRetProc</a>.</summary>
+    <summary>Defines the message parameters passed to a <b>WH_CALLWNDPROCRET</b> hook procedure, <a href="https://docs.microsoft.com/nc-winuser-hookproc.md">HOOKPROC callback function</a>.</summary>
   </member>
   <member name="CWPRETSTRUCT.lResult">
     <summary>The return value of the window procedure that processed the message specified by the<b>message</b> value.</summary>

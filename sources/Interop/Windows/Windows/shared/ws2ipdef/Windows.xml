@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.IN6ADDR_ISANY"></member>
+  <member name="Windows.IN6ADDR_ISEQUAL">
+    <summary>Determines whether two IPv6 addresses are equal.</summary>
+    <param name="a">Pointer to the first address.</param>
+    <param name="b">Pointer to the second address.</param>
+    <returns>
+      <code>true</code> if the two addresses arguments point to values that are equal; otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6ADDR_ISLOOPBACK">
+    <summary>Determines whether the address argument is an IPv6 loopback address.</summary>
+    <param name="a">Pointer to the address to test.</param>
+    <returns>
+      <code>true</code> if the address is an IPv6 loopback address; otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6ADDR_ISUNSPECIFIED">
+    <summary>Determines whether the address argument is the unspecified IPv6 address (in6addr_any).</summary>
+    <param name="a">The address to test.</param>
+    <returns>
+      <code>true</code> if the address is the unspecified IPv6 address (in6addr_any); otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6ADDR_SETANY"></member>
+  <member name="Windows.IN6ADDR_SETLOOPBACK"></member>
+  <member name="Windows.IN6_ADDR_EQUAL">
+    <summary>Determines whether two IPv6 addresses are equal.</summary>
+    <param name="x">Pointer to the first address.</param>
+    <param name="y">Pointer to the second address.</param>
+    <returns>
+      <code>true</code> if the two addresses arguments point to values that are equal; otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_ANYCAST">
+    <summary>Determines whether the address argument is an IPv6 anycast address.</summary>
+    <param name="a">Pointer to the address to test.</param>
+    <returns>
+      <code>true</code> if the address is an IPv6 anycast address; otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_EUI64">
+    <summary>Determines whether the address argument is an IPv6 EUI-64 format address.</summary>
+    <param name="a">Pointer to the address to test.</param>
+    <returns>
+      <code>true</code> if the address is an IPv6 EUI-64 format address; otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_GLOBAL">
+    <summary>Determines whether the address argument is an IPv6 global address.</summary>
+    <param name="a">Pointer to the address to test.</param>
+    <returns>
+      <code>true</code> if the address is an IPv6 global address; otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_LINKLOCAL">
+    <summary>Determines whether the address argument is an IPv6 link-local address.</summary>
+    <param name="a">Pointer to the address to test.</param>
+    <returns>
+      <para>
+        <code>true</code> if the address is an IPv6 link-local address; otherwise, <code>false</code>.</para>
+      <para>Returns <code>true</code> for local-use IPv6 unicast addresses. Returns <code>false</code> for the IPv6 loopback address. Doesn't return <code>true</code> for IPv6 multicast addresses of link-local scope.</para>
+    </returns>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_LOOPBACK">
+    <summary>Determines whether the address argument is an IPv6 loopback address.</summary>
+    <param name="a">Pointer to the address to test.</param>
+    <returns>
+      <code>true</code> if the address is an IPv6 loopback address; otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_MC_GLOBAL">
+    <summary>Determines whether the address argument is an IPv6 multicast global address.</summary>
+    <param name="a">Pointer to the address to test.</param>
+    <returns>
+      <code>true</code> if the address is an IPv6 multicast global address; otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_MC_LINKLOCAL">
+    <summary>Determines whether the address argument is an IPv6 multicast link-local address.</summary>
+    <param name="a">Pointer to the address to test.</param>
+    <returns>
+      <code>true</code> if the address is an IPv6 multicast link-local address; otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_MC_NODELOCAL">
+    <summary>Determines whether the address argument is an IPv6 multicast node-local address.</summary>
+    <param name="a">Pointer to the address to test.</param>
+    <returns>
+      <code>true</code> if the address is an IPv6 multicast node-local address; otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_MC_ORGLOCAL">
+    <summary>Determines whether the address argument is an IPv6 multicast organization-local address.</summary>
+    <param name="a">Pointer to the address to test.</param>
+    <returns>
+      <code>true</code> if the address is an IPv6 multicast organization-local address; otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_MC_SITELOCAL">
+    <summary>Determines whether the address argument is an IPv6 multicast site-local address.</summary>
+    <param name="a">Pointer to the address to test.</param>
+    <returns>
+      <code>true</code> if the address is an IPv6 multicast site-local address; otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_MULTICAST">
+    <summary>Determines whether the address argument is an IPv6 multicast address.</summary>
+    <param name="a">Pointer to the address to test.</param>
+    <returns>
+      <code>true</code> if the address is an IPv6 multicast address; otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_SITELOCAL">
+    <summary>Determines whether the address argument is an IPv6 site-local address.</summary>
+    <param name="a">Pointer to the address to test.</param>
+    <returns>
+      <para>
+        <code>true</code> if the address is an IPv6 site-local address; otherwise, <code>false</code>.</para>
+      <para>Returns <code>true</code> for local-use IPv6 unicast addresses.</para>
+    </returns>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_SUBNET_RESERVED_ANYCAST">
+    <summary>Determines whether the address argument is one of the 128 IPv6 subnet-reserved anycast addresses.</summary>
+    <param name="a">Pointer to the address to test.</param>
+    <returns>
+      <code>true</code> if the address is one of the 128 IPv6 subnet-reserved anycast addresses; otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_SUBNET_ROUTER_ANYCAST">
+    <summary>Determines whether the address argument is the IPv6 subnet router anycast address.</summary>
+    <param name="a">Pointer to the address to test.</param>
+    <returns>
+      <code>true</code> if the address is the IPv6 subnet router anycast address; otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_UNSPECIFIED">
+    <summary>Determines whether the address argument is the unspecified IPv6 address (in6addr_any).</summary>
+    <param name="a">The address to test.</param>
+    <returns>
+      <code>true</code> if the address is the unspecified IPv6 address (in6addr_any); otherwise, <code>false</code>.</returns>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_V4COMPAT">
+    <summary>Determines whether the address argument is an IPv4-compatible IPv6 address.</summary>
+    <param name="a">The address to test.</param>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_V4MAPPED">
+    <summary>Determines whether the address argument is an IPv4-mapped IPv6 address.</summary>
+    <param name="a">The address to test.</param>
+  </member>
+  <member name="Windows.IN6_IS_ADDR_V4TRANSLATED">
+    <summary>Determines whether the address argument is an IPv4-translated IPv6 address.</summary>
+    <param name="a">The address to test.</param>
+  </member>
+  <member name="Windows.IN6_SET_ADDR_LOOPBACK"></member>
+  <member name="Windows.IN6_SET_ADDR_UNSPECIFIED"></member>
+</doc>

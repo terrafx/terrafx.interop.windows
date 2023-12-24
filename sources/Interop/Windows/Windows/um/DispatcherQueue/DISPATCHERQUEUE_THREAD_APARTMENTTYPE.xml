@@ -3,7 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISPATCHERQUEUE_THREAD_APARTMENTTYPE">
-    <summary>Specifies the threading apartment type for a new <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a>.</summary>
+    <summary>Defines constants that specify options around type of COM apartment for a new <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a>.</summary>
   </member>
   <member name="DISPATCHERQUEUE_THREAD_APARTMENTTYPE.DQTAT_COM_NONE">
     <summary>No COM threading apartment type specified.</summary>

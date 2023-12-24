@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1DeviceContext7.DrawGlyphRunWithColorSupport">
+    <summary>Draws a glyph run, using color representations of glyphs if available in the font. We recommended that you render color glyphs by using this method.</summary>
+    <param name="baselineOrigin">The baseline.</param>
+    <param name="glyphRun">The glyph run to draw.</param>
+    <param name="glyphRunDescription">A description of the glyph run to draw.</param>
+    <param name="foregroundBrush">Foreground brush for the text.</param>
+    <param name="svgGlyphStyle">The glyph style.</param>
+    <param name="colorPaletteIndex">Zero-based index of the font-defined color palette to use.</param>
+    <param name="measuringMode">Specifies measuring mode for positioning glyphs in the run.</param>
+    <param name="bitmapSnapOption">Snap options.</param>
+  </member>
+  <member name="ID2D1DeviceContext7.DrawPaintGlyphRun">
+    <summary>To support COLR v1, draws a color glyph run that has the format of <see cref="DWRITE_GLYPH_IMAGE_FORMATS_COLR_PAINT_TREE" />.</summary>
+    <param name="baselineOrigin">The baseline.</param>
+    <param name="glyphRun">The glyph run to draw.</param>
+    <param name="defaultFillBrush">Default fill brush.</param>
+    <param name="colorPaletteIndex">The index used to select a color palette within a color font. Note that this not the same as the <i>paletteIndex</i> in the <see cref="DWRITE_COLOR_GLYPH_RUN" /> struct, which is not relevant for paint glyphs.</param>
+    <param name="measuringMode">Specifies measuring mode for positioning glyphs in the run.</param>
+  </member>
+  <member name="ID2D1DeviceContext7.GetPaintFeatureLevel">
+    <summary>Retrieves the maximum paint feature level supported by <see cref="DrawPaintGlyphRun" />.</summary>
+    <returns>The paint feature level supported by <see cref="DrawPaintGlyphRun" />.</returns>
+  </member>
+  <member name="ID2D1DeviceContext7">
+    <summary>
+      <para>Enables creation and drawing of geometry realization objects; extends earlier device context interfaces with support for advanced color fonts.</para>
+      <para>The <b>ID2D1DeviceContext7</b> interface derives from <see cref="ID2D1DeviceContext6" />.</para>
+    </summary>
+  </member>
+</doc>

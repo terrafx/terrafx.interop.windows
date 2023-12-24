@@ -77,6 +77,8 @@
         <b>Terminal Services:  </b>You cannot inherit handles across sessions. Additionally, if this parameter is TRUE, you must create the process in the same session as the caller.</para>
       <para>
         <b>Protected Process Light (PPL) processes:  </b>The generic handle inheritance is blocked when a PPL process creates a non-PPL process since PROCESS_DUP_HANDLE is not allowed from a non-PPL process to a PPL process. See <a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a></para>
+      <para>
+        <b>Windows 7:  </b>STD_INPUT_HANDLE, STD_OUTPUT_HANDLE, and STD_ERROR_HANDLE are inherited, even when the parameter is FALSE.</para>
     </param>
     <param name="dwCreationFlags">
       <para>The flags that control the priority class and the creation of the process. For a list of values, see<a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-creation-flags">Process Creation Flags</a>.</para>
@@ -200,6 +202,8 @@
         <b>Terminal Services:  </b>You cannot inherit handles across sessions. Additionally, if this parameter is TRUE, you must create the process in the same session as the caller.</para>
       <para>
         <b>Protected Process Light (PPL) processes:  </b>The generic handle inheritance is blocked when a PPL process creates a non-PPL process since PROCESS_DUP_HANDLE is not allowed from a non-PPL process to a PPL process. See <a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a></para>
+      <para>
+        <b>Windows 7:  </b>STD_INPUT_HANDLE, STD_OUTPUT_HANDLE, and STD_ERROR_HANDLE are inherited, even when the parameter is FALSE.</para>
     </param>
     <param name="dwCreationFlags">
       <para>The flags that control the priority class and the creation of the process. For a list of values, see<a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-creation-flags">Process Creation Flags</a>.</para>
@@ -323,6 +327,8 @@
         <b>Terminal Services:  </b>You cannot inherit handles across sessions. Additionally, if this parameter is TRUE, you must create the process in the same session as the caller.</para>
       <para>
         <b>Protected Process Light (PPL) processes:  </b>The generic handle inheritance is blocked when a PPL process creates a non-PPL process since PROCESS_DUP_HANDLE is not allowed from a non-PPL process to a PPL process. See <a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a></para>
+      <para>
+        <b>Windows 7:  </b>STD_INPUT_HANDLE, STD_OUTPUT_HANDLE, and STD_ERROR_HANDLE are inherited, even when the parameter is FALSE.</para>
     </param>
     <param name="dwCreationFlags">
       <para>The flags that control the priority class and the creation of the process. For a list of values, see<a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-creation-flags">Process Creation Flags</a>.</para>
@@ -1868,11 +1874,12 @@
   </member>
   <member name="Windows.GetProcessInformation">
     <summary>Retrieves information about the specified process.</summary>
-    <param name="hProcess">A handle to the process. This handle must have the <b>PROCESS_SET_INFORMATION</b> access right. For more information, see <a href="https://docs.microsoft.com//windows/win32/procthread/process-security-and-access-rights">Process Security and Access Rights</a>.</param>
+    <param name="hProcess">A handle to the process. This handle must have at least the <b>PROCESS_QUERY_LIMITED_INFORMATION</b> access right. For more information, see <a href="https://docs.microsoft.com//windows/win32/procthread/process-security-and-access-rights">Process Security and Access Rights</a>.</param>
     <param name="ProcessInformationClass">A member of the <see cref="PROCESS_INFORMATION_CLASS" /> enumeration specifying the kind of information to retrieve.</param>
     <param name="ProcessInformation">
       <para>Pointer to an object to receive the type of information specified by the <i>ProcessInformationClass</i> parameter.</para>
       <para>If the <i>ProcessInformationClass</i> parameter is <b>ProcessMemoryPriority</b>, this parameter must point to a <see cref="MEMORY_PRIORITY_INFORMATION structure" />.</para>
+      <para>If the <i>ProcessInformationClass</i> parameter is <b>ProcessPowerThrottling</b>, this parameter must point to a <see cref="PROCESS_POWER_THROTTLING_STATE structure" />.</para>
       <para>If the <i>ProcessInformationClass</i> parameter is <b>ProcessProtectionLevelInfo</b>, this parameter must point to a <see cref="PROCESS_PROTECTION_LEVEL_INFORMATION structure" />.</para>
       <para>If the <i>ProcessInformationClass</i> parameter is <b>ProcessLeapSecondInfo</b>, this parameter must point to a <see cref="PROCESS_LEAP_SECOND_INFO structure" />.</para>
       <para>If the <i>ProcessInformationClass</i> parameter is <b>ProcessAppMemoryInfo</b>, this parameter must point to a <see cref="APP_MEMORY_INFORMATION structure" />.</para>
@@ -3695,7 +3702,10 @@
     <param name="Thread">Specifies the thread on which to set the CPU Set assignment. This handle must have the THREAD_SET_LIMITED_INFORMATION access right. The value returned by <see cref="GetCurrentThread" /> can also be used.</param>
     <param name="CpuSetIds">Specifies the list of CPU Set IDs to set as the thread selected CPU set. If this is NULL, the API clears out any assignment, reverting to process default assignment if one is set.</param>
     <param name="CpuSetIdCount">Specifies the number of IDs in the list passed in the <b>CpuSetIds</b> argument. If that value is NULL, this should be 0.</param>
-    <returns>This function cannot fail when passed valid parameters.</returns>
+    <returns>
+      <para>If the function succeeds, the return value is nonzero.</para>
+      <para>This function cannot fail when passed valid parameters.</para>
+    </returns>
   </member>
   <member name="Windows.SetThreadStackGuarantee">
     <summary>Sets the minimum size of the stack associated with the calling thread or fiber that will be available during any stack overflow exceptions. This is useful for handling stack overflow exceptions; the application can safely use the specified number of bytes during exception handling.</summary>

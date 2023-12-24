@@ -11,6 +11,7 @@
   </member>
   <member name="ISystemMediaTransportControlsInterop">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/mediatransport/media-transport-controls-portal">Media Transport Controls</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/integrate-with-systemmediatransportcontrols">System Media Transport Controls</a>. System Media Transport Controls has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use System Media Transport Controls instead of #FEATURENAMENOLINK#, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Enables interoperability with a WinRT a <a href="https://docs.microsoft.com//uwp/api/windows.media.systemmediatransportcontrols">SystemMediaTransportControls</a> object.</para>
       <para>This interface is implemented by the Windows.Media.SystemMediaTransportControls activation factory.</para>
     </summary>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_HIT_KIND"></member>
+  <member name="D3D12_HIT_KIND.D3D12_HIT_KIND_TRIANGLE_FRONT_FACE"></member>
+  <member name="D3D12_HIT_KIND.D3D12_HIT_KIND_TRIANGLE_BACK_FACE"></member>
+</doc>

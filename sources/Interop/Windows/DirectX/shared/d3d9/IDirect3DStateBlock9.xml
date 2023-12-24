@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DStateBlock9.Apply">
+    <summary>Apply the state block to the current device state.</summary>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails while in record mode, the return value is D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DStateBlock9.Capture">
+    <summary>Capture the current value of states that are included in a stateblock.</summary>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails because capture cannot be done while in record mode, the return value is D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DStateBlock9.GetDevice">
+    <summary>Gets the device.</summary>
+    <param name="ppDevice">Pointer to the IDirect3DDevice9 interface that is returned.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DStateBlock9">
+    <summary>Applications use the methods of the IDirect3DStateBlock9 interface to encapsulate render states.</summary>
+  </member>
+</doc>

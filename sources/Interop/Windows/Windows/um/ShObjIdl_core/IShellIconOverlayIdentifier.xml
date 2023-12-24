@@ -24,7 +24,7 @@
   <member name="IShellIconOverlayIdentifier.IsMemberOf">
     <summary>Specifies whether an icon overlay should be added to a Shell object's icon.</summary>
     <param name="pwszPath">A Unicode string that contains the fully qualified path of the Shell object.</param>
-    <param name="dwAttrib">The object's attributes. For a complete list of file attributes and their associated flags, see <see cref="IShellFolder.GetAttributesOf" />.</param>
+    <param name="dwAttrib">The object's attributes. For a complete list of file attributes and their associated flags, see <a href="https://docs.microsoft.com//windows/desktop/FileIO/file-attribute-constants">File Attribute Constants</a>.</param>
     <returns>
       <para>This method returns one of the following:</para>
       <list type="table">

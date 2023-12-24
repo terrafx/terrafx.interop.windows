@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DTexture9.AddDirtyRect">
+    <summary>Adds a dirty region to a texture resource.</summary>
+    <param name="pDirtyRect">Pointer to a <see cref="RECT" /> structure, specifying the dirty region to add. Specifying <b>NULL</b> expands the dirty region to cover the entire texture.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DTexture9.GetLevelDesc">
+    <summary>Retrieves a level description of a texture resource.</summary>
+    <param name="Level">Identifies a level of the texture resource. This method returns a surface description for the level specified by this parameter.</param>
+    <param name="pDesc">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dsurface-desc">D3DSURFACE_DESC</a> structure, describing the returned level.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL is returned if one of the arguments is invalid.</returns>
+  </member>
+  <member name="IDirect3DTexture9.GetSurfaceLevel">
+    <summary>Retrieves the specified texture surface level.</summary>
+    <param name="Level">Identifies a level of the texture resource. This method returns a surface for the level specified by this parameter. The top-level surface is denoted by 0.</param>
+    <param name="ppSurfaceLevel">Address of a pointer to an <see cref="IDirect3DSurface9" /> interface, representing the returned surface.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DTexture9.LockRect">
+    <summary>Locks a rectangle on a texture resource.</summary>
+    <param name="Level">Specifies the level of the texture resource to lock.</param>
+    <param name="pLockedRect">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dlocked-rect">D3DLOCKED_RECT</a> structure, describing the locked region.</param>
+    <param name="pRect">Pointer to a rectangle to lock. Specified by a pointer to a RECT structure. Specifying <b>NULL</b> for this parameter expands the dirty region to cover the entire texture.</param>
+    <param name="Flags">
+      <para>Combination of zero or more locking flags that describe the type of lock to perform. For this method, the valid flags are:</para>
+      <list type="bullet">
+        <item>
+          <description>D3DLOCK_DISCARD</description>
+        </item>
+        <item>
+          <description>D3DLOCK_NO_DIRTY_UPDATE</description>
+        </item>
+        <item>
+          <description>D3DLOCK_NOSYSLOCK</description>
+        </item>
+        <item>
+          <description>D3DLOCK_READONLY</description>
+        </item>
+      </list>You may not specify a subrect when using D3DLOCK_DISCARD. For a description of the flags, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dlock">D3DLOCK</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DTexture9.UnlockRect">
+    <summary>Unlocks a rectangle on a texture resource.</summary>
+    <param name="Level">Specifies the level of the texture resource to unlock.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DTexture9">
+    <summary>Applications use the methods of the IDirect3DTexture9 interface to manipulate a texture resource.</summary>
+  </member>
+</doc>

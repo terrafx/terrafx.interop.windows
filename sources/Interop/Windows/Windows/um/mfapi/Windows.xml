@@ -479,7 +479,7 @@
   </member>
   <member name="Windows.MFCombineSamples">
     <summary>Concatenates a media sample onto another sample if their combined duration does not exceed the specified duration.</summary>
-    <param name="pSample">A pointer to an <see cref="IMFSample" /> to which the the sample provided in the <i>pSampleToAdd</i> parameter is appended.</param>
+    <param name="pSample">A pointer to an <see cref="IMFSample" /> to which the sample provided in the <i>pSampleToAdd</i> parameter is appended.</param>
     <param name="pSampleToAdd">A pointer to an <see cref="IMFSample" /> to append to the sample provided in the <i>pSample</i> parameter.</param>
     <param name="dwMaxMergedDurationInMS">The maximum duration in milliseconds that the combined sample can fill for the operation to be successful.</param>
     <param name="pMerged">Output parameter that receives a BOOL indicating whether the sample was successfully appended.</param>

@@ -15,4 +15,12 @@
     <param name="ppv">Pointer to receive the <a href="https://docs.microsoft.com//uwp/api/windows.ui.core.icoreinputsourcebase">ICoreInputSourceBase</a> object.</param>
     <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
+  <member name="WinRT.HWND_UserFree"></member>
+  <member name="WinRT.HWND_UserFree64"></member>
+  <member name="WinRT.HWND_UserMarshal"></member>
+  <member name="WinRT.HWND_UserMarshal64"></member>
+  <member name="WinRT.HWND_UserSize"></member>
+  <member name="WinRT.HWND_UserSize64"></member>
+  <member name="WinRT.HWND_UserUnmarshal"></member>
+  <member name="WinRT.HWND_UserUnmarshal64"></member>
 </doc>

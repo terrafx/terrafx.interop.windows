@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3DPSHADERCAPS2_0">
+    <summary>Pixel shader driver caps.</summary>
+  </member>
+  <member name="D3DPSHADERCAPS2_0.Caps">
+    <summary>Instruction predication is supported if this value is nonzero. See <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/setp-comp---vs">setp_comp - vs</a>.</summary>
+  </member>
+  <member name="D3DPSHADERCAPS2_0.DynamicFlowControlDepth">
+    <summary>Either 0 or 24, which represents the depth of the dynamic flow control instruction nesting. See <b>D3DPSHADERCAPS2_0</b>.</summary>
+  </member>
+  <member name="D3DPSHADERCAPS2_0.NumTemps">
+    <summary>The number of temporary registers supported. See <b>D3DPSHADERCAPS2_0</b>.</summary>
+  </member>
+  <member name="D3DPSHADERCAPS2_0.StaticFlowControlDepth">
+    <summary>The depth of nesting of the <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/loop---vs">loop - vs</a>/<a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/rep---vs">rep - vs</a> and <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/call---vs">call - vs</a>/<a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/callnz-bool---vs">callnz bool - vs</a> instructions. See <b>D3DPSHADERCAPS2_0</b>.</summary>
+  </member>
+  <member name="D3DPSHADERCAPS2_0.NumInstructionSlots">
+    <summary>The number of instruction slots supported. See <b>D3DPSHADERCAPS2_0</b>.</summary>
+  </member>
+</doc>

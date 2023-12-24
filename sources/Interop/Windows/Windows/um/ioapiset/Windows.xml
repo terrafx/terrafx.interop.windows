@@ -122,11 +122,6 @@
             <see cref="LockFileEx" />
           </description>
         </item>
-        <item>
-          <description>
-            <see cref="ReadDirectoryChangesW" />
-          </description>
-        </item>
       </list>
     </param>
     <param name="lpOverlapped">A pointer to an<see cref="OVERLAPPED" /> structure that was specified when the overlapped operation was started.</param>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DCryptoSession9.DecryptionBlt">
+    <summary>Writes encrypted data to a protected surface.</summary>
+    <param name="pSrcSurface">A pointer to the surface that contains the source data.</param>
+    <param name="pDstSurface">A pointer to the protected surface where the encrypted data is written.</param>
+    <param name="SrcSurfaceSize">The size of the surface memory that <i>pSrcSurface</i> points to, in bytes. The size must be aligned to the value of <b>BlockAlignmentSize</b> in the driver capabilities structure; see Remarks.</param>
+    <param name="pEncryptedBlockInfo">
+      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/medfound/d3dencrypted-block-info">D3DENCRYPTED_BLOCK_INFO</a> structure, or <b>NULL</b>.</para>
+      <para>If the driver supports partially encrypted buffers, <i>pEncryptedBlockInfo</i> indicates which portions of the buffer are encrypted. If the entire surface is encrypted, set this parameter to <b>NULL</b>.</para>
+      <para>To check whether the driver supports partially encrypted buffers, call <see cref="IDirect3DDevice9Video.GetContentProtectionCaps" /> and check for the <b>D3DCPCAPS_PARTIALDECRYPTION</b> capabilities flag. If the driver does not support partially encrypted buffers, set this parameter to <b>NULL</b>.</para>
+    </param>
+    <param name="pContentKey">
+      <para>A pointer to a buffer that contains a content encryption key, or <b>NULL</b>. To query whether the driver supports the use of content keys, call <see cref="IDirect3DDevice9Video.GetContentProtectionCaps" /> and check for the <b>D3DCPCAPS_CONTENTKEY</b> capabilities flag.</para>
+      <para>If the driver supports content keys, use the content key to encrypt the surface. Encrypt the content key using the session key, and place the resulting cipher text in <i>pContentKey</i>. If the driver does not support content keys, use the session key to encrypt the surface and set <i>pContentKey</i> to <b>NULL</b>.</para>
+    </param>
+    <param name="pIV">
+      <para>A pointer to a buffer that contains the initialization vector (IV).</para>
+      <para>If the encryption type is <b>D3DCRYPTOTYPE_AES128_CTR</b>, the buffer is a <a href="https://docs.microsoft.com//windows/desktop/medfound/d3daes-ctr-iv">D3DAES_CTR_IV</a> structure. The caller allocates the structure and generates the IV. When you generate the first IV, initialize the structure to a random number. For each subsequent IV, simply increment the <b>IV</b> member of the structure, ensuring that the value always increases. This procedure enables the driver to validate that the same IV is never used more than once with the same key pair.</para>
+      <para>For other encryption types, a different structure might be used, or the encryption might not use an IV.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDirect3DCryptoSession9.EncryptionBlt">
+    <summary>Reads encrypted data from a protected surface.</summary>
+    <param name="pSrcSurface">Pointer to the protected surface.</param>
+    <param name="pDstSurface">Pointer to a surface that receives the encrypted data.</param>
+    <param name="DstSurfaceSize">The size of the surface memory that <i>pDstSurface</i> points to, in bytes. The size must be aligned to the value of <b>BlockAlignmentSize</b> in the driver capabilities structure; see Remarks.</param>
+    <param name="pIV">
+      <para>Pointer to a buffer that receives the initialization vector (IV). The caller allocates this buffer, but the driver generates the IV.</para>
+      <para>If the encryption type is <b>D3DCRYPTOTYPE_AES128_CTR</b> (128-bit AES-CTR), <i>pIV</i> points to a <a href="https://docs.microsoft.com//windows/desktop/medfound/d3daes-ctr-iv">D3DAES_CTR_IV</a> structure. When the driver generates the first IV, it initializes the structure to a random number. For each subsequent IV, the driver simply increments the <b>IV</b> member of the structure, ensuring that the value always increases. This procedure enables the application to validate that the same IV is never used more than once with the same key pair.</para>
+      <para>For other encryption types, a different structure might be used, or the encryption might not use an IV.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDirect3DCryptoSession9.FinishSessionKeyRefresh">
+    <summary>Switches to a new session key.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDirect3DCryptoSession9.GetCertificate">
+    <summary>Gets the driver's certificate chain.</summary>
+    <param name="CertifacteSize">The size of the <i>ppCertificate</i> array, in bytes. To get the size of the certificate chain, call <see cref="IDirect3DCryptoSession9.GetCertificateSize" />.</param>
+    <param name="ppCertificate">A pointer to a byte array that receives the driver's certificate chain. The caller must allocate the array.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDirect3DCryptoSession9.GetCertificateSize">
+    <summary>Gets the size of the driver's certificate chain.</summary>
+    <param name="pCertificateSize">Receives the size of the certificate chain, in bytes.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDirect3DCryptoSession9.GetEncryptionBltKey">
+    <summary>Gets the cryptographic key used to decrypt the data returned by the <see cref="IDirect3DCryptoSession9.EncryptionBlt" /> method.</summary>
+    <param name="pReadbackKey">A pointer to a byte array that receives the key. The key is encrypted using the session key.</param>
+    <param name="KeySize">The size of the <i>pReadbackKey</i> array, in bytes. The size should match the size of the session key.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDirect3DCryptoSession9.GetSurfacePitch">
+    <summary>Gets the stride of a protected surface.</summary>
+    <param name="pSrcSurface">Pointer to the protected surface.</param>
+    <param name="pSurfacePitch">Receives the stride, in bytes.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDirect3DCryptoSession9.NegotiateKeyExchange">
+    <summary>Establishes the session key for the cryptographic session.</summary>
+    <param name="DataSize">The size of the <i>pData</i> byte array, in bytes.</param>
+    <param name="pData">A pointer to a byte array that contains the encrypted session key.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDirect3DCryptoSession9.StartSessionKeyRefresh">
+    <summary>Gets a random number that can be used to refresh the session key.</summary>
+    <param name="pRandomNumber">A pointer to a byte array that receives a random number.</param>
+    <param name="RandomNumberSize">The size of the <i>pRandomNumber</i> array, in bytes. The size should match the size of the session key.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDirect3DCryptoSession9">
+    <summary>
+      <para>Represents a cryptographic session.</para>
+      <para>To get a pointer to this interface, call <see cref="IDirect3DDevice9Video.CreateCryptoSession" />.</para>
+    </summary>
+  </member>
+</doc>

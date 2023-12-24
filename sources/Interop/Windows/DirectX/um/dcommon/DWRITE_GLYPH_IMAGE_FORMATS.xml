@@ -3,33 +3,43 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS">
-    <summary>Specifies which formats are supported in the font, either at a font-wide level or per glyph.</summary>
+    <summary>
+      <blockquote>[!NOTE]<b>Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.</b></blockquote>
+      <para>Defines constants that specify which formats are supported in a font, either at a font-wide level or per glyph.</para>
+      <para>For color fonts, these formats can be used to represent color glyphs. Fonts can contain multiple drawable data formats for glyphs. And an app can use these values to tell DirectWrite which formats to return when splitting a color glyph run.</para>
+    </summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_NONE">
-    <summary>Indicates no data is available for this glyph.</summary>
+    <summary>Specifies that no data is available for this glyph.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_TRUETYPE">
-    <summary>The glyph has TrueType outlines.</summary>
+    <summary>Specifies that the glyph has TrueType outlines.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_CFF">
-    <summary>The glyph has CFF outlines.</summary>
+    <summary>Specifies that the glyph has CFF outlines.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_COLR">
-    <summary>The glyph has multilayered COLR data.</summary>
+    <summary>Specifies that the glyph has multilayered COLR data.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_SVG">
-    <summary>The glyph has SVG outlines as standard XML. Fonts may store the content gzip'd rather than plain text, indicated by the first two bytes as gzip header {0x1F 0x8B}.</summary>
+    <summary>Specifies that the glyph has SVG outlines as standard XML. Fonts may store the content gzip'd rather than plain text, indicated by the first two bytes as gzip header {0x1F 0x8B}.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_PNG">
-    <summary>The glyph has PNG image data, with standard PNG IHDR.</summary>
+    <summary>Specifies that the glyph has PNG image data, with standard PNG IHDR.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_JPEG">
-    <summary>The glyph has JPEG image data, with standard JIFF SOI header.</summary>
+    <summary>Specifies that the glyph has JPEG image data, with standard JIFF SOI header.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_TIFF">
-    <summary>The glyph has TIFF image data.</summary>
+    <summary>Specifies that the glyph has TIFF image data.</summary>
   </member>
   <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_PREMULTIPLIED_B8G8R8A8">
-    <summary>The glyph has raw 32-bit premultiplied BGRA data.</summary>
+    <summary>Specifies that the glyph has raw 32-bit premultiplied BGRA data.</summary>
+  </member>
+  <member name="DWRITE_GLYPH_IMAGE_FORMATS.DWRITE_GLYPH_IMAGE_FORMATS_COLR_PAINT_TREE">
+    <summary>
+      <blockquote>[!IMPORTANT] The <b>DWRITE_GLYPH_IMAGE_FORMATS_COLR_PAINT_TREE</b> constant is available in pre-release versions of the <a href="https://www.microsoft.com/software-download/windowsinsiderpreviewsdk">Windows Insider Preview</a>.</blockquote>
+      <para>Specifies that the glyph is represented by a tree of paint elements in the font's COLR table.</para>
+    </summary>
   </member>
 </doc>

@@ -6,6 +6,6 @@
     <summary>The <b>AM_COPY_MACROVISION</b> structure specifies the analog copy protection level for an NTSC encoder.</summary>
   </member>
   <member name="AM_COPY_MACROVISION.MACROVISIONLevel">
-    <summary>Analog copy protection level for the NTSC encoder. Member of the <see cref="AM_COPY_MACROVISION_LEVEL" /> enumerated data type.</summary>
+    <summary>Analog copy protection level for the NTSC encoder. Member of the <a href="https://docs.microsoft.com//previous-versions/ms778997(v=vs.85)">AM_COPY_MACROVISION_LEVEL</a> enumerated data type.</summary>
   </member>
 </doc>

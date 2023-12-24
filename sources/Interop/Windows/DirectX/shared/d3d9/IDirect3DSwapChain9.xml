@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DSwapChain9.GetBackBuffer">
+    <summary>Retrieves a back buffer from the swap chain of the device.</summary>
+    <param name="iBackBuffer">Index of the back buffer object to return. Back buffers are numbered from 0 to the total number of back buffers - 1. A value of 0 returns the first back buffer, not the front buffer. The front buffer is not accessible through this method. Use <see cref="IDirect3DSwapChain9.GetFrontBufferData" /> to retrieve a copy of the front buffer.</param>
+    <param name="Type">Stereo view is not supported in Direct3D 9, so the only valid value for this parameter is D3DBACKBUFFER_TYPE_MONO.</param>
+    <param name="ppBackBuffer">Address of a pointer to an <see cref="IDirect3DSurface9" /> interface, representing the returned back buffer surface.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If BackBuffer exceeds or equals the total number of back buffers, then the function fails and returns D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DSwapChain9.GetDevice">
+    <summary>Retrieves the device associated with the swap chain.</summary>
+    <param name="ppDevice">Address of a pointer to an <see cref="IDirect3DDevice9" /> interface to fill with the device pointer, if the query succeeds.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DSwapChain9.GetDisplayMode">
+    <summary>Retrieves the display mode's spatial resolution, color resolution, and refresh frequency.</summary>
+    <param name="pMode">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddisplaymode">D3DDISPLAYMODE</a> structure containing data about the display mode of the adapter. As opposed to the display mode of the device, which may not be active if the device does not own full-screen mode.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DSwapChain9.GetFrontBufferData">
+    <summary>Generates a copy of the swapchain's front buffer and places that copy in a system memory buffer provided by the application.</summary>
+    <param name="pDestSurface">Pointer to an <see cref="IDirect3DSurface9" /> interface that will receive a copy of the swapchain's front buffer. The data is returned in successive rows with no intervening space, starting from the vertically highest row to the lowest. For windowed mode, the size of the destination surface should be the size of the desktop. For full screen mode, the size of the destination surface should be the screen size.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If BackBuffer exceeds or equals the total number of back buffers, the function fails and returns D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DSwapChain9.GetPresentParameters">
+    <summary>Retrieves the presentation parameters associated with a swap chain.</summary>
+    <param name="pPresentationParameters">Pointer to the presentation parameters. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpresent-parameters">D3DPRESENT_PARAMETERS</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DSwapChain9.GetRasterStatus">
+    <summary>Returns information describing the raster of the monitor on which the swap chain is presented.</summary>
+    <param name="pRasterStatus">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3draster-status">D3DRASTER_STATUS</a> structure filled with information about the position or other status of the raster on the monitor driven by this adapter.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL is returned if pRasterStatus is invalid or if the device does not support reading the current scan line. To determine if the device supports reading the scan line, check for the D3DCAPS_READ_SCANLINE flag in the Caps member of <see cref="D3DCAPS9" />.</returns>
+  </member>
+  <member name="IDirect3DSwapChain9.Present">
+    <summary>Presents the contents of the next buffer in the sequence of back buffers owned by the swap chain.</summary>
+    <param name="pSourceRect">Pointer to the source rectangle (see <see cref="RECT" />). Use <b>NULL</b> to present the entire surface. This value must be <b>NULL</b> unless the swap chain was created with D3DSWAPEFFECT_COPY. If the rectangle exceeds the source surface, the rectangle is clipped to the source surface.</param>
+    <param name="pDestRect">Pointer to the destination rectangle in client coordinates (see <see cref="RECT" />). This value must be <b>NULL</b> unless the swap chain was created with D3DSWAPEFFECT_COPY. Use <b>NULL</b> to fill the entire client area. If the rectangle exceeds the destination client area, the rectangle is clipped to the destination client area.</param>
+    <param name="hDestWindowOverride">Destination window whose client area is taken as the target for this presentation. If this value is <b>NULL</b>, the runtime uses the <b>hDeviceWindow</b> member of <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpresent-parameters">D3DPRESENT_PARAMETERS</a> for the presentation.</param>
+    <param name="pDirtyRegion">
+      <para>This value must be <b>NULL</b> unless the swap chain was created with <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dswapeffect">D3DSWAPEFFECT_COPY</a>. See <a href="https://docs.microsoft.com//windows/desktop/direct3d9/flipping-surfaces">Flipping Surfaces (Direct3D 9)</a>.</para>
+      <para>If this value is non-<b>NULL</b>, the contained region is expressed in back buffer coordinates. The rectangles within the region are the minimal set of pixels that need to be updated. This method takes these rectangles into account when optimizing the presentation by copying only the pixels within the region, or some suitably expanded set of rectangles. This is an aid to optimization only, and the application should not rely on the region being copied exactly. The implementation may choose to copy the whole source rectangle.</para>
+    </param>
+    <param name="dwFlags">
+      <para>Allows the application to request that the method return immediately when the driver reports that it cannot schedule a presentation. Valid values are 0, or any combination of <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpresent">D3DPRESENT_DONOTWAIT</a> or <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpresent">D3DPRESENT_LINEAR_CONTENT</a>.</para>
+      <list type="bullet">
+        <item>
+          <description>If dwFlags = 0, this method behaves as it did prior to Direct3D 9. Present will spin until the hardware is free, without returning an error.</description>
+        </item>
+        <item>
+          <description>If dwFlags = <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpresent">D3DPRESENT_DONOTWAIT</a>, and the hardware is busy processing or waiting for a vertical sync interval, the method will return D3DERR_WASSTILLDRAWING.</description>
+        </item>
+        <item>
+          <description>If dwFlags = <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpresent">D3DPRESENT_LINEAR_CONTENT</a>, gamma correction is performed from linear space to sRGB for windowed swap chains. This flag will take effect only when the driver exposes <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dcaps3">D3DCAPS3_LINEAR_TO_SRGB_PRESENTATION</a> (see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/gamma">Gamma (Direct3D 9)</a>). Applications should specify this flag if the backbuffer format is 16-bit floating point in order to match windowed mode present to fullscreen gamma behavior.</description>
+        </item>
+      </list>
+    </param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_DEVICELOST, D3DERR_DRIVERINTERNALERROR, D3DERR_INVALIDCALL, D3DERR_OUTOFVIDEOMEMORY, E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="IDirect3DSwapChain9">
+    <summary>Applications use the methods of the IDirect3DSwapChain9 interface to manipulate a swap chain.</summary>
+  </member>
+</doc>

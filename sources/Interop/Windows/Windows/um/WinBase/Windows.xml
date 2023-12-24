@@ -24518,8 +24518,8 @@ Rights</a>. You cannot request an access mode that conflicts with the sharing mo
     <param name="lpPathName">
       <para>The path to the new current directory. This parameter may specify a relative path or a full path. In either case, the full path of the specified directory is calculated and stored as the current directory.</para>
       <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/FileIO/naming-a-file">File Names, Paths, and Namespaces</a>.</para>
-      <para>By default, the name is limited to MAX_PATH characters. To extend this limit to 32,767 wide characters, prepend "\\?\" to the path. For more information, see <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a>.</para>
-      <blockquote>[!TIP] Starting with Windows 10, Version 1607, you can opt-in to remove the MAX_PATH limitation without prepending "\\?\". See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</blockquote>
+      <para>By default, the name is limited to MAX_PATH characters.</para>
+      <blockquote>[!TIP] Starting with Windows 10, Version 1607, you can opt-in to remove the MAX_PATH limitation. See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</blockquote>
       <para>The final character before the null character must be a backslash ('\'). If you do not specify the backslash, it will be added for you; therefore, specify <b>MAX_PATH</b>-2 characters for the path unless you include the trailing backslash, in which case, specify <b>MAX_PATH</b>-1 characters for the path.</para>
     </param>
     <returns>
@@ -24532,8 +24532,8 @@ Rights</a>. You cannot request an access mode that conflicts with the sharing mo
     <param name="lpPathName">
       <para>The path to the new current directory. This parameter may specify a relative path or a full path. In either case, the full path of the specified directory is calculated and stored as the current directory.</para>
       <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/FileIO/naming-a-file">File Names, Paths, and Namespaces</a>.</para>
-      <para>By default, the name is limited to MAX_PATH characters. To extend this limit to 32,767 wide characters, prepend "\\?\" to the path. For more information, see <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a>.</para>
-      <blockquote>[!TIP] Starting with Windows 10, Version 1607, you can opt-in to remove the MAX_PATH limitation without prepending "\\?\". See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</blockquote>
+      <para>By default, the name is limited to MAX_PATH characters.</para>
+      <blockquote>[!TIP] Starting with Windows 10, Version 1607, you can opt-in to remove the MAX_PATH limitation. See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</blockquote>
       <para>The final character before the null character must be a backslash ('\'). If you do not specify the backslash, it will be added for you; therefore, specify <b>MAX_PATH</b>-2 characters for the path unless you include the trailing backslash, in which case, specify <b>MAX_PATH</b>-1 characters for the path.</para>
     </param>
     <returns>
@@ -24546,8 +24546,8 @@ Rights</a>. You cannot request an access mode that conflicts with the sharing mo
     <param name="lpPathName">
       <para>The path to the new current directory. This parameter may specify a relative path or a full path. In either case, the full path of the specified directory is calculated and stored as the current directory.</para>
       <para>For more information, see <a href="https://docs.microsoft.com//windows/desktop/FileIO/naming-a-file">File Names, Paths, and Namespaces</a>.</para>
-      <para>By default, the name is limited to MAX_PATH characters. To extend this limit to 32,767 wide characters, prepend "\\?\" to the path. For more information, see <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a>.</para>
-      <blockquote>[!TIP] Starting with Windows 10, Version 1607, you can opt-in to remove the MAX_PATH limitation without prepending "\\?\". See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</blockquote>
+      <para>By default, the name is limited to MAX_PATH characters.</para>
+      <blockquote>[!TIP] Starting with Windows 10, Version 1607, you can opt-in to remove the MAX_PATH limitation. See the "Maximum Path Length Limitation" section of <a href="https://docs.microsoft.com//windows/win32/fileio/naming-a-file">Naming Files, Paths, and Namespaces</a> for details.</blockquote>
       <para>The final character before the null character must be a backslash ('\'). If you do not specify the backslash, it will be added for you; therefore, specify <b>MAX_PATH</b>-2 characters for the path unless you include the trailing backslash, in which case, specify <b>MAX_PATH</b>-1 characters for the path.</para>
     </param>
     <returns>

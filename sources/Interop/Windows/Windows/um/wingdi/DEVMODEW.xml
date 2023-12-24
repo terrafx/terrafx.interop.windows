@@ -221,8 +221,22 @@
   <member name="DEVMODEW.DUMMYUNIONNAME2"></member>
   <member name="DEVMODEW.DUMMYUNIONNAME2.dmDisplayFlags">
     <summary>
-      <para>For displays, specifies a display device's display mode. This member can be one of the following values:</para>
-      <para>This member is not used for printers.</para>
+      <para>Specifies the device's display mode. This member can be a combination of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>DM_GRAYSCALE</description>
+          <description>Specifies that the display is a noncolor device. If this flag is not set, color is assumed. This flag is no longer valid.</description>
+        </listheader>
+        <listheader>
+          <description>DM_INTERLACED</description>
+          <description>Specifies that the display mode is interlaced. If the flag is not set, noninterlaced is assumed.</description>
+        </listheader>
+      </list>
+      <para>Display drivers use this member; for example, in the <see cref="ChangeDisplaySettings" /> function. Printer drivers don't use this member.</para>
     </summary>
   </member>
   <member name="DEVMODEW.DUMMYUNIONNAME2.dmNup">

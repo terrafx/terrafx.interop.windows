@@ -17,7 +17,7 @@
   <member name="WinRT.GetInterface">
     <summary>Retrieves the DXGI interface that is wrapped by the IDirect3DDxgiInterfaceAccess object.</summary>
     <param name="iid">A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in p.</param>
-    <param name="p">A pointer to a memory block that receives a pointer to the the DXGI interface.</param>
+    <param name="p">A pointer to a memory block that receives a pointer to the DXGI interface.</param>
     <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/desktop/com/com-error-codes-10">error code</a>.</returns>
   </member>
 </doc>

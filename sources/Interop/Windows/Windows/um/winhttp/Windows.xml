@@ -3812,7 +3812,7 @@
             <list type="bullet">
               <listheader>
                 <term>
-                  <b>ERROR_INVALID_SERVER_RESPONSE</b>
+                  <b>ERROR_WINHTTP_INVALID_SERVER_RESPONSE</b>
                 </term>
               </listheader>
             </list>

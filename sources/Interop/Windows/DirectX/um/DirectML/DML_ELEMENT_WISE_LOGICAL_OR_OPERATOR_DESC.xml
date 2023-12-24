@@ -6,7 +6,7 @@
     <summary>
       <para>Performs a logical OR on each pair of corresponding elements of the input tensors, placing the result into the corresponding element of <i>OutputTensor</i>.</para>
       <code>f(a, b) = (a || b)</code>
-      <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias one of the the input tensors during binding.</para>
+      <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias one of the input tensors during binding.</para>
     </summary>
   </member>
   <member name="DML_ELEMENT_WISE_LOGICAL_OR_OPERATOR_DESC.ATensor">

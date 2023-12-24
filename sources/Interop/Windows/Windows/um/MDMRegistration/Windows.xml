@@ -75,7 +75,7 @@
   <member name="Windows.SetDeviceManagementConfigInfo">
     <summary>Sets the config info associated with the provider ID.</summary>
     <param name="providerID">A string containing the provider ID.</param>
-    <param name="configString">A string containing containing the config info (the data to write).</param>
+    <param name="configString">A string containing the config info (the data to write).</param>
     <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/desktop/com/com-error-codes-10">error code</a>.</returns>
   </member>
   <member name="Windows.SetManagedExternally">

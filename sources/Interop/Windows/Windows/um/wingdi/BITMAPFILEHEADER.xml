@@ -6,7 +6,7 @@
     <summary>The <b>BITMAPFILEHEADER</b> structure contains information about the type, size, and layout of a file that contains a DIB.</summary>
   </member>
   <member name="BITMAPFILEHEADER.bfType">
-    <summary>The file type; must be BM.</summary>
+    <summary>The file type; must be <code>0x4d42</code> (the ASCII string "BM").</summary>
   </member>
   <member name="BITMAPFILEHEADER.bfSize">
     <summary>The size, in bytes, of the bitmap file.</summary>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12SwapChainAssistant.GetCurrentResourceAndCommandQueue"></member>
+  <member name="ID3D12SwapChainAssistant.GetLUID"></member>
+  <member name="ID3D12SwapChainAssistant.GetSwapChainObject"></member>
+  <member name="ID3D12SwapChainAssistant.InsertImplicitSync"></member>
+  <member name="ID3D12SwapChainAssistant"></member>
+</doc>

@@ -8,7 +8,7 @@
   <member name="DxcShaderHash.Flags">
     <summary>One of <b>DXC_HASHFLAG_Xxx</b>.</summary>
   </member>
-  <member name="DxcShaderHash.HashDigest[16]">
+  <member name="DxcShaderHash.HashDigest">
     <summary>The hash digest.</summary>
   </member>
 </doc>

@@ -3,7 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1Factory7.CreateDevice">
-    <summary>Creates a new Direct2D device from the given IDXGIDevice</summary>
+    <summary>Creates a new Direct2D device from the given IDXGIDevice.</summary>
     <param name="dxgiDevice">The IDXGIDevice from which to create the Direct2D device.</param>
     <param name="d2dDevice6">The created device.</param>
     <returns>This method returns an HRESULT success or error code.</returns>

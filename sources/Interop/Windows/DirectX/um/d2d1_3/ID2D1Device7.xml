@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID2D1Device7.CreateDeviceContext">
+    <summary>Creates a new device context with no initially assigned target.</summary>
+    <param name="options">Options for creating the device context.</param>
+    <param name="deviceContext">The created device context.</param>
+  </member>
+  <member name="ID2D1Device7">
+    <summary>Represents a resource domain whose objects and device contexts can be used together.</summary>
+  </member>
+</doc>

@@ -85,7 +85,7 @@
   </member>
   <member name="IAppVisibility.Unadvise">
     <summary>Cancels a connection that was previously established by using <see cref="Advise" />.</summary>
-    <param name="dwCookie">A token that uniquely identifies the connection to cancel, which is provided by a previous call to to the <see cref="Advise" /> method.</param>
+    <param name="dwCookie">A token that uniquely identifies the connection to cancel, which is provided by a previous call to the <see cref="Advise" /> method.</param>
     <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppVisibility">

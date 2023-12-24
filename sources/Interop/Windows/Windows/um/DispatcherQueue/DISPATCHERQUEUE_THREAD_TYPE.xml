@@ -3,12 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISPATCHERQUEUE_THREAD_TYPE">
-    <summary>Specifies the thread affinity for a new <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a>.</summary>
+    <summary>Defines constants that specify options around threading affinity for a new <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a>.</summary>
   </member>
   <member name="DISPATCHERQUEUE_THREAD_TYPE.DQTYPE_THREAD_DEDICATED">
-    <summary>Specifies that the <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a> be created on a dedicated thread. With this option, <see cref="CreateDispatcherQueueController" /> creates a thread, the <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a> instance, and runs the dispatcher queue event loop on the newly created thread.</summary>
+    <summary>Specifies that the <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueue">DispatcherQueue</a> for the <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a> will be created on a dedicated thread.</summary>
   </member>
   <member name="DISPATCHERQUEUE_THREAD_TYPE.DQTYPE_THREAD_CURRENT">
-    <summary>Specifies that the <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a> will be created on the caller's thread.</summary>
+    <summary>Specifies that the <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueue">DispatcherQueue</a> for the <a href="https://docs.microsoft.com//uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a> will be created on the caller's thread.</summary>
   </member>
 </doc>

@@ -3,7 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionFilterEffect.SetInput">
-    <summary>Sets the the input at an index to the specified filter effect.</summary>
+    <summary>Sets the input at an index to the specified filter effect.</summary>
     <param name="index">Specifies the index the to apply the filter effect at.</param>
     <param name="input">
       <para>The filter effect to apply. The following effects are available:</para>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DVolumeTexture9.AddDirtyBox">
+    <summary>Adds a dirty region to a volume texture resource.</summary>
+    <param name="pDirtyBox">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dbox">D3DBOX</a> structure, specifying the dirty region to add. Specifying <b>NULL</b> expands the dirty region to cover the entire volume texture.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DVolumeTexture9.GetLevelDesc">
+    <summary>Retrieves a level description of a volume texture resource.</summary>
+    <param name="Level">Identifies a level of the volume texture resource. This method returns a volume description for the level specified by this parameter.</param>
+    <param name="pDesc">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dvolume-desc">D3DVOLUME_DESC</a> structure, describing the returned volume texture level.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL is returned if one or more of the arguments are invalid.</returns>
+  </member>
+  <member name="IDirect3DVolumeTexture9.GetVolumeLevel">
+    <summary>Retrieves the specified volume texture level.</summary>
+    <param name="Level">Identifies a level of the volume texture resource. This method returns a volume for the level specified by this parameter.</param>
+    <param name="ppVolumeLevel">Address of a pointer to an <see cref="IDirect3DVolume9" /> interface, representing the returned volume level.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DVolumeTexture9.LockBox">
+    <summary>Locks a box on a volume texture resource.</summary>
+    <param name="Level">Specifies the level of the volume texture resource to lock.</param>
+    <param name="pLockedVolume">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dlocked-box">D3DLOCKED_BOX</a> structure, describing the locked region.</param>
+    <param name="pBox">Pointer to the volume to lock. This parameter is specified by a pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dbox">D3DBOX</a> structure. Specifying <b>NULL</b> for this parameter locks the entire volume level.</param>
+    <param name="Flags">
+      <para>Combination of zero or more locking flags that describe the type of lock to perform. For this method, the valid flags are:</para>
+      <list type="bullet">
+        <item>
+          <description>D3DLOCK_DISCARD</description>
+        </item>
+        <item>
+          <description>D3DLOCK_NO_DIRTY_UPDATE</description>
+        </item>
+        <item>
+          <description>D3DLOCK_NOSYSLOCK</description>
+        </item>
+        <item>
+          <description>D3DLOCK_READONLY</description>
+        </item>
+      </list>For a description of the flags, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dlock">D3DLOCK</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DVolumeTexture9.UnlockBox">
+    <summary>Unlocks a box on a volume texture resource.</summary>
+    <param name="Level">Specifies the level of the volume texture resource to unlock.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DVolumeTexture9">
+    <summary>Applications use the methods of the IDirect3DVolumeTexture9 interface to manipulate a volume texture resource.</summary>
+  </member>
+</doc>

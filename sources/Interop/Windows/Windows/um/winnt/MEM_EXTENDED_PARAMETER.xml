@@ -10,20 +10,21 @@
     <summary>
       <para>A <see cref="MEM_EXTENDED_PARAMETER_TYPE" /> value that indicates the type of the parameter.</para>
       <para>If <i>Type</i> is set to <b>MemExtendedParameterAddressRequirements</b>, then <i>Pointer</i> must be a pointer to a caller-allocated <see cref="MEM_ADDRESS_REQUIREMENTS" /> structure that specifies the lowest and highest base address and alignment.</para>
-      <para>If <i>Type</i> is set to <b>MemExtendedParameterNumaNode</b>, then <i>ULong</i> must be set to the desired node number.</para>
+      <para>If <i>Type</i> is set to <b>MemExtendedParameterNumaNode</b>, then <i>ULong64</i> must be set to the desired node number.</para>
+      <para>If <i>Type</i> is set to <b>MemExtendedParameterAttributeFlags</b>, then <i>ULong64</i> must be set to a value that contains the desired flags:</para>
     </summary>
   </member>
   <member name="MEM_EXTENDED_PARAMETER.DUMMYSTRUCTNAME.Reserved">
     <summary>Reserved.</summary>
   </member>
   <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME"></member>
-  <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME.ULong64"></member>
+  <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME.ULong64">
+    <summary>If <i>Type</i> is set to <b>MemExtendedParameterNumaNode</b>, then <i>ULong64</i> must be set to the desired node number.</summary>
+  </member>
   <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME.Pointer">
     <summary>If <i>Type</i> is set to <b>MemExtendedParameterAddressRequirements</b>, then <i>Pointer</i> must be a pointer to a caller-allocated <see cref="MEM_ADDRESS_REQUIREMENTS" /> structure that specifies the lowest and highest base address and alignment.</summary>
   </member>
   <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME.Size"></member>
   <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME.Handle"></member>
-  <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME.ULong">
-    <summary>If <i>Type</i> is set to <b>MemExtendedParameterNumaNode</b>, then <i>ULong</i> must be set to the desired node number.</summary>
-  </member>
+  <member name="MEM_EXTENDED_PARAMETER.DUMMYUNIONNAME.ULong"></member>
 </doc>

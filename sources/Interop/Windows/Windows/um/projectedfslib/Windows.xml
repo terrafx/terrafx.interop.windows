@@ -111,7 +111,7 @@
       <para>Pointer to a null-terminated unicode string specifying the full path to the virtualization root directory.</para>
       <para>The provider must have called <see cref="PrjMarkDirectoryAsPlaceholder" /> passing the specified path as the rootPathName parameter and NULL as the targetPathName parameter before calling this routine. This only needs to be done once to designate the path as the virtualization root directory</para>
     </param>
-    <param name="callbacks">Pointer to a <see cref="PRJ_CALLBACKS" /> structure that has been initialized with PrjCommandCallbacksInit and filled in with pointers to the provider's callback functions.</param>
+    <param name="callbacks">Pointer to a <see cref="PRJ_CALLBACKS" /> structure that has been filled in with pointers to the provider's callback functions.</param>
     <param name="instanceContext">Pointer to context information defined by the provider for each instance. This parameter is optional and can be NULL. If it is specified, ProjFS will return it in the InstanceContext member of <see cref="PRJ_CALLBACK_DATA" /> when invoking provider callback routines.</param>
     <param name="options">An optional pointer to a <see cref="PRJ_STARTVIRTUALIZING_OPTIONS" />.</param>
     <param name="namespaceVirtualizationContext">On success returns an opaque handle to the ProjFS virtualization instance. The provider passes this value when calling functions that require a PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT as input.</param>

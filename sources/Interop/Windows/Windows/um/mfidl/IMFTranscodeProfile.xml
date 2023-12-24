@@ -92,7 +92,7 @@
       <para>For example code, see <see cref="MFCreateTranscodeProfile" />.</para>
     </summary>
     <param name="pAttrs">
-      <para>Pointer to the <see cref="IMFAttributes" /> interface of an attribute store that contains contains the configuration settings for the video stream. The specified attribute values overwrites any existing values stored in the transcode profile.</para>
+      <para>Pointer to the <see cref="IMFAttributes" /> interface of an attribute store that contains the configuration settings for the video stream. The specified attribute values overwrites any existing values stored in the transcode profile.</para>
       <para>The following video attributes can be set:</para>
       <list type="bullet">
         <item>

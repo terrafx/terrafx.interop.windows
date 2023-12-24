@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3D9.CheckDepthStencilMatch">
+    <summary>Determines whether a depth-stencil format is compatible with a render-target format in a particular display mode.</summary>
+    <param name="Adapter">Ordinal number denoting the display adapter to query. D3DADAPTER_DEFAULT is always the primary display adapter.</param>
+    <param name="DeviceType">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddevtype">D3DDEVTYPE</a> enumerated type, identifying the device type.</param>
+    <param name="AdapterFormat">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a> enumerated type, identifying the format of the display mode into which the adapter will be placed.</param>
+    <param name="RenderTargetFormat">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a> enumerated type, identifying the format of the render-target surface to be tested.</param>
+    <param name="DepthStencilFormat">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a> enumerated type, identifying the format of the depth-stencil surface to be tested.</param>
+    <returns>If the depth-stencil format is compatible with the render-target format in the display mode, this method returns D3D_OK. D3DERR_INVALIDCALL can be returned if one or more of the parameters is invalid. If a depth-stencil format is not compatible with the render target in the display mode, then this method returns D3DERR_NOTAVAILABLE.</returns>
+  </member>
+  <member name="IDirect3D9.CheckDeviceFormat">
+    <summary>Determines whether a surface format is available as a specified resource type and can be used as a texture, depth-stencil buffer, or render target, or any combination of the three, on a device representing this adapter.</summary>
+    <param name="Adapter">Ordinal number denoting the display adapter to query. <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dadapter-default">D3DADAPTER_DEFAULT</a> is always the primary display adapter. This method returns D3DERR_INVALIDCALL when this value equals or exceeds the number of display adapters in the system.</param>
+    <param name="DeviceType">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddevtype">D3DDEVTYPE</a> enumerated type, identifying the device type.</param>
+    <param name="AdapterFormat">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a> enumerated type, identifying the format of the display mode into which the adapter will be placed.</param>
+    <param name="Usage">Requested usage options for the surface. Usage options are any combination of <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dusage">D3DUSAGE</a> and <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dusage-query">D3DUSAGE_QUERY</a> constants (only a subset of the D3DUSAGE constants are valid for <b>CheckDeviceFormat</b>; see the table on the D3DUSAGE page).</param>
+    <param name="RType">Resource type requested for use with the queried format. Member of <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dresourcetype">D3DRESOURCETYPE</a>.</param>
+    <param name="CheckFormat">Format of the surfaces which may be used, as defined by Usage. Member of <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a>.</param>
+    <returns>
+      <para>If the format is compatible with the specified device for the requested usage, this method returns D3D_OK.</para>
+      <para>D3DERR_INVALIDCALL is returned if Adapter equals or exceeds the number of display adapters in the system, or if DeviceType is unsupported.</para>
+      <para>D3DERR_NOTAVAILABLE is returned if the format is not acceptable to the device for this usage.</para>
+    </returns>
+  </member>
+  <member name="IDirect3D9.CheckDeviceFormatConversion">
+    <summary>Tests the device to see if it supports conversion from one display format to another.</summary>
+    <param name="Adapter">Display adapter ordinal number. D3DADAPTER_DEFAULT is always the primary display adapter. This method returns D3DERR_INVALIDCALL when this value equals or exceeds the number of display adapters in the system.</param>
+    <param name="DeviceType">Device type. Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddevtype">D3DDEVTYPE</a> enumerated type.</param>
+    <param name="SourceFormat">Source adapter format. Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a> enumerated type.</param>
+    <param name="TargetFormat">Target adapter format. Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a> enumerated type.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value is D3DERR_INVALIDCALL. The method will return D3DERR_NOTAVAILABLE when the hardware does not support conversion between the two formats.</returns>
+  </member>
+  <member name="IDirect3D9.CheckDeviceMultiSampleType">
+    <summary>Determines if a multisampling technique is available on this device.</summary>
+    <param name="Adapter">Ordinal number denoting the display adapter to query. D3DADAPTER_DEFAULT is always the primary display adapter. This method returns <b>FALSE</b> when this value equals or exceeds the number of display adapters in the system. See Remarks.</param>
+    <param name="DeviceType">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddevtype">D3DDEVTYPE</a> enumerated type, identifying the device type.</param>
+    <param name="SurfaceFormat">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a> enumerated type that specifies the format of the surface to be multisampled. For more information, see Remarks.</param>
+    <param name="Windowed">bool value. Specify <b>TRUE</b> to inquire about windowed multisampling, and specify <b>FALSE</b> to inquire about full-screen multisampling.</param>
+    <param name="MultiSampleType">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dmultisample-type">D3DMULTISAMPLE_TYPE</a> enumerated type, identifying the multisampling technique to test.</param>
+    <param name="pQualityLevels">
+      <b>pQualityLevels</b> returns the number of device-specific sampling variations available with the given sample type. For example, if the returned value is 3, then quality levels 0, 1 and 2 can be used when creating resources with the given sample count. The meanings of these quality levels are defined by the device manufacturer and cannot be queried through D3D. For example, for a particular device different quality levels at a fixed sample count might refer to different spatial layouts of the sample locations or different methods of resolving. This can be <b>NULL</b> if it is not necessary to return the quality levels.</param>
+    <returns>If the device can perform the specified multisampling method, this method returns D3D_OK. D3DERR_INVALIDCALL is returned if the Adapter or MultiSampleType parameters are invalid. This method returns D3DERR_NOTAVAILABLE if the queried multisampling technique is not supported by this device. D3DERR_INVALIDDEVICE is returned if DeviceType does not apply to this adapter.</returns>
+  </member>
+  <member name="IDirect3D9.CheckDeviceType">
+    <summary>Verifies whether a hardware accelerated device type can be used on this adapter.</summary>
+    <param name="Adapter">Ordinal number denoting the display adapter to enumerate. D3DADAPTER_DEFAULT is always the primary display adapter. This method returns D3DERR_INVALIDCALL when this value equals or exceeds the number of display adapters in the system.</param>
+    <param name="DevType">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddevtype">D3DDEVTYPE</a> enumerated type, indicating the device type to check.</param>
+    <param name="AdapterFormat">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a> enumerated type, indicating the format of the adapter display mode for which the device type is to be checked. For example, some devices will operate only in 16-bits-per-pixel modes.</param>
+    <param name="BackBufferFormat">
+      <para>Back buffer format. For more information about formats, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a>. This value must be one of the render-target formats. You can use <see cref="GetAdapterDisplayMode" /> to obtain the current format.</para>
+      <para>For windowed applications, the back buffer format does not need to match the display mode format if the hardware supports color conversion. The set of possible back buffer formats is constrained, but the runtime will allow any valid back buffer format to be presented to any desktop format. There is the additional requirement that the device be operable in the desktop because devices typically do not operate in 8 bits per pixel modes.</para>
+      <para>Full-screen applications cannot do color conversion.</para>
+      <para>D3DFMT_UNKNOWN is allowed for windowed mode.</para>
+    </param>
+    <param name="bWindowed">Value indicating whether the device type will be used in full-screen or windowed mode. If set to <b>TRUE</b>, the query is performed for windowed applications; otherwise, this value should be set <b>FALSE</b>.</param>
+    <returns>
+      <para>If the device can be used on this adapter, D3D_OK is returned.</para>
+      <para>D3DERR_INVALIDCALL is returned if Adapter equals or exceeds the number of display adapters in the system. D3DERR_INVALIDCALL is also returned if <b>CheckDeviceType</b> specified a device that does not exist.</para>
+      <para>D3DERR_NOTAVAILABLE is returned if the requested back buffer format is not supported, or if hardware acceleration is not available for the specified formats.</para>
+    </returns>
+  </member>
+  <member name="IDirect3D9.CreateDevice">
+    <summary>Creates a device to represent the display adapter.</summary>
+    <param name="Adapter">Ordinal number that denotes the display adapter. <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dadapter-default">D3DADAPTER_DEFAULT</a> is always the primary display adapter.</param>
+    <param name="DeviceType">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddevtype">D3DDEVTYPE</a> enumerated type that denotes the desired device type. If the desired device type is not available, the method will fail.</param>
+    <param name="hFocusWindow">
+      <para>The focus window alerts Direct3D when an application switches from foreground mode to background mode. See Remarks.</para>
+      <list type="bullet">
+        <item>
+          <description>For full-screen mode, the window specified must be a top-level window.</description>
+        </item>
+        <item>
+          <description>For windowed mode, this parameter may be <b>NULL</b> only if the hDeviceWindow member of <i>pPresentationParameters</i> is set to a valid, non-<b>NULL</b> value.</description>
+        </item>
+      </list>
+    </param>
+    <param name="BehaviorFlags">Combination of one or more options that control device creation. For more information, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dcreate">D3DCREATE</a>.</param>
+    <param name="pPresentationParameters">
+      <para>Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dpresent-parameters">D3DPRESENT_PARAMETERS</a> structure, describing the presentation parameters for the device to be created. If BehaviorFlags specifies <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dcreate">D3DCREATE_ADAPTERGROUP_DEVICE</a>, pPresentationParameters is an array. Regardless of the number of heads that exist, only one depth/stencil surface is automatically created.</para>
+      <para>For Windows 2000 and Windows XP, the full-screen device display refresh rate is set in the following order:</para>
+      <list type="number">
+        <item>
+          <description>User-specified nonzero ForcedRefreshRate registry key, if supported by the device.</description>
+        </item>
+        <item>
+          <description>Application-specified nonzero refresh rate value in the presentation parameter.</description>
+        </item>
+        <item>
+          <description>Refresh rate of the latest desktop, if supported by the device.</description>
+        </item>
+        <item>
+          <description>75 hertz if supported by the device.</description>
+        </item>
+        <item>
+          <description>60 hertz if supported by the device.</description>
+        </item>
+        <item>
+          <description>Device default.</description>
+        </item>
+      </list>An unsupported refresh rate will default to the closest supported refresh rate below it. For example, if the application specifies 63 hertz, 60 hertz will be used. There are no supported refresh rates below 57 hertz.<para>pPresentationParameters is both an input and an output parameter. Calling this method may change several members including:</para><list type="bullet"><item><description>If BackBufferCount, BackBufferWidth, and BackBufferHeight are 0 before the method is called, they will be changed when the method returns.</description></item><item><description>If BackBufferFormat equals <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFMT_UNKNOWN</a> before the method is called, it will be changed when the method returns.</description></item></list></param>
+    <param name="ppReturnedDeviceInterface">Address of a pointer to the returned <see cref="IDirect3DDevice9" /> interface, which represents the created device.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_DEVICELOST, D3DERR_INVALIDCALL, D3DERR_NOTAVAILABLE, D3DERR_OUTOFVIDEOMEMORY.</returns>
+  </member>
+  <member name="IDirect3D9.EnumAdapterModes">
+    <summary>Queries the device to determine whether the specified adapter supports the requested format and display mode. This method could be used in a loop to enumerate all the available adapter modes.</summary>
+    <param name="Adapter">Ordinal number denoting the display adapter to enumerate. <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dadapter-default">D3DADAPTER_DEFAULT</a> is always the primary display adapter. This method returns D3DERR_INVALIDCALL when this value equals or exceeds the number of display adapters in the system.</param>
+    <param name="Format">Allowable pixel formats. See Remarks.</param>
+    <param name="Mode">Represents the display-mode index which is an unsigned integer between zero and the value returned by <see cref="GetAdapterModeCount" /> minus one.</param>
+    <param name="pMode">A pointer to the available display mode of type <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddisplaymode">D3DDISPLAYMODE</a>. See Remarks.</param>
+    <returns>
+      <list type="bullet">
+        <item>
+          <description>If the device can be used on this adapter, D3D_OK is returned.</description>
+        </item>
+        <item>
+          <description>If the Adapter equals or exceeds the number of display adapters in the system, D3DERR_INVALIDCALL is returned.</description>
+        </item>
+        <item>
+          <description>If either surface format is not supported or if hardware acceleration is not available for the specified formats, D3DERR_NOTAVAILABLE is returned.</description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="IDirect3D9.GetAdapterCount">
+    <summary>Returns the number of adapters on the system.</summary>
+    <returns>A UINT value that denotes the number of adapters on the system at the time this <see cref="IDirect3D9" /> interface was instantiated.</returns>
+  </member>
+  <member name="IDirect3D9.GetAdapterDisplayMode">
+    <summary>Retrieves the current display mode of the adapter.</summary>
+    <param name="Adapter">Ordinal number that denotes the display adapter to query. D3DADAPTER_DEFAULT is always the primary display adapter.</param>
+    <param name="pMode">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddisplaymode">D3DDISPLAYMODE</a> structure, to be filled with information describing the current adapter's mode.</param>
+    <returns>
+      <para>If the method succeeds, the return value is D3D_OK.</para>
+      <para>If Adapter is out of range or pMode is invalid, this method returns D3DERR_INVALIDCALL.</para>
+    </returns>
+  </member>
+  <member name="IDirect3D9.GetAdapterIdentifier">
+    <summary>Describes the physical display adapters present in the system when the <see cref="IDirect3D9" /> interface was instantiated.</summary>
+    <param name="Adapter">Ordinal number that denotes the display adapter. D3DADAPTER_DEFAULT is always the primary display adapter. The minimum value for this parameter is 0, and the maximum value for this parameter is one less than the value returned by <see cref="GetAdapterCount" />.</param>
+    <param name="Flags">
+      <para>Flags sets the <b>WHQLLevel</b> member of <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dadapter-identifier9">D3DADAPTER_IDENTIFIER9</a>. Flags can be set to either 0 or D3DENUM_WHQL_LEVEL. If D3DENUM_WHQL_LEVEL is specified, this call can connect to the Internet to download new Microsoft Windows Hardware Quality Labs (WHQL) certificates.</para>
+      <para>Differences between Direct3D 9 and Direct3D 9Ex:</para>
+      <para>D3DENUM_WHQL_LEVEL is deprecated for Direct3D9Ex running on Windows Vista, Windows Server 2008, Windows 7, and Windows Server 2008 R2 (or more current operating system). Any of these operating systems return 1 in the <b>WHQLLevel</b> member of <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dadapter-identifier9">D3DADAPTER_IDENTIFIER9</a> without checking the status of the driver.</para>
+    </param>
+    <param name="pIdentifier">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dadapter-identifier9">D3DADAPTER_IDENTIFIER9</a> structure to be filled with information describing this adapter. If <i>Adapter</i> is greater than or equal to the number of adapters in the system, this structure will be zeroed.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL is returned if Adapter is out of range, if Flags contains unrecognized parameters, or if pIdentifier is <b>NULL</b> or points to unwritable memory.</returns>
+  </member>
+  <member name="IDirect3D9.GetAdapterModeCount">
+    <summary>Returns the number of display modes available on this adapter.</summary>
+    <param name="Adapter">Ordinal number that denotes the display adapter. D3DADAPTER_DEFAULT is always the primary display adapter.</param>
+    <param name="Format">Identifies the format of the surface type using <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dformat">D3DFORMAT</a>. Use <see cref="EnumAdapterModes" /> to see the valid formats.</param>
+    <returns>This method returns the number of display modes on this adapter or zero if Adapter is greater than or equal to the number of adapters on the system.</returns>
+  </member>
+  <member name="IDirect3D9.GetAdapterMonitor">
+    <summary>Returns the handle of the monitor associated with the Direct3D object.</summary>
+    <param name="Adapter">Ordinal number that denotes the display adapter. D3DADAPTER_DEFAULT is always the primary display adapter.</param>
+    <returns>Handle of the monitor associated with the Direct3D object.</returns>
+  </member>
+  <member name="IDirect3D9.GetDeviceCaps">
+    <summary>Retrieves device-specific information about a device.</summary>
+    <param name="Adapter">Ordinal number that denotes the display adapter. D3DADAPTER_DEFAULT is always the primary display adapter.</param>
+    <param name="DeviceType">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3ddevtype">D3DDEVTYPE</a> enumerated type. Denotes the device type.</param>
+    <param name="pCaps">Pointer to a <see cref="D3DCAPS9" /> structure to be filled with information describing the capabilities of the device.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL, D3DERR_INVALIDDEVICE, D3DERR_OUTOFVIDEOMEMORY, and D3DERR_NOTAVAILABLE.</returns>
+  </member>
+  <member name="IDirect3D9.RegisterSoftwareDevice">
+    <summary>Registers a pluggable software device. Software devices provide software rasterization enabling applications to access a variety of software rasterizers.</summary>
+    <param name="pInitializeFunction">Pointer to the initialization function for the software device to be registered.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be one of the following: D3DERR_INVALIDCALL. The method call is invalid. For example, a method's parameter may have an invalid value: D3DERR_OUTOFVIDEOMEMORY.</returns>
+  </member>
+  <member name="IDirect3D9">
+    <summary>Applications use the methods of the IDirect3D9 interface to create Microsoft Direct3D objects and set up the environment. This interface includes methods for enumerating and retrieving capabilities of the device.</summary>
+  </member>
+</doc>

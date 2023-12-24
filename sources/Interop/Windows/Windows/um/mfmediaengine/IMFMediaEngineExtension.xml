@@ -4,7 +4,7 @@
 <doc>
   <member name="IMFMediaEngineExtension.CancelObjectCreation">
     <summary>Cancels the current request to create an object.</summary>
-    <param name="pIUnknownCancelCookie">The pointer that was returned in the the <i>ppIUnknownCancelCookie</i> parameter of the <see cref="IMFMediaEngineExtension.BeginCreateObject" /> method.</param>
+    <param name="pIUnknownCancelCookie">The pointer that was returned in the <i>ppIUnknownCancelCookie</i> parameter of the <see cref="IMFMediaEngineExtension.BeginCreateObject" /> method.</param>
     <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineExtension.CanPlayType">

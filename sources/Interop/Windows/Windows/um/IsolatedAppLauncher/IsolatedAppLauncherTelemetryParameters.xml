@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IsolatedAppLauncherTelemetryParameters">
+    <summary>A struct that provides telemetry parameters to be used when launching an app inside the container.</summary>
+  </member>
+  <member name="IsolatedAppLauncherTelemetryParameters.EnableForLaunch">
+    <summary>The <i>EnableForLaunch</i> field is a boolean value that indicates whether telemetry is enabled for the launch.</summary>
+  </member>
+  <member name="IsolatedAppLauncherTelemetryParameters.CorrelationGUID">
+    <summary>The <i>CorrelationGUID</i> field is a <b>GUID</b> that is used to correlate telemetry events.</summary>
+  </member>
+</doc>

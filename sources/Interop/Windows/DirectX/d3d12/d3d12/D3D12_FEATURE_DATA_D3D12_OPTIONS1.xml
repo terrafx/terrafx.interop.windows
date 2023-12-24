@@ -12,7 +12,7 @@
     <summary>Specifies the baseline number of lanes in the SIMD wave that this implementation can support. This term is sometimes known as "wavefront size" or "warp width". Currently apps should rely only on this minimum value for sizing workloads.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS1.WaveLaneCountMax">
-    <summary>Specifies the maximum number of lanes in the SIMD wave that this implementation can support. This capability is reserved for future expansion, and is not expected to be used by current applications.</summary>
+    <summary>Specifies the maximum number of lanes in the SIMD wave that this implementation can support.</summary>
   </member>
   <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS1.TotalLaneCount">
     <summary>Specifies the total number of SIMD lanes on the hardware.</summary>

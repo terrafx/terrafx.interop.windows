@@ -5,7 +5,7 @@
   <member name="RedEyeCorrectionParams">
     <summary>
       <para>A <b>RedEyeCorrectionParams</b> structure contains members that specify the areas of a bitmap to which a red-eye correction is applied.</para>
-      <para>You can can correct red eyes in a bitmap by following these steps.</para>
+      <para>You can correct red eyes in a bitmap by following these steps.</para>
       <list type="number">
         <item>
           <description>Create and initialize a <b>RedEyeCorrectionParams</b> structure.</description>

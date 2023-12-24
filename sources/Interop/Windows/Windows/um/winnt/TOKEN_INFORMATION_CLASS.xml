@@ -145,7 +145,12 @@
   <member name="TOKEN_INFORMATION_CLASS.TokenSingletonAttributes"></member>
   <member name="TOKEN_INFORMATION_CLASS.TokenBnoIsolation"></member>
   <member name="TOKEN_INFORMATION_CLASS.TokenChildProcessFlags"></member>
-  <member name="TOKEN_INFORMATION_CLASS.TokenIsLessPrivilegedAppContainer"></member>
+  <member name="TOKEN_INFORMATION_CLASS.TokenIsLessPrivilegedAppContainer">
+    <summary>
+      <para>Refers to a Least Privileged AppContainer (LPAC). An LPAC is effectively an AppContainer that's disregarded by the <b>ALL_APPLICATION_PACKAGES</b> SID. For info about what an AppContainer is, see <a href="https://docs.microsoft.com//windows/win32/secauthz/appcontainer-for-legacy-applications-">AppContainer for legacy apps</a>.</para>
+      <para>Many resources across Windows are ACL'd with <b>ALL_APPLICATION_PACKAGES</b>, as described in <a href="https://docs.microsoft.com//windows/win32/com/donotaddallapplicationpackagestorestrictions">DoNotAddAllApplicationPackagesToRestrictions</a>. In scenarios where you want a process running with no rights to any resources except what you explicitly grant (for example, a web browser sandboxing a child worker process), an AppContaoiner has too much access to the system because of <b>ALL_APPLICATION_PACKAGES</b>. That's where an LPAC comes in. You can create an LPAC only imperatively via APIs; not declaratively via <code>appxmanifest.xml</code>.</para>
+    </summary>
+  </member>
   <member name="TOKEN_INFORMATION_CLASS.MaxTokenInfoClass">
     <summary>The maximum value for this enumeration.</summary>
   </member>

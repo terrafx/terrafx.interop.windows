@@ -45,7 +45,7 @@
     </summary>
   </member>
   <member name="LOGPEN.lopnWidth">
-    <summary>The <see cref="POINT" /> structure that contains the pen width, in logical units. If the <b>pointer</b> member is <b>NULL</b>, the pen is one pixel wide on raster devices. The <b>y</b> member in the <b>POINT</b> structure for <b>lopnWidth</b> is not used.</summary>
+    <summary>The <see cref="POINT" /> structure that contains the pen width, in logical units. If the <b>x</b> member is <b>NULL</b>, then the pen is one pixel wide on raster devices. The <b>y</b> member in the <b>POINT</b> structure for <b>lopnWidth</b> isn't used.</summary>
   </member>
   <member name="LOGPEN.lopnColor">
     <summary>The pen color. To generate a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> structure, use the <see cref="RGB" /> macro.</summary>

@@ -37,7 +37,7 @@
   </member>
   <member name="ID3D11ShaderReflection.GetMinFeatureLevel">
     <summary>Gets the minimum feature level.</summary>
-    <param name="unnamedParam1">A pointer to one of the enumerated values in <see cref="D3D_FEATURE_LEVEL" />, which represents the minimum feature level.</param>
+    <param name="pLevel">A pointer to one of the enumerated values in <see cref="D3D_FEATURE_LEVEL" />, which represents the minimum feature level.</param>
     <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11ShaderReflection.GetMovcInstructionCount">

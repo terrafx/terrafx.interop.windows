@@ -4,7 +4,7 @@
 <doc>
   <member name="IDWriteTextFormat1.GetFontFallback">
     <summary>Gets the current fallback. If none was ever set since creating the layout, it will be nullptr.</summary>
-    <param name="fontFallback">Contains an address of a pointer to the the current font fallback object.</param>
+    <param name="fontFallback">Contains an address of a pointer to the current font fallback object.</param>
     <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextFormat1.GetLastLineWrapping">

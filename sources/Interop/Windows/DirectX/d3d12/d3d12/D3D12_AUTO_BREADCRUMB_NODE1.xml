@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_AUTO_BREADCRUMB_NODE1"></member>
+  <member name="D3D12_AUTO_BREADCRUMB_NODE1.pCommandListDebugNameA"></member>
+  <member name="D3D12_AUTO_BREADCRUMB_NODE1.pCommandListDebugNameW"></member>
+  <member name="D3D12_AUTO_BREADCRUMB_NODE1.pCommandQueueDebugNameA"></member>
+  <member name="D3D12_AUTO_BREADCRUMB_NODE1.pCommandQueueDebugNameW"></member>
+  <member name="D3D12_AUTO_BREADCRUMB_NODE1.pCommandList"></member>
+  <member name="D3D12_AUTO_BREADCRUMB_NODE1.pCommandQueue"></member>
+  <member name="D3D12_AUTO_BREADCRUMB_NODE1.BreadcrumbCount"></member>
+  <member name="D3D12_AUTO_BREADCRUMB_NODE1.pLastBreadcrumbValue"></member>
+  <member name="D3D12_AUTO_BREADCRUMB_NODE1.pCommandHistory"></member>
+  <member name="D3D12_AUTO_BREADCRUMB_NODE1.pNext"></member>
+  <member name="D3D12_AUTO_BREADCRUMB_NODE1.D3D12_AUTO_BREADCRUMB_NODE1"></member>
+  <member name="D3D12_AUTO_BREADCRUMB_NODE1.BreadcrumbContextsCount"></member>
+  <member name="D3D12_AUTO_BREADCRUMB_NODE1.pBreadcrumbContexts"></member>
+</doc>

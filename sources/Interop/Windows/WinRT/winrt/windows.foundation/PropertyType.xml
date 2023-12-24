@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PropertyType">
+    <summary>Identifies the type that is stored in a Windows Runtime object that implements the <see cref="IPropertyValue" /> interface.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Empty">
+    <summary>The object does not contain a value.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_UInt8">
+    <summary>The object contains an unsigned 8-bit integer.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Int16">
+    <summary>The object contains a signed 16-bit integer.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_UInt16">
+    <summary>The object contains an unsigned 16-bit integer.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Int32">
+    <summary>The object contains a signed 32-bit integer.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_UInt32">
+    <summary>The object contains an unsigned 32-bit integer.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Int64">
+    <summary>The object contains a signed 64-bit integer.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_UInt64">
+    <summary>The object contains an unsigned 64-bit integer.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Single">
+    <summary>The object contains a 32-bit floating point value. This value conforms to the IEEE 754 standard.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Double">
+    <summary>The object contains a 64-bit floating point value. This value conforms to the IEEE 754 standard.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Char16">
+    <summary>The object contains a 16-bit character. This character represents a UTF-16 (Unicode) code unit.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Boolean">
+    <summary>The object contains an 8-bit Boolean value.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_String">
+    <summary>The object contains an <a href="https://docs.microsoft.com//windows/desktop/WinRT/hstring">HSTRING</a>.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Inspectable">
+    <summary>The object contains an object that implements the <see cref="IInspectable" /> interface.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_DateTime">
+    <summary>The object contains a <see cref="DateTime" />.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_TimeSpan">
+    <summary>The object contains a <see cref="TimeSpan" />.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Guid">
+    <summary>The object contains a GUID.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Point">
+    <summary>The object contains a <see cref="Point" />.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Size">
+    <summary>The object contains a <see cref="Size" />.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Rect">
+    <summary>The object contains a <see cref="Rect" />.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_OtherType">
+    <summary>The object contains an unspecified type.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_UInt8Array">
+    <summary>The object contains an array of unsigned 8-bit integers.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Int16Array">
+    <summary>The object contains an array of signed 16-bit integers.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_UInt16Array">
+    <summary>The object contains an array of unsigned 16-bit integers.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Int32Array">
+    <summary>The object contains an array of signed 32-bit integers.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_UInt32Array">
+    <summary>The object contains an array of unsigned 32-bit integers.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Int64Array">
+    <summary>The object contains an array of signed 64-bit integers.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_UInt64Array">
+    <summary>The object contains an array of unsigned 64-bit integers.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_SingleArray">
+    <summary>The object contains an array of 32-bit floating point values.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_DoubleArray">
+    <summary>The object contains an array of 64-bit floating point values.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_Char16Array">
+    <summary>The object contains an array of 16-bit characters.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_BooleanArray">
+    <summary>The object contains an array of 8-bit Boolean values.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_StringArray">
+    <summary>The object contains an array of <a href="https://docs.microsoft.com//windows/desktop/WinRT/hstring">HSTRING</a>.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_InspectableArray">
+    <summary>The object contains an array of objects that implement the <see cref="IInspectable" /> interface.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_DateTimeArray">
+    <summary>The object contains an array of <see cref="DateTime" />.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_TimeSpanArray">
+    <summary>The object contains an array of <see cref="TimeSpan" />.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_GuidArray">
+    <summary>The object contains an array of GUIDs.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_PointArray">
+    <summary>The object contains an array of <see cref="Point" />.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_SizeArray">
+    <summary>The object contains an array of <see cref="Size" />.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_RectArray">
+    <summary>The object contains an array of <see cref="Rect" />.</summary>
+  </member>
+  <member name="PropertyType.PropertyType_OtherTypeArray">
+    <summary>The object contains an array of an unspecified type.</summary>
+  </member>
+</doc>

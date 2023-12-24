@@ -1,0 +1,774 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPropertyValueStatics.CreateBoolean">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified 8-bit Boolean value.</summary>
+    <param name="value">The value to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="IPropertyValue" /> object could not be created.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateBooleanArray">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of 8-bit Boolean values.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">The array of 8-bit Boolean values to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateChar16">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified Unicode character.</summary>
+    <param name="value">The Unicode character to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="IPropertyValue" /> object could not be created.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateChar16Array">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of Unicode characters.</summary>
+    <param name="__valueSize">The number of Unicode characters in the array.</param>
+    <param name="value">The array of Unicode characters to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateDateTime">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified <see cref="DateTime" /> value.</summary>
+    <param name="value">The value to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateDateTimeArray">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of <see cref="DateTime" /> values.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">The array of <see cref="DateTime" /> values to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateDouble">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified 64-bit floating point value.</summary>
+    <param name="value">The 64-bit floating point value to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="IPropertyValue" /> object could not be created.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateDoubleArray">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of 64-bit floating point values.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">The array of 64-bit floating point values to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateEmpty">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that represents an empty value.</summary>
+    <param name="propertyValue">A pointer to a new object that has its <see cref="Type" /> property set to <b>PropertyType_Empty</b>. No value is stored in the new object. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="IPropertyValue" /> object could not be created.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateGuid">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified <b>GUID</b> value.</summary>
+    <param name="value">The value to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateGuidArray">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of <a href="https://docs.microsoft.com//dotnet/api/system.guid">Guid</a> values.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">The array of <a href="https://docs.microsoft.com//dotnet/api/system.guid">Guid</a> values to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateInspectable">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified <see cref="IInspectable" /> object.</summary>
+    <param name="value">The object to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="IPropertyValue" /> object could not be created.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateInspectableArray">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of <see cref="IInspectable" /> objects.</summary>
+    <param name="__valueSize">The number of objects in the array.</param>
+    <param name="value">The array of <see cref="IInspectable" /> objects to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateInt32">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified signed 32-bit integer value.</summary>
+    <param name="value">The signed 32-bit integer value to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="IPropertyValue" /> object could not be created.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateInt32Array">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of signed 32-bit integer values.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">The array of signed 32-bit integer values to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateInt64">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified signed 64-bit integer value.</summary>
+    <param name="value">The signed 64-bit integer value to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="IPropertyValue" /> object could not be created.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateInt64Array">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of signed 64-bit integer values.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">The array of signed 64-bit integer values to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreatePoint">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified <see cref="Point" /> value.</summary>
+    <param name="value">The value to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreatePointArray">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of <see cref="Point" /> values.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">The array of <see cref="Point" /> values to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateRect">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified <see cref="Rect" /> value.</summary>
+    <param name="value">The value to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateRectArray">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of <see cref="Rect" /> values.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">The array of <see cref="Rect" /> values to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateSingle">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified 32-bit floating point value.</summary>
+    <param name="value">The 32-bit floating point value to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="IPropertyValue" /> object could not be created.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateSingleArray">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of 32-bit floating point values.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">The array of 32-bit floating point values to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateSize">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified <see cref="Size" /> value.</summary>
+    <param name="value">The value to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateSizeArray">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of <see cref="Size" /> values.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">The array of <see cref="Size" /> values to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateString">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified string value.</summary>
+    <param name="value">The string value to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="IPropertyValue" /> object could not be created.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateStringArray">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of string values.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">The array of string values to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateTimeSpan">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified <see cref="TimeSpan" /> value.</summary>
+    <param name="value">The value to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateTimeSpanArray">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of <see cref="TimeSpan" /> values.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">The array of <see cref="TimeSpan" /> values to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateUInt32">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified unsigned 32-bit integer value.</summary>
+    <param name="value">The unsigned 32-bit integer value to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="IPropertyValue" /> object could not be created.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateUInt32Array">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of unsigned 32-bit integer values.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">The array of unsigned 32-bit integer values to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateUInt64">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified unsigned 64-bit integer value.</summary>
+    <param name="value">The unsigned 64-bit integer value to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="IPropertyValue" /> object could not be created.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateUInt64Array">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of unsigned 64-bit integer values.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">The array of unsigned 64-bit integer values to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateUInt8">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified unsigned 8-bit integer value.</summary>
+    <param name="value">The unsigned 8-bit integer value to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was created successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="IPropertyValue" /> object could not be created.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValueStatics.CreateUInt8Array">
+    <summary>Creates a new <see cref="IPropertyValue" /> object that contains the specified array of unsigned 8-bit integer values.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">The array of unsigned 8-bit integer values to store.</param>
+    <param name="propertyValue">A pointer to a new object that contains <i>value</i>. Use the <see cref="IUnknown.QueryInterface" /> method to get the <see cref="IPropertyValue" /> interface for the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValueStatics">
+    <summary>Creates <see cref="IPropertyValue" /> objects that you can store in a property store.</summary>
+  </member>
+</doc>

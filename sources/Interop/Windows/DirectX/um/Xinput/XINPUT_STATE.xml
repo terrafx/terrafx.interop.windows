@@ -10,6 +10,6 @@
   </member>
   <member name="XINPUT_STATE.Gamepad">
     <summary>
-      <see cref="XINPUT_GAMEPAD" /> structure containing the current state of an Xbox 360 Controller.</summary>
+      <see cref="XINPUT_GAMEPAD" /> structure containing the current state of a controller.</summary>
   </member>
 </doc>

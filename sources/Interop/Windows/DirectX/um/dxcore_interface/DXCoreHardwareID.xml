@@ -5,13 +5,13 @@
   <member name="DXCoreHardwareID">
     <summary>Represents the PnP hardware ID parts for an adapter.</summary>
   </member>
-  <member name="DXCoreHardwareID.vendorId">
+  <member name="DXCoreHardwareID.vendorID">
     <summary>The PCI ID of the adapter's hardware vendor.</summary>
   </member>
-  <member name="DXCoreHardwareID.deviceId">
+  <member name="DXCoreHardwareID.deviceID">
     <summary>The PCI ID of the adapter's hardware device.</summary>
   </member>
-  <member name="DXCoreHardwareID.subSysId">
+  <member name="DXCoreHardwareID.subSysID">
     <summary>The PCI ID of the adapter's hardware subsystem.</summary>
   </member>
   <member name="DXCoreHardwareID.revision">

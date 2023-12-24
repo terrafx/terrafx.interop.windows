@@ -39,6 +39,6 @@
     <summary>Start of the variable-length buffer to hold EAs, a custom security descriptor, and alternate data stream information.</summary>
   </member>
   <member name="PRJ_PLACEHOLDER_INFO.versionInfo">
-    <summary>Version information for the placeholder (see <see cref="PrjMarkDirectoryAsPlaceholder" /> for more information on PRJ_PLACEHOLDER_VERSION_INFO)</summary>
+    <summary>Version information for the placeholder (see <see cref="PrjMarkDirectoryAsPlaceholder" /> for more information on PRJ_PLACEHOLDER_VERSION_INFO).</summary>
   </member>
 </doc>

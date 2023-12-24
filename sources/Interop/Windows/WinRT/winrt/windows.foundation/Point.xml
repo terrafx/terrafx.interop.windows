@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Point">
+    <summary>Represents an ordered pair of floating-point x- and y-coordinates that defines a point in a two-dimensional plane.</summary>
+  </member>
+  <member name="Point.Point.X"></member>
+  <member name="Point.Point.Y"></member>
+  <member name="Point.X">
+    <summary>The horizontal position of the point.</summary>
+  </member>
+  <member name="Point.Y">
+    <summary>The vertical position of the point.</summary>
+  </member>
+</doc>

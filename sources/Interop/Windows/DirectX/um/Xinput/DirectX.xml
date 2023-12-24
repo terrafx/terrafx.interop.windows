@@ -41,7 +41,7 @@
           <description>
             <b>XINPUT_FLAG_GAMEPAD</b>
           </description>
-          <description>Limit query to devices of Xbox 360 Controller type.</description>
+          <description>Limit query to devices of controller type.</description>
         </listheader>
       </list> <para>Any value of <i>dwflags</i> other than the above or 0 is illegal and will result in an error break when debugging.</para></param>
     <param name="pCapabilities">Pointer to an <see cref="XINPUT_CAPABILITIES" /> structure that receives the controller capabilities.</param>

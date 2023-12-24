@@ -7,7 +7,7 @@
       <para>Computes the modulus, with the same results as the Python modulus, for each pair of corresponding elements from the input tensors, placing the result into the corresponding element of <i>OutputTensor</i>.</para>
       <para>Because the quotient is rounded towards -inf, the result will have the same sign as the divisor.</para>
       <code>f(a, b) = a - (b * floor(a / b))</code>
-      <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias one of the the input tensors during binding.</para>
+      <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias one of the input tensors during binding.</para>
     </summary>
   </member>
   <member name="DML_ELEMENT_WISE_MODULUS_FLOOR_OPERATOR_DESC.ATensor">

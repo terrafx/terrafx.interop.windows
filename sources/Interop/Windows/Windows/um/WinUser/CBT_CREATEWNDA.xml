@@ -3,7 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CBT_CREATEWNDA">
-    <summary>Contains information passed to a <b>WH_CBT</b> hook procedure, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644977(v=vs.85)">CBTProc</a>, before a window is created.</summary>
+    <summary>Contains information passed to a <b>WH_CBT</b> hook procedure, <a href="https://docs.microsoft.com//windows/win32/winmsg/cbtproc">CBTProc</a>, before a window is created.</summary>
   </member>
   <member name="CBT_CREATEWNDA.lpcs">
     <summary>A pointer to a <see cref="CREATESTRUCT" /> structure that contains initialization parameters for the window about to be created.</summary>
@@ -12,7 +12,7 @@
     <summary>A handle to the window whose position in the Z order precedes that of the window being created. This member can also be <b>NULL</b>.</summary>
   </member>
   <member name="CBT_CREATEWNDA">
-    <summary>Contains information passed to a <b>WH_CBT</b> hook procedure, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644977(v=vs.85)">CBTProc</a>, before a window is created.</summary>
+    <summary>Contains information passed to a <b>WH_CBT</b> hook procedure, <a href="https://docs.microsoft.com//windows/win32/winmsg/cbtproc">CBTProc</a>, before a window is created.</summary>
   </member>
   <member name="CBT_CREATEWNDA.lpcs">
     <summary>A pointer to a <see cref="CREATESTRUCT" /> structure that contains initialization parameters for the window about to be created.</summary>

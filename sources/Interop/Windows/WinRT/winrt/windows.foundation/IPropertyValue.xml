@@ -1,0 +1,703 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPropertyValue.GetBoolean">
+    <summary>Gets the 8-bit Boolean value that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="value">The 8-bit Boolean value.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was returned successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INCORRECT_TYPE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The type of <i>value</i> does not match the value of the <see cref="Type" /> property.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValue.GetBooleanArray">
+    <summary>Gets the array of 8-bit Boolean values that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">
+      <para>The array of 8-bit Boolean values.</para>
+      <para>The returned pointer must be freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetChar16">
+    <summary>Gets the Unicode character that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="value">The Unicode character.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was returned successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INCORRECT_TYPE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The type of <i>value</i> does not match the <see cref="Type" /> property.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValue.GetChar16Array">
+    <summary>Gets the the array of Unicode characters that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of Unicode characters in the array.</param>
+    <param name="value">
+      <para>The array of Unicode characters.</para>
+      <para>The returned pointer must be freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetDateTime">
+    <summary>Gets the <see cref="DateTime" /> value that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="value">The value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetDateTimeArray">
+    <summary>Gets the array of <see cref="DateTime" /> values that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">
+      <para>The array of <see cref="DateTime" /> values.</para>
+      <para>The returned pointer must be freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetDouble">
+    <summary>Gets the 64-bit floating point value that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="value">The 64-bit floating point value.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was returned successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INCORRECT_TYPE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The type of <i>value</i> does not match the <see cref="Type" /> property.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValue.GetDoubleArray">
+    <summary>Gets the array of 64-bit floating point values that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">
+      <para>The array of 64-bit floating point values.</para>
+      <para>The returned pointer must be freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetGuid">
+    <summary>Gets the GUID value that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="value">The value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetGuidArray">
+    <summary>Gets the array of <a href="https://docs.microsoft.com//dotnet/api/system.guid">Guid</a> values that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">
+      <para>The array of <a href="https://docs.microsoft.com//dotnet/api/system.guid">Guid</a> values.</para>
+      <para>The returned pointer must be freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetInspectableArray">
+    <summary>Gets the array of pointers to <see cref="IInspectable" /> objects that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">
+      <para>The array of pointers to <see cref="IInspectable" /> objects.</para>
+      <para>The returned pointer must be freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetInt32">
+    <summary>Gets the signed 32-bit integer value that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="value">The signed 32-bit integer value.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was returned successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INCORRECT_TYPE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The type of <i>value</i> does not match the <see cref="Type" /> property.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValue.GetInt32Array">
+    <summary>Gets the array of signed 32-bit integer values that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">
+      <para>The array of signed 32-bit integer values.</para>
+      <para>The returned pointer must be freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetInt64">
+    <summary>Gets the signed 64-bit integer value that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="value">The signed 64-bit integer value.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was returned successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INCORRECT_TYPE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The type of <i>value</i> does not match the <see cref="Type" /> property.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValue.GetInt64Array">
+    <summary>Gets the array of signed 64-bit integer values that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">
+      <para>The array of signed 64-bit integer values.</para>
+      <para>The returned pointer must be freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetPoint">
+    <summary>Gets the <see cref="Point" /> value that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="value">The value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetPointArray">
+    <summary>Gets the array of <see cref="Point" /> values that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">
+      <para>The array of <see cref="Point" /> values.</para>
+      <para>The returned pointer must be freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetRect">
+    <summary>Gets the <see cref="Rect" /> value that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="value">The value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetRectArray">
+    <summary>Gets the array of <see cref="Rect" /> values that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">
+      <para>The array of <see cref="Rect" /> values.</para>
+      <para>The returned pointer must be freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetSingle">
+    <summary>Gets the 32-bit floating point value that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="value">The 32-bit floating point value.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was returned successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INCORRECT_TYPE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The type of <i>value</i> does not match the <see cref="Type" /> property.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValue.GetSingleArray">
+    <summary>Gets the array of 32-bit floating point values that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">
+      <para>The array of 32-bit floating point values.</para>
+      <para>The returned pointer must be freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetSize">
+    <summary>Gets the <see cref="Size" /> value that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="value">The value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetSizeArray">
+    <summary>Gets the array of <see cref="Size" /> values that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">
+      <para>The array of <see cref="Size" /> values.</para>
+      <para>The returned pointer must be freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetString">
+    <summary>Gets the string value that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="value">The string value.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was returned successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INCORRECT_TYPE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The type of <i>value</i> does not match the <see cref="Type" /> property.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValue.GetStringArray">
+    <summary>Gets the array of string values that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">
+      <para>The array of string values.</para>
+      <para>The returned strings must be freed using <see cref="WindowsDeleteString" />. The returned objects must be released using <b>IUnknown.Release</b>.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetTimeSpan">
+    <summary>Gets the <see cref="TimeSpan" /> value that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="value">The value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetTimeSpanArray">
+    <summary>Gets the array of <see cref="TimeSpan" /> values that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">
+      <para>The array of <see cref="TimeSpan" /> values.</para>
+      <para>The returned pointer must be freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetUInt32">
+    <summary>Gets the unsigned 32-bit integer value that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="value">The unsigned 32-bit integer value.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was returned successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INCORRECT_TYPE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The type of <i>value</i> does not match the <see cref="Type" /> property.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValue.GetUInt32Array">
+    <summary>Gets the array of unsigned 32-bit integer values that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">
+      <para>The array of unsigned 32-bit integer values.</para>
+      <para>The returned pointer must be freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetUInt64">
+    <summary>Gets the unsigned 64-bit integer value that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="value">The unsigned 64-bit integer value.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was returned successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INCORRECT_TYPE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The type of <i>value</i> does not match the <see cref="Type" /> property.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValue.GetUInt64Array">
+    <summary>Gets the array of unsigned 64-bit integer values that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">
+      <para>The array of unsigned 64-bit integer values.</para>
+      <para>The returned pointer must be freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.GetUInt8">
+    <summary>Gets the unsigned 8-bit integer value that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="value">The unsigned 8-bit integer values.</param>
+    <returns>
+      <para>This method can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The property value was returned successfully.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <i>value</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INCORRECT_TYPE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The type of <i>value</i> does not match the <see cref="Type" /> property.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IPropertyValue.GetUInt8Array">
+    <summary>Gets the array of unsigned 8-bit integer values that is stored in the current <see cref="IPropertyValue" /> object.</summary>
+    <param name="__valueSize">The number of values in the array.</param>
+    <param name="value">
+      <para>The array of unsigned 8-bit integer values.</para>
+      <para>The returned pointer must be freed using <see cref="CoTaskMemFree" />.</para>
+    </param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPropertyValue.get_Type">
+    <summary>
+      <para>Gets the data type of the value that is stored in the current <see cref="IPropertyValue" /> object.</para>
+      <para>This property is read-only.</para>
+    </summary>
+  </member>
+  <member name="IPropertyValue.Type">
+    <summary>
+      <para>Gets the data type of the value that is stored in the current <see cref="IPropertyValue" /> object.</para>
+      <para>This property is read-only.</para>
+    </summary>
+  </member>
+  <member name="IPropertyValue">
+    <summary>Represents a value in a Windows Runtime property store.</summary>
+  </member>
+</doc>

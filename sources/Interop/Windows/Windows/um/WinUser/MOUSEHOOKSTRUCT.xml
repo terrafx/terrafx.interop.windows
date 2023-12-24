@@ -3,7 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MOUSEHOOKSTRUCT">
-    <summary>Contains information about a mouse event passed to a <b>WH_MOUSE</b> hook procedure, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644988(v=vs.85)">MouseProc</a>.</summary>
+    <summary>Contains information about a mouse event passed to a <b>WH_MOUSE</b> hook procedure, <a href="https://docs.microsoft.com//windows/win32/winmsg/mouseproc">MouseProc</a>.</summary>
   </member>
   <member name="MOUSEHOOKSTRUCT.pt">
     <summary>The x- and y-coordinates of the cursor, in screen coordinates.</summary>

@@ -1653,7 +1653,11 @@
     </summary>
     <param name="FileMapping">A <b>HANDLE</b> to a section that is to be mapped into the address space of the specified process.</param>
     <param name="Process">A <b>HANDLE</b> to a process into which the section will be mapped.</param>
-    <param name="BaseAddress">The desired base address of the view. The address is rounded down to the nearest 64k boundary. If this parameter is <b>NULL</b>, the system picks the base address.</param>
+    <param name="BaseAddress">
+      <para>The desired base address of the view. The address is rounded down to the nearest 64k boundary.</para>
+      <code> If this parameter is &lt;b&gt;NULL&lt;/b&gt;, the system picks the base address.</code>
+      <para>If <i>BaseAddress</i> is not <b>NULL</b>, then any provided <see cref="MEM_ADDRESS_REQUIREMENTS" /> must consist of all zeroes.</para>
+    </param>
     <param name="Offset">The offset from the beginning of the section. This must be 64k aligned.</param>
     <param name="ViewSize">
       <para>The number of bytes to map. A value of zero (0) specifies that the entire section is to be mapped.</para>
@@ -1694,7 +1698,7 @@
               </listheader>
             </list>
           </description>
-          <description> Replaces a placeholder with a mapped view. Only data/pf-backed section views are supported (no images, physical memory, etc.). When you replace a placeholder, <i>BaseAddress</i> and <i>ViewSize</i> must exactly match those of the placeholder.<para>After you replace a placeholder with a mapped view, to free that mapped view back to a placeholder, see the <i>UnmapFlags</i> parameter of <see cref="UnmapViewOfFileEx" /> and <see cref="UnmapViewOfFile2" />.</para><para>A placeholder is a type of reserved memory region.</para><para>The 64k alignment requirements on <i>Offset</i> and <i>BaseAddress</i> do not apply when this flag is specified.</para></description>
+          <description> Replaces a placeholder with a mapped view. Only data/pf-backed section views are supported (no images, physical memory, etc.). When you replace a placeholder, <i>BaseAddress</i> and <i>ViewSize</i> must exactly match those of the placeholder, and any provided <see cref="MEM_ADDRESS_REQUIREMENTS" /> structure must consist of all zeroes.<para>After you replace a placeholder with a mapped view, to free that mapped view back to a placeholder, see the <i>UnmapFlags</i> parameter of <see cref="UnmapViewOfFileEx" /> and <see cref="UnmapViewOfFile2" />.</para><para>A placeholder is a type of reserved memory region.</para><para>The 64k alignment requirements on <i>Offset</i> and <i>BaseAddress</i> do not apply when this flag is specified.</para></description>
         </listheader>
         <listheader>
           <description>
@@ -1729,7 +1733,11 @@
     </summary>
     <param name="FileMapping">A <b>HANDLE</b> to a section that is to be mapped into the address space of the specified process.</param>
     <param name="Process">A <b>HANDLE</b> to a process into which the section will be mapped.</param>
-    <param name="BaseAddress">The desired base address of the view. The address is rounded down to the nearest 64k boundary. If this parameter is <b>NULL</b>, the system picks the base address.</param>
+    <param name="BaseAddress">
+      <para>The desired base address of the view. The address is rounded down to the nearest 64k boundary.</para>
+      <code> If this parameter is &lt;b&gt;NULL&lt;/b&gt;, the system picks the base address.</code>
+      <para>If <i>BaseAddress</i> is not <b>NULL</b>, then any provided <see cref="MEM_ADDRESS_REQUIREMENTS" /> structure must consist of all zeroes.</para>
+    </param>
     <param name="Offset">The offset from the beginning of the section. This must be 64k aligned.</param>
     <param name="ViewSize">
       <para>The number of bytes to map. A value of zero (0) specifies that the entire section is to be mapped.</para>
@@ -1770,7 +1778,7 @@
               </listheader>
             </list>
           </description>
-          <description> Replaces a placeholder with a mapped view. Only data/pf-backed section views are supported (no images, physical memory, etc.). When you replace a placeholder, <i>BaseAddress</i> and <i>ViewSize</i> must exactly match those of the placeholder.<para>After you replace a placeholder with a mapped view, to free that mapped view back to a placeholder, see the <i>UnmapFlags</i> parameter of <see cref="UnmapViewOfFileEx" /> and <see cref="UnmapViewOfFile2" />.</para><para>A placeholder is a type of reserved memory region.</para></description>
+          <description> Replaces a placeholder with a mapped view. Only data/pf-backed section views are supported (no images, physical memory, etc.). When you replace a placeholder, <i>BaseAddress</i> and <i>ViewSize</i> must exactly match those of the placeholder, and any provided <see cref="MEM_ADDRESS_REQUIREMENTS" /> structure must consist of all zeroes.<para>After you replace a placeholder with a mapped view, to free that mapped view back to a placeholder, see the <i>UnmapFlags</i> parameter of <see cref="UnmapViewOfFileEx" /> and <see cref="UnmapViewOfFile2" />.</para><para>A placeholder is a type of reserved memory region.</para></description>
         </listheader>
         <listheader>
           <description>
@@ -2326,7 +2334,7 @@
   </member>
   <member name="Windows.UnmapViewOfFile">
     <summary>Unmaps a mapped view of a file from the calling process's address space.</summary>
-    <param name="lpBaseAddress">A pointer to the base address of the mapped view of a file that is to be unmapped. This value must be identical to the value returned by a previous call to the<see cref="MapViewOfFile" /> or<see cref="MapViewOfFileEx" /> function.</param>
+    <param name="lpBaseAddress">A pointer to the base address of the mapped view of a file that is to be unmapped. This value must be identical to the value returned by a previous call to one of the functions in the<see cref="MapViewOfFile" /> family.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
       <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />.</para>
@@ -2335,7 +2343,7 @@
   <member name="Windows.UnmapViewOfFile2">
     <summary>Unmaps a previously mapped view of a file or a pagefile-backed section.</summary>
     <param name="Process">A <b>HANDLE</b> to the process from which the section will be unmapped.</param>
-    <param name="BaseAddress">The base address of a previously mapped view that is to be unmapped. This value must be identical to the value returned by a previous call to <see cref="MapViewOfFile2" />.</param>
+    <param name="BaseAddress">The base address of a previously mapped view that is to be unmapped. This value must be identical to the value returned by a previous call to one of the functions in the<see cref="MapViewOfFile" /> family.</param>
     <param name="UnmapFlags">
       <para>This parameter can be zero (0) or one of the following values.</para>
       <list type="table">
@@ -2371,7 +2379,7 @@
               </listheader>
             </list>
           </description>
-          <description>Unmaps a mapped view back to a placeholder (after you've replaced a placeholder with a mapped view using <see cref="MapViewOfFile2" /> or <b>MapViewOfFile2FromApp</b>).</description>
+          <description>Unmaps a mapped view back to a placeholder (after you've replaced a placeholder with a mapped view using <see cref="MapViewOfFile3" /> or <b>MapViewOfFile3FromApp</b>).</description>
         </listheader>
       </list>
     </param>
@@ -2379,7 +2387,7 @@
   </member>
   <member name="Windows.UnmapViewOfFileEx">
     <summary>This is an extended version of <see cref="UnmapViewOfFile" /> that takes an additional flags parameter.</summary>
-    <param name="BaseAddress">A pointer to the base address of the mapped view of a file that is to be unmapped. This value must be identical to the value returned by a previous call to the<see cref="MapViewOfFile" /> or<see cref="MapViewOfFileEx" /> function.</param>
+    <param name="BaseAddress">A pointer to the base address of the mapped view of a file that is to be unmapped. This value must be identical to the value returned by a previous call to one of the functions in the<see cref="MapViewOfFile" /> family.</param>
     <param name="UnmapFlags">
       <para>This parameter can be one of the following values.</para>
       <list type="table">
@@ -2415,7 +2423,7 @@
               </listheader>
             </list>
           </description>
-          <description>Unmaps a mapped view back to a placeholder (after you've replaced a placeholder with a mapped view using <see cref="MapViewOfFile2" /> or <b>MapViewOfFile2FromApp</b>).</description>
+          <description>Unmaps a mapped view back to a placeholder (after you've replaced a placeholder with a mapped view using <see cref="MapViewOfFile3" /> or <b>MapViewOfFile3FromApp</b>).</description>
         </listheader>
       </list>
     </param>
@@ -2613,8 +2621,8 @@
     </param>
     <param name="BaseAddress">
       <para>The pointer that specifies a desired starting address for the region of pages that you want to allocate.</para>
-      <para>If an explicit base address is specified, then it must be a multiple of the system allocation granularity. To determine the size of a page and the allocation granularity on the host computer, use the<see cref="GetSystemInfo" /> function.</para>
       <para>If <i>BaseAddress</i> is <b>NULL</b>, the function determines where to allocate the region.</para>
+      <para>If <i>BaseAddress</i> is not <b>NULL</b>, then any provided <see cref="MEM_ADDRESS_REQUIREMENTS" /> structure must consist of all zeroes, and the base address must be a multiple of the system allocation granularity. To determine the allocation granularity, use the<see cref="GetSystemInfo" /> function.</para>
       <para>If this address is within an enclave that you have not initialized by calling <see cref="InitializeEnclave" />, <b>VirtualAlloc2</b> allocates a page of zeros for the enclave at that address. The page must be previously uncommitted, and will not be measured with the EEXTEND instruction of the Intel Software Guard Extensions programming model.</para>
       <para>If the address in within an enclave that you initialized, then the allocation operation fails with the <b>ERROR_INVALID_ADDRESS</b> error. That is true for enclaves that do not support dynamic memory management (i.e. SGX1). SGX2 enclaves will permit allocation, and the page must be accepted by the enclave after it has been allocated.</para>
     </param>
@@ -2673,7 +2681,7 @@
               </listheader>
             </list>
           </description>
-          <description> Replaces a placeholder with a normal private allocation. Only data/pf-backed section views are supported (no images, physical memory, etc.). When you replace a placeholder, <i>BaseAddress</i> and <i>Size</i> must exactly match those of the placeholder.<para>After you replace a placeholder with a private allocation, to free that allocation back to a placeholder, see the <i>dwFreeType</i> parameter of <see cref="VirtualFree" /> and <see cref="VirtualFreeEx" />.</para><para>A placeholder is a type of reserved memory region.</para></description>
+          <description> Replaces a placeholder with a normal private allocation. Only data/pf-backed section views are supported (no images, physical memory, etc.). When you replace a placeholder, <i>BaseAddress</i> and <i>Size</i> must exactly match those of the placeholder, and any provided <see cref="MEM_ADDRESS_REQUIREMENTS" /> structure must consist of all zeroes.<para>After you replace a placeholder with a private allocation, to free that allocation back to a placeholder, see the <i>dwFreeType</i> parameter of <see cref="VirtualFree" /> and <see cref="VirtualFreeEx" />.</para><para>A placeholder is a type of reserved memory region.</para></description>
         </listheader>
         <listheader>
           <description>
@@ -2760,8 +2768,8 @@
     </param>
     <param name="BaseAddress">
       <para>The pointer that specifies a desired starting address for the region of pages that you want to allocate.</para>
-      <para>If an explicit base address is specified, then it must be a multiple of the system allocation granularity. To determine the size of a page and the allocation granularity on the host computer, use the<see cref="GetSystemInfo" /> function.</para>
       <para>If <i>BaseAddress</i> is <b>NULL</b>, the function determines where to allocate the region.</para>
+      <para>If <i>BaseAddress</i> is not <b>NULL</b>, then any provided <see cref="MEM_ADDRESS_REQUIREMENTS" /> structure must consist of all zeroes, and the base address must be a multiple of the system allocation granularity. To determine the allocation granularity, use the<see cref="GetSystemInfo" /> function.</para>
     </param>
     <param name="Size">
       <para>The size of the region of memory to allocate, in bytes.</para>
@@ -2818,7 +2826,7 @@
               </listheader>
             </list>
           </description>
-          <description> Replaces a placeholder with a normal private allocation. Only data/pf-backed section views are supported (no images, physical memory, etc.). When you replace a placeholder, <i>BaseAddress</i> and <i>Size</i> must exactly match those of the placeholder.<para>After you replace a placeholder with a private allocation, to free that allocation back to a placeholder, see the <i>dwFreeType</i> parameter of <see cref="VirtualFree" /> and <see cref="VirtualFreeEx" />.</para><para>A placeholder is a type of reserved memory region.</para></description>
+          <description> Replaces a placeholder with a normal private allocation. Only data/pf-backed section views are supported (no images, physical memory, etc.). When you replace a placeholder, <i>BaseAddress</i> and <i>Size</i> must exactly match those of the placeholder, and any provided <see cref="MEM_ADDRESS_REQUIREMENTS" /> structure must consist of all zeroes.<para>After you replace a placeholder with a private allocation, to free that allocation back to a placeholder, see the <i>dwFreeType</i> parameter of <see cref="VirtualFree" /> and <see cref="VirtualFreeEx" />.</para><para>A placeholder is a type of reserved memory region.</para></description>
         </listheader>
         <listheader>
           <description>

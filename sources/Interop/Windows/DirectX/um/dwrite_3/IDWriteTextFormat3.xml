@@ -30,7 +30,7 @@
   <member name="IDWriteTextFormat3">
     <summary>
       <para>Describes the font and paragraph properties used to format text, and it describes locale information.</para>
-      <para>This interface extends <a href="https://docs.microsoft.com//windows/win32/directwrite/idwritetextformat2">IDWriteTextFormat2</a>.</para>
+      <para>This interface extends <see cref="IDWriteTextFormat2" />.</para>
     </summary>
   </member>
 </doc>

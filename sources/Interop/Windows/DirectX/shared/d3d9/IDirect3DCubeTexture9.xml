@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDirect3DCubeTexture9.AddDirtyRect">
+    <summary>Adds a dirty region to a cube texture resource.</summary>
+    <param name="FaceType">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dcubemap-faces">D3DCUBEMAP_FACES</a> enumerated type, identifying the cube map face.</param>
+    <param name="pDirtyRect">Pointer to a <see cref="RECT" /> structure, specifying the dirty region. Specifying <b>NULL</b> expands the dirty region to cover the entire cube texture.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DCubeTexture9.GetCubeMapSurface">
+    <summary>Retrieves a cube texture map surface.</summary>
+    <param name="FaceType">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dcubemap-faces">D3DCUBEMAP_FACES</a> enumerated type, identifying a cube map face.</param>
+    <param name="Level">Specifies a level of a mipmapped cube texture.</param>
+    <param name="ppCubeMapSurface">Address of a pointer to an <see cref="IDirect3DSurface9" /> interface, representing the returned cube texture map surface.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DCubeTexture9.GetLevelDesc">
+    <summary>Retrieves a description of one face of the specified cube texture level.</summary>
+    <param name="Level">Specifies a level of a mipmapped cube texture.</param>
+    <param name="pDesc">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dsurface-desc">D3DSURFACE_DESC</a> structure, describing one face of the specified cube texture level.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DCubeTexture9.LockRect">
+    <summary>Locks a rectangle on a cube texture resource.</summary>
+    <param name="FaceType">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dcubemap-faces">D3DCUBEMAP_FACES</a> enumerated type, identifying a cube map face.</param>
+    <param name="Level">Specifies a level of a mipmapped cube texture.</param>
+    <param name="pLockedRect">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dlocked-rect">D3DLOCKED_RECT</a> structure, describing the region to lock.</param>
+    <param name="pRect">Pointer to a rectangle to lock. Specified by a pointer to a <see cref="RECT" /> structure. Specifying <b>NULL</b> for this parameter expands the dirty region to cover the entire cube texture.</param>
+    <param name="Flags">
+      <para>Combination of zero or more locking flags that describe the type of lock to perform. For this method, the valid flags are:</para>
+      <list type="bullet">
+        <item>
+          <description>D3DLOCK_DISCARD</description>
+        </item>
+        <item>
+          <description>D3DLOCK_NO_DIRTY_UPDATE</description>
+        </item>
+        <item>
+          <description>D3DLOCK_NOSYSLOCK</description>
+        </item>
+        <item>
+          <description>D3DLOCK_READONLY</description>
+        </item>
+      </list>You may not specify a subrect when using D3DLOCK_DISCARD. For a description of the flags, see <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dlock">D3DLOCK</a>.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. D3DERR_INVALIDCALL is returned if one or more of the arguments is invalid.</returns>
+  </member>
+  <member name="IDirect3DCubeTexture9.UnlockRect">
+    <summary>Unlocks a rectangle on a cube texture resource.</summary>
+    <param name="FaceType">Member of the <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dcubemap-faces">D3DCUBEMAP_FACES</a> enumerated type, identifying a cube map face.</param>
+    <param name="Level">Specifies a level of a mipmapped cube texture.</param>
+    <returns>If the method succeeds, the return value is D3D_OK. If the method fails, the return value can be: D3DERR_INVALIDCALL.</returns>
+  </member>
+  <member name="IDirect3DCubeTexture9">
+    <summary>Applications use the methods of the IDirect3DCubeTexture9 interface to manipulate a cube texture resource.</summary>
+  </member>
+</doc>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_QUERY_DATA_PIPELINE_STATISTICS1"></member>
+  <member name="D3D12_QUERY_DATA_PIPELINE_STATISTICS1.IAVertices"></member>
+  <member name="D3D12_QUERY_DATA_PIPELINE_STATISTICS1.IAPrimitives"></member>
+  <member name="D3D12_QUERY_DATA_PIPELINE_STATISTICS1.VSInvocations"></member>
+  <member name="D3D12_QUERY_DATA_PIPELINE_STATISTICS1.GSInvocations"></member>
+  <member name="D3D12_QUERY_DATA_PIPELINE_STATISTICS1.GSPrimitives"></member>
+  <member name="D3D12_QUERY_DATA_PIPELINE_STATISTICS1.CInvocations"></member>
+  <member name="D3D12_QUERY_DATA_PIPELINE_STATISTICS1.CPrimitives"></member>
+  <member name="D3D12_QUERY_DATA_PIPELINE_STATISTICS1.PSInvocations"></member>
+  <member name="D3D12_QUERY_DATA_PIPELINE_STATISTICS1.HSInvocations"></member>
+  <member name="D3D12_QUERY_DATA_PIPELINE_STATISTICS1.DSInvocations"></member>
+  <member name="D3D12_QUERY_DATA_PIPELINE_STATISTICS1.CSInvocations"></member>
+  <member name="D3D12_QUERY_DATA_PIPELINE_STATISTICS1.ASInvocations"></member>
+  <member name="D3D12_QUERY_DATA_PIPELINE_STATISTICS1.MSInvocations"></member>
+  <member name="D3D12_QUERY_DATA_PIPELINE_STATISTICS1.MSPrimitives"></member>
+</doc>

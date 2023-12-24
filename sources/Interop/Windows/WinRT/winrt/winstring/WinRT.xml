@@ -207,7 +207,7 @@
               </listheader>
             </list>
           </description>
-          <description>The [**HSTRING**](/windows/win32/winrt/hstring) was created successfully.</description>
+          <description>The <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> was created successfully.</description>
         </listheader>
         <listheader>
           <description>
@@ -232,7 +232,7 @@
               </listheader>
             </list>
           </description>
-          <description>Failed to allocate the new [**HSTRING**](/windows/win32/winrt/hstring).</description>
+          <description>Failed to allocate the new <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a>.</description>
         </listheader>
         <listheader>
           <description>
@@ -276,7 +276,7 @@
               </listheader>
             </list>
           </description>
-          <description>The [**HSTRING**](/windows/win32/winrt/hstring) was created successfully.</description>
+          <description>The <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> was created successfully.</description>
         </listheader>
         <listheader>
           <description>
@@ -300,7 +300,7 @@
               </listheader>
             </list>
           </description>
-          <description>Failed to allocate the new [**HSTRING**](/windows/win32/winrt/hstring).</description>
+          <description>Failed to allocate the new <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a>.</description>
         </listheader>
         <listheader>
           <description>
@@ -382,7 +382,7 @@
               </listheader>
             </list>
           </description>
-          <description>The [**HSTRING**](/windows/win32/winrt/hstring) was copied successfully.</description>
+          <description>The <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> was copied successfully.</description>
         </listheader>
         <listheader>
           <description>
@@ -407,7 +407,7 @@
               </listheader>
             </list>
           </description>
-          <description>Failed to allocate the new [**HSTRING**](/windows/win32/winrt/hstring).</description>
+          <description>Failed to allocate the new <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a>.</description>
         </listheader>
       </list>
     </returns>
@@ -475,7 +475,7 @@
               </item>
               <item>
                 <description>
-                  <i>targetHString</i> is not a correctly formed [**HSTRING**](/windows/win32/winrt/hstring).</description>
+                  <i>targetHString</i> is not a correctly formed <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a>.</description>
               </item>
             </list>
           </description>
@@ -530,7 +530,7 @@
               </item>
               <item>
                 <description>
-                  <i>targetHString</i> is not a correctly formed [**HSTRING**](/windows/win32/winrt/hstring).</description>
+                  <i>targetHString</i> is not a correctly formed <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a>.</description>
               </item>
             </list>
           </description>
@@ -566,7 +566,7 @@
               </listheader>
             </list>
           </description>
-          <description>The [**HSTRING**](/windows/win32/winrt/hstring) was created successfully.</description>
+          <description>The <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> was created successfully.</description>
         </listheader>
         <listheader>
           <description>
@@ -591,7 +591,7 @@
               </listheader>
             </list>
           </description>
-          <description>The requested [**HSTRING**](/windows/win32/winrt/hstring) allocation size is too large.</description>
+          <description>The requested <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> allocation size is too large.</description>
         </listheader>
         <listheader>
           <description>
@@ -603,7 +603,7 @@
               </listheader>
             </list>
           </description>
-          <description>Failed to allocate the [**HSTRING**](/windows/win32/winrt/hstring) buffer.</description>
+          <description>Failed to allocate the <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a>.</description>
         </listheader>
       </list>
     </returns>
@@ -629,7 +629,7 @@
               </listheader>
             </list>
           </description>
-          <description>The [**HSTRING**](/windows/win32/winrt/hstring) was created successfully.</description>
+          <description>The <a href="https://docs.microsoft.com//windows/win32/winrt/hstring">HSTRING</a> was created successfully.</description>
         </listheader>
         <listheader>
           <description>
@@ -655,7 +655,7 @@
             </list>
           </description>
           <description>
-            <i>bufferHandle</i> was not created by calling the <see cref="WindowsPreallocateStringBuffer" /> function, or the caller has overwritten the terminating NUL character in <i>bufferHandle</i>.</description>
+            <i>bufferHandle</i> was not created by calling the <see cref="WindowsPreallocateStringBuffer" /> function, or the caller has overwritten the terminating NULL character in <i>bufferHandle</i>.</description>
         </listheader>
       </list>
     </returns>

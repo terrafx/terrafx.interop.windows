@@ -15,7 +15,7 @@
     <summary>The class style(s). This member can be any combination of the <a href="https://docs.microsoft.com//windows/win32/winmsg/window-class-styles">Class Styles</a>.</summary>
   </member>
   <member name="WNDCLASSEXA.lpfnWndProc">
-    <summary>A pointer to the window procedure. You must use the <see cref="CallWindowProc" /> function to call the window procedure. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms633573(v=vs.85)">WindowProc</a>.</summary>
+    <summary>A pointer to the window procedure. You must use the <see cref="CallWindowProc" /> function to call the window procedure. For more information, see <a href="https://docs.microsoft.com//windows/win32/api/winuser/nc-winuser-wndproc">WindowProc</a>.</summary>
   </member>
   <member name="WNDCLASSEXA.cbClsExtra">
     <summary>The number of extra bytes to allocate following the window-class structure. The system initializes the bytes to zero.</summary>
@@ -121,7 +121,7 @@
     <summary>The class style(s). This member can be any combination of the <a href="https://docs.microsoft.com//windows/win32/winmsg/window-class-styles">Class Styles</a>.</summary>
   </member>
   <member name="WNDCLASSEXA.lpfnWndProc">
-    <summary>A pointer to the window procedure. You must use the <see cref="CallWindowProc" /> function to call the window procedure. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms633573(v=vs.85)">WindowProc</a>.</summary>
+    <summary>A pointer to the window procedure. You must use the <see cref="CallWindowProc" /> function to call the window procedure. For more information, see <a href="https://docs.microsoft.com//windows/win32/api/winuser/nc-winuser-wndproc">WindowProc</a>.</summary>
   </member>
   <member name="WNDCLASSEXA.cbClsExtra">
     <summary>The number of extra bytes to allocate following the window-class structure. The system initializes the bytes to zero.</summary>

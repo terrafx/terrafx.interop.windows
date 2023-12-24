@@ -6,9 +6,9 @@
     <summary>Defines the WS-Trust specification version to be used with message security and mixed-mode security.</summary>
   </member>
   <member name="WS_TRUST_VERSION.WS_TRUST_VERSION_FEBRUARY_2005">
-    <summary>WS-Trust with the specification URI of http://schemas.xmlsoap.org/ws/2005/02/trust</summary>
+    <summary>WS-Trust with the specification URI of <code>http://schemas.xmlsoap.org/ws/2005/02/trust</code>.</summary>
   </member>
   <member name="WS_TRUST_VERSION.WS_TRUST_VERSION_1_3">
-    <summary>WS-Trust 1.3 with the specification URI of http://docs.oasis-open.org/ws-sx/ws-trust/200512</summary>
+    <summary>WS-Trust 1.3 with the specification URI of <code>http://docs.oasis-open.org/ws-sx/ws-trust/200512</code>.</summary>
   </member>
 </doc>

@@ -10,14 +10,55 @@
     <summary>This member is reserved for system use.</summary>
   </member>
   <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME"></member>
-  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.DisallowWin32kSystemCalls"></member>
+  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.DisallowWin32kSystemCalls">
+    <summary>When set to 1, the process is not permitted to perform GUI system calls.</summary>
+  </member>
   <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AuditDisallowWin32kSystemCalls"></member>
-  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.ReservedFlags">
+  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.DisallowFsctlSystemCalls">
     <summary>
-      <h4>- DisallowWin32kSystemCalls : 1</h4>
-      <para>When set to 1, the process is not permitted to perform GUI system calls.</para>
-      <h4>- ReservedFlags : 31</h4>
-      <para>This member is reserved for system use.</para>
+      <para>When set to 1, the process is not be able to successfully make NtFsControlFile system calls, with the following FsControlCode exceptions.</para>
+      <list type="bullet">
+        <item>
+          <description>FSCTL_IS_VOLUME_MOUNTED</description>
+        </item>
+        <item>
+          <description>FSCTL_PIPE_IMPERSONATE</description>
+        </item>
+        <item>
+          <description>FSCTL_PIPE_LISTEN</description>
+        </item>
+        <item>
+          <description>FSCTL_PIPE_DISCONNECT</description>
+        </item>
+        <item>
+          <description>FSCTL_PIPE_TRANSCEIVE</description>
+        </item>
+        <item>
+          <description>FSCTL_PIPE_WAIT</description>
+        </item>
+        <item>
+          <description>FSCTL_PIPE_GET_PIPE_ATTRIBUTE</description>
+        </item>
+        <item>
+          <description>FSCTL_PIPE_GET_CONNECTION_ATTRIBUTE</description>
+        </item>
+        <item>
+          <description>FSCTL_PIPE_GET_HANDLE_ATTRIBUTE</description>
+        </item>
+        <item>
+          <description>FSCTL_PIPE_PEEK</description>
+        </item>
+        <item>
+          <description>FSCTL_PIPE_EVENT_SELECT</description>
+        </item>
+        <item>
+          <description>FSCTL_PIPE_EVENT_ENUM</description>
+        </item>
+      </list>
     </summary>
+  </member>
+  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AuditDisallowFsctlSystemCalls"></member>
+  <member name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.ReservedFlags">
+    <summary>This member is reserved for system use.</summary>
   </member>
 </doc>

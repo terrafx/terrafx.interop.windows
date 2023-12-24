@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IIsolatedProcessLauncher.AllowSetForegroundAccess">
+    <summary>Allows the remote window to reflecting what is going on in the container.</summary>
+    <param name="pid">The process ID.</param>
+    <returns>Returns an <b>HRESULT</b> success or error code.</returns>
+  </member>
+  <member name="IIsolatedProcessLauncher.GetContainerGuid">
+    <summary>Returns the container/VM Id.</summary>
+    <param name="guid">The container/VM Id.</param>
+    <returns>Returns an <b>HRESULT</b> success or error code.</returns>
+  </member>
+  <member name="IIsolatedProcessLauncher.IsContainerRunning">
+    <summary>Determines if a container is running or suspended.</summary>
+    <param name="running">The <i>running</i> parameter is set to <b>true</b> if the container is running, or <b>false</b> if the container is suspended.</param>
+    <returns>Returns an <b>HRESULT</b> success or error code.</returns>
+  </member>
+  <member name="IIsolatedProcessLauncher.LaunchProcess">
+    <summary>Launches a process inside the container.</summary>
+    <param name="process">The process to launch.</param>
+    <param name="arguments">The arguments to pass to the process.</param>
+    <param name="workingDirectory">The working directory of the process.</param>
+    <returns>Returns an <b>HRESULT</b> success or error code.</returns>
+  </member>
+  <member name="IIsolatedProcessLauncher.ShareDirectory">
+    <summary>Shares a host directory into the container, either as read-only or supporting modification.</summary>
+    <param name="hostPath">The path to the directory on the host to share.</param>
+    <param name="containerPath">The path to the directory in the container to map to the host path.</param>
+    <param name="readOnly">Determines if the directory is shared as read-only or read-write.</param>
+  </member>
+  <member name="IIsolatedProcessLauncher">
+    <summary>Enables apps to determine whether processes are running in a Microsoft Defender Application Guard (MDAG) container (VM container environment).</summary>
+  </member>
+</doc>

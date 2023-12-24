@@ -3,7 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="XINPUT_GAMEPAD">
-    <summary>Describes the current state of the Xbox 360 Controller.</summary>
+    <summary>Describes the current state of the controller.</summary>
   </member>
   <member name="XINPUT_GAMEPAD.wButtons">
     <summary>

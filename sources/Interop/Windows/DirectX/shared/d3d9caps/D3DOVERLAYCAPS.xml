@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3DOVERLAYCAPS">
+    <summary>Specifies hardware overlay capabilities for a Direct3D device.</summary>
+  </member>
+  <member name="D3DOVERLAYCAPS.Caps">
+    <summary>
+      <para>Contains a bitwise <b>OR</b> of the following flags.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DOVERLAYCAPS_FULLRANGERGB</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The overlay supports RGB with a nominal range of 0–255 per channel.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DOVERLAYCAPS_LIMITEDRANGERGB</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The overlay supports RGB with a nominal range of 16–235 per channel. Reference black is (16,16,16) and reference white is (235,235,235).</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DOVERLAYCAPS_YCbCr_BT601</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The overlay supports the BT.601 definition of YUV.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DOVERLAYCAPS_YCbCr_BT709</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The overlay supports the BT.709 definition of YUV.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DOVERLAYCAPS_YCbCr_BT601_xvYCC</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The overlay supports extended YCbCr (xvYCC) for BT.601 YUV.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DOVERLAYCAPS_YCbCr_BT709_xvYCC</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The overlay supports extended YCbCr (xvYCC) for BT.709 YUV.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DOVERLAYCAPS_STRETCHX</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The device can stretch and shrink the overlay data arbitrarily in the horizontal direction.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>D3DOVERLAYCAPS_STRETCHY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The device can stretch and shrink the overlay data arbitrarily in the vertical direction.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3DOVERLAYCAPS.MaxOverlayDisplayWidth">
+    <summary>The maximum overlay width after stretching.</summary>
+  </member>
+  <member name="D3DOVERLAYCAPS.MaxOverlayDisplayHeight">
+    <summary>The maximum overlay height after stretching.</summary>
+  </member>
+</doc>

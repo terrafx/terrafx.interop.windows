@@ -6,10 +6,10 @@
     <summary>Specifies a lowest and highest base address and alignment as part of an extended parameter to a function that manages virtual memory.</summary>
   </member>
   <member name="MEM_ADDRESS_REQUIREMENTS.LowestStartingAddress">
-    <summary>Specifies the lowest acceptable address. Calling &lt;a href=" and specifying <b>NULL</b> for <i>LowestStartingAddress</i>, and specifying <b>NULL</b> for <i>LowestStartingAddress</i>, gives the same behavior as calling <see cref="VirtualAlloc" />/<see cref="MapViewOfFile" />.</summary>
+    <summary>Specifies the lowest acceptable address. This address must be a multiple of the allocation granularity returned by <see cref="GetSystemInfo" />, or a multiple of the large page size returned by <see cref="GetLargePageMinimum" /> if large pages are being requested. If this member is <b>NULL</b>, then there is no lower limit.</summary>
   </member>
   <member name="MEM_ADDRESS_REQUIREMENTS.HighestEndingAddress">
-    <summary>Specifies the highest acceptable address (inclusive). This address must not exceed <b>lpMaximumApplicationAddress</b> returned by <see cref="GetSystemInfo" />. Calling &lt;a href=" and specifying <b>NULL</b> for <i>LowestStartingAddress</i>, and specifying <b>NULL</b> for <i>HighestEndingAddress</i>, gives the same behavior as calling <see cref="VirtualAlloc" />/<see cref="MapViewOfFile" />.</summary>
+    <summary>Specifies the highest acceptable address (inclusive). This address must not exceed <b>lpMaximumApplicationAddress</b> returned by <see cref="GetSystemInfo" />. If this member is <b>NULL</b>, then there is no upper limit.</summary>
   </member>
   <member name="MEM_ADDRESS_REQUIREMENTS.Alignment">
     <summary>Specifies power-of-2 alignment. Specifying 0 aligns the returned address on the system allocation granularity.</summary>

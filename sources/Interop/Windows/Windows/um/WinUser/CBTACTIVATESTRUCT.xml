@@ -3,7 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CBTACTIVATESTRUCT">
-    <summary>Contains information passed to a <b>WH_CBT</b> hook procedure, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644977(v=vs.85)">CBTProc</a>, before a window is activated.</summary>
+    <summary>Contains information passed to a <b>WH_CBT</b> hook procedure, <a href="https://docs.microsoft.com//windows/win32/winmsg/cbtproc">CBTProc</a>, before a window is activated.</summary>
   </member>
   <member name="CBTACTIVATESTRUCT.fMouse">
     <summary>This member is <b>TRUE</b> if a mouse click is causing the activation or <b>FALSE</b> if it is not.</summary>
