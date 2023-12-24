@@ -74,25 +74,4 @@ public unsafe partial struct D3D12_DEPTH_STENCIL_DESC2
         BackFace.StencilWriteMask = backStencilWriteMask;
         DepthBoundsTestEnable = depthBoundsTestEnable;
     }
-
-    public D3D12_DEPTH_STENCIL_DESC ToD3D12_DEPTH_STENCIL_DESC()
-    {
-        D3D12_DEPTH_STENCIL_DESC D = new D3D12_DEPTH_STENCIL_DESC();
-
-        D.DepthEnable = DepthEnable;
-        D.DepthWriteMask = DepthWriteMask;
-        D.DepthFunc = DepthFunc;
-        D.StencilEnable = StencilEnable;
-        D.StencilReadMask = FrontFace.StencilReadMask;
-        D.StencilWriteMask = FrontFace.StencilWriteMask;
-        D.FrontFace.StencilFailOp = FrontFace.StencilFailOp;
-        D.FrontFace.StencilDepthFailOp = FrontFace.StencilDepthFailOp;
-        D.FrontFace.StencilPassOp = FrontFace.StencilPassOp;
-        D.FrontFace.StencilFunc = FrontFace.StencilFunc;
-        D.BackFace.StencilFailOp = BackFace.StencilFailOp;
-        D.BackFace.StencilDepthFailOp = BackFace.StencilDepthFailOp;
-        D.BackFace.StencilPassOp = BackFace.StencilPassOp;
-        D.BackFace.StencilFunc = BackFace.StencilFunc;
-        return D;
-    }
 }
