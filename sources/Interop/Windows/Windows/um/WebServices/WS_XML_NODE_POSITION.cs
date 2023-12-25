@@ -3,8 +3,6 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WS_XML_NODE_POSITION.xml' path='doc/member[@name="WS_XML_NODE_POSITION"]/*' />
@@ -12,7 +10,7 @@ public unsafe partial struct WS_XML_NODE_POSITION
 {
     /// <include file='WS_XML_NODE_POSITION.xml' path='doc/member[@name="WS_XML_NODE_POSITION.buffer"]/*' />
     [NativeTypeName("WS_XML_BUFFER*")]
-    public IntPtr buffer;
+    public void* buffer;
 
     /// <include file='WS_XML_NODE_POSITION.xml' path='doc/member[@name="WS_XML_NODE_POSITION.node"]/*' />
     public void* node;

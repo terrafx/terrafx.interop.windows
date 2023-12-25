@@ -1,0 +1,154 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from winrt/windows.devices.sensors.h in the Windows SDK for Windows 10.0.22621.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
+
+namespace TerraFX.Interop.WinRT;
+
+/// <include file='IHumanPresenceSensorReading.xml' path='doc/member[@name="IHumanPresenceSensorReading"]/*' />
+[Guid("83533BF5-A85A-5D50-8BE4-6072D745A3BB")]
+[NativeTypeName("struct IHumanPresenceSensorReading : IInspectable")]
+[NativeInheritance("IInspectable")]
+public unsafe partial struct IHumanPresenceSensorReading : IHumanPresenceSensorReading.Interface, INativeGuid
+{
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHumanPresenceSensorReading));
+
+    public void** lpVtbl;
+
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+    {
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorReading*, Guid*, void**, int>)(lpVtbl[0]))((IHumanPresenceSensorReading*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
+
+    /// <inheritdoc cref="IUnknown.AddRef" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorReading*, uint>)(lpVtbl[1]))((IHumanPresenceSensorReading*)Unsafe.AsPointer(ref this));
+    }
+
+    /// <inheritdoc cref="IUnknown.Release" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorReading*, uint>)(lpVtbl[2]))((IHumanPresenceSensorReading*)Unsafe.AsPointer(ref this));
+    }
+
+    /// <inheritdoc cref="IInspectable.GetIids" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+    {
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorReading*, uint*, Guid**, int>)(lpVtbl[3]))((IHumanPresenceSensorReading*)Unsafe.AsPointer(ref this), iidCount, iids);
+    }
+
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetRuntimeClassName(HSTRING* className)
+    {
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorReading*, HSTRING*, int>)(lpVtbl[4]))((IHumanPresenceSensorReading*)Unsafe.AsPointer(ref this), className);
+    }
+
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetTrustLevel(TrustLevel* trustLevel)
+    {
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorReading*, TrustLevel*, int>)(lpVtbl[5]))((IHumanPresenceSensorReading*)Unsafe.AsPointer(ref this), trustLevel);
+    }
+
+    /// <include file='IHumanPresenceSensorReading.xml' path='doc/member[@name="IHumanPresenceSensorReading.get_Timestamp"]/*' />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    {
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorReading*, DateTime*, int>)(lpVtbl[6]))((IHumanPresenceSensorReading*)Unsafe.AsPointer(ref this), value);
+    }
+
+    /// <include file='IHumanPresenceSensorReading.xml' path='doc/member[@name="IHumanPresenceSensorReading.get_Presence"]/*' />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT get_Presence([NativeTypeName("ABI::Windows::Devices::Sensors::HumanPresence *")] HumanPresence* value)
+    {
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorReading*, HumanPresence*, int>)(lpVtbl[7]))((IHumanPresenceSensorReading*)Unsafe.AsPointer(ref this), value);
+    }
+
+    /// <include file='IHumanPresenceSensorReading.xml' path='doc/member[@name="IHumanPresenceSensorReading.get_Engagement"]/*' />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(8)]
+    public HRESULT get_Engagement([NativeTypeName("ABI::Windows::Devices::Sensors::HumanEngagement *")] HumanEngagement* value)
+    {
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorReading*, HumanEngagement*, int>)(lpVtbl[8]))((IHumanPresenceSensorReading*)Unsafe.AsPointer(ref this), value);
+    }
+
+    /// <include file='IHumanPresenceSensorReading.xml' path='doc/member[@name="IHumanPresenceSensorReading.get_DistanceInMillimeters"]/*' />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(9)]
+    public HRESULT get_DistanceInMillimeters([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_UINT32_t **")] IReference<uint>** value)
+    {
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorReading*, IReference<uint>**, int>)(lpVtbl[9]))((IHumanPresenceSensorReading*)Unsafe.AsPointer(ref this), value);
+    }
+
+    public interface Interface : IInspectable.Interface
+    {
+        [VtblIndex(6)]
+        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+
+        [VtblIndex(7)]
+        HRESULT get_Presence([NativeTypeName("ABI::Windows::Devices::Sensors::HumanPresence *")] HumanPresence* value);
+
+        [VtblIndex(8)]
+        HRESULT get_Engagement([NativeTypeName("ABI::Windows::Devices::Sensors::HumanEngagement *")] HumanEngagement* value);
+
+        [VtblIndex(9)]
+        HRESULT get_DistanceInMillimeters([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_UINT32_t **")] IReference<uint>** value);
+    }
+
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
+
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
+
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
+
+        [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
+
+        [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
+
+        [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
+
+        [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Timestamp;
+
+        [NativeTypeName("HRESULT (ABI::Windows::Devices::Sensors::HumanPresence *) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, HumanPresence*, int> get_Presence;
+
+        [NativeTypeName("HRESULT (ABI::Windows::Devices::Sensors::HumanEngagement *) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, HumanEngagement*, int> get_Engagement;
+
+        [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIReference_1_UINT32_t **) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, IReference<uint>**, int> get_DistanceInMillimeters;
+    }
+}

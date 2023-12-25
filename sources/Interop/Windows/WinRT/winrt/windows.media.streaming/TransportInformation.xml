@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TransportInformation">
+    <summary>Contains the current values of media playback transport-related information obtained from the DMR.</summary>
+  </member>
+  <member name="TransportInformation.streaming.TransportInformation.CurrentTransportState"></member>
+  <member name="TransportInformation.streaming.TransportInformation.CurrentTransportStatus"></member>
+  <member name="TransportInformation.streaming.TransportInformation.CurrentSpeed"></member>
+  <member name="TransportInformation.CurrentSpeed">
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh828990(v=vs.85)">PlaySpeed</a> structure, indicating the current speed at which the DMR is playing the content, or was last playing the content.</summary>
+  </member>
+  <member name="TransportInformation.CurrentTransportState">
+    <summary>A value from the <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/transportstate">TransportState</a> enumeration, indicating the current transport state of the DMR.</summary>
+  </member>
+  <member name="TransportInformation.CurrentTransportStatus">
+    <summary>A value from the <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/transportstatus">TransportStatus</a> enumeration, indicating the current transport status reported by the DMR.</summary>
+  </member>
+</doc>

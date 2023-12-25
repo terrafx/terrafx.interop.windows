@@ -1,0 +1,76 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Geolocation::BasicGeoposition>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Geolocation::Geoposition *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Geolocation::Geovisit *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Geolocation::BasicGeoposition>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Geolocation::Geoposition *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Geolocation::Geovisit *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Geolocation::BasicGeoposition>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Geolocation::Geoposition *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Geolocation::Geovisit *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Geolocation::GeolocationAccessStatus>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Geolocation::Geoposition *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Geolocation::Geovisit *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Geolocation::Geoposition *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Geolocation::GeolocationAccessStatus>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Geolocation::Geoposition *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Geolocation::Geovisit *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Geolocation::Geoposition *> *>
+ABI::Windows::Foundation::IReference<ABI::Windows::Devices::Geolocation::BasicGeoposition>
+ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::DateTime>
+ABI::Windows::Foundation::IReference<double>
+ABI::Windows::Foundation::IReference<unsigned int>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Geolocation::Geolocator *, ABI::Windows::Devices::Geolocation::PositionChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Geolocation::Geolocator *, ABI::Windows::Devices::Geolocation::StatusChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Geolocation::GeovisitMonitor *, ABI::Windows::Devices::Geolocation::GeovisitStateChangedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_ICivicAddress
+IID_IGeoboundingBox
+IID_IGeoboundingBoxFactory
+IID_IGeoboundingBoxStatics
+IID_IGeocircle
+IID_IGeocircleFactory
+IID_IGeocoordinate
+IID_IGeocoordinateSatelliteData
+IID_IGeocoordinateSatelliteData2
+IID_IGeocoordinateWithPoint
+IID_IGeocoordinateWithPositionData
+IID_IGeocoordinateWithPositionSourceTimestamp
+IID_IGeocoordinateWithRemoteSource
+IID_IGeolocator
+IID_IGeolocator2
+IID_IGeolocatorStatics
+IID_IGeolocatorStatics2
+IID_IGeolocatorWithScalarAccuracy
+IID_IGeopath
+IID_IGeopathFactory
+IID_IGeopoint
+IID_IGeopointFactory
+IID_IGeoposition
+IID_IGeoposition2
+IID_IGeoshape
+IID_IGeovisit
+IID_IGeovisitMonitor
+IID_IGeovisitMonitorStatics
+IID_IGeovisitStateChangedEventArgs
+IID_IGeovisitTriggerDetails
+IID_IPositionChangedEventArgs
+IID_IStatusChangedEventArgs
+IID_IVenueData
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.devices.geolocation.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.devices.geolocation
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.devices.geolocation
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.devices.geolocation.h

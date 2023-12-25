@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PlaySpeed">
+    <summary>Represents a playback speed as a rational number.</summary>
+  </member>
+  <member name="PlaySpeed.streaming.PlaySpeed.Numerator"></member>
+  <member name="PlaySpeed.streaming.PlaySpeed.Denominator"></member>
+  <member name="PlaySpeed.Denominator">
+    <summary>The <b>Numerator</b> should be divided by this value to obtain the play speed. A value of 0 is not allowed.</summary>
+  </member>
+  <member name="PlaySpeed.Numerator">
+    <summary>A value that when divided by the <b>Denominator</b> represents the play speed.</summary>
+  </member>
+</doc>

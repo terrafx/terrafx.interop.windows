@@ -1,0 +1,97 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::IEventHandler<ABI::Windows::UI::Core::BackRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Core::CoreComponentInputSource *, ABI::Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Core::CoreDispatcher *, ABI::Windows::UI::Core::AcceleratorKeyEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Core::CoreWindow *, ABI::Windows::UI::Core::AutomationProviderRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Core::CoreWindow *, ABI::Windows::UI::Core::CharacterReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Core::CoreWindow *, ABI::Windows::UI::Core::ClosestInteractiveBoundsRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Core::CoreWindow *, ABI::Windows::UI::Core::CoreWindowEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Core::CoreWindow *, ABI::Windows::UI::Core::CoreWindowPopupShowingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Core::CoreWindow *, ABI::Windows::UI::Core::InputEnabledEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Core::CoreWindow *, ABI::Windows::UI::Core::KeyEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Core::CoreWindow *, ABI::Windows::UI::Core::PointerEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Core::CoreWindow *, ABI::Windows::UI::Core::TouchHitTestingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Core::CoreWindow *, ABI::Windows::UI::Core::VisibilityChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Core::CoreWindow *, ABI::Windows::UI::Core::WindowActivatedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Core::CoreWindow *, ABI::Windows::UI::Core::WindowSizeChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Core::CoreWindow *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Core::ICorePointerRedirector *, ABI::Windows::UI::Core::PointerEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<IInspectable *, ABI::Windows::UI::Core::CharacterReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<IInspectable *, ABI::Windows::UI::Core::CoreWindowEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<IInspectable *, ABI::Windows::UI::Core::InputEnabledEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<IInspectable *, ABI::Windows::UI::Core::KeyEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<IInspectable *, ABI::Windows::UI::Core::PointerEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<IInspectable *, ABI::Windows::UI::Core::TouchHitTestingEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAcceleratorKeyEventArgs
+IID_IAcceleratorKeyEventArgs2
+IID_IAutomationProviderRequestedEventArgs
+IID_IBackRequestedEventArgs
+IID_ICharacterReceivedEventArgs
+IID_IClosestInteractiveBoundsRequestedEventArgs
+IID_ICoreAcceleratorKeys
+IID_ICoreClosestInteractiveBoundsRequested
+IID_ICoreComponentFocusable
+IID_ICoreCursor
+IID_ICoreCursorFactory
+IID_ICoreDispatcher
+IID_ICoreDispatcher2
+IID_ICoreDispatcherWithTaskPriority
+IID_ICoreIndependentInputSourceController
+IID_ICoreIndependentInputSourceControllerStatics
+IID_ICoreInputSourceBase
+IID_ICoreKeyboardInputSource
+IID_ICoreKeyboardInputSource2
+IID_ICorePointerInputSource
+IID_ICorePointerInputSource2
+IID_ICorePointerRedirector
+IID_ICoreTouchHitTesting
+IID_ICoreWindow
+IID_ICoreWindow2
+IID_ICoreWindow3
+IID_ICoreWindow4
+IID_ICoreWindow5
+IID_ICoreWindowDialog
+IID_ICoreWindowDialogFactory
+IID_ICoreWindowEventArgs
+IID_ICoreWindowFlyout
+IID_ICoreWindowFlyoutFactory
+IID_ICoreWindowPopupShowingEventArgs
+IID_ICoreWindowResizeManager
+IID_ICoreWindowResizeManagerLayoutCapability
+IID_ICoreWindowResizeManagerStatics
+IID_ICoreWindowStatic
+IID_ICoreWindowWithContext
+IID_IDispatchedHandler
+IID_IIdleDispatchedHandler
+IID_IIdleDispatchedHandlerArgs
+IID_IInitializeWithCoreWindow
+IID_IInputEnabledEventArgs
+IID_IKeyEventArgs
+IID_IKeyEventArgs2
+IID_IPointerEventArgs
+IID_ISystemNavigationManager
+IID_ISystemNavigationManager2
+IID_ISystemNavigationManagerStatics
+IID_ITouchHitTestingEventArgs
+IID_IVisibilityChangedEventArgs
+IID_IWindowActivatedEventArgs
+IID_IWindowSizeChangedEventArgs
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+--file
+winrt-windows.ui.core.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.ui.core
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.ui.core
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.ui.core.h

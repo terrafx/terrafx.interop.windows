@@ -3,8 +3,6 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WS_ENDPOINT_POLICY_EXTENSION.xml' path='doc/member[@name="WS_ENDPOINT_POLICY_EXTENSION"]/*' />
@@ -24,10 +22,10 @@ public unsafe partial struct WS_ENDPOINT_POLICY_EXTENSION
     public _out_e__Struct @out;
 
     /// <include file='_out_e__Struct.xml' path='doc/member[@name="_out_e__Struct"]/*' />
-    public partial struct _out_e__Struct
+    public unsafe partial struct _out_e__Struct
     {
         /// <include file='_out_e__Struct.xml' path='doc/member[@name="_out_e__Struct.assertionValue"]/*' />
         [NativeTypeName("WS_XML_BUFFER*")]
-        public IntPtr assertionValue;
+        public void* assertionValue;
     }
 }

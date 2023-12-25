@@ -1,0 +1,81 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Sms::ISmsBinaryMessage *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Sms::ISmsMessage *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Sms::SmsBroadcastType>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Sms::SmsFilterRule *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Sms::SmsMessageRegistration *>
+ABI::Windows::Foundation::Collections::IIterable<int>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Sms::ISmsBinaryMessage *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Sms::ISmsMessage *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Sms::SmsBroadcastType>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Sms::SmsFilterRule *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Sms::SmsMessageRegistration *>
+ABI::Windows::Foundation::Collections::IIterator<int>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Devices::Sms::SmsBroadcastType>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Devices::Sms::SmsFilterRule *>
+ABI::Windows::Foundation::Collections::IVector<int>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Sms::ISmsBinaryMessage *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Sms::ISmsMessage *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Sms::SmsBroadcastType>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Sms::SmsFilterRule *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Sms::SmsMessageRegistration *>
+ABI::Windows::Foundation::Collections::IVectorView<int>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Sms::ISmsMessage *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Sms::SmsDevice *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Sms::SmsSendMessageResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Sms::ISmsMessage *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Sms::SmsDevice *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Sms::SmsSendMessageResult *>
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Sms::ISmsMessage *> *, int>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Sms::ISmsMessage *> *, int>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Sms::ISmsMessage *> *, int>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Sms::SmsDevice2 *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Sms::SmsMessageRegistration *, ABI::Windows::Devices::Sms::SmsMessageReceivedTriggerDetails *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_ISmsAppMessage
+IID_ISmsBinaryMessage
+IID_ISmsBroadcastMessage
+IID_ISmsDevice
+IID_ISmsDevice2
+IID_ISmsDevice2Statics
+IID_ISmsDeviceMessageStore
+IID_ISmsDeviceStatics
+IID_ISmsDeviceStatics2
+IID_ISmsDeviceStatusChangedEventHandler
+IID_ISmsFilterRule
+IID_ISmsFilterRuleFactory
+IID_ISmsFilterRules
+IID_ISmsFilterRulesFactory
+IID_ISmsMessage
+IID_ISmsMessageBase
+IID_ISmsMessageReceivedEventArgs
+IID_ISmsMessageReceivedEventHandler
+IID_ISmsMessageReceivedTriggerDetails
+IID_ISmsMessageRegistration
+IID_ISmsMessageRegistrationStatics
+IID_ISmsReceivedEventDetails
+IID_ISmsReceivedEventDetails2
+IID_ISmsSendMessageResult
+IID_ISmsStatusMessage
+IID_ISmsTextMessage
+IID_ISmsTextMessage2
+IID_ISmsTextMessageStatics
+IID_ISmsVoicemailMessage
+IID_ISmsWapMessage
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.devices.sms.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.devices.sms
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.devices.sms
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.devices.sms.h

@@ -1,0 +1,62 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Wallet::WalletItem *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::ApplicationModel::Wallet::WalletItemCustomProperty *> *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::ApplicationModel::Wallet::WalletRelevantLocation *> *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::ApplicationModel::Wallet::WalletTransaction *> *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::ApplicationModel::Wallet::WalletVerb *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Wallet::WalletItem *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::ApplicationModel::Wallet::WalletItemCustomProperty *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::ApplicationModel::Wallet::WalletRelevantLocation *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::ApplicationModel::Wallet::WalletTransaction *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::ApplicationModel::Wallet::WalletVerb *> *>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, ABI::Windows::ApplicationModel::Wallet::WalletItemCustomProperty *>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, ABI::Windows::ApplicationModel::Wallet::WalletRelevantLocation *>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, ABI::Windows::ApplicationModel::Wallet::WalletTransaction *>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, ABI::Windows::ApplicationModel::Wallet::WalletVerb *>
+ABI::Windows::Foundation::Collections::IMap<HSTRING__ *, ABI::Windows::ApplicationModel::Wallet::WalletItemCustomProperty *>
+ABI::Windows::Foundation::Collections::IMap<HSTRING__ *, ABI::Windows::ApplicationModel::Wallet::WalletRelevantLocation *>
+ABI::Windows::Foundation::Collections::IMap<HSTRING__ *, ABI::Windows::ApplicationModel::Wallet::WalletTransaction *>
+ABI::Windows::Foundation::Collections::IMap<HSTRING__ *, ABI::Windows::ApplicationModel::Wallet::WalletVerb *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, ABI::Windows::ApplicationModel::Wallet::WalletItemCustomProperty *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, ABI::Windows::ApplicationModel::Wallet::WalletRelevantLocation *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, ABI::Windows::ApplicationModel::Wallet::WalletTransaction *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, ABI::Windows::ApplicationModel::Wallet::WalletVerb *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Wallet::WalletItem *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Wallet::WalletItem *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Wallet::WalletItemStore *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Wallet::WalletItem *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Wallet::WalletItem *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Wallet::WalletItemStore *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Wallet::WalletItem *> *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Wallet::WalletItemStore *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IWalletBarcode
+IID_IWalletBarcodeFactory
+IID_IWalletItem
+IID_IWalletItemCustomProperty
+IID_IWalletItemCustomPropertyFactory
+IID_IWalletItemFactory
+IID_IWalletItemStore
+IID_IWalletItemStore2
+IID_IWalletManagerStatics
+IID_IWalletRelevantLocation
+IID_IWalletTransaction
+IID_IWalletVerb
+IID_IWalletVerbFactory
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.applicationmodel.wallet.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.wallet
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.applicationmodel.wallet
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.applicationmodel.wallet.h

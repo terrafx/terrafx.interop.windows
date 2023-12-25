@@ -1,0 +1,147 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::AdvancedPhotoMode>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::AudioDeviceModule *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::AutoFocusRange>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::CaptureSceneMode>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::DigitalWindowCapability *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::FocusMode>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::FocusPreset>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::HdrVideoMode>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::InfraredTorchMode>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::IsoSpeedPreset>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::ManualFocusDistance>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::OpticalImageStabilizationMode>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::RegionOfInterest *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::VideoTemporalDenoisingMode>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Devices::ZoomTransitionMode>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::MediaProperties::IMediaEncodingProperties *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::AdvancedPhotoMode>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::AudioDeviceModule *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::AutoFocusRange>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::CaptureSceneMode>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::DigitalWindowCapability *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::FocusMode>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::FocusPreset>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::HdrVideoMode>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::InfraredTorchMode>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::IsoSpeedPreset>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::ManualFocusDistance>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::OpticalImageStabilizationMode>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::RegionOfInterest *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::VideoTemporalDenoisingMode>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Devices::ZoomTransitionMode>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::MediaProperties::IMediaEncodingProperties *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Devices::AdvancedPhotoMode>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Devices::AudioDeviceModule *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Devices::AutoFocusRange>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Devices::CaptureSceneMode>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Devices::DigitalWindowCapability *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Devices::FocusMode>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Devices::FocusPreset>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Devices::HdrVideoMode>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Devices::InfraredTorchMode>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Devices::IsoSpeedPreset>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Devices::ManualFocusDistance>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Devices::OpticalImageStabilizationMode>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Devices::VideoTemporalDenoisingMode>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Devices::ZoomTransitionMode>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::MediaProperties::IMediaEncodingProperties *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Devices::ModuleCommandResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Devices::ModuleCommandResult *>
+ABI::Windows::Foundation::IReference<ABI::Windows::Media::Devices::ManualFocusDistance>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Devices::AudioDeviceModulesManager *, ABI::Windows::Media::Devices::AudioDeviceModuleNotificationEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Devices::CameraOcclusionInfo *, ABI::Windows::Media::Devices::CameraOcclusionStateChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<IInspectable *, ABI::Windows::Media::Devices::DefaultAudioCaptureDeviceChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<IInspectable *, ABI::Windows::Media::Devices::DefaultAudioRenderDeviceChangedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAdvancedPhotoCaptureSettings
+IID_IAdvancedPhotoControl
+IID_IAdvancedVideoCaptureDeviceController
+IID_IAdvancedVideoCaptureDeviceController2
+IID_IAdvancedVideoCaptureDeviceController3
+IID_IAdvancedVideoCaptureDeviceController4
+IID_IAdvancedVideoCaptureDeviceController5
+IID_IAdvancedVideoCaptureDeviceController6
+IID_IAdvancedVideoCaptureDeviceController7
+IID_IAdvancedVideoCaptureDeviceController8
+IID_IAdvancedVideoCaptureDeviceController9
+IID_IAdvancedVideoCaptureDeviceController10
+IID_IAdvancedVideoCaptureDeviceController11
+IID_IAudioDeviceController
+IID_IAudioDeviceModule
+IID_IAudioDeviceModuleNotificationEventArgs
+IID_IAudioDeviceModulesManager
+IID_IAudioDeviceModulesManagerFactory
+IID_ICallControl
+IID_ICallControlEventHandler
+IID_ICallControlStatics
+IID_ICameraOcclusionInfo
+IID_ICameraOcclusionState
+IID_ICameraOcclusionStateChangedEventArgs
+IID_IDefaultAudioDeviceChangedEventArgs
+IID_IDialRequestedEventArgs
+IID_IDialRequestedEventHandler
+IID_IDigitalWindowBounds
+IID_IDigitalWindowCapability
+IID_IDigitalWindowControl
+IID_IExposureCompensationControl
+IID_IExposureControl
+IID_IExposurePriorityVideoControl
+IID_IFlashControl
+IID_IFlashControl2
+IID_IFocusControl
+IID_IFocusControl2
+IID_IFocusSettings
+IID_IHdrVideoControl
+IID_IInfraredTorchControl
+IID_IIsoSpeedControl
+IID_IIsoSpeedControl2
+IID_IKeypadPressedEventArgs
+IID_IKeypadPressedEventHandler
+IID_ILowLagPhotoControl
+IID_ILowLagPhotoSequenceControl
+IID_IMediaDeviceControl
+IID_IMediaDeviceControlCapabilities
+IID_IMediaDeviceController
+IID_IMediaDeviceStatics
+IID_IModuleCommandResult
+IID_IOpticalImageStabilizationControl
+IID_IPanelBasedOptimizationControl
+IID_IPhotoConfirmationControl
+IID_IRedialRequestedEventArgs
+IID_IRedialRequestedEventHandler
+IID_IRegionOfInterest
+IID_IRegionOfInterest2
+IID_IRegionsOfInterestControl
+IID_ISceneModeControl
+IID_ITorchControl
+IID_IVideoDeviceController
+IID_IVideoDeviceControllerGetDevicePropertyResult
+IID_IVideoTemporalDenoisingControl
+IID_IWhiteBalanceControl
+IID_IZoomControl
+IID_IZoomControl2
+IID_IZoomSettings
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION
+WINDOWS_MEDIA_DEVICES_CALLCONTROLCONTRACT_VERSION
+--file
+winrt-windows.media.devices.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.media.devices
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.media.devices
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.devices.h

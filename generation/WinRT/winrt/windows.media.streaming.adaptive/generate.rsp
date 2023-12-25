@@ -1,0 +1,56 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceCreationResult *>
+ABI::Windows::Foundation::IReference<ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceResourceType>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSource *, ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadBitrateChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSource *, ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadCompletedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSource *, ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadFailedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSource *, ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDownloadRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSource *, ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourcePlaybackBitrateChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDiagnostics *, ABI::Windows::Media::Streaming::Adaptive::AdaptiveMediaSourceDiagnosticAvailableEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAdaptiveMediaSource
+IID_IAdaptiveMediaSource2
+IID_IAdaptiveMediaSource3
+IID_IAdaptiveMediaSourceAdvancedSettings
+IID_IAdaptiveMediaSourceCorrelatedTimes
+IID_IAdaptiveMediaSourceCreationResult
+IID_IAdaptiveMediaSourceCreationResult2
+IID_IAdaptiveMediaSourceDiagnosticAvailableEventArgs
+IID_IAdaptiveMediaSourceDiagnosticAvailableEventArgs2
+IID_IAdaptiveMediaSourceDiagnosticAvailableEventArgs3
+IID_IAdaptiveMediaSourceDiagnostics
+IID_IAdaptiveMediaSourceDownloadBitrateChangedEventArgs
+IID_IAdaptiveMediaSourceDownloadBitrateChangedEventArgs2
+IID_IAdaptiveMediaSourceDownloadCompletedEventArgs
+IID_IAdaptiveMediaSourceDownloadCompletedEventArgs2
+IID_IAdaptiveMediaSourceDownloadCompletedEventArgs3
+IID_IAdaptiveMediaSourceDownloadFailedEventArgs
+IID_IAdaptiveMediaSourceDownloadFailedEventArgs2
+IID_IAdaptiveMediaSourceDownloadFailedEventArgs3
+IID_IAdaptiveMediaSourceDownloadRequestedDeferral
+IID_IAdaptiveMediaSourceDownloadRequestedEventArgs
+IID_IAdaptiveMediaSourceDownloadRequestedEventArgs2
+IID_IAdaptiveMediaSourceDownloadRequestedEventArgs3
+IID_IAdaptiveMediaSourceDownloadResult
+IID_IAdaptiveMediaSourceDownloadResult2
+IID_IAdaptiveMediaSourceDownloadStatistics
+IID_IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs
+IID_IAdaptiveMediaSourceStatics
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.media.streaming.adaptive.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.media.streaming.adaptive
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.media.streaming.adaptive
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.streaming.adaptive.h

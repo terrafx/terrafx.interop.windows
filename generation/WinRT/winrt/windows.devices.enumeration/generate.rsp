@@ -1,0 +1,82 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Enumeration::DeviceClass>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Enumeration::DeviceInformation *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Enumeration::DeviceWatcherEvent *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Enumeration::DeviceWatcherEventKind>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Enumeration::DeviceClass>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Enumeration::DeviceInformation *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Enumeration::DeviceWatcherEvent *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Enumeration::DeviceWatcherEventKind>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Devices::Enumeration::DeviceClass>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Enumeration::DeviceClass>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Enumeration::DeviceInformation *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Enumeration::DeviceWatcherEvent *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Enumeration::DeviceInformation *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Enumeration::DeviceInformationCollection *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Enumeration::DevicePairingResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Enumeration::DeviceThumbnail *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Enumeration::DeviceUnpairingResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Enumeration::DeviceInformation *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Enumeration::DeviceInformationCollection *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Enumeration::DevicePairingResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Enumeration::DeviceThumbnail *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Enumeration::DeviceUnpairingResult *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceAccessInformation *, ABI::Windows::Devices::Enumeration::DeviceAccessChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceInformationCustomPairing *, ABI::Windows::Devices::Enumeration::DevicePairingRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Enumeration::DevicePicker *, ABI::Windows::Devices::Enumeration::DeviceDisconnectButtonClickedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Enumeration::DevicePicker *, ABI::Windows::Devices::Enumeration::DeviceSelectedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Enumeration::DevicePicker *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher *, ABI::Windows::Devices::Enumeration::DeviceInformation *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher *, ABI::Windows::Devices::Enumeration::DeviceInformationUpdate *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Enumeration::DeviceWatcher *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IDeviceAccessChangedEventArgs
+IID_IDeviceAccessChangedEventArgs2
+IID_IDeviceAccessInformation
+IID_IDeviceAccessInformationStatics
+IID_IDeviceConnectionChangeTriggerDetails
+IID_IDeviceDisconnectButtonClickedEventArgs
+IID_IDeviceInformation
+IID_IDeviceInformation2
+IID_IDeviceInformationCustomPairing
+IID_IDeviceInformationPairing
+IID_IDeviceInformationPairing2
+IID_IDeviceInformationPairingStatics
+IID_IDeviceInformationPairingStatics2
+IID_IDeviceInformationStatics
+IID_IDeviceInformationStatics2
+IID_IDeviceInformationUpdate
+IID_IDeviceInformationUpdate2
+IID_IDevicePairingRequestedEventArgs
+IID_IDevicePairingRequestedEventArgs2
+IID_IDevicePairingResult
+IID_IDevicePairingSettings
+IID_IDevicePicker
+IID_IDevicePickerAppearance
+IID_IDevicePickerFilter
+IID_IDeviceSelectedEventArgs
+IID_IDeviceUnpairingResult
+IID_IDeviceWatcher
+IID_IDeviceWatcher2
+IID_IDeviceWatcherEvent
+IID_IDeviceWatcherTriggerDetails
+IID_IEnclosureLocation
+IID_IEnclosureLocation2
+WINDOWS_APPLICATIONMODEL_BACKGROUND_BACKGROUNDALARMAPPLICATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.devices.enumeration.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.devices.enumeration
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.devices.enumeration
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.devices.enumeration.h

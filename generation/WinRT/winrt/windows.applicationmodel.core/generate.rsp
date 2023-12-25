@@ -1,0 +1,64 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Core::CoreApplicationView *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Core::CoreApplicationView *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Core::CoreApplicationView *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Core::AppRestartFailureReason>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Core::AppRestartFailureReason>
+ABI::Windows::Foundation::IEventHandler<ABI::Windows::ApplicationModel::Activation::BackgroundActivatedEventArgs *>
+ABI::Windows::Foundation::IEventHandler<ABI::Windows::ApplicationModel::Core::UnhandledErrorDetectedEventArgs *>
+ABI::Windows::Foundation::IEventHandler<ABI::Windows::ApplicationModel::EnteredBackgroundEventArgs *>
+ABI::Windows::Foundation::IEventHandler<ABI::Windows::ApplicationModel::LeavingBackgroundEventArgs *>
+ABI::Windows::Foundation::IEventHandler<ABI::Windows::ApplicationModel::SuspendingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Core::CoreApplicationView *, ABI::Windows::ApplicationModel::Activation::IActivatedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Core::CoreApplicationView *, ABI::Windows::ApplicationModel::Core::HostedViewClosingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Core::CoreApplicationViewTitleBar *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAppListEntry
+IID_IAppListEntry2
+IID_IAppListEntry3
+IID_IAppListEntry4
+IID_ICoreApplication
+IID_ICoreApplication2
+IID_ICoreApplication3
+IID_ICoreApplicationExit
+IID_ICoreApplicationUnhandledError
+IID_ICoreApplicationUseCount
+IID_ICoreApplicationView
+IID_ICoreApplicationView2
+IID_ICoreApplicationView3
+IID_ICoreApplicationView5
+IID_ICoreApplicationView6
+IID_ICoreApplicationViewTitleBar
+IID_ICoreImmersiveApplication
+IID_ICoreImmersiveApplication2
+IID_ICoreImmersiveApplication3
+IID_IFrameworkView
+IID_IFrameworkViewSource
+IID_IHostedViewClosingEventArgs
+IID_IUnhandledError
+IID_IUnhandledErrorDetectedEventArgs
+WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION
+WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION
+WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATEDEVENTSCONTRACT_VERSION
+WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATIONCAMERASETTINGSCONTRACT_VERSION
+WINDOWS_APPLICATIONMODEL_ACTIVATION_CONTACTACTIVATEDEVENTSCONTRACT_VERSION
+WINDOWS_APPLICATIONMODEL_ACTIVATION_WEBUISEARCHACTIVATEDEVENTSCONTRACT_VERSION
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION
+--file
+winrt-windows.applicationmodel.core.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.core
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.applicationmodel.core
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.applicationmodel.core.h

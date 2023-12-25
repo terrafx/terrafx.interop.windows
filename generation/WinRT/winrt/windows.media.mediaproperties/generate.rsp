@@ -1,0 +1,77 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Core::AudioStreamDescriptor *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Core::VideoStreamDescriptor *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Core::AudioStreamDescriptor *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Core::VideoStreamDescriptor *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Core::AudioStreamDescriptor *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Core::VideoStreamDescriptor *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::AudioStreamDescriptor *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::TimedMetadataStreamDescriptor *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::VideoStreamDescriptor *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::MediaProperties::MediaEncodingProfile *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::MediaProperties::MediaEncodingProfile *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAudioEncodingProperties
+IID_IAudioEncodingProperties2
+IID_IAudioEncodingProperties3
+IID_IAudioEncodingPropertiesStatics
+IID_IAudioEncodingPropertiesStatics2
+IID_IAudioEncodingPropertiesWithFormatUserData
+IID_IAv1ProfileIdsStatics
+IID_IContainerEncodingProperties
+IID_IContainerEncodingProperties2
+IID_IH264ProfileIdsStatics
+IID_IHevcProfileIdsStatics
+IID_IImageEncodingProperties
+IID_IImageEncodingProperties2
+IID_IImageEncodingPropertiesStatics
+IID_IImageEncodingPropertiesStatics2
+IID_IImageEncodingPropertiesStatics3
+IID_IMediaEncodingProfile
+IID_IMediaEncodingProfile2
+IID_IMediaEncodingProfile3
+IID_IMediaEncodingProfileStatics
+IID_IMediaEncodingProfileStatics2
+IID_IMediaEncodingProfileStatics3
+IID_IMediaEncodingProfileStatics4
+IID_IMediaEncodingProperties
+IID_IMediaEncodingSubtypesStatics
+IID_IMediaEncodingSubtypesStatics2
+IID_IMediaEncodingSubtypesStatics3
+IID_IMediaEncodingSubtypesStatics4
+IID_IMediaEncodingSubtypesStatics5
+IID_IMediaEncodingSubtypesStatics6
+IID_IMediaEncodingSubtypesStatics7
+IID_IMediaRatio
+IID_IMpeg2ProfileIdsStatics
+IID_ITimedMetadataEncodingProperties
+IID_ITimedMetadataEncodingPropertiesStatics
+IID_IVideoEncodingProperties
+IID_IVideoEncodingProperties2
+IID_IVideoEncodingProperties3
+IID_IVideoEncodingProperties4
+IID_IVideoEncodingProperties5
+IID_IVideoEncodingPropertiesStatics
+IID_IVideoEncodingPropertiesStatics2
+IID_IVideoEncodingPropertiesStatics3
+IID_IVp9ProfileIdsStatics
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.media.mediaproperties.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.media.mediaproperties
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.media.mediaproperties
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.mediaproperties.h

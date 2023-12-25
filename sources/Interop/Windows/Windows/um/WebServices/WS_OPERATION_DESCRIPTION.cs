@@ -3,8 +3,6 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WS_OPERATION_DESCRIPTION.xml' path='doc/member[@name="WS_OPERATION_DESCRIPTION"]/*' />
@@ -36,7 +34,7 @@ public unsafe partial struct WS_OPERATION_DESCRIPTION
 
     /// <include file='WS_OPERATION_DESCRIPTION.xml' path='doc/member[@name="WS_OPERATION_DESCRIPTION.stubCallback"]/*' />
     [NativeTypeName("WS_SERVICE_STUB_CALLBACK")]
-    public delegate* unmanaged<IntPtr, void*, void*, WS_ASYNC_CONTEXT*, IntPtr, HRESULT> stubCallback;
+    public delegate* unmanaged<void*, void*, void*, WS_ASYNC_CONTEXT*, void*, HRESULT> stubCallback;
 
     /// <include file='WS_OPERATION_DESCRIPTION.xml' path='doc/member[@name="WS_OPERATION_DESCRIPTION.style"]/*' />
     public WS_OPERATION_STYLE style;

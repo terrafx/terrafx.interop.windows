@@ -1,0 +1,54 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Input::PointerDevice *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Input::PointerDeviceUsage>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Input::PointerDevice *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Input::PointerDeviceUsage>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Input::PointerDevice *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Input::PointerDeviceUsage>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Input::MouseDevice *, ABI::Windows::Devices::Input::MouseEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Input::PenButtonListener *, ABI::Windows::Devices::Input::PenTailButtonClickedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Input::PenButtonListener *, ABI::Windows::Devices::Input::PenTailButtonDoubleClickedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Input::PenButtonListener *, ABI::Windows::Devices::Input::PenTailButtonLongPressedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Input::PenButtonListener *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Input::PenDockListener *, ABI::Windows::Devices::Input::PenDockedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Input::PenDockListener *, ABI::Windows::Devices::Input::PenUndockedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Input::PenDockListener *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IKeyboardCapabilities
+IID_IMouseCapabilities
+IID_IMouseDevice
+IID_IMouseDeviceStatics
+IID_IMouseEventArgs
+IID_IPenButtonListener
+IID_IPenButtonListenerStatics
+IID_IPenDevice
+IID_IPenDevice2
+IID_IPenDeviceStatics
+IID_IPenDockedEventArgs
+IID_IPenDockListener
+IID_IPenDockListenerStatics
+IID_IPenTailButtonClickedEventArgs
+IID_IPenTailButtonDoubleClickedEventArgs
+IID_IPenTailButtonLongPressedEventArgs
+IID_IPenUndockedEventArgs
+IID_IPointerDevice
+IID_IPointerDevice2
+IID_IPointerDeviceStatics
+IID_ITouchCapabilities
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.devices.input.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.devices.input
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.devices.input
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.devices.input.h

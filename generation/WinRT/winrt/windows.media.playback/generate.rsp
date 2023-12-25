@@ -1,0 +1,133 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Core::AudioTrack *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Core::VideoTrack *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::MediaTimeRange>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Playback::MediaBreak *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Playback::MediaPlaybackItem *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Playback::PlaybackMediaMarker *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Core::AudioTrack *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Core::VideoTrack *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::MediaTimeRange>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Playback::MediaBreak *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Playback::MediaPlaybackItem *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Playback::PlaybackMediaMarker *>
+ABI::Windows::Foundation::Collections::IObservableVector<ABI::Windows::Media::Playback::MediaPlaybackItem *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Playback::MediaPlaybackItem *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::AudioTrack *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::VideoTrack *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::MediaTimeRange>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Playback::MediaBreak *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Playback::MediaPlaybackItem *>
+ABI::Windows::Foundation::Collections::VectorChangedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackItem *>
+ABI::Windows::Foundation::IEventHandler<ABI::Windows::Media::Playback::MediaPlayerDataReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaBreakManager *, ABI::Windows::Media::Playback::MediaBreakEndedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaBreakManager *, ABI::Windows::Media::Playback::MediaBreakSeekedOverEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaBreakManager *, ABI::Windows::Media::Playback::MediaBreakSkippedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaBreakManager *, ABI::Windows::Media::Playback::MediaBreakStartedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaBreakSchedule *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandManager *, ABI::Windows::Media::Playback::MediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandManager *, ABI::Windows::Media::Playback::MediaPlaybackCommandManagerFastForwardReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandManager *, ABI::Windows::Media::Playback::MediaPlaybackCommandManagerNextReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandManager *, ABI::Windows::Media::Playback::MediaPlaybackCommandManagerPauseReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandManager *, ABI::Windows::Media::Playback::MediaPlaybackCommandManagerPlayReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandManager *, ABI::Windows::Media::Playback::MediaPlaybackCommandManagerPositionReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandManager *, ABI::Windows::Media::Playback::MediaPlaybackCommandManagerPreviousReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandManager *, ABI::Windows::Media::Playback::MediaPlaybackCommandManagerRateReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandManager *, ABI::Windows::Media::Playback::MediaPlaybackCommandManagerRewindReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandManager *, ABI::Windows::Media::Playback::MediaPlaybackCommandManagerShuffleReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackCommandManagerCommandBehavior *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackItem *, ABI::Windows::Foundation::Collections::IVectorChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackList *, ABI::Windows::Media::Playback::CurrentMediaPlaybackItemChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackList *, ABI::Windows::Media::Playback::MediaPlaybackItemFailedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackList *, ABI::Windows::Media::Playback::MediaPlaybackItemOpenedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackSession *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlaybackTimedMetadataTrackList *, ABI::Windows::Media::Playback::TimedMetadataPresentationModeChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlayer *, ABI::Windows::Media::Playback::MediaPlayerFailedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlayer *, ABI::Windows::Media::Playback::MediaPlayerRateChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlayer *, ABI::Windows::Media::Playback::PlaybackMediaMarkerReachedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Playback::MediaPlayer *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IBackgroundMediaPlayerStatics
+IID_ICurrentMediaPlaybackItemChangedEventArgs
+IID_ICurrentMediaPlaybackItemChangedEventArgs2
+IID_IMediaBreak
+IID_IMediaBreakEndedEventArgs
+IID_IMediaBreakFactory
+IID_IMediaBreakManager
+IID_IMediaBreakSchedule
+IID_IMediaBreakSeekedOverEventArgs
+IID_IMediaBreakSkippedEventArgs
+IID_IMediaBreakStartedEventArgs
+IID_IMediaEnginePlaybackSource
+IID_IMediaItemDisplayProperties
+IID_IMediaPlaybackCommandManager
+IID_IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs
+IID_IMediaPlaybackCommandManagerCommandBehavior
+IID_IMediaPlaybackCommandManagerFastForwardReceivedEventArgs
+IID_IMediaPlaybackCommandManagerNextReceivedEventArgs
+IID_IMediaPlaybackCommandManagerPauseReceivedEventArgs
+IID_IMediaPlaybackCommandManagerPlayReceivedEventArgs
+IID_IMediaPlaybackCommandManagerPositionReceivedEventArgs
+IID_IMediaPlaybackCommandManagerPreviousReceivedEventArgs
+IID_IMediaPlaybackCommandManagerRateReceivedEventArgs
+IID_IMediaPlaybackCommandManagerRewindReceivedEventArgs
+IID_IMediaPlaybackCommandManagerShuffleReceivedEventArgs
+IID_IMediaPlaybackItem
+IID_IMediaPlaybackItem2
+IID_IMediaPlaybackItem3
+IID_IMediaPlaybackItemError
+IID_IMediaPlaybackItemFactory
+IID_IMediaPlaybackItemFactory2
+IID_IMediaPlaybackItemFailedEventArgs
+IID_IMediaPlaybackItemOpenedEventArgs
+IID_IMediaPlaybackItemStatics
+IID_IMediaPlaybackList
+IID_IMediaPlaybackList2
+IID_IMediaPlaybackList3
+IID_IMediaPlaybackSession
+IID_IMediaPlaybackSession2
+IID_IMediaPlaybackSession3
+IID_IMediaPlaybackSessionBufferingStartedEventArgs
+IID_IMediaPlaybackSessionOutputDegradationPolicyState
+IID_IMediaPlaybackSource
+IID_IMediaPlaybackSphericalVideoProjection
+IID_IMediaPlaybackTimedMetadataTrackList
+IID_IMediaPlayer
+IID_IMediaPlayer2
+IID_IMediaPlayer3
+IID_IMediaPlayer4
+IID_IMediaPlayer5
+IID_IMediaPlayer6
+IID_IMediaPlayer7
+IID_IMediaPlayerDataReceivedEventArgs
+IID_IMediaPlayerEffects
+IID_IMediaPlayerEffects2
+IID_IMediaPlayerFailedEventArgs
+IID_IMediaPlayerRateChangedEventArgs
+IID_IMediaPlayerSource
+IID_IMediaPlayerSource2
+IID_IMediaPlayerSurface
+IID_IPlaybackMediaMarker
+IID_IPlaybackMediaMarkerFactory
+IID_IPlaybackMediaMarkerReachedEventArgs
+IID_IPlaybackMediaMarkerSequence
+IID_ITimedMetadataPresentationModeChangedEventArgs
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION
+WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION
+--file
+winrt-windows.media.playback.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.media.playback
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.media.playback
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.playback.h

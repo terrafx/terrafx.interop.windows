@@ -1,0 +1,54 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Graphics::Imaging::BitmapCodecInformation *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Graphics::Imaging::BitmapCodecInformation *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Graphics::Imaging::BitmapCodecInformation *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Graphics::Imaging::BitmapDecoder *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Graphics::Imaging::BitmapEncoder *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Graphics::Imaging::BitmapFrame *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Graphics::Imaging::BitmapPropertySet *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Graphics::Imaging::PixelDataProvider *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Graphics::Imaging::SoftwareBitmap *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Graphics::Imaging::BitmapDecoder *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Graphics::Imaging::BitmapEncoder *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Graphics::Imaging::BitmapFrame *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Graphics::Imaging::BitmapPropertySet *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Graphics::Imaging::PixelDataProvider *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Graphics::Imaging::SoftwareBitmap *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IBitmapBuffer
+IID_IBitmapCodecInformation
+IID_IBitmapDecoder
+IID_IBitmapDecoderStatics
+IID_IBitmapDecoderStatics2
+IID_IBitmapEncoder
+IID_IBitmapEncoderStatics
+IID_IBitmapEncoderStatics2
+IID_IBitmapEncoderWithSoftwareBitmap
+IID_IBitmapFrame
+IID_IBitmapFrameWithSoftwareBitmap
+IID_IBitmapProperties
+IID_IBitmapPropertiesView
+IID_IBitmapTransform
+IID_IBitmapTypedValue
+IID_IBitmapTypedValueFactory
+IID_IPixelDataProvider
+IID_ISoftwareBitmap
+IID_ISoftwareBitmapFactory
+IID_ISoftwareBitmapStatics
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.graphics.imaging.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.graphics.imaging
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.graphics.imaging
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.graphics.imaging.h

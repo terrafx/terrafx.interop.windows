@@ -1,0 +1,42 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Search::SearchPane *, ABI::Windows::ApplicationModel::Search::SearchPaneQueryChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Search::SearchPane *, ABI::Windows::ApplicationModel::Search::SearchPaneQuerySubmittedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Search::SearchPane *, ABI::Windows::ApplicationModel::Search::SearchPaneResultSuggestionChosenEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Search::SearchPane *, ABI::Windows::ApplicationModel::Search::SearchPaneSuggestionsRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Search::SearchPane *, ABI::Windows::ApplicationModel::Search::SearchPaneVisibilityChangedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_ILocalContentSuggestionSettings
+IID_ISearchPane
+IID_ISearchPaneQueryChangedEventArgs
+IID_ISearchPaneQueryLinguisticDetails
+IID_ISearchPaneQuerySubmittedEventArgs
+IID_ISearchPaneQuerySubmittedEventArgsWithLinguisticDetails
+IID_ISearchPaneResultSuggestionChosenEventArgs
+IID_ISearchPaneStatics
+IID_ISearchPaneStaticsWithHideThisApplication
+IID_ISearchPaneSuggestionsRequest
+IID_ISearchPaneSuggestionsRequestDeferral
+IID_ISearchPaneSuggestionsRequestedEventArgs
+IID_ISearchPaneVisibilityChangedEventArgs
+IID_ISearchQueryLinguisticDetails
+IID_ISearchQueryLinguisticDetailsFactory
+IID_ISearchSuggestionCollection
+IID_ISearchSuggestionsRequest
+IID_ISearchSuggestionsRequestDeferral
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.applicationmodel.search.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.search
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.applicationmodel.search
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.applicationmodel.search.h

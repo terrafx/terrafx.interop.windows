@@ -1,0 +1,47 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Data::Xml::Dom::IXmlNode *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Data::Xml::Dom::IXmlNode *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Data::Xml::Dom::IXmlNode *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Data::Xml::Dom::XmlDocument *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Data::Xml::Dom::XmlDocument *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IDtdEntity
+IID_IDtdNotation
+IID_IXmlAttribute
+IID_IXmlCDataSection
+IID_IXmlCharacterData
+IID_IXmlComment
+IID_IXmlDocument
+IID_IXmlDocumentFragment
+IID_IXmlDocumentIO
+IID_IXmlDocumentIO2
+IID_IXmlDocumentStatics
+IID_IXmlDocumentType
+IID_IXmlDomImplementation
+IID_IXmlElement
+IID_IXmlEntityReference
+IID_IXmlLoadSettings
+IID_IXmlNamedNodeMap
+IID_IXmlNode
+IID_IXmlNodeList
+IID_IXmlNodeSelector
+IID_IXmlNodeSerializer
+IID_IXmlProcessingInstruction
+IID_IXmlText
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.data.xml.dom.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.data.xml.dom
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.data.xml.dom
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.data.xml.dom.h

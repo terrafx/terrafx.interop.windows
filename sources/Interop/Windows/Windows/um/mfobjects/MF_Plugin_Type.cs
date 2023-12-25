@@ -18,5 +18,5 @@ public enum MF_Plugin_Type
     MF_Plugin_Type_MFT_MatchOutputType = 2,
 
     /// <include file='MF_Plugin_Type.xml' path='doc/member[@name="MF_Plugin_Type.MF_Plugin_Type_Other"]/*' />
-    MF_Plugin_Type_Other = -1,
+    MF_Plugin_Type_Other = unchecked((int)((uint)(-1))),
 }

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DeviceTypes">
+    <summary>Describes the DLNA device types that are supported by the Media Streaming API.</summary>
+  </member>
+  <member name="DeviceTypes.DeviceTypes_Unknown"></member>
+  <member name="DeviceTypes.DeviceTypes_DigitalMediaRenderer"></member>
+  <member name="DeviceTypes.DeviceTypes_DigitalMediaServer"></member>
+  <member name="DeviceTypes.DeviceTypes_DigitalMediaPlayer">
+    <summary>
+      <h4>- DigitalMediaPlayer</h4>
+      <para>DLNA Digital Media Player</para>
+      <h4>- DigitalMediaRenderer</h4>
+      <para>DLNA Digital Media Renderer (DMR). The value is equivalent to the device type <b>urn:schemas-upnp-org:device:MediaRenderer:1</b>.</para>
+      <h4>- DigitalMediaServer</h4>
+      <para>DLNA Digital Media Server (DMS). The value is equivalent to the device type <b>urn:schemas-upnp-org:device:MediaServer:1</b>.</para>
+      <h4>- Unknown</h4>
+      <para>Unknown device type.</para>
+    </summary>
+  </member>
+</doc>

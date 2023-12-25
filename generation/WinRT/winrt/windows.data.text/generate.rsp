@@ -1,0 +1,54 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Data::Text::AlternateWordForm *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Data::Text::SelectableWordSegment *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Data::Text::TextPhoneme *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Data::Text::WordSegment *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Data::Text::AlternateWordForm *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Data::Text::SelectableWordSegment *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Data::Text::TextPhoneme *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Data::Text::WordSegment *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Data::Text::AlternateWordForm *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Data::Text::SelectableWordSegment *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Data::Text::TextPhoneme *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Data::Text::WordSegment *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Data::Text::TextPhoneme *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Data::Text::TextPhoneme *> *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAlternateWordForm
+IID_ISelectableWordSegment
+IID_ISelectableWordSegmentsTokenizingHandler
+IID_ISelectableWordsSegmenter
+IID_ISelectableWordsSegmenterFactory
+IID_ISemanticTextQuery
+IID_ISemanticTextQueryFactory
+IID_ITextConversionGenerator
+IID_ITextConversionGeneratorFactory
+IID_ITextPhoneme
+IID_ITextPredictionGenerator
+IID_ITextPredictionGenerator2
+IID_ITextPredictionGeneratorFactory
+IID_ITextReverseConversionGenerator
+IID_ITextReverseConversionGenerator2
+IID_ITextReverseConversionGeneratorFactory
+IID_IUnicodeCharactersStatics
+IID_IWordSegment
+IID_IWordSegmentsTokenizingHandler
+IID_IWordsSegmenter
+IID_IWordsSegmenterFactory
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.data.text.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.data.text
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.data.text
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.data.text.h

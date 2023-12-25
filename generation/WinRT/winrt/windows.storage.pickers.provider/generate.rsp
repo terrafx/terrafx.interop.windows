@@ -1,0 +1,32 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Storage::Pickers::Provider::FileOpenPickerUI *, ABI::Windows::Storage::Pickers::Provider::FileRemovedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Storage::Pickers::Provider::FileOpenPickerUI *, ABI::Windows::Storage::Pickers::Provider::PickerClosingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Storage::Pickers::Provider::FileSavePickerUI *, ABI::Windows::Storage::Pickers::Provider::TargetFileRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Storage::Pickers::Provider::FileSavePickerUI *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IFileOpenPickerUI
+IID_IFileRemovedEventArgs
+IID_IFileSavePickerUI
+IID_IPickerClosingDeferral
+IID_IPickerClosingEventArgs
+IID_IPickerClosingOperation
+IID_ITargetFileRequest
+IID_ITargetFileRequestDeferral
+IID_ITargetFileRequestedEventArgs
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.storage.pickers.provider.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.storage.pickers.provider
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.storage.pickers.provider
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.storage.pickers.provider.h

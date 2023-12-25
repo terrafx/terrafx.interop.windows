@@ -74,17 +74,17 @@ public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Int
     /// <include file='IGraphicsEffectD2D1Interop.xml' path='doc/member[@name="IGraphicsEffectD2D1Interop.GetProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetProperty(uint index, [NativeTypeName("Windows::Foundation::IPropertyValue **")] void** value)
+    public HRESULT GetProperty(uint index, [NativeTypeName("Windows::Foundation::IPropertyValue **")] IPropertyValue** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGraphicsEffectD2D1Interop*, uint, void**, int>)(lpVtbl[6]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), index, value);
+        return ((delegate* unmanaged[MemberFunction]<IGraphicsEffectD2D1Interop*, uint, IPropertyValue**, int>)(lpVtbl[6]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), index, value);
     }
 
     /// <include file='IGraphicsEffectD2D1Interop.xml' path='doc/member[@name="IGraphicsEffectD2D1Interop.GetSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetSource(uint index, [NativeTypeName("IGraphicsEffectSource **")] void** source)
+    public HRESULT GetSource(uint index, IGraphicsEffectSource** source)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGraphicsEffectD2D1Interop*, uint, void**, int>)(lpVtbl[7]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), index, source);
+        return ((delegate* unmanaged[MemberFunction]<IGraphicsEffectD2D1Interop*, uint, IGraphicsEffectSource**, int>)(lpVtbl[7]))((IGraphicsEffectD2D1Interop*)Unsafe.AsPointer(ref this), index, source);
     }
 
     /// <include file='IGraphicsEffectD2D1Interop.xml' path='doc/member[@name="IGraphicsEffectD2D1Interop.GetSourceCount"]/*' />
@@ -107,10 +107,10 @@ public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Int
         HRESULT GetPropertyCount(uint* count);
 
         [VtblIndex(6)]
-        HRESULT GetProperty(uint index, [NativeTypeName("Windows::Foundation::IPropertyValue **")] void** value);
+        HRESULT GetProperty(uint index, [NativeTypeName("Windows::Foundation::IPropertyValue **")] IPropertyValue** value);
 
         [VtblIndex(7)]
-        HRESULT GetSource(uint index, [NativeTypeName("IGraphicsEffectSource **")] void** source);
+        HRESULT GetSource(uint index, IGraphicsEffectSource** source);
 
         [VtblIndex(8)]
         HRESULT GetSourceCount(uint* count);
@@ -138,10 +138,10 @@ public unsafe partial struct IGraphicsEffectD2D1Interop : IGraphicsEffectD2D1Int
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetPropertyCount;
 
         [NativeTypeName("HRESULT (UINT, Windows::Foundation::IPropertyValue **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void**, int> GetProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IPropertyValue**, int> GetProperty;
 
         [NativeTypeName("HRESULT (UINT, IGraphicsEffectSource **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void**, int> GetSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IGraphicsEffectSource**, int> GetSource;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSourceCount;

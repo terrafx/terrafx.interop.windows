@@ -1,0 +1,120 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Input::RadialControllerMenuItem *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Input::RadialControllerSystemMenuItemKind>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Input::RadialControllerMenuItem *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Input::RadialControllerSystemMenuItemKind>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::Input::RadialControllerMenuItem *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Input::RadialControllerMenuItem *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::EdgeGesture *, ABI::Windows::UI::Input::EdgeGestureEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer *, ABI::Windows::UI::Input::CrossSlidingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer *, ABI::Windows::UI::Input::DraggingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer *, ABI::Windows::UI::Input::HoldingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer *, ABI::Windows::UI::Input::ManipulationCompletedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer *, ABI::Windows::UI::Input::ManipulationInertiaStartingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer *, ABI::Windows::UI::Input::ManipulationStartedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer *, ABI::Windows::UI::Input::ManipulationUpdatedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer *, ABI::Windows::UI::Input::RightTappedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::GestureRecognizer *, ABI::Windows::UI::Input::TappedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::InputActivationListener *, ABI::Windows::UI::Input::InputActivationListenerActivationChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::KeyboardDeliveryInterceptor *, ABI::Windows::UI::Core::KeyEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::RadialController *, ABI::Windows::UI::Input::RadialControllerButtonClickedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::RadialController *, ABI::Windows::UI::Input::RadialControllerButtonHoldingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::RadialController *, ABI::Windows::UI::Input::RadialControllerButtonPressedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::RadialController *, ABI::Windows::UI::Input::RadialControllerButtonReleasedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::RadialController *, ABI::Windows::UI::Input::RadialControllerControlAcquiredEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::RadialController *, ABI::Windows::UI::Input::RadialControllerRotationChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::RadialController *, ABI::Windows::UI::Input::RadialControllerScreenContactContinuedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::RadialController *, ABI::Windows::UI::Input::RadialControllerScreenContactStartedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::RadialController *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::RadialControllerMenuItem *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::SystemButtonEventController *, ABI::Windows::UI::Input::SystemFunctionButtonEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::SystemButtonEventController *, ABI::Windows::UI::Input::SystemFunctionLockChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Input::SystemButtonEventController *, ABI::Windows::UI::Input::SystemFunctionLockIndicatorChangedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAttachableInputObject
+IID_IAttachableInputObjectFactory
+IID_ICrossSlidingEventArgs
+IID_ICrossSlidingEventArgs2
+IID_IDraggingEventArgs
+IID_IDraggingEventArgs2
+IID_IEdgeGesture
+IID_IEdgeGestureEventArgs
+IID_IEdgeGestureStatics
+IID_IGestureRecognizer
+IID_IGestureRecognizer2
+IID_IHoldingEventArgs
+IID_IHoldingEventArgs2
+IID_IInputActivationListener
+IID_IInputActivationListenerActivationChangedEventArgs
+IID_IKeyboardDeliveryInterceptor
+IID_IKeyboardDeliveryInterceptorStatics
+IID_IManipulationCompletedEventArgs
+IID_IManipulationCompletedEventArgs2
+IID_IManipulationInertiaStartingEventArgs
+IID_IManipulationInertiaStartingEventArgs2
+IID_IManipulationStartedEventArgs
+IID_IManipulationStartedEventArgs2
+IID_IManipulationUpdatedEventArgs
+IID_IManipulationUpdatedEventArgs2
+IID_IMouseWheelParameters
+IID_IPointerPoint
+IID_IPointerPointProperties
+IID_IPointerPointProperties2
+IID_IPointerPointStatics
+IID_IPointerPointTransform
+IID_IPointerVisualizationSettings
+IID_IPointerVisualizationSettingsStatics
+IID_IRadialController
+IID_IRadialController2
+IID_IRadialControllerButtonClickedEventArgs
+IID_IRadialControllerButtonClickedEventArgs2
+IID_IRadialControllerButtonHoldingEventArgs
+IID_IRadialControllerButtonPressedEventArgs
+IID_IRadialControllerButtonReleasedEventArgs
+IID_IRadialControllerConfiguration
+IID_IRadialControllerConfiguration2
+IID_IRadialControllerConfigurationStatics
+IID_IRadialControllerConfigurationStatics2
+IID_IRadialControllerControlAcquiredEventArgs
+IID_IRadialControllerControlAcquiredEventArgs2
+IID_IRadialControllerMenu
+IID_IRadialControllerMenuItem
+IID_IRadialControllerMenuItemStatics
+IID_IRadialControllerMenuItemStatics2
+IID_IRadialControllerRotationChangedEventArgs
+IID_IRadialControllerRotationChangedEventArgs2
+IID_IRadialControllerScreenContact
+IID_IRadialControllerScreenContactContinuedEventArgs
+IID_IRadialControllerScreenContactContinuedEventArgs2
+IID_IRadialControllerScreenContactEndedEventArgs
+IID_IRadialControllerScreenContactStartedEventArgs
+IID_IRadialControllerScreenContactStartedEventArgs2
+IID_IRadialControllerStatics
+IID_IRightTappedEventArgs
+IID_IRightTappedEventArgs2
+IID_ISystemButtonEventController
+IID_ISystemButtonEventControllerStatics
+IID_ISystemFunctionButtonEventArgs
+IID_ISystemFunctionLockChangedEventArgs
+IID_ISystemFunctionLockIndicatorChangedEventArgs
+IID_ITappedEventArgs
+IID_ITappedEventArgs2
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION
+--file
+winrt-windows.ui.input.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.ui.input
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.ui.input
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.ui.input.h

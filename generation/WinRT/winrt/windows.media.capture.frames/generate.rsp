@@ -1,0 +1,77 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Capture::Frames::MediaFrameFormat *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Capture::Frames::MediaFrameSourceGroup *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Capture::Frames::MediaFrameFormat *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Capture::Frames::MediaFrameSourceGroup *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Capture::Frames::MediaFrameFormat *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Capture::Frames::MediaFrameSourceGroup *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Capture::Frames::MediaFrameSourceGroup *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Capture::Frames::MediaFrameReaderStartStatus>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Capture::Frames::MediaFrameSourceGroup *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Capture::Frames::MediaFrameSourceGroup *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::Frames::MediaFrameReaderStartStatus>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::Frames::MediaFrameSourceGetPropertyResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::Frames::MediaFrameSourceGroup *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::Frames::MediaFrameSourceSetPropertyStatus>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReaderStartStatus>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::Frames::MediaFrameReader *, ABI::Windows::Media::Capture::Frames::MediaFrameArrivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::Frames::MediaFrameSource *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReader *, ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameArrivedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAudioMediaFrame
+IID_IBufferMediaFrame
+IID_IDepthMediaFrame
+IID_IDepthMediaFrame2
+IID_IDepthMediaFrameFormat
+IID_IInfraredMediaFrame
+IID_IMediaFrameArrivedEventArgs
+IID_IMediaFrameFormat
+IID_IMediaFrameFormat2
+IID_IMediaFrameReader
+IID_IMediaFrameReader2
+IID_IMediaFrameReference
+IID_IMediaFrameReference2
+IID_IMediaFrameSource
+IID_IMediaFrameSourceController
+IID_IMediaFrameSourceController2
+IID_IMediaFrameSourceController3
+IID_IMediaFrameSourceGetPropertyResult
+IID_IMediaFrameSourceGroup
+IID_IMediaFrameSourceGroupStatics
+IID_IMediaFrameSourceInfo
+IID_IMediaFrameSourceInfo2
+IID_IMediaFrameSourceInfo3
+IID_IMediaFrameSourceInfo4
+IID_IMultiSourceMediaFrameArrivedEventArgs
+IID_IMultiSourceMediaFrameReader
+IID_IMultiSourceMediaFrameReader2
+IID_IMultiSourceMediaFrameReference
+IID_IVideoMediaFrame
+IID_IVideoMediaFrameFormat
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION
+WINDOWS_MEDIA_DEVICES_CALLCONTROLCONTRACT_VERSION
+WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION
+--file
+winrt-windows.media.capture.frames.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.media.capture.frames
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.media.capture.frames
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.capture.frames.h

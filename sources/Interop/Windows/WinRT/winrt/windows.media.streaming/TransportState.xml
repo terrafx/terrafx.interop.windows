@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TransportState">
+    <summary>Defines the available transport states as defined by the UPnP Guidelines.</summary>
+  </member>
+  <member name="TransportState.TransportState_Unknown"></member>
+  <member name="TransportState.TransportState_Stopped"></member>
+  <member name="TransportState.TransportState_Playing"></member>
+  <member name="TransportState.TransportState_Transitioning"></member>
+  <member name="TransportState.TransportState_Paused"></member>
+  <member name="TransportState.TransportState_Recording"></member>
+  <member name="TransportState.TransportState_NoMediaPresent"></member>
+  <member name="TransportState.TransportState_Last">
+    <summary>
+      <h4>- Last</h4>
+      <para>The device’s previous state to the current transport state.</para>
+      <h4>- NoMediaPresent</h4>
+      <para>The device’s transport does not have an URI set for playback.</para>
+      <h4>- Paused</h4>
+      <para>The device’s transport is in a paused state.</para>
+      <h4>- Playing</h4>
+      <para>The device’s transport is in a playing state.</para>
+      <h4>- Recording</h4>
+      <para>The device’s transport is in a recording state.</para>
+      <h4>- Stopped</h4>
+      <para>The device’s transport is in a stopped state.</para>
+      <h4>- Transitioning</h4>
+      <para>The device’s transport is in a transitioning state which will result in another state value.</para>
+      <h4>- Unknown</h4>
+      <para>Erroneous device state.</para>
+    </summary>
+  </member>
+</doc>

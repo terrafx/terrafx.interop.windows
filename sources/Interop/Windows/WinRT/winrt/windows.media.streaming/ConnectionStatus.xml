@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ConnectionStatus">
+    <summary>Represents the state of the device in the network as last seen.</summary>
+  </member>
+  <member name="ConnectionStatus.ConnectionStatus_Online"></member>
+  <member name="ConnectionStatus.ConnectionStatus_Offline"></member>
+  <member name="ConnectionStatus.ConnectionStatus_Sleeping">
+    <summary>
+      <h4>- Offline</h4>
+      <para>Device is offline.</para>
+      <h4>- Online</h4>
+      <para>Device is online and active on the network.</para>
+      <h4>- Sleeping</h4>
+      <para>Device is currently offline but might automatically wake up when an attempt is made to communicate with it.</para>
+    </summary>
+  </member>
+</doc>

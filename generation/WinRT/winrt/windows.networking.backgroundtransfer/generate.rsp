@@ -1,0 +1,93 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Networking::BackgroundTransfer::BackgroundTransferFileRange>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Networking::BackgroundTransfer::DownloadOperation *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Networking::BackgroundTransfer::UploadOperation *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Web::WebErrorStatus>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Networking::BackgroundTransfer::BackgroundTransferContentPart *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Networking::BackgroundTransfer::BackgroundTransferFileRange>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Networking::BackgroundTransfer::DownloadOperation *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Networking::BackgroundTransfer::UploadOperation *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Web::WebErrorStatus>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Foundation::Uri *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Networking::BackgroundTransfer::BackgroundTransferFileRange>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Web::WebErrorStatus>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::BackgroundTransfer::BackgroundTransferFileRange>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::BackgroundTransfer::DownloadOperation *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::BackgroundTransfer::UploadOperation *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Web::WebErrorStatus>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::BackgroundTransfer::DownloadOperation *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::BackgroundTransfer::UploadOperation *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Networking::BackgroundTransfer::DownloadOperation *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Networking::BackgroundTransfer::UploadOperation *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::BackgroundTransfer::DownloadOperation *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::BackgroundTransfer::UploadOperation *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Networking::BackgroundTransfer::DownloadOperation *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Networking::BackgroundTransfer::UnconstrainedTransferRequestResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Networking::BackgroundTransfer::UploadOperation *>
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Networking::BackgroundTransfer::DownloadOperation *, ABI::Windows::Networking::BackgroundTransfer::DownloadOperation *>
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Networking::BackgroundTransfer::UploadOperation *, ABI::Windows::Networking::BackgroundTransfer::UploadOperation *>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Networking::BackgroundTransfer::DownloadOperation *, ABI::Windows::Networking::BackgroundTransfer::DownloadOperation *>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Networking::BackgroundTransfer::UploadOperation *, ABI::Windows::Networking::BackgroundTransfer::UploadOperation *>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Networking::BackgroundTransfer::DownloadOperation *, ABI::Windows::Networking::BackgroundTransfer::DownloadOperation *>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Networking::BackgroundTransfer::UploadOperation *, ABI::Windows::Networking::BackgroundTransfer::UploadOperation *>
+ABI::Windows::Foundation::IReference<ABI::Windows::Web::WebErrorStatus>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::BackgroundTransfer::DownloadOperation *, ABI::Windows::Networking::BackgroundTransfer::BackgroundTransferRangesDownloadedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IBackgroundDownloader
+IID_IBackgroundDownloader2
+IID_IBackgroundDownloader3
+IID_IBackgroundDownloaderFactory
+IID_IBackgroundDownloaderStaticMethods
+IID_IBackgroundDownloaderStaticMethods2
+IID_IBackgroundDownloaderUserConsent
+IID_IBackgroundTransferBase
+IID_IBackgroundTransferCompletionGroup
+IID_IBackgroundTransferCompletionGroupTriggerDetails
+IID_IBackgroundTransferContentPart
+IID_IBackgroundTransferContentPartFactory
+IID_IBackgroundTransferErrorStaticMethods
+IID_IBackgroundTransferGroup
+IID_IBackgroundTransferGroupStatics
+IID_IBackgroundTransferOperation
+IID_IBackgroundTransferOperationPriority
+IID_IBackgroundTransferRangesDownloadedEventArgs
+IID_IBackgroundUploader
+IID_IBackgroundUploader2
+IID_IBackgroundUploader3
+IID_IBackgroundUploaderFactory
+IID_IBackgroundUploaderStaticMethods
+IID_IBackgroundUploaderStaticMethods2
+IID_IBackgroundUploaderUserConsent
+IID_IContentPrefetcher
+IID_IContentPrefetcherTime
+IID_IDownloadOperation
+IID_IDownloadOperation2
+IID_IDownloadOperation3
+IID_IDownloadOperation4
+IID_IDownloadOperation5
+IID_IResponseInformation
+IID_IUnconstrainedTransferRequestResult
+IID_IUploadOperation
+IID_IUploadOperation2
+IID_IUploadOperation3
+IID_IUploadOperation4
+WINDOWS_APPLICATIONMODEL_BACKGROUND_BACKGROUNDALARMAPPLICATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.networking.backgroundtransfer.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.networking.backgroundtransfer
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.networking.backgroundtransfer
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.networking.backgroundtransfer.h

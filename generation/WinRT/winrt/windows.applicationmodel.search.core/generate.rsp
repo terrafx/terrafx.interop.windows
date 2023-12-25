@@ -1,0 +1,32 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Search::Core::SearchSuggestion *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Search::Core::SearchSuggestion *>
+ABI::Windows::Foundation::Collections::IObservableVector<ABI::Windows::ApplicationModel::Search::Core::SearchSuggestion *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::Search::Core::SearchSuggestion *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Search::Core::SearchSuggestion *>
+ABI::Windows::Foundation::Collections::VectorChangedEventHandler<ABI::Windows::ApplicationModel::Search::Core::SearchSuggestion *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Search::Core::SearchSuggestionManager *, ABI::Windows::ApplicationModel::Search::Core::RequestingFocusOnKeyboardInputEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Search::Core::SearchSuggestionManager *, ABI::Windows::ApplicationModel::Search::Core::SearchSuggestionsRequestedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IRequestingFocusOnKeyboardInputEventArgs
+IID_ISearchSuggestion
+IID_ISearchSuggestionManager
+IID_ISearchSuggestionsRequestedEventArgs
+WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.applicationmodel.search.core.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.search.core
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.applicationmodel.search.core
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.applicationmodel.search.core.h

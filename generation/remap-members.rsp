@@ -17,7 +17,6 @@ IOleInPlaceFrame.TranslateAcceleratorW=@TranslateAccelerator
 IOleItemContainer.GetObjectW=@GetObject
 IPropertyPage.TranslateAcceleratorW=@TranslateAccelerator
 IPropertyPageSite.TranslateAcceleratorW=@TranslateAccelerator
-IPropertyValue*=@void*
 IProvideClassInfo.GetClassInfoW=@GetClassInfo
 IRunningObjectTable.GetObjectW=@GetObject
 ISpeechObjectToken.RemoveStorageFileName.DeleteFileW=@DeleteFile

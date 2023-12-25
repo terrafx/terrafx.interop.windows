@@ -1,0 +1,100 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Networking::Sockets::SocketActivityInformation *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Networking::Sockets::SocketActivityInformation *> *>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, ABI::Windows::Networking::Sockets::SocketActivityInformation *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, ABI::Windows::Networking::Sockets::SocketActivityInformation *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::EndpointPair *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::Streams::IOutputStream *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::EndpointPair *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::Streams::IOutputStream *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::Sockets::DatagramSocket *, ABI::Windows::Networking::Sockets::DatagramSocketMessageReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::Sockets::IWebSocket *, ABI::Windows::Networking::Sockets::WebSocketClosedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::Sockets::MessageWebSocket *, ABI::Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::Sockets::MessageWebSocket *, ABI::Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::Sockets::ServerMessageWebSocket *, ABI::Windows::Networking::Sockets::MessageWebSocketMessageReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::Sockets::ServerMessageWebSocket *, ABI::Windows::Networking::Sockets::WebSocketClosedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::Sockets::ServerStreamWebSocket *, ABI::Windows::Networking::Sockets::WebSocketClosedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::Sockets::StreamSocketListener *, ABI::Windows::Networking::Sockets::StreamSocketListenerConnectionReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Networking::Sockets::StreamWebSocket *, ABI::Windows::Networking::Sockets::WebSocketServerCustomValidationRequestedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IControlChannelTrigger
+IID_IControlChannelTrigger2
+IID_IControlChannelTriggerEventDetails
+IID_IControlChannelTriggerFactory
+IID_IControlChannelTriggerResetEventDetails
+IID_IDatagramSocket
+IID_IDatagramSocket2
+IID_IDatagramSocket3
+IID_IDatagramSocketControl
+IID_IDatagramSocketControl2
+IID_IDatagramSocketControl3
+IID_IDatagramSocketInformation
+IID_IDatagramSocketMessageReceivedEventArgs
+IID_IDatagramSocketStatics
+IID_IMessageWebSocket
+IID_IMessageWebSocket2
+IID_IMessageWebSocket3
+IID_IMessageWebSocketControl
+IID_IMessageWebSocketControl2
+IID_IMessageWebSocketMessageReceivedEventArgs
+IID_IMessageWebSocketMessageReceivedEventArgs2
+IID_IServerMessageWebSocket
+IID_IServerMessageWebSocketControl
+IID_IServerMessageWebSocketInformation
+IID_IServerStreamWebSocket
+IID_IServerStreamWebSocketInformation
+IID_ISocketActivityContext
+IID_ISocketActivityContextFactory
+IID_ISocketActivityInformation
+IID_ISocketActivityInformationStatics
+IID_ISocketActivityTriggerDetails
+IID_ISocketErrorStatics
+IID_IStreamSocket
+IID_IStreamSocket2
+IID_IStreamSocket3
+IID_IStreamSocketControl
+IID_IStreamSocketControl2
+IID_IStreamSocketControl3
+IID_IStreamSocketControl4
+IID_IStreamSocketInformation
+IID_IStreamSocketInformation2
+IID_IStreamSocketListener
+IID_IStreamSocketListener2
+IID_IStreamSocketListener3
+IID_IStreamSocketListenerConnectionReceivedEventArgs
+IID_IStreamSocketListenerControl
+IID_IStreamSocketListenerControl2
+IID_IStreamSocketListenerInformation
+IID_IStreamSocketStatics
+IID_IStreamWebSocket
+IID_IStreamWebSocket2
+IID_IStreamWebSocketControl
+IID_IStreamWebSocketControl2
+IID_IWebSocket
+IID_IWebSocketClosedEventArgs
+IID_IWebSocketControl
+IID_IWebSocketControl2
+IID_IWebSocketErrorStatics
+IID_IWebSocketInformation
+IID_IWebSocketInformation2
+IID_IWebSocketServerCustomValidationRequestedEventArgs
+WINDOWS_APPLICATIONMODEL_BACKGROUND_BACKGROUNDALARMAPPLICATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION
+WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION
+--file
+winrt-windows.networking.sockets.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.networking.sockets
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.networking.sockets
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.networking.sockets.h

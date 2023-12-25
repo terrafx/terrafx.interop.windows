@@ -1,0 +1,16 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from winrt/windows.storage.provider.h in the Windows SDK for Windows 10.0.22621.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+namespace TerraFX.Interop.WinRT;
+
+/// <include file='StorageProviderProtectionMode.xml' path='doc/member[@name="StorageProviderProtectionMode"]/*' />
+public enum StorageProviderProtectionMode
+{
+    /// <include file='StorageProviderProtectionMode.xml' path='doc/member[@name="StorageProviderProtectionMode.StorageProviderProtectionMode_Unknown"]/*' />
+    StorageProviderProtectionMode_Unknown = 0,
+
+    /// <include file='StorageProviderProtectionMode.xml' path='doc/member[@name="StorageProviderProtectionMode.StorageProviderProtectionMode_Personal"]/*' />
+    StorageProviderProtectionMode_Personal = 1,
+}

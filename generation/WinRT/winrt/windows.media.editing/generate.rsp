@@ -1,0 +1,69 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Graphics::Imaging::ImageStream *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Editing::BackgroundAudioTrack *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Editing::EmbeddedAudioTrack *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Editing::MediaClip *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Editing::MediaOverlay *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Editing::MediaOverlayLayer *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Effects::IVideoEffectDefinition *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Graphics::Imaging::ImageStream *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Editing::BackgroundAudioTrack *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Editing::EmbeddedAudioTrack *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Editing::MediaClip *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Editing::MediaOverlay *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Editing::MediaOverlayLayer *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Effects::IVideoEffectDefinition *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Editing::BackgroundAudioTrack *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Editing::MediaClip *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Editing::MediaOverlay *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Editing::MediaOverlayLayer *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Effects::IVideoEffectDefinition *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Graphics::Imaging::ImageStream *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Editing::BackgroundAudioTrack *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Editing::EmbeddedAudioTrack *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Editing::MediaClip *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Editing::MediaOverlay *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Editing::MediaOverlayLayer *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Effects::IVideoEffectDefinition *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Graphics::Imaging::ImageStream *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Editing::BackgroundAudioTrack *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Editing::MediaClip *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Editing::MediaComposition *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Graphics::Imaging::ImageStream *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Editing::BackgroundAudioTrack *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Editing::MediaClip *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Editing::MediaComposition *>
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Media::Transcoding::TranscodeFailureReason, double>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Media::Transcoding::TranscodeFailureReason, double>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Media::Transcoding::TranscodeFailureReason, double>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IBackgroundAudioTrack
+IID_IBackgroundAudioTrackStatics
+IID_IEmbeddedAudioTrack
+IID_IMediaClip
+IID_IMediaClipStatics
+IID_IMediaClipStatics2
+IID_IMediaComposition
+IID_IMediaComposition2
+IID_IMediaCompositionStatics
+IID_IMediaOverlay
+IID_IMediaOverlayFactory
+IID_IMediaOverlayLayer
+IID_IMediaOverlayLayerFactory
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.media.editing.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.media.editing
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.media.editing
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.editing.h

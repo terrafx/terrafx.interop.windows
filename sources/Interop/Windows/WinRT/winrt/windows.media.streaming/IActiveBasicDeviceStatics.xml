@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IActiveBasicDeviceStatics.CloneBasicDeviceAsync">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/mediastreaming/media-streaming-api-portal">Windows Media Streaming API</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/media-casting">Media Casting</a>. <b>Media Casting</b> has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>Media Casting</b> instead of <b>Windows Media Streaming API</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>Asynchronously creates a clone of a basic device.</para>
+    </summary>
+    <param name="basicDevice">The basic device object to clone.</param>
+    <param name="value">The asynchronous operation. Upon completion, <a href="https://docs.microsoft.com//previous-versions/br205815(v=vs.85)">IAsyncOperation.GetResults</a> returns a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dn385755(v=vs.85)">ActiveBasicDevice</a> object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IActiveBasicDeviceStatics.CreateBasicDeviceAsync">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/mediastreaming/media-streaming-api-portal">Windows Media Streaming API</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/media-casting">Media Casting</a>. <b>Media Casting</b> has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>Media Casting</b> instead of <b>Windows Media Streaming API</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>Asynchronously creates an active basic device.</para>
+    </summary>
+    <param name="deviceIdentifier">The identifier of the device.</param>
+    <param name="type">The type of the device.</param>
+    <param name="value">The asynchronous operation. Upon completion, <a href="https://docs.microsoft.com//previous-versions/br205815(v=vs.85)">IAsyncOperation.GetResults</a> returns a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dn385755(v=vs.85)">ActiveBasicDevice</a> object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IActiveBasicDeviceStatics.CreateDevicesOnMatchingNetworkAsync">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/mediastreaming/media-streaming-api-portal">Windows Media Streaming API</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/media-casting">Media Casting</a>. <b>Media Casting</b> has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>Media Casting</b> instead of <b>Windows Media Streaming API</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>Asynchronously creates a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dn385771(v=vs.85)">DevicePair</a> of devices that are on the same network interface.</para>
+    </summary>
+    <param name="serverUDN">The basic device server.</param>
+    <param name="renderer">The basic device renderer.</param>
+    <param name="optimizeForProxying">Specifies whether or not to optimize for proxying.</param>
+    <param name="allowChangeRendererNetwork">Specifies whether or not the renderer network can be changed.</param>
+    <param name="operation">The asynchronous operation. Upon completion, <a href="https://docs.microsoft.com//previous-versions/br205815(v=vs.85)">IAsyncOperation.GetResults</a> returns a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dn385771(v=vs.85)">DevicePair</a> object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IActiveBasicDeviceStatics.GetDevicesOnMatchingNetworkAsync">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/mediastreaming/media-streaming-api-portal">Windows Media Streaming API</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/media-casting">Media Casting</a>. <b>Media Casting</b> has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>Media Casting</b> instead of <b>Windows Media Streaming API</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>Asynchronously gets a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dn385771(v=vs.85)">DevicePair</a> of devices that are on the same network interface.</para>
+    </summary>
+    <param name="server">The UDN (unique device name) of the server.</param>
+    <param name="renderer">The basic device renderer.</param>
+    <param name="optimizeForProxying">Specifies whether or not to optimize for proxying.</param>
+    <param name="allowChangeRendererNetwork">Specifies whether or not the renderer network can be changed.</param>
+    <param name="operation">The asynchronous operation. Upon completion, <a href="https://docs.microsoft.com//previous-versions/br205815(v=vs.85)">IAsyncOperation.GetResults</a> returns a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dn385771(v=vs.85)">DevicePair</a> object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IActiveBasicDeviceStatics">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/mediastreaming/media-streaming-api-portal">Windows Media Streaming API</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/media-casting">Media Casting</a>. <b>Media Casting</b> has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>Media Casting</b> instead of <b>Windows Media Streaming API</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>Provides static methods for creating <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/windows.media.streaming/nn-windows-media-streaming-iactivebasicdevice">IActiveBasicDevice</a> objects.</para>
+    </summary>
+  </member>
+</doc>

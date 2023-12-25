@@ -1,0 +1,40 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t *> *>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, ABI::Windows::Foundation::Collections::IVector<HSTRING> *>
+ABI::Windows::Foundation::Collections::IMap<HSTRING__ *, ABI::Windows::Foundation::Collections::IVector<HSTRING> *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, ABI::Windows::Foundation::Collections::IVector<HSTRING> *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IFileOpenPicker
+IID_IFileOpenPicker2
+IID_IFileOpenPicker3
+IID_IFileOpenPickerStatics
+IID_IFileOpenPickerStatics2
+IID_IFileOpenPickerWithOperationId
+IID_IFileSavePicker
+IID_IFileSavePicker2
+IID_IFileSavePicker3
+IID_IFileSavePicker4
+IID_IFileSavePickerStatics
+IID_IFolderPicker
+IID_IFolderPicker2
+IID_IFolderPicker3
+IID_IFolderPickerStatics
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+--file
+winrt-windows.storage.pickers.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.storage.pickers
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.storage.pickers
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.storage.pickers.h

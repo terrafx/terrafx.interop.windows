@@ -1,0 +1,32 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Pwm::PwmController *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Pwm::PwmController *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Pwm::PwmController *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Pwm::PwmController *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Pwm::PwmController *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Pwm::PwmController *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Pwm::PwmController *> *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IPwmController
+IID_IPwmControllerStatics
+IID_IPwmControllerStatics2
+IID_IPwmControllerStatics3
+IID_IPwmPin
+WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.devices.pwm.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.devices.pwm
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.devices.pwm
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.devices.pwm.h

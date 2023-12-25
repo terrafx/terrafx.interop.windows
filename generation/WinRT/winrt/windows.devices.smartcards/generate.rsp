@@ -1,0 +1,148 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::SmartCards::SmartCard *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::SmartCards::SmartCardAppletIdGroupRegistration *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::SmartCards::SmartCardAutomaticResponseApdu *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::SmartCards::SmartCardCryptogramAlgorithm>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialCharacteristics *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialPackageCharacteristics *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialPackageConfirmationResponseFormat>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialPackageFormat>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialType>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::SmartCards::SmartCardCryptogramPlacementStep *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::SmartCards::SmartCardCryptogramStorageKeyCapabilities>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::SmartCards::SmartCardCryptogramStorageKeyCharacteristics *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::SmartCards::SmartCard *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::SmartCards::SmartCardAppletIdGroupRegistration *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::SmartCards::SmartCardAutomaticResponseApdu *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::SmartCards::SmartCardCryptogramAlgorithm>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialCharacteristics *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialPackageCharacteristics *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialPackageConfirmationResponseFormat>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialPackageFormat>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialType>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::SmartCards::SmartCardCryptogramPlacementStep *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::SmartCards::SmartCardCryptogramStorageKeyCapabilities>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::SmartCards::SmartCardCryptogramStorageKeyCharacteristics *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Storage::Streams::IBuffer *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::SmartCards::SmartCard *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::SmartCards::SmartCardAppletIdGroupRegistration *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::SmartCards::SmartCardCryptogramAlgorithm>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialCharacteristics *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialPackageCharacteristics *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialPackageConfirmationResponseFormat>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialPackageFormat>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialType>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::SmartCards::SmartCardCryptogramStorageKeyCapabilities>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::SmartCards::SmartCardCryptogramStorageKeyCharacteristics *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::SmartCards::SmartCardActivationPolicyChangeResult>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::SmartCards::SmartCardAppletIdGroupRegistration *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::SmartCards::SmartCardChallengeContext *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::SmartCards::SmartCardConnection *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::SmartCards::SmartCardCryptogramGenerator *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::SmartCards::SmartCardCryptogramGeneratorOperationStatus>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::SmartCards::SmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::SmartCards::SmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::SmartCards::SmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialPossessionProof *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::SmartCards::SmartCardCryptogramStorageKeyInfo *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::SmartCards::SmartCardEmulator *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::SmartCards::SmartCardProvisioning *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::SmartCards::SmartCardReader *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::SmartCards::SmartCardReaderStatus>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::SmartCards::SmartCardStatus>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::SmartCards::SmartCard *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::SmartCards::SmartCardAppletIdGroupRegistration *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::SmartCards::SmartCardActivationPolicyChangeResult>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::SmartCards::SmartCardAppletIdGroupRegistration *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::SmartCards::SmartCardChallengeContext *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::SmartCards::SmartCardConnection *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::SmartCards::SmartCardCryptogramGenerator *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::SmartCards::SmartCardCryptogramGeneratorOperationStatus>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::SmartCards::SmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::SmartCards::SmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::SmartCards::SmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialPossessionProof *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::SmartCards::SmartCardCryptogramStorageKeyInfo *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::SmartCards::SmartCardEmulator *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::SmartCards::SmartCardProvisioning *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::SmartCards::SmartCardReader *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::SmartCards::SmartCardReaderStatus>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::SmartCards::SmartCardStatus>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::SmartCards::SmartCard *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::SmartCards::SmartCardAppletIdGroupRegistration *> *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::SmartCards::SmartCardEmulator *, ABI::Windows::Devices::SmartCards::SmartCardEmulatorApduReceivedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::SmartCards::SmartCardEmulator *, ABI::Windows::Devices::SmartCards::SmartCardEmulatorConnectionDeactivatedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::SmartCards::SmartCardReader *, ABI::Windows::Devices::SmartCards::CardAddedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::SmartCards::SmartCardReader *, ABI::Windows::Devices::SmartCards::CardRemovedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_ICardAddedEventArgs
+IID_ICardRemovedEventArgs
+IID_IKnownSmartCardAppletIds
+IID_ISmartCard
+IID_ISmartCardAppletIdGroup
+IID_ISmartCardAppletIdGroup2
+IID_ISmartCardAppletIdGroupFactory
+IID_ISmartCardAppletIdGroupRegistration
+IID_ISmartCardAppletIdGroupRegistration2
+IID_ISmartCardAppletIdGroupStatics
+IID_ISmartCardAutomaticResponseApdu
+IID_ISmartCardAutomaticResponseApdu2
+IID_ISmartCardAutomaticResponseApdu3
+IID_ISmartCardAutomaticResponseApduFactory
+IID_ISmartCardChallengeContext
+IID_ISmartCardConnect
+IID_ISmartCardConnection
+IID_ISmartCardCryptogramGenerator
+IID_ISmartCardCryptogramGenerator2
+IID_ISmartCardCryptogramGeneratorStatics
+IID_ISmartCardCryptogramGeneratorStatics2
+IID_ISmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult
+IID_ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult
+IID_ISmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult
+IID_ISmartCardCryptogramMaterialCharacteristics
+IID_ISmartCardCryptogramMaterialPackageCharacteristics
+IID_ISmartCardCryptogramMaterialPossessionProof
+IID_ISmartCardCryptogramPlacementStep
+IID_ISmartCardCryptogramStorageKeyCharacteristics
+IID_ISmartCardCryptogramStorageKeyInfo
+IID_ISmartCardCryptogramStorageKeyInfo2
+IID_ISmartCardEmulator
+IID_ISmartCardEmulator2
+IID_ISmartCardEmulatorApduReceivedEventArgs
+IID_ISmartCardEmulatorApduReceivedEventArgs2
+IID_ISmartCardEmulatorApduReceivedEventArgsWithCryptograms
+IID_ISmartCardEmulatorConnectionDeactivatedEventArgs
+IID_ISmartCardEmulatorConnectionProperties
+IID_ISmartCardEmulatorStatics
+IID_ISmartCardEmulatorStatics2
+IID_ISmartCardEmulatorStatics3
+IID_ISmartCardPinPolicy
+IID_ISmartCardPinResetDeferral
+IID_ISmartCardPinResetHandler
+IID_ISmartCardPinResetRequest
+IID_ISmartCardProvisioning
+IID_ISmartCardProvisioning2
+IID_ISmartCardProvisioningStatics
+IID_ISmartCardProvisioningStatics2
+IID_ISmartCardReader
+IID_ISmartCardReaderStatics
+IID_ISmartCardTriggerDetails
+IID_ISmartCardTriggerDetails2
+IID_ISmartCardTriggerDetails3
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.devices.smartcards.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.devices.smartcards
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.devices.smartcards
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.devices.smartcards.h

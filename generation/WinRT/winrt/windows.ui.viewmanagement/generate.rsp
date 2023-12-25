@@ -1,0 +1,80 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ViewManagement::AccessibilitySettings *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ViewManagement::ApplicationView *, ABI::Windows::UI::ViewManagement::ApplicationViewConsolidatedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ViewManagement::ApplicationView *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ViewManagement::InputPane *, ABI::Windows::UI::ViewManagement::InputPaneVisibilityEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ViewManagement::StatusBar *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ViewManagement::UISettings *, ABI::Windows::UI::ViewManagement::UISettingsAnimationsEnabledChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ViewManagement::UISettings *, ABI::Windows::UI::ViewManagement::UISettingsAutoHideScrollBarsChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ViewManagement::UISettings *, ABI::Windows::UI::ViewManagement::UISettingsMessageDurationChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ViewManagement::UISettings *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAccessibilitySettings
+IID_IActivationViewSwitcher
+IID_IApplicationView
+IID_IApplicationView2
+IID_IApplicationView3
+IID_IApplicationView4
+IID_IApplicationView7
+IID_IApplicationView9
+IID_IApplicationViewConsolidatedEventArgs
+IID_IApplicationViewConsolidatedEventArgs2
+IID_IApplicationViewFullscreenStatics
+IID_IApplicationViewInteropStatics
+IID_IApplicationViewScaling
+IID_IApplicationViewScalingStatics
+IID_IApplicationViewStatics
+IID_IApplicationViewStatics2
+IID_IApplicationViewStatics3
+IID_IApplicationViewStatics4
+IID_IApplicationViewSwitcherStatics
+IID_IApplicationViewSwitcherStatics2
+IID_IApplicationViewSwitcherStatics3
+IID_IApplicationViewTitleBar
+IID_IApplicationViewTransferContext
+IID_IApplicationViewTransferContextStatics
+IID_IApplicationViewWithContext
+IID_IInputPane
+IID_IInputPane2
+IID_IInputPaneControl
+IID_IInputPaneStatics
+IID_IInputPaneStatics2
+IID_IInputPaneVisibilityEventArgs
+IID_IProjectionManagerStatics
+IID_IProjectionManagerStatics2
+IID_IStatusBar
+IID_IStatusBarProgressIndicator
+IID_IStatusBarStatics
+IID_IUISettings
+IID_IUISettings2
+IID_IUISettings3
+IID_IUISettings4
+IID_IUISettings5
+IID_IUISettings6
+IID_IUISettingsAnimationsEnabledChangedEventArgs
+IID_IUISettingsAutoHideScrollBarsChangedEventArgs
+IID_IUISettingsMessageDurationChangedEventArgs
+IID_IUIViewSettings
+IID_IUIViewSettingsStatics
+IID_IViewModePreferences
+IID_IViewModePreferencesStatics
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_PHONE_PHONECONTRACT_VERSION
+WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION
+WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION
+--file
+winrt-windows.ui.viewmanagement.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.ui.viewmanagement
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.ui.viewmanagement
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.ui.viewmanagement.h

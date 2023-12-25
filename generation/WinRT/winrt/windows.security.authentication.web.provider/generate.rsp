@@ -1,0 +1,57 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Security::Authentication::Web::Provider::WebAccountClientView *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Security::Authentication::Web::Provider::WebAccountClientView *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Web::Http::HttpCookie *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Security::Authentication::Web::Provider::WebAccountClientView *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Security::Authentication::Web::Provider::WebProviderTokenResponse *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Security::Authentication::Web::Provider::WebAccountClientView *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Security::Credentials::WebAccount *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Security::Authentication::Web::Provider::WebAccountClientView *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Security::Credentials::WebAccount *> *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IWebAccountClientView
+IID_IWebAccountClientViewFactory
+IID_IWebAccountManagerStatics
+IID_IWebAccountManagerStatics2
+IID_IWebAccountManagerStatics3
+IID_IWebAccountManagerStatics4
+IID_IWebAccountMapManagerStatics
+IID_IWebAccountProviderAddAccountOperation
+IID_IWebAccountProviderBaseReportOperation
+IID_IWebAccountProviderDeleteAccountOperation
+IID_IWebAccountProviderManageAccountOperation
+IID_IWebAccountProviderOperation
+IID_IWebAccountProviderRetrieveCookiesOperation
+IID_IWebAccountProviderSignOutAccountOperation
+IID_IWebAccountProviderSilentReportOperation
+IID_IWebAccountProviderTokenObjects
+IID_IWebAccountProviderTokenObjects2
+IID_IWebAccountProviderTokenOperation
+IID_IWebAccountProviderUIReportOperation
+IID_IWebAccountScopeManagerStatics
+IID_IWebProviderTokenRequest
+IID_IWebProviderTokenRequest2
+IID_IWebProviderTokenRequest3
+IID_IWebProviderTokenResponse
+IID_IWebProviderTokenResponseFactory
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+--file
+winrt-windows.security.authentication.web.provider.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.security.authentication.web.provider
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.security.authentication.web.provider
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.security.authentication.web.provider.h
