@@ -82,9 +82,9 @@ public unsafe partial struct IAppointmentConflictResult : IAppointmentConflictRe
     /// <include file='IAppointmentConflictResult.xml' path='doc/member[@name="IAppointmentConflictResult.get_Date"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Date([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Date([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentConflictResult*, DateTime*, int>)(lpVtbl[7]))((IAppointmentConflictResult*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentConflictResult*, WinRTDateTime*, int>)(lpVtbl[7]))((IAppointmentConflictResult*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IAppointmentConflictResult : IAppointmentConflictRe
         HRESULT get_Type([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::AppointmentConflictType *")] AppointmentConflictType* value);
 
         [VtblIndex(7)]
-        HRESULT get_Date([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Date([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IAppointmentConflictResult : IAppointmentConflictRe
         public delegate* unmanaged[MemberFunction]<TSelf*, AppointmentConflictType*, int> get_Type;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Date;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Date;
     }
 }

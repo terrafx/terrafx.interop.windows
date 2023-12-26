@@ -242,9 +242,9 @@ public unsafe partial struct IDataReader : IDataReader.Interface, INativeGuid
     /// <include file='IDataReader.xml' path='doc/member[@name="IDataReader.ReadDateTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT ReadDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT ReadDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataReader*, DateTime*, int>)(lpVtbl[27]))((IDataReader*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDataReader*, WinRTDateTime*, int>)(lpVtbl[27]))((IDataReader*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDataReader.xml' path='doc/member[@name="IDataReader.ReadTimeSpan"]/*' />
@@ -345,7 +345,7 @@ public unsafe partial struct IDataReader : IDataReader.Interface, INativeGuid
         HRESULT ReadString([NativeTypeName("UINT32")] uint codeUnitCount, HSTRING* value);
 
         [VtblIndex(27)]
-        HRESULT ReadDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT ReadDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(28)]
         HRESULT ReadTimeSpan([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value);
@@ -445,7 +445,7 @@ public unsafe partial struct IDataReader : IDataReader.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, uint, HSTRING*, int> ReadString;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> ReadDateTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> ReadDateTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::TimeSpan *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> ReadTimeSpan;

@@ -74,15 +74,15 @@ public unsafe partial struct IDateTimeSettingsStatics : IDateTimeSettingsStatics
     /// <include file='IDateTimeSettingsStatics.xml' path='doc/member[@name="IDateTimeSettingsStatics.SetSystemDateTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetSystemDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime utcDateTime)
+    public HRESULT SetSystemDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime utcDateTime)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDateTimeSettingsStatics*, DateTime, int>)(lpVtbl[6]))((IDateTimeSettingsStatics*)Unsafe.AsPointer(ref this), utcDateTime);
+        return ((delegate* unmanaged[MemberFunction]<IDateTimeSettingsStatics*, WinRTDateTime, int>)(lpVtbl[6]))((IDateTimeSettingsStatics*)Unsafe.AsPointer(ref this), utcDateTime);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT SetSystemDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime utcDateTime);
+        HRESULT SetSystemDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime utcDateTime);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IDateTimeSettingsStatics : IDateTimeSettingsStatics
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, int> SetSystemDateTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, int> SetSystemDateTime;
     }
 }

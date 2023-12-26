@@ -82,9 +82,9 @@ public unsafe partial struct IStorageLibraryContentChangedTriggerDetails : IStor
     /// <include file='IStorageLibraryContentChangedTriggerDetails.xml' path='doc/member[@name="IStorageLibraryContentChangedTriggerDetails.CreateModifiedSinceQuery"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateModifiedSinceQuery([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime lastQueryTime, [NativeTypeName("ABI::Windows::Storage::Search::IStorageItemQueryResult **")] IStorageItemQueryResult** result)
+    public HRESULT CreateModifiedSinceQuery([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime lastQueryTime, [NativeTypeName("ABI::Windows::Storage::Search::IStorageItemQueryResult **")] IStorageItemQueryResult** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageLibraryContentChangedTriggerDetails*, DateTime, IStorageItemQueryResult**, int>)(lpVtbl[7]))((IStorageLibraryContentChangedTriggerDetails*)Unsafe.AsPointer(ref this), lastQueryTime, result);
+        return ((delegate* unmanaged[MemberFunction]<IStorageLibraryContentChangedTriggerDetails*, WinRTDateTime, IStorageItemQueryResult**, int>)(lpVtbl[7]))((IStorageLibraryContentChangedTriggerDetails*)Unsafe.AsPointer(ref this), lastQueryTime, result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IStorageLibraryContentChangedTriggerDetails : IStor
         HRESULT get_Folder([NativeTypeName("ABI::Windows::Storage::IStorageFolder **")] IStorageFolder** value);
 
         [VtblIndex(7)]
-        HRESULT CreateModifiedSinceQuery([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime lastQueryTime, [NativeTypeName("ABI::Windows::Storage::Search::IStorageItemQueryResult **")] IStorageItemQueryResult** result);
+        HRESULT CreateModifiedSinceQuery([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime lastQueryTime, [NativeTypeName("ABI::Windows::Storage::Search::IStorageItemQueryResult **")] IStorageItemQueryResult** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IStorageLibraryContentChangedTriggerDetails : IStor
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFolder**, int> get_Folder;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Storage::Search::IStorageItemQueryResult **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, IStorageItemQueryResult**, int> CreateModifiedSinceQuery;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, IStorageItemQueryResult**, int> CreateModifiedSinceQuery;
     }
 }

@@ -196,9 +196,9 @@ public unsafe partial struct IPropertyValueStatics : IPropertyValueStatics.Inter
     /// <include file='IPropertyValueStatics.xml' path='doc/member[@name="IPropertyValueStatics.CreateDateTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT CreateDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value, IInspectable** propertyValue)
+    public HRESULT CreateDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value, IInspectable** propertyValue)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPropertyValueStatics*, DateTime, IInspectable**, int>)(lpVtbl[21]))((IPropertyValueStatics*)Unsafe.AsPointer(ref this), value, propertyValue);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValueStatics*, WinRTDateTime, IInspectable**, int>)(lpVtbl[21]))((IPropertyValueStatics*)Unsafe.AsPointer(ref this), value, propertyValue);
     }
 
     /// <include file='IPropertyValueStatics.xml' path='doc/member[@name="IPropertyValueStatics.CreateTimeSpan"]/*' />
@@ -348,9 +348,9 @@ public unsafe partial struct IPropertyValueStatics : IPropertyValueStatics.Inter
     /// <include file='IPropertyValueStatics.xml' path='doc/member[@name="IPropertyValueStatics.CreateDateTimeArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
-    public HRESULT CreateDateTimeArray([NativeTypeName("UINT32")] uint valueLength, [NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value, IInspectable** propertyValue)
+    public HRESULT CreateDateTimeArray([NativeTypeName("UINT32")] uint valueLength, [NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value, IInspectable** propertyValue)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPropertyValueStatics*, uint, DateTime*, IInspectable**, int>)(lpVtbl[40]))((IPropertyValueStatics*)Unsafe.AsPointer(ref this), valueLength, value, propertyValue);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValueStatics*, uint, WinRTDateTime*, IInspectable**, int>)(lpVtbl[40]))((IPropertyValueStatics*)Unsafe.AsPointer(ref this), valueLength, value, propertyValue);
     }
 
     /// <include file='IPropertyValueStatics.xml' path='doc/member[@name="IPropertyValueStatics.CreateTimeSpanArray"]/*' />
@@ -433,7 +433,7 @@ public unsafe partial struct IPropertyValueStatics : IPropertyValueStatics.Inter
         HRESULT CreateGuid(Guid value, IInspectable** propertyValue);
 
         [VtblIndex(21)]
-        HRESULT CreateDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value, IInspectable** propertyValue);
+        HRESULT CreateDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value, IInspectable** propertyValue);
 
         [VtblIndex(22)]
         HRESULT CreateTimeSpan([NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan value, IInspectable** propertyValue);
@@ -490,7 +490,7 @@ public unsafe partial struct IPropertyValueStatics : IPropertyValueStatics.Inter
         HRESULT CreateGuidArray([NativeTypeName("UINT32")] uint valueLength, Guid* value, IInspectable** propertyValue);
 
         [VtblIndex(40)]
-        HRESULT CreateDateTimeArray([NativeTypeName("UINT32")] uint valueLength, [NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value, IInspectable** propertyValue);
+        HRESULT CreateDateTimeArray([NativeTypeName("UINT32")] uint valueLength, [NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value, IInspectable** propertyValue);
 
         [VtblIndex(41)]
         HRESULT CreateTimeSpanArray([NativeTypeName("UINT32")] uint valueLength, [NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value, IInspectable** propertyValue);
@@ -572,7 +572,7 @@ public unsafe partial struct IPropertyValueStatics : IPropertyValueStatics.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IInspectable**, int> CreateGuid;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, IInspectable **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, IInspectable**, int> CreateDateTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, IInspectable**, int> CreateDateTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::TimeSpan, IInspectable **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan, IInspectable**, int> CreateTimeSpan;
@@ -629,7 +629,7 @@ public unsafe partial struct IPropertyValueStatics : IPropertyValueStatics.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, IInspectable**, int> CreateGuidArray;
 
         [NativeTypeName("HRESULT (UINT32, ABI::Windows::Foundation::DateTime *, IInspectable **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DateTime*, IInspectable**, int> CreateDateTimeArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, WinRTDateTime*, IInspectable**, int> CreateDateTimeArray;
 
         [NativeTypeName("HRESULT (UINT32, ABI::Windows::Foundation::TimeSpan *, IInspectable **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, uint, TimeSpan*, IInspectable**, int> CreateTimeSpanArray;

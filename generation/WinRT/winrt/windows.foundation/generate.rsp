@@ -20,6 +20,7 @@ ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Foundation::IWw
 ABI::Windows::Foundation::Collections::MapChangedEventHandler<HSTRING__ *, HSTRING__ *>
 ABI::Windows::Foundation::Collections::MapChangedEventHandler<HSTRING__ *, IInspectable *>
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Foundation::IMemoryBufferReference *, IInspectable *>
+ABI::Windows::Foundation::TimeSpan
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
 IID_IAsyncAction

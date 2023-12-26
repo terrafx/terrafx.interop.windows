@@ -74,9 +74,9 @@ public unsafe partial struct IOrientationSensorReading : IOrientationSensorReadi
     /// <include file='IOrientationSensorReading.xml' path='doc/member[@name="IOrientationSensorReading.get_Timestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IOrientationSensorReading*, DateTime*, int>)(lpVtbl[6]))((IOrientationSensorReading*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IOrientationSensorReading*, WinRTDateTime*, int>)(lpVtbl[6]))((IOrientationSensorReading*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IOrientationSensorReading.xml' path='doc/member[@name="IOrientationSensorReading.get_RotationMatrix"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IOrientationSensorReading : IOrientationSensorReadi
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(7)]
         HRESULT get_RotationMatrix([NativeTypeName("ABI::Windows::Devices::Sensors::ISensorRotationMatrix **")] ISensorRotationMatrix** value);
@@ -129,7 +129,7 @@ public unsafe partial struct IOrientationSensorReading : IOrientationSensorReadi
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Timestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Timestamp;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Sensors::ISensorRotationMatrix **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ISensorRotationMatrix**, int> get_RotationMatrix;

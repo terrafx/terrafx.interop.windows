@@ -82,9 +82,9 @@ public unsafe partial struct IPickerClosingOperation : IPickerClosingOperation.I
     /// <include file='IPickerClosingOperation.xml' path='doc/member[@name="IPickerClosingOperation.get_Deadline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPickerClosingOperation*, DateTime*, int>)(lpVtbl[7]))((IPickerClosingOperation*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPickerClosingOperation*, WinRTDateTime*, int>)(lpVtbl[7]))((IPickerClosingOperation*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IPickerClosingOperation : IPickerClosingOperation.I
         HRESULT GetDeferral([NativeTypeName("ABI::Windows::Storage::Pickers::Provider::IPickerClosingDeferral **")] IPickerClosingDeferral** value);
 
         [VtblIndex(7)]
-        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IPickerClosingOperation : IPickerClosingOperation.I
         public delegate* unmanaged[MemberFunction]<TSelf*, IPickerClosingDeferral**, int> GetDeferral;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Deadline;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Deadline;
     }
 }

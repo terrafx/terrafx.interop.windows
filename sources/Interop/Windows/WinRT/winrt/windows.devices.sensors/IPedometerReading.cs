@@ -90,9 +90,9 @@ public unsafe partial struct IPedometerReading : IPedometerReading.Interface, IN
     /// <include file='IPedometerReading.xml' path='doc/member[@name="IPedometerReading.get_Timestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPedometerReading*, DateTime*, int>)(lpVtbl[8]))((IPedometerReading*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPedometerReading*, WinRTDateTime*, int>)(lpVtbl[8]))((IPedometerReading*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPedometerReading.xml' path='doc/member[@name="IPedometerReading.get_CumulativeStepsDuration"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct IPedometerReading : IPedometerReading.Interface, IN
         HRESULT get_CumulativeSteps([NativeTypeName("INT32 *")] int* value);
 
         [VtblIndex(8)]
-        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(9)]
         HRESULT get_CumulativeStepsDuration([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value);
@@ -146,7 +146,7 @@ public unsafe partial struct IPedometerReading : IPedometerReading.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_CumulativeSteps;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Timestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Timestamp;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::TimeSpan *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> get_CumulativeStepsDuration;

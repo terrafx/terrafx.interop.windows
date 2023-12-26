@@ -82,17 +82,17 @@ public unsafe partial struct IChainBuildingParameters : IChainBuildingParameters
     /// <include file='IChainBuildingParameters.xml' path='doc/member[@name="IChainBuildingParameters.get_ValidationTimestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_ValidationTimestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_ValidationTimestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IChainBuildingParameters*, DateTime*, int>)(lpVtbl[7]))((IChainBuildingParameters*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IChainBuildingParameters*, WinRTDateTime*, int>)(lpVtbl[7]))((IChainBuildingParameters*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IChainBuildingParameters.xml' path='doc/member[@name="IChainBuildingParameters.put_ValidationTimestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT put_ValidationTimestamp([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value)
+    public HRESULT put_ValidationTimestamp([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IChainBuildingParameters*, DateTime, int>)(lpVtbl[8]))((IChainBuildingParameters*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IChainBuildingParameters*, WinRTDateTime, int>)(lpVtbl[8]))((IChainBuildingParameters*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IChainBuildingParameters.xml' path='doc/member[@name="IChainBuildingParameters.get_RevocationCheckEnabled"]/*' />
@@ -173,10 +173,10 @@ public unsafe partial struct IChainBuildingParameters : IChainBuildingParameters
         HRESULT get_EnhancedKeyUsages([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t **")] IVector<HSTRING>** value);
 
         [VtblIndex(7)]
-        HRESULT get_ValidationTimestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_ValidationTimestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(8)]
-        HRESULT put_ValidationTimestamp([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value);
+        HRESULT put_ValidationTimestamp([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value);
 
         [VtblIndex(9)]
         HRESULT get_RevocationCheckEnabled([NativeTypeName("boolean *")] byte* value);
@@ -231,10 +231,10 @@ public unsafe partial struct IChainBuildingParameters : IChainBuildingParameters
         public delegate* unmanaged[MemberFunction]<TSelf*, IVector<HSTRING>**, int> get_EnhancedKeyUsages;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_ValidationTimestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_ValidationTimestamp;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, int> put_ValidationTimestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, int> put_ValidationTimestamp;
 
         [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_RevocationCheckEnabled;

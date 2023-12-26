@@ -194,17 +194,17 @@ public unsafe partial struct IVoipPhoneCall : IVoipPhoneCall.Interface, INativeG
     /// <include file='IVoipPhoneCall.xml' path='doc/member[@name="IVoipPhoneCall.get_StartTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IVoipPhoneCall*, DateTime*, int>)(lpVtbl[21]))((IVoipPhoneCall*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IVoipPhoneCall*, WinRTDateTime*, int>)(lpVtbl[21]))((IVoipPhoneCall*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IVoipPhoneCall.xml' path='doc/member[@name="IVoipPhoneCall.put_StartTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT put_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value)
+    public HRESULT put_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IVoipPhoneCall*, DateTime, int>)(lpVtbl[22]))((IVoipPhoneCall*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IVoipPhoneCall*, WinRTDateTime, int>)(lpVtbl[22]))((IVoipPhoneCall*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IVoipPhoneCall.xml' path='doc/member[@name="IVoipPhoneCall.get_CallMedia"]/*' />
@@ -279,10 +279,10 @@ public unsafe partial struct IVoipPhoneCall : IVoipPhoneCall.Interface, INativeG
         HRESULT put_ContactName(HSTRING value);
 
         [VtblIndex(21)]
-        HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(22)]
-        HRESULT put_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value);
+        HRESULT put_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value);
 
         [VtblIndex(23)]
         HRESULT get_CallMedia([NativeTypeName("ABI::Windows::ApplicationModel::Calls::VoipPhoneCallMedia *")] VoipPhoneCallMedia* value);
@@ -361,10 +361,10 @@ public unsafe partial struct IVoipPhoneCall : IVoipPhoneCall.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_ContactName;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_StartTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_StartTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, int> put_StartTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, int> put_StartTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Calls::VoipPhoneCallMedia *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, VoipPhoneCallMedia*, int> get_CallMedia;

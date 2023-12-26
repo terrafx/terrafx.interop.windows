@@ -82,9 +82,9 @@ public unsafe partial struct IScheduledToastNotification : IScheduledToastNotifi
     /// <include file='IScheduledToastNotification.xml' path='doc/member[@name="IScheduledToastNotification.get_DeliveryTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_DeliveryTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_DeliveryTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IScheduledToastNotification*, DateTime*, int>)(lpVtbl[7]))((IScheduledToastNotification*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IScheduledToastNotification*, WinRTDateTime*, int>)(lpVtbl[7]))((IScheduledToastNotification*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IScheduledToastNotification.xml' path='doc/member[@name="IScheduledToastNotification.get_SnoozeInterval"]/*' />
@@ -125,7 +125,7 @@ public unsafe partial struct IScheduledToastNotification : IScheduledToastNotifi
         HRESULT get_Content([NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlDocument **")] IXmlDocument** value);
 
         [VtblIndex(7)]
-        HRESULT get_DeliveryTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_DeliveryTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(8)]
         HRESULT get_SnoozeInterval([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CTimeSpan_t **")] IReference<TimeSpan>** value);
@@ -165,7 +165,7 @@ public unsafe partial struct IScheduledToastNotification : IScheduledToastNotifi
         public delegate* unmanaged[MemberFunction]<TSelf*, IXmlDocument**, int> get_Content;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_DeliveryTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_DeliveryTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CTimeSpan_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IReference<TimeSpan>**, int> get_SnoozeInterval;

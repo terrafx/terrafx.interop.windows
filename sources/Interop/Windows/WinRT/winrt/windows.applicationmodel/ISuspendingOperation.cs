@@ -82,9 +82,9 @@ public unsafe partial struct ISuspendingOperation : ISuspendingOperation.Interfa
     /// <include file='ISuspendingOperation.xml' path='doc/member[@name="ISuspendingOperation.get_Deadline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISuspendingOperation*, DateTime*, int>)(lpVtbl[7]))((ISuspendingOperation*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISuspendingOperation*, WinRTDateTime*, int>)(lpVtbl[7]))((ISuspendingOperation*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct ISuspendingOperation : ISuspendingOperation.Interfa
         HRESULT GetDeferral([NativeTypeName("ABI::Windows::ApplicationModel::ISuspendingDeferral **")] ISuspendingDeferral** deferral);
 
         [VtblIndex(7)]
-        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct ISuspendingOperation : ISuspendingOperation.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, ISuspendingDeferral**, int> GetDeferral;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Deadline;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Deadline;
     }
 }

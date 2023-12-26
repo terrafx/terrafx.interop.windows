@@ -82,9 +82,9 @@ public unsafe partial struct IClipboardHistoryItem : IClipboardHistoryItem.Inter
     /// <include file='IClipboardHistoryItem.xml' path='doc/member[@name="IClipboardHistoryItem.get_Timestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IClipboardHistoryItem*, DateTime*, int>)(lpVtbl[7]))((IClipboardHistoryItem*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IClipboardHistoryItem*, WinRTDateTime*, int>)(lpVtbl[7]))((IClipboardHistoryItem*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IClipboardHistoryItem.xml' path='doc/member[@name="IClipboardHistoryItem.get_Content"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IClipboardHistoryItem : IClipboardHistoryItem.Inter
         HRESULT get_Id(HSTRING* value);
 
         [VtblIndex(7)]
-        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(8)]
         HRESULT get_Content([NativeTypeName("ABI::Windows::ApplicationModel::DataTransfer::IDataPackageView **")] IDataPackageView** value);
@@ -132,7 +132,7 @@ public unsafe partial struct IClipboardHistoryItem : IClipboardHistoryItem.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_Id;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Timestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Timestamp;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::DataTransfer::IDataPackageView **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IDataPackageView**, int> get_Content;

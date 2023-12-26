@@ -90,17 +90,17 @@ public unsafe partial struct IWebAccountProviderTokenOperation : IWebAccountProv
     /// <include file='IWebAccountProviderTokenOperation.xml' path='doc/member[@name="IWebAccountProviderTokenOperation.put_CacheExpirationTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT put_CacheExpirationTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value)
+    public HRESULT put_CacheExpirationTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAccountProviderTokenOperation*, DateTime, int>)(lpVtbl[8]))((IWebAccountProviderTokenOperation*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWebAccountProviderTokenOperation*, WinRTDateTime, int>)(lpVtbl[8]))((IWebAccountProviderTokenOperation*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWebAccountProviderTokenOperation.xml' path='doc/member[@name="IWebAccountProviderTokenOperation.get_CacheExpirationTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_CacheExpirationTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_CacheExpirationTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAccountProviderTokenOperation*, DateTime*, int>)(lpVtbl[9]))((IWebAccountProviderTokenOperation*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWebAccountProviderTokenOperation*, WinRTDateTime*, int>)(lpVtbl[9]))((IWebAccountProviderTokenOperation*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -112,10 +112,10 @@ public unsafe partial struct IWebAccountProviderTokenOperation : IWebAccountProv
         HRESULT get_ProviderResponses([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CAuthentication__CWeb__CProvider__CWebProviderTokenResponse_t **")] IVector<IntPtr>** value);
 
         [VtblIndex(8)]
-        HRESULT put_CacheExpirationTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value);
+        HRESULT put_CacheExpirationTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value);
 
         [VtblIndex(9)]
-        HRESULT get_CacheExpirationTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_CacheExpirationTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -146,9 +146,9 @@ public unsafe partial struct IWebAccountProviderTokenOperation : IWebAccountProv
         public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_ProviderResponses;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, int> put_CacheExpirationTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, int> put_CacheExpirationTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_CacheExpirationTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_CacheExpirationTime;
     }
 }

@@ -74,17 +74,17 @@ public unsafe partial struct IAppointment : IAppointment.Interface, INativeGuid
     /// <include file='IAppointment.xml' path='doc/member[@name="IAppointment.get_StartTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointment*, DateTime*, int>)(lpVtbl[6]))((IAppointment*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppointment*, WinRTDateTime*, int>)(lpVtbl[6]))((IAppointment*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppointment.xml' path='doc/member[@name="IAppointment.put_StartTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value)
+    public HRESULT put_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointment*, DateTime, int>)(lpVtbl[7]))((IAppointment*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppointment*, WinRTDateTime, int>)(lpVtbl[7]))((IAppointment*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppointment.xml' path='doc/member[@name="IAppointment.get_Duration"]/*' />
@@ -274,10 +274,10 @@ public unsafe partial struct IAppointment : IAppointment.Interface, INativeGuid
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(7)]
-        HRESULT put_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value);
+        HRESULT put_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value);
 
         [VtblIndex(8)]
         HRESULT get_Duration([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value);
@@ -371,10 +371,10 @@ public unsafe partial struct IAppointment : IAppointment.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_StartTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_StartTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, int> put_StartTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, int> put_StartTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::TimeSpan *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> get_Duration;

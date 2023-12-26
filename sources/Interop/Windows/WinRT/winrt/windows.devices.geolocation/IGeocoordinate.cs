@@ -133,9 +133,9 @@ public unsafe partial struct IGeocoordinate : IGeocoordinate.Interface, INativeG
     /// <include file='IGeocoordinate.xml' path='doc/member[@name="IGeocoordinate.get_Timestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGeocoordinate*, DateTime*, int>)(lpVtbl[13]))((IGeocoordinate*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IGeocoordinate*, WinRTDateTime*, int>)(lpVtbl[13]))((IGeocoordinate*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -165,7 +165,7 @@ public unsafe partial struct IGeocoordinate : IGeocoordinate.Interface, INativeG
         HRESULT get_Speed([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_double_t **")] IReference<double>** value);
 
         [VtblIndex(13)]
-        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -214,6 +214,6 @@ public unsafe partial struct IGeocoordinate : IGeocoordinate.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, IReference<double>**, int> get_Speed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Timestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Timestamp;
     }
 }

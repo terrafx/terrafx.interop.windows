@@ -162,9 +162,9 @@ public unsafe partial struct IIppAttributeValueStatics : IIppAttributeValueStati
     /// <include file='IIppAttributeValueStatics.xml' path='doc/member[@name="IIppAttributeValueStatics.CreateDateTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT CreateDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
+    public HRESULT CreateDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, DateTime, IIppAttributeValue**, int>)(lpVtbl[17]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), value, result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, WinRTDateTime, IIppAttributeValue**, int>)(lpVtbl[17]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), value, result);
     }
 
     /// <include file='IIppAttributeValueStatics.xml' path='doc/member[@name="IIppAttributeValueStatics.CreateDateTimeArray"]/*' />
@@ -419,7 +419,7 @@ public unsafe partial struct IIppAttributeValueStatics : IIppAttributeValueStati
         HRESULT CreateOctetStringArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CStreams__CIBuffer_t *")] IIterable<IntPtr>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
 
         [VtblIndex(17)]
-        HRESULT CreateDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
+        HRESULT CreateDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
 
         [VtblIndex(18)]
         HRESULT CreateDateTimeArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CDateTime_t *")] IIterable<DateTime>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
@@ -558,7 +558,7 @@ public unsafe partial struct IIppAttributeValueStatics : IIppAttributeValueStati
         public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IIppAttributeValue**, int> CreateOctetStringArray;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Devices::Printers::IIppAttributeValue **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, IIppAttributeValue**, int> CreateDateTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, IIppAttributeValue**, int> CreateDateTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CDateTime_t *, ABI::Windows::Devices::Printers::IIppAttributeValue **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<DateTime>*, IIppAttributeValue**, int> CreateDateTimeArray;

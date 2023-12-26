@@ -82,17 +82,17 @@ public unsafe partial struct IContact3 : IContact3.Interface, INativeGuid
     /// <include file='IContact3.xml' path='doc/member[@name="IContact3.get_DisplayPictureUserUpdateTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_DisplayPictureUserUpdateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_DisplayPictureUserUpdateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContact3*, DateTime*, int>)(lpVtbl[7]))((IContact3*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContact3*, WinRTDateTime*, int>)(lpVtbl[7]))((IContact3*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContact3.xml' path='doc/member[@name="IContact3.put_DisplayPictureUserUpdateTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT put_DisplayPictureUserUpdateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value)
+    public HRESULT put_DisplayPictureUserUpdateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContact3*, DateTime, int>)(lpVtbl[8]))((IContact3*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContact3*, WinRTDateTime, int>)(lpVtbl[8]))((IContact3*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContact3.xml' path='doc/member[@name="IContact3.get_IsMe"]/*' />
@@ -261,10 +261,10 @@ public unsafe partial struct IContact3 : IContact3.Interface, INativeGuid
         HRESULT get_ContactListId(HSTRING* value);
 
         [VtblIndex(7)]
-        HRESULT get_DisplayPictureUserUpdateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_DisplayPictureUserUpdateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(8)]
-        HRESULT put_DisplayPictureUserUpdateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value);
+        HRESULT put_DisplayPictureUserUpdateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value);
 
         [VtblIndex(9)]
         HRESULT get_IsMe([NativeTypeName("boolean *")] byte* value);
@@ -352,10 +352,10 @@ public unsafe partial struct IContact3 : IContact3.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_ContactListId;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_DisplayPictureUserUpdateTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_DisplayPictureUserUpdateTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, int> put_DisplayPictureUserUpdateTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, int> put_DisplayPictureUserUpdateTime;
 
         [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsMe;

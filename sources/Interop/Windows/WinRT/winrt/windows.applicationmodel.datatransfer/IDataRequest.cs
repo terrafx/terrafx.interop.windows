@@ -90,9 +90,9 @@ public unsafe partial struct IDataRequest : IDataRequest.Interface, INativeGuid
     /// <include file='IDataRequest.xml' path='doc/member[@name="IDataRequest.get_Deadline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataRequest*, DateTime*, int>)(lpVtbl[8]))((IDataRequest*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDataRequest*, WinRTDateTime*, int>)(lpVtbl[8]))((IDataRequest*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDataRequest.xml' path='doc/member[@name="IDataRequest.FailWithDisplayText"]/*' />
@@ -120,7 +120,7 @@ public unsafe partial struct IDataRequest : IDataRequest.Interface, INativeGuid
         HRESULT put_Data([NativeTypeName("ABI::Windows::ApplicationModel::DataTransfer::IDataPackage *")] IDataPackage* value);
 
         [VtblIndex(8)]
-        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(9)]
         HRESULT FailWithDisplayText(HSTRING value);
@@ -157,7 +157,7 @@ public unsafe partial struct IDataRequest : IDataRequest.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IDataPackage*, int> put_Data;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Deadline;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Deadline;
 
         [NativeTypeName("HRESULT (HSTRING) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> FailWithDisplayText;

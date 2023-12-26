@@ -82,17 +82,17 @@ public unsafe partial struct IBasicProperties : IBasicProperties.Interface, INat
     /// <include file='IBasicProperties.xml' path='doc/member[@name="IBasicProperties.get_DateModified"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_DateModified([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_DateModified([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBasicProperties*, DateTime*, int>)(lpVtbl[7]))((IBasicProperties*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBasicProperties*, WinRTDateTime*, int>)(lpVtbl[7]))((IBasicProperties*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBasicProperties.xml' path='doc/member[@name="IBasicProperties.get_ItemDate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_ItemDate([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_ItemDate([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBasicProperties*, DateTime*, int>)(lpVtbl[8]))((IBasicProperties*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBasicProperties*, WinRTDateTime*, int>)(lpVtbl[8]))((IBasicProperties*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -101,10 +101,10 @@ public unsafe partial struct IBasicProperties : IBasicProperties.Interface, INat
         HRESULT get_Size([NativeTypeName("UINT64 *")] ulong* value);
 
         [VtblIndex(7)]
-        HRESULT get_DateModified([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_DateModified([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(8)]
-        HRESULT get_ItemDate([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_ItemDate([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -132,9 +132,9 @@ public unsafe partial struct IBasicProperties : IBasicProperties.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_Size;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_DateModified;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_DateModified;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_ItemDate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_ItemDate;
     }
 }

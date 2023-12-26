@@ -98,17 +98,17 @@ public unsafe partial struct IPedometerStatics : IPedometerStatics.Interface, IN
     /// <include file='IPedometerStatics.xml' path='doc/member[@name="IPedometerStatics.GetSystemHistoryAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetSystemHistoryAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime fromTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CPedometerReading_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetSystemHistoryAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime fromTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CPedometerReading_t **")] IAsyncOperation<IntPtr>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPedometerStatics*, DateTime, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IPedometerStatics*)Unsafe.AsPointer(ref this), fromTime, operation);
+        return ((delegate* unmanaged[MemberFunction]<IPedometerStatics*, WinRTDateTime, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IPedometerStatics*)Unsafe.AsPointer(ref this), fromTime, operation);
     }
 
     /// <include file='IPedometerStatics.xml' path='doc/member[@name="IPedometerStatics.GetSystemHistoryWithDurationAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetSystemHistoryWithDurationAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime fromTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CPedometerReading_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetSystemHistoryWithDurationAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime fromTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CPedometerReading_t **")] IAsyncOperation<IntPtr>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPedometerStatics*, DateTime, TimeSpan, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IPedometerStatics*)Unsafe.AsPointer(ref this), fromTime, duration, operation);
+        return ((delegate* unmanaged[MemberFunction]<IPedometerStatics*, WinRTDateTime, TimeSpan, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IPedometerStatics*)Unsafe.AsPointer(ref this), fromTime, duration, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -123,10 +123,10 @@ public unsafe partial struct IPedometerStatics : IPedometerStatics.Interface, IN
         HRESULT GetDeviceSelector(HSTRING* result);
 
         [VtblIndex(9)]
-        HRESULT GetSystemHistoryAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime fromTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CPedometerReading_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetSystemHistoryAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime fromTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CPedometerReading_t **")] IAsyncOperation<IntPtr>** operation);
 
         [VtblIndex(10)]
-        HRESULT GetSystemHistoryWithDurationAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime fromTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CPedometerReading_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetSystemHistoryWithDurationAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime fromTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CPedometerReading_t **")] IAsyncOperation<IntPtr>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -160,9 +160,9 @@ public unsafe partial struct IPedometerStatics : IPedometerStatics.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetDeviceSelector;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CPedometerReading_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, IAsyncOperation<IntPtr>**, int> GetSystemHistoryAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, IAsyncOperation<IntPtr>**, int> GetSystemHistoryAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::TimeSpan, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CPedometerReading_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, TimeSpan, IAsyncOperation<IntPtr>**, int> GetSystemHistoryWithDurationAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, TimeSpan, IAsyncOperation<IntPtr>**, int> GetSystemHistoryWithDurationAsync;
     }
 }

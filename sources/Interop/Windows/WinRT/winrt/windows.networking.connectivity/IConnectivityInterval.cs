@@ -74,9 +74,9 @@ public unsafe partial struct IConnectivityInterval : IConnectivityInterval.Inter
     /// <include file='IConnectivityInterval.xml' path='doc/member[@name="IConnectivityInterval.get_StartTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* startTime)
+    public HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* startTime)
     {
-        return ((delegate* unmanaged[MemberFunction]<IConnectivityInterval*, DateTime*, int>)(lpVtbl[6]))((IConnectivityInterval*)Unsafe.AsPointer(ref this), startTime);
+        return ((delegate* unmanaged[MemberFunction]<IConnectivityInterval*, WinRTDateTime*, int>)(lpVtbl[6]))((IConnectivityInterval*)Unsafe.AsPointer(ref this), startTime);
     }
 
     /// <include file='IConnectivityInterval.xml' path='doc/member[@name="IConnectivityInterval.get_ConnectionDuration"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IConnectivityInterval : IConnectivityInterval.Inter
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* startTime);
+        HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* startTime);
 
         [VtblIndex(7)]
         HRESULT get_ConnectionDuration([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* duration);
@@ -118,7 +118,7 @@ public unsafe partial struct IConnectivityInterval : IConnectivityInterval.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_StartTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_StartTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::TimeSpan *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> get_ConnectionDuration;

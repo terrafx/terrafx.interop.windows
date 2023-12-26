@@ -138,9 +138,9 @@ public unsafe partial struct ITileUpdater : ITileUpdater.Interface, INativeGuid
     /// <include file='ITileUpdater.xml' path='doc/member[@name="ITileUpdater.StartPeriodicUpdateAtTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT StartPeriodicUpdateAtTime([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* tileContent, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime startTime, [NativeTypeName("ABI::Windows::UI::Notifications::PeriodicUpdateRecurrence")] PeriodicUpdateRecurrence requestedInterval)
+    public HRESULT StartPeriodicUpdateAtTime([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* tileContent, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::UI::Notifications::PeriodicUpdateRecurrence")] PeriodicUpdateRecurrence requestedInterval)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITileUpdater*, IUriRuntimeClass*, DateTime, PeriodicUpdateRecurrence, int>)(lpVtbl[14]))((ITileUpdater*)Unsafe.AsPointer(ref this), tileContent, startTime, requestedInterval);
+        return ((delegate* unmanaged[MemberFunction]<ITileUpdater*, IUriRuntimeClass*, WinRTDateTime, PeriodicUpdateRecurrence, int>)(lpVtbl[14]))((ITileUpdater*)Unsafe.AsPointer(ref this), tileContent, startTime, requestedInterval);
     }
 
     /// <include file='ITileUpdater.xml' path='doc/member[@name="ITileUpdater.StopPeriodicUpdate"]/*' />
@@ -162,9 +162,9 @@ public unsafe partial struct ITileUpdater : ITileUpdater.Interface, INativeGuid
     /// <include file='ITileUpdater.xml' path='doc/member[@name="ITileUpdater.StartPeriodicUpdateBatchAtTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT StartPeriodicUpdateBatchAtTime([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CUri_t *")] IIterable<IntPtr>* tileContents, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime startTime, [NativeTypeName("ABI::Windows::UI::Notifications::PeriodicUpdateRecurrence")] PeriodicUpdateRecurrence requestedInterval)
+    public HRESULT StartPeriodicUpdateBatchAtTime([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CUri_t *")] IIterable<IntPtr>* tileContents, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::UI::Notifications::PeriodicUpdateRecurrence")] PeriodicUpdateRecurrence requestedInterval)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITileUpdater*, IIterable<IntPtr>*, DateTime, PeriodicUpdateRecurrence, int>)(lpVtbl[17]))((ITileUpdater*)Unsafe.AsPointer(ref this), tileContents, startTime, requestedInterval);
+        return ((delegate* unmanaged[MemberFunction]<ITileUpdater*, IIterable<IntPtr>*, WinRTDateTime, PeriodicUpdateRecurrence, int>)(lpVtbl[17]))((ITileUpdater*)Unsafe.AsPointer(ref this), tileContents, startTime, requestedInterval);
     }
 
     public interface Interface : IInspectable.Interface
@@ -194,7 +194,7 @@ public unsafe partial struct ITileUpdater : ITileUpdater.Interface, INativeGuid
         HRESULT StartPeriodicUpdate([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* tileContent, [NativeTypeName("ABI::Windows::UI::Notifications::PeriodicUpdateRecurrence")] PeriodicUpdateRecurrence requestedInterval);
 
         [VtblIndex(14)]
-        HRESULT StartPeriodicUpdateAtTime([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* tileContent, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime startTime, [NativeTypeName("ABI::Windows::UI::Notifications::PeriodicUpdateRecurrence")] PeriodicUpdateRecurrence requestedInterval);
+        HRESULT StartPeriodicUpdateAtTime([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* tileContent, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::UI::Notifications::PeriodicUpdateRecurrence")] PeriodicUpdateRecurrence requestedInterval);
 
         [VtblIndex(15)]
         HRESULT StopPeriodicUpdate();
@@ -203,7 +203,7 @@ public unsafe partial struct ITileUpdater : ITileUpdater.Interface, INativeGuid
         HRESULT StartPeriodicUpdateBatch([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CUri_t *")] IIterable<IntPtr>* tileContents, [NativeTypeName("ABI::Windows::UI::Notifications::PeriodicUpdateRecurrence")] PeriodicUpdateRecurrence requestedInterval);
 
         [VtblIndex(17)]
-        HRESULT StartPeriodicUpdateBatchAtTime([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CUri_t *")] IIterable<IntPtr>* tileContents, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime startTime, [NativeTypeName("ABI::Windows::UI::Notifications::PeriodicUpdateRecurrence")] PeriodicUpdateRecurrence requestedInterval);
+        HRESULT StartPeriodicUpdateBatchAtTime([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CUri_t *")] IIterable<IntPtr>* tileContents, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::UI::Notifications::PeriodicUpdateRecurrence")] PeriodicUpdateRecurrence requestedInterval);
     }
 
     public partial struct Vtbl<TSelf>
@@ -252,7 +252,7 @@ public unsafe partial struct ITileUpdater : ITileUpdater.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, PeriodicUpdateRecurrence, int> StartPeriodicUpdate;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::DateTime, ABI::Windows::UI::Notifications::PeriodicUpdateRecurrence) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, DateTime, PeriodicUpdateRecurrence, int> StartPeriodicUpdateAtTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, WinRTDateTime, PeriodicUpdateRecurrence, int> StartPeriodicUpdateAtTime;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, int> StopPeriodicUpdate;
@@ -261,6 +261,6 @@ public unsafe partial struct ITileUpdater : ITileUpdater.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, PeriodicUpdateRecurrence, int> StartPeriodicUpdateBatch;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CUri_t *, ABI::Windows::Foundation::DateTime, ABI::Windows::UI::Notifications::PeriodicUpdateRecurrence) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, DateTime, PeriodicUpdateRecurrence, int> StartPeriodicUpdateBatchAtTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, WinRTDateTime, PeriodicUpdateRecurrence, int> StartPeriodicUpdateBatchAtTime;
     }
 }

@@ -82,17 +82,17 @@ public unsafe partial struct IContactListSyncManager2 : IContactListSyncManager2
     /// <include file='IContactListSyncManager2.xml' path='doc/member[@name="IContactListSyncManager2.put_LastSuccessfulSyncTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT put_LastSuccessfulSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value)
+    public HRESULT put_LastSuccessfulSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactListSyncManager2*, DateTime, int>)(lpVtbl[7]))((IContactListSyncManager2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContactListSyncManager2*, WinRTDateTime, int>)(lpVtbl[7]))((IContactListSyncManager2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContactListSyncManager2.xml' path='doc/member[@name="IContactListSyncManager2.put_LastAttemptedSyncTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT put_LastAttemptedSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value)
+    public HRESULT put_LastAttemptedSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactListSyncManager2*, DateTime, int>)(lpVtbl[8]))((IContactListSyncManager2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContactListSyncManager2*, WinRTDateTime, int>)(lpVtbl[8]))((IContactListSyncManager2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -101,10 +101,10 @@ public unsafe partial struct IContactListSyncManager2 : IContactListSyncManager2
         HRESULT put_Status([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::ContactListSyncStatus")] ContactListSyncStatus value);
 
         [VtblIndex(7)]
-        HRESULT put_LastSuccessfulSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value);
+        HRESULT put_LastSuccessfulSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value);
 
         [VtblIndex(8)]
-        HRESULT put_LastAttemptedSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value);
+        HRESULT put_LastAttemptedSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -132,9 +132,9 @@ public unsafe partial struct IContactListSyncManager2 : IContactListSyncManager2
         public delegate* unmanaged[MemberFunction]<TSelf*, ContactListSyncStatus, int> put_Status;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, int> put_LastSuccessfulSyncTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, int> put_LastSuccessfulSyncTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, int> put_LastAttemptedSyncTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, int> put_LastAttemptedSyncTime;
     }
 }

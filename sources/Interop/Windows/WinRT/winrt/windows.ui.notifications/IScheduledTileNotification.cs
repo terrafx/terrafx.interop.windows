@@ -82,9 +82,9 @@ public unsafe partial struct IScheduledTileNotification : IScheduledTileNotifica
     /// <include file='IScheduledTileNotification.xml' path='doc/member[@name="IScheduledTileNotification.get_DeliveryTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_DeliveryTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_DeliveryTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IScheduledTileNotification*, DateTime*, int>)(lpVtbl[7]))((IScheduledTileNotification*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IScheduledTileNotification*, WinRTDateTime*, int>)(lpVtbl[7]))((IScheduledTileNotification*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IScheduledTileNotification.xml' path='doc/member[@name="IScheduledTileNotification.put_ExpirationTime"]/*' />
@@ -141,7 +141,7 @@ public unsafe partial struct IScheduledTileNotification : IScheduledTileNotifica
         HRESULT get_Content([NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlDocument **")] IXmlDocument** value);
 
         [VtblIndex(7)]
-        HRESULT get_DeliveryTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_DeliveryTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(8)]
         HRESULT put_ExpirationTime([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CDateTime_t *")] IReference<DateTime>* value);
@@ -187,7 +187,7 @@ public unsafe partial struct IScheduledTileNotification : IScheduledTileNotifica
         public delegate* unmanaged[MemberFunction]<TSelf*, IXmlDocument**, int> get_Content;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_DeliveryTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_DeliveryTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CDateTime_t *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IReference<DateTime>*, int> put_ExpirationTime;

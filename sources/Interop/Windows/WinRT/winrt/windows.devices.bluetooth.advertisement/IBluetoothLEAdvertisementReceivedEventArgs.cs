@@ -98,9 +98,9 @@ public unsafe partial struct IBluetoothLEAdvertisementReceivedEventArgs : IBluet
     /// <include file='IBluetoothLEAdvertisementReceivedEventArgs.xml' path='doc/member[@name="IBluetoothLEAdvertisementReceivedEventArgs.get_Timestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisementReceivedEventArgs*, DateTime*, int>)(lpVtbl[9]))((IBluetoothLEAdvertisementReceivedEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisementReceivedEventArgs*, WinRTDateTime*, int>)(lpVtbl[9]))((IBluetoothLEAdvertisementReceivedEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBluetoothLEAdvertisementReceivedEventArgs.xml' path='doc/member[@name="IBluetoothLEAdvertisementReceivedEventArgs.get_Advertisement"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IBluetoothLEAdvertisementReceivedEventArgs : IBluet
         HRESULT get_AdvertisementType([NativeTypeName("ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementType *")] BluetoothLEAdvertisementType* value);
 
         [VtblIndex(9)]
-        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(10)]
         HRESULT get_Advertisement([NativeTypeName("ABI::Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement **")] IBluetoothLEAdvertisement** value);
@@ -160,7 +160,7 @@ public unsafe partial struct IBluetoothLEAdvertisementReceivedEventArgs : IBluet
         public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothLEAdvertisementType*, int> get_AdvertisementType;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Timestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Timestamp;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IBluetoothLEAdvertisement**, int> get_Advertisement;

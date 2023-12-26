@@ -226,9 +226,9 @@ public unsafe partial struct IDataWriter : IDataWriter.Interface, INativeGuid
     /// <include file='IDataWriter.xml' path='doc/member[@name="IDataWriter.WriteDateTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public HRESULT WriteDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value)
+    public HRESULT WriteDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataWriter*, DateTime, int>)(lpVtbl[25]))((IDataWriter*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDataWriter*, WinRTDateTime, int>)(lpVtbl[25]))((IDataWriter*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDataWriter.xml' path='doc/member[@name="IDataWriter.WriteTimeSpan"]/*' />
@@ -347,7 +347,7 @@ public unsafe partial struct IDataWriter : IDataWriter.Interface, INativeGuid
         HRESULT WriteDouble(double value);
 
         [VtblIndex(25)]
-        HRESULT WriteDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value);
+        HRESULT WriteDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value);
 
         [VtblIndex(26)]
         HRESULT WriteTimeSpan([NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan value);
@@ -450,7 +450,7 @@ public unsafe partial struct IDataWriter : IDataWriter.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, double, int> WriteDouble;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, int> WriteDateTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, int> WriteDateTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::TimeSpan) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan, int> WriteTimeSpan;

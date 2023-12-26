@@ -82,9 +82,9 @@ public unsafe partial struct IDataPlanUsage : IDataPlanUsage.Interface, INativeG
     /// <include file='IDataPlanUsage.xml' path='doc/member[@name="IDataPlanUsage.get_LastSyncTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_LastSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_LastSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataPlanUsage*, DateTime*, int>)(lpVtbl[7]))((IDataPlanUsage*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDataPlanUsage*, WinRTDateTime*, int>)(lpVtbl[7]))((IDataPlanUsage*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IDataPlanUsage : IDataPlanUsage.Interface, INativeG
         HRESULT get_MegabytesUsed([NativeTypeName("UINT32 *")] uint* value);
 
         [VtblIndex(7)]
-        HRESULT get_LastSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_LastSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IDataPlanUsage : IDataPlanUsage.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_MegabytesUsed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_LastSyncTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_LastSyncTime;
     }
 }

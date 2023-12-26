@@ -76,9 +76,9 @@ public unsafe partial struct ISmsTextMessage : ISmsTextMessage.Interface, INativ
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [Obsolete("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")]
-    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmsTextMessage*, DateTime*, int>)(lpVtbl[6]))((ISmsTextMessage*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISmsTextMessage*, WinRTDateTime*, int>)(lpVtbl[6]))((ISmsTextMessage*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISmsTextMessage.xml' path='doc/member[@name="ISmsTextMessage.get_PartReferenceId"]/*' />
@@ -193,7 +193,7 @@ public unsafe partial struct ISmsTextMessage : ISmsTextMessage.Interface, INativ
     {
         [VtblIndex(6)]
         [Obsolete("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")]
-        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(7)]
         [Obsolete("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")]
@@ -267,7 +267,7 @@ public unsafe partial struct ISmsTextMessage : ISmsTextMessage.Interface, INativ
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
         [Obsolete("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Timestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Timestamp;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
         [Obsolete("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")]

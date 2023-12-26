@@ -82,9 +82,9 @@ public unsafe partial struct IAppointmentManagerStatics2 : IAppointmentManagerSt
     /// <include file='IAppointmentManagerStatics2.xml' path='doc/member[@name="IAppointmentManagerStatics2.ShowAppointmentDetailsWithDateAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT ShowAppointmentDetailsWithDateAsync(HSTRING appointmentId, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime instanceStartDate, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncAction)
+    public HRESULT ShowAppointmentDetailsWithDateAsync(HSTRING appointmentId, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime instanceStartDate, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncAction)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentManagerStatics2*, HSTRING, DateTime, IAsyncAction**, int>)(lpVtbl[7]))((IAppointmentManagerStatics2*)Unsafe.AsPointer(ref this), appointmentId, instanceStartDate, asyncAction);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentManagerStatics2*, HSTRING, WinRTDateTime, IAsyncAction**, int>)(lpVtbl[7]))((IAppointmentManagerStatics2*)Unsafe.AsPointer(ref this), appointmentId, instanceStartDate, asyncAction);
     }
 
     /// <include file='IAppointmentManagerStatics2.xml' path='doc/member[@name="IAppointmentManagerStatics2.ShowEditNewAppointmentAsync"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct IAppointmentManagerStatics2 : IAppointmentManagerSt
         HRESULT ShowAppointmentDetailsAsync(HSTRING appointmentId, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncAction);
 
         [VtblIndex(7)]
-        HRESULT ShowAppointmentDetailsWithDateAsync(HSTRING appointmentId, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime instanceStartDate, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncAction);
+        HRESULT ShowAppointmentDetailsWithDateAsync(HSTRING appointmentId, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime instanceStartDate, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncAction);
 
         [VtblIndex(8)]
         HRESULT ShowEditNewAppointmentAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **")] IAsyncOperation<HSTRING>** operation);
@@ -143,7 +143,7 @@ public unsafe partial struct IAppointmentManagerStatics2 : IAppointmentManagerSt
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncAction**, int> ShowAppointmentDetailsAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, DateTime, IAsyncAction**, int> ShowAppointmentDetailsWithDateAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, WinRTDateTime, IAsyncAction**, int> ShowAppointmentDetailsWithDateAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Appointments::IAppointment *, ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppointment*, IAsyncOperation<HSTRING>**, int> ShowEditNewAppointmentAsync;

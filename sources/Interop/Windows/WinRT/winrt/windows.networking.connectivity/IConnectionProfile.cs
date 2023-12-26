@@ -123,18 +123,18 @@ public unsafe partial struct IConnectionProfile : IConnectionProfile.Interface, 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     [Obsolete("GetLocalUsage may be altered or unavailable for releases after Windows 8.1. Instead, use GetNetworkUsageAsync.")]
-    public HRESULT GetLocalUsage([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime StartTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime EndTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::IDataUsage **")] IDataUsage** value)
+    public HRESULT GetLocalUsage([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime StartTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime EndTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::IDataUsage **")] IDataUsage** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IConnectionProfile*, DateTime, DateTime, IDataUsage**, int>)(lpVtbl[12]))((IConnectionProfile*)Unsafe.AsPointer(ref this), StartTime, EndTime, value);
+        return ((delegate* unmanaged[MemberFunction]<IConnectionProfile*, WinRTDateTime, WinRTDateTime, IDataUsage**, int>)(lpVtbl[12]))((IConnectionProfile*)Unsafe.AsPointer(ref this), StartTime, EndTime, value);
     }
 
     /// <include file='IConnectionProfile.xml' path='doc/member[@name="IConnectionProfile.GetLocalUsagePerRoamingStates"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     [Obsolete("GetLocalUsage may be altered or unavailable for releases after Windows 8.1. Instead, use GetNetworkUsageAsync.")]
-    public HRESULT GetLocalUsagePerRoamingStates([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime StartTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime EndTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::RoamingStates")] RoamingStates States, [NativeTypeName("ABI::Windows::Networking::Connectivity::IDataUsage **")] IDataUsage** value)
+    public HRESULT GetLocalUsagePerRoamingStates([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime StartTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime EndTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::RoamingStates")] RoamingStates States, [NativeTypeName("ABI::Windows::Networking::Connectivity::IDataUsage **")] IDataUsage** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IConnectionProfile*, DateTime, DateTime, RoamingStates, IDataUsage**, int>)(lpVtbl[13]))((IConnectionProfile*)Unsafe.AsPointer(ref this), StartTime, EndTime, States, value);
+        return ((delegate* unmanaged[MemberFunction]<IConnectionProfile*, WinRTDateTime, WinRTDateTime, RoamingStates, IDataUsage**, int>)(lpVtbl[13]))((IConnectionProfile*)Unsafe.AsPointer(ref this), StartTime, EndTime, States, value);
     }
 
     /// <include file='IConnectionProfile.xml' path='doc/member[@name="IConnectionProfile.get_NetworkSecuritySettings"]/*' />
@@ -167,11 +167,11 @@ public unsafe partial struct IConnectionProfile : IConnectionProfile.Interface, 
 
         [VtblIndex(12)]
         [Obsolete("GetLocalUsage may be altered or unavailable for releases after Windows 8.1. Instead, use GetNetworkUsageAsync.")]
-        HRESULT GetLocalUsage([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime StartTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime EndTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::IDataUsage **")] IDataUsage** value);
+        HRESULT GetLocalUsage([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime StartTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime EndTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::IDataUsage **")] IDataUsage** value);
 
         [VtblIndex(13)]
         [Obsolete("GetLocalUsage may be altered or unavailable for releases after Windows 8.1. Instead, use GetNetworkUsageAsync.")]
-        HRESULT GetLocalUsagePerRoamingStates([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime StartTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime EndTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::RoamingStates")] RoamingStates States, [NativeTypeName("ABI::Windows::Networking::Connectivity::IDataUsage **")] IDataUsage** value);
+        HRESULT GetLocalUsagePerRoamingStates([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime StartTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime EndTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::RoamingStates")] RoamingStates States, [NativeTypeName("ABI::Windows::Networking::Connectivity::IDataUsage **")] IDataUsage** value);
 
         [VtblIndex(14)]
         HRESULT get_NetworkSecuritySettings([NativeTypeName("ABI::Windows::Networking::Connectivity::INetworkSecuritySettings **")] INetworkSecuritySettings** value);
@@ -218,11 +218,11 @@ public unsafe partial struct IConnectionProfile : IConnectionProfile.Interface, 
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::DateTime, ABI::Windows::Networking::Connectivity::IDataUsage **) __attribute__((stdcall))")]
         [Obsolete("GetLocalUsage may be altered or unavailable for releases after Windows 8.1. Instead, use GetNetworkUsageAsync.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, DateTime, IDataUsage**, int> GetLocalUsage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, WinRTDateTime, IDataUsage**, int> GetLocalUsage;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::DateTime, ABI::Windows::Networking::Connectivity::RoamingStates, ABI::Windows::Networking::Connectivity::IDataUsage **) __attribute__((stdcall))")]
         [Obsolete("GetLocalUsage may be altered or unavailable for releases after Windows 8.1. Instead, use GetNetworkUsageAsync.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, DateTime, RoamingStates, IDataUsage**, int> GetLocalUsagePerRoamingStates;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, WinRTDateTime, RoamingStates, IDataUsage**, int> GetLocalUsagePerRoamingStates;
 
         [NativeTypeName("HRESULT (ABI::Windows::Networking::Connectivity::INetworkSecuritySettings **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, INetworkSecuritySettings**, int> get_NetworkSecuritySettings;

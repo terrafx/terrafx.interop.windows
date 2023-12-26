@@ -130,17 +130,17 @@ public unsafe partial struct IConnectionProfile2 : IConnectionProfile2.Interface
     /// <include file='IConnectionProfile2.xml' path='doc/member[@name="IConnectionProfile2.GetNetworkUsageAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetNetworkUsageAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime startTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime endTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::DataUsageGranularity")] DataUsageGranularity granularity, [NativeTypeName("ABI::Windows::Networking::Connectivity::NetworkUsageStates")] NetworkUsageStates states, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetNetworkUsageAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime endTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::DataUsageGranularity")] DataUsageGranularity granularity, [NativeTypeName("ABI::Windows::Networking::Connectivity::NetworkUsageStates")] NetworkUsageStates states, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_t **")] IAsyncOperation<IntPtr>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IConnectionProfile2*, DateTime, DateTime, DataUsageGranularity, NetworkUsageStates, IAsyncOperation<IntPtr>**, int>)(lpVtbl[13]))((IConnectionProfile2*)Unsafe.AsPointer(ref this), startTime, endTime, granularity, states, value);
+        return ((delegate* unmanaged[MemberFunction]<IConnectionProfile2*, WinRTDateTime, WinRTDateTime, DataUsageGranularity, NetworkUsageStates, IAsyncOperation<IntPtr>**, int>)(lpVtbl[13]))((IConnectionProfile2*)Unsafe.AsPointer(ref this), startTime, endTime, granularity, states, value);
     }
 
     /// <include file='IConnectionProfile2.xml' path='doc/member[@name="IConnectionProfile2.GetConnectivityIntervalsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetConnectivityIntervalsAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime startTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime endTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::NetworkUsageStates")] NetworkUsageStates states, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetConnectivityIntervalsAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime endTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::NetworkUsageStates")] NetworkUsageStates states, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_t **")] IAsyncOperation<IntPtr>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IConnectionProfile2*, DateTime, DateTime, NetworkUsageStates, IAsyncOperation<IntPtr>**, int>)(lpVtbl[14]))((IConnectionProfile2*)Unsafe.AsPointer(ref this), startTime, endTime, states, value);
+        return ((delegate* unmanaged[MemberFunction]<IConnectionProfile2*, WinRTDateTime, WinRTDateTime, NetworkUsageStates, IAsyncOperation<IntPtr>**, int>)(lpVtbl[14]))((IConnectionProfile2*)Unsafe.AsPointer(ref this), startTime, endTime, states, value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -167,10 +167,10 @@ public unsafe partial struct IConnectionProfile2 : IConnectionProfile2.Interface
         HRESULT GetDomainConnectivityLevel([NativeTypeName("ABI::Windows::Networking::Connectivity::DomainConnectivityLevel *")] DomainConnectivityLevel* value);
 
         [VtblIndex(13)]
-        HRESULT GetNetworkUsageAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime startTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime endTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::DataUsageGranularity")] DataUsageGranularity granularity, [NativeTypeName("ABI::Windows::Networking::Connectivity::NetworkUsageStates")] NetworkUsageStates states, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetNetworkUsageAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime endTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::DataUsageGranularity")] DataUsageGranularity granularity, [NativeTypeName("ABI::Windows::Networking::Connectivity::NetworkUsageStates")] NetworkUsageStates states, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_t **")] IAsyncOperation<IntPtr>** value);
 
         [VtblIndex(14)]
-        HRESULT GetConnectivityIntervalsAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime startTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime endTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::NetworkUsageStates")] NetworkUsageStates states, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetConnectivityIntervalsAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime endTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::NetworkUsageStates")] NetworkUsageStates states, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_t **")] IAsyncOperation<IntPtr>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -216,9 +216,9 @@ public unsafe partial struct IConnectionProfile2 : IConnectionProfile2.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, DomainConnectivityLevel*, int> GetDomainConnectivityLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::DateTime, ABI::Windows::Networking::Connectivity::DataUsageGranularity, ABI::Windows::Networking::Connectivity::NetworkUsageStates, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CNetworkUsage_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, DateTime, DataUsageGranularity, NetworkUsageStates, IAsyncOperation<IntPtr>**, int> GetNetworkUsageAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, WinRTDateTime, DataUsageGranularity, NetworkUsageStates, IAsyncOperation<IntPtr>**, int> GetNetworkUsageAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::DateTime, ABI::Windows::Networking::Connectivity::NetworkUsageStates, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectivityInterval_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, DateTime, NetworkUsageStates, IAsyncOperation<IntPtr>**, int> GetConnectivityIntervalsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, WinRTDateTime, NetworkUsageStates, IAsyncOperation<IntPtr>**, int> GetConnectivityIntervalsAsync;
     }
 }

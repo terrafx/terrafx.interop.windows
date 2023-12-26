@@ -106,9 +106,9 @@ public unsafe partial struct ICivicAddress : ICivicAddress.Interface, INativeGui
     /// <include file='ICivicAddress.xml' path='doc/member[@name="ICivicAddress.get_Timestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICivicAddress*, DateTime*, int>)(lpVtbl[10]))((ICivicAddress*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICivicAddress*, WinRTDateTime*, int>)(lpVtbl[10]))((ICivicAddress*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -126,7 +126,7 @@ public unsafe partial struct ICivicAddress : ICivicAddress.Interface, INativeGui
         HRESULT get_PostalCode(HSTRING* value);
 
         [VtblIndex(10)]
-        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -163,6 +163,6 @@ public unsafe partial struct ICivicAddress : ICivicAddress.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_PostalCode;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Timestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Timestamp;
     }
 }

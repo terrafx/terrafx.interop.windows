@@ -154,17 +154,17 @@ public unsafe partial struct ICalendar : ICalendar.Interface, INativeGuid
     /// <include file='ICalendar.xml' path='doc/member[@name="ICalendar.GetDateTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT GetDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* result)
+    public HRESULT GetDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICalendar*, DateTime*, int>)(lpVtbl[16]))((ICalendar*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<ICalendar*, WinRTDateTime*, int>)(lpVtbl[16]))((ICalendar*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='ICalendar.xml' path='doc/member[@name="ICalendar.SetDateTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT SetDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value)
+    public HRESULT SetDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICalendar*, DateTime, int>)(lpVtbl[17]))((ICalendar*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICalendar*, WinRTDateTime, int>)(lpVtbl[17]))((ICalendar*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICalendar.xml' path='doc/member[@name="ICalendar.SetToNow"]/*' />
@@ -778,9 +778,9 @@ public unsafe partial struct ICalendar : ICalendar.Interface, INativeGuid
     /// <include file='ICalendar.xml' path='doc/member[@name="ICalendar.CompareDateTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(94)]
-    public HRESULT CompareDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime other, [NativeTypeName("INT32 *")] int* result)
+    public HRESULT CompareDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime other, [NativeTypeName("INT32 *")] int* result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICalendar*, DateTime, int*, int>)(lpVtbl[94]))((ICalendar*)Unsafe.AsPointer(ref this), other, result);
+        return ((delegate* unmanaged[MemberFunction]<ICalendar*, WinRTDateTime, int*, int>)(lpVtbl[94]))((ICalendar*)Unsafe.AsPointer(ref this), other, result);
     }
 
     /// <include file='ICalendar.xml' path='doc/member[@name="ICalendar.CopyTo"]/*' />
@@ -888,10 +888,10 @@ public unsafe partial struct ICalendar : ICalendar.Interface, INativeGuid
         HRESULT ChangeClock(HSTRING value);
 
         [VtblIndex(16)]
-        HRESULT GetDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* result);
+        HRESULT GetDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* result);
 
         [VtblIndex(17)]
-        HRESULT SetDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value);
+        HRESULT SetDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value);
 
         [VtblIndex(18)]
         HRESULT SetToNow();
@@ -1122,7 +1122,7 @@ public unsafe partial struct ICalendar : ICalendar.Interface, INativeGuid
         HRESULT Compare([NativeTypeName("ABI::Windows::Globalization::ICalendar *")] ICalendar* other, [NativeTypeName("INT32 *")] int* result);
 
         [VtblIndex(94)]
-        HRESULT CompareDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime other, [NativeTypeName("INT32 *")] int* result);
+        HRESULT CompareDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime other, [NativeTypeName("INT32 *")] int* result);
 
         [VtblIndex(95)]
         HRESULT CopyTo([NativeTypeName("ABI::Windows::Globalization::ICalendar *")] ICalendar* other);
@@ -1204,10 +1204,10 @@ public unsafe partial struct ICalendar : ICalendar.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> ChangeClock;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> GetDateTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> GetDateTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, int> SetDateTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, int> SetDateTime;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, int> SetToNow;
@@ -1438,7 +1438,7 @@ public unsafe partial struct ICalendar : ICalendar.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, ICalendar*, int*, int> Compare;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, INT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, int*, int> CompareDateTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, int*, int> CompareDateTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Globalization::ICalendar *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ICalendar*, int> CopyTo;
