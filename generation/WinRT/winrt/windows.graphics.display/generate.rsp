@@ -1,0 +1,50 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Graphics::Display::NitRange>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Graphics::Display::NitRange>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Graphics::Display::NitRange>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Graphics::Display::BrightnessOverride *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Graphics::Display::DisplayEnhancementOverride *, ABI::Windows::Graphics::Display::DisplayEnhancementOverrideCapabilitiesChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Graphics::Display::DisplayEnhancementOverride *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Graphics::Display::DisplayInformation *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAdvancedColorInfo
+IID_IBrightnessOverride
+IID_IBrightnessOverrideSettings
+IID_IBrightnessOverrideSettingsStatics
+IID_IBrightnessOverrideStatics
+IID_IColorOverrideSettings
+IID_IColorOverrideSettingsStatics
+IID_IDisplayEnhancementOverride
+IID_IDisplayEnhancementOverrideCapabilities
+IID_IDisplayEnhancementOverrideCapabilitiesChangedEventArgs
+IID_IDisplayEnhancementOverrideStatics
+IID_IDisplayInformation
+IID_IDisplayInformation2
+IID_IDisplayInformation3
+IID_IDisplayInformation4
+IID_IDisplayInformation5
+IID_IDisplayInformationStatics
+IID_IDisplayPropertiesEventHandler
+IID_IDisplayPropertiesStatics
+IID_IDisplayServices
+IID_IDisplayServicesStatics
+IID_WinRT_IDisplayServices
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.graphics.display.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.graphics.display
+--remap
+IID_IDisplayServices=@IID_WinRT_IDisplayServices
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.graphics.display
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.graphics.display.h

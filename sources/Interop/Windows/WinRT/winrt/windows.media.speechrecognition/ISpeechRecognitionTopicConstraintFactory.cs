@@ -1,0 +1,126 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from winrt/windows.media.speechrecognition.h in the Windows SDK for Windows 10.0.22621.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
+
+namespace TerraFX.Interop.WinRT;
+
+/// <include file='ISpeechRecognitionTopicConstraintFactory.xml' path='doc/member[@name="ISpeechRecognitionTopicConstraintFactory"]/*' />
+[Guid("6E6863DF-EC05-47D7-A5DF-56A3431E58D2")]
+[NativeTypeName("struct ISpeechRecognitionTopicConstraintFactory : IInspectable")]
+[NativeInheritance("IInspectable")]
+public unsafe partial struct ISpeechRecognitionTopicConstraintFactory : ISpeechRecognitionTopicConstraintFactory.Interface, INativeGuid
+{
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpeechRecognitionTopicConstraintFactory));
+
+    public void** lpVtbl;
+
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+    {
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognitionTopicConstraintFactory*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechRecognitionTopicConstraintFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
+
+    /// <inheritdoc cref="IUnknown.AddRef" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognitionTopicConstraintFactory*, uint>)(lpVtbl[1]))((ISpeechRecognitionTopicConstraintFactory*)Unsafe.AsPointer(ref this));
+    }
+
+    /// <inheritdoc cref="IUnknown.Release" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognitionTopicConstraintFactory*, uint>)(lpVtbl[2]))((ISpeechRecognitionTopicConstraintFactory*)Unsafe.AsPointer(ref this));
+    }
+
+    /// <inheritdoc cref="IInspectable.GetIids" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
+    {
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognitionTopicConstraintFactory*, uint*, Guid**, int>)(lpVtbl[3]))((ISpeechRecognitionTopicConstraintFactory*)Unsafe.AsPointer(ref this), iidCount, iids);
+    }
+
+    /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(4)]
+    public HRESULT GetRuntimeClassName(HSTRING* className)
+    {
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognitionTopicConstraintFactory*, HSTRING*, int>)(lpVtbl[4]))((ISpeechRecognitionTopicConstraintFactory*)Unsafe.AsPointer(ref this), className);
+    }
+
+    /// <inheritdoc cref="IInspectable.GetTrustLevel" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(5)]
+    public HRESULT GetTrustLevel(TrustLevel* trustLevel)
+    {
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognitionTopicConstraintFactory*, TrustLevel*, int>)(lpVtbl[5]))((ISpeechRecognitionTopicConstraintFactory*)Unsafe.AsPointer(ref this), trustLevel);
+    }
+
+    /// <include file='ISpeechRecognitionTopicConstraintFactory.xml' path='doc/member[@name="ISpeechRecognitionTopicConstraintFactory.Create"]/*' />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(6)]
+    public HRESULT Create([NativeTypeName("ABI::Windows::Media::SpeechRecognition::SpeechRecognitionScenario")] SpeechRecognitionScenario scenario, HSTRING topicHint, [NativeTypeName("ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraint **")] ISpeechRecognitionTopicConstraint** constraint)
+    {
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognitionTopicConstraintFactory*, SpeechRecognitionScenario, HSTRING, ISpeechRecognitionTopicConstraint**, int>)(lpVtbl[6]))((ISpeechRecognitionTopicConstraintFactory*)Unsafe.AsPointer(ref this), scenario, topicHint, constraint);
+    }
+
+    /// <include file='ISpeechRecognitionTopicConstraintFactory.xml' path='doc/member[@name="ISpeechRecognitionTopicConstraintFactory.CreateWithTag"]/*' />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(7)]
+    public HRESULT CreateWithTag([NativeTypeName("ABI::Windows::Media::SpeechRecognition::SpeechRecognitionScenario")] SpeechRecognitionScenario scenario, HSTRING topicHint, HSTRING tag, [NativeTypeName("ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraint **")] ISpeechRecognitionTopicConstraint** constraint)
+    {
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognitionTopicConstraintFactory*, SpeechRecognitionScenario, HSTRING, HSTRING, ISpeechRecognitionTopicConstraint**, int>)(lpVtbl[7]))((ISpeechRecognitionTopicConstraintFactory*)Unsafe.AsPointer(ref this), scenario, topicHint, tag, constraint);
+    }
+
+    public interface Interface : IInspectable.Interface
+    {
+        [VtblIndex(6)]
+        HRESULT Create([NativeTypeName("ABI::Windows::Media::SpeechRecognition::SpeechRecognitionScenario")] SpeechRecognitionScenario scenario, HSTRING topicHint, [NativeTypeName("ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraint **")] ISpeechRecognitionTopicConstraint** constraint);
+
+        [VtblIndex(7)]
+        HRESULT CreateWithTag([NativeTypeName("ABI::Windows::Media::SpeechRecognition::SpeechRecognitionScenario")] SpeechRecognitionScenario scenario, HSTRING topicHint, HSTRING tag, [NativeTypeName("ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraint **")] ISpeechRecognitionTopicConstraint** constraint);
+    }
+
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
+
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
+
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
+
+        [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
+
+        [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
+
+        [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
+
+        [NativeTypeName("HRESULT (ABI::Windows::Media::SpeechRecognition::SpeechRecognitionScenario, HSTRING, ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraint **) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, SpeechRecognitionScenario, HSTRING, ISpeechRecognitionTopicConstraint**, int> Create;
+
+        [NativeTypeName("HRESULT (ABI::Windows::Media::SpeechRecognition::SpeechRecognitionScenario, HSTRING, HSTRING, ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionTopicConstraint **) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, SpeechRecognitionScenario, HSTRING, HSTRING, ISpeechRecognitionTopicConstraint**, int> CreateWithTag;
+    }
+}

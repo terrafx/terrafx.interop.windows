@@ -1,0 +1,32 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Printers::Extensions::Print3DWorkflow *, ABI::Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Printers::Extensions::Print3DWorkflow *, ABI::Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Printers::Extensions::PrintTaskConfiguration *, ABI::Windows::Devices::Printers::Extensions::PrintTaskConfigurationSaveRequestedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IPrint3DWorkflow
+IID_IPrint3DWorkflow2
+IID_IPrint3DWorkflowPrinterChangedEventArgs
+IID_IPrint3DWorkflowPrintRequestedEventArgs
+IID_IPrintExtensionContextStatic
+IID_IPrintNotificationEventDetails
+IID_IPrintTaskConfiguration
+IID_IPrintTaskConfigurationSaveRequest
+IID_IPrintTaskConfigurationSaveRequestedDeferral
+IID_IPrintTaskConfigurationSaveRequestedEventArgs
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.devices.printers.extensions.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.devices.printers.extensions
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.devices.printers.extensions
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.devices.printers.extensions.h

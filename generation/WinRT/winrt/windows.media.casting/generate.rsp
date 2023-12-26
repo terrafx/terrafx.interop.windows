@@ -1,0 +1,41 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Casting::CastingSource *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Casting::CastingSource *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Casting::CastingSource *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Casting::CastingSource *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Casting::CastingConnectionErrorStatus>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Casting::CastingDevice *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Casting::CastingPlaybackTypes>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Casting::CastingConnectionErrorStatus>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Casting::CastingDevice *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Casting::CastingPlaybackTypes>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Casting::CastingConnection *, ABI::Windows::Media::Casting::CastingConnectionErrorOccurredEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Casting::CastingConnection *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Casting::CastingDevicePicker *, ABI::Windows::Media::Casting::CastingDeviceSelectedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Casting::CastingDevicePicker *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_ICastingConnection
+IID_ICastingConnectionErrorOccurredEventArgs
+IID_ICastingDevice
+IID_ICastingDevicePicker
+IID_ICastingDevicePickerFilter
+IID_ICastingDeviceSelectedEventArgs
+IID_ICastingDeviceStatics
+IID_ICastingSource
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.media.casting.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.media.casting
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.media.casting
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.casting.h

@@ -1727,7 +1727,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsBadCodePtr"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL IsBadCodePtr([NativeTypeName("FARPROC")] IntPtr lpfn);
+    public static extern BOOL IsBadCodePtr([NativeTypeName("FARPROC")] void* lpfn);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsBadStringPtrA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]

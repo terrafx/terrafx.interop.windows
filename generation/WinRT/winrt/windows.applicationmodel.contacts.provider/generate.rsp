@@ -1,0 +1,23 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::Provider::ContactPickerUI *, ABI::Windows::ApplicationModel::Contacts::Provider::ContactRemovedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IContactPickerUI
+IID_IContactPickerUI2
+IID_IContactRemovedEventArgs
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.applicationmodel.contacts.provider.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.contacts.provider
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.applicationmodel.contacts.provider
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.applicationmodel.contacts.provider.h

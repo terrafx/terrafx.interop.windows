@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDevicePair.get_Renderer">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/mediastreaming/media-streaming-api-portal">Windows Media Streaming API</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/media-casting">Media Casting</a>. <b>Media Casting</b> has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>Media Casting</b> instead of <b>Windows Media Streaming API</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>Gets the renderer for the active basic device pair.</para>
+    </summary>
+    <param name="value">Receives the renderer device.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDevicePair.get_Server">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/mediastreaming/media-streaming-api-portal">Windows Media Streaming API</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/media-casting">Media Casting</a>. <b>Media Casting</b> has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>Media Casting</b> instead of <b>Windows Media Streaming API</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>Gets the server for the active basic device pair.</para>
+    </summary>
+    <param name="value">Receives the server device.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IDevicePair">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/mediastreaming/media-streaming-api-portal">Windows Media Streaming API</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/media-casting">Media Casting</a>. <b>Media Casting</b> has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>Media Casting</b> instead of <b>Windows Media Streaming API</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>Represents a pair of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dn385755(v=vs.85)">ActiveBasicDevice</a> objects which is comprised of a renderer and a server.</para>
+    </summary>
+  </member>
+</doc>

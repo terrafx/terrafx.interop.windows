@@ -1,0 +1,45 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Security::Credentials::PasswordCredential *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Security::Credentials::PasswordCredential *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Security::Credentials::PasswordCredential *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::Credentials::KeyCredentialAttestationResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::Credentials::KeyCredentialOperationResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::Credentials::KeyCredentialRetrievalResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::Credentials::KeyCredentialAttestationResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::Credentials::KeyCredentialOperationResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::Credentials::KeyCredentialRetrievalResult *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_ICredentialFactory
+IID_IKeyCredential
+IID_IKeyCredentialAttestationResult
+IID_IKeyCredentialManagerStatics
+IID_IKeyCredentialOperationResult
+IID_IKeyCredentialRetrievalResult
+IID_IPasswordCredential
+IID_IPasswordVault
+IID_IWebAccount
+IID_IWebAccount2
+IID_IWebAccountFactory
+IID_IWebAccountProvider
+IID_IWebAccountProvider2
+IID_IWebAccountProvider3
+IID_IWebAccountProvider4
+IID_IWebAccountProviderFactory
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+--file
+winrt-windows.security.credentials.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.security.credentials
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.security.credentials
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.security.credentials.h

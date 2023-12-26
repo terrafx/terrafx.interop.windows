@@ -1,0 +1,77 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Foundation::Collections::__FIVectorView_1_HSTRING_t *> *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Media::SpeechRecognition::VoiceCommandSet *> *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::SpeechRecognition::SpeechRecognitionResult *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Foundation::Collections::__FIVectorView_1_HSTRING_t *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Media::SpeechRecognition::VoiceCommandSet *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::SpeechRecognition::SpeechRecognitionResult *>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, ABI::Windows::Foundation::Collections::IVectorView<HSTRING> *>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, ABI::Windows::Media::SpeechRecognition::VoiceCommandSet *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, ABI::Windows::Foundation::Collections::IVectorView<HSTRING> *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, ABI::Windows::Media::SpeechRecognition::VoiceCommandSet *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::SpeechRecognition::SpeechRecognitionResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::SpeechRecognition::SpeechRecognitionCompilationResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::SpeechRecognition::SpeechRecognitionResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::SpeechRecognition::SpeechRecognitionCompilationResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::SpeechRecognition::SpeechRecognitionResult *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession *, ABI::Windows::Media::SpeechRecognition::SpeechContinuousRecognitionCompletedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::SpeechRecognition::SpeechContinuousRecognitionSession *, ABI::Windows::Media::SpeechRecognition::SpeechContinuousRecognitionResultGeneratedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::SpeechRecognition::SpeechRecognizer *, ABI::Windows::Media::SpeechRecognition::SpeechRecognitionHypothesisGeneratedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::SpeechRecognition::SpeechRecognizer *, ABI::Windows::Media::SpeechRecognition::SpeechRecognitionQualityDegradingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::SpeechRecognition::SpeechRecognizer *, ABI::Windows::Media::SpeechRecognition::SpeechRecognizerStateChangedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_ISpeechContinuousRecognitionCompletedEventArgs
+IID_ISpeechContinuousRecognitionResultGeneratedEventArgs
+IID_ISpeechContinuousRecognitionSession
+IID_ISpeechRecognitionCompilationResult
+IID_ISpeechRecognitionConstraint
+IID_ISpeechRecognitionGrammarFileConstraint
+IID_ISpeechRecognitionGrammarFileConstraintFactory
+IID_ISpeechRecognitionHypothesis
+IID_ISpeechRecognitionHypothesisGeneratedEventArgs
+IID_ISpeechRecognitionListConstraint
+IID_ISpeechRecognitionListConstraintFactory
+IID_ISpeechRecognitionQualityDegradingEventArgs
+IID_ISpeechRecognitionResult
+IID_ISpeechRecognitionResult2
+IID_ISpeechRecognitionSemanticInterpretation
+IID_ISpeechRecognitionTopicConstraint
+IID_ISpeechRecognitionTopicConstraintFactory
+IID_ISpeechRecognitionVoiceCommandDefinitionConstraint
+IID_ISpeechRecognizer
+IID_ISpeechRecognizer2
+IID_ISpeechRecognizerFactory
+IID_ISpeechRecognizerStateChangedEventArgs
+IID_ISpeechRecognizerStatics
+IID_ISpeechRecognizerStatics2
+IID_ISpeechRecognizerTimeouts
+IID_ISpeechRecognizerUIOptions
+IID_IVoiceCommandManager
+IID_IVoiceCommandSet
+IID_WinRT_ISpeechRecognizer
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_GLOBALIZATION_GLOBALIZATIONJAPANESEPHONETICANALYZERCONTRACT_VERSION
+WINDOWS_PHONE_PHONECONTRACT_VERSION
+WINDOWS_PHONE_PHONEINTERNALCONTRACT_VERSION
+--file
+winrt-windows.media.speechrecognition.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.media.speechrecognition
+--remap
+IID_ISpeechRecognizer=@IID_WinRT_ISpeechRecognizer
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.media.speechrecognition
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.speechrecognition.h

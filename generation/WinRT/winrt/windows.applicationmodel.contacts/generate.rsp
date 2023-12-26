@@ -1,0 +1,190 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::ContactAddress *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::ContactAnnotation *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::ContactChange *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::ContactConnectedServiceAccount *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::ContactDate *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::ContactEmail *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::ContactField *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::ContactInformation *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::ContactInstantMessageField *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::ContactJobInfo *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::ContactLocationField *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::ContactMatchReason *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::ContactPhone *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::ContactSignificantOther *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::ContactWebsite *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::IContactField *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::ContactAddress *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::ContactAnnotation *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::ContactChange *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::ContactConnectedServiceAccount *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::ContactDate *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::ContactEmail *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::ContactField *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::ContactInformation *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::ContactInstantMessageField *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::ContactJobInfo *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::ContactLocationField *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::ContactMatchReason *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::ContactPhone *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::ContactSignificantOther *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::ContactWebsite *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::IContactField *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::Contacts::Contact *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::Contacts::ContactAddress *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::Contacts::ContactConnectedServiceAccount *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::Contacts::ContactDate *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::Contacts::ContactEmail *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::Contacts::ContactJobInfo *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::Contacts::ContactPhone *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::Contacts::ContactSignificantOther *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::Contacts::ContactWebsite *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::Contacts::IContactField *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactAddress *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactAnnotation *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactChange *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactConnectedServiceAccount *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactDate *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactEmail *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactField *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactInformation *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactInstantMessageField *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactJobInfo *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactLocationField *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactMatchReason *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactPhone *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactSignificantOther *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactWebsite *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::IContactField *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Contacts::Contact *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Contacts::ContactAnnotation *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Contacts::ContactAnnotationList *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Contacts::ContactAnnotationStore *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Contacts::ContactBatch *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Contacts::ContactInformation *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Contacts::ContactList *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Contacts::ContactStore *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::Contacts::PinnedContactIdsQueryResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::Contacts::Contact *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::Contact *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactAnnotation *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactChange *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactInformation *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Contacts::Contact *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Contacts::ContactAnnotation *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Contacts::ContactAnnotationList *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Contacts::ContactAnnotationStore *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Contacts::ContactBatch *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Contacts::ContactInformation *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Contacts::ContactList *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Contacts::ContactStore *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::Contacts::PinnedContactIdsQueryResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::Contacts::Contact *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::Contact *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactAnnotation *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactChange *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactInformation *> *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::ContactList *, ABI::Windows::ApplicationModel::Contacts::ContactChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::ContactListSyncManager *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::ContactPanel *, ABI::Windows::ApplicationModel::Contacts::ContactPanelClosingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::ContactPanel *, ABI::Windows::ApplicationModel::Contacts::ContactPanelLaunchFullAppRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Contacts::ContactStore *, ABI::Windows::ApplicationModel::Contacts::ContactChangedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAggregateContactManager
+IID_IAggregateContactManager2
+IID_IContact
+IID_IContact2
+IID_IContact3
+IID_IContactAddress
+IID_IContactAnnotation
+IID_IContactAnnotation2
+IID_IContactAnnotationList
+IID_IContactAnnotationStore
+IID_IContactAnnotationStore2
+IID_IContactBatch
+IID_IContactCardDelayedDataLoader
+IID_IContactCardOptions
+IID_IContactCardOptions2
+IID_IContactChange
+IID_IContactChangedDeferral
+IID_IContactChangedEventArgs
+IID_IContactChangeReader
+IID_IContactChangeTracker
+IID_IContactChangeTracker2
+IID_IContactConnectedServiceAccount
+IID_IContactDate
+IID_IContactEmail
+IID_IContactField
+IID_IContactFieldFactory
+IID_IContactGroup
+IID_IContactInformation
+IID_IContactInstantMessageField
+IID_IContactInstantMessageFieldFactory
+IID_IContactJobInfo
+IID_IContactLaunchActionVerbsStatics
+IID_IContactList
+IID_IContactList2
+IID_IContactList3
+IID_IContactListLimitedWriteOperations
+IID_IContactListSyncConstraints
+IID_IContactListSyncManager
+IID_IContactListSyncManager2
+IID_IContactLocationField
+IID_IContactLocationFieldFactory
+IID_IContactManagerForUser
+IID_IContactManagerForUser2
+IID_IContactManagerStatics
+IID_IContactManagerStatics2
+IID_IContactManagerStatics3
+IID_IContactManagerStatics4
+IID_IContactManagerStatics5
+IID_IContactMatchReason
+IID_IContactName
+IID_IContactPanel
+IID_IContactPanelClosingEventArgs
+IID_IContactPanelLaunchFullAppRequestedEventArgs
+IID_IContactPhone
+IID_IContactPicker
+IID_IContactPicker2
+IID_IContactPicker3
+IID_IContactPickerStatics
+IID_IContactQueryOptions
+IID_IContactQueryOptionsFactory
+IID_IContactQueryTextSearch
+IID_IContactReader
+IID_IContactSignificantOther
+IID_IContactSignificantOther2
+IID_IContactStore
+IID_IContactStore2
+IID_IContactStore3
+IID_IContactStoreNotificationTriggerDetails
+IID_IContactWebsite
+IID_IContactWebsite2
+IID_IFullContactCardOptions
+IID_IKnownContactFieldStatics
+IID_IPinnedContactIdsQueryResult
+IID_IPinnedContactManager
+IID_IPinnedContactManagerStatics
+IID_WinRT_IContact
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION
+--file
+winrt-windows.applicationmodel.contacts.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.contacts
+--remap
+IID_IContact=@IID_WinRT_IContact
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.applicationmodel.contacts
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.applicationmodel.contacts.h

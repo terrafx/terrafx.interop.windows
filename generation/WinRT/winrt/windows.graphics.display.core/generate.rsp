@@ -1,0 +1,29 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Graphics::Display::Core::HdmiDisplayMode *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Graphics::Display::Core::HdmiDisplayMode *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Graphics::Display::Core::HdmiDisplayMode *>
+ABI::Windows::Foundation::IAsyncOperation<bool>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<bool>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Graphics::Display::Core::HdmiDisplayInformation *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IHdmiDisplayInformation
+IID_IHdmiDisplayInformationStatics
+IID_IHdmiDisplayMode
+IID_IHdmiDisplayMode2
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.graphics.display.core.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.graphics.display.core
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.graphics.display.core
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.graphics.display.core.h

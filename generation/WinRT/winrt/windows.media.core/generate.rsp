@@ -1,0 +1,197 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Graphics::Imaging::SoftwareBitmap *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Core::CodecInfo *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Core::IMediaCue *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Core::MseSourceBuffer *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Core::MseTimeRange>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Core::TimedTextLine *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Core::TimedTextSource *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Core::TimedTextSubformat *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Graphics::Imaging::SoftwareBitmap *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Core::CodecInfo *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Core::IMediaCue *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Core::MseSourceBuffer *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Core::MseTimeRange>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Core::TimedTextLine *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Core::TimedTextSource *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Core::TimedTextSubformat *>
+ABI::Windows::Foundation::Collections::IObservableVector<ABI::Windows::Media::Core::TimedMetadataTrack *>
+ABI::Windows::Foundation::Collections::IObservableVector<ABI::Windows::Media::Core::TimedTextSource *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Core::TimedMetadataTrack *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Core::TimedTextLine *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Core::TimedTextSource *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::Core::TimedTextSubformat *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::CodecInfo *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::IMediaCue *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::MseSourceBuffer *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::MseTimeRange>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::TimedTextLine *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::TimedTextSource *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::TimedTextSubformat *>
+ABI::Windows::Foundation::Collections::VectorChangedEventHandler<ABI::Windows::Media::Core::TimedMetadataTrack *>
+ABI::Windows::Foundation::Collections::VectorChangedEventHandler<ABI::Windows::Media::Core::TimedTextSource *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::CodecInfo *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Core::MediaStreamSample *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Core::CodecInfo *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Core::MediaStreamSample *>
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Media::Core::LowLightFusionResult *, double>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Media::Core::LowLightFusionResult *, double>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Media::Core::LowLightFusionResult *, double>
+ABI::Windows::Foundation::IReference<ABI::Windows::Media::Core::MseTimeRange>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::AudioTrack *, ABI::Windows::Media::Core::AudioTrackOpenFailedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::FaceDetectionEffect *, ABI::Windows::Media::Core::FaceDetectedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::ISingleSelectMediaTrackList *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::MediaBinder *, ABI::Windows::Media::Core::MediaBindingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::MediaBindingEventArgs *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::MediaSource *, ABI::Windows::Media::Core::MediaSourceOpenOperationCompletedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::MediaSource *, ABI::Windows::Media::Core::MediaSourceStateChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::MediaSourceAppServiceConnection *, ABI::Windows::Media::Core::InitializeMediaStreamSourceRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::MediaStreamSample *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::MediaStreamSource *, ABI::Windows::Media::Core::MediaStreamSourceClosedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::MediaStreamSource *, ABI::Windows::Media::Core::MediaStreamSourceSampleRenderedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::MediaStreamSource *, ABI::Windows::Media::Core::MediaStreamSourceSampleRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::MediaStreamSource *, ABI::Windows::Media::Core::MediaStreamSourceStartingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::MediaStreamSource *, ABI::Windows::Media::Core::MediaStreamSourceSwitchStreamsRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::MediaStreamSource *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::MseSourceBuffer *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::MseSourceBufferList *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::MseStreamSource *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::SceneAnalysisEffect *, ABI::Windows::Media::Core::SceneAnalyzedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::TimedMetadataTrack *, ABI::Windows::Media::Core::MediaCueEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::TimedMetadataTrack *, ABI::Windows::Media::Core::TimedMetadataTrackFailedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::TimedTextSource *, ABI::Windows::Media::Core::TimedTextSourceResolveResultEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::VideoStabilizationEffect *, ABI::Windows::Media::Core::VideoStabilizationEffectEnabledChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Core::VideoTrack *, ABI::Windows::Media::Core::VideoTrackOpenFailedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAudioStreamDescriptor
+IID_IAudioStreamDescriptor2
+IID_IAudioStreamDescriptor3
+IID_IAudioStreamDescriptorFactory
+IID_IAudioTrack
+IID_IAudioTrackOpenFailedEventArgs
+IID_IAudioTrackSupportInfo
+IID_IChapterCue
+IID_ICodecInfo
+IID_ICodecQuery
+IID_ICodecSubtypesStatics
+IID_IDataCue
+IID_IDataCue2
+IID_IFaceDetectedEventArgs
+IID_IFaceDetectionEffect
+IID_IFaceDetectionEffectDefinition
+IID_IFaceDetectionEffectFrame
+IID_IHighDynamicRangeControl
+IID_IHighDynamicRangeOutput
+IID_IImageCue
+IID_IInitializeMediaStreamSourceRequestedEventArgs
+IID_ILowLightFusionResult
+IID_ILowLightFusionStatics
+IID_IMediaBinder
+IID_IMediaBindingEventArgs
+IID_IMediaBindingEventArgs2
+IID_IMediaBindingEventArgs3
+IID_IMediaCue
+IID_IMediaCueEventArgs
+IID_IMediaSource
+IID_IMediaSource2
+IID_IMediaSource3
+IID_IMediaSource4
+IID_IMediaSource5
+IID_IMediaSourceAppServiceConnection
+IID_IMediaSourceAppServiceConnectionFactory
+IID_IMediaSourceError
+IID_IMediaSourceOpenOperationCompletedEventArgs
+IID_IMediaSourceStateChangedEventArgs
+IID_IMediaSourceStatics
+IID_IMediaSourceStatics2
+IID_IMediaSourceStatics3
+IID_IMediaSourceStatics4
+IID_IMediaStreamDescriptor
+IID_IMediaStreamDescriptor2
+IID_IMediaStreamSample
+IID_IMediaStreamSample2
+IID_IMediaStreamSampleProtectionProperties
+IID_IMediaStreamSampleStatics
+IID_IMediaStreamSampleStatics2
+IID_IMediaStreamSource
+IID_IMediaStreamSource2
+IID_IMediaStreamSource3
+IID_IMediaStreamSource4
+IID_IMediaStreamSourceClosedEventArgs
+IID_IMediaStreamSourceClosedRequest
+IID_IMediaStreamSourceFactory
+IID_IMediaStreamSourceSampleRenderedEventArgs
+IID_IMediaStreamSourceSampleRequest
+IID_IMediaStreamSourceSampleRequestDeferral
+IID_IMediaStreamSourceSampleRequestedEventArgs
+IID_IMediaStreamSourceStartingEventArgs
+IID_IMediaStreamSourceStartingRequest
+IID_IMediaStreamSourceStartingRequestDeferral
+IID_IMediaStreamSourceSwitchStreamsRequest
+IID_IMediaStreamSourceSwitchStreamsRequestDeferral
+IID_IMediaStreamSourceSwitchStreamsRequestedEventArgs
+IID_IMediaTrack
+IID_IMseSourceBuffer
+IID_IMseSourceBufferList
+IID_IMseStreamSource
+IID_IMseStreamSource2
+IID_IMseStreamSourceStatics
+IID_ISceneAnalysisEffect
+IID_ISceneAnalysisEffectFrame
+IID_ISceneAnalysisEffectFrame2
+IID_ISceneAnalyzedEventArgs
+IID_ISingleSelectMediaTrackList
+IID_ISpeechCue
+IID_ITimedMetadataStreamDescriptor
+IID_ITimedMetadataStreamDescriptorFactory
+IID_ITimedMetadataTrack
+IID_ITimedMetadataTrack2
+IID_ITimedMetadataTrackError
+IID_ITimedMetadataTrackFactory
+IID_ITimedMetadataTrackFailedEventArgs
+IID_ITimedMetadataTrackProvider
+IID_ITimedTextBouten
+IID_ITimedTextCue
+IID_ITimedTextLine
+IID_ITimedTextRegion
+IID_ITimedTextRuby
+IID_ITimedTextSource
+IID_ITimedTextSourceResolveResultEventArgs
+IID_ITimedTextSourceStatics
+IID_ITimedTextSourceStatics2
+IID_ITimedTextStyle
+IID_ITimedTextStyle2
+IID_ITimedTextStyle3
+IID_ITimedTextSubformat
+IID_IVideoStabilizationEffect
+IID_IVideoStabilizationEffectEnabledChangedEventArgs
+IID_IVideoStreamDescriptor
+IID_IVideoStreamDescriptor2
+IID_IVideoStreamDescriptorFactory
+IID_IVideoTrack
+IID_IVideoTrackOpenFailedEventArgs
+IID_IVideoTrackSupportInfo
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION
+WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION
+WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION
+--file
+winrt-windows.media.core.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.media.core
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.media.core
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.core.h

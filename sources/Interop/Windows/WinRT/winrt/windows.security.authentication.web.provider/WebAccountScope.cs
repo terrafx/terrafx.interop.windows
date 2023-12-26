@@ -1,0 +1,16 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from winrt/windows.security.authentication.web.provider.h in the Windows SDK for Windows 10.0.22621.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+namespace TerraFX.Interop.WinRT;
+
+/// <include file='WebAccountScope.xml' path='doc/member[@name="WebAccountScope"]/*' />
+public enum WebAccountScope
+{
+    /// <include file='WebAccountScope.xml' path='doc/member[@name="WebAccountScope.WebAccountScope_PerUser"]/*' />
+    WebAccountScope_PerUser = 0,
+
+    /// <include file='WebAccountScope.xml' path='doc/member[@name="WebAccountScope.WebAccountScope_PerApplication"]/*' />
+    WebAccountScope_PerApplication = 1,
+}

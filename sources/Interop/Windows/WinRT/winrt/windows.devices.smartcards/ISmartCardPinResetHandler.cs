@@ -1,0 +1,79 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from winrt/windows.devices.smartcards.h in the Windows SDK for Windows 10.0.22621.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using TerraFX.Interop.Windows;
+using static TerraFX.Interop.Windows.IID;
+
+namespace TerraFX.Interop.WinRT;
+
+/// <include file='ISmartCardPinResetHandler.xml' path='doc/member[@name="ISmartCardPinResetHandler"]/*' />
+[Guid("138D5E40-F3BC-4A5C-B41D-4B4EF684E237")]
+[NativeTypeName("struct ISmartCardPinResetHandler : IUnknown")]
+[NativeInheritance("IUnknown")]
+public unsafe partial struct ISmartCardPinResetHandler : ISmartCardPinResetHandler.Interface, INativeGuid
+{
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISmartCardPinResetHandler));
+
+    public void** lpVtbl;
+
+    /// <inheritdoc cref="IUnknown.QueryInterface" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
+    {
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardPinResetHandler*, Guid*, void**, int>)(lpVtbl[0]))((ISmartCardPinResetHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+    }
+
+    /// <inheritdoc cref="IUnknown.AddRef" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(1)]
+    [return: NativeTypeName("ULONG")]
+    public uint AddRef()
+    {
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardPinResetHandler*, uint>)(lpVtbl[1]))((ISmartCardPinResetHandler*)Unsafe.AsPointer(ref this));
+    }
+
+    /// <inheritdoc cref="IUnknown.Release" />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(2)]
+    [return: NativeTypeName("ULONG")]
+    public uint Release()
+    {
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardPinResetHandler*, uint>)(lpVtbl[2]))((ISmartCardPinResetHandler*)Unsafe.AsPointer(ref this));
+    }
+
+    /// <include file='ISmartCardPinResetHandler.xml' path='doc/member[@name="ISmartCardPinResetHandler.Invoke"]/*' />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(3)]
+    public HRESULT Invoke([NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardProvisioning *")] ISmartCardProvisioning* sender, [NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardPinResetRequest *")] ISmartCardPinResetRequest* request)
+    {
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardPinResetHandler*, ISmartCardProvisioning*, ISmartCardPinResetRequest*, int>)(lpVtbl[3]))((ISmartCardPinResetHandler*)Unsafe.AsPointer(ref this), sender, request);
+    }
+
+    public interface Interface : IUnknown.Interface
+    {
+        [VtblIndex(3)]
+        HRESULT Invoke([NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardProvisioning *")] ISmartCardProvisioning* sender, [NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardPinResetRequest *")] ISmartCardPinResetRequest* request);
+    }
+
+    public partial struct Vtbl<TSelf>
+        where TSelf : unmanaged, Interface
+    {
+        [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
+
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
+
+        [NativeTypeName("ULONG () __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
+
+        [NativeTypeName("HRESULT (ABI::Windows::Devices::SmartCards::ISmartCardProvisioning *, ABI::Windows::Devices::SmartCards::ISmartCardPinResetRequest *) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISmartCardProvisioning*, ISmartCardPinResetRequest*, int> Invoke;
+    }
+}

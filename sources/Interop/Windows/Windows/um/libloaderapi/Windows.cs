@@ -3,7 +3,6 @@
 // Ported from um/libloaderapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -75,7 +74,7 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("FARPROC")]
-    public static extern IntPtr GetProcAddress(HMODULE hModule, [NativeTypeName("LPCSTR")] sbyte* lpProcName);
+    public static extern void* GetProcAddress(HMODULE hModule, [NativeTypeName("LPCSTR")] sbyte* lpProcName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadLibraryExA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]

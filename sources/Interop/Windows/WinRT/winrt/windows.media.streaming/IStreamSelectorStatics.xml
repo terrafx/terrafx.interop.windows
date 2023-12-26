@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IStreamSelectorStatics.GetStreamPropertiesAsync">
+    <summary>When implemented gets the properties of the stream asynchronously.</summary>
+    <param name="storageFile">Windows.Storage.StorageFile</param>
+    <param name="selectorProperties">
+      <para>An IPropertySet containing any of the following allowed values.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>STREAM_SELECTOR_PROPERTY_BEST_URL_ONLY</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>STREAM_SELECTOR_PROPERTY_HTTP_ONLY</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>STREAM_SELECTOR_PROPERTY_LINK_BANDWIDTH</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>STREAM_SELECTOR_PROPERTY_PREFER_NO_TRANSCODING</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>STREAM_SELECTOR_PROPERTY_MAX_HEIGHT</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>STREAM_SELECTOR_PROPERTY_MAX_WIDTH</b>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IStreamSelectorStatics.SelectBestStreamAsync">
+    <summary>When implemented queries asynchronously for the best stream.</summary>
+    <param name="storageFile">Windows.Storage.StorageFile</param>
+    <param name="selectorProperties">
+      <para>An IPropertySet containing any of the following allowed values.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>STREAM_SELECTOR_PROPERTY_BEST_URL_ONLY</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>STREAM_SELECTOR_PROPERTY_HTTP_ONLY</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>STREAM_SELECTOR_PROPERTY_LINK_BANDWIDTH</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>STREAM_SELECTOR_PROPERTY_PREFER_NO_TRANSCODING</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>STREAM_SELECTOR_PROPERTY_MAX_HEIGHT</b>
+          </description>
+        </item>
+        <item>
+          <description>
+            <b>STREAM_SELECTOR_PROPERTY_MAX_WIDTH</b>
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IStreamSelectorStatics">
+    <summary>Encapsulates the methods needed to asynchronously select a stream.</summary>
+  </member>
+</doc>

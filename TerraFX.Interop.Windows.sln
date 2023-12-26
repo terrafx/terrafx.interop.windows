@@ -3299,6 +3299,769 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.system.power", "win
 		generation\WinRT\winrt\windows.system.power\winrt-windows.system.power.h = generation\WinRT\winrt\windows.system.power\winrt-windows.system.power.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.viewmanagement", "windows.ui.viewmanagement", "{AF9F6E3F-A98E-4D76-80EE-60D213B75FD5}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.ui.viewmanagement\generate.rsp = generation\WinRT\winrt\windows.ui.viewmanagement\generate.rsp
+		generation\WinRT\winrt\windows.ui.viewmanagement\header.txt = generation\WinRT\winrt\windows.ui.viewmanagement\header.txt
+		generation\WinRT\winrt\windows.ui.viewmanagement\winrt-windows.ui.viewmanagement.h = generation\WinRT\winrt\windows.ui.viewmanagement\winrt-windows.ui.viewmanagement.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.viewmanagement.core", "windows.ui.viewmanagement.core", "{CF710A8D-7F47-40B6-B9A4-B1A713E99EDE}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.ui.viewmanagement.core\generate.rsp = generation\WinRT\winrt\windows.ui.viewmanagement.core\generate.rsp
+		generation\WinRT\winrt\windows.ui.viewmanagement.core\header.txt = generation\WinRT\winrt\windows.ui.viewmanagement.core\header.txt
+		generation\WinRT\winrt\windows.ui.viewmanagement.core\winrt-windows.ui.viewmanagement.core.h = generation\WinRT\winrt\windows.ui.viewmanagement.core\winrt-windows.ui.viewmanagement.core.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.windowmanagement", "windows.ui.windowmanagement", "{ABE362FD-8590-4C33-805A-4952955CDF90}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.ui.windowmanagement\generate.rsp = generation\WinRT\winrt\windows.ui.windowmanagement\generate.rsp
+		generation\WinRT\winrt\windows.ui.windowmanagement\header.txt = generation\WinRT\winrt\windows.ui.windowmanagement\header.txt
+		generation\WinRT\winrt\windows.ui.windowmanagement\winrt-windows.ui.windowmanagement.h = generation\WinRT\winrt\windows.ui.windowmanagement\winrt-windows.ui.windowmanagement.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.core", "windows.ui.core", "{FA023EA3-8087-41EE-A5A4-17CDFEEE21C8}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.ui.core\generate.rsp = generation\WinRT\winrt\windows.ui.core\generate.rsp
+		generation\WinRT\winrt\windows.ui.core\header.txt = generation\WinRT\winrt\windows.ui.core\header.txt
+		generation\WinRT\winrt\windows.ui.core\winrt-windows.ui.core.h = generation\WinRT\winrt\windows.ui.core\winrt-windows.ui.core.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.system", "windows.system", "{5EAFD9FE-F1F6-49B4-AA91-976D449E38B6}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.system\generate.rsp = generation\WinRT\winrt\windows.system\generate.rsp
+		generation\WinRT\winrt\windows.system\header.txt = generation\WinRT\winrt\windows.system\header.txt
+		generation\WinRT\winrt\windows.system\winrt-windows.system.h = generation\WinRT\winrt\windows.system\winrt-windows.system.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel", "windows.applicationmodel", "{A156BF9C-A4AC-406E-9378-71CD45B82C36}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel\generate.rsp = generation\WinRT\winrt\windows.applicationmodel\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel\header.txt = generation\WinRT\winrt\windows.applicationmodel\header.txt
+		generation\WinRT\winrt\windows.applicationmodel\winrt-windows.applicationmodel.h = generation\WinRT\winrt\windows.applicationmodel\winrt-windows.applicationmodel.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.storage.streams", "windows.storage.streams", "{B299286E-E167-4AC3-9915-686FABD70BAA}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.storage.streams\generate.rsp = generation\WinRT\winrt\windows.storage.streams\generate.rsp
+		generation\WinRT\winrt\windows.storage.streams\header.txt = generation\WinRT\winrt\windows.storage.streams\header.txt
+		generation\WinRT\winrt\windows.storage.streams\winrt-windows.storage.streams.h = generation\WinRT\winrt\windows.storage.streams\winrt-windows.storage.streams.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.storage", "windows.storage", "{85ADD5F6-590E-429A-BEE5-464FBE1FA82A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.storage\generate.rsp = generation\WinRT\winrt\windows.storage\generate.rsp
+		generation\WinRT\winrt\windows.storage\header.txt = generation\WinRT\winrt\windows.storage\header.txt
+		generation\WinRT\winrt\windows.storage\winrt-windows.storage.h = generation\WinRT\winrt\windows.storage\winrt-windows.storage.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.activation", "windows.applicationmodel.activation", "{143C7125-851F-45FD-8071-3E6FF30B550A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.activation\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.activation\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.activation\header.txt = generation\WinRT\winrt\windows.applicationmodel.activation\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.activation\winrt-windows.applicationmodel.activation.h = generation\WinRT\winrt\windows.applicationmodel.activation\winrt-windows.applicationmodel.activation.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.core", "windows.applicationmodel.core", "{CB171E8D-6A34-4AC3-8D3D-077E0C64E0CE}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.core\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.core\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.core\header.txt = generation\WinRT\winrt\windows.applicationmodel.core\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.core\winrt-windows.applicationmodel.core.h = generation\WinRT\winrt\windows.applicationmodel.core\winrt-windows.applicationmodel.core.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.appointments", "windows.applicationmodel.appointments", "{97AFCE29-5397-4F2C-83C4-F65DC7D8CF67}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.appointments\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.appointments\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.appointments\header.txt = generation\WinRT\winrt\windows.applicationmodel.appointments\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.appointments\winrt-windows.applicationmodel.appointments.h = generation\WinRT\winrt\windows.applicationmodel.appointments\winrt-windows.applicationmodel.appointments.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.appointments.appointmentsprovider", "windows.applicationmodel.appointments.appointmentsprovider", "{88EFB4F7-049C-4BA6-BF21-BA91E0EF7821}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.appointments.appointmentsprovider\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.appointments.appointmentsprovider\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.appointments.appointmentsprovider\header.txt = generation\WinRT\winrt\windows.applicationmodel.appointments.appointmentsprovider\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.appointments.appointmentsprovider\winrt-windows.applicationmodel.appointments.appointmentsprovider.h = generation\WinRT\winrt\windows.applicationmodel.appointments.appointmentsprovider\winrt-windows.applicationmodel.appointments.appointmentsprovider.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.background", "windows.applicationmodel.background", "{DE182982-39F0-4066-A7C2-A28BA6FA96AC}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.background\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.background\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.background\header.txt = generation\WinRT\winrt\windows.applicationmodel.background\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.background\winrt-windows.applicationmodel.background.h = generation\WinRT\winrt\windows.applicationmodel.background\winrt-windows.applicationmodel.background.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.storage.provider", "windows.storage.provider", "{5729108D-F8F2-4C0E-B096-A1D7505A5D77}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.storage.provider\generate.rsp = generation\WinRT\winrt\windows.storage.provider\generate.rsp
+		generation\WinRT\winrt\windows.storage.provider\header.txt = generation\WinRT\winrt\windows.storage.provider\header.txt
+		generation\WinRT\winrt\windows.storage.provider\winrt-windows.storage.provider.h = generation\WinRT\winrt\windows.storage.provider\winrt-windows.storage.provider.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.contacts", "windows.applicationmodel.contacts", "{FB15B687-A7A2-4093-8465-A7E856E0637C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.contacts\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.contacts\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.contacts\header.txt = generation\WinRT\winrt\windows.applicationmodel.contacts\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.contacts\winrt-windows.applicationmodel.contacts.h = generation\WinRT\winrt\windows.applicationmodel.contacts\winrt-windows.applicationmodel.contacts.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.contacts.provider", "windows.applicationmodel.contacts.provider", "{1052B6FD-53C7-444D-8BF9-48F93BD9AA0A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.contacts.provider\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.contacts.provider\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.contacts.provider\header.txt = generation\WinRT\winrt\windows.applicationmodel.contacts.provider\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.contacts.provider\winrt-windows.applicationmodel.contacts.provider.h = generation\WinRT\winrt\windows.applicationmodel.contacts.provider\winrt-windows.applicationmodel.contacts.provider.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.enumeration", "windows.devices.enumeration", "{4073585D-DDB7-4A41-B352-FEF9660665E6}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.enumeration\generate.rsp = generation\WinRT\winrt\windows.devices.enumeration\generate.rsp
+		generation\WinRT\winrt\windows.devices.enumeration\header.txt = generation\WinRT\winrt\windows.devices.enumeration\header.txt
+		generation\WinRT\winrt\windows.devices.enumeration\winrt-windows.devices.enumeration.h = generation\WinRT\winrt\windows.devices.enumeration\winrt-windows.devices.enumeration.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices", "windows.devices", "{66092349-4284-4E56-9F2D-6F431B2B20AA}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices\generate.rsp = generation\WinRT\winrt\windows.devices\generate.rsp
+		generation\WinRT\winrt\windows.devices\header.txt = generation\WinRT\winrt\windows.devices\header.txt
+		generation\WinRT\winrt\windows.devices\winrt-windows.devices.h = generation\WinRT\winrt\windows.devices\winrt-windows.devices.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.storage.search", "windows.storage.search", "{06CEC626-82D7-48DB-8328-FAA318EA2B39}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.storage.search\generate.rsp = generation\WinRT\winrt\windows.storage.search\generate.rsp
+		generation\WinRT\winrt\windows.storage.search\header.txt = generation\WinRT\winrt\windows.storage.search\header.txt
+		generation\WinRT\winrt\windows.storage.search\winrt-windows.storage.search.h = generation\WinRT\winrt\windows.storage.search\winrt-windows.storage.search.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.storage.pickers", "windows.storage.pickers", "{8331FDA0-0A72-4A6C-90FA-E8CA37E5E592}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.storage.pickers\generate.rsp = generation\WinRT\winrt\windows.storage.pickers\generate.rsp
+		generation\WinRT\winrt\windows.storage.pickers\header.txt = generation\WinRT\winrt\windows.storage.pickers\header.txt
+		generation\WinRT\winrt\windows.storage.pickers\winrt-windows.storage.pickers.h = generation\WinRT\winrt\windows.storage.pickers\winrt-windows.storage.pickers.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.storage.pickers.provider", "windows.storage.pickers.provider", "{2D6B4E47-96FE-461F-A032-DBB1FDC0C513}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.storage.pickers.provider\generate.rsp = generation\WinRT\winrt\windows.storage.pickers.provider\generate.rsp
+		generation\WinRT\winrt\windows.storage.pickers.provider\header.txt = generation\WinRT\winrt\windows.storage.pickers.provider\header.txt
+		generation\WinRT\winrt\windows.storage.pickers.provider\winrt-windows.storage.pickers.provider.h = generation\WinRT\winrt\windows.storage.pickers.provider\winrt-windows.storage.pickers.provider.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.calls", "windows.applicationmodel.calls", "{7941C821-C136-438B-8102-E31513965EA8}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.calls\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.calls\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.calls\header.txt = generation\WinRT\winrt\windows.applicationmodel.calls\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.calls\winrt-windows.applicationmodel.calls.h = generation\WinRT\winrt\windows.applicationmodel.calls\winrt-windows.applicationmodel.calls.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.printers", "windows.devices.printers", "{9389B650-E18D-488C-9474-21BE11152B31}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.printers\generate.rsp = generation\WinRT\winrt\windows.devices.printers\generate.rsp
+		generation\WinRT\winrt\windows.devices.printers\header.txt = generation\WinRT\winrt\windows.devices.printers\header.txt
+		generation\WinRT\winrt\windows.devices.printers\winrt-windows.devices.printers.h = generation\WinRT\winrt\windows.devices.printers\winrt-windows.devices.printers.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.printers.extensions", "windows.devices.printers.extensions", "{C128AFD3-20A5-45E8-9615-39EF7851195C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.printers.extensions\generate.rsp = generation\WinRT\winrt\windows.devices.printers.extensions\generate.rsp
+		generation\WinRT\winrt\windows.devices.printers.extensions\header.txt = generation\WinRT\winrt\windows.devices.printers.extensions\header.txt
+		generation\WinRT\winrt\windows.devices.printers.extensions\winrt-windows.devices.printers.extensions.h = generation\WinRT\winrt\windows.devices.printers.extensions\winrt-windows.devices.printers.extensions.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.search", "windows.applicationmodel.search", "{D7B9B94A-5948-4B2B-AC4A-D10B899EF4C5}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.search\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.search\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.search\header.txt = generation\WinRT\winrt\windows.applicationmodel.search\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.search\winrt-windows.applicationmodel.search.h = generation\WinRT\winrt\windows.applicationmodel.search\winrt-windows.applicationmodel.search.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.search.core", "windows.applicationmodel.search.core", "{35723C1D-D515-4697-A4F7-F18EE9FF10DB}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.search.core\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.search.core\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.search.core\header.txt = generation\WinRT\winrt\windows.applicationmodel.search.core\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.search.core\winrt-windows.applicationmodel.search.core.h = generation\WinRT\winrt\windows.applicationmodel.search.core\winrt-windows.applicationmodel.search.core.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.datatransfer", "windows.applicationmodel.datatransfer", "{3E7EC5DB-3541-418D-B054-94F50E9E31E9}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.datatransfer\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.datatransfer\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.datatransfer\header.txt = generation\WinRT\winrt\windows.applicationmodel.datatransfer\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.datatransfer\winrt-windows.applicationmodel.datatransfer.h = generation\WinRT\winrt\windows.applicationmodel.datatransfer\winrt-windows.applicationmodel.datatransfer.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.datatransfer.sharetarget", "windows.applicationmodel.datatransfer.sharetarget", "{700E36C1-EED7-4928-B98D-CA3AE9EE3CB7}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.datatransfer.sharetarget\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.datatransfer.sharetarget\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.datatransfer.sharetarget\header.txt = generation\WinRT\winrt\windows.applicationmodel.datatransfer.sharetarget\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.datatransfer.sharetarget\winrt-windows.applicationmodel.datatransfer.sharetarget.h = generation\WinRT\winrt\windows.applicationmodel.datatransfer.sharetarget\winrt-windows.applicationmodel.datatransfer.sharetarget.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.userdataaccounts", "windows.applicationmodel.userdataaccounts", "{5D7AAC05-2CC8-4C23-B5A2-33223C8660E7}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.userdataaccounts\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.userdataaccounts\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.userdataaccounts\header.txt = generation\WinRT\winrt\windows.applicationmodel.userdataaccounts\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.userdataaccounts\winrt-windows.applicationmodel.userdataaccounts.h = generation\WinRT\winrt\windows.applicationmodel.userdataaccounts\winrt-windows.applicationmodel.userdataaccounts.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.userdataaccounts.provider", "windows.applicationmodel.userdataaccounts.provider", "{17A7A00F-2276-472A-84DC-2D131D8C2390}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.userdataaccounts.provider\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.userdataaccounts.provider\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.userdataaccounts.provider\header.txt = generation\WinRT\winrt\windows.applicationmodel.userdataaccounts.provider\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.userdataaccounts.provider\winrt-windows.applicationmodel.userdataaccounts.provider.h = generation\WinRT\winrt\windows.applicationmodel.userdataaccounts.provider\winrt-windows.applicationmodel.userdataaccounts.provider.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.speechrecognition", "windows.media.speechrecognition", "{1967F303-5AD4-49E9-AE9E-5360E2D24B7C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.speechrecognition\generate.rsp = generation\WinRT\winrt\windows.media.speechrecognition\generate.rsp
+		generation\WinRT\winrt\windows.media.speechrecognition\header.txt = generation\WinRT\winrt\windows.media.speechrecognition\header.txt
+		generation\WinRT\winrt\windows.media.speechrecognition\winrt-windows.media.speechrecognition.h = generation\WinRT\winrt\windows.media.speechrecognition\winrt-windows.media.speechrecognition.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.wallet", "windows.applicationmodel.wallet", "{70000A0A-C310-499C-B3D8-97A4010A3FFA}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.wallet\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.wallet\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.wallet\header.txt = generation\WinRT\winrt\windows.applicationmodel.wallet\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.wallet\winrt-windows.applicationmodel.wallet.h = generation\WinRT\winrt\windows.applicationmodel.wallet\winrt-windows.applicationmodel.wallet.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.security.authentication.web", "windows.security.authentication.web", "{E70755E1-267B-4F54-84FD-D0553EAF49E0}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.security.authentication.web\generate.rsp = generation\WinRT\winrt\windows.security.authentication.web\generate.rsp
+		generation\WinRT\winrt\windows.security.authentication.web\header.txt = generation\WinRT\winrt\windows.security.authentication.web\header.txt
+		generation\WinRT\winrt\windows.security.authentication.web\winrt-windows.security.authentication.web.h = generation\WinRT\winrt\windows.security.authentication.web\winrt-windows.security.authentication.web.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.security.authentication.web.core", "windows.security.authentication.web.core", "{8D2FD8F4-EB5C-45F8-9359-6BBB48C9BFF3}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.security.authentication.web.core\generate.rsp = generation\WinRT\winrt\windows.security.authentication.web.core\generate.rsp
+		generation\WinRT\winrt\windows.security.authentication.web.core\header.txt = generation\WinRT\winrt\windows.security.authentication.web.core\header.txt
+		generation\WinRT\winrt\windows.security.authentication.web.core\winrt-windows.security.authentication.web.core.h = generation\WinRT\winrt\windows.security.authentication.web.core\winrt-windows.security.authentication.web.core.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.security.authentication.web.provider", "windows.security.authentication.web.provider", "{2197EBED-774E-42B0-ADBC-484008D1AD8F}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.security.authentication.web.provider\generate.rsp = generation\WinRT\winrt\windows.security.authentication.web.provider\generate.rsp
+		generation\WinRT\winrt\windows.security.authentication.web.provider\header.txt = generation\WinRT\winrt\windows.security.authentication.web.provider\header.txt
+		generation\WinRT\winrt\windows.security.authentication.web.provider\winrt-windows.security.authentication.web.provider.h = generation\WinRT\winrt\windows.security.authentication.web.provider\winrt-windows.security.authentication.web.provider.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.popups", "windows.ui.popups", "{2E6C500F-396F-4B0A-9504-4F67847DFB3C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.ui.popups\generate.rsp = generation\WinRT\winrt\windows.ui.popups\generate.rsp
+		generation\WinRT\winrt\windows.ui.popups\header.txt = generation\WinRT\winrt\windows.ui.popups\header.txt
+		generation\WinRT\winrt\windows.ui.popups\winrt-windows.ui.popups.h = generation\WinRT\winrt\windows.ui.popups\winrt-windows.ui.popups.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.sensors", "windows.devices.sensors", "{685FA8B3-E524-4610-8ADB-26DB09B9CDD2}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.sensors\generate.rsp = generation\WinRT\winrt\windows.devices.sensors\generate.rsp
+		generation\WinRT\winrt\windows.devices.sensors\header.txt = generation\WinRT\winrt\windows.devices.sensors\header.txt
+		generation\WinRT\winrt\windows.devices.sensors\winrt-windows.devices.sensors.h = generation\WinRT\winrt\windows.devices.sensors\winrt-windows.devices.sensors.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.bluetooth", "windows.devices.bluetooth", "{F13F2B90-0EE0-4ACE-AF1F-1FC0C5C8390E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.bluetooth\generate.rsp = generation\WinRT\winrt\windows.devices.bluetooth\generate.rsp
+		generation\WinRT\winrt\windows.devices.bluetooth\header.txt = generation\WinRT\winrt\windows.devices.bluetooth\header.txt
+		generation\WinRT\winrt\windows.devices.bluetooth\winrt-windows.devices.bluetooth.h = generation\WinRT\winrt\windows.devices.bluetooth\winrt-windows.devices.bluetooth.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.bluetooth.advertisement", "windows.devices.bluetooth.advertisement", "{73DA0C69-8A14-4AAA-A66C-AC31AF904993}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.bluetooth.advertisement\generate.rsp = generation\WinRT\winrt\windows.devices.bluetooth.advertisement\generate.rsp
+		generation\WinRT\winrt\windows.devices.bluetooth.advertisement\header.txt = generation\WinRT\winrt\windows.devices.bluetooth.advertisement\header.txt
+		generation\WinRT\winrt\windows.devices.bluetooth.advertisement\winrt-windows.devices.bluetooth.advertisement.h = generation\WinRT\winrt\windows.devices.bluetooth.advertisement\winrt-windows.devices.bluetooth.advertisement.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.geolocation", "windows.devices.geolocation", "{5E54DE75-6013-40F2-8FE5-B452323FB28F}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.geolocation\generate.rsp = generation\WinRT\winrt\windows.devices.geolocation\generate.rsp
+		generation\WinRT\winrt\windows.devices.geolocation\header.txt = generation\WinRT\winrt\windows.devices.geolocation\header.txt
+		generation\WinRT\winrt\windows.devices.geolocation\winrt-windows.devices.geolocation.h = generation\WinRT\winrt\windows.devices.geolocation\winrt-windows.devices.geolocation.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.calls.background", "windows.applicationmodel.calls.background", "{9B867A1B-BE20-49B1-808C-144F6AF08AC8}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.calls.background\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.calls.background\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.calls.background\header.txt = generation\WinRT\winrt\windows.applicationmodel.calls.background\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.calls.background\winrt-windows.applicationmodel.calls.background.h = generation\WinRT\winrt\windows.applicationmodel.calls.background\winrt-windows.applicationmodel.calls.background.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.bluetooth.background", "windows.devices.bluetooth.background", "{3E5EFA12-24FC-44C1-8512-67D1FE0DB49B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.bluetooth.background\generate.rsp = generation\WinRT\winrt\windows.devices.bluetooth.background\generate.rsp
+		generation\WinRT\winrt\windows.devices.bluetooth.background\header.txt = generation\WinRT\winrt\windows.devices.bluetooth.background\header.txt
+		generation\WinRT\winrt\windows.devices.bluetooth.background\winrt-windows.devices.bluetooth.background.h = generation\WinRT\winrt\windows.devices.bluetooth.background\winrt-windows.devices.bluetooth.background.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.networking", "windows.networking", "{E0331BCA-C8F7-4759-87E1-FCC6D9CA27DB}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.networking\generate.rsp = generation\WinRT\winrt\windows.networking\generate.rsp
+		generation\WinRT\winrt\windows.networking\header.txt = generation\WinRT\winrt\windows.networking\header.txt
+		generation\WinRT\winrt\windows.networking\winrt-windows.networking.h = generation\WinRT\winrt\windows.networking\winrt-windows.networking.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.networking.sockets", "windows.networking.sockets", "{BA5A5D66-5AEF-4402-A5D2-0E33B90D1455}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.networking.sockets\generate.rsp = generation\WinRT\winrt\windows.networking.sockets\generate.rsp
+		generation\WinRT\winrt\windows.networking.sockets\header.txt = generation\WinRT\winrt\windows.networking.sockets\header.txt
+		generation\WinRT\winrt\windows.networking.sockets\winrt-windows.networking.sockets.h = generation\WinRT\winrt\windows.networking.sockets\winrt-windows.networking.sockets.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.smartcards", "windows.devices.smartcards", "{0E77FEBD-1932-47BC-8BF8-ACB4F5A98882}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.smartcards\generate.rsp = generation\WinRT\winrt\windows.devices.smartcards\generate.rsp
+		generation\WinRT\winrt\windows.devices.smartcards\header.txt = generation\WinRT\winrt\windows.devices.smartcards\header.txt
+		generation\WinRT\winrt\windows.devices.smartcards\winrt-windows.devices.smartcards.h = generation\WinRT\winrt\windows.devices.smartcards\winrt-windows.devices.smartcards.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.data.text", "windows.data.text", "{ADB8A34D-E073-45B1-963C-30C04720B718}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.data.text\generate.rsp = generation\WinRT\winrt\windows.data.text\generate.rsp
+		generation\WinRT\winrt\windows.data.text\header.txt = generation\WinRT\winrt\windows.data.text\header.txt
+		generation\WinRT\winrt\windows.data.text\winrt-windows.data.text.h = generation\WinRT\winrt\windows.data.text\winrt-windows.data.text.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.storage.fileproperties", "windows.storage.fileproperties", "{27E2F8C0-0B0D-4EBE-8FA4-DE232A472876}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.storage.fileproperties\generate.rsp = generation\WinRT\winrt\windows.storage.fileproperties\generate.rsp
+		generation\WinRT\winrt\windows.storage.fileproperties\header.txt = generation\WinRT\winrt\windows.storage.fileproperties\header.txt
+		generation\WinRT\winrt\windows.storage.fileproperties\winrt-windows.storage.fileproperties.h = generation\WinRT\winrt\windows.storage.fileproperties\winrt-windows.storage.fileproperties.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media", "windows.media", "{AD74FD99-7352-4E2D-995A-0953697A4BA7}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media\generate.rsp = generation\WinRT\winrt\windows.media\generate.rsp
+		generation\WinRT\winrt\windows.media\header.txt = generation\WinRT\winrt\windows.media\header.txt
+		generation\WinRT\winrt\windows.media\winrt-windows.media.h = generation\WinRT\winrt\windows.media\winrt-windows.media.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.core", "windows.media.core", "{5A8F203F-453E-4700-8C2C-B0F245C206F8}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.core\generate.rsp = generation\WinRT\winrt\windows.media.core\generate.rsp
+		generation\WinRT\winrt\windows.media.core\header.txt = generation\WinRT\winrt\windows.media.core\header.txt
+		generation\WinRT\winrt\windows.media.core\winrt-windows.media.core.h = generation\WinRT\winrt\windows.media.core\winrt-windows.media.core.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.bluetooth.genericattributeprofile", "windows.devices.bluetooth.genericattributeprofile", "{DAAD7B74-1F1E-4C93-B75B-8E4F52BC2D06}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.bluetooth.genericattributeprofile\generate.rsp = generation\WinRT\winrt\windows.devices.bluetooth.genericattributeprofile\generate.rsp
+		generation\WinRT\winrt\windows.devices.bluetooth.genericattributeprofile\header.txt = generation\WinRT\winrt\windows.devices.bluetooth.genericattributeprofile\header.txt
+		generation\WinRT\winrt\windows.devices.bluetooth.genericattributeprofile\winrt-windows.devices.bluetooth.genericattributeprofile.h = generation\WinRT\winrt\windows.devices.bluetooth.genericattributeprofile\winrt-windows.devices.bluetooth.genericattributeprofile.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.sms", "windows.devices.sms", "{97839091-EDA9-40E4-AD4B-54CF024A6A36}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.sms\generate.rsp = generation\WinRT\winrt\windows.devices.sms\generate.rsp
+		generation\WinRT\winrt\windows.devices.sms\header.txt = generation\WinRT\winrt\windows.devices.sms\header.txt
+		generation\WinRT\winrt\windows.devices.sms\winrt-windows.devices.sms.h = generation\WinRT\winrt\windows.devices.sms\winrt-windows.devices.sms.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.notifications", "windows.ui.notifications", "{C89FD70B-82A0-4902-876D-62BDF1B8375F}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.ui.notifications\generate.rsp = generation\WinRT\winrt\windows.ui.notifications\generate.rsp
+		generation\WinRT\winrt\windows.ui.notifications\header.txt = generation\WinRT\winrt\windows.ui.notifications\header.txt
+		generation\WinRT\winrt\windows.ui.notifications\winrt-windows.ui.notifications.h = generation\WinRT\winrt\windows.ui.notifications\winrt-windows.ui.notifications.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.security.enterprisedata", "windows.security.enterprisedata", "{B84DE9BD-92C3-4F00-9CA5-3F117606364E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.security.enterprisedata\generate.rsp = generation\WinRT\winrt\windows.security.enterprisedata\generate.rsp
+		generation\WinRT\winrt\windows.security.enterprisedata\header.txt = generation\WinRT\winrt\windows.security.enterprisedata\header.txt
+		generation\WinRT\winrt\windows.security.enterprisedata\winrt-windows.security.enterprisedata.h = generation\WinRT\winrt\windows.security.enterprisedata\winrt-windows.security.enterprisedata.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.text", "windows.ui.text", "{438F26B0-F5D7-415E-A667-CE0666B62CB6}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.ui.text\generate.rsp = generation\WinRT\winrt\windows.ui.text\generate.rsp
+		generation\WinRT\winrt\windows.ui.text\header.txt = generation\WinRT\winrt\windows.ui.text\header.txt
+		generation\WinRT\winrt\windows.ui.text\winrt-windows.ui.text.h = generation\WinRT\winrt\windows.ui.text\winrt-windows.ui.text.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.text.core", "windows.ui.text.core", "{1A8B5AD9-2852-4D5B-B6A1-55AB1135849B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.ui.text.core\generate.rsp = generation\WinRT\winrt\windows.ui.text.core\generate.rsp
+		generation\WinRT\winrt\windows.ui.text.core\header.txt = generation\WinRT\winrt\windows.ui.text.core\header.txt
+		generation\WinRT\winrt\windows.ui.text.core\winrt-windows.ui.text.core.h = generation\WinRT\winrt\windows.ui.text.core\winrt-windows.ui.text.core.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.bluetooth.rfcomm", "windows.devices.bluetooth.rfcomm", "{AD0B37D9-7D1E-49A2-8C32-A4408735BC51}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.bluetooth.rfcomm\generate.rsp = generation\WinRT\winrt\windows.devices.bluetooth.rfcomm\generate.rsp
+		generation\WinRT\winrt\windows.devices.bluetooth.rfcomm\header.txt = generation\WinRT\winrt\windows.devices.bluetooth.rfcomm\header.txt
+		generation\WinRT\winrt\windows.devices.bluetooth.rfcomm\winrt-windows.devices.bluetooth.rfcomm.h = generation\WinRT\winrt\windows.devices.bluetooth.rfcomm\winrt-windows.devices.bluetooth.rfcomm.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.security.credentials", "windows.security.credentials", "{6649F328-AC42-49DC-A4A6-1084A7A6C571}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.security.credentials\generate.rsp = generation\WinRT\winrt\windows.security.credentials\generate.rsp
+		generation\WinRT\winrt\windows.security.credentials\header.txt = generation\WinRT\winrt\windows.security.credentials\header.txt
+		generation\WinRT\winrt\windows.security.credentials\winrt-windows.security.credentials.h = generation\WinRT\winrt\windows.security.credentials\winrt-windows.security.credentials.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics.printing", "windows.graphics.printing", "{D6D9F53A-8E26-4A91-9E85-16E488CCA173}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.graphics.printing\generate.rsp = generation\WinRT\winrt\windows.graphics.printing\generate.rsp
+		generation\WinRT\winrt\windows.graphics.printing\header.txt = generation\WinRT\winrt\windows.graphics.printing\header.txt
+		generation\WinRT\winrt\windows.graphics.printing\winrt-windows.graphics.printing.h = generation\WinRT\winrt\windows.graphics.printing\winrt-windows.graphics.printing.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics.display", "windows.graphics.display", "{95E44831-8E2A-4747-9EB6-2A1784CB19A3}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.graphics.display\generate.rsp = generation\WinRT\winrt\windows.graphics.display\generate.rsp
+		generation\WinRT\winrt\windows.graphics.display\header.txt = generation\WinRT\winrt\windows.graphics.display\header.txt
+		generation\WinRT\winrt\windows.graphics.display\winrt-windows.graphics.display.h = generation\WinRT\winrt\windows.graphics.display\winrt-windows.graphics.display.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics.display.core", "windows.graphics.display.core", "{383B105A-70D0-4927-80BC-37B81902FA45}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.graphics.display.core\generate.rsp = generation\WinRT\winrt\windows.graphics.display.core\generate.rsp
+		generation\WinRT\winrt\windows.graphics.display.core\header.txt = generation\WinRT\winrt\windows.graphics.display.core\header.txt
+		generation\WinRT\winrt\windows.graphics.display.core\winrt-windows.graphics.display.core.h = generation\WinRT\winrt\windows.graphics.display.core\winrt-windows.graphics.display.core.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.security.cryptography.core", "windows.security.cryptography.core", "{C9BE02CD-3195-4CF4-9981-816E5EFBC675}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.security.cryptography.core\generate.rsp = generation\WinRT\winrt\windows.security.cryptography.core\generate.rsp
+		generation\WinRT\winrt\windows.security.cryptography.core\header.txt = generation\WinRT\winrt\windows.security.cryptography.core\header.txt
+		generation\WinRT\winrt\windows.security.cryptography.core\winrt-windows.security.cryptography.core.h = generation\WinRT\winrt\windows.security.cryptography.core\winrt-windows.security.cryptography.core.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.security.cryptography", "windows.security.cryptography", "{59410924-A583-4ACF-AA95-C8CA5137A902}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.security.cryptography\generate.rsp = generation\WinRT\winrt\windows.security.cryptography\generate.rsp
+		generation\WinRT\winrt\windows.security.cryptography\header.txt = generation\WinRT\winrt\windows.security.cryptography\header.txt
+		generation\WinRT\winrt\windows.security.cryptography\winrt-windows.security.cryptography.h = generation\WinRT\winrt\windows.security.cryptography\winrt-windows.security.cryptography.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.adc", "windows.devices.adc", "{5264D3EC-4A5F-4C49-A9FC-3D8A00FC1885}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.adc\generate.rsp = generation\WinRT\winrt\windows.devices.adc\generate.rsp
+		generation\WinRT\winrt\windows.devices.adc\header.txt = generation\WinRT\winrt\windows.devices.adc\header.txt
+		generation\WinRT\winrt\windows.devices.adc\winrt-windows.devices.adc.h = generation\WinRT\winrt\windows.devices.adc\winrt-windows.devices.adc.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.adc.provider", "windows.devices.adc.provider", "{4B7CD9DE-7A92-4AF1-91E5-4AC8E63CF2A6}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.adc.provider\generate.rsp = generation\WinRT\winrt\windows.devices.adc.provider\generate.rsp
+		generation\WinRT\winrt\windows.devices.adc.provider\header.txt = generation\WinRT\winrt\windows.devices.adc.provider\header.txt
+		generation\WinRT\winrt\windows.devices.adc.provider\winrt-windows.devices.adc.provider.h = generation\WinRT\winrt\windows.devices.adc.provider\winrt-windows.devices.adc.provider.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.pwm", "windows.devices.pwm", "{E386360F-E7B6-451A-9B52-E454F58560BE}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.pwm\generate.rsp = generation\WinRT\winrt\windows.devices.pwm\generate.rsp
+		generation\WinRT\winrt\windows.devices.pwm\header.txt = generation\WinRT\winrt\windows.devices.pwm\header.txt
+		generation\WinRT\winrt\windows.devices.pwm\winrt-windows.devices.pwm.h = generation\WinRT\winrt\windows.devices.pwm\winrt-windows.devices.pwm.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.pwm.provider", "windows.devices.pwm.provider", "{C370E13B-77E7-4566-9AC1-935728D6E250}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.pwm.provider\generate.rsp = generation\WinRT\winrt\windows.devices.pwm.provider\generate.rsp
+		generation\WinRT\winrt\windows.devices.pwm.provider\header.txt = generation\WinRT\winrt\windows.devices.pwm.provider\header.txt
+		generation\WinRT\winrt\windows.devices.pwm.provider\winrt-windows.devices.pwm.provider.h = generation\WinRT\winrt\windows.devices.pwm.provider\winrt-windows.devices.pwm.provider.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.gpio", "windows.devices.gpio", "{031BCA11-2916-4285-B5FC-A8AF2751A82A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.gpio\generate.rsp = generation\WinRT\winrt\windows.devices.gpio\generate.rsp
+		generation\WinRT\winrt\windows.devices.gpio\header.txt = generation\WinRT\winrt\windows.devices.gpio\header.txt
+		generation\WinRT\winrt\windows.devices.gpio\winrt-windows.devices.gpio.h = generation\WinRT\winrt\windows.devices.gpio\winrt-windows.devices.gpio.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.gpio.provider", "windows.devices.gpio.provider", "{5111E31F-6411-4720-8ACA-FC67F6F1F8B1}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.gpio.provider\generate.rsp = generation\WinRT\winrt\windows.devices.gpio.provider\generate.rsp
+		generation\WinRT\winrt\windows.devices.gpio.provider\header.txt = generation\WinRT\winrt\windows.devices.gpio.provider\header.txt
+		generation\WinRT\winrt\windows.devices.gpio.provider\winrt-windows.devices.gpio.provider.h = generation\WinRT\winrt\windows.devices.gpio.provider\winrt-windows.devices.gpio.provider.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.i2c", "windows.devices.i2c", "{3684F28D-3AC7-4770-A3FB-ECBF96EA2478}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.i2c\generate.rsp = generation\WinRT\winrt\windows.devices.i2c\generate.rsp
+		generation\WinRT\winrt\windows.devices.i2c\header.txt = generation\WinRT\winrt\windows.devices.i2c\header.txt
+		generation\WinRT\winrt\windows.devices.i2c\winrt-windows.devices.i2c.h = generation\WinRT\winrt\windows.devices.i2c\winrt-windows.devices.i2c.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.i2c.provider", "windows.devices.i2c.provider", "{FB2ADE01-E918-4AF1-9388-F392232ECFE5}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.i2c.provider\generate.rsp = generation\WinRT\winrt\windows.devices.i2c.provider\generate.rsp
+		generation\WinRT\winrt\windows.devices.i2c.provider\header.txt = generation\WinRT\winrt\windows.devices.i2c.provider\header.txt
+		generation\WinRT\winrt\windows.devices.i2c.provider\winrt-windows.devices.i2c.provider.h = generation\WinRT\winrt\windows.devices.i2c.provider\winrt-windows.devices.i2c.provider.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.spi", "windows.devices.spi", "{BD43E684-3507-4534-B4FF-146462E96AF1}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.spi\generate.rsp = generation\WinRT\winrt\windows.devices.spi\generate.rsp
+		generation\WinRT\winrt\windows.devices.spi\header.txt = generation\WinRT\winrt\windows.devices.spi\header.txt
+		generation\WinRT\winrt\windows.devices.spi\winrt-windows.devices.spi.h = generation\WinRT\winrt\windows.devices.spi\winrt-windows.devices.spi.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.spi.provider", "windows.devices.spi.provider", "{4056CA3A-99D6-4FC2-AAF6-F10A0F016A4E}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.spi.provider\generate.rsp = generation\WinRT\winrt\windows.devices.spi.provider\generate.rsp
+		generation\WinRT\winrt\windows.devices.spi.provider\header.txt = generation\WinRT\winrt\windows.devices.spi.provider\header.txt
+		generation\WinRT\winrt\windows.devices.spi.provider\winrt-windows.devices.spi.provider.h = generation\WinRT\winrt\windows.devices.spi.provider\winrt-windows.devices.spi.provider.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.mediaproperties", "windows.media.mediaproperties", "{537DCA92-B486-422C-9D53-80A182BAA4C8}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.mediaproperties\generate.rsp = generation\WinRT\winrt\windows.media.mediaproperties\generate.rsp
+		generation\WinRT\winrt\windows.media.mediaproperties\header.txt = generation\WinRT\winrt\windows.media.mediaproperties\header.txt
+		generation\WinRT\winrt\windows.media.mediaproperties\winrt-windows.media.mediaproperties.h = generation\WinRT\winrt\windows.media.mediaproperties\winrt-windows.media.mediaproperties.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.playback", "windows.media.playback", "{1041D4F5-B605-4EBA-8F58-17E9C70BBAC7}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.playback\generate.rsp = generation\WinRT\winrt\windows.media.playback\generate.rsp
+		generation\WinRT\winrt\windows.media.playback\header.txt = generation\WinRT\winrt\windows.media.playback\header.txt
+		generation\WinRT\winrt\windows.media.playback\winrt-windows.media.playback.h = generation\WinRT\winrt\windows.media.playback\winrt-windows.media.playback.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics.imaging", "windows.graphics.imaging", "{511B0B4F-D5D1-4F1E-8CA6-1AE5EB146AD7}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.graphics.imaging\generate.rsp = generation\WinRT\winrt\windows.graphics.imaging\generate.rsp
+		generation\WinRT\winrt\windows.graphics.imaging\header.txt = generation\WinRT\winrt\windows.graphics.imaging\header.txt
+		generation\WinRT\winrt\windows.graphics.imaging\winrt-windows.graphics.imaging.h = generation\WinRT\winrt\windows.graphics.imaging\winrt-windows.graphics.imaging.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics.directx.direct3d11", "windows.graphics.directx.direct3d11", "{9B3063D4-8AF6-4C99-A678-17EEA33D8ED8}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.graphics.directx.direct3d11\generate.rsp = generation\WinRT\winrt\windows.graphics.directx.direct3d11\generate.rsp
+		generation\WinRT\winrt\windows.graphics.directx.direct3d11\header.txt = generation\WinRT\winrt\windows.graphics.directx.direct3d11\header.txt
+		generation\WinRT\winrt\windows.graphics.directx.direct3d11\winrt-windows.graphics.directx.direct3d11.h = generation\WinRT\winrt\windows.graphics.directx.direct3d11\winrt-windows.graphics.directx.direct3d11.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.streaming.adaptive", "windows.media.streaming.adaptive", "{63C46DCC-3292-455B-A3DB-6F3097B20246}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.streaming.adaptive\generate.rsp = generation\WinRT\winrt\windows.media.streaming.adaptive\generate.rsp
+		generation\WinRT\winrt\windows.media.streaming.adaptive\header.txt = generation\WinRT\winrt\windows.media.streaming.adaptive\header.txt
+		generation\WinRT\winrt\windows.media.streaming.adaptive\winrt-windows.media.streaming.adaptive.h = generation\WinRT\winrt\windows.media.streaming.adaptive\winrt-windows.media.streaming.adaptive.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.streaming", "windows.media.streaming", "{CD080A72-FC29-4794-B455-105C1B33CA57}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.streaming\generate.rsp = generation\WinRT\winrt\windows.media.streaming\generate.rsp
+		generation\WinRT\winrt\windows.media.streaming\header.txt = generation\WinRT\winrt\windows.media.streaming\header.txt
+		generation\WinRT\winrt\windows.media.streaming\winrt-windows.media.streaming.h = generation\WinRT\winrt\windows.media.streaming\winrt-windows.media.streaming.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.networking.backgroundtransfer", "windows.networking.backgroundtransfer", "{66EB1904-5E22-4F4E-B4A4-9ABB098F8F95}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.networking.backgroundtransfer\generate.rsp = generation\WinRT\winrt\windows.networking.backgroundtransfer\generate.rsp
+		generation\WinRT\winrt\windows.networking.backgroundtransfer\header.txt = generation\WinRT\winrt\windows.networking.backgroundtransfer\header.txt
+		generation\WinRT\winrt\windows.networking.backgroundtransfer\winrt-windows.networking.backgroundtransfer.h = generation\WinRT\winrt\windows.networking.backgroundtransfer\winrt-windows.networking.backgroundtransfer.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.applicationmodel.appservice", "windows.applicationmodel.appservice", "{86D788E6-8013-43AA-AE6B-5EFFCDE0D86B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.applicationmodel.appservice\generate.rsp = generation\WinRT\winrt\windows.applicationmodel.appservice\generate.rsp
+		generation\WinRT\winrt\windows.applicationmodel.appservice\header.txt = generation\WinRT\winrt\windows.applicationmodel.appservice\header.txt
+		generation\WinRT\winrt\windows.applicationmodel.appservice\winrt-windows.applicationmodel.appservice.h = generation\WinRT\winrt\windows.applicationmodel.appservice\winrt-windows.applicationmodel.appservice.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.capture", "windows.media.capture", "{3DAAFBD3-E533-4A15-99EE-9D7D244CD1C4}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.capture\generate.rsp = generation\WinRT\winrt\windows.media.capture\generate.rsp
+		generation\WinRT\winrt\windows.media.capture\header.txt = generation\WinRT\winrt\windows.media.capture\header.txt
+		generation\WinRT\winrt\windows.media.capture\winrt-windows.media.capture.h = generation\WinRT\winrt\windows.media.capture\winrt-windows.media.capture.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.capture.core", "windows.media.capture.core", "{29A0EC4D-4EA3-47A0-BABA-87CF9F574758}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.capture.core\generate.rsp = generation\WinRT\winrt\windows.media.capture.core\generate.rsp
+		generation\WinRT\winrt\windows.media.capture.core\header.txt = generation\WinRT\winrt\windows.media.capture.core\header.txt
+		generation\WinRT\winrt\windows.media.capture.core\winrt-windows.media.capture.core.h = generation\WinRT\winrt\windows.media.capture.core\winrt-windows.media.capture.core.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.capture.frames", "windows.media.capture.frames", "{101726FC-8ED4-4E12-8B31-B58F351FE749}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.capture.frames\generate.rsp = generation\WinRT\winrt\windows.media.capture.frames\generate.rsp
+		generation\WinRT\winrt\windows.media.capture.frames\header.txt = generation\WinRT\winrt\windows.media.capture.frames\header.txt
+		generation\WinRT\winrt\windows.media.capture.frames\winrt-windows.media.capture.frames.h = generation\WinRT\winrt\windows.media.capture.frames\winrt-windows.media.capture.frames.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.system.remotesystems", "windows.system.remotesystems", "{DCA05869-40DB-45E5-9528-EB82972B15C6}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.system.remotesystems\generate.rsp = generation\WinRT\winrt\windows.system.remotesystems\generate.rsp
+		generation\WinRT\winrt\windows.system.remotesystems\header.txt = generation\WinRT\winrt\windows.system.remotesystems\header.txt
+		generation\WinRT\winrt\windows.system.remotesystems\winrt-windows.system.remotesystems.h = generation\WinRT\winrt\windows.system.remotesystems\winrt-windows.system.remotesystems.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.devices.core", "windows.media.devices.core", "{F5AD534D-8CBE-4CAB-9385-A84FC95AB03F}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.devices.core\generate.rsp = generation\WinRT\winrt\windows.media.devices.core\generate.rsp
+		generation\WinRT\winrt\windows.media.devices.core\header.txt = generation\WinRT\winrt\windows.media.devices.core\header.txt
+		generation\WinRT\winrt\windows.media.devices.core\winrt-windows.media.devices.core.h = generation\WinRT\winrt\windows.media.devices.core\winrt-windows.media.devices.core.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.devices", "windows.media.devices", "{0E57AB42-B811-4385-9830-A9B7E58BC1F6}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.devices\generate.rsp = generation\WinRT\winrt\windows.media.devices\generate.rsp
+		generation\WinRT\winrt\windows.media.devices\header.txt = generation\WinRT\winrt\windows.media.devices\header.txt
+		generation\WinRT\winrt\windows.media.devices\winrt-windows.media.devices.h = generation\WinRT\winrt\windows.media.devices\winrt-windows.media.devices.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.perception", "windows.perception", "{CC505248-4092-457C-B3DB-5790D5BF7F92}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.perception\generate.rsp = generation\WinRT\winrt\windows.perception\generate.rsp
+		generation\WinRT\winrt\windows.perception\header.txt = generation\WinRT\winrt\windows.perception\header.txt
+		generation\WinRT\winrt\windows.perception\winrt-windows.perception.h = generation\WinRT\winrt\windows.perception\winrt-windows.perception.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.perception.spatial", "windows.perception.spatial", "{5BD766B5-4359-466F-918F-684D087941D5}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.perception.spatial\generate.rsp = generation\WinRT\winrt\windows.perception.spatial\generate.rsp
+		generation\WinRT\winrt\windows.perception.spatial\header.txt = generation\WinRT\winrt\windows.perception.spatial\header.txt
+		generation\WinRT\winrt\windows.perception.spatial\winrt-windows.perception.spatial.h = generation\WinRT\winrt\windows.perception.spatial\winrt-windows.perception.spatial.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.effects", "windows.media.effects", "{BB259E56-BE7D-473C-BB76-07B4C5E37B6C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.effects\generate.rsp = generation\WinRT\winrt\windows.media.effects\generate.rsp
+		generation\WinRT\winrt\windows.media.effects\header.txt = generation\WinRT\winrt\windows.media.effects\header.txt
+		generation\WinRT\winrt\windows.media.effects\winrt-windows.media.effects.h = generation\WinRT\winrt\windows.media.effects\winrt-windows.media.effects.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.protection", "windows.media.protection", "{1655BDD9-E962-4157-BDA8-3B8C36034156}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.protection\generate.rsp = generation\WinRT\winrt\windows.media.protection\generate.rsp
+		generation\WinRT\winrt\windows.media.protection\header.txt = generation\WinRT\winrt\windows.media.protection\header.txt
+		generation\WinRT\winrt\windows.media.protection\winrt-windows.media.protection.h = generation\WinRT\winrt\windows.media.protection\winrt-windows.media.protection.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.render", "windows.media.render", "{ADC72FC8-7175-48B5-BF75-3CD4B26F84C0}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.render\generate.rsp = generation\WinRT\winrt\windows.media.render\generate.rsp
+		generation\WinRT\winrt\windows.media.render\header.txt = generation\WinRT\winrt\windows.media.render\header.txt
+		generation\WinRT\winrt\windows.media.render\winrt-windows.media.render.h = generation\WinRT\winrt\windows.media.render\winrt-windows.media.render.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.editing", "windows.media.editing", "{CE7A105D-00DD-4199-91D5-CAF3FBAD3C93}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.editing\generate.rsp = generation\WinRT\winrt\windows.media.editing\generate.rsp
+		generation\WinRT\winrt\windows.media.editing\header.txt = generation\WinRT\winrt\windows.media.editing\header.txt
+		generation\WinRT\winrt\windows.media.editing\winrt-windows.media.editing.h = generation\WinRT\winrt\windows.media.editing\winrt-windows.media.editing.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.transcoding", "windows.media.transcoding", "{DDE0139F-52B3-4ED7-826A-90D854F57E9B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.transcoding\generate.rsp = generation\WinRT\winrt\windows.media.transcoding\generate.rsp
+		generation\WinRT\winrt\windows.media.transcoding\header.txt = generation\WinRT\winrt\windows.media.transcoding\header.txt
+		generation\WinRT\winrt\windows.media.transcoding\winrt-windows.media.transcoding.h = generation\WinRT\winrt\windows.media.transcoding\winrt-windows.media.transcoding.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.casting", "windows.media.casting", "{65BD96B2-2E26-411D-A170-3089C16092BA}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.casting\generate.rsp = generation\WinRT\winrt\windows.media.casting\generate.rsp
+		generation\WinRT\winrt\windows.media.casting\header.txt = generation\WinRT\winrt\windows.media.casting\header.txt
+		generation\WinRT\winrt\windows.media.casting\winrt-windows.media.casting.h = generation\WinRT\winrt\windows.media.casting\winrt-windows.media.casting.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.composition", "windows.ui.composition", "{2C6DEC4C-E3FD-42EC-B060-90FD7520B69A}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.ui.composition\generate.rsp = generation\WinRT\winrt\windows.ui.composition\generate.rsp
+		generation\WinRT\winrt\windows.ui.composition\header.txt = generation\WinRT\winrt\windows.ui.composition\header.txt
+		generation\WinRT\winrt\windows.ui.composition\winrt-windows.ui.composition.h = generation\WinRT\winrt\windows.ui.composition\winrt-windows.ui.composition.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.composition.core", "windows.ui.composition.core", "{FA2F997B-3051-47AF-A4E0-67FD9C341C86}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.ui.composition.core\generate.rsp = generation\WinRT\winrt\windows.ui.composition.core\generate.rsp
+		generation\WinRT\winrt\windows.ui.composition.core\header.txt = generation\WinRT\winrt\windows.ui.composition.core\header.txt
+		generation\WinRT\winrt\windows.ui.composition.core\winrt-windows.ui.composition.core.h = generation\WinRT\winrt\windows.ui.composition.core\winrt-windows.ui.composition.core.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.media.audio", "windows.media.audio", "{00E63A14-797A-4B5D-BFDE-79CA2DE9DF37}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.media.audio\generate.rsp = generation\WinRT\winrt\windows.media.audio\generate.rsp
+		generation\WinRT\winrt\windows.media.audio\header.txt = generation\WinRT\winrt\windows.media.audio\header.txt
+		generation\WinRT\winrt\windows.media.audio\winrt-windows.media.audio.h = generation\WinRT\winrt\windows.media.audio\winrt-windows.media.audio.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.globalization", "windows.globalization", "{C4BDA45B-4757-4F35-8984-0DE57577ACE0}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.globalization\generate.rsp = generation\WinRT\winrt\windows.globalization\generate.rsp
+		generation\WinRT\winrt\windows.globalization\header.txt = generation\WinRT\winrt\windows.globalization\header.txt
+		generation\WinRT\winrt\windows.globalization\winrt-windows.globalization.h = generation\WinRT\winrt\windows.globalization\winrt-windows.globalization.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.web.http", "windows.web.http", "{DF2A6E4C-314A-4828-98AA-62E298134B40}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.web.http\generate.rsp = generation\WinRT\winrt\windows.web.http\generate.rsp
+		generation\WinRT\winrt\windows.web.http\header.txt = generation\WinRT\winrt\windows.web.http\header.txt
+		generation\WinRT\winrt\windows.web.http\winrt-windows.web.http.h = generation\WinRT\winrt\windows.web.http\winrt-windows.web.http.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.web", "windows.web", "{A8C1BC2B-ABA0-4E5B-B546-C052B807F253}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.web\generate.rsp = generation\WinRT\winrt\windows.web\generate.rsp
+		generation\WinRT\winrt\windows.web\header.txt = generation\WinRT\winrt\windows.web\header.txt
+		generation\WinRT\winrt\windows.web\winrt-windows.web.h = generation\WinRT\winrt\windows.web\winrt-windows.web.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.networking.connectivity", "windows.networking.connectivity", "{376B937E-A1DB-46F9-9984-0D146EAC31D9}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.networking.connectivity\generate.rsp = generation\WinRT\winrt\windows.networking.connectivity\generate.rsp
+		generation\WinRT\winrt\windows.networking.connectivity\header.txt = generation\WinRT\winrt\windows.networking.connectivity\header.txt
+		generation\WinRT\winrt\windows.networking.connectivity\winrt-windows.networking.connectivity.h = generation\WinRT\winrt\windows.networking.connectivity\winrt-windows.networking.connectivity.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.security.cryptography.certificates", "windows.security.cryptography.certificates", "{9A24EC05-0095-475C-8484-60DBE482BDA9}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.security.cryptography.certificates\generate.rsp = generation\WinRT\winrt\windows.security.cryptography.certificates\generate.rsp
+		generation\WinRT\winrt\windows.security.cryptography.certificates\header.txt = generation\WinRT\winrt\windows.security.cryptography.certificates\header.txt
+		generation\WinRT\winrt\windows.security.cryptography.certificates\winrt-windows.security.cryptography.certificates.h = generation\WinRT\winrt\windows.security.cryptography.certificates\winrt-windows.security.cryptography.certificates.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.input", "windows.ui.input", "{FE0EE48B-3262-4E58-A260-D8A2576D94A5}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.ui.input\generate.rsp = generation\WinRT\winrt\windows.ui.input\generate.rsp
+		generation\WinRT\winrt\windows.ui.input\header.txt = generation\WinRT\winrt\windows.ui.input\header.txt
+		generation\WinRT\winrt\windows.ui.input\winrt-windows.ui.input.h = generation\WinRT\winrt\windows.ui.input\winrt-windows.ui.input.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.input.core", "windows.ui.input.core", "{08CD2028-508A-48C6-AC37-D5D4E473741C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.ui.input.core\generate.rsp = generation\WinRT\winrt\windows.ui.input.core\generate.rsp
+		generation\WinRT\winrt\windows.ui.input.core\header.txt = generation\WinRT\winrt\windows.ui.input.core\header.txt
+		generation\WinRT\winrt\windows.ui.input.core\winrt-windows.ui.input.core.h = generation\WinRT\winrt\windows.ui.input.core\winrt-windows.ui.input.core.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.devices.input", "windows.devices.input", "{73420A2B-CBEB-4C66-A7DC-1D3E672F9A1C}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.devices.input\generate.rsp = generation\WinRT\winrt\windows.devices.input\generate.rsp
+		generation\WinRT\winrt\windows.devices.input\header.txt = generation\WinRT\winrt\windows.devices.input\header.txt
+		generation\WinRT\winrt\windows.devices.input\winrt-windows.devices.input.h = generation\WinRT\winrt\windows.devices.input\winrt-windows.devices.input.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.data.xml.dom", "windows.data.xml.dom", "{68F1DFD8-098A-4D30-A4C0-A28512B33BA9}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.data.xml.dom\generate.rsp = generation\WinRT\winrt\windows.data.xml.dom\generate.rsp
+		generation\WinRT\winrt\windows.data.xml.dom\header.txt = generation\WinRT\winrt\windows.data.xml.dom\header.txt
+		generation\WinRT\winrt\windows.data.xml.dom\winrt-windows.data.xml.dom.h = generation\WinRT\winrt\windows.data.xml.dom\winrt-windows.data.xml.dom.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.web.http.headers", "windows.web.http.headers", "{807F70F0-D52C-40B8-9D13-BCF016222EA8}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.web.http.headers\generate.rsp = generation\WinRT\winrt\windows.web.http.headers\generate.rsp
+		generation\WinRT\winrt\windows.web.http.headers\header.txt = generation\WinRT\winrt\windows.web.http.headers\header.txt
+		generation\WinRT\winrt\windows.web.http.headers\winrt-windows.web.http.headers.h = generation\WinRT\winrt\windows.web.http.headers\winrt-windows.web.http.headers.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.web.http.filters", "windows.web.http.filters", "{8A7B659A-CEDB-4189-B1EA-7B0319E3F2B6}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.web.http.filters\generate.rsp = generation\WinRT\winrt\windows.web.http.filters\generate.rsp
+		generation\WinRT\winrt\windows.web.http.filters\header.txt = generation\WinRT\winrt\windows.web.http.filters\header.txt
+		generation\WinRT\winrt\windows.web.http.filters\winrt-windows.web.http.filters.h = generation\WinRT\winrt\windows.web.http.filters\winrt-windows.web.http.filters.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.ui.composition.desktop", "windows.ui.composition.desktop", "{2622EAB3-2544-40AD-9284-3F86115B7DDA}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.ui.composition.desktop\generate.rsp = generation\WinRT\winrt\windows.ui.composition.desktop\generate.rsp
+		generation\WinRT\winrt\windows.ui.composition.desktop\header.txt = generation\WinRT\winrt\windows.ui.composition.desktop\header.txt
+		generation\WinRT\winrt\windows.ui.composition.desktop\winrt-windows.ui.composition.desktop.h = generation\WinRT\winrt\windows.ui.composition.desktop\winrt-windows.ui.composition.desktop.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -3767,17 +4530,6 @@ Global
 		{EA5B695A-5F25-401E-9FD9-23BFDEFBA01B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{5E5D7257-3F63-45F9-899B-CE0DFEFCC2D1} = {D9638FEE-50A4-44FF-B1F6-72E59548490B}
 		{566C5B1B-E5DC-420D-8740-A991751A5D09} = {65954CB3-F28F-4CF0-BC77-0FFD6E858BCE}
-		{0A6C98CF-2561-439D-A78D-C8C1E7F19B75} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
-		{BBCA5500-FE50-4970-A019-830C912D9ABE} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
-		{65B229A2-8DDE-40CB-B600-7A4EE052DD60} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
-		{11D48099-EDE0-4F6F-884E-45B0DC0AA6AD} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
-		{32CFDE8C-7D38-4549-B08E-7271102D6503} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
-		{D9631DB3-5394-4D28-B687-C0524ABC80FC} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
-		{E1CE167B-DD40-4955-84F0-64D55CAACA00} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
-		{7523C542-E0CD-42F9-93C4-B593179B378C} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
-		{48C596B5-7E3C-46A8-A0B1-ACC1960234F3} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
-		{B9B6668A-10CD-451A-8B5B-0C0DC12213AD} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
-		{5C9AEBD7-5857-4641-9F8C-D16680230BD9} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{635B5075-171E-4AE9-B25D-F2E3C36E2F7E} = {849C4129-3383-468E-9CFA-B709015C0BE2}
 		{10FB9457-4DE3-4E4C-9229-2C3C58D07346} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{CA0728D0-571F-48A0-A4A9-4681A76D120C} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
@@ -3805,6 +4557,126 @@ Global
 		{AC2FBDD1-6B86-4F80-A8C5-17130D9B4A73} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{7305CE91-7BD6-4BBE-BBF6-D64B0254E755} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{569D2D0D-DD00-4449-B0D2-9961B649F58C} = {F9716DD9-2967-4295-AC71-F1FD5A9EEFEF}
+		{0A6C98CF-2561-439D-A78D-C8C1E7F19B75} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{BBCA5500-FE50-4970-A019-830C912D9ABE} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{65B229A2-8DDE-40CB-B600-7A4EE052DD60} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{11D48099-EDE0-4F6F-884E-45B0DC0AA6AD} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{32CFDE8C-7D38-4549-B08E-7271102D6503} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{D9631DB3-5394-4D28-B687-C0524ABC80FC} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{E1CE167B-DD40-4955-84F0-64D55CAACA00} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{7523C542-E0CD-42F9-93C4-B593179B378C} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{48C596B5-7E3C-46A8-A0B1-ACC1960234F3} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{B9B6668A-10CD-451A-8B5B-0C0DC12213AD} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{5C9AEBD7-5857-4641-9F8C-D16680230BD9} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{AF9F6E3F-A98E-4D76-80EE-60D213B75FD5} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{CF710A8D-7F47-40B6-B9A4-B1A713E99EDE} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{ABE362FD-8590-4C33-805A-4952955CDF90} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{FA023EA3-8087-41EE-A5A4-17CDFEEE21C8} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{5EAFD9FE-F1F6-49B4-AA91-976D449E38B6} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{A156BF9C-A4AC-406E-9378-71CD45B82C36} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{B299286E-E167-4AC3-9915-686FABD70BAA} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{85ADD5F6-590E-429A-BEE5-464FBE1FA82A} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{143C7125-851F-45FD-8071-3E6FF30B550A} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{CB171E8D-6A34-4AC3-8D3D-077E0C64E0CE} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{97AFCE29-5397-4F2C-83C4-F65DC7D8CF67} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{88EFB4F7-049C-4BA6-BF21-BA91E0EF7821} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{DE182982-39F0-4066-A7C2-A28BA6FA96AC} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{5729108D-F8F2-4C0E-B096-A1D7505A5D77} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{FB15B687-A7A2-4093-8465-A7E856E0637C} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{1052B6FD-53C7-444D-8BF9-48F93BD9AA0A} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{4073585D-DDB7-4A41-B352-FEF9660665E6} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{66092349-4284-4E56-9F2D-6F431B2B20AA} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{06CEC626-82D7-48DB-8328-FAA318EA2B39} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{8331FDA0-0A72-4A6C-90FA-E8CA37E5E592} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{2D6B4E47-96FE-461F-A032-DBB1FDC0C513} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{7941C821-C136-438B-8102-E31513965EA8} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{9389B650-E18D-488C-9474-21BE11152B31} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{C128AFD3-20A5-45E8-9615-39EF7851195C} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{D7B9B94A-5948-4B2B-AC4A-D10B899EF4C5} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{35723C1D-D515-4697-A4F7-F18EE9FF10DB} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{3E7EC5DB-3541-418D-B054-94F50E9E31E9} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{700E36C1-EED7-4928-B98D-CA3AE9EE3CB7} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{5D7AAC05-2CC8-4C23-B5A2-33223C8660E7} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{17A7A00F-2276-472A-84DC-2D131D8C2390} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{1967F303-5AD4-49E9-AE9E-5360E2D24B7C} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{70000A0A-C310-499C-B3D8-97A4010A3FFA} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{E70755E1-267B-4F54-84FD-D0553EAF49E0} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{8D2FD8F4-EB5C-45F8-9359-6BBB48C9BFF3} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{2197EBED-774E-42B0-ADBC-484008D1AD8F} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{2E6C500F-396F-4B0A-9504-4F67847DFB3C} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{685FA8B3-E524-4610-8ADB-26DB09B9CDD2} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{F13F2B90-0EE0-4ACE-AF1F-1FC0C5C8390E} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{73DA0C69-8A14-4AAA-A66C-AC31AF904993} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{5E54DE75-6013-40F2-8FE5-B452323FB28F} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{9B867A1B-BE20-49B1-808C-144F6AF08AC8} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{3E5EFA12-24FC-44C1-8512-67D1FE0DB49B} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{E0331BCA-C8F7-4759-87E1-FCC6D9CA27DB} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{BA5A5D66-5AEF-4402-A5D2-0E33B90D1455} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{0E77FEBD-1932-47BC-8BF8-ACB4F5A98882} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{ADB8A34D-E073-45B1-963C-30C04720B718} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{27E2F8C0-0B0D-4EBE-8FA4-DE232A472876} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{AD74FD99-7352-4E2D-995A-0953697A4BA7} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{5A8F203F-453E-4700-8C2C-B0F245C206F8} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{DAAD7B74-1F1E-4C93-B75B-8E4F52BC2D06} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{97839091-EDA9-40E4-AD4B-54CF024A6A36} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{C89FD70B-82A0-4902-876D-62BDF1B8375F} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{B84DE9BD-92C3-4F00-9CA5-3F117606364E} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{438F26B0-F5D7-415E-A667-CE0666B62CB6} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{1A8B5AD9-2852-4D5B-B6A1-55AB1135849B} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{AD0B37D9-7D1E-49A2-8C32-A4408735BC51} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{6649F328-AC42-49DC-A4A6-1084A7A6C571} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{D6D9F53A-8E26-4A91-9E85-16E488CCA173} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{95E44831-8E2A-4747-9EB6-2A1784CB19A3} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{383B105A-70D0-4927-80BC-37B81902FA45} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{C9BE02CD-3195-4CF4-9981-816E5EFBC675} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{59410924-A583-4ACF-AA95-C8CA5137A902} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{5264D3EC-4A5F-4C49-A9FC-3D8A00FC1885} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{4B7CD9DE-7A92-4AF1-91E5-4AC8E63CF2A6} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{E386360F-E7B6-451A-9B52-E454F58560BE} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{C370E13B-77E7-4566-9AC1-935728D6E250} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{031BCA11-2916-4285-B5FC-A8AF2751A82A} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{5111E31F-6411-4720-8ACA-FC67F6F1F8B1} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{3684F28D-3AC7-4770-A3FB-ECBF96EA2478} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{FB2ADE01-E918-4AF1-9388-F392232ECFE5} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{BD43E684-3507-4534-B4FF-146462E96AF1} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{4056CA3A-99D6-4FC2-AAF6-F10A0F016A4E} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{537DCA92-B486-422C-9D53-80A182BAA4C8} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{1041D4F5-B605-4EBA-8F58-17E9C70BBAC7} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{511B0B4F-D5D1-4F1E-8CA6-1AE5EB146AD7} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{9B3063D4-8AF6-4C99-A678-17EEA33D8ED8} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{63C46DCC-3292-455B-A3DB-6F3097B20246} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{CD080A72-FC29-4794-B455-105C1B33CA57} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{66EB1904-5E22-4F4E-B4A4-9ABB098F8F95} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{86D788E6-8013-43AA-AE6B-5EFFCDE0D86B} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{3DAAFBD3-E533-4A15-99EE-9D7D244CD1C4} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{29A0EC4D-4EA3-47A0-BABA-87CF9F574758} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{101726FC-8ED4-4E12-8B31-B58F351FE749} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{DCA05869-40DB-45E5-9528-EB82972B15C6} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{F5AD534D-8CBE-4CAB-9385-A84FC95AB03F} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{0E57AB42-B811-4385-9830-A9B7E58BC1F6} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{CC505248-4092-457C-B3DB-5790D5BF7F92} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{5BD766B5-4359-466F-918F-684D087941D5} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{BB259E56-BE7D-473C-BB76-07B4C5E37B6C} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{1655BDD9-E962-4157-BDA8-3B8C36034156} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{ADC72FC8-7175-48B5-BF75-3CD4B26F84C0} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{CE7A105D-00DD-4199-91D5-CAF3FBAD3C93} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{DDE0139F-52B3-4ED7-826A-90D854F57E9B} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{65BD96B2-2E26-411D-A170-3089C16092BA} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{2C6DEC4C-E3FD-42EC-B060-90FD7520B69A} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{FA2F997B-3051-47AF-A4E0-67FD9C341C86} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{00E63A14-797A-4B5D-BFDE-79CA2DE9DF37} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{C4BDA45B-4757-4F35-8984-0DE57577ACE0} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{DF2A6E4C-314A-4828-98AA-62E298134B40} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{A8C1BC2B-ABA0-4E5B-B546-C052B807F253} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{376B937E-A1DB-46F9-9984-0D146EAC31D9} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{9A24EC05-0095-475C-8484-60DBE482BDA9} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{FE0EE48B-3262-4E58-A260-D8A2576D94A5} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{08CD2028-508A-48C6-AC37-D5D4E473741C} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{73420A2B-CBEB-4C66-A7DC-1D3E672F9A1C} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{68F1DFD8-098A-4D30-A4C0-A28512B33BA9} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{807F70F0-D52C-40B8-9D13-BCF016222EA8} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{8A7B659A-CEDB-4189-B1EA-7B0319E3F2B6} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{2622EAB3-2544-40AD-9284-3F86115B7DDA} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

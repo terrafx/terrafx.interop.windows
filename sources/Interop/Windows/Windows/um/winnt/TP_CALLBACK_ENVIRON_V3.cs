@@ -3,7 +3,6 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -32,7 +31,7 @@ public unsafe partial struct TP_CALLBACK_ENVIRON_V3
 
     /// <include file='TP_CALLBACK_ENVIRON_V3.xml' path='doc/member[@name="TP_CALLBACK_ENVIRON_V3.ActivationContext"]/*' />
     [NativeTypeName("struct _ACTIVATION_CONTEXT *")]
-    public IntPtr ActivationContext;
+    public void* ActivationContext;
 
     /// <include file='TP_CALLBACK_ENVIRON_V3.xml' path='doc/member[@name="TP_CALLBACK_ENVIRON_V3.FinalizationCallback"]/*' />
     [NativeTypeName("PTP_SIMPLE_CALLBACK")]

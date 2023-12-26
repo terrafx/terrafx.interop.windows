@@ -1,0 +1,54 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Graphics::Printing::PrintPageRange *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Graphics::Printing::PrintPageRange *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Graphics::Printing::PrintPageRange *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Graphics::Printing::PrintPageRange *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Graphics::Printing::PrintManager *, ABI::Windows::Graphics::Printing::PrintTaskRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Graphics::Printing::PrintTask *, ABI::Windows::Graphics::Printing::PrintTaskCompletedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Graphics::Printing::PrintTask *, ABI::Windows::Graphics::Printing::PrintTaskProgressingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Graphics::Printing::PrintTask *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IPrintDocumentSource
+IID_IPrintManager
+IID_IPrintManagerStatic
+IID_IPrintManagerStatic2
+IID_IPrintPageInfo
+IID_IPrintPageRange
+IID_IPrintPageRangeFactory
+IID_IPrintPageRangeOptions
+IID_IPrintTask
+IID_IPrintTask2
+IID_IPrintTaskCompletedEventArgs
+IID_IPrintTaskOptions
+IID_IPrintTaskOptions2
+IID_IPrintTaskOptionsCore
+IID_IPrintTaskOptionsCoreProperties
+IID_IPrintTaskOptionsCoreUIConfiguration
+IID_IPrintTaskProgressingEventArgs
+IID_IPrintTaskRequest
+IID_IPrintTaskRequestedDeferral
+IID_IPrintTaskRequestedEventArgs
+IID_IPrintTaskSourceRequestedArgs
+IID_IPrintTaskSourceRequestedDeferral
+IID_IPrintTaskSourceRequestedHandler
+IID_IPrintTaskTargetDeviceSupport
+IID_IStandardPrintTaskOptionsStatic
+IID_IStandardPrintTaskOptionsStatic2
+IID_IStandardPrintTaskOptionsStatic3
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.graphics.printing.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.graphics.printing
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.graphics.printing
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.graphics.printing.h

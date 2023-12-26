@@ -1,0 +1,64 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::BluetoothAdapter *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::BluetoothDevice *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::BluetoothLEDevice *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::BluetoothAdapter *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::BluetoothDevice *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::BluetoothLEDevice *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceServicesResult *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Bluetooth::BluetoothDevice *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Bluetooth::BluetoothLEDevice *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IBluetoothAdapter
+IID_IBluetoothAdapter2
+IID_IBluetoothAdapter3
+IID_IBluetoothAdapterStatics
+IID_IBluetoothClassOfDevice
+IID_IBluetoothClassOfDeviceStatics
+IID_IBluetoothDevice
+IID_IBluetoothDevice2
+IID_IBluetoothDevice3
+IID_IBluetoothDevice4
+IID_IBluetoothDevice5
+IID_IBluetoothDeviceId
+IID_IBluetoothDeviceIdStatics
+IID_IBluetoothDeviceStatics
+IID_IBluetoothDeviceStatics2
+IID_IBluetoothLEAppearance
+IID_IBluetoothLEAppearanceCategoriesStatics
+IID_IBluetoothLEAppearanceStatics
+IID_IBluetoothLEAppearanceSubcategoriesStatics
+IID_IBluetoothLEConnectionParameters
+IID_IBluetoothLEConnectionPhy
+IID_IBluetoothLEConnectionPhyInfo
+IID_IBluetoothLEDevice
+IID_IBluetoothLEDevice2
+IID_IBluetoothLEDevice3
+IID_IBluetoothLEDevice4
+IID_IBluetoothLEDevice5
+IID_IBluetoothLEDevice6
+IID_IBluetoothLEDeviceStatics
+IID_IBluetoothLEDeviceStatics2
+IID_IBluetoothLEPreferredConnectionParameters
+IID_IBluetoothLEPreferredConnectionParametersRequest
+IID_IBluetoothLEPreferredConnectionParametersStatics
+IID_IBluetoothSignalStrengthFilter
+IID_IBluetoothUuidHelperStatics
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.devices.bluetooth.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.devices.bluetooth
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.devices.bluetooth
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.devices.bluetooth.h

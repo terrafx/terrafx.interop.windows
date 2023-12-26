@@ -1,0 +1,46 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Contacts::ContactGroup *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccount *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Contacts::ContactGroup *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccount *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactGroup *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccount *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccount *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactGroup *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccount *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccount *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Contacts::ContactGroup *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccount *> *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStore *, ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreChangedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IUserDataAccount
+IID_IUserDataAccount2
+IID_IUserDataAccount3
+IID_IUserDataAccount4
+IID_IUserDataAccountManagerForUser
+IID_IUserDataAccountManagerStatics
+IID_IUserDataAccountManagerStatics2
+IID_IUserDataAccountStore
+IID_IUserDataAccountStore2
+IID_IUserDataAccountStore3
+IID_IUserDataAccountStoreChangedEventArgs
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+--file
+winrt-windows.applicationmodel.userdataaccounts.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.userdataaccounts
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.applicationmodel.userdataaccounts
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.applicationmodel.userdataaccounts.h

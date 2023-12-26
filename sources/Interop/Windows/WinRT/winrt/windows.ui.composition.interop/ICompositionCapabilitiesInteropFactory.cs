@@ -74,15 +74,15 @@ public unsafe partial struct ICompositionCapabilitiesInteropFactory : ICompositi
     /// <include file='ICompositionCapabilitiesInteropFactory.xml' path='doc/member[@name="ICompositionCapabilitiesInteropFactory.GetForWindow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetForWindow(HWND hwnd, [NativeTypeName("ICompositionCapabilities **")] void** result)
+    public HRESULT GetForWindow(HWND hwnd, ICompositionCapabilities** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICompositionCapabilitiesInteropFactory*, HWND, void**, int>)(lpVtbl[6]))((ICompositionCapabilitiesInteropFactory*)Unsafe.AsPointer(ref this), hwnd, result);
+        return ((delegate* unmanaged[MemberFunction]<ICompositionCapabilitiesInteropFactory*, HWND, ICompositionCapabilities**, int>)(lpVtbl[6]))((ICompositionCapabilitiesInteropFactory*)Unsafe.AsPointer(ref this), hwnd, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetForWindow(HWND hwnd, [NativeTypeName("ICompositionCapabilities **")] void** result);
+        HRESULT GetForWindow(HWND hwnd, ICompositionCapabilities** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ICompositionCapabilitiesInteropFactory : ICompositi
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HWND, ICompositionCapabilities **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, void**, int> GetForWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, ICompositionCapabilities**, int> GetForWindow;
     }
 }

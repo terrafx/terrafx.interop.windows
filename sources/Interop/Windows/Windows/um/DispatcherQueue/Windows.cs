@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
+using TerraFX.Interop.WinRT;
 
 namespace TerraFX.Interop.Windows;
 
@@ -11,5 +12,5 @@ public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDispatcherQueueController"]/*' />
     [DllImport("coremessaging", ExactSpelling = true)]
-    public static extern HRESULT CreateDispatcherQueueController(DispatcherQueueOptions options, [NativeTypeName("PDISPATCHERQUEUECONTROLLER *")] void** dispatcherQueueController);
+    public static extern HRESULT CreateDispatcherQueueController(DispatcherQueueOptions options, [NativeTypeName("PDISPATCHERQUEUECONTROLLER *")] IDispatcherQueueController** dispatcherQueueController);
 }

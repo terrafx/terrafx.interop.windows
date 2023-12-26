@@ -1,0 +1,98 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Networking::Connectivity::AttributedNetworkUsage *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Networking::Connectivity::ConnectionProfile *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Networking::Connectivity::ConnectivityInterval *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Networking::Connectivity::LanIdentifier *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Networking::Connectivity::NetworkUsage *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Networking::Connectivity::ProviderNetworkUsage *>
+ABI::Windows::Foundation::Collections::IIterable<unsigned char>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Networking::Connectivity::AttributedNetworkUsage *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Networking::Connectivity::ConnectionProfile *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Networking::Connectivity::ConnectivityInterval *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Networking::Connectivity::LanIdentifier *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Networking::Connectivity::NetworkUsage *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Networking::Connectivity::ProviderNetworkUsage *>
+ABI::Windows::Foundation::Collections::IIterator<unsigned char>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::Connectivity::AttributedNetworkUsage *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::Connectivity::ConnectionProfile *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::Connectivity::ConnectivityInterval *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::Connectivity::LanIdentifier *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::Connectivity::NetworkUsage *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::Connectivity::ProviderNetworkUsage *>
+ABI::Windows::Foundation::Collections::IVectorView<unsigned char>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::Connectivity::AttributedNetworkUsage *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::Connectivity::ConnectionProfile *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::Connectivity::ConnectivityInterval *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::Connectivity::NetworkUsage *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::Connectivity::ProviderNetworkUsage *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Networking::Connectivity::ConnectionProfile *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Networking::Connectivity::ConnectionProfileDeleteStatus>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Networking::Connectivity::ConnectionSession *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Networking::Connectivity::ProxyConfiguration *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::Connectivity::AttributedNetworkUsage *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::Connectivity::ConnectionProfile *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::Connectivity::ConnectivityInterval *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::Connectivity::NetworkUsage *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Networking::Connectivity::ProviderNetworkUsage *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Networking::Connectivity::ConnectionProfile *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Networking::Connectivity::ConnectionProfileDeleteStatus>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Networking::Connectivity::ConnectionSession *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Networking::Connectivity::ProxyConfiguration *>
+ABI::Windows::Foundation::IReference<_GUID>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAttributedNetworkUsage
+IID_ICellularApnContext
+IID_ICellularApnContext2
+IID_IConnectionCost
+IID_IConnectionCost2
+IID_IConnectionProfile
+IID_IConnectionProfile2
+IID_IConnectionProfile3
+IID_IConnectionProfile4
+IID_IConnectionProfile5
+IID_IConnectionProfile6
+IID_IConnectionProfileFilter
+IID_IConnectionProfileFilter2
+IID_IConnectionProfileFilter3
+IID_IConnectionSession
+IID_IConnectivityInterval
+IID_IConnectivityManagerStatics
+IID_IDataPlanStatus
+IID_IDataPlanUsage
+IID_IDataUsage
+IID_IIPInformation
+IID_ILanIdentifier
+IID_ILanIdentifierData
+IID_INetworkAdapter
+IID_INetworkInformationStatics
+IID_INetworkInformationStatics2
+IID_INetworkItem
+IID_INetworkSecuritySettings
+IID_INetworkStateChangeEventDetails
+IID_INetworkStateChangeEventDetails2
+IID_INetworkStatusChangedEventHandler
+IID_INetworkUsage
+IID_IProviderNetworkUsage
+IID_IProxyConfiguration
+IID_IRoutePolicy
+IID_IRoutePolicyFactory
+IID_IWlanConnectionProfileDetails
+IID_IWwanConnectionProfileDetails
+IID_IWwanConnectionProfileDetails2
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.networking.connectivity.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.networking.connectivity
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.networking.connectivity
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.networking.connectivity.h

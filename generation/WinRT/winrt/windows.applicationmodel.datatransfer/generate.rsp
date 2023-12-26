@@ -1,0 +1,95 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::DataTransfer::ShareProvider *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Storage::Streams::RandomAccessStreamReference *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::DataTransfer::ShareProvider *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Storage::Streams::RandomAccessStreamReference *> *>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, ABI::Windows::Storage::Streams::RandomAccessStreamReference *>
+ABI::Windows::Foundation::Collections::IMap<HSTRING__ *, ABI::Windows::Storage::Streams::RandomAccessStreamReference *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, ABI::Windows::Storage::Streams::RandomAccessStreamReference *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::DataTransfer::ShareProvider *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItem *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::DataTransfer::ShareProvider *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IMapView<HSTRING, ABI::Windows::Storage::Streams::RandomAccessStreamReference *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Uri *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IMapView<HSTRING, ABI::Windows::Storage::Streams::RandomAccessStreamReference *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Uri *>
+ABI::Windows::Foundation::IEventHandler<ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::DataTransfer::DataPackage *, ABI::Windows::ApplicationModel::DataTransfer::OperationCompletedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::DataTransfer::DataPackage *, ABI::Windows::ApplicationModel::DataTransfer::ShareCompletedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::DataTransfer::DataPackage *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::DataTransfer::DataTransferManager *, ABI::Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::DataTransfer::DataTransferManager *, ABI::Windows::ApplicationModel::DataTransfer::ShareProvidersRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::DataTransfer::DataTransferManager *, ABI::Windows::ApplicationModel::DataTransfer::TargetApplicationChosenEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IClipboardContentOptions
+IID_IClipboardHistoryChangedEventArgs
+IID_IClipboardHistoryItem
+IID_IClipboardHistoryItemsResult
+IID_IClipboardStatics
+IID_IClipboardStatics2
+IID_IDataPackage
+IID_IDataPackage2
+IID_IDataPackage3
+IID_IDataPackage4
+IID_IDataPackagePropertySet
+IID_IDataPackagePropertySet2
+IID_IDataPackagePropertySet3
+IID_IDataPackagePropertySet4
+IID_IDataPackagePropertySetView
+IID_IDataPackagePropertySetView2
+IID_IDataPackagePropertySetView3
+IID_IDataPackagePropertySetView4
+IID_IDataPackagePropertySetView5
+IID_IDataPackageView
+IID_IDataPackageView2
+IID_IDataPackageView3
+IID_IDataPackageView4
+IID_IDataProviderDeferral
+IID_IDataProviderHandler
+IID_IDataProviderRequest
+IID_IDataRequest
+IID_IDataRequestDeferral
+IID_IDataRequestedEventArgs
+IID_IDataTransferManager
+IID_IDataTransferManager2
+IID_IDataTransferManagerStatics
+IID_IDataTransferManagerStatics2
+IID_IDataTransferManagerStatics3
+IID_IHtmlFormatHelperStatics
+IID_IOperationCompletedEventArgs
+IID_IOperationCompletedEventArgs2
+IID_IShareCompletedEventArgs
+IID_ISharedStorageAccessManagerStatics
+IID_IShareProvider
+IID_IShareProviderFactory
+IID_IShareProviderHandler
+IID_IShareProviderOperation
+IID_IShareProvidersRequestedEventArgs
+IID_IShareTargetInfo
+IID_IShareUIOptions
+IID_IStandardDataFormatsStatics
+IID_IStandardDataFormatsStatics2
+IID_IStandardDataFormatsStatics3
+IID_ITargetApplicationChosenEventArgs
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SECURITY_ENTERPRISEDATA_ENTERPRISEDATACONTRACT_VERSION
+--file
+winrt-windows.applicationmodel.datatransfer.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.datatransfer
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.applicationmodel.datatransfer
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.applicationmodel.datatransfer.h

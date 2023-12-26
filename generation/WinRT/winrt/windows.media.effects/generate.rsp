@@ -1,0 +1,59 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Effects::AudioEffect *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::MediaProperties::AudioEncodingProperties *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::MediaProperties::VideoEncodingProperties *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Effects::AudioEffect *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::MediaProperties::AudioEncodingProperties *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::MediaProperties::VideoEncodingProperties *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Effects::AudioEffect *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::MediaProperties::AudioEncodingProperties *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::MediaProperties::VideoEncodingProperties *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Effects::AudioCaptureEffectsManager *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Effects::AudioRenderEffectsManager *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAudioCaptureEffectsManager
+IID_IAudioEffect
+IID_IAudioEffectDefinition
+IID_IAudioEffectDefinitionFactory
+IID_IAudioEffectsManagerStatics
+IID_IAudioRenderEffectsManager
+IID_IAudioRenderEffectsManager2
+IID_IBasicAudioEffect
+IID_IBasicVideoEffect
+IID_ICompositeVideoFrameContext
+IID_IProcessAudioFrameContext
+IID_IProcessVideoFrameContext
+IID_IVideoCompositor
+IID_IVideoCompositorDefinition
+IID_IVideoCompositorDefinitionFactory
+IID_IVideoEffectDefinition
+IID_IVideoEffectDefinitionFactory
+IID_IVideoTransformEffectDefinition
+IID_IVideoTransformEffectDefinition2
+IID_IVideoTransformSphericalProjection
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION
+WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION
+--file
+winrt-windows.media.effects.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.media.effects
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.media.effects
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.effects.h

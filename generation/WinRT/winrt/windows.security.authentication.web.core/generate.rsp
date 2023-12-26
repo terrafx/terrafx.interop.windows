@@ -1,0 +1,48 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Security::Authentication::Web::Core::WebTokenResponse *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Security::Authentication::Web::Core::WebTokenResponse *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Security::Authentication::Web::Core::WebTokenResponse *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::Authentication::Web::Core::FindAllAccountsResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::Authentication::Web::Core::WebTokenRequestResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::Credentials::WebAccountProvider *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::Authentication::Web::Core::FindAllAccountsResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::Authentication::Web::Core::WebTokenRequestResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::Credentials::WebAccountProvider *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Security::Authentication::Web::Core::WebAccountMonitor *, ABI::Windows::Security::Authentication::Web::Core::WebAccountEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Security::Authentication::Web::Core::WebAccountMonitor *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IFindAllAccountsResult
+IID_IWebAccountEventArgs
+IID_IWebAccountMonitor
+IID_IWebAccountMonitor2
+IID_IWebAuthenticationCoreManagerStatics
+IID_IWebAuthenticationCoreManagerStatics2
+IID_IWebAuthenticationCoreManagerStatics3
+IID_IWebAuthenticationCoreManagerStatics4
+IID_IWebProviderError
+IID_IWebProviderErrorFactory
+IID_IWebTokenRequest
+IID_IWebTokenRequest2
+IID_IWebTokenRequest3
+IID_IWebTokenRequestFactory
+IID_IWebTokenRequestResult
+IID_IWebTokenResponse
+IID_IWebTokenResponseFactory
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+--file
+winrt-windows.security.authentication.web.core.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.security.authentication.web.core
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.security.authentication.web.core
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.security.authentication.web.core.h

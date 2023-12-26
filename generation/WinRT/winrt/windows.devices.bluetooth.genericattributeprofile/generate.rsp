@@ -1,0 +1,147 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientNotificationResult *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientNotificationResult *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientNotificationResult *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptor *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattPresentationFormat *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientNotificationResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristicResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptorResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattOpenStatus>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadClientCharacteristicConfigurationDescriptorResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequest *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequest *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientNotificationResult *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicsResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientNotificationResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCommunicationStatus>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDescriptorsResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceService *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattDeviceServicesResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristicResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptorResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattOpenStatus>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadClientCharacteristicConfigurationDescriptorResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequest *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequest *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientNotificationResult *> *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristic *, ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic *, ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic *, ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalCharacteristic *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor *, ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattLocalDescriptor *, ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattReadRequest *, ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestStateChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProvider *, ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatusChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession *, ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatusChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSession *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSubscribedClient *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteRequest *, ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestStateChangedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IGattCharacteristic
+IID_IGattCharacteristic2
+IID_IGattCharacteristic3
+IID_IGattCharacteristicsResult
+IID_IGattCharacteristicStatics
+IID_IGattCharacteristicUuidsStatics
+IID_IGattCharacteristicUuidsStatics2
+IID_IGattClientNotificationResult
+IID_IGattClientNotificationResult2
+IID_IGattDescriptor
+IID_IGattDescriptor2
+IID_IGattDescriptorsResult
+IID_IGattDescriptorStatics
+IID_IGattDescriptorUuidsStatics
+IID_IGattDeviceService
+IID_IGattDeviceService2
+IID_IGattDeviceService3
+IID_IGattDeviceServicesResult
+IID_IGattDeviceServiceStatics
+IID_IGattDeviceServiceStatics2
+IID_IGattLocalCharacteristic
+IID_IGattLocalCharacteristicParameters
+IID_IGattLocalCharacteristicResult
+IID_IGattLocalDescriptor
+IID_IGattLocalDescriptorParameters
+IID_IGattLocalDescriptorResult
+IID_IGattLocalService
+IID_IGattPresentationFormat
+IID_IGattPresentationFormatStatics
+IID_IGattPresentationFormatStatics2
+IID_IGattPresentationFormatTypesStatics
+IID_IGattProtocolErrorStatics
+IID_IGattReadClientCharacteristicConfigurationDescriptorResult
+IID_IGattReadClientCharacteristicConfigurationDescriptorResult2
+IID_IGattReadRequest
+IID_IGattReadRequestedEventArgs
+IID_IGattReadResult
+IID_IGattReadResult2
+IID_IGattReliableWriteTransaction
+IID_IGattReliableWriteTransaction2
+IID_IGattRequestStateChangedEventArgs
+IID_IGattServiceProvider
+IID_IGattServiceProviderAdvertisementStatusChangedEventArgs
+IID_IGattServiceProviderAdvertisingParameters
+IID_IGattServiceProviderAdvertisingParameters2
+IID_IGattServiceProviderResult
+IID_IGattServiceProviderStatics
+IID_IGattServiceUuidsStatics
+IID_IGattServiceUuidsStatics2
+IID_IGattSession
+IID_IGattSessionStatics
+IID_IGattSessionStatusChangedEventArgs
+IID_IGattSubscribedClient
+IID_IGattValueChangedEventArgs
+IID_IGattWriteRequest
+IID_IGattWriteRequestedEventArgs
+IID_IGattWriteResult
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.devices.bluetooth.genericattributeprofile.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.devices.bluetooth.genericattributeprofile
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.devices.bluetooth.genericattributeprofile
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.devices.bluetooth.genericattributeprofile.h

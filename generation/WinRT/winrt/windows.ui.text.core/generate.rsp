@@ -1,0 +1,55 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Text::Core::CoreTextCompositionSegment *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Text::Core::CoreTextCompositionSegment *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Text::Core::CoreTextCompositionSegment *>
+ABI::Windows::Foundation::IReference<ABI::Windows::UI::Text::UnderlineType>
+ABI::Windows::Foundation::IReference<ABI::Windows::UI::ViewManagement::UIElementType>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext *, ABI::Windows::UI::Text::Core::CoreTextCompositionCompletedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext *, ABI::Windows::UI::Text::Core::CoreTextCompositionStartedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext *, ABI::Windows::UI::Text::Core::CoreTextFormatUpdatingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext *, ABI::Windows::UI::Text::Core::CoreTextLayoutRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext *, ABI::Windows::UI::Text::Core::CoreTextSelectionRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext *, ABI::Windows::UI::Text::Core::CoreTextSelectionUpdatingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext *, ABI::Windows::UI::Text::Core::CoreTextTextRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext *, ABI::Windows::UI::Text::Core::CoreTextTextUpdatingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextServicesManager *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_ICoreTextCompositionCompletedEventArgs
+IID_ICoreTextCompositionSegment
+IID_ICoreTextCompositionStartedEventArgs
+IID_ICoreTextEditContext
+IID_ICoreTextEditContext2
+IID_ICoreTextFormatUpdatingEventArgs
+IID_ICoreTextLayoutBounds
+IID_ICoreTextLayoutRequest
+IID_ICoreTextLayoutRequest2
+IID_ICoreTextLayoutRequestedEventArgs
+IID_ICoreTextSelectionRequest
+IID_ICoreTextSelectionRequestedEventArgs
+IID_ICoreTextSelectionUpdatingEventArgs
+IID_ICoreTextServicesManager
+IID_ICoreTextServicesManagerStatics
+IID_ICoreTextServicesStatics
+IID_ICoreTextTextRequest
+IID_ICoreTextTextRequestedEventArgs
+IID_ICoreTextTextUpdatingEventArgs
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_GLOBALIZATION_GLOBALIZATIONJAPANESEPHONETICANALYZERCONTRACT_VERSION
+WINDOWS_UI_VIEWMANAGEMENT_VIEWMANAGEMENTVIEWSCALINGCONTRACT_VERSION
+--file
+winrt-windows.ui.text.core.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.ui.text.core
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.ui.text.core
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.ui.text.core.h

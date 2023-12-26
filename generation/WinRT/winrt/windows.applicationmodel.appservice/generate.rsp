@@ -1,0 +1,46 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::AppService::AppServiceConnectionStatus>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::AppService::AppServiceResponse *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::AppService::AppServiceResponseStatus>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::AppService::StatelessAppServiceResponse *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::AppService::AppServiceConnectionStatus>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::AppService::AppServiceResponse *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::AppService::AppServiceResponseStatus>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::AppService::StatelessAppServiceResponse *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::AppService::AppServiceConnection *, ABI::Windows::ApplicationModel::AppService::AppServiceClosedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::AppService::AppServiceConnection *, ABI::Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAppServiceCatalogStatics
+IID_IAppServiceClosedEventArgs
+IID_IAppServiceConnection
+IID_IAppServiceConnection2
+IID_IAppServiceConnectionStatics
+IID_IAppServiceDeferral
+IID_IAppServiceRequest
+IID_IAppServiceRequestReceivedEventArgs
+IID_IAppServiceResponse
+IID_IAppServiceTriggerDetails
+IID_IAppServiceTriggerDetails2
+IID_IAppServiceTriggerDetails3
+IID_IAppServiceTriggerDetails4
+IID_IStatelessAppServiceResponse
+WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION
+WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+--file
+winrt-windows.applicationmodel.appservice.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.appservice
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.applicationmodel.appservice
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.applicationmodel.appservice.h

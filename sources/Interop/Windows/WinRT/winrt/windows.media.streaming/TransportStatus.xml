@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TransportStatus">
+    <summary>Defines the available transport status as defined by the UPnP Guidelines.</summary>
+  </member>
+  <member name="TransportStatus.TransportStatus_Unknown"></member>
+  <member name="TransportStatus.TransportStatus_Ok"></member>
+  <member name="TransportStatus.TransportStatus_ErrorOccurred"></member>
+  <member name="TransportStatus.TransportStatus_Last">
+    <summary>
+      <h4>- ErrorOccurred</h4>
+      <para>An error occurred on the device.</para>
+      <h4>- Last</h4>
+      <para>The device’s previous status to the current transport status.</para>
+      <h4>- Ok</h4>
+      <para>The device is in a good status.</para>
+      <h4>- Unknown</h4>
+      <para>Erroneous device status.</para>
+    </summary>
+  </member>
+</doc>

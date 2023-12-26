@@ -1,0 +1,18 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from winrt/windows.graphics.directx.direct3d11.h in the Windows SDK for Windows 10.0.22621.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+namespace TerraFX.Interop.WinRT;
+
+/// <include file='Direct3DMultisampleDescription.xml' path='doc/member[@name="Direct3DMultisampleDescription"]/*' />
+public partial struct Direct3DMultisampleDescription
+{
+    /// <include file='Direct3DMultisampleDescription.xml' path='doc/member[@name="Direct3DMultisampleDescription.Count"]/*' />
+    [NativeTypeName("INT32")]
+    public int Count;
+
+    /// <include file='Direct3DMultisampleDescription.xml' path='doc/member[@name="Direct3DMultisampleDescription.Quality"]/*' />
+    [NativeTypeName("INT32")]
+    public int Quality;
+}

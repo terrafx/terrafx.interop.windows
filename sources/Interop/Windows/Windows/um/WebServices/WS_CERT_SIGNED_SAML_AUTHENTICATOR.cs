@@ -3,8 +3,6 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WS_CERT_SIGNED_SAML_AUTHENTICATOR.xml' path='doc/member[@name="WS_CERT_SIGNED_SAML_AUTHENTICATOR"]/*' />
@@ -27,7 +25,7 @@ public unsafe partial struct WS_CERT_SIGNED_SAML_AUTHENTICATOR
 
     /// <include file='WS_CERT_SIGNED_SAML_AUTHENTICATOR.xml' path='doc/member[@name="WS_CERT_SIGNED_SAML_AUTHENTICATOR.samlValidator"]/*' />
     [NativeTypeName("WS_VALIDATE_SAML_CALLBACK")]
-    public delegate* unmanaged<void*, IntPtr, IntPtr, HRESULT> samlValidator;
+    public delegate* unmanaged<void*, void*, void*, HRESULT> samlValidator;
 
     /// <include file='WS_CERT_SIGNED_SAML_AUTHENTICATOR.xml' path='doc/member[@name="WS_CERT_SIGNED_SAML_AUTHENTICATOR.samlValidatorCallbackState"]/*' />
     public void* samlValidatorCallbackState;

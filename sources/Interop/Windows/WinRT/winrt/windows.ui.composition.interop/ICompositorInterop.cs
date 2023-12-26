@@ -50,37 +50,37 @@ public unsafe partial struct ICompositorInterop : ICompositorInterop.Interface, 
     /// <include file='ICompositorInterop.xml' path='doc/member[@name="ICompositorInterop.CreateCompositionSurfaceForHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateCompositionSurfaceForHandle(HANDLE swapChain, [NativeTypeName("ICompositionSurface **")] void** result)
+    public HRESULT CreateCompositionSurfaceForHandle(HANDLE swapChain, ICompositionSurface** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICompositorInterop*, HANDLE, void**, int>)(lpVtbl[3]))((ICompositorInterop*)Unsafe.AsPointer(ref this), swapChain, result);
+        return ((delegate* unmanaged[MemberFunction]<ICompositorInterop*, HANDLE, ICompositionSurface**, int>)(lpVtbl[3]))((ICompositorInterop*)Unsafe.AsPointer(ref this), swapChain, result);
     }
 
     /// <include file='ICompositorInterop.xml' path='doc/member[@name="ICompositorInterop.CreateCompositionSurfaceForSwapChain"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT CreateCompositionSurfaceForSwapChain(IUnknown* swapChain, [NativeTypeName("ICompositionSurface **")] void** result)
+    public HRESULT CreateCompositionSurfaceForSwapChain(IUnknown* swapChain, ICompositionSurface** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICompositorInterop*, IUnknown*, void**, int>)(lpVtbl[4]))((ICompositorInterop*)Unsafe.AsPointer(ref this), swapChain, result);
+        return ((delegate* unmanaged[MemberFunction]<ICompositorInterop*, IUnknown*, ICompositionSurface**, int>)(lpVtbl[4]))((ICompositorInterop*)Unsafe.AsPointer(ref this), swapChain, result);
     }
 
     /// <include file='ICompositorInterop.xml' path='doc/member[@name="ICompositorInterop.CreateGraphicsDevice"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT CreateGraphicsDevice(IUnknown* renderingDevice, [NativeTypeName("ICompositionGraphicsDevice **")] void** result)
+    public HRESULT CreateGraphicsDevice(IUnknown* renderingDevice, ICompositionGraphicsDevice** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICompositorInterop*, IUnknown*, void**, int>)(lpVtbl[5]))((ICompositorInterop*)Unsafe.AsPointer(ref this), renderingDevice, result);
+        return ((delegate* unmanaged[MemberFunction]<ICompositorInterop*, IUnknown*, ICompositionGraphicsDevice**, int>)(lpVtbl[5]))((ICompositorInterop*)Unsafe.AsPointer(ref this), renderingDevice, result);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateCompositionSurfaceForHandle(HANDLE swapChain, [NativeTypeName("ICompositionSurface **")] void** result);
+        HRESULT CreateCompositionSurfaceForHandle(HANDLE swapChain, ICompositionSurface** result);
 
         [VtblIndex(4)]
-        HRESULT CreateCompositionSurfaceForSwapChain(IUnknown* swapChain, [NativeTypeName("ICompositionSurface **")] void** result);
+        HRESULT CreateCompositionSurfaceForSwapChain(IUnknown* swapChain, ICompositionSurface** result);
 
         [VtblIndex(5)]
-        HRESULT CreateGraphicsDevice(IUnknown* renderingDevice, [NativeTypeName("ICompositionGraphicsDevice **")] void** result);
+        HRESULT CreateGraphicsDevice(IUnknown* renderingDevice, ICompositionGraphicsDevice** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -96,12 +96,12 @@ public unsafe partial struct ICompositorInterop : ICompositorInterop.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HANDLE, ICompositionSurface **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE, void**, int> CreateCompositionSurfaceForHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE, ICompositionSurface**, int> CreateCompositionSurfaceForHandle;
 
         [NativeTypeName("HRESULT (IUnknown *, ICompositionSurface **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, void**, int> CreateCompositionSurfaceForSwapChain;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, ICompositionSurface**, int> CreateCompositionSurfaceForSwapChain;
 
         [NativeTypeName("HRESULT (IUnknown *, ICompositionGraphicsDevice **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, void**, int> CreateGraphicsDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, ICompositionGraphicsDevice**, int> CreateGraphicsDevice;
     }
 }

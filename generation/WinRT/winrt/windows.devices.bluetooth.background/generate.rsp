@@ -1,0 +1,41 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Devices::Bluetooth::Background::GattServiceProviderConnection *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Devices::Bluetooth::Background::GattServiceProviderConnection *> *>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, ABI::Windows::Devices::Bluetooth::Background::GattServiceProviderConnection *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, ABI::Windows::Devices::Bluetooth::Background::GattServiceProviderConnection *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IBluetoothLEAdvertisementPublisherTriggerDetails
+IID_IBluetoothLEAdvertisementPublisherTriggerDetails2
+IID_IBluetoothLEAdvertisementWatcherTriggerDetails
+IID_IGattCharacteristicNotificationTriggerDetails
+IID_IGattCharacteristicNotificationTriggerDetails2
+IID_IGattServiceProviderConnection
+IID_IGattServiceProviderConnectionStatics
+IID_IGattServiceProviderTriggerDetails
+IID_IRfcommConnectionTriggerDetails
+IID_IRfcommInboundConnectionInformation
+IID_IRfcommOutboundConnectionInformation
+WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.devices.bluetooth.background.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.devices.bluetooth.background
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.devices.bluetooth.background
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.devices.bluetooth.background.h

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IActiveBasicDevice.GetCachedBitrateMeasurement">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/mediastreaming/media-streaming-api-portal">Windows Media Streaming API</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/media-casting">Media Casting</a>. <b>Media Casting</b> has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>Media Casting</b> instead of <b>Windows Media Streaming API</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>Gets the cached bitrate.</para>
+    </summary>
+    <param name="physicalNetworkInterface">Specifies the physical network interface.</param>
+    <param name="bitrate">Receives the bitrate value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IActiveBasicDevice.GetCachedExtraSinkProtocolInfo">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/mediastreaming/media-streaming-api-portal">Windows Media Streaming API</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/media-casting">Media Casting</a>. <b>Media Casting</b> has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>Media Casting</b> instead of <b>Windows Media Streaming API</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>Gets additional cached sink protocol info for the device.</para>
+    </summary>
+    <param name="value">The extra cached sink protocol info for the device.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IActiveBasicDevice.GetCachedSinkProtocolInfo">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/mediastreaming/media-streaming-api-portal">Windows Media Streaming API</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/media-casting">Media Casting</a>. <b>Media Casting</b> has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>Media Casting</b> instead of <b>Windows Media Streaming API</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>Gets the cached sink protocol info for the device.</para>
+    </summary>
+    <param name="value">The cached sink protocol info for the device.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IActiveBasicDevice.GetEffectiveBandwidth">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/mediastreaming/media-streaming-api-portal">Windows Media Streaming API</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/media-casting">Media Casting</a>. <b>Media Casting</b> has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>Media Casting</b> instead of <b>Windows Media Streaming API</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>Gets the current effective bandwidth for the device.</para>
+    </summary>
+    <param name="transmitSpeed">
+      <para>Specifies whether the transmit speed is retrieved or the receive speed is retrieved.</para>
+      <para>
+        <b>true</b> to retrieve the transmit speed. <b>false</b> to retrieve the receive speed.</para>
+    </param>
+    <param name="currentSpeed">Receives the current effective bandwidth.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IActiveBasicDevice.NotifyStreamingStatus">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/mediastreaming/media-streaming-api-portal">Windows Media Streaming API</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/media-casting">Media Casting</a>. <b>Media Casting</b> has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>Media Casting</b> instead of <b>Windows Media Streaming API</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>Called by the application to indicate that the device is being used for active streaming.</para>
+    </summary>
+    <param name="fIsStreaming">
+      <b>true</b> indicates that streaming is on. <b>false</b> indicates that streaming if off.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IActiveBasicDevice.SetCachedBitrateMeasurement">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/mediastreaming/media-streaming-api-portal">Windows Media Streaming API</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/media-casting">Media Casting</a>. <b>Media Casting</b> has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>Media Casting</b> instead of <b>Windows Media Streaming API</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>Sets the cached bitrate.</para>
+    </summary>
+    <param name="physicalNetworkInterface">Specifies the physical network interface.</param>
+    <param name="bitrate">The value to set the bitrate to.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IActiveBasicDevice.SetCachedSinkProtocolInfo">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/mediastreaming/media-streaming-api-portal">Windows Media Streaming API</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/media-casting">Media Casting</a>. <b>Media Casting</b> has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>Media Casting</b> instead of <b>Windows Media Streaming API</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>Sets the cached sink protocol info for the device.</para>
+    </summary>
+    <param name="value">The cached sink protocol info for the device.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IActiveBasicDevice">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/mediastreaming/media-streaming-api-portal">Windows Media Streaming API</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//windows/uwp/audio-video-camera/media-casting">Media Casting</a>. <b>Media Casting</b> has been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>Media Casting</b> instead of <b>Windows Media Streaming API</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>Represents an active <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/ibasicdevice">IBasicDevice</a> that is associated with a UPnP device.</para>
+    </summary>
+  </member>
+</doc>

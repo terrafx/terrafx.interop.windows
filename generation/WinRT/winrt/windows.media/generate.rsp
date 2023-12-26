@@ -1,0 +1,71 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::IMediaMarker *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::IMediaMarker *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::IMediaMarker *>
+ABI::Windows::Foundation::IReference<ABI::Windows::Graphics::Imaging::BitmapBounds>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::MediaTimelineController *, ABI::Windows::Media::MediaTimelineControllerFailedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::MediaTimelineController *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::SystemMediaTransportControls *, ABI::Windows::Media::AutoRepeatModeChangeRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::SystemMediaTransportControls *, ABI::Windows::Media::PlaybackPositionChangeRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::SystemMediaTransportControls *, ABI::Windows::Media::PlaybackRateChangeRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::SystemMediaTransportControls *, ABI::Windows::Media::ShuffleEnabledChangeRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::SystemMediaTransportControls *, ABI::Windows::Media::SystemMediaTransportControlsButtonPressedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::SystemMediaTransportControls *, ABI::Windows::Media::SystemMediaTransportControlsPropertyChangedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAudioBuffer
+IID_IAudioFrame
+IID_IAudioFrameFactory
+IID_IAutoRepeatModeChangeRequestedEventArgs
+IID_IImageDisplayProperties
+IID_IMediaControl
+IID_IMediaExtension
+IID_IMediaExtensionManager
+IID_IMediaExtensionManager2
+IID_IMediaFrame
+IID_IMediaMarker
+IID_IMediaMarkers
+IID_IMediaMarkerTypesStatics
+IID_IMediaProcessingTriggerDetails
+IID_IMediaTimelineController
+IID_IMediaTimelineController2
+IID_IMediaTimelineControllerFailedEventArgs
+IID_IMusicDisplayProperties
+IID_IMusicDisplayProperties2
+IID_IMusicDisplayProperties3
+IID_IPlaybackPositionChangeRequestedEventArgs
+IID_IPlaybackRateChangeRequestedEventArgs
+IID_IShuffleEnabledChangeRequestedEventArgs
+IID_ISystemMediaTransportControls
+IID_ISystemMediaTransportControls2
+IID_ISystemMediaTransportControlsButtonPressedEventArgs
+IID_ISystemMediaTransportControlsDisplayUpdater
+IID_ISystemMediaTransportControlsPropertyChangedEventArgs
+IID_ISystemMediaTransportControlsStatics
+IID_ISystemMediaTransportControlsTimelineProperties
+IID_IVideoDisplayProperties
+IID_IVideoDisplayProperties2
+IID_IVideoEffectsStatics
+IID_IVideoFrame
+IID_IVideoFrame2
+IID_IVideoFrameFactory
+IID_IVideoFrameStatics
+IID_WinRT_IMediaControl
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.media.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.media
+--remap
+IID_IMediaControl=@IID_WinRT_IMediaControl
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.media
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.h

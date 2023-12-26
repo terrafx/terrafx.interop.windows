@@ -1,0 +1,29 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Gpio::Provider::IGpioControllerProvider *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Gpio::Provider::IGpioControllerProvider *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Gpio::Provider::IGpioControllerProvider *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Gpio::Provider::IGpioPinProvider *, ABI::Windows::Devices::Gpio::Provider::GpioPinProviderValueChangedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IGpioControllerProvider
+IID_IGpioPinProvider
+IID_IGpioPinProviderValueChangedEventArgs
+IID_IGpioPinProviderValueChangedEventArgsFactory
+IID_IGpioProvider
+WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.devices.gpio.provider.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.devices.gpio.provider
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.devices.gpio.provider
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.devices.gpio.provider.h

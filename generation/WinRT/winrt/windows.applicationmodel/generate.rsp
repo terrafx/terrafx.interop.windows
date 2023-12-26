@@ -1,0 +1,133 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::AppInstance *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Core::AppListEntry *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Package *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::PackageContentGroup *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::StartupTask *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::AppInstance *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Core::AppListEntry *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Package *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::PackageContentGroup *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::StartupTask *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::AppInstance *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::Package *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::PackageContentGroup *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::AppInstance *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Core::AppListEntry *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Package *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::PackageContentGroup *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::StartupTask *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::FullTrustProcessLaunchResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::PackageCatalogAddOptionalPackageResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::PackageCatalogRemoveOptionalPackagesResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::PackageCatalogRemoveResourcePackagesResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::PackageContentGroup *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::PackageUpdateAvailabilityResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::StartupTask *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::StartupTaskState>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::PackageContentGroup *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Core::AppListEntry *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::StartupTask *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::FullTrustProcessLaunchResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::PackageCatalogAddOptionalPackageResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::PackageCatalogRemoveOptionalPackagesResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::PackageCatalogRemoveResourcePackagesResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::PackageContentGroup *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::PackageUpdateAvailabilityResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::StartupTask *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::StartupTaskState>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVector<ABI::Windows::ApplicationModel::PackageContentGroup *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::Core::AppListEntry *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::StartupTask *> *>
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::ApplicationModel::PackageCatalogAddResourcePackageResult *, ABI::Windows::ApplicationModel::PackageInstallProgress>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::ApplicationModel::PackageCatalogAddResourcePackageResult *, ABI::Windows::ApplicationModel::PackageInstallProgress>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::ApplicationModel::PackageCatalogAddResourcePackageResult *, ABI::Windows::ApplicationModel::PackageInstallProgress>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::PackageCatalog *, ABI::Windows::ApplicationModel::PackageContentGroupStagingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::PackageCatalog *, ABI::Windows::ApplicationModel::PackageInstallingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::PackageCatalog *, ABI::Windows::ApplicationModel::PackageStagingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::PackageCatalog *, ABI::Windows::ApplicationModel::PackageStatusChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::PackageCatalog *, ABI::Windows::ApplicationModel::PackageUninstallingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::PackageCatalog *, ABI::Windows::ApplicationModel::PackageUpdatingEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAppDisplayInfo
+IID_IAppInfo
+IID_IAppInfo2
+IID_IAppInfo3
+IID_IAppInfo4
+IID_IAppInfoStatics
+IID_IAppInstallerInfo
+IID_IAppInstallerInfo2
+IID_IAppInstance
+IID_IAppInstanceStatics
+IID_IDesignModeStatics
+IID_IDesignModeStatics2
+IID_IEnteredBackgroundEventArgs
+IID_IFindRelatedPackagesOptions
+IID_IFindRelatedPackagesOptionsFactory
+IID_IFullTrustProcessLauncherStatics
+IID_IFullTrustProcessLauncherStatics2
+IID_IFullTrustProcessLaunchResult
+IID_ILeavingBackgroundEventArgs
+IID_ILimitedAccessFeatureRequestResult
+IID_ILimitedAccessFeaturesStatics
+IID_IPackage
+IID_IPackage2
+IID_IPackage3
+IID_IPackage4
+IID_IPackage5
+IID_IPackage6
+IID_IPackage7
+IID_IPackage8
+IID_IPackage9
+IID_IPackageCatalog
+IID_IPackageCatalog2
+IID_IPackageCatalog3
+IID_IPackageCatalog4
+IID_IPackageCatalogAddOptionalPackageResult
+IID_IPackageCatalogAddResourcePackageResult
+IID_IPackageCatalogRemoveOptionalPackagesResult
+IID_IPackageCatalogRemoveResourcePackagesResult
+IID_IPackageCatalogStatics
+IID_IPackageCatalogStatics2
+IID_IPackageContentGroup
+IID_IPackageContentGroupStagingEventArgs
+IID_IPackageContentGroupStatics
+IID_IPackageId
+IID_IPackageIdWithMetadata
+IID_IPackageInstallingEventArgs
+IID_IPackageStagingEventArgs
+IID_IPackageStatics
+IID_IPackageStatus
+IID_IPackageStatus2
+IID_IPackageStatusChangedEventArgs
+IID_IPackageUninstallingEventArgs
+IID_IPackageUpdateAvailabilityResult
+IID_IPackageUpdatingEventArgs
+IID_IPackageWithMetadata
+IID_IStartupTask
+IID_IStartupTaskStatics
+IID_ISuspendingDeferral
+IID_ISuspendingEventArgs
+IID_ISuspendingOperation
+WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATEDEVENTSCONTRACT_VERSION
+WINDOWS_APPLICATIONMODEL_ACTIVATION_ACTIVATIONCAMERASETTINGSCONTRACT_VERSION
+WINDOWS_APPLICATIONMODEL_ACTIVATION_CONTACTACTIVATEDEVENTSCONTRACT_VERSION
+WINDOWS_APPLICATIONMODEL_ACTIVATION_WEBUISEARCHACTIVATEDEVENTSCONTRACT_VERSION
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+--file
+winrt-windows.applicationmodel.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.applicationmodel
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.applicationmodel
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.applicationmodel.h

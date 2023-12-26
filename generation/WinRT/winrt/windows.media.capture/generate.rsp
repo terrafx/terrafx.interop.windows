@@ -1,0 +1,206 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Media::Capture::Frames::MediaFrameSource *> *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Capture::AppBroadcastPlugIn *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Capture::Frames::MediaFrameSource *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Capture::MediaCaptureVideoProfile *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Media::Capture::Frames::MediaFrameSource *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Capture::AppBroadcastPlugIn *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Capture::Frames::MediaFrameSource *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Capture::MediaCaptureVideoProfile *>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, ABI::Windows::Media::Capture::Frames::MediaFrameSource *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, ABI::Windows::Media::Capture::Frames::MediaFrameSource *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Capture::AppBroadcastPlugIn *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Capture::MediaCaptureVideoProfile *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Capture::AdvancedCapturedPhoto *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Capture::AdvancedPhotoCapture *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Capture::CapturedPhoto *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Capture::Core::VariablePhotoSequenceCapture *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Capture::Frames::MediaFrameReader *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReader *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Capture::LowLagMediaRecording *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Capture::LowLagPhotoCapture *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Capture::LowLagPhotoSequenceCapture *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Capture::MediaCapturePauseResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Capture::MediaCaptureStopResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::IMediaExtension *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::VideoFrame *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::AdvancedCapturedPhoto *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::AdvancedPhotoCapture *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::CapturedPhoto *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::Core::VariablePhotoSequenceCapture *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::Frames::MediaFrameReader *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::Frames::MultiSourceMediaFrameReader *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::LowLagMediaRecording *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::LowLagPhotoCapture *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::LowLagPhotoSequenceCapture *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::MediaCapturePauseResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Capture::MediaCaptureStopResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::IMediaExtension *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::VideoFrame *>
+ABI::Windows::Foundation::IReference<ABI::Windows::Media::Capture::WhiteBalanceGain>
+ABI::Windows::Foundation::IReference<ABI::Windows::Media::Devices::CaptureSceneMode>
+ABI::Windows::Foundation::IReference<ABI::Windows::Media::Devices::MediaCaptureFocusState>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AdvancedPhotoCapture *, ABI::Windows::Media::Capture::OptionalReferencePhotoCapturedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AdvancedPhotoCapture *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppBroadcastBackgroundService *, ABI::Windows::Media::Capture::AppBroadcastHeartbeatRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppBroadcastBackgroundService *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppBroadcastBackgroundServiceSignInInfo *, ABI::Windows::Media::Capture::AppBroadcastSignInStateChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppBroadcastBackgroundServiceSignInInfo *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppBroadcastBackgroundServiceStreamInfo *, ABI::Windows::Media::Capture::AppBroadcastStreamStateChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppBroadcastBackgroundServiceStreamInfo *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppBroadcastPreview *, ABI::Windows::Media::Capture::AppBroadcastPreviewStateChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppBroadcastPreviewStreamReader *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppBroadcastState *, ABI::Windows::Media::Capture::AppBroadcastCameraCaptureStateChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppBroadcastState *, ABI::Windows::Media::Capture::AppBroadcastMicrophoneCaptureStateChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppBroadcastState *, ABI::Windows::Media::Capture::AppBroadcastPlugInStateChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppBroadcastState *, ABI::Windows::Media::Capture::AppBroadcastStreamStateChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppBroadcastState *, ABI::Windows::Media::Capture::AppBroadcastViewerCountChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppBroadcastState *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppBroadcastStreamReader *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppCapture *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppCaptureMetadataWriter *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppCaptureRecordOperation *, ABI::Windows::Media::Capture::AppCaptureDurationGeneratedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppCaptureRecordOperation *, ABI::Windows::Media::Capture::AppCaptureFileGeneratedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppCaptureRecordOperation *, ABI::Windows::Media::Capture::AppCaptureRecordingStateChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppCaptureState *, ABI::Windows::Media::Capture::AppCaptureMicrophoneCaptureStateChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::AppCaptureState *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::GameBarServices *, ABI::Windows::Media::Capture::GameBarServicesCommandEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::GameBarServicesManager *, ABI::Windows::Media::Capture::GameBarServicesManagerGameBarServicesCreatedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::LowLagPhotoSequenceCapture *, ABI::Windows::Media::Capture::PhotoCapturedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::MediaCapture *, ABI::Windows::Media::Capture::MediaCaptureDeviceExclusiveControlStatusChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::MediaCapture *, ABI::Windows::Media::Capture::MediaCaptureFocusChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::MediaCapture *, ABI::Windows::Media::Capture::PhotoConfirmationCapturedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::MediaCapture *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::MediaCaptureRelativePanelWatcher *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAdvancedCapturedPhoto
+IID_IAdvancedCapturedPhoto2
+IID_IAdvancedPhotoCapture
+IID_IAppBroadcastBackgroundService
+IID_IAppBroadcastBackgroundService2
+IID_IAppBroadcastBackgroundServiceSignInInfo
+IID_IAppBroadcastBackgroundServiceSignInInfo2
+IID_IAppBroadcastBackgroundServiceStreamInfo
+IID_IAppBroadcastBackgroundServiceStreamInfo2
+IID_IAppBroadcastCameraCaptureStateChangedEventArgs
+IID_IAppBroadcastGlobalSettings
+IID_IAppBroadcastHeartbeatRequestedEventArgs
+IID_IAppBroadcastManagerStatics
+IID_IAppBroadcastMicrophoneCaptureStateChangedEventArgs
+IID_IAppBroadcastPlugIn
+IID_IAppBroadcastPlugInManager
+IID_IAppBroadcastPlugInManagerStatics
+IID_IAppBroadcastPlugInStateChangedEventArgs
+IID_IAppBroadcastPreview
+IID_IAppBroadcastPreviewStateChangedEventArgs
+IID_IAppBroadcastPreviewStreamReader
+IID_IAppBroadcastPreviewStreamVideoFrame
+IID_IAppBroadcastPreviewStreamVideoHeader
+IID_IAppBroadcastProviderSettings
+IID_IAppBroadcastServices
+IID_IAppBroadcastSignInStateChangedEventArgs
+IID_IAppBroadcastState
+IID_IAppBroadcastStreamAudioFrame
+IID_IAppBroadcastStreamAudioHeader
+IID_IAppBroadcastStreamReader
+IID_IAppBroadcastStreamStateChangedEventArgs
+IID_IAppBroadcastStreamVideoFrame
+IID_IAppBroadcastStreamVideoHeader
+IID_IAppBroadcastTriggerDetails
+IID_IAppBroadcastViewerCountChangedEventArgs
+IID_IAppCapture
+IID_IAppCaptureAlternateShortcutKeys
+IID_IAppCaptureAlternateShortcutKeys2
+IID_IAppCaptureAlternateShortcutKeys3
+IID_IAppCaptureDurationGeneratedEventArgs
+IID_IAppCaptureFileGeneratedEventArgs
+IID_IAppCaptureManagerStatics
+IID_IAppCaptureMetadataWriter
+IID_IAppCaptureMicrophoneCaptureStateChangedEventArgs
+IID_IAppCaptureRecordingStateChangedEventArgs
+IID_IAppCaptureRecordOperation
+IID_IAppCaptureServices
+IID_IAppCaptureSettings
+IID_IAppCaptureSettings2
+IID_IAppCaptureSettings3
+IID_IAppCaptureSettings4
+IID_IAppCaptureSettings5
+IID_IAppCaptureState
+IID_IAppCaptureStatics
+IID_IAppCaptureStatics2
+IID_ICameraCaptureUI
+IID_ICameraCaptureUIPhotoCaptureSettings
+IID_ICameraCaptureUIVideoCaptureSettings
+IID_ICameraOptionsUIStatics
+IID_ICapturedFrame
+IID_ICapturedFrame2
+IID_ICapturedFrameControlValues
+IID_ICapturedFrameControlValues2
+IID_ICapturedFrameWithSoftwareBitmap
+IID_ICapturedPhoto
+IID_IGameBarServices
+IID_IGameBarServicesCommandEventArgs
+IID_IGameBarServicesManager
+IID_IGameBarServicesManagerGameBarServicesCreatedEventArgs
+IID_IGameBarServicesManagerStatics
+IID_IGameBarServicesTargetInfo
+IID_ILowLagMediaRecording
+IID_ILowLagMediaRecording2
+IID_ILowLagMediaRecording3
+IID_ILowLagPhotoCapture
+IID_ILowLagPhotoSequenceCapture
+IID_IMediaCapture
+IID_IMediaCapture2
+IID_IMediaCapture3
+IID_IMediaCapture4
+IID_IMediaCapture5
+IID_IMediaCapture6
+IID_IMediaCapture7
+IID_IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs
+IID_IMediaCaptureFailedEventArgs
+IID_IMediaCaptureFailedEventHandler
+IID_IMediaCaptureFocusChangedEventArgs
+IID_IMediaCaptureInitializationSettings
+IID_IMediaCaptureInitializationSettings2
+IID_IMediaCaptureInitializationSettings3
+IID_IMediaCaptureInitializationSettings4
+IID_IMediaCaptureInitializationSettings5
+IID_IMediaCaptureInitializationSettings6
+IID_IMediaCaptureInitializationSettings7
+IID_IMediaCapturePauseResult
+IID_IMediaCaptureRelativePanelWatcher
+IID_IMediaCaptureSettings
+IID_IMediaCaptureSettings2
+IID_IMediaCaptureSettings3
+IID_IMediaCaptureStatics
+IID_IMediaCaptureStopResult
+IID_IMediaCaptureVideoPreview
+IID_IMediaCaptureVideoProfile
+IID_IMediaCaptureVideoProfile2
+IID_IMediaCaptureVideoProfileMediaDescription
+IID_IMediaCaptureVideoProfileMediaDescription2
+IID_IOptionalReferencePhotoCapturedEventArgs
+IID_IPhotoCapturedEventArgs
+IID_IPhotoConfirmationCapturedEventArgs
+IID_IRecordLimitationExceededEventHandler
+IID_IVideoStreamConfiguration
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_MEDIA_DEVICES_CALLCONTROLCONTRACT_VERSION
+WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+--file
+winrt-windows.media.capture.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.media.capture
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.media.capture
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.capture.h

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IBasicDevice.add_ConnectionStatusChanged">
+    <summary>Registers an event handler for the <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/connectionstatuschanged">ConnectionStatusChanged</a> event.</summary>
+    <param name="handler">A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh828836(v=vs.85)">ConnectionStatusHandler</a> event handler function.</param>
+    <param name="token">Reference to a token that can be used to unregister the event handler.</param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IBasicDevice.remove_ConnectionStatusChanged">
+    <summary>Unregisters an event handler for the <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/connectionstatuschanged">ConnectionStatusChanged</a> event.</summary>
+    <param name="token">A reference to a token obtained from the <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/ibasicdevice-add-connectionstatuschanged">add_ConnectionStatusChanged</a> method when the event handler was registered.</param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IBasicDevice">
+    <summary>Encapsulates the methods and events needed to model a DLNA Device.</summary>
+  </member>
+</doc>

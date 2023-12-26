@@ -1,0 +1,237 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::UI::Composition::ICompositionAnimationBase *> *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Composition::CompositionAnimation *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Composition::CompositionColorGradientStop *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Composition::CompositionProjectedShadowCaster *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Composition::CompositionProjectedShadowReceiver *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Composition::CompositionShape *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Composition::Visual *>
+ABI::Windows::Foundation::Collections::IIterable<float>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::UI::Composition::ICompositionAnimationBase *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Composition::CompositionAnimation *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Composition::CompositionColorGradientStop *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Composition::CompositionProjectedShadowCaster *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Composition::CompositionProjectedShadowReceiver *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Composition::CompositionShape *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Composition::Visual *>
+ABI::Windows::Foundation::Collections::IIterator<float>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, ABI::Windows::UI::Composition::ICompositionAnimationBase *>
+ABI::Windows::Foundation::Collections::IMap<HSTRING__ *, ABI::Windows::UI::Composition::ICompositionAnimationBase *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, ABI::Windows::UI::Composition::ICompositionAnimationBase *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::Composition::CompositionColorGradientStop *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::Composition::CompositionShape *>
+ABI::Windows::Foundation::Collections::IVector<float>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Composition::CompositionColorGradientStop *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Composition::CompositionShape *>
+ABI::Windows::Foundation::Collections::IVectorView<float>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::UI::Composition::ICompositionSurface *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::UI::Composition::ICompositionSurface *>
+ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::Numerics::Vector2>
+ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::Numerics::Vector3>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Composition::CompositionCapabilities *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Composition::CompositionGraphicsDevice *, ABI::Windows::UI::Composition::RenderingDeviceReplacedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<IInspectable *, ABI::Windows::UI::Composition::CompositionBatchCompletedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAmbientLight
+IID_IAmbientLight2
+IID_IAnimationController
+IID_IAnimationControllerStatics
+IID_IAnimationObject
+IID_IAnimationPropertyInfo
+IID_IAnimationPropertyInfo2
+IID_IBackEasingFunction
+IID_IBooleanKeyFrameAnimation
+IID_IBounceEasingFunction
+IID_IBounceScalarNaturalMotionAnimation
+IID_IBounceVector2NaturalMotionAnimation
+IID_IBounceVector3NaturalMotionAnimation
+IID_ICircleEasingFunction
+IID_IColorKeyFrameAnimation
+IID_ICompositionAnimation
+IID_ICompositionAnimation2
+IID_ICompositionAnimation3
+IID_ICompositionAnimation4
+IID_ICompositionAnimationBase
+IID_ICompositionAnimationFactory
+IID_ICompositionAnimationGroup
+IID_ICompositionBackdropBrush
+IID_ICompositionBatchCompletedEventArgs
+IID_ICompositionBrush
+IID_ICompositionBrushFactory
+IID_ICompositionCapabilities
+IID_ICompositionCapabilitiesStatics
+IID_ICompositionClip
+IID_ICompositionClip2
+IID_ICompositionClipFactory
+IID_ICompositionColorBrush
+IID_ICompositionColorGradientStop
+IID_ICompositionColorGradientStopCollection
+IID_ICompositionCommitBatch
+IID_ICompositionContainerShape
+IID_ICompositionDrawingSurface
+IID_ICompositionDrawingSurface2
+IID_ICompositionDrawingSurfaceFactory
+IID_ICompositionEasingFunction
+IID_ICompositionEasingFunctionFactory
+IID_ICompositionEasingFunctionStatics
+IID_ICompositionEffectBrush
+IID_ICompositionEffectFactory
+IID_ICompositionEffectSourceParameter
+IID_ICompositionEffectSourceParameterFactory
+IID_ICompositionEllipseGeometry
+IID_ICompositionGeometricClip
+IID_ICompositionGeometry
+IID_ICompositionGeometryFactory
+IID_ICompositionGradientBrush
+IID_ICompositionGradientBrush2
+IID_ICompositionGradientBrushFactory
+IID_ICompositionGraphicsDevice
+IID_ICompositionGraphicsDevice2
+IID_ICompositionGraphicsDevice3
+IID_ICompositionGraphicsDevice4
+IID_ICompositionLight
+IID_ICompositionLight2
+IID_ICompositionLight3
+IID_ICompositionLightFactory
+IID_ICompositionLinearGradientBrush
+IID_ICompositionLineGeometry
+IID_ICompositionMaskBrush
+IID_ICompositionMipmapSurface
+IID_ICompositionNineGridBrush
+IID_ICompositionObject
+IID_ICompositionObject2
+IID_ICompositionObject3
+IID_ICompositionObject4
+IID_ICompositionObject5
+IID_ICompositionObjectFactory
+IID_ICompositionObjectStatics
+IID_ICompositionPath
+IID_ICompositionPathFactory
+IID_ICompositionPathGeometry
+IID_ICompositionProjectedShadow
+IID_ICompositionProjectedShadowCaster
+IID_ICompositionProjectedShadowCasterCollection
+IID_ICompositionProjectedShadowCasterCollectionStatics
+IID_ICompositionProjectedShadowReceiver
+IID_ICompositionProjectedShadowReceiverUnorderedCollection
+IID_ICompositionPropertySet
+IID_ICompositionPropertySet2
+IID_ICompositionRadialGradientBrush
+IID_ICompositionRectangleGeometry
+IID_ICompositionRoundedRectangleGeometry
+IID_ICompositionScopedBatch
+IID_ICompositionShadow
+IID_ICompositionShadowFactory
+IID_ICompositionShape
+IID_ICompositionShapeFactory
+IID_ICompositionSpriteShape
+IID_ICompositionSupportsSystemBackdrop
+IID_ICompositionSurface
+IID_ICompositionSurfaceBrush
+IID_ICompositionSurfaceBrush2
+IID_ICompositionSurfaceBrush3
+IID_ICompositionSurfaceFacade
+IID_ICompositionTarget
+IID_ICompositionTargetFactory
+IID_ICompositionTexture
+IID_ICompositionTextureFactory
+IID_ICompositionTransform
+IID_ICompositionTransformFactory
+IID_ICompositionViewBox
+IID_ICompositionVirtualDrawingSurface
+IID_ICompositionVirtualDrawingSurfaceFactory
+IID_ICompositionVisualSurface
+IID_ICompositor
+IID_ICompositor2
+IID_ICompositor3
+IID_ICompositor4
+IID_ICompositor5
+IID_ICompositor6
+IID_ICompositor7
+IID_ICompositor8
+IID_ICompositorStatics
+IID_ICompositorWithBlurredWallpaperBackdropBrush
+IID_ICompositorWithProjectedShadow
+IID_ICompositorWithRadialGradient
+IID_ICompositorWithVisualSurface
+IID_IContainerVisual
+IID_IContainerVisualFactory
+IID_ICubicBezierEasingFunction
+IID_IDelegatedInkTrailVisual
+IID_IDelegatedInkTrailVisualStatics
+IID_IDistantLight
+IID_IDistantLight2
+IID_IDropShadow
+IID_IDropShadow2
+IID_IElasticEasingFunction
+IID_IExponentialEasingFunction
+IID_IExpressionAnimation
+IID_IImplicitAnimationCollection
+IID_IInsetClip
+IID_IKeyFrameAnimation
+IID_IKeyFrameAnimation2
+IID_IKeyFrameAnimation3
+IID_IKeyFrameAnimationFactory
+IID_ILayerVisual
+IID_ILayerVisual2
+IID_ILinearEasingFunction
+IID_INaturalMotionAnimation
+IID_INaturalMotionAnimationFactory
+IID_IPathKeyFrameAnimation
+IID_IPointLight
+IID_IPointLight2
+IID_IPointLight3
+IID_IPowerEasingFunction
+IID_IQuaternionKeyFrameAnimation
+IID_IRectangleClip
+IID_IRedirectVisual
+IID_IRenderingDeviceReplacedEventArgs
+IID_IScalarKeyFrameAnimation
+IID_IScalarNaturalMotionAnimation
+IID_IScalarNaturalMotionAnimationFactory
+IID_IShapeVisual
+IID_ISineEasingFunction
+IID_ISpotLight
+IID_ISpotLight2
+IID_ISpotLight3
+IID_ISpringScalarNaturalMotionAnimation
+IID_ISpringVector2NaturalMotionAnimation
+IID_ISpringVector3NaturalMotionAnimation
+IID_ISpriteVisual
+IID_ISpriteVisual2
+IID_IStepEasingFunction
+IID_IVector2KeyFrameAnimation
+IID_IVector2NaturalMotionAnimation
+IID_IVector2NaturalMotionAnimationFactory
+IID_IVector3KeyFrameAnimation
+IID_IVector3NaturalMotionAnimation
+IID_IVector3NaturalMotionAnimationFactory
+IID_IVector4KeyFrameAnimation
+IID_IVisual
+IID_IVisual2
+IID_IVisual3
+IID_IVisual4
+IID_IVisualCollection
+IID_IVisualElement
+IID_IVisualElement2
+IID_IVisualFactory
+IID_IVisualUnorderedCollection
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+WINDOWS_UI_CORE_COREWINDOWDIALOGSCONTRACT_VERSION
+--file
+winrt-windows.ui.composition.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.ui.composition
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.ui.composition
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.ui.composition.h

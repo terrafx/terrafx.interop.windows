@@ -50,9 +50,9 @@ public unsafe partial struct ICompositorDesktopInterop : ICompositorDesktopInter
     /// <include file='ICompositorDesktopInterop.xml' path='doc/member[@name="ICompositorDesktopInterop.CreateDesktopWindowTarget"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT CreateDesktopWindowTarget(HWND hwndTarget, BOOL isTopmost, [NativeTypeName("IDesktopWindowTarget **")] void** result)
+    public HRESULT CreateDesktopWindowTarget(HWND hwndTarget, BOOL isTopmost, IDesktopWindowTarget** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICompositorDesktopInterop*, HWND, BOOL, void**, int>)(lpVtbl[3]))((ICompositorDesktopInterop*)Unsafe.AsPointer(ref this), hwndTarget, isTopmost, result);
+        return ((delegate* unmanaged[MemberFunction]<ICompositorDesktopInterop*, HWND, BOOL, IDesktopWindowTarget**, int>)(lpVtbl[3]))((ICompositorDesktopInterop*)Unsafe.AsPointer(ref this), hwndTarget, isTopmost, result);
     }
 
     /// <include file='ICompositorDesktopInterop.xml' path='doc/member[@name="ICompositorDesktopInterop.EnsureOnThread"]/*' />
@@ -66,7 +66,7 @@ public unsafe partial struct ICompositorDesktopInterop : ICompositorDesktopInter
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT CreateDesktopWindowTarget(HWND hwndTarget, BOOL isTopmost, [NativeTypeName("IDesktopWindowTarget **")] void** result);
+        HRESULT CreateDesktopWindowTarget(HWND hwndTarget, BOOL isTopmost, IDesktopWindowTarget** result);
 
         [VtblIndex(4)]
         HRESULT EnsureOnThread([NativeTypeName("DWORD")] uint threadId);
@@ -85,7 +85,7 @@ public unsafe partial struct ICompositorDesktopInterop : ICompositorDesktopInter
         public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, BOOL, IDesktopWindowTarget **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, BOOL, void**, int> CreateDesktopWindowTarget;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, BOOL, IDesktopWindowTarget**, int> CreateDesktopWindowTarget;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> EnsureOnThread;

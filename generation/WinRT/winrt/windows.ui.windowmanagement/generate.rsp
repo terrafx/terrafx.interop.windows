@@ -1,0 +1,64 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Composition::IVisualElement *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::WindowId>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::WindowManagement::AppWindowTitleBarOcclusion *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::WindowManagement::WindowingEnvironment *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Composition::IVisualElement *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::WindowId>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::WindowManagement::AppWindowTitleBarOcclusion *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::WindowManagement::WindowingEnvironment *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::Composition::IVisualElement *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Composition::IVisualElement *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::WindowId>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::WindowManagement::AppWindowTitleBarOcclusion *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::WindowManagement::WindowingEnvironment *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::UI::WindowManagement::AppWindow *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::UI::WindowManagement::AppWindow *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::WindowManagement::AppWindow *, ABI::Windows::UI::WindowManagement::AppWindowChangedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::WindowManagement::AppWindow *, ABI::Windows::UI::WindowManagement::AppWindowClosedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::WindowManagement::AppWindow *, ABI::Windows::UI::WindowManagement::AppWindowCloseRequestedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::WindowManagement::DisplayRegion *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::WindowManagement::WindowingEnvironment *, ABI::Windows::UI::WindowManagement::WindowingEnvironmentChangedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAppWindow
+IID_IAppWindowChangedEventArgs
+IID_IAppWindowClosedEventArgs
+IID_IAppWindowCloseRequestedEventArgs
+IID_IAppWindowFrame
+IID_IAppWindowFrameStyle
+IID_IAppWindowPlacement
+IID_IAppWindowPresentationConfiguration
+IID_IAppWindowPresentationConfigurationFactory
+IID_IAppWindowPresenter
+IID_IAppWindowStatics
+IID_IAppWindowTitleBar
+IID_IAppWindowTitleBarOcclusion
+IID_IAppWindowTitleBarVisibility
+IID_ICompactOverlayPresentationConfiguration
+IID_IDefaultPresentationConfiguration
+IID_IDisplayRegion
+IID_IFullScreenPresentationConfiguration
+IID_IWindowingEnvironment
+IID_IWindowingEnvironmentAddedEventArgs
+IID_IWindowingEnvironmentChangedEventArgs
+IID_IWindowingEnvironmentRemovedEventArgs
+IID_IWindowingEnvironmentStatics
+IID_IWindowServicesStatics
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+--file
+winrt-windows.ui.windowmanagement.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.ui.windowmanagement
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.ui.windowmanagement
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.ui.windowmanagement.h

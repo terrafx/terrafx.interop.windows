@@ -1,0 +1,23 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_ILowLevelDevicesAggregateProvider
+IID_ILowLevelDevicesAggregateProviderFactory
+IID_ILowLevelDevicesController
+IID_ILowLevelDevicesControllerStatics
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.devices.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.devices
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.devices
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.devices.h

@@ -1,0 +1,60 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CTextSegment_t *> *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IMapView<HSTRING, IInspectable *> *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Storage::Search::IIndexableContent *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Storage::Search::SortEntry>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CTextSegment_t *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IMapView<HSTRING, IInspectable *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Storage::Search::IIndexableContent *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Storage::Search::SortEntry>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, ABI::Windows::Foundation::Collections::IVectorView<struct ABI::Windows::Data::Text::TextSegment> *>
+ABI::Windows::Foundation::Collections::IMap<HSTRING__ *, ABI::Windows::Foundation::Collections::IVectorView<struct ABI::Windows::Data::Text::TextSegment> *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, ABI::Windows::Foundation::Collections::IVectorView<struct ABI::Windows::Data::Text::TextSegment> *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Storage::Search::SortEntry>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Foundation::Collections::IMapView<HSTRING, IInspectable *> *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Storage::Search::IIndexableContent *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Storage::Search::SortEntry>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IMapView<HSTRING, IInspectable *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_IInspectable_t *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Storage::Search::IIndexableContent *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Storage::Search::IndexedState>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IMapView<HSTRING, IInspectable *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_IInspectable_t *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Storage::Search::IIndexableContent *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::Search::IndexedState>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Storage::Search::IStorageQueryResultBase *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IContentIndexer
+IID_IContentIndexerQuery
+IID_IContentIndexerQueryOperations
+IID_IContentIndexerStatics
+IID_IIndexableContent
+IID_IQueryOptions
+IID_IQueryOptionsFactory
+IID_IQueryOptionsWithProviderFilter
+IID_IStorageFileQueryResult
+IID_IStorageFileQueryResult2
+IID_IStorageFolderQueryOperations
+IID_IStorageFolderQueryResult
+IID_IStorageItemQueryResult
+IID_IStorageLibraryChangeTrackerTriggerDetails
+IID_IStorageLibraryContentChangedTriggerDetails
+IID_IStorageQueryResultBase
+IID_IValueAndLanguage
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.storage.search.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.storage.search
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.storage.search
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.storage.search.h

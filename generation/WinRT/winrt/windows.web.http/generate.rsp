@@ -1,0 +1,81 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Web::Http::IHttpContent *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Web::Http::IHttpContent *>
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Storage::Streams::IBuffer *, unsigned long long>
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Storage::Streams::IInputStream *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Storage::Streams::IInputStream *, unsigned long long>
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Web::Http::HttpGetBufferResult *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Web::Http::HttpGetInputStreamResult *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Web::Http::HttpGetStringResult *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Web::Http::HttpRequestResult *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<HSTRING__ *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<HSTRING__ *, unsigned long long>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Storage::Streams::IBuffer *, unsigned long long>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Storage::Streams::IInputStream *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Storage::Streams::IInputStream *, unsigned long long>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Web::Http::HttpGetBufferResult *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Web::Http::HttpGetInputStreamResult *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Web::Http::HttpGetStringResult *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Web::Http::HttpRequestResult *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<HSTRING__ *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<HSTRING__ *, unsigned long long>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Storage::Streams::IBuffer *, unsigned long long>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Storage::Streams::IInputStream *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Storage::Streams::IInputStream *, unsigned long long>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Web::Http::HttpGetBufferResult *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Web::Http::HttpGetInputStreamResult *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Web::Http::HttpGetStringResult *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Web::Http::HttpRequestResult *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<HSTRING__ *, ABI::Windows::Web::Http::HttpProgress>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<HSTRING__ *, unsigned long long>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IHttpBufferContentFactory
+IID_IHttpClient
+IID_IHttpClient2
+IID_IHttpClient3
+IID_IHttpClientFactory
+IID_IHttpContent
+IID_IHttpCookie
+IID_IHttpCookieFactory
+IID_IHttpCookieManager
+IID_IHttpFormUrlEncodedContentFactory
+IID_IHttpGetBufferResult
+IID_IHttpGetInputStreamResult
+IID_IHttpGetStringResult
+IID_IHttpMethod
+IID_IHttpMethodFactory
+IID_IHttpMethodStatics
+IID_IHttpMultipartContent
+IID_IHttpMultipartContentFactory
+IID_IHttpMultipartFormDataContent
+IID_IHttpMultipartFormDataContentFactory
+IID_IHttpRequestMessage
+IID_IHttpRequestMessage2
+IID_IHttpRequestMessageFactory
+IID_IHttpRequestResult
+IID_IHttpResponseMessage
+IID_IHttpResponseMessageFactory
+IID_IHttpStreamContentFactory
+IID_IHttpStringContentFactory
+IID_IHttpTransportInformation
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION
+--file
+winrt-windows.web.http.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.web.http
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.web.http
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.web.http.h

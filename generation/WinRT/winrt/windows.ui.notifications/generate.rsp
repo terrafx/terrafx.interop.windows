@@ -1,0 +1,123 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Notifications::AdaptiveNotificationText *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Notifications::NotificationBinding *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Notifications::ScheduledTileNotification *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Notifications::ScheduledToastNotification *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Notifications::ToastCollection *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Notifications::ToastNotification *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Notifications::AdaptiveNotificationText *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Notifications::NotificationBinding *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Notifications::ScheduledTileNotification *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Notifications::ScheduledToastNotification *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Notifications::ToastCollection *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Notifications::ToastNotification *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::Notifications::NotificationBinding *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Notifications::AdaptiveNotificationText *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Notifications::NotificationBinding *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Notifications::ScheduledTileNotification *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Notifications::ScheduledToastNotification *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Notifications::ToastCollection *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Notifications::ToastNotification *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Notifications::ToastCollection *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::UI::Notifications::ToastCollection *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::UI::Notifications::ToastNotificationHistory *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::UI::Notifications::ToastNotifier *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Notifications::ToastCollection *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::UI::Notifications::ToastCollection *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::UI::Notifications::ToastNotificationHistory *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::UI::Notifications::ToastNotifier *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Notifications::ToastNotification *, ABI::Windows::UI::Notifications::ToastDismissedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Notifications::ToastNotification *, ABI::Windows::UI::Notifications::ToastFailedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Notifications::ToastNotification *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Notifications::ToastNotificationManagerForUser *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Notifications::ToastNotifier *, ABI::Windows::UI::Notifications::ScheduledToastNotificationShowingEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAdaptiveNotificationContent
+IID_IAdaptiveNotificationText
+IID_IBadgeNotification
+IID_IBadgeNotificationFactory
+IID_IBadgeUpdateManagerForUser
+IID_IBadgeUpdateManagerStatics2
+IID_IBadgeUpdateManagerStatics
+IID_IBadgeUpdater
+IID_IKnownAdaptiveNotificationHintsStatics
+IID_IKnownAdaptiveNotificationTextStylesStatics
+IID_IKnownNotificationBindingsStatics
+IID_INotification
+IID_INotificationBinding
+IID_INotificationData
+IID_INotificationDataFactory
+IID_INotificationVisual
+IID_IScheduledTileNotification
+IID_IScheduledTileNotificationFactory
+IID_IScheduledToastNotification2
+IID_IScheduledToastNotification3
+IID_IScheduledToastNotification4
+IID_IScheduledToastNotification
+IID_IScheduledToastNotificationFactory
+IID_IScheduledToastNotificationShowingEventArgs
+IID_IShownTileNotification
+IID_ITileFlyoutNotification
+IID_ITileFlyoutNotificationFactory
+IID_ITileFlyoutUpdateManagerStatics
+IID_ITileFlyoutUpdater
+IID_ITileNotification
+IID_ITileNotificationFactory
+IID_ITileUpdateManagerForUser
+IID_ITileUpdateManagerStatics2
+IID_ITileUpdateManagerStatics
+IID_ITileUpdater2
+IID_ITileUpdater
+IID_IToastActivatedEventArgs2
+IID_IToastActivatedEventArgs
+IID_IToastCollection
+IID_IToastCollectionFactory
+IID_IToastCollectionManager
+IID_IToastDismissedEventArgs
+IID_IToastFailedEventArgs
+IID_IToastNotification2
+IID_IToastNotification3
+IID_IToastNotification4
+IID_IToastNotification6
+IID_IToastNotification
+IID_IToastNotificationActionTriggerDetail
+IID_IToastNotificationFactory
+IID_IToastNotificationHistory2
+IID_IToastNotificationHistory
+IID_IToastNotificationHistoryChangedTriggerDetail2
+IID_IToastNotificationHistoryChangedTriggerDetail
+IID_IToastNotificationManagerForUser2
+IID_IToastNotificationManagerForUser3
+IID_IToastNotificationManagerForUser
+IID_IToastNotificationManagerStatics2
+IID_IToastNotificationManagerStatics4
+IID_IToastNotificationManagerStatics5
+IID_IToastNotificationManagerStatics
+IID_IToastNotifier2
+IID_IToastNotifier3
+IID_IToastNotifier
+IID_IUserNotification
+IID_IUserNotificationChangedEventArgs
+IID_WinRT_IUserNotification
+WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION
+WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+--file
+winrt-windows.ui.notifications.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.ui.notifications
+--remap
+IID_IUserNotification=@IID_WinRT_IUserNotification
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.ui.notifications
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.ui.notifications.h

@@ -1,0 +1,74 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Perception::Spatial::SpatialAnchor *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Perception::Spatial::SpatialAnchor *> *>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, ABI::Windows::Perception::Spatial::SpatialAnchor *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, ABI::Windows::Perception::Spatial::SpatialAnchor *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IMapView<HSTRING, ABI::Windows::Perception::Spatial::SpatialAnchor *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Perception::Spatial::SpatialAnchorExportSufficiency *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Perception::Spatial::SpatialAnchorStore *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Perception::Spatial::SpatialPerceptionAccessStatus>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Perception::Spatial::SpatialPerceptionAccessStatus>'
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Perception::Spatial::SpatialStageFrameOfReference *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IMapView<HSTRING, ABI::Windows::Perception::Spatial::SpatialAnchor *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Perception::Spatial::SpatialAnchorExportSufficiency *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Perception::Spatial::SpatialAnchorStore *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Perception::Spatial::SpatialPerceptionAccessStatus>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Perception::Spatial::SpatialPerceptionAccessStatus>'
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Perception::Spatial::SpatialStageFrameOfReference *>
+ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::Numerics::Matrix4x4>
+ABI::Windows::Foundation::IReference<ABI::Windows::Foundation::Numerics::Matrix4x4>'
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialAnchor *, ABI::Windows::Perception::Spatial::SpatialAnchorRawCoordinateSystemAdjustedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialEntityWatcher *, ABI::Windows::Perception::Spatial::SpatialEntityAddedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialEntityWatcher *, ABI::Windows::Perception::Spatial::SpatialEntityRemovedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialEntityWatcher *, ABI::Windows::Perception::Spatial::SpatialEntityUpdatedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialEntityWatcher *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialLocator *, ABI::Windows::Perception::Spatial::SpatialLocatorPositionalTrackingDeactivatingEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Perception::Spatial::SpatialLocator *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_ISpatialAnchor
+IID_ISpatialAnchor2
+IID_ISpatialAnchorExporter
+IID_ISpatialAnchorExporterStatics
+IID_ISpatialAnchorExportSufficiency
+IID_ISpatialAnchorManagerStatics
+IID_ISpatialAnchorRawCoordinateSystemAdjustedEventArgs
+IID_ISpatialAnchorStatics
+IID_ISpatialAnchorStore
+IID_ISpatialAnchorTransferManagerStatics
+IID_ISpatialBoundingVolume
+IID_ISpatialBoundingVolumeStatics
+IID_ISpatialCoordinateSystem
+IID_ISpatialEntity
+IID_ISpatialEntityAddedEventArgs
+IID_ISpatialEntityFactory
+IID_ISpatialEntityRemovedEventArgs
+IID_ISpatialEntityStore
+IID_ISpatialEntityStoreStatics
+IID_ISpatialEntityUpdatedEventArgs
+IID_ISpatialEntityWatcher
+IID_ISpatialLocation
+IID_ISpatialLocation2
+IID_ISpatialLocator
+IID_ISpatialLocatorAttachedFrameOfReference
+IID_ISpatialLocatorPositionalTrackingDeactivatingEventArgs
+IID_ISpatialLocatorStatics
+IID_ISpatialStageFrameOfReference
+IID_ISpatialStageFrameOfReferenceStatics
+IID_ISpatialStationaryFrameOfReference
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.perception.spatial.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.perception.spatial
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.perception.spatial
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.perception.spatial.h

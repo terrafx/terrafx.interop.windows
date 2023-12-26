@@ -3,8 +3,6 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WS_XML_WRITER_BINARY_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_BINARY_ENCODING"]/*' />
@@ -18,7 +16,7 @@ public unsafe partial struct WS_XML_WRITER_BINARY_ENCODING
 
     /// <include file='WS_XML_WRITER_BINARY_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_BINARY_ENCODING.dynamicStringCallback"]/*' />
     [NativeTypeName("WS_DYNAMIC_STRING_CALLBACK")]
-    public delegate* unmanaged<void*, WS_XML_STRING*, BOOL*, uint*, IntPtr, HRESULT> dynamicStringCallback;
+    public delegate* unmanaged<void*, WS_XML_STRING*, BOOL*, uint*, void*, HRESULT> dynamicStringCallback;
 
     /// <include file='WS_XML_WRITER_BINARY_ENCODING.xml' path='doc/member[@name="WS_XML_WRITER_BINARY_ENCODING.dynamicStringCallbackState"]/*' />
     public void* dynamicStringCallbackState;

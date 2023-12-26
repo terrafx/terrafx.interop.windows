@@ -1,0 +1,31 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Web::Http::Filters::HttpBaseProtocolFilter *, ABI::Windows::Web::Http::Filters::HttpServerCustomValidationRequestedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IHttpBaseProtocolFilter
+IID_IHttpBaseProtocolFilter2
+IID_IHttpBaseProtocolFilter3
+IID_IHttpBaseProtocolFilter4
+IID_IHttpBaseProtocolFilter5
+IID_IHttpBaseProtocolFilterStatics
+IID_IHttpCacheControl
+IID_IHttpFilter
+IID_IHttpServerCustomValidationRequestedEventArgs
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+--file
+winrt-windows.web.http.filters.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.web.http.filters
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.web.http.filters
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.web.http.filters.h

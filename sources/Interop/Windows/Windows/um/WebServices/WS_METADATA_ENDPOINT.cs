@@ -3,8 +3,6 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WS_METADATA_ENDPOINT.xml' path='doc/member[@name="WS_METADATA_ENDPOINT"]/*' />
@@ -15,7 +13,7 @@ public unsafe partial struct WS_METADATA_ENDPOINT
 
     /// <include file='WS_METADATA_ENDPOINT.xml' path='doc/member[@name="WS_METADATA_ENDPOINT.endpointPolicy"]/*' />
     [NativeTypeName("WS_POLICY*")]
-    public IntPtr endpointPolicy;
+    public void* endpointPolicy;
 
     /// <include file='WS_METADATA_ENDPOINT.xml' path='doc/member[@name="WS_METADATA_ENDPOINT.portName"]/*' />
     public WS_XML_STRING* portName;

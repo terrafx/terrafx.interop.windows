@@ -3,8 +3,6 @@
 // Ported from um/WebServices.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WS_SERVICE_ENDPOINT.xml' path='doc/member[@name="WS_SERVICE_ENDPOINT"]/*' />
@@ -29,7 +27,7 @@ public unsafe partial struct WS_SERVICE_ENDPOINT
 
     /// <include file='WS_SERVICE_ENDPOINT.xml' path='doc/member[@name="WS_SERVICE_ENDPOINT.authorizationCallback"]/*' />
     [NativeTypeName("WS_SERVICE_SECURITY_CALLBACK")]
-    public delegate* unmanaged<IntPtr, BOOL*, IntPtr, HRESULT> authorizationCallback;
+    public delegate* unmanaged<void*, BOOL*, void*, HRESULT> authorizationCallback;
 
     /// <include file='WS_SERVICE_ENDPOINT.xml' path='doc/member[@name="WS_SERVICE_ENDPOINT.properties"]/*' />
     [NativeTypeName("const WS_SERVICE_ENDPOINT_PROPERTY *")]

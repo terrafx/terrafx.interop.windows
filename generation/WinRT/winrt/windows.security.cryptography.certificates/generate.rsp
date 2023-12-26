@@ -1,0 +1,76 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Security::Cryptography::Certificates::CertificateExtension *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Security::Cryptography::Certificates::CmsSignerInfo *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Security::Cryptography::Certificates::CertificateExtension *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Security::Cryptography::Certificates::CmsSignerInfo *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Security::Cryptography::Certificates::Certificate *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Security::Cryptography::Certificates::CertificateExtension *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Security::Cryptography::Certificates::CertificateExtension *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Security::Cryptography::Certificates::CmsSignerInfo *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Security::Cryptography::Certificates::Certificate *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::Cryptography::Certificates::CertificateChain *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::Cryptography::Certificates::SignatureValidationResult>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Security::Cryptography::Certificates::Certificate *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::Cryptography::Certificates::CertificateChain *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::Cryptography::Certificates::SignatureValidationResult>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_ICertificate
+IID_ICertificate2
+IID_ICertificate3
+IID_ICertificateChain
+IID_ICertificateEnrollmentManagerStatics
+IID_ICertificateEnrollmentManagerStatics2
+IID_ICertificateEnrollmentManagerStatics3
+IID_ICertificateExtension
+IID_ICertificateFactory
+IID_ICertificateKeyUsages
+IID_ICertificateQuery
+IID_ICertificateQuery2
+IID_ICertificateRequestProperties
+IID_ICertificateRequestProperties2
+IID_ICertificateRequestProperties3
+IID_ICertificateRequestProperties4
+IID_ICertificateStore
+IID_ICertificateStore2
+IID_ICertificateStoresStatics
+IID_ICertificateStoresStatics2
+IID_IChainBuildingParameters
+IID_IChainValidationParameters
+IID_ICmsAttachedSignature
+IID_ICmsAttachedSignatureFactory
+IID_ICmsAttachedSignatureStatics
+IID_ICmsDetachedSignature
+IID_ICmsDetachedSignatureFactory
+IID_ICmsDetachedSignatureStatics
+IID_ICmsSignerInfo
+IID_ICmsTimestampInfo
+IID_IKeyAlgorithmNamesStatics
+IID_IKeyAlgorithmNamesStatics2
+IID_IKeyAttestationHelperStatics
+IID_IKeyAttestationHelperStatics2
+IID_IKeyStorageProviderNamesStatics
+IID_IKeyStorageProviderNamesStatics2
+IID_IPfxImportParameters
+IID_IStandardCertificateStoreNamesStatics
+IID_ISubjectAlternativeNameInfo
+IID_ISubjectAlternativeNameInfo2
+IID_IUserCertificateEnrollmentManager
+IID_IUserCertificateEnrollmentManager2
+IID_IUserCertificateStore
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.security.cryptography.certificates.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.security.cryptography.certificates
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.security.cryptography.certificates
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.security.cryptography.certificates.h

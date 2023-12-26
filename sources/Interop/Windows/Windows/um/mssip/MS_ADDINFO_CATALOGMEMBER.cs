@@ -3,12 +3,10 @@
 // Ported from um/mssip.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MS_ADDINFO_CATALOGMEMBER.xml' path='doc/member[@name="MS_ADDINFO_CATALOGMEMBER"]/*' />
-public partial struct MS_ADDINFO_CATALOGMEMBER
+public unsafe partial struct MS_ADDINFO_CATALOGMEMBER
 {
     /// <include file='MS_ADDINFO_CATALOGMEMBER.xml' path='doc/member[@name="MS_ADDINFO_CATALOGMEMBER.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
@@ -16,9 +14,9 @@ public partial struct MS_ADDINFO_CATALOGMEMBER
 
     /// <include file='MS_ADDINFO_CATALOGMEMBER.xml' path='doc/member[@name="MS_ADDINFO_CATALOGMEMBER.pStore"]/*' />
     [NativeTypeName("struct CRYPTCATSTORE_ *")]
-    public IntPtr pStore;
+    public void* pStore;
 
     /// <include file='MS_ADDINFO_CATALOGMEMBER.xml' path='doc/member[@name="MS_ADDINFO_CATALOGMEMBER.pMember"]/*' />
     [NativeTypeName("struct CRYPTCATMEMBER_ *")]
-    public IntPtr pMember;
+    public void* pMember;
 }

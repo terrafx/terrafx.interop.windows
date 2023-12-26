@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PositionInformation">
+    <summary>Contains the current values of media playback position information obtained from the DMR.</summary>
+  </member>
+  <member name="PositionInformation.streaming.PositionInformation.trackInformation"></member>
+  <member name="PositionInformation.streaming.PositionInformation.relativeTime"></member>
+  <member name="PositionInformation.relativeTime">
+    <summary>The current playback position of the DMR.</summary>
+  </member>
+  <member name="PositionInformation.trackInformation">
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh829004(v=vs.85)">TrackInformation</a> structure that contains the current track number and duration.</summary>
+  </member>
+</doc>

@@ -298,6 +298,7 @@ IDI=TerraFX.Interop.Windows
 IDirectDraw7=TerraFX.Interop.DirectX
 IDirectDraw=TerraFX.Interop.DirectX
 IDirectDrawSurface7=TerraFX.Interop.DirectX
+IDispatcherQueueController=TerraFX.Interop.WinRT
 IDXGIDevice=TerraFX.Interop.DirectX
 IDXGISwapChain=TerraFX.Interop.DirectX
 IEIFLAG=TerraFX.Interop.Windows

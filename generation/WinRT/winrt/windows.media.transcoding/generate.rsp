@@ -1,0 +1,27 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::IAsyncActionProgressHandler<double>
+ABI::Windows::Foundation::IAsyncActionWithProgress<double>
+ABI::Windows::Foundation::IAsyncActionWithProgressCompletedHandler<double>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Transcoding::PrepareTranscodeResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Transcoding::PrepareTranscodeResult *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IMediaTranscoder
+IID_IMediaTranscoder2
+IID_IPrepareTranscodeResult
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.media.transcoding.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.media.transcoding
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.media.transcoding
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.transcoding.h

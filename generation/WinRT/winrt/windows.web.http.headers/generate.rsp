@@ -1,0 +1,135 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Web::Http::Headers::HttpChallengeHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Web::Http::Headers::HttpContentCodingHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Web::Http::Headers::HttpCookiePairHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Web::Http::Headers::HttpExpectationHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Web::Http::Headers::HttpNameValueHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Web::Http::Headers::HttpProductInfoHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Web::Http::Headers::HttpTransferCodingHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Web::Http::HttpMethod *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Web::Http::Headers::HttpChallengeHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Web::Http::Headers::HttpContentCodingHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Web::Http::Headers::HttpCookiePairHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Web::Http::Headers::HttpExpectationHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Web::Http::Headers::HttpNameValueHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Web::Http::Headers::HttpProductInfoHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Web::Http::Headers::HttpTransferCodingHeaderValue *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Web::Http::HttpMethod *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Globalization::Language *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Web::Http::Headers::HttpChallengeHeaderValue *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Web::Http::Headers::HttpContentCodingHeaderValue *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Web::Http::Headers::HttpCookiePairHeaderValue *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Web::Http::Headers::HttpExpectationHeaderValue *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Web::Http::Headers::HttpNameValueHeaderValue *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Web::Http::Headers::HttpProductInfoHeaderValue *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Web::Http::Headers::HttpTransferCodingHeaderValue *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Web::Http::HttpMethod *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Web::Http::Headers::HttpChallengeHeaderValue *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Web::Http::Headers::HttpConnectionOptionHeaderValue *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Web::Http::Headers::HttpContentCodingHeaderValue *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Web::Http::Headers::HttpContentCodingWithQualityHeaderValue *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Web::Http::Headers::HttpCookiePairHeaderValue *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Web::Http::Headers::HttpExpectationHeaderValue *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Web::Http::Headers::HttpLanguageRangeWithQualityHeaderValue *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Web::Http::Headers::HttpMediaTypeWithQualityHeaderValue *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Web::Http::Headers::HttpNameValueHeaderValue *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Web::Http::Headers::HttpProductInfoHeaderValue *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Web::Http::Headers::HttpTransferCodingHeaderValue *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Web::Http::HttpMethod *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IHttpCacheDirectiveHeaderValueCollection
+IID_IHttpChallengeHeaderValue
+IID_IHttpChallengeHeaderValueCollection
+IID_IHttpChallengeHeaderValueFactory
+IID_IHttpChallengeHeaderValueStatics
+IID_IHttpConnectionOptionHeaderValue
+IID_IHttpConnectionOptionHeaderValueCollection
+IID_IHttpConnectionOptionHeaderValueFactory
+IID_IHttpConnectionOptionHeaderValueStatics
+IID_IHttpContentCodingHeaderValue
+IID_IHttpContentCodingHeaderValueCollection
+IID_IHttpContentCodingHeaderValueFactory
+IID_IHttpContentCodingHeaderValueStatics
+IID_IHttpContentCodingWithQualityHeaderValue
+IID_IHttpContentCodingWithQualityHeaderValueCollection
+IID_IHttpContentCodingWithQualityHeaderValueFactory
+IID_IHttpContentCodingWithQualityHeaderValueStatics
+IID_IHttpContentDispositionHeaderValue
+IID_IHttpContentDispositionHeaderValueFactory
+IID_IHttpContentDispositionHeaderValueStatics
+IID_IHttpContentHeaderCollection
+IID_IHttpContentRangeHeaderValue
+IID_IHttpContentRangeHeaderValueFactory
+IID_IHttpContentRangeHeaderValueStatics
+IID_IHttpCookiePairHeaderValue
+IID_IHttpCookiePairHeaderValueCollection
+IID_IHttpCookiePairHeaderValueFactory
+IID_IHttpCookiePairHeaderValueStatics
+IID_IHttpCredentialsHeaderValue
+IID_IHttpCredentialsHeaderValueFactory
+IID_IHttpCredentialsHeaderValueStatics
+IID_IHttpDateOrDeltaHeaderValue
+IID_IHttpDateOrDeltaHeaderValueStatics
+IID_IHttpExpectationHeaderValue
+IID_IHttpExpectationHeaderValueCollection
+IID_IHttpExpectationHeaderValueFactory
+IID_IHttpExpectationHeaderValueStatics
+IID_IHttpLanguageHeaderValueCollection
+IID_IHttpLanguageRangeWithQualityHeaderValue
+IID_IHttpLanguageRangeWithQualityHeaderValueCollection
+IID_IHttpLanguageRangeWithQualityHeaderValueFactory
+IID_IHttpLanguageRangeWithQualityHeaderValueStatics
+IID_IHttpMediaTypeHeaderValue
+IID_IHttpMediaTypeHeaderValueFactory
+IID_IHttpMediaTypeHeaderValueStatics
+IID_IHttpMediaTypeWithQualityHeaderValue
+IID_IHttpMediaTypeWithQualityHeaderValueCollection
+IID_IHttpMediaTypeWithQualityHeaderValueFactory
+IID_IHttpMediaTypeWithQualityHeaderValueStatics
+IID_IHttpMethodHeaderValueCollection
+IID_IHttpNameValueHeaderValue
+IID_IHttpNameValueHeaderValueFactory
+IID_IHttpNameValueHeaderValueStatics
+IID_IHttpProductHeaderValue
+IID_IHttpProductHeaderValueFactory
+IID_IHttpProductHeaderValueStatics
+IID_IHttpProductInfoHeaderValue
+IID_IHttpProductInfoHeaderValueCollection
+IID_IHttpProductInfoHeaderValueFactory
+IID_IHttpProductInfoHeaderValueStatics
+IID_IHttpRequestHeaderCollection
+IID_IHttpResponseHeaderCollection
+IID_IHttpTransferCodingHeaderValue
+IID_IHttpTransferCodingHeaderValueCollection
+IID_IHttpTransferCodingHeaderValueFactory
+IID_IHttpTransferCodingHeaderValueStatics
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_GLOBALIZATION_GLOBALIZATIONJAPANESEPHONETICANALYZERCONTRACT_VERSION
+--file
+winrt-windows.web.http.headers.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.web.http.headers
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.web.http.headers
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.web.http.headers.h

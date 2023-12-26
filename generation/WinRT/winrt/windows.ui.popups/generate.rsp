@@ -1,0 +1,31 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::UI::Popups::IUICommand *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::UI::Popups::IUICommand *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::Popups::IUICommand *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Popups::IUICommand *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::UI::Popups::IUICommand *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::UI::Popups::IUICommand *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IMessageDialog
+IID_IMessageDialogFactory
+IID_IPopupMenu
+IID_IUICommand
+IID_IUICommandFactory
+IID_IUICommandInvokedHandler
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.ui.popups.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.ui.popups
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.ui.popups
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.ui.popups.h

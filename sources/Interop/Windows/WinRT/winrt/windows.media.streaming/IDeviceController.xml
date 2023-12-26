@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDeviceController.AddDevice">
+    <summary>Adds a DLNA DMR or DMS Device, identified by its UPnP Unique Device Name (UDN), to the list of devices that is returned by the <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/idevicecontroller-cacheddevices">CachedDevices</a> method.</summary>
+    <param name="uniqueDeviceName">A string representing the device’s UDN.</param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IDeviceController.add_DeviceArrival">
+    <summary>Registers an event handler for the <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/devicearrival">DeviceArrival</a> event.</summary>
+    <param name="handler">A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh828843(v=vs.85)">DeviceControllerFinderHandler</a> event handler function.</param>
+    <param name="token">Reference to a token that can be used to unregister the event handler.</param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IDeviceController.add_DeviceDeparture">
+    <summary>Registers an event handler for the <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/devicedeparture">DeviceDeparture</a> event.</summary>
+    <param name="handler">A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh828843(v=vs.85)">DeviceControllerFinderHandler</a> event handler function.</param>
+    <param name="token">Reference to a token that can be used to unregister the event handler.</param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IDeviceController.RemoveDevice">
+    <summary>Removes the specified device from the list of devices that is returned by the <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/idevicecontroller-cacheddevices">CachedDevices</a> method.</summary>
+    <param name="device">A reference to an <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/ibasicdevice">IBasicDevice</a> that represents the device to remove from the list.</param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IDeviceController.remove_DeviceArrival">
+    <summary>Unregisters an event handler for the <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/devicearrival">DeviceArrival</a> event.</summary>
+    <param name="token">A reference to a token obtained from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh828903(v=vs.85)">add_DeviceArrival</a> method when the event handler was registered.</param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IDeviceController.remove_DeviceDeparture">
+    <summary>Unregisters an event handler for the <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/devicedeparture">DeviceDeparture</a> event.</summary>
+    <param name="token">A reference to a token obtained from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh828904(v=vs.85)">add_DeviceDeparture</a> method when the event handler was registered.</param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IDeviceController">
+    <summary>Encapsulates the methods and events needed to retrieve a list of cached Digital Media Renderers (DMRs) and/or Digital Media Servers (DMSs), or to asynchronously find the DMRs and/or DMSs that are currently on the network.</summary>
+  </member>
+</doc>

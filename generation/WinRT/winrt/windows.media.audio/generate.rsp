@@ -1,0 +1,124 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Audio::AudioGraphConnection *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Media::Audio::EqualizerBand *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Audio::AudioGraphConnection *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Media::Audio::EqualizerBand *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Audio::AudioGraphConnection *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Media::Audio::EqualizerBand *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Audio::AudioPlaybackConnectionOpenResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Audio::CreateAudioDeviceInputNodeResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Audio::CreateAudioDeviceOutputNodeResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Audio::CreateAudioFileInputNodeResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Audio::CreateAudioFileOutputNodeResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Audio::CreateAudioGraphResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Audio::CreateMediaSourceAudioInputNodeResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Audio::SetDefaultSpatialAudioFormatResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Transcoding::TranscodeFailureReason>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Audio::AudioPlaybackConnectionOpenResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Audio::CreateAudioDeviceInputNodeResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Audio::CreateAudioDeviceOutputNodeResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Audio::CreateAudioFileInputNodeResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Audio::CreateAudioFileOutputNodeResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Audio::CreateAudioGraphResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Audio::CreateMediaSourceAudioInputNodeResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Audio::SetDefaultSpatialAudioFormatResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Transcoding::TranscodeFailureReason>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Audio::AudioFileInputNode *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Audio::AudioFrameInputNode *, ABI::Windows::Media::Audio::AudioFrameCompletedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Audio::AudioFrameInputNode *, ABI::Windows::Media::Audio::FrameInputNodeQuantumStartedEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Audio::AudioGraph *, ABI::Windows::Media::Audio::AudioGraphUnrecoverableErrorOccurredEventArgs *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Audio::AudioGraph *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Audio::AudioPlaybackConnection *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Audio::AudioStateMonitor *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Audio::MediaSourceAudioInputNode *, IInspectable *>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Audio::SpatialAudioDeviceConfiguration *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IAudioDeviceInputNode
+IID_IAudioDeviceOutputNode
+IID_IAudioFileInputNode
+IID_IAudioFileOutputNode
+IID_IAudioFrameCompletedEventArgs
+IID_IAudioFrameInputNode
+IID_IAudioFrameOutputNode
+IID_IAudioGraph
+IID_IAudioGraph2
+IID_IAudioGraph3
+IID_IAudioGraphConnection
+IID_IAudioGraphSettings
+IID_IAudioGraphSettings2
+IID_IAudioGraphSettingsFactory
+IID_IAudioGraphStatics
+IID_IAudioGraphUnrecoverableErrorOccurredEventArgs
+IID_IAudioInputNode
+IID_IAudioInputNode2
+IID_IAudioNode
+IID_IAudioNodeEmitter
+IID_IAudioNodeEmitter2
+IID_IAudioNodeEmitterConeProperties
+IID_IAudioNodeEmitterDecayModel
+IID_IAudioNodeEmitterDecayModelStatics
+IID_IAudioNodeEmitterFactory
+IID_IAudioNodeEmitterNaturalDecayModelProperties
+IID_IAudioNodeEmitterShape
+IID_IAudioNodeEmitterShapeStatics
+IID_IAudioNodeListener
+IID_IAudioNodeWithListener
+IID_IAudioPlaybackConnection
+IID_IAudioPlaybackConnectionOpenResult
+IID_IAudioPlaybackConnectionStatics
+IID_IAudioStateMonitor
+IID_IAudioStateMonitorStatics
+IID_ICreateAudioDeviceInputNodeResult
+IID_ICreateAudioDeviceInputNodeResult2
+IID_ICreateAudioDeviceOutputNodeResult
+IID_ICreateAudioDeviceOutputNodeResult2
+IID_ICreateAudioFileInputNodeResult
+IID_ICreateAudioFileInputNodeResult2
+IID_ICreateAudioFileOutputNodeResult
+IID_ICreateAudioFileOutputNodeResult2
+IID_ICreateAudioGraphResult
+IID_ICreateAudioGraphResult2
+IID_ICreateMediaSourceAudioInputNodeResult
+IID_ICreateMediaSourceAudioInputNodeResult2
+IID_IEchoEffectDefinition
+IID_IEchoEffectDefinitionFactory
+IID_IEqualizerBand
+IID_IEqualizerEffectDefinition
+IID_IEqualizerEffectDefinitionFactory
+IID_IFrameInputNodeQuantumStartedEventArgs
+IID_ILimiterEffectDefinition
+IID_ILimiterEffectDefinitionFactory
+IID_IMediaSourceAudioInputNode
+IID_IReverbEffectDefinition
+IID_IReverbEffectDefinitionFactory
+IID_ISetDefaultSpatialAudioFormatResult
+IID_ISpatialAudioDeviceConfiguration
+IID_ISpatialAudioDeviceConfigurationStatics
+IID_ISpatialAudioFormatConfiguration
+IID_ISpatialAudioFormatConfigurationStatics
+IID_ISpatialAudioFormatSubtypeStatics
+IID_ISpatialAudioFormatSubtypeStatics2
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_APPCAPTURECONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_APPCAPTUREMETADATACONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_CAMERACAPTUREUICONTRACT_VERSION
+WINDOWS_MEDIA_CAPTURE_GAMEBARCONTRACT_VERSION
+WINDOWS_MEDIA_DEVICES_CALLCONTROLCONTRACT_VERSION
+WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION
+--file
+winrt-windows.media.audio.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.media.audio
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.media.audio
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.audio.h

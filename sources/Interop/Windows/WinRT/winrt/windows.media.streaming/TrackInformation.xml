@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TrackInformation">
+    <summary>Contains the current track number and duration as part of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh828991(v=vs.85)">PositionInformation</a> obtained from the DMR.</summary>
+  </member>
+  <member name="TrackInformation.streaming.TrackInformation.Track"></member>
+  <member name="TrackInformation.streaming.TrackInformation.TrackId"></member>
+  <member name="TrackInformation.streaming.TrackInformation.TrackDuration"></member>
+  <member name="TrackInformation.Track">
+    <summary>The current track number as reported by DMR. If the DMR does not have a concept of track numbers, this value will be 0.</summary>
+  </member>
+  <member name="TrackInformation.TrackDuration">
+    <summary>The duration of the current track.</summary>
+  </member>
+</doc>

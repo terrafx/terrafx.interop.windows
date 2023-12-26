@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMediaRendererFactory.CreateMediaRendererAsync">
+    <summary>Asynchronously creates a new instance of an object that implements the <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/imediarenderer">IMediaRenderer</a> interface using the specified Unique Device Name (UDN).</summary>
+    <param name="deviceIdentifier">An HSTRING containing a UDN that identifies the DLNA DMR device for which an instance of <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/imediarenderer">IMediaRenderer</a> will be created.</param>
+    <param name="value">Receives a reference to a <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/createmediarendereroperation">CreateMediaRendererOperation</a> object that is used to get results from the asynchronous operation.</param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IMediaRendererFactory.CreateMediaRendererFromBasicDeviceAsync">
+    <summary>Asynchronously creates a new instance of an object that implements the <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/imediarenderer">IMediaRenderer</a> interface using the specified <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/ibasicdevice">IBasicDevice</a> interface.</summary>
+    <param name="basicDevice">A pointer to an <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/ibasicdevice">IBasicDevice</a> interface representing the device for which an instance of <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/imediarenderer">IMediaRenderer</a> will be created.</param>
+    <param name="value">Receives a reference to a <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/createmediarendereroperation">CreateMediaRendererOperation</a> object that is used to get results from the asynchronous operation.</param>
+    <returns>
+      <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="IMediaRendererFactory">
+    <summary>Encapsulates the methods needed to asynchronously create a new instance of an object that implements the <a href="https://docs.microsoft.com//windows/desktop/mediastreaming/imediarenderer">IMediaRenderer</a> interface.</summary>
+  </member>
+</doc>

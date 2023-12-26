@@ -1,0 +1,62 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::EnterpriseData::BufferProtectUnprotectResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::EnterpriseData::DataProtectionInfo *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::EnterpriseData::FileProtectionInfo *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::EnterpriseData::FileProtectionStatus>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::EnterpriseData::ProtectedContainerExportResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::EnterpriseData::ProtectedContainerImportResult *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::EnterpriseData::ProtectedFileCreateResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::EnterpriseData::BufferProtectUnprotectResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::EnterpriseData::DataProtectionInfo *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::EnterpriseData::FileProtectionInfo *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::EnterpriseData::FileProtectionStatus>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::EnterpriseData::ProtectedContainerExportResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::EnterpriseData::ProtectedContainerImportResult *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::EnterpriseData::ProtectedFileCreateResult *>
+ABI::Windows::Foundation::IEventHandler<ABI::Windows::Security::EnterpriseData::ProtectedAccessResumedEventArgs *>
+ABI::Windows::Foundation::IEventHandler<ABI::Windows::Security::EnterpriseData::ProtectedAccessSuspendingEventArgs *>
+ABI::Windows::Foundation::IEventHandler<ABI::Windows::Security::EnterpriseData::ProtectedContentRevokedEventArgs *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IBufferProtectUnprotectResult
+IID_IDataProtectionInfo
+IID_IDataProtectionManagerStatics
+IID_IFileProtectionInfo
+IID_IFileProtectionInfo2
+IID_IFileProtectionManagerStatics
+IID_IFileProtectionManagerStatics2
+IID_IFileProtectionManagerStatics3
+IID_IFileRevocationManagerStatics
+IID_IFileUnprotectOptions
+IID_IFileUnprotectOptionsFactory
+IID_IProtectedAccessResumedEventArgs
+IID_IProtectedAccessSuspendingEventArgs
+IID_IProtectedContainerExportResult
+IID_IProtectedContainerImportResult
+IID_IProtectedContentRevokedEventArgs
+IID_IProtectedFileCreateResult
+IID_IProtectionPolicyAuditInfo
+IID_IProtectionPolicyAuditInfoFactory
+IID_IProtectionPolicyManager
+IID_IProtectionPolicyManager2
+IID_IProtectionPolicyManagerStatics
+IID_IProtectionPolicyManagerStatics2
+IID_IProtectionPolicyManagerStatics3
+IID_IProtectionPolicyManagerStatics4
+IID_IThreadNetworkContext
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.security.enterprisedata.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.security.enterprisedata
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.security.enterprisedata
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.security.enterprisedata.h

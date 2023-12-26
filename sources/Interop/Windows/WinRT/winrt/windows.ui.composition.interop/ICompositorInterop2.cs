@@ -58,9 +58,9 @@ public unsafe partial struct ICompositorInterop2 : ICompositorInterop2.Interface
     /// <include file='ICompositorInterop2.xml' path='doc/member[@name="ICompositorInterop2.CreateCompositionTexture"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT CreateCompositionTexture(IUnknown* d3dTexture, IInspectable** compositionTexture)
+    public HRESULT CreateCompositionTexture(IUnknown* d3dTexture, ICompositionTexture** compositionTexture)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICompositorInterop2*, IUnknown*, IInspectable**, int>)(lpVtbl[4]))((ICompositorInterop2*)Unsafe.AsPointer(ref this), d3dTexture, compositionTexture);
+        return ((delegate* unmanaged[MemberFunction]<ICompositorInterop2*, IUnknown*, ICompositionTexture**, int>)(lpVtbl[4]))((ICompositorInterop2*)Unsafe.AsPointer(ref this), d3dTexture, compositionTexture);
     }
 
     public interface Interface : IUnknown.Interface
@@ -69,7 +69,7 @@ public unsafe partial struct ICompositorInterop2 : ICompositorInterop2.Interface
         HRESULT CheckCompositionTextureSupport(IUnknown* renderingDevice, BOOL* supportsCompositionTextures);
 
         [VtblIndex(4)]
-        HRESULT CreateCompositionTexture(IUnknown* d3dTexture, IInspectable** compositionTexture);
+        HRESULT CreateCompositionTexture(IUnknown* d3dTexture, ICompositionTexture** compositionTexture);
     }
 
     public partial struct Vtbl<TSelf>
@@ -88,6 +88,6 @@ public unsafe partial struct ICompositorInterop2 : ICompositorInterop2.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, BOOL*, int> CheckCompositionTextureSupport;
 
         [NativeTypeName("HRESULT (IUnknown *, ICompositionTexture **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, IInspectable**, int> CreateCompositionTexture;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, ICompositionTexture**, int> CreateCompositionTexture;
     }
 }
