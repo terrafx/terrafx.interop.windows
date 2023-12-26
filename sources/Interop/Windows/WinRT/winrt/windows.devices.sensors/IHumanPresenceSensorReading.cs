@@ -74,9 +74,9 @@ public unsafe partial struct IHumanPresenceSensorReading : IHumanPresenceSensorR
     /// <include file='IHumanPresenceSensorReading.xml' path='doc/member[@name="IHumanPresenceSensorReading.get_Timestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorReading*, DateTime*, int>)(lpVtbl[6]))((IHumanPresenceSensorReading*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorReading*, WinRTDateTime*, int>)(lpVtbl[6]))((IHumanPresenceSensorReading*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IHumanPresenceSensorReading.xml' path='doc/member[@name="IHumanPresenceSensorReading.get_Presence"]/*' />
@@ -106,7 +106,7 @@ public unsafe partial struct IHumanPresenceSensorReading : IHumanPresenceSensorR
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(7)]
         HRESULT get_Presence([NativeTypeName("ABI::Windows::Devices::Sensors::HumanPresence *")] HumanPresence* value);
@@ -140,7 +140,7 @@ public unsafe partial struct IHumanPresenceSensorReading : IHumanPresenceSensorR
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Timestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Timestamp;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Sensors::HumanPresence *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HumanPresence*, int> get_Presence;

@@ -98,9 +98,9 @@ public unsafe partial struct IPrintTaskConfigurationSaveRequest : IPrintTaskConf
     /// <include file='IPrintTaskConfigurationSaveRequest.xml' path='doc/member[@name="IPrintTaskConfigurationSaveRequest.get_Deadline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPrintTaskConfigurationSaveRequest*, DateTime*, int>)(lpVtbl[9]))((IPrintTaskConfigurationSaveRequest*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPrintTaskConfigurationSaveRequest*, WinRTDateTime*, int>)(lpVtbl[9]))((IPrintTaskConfigurationSaveRequest*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -115,7 +115,7 @@ public unsafe partial struct IPrintTaskConfigurationSaveRequest : IPrintTaskConf
         HRESULT GetDeferral([NativeTypeName("ABI::Windows::Devices::Printers::Extensions::IPrintTaskConfigurationSaveRequestedDeferral **")] IPrintTaskConfigurationSaveRequestedDeferral** deferral);
 
         [VtblIndex(9)]
-        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -149,6 +149,6 @@ public unsafe partial struct IPrintTaskConfigurationSaveRequest : IPrintTaskConf
         public delegate* unmanaged[MemberFunction]<TSelf*, IPrintTaskConfigurationSaveRequestedDeferral**, int> GetDeferral;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Deadline;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Deadline;
     }
 }

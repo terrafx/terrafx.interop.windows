@@ -11,6 +11,7 @@ ABI::Windows::Foundation::Collections::IVector=IVector
 ABI::Windows::Foundation::Collections::IVectorView=IVectorView
 ABI::Windows::Foundation::Collections::MapChangedEventHandler=MapChangedEventHandler
 ABI::Windows::Foundation::Collections::VectorChangedEventHandler=VectorChangedEventHandler
+ABI::Windows::Foundation::DateTime=WinRTDateTime
 ABI::Windows::Foundation::IAsyncActionProgressHandler=IAsyncActionProgressHandler
 ABI::Windows::Foundation::IAsyncActionWithProgress=IAsyncActionWithProgress
 ABI::Windows::Foundation::IAsyncActionWithProgressCompletedHandler=IAsyncActionWithProgressCompletedHandler

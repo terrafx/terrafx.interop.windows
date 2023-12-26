@@ -74,15 +74,15 @@ public unsafe partial struct IScheduledTileNotificationFactory : IScheduledTileN
     /// <include file='IScheduledTileNotificationFactory.xml' path='doc/member[@name="IScheduledTileNotificationFactory.CreateScheduledTileNotification"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateScheduledTileNotification([NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlDocument *")] IXmlDocument* content, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime deliveryTime, [NativeTypeName("ABI::Windows::UI::Notifications::IScheduledTileNotification **")] IScheduledTileNotification** value)
+    public HRESULT CreateScheduledTileNotification([NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlDocument *")] IXmlDocument* content, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime deliveryTime, [NativeTypeName("ABI::Windows::UI::Notifications::IScheduledTileNotification **")] IScheduledTileNotification** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IScheduledTileNotificationFactory*, IXmlDocument*, DateTime, IScheduledTileNotification**, int>)(lpVtbl[6]))((IScheduledTileNotificationFactory*)Unsafe.AsPointer(ref this), content, deliveryTime, value);
+        return ((delegate* unmanaged[MemberFunction]<IScheduledTileNotificationFactory*, IXmlDocument*, WinRTDateTime, IScheduledTileNotification**, int>)(lpVtbl[6]))((IScheduledTileNotificationFactory*)Unsafe.AsPointer(ref this), content, deliveryTime, value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CreateScheduledTileNotification([NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlDocument *")] IXmlDocument* content, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime deliveryTime, [NativeTypeName("ABI::Windows::UI::Notifications::IScheduledTileNotification **")] IScheduledTileNotification** value);
+        HRESULT CreateScheduledTileNotification([NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlDocument *")] IXmlDocument* content, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime deliveryTime, [NativeTypeName("ABI::Windows::UI::Notifications::IScheduledTileNotification **")] IScheduledTileNotification** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IScheduledTileNotificationFactory : IScheduledTileN
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Data::Xml::Dom::IXmlDocument *, ABI::Windows::Foundation::DateTime, ABI::Windows::UI::Notifications::IScheduledTileNotification **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IXmlDocument*, DateTime, IScheduledTileNotification**, int> CreateScheduledTileNotification;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXmlDocument*, WinRTDateTime, IScheduledTileNotification**, int> CreateScheduledTileNotification;
     }
 }

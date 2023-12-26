@@ -98,17 +98,17 @@ public unsafe partial struct IImageProperties : IImageProperties.Interface, INat
     /// <include file='IImageProperties.xml' path='doc/member[@name="IImageProperties.get_DateTaken"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_DateTaken([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_DateTaken([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IImageProperties*, DateTime*, int>)(lpVtbl[9]))((IImageProperties*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IImageProperties*, WinRTDateTime*, int>)(lpVtbl[9]))((IImageProperties*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IImageProperties.xml' path='doc/member[@name="IImageProperties.put_DateTaken"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT put_DateTaken([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value)
+    public HRESULT put_DateTaken([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IImageProperties*, DateTime, int>)(lpVtbl[10]))((IImageProperties*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IImageProperties*, WinRTDateTime, int>)(lpVtbl[10]))((IImageProperties*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IImageProperties.xml' path='doc/member[@name="IImageProperties.get_Width"]/*' />
@@ -219,10 +219,10 @@ public unsafe partial struct IImageProperties : IImageProperties.Interface, INat
         HRESULT get_Keywords([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t **")] IVector<HSTRING>** value);
 
         [VtblIndex(9)]
-        HRESULT get_DateTaken([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_DateTaken([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(10)]
-        HRESULT put_DateTaken([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value);
+        HRESULT put_DateTaken([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value);
 
         [VtblIndex(11)]
         HRESULT get_Width([NativeTypeName("UINT32 *")] uint* value);
@@ -292,10 +292,10 @@ public unsafe partial struct IImageProperties : IImageProperties.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, IVector<HSTRING>**, int> get_Keywords;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_DateTaken;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_DateTaken;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, int> put_DateTaken;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, int> put_DateTaken;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_Width;

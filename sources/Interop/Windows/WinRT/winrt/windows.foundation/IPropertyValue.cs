@@ -196,9 +196,9 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetDateTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT GetDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT GetDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, DateTime*, int>)(lpVtbl[21]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, WinRTDateTime*, int>)(lpVtbl[21]))((IPropertyValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetTimeSpan"]/*' />
@@ -348,9 +348,9 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetDateTimeArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
-    public HRESULT GetDateTimeArray([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("ABI::Windows::Foundation::DateTime **")] DateTime** value)
+    public HRESULT GetDateTimeArray([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("ABI::Windows::Foundation::DateTime **")] WinRTDateTime** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, DateTime**, int>)(lpVtbl[40]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyValue*, uint*, WinRTDateTime**, int>)(lpVtbl[40]))((IPropertyValue*)Unsafe.AsPointer(ref this), valueLength, value);
     }
 
     /// <include file='IPropertyValue.xml' path='doc/member[@name="IPropertyValue.GetTimeSpanArray"]/*' />
@@ -433,7 +433,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
         HRESULT GetGuid(Guid* value);
 
         [VtblIndex(21)]
-        HRESULT GetDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT GetDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(22)]
         HRESULT GetTimeSpan([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value);
@@ -490,7 +490,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
         HRESULT GetGuidArray([NativeTypeName("UINT32 *")] uint* valueLength, Guid** value);
 
         [VtblIndex(40)]
-        HRESULT GetDateTimeArray([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("ABI::Windows::Foundation::DateTime **")] DateTime** value);
+        HRESULT GetDateTimeArray([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("ABI::Windows::Foundation::DateTime **")] WinRTDateTime** value);
 
         [VtblIndex(41)]
         HRESULT GetTimeSpanArray([NativeTypeName("UINT32 *")] uint* valueLength, [NativeTypeName("ABI::Windows::Foundation::TimeSpan **")] TimeSpan** value);
@@ -572,7 +572,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetGuid;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> GetDateTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> GetDateTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::TimeSpan *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> GetTimeSpan;
@@ -629,7 +629,7 @@ public unsafe partial struct IPropertyValue : IPropertyValue.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetGuidArray;
 
         [NativeTypeName("HRESULT (UINT32 *, ABI::Windows::Foundation::DateTime **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, DateTime**, int> GetDateTimeArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, WinRTDateTime**, int> GetDateTimeArray;
 
         [NativeTypeName("HRESULT (UINT32 *, ABI::Windows::Foundation::TimeSpan **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, TimeSpan**, int> GetTimeSpanArray;

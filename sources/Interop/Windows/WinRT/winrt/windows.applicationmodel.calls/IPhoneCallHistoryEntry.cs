@@ -330,17 +330,17 @@ public unsafe partial struct IPhoneCallHistoryEntry : IPhoneCallHistoryEntry.Int
     /// <include file='IPhoneCallHistoryEntry.xml' path='doc/member[@name="IPhoneCallHistoryEntry.get_StartTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(38)]
-    public HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneCallHistoryEntry*, DateTime*, int>)(lpVtbl[38]))((IPhoneCallHistoryEntry*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneCallHistoryEntry*, WinRTDateTime*, int>)(lpVtbl[38]))((IPhoneCallHistoryEntry*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPhoneCallHistoryEntry.xml' path='doc/member[@name="IPhoneCallHistoryEntry.put_StartTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
-    public HRESULT put_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value)
+    public HRESULT put_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneCallHistoryEntry*, DateTime, int>)(lpVtbl[39]))((IPhoneCallHistoryEntry*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneCallHistoryEntry*, WinRTDateTime, int>)(lpVtbl[39]))((IPhoneCallHistoryEntry*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -442,10 +442,10 @@ public unsafe partial struct IPhoneCallHistoryEntry : IPhoneCallHistoryEntry.Int
         HRESULT put_SourceIdKind([NativeTypeName("ABI::Windows::ApplicationModel::Calls::PhoneCallHistorySourceIdKind")] PhoneCallHistorySourceIdKind value);
 
         [VtblIndex(38)]
-        HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(39)]
-        HRESULT put_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime value);
+        HRESULT put_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -566,9 +566,9 @@ public unsafe partial struct IPhoneCallHistoryEntry : IPhoneCallHistoryEntry.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, PhoneCallHistorySourceIdKind, int> put_SourceIdKind;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_StartTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_StartTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, int> put_StartTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, int> put_StartTime;
     }
 }

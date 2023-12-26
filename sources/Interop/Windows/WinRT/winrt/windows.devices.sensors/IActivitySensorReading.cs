@@ -74,9 +74,9 @@ public unsafe partial struct IActivitySensorReading : IActivitySensorReading.Int
     /// <include file='IActivitySensorReading.xml' path='doc/member[@name="IActivitySensorReading.get_Timestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IActivitySensorReading*, DateTime*, int>)(lpVtbl[6]))((IActivitySensorReading*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IActivitySensorReading*, WinRTDateTime*, int>)(lpVtbl[6]))((IActivitySensorReading*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IActivitySensorReading.xml' path='doc/member[@name="IActivitySensorReading.get_Activity"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IActivitySensorReading : IActivitySensorReading.Int
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(7)]
         HRESULT get_Activity([NativeTypeName("ABI::Windows::Devices::Sensors::ActivityType *")] ActivityType* value);
@@ -129,7 +129,7 @@ public unsafe partial struct IActivitySensorReading : IActivitySensorReading.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Timestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Timestamp;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Sensors::ActivityType *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ActivityType*, int> get_Activity;

@@ -74,9 +74,9 @@ public unsafe partial struct ISmsTextMessage2 : ISmsTextMessage2.Interface, INat
     /// <include file='ISmsTextMessage2.xml' path='doc/member[@name="ISmsTextMessage2.get_Timestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmsTextMessage2*, DateTime*, int>)(lpVtbl[6]))((ISmsTextMessage2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISmsTextMessage2*, WinRTDateTime*, int>)(lpVtbl[6]))((ISmsTextMessage2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISmsTextMessage2.xml' path='doc/member[@name="ISmsTextMessage2.get_To"]/*' />
@@ -202,7 +202,7 @@ public unsafe partial struct ISmsTextMessage2 : ISmsTextMessage2.Interface, INat
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(7)]
         HRESULT get_To(HSTRING* value);
@@ -272,7 +272,7 @@ public unsafe partial struct ISmsTextMessage2 : ISmsTextMessage2.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Timestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Timestamp;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_To;

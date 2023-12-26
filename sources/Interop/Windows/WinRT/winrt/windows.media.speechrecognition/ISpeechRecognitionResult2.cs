@@ -74,9 +74,9 @@ public unsafe partial struct ISpeechRecognitionResult2 : ISpeechRecognitionResul
     /// <include file='ISpeechRecognitionResult2.xml' path='doc/member[@name="ISpeechRecognitionResult2.get_PhraseStartTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_PhraseStartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_PhraseStartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognitionResult2*, DateTime*, int>)(lpVtbl[6]))((ISpeechRecognitionResult2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognitionResult2*, WinRTDateTime*, int>)(lpVtbl[6]))((ISpeechRecognitionResult2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISpeechRecognitionResult2.xml' path='doc/member[@name="ISpeechRecognitionResult2.get_PhraseDuration"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct ISpeechRecognitionResult2 : ISpeechRecognitionResul
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_PhraseStartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_PhraseStartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(7)]
         HRESULT get_PhraseDuration([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value);
@@ -118,7 +118,7 @@ public unsafe partial struct ISpeechRecognitionResult2 : ISpeechRecognitionResul
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_PhraseStartTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_PhraseStartTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::TimeSpan *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> get_PhraseDuration;

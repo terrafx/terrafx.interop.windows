@@ -74,9 +74,9 @@ public unsafe partial struct IAppBroadcastPreviewStreamVideoHeader : IAppBroadca
     /// <include file='IAppBroadcastPreviewStreamVideoHeader.xml' path='doc/member[@name="IAppBroadcastPreviewStreamVideoHeader.get_AbsoluteTimestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_AbsoluteTimestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_AbsoluteTimestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastPreviewStreamVideoHeader*, DateTime*, int>)(lpVtbl[6]))((IAppBroadcastPreviewStreamVideoHeader*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastPreviewStreamVideoHeader*, WinRTDateTime*, int>)(lpVtbl[6]))((IAppBroadcastPreviewStreamVideoHeader*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppBroadcastPreviewStreamVideoHeader.xml' path='doc/member[@name="IAppBroadcastPreviewStreamVideoHeader.get_RelativeTimestamp"]/*' />
@@ -106,7 +106,7 @@ public unsafe partial struct IAppBroadcastPreviewStreamVideoHeader : IAppBroadca
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_AbsoluteTimestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_AbsoluteTimestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(7)]
         HRESULT get_RelativeTimestamp([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value);
@@ -140,7 +140,7 @@ public unsafe partial struct IAppBroadcastPreviewStreamVideoHeader : IAppBroadca
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_AbsoluteTimestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_AbsoluteTimestamp;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::TimeSpan *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> get_RelativeTimestamp;

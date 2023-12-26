@@ -1,6 +1,13 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Foundation::Numerics::Matrix3x2
+ABI::Windows::Foundation::Numerics::Matrix4x4
+ABI::Windows::Foundation::Numerics::Plane
+ABI::Windows::Foundation::Numerics::Quaternion
+ABI::Windows::Foundation::Numerics::Vector2
+ABI::Windows::Foundation::Numerics::Vector3
+ABI::Windows::Foundation::Numerics::Vector4
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION

@@ -74,9 +74,9 @@ public unsafe partial struct IGyrometerReading : IGyrometerReading.Interface, IN
     /// <include file='IGyrometerReading.xml' path='doc/member[@name="IGyrometerReading.get_Timestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGyrometerReading*, DateTime*, int>)(lpVtbl[6]))((IGyrometerReading*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IGyrometerReading*, WinRTDateTime*, int>)(lpVtbl[6]))((IGyrometerReading*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IGyrometerReading.xml' path='doc/member[@name="IGyrometerReading.get_AngularVelocityX"]/*' />
@@ -106,7 +106,7 @@ public unsafe partial struct IGyrometerReading : IGyrometerReading.Interface, IN
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(7)]
         HRESULT get_AngularVelocityX(double* value);
@@ -140,7 +140,7 @@ public unsafe partial struct IGyrometerReading : IGyrometerReading.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Timestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Timestamp;
 
         [NativeTypeName("HRESULT (DOUBLE *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_AngularVelocityX;

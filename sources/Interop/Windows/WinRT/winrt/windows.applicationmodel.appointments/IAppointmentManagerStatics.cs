@@ -106,9 +106,9 @@ public unsafe partial struct IAppointmentManagerStatics : IAppointmentManagerSta
     /// <include file='IAppointmentManagerStatics.xml' path='doc/member[@name="IAppointmentManagerStatics.ShowReplaceAppointmentWithPlacementAndDateAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT ShowReplaceAppointmentWithPlacementAndDateAsync(HSTRING appointmentId, [NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement preferredPlacement, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime instanceStartDate, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **")] IAsyncOperation<HSTRING>** operation)
+    public HRESULT ShowReplaceAppointmentWithPlacementAndDateAsync(HSTRING appointmentId, [NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement preferredPlacement, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime instanceStartDate, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **")] IAsyncOperation<HSTRING>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentManagerStatics*, HSTRING, IAppointment*, Rect, Placement, DateTime, IAsyncOperation<HSTRING>**, int>)(lpVtbl[10]))((IAppointmentManagerStatics*)Unsafe.AsPointer(ref this), appointmentId, appointment, selection, preferredPlacement, instanceStartDate, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentManagerStatics*, HSTRING, IAppointment*, Rect, Placement, WinRTDateTime, IAsyncOperation<HSTRING>**, int>)(lpVtbl[10]))((IAppointmentManagerStatics*)Unsafe.AsPointer(ref this), appointmentId, appointment, selection, preferredPlacement, instanceStartDate, operation);
     }
 
     /// <include file='IAppointmentManagerStatics.xml' path='doc/member[@name="IAppointmentManagerStatics.ShowRemoveAppointmentAsync"]/*' />
@@ -130,17 +130,17 @@ public unsafe partial struct IAppointmentManagerStatics : IAppointmentManagerSta
     /// <include file='IAppointmentManagerStatics.xml' path='doc/member[@name="IAppointmentManagerStatics.ShowRemoveAppointmentWithPlacementAndDateAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT ShowRemoveAppointmentWithPlacementAndDateAsync(HSTRING appointmentId, [NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement preferredPlacement, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime instanceStartDate, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation)
+    public HRESULT ShowRemoveAppointmentWithPlacementAndDateAsync(HSTRING appointmentId, [NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement preferredPlacement, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime instanceStartDate, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentManagerStatics*, HSTRING, Rect, Placement, DateTime, IAsyncOperation<bool>**, int>)(lpVtbl[13]))((IAppointmentManagerStatics*)Unsafe.AsPointer(ref this), appointmentId, selection, preferredPlacement, instanceStartDate, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentManagerStatics*, HSTRING, Rect, Placement, WinRTDateTime, IAsyncOperation<bool>**, int>)(lpVtbl[13]))((IAppointmentManagerStatics*)Unsafe.AsPointer(ref this), appointmentId, selection, preferredPlacement, instanceStartDate, operation);
     }
 
     /// <include file='IAppointmentManagerStatics.xml' path='doc/member[@name="IAppointmentManagerStatics.ShowTimeFrameAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT ShowTimeFrameAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime timeToShow, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncAction)
+    public HRESULT ShowTimeFrameAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime timeToShow, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncAction)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentManagerStatics*, DateTime, TimeSpan, IAsyncAction**, int>)(lpVtbl[14]))((IAppointmentManagerStatics*)Unsafe.AsPointer(ref this), timeToShow, duration, asyncAction);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentManagerStatics*, WinRTDateTime, TimeSpan, IAsyncAction**, int>)(lpVtbl[14]))((IAppointmentManagerStatics*)Unsafe.AsPointer(ref this), timeToShow, duration, asyncAction);
     }
 
     public interface Interface : IInspectable.Interface
@@ -158,7 +158,7 @@ public unsafe partial struct IAppointmentManagerStatics : IAppointmentManagerSta
         HRESULT ShowReplaceAppointmentWithPlacementAsync(HSTRING appointmentId, [NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement preferredPlacement, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **")] IAsyncOperation<HSTRING>** operation);
 
         [VtblIndex(10)]
-        HRESULT ShowReplaceAppointmentWithPlacementAndDateAsync(HSTRING appointmentId, [NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement preferredPlacement, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime instanceStartDate, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **")] IAsyncOperation<HSTRING>** operation);
+        HRESULT ShowReplaceAppointmentWithPlacementAndDateAsync(HSTRING appointmentId, [NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement preferredPlacement, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime instanceStartDate, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **")] IAsyncOperation<HSTRING>** operation);
 
         [VtblIndex(11)]
         HRESULT ShowRemoveAppointmentAsync(HSTRING appointmentId, [NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
@@ -167,10 +167,10 @@ public unsafe partial struct IAppointmentManagerStatics : IAppointmentManagerSta
         HRESULT ShowRemoveAppointmentWithPlacementAsync(HSTRING appointmentId, [NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement preferredPlacement, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
 
         [VtblIndex(13)]
-        HRESULT ShowRemoveAppointmentWithPlacementAndDateAsync(HSTRING appointmentId, [NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement preferredPlacement, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime instanceStartDate, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
+        HRESULT ShowRemoveAppointmentWithPlacementAndDateAsync(HSTRING appointmentId, [NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement preferredPlacement, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime instanceStartDate, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
 
         [VtblIndex(14)]
-        HRESULT ShowTimeFrameAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime timeToShow, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncAction);
+        HRESULT ShowTimeFrameAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime timeToShow, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncAction);
     }
 
     public partial struct Vtbl<TSelf>
@@ -207,7 +207,7 @@ public unsafe partial struct IAppointmentManagerStatics : IAppointmentManagerSta
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAppointment*, Rect, Placement, IAsyncOperation<HSTRING>**, int> ShowReplaceAppointmentWithPlacementAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::ApplicationModel::Appointments::IAppointment *, ABI::Windows::Foundation::Rect, ABI::Windows::UI::Popups::Placement, ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAppointment*, Rect, Placement, DateTime, IAsyncOperation<HSTRING>**, int> ShowReplaceAppointmentWithPlacementAndDateAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAppointment*, Rect, Placement, WinRTDateTime, IAsyncOperation<HSTRING>**, int> ShowReplaceAppointmentWithPlacementAndDateAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Rect, ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, Rect, IAsyncOperation<bool>**, int> ShowRemoveAppointmentAsync;
@@ -216,9 +216,9 @@ public unsafe partial struct IAppointmentManagerStatics : IAppointmentManagerSta
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, Rect, Placement, IAsyncOperation<bool>**, int> ShowRemoveAppointmentWithPlacementAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Rect, ABI::Windows::UI::Popups::Placement, ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, Rect, Placement, DateTime, IAsyncOperation<bool>**, int> ShowRemoveAppointmentWithPlacementAndDateAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, Rect, Placement, WinRTDateTime, IAsyncOperation<bool>**, int> ShowRemoveAppointmentWithPlacementAndDateAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::TimeSpan, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, TimeSpan, IAsyncAction**, int> ShowTimeFrameAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, TimeSpan, IAsyncAction**, int> ShowTimeFrameAsync;
     }
 }

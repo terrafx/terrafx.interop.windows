@@ -74,9 +74,9 @@ public unsafe partial struct IPrintTaskRequest : IPrintTaskRequest.Interface, IN
     /// <include file='IPrintTaskRequest.xml' path='doc/member[@name="IPrintTaskRequest.get_Deadline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPrintTaskRequest*, DateTime*, int>)(lpVtbl[6]))((IPrintTaskRequest*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPrintTaskRequest*, WinRTDateTime*, int>)(lpVtbl[6]))((IPrintTaskRequest*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPrintTaskRequest.xml' path='doc/member[@name="IPrintTaskRequest.CreatePrintTask"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IPrintTaskRequest : IPrintTaskRequest.Interface, IN
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(7)]
         HRESULT CreatePrintTask(HSTRING title, [NativeTypeName("ABI::Windows::Graphics::Printing::IPrintTaskSourceRequestedHandler *")] IPrintTaskSourceRequestedHandler* handler, [NativeTypeName("ABI::Windows::Graphics::Printing::IPrintTask **")] IPrintTask** task);
@@ -129,7 +129,7 @@ public unsafe partial struct IPrintTaskRequest : IPrintTaskRequest.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Deadline;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Deadline;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Graphics::Printing::IPrintTaskSourceRequestedHandler *, ABI::Windows::Graphics::Printing::IPrintTask **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IPrintTaskSourceRequestedHandler*, IPrintTask**, int> CreatePrintTask;

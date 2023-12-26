@@ -74,9 +74,9 @@ public unsafe partial struct ISmsAppMessage : ISmsAppMessage.Interface, INativeG
     /// <include file='ISmsAppMessage.xml' path='doc/member[@name="ISmsAppMessage.get_Timestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmsAppMessage*, DateTime*, int>)(lpVtbl[6]))((ISmsAppMessage*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISmsAppMessage*, WinRTDateTime*, int>)(lpVtbl[6]))((ISmsAppMessage*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISmsAppMessage.xml' path='doc/member[@name="ISmsAppMessage.get_To"]/*' />
@@ -250,7 +250,7 @@ public unsafe partial struct ISmsAppMessage : ISmsAppMessage.Interface, INativeG
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(7)]
         HRESULT get_To(HSTRING* value);
@@ -338,7 +338,7 @@ public unsafe partial struct ISmsAppMessage : ISmsAppMessage.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Timestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Timestamp;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_To;

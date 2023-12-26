@@ -114,17 +114,17 @@ public unsafe partial struct ISmsStatusMessage : ISmsStatusMessage.Interface, IN
     /// <include file='ISmsStatusMessage.xml' path='doc/member[@name="ISmsStatusMessage.get_ServiceCenterTimestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_ServiceCenterTimestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_ServiceCenterTimestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmsStatusMessage*, DateTime*, int>)(lpVtbl[11]))((ISmsStatusMessage*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISmsStatusMessage*, WinRTDateTime*, int>)(lpVtbl[11]))((ISmsStatusMessage*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISmsStatusMessage.xml' path='doc/member[@name="ISmsStatusMessage.get_DischargeTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_DischargeTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_DischargeTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmsStatusMessage*, DateTime*, int>)(lpVtbl[12]))((ISmsStatusMessage*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISmsStatusMessage*, WinRTDateTime*, int>)(lpVtbl[12]))((ISmsStatusMessage*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -145,10 +145,10 @@ public unsafe partial struct ISmsStatusMessage : ISmsStatusMessage.Interface, IN
         HRESULT get_MessageReferenceNumber([NativeTypeName("INT32 *")] int* value);
 
         [VtblIndex(11)]
-        HRESULT get_ServiceCenterTimestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_ServiceCenterTimestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(12)]
-        HRESULT get_DischargeTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_DischargeTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -188,9 +188,9 @@ public unsafe partial struct ISmsStatusMessage : ISmsStatusMessage.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_MessageReferenceNumber;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_ServiceCenterTimestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_ServiceCenterTimestamp;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_DischargeTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_DischargeTime;
     }
 }

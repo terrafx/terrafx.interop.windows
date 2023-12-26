@@ -82,9 +82,9 @@ public unsafe partial struct IProtectedAccessSuspendingEventArgs : IProtectedAcc
     /// <include file='IProtectedAccessSuspendingEventArgs.xml' path='doc/member[@name="IProtectedAccessSuspendingEventArgs.get_Deadline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IProtectedAccessSuspendingEventArgs*, DateTime*, int>)(lpVtbl[7]))((IProtectedAccessSuspendingEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IProtectedAccessSuspendingEventArgs*, WinRTDateTime*, int>)(lpVtbl[7]))((IProtectedAccessSuspendingEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IProtectedAccessSuspendingEventArgs.xml' path='doc/member[@name="IProtectedAccessSuspendingEventArgs.GetDeferral"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IProtectedAccessSuspendingEventArgs : IProtectedAcc
         HRESULT get_Identities([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_HSTRING_t **")] IVectorView<HSTRING>** value);
 
         [VtblIndex(7)]
-        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(8)]
         HRESULT GetDeferral([NativeTypeName("ABI::Windows::Foundation::IDeferral **")] IDeferral** result);
@@ -132,7 +132,7 @@ public unsafe partial struct IProtectedAccessSuspendingEventArgs : IProtectedAcc
         public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<HSTRING>**, int> get_Identities;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Deadline;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Deadline;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IDeferral **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IDeferral**, int> GetDeferral;

@@ -82,9 +82,9 @@ public unsafe partial struct IDataProviderRequest : IDataProviderRequest.Interfa
     /// <include file='IDataProviderRequest.xml' path='doc/member[@name="IDataProviderRequest.get_Deadline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataProviderRequest*, DateTime*, int>)(lpVtbl[7]))((IDataProviderRequest*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDataProviderRequest*, WinRTDateTime*, int>)(lpVtbl[7]))((IDataProviderRequest*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDataProviderRequest.xml' path='doc/member[@name="IDataProviderRequest.GetDeferral"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct IDataProviderRequest : IDataProviderRequest.Interfa
         HRESULT get_FormatId(HSTRING* value);
 
         [VtblIndex(7)]
-        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(8)]
         HRESULT GetDeferral([NativeTypeName("ABI::Windows::ApplicationModel::DataTransfer::IDataProviderDeferral **")] IDataProviderDeferral** value);
@@ -143,7 +143,7 @@ public unsafe partial struct IDataProviderRequest : IDataProviderRequest.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_FormatId;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Deadline;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Deadline;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::DataTransfer::IDataProviderDeferral **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IDataProviderDeferral**, int> GetDeferral;

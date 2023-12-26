@@ -82,9 +82,9 @@ public unsafe partial struct ISmartCardPinResetRequest : ISmartCardPinResetReque
     /// <include file='ISmartCardPinResetRequest.xml' path='doc/member[@name="ISmartCardPinResetRequest.get_Deadline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardPinResetRequest*, DateTime*, int>)(lpVtbl[7]))((ISmartCardPinResetRequest*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardPinResetRequest*, WinRTDateTime*, int>)(lpVtbl[7]))((ISmartCardPinResetRequest*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISmartCardPinResetRequest.xml' path='doc/member[@name="ISmartCardPinResetRequest.GetDeferral"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct ISmartCardPinResetRequest : ISmartCardPinResetReque
         HRESULT get_Challenge([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer **")] IBuffer** value);
 
         [VtblIndex(7)]
-        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(8)]
         HRESULT GetDeferral([NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardPinResetDeferral **")] ISmartCardPinResetDeferral** result);
@@ -143,7 +143,7 @@ public unsafe partial struct ISmartCardPinResetRequest : ISmartCardPinResetReque
         public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer**, int> get_Challenge;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Deadline;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Deadline;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::SmartCards::ISmartCardPinResetDeferral **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ISmartCardPinResetDeferral**, int> GetDeferral;

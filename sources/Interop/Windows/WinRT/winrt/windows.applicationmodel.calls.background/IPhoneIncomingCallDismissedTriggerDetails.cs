@@ -103,9 +103,9 @@ public unsafe partial struct IPhoneIncomingCallDismissedTriggerDetails : IPhoneI
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     [Obsolete("PhoneIncomingCallDismissedTriggerDetails is deprecated and might not work for all platforms. For more info, see MSDN.")]
-    public HRESULT get_DismissalTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_DismissalTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneIncomingCallDismissedTriggerDetails*, DateTime*, int>)(lpVtbl[9]))((IPhoneIncomingCallDismissedTriggerDetails*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneIncomingCallDismissedTriggerDetails*, WinRTDateTime*, int>)(lpVtbl[9]))((IPhoneIncomingCallDismissedTriggerDetails*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPhoneIncomingCallDismissedTriggerDetails.xml' path='doc/member[@name="IPhoneIncomingCallDismissedTriggerDetails.get_TextReplyMessage"]/*' />
@@ -142,7 +142,7 @@ public unsafe partial struct IPhoneIncomingCallDismissedTriggerDetails : IPhoneI
 
         [VtblIndex(9)]
         [Obsolete("PhoneIncomingCallDismissedTriggerDetails is deprecated and might not work for all platforms. For more info, see MSDN.")]
-        HRESULT get_DismissalTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_DismissalTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(10)]
         [Obsolete("PhoneIncomingCallDismissedTriggerDetails is deprecated and might not work for all platforms. For more info, see MSDN.")]
@@ -188,7 +188,7 @@ public unsafe partial struct IPhoneIncomingCallDismissedTriggerDetails : IPhoneI
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
         [Obsolete("PhoneIncomingCallDismissedTriggerDetails is deprecated and might not work for all platforms. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_DismissalTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_DismissalTime;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         [Obsolete("PhoneIncomingCallDismissedTriggerDetails is deprecated and might not work for all platforms. For more info, see MSDN.")]

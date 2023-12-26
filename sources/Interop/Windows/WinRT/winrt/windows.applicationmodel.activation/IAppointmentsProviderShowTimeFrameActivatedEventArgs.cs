@@ -74,9 +74,9 @@ public unsafe partial struct IAppointmentsProviderShowTimeFrameActivatedEventArg
     /// <include file='IAppointmentsProviderShowTimeFrameActivatedEventArgs.xml' path='doc/member[@name="IAppointmentsProviderShowTimeFrameActivatedEventArgs.get_TimeToShow"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_TimeToShow([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_TimeToShow([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentsProviderShowTimeFrameActivatedEventArgs*, DateTime*, int>)(lpVtbl[6]))((IAppointmentsProviderShowTimeFrameActivatedEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentsProviderShowTimeFrameActivatedEventArgs*, WinRTDateTime*, int>)(lpVtbl[6]))((IAppointmentsProviderShowTimeFrameActivatedEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppointmentsProviderShowTimeFrameActivatedEventArgs.xml' path='doc/member[@name="IAppointmentsProviderShowTimeFrameActivatedEventArgs.get_Duration"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IAppointmentsProviderShowTimeFrameActivatedEventArg
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_TimeToShow([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_TimeToShow([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(7)]
         HRESULT get_Duration([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value);
@@ -118,7 +118,7 @@ public unsafe partial struct IAppointmentsProviderShowTimeFrameActivatedEventArg
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_TimeToShow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_TimeToShow;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::TimeSpan *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> get_Duration;

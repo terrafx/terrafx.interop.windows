@@ -90,9 +90,9 @@ public unsafe partial struct ISmartCardCryptogramMaterialPackageCharacteristics 
     /// <include file='ISmartCardCryptogramMaterialPackageCharacteristics.xml' path='doc/member[@name="ISmartCardCryptogramMaterialPackageCharacteristics.get_DateImported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_DateImported([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_DateImported([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardCryptogramMaterialPackageCharacteristics*, DateTime*, int>)(lpVtbl[8]))((ISmartCardCryptogramMaterialPackageCharacteristics*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardCryptogramMaterialPackageCharacteristics*, WinRTDateTime*, int>)(lpVtbl[8]))((ISmartCardCryptogramMaterialPackageCharacteristics*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISmartCardCryptogramMaterialPackageCharacteristics.xml' path='doc/member[@name="ISmartCardCryptogramMaterialPackageCharacteristics.get_PackageFormat"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct ISmartCardCryptogramMaterialPackageCharacteristics 
         HRESULT get_StorageKeyName(HSTRING* value);
 
         [VtblIndex(8)]
-        HRESULT get_DateImported([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_DateImported([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(9)]
         HRESULT get_PackageFormat([NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialPackageFormat *")] SmartCardCryptogramMaterialPackageFormat* value);
@@ -146,7 +146,7 @@ public unsafe partial struct ISmartCardCryptogramMaterialPackageCharacteristics 
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_StorageKeyName;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_DateImported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_DateImported;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::SmartCards::SmartCardCryptogramMaterialPackageFormat *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, SmartCardCryptogramMaterialPackageFormat*, int> get_PackageFormat;

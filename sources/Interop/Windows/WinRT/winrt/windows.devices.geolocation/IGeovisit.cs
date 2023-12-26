@@ -90,9 +90,9 @@ public unsafe partial struct IGeovisit : IGeovisit.Interface, INativeGuid
     /// <include file='IGeovisit.xml' path='doc/member[@name="IGeovisit.get_Timestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGeovisit*, DateTime*, int>)(lpVtbl[8]))((IGeovisit*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IGeovisit*, WinRTDateTime*, int>)(lpVtbl[8]))((IGeovisit*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IGeovisit : IGeovisit.Interface, INativeGuid
         HRESULT get_StateChange([NativeTypeName("ABI::Windows::Devices::Geolocation::VisitStateChange *")] VisitStateChange* value);
 
         [VtblIndex(8)]
-        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IGeovisit : IGeovisit.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, VisitStateChange*, int> get_StateChange;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Timestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Timestamp;
     }
 }

@@ -74,9 +74,9 @@ public unsafe partial struct IProtectionPolicyManagerStatics2 : IProtectionPolic
     /// <include file='IProtectionPolicyManagerStatics2.xml' path='doc/member[@name="IProtectionPolicyManagerStatics2.HasContentBeenRevokedSince"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT HasContentBeenRevokedSince(HSTRING identity, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime since, [NativeTypeName("boolean *")] byte* result)
+    public HRESULT HasContentBeenRevokedSince(HSTRING identity, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime since, [NativeTypeName("boolean *")] byte* result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerStatics2*, HSTRING, DateTime, byte*, int>)(lpVtbl[6]))((IProtectionPolicyManagerStatics2*)Unsafe.AsPointer(ref this), identity, since, result);
+        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerStatics2*, HSTRING, WinRTDateTime, byte*, int>)(lpVtbl[6]))((IProtectionPolicyManagerStatics2*)Unsafe.AsPointer(ref this), identity, since, result);
     }
 
     /// <include file='IProtectionPolicyManagerStatics2.xml' path='doc/member[@name="IProtectionPolicyManagerStatics2.CheckAccessForApp"]/*' />
@@ -146,7 +146,7 @@ public unsafe partial struct IProtectionPolicyManagerStatics2 : IProtectionPolic
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT HasContentBeenRevokedSince(HSTRING identity, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime since, [NativeTypeName("boolean *")] byte* result);
+        HRESULT HasContentBeenRevokedSince(HSTRING identity, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime since, [NativeTypeName("boolean *")] byte* result);
 
         [VtblIndex(7)]
         HRESULT CheckAccessForApp(HSTRING sourceIdentity, HSTRING appPackageFamilyName, [NativeTypeName("ABI::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult *")] ProtectionPolicyEvaluationResult* result);
@@ -195,7 +195,7 @@ public unsafe partial struct IProtectionPolicyManagerStatics2 : IProtectionPolic
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::DateTime, boolean *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, DateTime, byte*, int> HasContentBeenRevokedSince;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, WinRTDateTime, byte*, int> HasContentBeenRevokedSince;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, ABI::Windows::Security::EnterpriseData::ProtectionPolicyEvaluationResult *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, ProtectionPolicyEvaluationResult*, int> CheckAccessForApp;

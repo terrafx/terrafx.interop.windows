@@ -154,17 +154,17 @@ public unsafe partial struct ICertificate : ICertificate.Interface, INativeGuid
     /// <include file='ICertificate.xml' path='doc/member[@name="ICertificate.get_ValidFrom"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT get_ValidFrom([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_ValidFrom([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICertificate*, DateTime*, int>)(lpVtbl[16]))((ICertificate*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICertificate*, WinRTDateTime*, int>)(lpVtbl[16]))((ICertificate*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICertificate.xml' path='doc/member[@name="ICertificate.get_ValidTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT get_ValidTo([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_ValidTo([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICertificate*, DateTime*, int>)(lpVtbl[17]))((ICertificate*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICertificate*, WinRTDateTime*, int>)(lpVtbl[17]))((ICertificate*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICertificate.xml' path='doc/member[@name="ICertificate.get_EnhancedKeyUsages"]/*' />
@@ -224,10 +224,10 @@ public unsafe partial struct ICertificate : ICertificate.Interface, INativeGuid
         HRESULT get_IsStronglyProtected([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(16)]
-        HRESULT get_ValidFrom([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_ValidFrom([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(17)]
-        HRESULT get_ValidTo([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_ValidTo([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(18)]
         HRESULT get_EnhancedKeyUsages([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_HSTRING_t **")] IVectorView<HSTRING>** value);
@@ -291,10 +291,10 @@ public unsafe partial struct ICertificate : ICertificate.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsStronglyProtected;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_ValidFrom;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_ValidFrom;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_ValidTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_ValidTo;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_HSTRING_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<HSTRING>**, int> get_EnhancedKeyUsages;

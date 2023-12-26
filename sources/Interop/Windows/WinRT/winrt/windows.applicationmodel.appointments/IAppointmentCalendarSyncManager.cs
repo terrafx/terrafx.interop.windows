@@ -82,17 +82,17 @@ public unsafe partial struct IAppointmentCalendarSyncManager : IAppointmentCalen
     /// <include file='IAppointmentCalendarSyncManager.xml' path='doc/member[@name="IAppointmentCalendarSyncManager.get_LastSuccessfulSyncTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_LastSuccessfulSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_LastSuccessfulSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentCalendarSyncManager*, DateTime*, int>)(lpVtbl[7]))((IAppointmentCalendarSyncManager*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentCalendarSyncManager*, WinRTDateTime*, int>)(lpVtbl[7]))((IAppointmentCalendarSyncManager*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppointmentCalendarSyncManager.xml' path='doc/member[@name="IAppointmentCalendarSyncManager.get_LastAttemptedSyncTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_LastAttemptedSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_LastAttemptedSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentCalendarSyncManager*, DateTime*, int>)(lpVtbl[8]))((IAppointmentCalendarSyncManager*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentCalendarSyncManager*, WinRTDateTime*, int>)(lpVtbl[8]))((IAppointmentCalendarSyncManager*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppointmentCalendarSyncManager.xml' path='doc/member[@name="IAppointmentCalendarSyncManager.SyncAsync"]/*' />
@@ -125,10 +125,10 @@ public unsafe partial struct IAppointmentCalendarSyncManager : IAppointmentCalen
         HRESULT get_Status([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::AppointmentCalendarSyncStatus *")] AppointmentCalendarSyncStatus* value);
 
         [VtblIndex(7)]
-        HRESULT get_LastSuccessfulSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_LastSuccessfulSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(8)]
-        HRESULT get_LastAttemptedSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_LastAttemptedSyncTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(9)]
         HRESULT SyncAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** result);
@@ -165,10 +165,10 @@ public unsafe partial struct IAppointmentCalendarSyncManager : IAppointmentCalen
         public delegate* unmanaged[MemberFunction]<TSelf*, AppointmentCalendarSyncStatus*, int> get_Status;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_LastSuccessfulSyncTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_LastSuccessfulSyncTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_LastAttemptedSyncTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_LastAttemptedSyncTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<bool>**, int> SyncAsync;

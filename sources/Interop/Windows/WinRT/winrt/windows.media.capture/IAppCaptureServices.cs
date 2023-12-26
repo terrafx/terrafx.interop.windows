@@ -82,9 +82,9 @@ public unsafe partial struct IAppCaptureServices : IAppCaptureServices.Interface
     /// <include file='IAppCaptureServices.xml' path='doc/member[@name="IAppCaptureServices.RecordTimeSpan"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT RecordTimeSpan([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime startTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Media::Capture::IAppCaptureRecordOperation **")] IAppCaptureRecordOperation** operation)
+    public HRESULT RecordTimeSpan([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Media::Capture::IAppCaptureRecordOperation **")] IAppCaptureRecordOperation** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppCaptureServices*, DateTime, TimeSpan, IAppCaptureRecordOperation**, int>)(lpVtbl[7]))((IAppCaptureServices*)Unsafe.AsPointer(ref this), startTime, duration, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppCaptureServices*, WinRTDateTime, TimeSpan, IAppCaptureRecordOperation**, int>)(lpVtbl[7]))((IAppCaptureServices*)Unsafe.AsPointer(ref this), startTime, duration, operation);
     }
 
     /// <include file='IAppCaptureServices.xml' path='doc/member[@name="IAppCaptureServices.get_CanCapture"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct IAppCaptureServices : IAppCaptureServices.Interface
         HRESULT Record([NativeTypeName("ABI::Windows::Media::Capture::IAppCaptureRecordOperation **")] IAppCaptureRecordOperation** operation);
 
         [VtblIndex(7)]
-        HRESULT RecordTimeSpan([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime startTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Media::Capture::IAppCaptureRecordOperation **")] IAppCaptureRecordOperation** operation);
+        HRESULT RecordTimeSpan([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Media::Capture::IAppCaptureRecordOperation **")] IAppCaptureRecordOperation** operation);
 
         [VtblIndex(8)]
         HRESULT get_CanCapture([NativeTypeName("boolean *")] byte* value);
@@ -143,7 +143,7 @@ public unsafe partial struct IAppCaptureServices : IAppCaptureServices.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppCaptureRecordOperation**, int> Record;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::TimeSpan, ABI::Windows::Media::Capture::IAppCaptureRecordOperation **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, TimeSpan, IAppCaptureRecordOperation**, int> RecordTimeSpan;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, TimeSpan, IAppCaptureRecordOperation**, int> RecordTimeSpan;
 
         [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_CanCapture;

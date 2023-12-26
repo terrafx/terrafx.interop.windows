@@ -138,9 +138,9 @@ public unsafe partial struct IStorageItem : IStorageItem.Interface, INativeGuid
     /// <include file='IStorageItem.xml' path='doc/member[@name="IStorageItem.get_DateCreated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_DateCreated([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_DateCreated([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageItem*, DateTime*, int>)(lpVtbl[14]))((IStorageItem*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IStorageItem*, WinRTDateTime*, int>)(lpVtbl[14]))((IStorageItem*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IStorageItem.xml' path='doc/member[@name="IStorageItem.IsOfType"]/*' />
@@ -178,7 +178,7 @@ public unsafe partial struct IStorageItem : IStorageItem.Interface, INativeGuid
         HRESULT get_Attributes([NativeTypeName("ABI::Windows::Storage::FileAttributes *")] FileAttributes* value);
 
         [VtblIndex(14)]
-        HRESULT get_DateCreated([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_DateCreated([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(15)]
         HRESULT IsOfType([NativeTypeName("ABI::Windows::Storage::StorageItemTypes")] StorageItemTypes type, [NativeTypeName("boolean *")] byte* value);
@@ -230,7 +230,7 @@ public unsafe partial struct IStorageItem : IStorageItem.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, FileAttributes*, int> get_Attributes;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_DateCreated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_DateCreated;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::StorageItemTypes, boolean *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, StorageItemTypes, byte*, int> IsOfType;

@@ -74,26 +74,26 @@ public unsafe partial struct IScheduledToastNotificationFactory : IScheduledToas
     /// <include file='IScheduledToastNotificationFactory.xml' path='doc/member[@name="IScheduledToastNotificationFactory.CreateScheduledToastNotification"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateScheduledToastNotification([NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlDocument *")] IXmlDocument* content, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime deliveryTime, [NativeTypeName("ABI::Windows::UI::Notifications::IScheduledToastNotification **")] IScheduledToastNotification** value)
+    public HRESULT CreateScheduledToastNotification([NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlDocument *")] IXmlDocument* content, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime deliveryTime, [NativeTypeName("ABI::Windows::UI::Notifications::IScheduledToastNotification **")] IScheduledToastNotification** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IScheduledToastNotificationFactory*, IXmlDocument*, DateTime, IScheduledToastNotification**, int>)(lpVtbl[6]))((IScheduledToastNotificationFactory*)Unsafe.AsPointer(ref this), content, deliveryTime, value);
+        return ((delegate* unmanaged[MemberFunction]<IScheduledToastNotificationFactory*, IXmlDocument*, WinRTDateTime, IScheduledToastNotification**, int>)(lpVtbl[6]))((IScheduledToastNotificationFactory*)Unsafe.AsPointer(ref this), content, deliveryTime, value);
     }
 
     /// <include file='IScheduledToastNotificationFactory.xml' path='doc/member[@name="IScheduledToastNotificationFactory.CreateScheduledToastNotificationRecurring"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateScheduledToastNotificationRecurring([NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlDocument *")] IXmlDocument* content, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime deliveryTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan snoozeInterval, [NativeTypeName("UINT32")] uint maximumSnoozeCount, [NativeTypeName("ABI::Windows::UI::Notifications::IScheduledToastNotification **")] IScheduledToastNotification** value)
+    public HRESULT CreateScheduledToastNotificationRecurring([NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlDocument *")] IXmlDocument* content, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime deliveryTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan snoozeInterval, [NativeTypeName("UINT32")] uint maximumSnoozeCount, [NativeTypeName("ABI::Windows::UI::Notifications::IScheduledToastNotification **")] IScheduledToastNotification** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IScheduledToastNotificationFactory*, IXmlDocument*, DateTime, TimeSpan, uint, IScheduledToastNotification**, int>)(lpVtbl[7]))((IScheduledToastNotificationFactory*)Unsafe.AsPointer(ref this), content, deliveryTime, snoozeInterval, maximumSnoozeCount, value);
+        return ((delegate* unmanaged[MemberFunction]<IScheduledToastNotificationFactory*, IXmlDocument*, WinRTDateTime, TimeSpan, uint, IScheduledToastNotification**, int>)(lpVtbl[7]))((IScheduledToastNotificationFactory*)Unsafe.AsPointer(ref this), content, deliveryTime, snoozeInterval, maximumSnoozeCount, value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CreateScheduledToastNotification([NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlDocument *")] IXmlDocument* content, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime deliveryTime, [NativeTypeName("ABI::Windows::UI::Notifications::IScheduledToastNotification **")] IScheduledToastNotification** value);
+        HRESULT CreateScheduledToastNotification([NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlDocument *")] IXmlDocument* content, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime deliveryTime, [NativeTypeName("ABI::Windows::UI::Notifications::IScheduledToastNotification **")] IScheduledToastNotification** value);
 
         [VtblIndex(7)]
-        HRESULT CreateScheduledToastNotificationRecurring([NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlDocument *")] IXmlDocument* content, [NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime deliveryTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan snoozeInterval, [NativeTypeName("UINT32")] uint maximumSnoozeCount, [NativeTypeName("ABI::Windows::UI::Notifications::IScheduledToastNotification **")] IScheduledToastNotification** value);
+        HRESULT CreateScheduledToastNotificationRecurring([NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlDocument *")] IXmlDocument* content, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime deliveryTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan snoozeInterval, [NativeTypeName("UINT32")] uint maximumSnoozeCount, [NativeTypeName("ABI::Windows::UI::Notifications::IScheduledToastNotification **")] IScheduledToastNotification** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IScheduledToastNotificationFactory : IScheduledToas
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Data::Xml::Dom::IXmlDocument *, ABI::Windows::Foundation::DateTime, ABI::Windows::UI::Notifications::IScheduledToastNotification **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IXmlDocument*, DateTime, IScheduledToastNotification**, int> CreateScheduledToastNotification;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXmlDocument*, WinRTDateTime, IScheduledToastNotification**, int> CreateScheduledToastNotification;
 
         [NativeTypeName("HRESULT (ABI::Windows::Data::Xml::Dom::IXmlDocument *, ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::TimeSpan, UINT32, ABI::Windows::UI::Notifications::IScheduledToastNotification **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IXmlDocument*, DateTime, TimeSpan, uint, IScheduledToastNotification**, int> CreateScheduledToastNotificationRecurring;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXmlDocument*, WinRTDateTime, TimeSpan, uint, IScheduledToastNotification**, int> CreateScheduledToastNotificationRecurring;
     }
 }

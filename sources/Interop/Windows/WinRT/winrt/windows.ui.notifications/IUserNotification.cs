@@ -98,9 +98,9 @@ public unsafe partial struct IUserNotification : IUserNotification.Interface, IN
     /// <include file='IUserNotification.xml' path='doc/member[@name="IUserNotification.get_CreationTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_CreationTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_CreationTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserNotification*, DateTime*, int>)(lpVtbl[9]))((IUserNotification*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IUserNotification*, WinRTDateTime*, int>)(lpVtbl[9]))((IUserNotification*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -115,7 +115,7 @@ public unsafe partial struct IUserNotification : IUserNotification.Interface, IN
         HRESULT get_Id([NativeTypeName("UINT32 *")] uint* value);
 
         [VtblIndex(9)]
-        HRESULT get_CreationTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_CreationTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -149,6 +149,6 @@ public unsafe partial struct IUserNotification : IUserNotification.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_Id;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_CreationTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_CreationTime;
     }
 }

@@ -74,9 +74,9 @@ public unsafe partial struct ISmsBroadcastMessage : ISmsBroadcastMessage.Interfa
     /// <include file='ISmsBroadcastMessage.xml' path='doc/member[@name="ISmsBroadcastMessage.get_Timestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmsBroadcastMessage*, DateTime*, int>)(lpVtbl[6]))((ISmsBroadcastMessage*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISmsBroadcastMessage*, WinRTDateTime*, int>)(lpVtbl[6]))((ISmsBroadcastMessage*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISmsBroadcastMessage.xml' path='doc/member[@name="ISmsBroadcastMessage.get_To"]/*' />
@@ -154,7 +154,7 @@ public unsafe partial struct ISmsBroadcastMessage : ISmsBroadcastMessage.Interfa
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(7)]
         HRESULT get_To(HSTRING* value);
@@ -206,7 +206,7 @@ public unsafe partial struct ISmsBroadcastMessage : ISmsBroadcastMessage.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Timestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Timestamp;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_To;

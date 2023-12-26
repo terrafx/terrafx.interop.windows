@@ -3,6 +3,8 @@
 // Ported from winrt/windows.media.streaming.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+
 namespace TerraFX.Interop.WinRT;
 
 /// <include file='TrackInformation.xml' path='doc/member[@name="TrackInformation"]/*' />

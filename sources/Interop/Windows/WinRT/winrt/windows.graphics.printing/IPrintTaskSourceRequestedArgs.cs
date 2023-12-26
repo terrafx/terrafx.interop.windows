@@ -74,9 +74,9 @@ public unsafe partial struct IPrintTaskSourceRequestedArgs : IPrintTaskSourceReq
     /// <include file='IPrintTaskSourceRequestedArgs.xml' path='doc/member[@name="IPrintTaskSourceRequestedArgs.get_Deadline"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPrintTaskSourceRequestedArgs*, DateTime*, int>)(lpVtbl[6]))((IPrintTaskSourceRequestedArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPrintTaskSourceRequestedArgs*, WinRTDateTime*, int>)(lpVtbl[6]))((IPrintTaskSourceRequestedArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPrintTaskSourceRequestedArgs.xml' path='doc/member[@name="IPrintTaskSourceRequestedArgs.SetSource"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IPrintTaskSourceRequestedArgs : IPrintTaskSourceReq
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Deadline([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(7)]
         HRESULT SetSource([NativeTypeName("ABI::Windows::Graphics::Printing::IPrintDocumentSource *")] IPrintDocumentSource* source);
@@ -129,7 +129,7 @@ public unsafe partial struct IPrintTaskSourceRequestedArgs : IPrintTaskSourceReq
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Deadline;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Deadline;
 
         [NativeTypeName("HRESULT (ABI::Windows::Graphics::Printing::IPrintDocumentSource *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IPrintDocumentSource*, int> SetSource;

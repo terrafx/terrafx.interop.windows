@@ -74,15 +74,15 @@ public unsafe partial struct IPerceptionTimestampHelperStatics : IPerceptionTime
     /// <include file='IPerceptionTimestampHelperStatics.xml' path='doc/member[@name="IPerceptionTimestampHelperStatics.FromHistoricalTargetTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FromHistoricalTargetTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime targetTime, [NativeTypeName("ABI::Windows::Perception::IPerceptionTimestamp **")] IPerceptionTimestamp** value)
+    public HRESULT FromHistoricalTargetTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime targetTime, [NativeTypeName("ABI::Windows::Perception::IPerceptionTimestamp **")] IPerceptionTimestamp** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPerceptionTimestampHelperStatics*, DateTime, IPerceptionTimestamp**, int>)(lpVtbl[6]))((IPerceptionTimestampHelperStatics*)Unsafe.AsPointer(ref this), targetTime, value);
+        return ((delegate* unmanaged[MemberFunction]<IPerceptionTimestampHelperStatics*, WinRTDateTime, IPerceptionTimestamp**, int>)(lpVtbl[6]))((IPerceptionTimestampHelperStatics*)Unsafe.AsPointer(ref this), targetTime, value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FromHistoricalTargetTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] DateTime targetTime, [NativeTypeName("ABI::Windows::Perception::IPerceptionTimestamp **")] IPerceptionTimestamp** value);
+        HRESULT FromHistoricalTargetTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime targetTime, [NativeTypeName("ABI::Windows::Perception::IPerceptionTimestamp **")] IPerceptionTimestamp** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IPerceptionTimestampHelperStatics : IPerceptionTime
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Perception::IPerceptionTimestamp **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime, IPerceptionTimestamp**, int> FromHistoricalTargetTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, IPerceptionTimestamp**, int> FromHistoricalTargetTime;
     }
 }

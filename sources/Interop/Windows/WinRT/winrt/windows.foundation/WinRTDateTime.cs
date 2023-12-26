@@ -5,10 +5,10 @@
 
 namespace TerraFX.Interop.WinRT;
 
-/// <include file='TimeSpan.xml' path='doc/member[@name="TimeSpan"]/*' />
-public partial struct TimeSpan
+/// <include file='WinRTDateTime.xml' path='doc/member[@name="WinRTDateTime"]/*' />
+public partial struct WinRTDateTime
 {
-    /// <include file='TimeSpan.xml' path='doc/member[@name="TimeSpan.Duration"]/*' />
+    /// <include file='WinRTDateTime.xml' path='doc/member[@name="WinRTDateTime.UniversalTime"]/*' />
     [NativeTypeName("INT64")]
-    public long Duration;
+    public long UniversalTime;
 }

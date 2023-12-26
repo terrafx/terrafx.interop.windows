@@ -90,9 +90,9 @@ public unsafe partial struct IPhoneCallInfo : IPhoneCallInfo.Interface, INativeG
     /// <include file='IPhoneCallInfo.xml' path='doc/member[@name="IPhoneCallInfo.get_StartTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneCallInfo*, DateTime*, int>)(lpVtbl[8]))((IPhoneCallInfo*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneCallInfo*, WinRTDateTime*, int>)(lpVtbl[8]))((IPhoneCallInfo*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPhoneCallInfo.xml' path='doc/member[@name="IPhoneCallInfo.get_PhoneNumber"]/*' />
@@ -128,7 +128,7 @@ public unsafe partial struct IPhoneCallInfo : IPhoneCallInfo.Interface, INativeG
         HRESULT get_IsHoldSupported([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(8)]
-        HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_StartTime([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(9)]
         HRESULT get_PhoneNumber(HSTRING* value);
@@ -168,7 +168,7 @@ public unsafe partial struct IPhoneCallInfo : IPhoneCallInfo.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsHoldSupported;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_StartTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_StartTime;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_PhoneNumber;

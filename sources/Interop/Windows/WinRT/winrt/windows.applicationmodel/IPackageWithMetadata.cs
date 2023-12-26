@@ -74,9 +74,9 @@ public unsafe partial struct IPackageWithMetadata : IPackageWithMetadata.Interfa
     /// <include file='IPackageWithMetadata.xml' path='doc/member[@name="IPackageWithMetadata.get_InstallDate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_InstallDate([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_InstallDate([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackageWithMetadata*, DateTime*, int>)(lpVtbl[6]))((IPackageWithMetadata*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPackageWithMetadata*, WinRTDateTime*, int>)(lpVtbl[6]))((IPackageWithMetadata*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPackageWithMetadata.xml' path='doc/member[@name="IPackageWithMetadata.GetThumbnailToken"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IPackageWithMetadata : IPackageWithMetadata.Interfa
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_InstallDate([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_InstallDate([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(7)]
         HRESULT GetThumbnailToken(HSTRING* value);
@@ -131,7 +131,7 @@ public unsafe partial struct IPackageWithMetadata : IPackageWithMetadata.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_InstallDate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_InstallDate;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetThumbnailToken;

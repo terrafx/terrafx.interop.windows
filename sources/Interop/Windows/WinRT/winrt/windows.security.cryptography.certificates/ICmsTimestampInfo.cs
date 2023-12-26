@@ -90,9 +90,9 @@ public unsafe partial struct ICmsTimestampInfo : ICmsTimestampInfo.Interface, IN
     /// <include file='ICmsTimestampInfo.xml' path='doc/member[@name="ICmsTimestampInfo.get_Timestamp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value)
+    public HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICmsTimestampInfo*, DateTime*, int>)(lpVtbl[8]))((ICmsTimestampInfo*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICmsTimestampInfo*, WinRTDateTime*, int>)(lpVtbl[8]))((ICmsTimestampInfo*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct ICmsTimestampInfo : ICmsTimestampInfo.Interface, IN
         HRESULT get_Certificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<IntPtr>** value);
 
         [VtblIndex(8)]
-        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] DateTime* value);
+        HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct ICmsTimestampInfo : ICmsTimestampInfo.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Certificates;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DateTime*, int> get_Timestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Timestamp;
     }
 }
