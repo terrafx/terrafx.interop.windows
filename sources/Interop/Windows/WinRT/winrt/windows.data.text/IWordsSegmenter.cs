@@ -90,9 +90,9 @@ public unsafe partial struct IWordsSegmenter : IWordsSegmenter.Interface, INativ
     /// <include file='IWordsSegmenter.xml' path='doc/member[@name="IWordsSegmenter.GetTokens"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetTokens(HSTRING text, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CWordSegment_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetTokens(HSTRING text, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CWordSegment_t **")] IVectorView<Pointer<IWordSegment>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWordsSegmenter*, HSTRING, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((IWordsSegmenter*)Unsafe.AsPointer(ref this), text, result);
+        return ((delegate* unmanaged[MemberFunction]<IWordsSegmenter*, HSTRING, IVectorView<Pointer<IWordSegment>>**, int>)(lpVtbl[8]))((IWordsSegmenter*)Unsafe.AsPointer(ref this), text, result);
     }
 
     /// <include file='IWordsSegmenter.xml' path='doc/member[@name="IWordsSegmenter.Tokenize"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct IWordsSegmenter : IWordsSegmenter.Interface, INativ
         HRESULT GetTokenAt(HSTRING text, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("ABI::Windows::Data::Text::IWordSegment **")] IWordSegment** result);
 
         [VtblIndex(8)]
-        HRESULT GetTokens(HSTRING text, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CWordSegment_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetTokens(HSTRING text, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CWordSegment_t **")] IVectorView<Pointer<IWordSegment>>** result);
 
         [VtblIndex(9)]
         HRESULT Tokenize(HSTRING text, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("ABI::Windows::Data::Text::IWordSegmentsTokenizingHandler *")] IWordSegmentsTokenizingHandler* handler);
@@ -146,7 +146,7 @@ public unsafe partial struct IWordsSegmenter : IWordsSegmenter.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, uint, IWordSegment**, int> GetTokenAt;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CWordSegment_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<IntPtr>**, int> GetTokens;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<Pointer<IWordSegment>>**, int> GetTokens;
 
         [NativeTypeName("HRESULT (HSTRING, UINT32, ABI::Windows::Data::Text::IWordSegmentsTokenizingHandler *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, uint, IWordSegmentsTokenizingHandler*, int> Tokenize;

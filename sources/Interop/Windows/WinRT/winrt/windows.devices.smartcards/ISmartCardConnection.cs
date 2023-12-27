@@ -74,15 +74,15 @@ public unsafe partial struct ISmartCardConnection : ISmartCardConnection.Interfa
     /// <include file='ISmartCardConnection.xml' path='doc/member[@name="ISmartCardConnection.TransmitAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT TransmitAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* command, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT TransmitAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* command, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IBuffer>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardConnection*, IBuffer*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ISmartCardConnection*)Unsafe.AsPointer(ref this), command, result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardConnection*, IBuffer*, IAsyncOperation<Pointer<IBuffer>>**, int>)(lpVtbl[6]))((ISmartCardConnection*)Unsafe.AsPointer(ref this), command, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT TransmitAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* command, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT TransmitAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* command, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IBuffer>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ISmartCardConnection : ISmartCardConnection.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IAsyncOperation<IntPtr>**, int> TransmitAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IAsyncOperation<Pointer<IBuffer>>**, int> TransmitAsync;
     }
 }

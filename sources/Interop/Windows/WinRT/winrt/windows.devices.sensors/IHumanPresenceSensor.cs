@@ -106,9 +106,9 @@ public unsafe partial struct IHumanPresenceSensor : IHumanPresenceSensor.Interfa
     /// <include file='IHumanPresenceSensor.xml' path='doc/member[@name="IHumanPresenceSensor.add_ReadingChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CHumanPresenceSensor_Windows__CDevices__CSensors__CHumanPresenceSensorReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CHumanPresenceSensor_Windows__CDevices__CSensors__CHumanPresenceSensorReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<IHumanPresenceSensor>, Pointer<IHumanPresenceSensorReadingChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensor*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IHumanPresenceSensor*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensor*, ITypedEventHandler<Pointer<IHumanPresenceSensor>, Pointer<IHumanPresenceSensorReadingChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IHumanPresenceSensor*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IHumanPresenceSensor.xml' path='doc/member[@name="IHumanPresenceSensor.remove_ReadingChanged"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IHumanPresenceSensor : IHumanPresenceSensor.Interfa
         HRESULT GetCurrentReading([NativeTypeName("ABI::Windows::Devices::Sensors::IHumanPresenceSensorReading **")] IHumanPresenceSensorReading** result);
 
         [VtblIndex(10)]
-        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CHumanPresenceSensor_Windows__CDevices__CSensors__CHumanPresenceSensorReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CHumanPresenceSensor_Windows__CDevices__CSensors__CHumanPresenceSensorReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<IHumanPresenceSensor>, Pointer<IHumanPresenceSensorReadingChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_ReadingChanged(EventRegistrationToken token);
@@ -174,7 +174,7 @@ public unsafe partial struct IHumanPresenceSensor : IHumanPresenceSensor.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, IHumanPresenceSensorReading**, int> GetCurrentReading;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CHumanPresenceSensor_Windows__CDevices__CSensors__CHumanPresenceSensorReadingChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ReadingChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IHumanPresenceSensor>, Pointer<IHumanPresenceSensorReadingChangedEventArgs>>*, EventRegistrationToken*, int> add_ReadingChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ReadingChanged;

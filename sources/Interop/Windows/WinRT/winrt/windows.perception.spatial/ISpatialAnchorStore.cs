@@ -74,9 +74,9 @@ public unsafe partial struct ISpatialAnchorStore : ISpatialAnchorStore.Interface
     /// <include file='ISpatialAnchorStore.xml' path='doc/member[@name="ISpatialAnchorStore.GetAllSavedAnchors"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetAllSavedAnchors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_t **")] IMapView<HSTRING, IntPtr>** value)
+    public HRESULT GetAllSavedAnchors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_t **")] IMapView<HSTRING, Pointer<ISpatialAnchor>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpatialAnchorStore*, IMapView<HSTRING, IntPtr>**, int>)(lpVtbl[6]))((ISpatialAnchorStore*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAnchorStore*, IMapView<HSTRING, Pointer<ISpatialAnchor>>**, int>)(lpVtbl[6]))((ISpatialAnchorStore*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISpatialAnchorStore.xml' path='doc/member[@name="ISpatialAnchorStore.TrySave"]/*' />
@@ -106,7 +106,7 @@ public unsafe partial struct ISpatialAnchorStore : ISpatialAnchorStore.Interface
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetAllSavedAnchors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_t **")] IMapView<HSTRING, IntPtr>** value);
+        HRESULT GetAllSavedAnchors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_t **")] IMapView<HSTRING, Pointer<ISpatialAnchor>>** value);
 
         [VtblIndex(7)]
         HRESULT TrySave(HSTRING id, [NativeTypeName("ABI::Windows::Perception::Spatial::ISpatialAnchor *")] ISpatialAnchor* anchor, [NativeTypeName("boolean *")] byte* succeeded);
@@ -140,7 +140,7 @@ public unsafe partial struct ISpatialAnchorStore : ISpatialAnchorStore.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, IntPtr>**, int> GetAllSavedAnchors;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, Pointer<ISpatialAnchor>>**, int> GetAllSavedAnchors;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Perception::Spatial::ISpatialAnchor *, boolean *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, ISpatialAnchor*, byte*, int> TrySave;

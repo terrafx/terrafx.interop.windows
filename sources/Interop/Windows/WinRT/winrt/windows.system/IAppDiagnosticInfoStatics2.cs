@@ -90,25 +90,25 @@ public unsafe partial struct IAppDiagnosticInfoStatics2 : IAppDiagnosticInfoStat
     /// <include file='IAppDiagnosticInfoStatics2.xml' path='doc/member[@name="IAppDiagnosticInfoStatics2.RequestInfoForPackageAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT RequestInfoForPackageAsync(HSTRING packageFamilyName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT RequestInfoForPackageAsync(HSTRING packageFamilyName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IAsyncOperation<Pointer<IVector<Pointer<IAppDiagnosticInfo>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfoStatics2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IAppDiagnosticInfoStatics2*)Unsafe.AsPointer(ref this), packageFamilyName, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfoStatics2*, HSTRING, IAsyncOperation<Pointer<IVector<Pointer<IAppDiagnosticInfo>>>>**, int>)(lpVtbl[8]))((IAppDiagnosticInfoStatics2*)Unsafe.AsPointer(ref this), packageFamilyName, operation);
     }
 
     /// <include file='IAppDiagnosticInfoStatics2.xml' path='doc/member[@name="IAppDiagnosticInfoStatics2.RequestInfoForAppAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT RequestInfoForAppAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT RequestInfoForAppAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IAsyncOperation<Pointer<IVector<Pointer<IAppDiagnosticInfo>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfoStatics2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IAppDiagnosticInfoStatics2*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfoStatics2*, IAsyncOperation<Pointer<IVector<Pointer<IAppDiagnosticInfo>>>>**, int>)(lpVtbl[9]))((IAppDiagnosticInfoStatics2*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IAppDiagnosticInfoStatics2.xml' path='doc/member[@name="IAppDiagnosticInfoStatics2.RequestInfoForAppUserModelId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT RequestInfoForAppUserModelId(HSTRING appUserModelId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT RequestInfoForAppUserModelId(HSTRING appUserModelId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IAsyncOperation<Pointer<IVector<Pointer<IAppDiagnosticInfo>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfoStatics2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IAppDiagnosticInfoStatics2*)Unsafe.AsPointer(ref this), appUserModelId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfoStatics2*, HSTRING, IAsyncOperation<Pointer<IVector<Pointer<IAppDiagnosticInfo>>>>**, int>)(lpVtbl[10]))((IAppDiagnosticInfoStatics2*)Unsafe.AsPointer(ref this), appUserModelId, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -120,13 +120,13 @@ public unsafe partial struct IAppDiagnosticInfoStatics2 : IAppDiagnosticInfoStat
         HRESULT RequestAccessAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CDiagnosticAccessStatus_t **")] IAsyncOperation<DiagnosticAccessStatus>** operation);
 
         [VtblIndex(8)]
-        HRESULT RequestInfoForPackageAsync(HSTRING packageFamilyName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT RequestInfoForPackageAsync(HSTRING packageFamilyName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IAsyncOperation<Pointer<IVector<Pointer<IAppDiagnosticInfo>>>>** operation);
 
         [VtblIndex(9)]
-        HRESULT RequestInfoForAppAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT RequestInfoForAppAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IAsyncOperation<Pointer<IVector<Pointer<IAppDiagnosticInfo>>>>** operation);
 
         [VtblIndex(10)]
-        HRESULT RequestInfoForAppUserModelId(HSTRING appUserModelId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT RequestInfoForAppUserModelId(HSTRING appUserModelId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IAsyncOperation<Pointer<IVector<Pointer<IAppDiagnosticInfo>>>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -157,12 +157,12 @@ public unsafe partial struct IAppDiagnosticInfoStatics2 : IAppDiagnosticInfoStat
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<DiagnosticAccessStatus>**, int> RequestAccessAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> RequestInfoForPackageAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IVector<Pointer<IAppDiagnosticInfo>>>>**, int> RequestInfoForPackageAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> RequestInfoForAppAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVector<Pointer<IAppDiagnosticInfo>>>>**, int> RequestInfoForAppAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> RequestInfoForAppUserModelId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IVector<Pointer<IAppDiagnosticInfo>>>>**, int> RequestInfoForAppUserModelId;
     }
 }

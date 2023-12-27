@@ -74,48 +74,48 @@ public unsafe partial struct IPopupMenu : IPopupMenu.Interface, INativeGuid
     /// <include file='IPopupMenu.xml' path='doc/member[@name="IPopupMenu.get_Commands"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Commands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CPopups__CIUICommand_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Commands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CPopups__CIUICommand_t **")] IVector<Pointer<IUICommand>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPopupMenu*, IVector<IntPtr>**, int>)(lpVtbl[6]))((IPopupMenu*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPopupMenu*, IVector<Pointer<IUICommand>>**, int>)(lpVtbl[6]))((IPopupMenu*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPopupMenu.xml' path='doc/member[@name="IPopupMenu.ShowAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT ShowAsync([NativeTypeName("ABI::Windows::Foundation::Point")] Point invocationPoint, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<IntPtr>** asyncOperation)
+    public HRESULT ShowAsync([NativeTypeName("ABI::Windows::Foundation::Point")] Point invocationPoint, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<Pointer<IUICommand>>** asyncOperation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPopupMenu*, Point, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IPopupMenu*)Unsafe.AsPointer(ref this), invocationPoint, asyncOperation);
+        return ((delegate* unmanaged[MemberFunction]<IPopupMenu*, Point, IAsyncOperation<Pointer<IUICommand>>**, int>)(lpVtbl[7]))((IPopupMenu*)Unsafe.AsPointer(ref this), invocationPoint, asyncOperation);
     }
 
     /// <include file='IPopupMenu.xml' path='doc/member[@name="IPopupMenu.ShowAsyncWithRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT ShowAsyncWithRect([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<IntPtr>** asyncOperation)
+    public HRESULT ShowAsyncWithRect([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<Pointer<IUICommand>>** asyncOperation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPopupMenu*, Rect, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IPopupMenu*)Unsafe.AsPointer(ref this), selection, asyncOperation);
+        return ((delegate* unmanaged[MemberFunction]<IPopupMenu*, Rect, IAsyncOperation<Pointer<IUICommand>>**, int>)(lpVtbl[8]))((IPopupMenu*)Unsafe.AsPointer(ref this), selection, asyncOperation);
     }
 
     /// <include file='IPopupMenu.xml' path='doc/member[@name="IPopupMenu.ShowAsyncWithRectAndPlacement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT ShowAsyncWithRectAndPlacement([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement preferredPlacement, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<IntPtr>** asyncOperation)
+    public HRESULT ShowAsyncWithRectAndPlacement([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement preferredPlacement, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<Pointer<IUICommand>>** asyncOperation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPopupMenu*, Rect, Placement, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IPopupMenu*)Unsafe.AsPointer(ref this), selection, preferredPlacement, asyncOperation);
+        return ((delegate* unmanaged[MemberFunction]<IPopupMenu*, Rect, Placement, IAsyncOperation<Pointer<IUICommand>>**, int>)(lpVtbl[9]))((IPopupMenu*)Unsafe.AsPointer(ref this), selection, preferredPlacement, asyncOperation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Commands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CPopups__CIUICommand_t **")] IVector<IntPtr>** value);
+        HRESULT get_Commands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CPopups__CIUICommand_t **")] IVector<Pointer<IUICommand>>** value);
 
         [VtblIndex(7)]
-        HRESULT ShowAsync([NativeTypeName("ABI::Windows::Foundation::Point")] Point invocationPoint, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<IntPtr>** asyncOperation);
+        HRESULT ShowAsync([NativeTypeName("ABI::Windows::Foundation::Point")] Point invocationPoint, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<Pointer<IUICommand>>** asyncOperation);
 
         [VtblIndex(8)]
-        HRESULT ShowAsyncWithRect([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<IntPtr>** asyncOperation);
+        HRESULT ShowAsyncWithRect([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<Pointer<IUICommand>>** asyncOperation);
 
         [VtblIndex(9)]
-        HRESULT ShowAsyncWithRectAndPlacement([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement preferredPlacement, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<IntPtr>** asyncOperation);
+        HRESULT ShowAsyncWithRectAndPlacement([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement preferredPlacement, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<Pointer<IUICommand>>** asyncOperation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -140,15 +140,15 @@ public unsafe partial struct IPopupMenu : IPopupMenu.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CPopups__CIUICommand_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Commands;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IUICommand>>**, int> get_Commands;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Point, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, Point, IAsyncOperation<IntPtr>**, int> ShowAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Point, IAsyncOperation<Pointer<IUICommand>>**, int> ShowAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Rect, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, Rect, IAsyncOperation<IntPtr>**, int> ShowAsyncWithRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Rect, IAsyncOperation<Pointer<IUICommand>>**, int> ShowAsyncWithRect;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Rect, ABI::Windows::UI::Popups::Placement, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, Rect, Placement, IAsyncOperation<IntPtr>**, int> ShowAsyncWithRectAndPlacement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Rect, Placement, IAsyncOperation<Pointer<IUICommand>>**, int> ShowAsyncWithRectAndPlacement;
     }
 }

@@ -74,48 +74,48 @@ public unsafe partial struct IStreamSelectorStatics : IStreamSelectorStatics.Int
     /// <include file='IStreamSelectorStatics.xml' path='doc/member[@name="IStreamSelectorStatics.SelectBestStreamAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SelectBestStreamAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* storageFile, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* selectorProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT SelectBestStreamAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* storageFile, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* selectorProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStreamSelectorStatics*, IStorageFile*, IPropertySet*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStreamSelectorStatics*)Unsafe.AsPointer(ref this), storageFile, selectorProperties, value);
+        return ((delegate* unmanaged[MemberFunction]<IStreamSelectorStatics*, IStorageFile*, IPropertySet*, IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>**, int>)(lpVtbl[6]))((IStreamSelectorStatics*)Unsafe.AsPointer(ref this), storageFile, selectorProperties, value);
     }
 
     /// <include file='IStreamSelectorStatics.xml' path='doc/member[@name="IStreamSelectorStatics.GetStreamPropertiesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetStreamPropertiesAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* storageFile, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* selectorProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___F__CIPropertySet_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetStreamPropertiesAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* storageFile, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* selectorProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___F__CIPropertySet_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IPropertySet>>>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStreamSelectorStatics*, IStorageFile*, IPropertySet*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IStreamSelectorStatics*)Unsafe.AsPointer(ref this), storageFile, selectorProperties, value);
+        return ((delegate* unmanaged[MemberFunction]<IStreamSelectorStatics*, IStorageFile*, IPropertySet*, IAsyncOperation<Pointer<IVectorView<Pointer<IPropertySet>>>>**, int>)(lpVtbl[7]))((IStreamSelectorStatics*)Unsafe.AsPointer(ref this), storageFile, selectorProperties, value);
     }
 
     /// <include file='IStreamSelectorStatics.xml' path='doc/member[@name="IStreamSelectorStatics.SelectBestStreamFromStreamAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SelectBestStreamFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* selectorProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT SelectBestStreamFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* selectorProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStreamSelectorStatics*, IRandomAccessStream*, IPropertySet*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IStreamSelectorStatics*)Unsafe.AsPointer(ref this), stream, selectorProperties, value);
+        return ((delegate* unmanaged[MemberFunction]<IStreamSelectorStatics*, IRandomAccessStream*, IPropertySet*, IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>**, int>)(lpVtbl[8]))((IStreamSelectorStatics*)Unsafe.AsPointer(ref this), stream, selectorProperties, value);
     }
 
     /// <include file='IStreamSelectorStatics.xml' path='doc/member[@name="IStreamSelectorStatics.GetStreamPropertiesFromStreamAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetStreamPropertiesFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* selectorProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___F__CIPropertySet_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetStreamPropertiesFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* selectorProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___F__CIPropertySet_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IPropertySet>>>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStreamSelectorStatics*, IRandomAccessStream*, IPropertySet*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IStreamSelectorStatics*)Unsafe.AsPointer(ref this), stream, selectorProperties, value);
+        return ((delegate* unmanaged[MemberFunction]<IStreamSelectorStatics*, IRandomAccessStream*, IPropertySet*, IAsyncOperation<Pointer<IVectorView<Pointer<IPropertySet>>>>**, int>)(lpVtbl[9]))((IStreamSelectorStatics*)Unsafe.AsPointer(ref this), stream, selectorProperties, value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT SelectBestStreamAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* storageFile, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* selectorProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT SelectBestStreamAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* storageFile, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* selectorProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>** value);
 
         [VtblIndex(7)]
-        HRESULT GetStreamPropertiesAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* storageFile, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* selectorProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___F__CIPropertySet_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetStreamPropertiesAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* storageFile, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* selectorProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___F__CIPropertySet_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IPropertySet>>>>** value);
 
         [VtblIndex(8)]
-        HRESULT SelectBestStreamFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* selectorProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT SelectBestStreamFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* selectorProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>** value);
 
         [VtblIndex(9)]
-        HRESULT GetStreamPropertiesFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* selectorProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___F__CIPropertySet_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetStreamPropertiesFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* selectorProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___F__CIPropertySet_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IPropertySet>>>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -140,15 +140,15 @@ public unsafe partial struct IStreamSelectorStatics : IStreamSelectorStatics.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::Collections::IPropertySet *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IPropertySet*, IAsyncOperation<IntPtr>**, int> SelectBestStreamAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IPropertySet*, IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>**, int> SelectBestStreamAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::Collections::IPropertySet *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___F__CIPropertySet_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IPropertySet*, IAsyncOperation<IntPtr>**, int> GetStreamPropertiesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IPropertySet*, IAsyncOperation<Pointer<IVectorView<Pointer<IPropertySet>>>>**, int> GetStreamPropertiesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IRandomAccessStream *, ABI::Windows::Foundation::Collections::IPropertySet *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStream*, IPropertySet*, IAsyncOperation<IntPtr>**, int> SelectBestStreamFromStreamAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStream*, IPropertySet*, IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>**, int> SelectBestStreamFromStreamAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IRandomAccessStream *, ABI::Windows::Foundation::Collections::IPropertySet *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___F__CIPropertySet_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStream*, IPropertySet*, IAsyncOperation<IntPtr>**, int> GetStreamPropertiesFromStreamAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStream*, IPropertySet*, IAsyncOperation<Pointer<IVectorView<Pointer<IPropertySet>>>>**, int> GetStreamPropertiesFromStreamAsync;
     }
 }

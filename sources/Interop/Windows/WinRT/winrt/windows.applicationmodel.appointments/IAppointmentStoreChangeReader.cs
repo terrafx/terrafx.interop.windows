@@ -74,9 +74,9 @@ public unsafe partial struct IAppointmentStoreChangeReader : IAppointmentStoreCh
     /// <include file='IAppointmentStoreChangeReader.xml' path='doc/member[@name="IAppointmentStoreChangeReader.ReadBatchAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentStoreChange_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentStoreChange_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppointmentStoreChange>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentStoreChangeReader*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IAppointmentStoreChangeReader*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentStoreChangeReader*, IAsyncOperation<Pointer<IVectorView<Pointer<IAppointmentStoreChange>>>>**, int>)(lpVtbl[6]))((IAppointmentStoreChangeReader*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IAppointmentStoreChangeReader.xml' path='doc/member[@name="IAppointmentStoreChangeReader.AcceptChanges"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IAppointmentStoreChangeReader : IAppointmentStoreCh
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentStoreChange_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentStoreChange_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppointmentStoreChange>>>>** result);
 
         [VtblIndex(7)]
         HRESULT AcceptChanges();
@@ -129,7 +129,7 @@ public unsafe partial struct IAppointmentStoreChangeReader : IAppointmentStoreCh
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentStoreChange_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> ReadBatchAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IAppointmentStoreChange>>>>**, int> ReadBatchAsync;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, int> AcceptChanges;

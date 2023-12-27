@@ -74,15 +74,15 @@ public unsafe partial struct ISmartCardCryptogramGeneratorStatics : ISmartCardCr
     /// <include file='ISmartCardCryptogramGeneratorStatics.xml' path='doc/member[@name="ISmartCardCryptogramGeneratorStatics.GetSmartCardCryptogramGeneratorAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetSmartCardCryptogramGeneratorAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGenerator_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetSmartCardCryptogramGeneratorAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGenerator_t **")] IAsyncOperation<Pointer<ISmartCardCryptogramGenerator>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardCryptogramGeneratorStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ISmartCardCryptogramGeneratorStatics*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardCryptogramGeneratorStatics*, IAsyncOperation<Pointer<ISmartCardCryptogramGenerator>>**, int>)(lpVtbl[6]))((ISmartCardCryptogramGeneratorStatics*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetSmartCardCryptogramGeneratorAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGenerator_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetSmartCardCryptogramGeneratorAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGenerator_t **")] IAsyncOperation<Pointer<ISmartCardCryptogramGenerator>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ISmartCardCryptogramGeneratorStatics : ISmartCardCr
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGenerator_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetSmartCardCryptogramGeneratorAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<ISmartCardCryptogramGenerator>>**, int> GetSmartCardCryptogramGeneratorAsync;
     }
 }

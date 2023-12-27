@@ -82,17 +82,17 @@ public unsafe partial struct IToastCollectionManager : IToastCollectionManager.I
     /// <include file='IToastCollectionManager.xml' path='doc/member[@name="IToastCollectionManager.FindAllToastCollectionsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FindAllToastCollectionsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FindAllToastCollectionsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IToastCollection>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IToastCollectionManager*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IToastCollectionManager*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IToastCollectionManager*, IAsyncOperation<Pointer<IVectorView<Pointer<IToastCollection>>>>**, int>)(lpVtbl[7]))((IToastCollectionManager*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IToastCollectionManager.xml' path='doc/member[@name="IToastCollectionManager.GetToastCollectionAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetToastCollectionAsync(HSTRING collectionId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetToastCollectionAsync(HSTRING collectionId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_t **")] IAsyncOperation<Pointer<IToastCollection>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IToastCollectionManager*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IToastCollectionManager*)Unsafe.AsPointer(ref this), collectionId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IToastCollectionManager*, HSTRING, IAsyncOperation<Pointer<IToastCollection>>**, int>)(lpVtbl[8]))((IToastCollectionManager*)Unsafe.AsPointer(ref this), collectionId, operation);
     }
 
     /// <include file='IToastCollectionManager.xml' path='doc/member[@name="IToastCollectionManager.RemoveToastCollectionAsync"]/*' />
@@ -133,10 +133,10 @@ public unsafe partial struct IToastCollectionManager : IToastCollectionManager.I
         HRESULT SaveToastCollectionAsync([NativeTypeName("ABI::Windows::UI::Notifications::IToastCollection *")] IToastCollection* collection, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
 
         [VtblIndex(7)]
-        HRESULT FindAllToastCollectionsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FindAllToastCollectionsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IToastCollection>>>>** operation);
 
         [VtblIndex(8)]
-        HRESULT GetToastCollectionAsync(HSTRING collectionId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetToastCollectionAsync(HSTRING collectionId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_t **")] IAsyncOperation<Pointer<IToastCollection>>** operation);
 
         [VtblIndex(9)]
         HRESULT RemoveToastCollectionAsync(HSTRING collectionId, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
@@ -176,10 +176,10 @@ public unsafe partial struct IToastCollectionManager : IToastCollectionManager.I
         public delegate* unmanaged[MemberFunction]<TSelf*, IToastCollection*, IAsyncAction**, int> SaveToastCollectionAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CUI__CNotifications__CToastCollection_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindAllToastCollectionsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IToastCollection>>>>**, int> FindAllToastCollectionsAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastCollection_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetToastCollectionAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IToastCollection>>**, int> GetToastCollectionAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncAction**, int> RemoveToastCollectionAsync;

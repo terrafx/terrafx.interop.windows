@@ -82,9 +82,9 @@ public unsafe partial struct IPointerDeviceStatics : IPointerDeviceStatics.Inter
     /// <include file='IPointerDeviceStatics.xml' path='doc/member[@name="IPointerDeviceStatics.GetPointerDevices"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetPointerDevices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CInput__CPointerDevice_t **")] IVectorView<IntPtr>** pointerDevices)
+    public HRESULT GetPointerDevices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CInput__CPointerDevice_t **")] IVectorView<Pointer<IPointerDevice>>** pointerDevices)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPointerDeviceStatics*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IPointerDeviceStatics*)Unsafe.AsPointer(ref this), pointerDevices);
+        return ((delegate* unmanaged[MemberFunction]<IPointerDeviceStatics*, IVectorView<Pointer<IPointerDevice>>**, int>)(lpVtbl[7]))((IPointerDeviceStatics*)Unsafe.AsPointer(ref this), pointerDevices);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IPointerDeviceStatics : IPointerDeviceStatics.Inter
         HRESULT GetPointerDevice([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("ABI::Windows::Devices::Input::IPointerDevice **")] IPointerDevice** pointerDevice);
 
         [VtblIndex(7)]
-        HRESULT GetPointerDevices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CInput__CPointerDevice_t **")] IVectorView<IntPtr>** pointerDevices);
+        HRESULT GetPointerDevices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CInput__CPointerDevice_t **")] IVectorView<Pointer<IPointerDevice>>** pointerDevices);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IPointerDeviceStatics : IPointerDeviceStatics.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, uint, IPointerDevice**, int> GetPointerDevice;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CInput__CPointerDevice_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetPointerDevices;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IPointerDevice>>**, int> GetPointerDevices;
     }
 }

@@ -82,9 +82,9 @@ public unsafe partial struct ISharedStorageAccessManagerStatics : ISharedStorage
     /// <include file='ISharedStorageAccessManagerStatics.xml' path='doc/member[@name="ISharedStorageAccessManagerStatics.RedeemTokenForFileAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT RedeemTokenForFileAsync(HSTRING token, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT RedeemTokenForFileAsync(HSTRING token, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISharedStorageAccessManagerStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((ISharedStorageAccessManagerStatics*)Unsafe.AsPointer(ref this), token, operation);
+        return ((delegate* unmanaged[MemberFunction]<ISharedStorageAccessManagerStatics*, HSTRING, IAsyncOperation<Pointer<IStorageFile>>**, int>)(lpVtbl[7]))((ISharedStorageAccessManagerStatics*)Unsafe.AsPointer(ref this), token, operation);
     }
 
     /// <include file='ISharedStorageAccessManagerStatics.xml' path='doc/member[@name="ISharedStorageAccessManagerStatics.RemoveFile"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct ISharedStorageAccessManagerStatics : ISharedStorage
         HRESULT AddFile([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, HSTRING* outToken);
 
         [VtblIndex(7)]
-        HRESULT RedeemTokenForFileAsync(HSTRING token, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT RedeemTokenForFileAsync(HSTRING token, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation);
 
         [VtblIndex(8)]
         HRESULT RemoveFile(HSTRING token);
@@ -132,7 +132,7 @@ public unsafe partial struct ISharedStorageAccessManagerStatics : ISharedStorage
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, HSTRING*, int> AddFile;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> RedeemTokenForFileAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IStorageFile>>**, int> RedeemTokenForFileAsync;
 
         [NativeTypeName("HRESULT (HSTRING) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> RemoveFile;

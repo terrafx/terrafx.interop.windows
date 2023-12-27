@@ -114,9 +114,9 @@ public unsafe partial struct IDataPackageView : IDataPackageView.Interface, INat
     /// <include file='IDataPackageView.xml' path='doc/member[@name="IDataPackageView.GetDataAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetDataAsync(HSTRING formatId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_IInspectable_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetDataAsync(HSTRING formatId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_IInspectable_t **")] IAsyncOperation<Pointer<IInspectable>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataPackageView*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IDataPackageView*)Unsafe.AsPointer(ref this), formatId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IDataPackageView*, HSTRING, IAsyncOperation<Pointer<IInspectable>>**, int>)(lpVtbl[11]))((IDataPackageView*)Unsafe.AsPointer(ref this), formatId, operation);
     }
 
     /// <include file='IDataPackageView.xml' path='doc/member[@name="IDataPackageView.GetTextAsync"]/*' />
@@ -139,9 +139,9 @@ public unsafe partial struct IDataPackageView : IDataPackageView.Interface, INat
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     [Obsolete("GetUriAsync may be altered or unavailable for releases after Windows 8.1. Instead, use GetWebLinkAsync or GetApplicationLinkAsync.")]
-    public HRESULT GetUriAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetUriAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t **")] IAsyncOperation<Pointer<IUri>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataPackageView*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[14]))((IDataPackageView*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IDataPackageView*, IAsyncOperation<Pointer<IUri>>**, int>)(lpVtbl[14]))((IDataPackageView*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IDataPackageView.xml' path='doc/member[@name="IDataPackageView.GetHtmlFormatAsync"]/*' />
@@ -155,9 +155,9 @@ public unsafe partial struct IDataPackageView : IDataPackageView.Interface, INat
     /// <include file='IDataPackageView.xml' path='doc/member[@name="IDataPackageView.GetResourceMapAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT GetResourceMapAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetResourceMapAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IAsyncOperation<Pointer<IMapView<HSTRING, Pointer<IRandomAccessStreamReference>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataPackageView*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[16]))((IDataPackageView*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IDataPackageView*, IAsyncOperation<Pointer<IMapView<HSTRING, Pointer<IRandomAccessStreamReference>>>>**, int>)(lpVtbl[16]))((IDataPackageView*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IDataPackageView.xml' path='doc/member[@name="IDataPackageView.GetRtfAsync"]/*' />
@@ -171,17 +171,17 @@ public unsafe partial struct IDataPackageView : IDataPackageView.Interface, INat
     /// <include file='IDataPackageView.xml' path='doc/member[@name="IDataPackageView.GetBitmapAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT GetBitmapAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetBitmapAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IAsyncOperation<Pointer<IRandomAccessStreamReference>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataPackageView*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[18]))((IDataPackageView*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IDataPackageView*, IAsyncOperation<Pointer<IRandomAccessStreamReference>>**, int>)(lpVtbl[18]))((IDataPackageView*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IDataPackageView.xml' path='doc/member[@name="IDataPackageView.GetStorageItemsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT GetStorageItemsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetStorageItemsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageItem>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataPackageView*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[19]))((IDataPackageView*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IDataPackageView*, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageItem>>>>**, int>)(lpVtbl[19]))((IDataPackageView*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -202,7 +202,7 @@ public unsafe partial struct IDataPackageView : IDataPackageView.Interface, INat
         HRESULT Contains(HSTRING formatId, [NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(11)]
-        HRESULT GetDataAsync(HSTRING formatId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_IInspectable_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetDataAsync(HSTRING formatId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_IInspectable_t **")] IAsyncOperation<Pointer<IInspectable>>** operation);
 
         [VtblIndex(12)]
         HRESULT GetTextAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **")] IAsyncOperation<HSTRING>** operation);
@@ -212,22 +212,22 @@ public unsafe partial struct IDataPackageView : IDataPackageView.Interface, INat
 
         [VtblIndex(14)]
         [Obsolete("GetUriAsync may be altered or unavailable for releases after Windows 8.1. Instead, use GetWebLinkAsync or GetApplicationLinkAsync.")]
-        HRESULT GetUriAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetUriAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t **")] IAsyncOperation<Pointer<IUri>>** operation);
 
         [VtblIndex(15)]
         HRESULT GetHtmlFormatAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **")] IAsyncOperation<HSTRING>** operation);
 
         [VtblIndex(16)]
-        HRESULT GetResourceMapAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetResourceMapAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IAsyncOperation<Pointer<IMapView<HSTRING, Pointer<IRandomAccessStreamReference>>>>** operation);
 
         [VtblIndex(17)]
         HRESULT GetRtfAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **")] IAsyncOperation<HSTRING>** operation);
 
         [VtblIndex(18)]
-        HRESULT GetBitmapAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetBitmapAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IAsyncOperation<Pointer<IRandomAccessStreamReference>>** operation);
 
         [VtblIndex(19)]
-        HRESULT GetStorageItemsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetStorageItemsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageItem>>>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -267,7 +267,7 @@ public unsafe partial struct IDataPackageView : IDataPackageView.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, byte*, int> Contains;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_IInspectable_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetDataAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IInspectable>>**, int> GetDataAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<HSTRING>**, int> GetTextAsync;
@@ -277,21 +277,21 @@ public unsafe partial struct IDataPackageView : IDataPackageView.Interface, INat
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t **) __attribute__((stdcall))")]
         [Obsolete("GetUriAsync may be altered or unavailable for releases after Windows 8.1. Instead, use GetWebLinkAsync or GetApplicationLinkAsync.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetUriAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IUri>>**, int> GetUriAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<HSTRING>**, int> GetHtmlFormatAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetResourceMapAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IMapView<HSTRING, Pointer<IRandomAccessStreamReference>>>>**, int> GetResourceMapAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<HSTRING>**, int> GetRtfAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetBitmapAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IRandomAccessStreamReference>>**, int> GetBitmapAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CIStorageItem_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetStorageItemsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageItem>>>>**, int> GetStorageItemsAsync;
     }
 }

@@ -82,9 +82,9 @@ public unsafe partial struct IWebAccountManagerStatics : IWebAccountManagerStati
     /// <include file='IWebAccountManagerStatics.xml' path='doc/member[@name="IWebAccountManagerStatics.AddWebAccountAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT AddWebAccountAsync(HSTRING webAccountId, HSTRING webAccountUserName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_HSTRING_t *")] IMapView<HSTRING, HSTRING>* props, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT AddWebAccountAsync(HSTRING webAccountId, HSTRING webAccountUserName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_HSTRING_t *")] IMapView<HSTRING, HSTRING>* props, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<Pointer<IWebAccount>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAccountManagerStatics*, HSTRING, HSTRING, IMapView<HSTRING, HSTRING>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IWebAccountManagerStatics*)Unsafe.AsPointer(ref this), webAccountId, webAccountUserName, props, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAccountManagerStatics*, HSTRING, HSTRING, IMapView<HSTRING, HSTRING>*, IAsyncOperation<Pointer<IWebAccount>>**, int>)(lpVtbl[7]))((IWebAccountManagerStatics*)Unsafe.AsPointer(ref this), webAccountId, webAccountUserName, props, asyncInfo);
     }
 
     /// <include file='IWebAccountManagerStatics.xml' path='doc/member[@name="IWebAccountManagerStatics.DeleteWebAccountAsync"]/*' />
@@ -98,17 +98,17 @@ public unsafe partial struct IWebAccountManagerStatics : IWebAccountManagerStati
     /// <include file='IWebAccountManagerStatics.xml' path='doc/member[@name="IWebAccountManagerStatics.FindAllProviderWebAccountsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT FindAllProviderWebAccountsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT FindAllProviderWebAccountsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IWebAccount>>>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAccountManagerStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IWebAccountManagerStatics*)Unsafe.AsPointer(ref this), asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAccountManagerStatics*, IAsyncOperation<Pointer<IVectorView<Pointer<IWebAccount>>>>**, int>)(lpVtbl[9]))((IWebAccountManagerStatics*)Unsafe.AsPointer(ref this), asyncInfo);
     }
 
     /// <include file='IWebAccountManagerStatics.xml' path='doc/member[@name="IWebAccountManagerStatics.PushCookiesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT PushCookiesAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CWeb__CHttp__CHttpCookie_t *")] IVectorView<IntPtr>* cookies, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo)
+    public HRESULT PushCookiesAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CWeb__CHttp__CHttpCookie_t *")] IVectorView<Pointer<IHttpCookie>>* cookies, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAccountManagerStatics*, IUriRuntimeClass*, IVectorView<IntPtr>*, IAsyncAction**, int>)(lpVtbl[10]))((IWebAccountManagerStatics*)Unsafe.AsPointer(ref this), uri, cookies, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAccountManagerStatics*, IUriRuntimeClass*, IVectorView<Pointer<IHttpCookie>>*, IAsyncAction**, int>)(lpVtbl[10]))((IWebAccountManagerStatics*)Unsafe.AsPointer(ref this), uri, cookies, asyncInfo);
     }
 
     /// <include file='IWebAccountManagerStatics.xml' path='doc/member[@name="IWebAccountManagerStatics.SetViewAsync"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IWebAccountManagerStatics : IWebAccountManagerStati
     /// <include file='IWebAccountManagerStatics.xml' path='doc/member[@name="IWebAccountManagerStatics.GetViewsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetViewsAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CAuthentication__CWeb__CProvider__CWebAccountClientView_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT GetViewsAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CAuthentication__CWeb__CProvider__CWebAccountClientView_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IWebAccountClientView>>>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAccountManagerStatics*, IWebAccount*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[13]))((IWebAccountManagerStatics*)Unsafe.AsPointer(ref this), webAccount, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAccountManagerStatics*, IWebAccount*, IAsyncOperation<Pointer<IVectorView<Pointer<IWebAccountClientView>>>>**, int>)(lpVtbl[13]))((IWebAccountManagerStatics*)Unsafe.AsPointer(ref this), webAccount, asyncInfo);
     }
 
     /// <include file='IWebAccountManagerStatics.xml' path='doc/member[@name="IWebAccountManagerStatics.SetWebAccountPictureAsync"]/*' />
@@ -157,16 +157,16 @@ public unsafe partial struct IWebAccountManagerStatics : IWebAccountManagerStati
         HRESULT UpdateWebAccountPropertiesAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, HSTRING webAccountUserName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_HSTRING_t *")] IMapView<HSTRING, HSTRING>* additionalProperties, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
 
         [VtblIndex(7)]
-        HRESULT AddWebAccountAsync(HSTRING webAccountId, HSTRING webAccountUserName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_HSTRING_t *")] IMapView<HSTRING, HSTRING>* props, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT AddWebAccountAsync(HSTRING webAccountId, HSTRING webAccountUserName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_HSTRING_t *")] IMapView<HSTRING, HSTRING>* props, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<Pointer<IWebAccount>>** asyncInfo);
 
         [VtblIndex(8)]
         HRESULT DeleteWebAccountAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
 
         [VtblIndex(9)]
-        HRESULT FindAllProviderWebAccountsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT FindAllProviderWebAccountsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IWebAccount>>>>** asyncInfo);
 
         [VtblIndex(10)]
-        HRESULT PushCookiesAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CWeb__CHttp__CHttpCookie_t *")] IVectorView<IntPtr>* cookies, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
+        HRESULT PushCookiesAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CWeb__CHttp__CHttpCookie_t *")] IVectorView<Pointer<IHttpCookie>>* cookies, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
 
         [VtblIndex(11)]
         HRESULT SetViewAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, [NativeTypeName("ABI::Windows::Security::Authentication::Web::Provider::IWebAccountClientView *")] IWebAccountClientView* view, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
@@ -175,7 +175,7 @@ public unsafe partial struct IWebAccountManagerStatics : IWebAccountManagerStati
         HRESULT ClearViewAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* applicationCallbackUri, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
 
         [VtblIndex(13)]
-        HRESULT GetViewsAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CAuthentication__CWeb__CProvider__CWebAccountClientView_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT GetViewsAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CAuthentication__CWeb__CProvider__CWebAccountClientView_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IWebAccountClientView>>>>** asyncInfo);
 
         [VtblIndex(14)]
         HRESULT SetWebAccountPictureAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, [NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* webAccountPicture, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
@@ -209,16 +209,16 @@ public unsafe partial struct IWebAccountManagerStatics : IWebAccountManagerStati
         public delegate* unmanaged[MemberFunction]<TSelf*, IWebAccount*, HSTRING, IMapView<HSTRING, HSTRING>*, IAsyncAction**, int> UpdateWebAccountPropertiesAsync;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_HSTRING_t *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IMapView<HSTRING, HSTRING>*, IAsyncOperation<IntPtr>**, int> AddWebAccountAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IMapView<HSTRING, HSTRING>*, IAsyncOperation<Pointer<IWebAccount>>**, int> AddWebAccountAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Credentials::IWebAccount *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IWebAccount*, IAsyncAction**, int> DeleteWebAccountAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCredentials__CWebAccount_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindAllProviderWebAccountsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IWebAccount>>>>**, int> FindAllProviderWebAccountsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CWeb__CHttp__CHttpCookie_t *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IVectorView<IntPtr>*, IAsyncAction**, int> PushCookiesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IVectorView<Pointer<IHttpCookie>>*, IAsyncAction**, int> PushCookiesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Credentials::IWebAccount *, ABI::Windows::Security::Authentication::Web::Provider::IWebAccountClientView *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IWebAccount*, IWebAccountClientView*, IAsyncAction**, int> SetViewAsync;
@@ -227,7 +227,7 @@ public unsafe partial struct IWebAccountManagerStatics : IWebAccountManagerStati
         public delegate* unmanaged[MemberFunction]<TSelf*, IWebAccount*, IUriRuntimeClass*, IAsyncAction**, int> ClearViewAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Credentials::IWebAccount *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CAuthentication__CWeb__CProvider__CWebAccountClientView_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IWebAccount*, IAsyncOperation<IntPtr>**, int> GetViewsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWebAccount*, IAsyncOperation<Pointer<IVectorView<Pointer<IWebAccountClientView>>>>**, int> GetViewsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Credentials::IWebAccount *, ABI::Windows::Storage::Streams::IRandomAccessStream *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IWebAccount*, IRandomAccessStream*, IAsyncAction**, int> SetWebAccountPictureAsync;

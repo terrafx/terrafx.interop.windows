@@ -82,33 +82,33 @@ public unsafe partial struct IAdaptiveMediaSourceStatics : IAdaptiveMediaSourceS
     /// <include file='IAdaptiveMediaSourceStatics.xml' path='doc/member[@name="IAdaptiveMediaSourceStatics.CreateFromUriAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateFromUriAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateFromUriAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **")] IAsyncOperation<Pointer<IAdaptiveMediaSourceCreationResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSourceStatics*, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IAdaptiveMediaSourceStatics*)Unsafe.AsPointer(ref this), uri, result);
+        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSourceStatics*, IUriRuntimeClass*, IAsyncOperation<Pointer<IAdaptiveMediaSourceCreationResult>>**, int>)(lpVtbl[7]))((IAdaptiveMediaSourceStatics*)Unsafe.AsPointer(ref this), uri, result);
     }
 
     /// <include file='IAdaptiveMediaSourceStatics.xml' path='doc/member[@name="IAdaptiveMediaSourceStatics.CreateFromUriWithDownloaderAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT CreateFromUriWithDownloaderAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Web::Http::IHttpClient *")] IHttpClient* httpClient, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateFromUriWithDownloaderAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Web::Http::IHttpClient *")] IHttpClient* httpClient, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **")] IAsyncOperation<Pointer<IAdaptiveMediaSourceCreationResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSourceStatics*, IUriRuntimeClass*, IHttpClient*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IAdaptiveMediaSourceStatics*)Unsafe.AsPointer(ref this), uri, httpClient, result);
+        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSourceStatics*, IUriRuntimeClass*, IHttpClient*, IAsyncOperation<Pointer<IAdaptiveMediaSourceCreationResult>>**, int>)(lpVtbl[8]))((IAdaptiveMediaSourceStatics*)Unsafe.AsPointer(ref this), uri, httpClient, result);
     }
 
     /// <include file='IAdaptiveMediaSourceStatics.xml' path='doc/member[@name="IAdaptiveMediaSourceStatics.CreateFromStreamAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT CreateFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* stream, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, HSTRING contentType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* stream, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, HSTRING contentType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **")] IAsyncOperation<Pointer<IAdaptiveMediaSourceCreationResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSourceStatics*, IInputStream*, IUriRuntimeClass*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IAdaptiveMediaSourceStatics*)Unsafe.AsPointer(ref this), stream, uri, contentType, result);
+        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSourceStatics*, IInputStream*, IUriRuntimeClass*, HSTRING, IAsyncOperation<Pointer<IAdaptiveMediaSourceCreationResult>>**, int>)(lpVtbl[9]))((IAdaptiveMediaSourceStatics*)Unsafe.AsPointer(ref this), stream, uri, contentType, result);
     }
 
     /// <include file='IAdaptiveMediaSourceStatics.xml' path='doc/member[@name="IAdaptiveMediaSourceStatics.CreateFromStreamWithDownloaderAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT CreateFromStreamWithDownloaderAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* stream, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, HSTRING contentType, [NativeTypeName("ABI::Windows::Web::Http::IHttpClient *")] IHttpClient* httpClient, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateFromStreamWithDownloaderAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* stream, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, HSTRING contentType, [NativeTypeName("ABI::Windows::Web::Http::IHttpClient *")] IHttpClient* httpClient, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **")] IAsyncOperation<Pointer<IAdaptiveMediaSourceCreationResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSourceStatics*, IInputStream*, IUriRuntimeClass*, HSTRING, IHttpClient*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IAdaptiveMediaSourceStatics*)Unsafe.AsPointer(ref this), stream, uri, contentType, httpClient, result);
+        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSourceStatics*, IInputStream*, IUriRuntimeClass*, HSTRING, IHttpClient*, IAsyncOperation<Pointer<IAdaptiveMediaSourceCreationResult>>**, int>)(lpVtbl[10]))((IAdaptiveMediaSourceStatics*)Unsafe.AsPointer(ref this), stream, uri, contentType, httpClient, result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -117,16 +117,16 @@ public unsafe partial struct IAdaptiveMediaSourceStatics : IAdaptiveMediaSourceS
         HRESULT IsContentTypeSupported(HSTRING contentType, [NativeTypeName("boolean *")] byte* result);
 
         [VtblIndex(7)]
-        HRESULT CreateFromUriAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateFromUriAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **")] IAsyncOperation<Pointer<IAdaptiveMediaSourceCreationResult>>** result);
 
         [VtblIndex(8)]
-        HRESULT CreateFromUriWithDownloaderAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Web::Http::IHttpClient *")] IHttpClient* httpClient, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateFromUriWithDownloaderAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Web::Http::IHttpClient *")] IHttpClient* httpClient, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **")] IAsyncOperation<Pointer<IAdaptiveMediaSourceCreationResult>>** result);
 
         [VtblIndex(9)]
-        HRESULT CreateFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* stream, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, HSTRING contentType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* stream, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, HSTRING contentType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **")] IAsyncOperation<Pointer<IAdaptiveMediaSourceCreationResult>>** result);
 
         [VtblIndex(10)]
-        HRESULT CreateFromStreamWithDownloaderAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* stream, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, HSTRING contentType, [NativeTypeName("ABI::Windows::Web::Http::IHttpClient *")] IHttpClient* httpClient, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateFromStreamWithDownloaderAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* stream, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, HSTRING contentType, [NativeTypeName("ABI::Windows::Web::Http::IHttpClient *")] IHttpClient* httpClient, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **")] IAsyncOperation<Pointer<IAdaptiveMediaSourceCreationResult>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -154,15 +154,15 @@ public unsafe partial struct IAdaptiveMediaSourceStatics : IAdaptiveMediaSourceS
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, byte*, int> IsContentTypeSupported;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int> CreateFromUriAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperation<Pointer<IAdaptiveMediaSourceCreationResult>>**, int> CreateFromUriAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Web::Http::IHttpClient *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IHttpClient*, IAsyncOperation<IntPtr>**, int> CreateFromUriWithDownloaderAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IHttpClient*, IAsyncOperation<Pointer<IAdaptiveMediaSourceCreationResult>>**, int> CreateFromUriWithDownloaderAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IInputStream *, ABI::Windows::Foundation::IUriRuntimeClass *, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IInputStream*, IUriRuntimeClass*, HSTRING, IAsyncOperation<IntPtr>**, int> CreateFromStreamAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInputStream*, IUriRuntimeClass*, HSTRING, IAsyncOperation<Pointer<IAdaptiveMediaSourceCreationResult>>**, int> CreateFromStreamAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IInputStream *, ABI::Windows::Foundation::IUriRuntimeClass *, HSTRING, ABI::Windows::Web::Http::IHttpClient *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceCreationResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IInputStream*, IUriRuntimeClass*, HSTRING, IHttpClient*, IAsyncOperation<IntPtr>**, int> CreateFromStreamWithDownloaderAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInputStream*, IUriRuntimeClass*, HSTRING, IHttpClient*, IAsyncOperation<Pointer<IAdaptiveMediaSourceCreationResult>>**, int> CreateFromStreamWithDownloaderAsync;
     }
 }

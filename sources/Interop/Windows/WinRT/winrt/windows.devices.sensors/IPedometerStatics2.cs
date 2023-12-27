@@ -74,15 +74,15 @@ public unsafe partial struct IPedometerStatics2 : IPedometerStatics2.Interface, 
     /// <include file='IPedometerStatics2.xml' path='doc/member[@name="IPedometerStatics2.GetReadingsFromTriggerDetails"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetReadingsFromTriggerDetails([NativeTypeName("ABI::Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails *")] ISensorDataThresholdTriggerDetails* triggerDetails, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CPedometerReading_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetReadingsFromTriggerDetails([NativeTypeName("ABI::Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails *")] ISensorDataThresholdTriggerDetails* triggerDetails, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CPedometerReading_t **")] IVectorView<Pointer<IPedometerReading>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPedometerStatics2*, ISensorDataThresholdTriggerDetails*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IPedometerStatics2*)Unsafe.AsPointer(ref this), triggerDetails, result);
+        return ((delegate* unmanaged[MemberFunction]<IPedometerStatics2*, ISensorDataThresholdTriggerDetails*, IVectorView<Pointer<IPedometerReading>>**, int>)(lpVtbl[6]))((IPedometerStatics2*)Unsafe.AsPointer(ref this), triggerDetails, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetReadingsFromTriggerDetails([NativeTypeName("ABI::Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails *")] ISensorDataThresholdTriggerDetails* triggerDetails, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CPedometerReading_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetReadingsFromTriggerDetails([NativeTypeName("ABI::Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails *")] ISensorDataThresholdTriggerDetails* triggerDetails, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CPedometerReading_t **")] IVectorView<Pointer<IPedometerReading>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IPedometerStatics2 : IPedometerStatics2.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails *, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CPedometerReading_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ISensorDataThresholdTriggerDetails*, IVectorView<IntPtr>**, int> GetReadingsFromTriggerDetails;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISensorDataThresholdTriggerDetails*, IVectorView<Pointer<IPedometerReading>>**, int> GetReadingsFromTriggerDetails;
     }
 }

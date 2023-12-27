@@ -82,9 +82,9 @@ public unsafe partial struct ISpatialStageFrameOfReferenceStatics : ISpatialStag
     /// <include file='ISpatialStageFrameOfReferenceStatics.xml' path='doc/member[@name="ISpatialStageFrameOfReferenceStatics.add_CurrentChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_CurrentChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_CurrentChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpatialStageFrameOfReferenceStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ISpatialStageFrameOfReferenceStatics*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialStageFrameOfReferenceStatics*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ISpatialStageFrameOfReferenceStatics*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ISpatialStageFrameOfReferenceStatics.xml' path='doc/member[@name="ISpatialStageFrameOfReferenceStatics.remove_CurrentChanged"]/*' />
@@ -98,9 +98,9 @@ public unsafe partial struct ISpatialStageFrameOfReferenceStatics : ISpatialStag
     /// <include file='ISpatialStageFrameOfReferenceStatics.xml' path='doc/member[@name="ISpatialStageFrameOfReferenceStatics.RequestNewStageAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT RequestNewStageAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT RequestNewStageAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_t **")] IAsyncOperation<Pointer<ISpatialStageFrameOfReference>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpatialStageFrameOfReferenceStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((ISpatialStageFrameOfReferenceStatics*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialStageFrameOfReferenceStatics*, IAsyncOperation<Pointer<ISpatialStageFrameOfReference>>**, int>)(lpVtbl[9]))((ISpatialStageFrameOfReferenceStatics*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -109,13 +109,13 @@ public unsafe partial struct ISpatialStageFrameOfReferenceStatics : ISpatialStag
         HRESULT get_Current([NativeTypeName("ABI::Windows::Perception::Spatial::ISpatialStageFrameOfReference **")] ISpatialStageFrameOfReference** value);
 
         [VtblIndex(7)]
-        HRESULT add_CurrentChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_CurrentChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(8)]
         HRESULT remove_CurrentChanged(EventRegistrationToken cookie);
 
         [VtblIndex(9)]
-        HRESULT RequestNewStageAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT RequestNewStageAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_t **")] IAsyncOperation<Pointer<ISpatialStageFrameOfReference>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -143,12 +143,12 @@ public unsafe partial struct ISpatialStageFrameOfReferenceStatics : ISpatialStag
         public delegate* unmanaged[MemberFunction]<TSelf*, ISpatialStageFrameOfReference**, int> get_Current;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_CurrentChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_CurrentChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CurrentChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialStageFrameOfReference_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> RequestNewStageAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<ISpatialStageFrameOfReference>>**, int> RequestNewStageAsync;
     }
 }

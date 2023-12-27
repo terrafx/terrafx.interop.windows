@@ -106,9 +106,9 @@ public unsafe partial struct IStreamSocketListener : IStreamSocketListener.Inter
     /// <include file='IStreamSocketListener.xml' path='doc/member[@name="IStreamSocketListener.add_ConnectionReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_ConnectionReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamSocketListener_Windows__CNetworking__CSockets__CStreamSocketListenerConnectionReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_ConnectionReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamSocketListener_Windows__CNetworking__CSockets__CStreamSocketListenerConnectionReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IStreamSocketListener>, Pointer<IStreamSocketListenerConnectionReceivedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStreamSocketListener*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IStreamSocketListener*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IStreamSocketListener*, ITypedEventHandler<Pointer<IStreamSocketListener>, Pointer<IStreamSocketListenerConnectionReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IStreamSocketListener*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
     }
 
     /// <include file='IStreamSocketListener.xml' path='doc/member[@name="IStreamSocketListener.remove_ConnectionReceived"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IStreamSocketListener : IStreamSocketListener.Inter
         HRESULT BindEndpointAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* localHostName, HSTRING localServiceName, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
 
         [VtblIndex(10)]
-        HRESULT add_ConnectionReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamSocketListener_Windows__CNetworking__CSockets__CStreamSocketListenerConnectionReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_ConnectionReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamSocketListener_Windows__CNetworking__CSockets__CStreamSocketListenerConnectionReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IStreamSocketListener>, Pointer<IStreamSocketListenerConnectionReceivedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(11)]
         HRESULT remove_ConnectionReceived(EventRegistrationToken eventCookie);
@@ -174,7 +174,7 @@ public unsafe partial struct IStreamSocketListener : IStreamSocketListener.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, IHostName*, HSTRING, IAsyncAction**, int> BindEndpointAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamSocketListener_Windows__CNetworking__CSockets__CStreamSocketListenerConnectionReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ConnectionReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IStreamSocketListener>, Pointer<IStreamSocketListenerConnectionReceivedEventArgs>>*, EventRegistrationToken*, int> add_ConnectionReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ConnectionReceived;

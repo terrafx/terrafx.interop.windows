@@ -74,15 +74,15 @@ public unsafe partial struct IGeovisitMonitorStatics : IGeovisitMonitorStatics.I
     /// <include file='IGeovisitMonitorStatics.xml' path='doc/member[@name="IGeovisitMonitorStatics.GetLastReportAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetLastReportAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeovisit_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetLastReportAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeovisit_t **")] IAsyncOperation<Pointer<IGeovisit>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGeovisitMonitorStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IGeovisitMonitorStatics*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IGeovisitMonitorStatics*, IAsyncOperation<Pointer<IGeovisit>>**, int>)(lpVtbl[6]))((IGeovisitMonitorStatics*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetLastReportAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeovisit_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetLastReportAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeovisit_t **")] IAsyncOperation<Pointer<IGeovisit>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IGeovisitMonitorStatics : IGeovisitMonitorStatics.I
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeovisit_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetLastReportAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IGeovisit>>**, int> GetLastReportAsync;
     }
 }

@@ -130,9 +130,9 @@ public unsafe partial struct IDispatcherQueueTimer : IDispatcherQueueTimer.Inter
     /// <include file='IDispatcherQueueTimer.xml' path='doc/member[@name="IDispatcherQueueTimer.add_Tick"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_Tick([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CDispatcherQueueTimer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Tick([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CDispatcherQueueTimer_IInspectable_t *")] ITypedEventHandler<Pointer<IDispatcherQueueTimer>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDispatcherQueueTimer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IDispatcherQueueTimer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDispatcherQueueTimer*, ITypedEventHandler<Pointer<IDispatcherQueueTimer>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IDispatcherQueueTimer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDispatcherQueueTimer.xml' path='doc/member[@name="IDispatcherQueueTimer.remove_Tick"]/*' />
@@ -167,7 +167,7 @@ public unsafe partial struct IDispatcherQueueTimer : IDispatcherQueueTimer.Inter
         HRESULT Stop();
 
         [VtblIndex(13)]
-        HRESULT add_Tick([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CDispatcherQueueTimer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Tick([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CDispatcherQueueTimer_IInspectable_t *")] ITypedEventHandler<Pointer<IDispatcherQueueTimer>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_Tick(EventRegistrationToken token);
@@ -216,7 +216,7 @@ public unsafe partial struct IDispatcherQueueTimer : IDispatcherQueueTimer.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CDispatcherQueueTimer_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Tick;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDispatcherQueueTimer>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Tick;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Tick;

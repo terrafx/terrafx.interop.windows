@@ -90,25 +90,25 @@ public unsafe partial struct ICryptographicEngineStatics2 : ICryptographicEngine
     /// <include file='ICryptographicEngineStatics2.xml' path='doc/member[@name="ICryptographicEngineStatics2.DecryptAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT DecryptAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Core::ICryptographicKey *")] ICryptographicKey* key, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* iv, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT DecryptAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Core::ICryptographicKey *")] ICryptographicKey* key, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* iv, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IBuffer>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICryptographicEngineStatics2*, ICryptographicKey*, IBuffer*, IBuffer*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((ICryptographicEngineStatics2*)Unsafe.AsPointer(ref this), key, data, iv, value);
+        return ((delegate* unmanaged[MemberFunction]<ICryptographicEngineStatics2*, ICryptographicKey*, IBuffer*, IBuffer*, IAsyncOperation<Pointer<IBuffer>>**, int>)(lpVtbl[8]))((ICryptographicEngineStatics2*)Unsafe.AsPointer(ref this), key, data, iv, value);
     }
 
     /// <include file='ICryptographicEngineStatics2.xml' path='doc/member[@name="ICryptographicEngineStatics2.SignAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT SignAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Core::ICryptographicKey *")] ICryptographicKey* key, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT SignAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Core::ICryptographicKey *")] ICryptographicKey* key, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IBuffer>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICryptographicEngineStatics2*, ICryptographicKey*, IBuffer*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((ICryptographicEngineStatics2*)Unsafe.AsPointer(ref this), key, data, value);
+        return ((delegate* unmanaged[MemberFunction]<ICryptographicEngineStatics2*, ICryptographicKey*, IBuffer*, IAsyncOperation<Pointer<IBuffer>>**, int>)(lpVtbl[9]))((ICryptographicEngineStatics2*)Unsafe.AsPointer(ref this), key, data, value);
     }
 
     /// <include file='ICryptographicEngineStatics2.xml' path='doc/member[@name="ICryptographicEngineStatics2.SignHashedDataAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT SignHashedDataAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Core::ICryptographicKey *")] ICryptographicKey* key, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT SignHashedDataAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Core::ICryptographicKey *")] ICryptographicKey* key, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IBuffer>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICryptographicEngineStatics2*, ICryptographicKey*, IBuffer*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((ICryptographicEngineStatics2*)Unsafe.AsPointer(ref this), key, data, value);
+        return ((delegate* unmanaged[MemberFunction]<ICryptographicEngineStatics2*, ICryptographicKey*, IBuffer*, IAsyncOperation<Pointer<IBuffer>>**, int>)(lpVtbl[10]))((ICryptographicEngineStatics2*)Unsafe.AsPointer(ref this), key, data, value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -120,13 +120,13 @@ public unsafe partial struct ICryptographicEngineStatics2 : ICryptographicEngine
         HRESULT VerifySignatureWithHashInput([NativeTypeName("ABI::Windows::Security::Cryptography::Core::ICryptographicKey *")] ICryptographicKey* key, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* signature, [NativeTypeName("boolean *")] byte* isAuthenticated);
 
         [VtblIndex(8)]
-        HRESULT DecryptAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Core::ICryptographicKey *")] ICryptographicKey* key, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* iv, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT DecryptAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Core::ICryptographicKey *")] ICryptographicKey* key, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* iv, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IBuffer>>** value);
 
         [VtblIndex(9)]
-        HRESULT SignAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Core::ICryptographicKey *")] ICryptographicKey* key, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT SignAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Core::ICryptographicKey *")] ICryptographicKey* key, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IBuffer>>** value);
 
         [VtblIndex(10)]
-        HRESULT SignHashedDataAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Core::ICryptographicKey *")] ICryptographicKey* key, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT SignHashedDataAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Core::ICryptographicKey *")] ICryptographicKey* key, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IBuffer>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -157,12 +157,12 @@ public unsafe partial struct ICryptographicEngineStatics2 : ICryptographicEngine
         public delegate* unmanaged[MemberFunction]<TSelf*, ICryptographicKey*, IBuffer*, IBuffer*, byte*, int> VerifySignatureWithHashInput;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Cryptography::Core::ICryptographicKey *, ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ICryptographicKey*, IBuffer*, IBuffer*, IAsyncOperation<IntPtr>**, int> DecryptAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICryptographicKey*, IBuffer*, IBuffer*, IAsyncOperation<Pointer<IBuffer>>**, int> DecryptAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Cryptography::Core::ICryptographicKey *, ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ICryptographicKey*, IBuffer*, IAsyncOperation<IntPtr>**, int> SignAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICryptographicKey*, IBuffer*, IAsyncOperation<Pointer<IBuffer>>**, int> SignAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Cryptography::Core::ICryptographicKey *, ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ICryptographicKey*, IBuffer*, IAsyncOperation<IntPtr>**, int> SignHashedDataAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICryptographicKey*, IBuffer*, IAsyncOperation<Pointer<IBuffer>>**, int> SignHashedDataAsync;
     }
 }

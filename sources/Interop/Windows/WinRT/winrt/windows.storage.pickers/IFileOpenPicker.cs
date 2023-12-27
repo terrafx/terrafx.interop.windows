@@ -146,17 +146,17 @@ public unsafe partial struct IFileOpenPicker : IFileOpenPicker.Interface, INativ
     /// <include file='IFileOpenPicker.xml' path='doc/member[@name="IFileOpenPicker.PickSingleFileAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT PickSingleFileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT PickSingleFileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileOpenPicker*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[15]))((IFileOpenPicker*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IFileOpenPicker*, IAsyncOperation<Pointer<IStorageFile>>**, int>)(lpVtbl[15]))((IFileOpenPicker*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IFileOpenPicker.xml' path='doc/member[@name="IFileOpenPicker.PickMultipleFilesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT PickMultipleFilesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT PickMultipleFilesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFile>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileOpenPicker*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[16]))((IFileOpenPicker*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IFileOpenPicker*, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFile>>>>**, int>)(lpVtbl[16]))((IFileOpenPicker*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -189,10 +189,10 @@ public unsafe partial struct IFileOpenPicker : IFileOpenPicker.Interface, INativ
         HRESULT get_FileTypeFilter([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t **")] IVector<HSTRING>** value);
 
         [VtblIndex(15)]
-        HRESULT PickSingleFileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT PickSingleFileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation);
 
         [VtblIndex(16)]
-        HRESULT PickMultipleFilesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT PickMultipleFilesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFile>>>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -244,9 +244,9 @@ public unsafe partial struct IFileOpenPicker : IFileOpenPicker.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, IVector<HSTRING>**, int> get_FileTypeFilter;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> PickSingleFileAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IStorageFile>>**, int> PickSingleFileAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> PickMultipleFilesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFile>>>>**, int> PickMultipleFilesAsync;
     }
 }

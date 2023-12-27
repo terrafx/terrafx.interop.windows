@@ -74,26 +74,26 @@ public unsafe partial struct II2cControllerStatics : II2cControllerStatics.Inter
     /// <include file='II2cControllerStatics.xml' path='doc/member[@name="II2cControllerStatics.GetControllersAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetControllersAsync([NativeTypeName("ABI::Windows::Devices::I2c::Provider::II2cProvider *")] II2cProvider* provider, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CI2c__CI2cController_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetControllersAsync([NativeTypeName("ABI::Windows::Devices::I2c::Provider::II2cProvider *")] II2cProvider* provider, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CI2c__CI2cController_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<II2cController>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<II2cControllerStatics*, II2cProvider*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((II2cControllerStatics*)Unsafe.AsPointer(ref this), provider, operation);
+        return ((delegate* unmanaged[MemberFunction]<II2cControllerStatics*, II2cProvider*, IAsyncOperation<Pointer<IVectorView<Pointer<II2cController>>>>**, int>)(lpVtbl[6]))((II2cControllerStatics*)Unsafe.AsPointer(ref this), provider, operation);
     }
 
     /// <include file='II2cControllerStatics.xml' path='doc/member[@name="II2cControllerStatics.GetDefaultAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CI2c__CI2cController_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CI2c__CI2cController_t **")] IAsyncOperation<Pointer<II2cController>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<II2cControllerStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((II2cControllerStatics*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<II2cControllerStatics*, IAsyncOperation<Pointer<II2cController>>**, int>)(lpVtbl[7]))((II2cControllerStatics*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetControllersAsync([NativeTypeName("ABI::Windows::Devices::I2c::Provider::II2cProvider *")] II2cProvider* provider, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CI2c__CI2cController_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetControllersAsync([NativeTypeName("ABI::Windows::Devices::I2c::Provider::II2cProvider *")] II2cProvider* provider, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CI2c__CI2cController_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<II2cController>>>>** operation);
 
         [VtblIndex(7)]
-        HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CI2c__CI2cController_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CI2c__CI2cController_t **")] IAsyncOperation<Pointer<II2cController>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct II2cControllerStatics : II2cControllerStatics.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::I2c::Provider::II2cProvider *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CI2c__CI2cController_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, II2cProvider*, IAsyncOperation<IntPtr>**, int> GetControllersAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, II2cProvider*, IAsyncOperation<Pointer<IVectorView<Pointer<II2cController>>>>**, int> GetControllersAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CI2c__CI2cController_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetDefaultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<II2cController>>**, int> GetDefaultAsync;
     }
 }

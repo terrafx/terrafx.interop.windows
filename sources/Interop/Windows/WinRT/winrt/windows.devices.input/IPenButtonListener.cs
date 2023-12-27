@@ -82,9 +82,9 @@ public unsafe partial struct IPenButtonListener : IPenButtonListener.Interface, 
     /// <include file='IPenButtonListener.xml' path='doc/member[@name="IPenButtonListener.add_IsSupportedChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_IsSupportedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_IsSupportedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_IInspectable_t *")] ITypedEventHandler<Pointer<IPenButtonListener>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPenButtonListener*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IPenButtonListener*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPenButtonListener*, ITypedEventHandler<Pointer<IPenButtonListener>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IPenButtonListener*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPenButtonListener.xml' path='doc/member[@name="IPenButtonListener.remove_IsSupportedChanged"]/*' />
@@ -98,9 +98,9 @@ public unsafe partial struct IPenButtonListener : IPenButtonListener.Interface, 
     /// <include file='IPenButtonListener.xml' path='doc/member[@name="IPenButtonListener.add_TailButtonClicked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_TailButtonClicked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_Windows__CDevices__CInput__CPenTailButtonClickedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_TailButtonClicked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_Windows__CDevices__CInput__CPenTailButtonClickedEventArgs_t *")] ITypedEventHandler<Pointer<IPenButtonListener>, Pointer<IPenTailButtonClickedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPenButtonListener*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IPenButtonListener*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPenButtonListener*, ITypedEventHandler<Pointer<IPenButtonListener>, Pointer<IPenTailButtonClickedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IPenButtonListener*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPenButtonListener.xml' path='doc/member[@name="IPenButtonListener.remove_TailButtonClicked"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct IPenButtonListener : IPenButtonListener.Interface, 
     /// <include file='IPenButtonListener.xml' path='doc/member[@name="IPenButtonListener.add_TailButtonDoubleClicked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_TailButtonDoubleClicked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_Windows__CDevices__CInput__CPenTailButtonDoubleClickedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_TailButtonDoubleClicked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_Windows__CDevices__CInput__CPenTailButtonDoubleClickedEventArgs_t *")] ITypedEventHandler<Pointer<IPenButtonListener>, Pointer<IPenTailButtonDoubleClickedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPenButtonListener*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IPenButtonListener*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPenButtonListener*, ITypedEventHandler<Pointer<IPenButtonListener>, Pointer<IPenTailButtonDoubleClickedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IPenButtonListener*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPenButtonListener.xml' path='doc/member[@name="IPenButtonListener.remove_TailButtonDoubleClicked"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IPenButtonListener : IPenButtonListener.Interface, 
     /// <include file='IPenButtonListener.xml' path='doc/member[@name="IPenButtonListener.add_TailButtonLongPressed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_TailButtonLongPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_Windows__CDevices__CInput__CPenTailButtonLongPressedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_TailButtonLongPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_Windows__CDevices__CInput__CPenTailButtonLongPressedEventArgs_t *")] ITypedEventHandler<Pointer<IPenButtonListener>, Pointer<IPenTailButtonLongPressedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPenButtonListener*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IPenButtonListener*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPenButtonListener*, ITypedEventHandler<Pointer<IPenButtonListener>, Pointer<IPenTailButtonLongPressedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IPenButtonListener*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPenButtonListener.xml' path='doc/member[@name="IPenButtonListener.remove_TailButtonLongPressed"]/*' />
@@ -149,25 +149,25 @@ public unsafe partial struct IPenButtonListener : IPenButtonListener.Interface, 
         HRESULT IsSupported([NativeTypeName("boolean *")] byte* result);
 
         [VtblIndex(7)]
-        HRESULT add_IsSupportedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_IsSupportedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_IInspectable_t *")] ITypedEventHandler<Pointer<IPenButtonListener>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_IsSupportedChanged(EventRegistrationToken token);
 
         [VtblIndex(9)]
-        HRESULT add_TailButtonClicked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_Windows__CDevices__CInput__CPenTailButtonClickedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_TailButtonClicked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_Windows__CDevices__CInput__CPenTailButtonClickedEventArgs_t *")] ITypedEventHandler<Pointer<IPenButtonListener>, Pointer<IPenTailButtonClickedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_TailButtonClicked(EventRegistrationToken token);
 
         [VtblIndex(11)]
-        HRESULT add_TailButtonDoubleClicked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_Windows__CDevices__CInput__CPenTailButtonDoubleClickedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_TailButtonDoubleClicked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_Windows__CDevices__CInput__CPenTailButtonDoubleClickedEventArgs_t *")] ITypedEventHandler<Pointer<IPenButtonListener>, Pointer<IPenTailButtonDoubleClickedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_TailButtonDoubleClicked(EventRegistrationToken token);
 
         [VtblIndex(13)]
-        HRESULT add_TailButtonLongPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_Windows__CDevices__CInput__CPenTailButtonLongPressedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_TailButtonLongPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_Windows__CDevices__CInput__CPenTailButtonLongPressedEventArgs_t *")] ITypedEventHandler<Pointer<IPenButtonListener>, Pointer<IPenTailButtonLongPressedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_TailButtonLongPressed(EventRegistrationToken token);
@@ -198,25 +198,25 @@ public unsafe partial struct IPenButtonListener : IPenButtonListener.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> IsSupported;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_IsSupportedChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPenButtonListener>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_IsSupportedChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_IsSupportedChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_Windows__CDevices__CInput__CPenTailButtonClickedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_TailButtonClicked;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPenButtonListener>, Pointer<IPenTailButtonClickedEventArgs>>*, EventRegistrationToken*, int> add_TailButtonClicked;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_TailButtonClicked;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_Windows__CDevices__CInput__CPenTailButtonDoubleClickedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_TailButtonDoubleClicked;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPenButtonListener>, Pointer<IPenTailButtonDoubleClickedEventArgs>>*, EventRegistrationToken*, int> add_TailButtonDoubleClicked;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_TailButtonDoubleClicked;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenButtonListener_Windows__CDevices__CInput__CPenTailButtonLongPressedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_TailButtonLongPressed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPenButtonListener>, Pointer<IPenTailButtonLongPressedEventArgs>>*, EventRegistrationToken*, int> add_TailButtonLongPressed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_TailButtonLongPressed;

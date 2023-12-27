@@ -106,41 +106,41 @@ public unsafe partial struct IContact2 : IContact2.Interface, INativeGuid
     /// <include file='IContact2.xml' path='doc/member[@name="IContact2.get_Phones"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_Phones([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactPhone_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Phones([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactPhone_t **")] IVector<Pointer<IContactPhone>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContact2*, IVector<IntPtr>**, int>)(lpVtbl[10]))((IContact2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContact2*, IVector<Pointer<IContactPhone>>**, int>)(lpVtbl[10]))((IContact2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContact2.xml' path='doc/member[@name="IContact2.get_Emails"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_Emails([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactEmail_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Emails([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactEmail_t **")] IVector<Pointer<IContactEmail>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContact2*, IVector<IntPtr>**, int>)(lpVtbl[11]))((IContact2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContact2*, IVector<Pointer<IContactEmail>>**, int>)(lpVtbl[11]))((IContact2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContact2.xml' path='doc/member[@name="IContact2.get_Addresses"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_Addresses([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactAddress_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Addresses([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactAddress_t **")] IVector<Pointer<IContactAddress>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContact2*, IVector<IntPtr>**, int>)(lpVtbl[12]))((IContact2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContact2*, IVector<Pointer<IContactAddress>>**, int>)(lpVtbl[12]))((IContact2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContact2.xml' path='doc/member[@name="IContact2.get_ConnectedServiceAccounts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_ConnectedServiceAccounts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_t **")] IVector<IntPtr>** value)
+    public HRESULT get_ConnectedServiceAccounts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_t **")] IVector<Pointer<IContactConnectedServiceAccount>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContact2*, IVector<IntPtr>**, int>)(lpVtbl[13]))((IContact2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContact2*, IVector<Pointer<IContactConnectedServiceAccount>>**, int>)(lpVtbl[13]))((IContact2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContact2.xml' path='doc/member[@name="IContact2.get_ImportantDates"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_ImportantDates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactDate_t **")] IVector<IntPtr>** value)
+    public HRESULT get_ImportantDates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactDate_t **")] IVector<Pointer<IContactDate>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContact2*, IVector<IntPtr>**, int>)(lpVtbl[14]))((IContact2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContact2*, IVector<Pointer<IContactDate>>**, int>)(lpVtbl[14]))((IContact2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContact2.xml' path='doc/member[@name="IContact2.get_DataSuppliers"]/*' />
@@ -154,25 +154,25 @@ public unsafe partial struct IContact2 : IContact2.Interface, INativeGuid
     /// <include file='IContact2.xml' path='doc/member[@name="IContact2.get_JobInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT get_JobInfo([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactJobInfo_t **")] IVector<IntPtr>** value)
+    public HRESULT get_JobInfo([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactJobInfo_t **")] IVector<Pointer<IContactJobInfo>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContact2*, IVector<IntPtr>**, int>)(lpVtbl[16]))((IContact2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContact2*, IVector<Pointer<IContactJobInfo>>**, int>)(lpVtbl[16]))((IContact2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContact2.xml' path='doc/member[@name="IContact2.get_SignificantOthers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT get_SignificantOthers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_t **")] IVector<IntPtr>** value)
+    public HRESULT get_SignificantOthers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_t **")] IVector<Pointer<IContactSignificantOther>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContact2*, IVector<IntPtr>**, int>)(lpVtbl[17]))((IContact2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContact2*, IVector<Pointer<IContactSignificantOther>>**, int>)(lpVtbl[17]))((IContact2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContact2.xml' path='doc/member[@name="IContact2.get_Websites"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT get_Websites([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactWebsite_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Websites([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactWebsite_t **")] IVector<Pointer<IContactWebsite>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContact2*, IVector<IntPtr>**, int>)(lpVtbl[18]))((IContact2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContact2*, IVector<Pointer<IContactWebsite>>**, int>)(lpVtbl[18]))((IContact2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContact2.xml' path='doc/member[@name="IContact2.get_ProviderProperties"]/*' />
@@ -198,31 +198,31 @@ public unsafe partial struct IContact2 : IContact2.Interface, INativeGuid
         HRESULT put_Notes(HSTRING value);
 
         [VtblIndex(10)]
-        HRESULT get_Phones([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactPhone_t **")] IVector<IntPtr>** value);
+        HRESULT get_Phones([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactPhone_t **")] IVector<Pointer<IContactPhone>>** value);
 
         [VtblIndex(11)]
-        HRESULT get_Emails([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactEmail_t **")] IVector<IntPtr>** value);
+        HRESULT get_Emails([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactEmail_t **")] IVector<Pointer<IContactEmail>>** value);
 
         [VtblIndex(12)]
-        HRESULT get_Addresses([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactAddress_t **")] IVector<IntPtr>** value);
+        HRESULT get_Addresses([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactAddress_t **")] IVector<Pointer<IContactAddress>>** value);
 
         [VtblIndex(13)]
-        HRESULT get_ConnectedServiceAccounts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_t **")] IVector<IntPtr>** value);
+        HRESULT get_ConnectedServiceAccounts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_t **")] IVector<Pointer<IContactConnectedServiceAccount>>** value);
 
         [VtblIndex(14)]
-        HRESULT get_ImportantDates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactDate_t **")] IVector<IntPtr>** value);
+        HRESULT get_ImportantDates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactDate_t **")] IVector<Pointer<IContactDate>>** value);
 
         [VtblIndex(15)]
         HRESULT get_DataSuppliers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t **")] IVector<HSTRING>** value);
 
         [VtblIndex(16)]
-        HRESULT get_JobInfo([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactJobInfo_t **")] IVector<IntPtr>** value);
+        HRESULT get_JobInfo([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactJobInfo_t **")] IVector<Pointer<IContactJobInfo>>** value);
 
         [VtblIndex(17)]
-        HRESULT get_SignificantOthers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_t **")] IVector<IntPtr>** value);
+        HRESULT get_SignificantOthers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_t **")] IVector<Pointer<IContactSignificantOther>>** value);
 
         [VtblIndex(18)]
-        HRESULT get_Websites([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactWebsite_t **")] IVector<IntPtr>** value);
+        HRESULT get_Websites([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactWebsite_t **")] IVector<Pointer<IContactWebsite>>** value);
 
         [VtblIndex(19)]
         HRESULT get_ProviderProperties([NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet **")] IPropertySet** value);
@@ -262,31 +262,31 @@ public unsafe partial struct IContact2 : IContact2.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_Notes;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactPhone_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Phones;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IContactPhone>>**, int> get_Phones;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactEmail_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Emails;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IContactEmail>>**, int> get_Emails;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactAddress_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Addresses;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IContactAddress>>**, int> get_Addresses;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactConnectedServiceAccount_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_ConnectedServiceAccounts;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IContactConnectedServiceAccount>>**, int> get_ConnectedServiceAccounts;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactDate_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_ImportantDates;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IContactDate>>**, int> get_ImportantDates;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IVector<HSTRING>**, int> get_DataSuppliers;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactJobInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_JobInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IContactJobInfo>>**, int> get_JobInfo;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactSignificantOther_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_SignificantOthers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IContactSignificantOther>>**, int> get_SignificantOthers;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactWebsite_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Websites;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IContactWebsite>>**, int> get_Websites;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::IPropertySet **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IPropertySet**, int> get_ProviderProperties;

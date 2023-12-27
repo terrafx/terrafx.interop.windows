@@ -74,9 +74,9 @@ public unsafe partial struct ISystemButtonEventController : ISystemButtonEventCo
     /// <include file='ISystemButtonEventController.xml' path='doc/member[@name="ISystemButtonEventController.add_SystemFunctionButtonPressed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_SystemFunctionButtonPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionButtonEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SystemFunctionButtonPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionButtonEventArgs_t *")] ITypedEventHandler<Pointer<ISystemButtonEventController>, Pointer<ISystemFunctionButtonEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISystemButtonEventController*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ISystemButtonEventController*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISystemButtonEventController*, ITypedEventHandler<Pointer<ISystemButtonEventController>, Pointer<ISystemFunctionButtonEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ISystemButtonEventController*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISystemButtonEventController.xml' path='doc/member[@name="ISystemButtonEventController.remove_SystemFunctionButtonPressed"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct ISystemButtonEventController : ISystemButtonEventCo
     /// <include file='ISystemButtonEventController.xml' path='doc/member[@name="ISystemButtonEventController.add_SystemFunctionButtonReleased"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_SystemFunctionButtonReleased([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionButtonEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SystemFunctionButtonReleased([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionButtonEventArgs_t *")] ITypedEventHandler<Pointer<ISystemButtonEventController>, Pointer<ISystemFunctionButtonEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISystemButtonEventController*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ISystemButtonEventController*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISystemButtonEventController*, ITypedEventHandler<Pointer<ISystemButtonEventController>, Pointer<ISystemFunctionButtonEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ISystemButtonEventController*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISystemButtonEventController.xml' path='doc/member[@name="ISystemButtonEventController.remove_SystemFunctionButtonReleased"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct ISystemButtonEventController : ISystemButtonEventCo
     /// <include file='ISystemButtonEventController.xml' path='doc/member[@name="ISystemButtonEventController.add_SystemFunctionLockChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_SystemFunctionLockChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionLockChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SystemFunctionLockChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionLockChangedEventArgs_t *")] ITypedEventHandler<Pointer<ISystemButtonEventController>, Pointer<ISystemFunctionLockChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISystemButtonEventController*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((ISystemButtonEventController*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISystemButtonEventController*, ITypedEventHandler<Pointer<ISystemButtonEventController>, Pointer<ISystemFunctionLockChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((ISystemButtonEventController*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISystemButtonEventController.xml' path='doc/member[@name="ISystemButtonEventController.remove_SystemFunctionLockChanged"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct ISystemButtonEventController : ISystemButtonEventCo
     /// <include file='ISystemButtonEventController.xml' path='doc/member[@name="ISystemButtonEventController.add_SystemFunctionLockIndicatorChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_SystemFunctionLockIndicatorChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionLockIndicatorChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SystemFunctionLockIndicatorChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionLockIndicatorChangedEventArgs_t *")] ITypedEventHandler<Pointer<ISystemButtonEventController>, Pointer<ISystemFunctionLockIndicatorChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISystemButtonEventController*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((ISystemButtonEventController*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISystemButtonEventController*, ITypedEventHandler<Pointer<ISystemButtonEventController>, Pointer<ISystemFunctionLockIndicatorChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((ISystemButtonEventController*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISystemButtonEventController.xml' path='doc/member[@name="ISystemButtonEventController.remove_SystemFunctionLockIndicatorChanged"]/*' />
@@ -138,25 +138,25 @@ public unsafe partial struct ISystemButtonEventController : ISystemButtonEventCo
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_SystemFunctionButtonPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionButtonEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SystemFunctionButtonPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionButtonEventArgs_t *")] ITypedEventHandler<Pointer<ISystemButtonEventController>, Pointer<ISystemFunctionButtonEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_SystemFunctionButtonPressed(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_SystemFunctionButtonReleased([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionButtonEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SystemFunctionButtonReleased([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionButtonEventArgs_t *")] ITypedEventHandler<Pointer<ISystemButtonEventController>, Pointer<ISystemFunctionButtonEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_SystemFunctionButtonReleased(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_SystemFunctionLockChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionLockChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SystemFunctionLockChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionLockChangedEventArgs_t *")] ITypedEventHandler<Pointer<ISystemButtonEventController>, Pointer<ISystemFunctionLockChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_SystemFunctionLockChanged(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT add_SystemFunctionLockIndicatorChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionLockIndicatorChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SystemFunctionLockIndicatorChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionLockIndicatorChangedEventArgs_t *")] ITypedEventHandler<Pointer<ISystemButtonEventController>, Pointer<ISystemFunctionLockIndicatorChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_SystemFunctionLockIndicatorChanged(EventRegistrationToken token);
@@ -184,25 +184,25 @@ public unsafe partial struct ISystemButtonEventController : ISystemButtonEventCo
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionButtonEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SystemFunctionButtonPressed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISystemButtonEventController>, Pointer<ISystemFunctionButtonEventArgs>>*, EventRegistrationToken*, int> add_SystemFunctionButtonPressed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SystemFunctionButtonPressed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionButtonEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SystemFunctionButtonReleased;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISystemButtonEventController>, Pointer<ISystemFunctionButtonEventArgs>>*, EventRegistrationToken*, int> add_SystemFunctionButtonReleased;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SystemFunctionButtonReleased;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionLockChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SystemFunctionLockChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISystemButtonEventController>, Pointer<ISystemFunctionLockChangedEventArgs>>*, EventRegistrationToken*, int> add_SystemFunctionLockChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SystemFunctionLockChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CSystemButtonEventController_Windows__CUI__CInput__CSystemFunctionLockIndicatorChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SystemFunctionLockIndicatorChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISystemButtonEventController>, Pointer<ISystemFunctionLockIndicatorChangedEventArgs>>*, EventRegistrationToken*, int> add_SystemFunctionLockIndicatorChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SystemFunctionLockIndicatorChanged;

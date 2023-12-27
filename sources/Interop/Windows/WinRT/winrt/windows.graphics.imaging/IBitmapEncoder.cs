@@ -170,9 +170,9 @@ public unsafe partial struct IBitmapEncoder : IBitmapEncoder.Interface, INativeG
     /// <include file='IBitmapEncoder.xml' path='doc/member[@name="IBitmapEncoder.GoToNextFrameWithEncodingOptionsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT GoToNextFrameWithEncodingOptionsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTypedValue_t *")] IIterable<IntPtr>* encodingOptions, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo)
+    public HRESULT GoToNextFrameWithEncodingOptionsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTypedValue_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IBitmapTypedValue>>>>* encodingOptions, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBitmapEncoder*, IIterable<IntPtr>*, IAsyncAction**, int>)(lpVtbl[18]))((IBitmapEncoder*)Unsafe.AsPointer(ref this), encodingOptions, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IBitmapEncoder*, IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IBitmapTypedValue>>>>*, IAsyncAction**, int>)(lpVtbl[18]))((IBitmapEncoder*)Unsafe.AsPointer(ref this), encodingOptions, asyncInfo);
     }
 
     /// <include file='IBitmapEncoder.xml' path='doc/member[@name="IBitmapEncoder.FlushAsync"]/*' />
@@ -222,7 +222,7 @@ public unsafe partial struct IBitmapEncoder : IBitmapEncoder.Interface, INativeG
         HRESULT GoToNextFrameAsync([NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
 
         [VtblIndex(18)]
-        HRESULT GoToNextFrameWithEncodingOptionsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTypedValue_t *")] IIterable<IntPtr>* encodingOptions, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
+        HRESULT GoToNextFrameWithEncodingOptionsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTypedValue_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IBitmapTypedValue>>>>* encodingOptions, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
 
         [VtblIndex(19)]
         HRESULT FlushAsync([NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
@@ -286,7 +286,7 @@ public unsafe partial struct IBitmapEncoder : IBitmapEncoder.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncAction**, int> GoToNextFrameAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTypedValue_t *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IAsyncAction**, int> GoToNextFrameWithEncodingOptionsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IBitmapTypedValue>>>>*, IAsyncAction**, int> GoToNextFrameWithEncodingOptionsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncAction**, int> FlushAsync;

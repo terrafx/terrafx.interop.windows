@@ -90,9 +90,9 @@ public unsafe partial struct ILocalContentSuggestionSettings : ILocalContentSugg
     /// <include file='ILocalContentSuggestionSettings.xml' path='doc/member[@name="ILocalContentSuggestionSettings.get_Locations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Locations([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStorageFolder_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Locations([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStorageFolder_t **")] IVector<Pointer<IStorageFolder>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ILocalContentSuggestionSettings*, IVector<IntPtr>**, int>)(lpVtbl[8]))((ILocalContentSuggestionSettings*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ILocalContentSuggestionSettings*, IVector<Pointer<IStorageFolder>>**, int>)(lpVtbl[8]))((ILocalContentSuggestionSettings*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ILocalContentSuggestionSettings.xml' path='doc/member[@name="ILocalContentSuggestionSettings.put_AqsFilter"]/*' />
@@ -128,7 +128,7 @@ public unsafe partial struct ILocalContentSuggestionSettings : ILocalContentSugg
         HRESULT get_Enabled([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(8)]
-        HRESULT get_Locations([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStorageFolder_t **")] IVector<IntPtr>** value);
+        HRESULT get_Locations([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStorageFolder_t **")] IVector<Pointer<IStorageFolder>>** value);
 
         [VtblIndex(9)]
         HRESULT put_AqsFilter(HSTRING value);
@@ -168,7 +168,7 @@ public unsafe partial struct ILocalContentSuggestionSettings : ILocalContentSugg
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_Enabled;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Locations;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IStorageFolder>>**, int> get_Locations;
 
         [NativeTypeName("HRESULT (HSTRING) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_AqsFilter;

@@ -76,16 +76,16 @@ public unsafe partial struct IFileOpenPickerContinuationEventArgs : IFileOpenPic
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [Obsolete("IFileOpenPickerContinuationEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]
-    public HRESULT get_Files([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Files([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IVectorView<Pointer<IStorageFile>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileOpenPickerContinuationEventArgs*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IFileOpenPickerContinuationEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IFileOpenPickerContinuationEventArgs*, IVectorView<Pointer<IStorageFile>>**, int>)(lpVtbl[6]))((IFileOpenPickerContinuationEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
         [Obsolete("IFileOpenPickerContinuationEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        HRESULT get_Files([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Files([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IVectorView<Pointer<IStorageFile>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -111,6 +111,6 @@ public unsafe partial struct IFileOpenPickerContinuationEventArgs : IFileOpenPic
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
         [Obsolete("IFileOpenPickerContinuationEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Files;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IStorageFile>>**, int> get_Files;
     }
 }

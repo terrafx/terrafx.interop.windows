@@ -74,15 +74,15 @@ public unsafe partial struct IWebProviderTokenRequest2 : IWebProviderTokenReques
     /// <include file='IWebProviderTokenRequest2.xml' path='doc/member[@name="IWebProviderTokenRequest2.GetApplicationTokenBindingKeyIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetApplicationTokenBindingKeyIdAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::TokenBindingKeyType")] TokenBindingKeyType keyType, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* target, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT GetApplicationTokenBindingKeyIdAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::TokenBindingKeyType")] TokenBindingKeyType keyType, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* target, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IBuffer>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebProviderTokenRequest2*, TokenBindingKeyType, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IWebProviderTokenRequest2*)Unsafe.AsPointer(ref this), keyType, target, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebProviderTokenRequest2*, TokenBindingKeyType, IUriRuntimeClass*, IAsyncOperation<Pointer<IBuffer>>**, int>)(lpVtbl[6]))((IWebProviderTokenRequest2*)Unsafe.AsPointer(ref this), keyType, target, asyncInfo);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetApplicationTokenBindingKeyIdAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::TokenBindingKeyType")] TokenBindingKeyType keyType, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* target, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT GetApplicationTokenBindingKeyIdAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::TokenBindingKeyType")] TokenBindingKeyType keyType, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* target, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IBuffer>>** asyncInfo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IWebProviderTokenRequest2 : IWebProviderTokenReques
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Authentication::Web::TokenBindingKeyType, ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, TokenBindingKeyType, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int> GetApplicationTokenBindingKeyIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TokenBindingKeyType, IUriRuntimeClass*, IAsyncOperation<Pointer<IBuffer>>**, int> GetApplicationTokenBindingKeyIdAsync;
     }
 }

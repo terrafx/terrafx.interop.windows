@@ -90,9 +90,9 @@ public unsafe partial struct IContactChangeReader : IContactChangeReader.Interfa
     /// <include file='IContactChangeReader.xml' path='doc/member[@name="IContactChangeReader.ReadBatchAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContactChange>>>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactChangeReader*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IContactChangeReader*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContactChangeReader*, IAsyncOperation<Pointer<IVectorView<Pointer<IContactChange>>>>**, int>)(lpVtbl[8]))((IContactChangeReader*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IContactChangeReader : IContactChangeReader.Interfa
         HRESULT AcceptChangesThrough([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContactChange *")] IContactChange* lastChangeToAccept);
 
         [VtblIndex(8)]
-        HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContactChange>>>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IContactChangeReader : IContactChangeReader.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, IContactChange*, int> AcceptChangesThrough;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactChange_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> ReadBatchAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IContactChange>>>>**, int> ReadBatchAsync;
     }
 }

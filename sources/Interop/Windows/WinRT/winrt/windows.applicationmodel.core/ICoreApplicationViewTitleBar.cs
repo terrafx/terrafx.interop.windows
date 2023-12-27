@@ -114,9 +114,9 @@ public unsafe partial struct ICoreApplicationViewTitleBar : ICoreApplicationView
     /// <include file='ICoreApplicationViewTitleBar.xml' path='doc/member[@name="ICoreApplicationViewTitleBar.add_LayoutMetricsChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_LayoutMetricsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationViewTitleBar_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_LayoutMetricsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationViewTitleBar_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreApplicationViewTitleBar>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreApplicationViewTitleBar*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((ICoreApplicationViewTitleBar*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreApplicationViewTitleBar*, ITypedEventHandler<Pointer<ICoreApplicationViewTitleBar>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((ICoreApplicationViewTitleBar*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreApplicationViewTitleBar.xml' path='doc/member[@name="ICoreApplicationViewTitleBar.remove_LayoutMetricsChanged"]/*' />
@@ -138,9 +138,9 @@ public unsafe partial struct ICoreApplicationViewTitleBar : ICoreApplicationView
     /// <include file='ICoreApplicationViewTitleBar.xml' path='doc/member[@name="ICoreApplicationViewTitleBar.add_IsVisibleChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_IsVisibleChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationViewTitleBar_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_IsVisibleChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationViewTitleBar_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreApplicationViewTitleBar>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreApplicationViewTitleBar*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((ICoreApplicationViewTitleBar*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreApplicationViewTitleBar*, ITypedEventHandler<Pointer<ICoreApplicationViewTitleBar>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((ICoreApplicationViewTitleBar*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreApplicationViewTitleBar.xml' path='doc/member[@name="ICoreApplicationViewTitleBar.remove_IsVisibleChanged"]/*' />
@@ -169,7 +169,7 @@ public unsafe partial struct ICoreApplicationViewTitleBar : ICoreApplicationView
         HRESULT get_Height(double* value);
 
         [VtblIndex(11)]
-        HRESULT add_LayoutMetricsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationViewTitleBar_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_LayoutMetricsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationViewTitleBar_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreApplicationViewTitleBar>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_LayoutMetricsChanged(EventRegistrationToken token);
@@ -178,7 +178,7 @@ public unsafe partial struct ICoreApplicationViewTitleBar : ICoreApplicationView
         HRESULT get_IsVisible([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(14)]
-        HRESULT add_IsVisibleChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationViewTitleBar_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_IsVisibleChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationViewTitleBar_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreApplicationViewTitleBar>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(15)]
         HRESULT remove_IsVisibleChanged(EventRegistrationToken token);
@@ -221,7 +221,7 @@ public unsafe partial struct ICoreApplicationViewTitleBar : ICoreApplicationView
         public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_Height;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationViewTitleBar_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_LayoutMetricsChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreApplicationViewTitleBar>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_LayoutMetricsChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_LayoutMetricsChanged;
@@ -230,7 +230,7 @@ public unsafe partial struct ICoreApplicationViewTitleBar : ICoreApplicationView
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsVisible;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationViewTitleBar_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_IsVisibleChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreApplicationViewTitleBar>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_IsVisibleChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_IsVisibleChanged;

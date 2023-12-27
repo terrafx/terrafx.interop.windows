@@ -82,9 +82,9 @@ public unsafe partial struct IPackage6 : IPackage6.Interface, INativeGuid
     /// <include file='IPackage6.xml' path='doc/member[@name="IPackage6.CheckUpdateAvailabilityAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CheckUpdateAvailabilityAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageUpdateAvailabilityResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CheckUpdateAvailabilityAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageUpdateAvailabilityResult_t **")] IAsyncOperation<Pointer<IPackageUpdateAvailabilityResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackage6*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IPackage6*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IPackage6*, IAsyncOperation<Pointer<IPackageUpdateAvailabilityResult>>**, int>)(lpVtbl[7]))((IPackage6*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IPackage6 : IPackage6.Interface, INativeGuid
         HRESULT GetAppInstallerInfo([NativeTypeName("ABI::Windows::ApplicationModel::IAppInstallerInfo **")] IAppInstallerInfo** value);
 
         [VtblIndex(7)]
-        HRESULT CheckUpdateAvailabilityAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageUpdateAvailabilityResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CheckUpdateAvailabilityAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageUpdateAvailabilityResult_t **")] IAsyncOperation<Pointer<IPackageUpdateAvailabilityResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IPackage6 : IPackage6.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppInstallerInfo**, int> GetAppInstallerInfo;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageUpdateAvailabilityResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> CheckUpdateAvailabilityAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IPackageUpdateAvailabilityResult>>**, int> CheckUpdateAvailabilityAsync;
     }
 }

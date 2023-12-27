@@ -74,9 +74,9 @@ public unsafe partial struct IVoipPhoneCall : IVoipPhoneCall.Interface, INativeG
     /// <include file='IVoipPhoneCall.xml' path='doc/member[@name="IVoipPhoneCall.add_EndRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_EndRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_EndRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_t *")] ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallStateChangeEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IVoipPhoneCall*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IVoipPhoneCall*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IVoipPhoneCall*, ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallStateChangeEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IVoipPhoneCall*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IVoipPhoneCall.xml' path='doc/member[@name="IVoipPhoneCall.remove_EndRequested"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IVoipPhoneCall : IVoipPhoneCall.Interface, INativeG
     /// <include file='IVoipPhoneCall.xml' path='doc/member[@name="IVoipPhoneCall.add_HoldRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_HoldRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_HoldRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_t *")] ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallStateChangeEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IVoipPhoneCall*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IVoipPhoneCall*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IVoipPhoneCall*, ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallStateChangeEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IVoipPhoneCall*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IVoipPhoneCall.xml' path='doc/member[@name="IVoipPhoneCall.remove_HoldRequested"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IVoipPhoneCall : IVoipPhoneCall.Interface, INativeG
     /// <include file='IVoipPhoneCall.xml' path='doc/member[@name="IVoipPhoneCall.add_ResumeRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_ResumeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ResumeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_t *")] ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallStateChangeEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IVoipPhoneCall*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IVoipPhoneCall*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IVoipPhoneCall*, ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallStateChangeEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IVoipPhoneCall*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IVoipPhoneCall.xml' path='doc/member[@name="IVoipPhoneCall.remove_ResumeRequested"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IVoipPhoneCall : IVoipPhoneCall.Interface, INativeG
     /// <include file='IVoipPhoneCall.xml' path='doc/member[@name="IVoipPhoneCall.add_AnswerRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_AnswerRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallAnswerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* acceptHandler, EventRegistrationToken* token)
+    public HRESULT add_AnswerRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallAnswerEventArgs_t *")] ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallAnswerEventArgs>>* acceptHandler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IVoipPhoneCall*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IVoipPhoneCall*)Unsafe.AsPointer(ref this), acceptHandler, token);
+        return ((delegate* unmanaged[MemberFunction]<IVoipPhoneCall*, ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallAnswerEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IVoipPhoneCall*)Unsafe.AsPointer(ref this), acceptHandler, token);
     }
 
     /// <include file='IVoipPhoneCall.xml' path='doc/member[@name="IVoipPhoneCall.remove_AnswerRequested"]/*' />
@@ -138,9 +138,9 @@ public unsafe partial struct IVoipPhoneCall : IVoipPhoneCall.Interface, INativeG
     /// <include file='IVoipPhoneCall.xml' path='doc/member[@name="IVoipPhoneCall.add_RejectRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_RejectRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallRejectEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* rejectHandler, EventRegistrationToken* token)
+    public HRESULT add_RejectRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallRejectEventArgs_t *")] ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallRejectEventArgs>>* rejectHandler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IVoipPhoneCall*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IVoipPhoneCall*)Unsafe.AsPointer(ref this), rejectHandler, token);
+        return ((delegate* unmanaged[MemberFunction]<IVoipPhoneCall*, ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallRejectEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IVoipPhoneCall*)Unsafe.AsPointer(ref this), rejectHandler, token);
     }
 
     /// <include file='IVoipPhoneCall.xml' path='doc/member[@name="IVoipPhoneCall.remove_RejectRequested"]/*' />
@@ -234,31 +234,31 @@ public unsafe partial struct IVoipPhoneCall : IVoipPhoneCall.Interface, INativeG
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_EndRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_EndRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_t *")] ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallStateChangeEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_EndRequested(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_HoldRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_HoldRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_t *")] ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallStateChangeEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_HoldRequested(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_ResumeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ResumeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_t *")] ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallStateChangeEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_ResumeRequested(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT add_AnswerRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallAnswerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* acceptHandler, EventRegistrationToken* token);
+        HRESULT add_AnswerRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallAnswerEventArgs_t *")] ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallAnswerEventArgs>>* acceptHandler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_AnswerRequested(EventRegistrationToken token);
 
         [VtblIndex(14)]
-        HRESULT add_RejectRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallRejectEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* rejectHandler, EventRegistrationToken* token);
+        HRESULT add_RejectRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallRejectEventArgs_t *")] ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallRejectEventArgs>>* rejectHandler, EventRegistrationToken* token);
 
         [VtblIndex(15)]
         HRESULT remove_RejectRequested(EventRegistrationToken token);
@@ -316,31 +316,31 @@ public unsafe partial struct IVoipPhoneCall : IVoipPhoneCall.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_EndRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallStateChangeEventArgs>>*, EventRegistrationToken*, int> add_EndRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_EndRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_HoldRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallStateChangeEventArgs>>*, EventRegistrationToken*, int> add_HoldRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_HoldRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallStateChangeEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ResumeRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallStateChangeEventArgs>>*, EventRegistrationToken*, int> add_ResumeRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ResumeRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallAnswerEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AnswerRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallAnswerEventArgs>>*, EventRegistrationToken*, int> add_AnswerRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AnswerRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipPhoneCall_Windows__CApplicationModel__CCalls__CCallRejectEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_RejectRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IVoipPhoneCall>, Pointer<ICallRejectEventArgs>>*, EventRegistrationToken*, int> add_RejectRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RejectRequested;

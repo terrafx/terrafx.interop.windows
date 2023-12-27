@@ -98,9 +98,9 @@ public unsafe partial struct IContactPanel : IContactPanel.Interface, INativeGui
     /// <include file='IContactPanel.xml' path='doc/member[@name="IContactPanel.add_LaunchFullAppRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_LaunchFullAppRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_LaunchFullAppRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IContactPanel>, Pointer<IContactPanelLaunchFullAppRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactPanel*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IContactPanel*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IContactPanel*, ITypedEventHandler<Pointer<IContactPanel>, Pointer<IContactPanelLaunchFullAppRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IContactPanel*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IContactPanel.xml' path='doc/member[@name="IContactPanel.remove_LaunchFullAppRequested"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct IContactPanel : IContactPanel.Interface, INativeGui
     /// <include file='IContactPanel.xml' path='doc/member[@name="IContactPanel.add_Closing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_Closing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Closing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_t *")] ITypedEventHandler<Pointer<IContactPanel>, Pointer<IContactPanelClosingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactPanel*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IContactPanel*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IContactPanel*, ITypedEventHandler<Pointer<IContactPanel>, Pointer<IContactPanelClosingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IContactPanel*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IContactPanel.xml' path='doc/member[@name="IContactPanel.remove_Closing"]/*' />
@@ -139,13 +139,13 @@ public unsafe partial struct IContactPanel : IContactPanel.Interface, INativeGui
         HRESULT put_HeaderColor([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_Windows__CUI__CColor_t *")] IReference<Color>* value);
 
         [VtblIndex(9)]
-        HRESULT add_LaunchFullAppRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_LaunchFullAppRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IContactPanel>, Pointer<IContactPanelLaunchFullAppRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_LaunchFullAppRequested(EventRegistrationToken token);
 
         [VtblIndex(11)]
-        HRESULT add_Closing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Closing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_t *")] ITypedEventHandler<Pointer<IContactPanel>, Pointer<IContactPanelClosingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_Closing(EventRegistrationToken token);
@@ -182,13 +182,13 @@ public unsafe partial struct IContactPanel : IContactPanel.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, IReference<Color>*, int> put_HeaderColor;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelLaunchFullAppRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_LaunchFullAppRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IContactPanel>, Pointer<IContactPanelLaunchFullAppRequestedEventArgs>>*, EventRegistrationToken*, int> add_LaunchFullAppRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_LaunchFullAppRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactPanel_Windows__CApplicationModel__CContacts__CContactPanelClosingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Closing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IContactPanel>, Pointer<IContactPanelClosingEventArgs>>*, EventRegistrationToken*, int> add_Closing;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Closing;

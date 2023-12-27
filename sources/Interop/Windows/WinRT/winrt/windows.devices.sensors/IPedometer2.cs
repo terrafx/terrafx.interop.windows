@@ -74,15 +74,15 @@ public unsafe partial struct IPedometer2 : IPedometer2.Interface, INativeGuid
     /// <include file='IPedometer2.xml' path='doc/member[@name="IPedometer2.GetCurrentReadings"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetCurrentReadings([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_Windows__CDevices__CSensors__CPedometerStepKind_Windows__CDevices__CSensors__CPedometerReading_t **")] IMapView<PedometerStepKind, IntPtr>** value)
+    public HRESULT GetCurrentReadings([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_Windows__CDevices__CSensors__CPedometerStepKind_Windows__CDevices__CSensors__CPedometerReading_t **")] IMapView<PedometerStepKind, Pointer<IPedometerReading>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPedometer2*, IMapView<PedometerStepKind, IntPtr>**, int>)(lpVtbl[6]))((IPedometer2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPedometer2*, IMapView<PedometerStepKind, Pointer<IPedometerReading>>**, int>)(lpVtbl[6]))((IPedometer2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetCurrentReadings([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_Windows__CDevices__CSensors__CPedometerStepKind_Windows__CDevices__CSensors__CPedometerReading_t **")] IMapView<PedometerStepKind, IntPtr>** value);
+        HRESULT GetCurrentReadings([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_Windows__CDevices__CSensors__CPedometerStepKind_Windows__CDevices__CSensors__CPedometerReading_t **")] IMapView<PedometerStepKind, Pointer<IPedometerReading>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IPedometer2 : IPedometer2.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_Windows__CDevices__CSensors__CPedometerStepKind_Windows__CDevices__CSensors__CPedometerReading_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<PedometerStepKind, IntPtr>**, int> GetCurrentReadings;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<PedometerStepKind, Pointer<IPedometerReading>>**, int> GetCurrentReadings;
     }
 }

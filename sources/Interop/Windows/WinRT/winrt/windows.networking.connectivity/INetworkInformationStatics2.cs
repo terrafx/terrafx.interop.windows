@@ -74,15 +74,15 @@ public unsafe partial struct INetworkInformationStatics2 : INetworkInformationSt
     /// <include file='INetworkInformationStatics2.xml' path='doc/member[@name="INetworkInformationStatics2.FindConnectionProfilesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindConnectionProfilesAsync([NativeTypeName("ABI::Windows::Networking::Connectivity::IConnectionProfileFilter *")] IConnectionProfileFilter* pProfileFilter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT FindConnectionProfilesAsync([NativeTypeName("ABI::Windows::Networking::Connectivity::IConnectionProfileFilter *")] IConnectionProfileFilter* pProfileFilter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IConnectionProfile>>>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<INetworkInformationStatics2*, IConnectionProfileFilter*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((INetworkInformationStatics2*)Unsafe.AsPointer(ref this), pProfileFilter, value);
+        return ((delegate* unmanaged[MemberFunction]<INetworkInformationStatics2*, IConnectionProfileFilter*, IAsyncOperation<Pointer<IVectorView<Pointer<IConnectionProfile>>>>**, int>)(lpVtbl[6]))((INetworkInformationStatics2*)Unsafe.AsPointer(ref this), pProfileFilter, value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FindConnectionProfilesAsync([NativeTypeName("ABI::Windows::Networking::Connectivity::IConnectionProfileFilter *")] IConnectionProfileFilter* pProfileFilter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT FindConnectionProfilesAsync([NativeTypeName("ABI::Windows::Networking::Connectivity::IConnectionProfileFilter *")] IConnectionProfileFilter* pProfileFilter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IConnectionProfile>>>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct INetworkInformationStatics2 : INetworkInformationSt
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Networking::Connectivity::IConnectionProfileFilter *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IConnectionProfileFilter*, IAsyncOperation<IntPtr>**, int> FindConnectionProfilesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IConnectionProfileFilter*, IAsyncOperation<Pointer<IVectorView<Pointer<IConnectionProfile>>>>**, int> FindConnectionProfilesAsync;
     }
 }

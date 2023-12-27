@@ -82,9 +82,9 @@ public unsafe partial struct ISpatialEntityWatcher : ISpatialEntityWatcher.Inter
     /// <include file='ISpatialEntityWatcher.xml' path='doc/member[@name="ISpatialEntityWatcher.add_Added"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_Added([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Added([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_t *")] ITypedEventHandler<Pointer<ISpatialEntityWatcher>, Pointer<ISpatialEntityAddedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpatialEntityWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ISpatialEntityWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialEntityWatcher*, ITypedEventHandler<Pointer<ISpatialEntityWatcher>, Pointer<ISpatialEntityAddedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ISpatialEntityWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISpatialEntityWatcher.xml' path='doc/member[@name="ISpatialEntityWatcher.remove_Added"]/*' />
@@ -98,9 +98,9 @@ public unsafe partial struct ISpatialEntityWatcher : ISpatialEntityWatcher.Inter
     /// <include file='ISpatialEntityWatcher.xml' path='doc/member[@name="ISpatialEntityWatcher.add_Updated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_t *")] ITypedEventHandler<Pointer<ISpatialEntityWatcher>, Pointer<ISpatialEntityUpdatedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpatialEntityWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ISpatialEntityWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialEntityWatcher*, ITypedEventHandler<Pointer<ISpatialEntityWatcher>, Pointer<ISpatialEntityUpdatedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ISpatialEntityWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISpatialEntityWatcher.xml' path='doc/member[@name="ISpatialEntityWatcher.remove_Updated"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct ISpatialEntityWatcher : ISpatialEntityWatcher.Inter
     /// <include file='ISpatialEntityWatcher.xml' path='doc/member[@name="ISpatialEntityWatcher.add_Removed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_t *")] ITypedEventHandler<Pointer<ISpatialEntityWatcher>, Pointer<ISpatialEntityRemovedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpatialEntityWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((ISpatialEntityWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialEntityWatcher*, ITypedEventHandler<Pointer<ISpatialEntityWatcher>, Pointer<ISpatialEntityRemovedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((ISpatialEntityWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISpatialEntityWatcher.xml' path='doc/member[@name="ISpatialEntityWatcher.remove_Removed"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct ISpatialEntityWatcher : ISpatialEntityWatcher.Inter
     /// <include file='ISpatialEntityWatcher.xml' path='doc/member[@name="ISpatialEntityWatcher.add_EnumerationCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<ISpatialEntityWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpatialEntityWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((ISpatialEntityWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialEntityWatcher*, ITypedEventHandler<Pointer<ISpatialEntityWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((ISpatialEntityWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISpatialEntityWatcher.xml' path='doc/member[@name="ISpatialEntityWatcher.remove_EnumerationCompleted"]/*' />
@@ -165,25 +165,25 @@ public unsafe partial struct ISpatialEntityWatcher : ISpatialEntityWatcher.Inter
         HRESULT get_Status([NativeTypeName("ABI::Windows::Perception::Spatial::SpatialEntityWatcherStatus *")] SpatialEntityWatcherStatus* value);
 
         [VtblIndex(7)]
-        HRESULT add_Added([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Added([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_t *")] ITypedEventHandler<Pointer<ISpatialEntityWatcher>, Pointer<ISpatialEntityAddedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_Added(EventRegistrationToken token);
 
         [VtblIndex(9)]
-        HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_t *")] ITypedEventHandler<Pointer<ISpatialEntityWatcher>, Pointer<ISpatialEntityUpdatedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_Updated(EventRegistrationToken token);
 
         [VtblIndex(11)]
-        HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_t *")] ITypedEventHandler<Pointer<ISpatialEntityWatcher>, Pointer<ISpatialEntityRemovedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_Removed(EventRegistrationToken token);
 
         [VtblIndex(13)]
-        HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<ISpatialEntityWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_EnumerationCompleted(EventRegistrationToken token);
@@ -220,25 +220,25 @@ public unsafe partial struct ISpatialEntityWatcher : ISpatialEntityWatcher.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, SpatialEntityWatcherStatus*, int> get_Status;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityAddedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Added;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISpatialEntityWatcher>, Pointer<ISpatialEntityAddedEventArgs>>*, EventRegistrationToken*, int> add_Added;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Added;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityUpdatedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Updated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISpatialEntityWatcher>, Pointer<ISpatialEntityUpdatedEventArgs>>*, EventRegistrationToken*, int> add_Updated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Updated;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_Windows__CPerception__CSpatial__CSpatialEntityRemovedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Removed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISpatialEntityWatcher>, Pointer<ISpatialEntityRemovedEventArgs>>*, EventRegistrationToken*, int> add_Removed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Removed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialEntityWatcher_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_EnumerationCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISpatialEntityWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_EnumerationCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_EnumerationCompleted;

@@ -74,114 +74,114 @@ public unsafe partial struct IStorageFolder : IStorageFolder.Interface, INativeG
     /// <include file='IStorageFolder.xml' path='doc/member[@name="IStorageFolder.CreateFileAsyncOverloadDefaultOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateFileAsyncOverloadDefaultOptions(HSTRING desiredName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateFileAsyncOverloadDefaultOptions(HSTRING desiredName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStorageFolder*)Unsafe.AsPointer(ref this), desiredName, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, HSTRING, IAsyncOperation<Pointer<IStorageFile>>**, int>)(lpVtbl[6]))((IStorageFolder*)Unsafe.AsPointer(ref this), desiredName, operation);
     }
 
     /// <include file='IStorageFolder.xml' path='doc/member[@name="IStorageFolder.CreateFileAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateFileAsync(HSTRING desiredName, [NativeTypeName("ABI::Windows::Storage::CreationCollisionOption")] CreationCollisionOption options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateFileAsync(HSTRING desiredName, [NativeTypeName("ABI::Windows::Storage::CreationCollisionOption")] CreationCollisionOption options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, HSTRING, CreationCollisionOption, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IStorageFolder*)Unsafe.AsPointer(ref this), desiredName, options, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, HSTRING, CreationCollisionOption, IAsyncOperation<Pointer<IStorageFile>>**, int>)(lpVtbl[7]))((IStorageFolder*)Unsafe.AsPointer(ref this), desiredName, options, operation);
     }
 
     /// <include file='IStorageFolder.xml' path='doc/member[@name="IStorageFolder.CreateFolderAsyncOverloadDefaultOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT CreateFolderAsyncOverloadDefaultOptions(HSTRING desiredName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateFolderAsyncOverloadDefaultOptions(HSTRING desiredName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IStorageFolder*)Unsafe.AsPointer(ref this), desiredName, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, HSTRING, IAsyncOperation<Pointer<IStorageFolder>>**, int>)(lpVtbl[8]))((IStorageFolder*)Unsafe.AsPointer(ref this), desiredName, operation);
     }
 
     /// <include file='IStorageFolder.xml' path='doc/member[@name="IStorageFolder.CreateFolderAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT CreateFolderAsync(HSTRING desiredName, [NativeTypeName("ABI::Windows::Storage::CreationCollisionOption")] CreationCollisionOption options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateFolderAsync(HSTRING desiredName, [NativeTypeName("ABI::Windows::Storage::CreationCollisionOption")] CreationCollisionOption options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, HSTRING, CreationCollisionOption, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IStorageFolder*)Unsafe.AsPointer(ref this), desiredName, options, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, HSTRING, CreationCollisionOption, IAsyncOperation<Pointer<IStorageFolder>>**, int>)(lpVtbl[9]))((IStorageFolder*)Unsafe.AsPointer(ref this), desiredName, options, operation);
     }
 
     /// <include file='IStorageFolder.xml' path='doc/member[@name="IStorageFolder.GetFileAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetFileAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetFileAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IStorageFolder*)Unsafe.AsPointer(ref this), name, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, HSTRING, IAsyncOperation<Pointer<IStorageFile>>**, int>)(lpVtbl[10]))((IStorageFolder*)Unsafe.AsPointer(ref this), name, operation);
     }
 
     /// <include file='IStorageFolder.xml' path='doc/member[@name="IStorageFolder.GetFolderAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetFolderAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetFolderAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IStorageFolder*)Unsafe.AsPointer(ref this), name, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, HSTRING, IAsyncOperation<Pointer<IStorageFolder>>**, int>)(lpVtbl[11]))((IStorageFolder*)Unsafe.AsPointer(ref this), name, operation);
     }
 
     /// <include file='IStorageFolder.xml' path='doc/member[@name="IStorageFolder.GetItemAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetItemAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetItemAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<Pointer<IStorageItem>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[12]))((IStorageFolder*)Unsafe.AsPointer(ref this), name, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, HSTRING, IAsyncOperation<Pointer<IStorageItem>>**, int>)(lpVtbl[12]))((IStorageFolder*)Unsafe.AsPointer(ref this), name, operation);
     }
 
     /// <include file='IStorageFolder.xml' path='doc/member[@name="IStorageFolder.GetFilesAsyncOverloadDefaultOptionsStartAndCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetFilesAsyncOverloadDefaultOptionsStartAndCount([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetFilesAsyncOverloadDefaultOptionsStartAndCount([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFile>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[13]))((IStorageFolder*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFile>>>>**, int>)(lpVtbl[13]))((IStorageFolder*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IStorageFolder.xml' path='doc/member[@name="IStorageFolder.GetFoldersAsyncOverloadDefaultOptionsStartAndCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetFoldersAsyncOverloadDefaultOptionsStartAndCount([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetFoldersAsyncOverloadDefaultOptionsStartAndCount([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[14]))((IStorageFolder*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>**, int>)(lpVtbl[14]))((IStorageFolder*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IStorageFolder.xml' path='doc/member[@name="IStorageFolder.GetItemsAsyncOverloadDefaultStartAndCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT GetItemsAsyncOverloadDefaultStartAndCount([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetItemsAsyncOverloadDefaultStartAndCount([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageItem>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[15]))((IStorageFolder*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolder*, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageItem>>>>**, int>)(lpVtbl[15]))((IStorageFolder*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CreateFileAsyncOverloadDefaultOptions(HSTRING desiredName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateFileAsyncOverloadDefaultOptions(HSTRING desiredName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation);
 
         [VtblIndex(7)]
-        HRESULT CreateFileAsync(HSTRING desiredName, [NativeTypeName("ABI::Windows::Storage::CreationCollisionOption")] CreationCollisionOption options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateFileAsync(HSTRING desiredName, [NativeTypeName("ABI::Windows::Storage::CreationCollisionOption")] CreationCollisionOption options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation);
 
         [VtblIndex(8)]
-        HRESULT CreateFolderAsyncOverloadDefaultOptions(HSTRING desiredName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateFolderAsyncOverloadDefaultOptions(HSTRING desiredName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation);
 
         [VtblIndex(9)]
-        HRESULT CreateFolderAsync(HSTRING desiredName, [NativeTypeName("ABI::Windows::Storage::CreationCollisionOption")] CreationCollisionOption options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateFolderAsync(HSTRING desiredName, [NativeTypeName("ABI::Windows::Storage::CreationCollisionOption")] CreationCollisionOption options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation);
 
         [VtblIndex(10)]
-        HRESULT GetFileAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetFileAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation);
 
         [VtblIndex(11)]
-        HRESULT GetFolderAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetFolderAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation);
 
         [VtblIndex(12)]
-        HRESULT GetItemAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetItemAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<Pointer<IStorageItem>>** operation);
 
         [VtblIndex(13)]
-        HRESULT GetFilesAsyncOverloadDefaultOptionsStartAndCount([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetFilesAsyncOverloadDefaultOptionsStartAndCount([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFile>>>>** operation);
 
         [VtblIndex(14)]
-        HRESULT GetFoldersAsyncOverloadDefaultOptionsStartAndCount([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetFoldersAsyncOverloadDefaultOptionsStartAndCount([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>** operation);
 
         [VtblIndex(15)]
-        HRESULT GetItemsAsyncOverloadDefaultStartAndCount([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetItemsAsyncOverloadDefaultStartAndCount([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageItem>>>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -206,33 +206,33 @@ public unsafe partial struct IStorageFolder : IStorageFolder.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> CreateFileAsyncOverloadDefaultOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IStorageFile>>**, int> CreateFileAsyncOverloadDefaultOptions;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Storage::CreationCollisionOption, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, CreationCollisionOption, IAsyncOperation<IntPtr>**, int> CreateFileAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, CreationCollisionOption, IAsyncOperation<Pointer<IStorageFile>>**, int> CreateFileAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> CreateFolderAsyncOverloadDefaultOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IStorageFolder>>**, int> CreateFolderAsyncOverloadDefaultOptions;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Storage::CreationCollisionOption, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, CreationCollisionOption, IAsyncOperation<IntPtr>**, int> CreateFolderAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, CreationCollisionOption, IAsyncOperation<Pointer<IStorageFolder>>**, int> CreateFolderAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetFileAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IStorageFile>>**, int> GetFileAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetFolderAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IStorageFolder>>**, int> GetFolderAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CIStorageItem_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetItemAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IStorageItem>>**, int> GetItemAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetFilesAsyncOverloadDefaultOptionsStartAndCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFile>>>>**, int> GetFilesAsyncOverloadDefaultOptionsStartAndCount;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetFoldersAsyncOverloadDefaultOptionsStartAndCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>**, int> GetFoldersAsyncOverloadDefaultOptionsStartAndCount;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CIStorageItem_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetItemsAsyncOverloadDefaultStartAndCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageItem>>>>**, int> GetItemsAsyncOverloadDefaultStartAndCount;
     }
 }

@@ -98,9 +98,9 @@ public unsafe partial struct IDisplayInformationStatics : IDisplayInformationSta
     /// <include file='IDisplayInformationStatics.xml' path='doc/member[@name="IDisplayInformationStatics.add_DisplayContentsInvalidated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_DisplayContentsInvalidated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_DisplayContentsInvalidated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_t *")] ITypedEventHandler<Pointer<IDisplayInformation>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDisplayInformationStatics*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IDisplayInformationStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayInformationStatics*, ITypedEventHandler<Pointer<IDisplayInformation>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IDisplayInformationStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDisplayInformationStatics.xml' path='doc/member[@name="IDisplayInformationStatics.remove_DisplayContentsInvalidated"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IDisplayInformationStatics : IDisplayInformationSta
         HRESULT put_AutoRotationPreferences([NativeTypeName("ABI::Windows::Graphics::Display::DisplayOrientations")] DisplayOrientations value);
 
         [VtblIndex(9)]
-        HRESULT add_DisplayContentsInvalidated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_DisplayContentsInvalidated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_t *")] ITypedEventHandler<Pointer<IDisplayInformation>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_DisplayContentsInvalidated(EventRegistrationToken token);
@@ -160,7 +160,7 @@ public unsafe partial struct IDisplayInformationStatics : IDisplayInformationSta
         public delegate* unmanaged[MemberFunction]<TSelf*, DisplayOrientations, int> put_AutoRotationPreferences;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DisplayContentsInvalidated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDisplayInformation>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_DisplayContentsInvalidated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DisplayContentsInvalidated;

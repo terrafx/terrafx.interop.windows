@@ -90,9 +90,9 @@ public unsafe partial struct IPwmControllerStatics3 : IPwmControllerStatics3.Int
     /// <include file='IPwmControllerStatics3.xml' path='doc/member[@name="IPwmControllerStatics3.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPwm__CPwmController_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPwm__CPwmController_t **")] IAsyncOperation<Pointer<IPwmController>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPwmControllerStatics3*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IPwmControllerStatics3*)Unsafe.AsPointer(ref this), deviceId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IPwmControllerStatics3*, HSTRING, IAsyncOperation<Pointer<IPwmController>>**, int>)(lpVtbl[8]))((IPwmControllerStatics3*)Unsafe.AsPointer(ref this), deviceId, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IPwmControllerStatics3 : IPwmControllerStatics3.Int
         HRESULT GetDeviceSelectorFromFriendlyName(HSTRING friendlyName, HSTRING* result);
 
         [VtblIndex(8)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPwm__CPwmController_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPwm__CPwmController_t **")] IAsyncOperation<Pointer<IPwmController>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IPwmControllerStatics3 : IPwmControllerStatics3.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING*, int> GetDeviceSelectorFromFriendlyName;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPwm__CPwmController_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IPwmController>>**, int> FromIdAsync;
     }
 }

@@ -98,9 +98,9 @@ public unsafe partial struct IBasicVideoEffect : IBasicVideoEffect.Interface, IN
     /// <include file='IBasicVideoEffect.xml' path='doc/member[@name="IBasicVideoEffect.get_SupportedEncodingProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_SupportedEncodingProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CMediaProperties__CVideoEncodingProperties_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_SupportedEncodingProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CMediaProperties__CVideoEncodingProperties_t **")] IVectorView<Pointer<IVideoEncodingProperties>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBasicVideoEffect*, IVectorView<IntPtr>**, int>)(lpVtbl[9]))((IBasicVideoEffect*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBasicVideoEffect*, IVectorView<Pointer<IVideoEncodingProperties>>**, int>)(lpVtbl[9]))((IBasicVideoEffect*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBasicVideoEffect.xml' path='doc/member[@name="IBasicVideoEffect.SetEncodingProperties"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IBasicVideoEffect : IBasicVideoEffect.Interface, IN
         HRESULT get_TimeIndependent([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(9)]
-        HRESULT get_SupportedEncodingProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CMediaProperties__CVideoEncodingProperties_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_SupportedEncodingProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CMediaProperties__CVideoEncodingProperties_t **")] IVectorView<Pointer<IVideoEncodingProperties>>** value);
 
         [VtblIndex(10)]
         HRESULT SetEncodingProperties([NativeTypeName("ABI::Windows::Media::MediaProperties::IVideoEncodingProperties *")] IVideoEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice *")] IDirect3DDevice* device);
@@ -193,7 +193,7 @@ public unsafe partial struct IBasicVideoEffect : IBasicVideoEffect.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_TimeIndependent;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CMediaProperties__CVideoEncodingProperties_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_SupportedEncodingProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IVideoEncodingProperties>>**, int> get_SupportedEncodingProperties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::MediaProperties::IVideoEncodingProperties *, ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DDevice *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IVideoEncodingProperties*, IDirect3DDevice*, int> SetEncodingProperties;

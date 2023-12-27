@@ -130,9 +130,9 @@ public unsafe partial struct IBluetoothAdapter : IBluetoothAdapter.Interface, IN
     /// <include file='IBluetoothAdapter.xml' path='doc/member[@name="IBluetoothAdapter.GetRadioAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetRadioAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CRadios__CRadio_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetRadioAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CRadios__CRadio_t **")] IAsyncOperation<Pointer<IRadio>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothAdapter*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[13]))((IBluetoothAdapter*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothAdapter*, IAsyncOperation<Pointer<IRadio>>**, int>)(lpVtbl[13]))((IBluetoothAdapter*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -159,7 +159,7 @@ public unsafe partial struct IBluetoothAdapter : IBluetoothAdapter.Interface, IN
         HRESULT get_IsAdvertisementOffloadSupported([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(13)]
-        HRESULT GetRadioAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CRadios__CRadio_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetRadioAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CRadios__CRadio_t **")] IAsyncOperation<Pointer<IRadio>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -205,6 +205,6 @@ public unsafe partial struct IBluetoothAdapter : IBluetoothAdapter.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsAdvertisementOffloadSupported;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CRadios__CRadio_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetRadioAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IRadio>>**, int> GetRadioAsync;
     }
 }

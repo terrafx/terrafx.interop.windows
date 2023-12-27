@@ -82,9 +82,9 @@ public unsafe partial struct IMemoryBufferReference : IMemoryBufferReference.Int
     /// <include file='IMemoryBufferReference.xml' path='doc/member[@name="IMemoryBufferReference.add_Closed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CFoundation__CIMemoryBufferReference_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CFoundation__CIMemoryBufferReference_IInspectable_t *")] ITypedEventHandler<Pointer<IMemoryBufferReference>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMemoryBufferReference*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMemoryBufferReference*, ITypedEventHandler<Pointer<IMemoryBufferReference>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IMemoryBufferReference*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMemoryBufferReference.xml' path='doc/member[@name="IMemoryBufferReference.remove_Closed"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IMemoryBufferReference : IMemoryBufferReference.Int
         HRESULT get_Capacity([NativeTypeName("UINT32 *")] uint* value);
 
         [VtblIndex(7)]
-        HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CFoundation__CIMemoryBufferReference_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CFoundation__CIMemoryBufferReference_IInspectable_t *")] ITypedEventHandler<Pointer<IMemoryBufferReference>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(8)]
         HRESULT remove_Closed(EventRegistrationToken cookie);
@@ -132,7 +132,7 @@ public unsafe partial struct IMemoryBufferReference : IMemoryBufferReference.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_Capacity;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CFoundation__CIMemoryBufferReference_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Closed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMemoryBufferReference>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Closed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Closed;

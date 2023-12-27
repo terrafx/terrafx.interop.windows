@@ -146,9 +146,9 @@ public unsafe partial struct IFolderPicker : IFolderPicker.Interface, INativeGui
     /// <include file='IFolderPicker.xml' path='doc/member[@name="IFolderPicker.PickSingleFolderAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT PickSingleFolderAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT PickSingleFolderAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFolderPicker*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[15]))((IFolderPicker*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IFolderPicker*, IAsyncOperation<Pointer<IStorageFolder>>**, int>)(lpVtbl[15]))((IFolderPicker*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -181,7 +181,7 @@ public unsafe partial struct IFolderPicker : IFolderPicker.Interface, INativeGui
         HRESULT get_FileTypeFilter([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t **")] IVector<HSTRING>** value);
 
         [VtblIndex(15)]
-        HRESULT PickSingleFolderAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT PickSingleFolderAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -233,6 +233,6 @@ public unsafe partial struct IFolderPicker : IFolderPicker.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, IVector<HSTRING>**, int> get_FileTypeFilter;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> PickSingleFolderAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IStorageFolder>>**, int> PickSingleFolderAsync;
     }
 }

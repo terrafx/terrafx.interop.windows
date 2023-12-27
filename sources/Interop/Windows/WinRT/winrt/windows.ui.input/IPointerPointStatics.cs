@@ -82,9 +82,9 @@ public unsafe partial struct IPointerPointStatics : IPointerPointStatics.Interfa
     /// <include file='IPointerPointStatics.xml' path='doc/member[@name="IPointerPointStatics.GetIntermediatePoints"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetIntermediatePoints([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t **")] IVector<IntPtr>** pointerPoints)
+    public HRESULT GetIntermediatePoints([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t **")] IVector<Pointer<IPointerPoint>>** pointerPoints)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPointerPointStatics*, uint, IVector<IntPtr>**, int>)(lpVtbl[7]))((IPointerPointStatics*)Unsafe.AsPointer(ref this), pointerId, pointerPoints);
+        return ((delegate* unmanaged[MemberFunction]<IPointerPointStatics*, uint, IVector<Pointer<IPointerPoint>>**, int>)(lpVtbl[7]))((IPointerPointStatics*)Unsafe.AsPointer(ref this), pointerId, pointerPoints);
     }
 
     /// <include file='IPointerPointStatics.xml' path='doc/member[@name="IPointerPointStatics.GetCurrentPointTransformed"]/*' />
@@ -98,9 +98,9 @@ public unsafe partial struct IPointerPointStatics : IPointerPointStatics.Interfa
     /// <include file='IPointerPointStatics.xml' path='doc/member[@name="IPointerPointStatics.GetIntermediatePointsTransformed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetIntermediatePointsTransformed([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("ABI::Windows::UI::Input::IPointerPointTransform *")] IPointerPointTransform* transform, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t **")] IVector<IntPtr>** pointerPoints)
+    public HRESULT GetIntermediatePointsTransformed([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("ABI::Windows::UI::Input::IPointerPointTransform *")] IPointerPointTransform* transform, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t **")] IVector<Pointer<IPointerPoint>>** pointerPoints)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPointerPointStatics*, uint, IPointerPointTransform*, IVector<IntPtr>**, int>)(lpVtbl[9]))((IPointerPointStatics*)Unsafe.AsPointer(ref this), pointerId, transform, pointerPoints);
+        return ((delegate* unmanaged[MemberFunction]<IPointerPointStatics*, uint, IPointerPointTransform*, IVector<Pointer<IPointerPoint>>**, int>)(lpVtbl[9]))((IPointerPointStatics*)Unsafe.AsPointer(ref this), pointerId, transform, pointerPoints);
     }
 
     public interface Interface : IInspectable.Interface
@@ -109,13 +109,13 @@ public unsafe partial struct IPointerPointStatics : IPointerPointStatics.Interfa
         HRESULT GetCurrentPoint([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("ABI::Windows::UI::Input::IPointerPoint **")] IPointerPoint** pointerPoint);
 
         [VtblIndex(7)]
-        HRESULT GetIntermediatePoints([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t **")] IVector<IntPtr>** pointerPoints);
+        HRESULT GetIntermediatePoints([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t **")] IVector<Pointer<IPointerPoint>>** pointerPoints);
 
         [VtblIndex(8)]
         HRESULT GetCurrentPointTransformed([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("ABI::Windows::UI::Input::IPointerPointTransform *")] IPointerPointTransform* transform, [NativeTypeName("ABI::Windows::UI::Input::IPointerPoint **")] IPointerPoint** pointerPoint);
 
         [VtblIndex(9)]
-        HRESULT GetIntermediatePointsTransformed([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("ABI::Windows::UI::Input::IPointerPointTransform *")] IPointerPointTransform* transform, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t **")] IVector<IntPtr>** pointerPoints);
+        HRESULT GetIntermediatePointsTransformed([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("ABI::Windows::UI::Input::IPointerPointTransform *")] IPointerPointTransform* transform, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t **")] IVector<Pointer<IPointerPoint>>** pointerPoints);
     }
 
     public partial struct Vtbl<TSelf>
@@ -143,12 +143,12 @@ public unsafe partial struct IPointerPointStatics : IPointerPointStatics.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, uint, IPointerPoint**, int> GetCurrentPoint;
 
         [NativeTypeName("HRESULT (UINT32, ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IVector<IntPtr>**, int> GetIntermediatePoints;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IVector<Pointer<IPointerPoint>>**, int> GetIntermediatePoints;
 
         [NativeTypeName("HRESULT (UINT32, ABI::Windows::UI::Input::IPointerPointTransform *, ABI::Windows::UI::Input::IPointerPoint **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, uint, IPointerPointTransform*, IPointerPoint**, int> GetCurrentPointTransformed;
 
         [NativeTypeName("HRESULT (UINT32, ABI::Windows::UI::Input::IPointerPointTransform *, ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IPointerPointTransform*, IVector<IntPtr>**, int> GetIntermediatePointsTransformed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IPointerPointTransform*, IVector<Pointer<IPointerPoint>>**, int> GetIntermediatePointsTransformed;
     }
 }

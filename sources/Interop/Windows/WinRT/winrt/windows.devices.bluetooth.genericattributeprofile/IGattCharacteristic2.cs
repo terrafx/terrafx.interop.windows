@@ -83,9 +83,9 @@ public unsafe partial struct IGattCharacteristic2 : IGattCharacteristic2.Interfa
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [Obsolete("Use GetDescriptorsAsync instead of GetAllDescriptors.  For more information, see MSDN.")]
-    public HRESULT GetAllDescriptors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDescriptor_t **")] IVectorView<IntPtr>** descriptors)
+    public HRESULT GetAllDescriptors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDescriptor_t **")] IVectorView<Pointer<IGattDescriptor>>** descriptors)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristic2*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IGattCharacteristic2*)Unsafe.AsPointer(ref this), descriptors);
+        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristic2*, IVectorView<Pointer<IGattDescriptor>>**, int>)(lpVtbl[7]))((IGattCharacteristic2*)Unsafe.AsPointer(ref this), descriptors);
     }
 
     public interface Interface : IInspectable.Interface
@@ -95,7 +95,7 @@ public unsafe partial struct IGattCharacteristic2 : IGattCharacteristic2.Interfa
 
         [VtblIndex(7)]
         [Obsolete("Use GetDescriptorsAsync instead of GetAllDescriptors.  For more information, see MSDN.")]
-        HRESULT GetAllDescriptors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDescriptor_t **")] IVectorView<IntPtr>** descriptors);
+        HRESULT GetAllDescriptors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDescriptor_t **")] IVectorView<Pointer<IGattDescriptor>>** descriptors);
     }
 
     public partial struct Vtbl<TSelf>
@@ -124,6 +124,6 @@ public unsafe partial struct IGattCharacteristic2 : IGattCharacteristic2.Interfa
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDescriptor_t **) __attribute__((stdcall))")]
         [Obsolete("Use GetDescriptorsAsync instead of GetAllDescriptors.  For more information, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetAllDescriptors;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IGattDescriptor>>**, int> GetAllDescriptors;
     }
 }

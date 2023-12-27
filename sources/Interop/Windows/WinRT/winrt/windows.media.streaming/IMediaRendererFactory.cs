@@ -74,26 +74,26 @@ public unsafe partial struct IMediaRendererFactory : IMediaRendererFactory.Inter
     /// <include file='IMediaRendererFactory.xml' path='doc/member[@name="IMediaRendererFactory.CreateMediaRendererAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateMediaRendererAsync(HSTRING deviceIdentifier, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CMediaRenderer_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT CreateMediaRendererAsync(HSTRING deviceIdentifier, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CMediaRenderer_t **")] IAsyncOperation<Pointer<IMediaRenderer>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaRendererFactory*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IMediaRendererFactory*)Unsafe.AsPointer(ref this), deviceIdentifier, value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaRendererFactory*, HSTRING, IAsyncOperation<Pointer<IMediaRenderer>>**, int>)(lpVtbl[6]))((IMediaRendererFactory*)Unsafe.AsPointer(ref this), deviceIdentifier, value);
     }
 
     /// <include file='IMediaRendererFactory.xml' path='doc/member[@name="IMediaRendererFactory.CreateMediaRendererFromBasicDeviceAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateMediaRendererFromBasicDeviceAsync([NativeTypeName("ABI::Windows::Media::Streaming::IBasicDevice *")] IBasicDevice* basicDevice, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CMediaRenderer_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT CreateMediaRendererFromBasicDeviceAsync([NativeTypeName("ABI::Windows::Media::Streaming::IBasicDevice *")] IBasicDevice* basicDevice, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CMediaRenderer_t **")] IAsyncOperation<Pointer<IMediaRenderer>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaRendererFactory*, IBasicDevice*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IMediaRendererFactory*)Unsafe.AsPointer(ref this), basicDevice, value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaRendererFactory*, IBasicDevice*, IAsyncOperation<Pointer<IMediaRenderer>>**, int>)(lpVtbl[7]))((IMediaRendererFactory*)Unsafe.AsPointer(ref this), basicDevice, value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CreateMediaRendererAsync(HSTRING deviceIdentifier, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CMediaRenderer_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT CreateMediaRendererAsync(HSTRING deviceIdentifier, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CMediaRenderer_t **")] IAsyncOperation<Pointer<IMediaRenderer>>** value);
 
         [VtblIndex(7)]
-        HRESULT CreateMediaRendererFromBasicDeviceAsync([NativeTypeName("ABI::Windows::Media::Streaming::IBasicDevice *")] IBasicDevice* basicDevice, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CMediaRenderer_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT CreateMediaRendererFromBasicDeviceAsync([NativeTypeName("ABI::Windows::Media::Streaming::IBasicDevice *")] IBasicDevice* basicDevice, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CMediaRenderer_t **")] IAsyncOperation<Pointer<IMediaRenderer>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IMediaRendererFactory : IMediaRendererFactory.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CMediaRenderer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> CreateMediaRendererAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IMediaRenderer>>**, int> CreateMediaRendererAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Streaming::IBasicDevice *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CMediaRenderer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IBasicDevice*, IAsyncOperation<IntPtr>**, int> CreateMediaRendererFromBasicDeviceAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBasicDevice*, IAsyncOperation<Pointer<IMediaRenderer>>**, int> CreateMediaRendererFromBasicDeviceAsync;
     }
 }

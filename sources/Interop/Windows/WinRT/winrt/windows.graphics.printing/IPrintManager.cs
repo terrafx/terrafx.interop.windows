@@ -74,9 +74,9 @@ public unsafe partial struct IPrintManager : IPrintManager.Interface, INativeGui
     /// <include file='IPrintManager.xml' path='doc/member[@name="IPrintManager.add_PrintTaskRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_PrintTaskRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintManager_Windows__CGraphics__CPrinting__CPrintTaskRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_PrintTaskRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintManager_Windows__CGraphics__CPrinting__CPrintTaskRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IPrintManager>, Pointer<IPrintTaskRequestedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPrintManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IPrintManager*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IPrintManager*, ITypedEventHandler<Pointer<IPrintManager>, Pointer<IPrintTaskRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IPrintManager*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
     }
 
     /// <include file='IPrintManager.xml' path='doc/member[@name="IPrintManager.remove_PrintTaskRequested"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IPrintManager : IPrintManager.Interface, INativeGui
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_PrintTaskRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintManager_Windows__CGraphics__CPrinting__CPrintTaskRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_PrintTaskRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintManager_Windows__CGraphics__CPrinting__CPrintTaskRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IPrintManager>, Pointer<IPrintTaskRequestedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(7)]
         HRESULT remove_PrintTaskRequested(EventRegistrationToken eventCookie);
@@ -118,7 +118,7 @@ public unsafe partial struct IPrintManager : IPrintManager.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintManager_Windows__CGraphics__CPrinting__CPrintTaskRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PrintTaskRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPrintManager>, Pointer<IPrintTaskRequestedEventArgs>>*, EventRegistrationToken*, int> add_PrintTaskRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PrintTaskRequested;

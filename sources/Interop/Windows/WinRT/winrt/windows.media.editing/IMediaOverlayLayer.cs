@@ -82,9 +82,9 @@ public unsafe partial struct IMediaOverlayLayer : IMediaOverlayLayer.Interface, 
     /// <include file='IMediaOverlayLayer.xml' path='doc/member[@name="IMediaOverlayLayer.get_Overlays"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Overlays([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEditing__CMediaOverlay_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Overlays([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEditing__CMediaOverlay_t **")] IVector<Pointer<IMediaOverlay>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaOverlayLayer*, IVector<IntPtr>**, int>)(lpVtbl[7]))((IMediaOverlayLayer*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaOverlayLayer*, IVector<Pointer<IMediaOverlay>>**, int>)(lpVtbl[7]))((IMediaOverlayLayer*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaOverlayLayer.xml' path='doc/member[@name="IMediaOverlayLayer.get_CustomCompositorDefinition"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IMediaOverlayLayer : IMediaOverlayLayer.Interface, 
         HRESULT Clone([NativeTypeName("ABI::Windows::Media::Editing::IMediaOverlayLayer **")] IMediaOverlayLayer** result);
 
         [VtblIndex(7)]
-        HRESULT get_Overlays([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEditing__CMediaOverlay_t **")] IVector<IntPtr>** value);
+        HRESULT get_Overlays([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEditing__CMediaOverlay_t **")] IVector<Pointer<IMediaOverlay>>** value);
 
         [VtblIndex(8)]
         HRESULT get_CustomCompositorDefinition([NativeTypeName("ABI::Windows::Media::Effects::IVideoCompositorDefinition **")] IVideoCompositorDefinition** value);
@@ -132,7 +132,7 @@ public unsafe partial struct IMediaOverlayLayer : IMediaOverlayLayer.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, IMediaOverlayLayer**, int> Clone;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEditing__CMediaOverlay_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Overlays;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IMediaOverlay>>**, int> get_Overlays;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Effects::IVideoCompositorDefinition **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IVideoCompositorDefinition**, int> get_CustomCompositorDefinition;

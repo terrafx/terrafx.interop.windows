@@ -74,9 +74,9 @@ public unsafe partial struct IMediaSource3 : IMediaSource3.Interface, INativeGui
     /// <include file='IMediaSource3.xml' path='doc/member[@name="IMediaSource3.add_StateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaSource>, Pointer<IMediaSourceStateChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaSource3*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaSource3*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSource3*, ITypedEventHandler<Pointer<IMediaSource>, Pointer<IMediaSourceStateChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaSource3*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaSource3.xml' path='doc/member[@name="IMediaSource3.remove_StateChanged"]/*' />
@@ -106,7 +106,7 @@ public unsafe partial struct IMediaSource3 : IMediaSource3.Interface, INativeGui
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaSource>, Pointer<IMediaSourceStateChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_StateChanged(EventRegistrationToken token);
@@ -140,7 +140,7 @@ public unsafe partial struct IMediaSource3 : IMediaSource3.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceStateChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_StateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaSource>, Pointer<IMediaSourceStateChangedEventArgs>>*, EventRegistrationToken*, int> add_StateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StateChanged;

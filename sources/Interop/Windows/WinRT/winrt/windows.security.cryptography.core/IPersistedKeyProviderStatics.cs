@@ -74,9 +74,9 @@ public unsafe partial struct IPersistedKeyProviderStatics : IPersistedKeyProvide
     /// <include file='IPersistedKeyProviderStatics.xml' path='doc/member[@name="IPersistedKeyProviderStatics.OpenKeyPairFromCertificateAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT OpenKeyPairFromCertificateAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::ICertificate *")] ICertificate* certificate, HSTRING hashAlgorithmName, [NativeTypeName("ABI::Windows::Security::Cryptography::Core::CryptographicPadding")] CryptographicPadding padding, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCore__CCryptographicKey_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT OpenKeyPairFromCertificateAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::ICertificate *")] ICertificate* certificate, HSTRING hashAlgorithmName, [NativeTypeName("ABI::Windows::Security::Cryptography::Core::CryptographicPadding")] CryptographicPadding padding, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCore__CCryptographicKey_t **")] IAsyncOperation<Pointer<ICryptographicKey>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPersistedKeyProviderStatics*, ICertificate*, HSTRING, CryptographicPadding, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IPersistedKeyProviderStatics*)Unsafe.AsPointer(ref this), certificate, hashAlgorithmName, padding, operation);
+        return ((delegate* unmanaged[MemberFunction]<IPersistedKeyProviderStatics*, ICertificate*, HSTRING, CryptographicPadding, IAsyncOperation<Pointer<ICryptographicKey>>**, int>)(lpVtbl[6]))((IPersistedKeyProviderStatics*)Unsafe.AsPointer(ref this), certificate, hashAlgorithmName, padding, operation);
     }
 
     /// <include file='IPersistedKeyProviderStatics.xml' path='doc/member[@name="IPersistedKeyProviderStatics.OpenPublicKeyFromCertificate"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IPersistedKeyProviderStatics : IPersistedKeyProvide
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT OpenKeyPairFromCertificateAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::ICertificate *")] ICertificate* certificate, HSTRING hashAlgorithmName, [NativeTypeName("ABI::Windows::Security::Cryptography::Core::CryptographicPadding")] CryptographicPadding padding, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCore__CCryptographicKey_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT OpenKeyPairFromCertificateAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::ICertificate *")] ICertificate* certificate, HSTRING hashAlgorithmName, [NativeTypeName("ABI::Windows::Security::Cryptography::Core::CryptographicPadding")] CryptographicPadding padding, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCore__CCryptographicKey_t **")] IAsyncOperation<Pointer<ICryptographicKey>>** operation);
 
         [VtblIndex(7)]
         HRESULT OpenPublicKeyFromCertificate([NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::ICertificate *")] ICertificate* certificate, HSTRING hashAlgorithmName, [NativeTypeName("ABI::Windows::Security::Cryptography::Core::CryptographicPadding")] CryptographicPadding padding, [NativeTypeName("ABI::Windows::Security::Cryptography::Core::ICryptographicKey **")] ICryptographicKey** key);
@@ -118,7 +118,7 @@ public unsafe partial struct IPersistedKeyProviderStatics : IPersistedKeyProvide
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Cryptography::Certificates::ICertificate *, HSTRING, ABI::Windows::Security::Cryptography::Core::CryptographicPadding, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCore__CCryptographicKey_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ICertificate*, HSTRING, CryptographicPadding, IAsyncOperation<IntPtr>**, int> OpenKeyPairFromCertificateAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICertificate*, HSTRING, CryptographicPadding, IAsyncOperation<Pointer<ICryptographicKey>>**, int> OpenKeyPairFromCertificateAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Cryptography::Certificates::ICertificate *, HSTRING, ABI::Windows::Security::Cryptography::Core::CryptographicPadding, ABI::Windows::Security::Cryptography::Core::ICryptographicKey **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ICertificate*, HSTRING, CryptographicPadding, ICryptographicKey**, int> OpenPublicKeyFromCertificate;

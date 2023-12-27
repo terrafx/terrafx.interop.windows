@@ -147,9 +147,9 @@ public unsafe partial struct IFileOpenPickerUI : IFileOpenPickerUI.Interface, IN
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     [Obsolete("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")]
-    public HRESULT add_FileRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CFileRemovedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_FileRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CFileRemovedEventArgs_t *")] ITypedEventHandler<Pointer<IFileOpenPickerUI>, Pointer<IFileRemovedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileOpenPickerUI*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IFileOpenPickerUI*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IFileOpenPickerUI*, ITypedEventHandler<Pointer<IFileOpenPickerUI>, Pointer<IFileRemovedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IFileOpenPickerUI*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IFileOpenPickerUI.xml' path='doc/member[@name="IFileOpenPickerUI.remove_FileRemoved"]/*' />
@@ -164,9 +164,9 @@ public unsafe partial struct IFileOpenPickerUI : IFileOpenPickerUI.Interface, IN
     /// <include file='IFileOpenPickerUI.xml' path='doc/member[@name="IFileOpenPickerUI.add_Closing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT add_Closing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CPickerClosingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Closing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CPickerClosingEventArgs_t *")] ITypedEventHandler<Pointer<IFileOpenPickerUI>, Pointer<IPickerClosingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileOpenPickerUI*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IFileOpenPickerUI*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IFileOpenPickerUI*, ITypedEventHandler<Pointer<IFileOpenPickerUI>, Pointer<IPickerClosingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IFileOpenPickerUI*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IFileOpenPickerUI.xml' path='doc/member[@name="IFileOpenPickerUI.remove_Closing"]/*' />
@@ -208,14 +208,14 @@ public unsafe partial struct IFileOpenPickerUI : IFileOpenPickerUI.Interface, IN
 
         [VtblIndex(15)]
         [Obsolete("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")]
-        HRESULT add_FileRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CFileRemovedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_FileRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CFileRemovedEventArgs_t *")] ITypedEventHandler<Pointer<IFileOpenPickerUI>, Pointer<IFileRemovedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(16)]
         [Obsolete("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")]
         HRESULT remove_FileRemoved(EventRegistrationToken token);
 
         [VtblIndex(17)]
-        HRESULT add_Closing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CPickerClosingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Closing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CPickerClosingEventArgs_t *")] ITypedEventHandler<Pointer<IFileOpenPickerUI>, Pointer<IPickerClosingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(18)]
         HRESULT remove_Closing(EventRegistrationToken token);
@@ -271,14 +271,14 @@ public unsafe partial struct IFileOpenPickerUI : IFileOpenPickerUI.Interface, IN
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CFileRemovedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_FileRemoved;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IFileOpenPickerUI>, Pointer<IFileRemovedEventArgs>>*, EventRegistrationToken*, int> add_FileRemoved;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("Since Windows 10, only apps can remove files, not end users so the FileRemoved event will not be raised.")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_FileRemoved;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileOpenPickerUI_Windows__CStorage__CPickers__CProvider__CPickerClosingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Closing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IFileOpenPickerUI>, Pointer<IPickerClosingEventArgs>>*, EventRegistrationToken*, int> add_Closing;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Closing;

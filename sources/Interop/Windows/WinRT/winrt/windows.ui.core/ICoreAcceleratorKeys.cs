@@ -74,9 +74,9 @@ public unsafe partial struct ICoreAcceleratorKeys : ICoreAcceleratorKeys.Interfa
     /// <include file='ICoreAcceleratorKeys.xml' path='doc/member[@name="ICoreAcceleratorKeys.add_AcceleratorKeyActivated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_AcceleratorKeyActivated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreDispatcher_Windows__CUI__CCore__CAcceleratorKeyEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie)
+    public HRESULT add_AcceleratorKeyActivated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreDispatcher_Windows__CUI__CCore__CAcceleratorKeyEventArgs_t *")] ITypedEventHandler<Pointer<ICoreDispatcher>, Pointer<IAcceleratorKeyEventArgs>>* handler, EventRegistrationToken* pCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreAcceleratorKeys*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreAcceleratorKeys*)Unsafe.AsPointer(ref this), handler, pCookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreAcceleratorKeys*, ITypedEventHandler<Pointer<ICoreDispatcher>, Pointer<IAcceleratorKeyEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreAcceleratorKeys*)Unsafe.AsPointer(ref this), handler, pCookie);
     }
 
     /// <include file='ICoreAcceleratorKeys.xml' path='doc/member[@name="ICoreAcceleratorKeys.remove_AcceleratorKeyActivated"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct ICoreAcceleratorKeys : ICoreAcceleratorKeys.Interfa
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_AcceleratorKeyActivated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreDispatcher_Windows__CUI__CCore__CAcceleratorKeyEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie);
+        HRESULT add_AcceleratorKeyActivated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreDispatcher_Windows__CUI__CCore__CAcceleratorKeyEventArgs_t *")] ITypedEventHandler<Pointer<ICoreDispatcher>, Pointer<IAcceleratorKeyEventArgs>>* handler, EventRegistrationToken* pCookie);
 
         [VtblIndex(7)]
         HRESULT remove_AcceleratorKeyActivated(EventRegistrationToken cookie);
@@ -118,7 +118,7 @@ public unsafe partial struct ICoreAcceleratorKeys : ICoreAcceleratorKeys.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreDispatcher_Windows__CUI__CCore__CAcceleratorKeyEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AcceleratorKeyActivated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreDispatcher>, Pointer<IAcceleratorKeyEventArgs>>*, EventRegistrationToken*, int> add_AcceleratorKeyActivated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AcceleratorKeyActivated;

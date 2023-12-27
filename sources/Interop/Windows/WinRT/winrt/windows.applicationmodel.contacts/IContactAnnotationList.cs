@@ -114,25 +114,25 @@ public unsafe partial struct IContactAnnotationList : IContactAnnotationList.Int
     /// <include file='IContactAnnotationList.xml' path='doc/member[@name="IContactAnnotationList.GetAnnotationAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetAnnotationAsync(HSTRING annotationId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **")] IAsyncOperation<IntPtr>** annotation)
+    public HRESULT GetAnnotationAsync(HSTRING annotationId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **")] IAsyncOperation<Pointer<IContactAnnotation>>** annotation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactAnnotationList*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IContactAnnotationList*)Unsafe.AsPointer(ref this), annotationId, annotation);
+        return ((delegate* unmanaged[MemberFunction]<IContactAnnotationList*, HSTRING, IAsyncOperation<Pointer<IContactAnnotation>>**, int>)(lpVtbl[11]))((IContactAnnotationList*)Unsafe.AsPointer(ref this), annotationId, annotation);
     }
 
     /// <include file='IContactAnnotationList.xml' path='doc/member[@name="IContactAnnotationList.FindAnnotationsByRemoteIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT FindAnnotationsByRemoteIdAsync(HSTRING remoteId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **")] IAsyncOperation<IntPtr>** annotations)
+    public HRESULT FindAnnotationsByRemoteIdAsync(HSTRING remoteId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContactAnnotation>>>>** annotations)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactAnnotationList*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[12]))((IContactAnnotationList*)Unsafe.AsPointer(ref this), remoteId, annotations);
+        return ((delegate* unmanaged[MemberFunction]<IContactAnnotationList*, HSTRING, IAsyncOperation<Pointer<IVectorView<Pointer<IContactAnnotation>>>>**, int>)(lpVtbl[12]))((IContactAnnotationList*)Unsafe.AsPointer(ref this), remoteId, annotations);
     }
 
     /// <include file='IContactAnnotationList.xml' path='doc/member[@name="IContactAnnotationList.FindAnnotationsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT FindAnnotationsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **")] IAsyncOperation<IntPtr>** annotations)
+    public HRESULT FindAnnotationsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContactAnnotation>>>>** annotations)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactAnnotationList*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[13]))((IContactAnnotationList*)Unsafe.AsPointer(ref this), annotations);
+        return ((delegate* unmanaged[MemberFunction]<IContactAnnotationList*, IAsyncOperation<Pointer<IVectorView<Pointer<IContactAnnotation>>>>**, int>)(lpVtbl[13]))((IContactAnnotationList*)Unsafe.AsPointer(ref this), annotations);
     }
 
     /// <include file='IContactAnnotationList.xml' path='doc/member[@name="IContactAnnotationList.DeleteAnnotationAsync"]/*' />
@@ -161,13 +161,13 @@ public unsafe partial struct IContactAnnotationList : IContactAnnotationList.Int
         HRESULT TrySaveAnnotationAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContactAnnotation *")] IContactAnnotation* annotation, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** ppResult);
 
         [VtblIndex(11)]
-        HRESULT GetAnnotationAsync(HSTRING annotationId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **")] IAsyncOperation<IntPtr>** annotation);
+        HRESULT GetAnnotationAsync(HSTRING annotationId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **")] IAsyncOperation<Pointer<IContactAnnotation>>** annotation);
 
         [VtblIndex(12)]
-        HRESULT FindAnnotationsByRemoteIdAsync(HSTRING remoteId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **")] IAsyncOperation<IntPtr>** annotations);
+        HRESULT FindAnnotationsByRemoteIdAsync(HSTRING remoteId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContactAnnotation>>>>** annotations);
 
         [VtblIndex(13)]
-        HRESULT FindAnnotationsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **")] IAsyncOperation<IntPtr>** annotations);
+        HRESULT FindAnnotationsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContactAnnotation>>>>** annotations);
 
         [VtblIndex(14)]
         HRESULT DeleteAnnotationAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContactAnnotation *")] IContactAnnotation* annotation, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** value);
@@ -210,13 +210,13 @@ public unsafe partial struct IContactAnnotationList : IContactAnnotationList.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, IContactAnnotation*, IAsyncOperation<bool>**, int> TrySaveAnnotationAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetAnnotationAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IContactAnnotation>>**, int> GetAnnotationAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FindAnnotationsByRemoteIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IVectorView<Pointer<IContactAnnotation>>>>**, int> FindAnnotationsByRemoteIdAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindAnnotationsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IContactAnnotation>>>>**, int> FindAnnotationsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Contacts::IContactAnnotation *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IContactAnnotation*, IAsyncAction**, int> DeleteAnnotationAsync;

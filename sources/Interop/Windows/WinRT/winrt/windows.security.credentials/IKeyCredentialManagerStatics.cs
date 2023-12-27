@@ -90,17 +90,17 @@ public unsafe partial struct IKeyCredentialManagerStatics : IKeyCredentialManage
     /// <include file='IKeyCredentialManagerStatics.xml' path='doc/member[@name="IKeyCredentialManagerStatics.RequestCreateAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT RequestCreateAsync(HSTRING name, [NativeTypeName("ABI::Windows::Security::Credentials::KeyCredentialCreationOption")] KeyCredentialCreationOption option, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialRetrievalResult_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT RequestCreateAsync(HSTRING name, [NativeTypeName("ABI::Windows::Security::Credentials::KeyCredentialCreationOption")] KeyCredentialCreationOption option, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialRetrievalResult_t **")] IAsyncOperation<Pointer<IKeyCredentialRetrievalResult>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IKeyCredentialManagerStatics*, HSTRING, KeyCredentialCreationOption, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IKeyCredentialManagerStatics*)Unsafe.AsPointer(ref this), name, option, value);
+        return ((delegate* unmanaged[MemberFunction]<IKeyCredentialManagerStatics*, HSTRING, KeyCredentialCreationOption, IAsyncOperation<Pointer<IKeyCredentialRetrievalResult>>**, int>)(lpVtbl[8]))((IKeyCredentialManagerStatics*)Unsafe.AsPointer(ref this), name, option, value);
     }
 
     /// <include file='IKeyCredentialManagerStatics.xml' path='doc/member[@name="IKeyCredentialManagerStatics.OpenAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT OpenAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialRetrievalResult_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT OpenAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialRetrievalResult_t **")] IAsyncOperation<Pointer<IKeyCredentialRetrievalResult>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IKeyCredentialManagerStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IKeyCredentialManagerStatics*)Unsafe.AsPointer(ref this), name, value);
+        return ((delegate* unmanaged[MemberFunction]<IKeyCredentialManagerStatics*, HSTRING, IAsyncOperation<Pointer<IKeyCredentialRetrievalResult>>**, int>)(lpVtbl[9]))((IKeyCredentialManagerStatics*)Unsafe.AsPointer(ref this), name, value);
     }
 
     /// <include file='IKeyCredentialManagerStatics.xml' path='doc/member[@name="IKeyCredentialManagerStatics.DeleteAsync"]/*' />
@@ -120,10 +120,10 @@ public unsafe partial struct IKeyCredentialManagerStatics : IKeyCredentialManage
         HRESULT RenewAttestationAsync([NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
 
         [VtblIndex(8)]
-        HRESULT RequestCreateAsync(HSTRING name, [NativeTypeName("ABI::Windows::Security::Credentials::KeyCredentialCreationOption")] KeyCredentialCreationOption option, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialRetrievalResult_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT RequestCreateAsync(HSTRING name, [NativeTypeName("ABI::Windows::Security::Credentials::KeyCredentialCreationOption")] KeyCredentialCreationOption option, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialRetrievalResult_t **")] IAsyncOperation<Pointer<IKeyCredentialRetrievalResult>>** value);
 
         [VtblIndex(9)]
-        HRESULT OpenAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialRetrievalResult_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT OpenAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialRetrievalResult_t **")] IAsyncOperation<Pointer<IKeyCredentialRetrievalResult>>** value);
 
         [VtblIndex(10)]
         HRESULT DeleteAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
@@ -157,10 +157,10 @@ public unsafe partial struct IKeyCredentialManagerStatics : IKeyCredentialManage
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncAction**, int> RenewAttestationAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Security::Credentials::KeyCredentialCreationOption, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialRetrievalResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, KeyCredentialCreationOption, IAsyncOperation<IntPtr>**, int> RequestCreateAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, KeyCredentialCreationOption, IAsyncOperation<Pointer<IKeyCredentialRetrievalResult>>**, int> RequestCreateAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialRetrievalResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> OpenAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IKeyCredentialRetrievalResult>>**, int> OpenAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncAction**, int> DeleteAsync;

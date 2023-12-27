@@ -74,9 +74,9 @@ public unsafe partial struct IMediaFrameReader : IMediaFrameReader.Interface, IN
     /// <include file='IMediaFrameReader.xml' path='doc/member[@name="IMediaFrameReader.add_FrameArrived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_FrameArrived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_FrameArrived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaFrameReader>, Pointer<IMediaFrameArrivedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaFrameReader*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaFrameReader*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaFrameReader*, ITypedEventHandler<Pointer<IMediaFrameReader>, Pointer<IMediaFrameArrivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaFrameReader*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaFrameReader.xml' path='doc/member[@name="IMediaFrameReader.remove_FrameArrived"]/*' />
@@ -114,7 +114,7 @@ public unsafe partial struct IMediaFrameReader : IMediaFrameReader.Interface, IN
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_FrameArrived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_FrameArrived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaFrameReader>, Pointer<IMediaFrameArrivedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_FrameArrived(EventRegistrationToken token);
@@ -151,7 +151,7 @@ public unsafe partial struct IMediaFrameReader : IMediaFrameReader.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_Windows__CMedia__CCapture__CFrames__CMediaFrameArrivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_FrameArrived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaFrameReader>, Pointer<IMediaFrameArrivedEventArgs>>*, EventRegistrationToken*, int> add_FrameArrived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_FrameArrived;

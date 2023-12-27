@@ -114,17 +114,17 @@ public unsafe partial struct ISoftwareBitmapStatics : ISoftwareBitmapStatics.Int
     /// <include file='ISoftwareBitmapStatics.xml' path='doc/member[@name="ISoftwareBitmapStatics.CreateCopyFromSurfaceAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT CreateCopyFromSurfaceAsync([NativeTypeName("ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *")] IDirect3DSurface* surface, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT CreateCopyFromSurfaceAsync([NativeTypeName("ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *")] IDirect3DSurface* surface, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<Pointer<ISoftwareBitmap>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISoftwareBitmapStatics*, IDirect3DSurface*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((ISoftwareBitmapStatics*)Unsafe.AsPointer(ref this), surface, value);
+        return ((delegate* unmanaged[MemberFunction]<ISoftwareBitmapStatics*, IDirect3DSurface*, IAsyncOperation<Pointer<ISoftwareBitmap>>**, int>)(lpVtbl[11]))((ISoftwareBitmapStatics*)Unsafe.AsPointer(ref this), surface, value);
     }
 
     /// <include file='ISoftwareBitmapStatics.xml' path='doc/member[@name="ISoftwareBitmapStatics.CreateCopyWithAlphaFromSurfaceAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT CreateCopyWithAlphaFromSurfaceAsync([NativeTypeName("ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *")] IDirect3DSurface* surface, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapAlphaMode")] BitmapAlphaMode alpha, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT CreateCopyWithAlphaFromSurfaceAsync([NativeTypeName("ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *")] IDirect3DSurface* surface, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapAlphaMode")] BitmapAlphaMode alpha, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<Pointer<ISoftwareBitmap>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISoftwareBitmapStatics*, IDirect3DSurface*, BitmapAlphaMode, IAsyncOperation<IntPtr>**, int>)(lpVtbl[12]))((ISoftwareBitmapStatics*)Unsafe.AsPointer(ref this), surface, alpha, value);
+        return ((delegate* unmanaged[MemberFunction]<ISoftwareBitmapStatics*, IDirect3DSurface*, BitmapAlphaMode, IAsyncOperation<Pointer<ISoftwareBitmap>>**, int>)(lpVtbl[12]))((ISoftwareBitmapStatics*)Unsafe.AsPointer(ref this), surface, alpha, value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -145,10 +145,10 @@ public unsafe partial struct ISoftwareBitmapStatics : ISoftwareBitmapStatics.Int
         HRESULT CreateCopyWithAlphaFromBuffer([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* source, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapPixelFormat")] BitmapPixelFormat format, [NativeTypeName("INT32")] int width, [NativeTypeName("INT32")] int height, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapAlphaMode")] BitmapAlphaMode alpha, [NativeTypeName("ABI::Windows::Graphics::Imaging::ISoftwareBitmap **")] ISoftwareBitmap** value);
 
         [VtblIndex(11)]
-        HRESULT CreateCopyFromSurfaceAsync([NativeTypeName("ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *")] IDirect3DSurface* surface, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT CreateCopyFromSurfaceAsync([NativeTypeName("ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *")] IDirect3DSurface* surface, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<Pointer<ISoftwareBitmap>>** value);
 
         [VtblIndex(12)]
-        HRESULT CreateCopyWithAlphaFromSurfaceAsync([NativeTypeName("ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *")] IDirect3DSurface* surface, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapAlphaMode")] BitmapAlphaMode alpha, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT CreateCopyWithAlphaFromSurfaceAsync([NativeTypeName("ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *")] IDirect3DSurface* surface, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapAlphaMode")] BitmapAlphaMode alpha, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<Pointer<ISoftwareBitmap>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -188,9 +188,9 @@ public unsafe partial struct ISoftwareBitmapStatics : ISoftwareBitmapStatics.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, BitmapPixelFormat, int, int, BitmapAlphaMode, ISoftwareBitmap**, int> CreateCopyWithAlphaFromBuffer;
 
         [NativeTypeName("HRESULT (ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IDirect3DSurface*, IAsyncOperation<IntPtr>**, int> CreateCopyFromSurfaceAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirect3DSurface*, IAsyncOperation<Pointer<ISoftwareBitmap>>**, int> CreateCopyFromSurfaceAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Graphics::DirectX::Direct3D11::IDirect3DSurface *, ABI::Windows::Graphics::Imaging::BitmapAlphaMode, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IDirect3DSurface*, BitmapAlphaMode, IAsyncOperation<IntPtr>**, int> CreateCopyWithAlphaFromSurfaceAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirect3DSurface*, BitmapAlphaMode, IAsyncOperation<Pointer<ISoftwareBitmap>>**, int> CreateCopyWithAlphaFromSurfaceAsync;
     }
 }

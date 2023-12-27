@@ -85,9 +85,9 @@ public unsafe partial struct IBackgroundMediaPlayerStatics : IBackgroundMediaPla
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [Obsolete("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]
-    public HRESULT add_MessageReceivedFromBackground([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlayerDataReceivedEventArgs_t *")] IEventHandler<IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_MessageReceivedFromBackground([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlayerDataReceivedEventArgs_t *")] IEventHandler<Pointer<IMediaPlayerDataReceivedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundMediaPlayerStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IBackgroundMediaPlayerStatics*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundMediaPlayerStatics*, IEventHandler<Pointer<IMediaPlayerDataReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IBackgroundMediaPlayerStatics*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IBackgroundMediaPlayerStatics.xml' path='doc/member[@name="IBackgroundMediaPlayerStatics.remove_MessageReceivedFromBackground"]/*' />
@@ -103,9 +103,9 @@ public unsafe partial struct IBackgroundMediaPlayerStatics : IBackgroundMediaPla
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     [Obsolete("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]
-    public HRESULT add_MessageReceivedFromForeground([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlayerDataReceivedEventArgs_t *")] IEventHandler<IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_MessageReceivedFromForeground([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlayerDataReceivedEventArgs_t *")] IEventHandler<Pointer<IMediaPlayerDataReceivedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundMediaPlayerStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IBackgroundMediaPlayerStatics*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundMediaPlayerStatics*, IEventHandler<Pointer<IMediaPlayerDataReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IBackgroundMediaPlayerStatics*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IBackgroundMediaPlayerStatics.xml' path='doc/member[@name="IBackgroundMediaPlayerStatics.remove_MessageReceivedFromForeground"]/*' />
@@ -161,7 +161,7 @@ public unsafe partial struct IBackgroundMediaPlayerStatics : IBackgroundMediaPla
 
         [VtblIndex(7)]
         [Obsolete("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]
-        HRESULT add_MessageReceivedFromBackground([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlayerDataReceivedEventArgs_t *")] IEventHandler<IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_MessageReceivedFromBackground([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlayerDataReceivedEventArgs_t *")] IEventHandler<Pointer<IMediaPlayerDataReceivedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         [Obsolete("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]
@@ -169,7 +169,7 @@ public unsafe partial struct IBackgroundMediaPlayerStatics : IBackgroundMediaPla
 
         [VtblIndex(9)]
         [Obsolete("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]
-        HRESULT add_MessageReceivedFromForeground([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlayerDataReceivedEventArgs_t *")] IEventHandler<IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_MessageReceivedFromForeground([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlayerDataReceivedEventArgs_t *")] IEventHandler<Pointer<IMediaPlayerDataReceivedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         [Obsolete("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]
@@ -219,7 +219,7 @@ public unsafe partial struct IBackgroundMediaPlayerStatics : IBackgroundMediaPla
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlayerDataReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_MessageReceivedFromBackground;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IMediaPlayerDataReceivedEventArgs>>*, EventRegistrationToken*, int> add_MessageReceivedFromBackground;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]
@@ -227,7 +227,7 @@ public unsafe partial struct IBackgroundMediaPlayerStatics : IBackgroundMediaPla
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_Windows__CMedia__CPlayback__CMediaPlayerDataReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_MessageReceivedFromForeground;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IMediaPlayerDataReceivedEventArgs>>*, EventRegistrationToken*, int> add_MessageReceivedFromForeground;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]

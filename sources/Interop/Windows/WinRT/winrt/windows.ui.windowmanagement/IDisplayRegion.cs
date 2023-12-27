@@ -114,9 +114,9 @@ public unsafe partial struct IDisplayRegion : IDisplayRegion.Interface, INativeG
     /// <include file='IDisplayRegion.xml' path='doc/member[@name="IDisplayRegion.add_Changed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CDisplayRegion_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CDisplayRegion_IInspectable_t *")] ITypedEventHandler<Pointer<IDisplayRegion>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDisplayRegion*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IDisplayRegion*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayRegion*, ITypedEventHandler<Pointer<IDisplayRegion>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IDisplayRegion*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDisplayRegion.xml' path='doc/member[@name="IDisplayRegion.remove_Changed"]/*' />
@@ -145,7 +145,7 @@ public unsafe partial struct IDisplayRegion : IDisplayRegion.Interface, INativeG
         HRESULT get_WindowingEnvironment([NativeTypeName("ABI::Windows::UI::WindowManagement::IWindowingEnvironment **")] IWindowingEnvironment** value);
 
         [VtblIndex(11)]
-        HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CDisplayRegion_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CDisplayRegion_IInspectable_t *")] ITypedEventHandler<Pointer<IDisplayRegion>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_Changed(EventRegistrationToken token);
@@ -188,7 +188,7 @@ public unsafe partial struct IDisplayRegion : IDisplayRegion.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, IWindowingEnvironment**, int> get_WindowingEnvironment;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CDisplayRegion_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Changed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDisplayRegion>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Changed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Changed;

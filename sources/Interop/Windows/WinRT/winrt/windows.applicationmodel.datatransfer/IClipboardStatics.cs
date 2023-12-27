@@ -106,9 +106,9 @@ public unsafe partial struct IClipboardStatics : IClipboardStatics.Interface, IN
     /// <include file='IClipboardStatics.xml' path='doc/member[@name="IClipboardStatics.add_ContentChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_ContentChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ContentChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IClipboardStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IClipboardStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IClipboardStatics*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IClipboardStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IClipboardStatics.xml' path='doc/member[@name="IClipboardStatics.remove_ContentChanged"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IClipboardStatics : IClipboardStatics.Interface, IN
         HRESULT Clear();
 
         [VtblIndex(10)]
-        HRESULT add_ContentChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ContentChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_ContentChanged(EventRegistrationToken token);
@@ -174,7 +174,7 @@ public unsafe partial struct IClipboardStatics : IClipboardStatics.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, int> Clear;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_ContentChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ContentChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ContentChanged;

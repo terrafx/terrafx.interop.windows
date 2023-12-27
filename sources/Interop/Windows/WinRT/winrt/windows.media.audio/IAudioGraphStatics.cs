@@ -74,15 +74,15 @@ public unsafe partial struct IAudioGraphStatics : IAudioGraphStatics.Interface, 
     /// <include file='IAudioGraphStatics.xml' path='doc/member[@name="IAudioGraphStatics.CreateAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateAsync([NativeTypeName("ABI::Windows::Media::Audio::IAudioGraphSettings *")] IAudioGraphSettings* settings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioGraphResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateAsync([NativeTypeName("ABI::Windows::Media::Audio::IAudioGraphSettings *")] IAudioGraphSettings* settings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioGraphResult_t **")] IAsyncOperation<Pointer<ICreateAudioGraphResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioGraphStatics*, IAudioGraphSettings*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IAudioGraphStatics*)Unsafe.AsPointer(ref this), settings, result);
+        return ((delegate* unmanaged[MemberFunction]<IAudioGraphStatics*, IAudioGraphSettings*, IAsyncOperation<Pointer<ICreateAudioGraphResult>>**, int>)(lpVtbl[6]))((IAudioGraphStatics*)Unsafe.AsPointer(ref this), settings, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CreateAsync([NativeTypeName("ABI::Windows::Media::Audio::IAudioGraphSettings *")] IAudioGraphSettings* settings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioGraphResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateAsync([NativeTypeName("ABI::Windows::Media::Audio::IAudioGraphSettings *")] IAudioGraphSettings* settings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioGraphResult_t **")] IAsyncOperation<Pointer<ICreateAudioGraphResult>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IAudioGraphStatics : IAudioGraphStatics.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Audio::IAudioGraphSettings *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioGraphResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAudioGraphSettings*, IAsyncOperation<IntPtr>**, int> CreateAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAudioGraphSettings*, IAsyncOperation<Pointer<ICreateAudioGraphResult>>**, int> CreateAsync;
     }
 }

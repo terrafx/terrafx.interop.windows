@@ -250,9 +250,9 @@ public unsafe partial struct IAppointmentCalendar2 : IAppointmentCalendar2.Inter
     /// <include file='IAppointmentCalendar2.xml' path='doc/member[@name="IAppointmentCalendar2.TryForwardMeetingAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT TryForwardMeetingAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* meeting, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CAppointments__CAppointmentInvitee_t *")] IIterable<IntPtr>* invitees, HSTRING subject, HSTRING forwardHeader, HSTRING comment, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** result)
+    public HRESULT TryForwardMeetingAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* meeting, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CAppointments__CAppointmentInvitee_t *")] IIterable<Pointer<IAppointmentInvitee>>* invitees, HSTRING subject, HSTRING forwardHeader, HSTRING comment, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentCalendar2*, IAppointment*, IIterable<IntPtr>*, HSTRING, HSTRING, HSTRING, IAsyncOperation<bool>**, int>)(lpVtbl[28]))((IAppointmentCalendar2*)Unsafe.AsPointer(ref this), meeting, invitees, subject, forwardHeader, comment, result);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentCalendar2*, IAppointment*, IIterable<Pointer<IAppointmentInvitee>>*, HSTRING, HSTRING, HSTRING, IAsyncOperation<bool>**, int>)(lpVtbl[28]))((IAppointmentCalendar2*)Unsafe.AsPointer(ref this), meeting, invitees, subject, forwardHeader, comment, result);
     }
 
     /// <include file='IAppointmentCalendar2.xml' path='doc/member[@name="IAppointmentCalendar2.TryProposeNewTimeForMeetingAsync"]/*' />
@@ -340,7 +340,7 @@ public unsafe partial struct IAppointmentCalendar2 : IAppointmentCalendar2.Inter
         HRESULT TryCancelMeetingAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* meeting, HSTRING subject, HSTRING comment, [NativeTypeName("boolean")] byte notifyInvitees, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** result);
 
         [VtblIndex(28)]
-        HRESULT TryForwardMeetingAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* meeting, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CAppointments__CAppointmentInvitee_t *")] IIterable<IntPtr>* invitees, HSTRING subject, HSTRING forwardHeader, HSTRING comment, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** result);
+        HRESULT TryForwardMeetingAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* meeting, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CAppointments__CAppointmentInvitee_t *")] IIterable<Pointer<IAppointmentInvitee>>* invitees, HSTRING subject, HSTRING forwardHeader, HSTRING comment, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** result);
 
         [VtblIndex(29)]
         HRESULT TryProposeNewTimeForMeetingAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* meeting, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime newStartTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan newDuration, HSTRING subject, HSTRING comment, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** result);
@@ -437,7 +437,7 @@ public unsafe partial struct IAppointmentCalendar2 : IAppointmentCalendar2.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppointment*, HSTRING, HSTRING, byte, IAsyncOperation<bool>**, int> TryCancelMeetingAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Appointments::IAppointment *, ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CAppointments__CAppointmentInvitee_t *, HSTRING, HSTRING, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAppointment*, IIterable<IntPtr>*, HSTRING, HSTRING, HSTRING, IAsyncOperation<bool>**, int> TryForwardMeetingAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppointment*, IIterable<Pointer<IAppointmentInvitee>>*, HSTRING, HSTRING, HSTRING, IAsyncOperation<bool>**, int> TryForwardMeetingAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Appointments::IAppointment *, ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::TimeSpan, HSTRING, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppointment*, WinRTDateTime, TimeSpan, HSTRING, HSTRING, IAsyncOperation<bool>**, int> TryProposeNewTimeForMeetingAsync;

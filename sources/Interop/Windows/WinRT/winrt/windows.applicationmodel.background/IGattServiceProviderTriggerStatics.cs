@@ -74,15 +74,15 @@ public unsafe partial struct IGattServiceProviderTriggerStatics : IGattServicePr
     /// <include file='IGattServiceProviderTriggerStatics.xml' path='doc/member[@name="IGattServiceProviderTriggerStatics.CreateAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateAsync(HSTRING triggerId, Guid serviceUuid, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateAsync(HSTRING triggerId, Guid serviceUuid, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_t **")] IAsyncOperation<Pointer<IGattServiceProviderTriggerResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattServiceProviderTriggerStatics*, HSTRING, Guid, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IGattServiceProviderTriggerStatics*)Unsafe.AsPointer(ref this), triggerId, serviceUuid, operation);
+        return ((delegate* unmanaged[MemberFunction]<IGattServiceProviderTriggerStatics*, HSTRING, Guid, IAsyncOperation<Pointer<IGattServiceProviderTriggerResult>>**, int>)(lpVtbl[6]))((IGattServiceProviderTriggerStatics*)Unsafe.AsPointer(ref this), triggerId, serviceUuid, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CreateAsync(HSTRING triggerId, Guid serviceUuid, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateAsync(HSTRING triggerId, Guid serviceUuid, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_t **")] IAsyncOperation<Pointer<IGattServiceProviderTriggerResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IGattServiceProviderTriggerStatics : IGattServicePr
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, GUID, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CGattServiceProviderTriggerResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, Guid, IAsyncOperation<IntPtr>**, int> CreateAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, Guid, IAsyncOperation<Pointer<IGattServiceProviderTriggerResult>>**, int> CreateAsync;
     }
 }

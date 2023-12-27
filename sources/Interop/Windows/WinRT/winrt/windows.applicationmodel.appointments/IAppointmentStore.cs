@@ -82,81 +82,81 @@ public unsafe partial struct IAppointmentStore : IAppointmentStore.Interface, IN
     /// <include file='IAppointmentStore.xml' path='doc/member[@name="IAppointmentStore.CreateAppointmentCalendarAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateAppointmentCalendarAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateAppointmentCalendarAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<Pointer<IAppointmentCalendar>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IAppointmentStore*)Unsafe.AsPointer(ref this), name, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, HSTRING, IAsyncOperation<Pointer<IAppointmentCalendar>>**, int>)(lpVtbl[7]))((IAppointmentStore*)Unsafe.AsPointer(ref this), name, operation);
     }
 
     /// <include file='IAppointmentStore.xml' path='doc/member[@name="IAppointmentStore.GetAppointmentCalendarAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetAppointmentCalendarAsync(HSTRING calendarId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetAppointmentCalendarAsync(HSTRING calendarId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<Pointer<IAppointmentCalendar>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IAppointmentStore*)Unsafe.AsPointer(ref this), calendarId, result);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, HSTRING, IAsyncOperation<Pointer<IAppointmentCalendar>>**, int>)(lpVtbl[8]))((IAppointmentStore*)Unsafe.AsPointer(ref this), calendarId, result);
     }
 
     /// <include file='IAppointmentStore.xml' path='doc/member[@name="IAppointmentStore.GetAppointmentAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetAppointmentAsync(HSTRING localId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointment_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetAppointmentAsync(HSTRING localId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointment_t **")] IAsyncOperation<Pointer<IAppointment>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IAppointmentStore*)Unsafe.AsPointer(ref this), localId, result);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, HSTRING, IAsyncOperation<Pointer<IAppointment>>**, int>)(lpVtbl[9]))((IAppointmentStore*)Unsafe.AsPointer(ref this), localId, result);
     }
 
     /// <include file='IAppointmentStore.xml' path='doc/member[@name="IAppointmentStore.GetAppointmentInstanceAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetAppointmentInstanceAsync(HSTRING localId, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime instanceStartTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointment_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetAppointmentInstanceAsync(HSTRING localId, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime instanceStartTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointment_t **")] IAsyncOperation<Pointer<IAppointment>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, HSTRING, WinRTDateTime, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IAppointmentStore*)Unsafe.AsPointer(ref this), localId, instanceStartTime, result);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, HSTRING, WinRTDateTime, IAsyncOperation<Pointer<IAppointment>>**, int>)(lpVtbl[10]))((IAppointmentStore*)Unsafe.AsPointer(ref this), localId, instanceStartTime, result);
     }
 
     /// <include file='IAppointmentStore.xml' path='doc/member[@name="IAppointmentStore.FindAppointmentCalendarsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT FindAppointmentCalendarsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FindAppointmentCalendarsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppointmentCalendar>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IAppointmentStore*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, IAsyncOperation<Pointer<IVectorView<Pointer<IAppointmentCalendar>>>>**, int>)(lpVtbl[11]))((IAppointmentStore*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IAppointmentStore.xml' path='doc/member[@name="IAppointmentStore.FindAppointmentCalendarsAsyncWithOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT FindAppointmentCalendarsAsyncWithOptions([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::FindAppointmentCalendarsOptions")] FindAppointmentCalendarsOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FindAppointmentCalendarsAsyncWithOptions([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::FindAppointmentCalendarsOptions")] FindAppointmentCalendarsOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppointmentCalendar>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, FindAppointmentCalendarsOptions, IAsyncOperation<IntPtr>**, int>)(lpVtbl[12]))((IAppointmentStore*)Unsafe.AsPointer(ref this), options, result);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, FindAppointmentCalendarsOptions, IAsyncOperation<Pointer<IVectorView<Pointer<IAppointmentCalendar>>>>**, int>)(lpVtbl[12]))((IAppointmentStore*)Unsafe.AsPointer(ref this), options, result);
     }
 
     /// <include file='IAppointmentStore.xml' path='doc/member[@name="IAppointmentStore.FindAppointmentsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT FindAppointmentsAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime rangeStart, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan rangeLength, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointment_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FindAppointmentsAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime rangeStart, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan rangeLength, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointment_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppointment>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, WinRTDateTime, TimeSpan, IAsyncOperation<IntPtr>**, int>)(lpVtbl[13]))((IAppointmentStore*)Unsafe.AsPointer(ref this), rangeStart, rangeLength, result);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, WinRTDateTime, TimeSpan, IAsyncOperation<Pointer<IVectorView<Pointer<IAppointment>>>>**, int>)(lpVtbl[13]))((IAppointmentStore*)Unsafe.AsPointer(ref this), rangeStart, rangeLength, result);
     }
 
     /// <include file='IAppointmentStore.xml' path='doc/member[@name="IAppointmentStore.FindAppointmentsAsyncWithOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT FindAppointmentsAsyncWithOptions([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime rangeStart, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan rangeLength, [NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IFindAppointmentsOptions *")] IFindAppointmentsOptions* options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointment_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FindAppointmentsAsyncWithOptions([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime rangeStart, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan rangeLength, [NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IFindAppointmentsOptions *")] IFindAppointmentsOptions* options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointment_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppointment>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, WinRTDateTime, TimeSpan, IFindAppointmentsOptions*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[14]))((IAppointmentStore*)Unsafe.AsPointer(ref this), rangeStart, rangeLength, options, result);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, WinRTDateTime, TimeSpan, IFindAppointmentsOptions*, IAsyncOperation<Pointer<IVectorView<Pointer<IAppointment>>>>**, int>)(lpVtbl[14]))((IAppointmentStore*)Unsafe.AsPointer(ref this), rangeStart, rangeLength, options, result);
     }
 
     /// <include file='IAppointmentStore.xml' path='doc/member[@name="IAppointmentStore.FindConflictAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT FindConflictAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentConflictResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FindConflictAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentConflictResult_t **")] IAsyncOperation<Pointer<IAppointmentConflictResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, IAppointment*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[15]))((IAppointmentStore*)Unsafe.AsPointer(ref this), appointment, result);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, IAppointment*, IAsyncOperation<Pointer<IAppointmentConflictResult>>**, int>)(lpVtbl[15]))((IAppointmentStore*)Unsafe.AsPointer(ref this), appointment, result);
     }
 
     /// <include file='IAppointmentStore.xml' path='doc/member[@name="IAppointmentStore.FindConflictAsyncWithInstanceStart"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT FindConflictAsyncWithInstanceStart([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime instanceStartTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentConflictResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FindConflictAsyncWithInstanceStart([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime instanceStartTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentConflictResult_t **")] IAsyncOperation<Pointer<IAppointmentConflictResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, IAppointment*, WinRTDateTime, IAsyncOperation<IntPtr>**, int>)(lpVtbl[16]))((IAppointmentStore*)Unsafe.AsPointer(ref this), appointment, instanceStartTime, result);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, IAppointment*, WinRTDateTime, IAsyncOperation<Pointer<IAppointmentConflictResult>>**, int>)(lpVtbl[16]))((IAppointmentStore*)Unsafe.AsPointer(ref this), appointment, instanceStartTime, result);
     }
 
     /// <include file='IAppointmentStore.xml' path='doc/member[@name="IAppointmentStore.MoveAppointmentAsync"]/*' />
@@ -234,9 +234,9 @@ public unsafe partial struct IAppointmentStore : IAppointmentStore.Interface, IN
     /// <include file='IAppointmentStore.xml' path='doc/member[@name="IAppointmentStore.FindLocalIdsFromRoamingIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
-    public HRESULT FindLocalIdsFromRoamingIdAsync(HSTRING roamingId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FindLocalIdsFromRoamingIdAsync(HSTRING roamingId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<Pointer<IVectorView<HSTRING>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[26]))((IAppointmentStore*)Unsafe.AsPointer(ref this), roamingId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore*, HSTRING, IAsyncOperation<Pointer<IVectorView<HSTRING>>>**, int>)(lpVtbl[26]))((IAppointmentStore*)Unsafe.AsPointer(ref this), roamingId, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -245,34 +245,34 @@ public unsafe partial struct IAppointmentStore : IAppointmentStore.Interface, IN
         HRESULT get_ChangeTracker([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointmentStoreChangeTracker **")] IAppointmentStoreChangeTracker** value);
 
         [VtblIndex(7)]
-        HRESULT CreateAppointmentCalendarAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateAppointmentCalendarAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<Pointer<IAppointmentCalendar>>** operation);
 
         [VtblIndex(8)]
-        HRESULT GetAppointmentCalendarAsync(HSTRING calendarId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetAppointmentCalendarAsync(HSTRING calendarId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<Pointer<IAppointmentCalendar>>** result);
 
         [VtblIndex(9)]
-        HRESULT GetAppointmentAsync(HSTRING localId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointment_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetAppointmentAsync(HSTRING localId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointment_t **")] IAsyncOperation<Pointer<IAppointment>>** result);
 
         [VtblIndex(10)]
-        HRESULT GetAppointmentInstanceAsync(HSTRING localId, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime instanceStartTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointment_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetAppointmentInstanceAsync(HSTRING localId, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime instanceStartTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointment_t **")] IAsyncOperation<Pointer<IAppointment>>** result);
 
         [VtblIndex(11)]
-        HRESULT FindAppointmentCalendarsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FindAppointmentCalendarsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppointmentCalendar>>>>** result);
 
         [VtblIndex(12)]
-        HRESULT FindAppointmentCalendarsAsyncWithOptions([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::FindAppointmentCalendarsOptions")] FindAppointmentCalendarsOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FindAppointmentCalendarsAsyncWithOptions([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::FindAppointmentCalendarsOptions")] FindAppointmentCalendarsOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppointmentCalendar>>>>** result);
 
         [VtblIndex(13)]
-        HRESULT FindAppointmentsAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime rangeStart, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan rangeLength, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointment_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FindAppointmentsAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime rangeStart, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan rangeLength, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointment_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppointment>>>>** result);
 
         [VtblIndex(14)]
-        HRESULT FindAppointmentsAsyncWithOptions([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime rangeStart, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan rangeLength, [NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IFindAppointmentsOptions *")] IFindAppointmentsOptions* options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointment_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FindAppointmentsAsyncWithOptions([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime rangeStart, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan rangeLength, [NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IFindAppointmentsOptions *")] IFindAppointmentsOptions* options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointment_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppointment>>>>** result);
 
         [VtblIndex(15)]
-        HRESULT FindConflictAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentConflictResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FindConflictAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentConflictResult_t **")] IAsyncOperation<Pointer<IAppointmentConflictResult>>** result);
 
         [VtblIndex(16)]
-        HRESULT FindConflictAsyncWithInstanceStart([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime instanceStartTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentConflictResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FindConflictAsyncWithInstanceStart([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime instanceStartTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentConflictResult_t **")] IAsyncOperation<Pointer<IAppointmentConflictResult>>** result);
 
         [VtblIndex(17)]
         HRESULT MoveAppointmentAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointmentCalendar *")] IAppointmentCalendar* destinationCalendar, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncAction);
@@ -302,7 +302,7 @@ public unsafe partial struct IAppointmentStore : IAppointmentStore.Interface, IN
         HRESULT ShowEditNewAppointmentAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **")] IAsyncOperation<HSTRING>** operation);
 
         [VtblIndex(26)]
-        HRESULT FindLocalIdsFromRoamingIdAsync(HSTRING roamingId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FindLocalIdsFromRoamingIdAsync(HSTRING roamingId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<Pointer<IVectorView<HSTRING>>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -330,34 +330,34 @@ public unsafe partial struct IAppointmentStore : IAppointmentStore.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppointmentStoreChangeTracker**, int> get_ChangeTracker;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> CreateAppointmentCalendarAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IAppointmentCalendar>>**, int> CreateAppointmentCalendarAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetAppointmentCalendarAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IAppointmentCalendar>>**, int> GetAppointmentCalendarAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointment_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetAppointmentAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IAppointment>>**, int> GetAppointmentAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointment_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, WinRTDateTime, IAsyncOperation<IntPtr>**, int> GetAppointmentInstanceAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, WinRTDateTime, IAsyncOperation<Pointer<IAppointment>>**, int> GetAppointmentInstanceAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindAppointmentCalendarsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IAppointmentCalendar>>>>**, int> FindAppointmentCalendarsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Appointments::FindAppointmentCalendarsOptions, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, FindAppointmentCalendarsOptions, IAsyncOperation<IntPtr>**, int> FindAppointmentCalendarsAsyncWithOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FindAppointmentCalendarsOptions, IAsyncOperation<Pointer<IVectorView<Pointer<IAppointmentCalendar>>>>**, int> FindAppointmentCalendarsAsyncWithOptions;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::TimeSpan, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointment_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, TimeSpan, IAsyncOperation<IntPtr>**, int> FindAppointmentsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, TimeSpan, IAsyncOperation<Pointer<IVectorView<Pointer<IAppointment>>>>**, int> FindAppointmentsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::TimeSpan, ABI::Windows::ApplicationModel::Appointments::IFindAppointmentsOptions *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointment_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, TimeSpan, IFindAppointmentsOptions*, IAsyncOperation<IntPtr>**, int> FindAppointmentsAsyncWithOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, TimeSpan, IFindAppointmentsOptions*, IAsyncOperation<Pointer<IVectorView<Pointer<IAppointment>>>>**, int> FindAppointmentsAsyncWithOptions;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Appointments::IAppointment *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentConflictResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAppointment*, IAsyncOperation<IntPtr>**, int> FindConflictAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppointment*, IAsyncOperation<Pointer<IAppointmentConflictResult>>**, int> FindConflictAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Appointments::IAppointment *, ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentConflictResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAppointment*, WinRTDateTime, IAsyncOperation<IntPtr>**, int> FindConflictAsyncWithInstanceStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppointment*, WinRTDateTime, IAsyncOperation<Pointer<IAppointmentConflictResult>>**, int> FindConflictAsyncWithInstanceStart;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Appointments::IAppointment *, ABI::Windows::ApplicationModel::Appointments::IAppointmentCalendar *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppointment*, IAppointmentCalendar*, IAsyncAction**, int> MoveAppointmentAsync;
@@ -387,6 +387,6 @@ public unsafe partial struct IAppointmentStore : IAppointmentStore.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppointment*, IAsyncOperation<HSTRING>**, int> ShowEditNewAppointmentAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FindLocalIdsFromRoamingIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IVectorView<HSTRING>>>**, int> FindLocalIdsFromRoamingIdAsync;
     }
 }

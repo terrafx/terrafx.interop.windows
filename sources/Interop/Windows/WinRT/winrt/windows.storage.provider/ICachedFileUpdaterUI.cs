@@ -98,9 +98,9 @@ public unsafe partial struct ICachedFileUpdaterUI : ICachedFileUpdaterUI.Interfa
     /// <include file='ICachedFileUpdaterUI.xml' path='doc/member[@name="ICachedFileUpdaterUI.add_FileUpdateRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_FileUpdateRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdaterUI_Windows__CStorage__CProvider__CFileUpdateRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_FileUpdateRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdaterUI_Windows__CStorage__CProvider__CFileUpdateRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ICachedFileUpdaterUI>, Pointer<IFileUpdateRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICachedFileUpdaterUI*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ICachedFileUpdaterUI*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICachedFileUpdaterUI*, ITypedEventHandler<Pointer<ICachedFileUpdaterUI>, Pointer<IFileUpdateRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ICachedFileUpdaterUI*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICachedFileUpdaterUI.xml' path='doc/member[@name="ICachedFileUpdaterUI.remove_FileUpdateRequested"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct ICachedFileUpdaterUI : ICachedFileUpdaterUI.Interfa
     /// <include file='ICachedFileUpdaterUI.xml' path='doc/member[@name="ICachedFileUpdaterUI.add_UIRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_UIRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdaterUI_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_UIRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdaterUI_IInspectable_t *")] ITypedEventHandler<Pointer<ICachedFileUpdaterUI>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICachedFileUpdaterUI*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((ICachedFileUpdaterUI*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICachedFileUpdaterUI*, ITypedEventHandler<Pointer<ICachedFileUpdaterUI>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((ICachedFileUpdaterUI*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICachedFileUpdaterUI.xml' path='doc/member[@name="ICachedFileUpdaterUI.remove_UIRequested"]/*' />
@@ -147,13 +147,13 @@ public unsafe partial struct ICachedFileUpdaterUI : ICachedFileUpdaterUI.Interfa
         HRESULT get_UpdateTarget([NativeTypeName("ABI::Windows::Storage::Provider::CachedFileTarget *")] CachedFileTarget* value);
 
         [VtblIndex(9)]
-        HRESULT add_FileUpdateRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdaterUI_Windows__CStorage__CProvider__CFileUpdateRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_FileUpdateRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdaterUI_Windows__CStorage__CProvider__CFileUpdateRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ICachedFileUpdaterUI>, Pointer<IFileUpdateRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_FileUpdateRequested(EventRegistrationToken token);
 
         [VtblIndex(11)]
-        HRESULT add_UIRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdaterUI_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_UIRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdaterUI_IInspectable_t *")] ITypedEventHandler<Pointer<ICachedFileUpdaterUI>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_UIRequested(EventRegistrationToken token);
@@ -193,13 +193,13 @@ public unsafe partial struct ICachedFileUpdaterUI : ICachedFileUpdaterUI.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, CachedFileTarget*, int> get_UpdateTarget;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdaterUI_Windows__CStorage__CProvider__CFileUpdateRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_FileUpdateRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICachedFileUpdaterUI>, Pointer<IFileUpdateRequestedEventArgs>>*, EventRegistrationToken*, int> add_FileUpdateRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_FileUpdateRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CCachedFileUpdaterUI_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_UIRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICachedFileUpdaterUI>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_UIRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_UIRequested;

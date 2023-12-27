@@ -74,9 +74,9 @@ public unsafe partial struct ITimedMetadataTrack : ITimedMetadataTrack.Interface
     /// <include file='ITimedMetadataTrack.xml' path='doc/member[@name="ITimedMetadataTrack.add_CueEntered"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_CueEntered([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CMediaCueEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_CueEntered([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CMediaCueEventArgs_t *")] ITypedEventHandler<Pointer<ITimedMetadataTrack>, Pointer<IMediaCueEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITimedMetadataTrack*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ITimedMetadataTrack*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ITimedMetadataTrack*, ITypedEventHandler<Pointer<ITimedMetadataTrack>, Pointer<IMediaCueEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ITimedMetadataTrack*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ITimedMetadataTrack.xml' path='doc/member[@name="ITimedMetadataTrack.remove_CueEntered"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct ITimedMetadataTrack : ITimedMetadataTrack.Interface
     /// <include file='ITimedMetadataTrack.xml' path='doc/member[@name="ITimedMetadataTrack.add_CueExited"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_CueExited([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CMediaCueEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_CueExited([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CMediaCueEventArgs_t *")] ITypedEventHandler<Pointer<ITimedMetadataTrack>, Pointer<IMediaCueEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITimedMetadataTrack*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ITimedMetadataTrack*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ITimedMetadataTrack*, ITypedEventHandler<Pointer<ITimedMetadataTrack>, Pointer<IMediaCueEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ITimedMetadataTrack*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ITimedMetadataTrack.xml' path='doc/member[@name="ITimedMetadataTrack.remove_CueExited"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct ITimedMetadataTrack : ITimedMetadataTrack.Interface
     /// <include file='ITimedMetadataTrack.xml' path='doc/member[@name="ITimedMetadataTrack.add_TrackFailed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_TrackFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CTimedMetadataTrackFailedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_TrackFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CTimedMetadataTrackFailedEventArgs_t *")] ITypedEventHandler<Pointer<ITimedMetadataTrack>, Pointer<ITimedMetadataTrackFailedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITimedMetadataTrack*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((ITimedMetadataTrack*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ITimedMetadataTrack*, ITypedEventHandler<Pointer<ITimedMetadataTrack>, Pointer<ITimedMetadataTrackFailedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((ITimedMetadataTrack*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ITimedMetadataTrack.xml' path='doc/member[@name="ITimedMetadataTrack.remove_TrackFailed"]/*' />
@@ -122,17 +122,17 @@ public unsafe partial struct ITimedMetadataTrack : ITimedMetadataTrack.Interface
     /// <include file='ITimedMetadataTrack.xml' path='doc/member[@name="ITimedMetadataTrack.get_Cues"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_Cues([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CIMediaCue_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Cues([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CIMediaCue_t **")] IVectorView<Pointer<IMediaCue>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITimedMetadataTrack*, IVectorView<IntPtr>**, int>)(lpVtbl[12]))((ITimedMetadataTrack*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ITimedMetadataTrack*, IVectorView<Pointer<IMediaCue>>**, int>)(lpVtbl[12]))((ITimedMetadataTrack*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ITimedMetadataTrack.xml' path='doc/member[@name="ITimedMetadataTrack.get_ActiveCues"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_ActiveCues([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CIMediaCue_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_ActiveCues([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CIMediaCue_t **")] IVectorView<Pointer<IMediaCue>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITimedMetadataTrack*, IVectorView<IntPtr>**, int>)(lpVtbl[13]))((ITimedMetadataTrack*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ITimedMetadataTrack*, IVectorView<Pointer<IMediaCue>>**, int>)(lpVtbl[13]))((ITimedMetadataTrack*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ITimedMetadataTrack.xml' path='doc/member[@name="ITimedMetadataTrack.get_TimedMetadataKind"]/*' />
@@ -170,28 +170,28 @@ public unsafe partial struct ITimedMetadataTrack : ITimedMetadataTrack.Interface
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_CueEntered([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CMediaCueEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_CueEntered([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CMediaCueEventArgs_t *")] ITypedEventHandler<Pointer<ITimedMetadataTrack>, Pointer<IMediaCueEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_CueEntered(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_CueExited([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CMediaCueEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_CueExited([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CMediaCueEventArgs_t *")] ITypedEventHandler<Pointer<ITimedMetadataTrack>, Pointer<IMediaCueEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_CueExited(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_TrackFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CTimedMetadataTrackFailedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_TrackFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CTimedMetadataTrackFailedEventArgs_t *")] ITypedEventHandler<Pointer<ITimedMetadataTrack>, Pointer<ITimedMetadataTrackFailedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_TrackFailed(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT get_Cues([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CIMediaCue_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Cues([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CIMediaCue_t **")] IVectorView<Pointer<IMediaCue>>** value);
 
         [VtblIndex(13)]
-        HRESULT get_ActiveCues([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CIMediaCue_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_ActiveCues([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CIMediaCue_t **")] IVectorView<Pointer<IMediaCue>>** value);
 
         [VtblIndex(14)]
         HRESULT get_TimedMetadataKind([NativeTypeName("ABI::Windows::Media::Core::TimedMetadataKind *")] TimedMetadataKind* value);
@@ -228,28 +228,28 @@ public unsafe partial struct ITimedMetadataTrack : ITimedMetadataTrack.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CMediaCueEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CueEntered;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ITimedMetadataTrack>, Pointer<IMediaCueEventArgs>>*, EventRegistrationToken*, int> add_CueEntered;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CueEntered;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CMediaCueEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CueExited;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ITimedMetadataTrack>, Pointer<IMediaCueEventArgs>>*, EventRegistrationToken*, int> add_CueExited;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CueExited;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedMetadataTrack_Windows__CMedia__CCore__CTimedMetadataTrackFailedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_TrackFailed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ITimedMetadataTrack>, Pointer<ITimedMetadataTrackFailedEventArgs>>*, EventRegistrationToken*, int> add_TrackFailed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_TrackFailed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CIMediaCue_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Cues;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IMediaCue>>**, int> get_Cues;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CIMediaCue_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_ActiveCues;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IMediaCue>>**, int> get_ActiveCues;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Core::TimedMetadataKind *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, TimedMetadataKind*, int> get_TimedMetadataKind;

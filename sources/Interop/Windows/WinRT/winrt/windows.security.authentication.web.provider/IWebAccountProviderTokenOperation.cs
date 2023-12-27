@@ -82,9 +82,9 @@ public unsafe partial struct IWebAccountProviderTokenOperation : IWebAccountProv
     /// <include file='IWebAccountProviderTokenOperation.xml' path='doc/member[@name="IWebAccountProviderTokenOperation.get_ProviderResponses"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_ProviderResponses([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CAuthentication__CWeb__CProvider__CWebProviderTokenResponse_t **")] IVector<IntPtr>** value)
+    public HRESULT get_ProviderResponses([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CAuthentication__CWeb__CProvider__CWebProviderTokenResponse_t **")] IVector<Pointer<IWebProviderTokenResponse>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAccountProviderTokenOperation*, IVector<IntPtr>**, int>)(lpVtbl[7]))((IWebAccountProviderTokenOperation*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWebAccountProviderTokenOperation*, IVector<Pointer<IWebProviderTokenResponse>>**, int>)(lpVtbl[7]))((IWebAccountProviderTokenOperation*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWebAccountProviderTokenOperation.xml' path='doc/member[@name="IWebAccountProviderTokenOperation.put_CacheExpirationTime"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct IWebAccountProviderTokenOperation : IWebAccountProv
         HRESULT get_ProviderRequest([NativeTypeName("ABI::Windows::Security::Authentication::Web::Provider::IWebProviderTokenRequest **")] IWebProviderTokenRequest** webTokenRequest);
 
         [VtblIndex(7)]
-        HRESULT get_ProviderResponses([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CAuthentication__CWeb__CProvider__CWebProviderTokenResponse_t **")] IVector<IntPtr>** value);
+        HRESULT get_ProviderResponses([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CAuthentication__CWeb__CProvider__CWebProviderTokenResponse_t **")] IVector<Pointer<IWebProviderTokenResponse>>** value);
 
         [VtblIndex(8)]
         HRESULT put_CacheExpirationTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value);
@@ -143,7 +143,7 @@ public unsafe partial struct IWebAccountProviderTokenOperation : IWebAccountProv
         public delegate* unmanaged[MemberFunction]<TSelf*, IWebProviderTokenRequest**, int> get_ProviderRequest;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CAuthentication__CWeb__CProvider__CWebProviderTokenResponse_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_ProviderResponses;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IWebProviderTokenResponse>>**, int> get_ProviderResponses;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, int> put_CacheExpirationTime;

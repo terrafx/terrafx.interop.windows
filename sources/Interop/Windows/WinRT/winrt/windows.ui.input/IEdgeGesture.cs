@@ -74,9 +74,9 @@ public unsafe partial struct IEdgeGesture : IEdgeGesture.Interface, INativeGuid
     /// <include file='IEdgeGesture.xml' path='doc/member[@name="IEdgeGesture.add_Starting"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_Starting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Starting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_t *")] ITypedEventHandler<Pointer<IEdgeGesture>, Pointer<IEdgeGestureEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IEdgeGesture*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IEdgeGesture*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IEdgeGesture*, ITypedEventHandler<Pointer<IEdgeGesture>, Pointer<IEdgeGestureEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IEdgeGesture*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IEdgeGesture.xml' path='doc/member[@name="IEdgeGesture.remove_Starting"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IEdgeGesture : IEdgeGesture.Interface, INativeGuid
     /// <include file='IEdgeGesture.xml' path='doc/member[@name="IEdgeGesture.add_Completed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_Completed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Completed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_t *")] ITypedEventHandler<Pointer<IEdgeGesture>, Pointer<IEdgeGestureEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IEdgeGesture*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IEdgeGesture*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IEdgeGesture*, ITypedEventHandler<Pointer<IEdgeGesture>, Pointer<IEdgeGestureEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IEdgeGesture*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IEdgeGesture.xml' path='doc/member[@name="IEdgeGesture.remove_Completed"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IEdgeGesture : IEdgeGesture.Interface, INativeGuid
     /// <include file='IEdgeGesture.xml' path='doc/member[@name="IEdgeGesture.add_Canceled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_Canceled([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Canceled([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_t *")] ITypedEventHandler<Pointer<IEdgeGesture>, Pointer<IEdgeGestureEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IEdgeGesture*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IEdgeGesture*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IEdgeGesture*, ITypedEventHandler<Pointer<IEdgeGesture>, Pointer<IEdgeGestureEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IEdgeGesture*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IEdgeGesture.xml' path='doc/member[@name="IEdgeGesture.remove_Canceled"]/*' />
@@ -122,19 +122,19 @@ public unsafe partial struct IEdgeGesture : IEdgeGesture.Interface, INativeGuid
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_Starting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Starting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_t *")] ITypedEventHandler<Pointer<IEdgeGesture>, Pointer<IEdgeGestureEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_Starting(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_Completed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Completed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_t *")] ITypedEventHandler<Pointer<IEdgeGesture>, Pointer<IEdgeGestureEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_Completed(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_Canceled([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Canceled([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_t *")] ITypedEventHandler<Pointer<IEdgeGesture>, Pointer<IEdgeGestureEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_Canceled(EventRegistrationToken token);
@@ -162,19 +162,19 @@ public unsafe partial struct IEdgeGesture : IEdgeGesture.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Starting;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IEdgeGesture>, Pointer<IEdgeGestureEventArgs>>*, EventRegistrationToken*, int> add_Starting;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Starting;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Completed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IEdgeGesture>, Pointer<IEdgeGestureEventArgs>>*, EventRegistrationToken*, int> add_Completed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Completed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CEdgeGesture_Windows__CUI__CInput__CEdgeGestureEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Canceled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IEdgeGesture>, Pointer<IEdgeGestureEventArgs>>*, EventRegistrationToken*, int> add_Canceled;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Canceled;

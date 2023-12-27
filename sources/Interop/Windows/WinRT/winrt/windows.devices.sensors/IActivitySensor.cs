@@ -74,9 +74,9 @@ public unsafe partial struct IActivitySensor : IActivitySensor.Interface, INativ
     /// <include file='IActivitySensor.xml' path='doc/member[@name="IActivitySensor.GetCurrentReadingAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetCurrentReadingAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensorReading_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetCurrentReadingAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensorReading_t **")] IAsyncOperation<Pointer<IActivitySensorReading>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IActivitySensor*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IActivitySensor*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IActivitySensor*, IAsyncOperation<Pointer<IActivitySensorReading>>**, int>)(lpVtbl[6]))((IActivitySensor*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IActivitySensor.xml' path='doc/member[@name="IActivitySensor.get_SubscribedActivities"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IActivitySensor : IActivitySensor.Interface, INativ
     /// <include file='IActivitySensor.xml' path='doc/member[@name="IActivitySensor.add_ReadingChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CActivitySensor_Windows__CDevices__CSensors__CActivitySensorReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CActivitySensor_Windows__CDevices__CSensors__CActivitySensorReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<IActivitySensor>, Pointer<IActivitySensorReadingChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IActivitySensor*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IActivitySensor*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IActivitySensor*, ITypedEventHandler<Pointer<IActivitySensor>, Pointer<IActivitySensorReadingChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IActivitySensor*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IActivitySensor.xml' path='doc/member[@name="IActivitySensor.remove_ReadingChanged"]/*' />
@@ -138,7 +138,7 @@ public unsafe partial struct IActivitySensor : IActivitySensor.Interface, INativ
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetCurrentReadingAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensorReading_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetCurrentReadingAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensorReading_t **")] IAsyncOperation<Pointer<IActivitySensorReading>>** result);
 
         [VtblIndex(7)]
         HRESULT get_SubscribedActivities([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CSensors__CActivityType_t **")] IVector<ActivityType>** value);
@@ -156,7 +156,7 @@ public unsafe partial struct IActivitySensor : IActivitySensor.Interface, INativ
         HRESULT get_MinimumReportInterval([NativeTypeName("UINT32 *")] uint* value);
 
         [VtblIndex(12)]
-        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CActivitySensor_Windows__CDevices__CSensors__CActivitySensorReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CActivitySensor_Windows__CDevices__CSensors__CActivitySensorReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<IActivitySensor>, Pointer<IActivitySensorReadingChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_ReadingChanged(EventRegistrationToken token);
@@ -184,7 +184,7 @@ public unsafe partial struct IActivitySensor : IActivitySensor.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensorReading_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetCurrentReadingAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IActivitySensorReading>>**, int> GetCurrentReadingAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CSensors__CActivityType_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IVector<ActivityType>**, int> get_SubscribedActivities;
@@ -202,7 +202,7 @@ public unsafe partial struct IActivitySensor : IActivitySensor.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_MinimumReportInterval;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CActivitySensor_Windows__CDevices__CSensors__CActivitySensorReadingChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ReadingChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IActivitySensor>, Pointer<IActivitySensorReadingChangedEventArgs>>*, EventRegistrationToken*, int> add_ReadingChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ReadingChanged;

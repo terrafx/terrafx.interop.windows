@@ -74,9 +74,9 @@ public unsafe partial struct IFindAllAccountsResult : IFindAllAccountsResult.Int
     /// <include file='IFindAllAccountsResult.xml' path='doc/member[@name="IFindAllAccountsResult.get_Accounts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Accounts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Accounts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IVectorView<Pointer<IWebAccount>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFindAllAccountsResult*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IFindAllAccountsResult*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IFindAllAccountsResult*, IVectorView<Pointer<IWebAccount>>**, int>)(lpVtbl[6]))((IFindAllAccountsResult*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IFindAllAccountsResult.xml' path='doc/member[@name="IFindAllAccountsResult.get_Status"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IFindAllAccountsResult : IFindAllAccountsResult.Int
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Accounts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Accounts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IVectorView<Pointer<IWebAccount>>** value);
 
         [VtblIndex(7)]
         HRESULT get_Status([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::FindAllWebAccountsStatus *")] FindAllWebAccountsStatus* value);
@@ -129,7 +129,7 @@ public unsafe partial struct IFindAllAccountsResult : IFindAllAccountsResult.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CWebAccount_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Accounts;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IWebAccount>>**, int> get_Accounts;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Authentication::Web::Core::FindAllWebAccountsStatus *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, FindAllWebAccountsStatus*, int> get_Status;

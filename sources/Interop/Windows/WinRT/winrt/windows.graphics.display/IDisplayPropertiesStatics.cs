@@ -193,9 +193,9 @@ public unsafe partial struct IDisplayPropertiesStatics : IDisplayPropertiesStati
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     [Obsolete("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]
-    public HRESULT GetColorProfileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT GetColorProfileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **")] IAsyncOperation<Pointer<IRandomAccessStream>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDisplayPropertiesStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[19]))((IDisplayPropertiesStatics*)Unsafe.AsPointer(ref this), asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPropertiesStatics*, IAsyncOperation<Pointer<IRandomAccessStream>>**, int>)(lpVtbl[19]))((IDisplayPropertiesStatics*)Unsafe.AsPointer(ref this), asyncInfo);
     }
 
     /// <include file='IDisplayPropertiesStatics.xml' path='doc/member[@name="IDisplayPropertiesStatics.add_ColorProfileChanged"]/*' />
@@ -290,7 +290,7 @@ public unsafe partial struct IDisplayPropertiesStatics : IDisplayPropertiesStati
 
         [VtblIndex(19)]
         [Obsolete("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]
-        HRESULT GetColorProfileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT GetColorProfileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **")] IAsyncOperation<Pointer<IRandomAccessStream>>** asyncInfo);
 
         [VtblIndex(20)]
         [Obsolete("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]
@@ -384,7 +384,7 @@ public unsafe partial struct IDisplayPropertiesStatics : IDisplayPropertiesStati
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **) __attribute__((stdcall))")]
         [Obsolete("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetColorProfileAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IRandomAccessStream>>**, int> GetColorProfileAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Graphics::Display::IDisplayPropertiesEventHandler *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("DisplayProperties may be altered or unavailable for releases after Windows Phone 8.1. Instead, use DisplayInformation.")]

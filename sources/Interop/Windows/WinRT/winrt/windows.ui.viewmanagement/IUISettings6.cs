@@ -74,9 +74,9 @@ public unsafe partial struct IUISettings6 : IUISettings6.Interface, INativeGuid
     /// <include file='IUISettings6.xml' path='doc/member[@name="IUISettings6.add_AnimationsEnabledChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_AnimationsEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_Windows__CUI__CViewManagement__CUISettingsAnimationsEnabledChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AnimationsEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_Windows__CUI__CViewManagement__CUISettingsAnimationsEnabledChangedEventArgs_t *")] ITypedEventHandler<Pointer<IUISettings>, Pointer<IUISettingsAnimationsEnabledChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUISettings6*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IUISettings6*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IUISettings6*, ITypedEventHandler<Pointer<IUISettings>, Pointer<IUISettingsAnimationsEnabledChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IUISettings6*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IUISettings6.xml' path='doc/member[@name="IUISettings6.remove_AnimationsEnabledChanged"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IUISettings6 : IUISettings6.Interface, INativeGuid
     /// <include file='IUISettings6.xml' path='doc/member[@name="IUISettings6.add_MessageDurationChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_MessageDurationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_Windows__CUI__CViewManagement__CUISettingsMessageDurationChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_MessageDurationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_Windows__CUI__CViewManagement__CUISettingsMessageDurationChangedEventArgs_t *")] ITypedEventHandler<Pointer<IUISettings>, Pointer<IUISettingsMessageDurationChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUISettings6*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IUISettings6*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IUISettings6*, ITypedEventHandler<Pointer<IUISettings>, Pointer<IUISettingsMessageDurationChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IUISettings6*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IUISettings6.xml' path='doc/member[@name="IUISettings6.remove_MessageDurationChanged"]/*' />
@@ -106,13 +106,13 @@ public unsafe partial struct IUISettings6 : IUISettings6.Interface, INativeGuid
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_AnimationsEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_Windows__CUI__CViewManagement__CUISettingsAnimationsEnabledChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AnimationsEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_Windows__CUI__CViewManagement__CUISettingsAnimationsEnabledChangedEventArgs_t *")] ITypedEventHandler<Pointer<IUISettings>, Pointer<IUISettingsAnimationsEnabledChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_AnimationsEnabledChanged(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_MessageDurationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_Windows__CUI__CViewManagement__CUISettingsMessageDurationChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_MessageDurationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_Windows__CUI__CViewManagement__CUISettingsMessageDurationChangedEventArgs_t *")] ITypedEventHandler<Pointer<IUISettings>, Pointer<IUISettingsMessageDurationChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_MessageDurationChanged(EventRegistrationToken token);
@@ -140,13 +140,13 @@ public unsafe partial struct IUISettings6 : IUISettings6.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_Windows__CUI__CViewManagement__CUISettingsAnimationsEnabledChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AnimationsEnabledChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IUISettings>, Pointer<IUISettingsAnimationsEnabledChangedEventArgs>>*, EventRegistrationToken*, int> add_AnimationsEnabledChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AnimationsEnabledChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_Windows__CUI__CViewManagement__CUISettingsMessageDurationChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_MessageDurationChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IUISettings>, Pointer<IUISettingsMessageDurationChangedEventArgs>>*, EventRegistrationToken*, int> add_MessageDurationChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_MessageDurationChanged;

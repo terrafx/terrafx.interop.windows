@@ -76,9 +76,9 @@ public unsafe partial struct IWalletItemStore2 : IWalletItemStore2.Interface, IN
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [Obsolete("IWalletItemStore2 is deprecated and might not work on all platforms. For more info, see MSDN.")]
-    public HRESULT add_ItemsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CWallet__CWalletItemStore_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_ItemsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CWallet__CWalletItemStore_IInspectable_t *")] ITypedEventHandler<Pointer<IWalletItemStore>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWalletItemStore2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IWalletItemStore2*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IWalletItemStore2*, ITypedEventHandler<Pointer<IWalletItemStore>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IWalletItemStore2*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IWalletItemStore2.xml' path='doc/member[@name="IWalletItemStore2.remove_ItemsChanged"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IWalletItemStore2 : IWalletItemStore2.Interface, IN
     {
         [VtblIndex(6)]
         [Obsolete("IWalletItemStore2 is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        HRESULT add_ItemsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CWallet__CWalletItemStore_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_ItemsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CWallet__CWalletItemStore_IInspectable_t *")] ITypedEventHandler<Pointer<IWalletItemStore>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(7)]
         [Obsolete("IWalletItemStore2 is deprecated and might not work on all platforms. For more info, see MSDN.")]
@@ -124,7 +124,7 @@ public unsafe partial struct IWalletItemStore2 : IWalletItemStore2.Interface, IN
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CWallet__CWalletItemStore_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("IWalletItemStore2 is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ItemsChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IWalletItemStore>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ItemsChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("IWalletItemStore2 is deprecated and might not work on all platforms. For more info, see MSDN.")]

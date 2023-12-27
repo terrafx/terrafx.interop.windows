@@ -82,9 +82,9 @@ public unsafe partial struct IMagnetometerStatics2 : IMagnetometerStatics2.Inter
     /// <include file='IMagnetometerStatics2.xml' path='doc/member[@name="IMagnetometerStatics2.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CMagnetometer_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CMagnetometer_t **")] IAsyncOperation<Pointer<IMagnetometer>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMagnetometerStatics2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IMagnetometerStatics2*)Unsafe.AsPointer(ref this), deviceId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IMagnetometerStatics2*, HSTRING, IAsyncOperation<Pointer<IMagnetometer>>**, int>)(lpVtbl[7]))((IMagnetometerStatics2*)Unsafe.AsPointer(ref this), deviceId, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IMagnetometerStatics2 : IMagnetometerStatics2.Inter
         HRESULT GetDeviceSelector(HSTRING* result);
 
         [VtblIndex(7)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CMagnetometer_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CMagnetometer_t **")] IAsyncOperation<Pointer<IMagnetometer>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IMagnetometerStatics2 : IMagnetometerStatics2.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetDeviceSelector;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CMagnetometer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IMagnetometer>>**, int> FromIdAsync;
     }
 }

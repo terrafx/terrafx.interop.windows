@@ -82,9 +82,9 @@ public unsafe partial struct ICoreKeyboardInputSource : ICoreKeyboardInputSource
     /// <include file='ICoreKeyboardInputSource.xml' path='doc/member[@name="ICoreKeyboardInputSource.add_CharacterReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_CharacterReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CCharacterReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie)
+    public HRESULT add_CharacterReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CCharacterReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<ICharacterReceivedEventArgs>>* handler, EventRegistrationToken* pCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreKeyboardInputSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ICoreKeyboardInputSource*)Unsafe.AsPointer(ref this), handler, pCookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreKeyboardInputSource*, ITypedEventHandler<Pointer<IInspectable>, Pointer<ICharacterReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ICoreKeyboardInputSource*)Unsafe.AsPointer(ref this), handler, pCookie);
     }
 
     /// <include file='ICoreKeyboardInputSource.xml' path='doc/member[@name="ICoreKeyboardInputSource.remove_CharacterReceived"]/*' />
@@ -98,9 +98,9 @@ public unsafe partial struct ICoreKeyboardInputSource : ICoreKeyboardInputSource
     /// <include file='ICoreKeyboardInputSource.xml' path='doc/member[@name="ICoreKeyboardInputSource.add_KeyDown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_KeyDown([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CKeyEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie)
+    public HRESULT add_KeyDown([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CKeyEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IKeyEventArgs>>* handler, EventRegistrationToken* pCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreKeyboardInputSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ICoreKeyboardInputSource*)Unsafe.AsPointer(ref this), handler, pCookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreKeyboardInputSource*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IKeyEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ICoreKeyboardInputSource*)Unsafe.AsPointer(ref this), handler, pCookie);
     }
 
     /// <include file='ICoreKeyboardInputSource.xml' path='doc/member[@name="ICoreKeyboardInputSource.remove_KeyDown"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct ICoreKeyboardInputSource : ICoreKeyboardInputSource
     /// <include file='ICoreKeyboardInputSource.xml' path='doc/member[@name="ICoreKeyboardInputSource.add_KeyUp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_KeyUp([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CKeyEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie)
+    public HRESULT add_KeyUp([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CKeyEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IKeyEventArgs>>* handler, EventRegistrationToken* pCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreKeyboardInputSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((ICoreKeyboardInputSource*)Unsafe.AsPointer(ref this), handler, pCookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreKeyboardInputSource*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IKeyEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((ICoreKeyboardInputSource*)Unsafe.AsPointer(ref this), handler, pCookie);
     }
 
     /// <include file='ICoreKeyboardInputSource.xml' path='doc/member[@name="ICoreKeyboardInputSource.remove_KeyUp"]/*' />
@@ -133,19 +133,19 @@ public unsafe partial struct ICoreKeyboardInputSource : ICoreKeyboardInputSource
         HRESULT GetCurrentKeyState([NativeTypeName("ABI::Windows::System::VirtualKey")] VirtualKey virtualKey, [NativeTypeName("ABI::Windows::UI::Core::CoreVirtualKeyStates *")] CoreVirtualKeyStates* KeyState);
 
         [VtblIndex(7)]
-        HRESULT add_CharacterReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CCharacterReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie);
+        HRESULT add_CharacterReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CCharacterReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<ICharacterReceivedEventArgs>>* handler, EventRegistrationToken* pCookie);
 
         [VtblIndex(8)]
         HRESULT remove_CharacterReceived(EventRegistrationToken cookie);
 
         [VtblIndex(9)]
-        HRESULT add_KeyDown([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CKeyEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie);
+        HRESULT add_KeyDown([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CKeyEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IKeyEventArgs>>* handler, EventRegistrationToken* pCookie);
 
         [VtblIndex(10)]
         HRESULT remove_KeyDown(EventRegistrationToken cookie);
 
         [VtblIndex(11)]
-        HRESULT add_KeyUp([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CKeyEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie);
+        HRESULT add_KeyUp([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CKeyEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IKeyEventArgs>>* handler, EventRegistrationToken* pCookie);
 
         [VtblIndex(12)]
         HRESULT remove_KeyUp(EventRegistrationToken cookie);
@@ -176,19 +176,19 @@ public unsafe partial struct ICoreKeyboardInputSource : ICoreKeyboardInputSource
         public delegate* unmanaged[MemberFunction]<TSelf*, VirtualKey, CoreVirtualKeyStates*, int> GetCurrentKeyState;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CCharacterReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CharacterReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, Pointer<ICharacterReceivedEventArgs>>*, EventRegistrationToken*, int> add_CharacterReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CharacterReceived;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CKeyEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_KeyDown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IKeyEventArgs>>*, EventRegistrationToken*, int> add_KeyDown;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_KeyDown;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CKeyEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_KeyUp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IKeyEventArgs>>*, EventRegistrationToken*, int> add_KeyUp;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_KeyUp;

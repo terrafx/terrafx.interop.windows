@@ -90,9 +90,9 @@ public unsafe partial struct ITimedTextLine : ITimedTextLine.Interface, INativeG
     /// <include file='ITimedTextLine.xml' path='doc/member[@name="ITimedTextLine.get_Subformats"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Subformats([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedTextSubformat_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Subformats([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedTextSubformat_t **")] IVector<Pointer<ITimedTextSubformat>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITimedTextLine*, IVector<IntPtr>**, int>)(lpVtbl[8]))((ITimedTextLine*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ITimedTextLine*, IVector<Pointer<ITimedTextSubformat>>**, int>)(lpVtbl[8]))((ITimedTextLine*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct ITimedTextLine : ITimedTextLine.Interface, INativeG
         HRESULT put_Text(HSTRING value);
 
         [VtblIndex(8)]
-        HRESULT get_Subformats([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedTextSubformat_t **")] IVector<IntPtr>** value);
+        HRESULT get_Subformats([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedTextSubformat_t **")] IVector<Pointer<ITimedTextSubformat>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct ITimedTextLine : ITimedTextLine.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_Text;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedTextSubformat_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Subformats;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<ITimedTextSubformat>>**, int> get_Subformats;
     }
 }

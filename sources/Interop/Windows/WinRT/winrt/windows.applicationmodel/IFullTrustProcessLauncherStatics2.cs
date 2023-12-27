@@ -74,26 +74,26 @@ public unsafe partial struct IFullTrustProcessLauncherStatics2 : IFullTrustProce
     /// <include file='IFullTrustProcessLauncherStatics2.xml' path='doc/member[@name="IFullTrustProcessLauncherStatics2.LaunchFullTrustProcessForCurrentAppWithArgumentsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT LaunchFullTrustProcessForCurrentAppWithArgumentsAsync(HSTRING commandLine, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CFullTrustProcessLaunchResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT LaunchFullTrustProcessForCurrentAppWithArgumentsAsync(HSTRING commandLine, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CFullTrustProcessLaunchResult_t **")] IAsyncOperation<Pointer<IFullTrustProcessLaunchResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFullTrustProcessLauncherStatics2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IFullTrustProcessLauncherStatics2*)Unsafe.AsPointer(ref this), commandLine, operation);
+        return ((delegate* unmanaged[MemberFunction]<IFullTrustProcessLauncherStatics2*, HSTRING, IAsyncOperation<Pointer<IFullTrustProcessLaunchResult>>**, int>)(lpVtbl[6]))((IFullTrustProcessLauncherStatics2*)Unsafe.AsPointer(ref this), commandLine, operation);
     }
 
     /// <include file='IFullTrustProcessLauncherStatics2.xml' path='doc/member[@name="IFullTrustProcessLauncherStatics2.LaunchFullTrustProcessForAppWithArgumentsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT LaunchFullTrustProcessForAppWithArgumentsAsync(HSTRING fullTrustPackageRelativeAppId, HSTRING commandLine, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CFullTrustProcessLaunchResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT LaunchFullTrustProcessForAppWithArgumentsAsync(HSTRING fullTrustPackageRelativeAppId, HSTRING commandLine, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CFullTrustProcessLaunchResult_t **")] IAsyncOperation<Pointer<IFullTrustProcessLaunchResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFullTrustProcessLauncherStatics2*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IFullTrustProcessLauncherStatics2*)Unsafe.AsPointer(ref this), fullTrustPackageRelativeAppId, commandLine, operation);
+        return ((delegate* unmanaged[MemberFunction]<IFullTrustProcessLauncherStatics2*, HSTRING, HSTRING, IAsyncOperation<Pointer<IFullTrustProcessLaunchResult>>**, int>)(lpVtbl[7]))((IFullTrustProcessLauncherStatics2*)Unsafe.AsPointer(ref this), fullTrustPackageRelativeAppId, commandLine, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT LaunchFullTrustProcessForCurrentAppWithArgumentsAsync(HSTRING commandLine, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CFullTrustProcessLaunchResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT LaunchFullTrustProcessForCurrentAppWithArgumentsAsync(HSTRING commandLine, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CFullTrustProcessLaunchResult_t **")] IAsyncOperation<Pointer<IFullTrustProcessLaunchResult>>** operation);
 
         [VtblIndex(7)]
-        HRESULT LaunchFullTrustProcessForAppWithArgumentsAsync(HSTRING fullTrustPackageRelativeAppId, HSTRING commandLine, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CFullTrustProcessLaunchResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT LaunchFullTrustProcessForAppWithArgumentsAsync(HSTRING fullTrustPackageRelativeAppId, HSTRING commandLine, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CFullTrustProcessLaunchResult_t **")] IAsyncOperation<Pointer<IFullTrustProcessLaunchResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IFullTrustProcessLauncherStatics2 : IFullTrustProce
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CFullTrustProcessLaunchResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> LaunchFullTrustProcessForCurrentAppWithArgumentsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IFullTrustProcessLaunchResult>>**, int> LaunchFullTrustProcessForCurrentAppWithArgumentsAsync;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CFullTrustProcessLaunchResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int> LaunchFullTrustProcessForAppWithArgumentsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IAsyncOperation<Pointer<IFullTrustProcessLaunchResult>>**, int> LaunchFullTrustProcessForAppWithArgumentsAsync;
     }
 }

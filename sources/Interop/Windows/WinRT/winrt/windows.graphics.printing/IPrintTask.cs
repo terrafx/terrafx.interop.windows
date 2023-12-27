@@ -98,9 +98,9 @@ public unsafe partial struct IPrintTask : IPrintTask.Interface, INativeGuid
     /// <include file='IPrintTask.xml' path='doc/member[@name="IPrintTask.add_Previewing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_Previewing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_Previewing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_IInspectable_t *")] ITypedEventHandler<Pointer<IPrintTask>, Pointer<IInspectable>>* eventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPrintTask*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IPrintTask*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IPrintTask*, ITypedEventHandler<Pointer<IPrintTask>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IPrintTask*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
     }
 
     /// <include file='IPrintTask.xml' path='doc/member[@name="IPrintTask.remove_Previewing"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct IPrintTask : IPrintTask.Interface, INativeGuid
     /// <include file='IPrintTask.xml' path='doc/member[@name="IPrintTask.add_Submitting"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_Submitting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_Submitting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_IInspectable_t *")] ITypedEventHandler<Pointer<IPrintTask>, Pointer<IInspectable>>* eventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPrintTask*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IPrintTask*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IPrintTask*, ITypedEventHandler<Pointer<IPrintTask>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IPrintTask*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
     }
 
     /// <include file='IPrintTask.xml' path='doc/member[@name="IPrintTask.remove_Submitting"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IPrintTask : IPrintTask.Interface, INativeGuid
     /// <include file='IPrintTask.xml' path='doc/member[@name="IPrintTask.add_Progressing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_Progressing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_Windows__CGraphics__CPrinting__CPrintTaskProgressingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_Progressing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_Windows__CGraphics__CPrinting__CPrintTaskProgressingEventArgs_t *")] ITypedEventHandler<Pointer<IPrintTask>, Pointer<IPrintTaskProgressingEventArgs>>* eventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPrintTask*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IPrintTask*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IPrintTask*, ITypedEventHandler<Pointer<IPrintTask>, Pointer<IPrintTaskProgressingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IPrintTask*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
     }
 
     /// <include file='IPrintTask.xml' path='doc/member[@name="IPrintTask.remove_Progressing"]/*' />
@@ -146,9 +146,9 @@ public unsafe partial struct IPrintTask : IPrintTask.Interface, INativeGuid
     /// <include file='IPrintTask.xml' path='doc/member[@name="IPrintTask.add_Completed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT add_Completed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_Windows__CGraphics__CPrinting__CPrintTaskCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_Completed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_Windows__CGraphics__CPrinting__CPrintTaskCompletedEventArgs_t *")] ITypedEventHandler<Pointer<IPrintTask>, Pointer<IPrintTaskCompletedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPrintTask*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IPrintTask*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IPrintTask*, ITypedEventHandler<Pointer<IPrintTask>, Pointer<IPrintTaskCompletedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IPrintTask*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
     }
 
     /// <include file='IPrintTask.xml' path='doc/member[@name="IPrintTask.remove_Completed"]/*' />
@@ -171,25 +171,25 @@ public unsafe partial struct IPrintTask : IPrintTask.Interface, INativeGuid
         HRESULT get_Options([NativeTypeName("ABI::Windows::Graphics::Printing::IPrintTaskOptionsCore **")] IPrintTaskOptionsCore** value);
 
         [VtblIndex(9)]
-        HRESULT add_Previewing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_Previewing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_IInspectable_t *")] ITypedEventHandler<Pointer<IPrintTask>, Pointer<IInspectable>>* eventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(10)]
         HRESULT remove_Previewing(EventRegistrationToken eventCookie);
 
         [VtblIndex(11)]
-        HRESULT add_Submitting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_Submitting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_IInspectable_t *")] ITypedEventHandler<Pointer<IPrintTask>, Pointer<IInspectable>>* eventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(12)]
         HRESULT remove_Submitting(EventRegistrationToken eventCookie);
 
         [VtblIndex(13)]
-        HRESULT add_Progressing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_Windows__CGraphics__CPrinting__CPrintTaskProgressingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_Progressing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_Windows__CGraphics__CPrinting__CPrintTaskProgressingEventArgs_t *")] ITypedEventHandler<Pointer<IPrintTask>, Pointer<IPrintTaskProgressingEventArgs>>* eventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(14)]
         HRESULT remove_Progressing(EventRegistrationToken eventCookie);
 
         [VtblIndex(15)]
-        HRESULT add_Completed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_Windows__CGraphics__CPrinting__CPrintTaskCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_Completed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_Windows__CGraphics__CPrinting__CPrintTaskCompletedEventArgs_t *")] ITypedEventHandler<Pointer<IPrintTask>, Pointer<IPrintTaskCompletedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(16)]
         HRESULT remove_Completed(EventRegistrationToken eventCookie);
@@ -226,25 +226,25 @@ public unsafe partial struct IPrintTask : IPrintTask.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IPrintTaskOptionsCore**, int> get_Options;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Previewing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPrintTask>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Previewing;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Previewing;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Submitting;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPrintTask>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Submitting;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Submitting;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_Windows__CGraphics__CPrinting__CPrintTaskProgressingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Progressing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPrintTask>, Pointer<IPrintTaskProgressingEventArgs>>*, EventRegistrationToken*, int> add_Progressing;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Progressing;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CPrinting__CPrintTask_Windows__CGraphics__CPrinting__CPrintTaskCompletedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Completed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPrintTask>, Pointer<IPrintTaskCompletedEventArgs>>*, EventRegistrationToken*, int> add_Completed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Completed;

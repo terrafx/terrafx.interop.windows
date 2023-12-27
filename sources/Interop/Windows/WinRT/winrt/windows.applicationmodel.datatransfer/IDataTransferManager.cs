@@ -74,9 +74,9 @@ public unsafe partial struct IDataTransferManager : IDataTransferManager.Interfa
     /// <include file='IDataTransferManager.xml' path='doc/member[@name="IDataTransferManager.add_DataRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_DataRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CDataRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_DataRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CDataRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IDataTransferManager>, Pointer<IDataRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataTransferManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IDataTransferManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDataTransferManager*, ITypedEventHandler<Pointer<IDataTransferManager>, Pointer<IDataRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IDataTransferManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDataTransferManager.xml' path='doc/member[@name="IDataTransferManager.remove_DataRequested"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IDataTransferManager : IDataTransferManager.Interfa
     /// <include file='IDataTransferManager.xml' path='doc/member[@name="IDataTransferManager.add_TargetApplicationChosen"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_TargetApplicationChosen([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CTargetApplicationChosenEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_TargetApplicationChosen([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CTargetApplicationChosenEventArgs_t *")] ITypedEventHandler<Pointer<IDataTransferManager>, Pointer<ITargetApplicationChosenEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataTransferManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IDataTransferManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDataTransferManager*, ITypedEventHandler<Pointer<IDataTransferManager>, Pointer<ITargetApplicationChosenEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IDataTransferManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDataTransferManager.xml' path='doc/member[@name="IDataTransferManager.remove_TargetApplicationChosen"]/*' />
@@ -106,13 +106,13 @@ public unsafe partial struct IDataTransferManager : IDataTransferManager.Interfa
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_DataRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CDataRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_DataRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CDataRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IDataTransferManager>, Pointer<IDataRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_DataRequested(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_TargetApplicationChosen([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CTargetApplicationChosenEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_TargetApplicationChosen([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CTargetApplicationChosenEventArgs_t *")] ITypedEventHandler<Pointer<IDataTransferManager>, Pointer<ITargetApplicationChosenEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_TargetApplicationChosen(EventRegistrationToken token);
@@ -140,13 +140,13 @@ public unsafe partial struct IDataTransferManager : IDataTransferManager.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CDataRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DataRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDataTransferManager>, Pointer<IDataRequestedEventArgs>>*, EventRegistrationToken*, int> add_DataRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DataRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CTargetApplicationChosenEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_TargetApplicationChosen;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDataTransferManager>, Pointer<ITargetApplicationChosenEventArgs>>*, EventRegistrationToken*, int> add_TargetApplicationChosen;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_TargetApplicationChosen;

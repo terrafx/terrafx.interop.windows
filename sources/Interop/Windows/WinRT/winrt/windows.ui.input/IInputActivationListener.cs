@@ -82,9 +82,9 @@ public unsafe partial struct IInputActivationListener : IInputActivationListener
     /// <include file='IInputActivationListener.xml' path='doc/member[@name="IInputActivationListener.add_InputActivationChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_InputActivationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CInputActivationListener_Windows__CUI__CInput__CInputActivationListenerActivationChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_InputActivationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CInputActivationListener_Windows__CUI__CInput__CInputActivationListenerActivationChangedEventArgs_t *")] ITypedEventHandler<Pointer<IInputActivationListener>, Pointer<IInputActivationListenerActivationChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IInputActivationListener*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IInputActivationListener*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IInputActivationListener*, ITypedEventHandler<Pointer<IInputActivationListener>, Pointer<IInputActivationListenerActivationChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IInputActivationListener*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IInputActivationListener.xml' path='doc/member[@name="IInputActivationListener.remove_InputActivationChanged"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IInputActivationListener : IInputActivationListener
         HRESULT get_State([NativeTypeName("ABI::Windows::UI::Input::InputActivationState *")] InputActivationState* value);
 
         [VtblIndex(7)]
-        HRESULT add_InputActivationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CInputActivationListener_Windows__CUI__CInput__CInputActivationListenerActivationChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_InputActivationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CInputActivationListener_Windows__CUI__CInput__CInputActivationListenerActivationChangedEventArgs_t *")] ITypedEventHandler<Pointer<IInputActivationListener>, Pointer<IInputActivationListenerActivationChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_InputActivationChanged(EventRegistrationToken token);
@@ -132,7 +132,7 @@ public unsafe partial struct IInputActivationListener : IInputActivationListener
         public delegate* unmanaged[MemberFunction]<TSelf*, InputActivationState*, int> get_State;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CInputActivationListener_Windows__CUI__CInput__CInputActivationListenerActivationChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_InputActivationChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInputActivationListener>, Pointer<IInputActivationListenerActivationChangedEventArgs>>*, EventRegistrationToken*, int> add_InputActivationChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_InputActivationChanged;

@@ -82,9 +82,9 @@ public unsafe partial struct IApplicationView9 : IApplicationView9.Interface, IN
     /// <include file='IApplicationView9.xml' path='doc/member[@name="IApplicationView9.GetDisplayRegions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetDisplayRegions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CDisplayRegion_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetDisplayRegions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CDisplayRegion_t **")] IVectorView<Pointer<IDisplayRegion>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IApplicationView9*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IApplicationView9*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationView9*, IVectorView<Pointer<IDisplayRegion>>**, int>)(lpVtbl[7]))((IApplicationView9*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IApplicationView9 : IApplicationView9.Interface, IN
         HRESULT get_WindowingEnvironment([NativeTypeName("ABI::Windows::UI::WindowManagement::IWindowingEnvironment **")] IWindowingEnvironment** value);
 
         [VtblIndex(7)]
-        HRESULT GetDisplayRegions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CDisplayRegion_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetDisplayRegions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CDisplayRegion_t **")] IVectorView<Pointer<IDisplayRegion>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IApplicationView9 : IApplicationView9.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, IWindowingEnvironment**, int> get_WindowingEnvironment;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CDisplayRegion_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetDisplayRegions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IDisplayRegion>>**, int> GetDisplayRegions;
     }
 }

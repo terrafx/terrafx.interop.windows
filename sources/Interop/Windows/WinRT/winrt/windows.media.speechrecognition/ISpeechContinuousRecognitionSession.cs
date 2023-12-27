@@ -138,9 +138,9 @@ public unsafe partial struct ISpeechContinuousRecognitionSession : ISpeechContin
     /// <include file='ISpeechContinuousRecognitionSession.xml' path='doc/member[@name="ISpeechContinuousRecognitionSession.add_Completed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_Completed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* returnValue)
+    public HRESULT add_Completed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionCompletedEventArgs_t *")] ITypedEventHandler<Pointer<ISpeechContinuousRecognitionSession>, Pointer<ISpeechContinuousRecognitionCompletedEventArgs>>* value, EventRegistrationToken* returnValue)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpeechContinuousRecognitionSession*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((ISpeechContinuousRecognitionSession*)Unsafe.AsPointer(ref this), value, returnValue);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechContinuousRecognitionSession*, ITypedEventHandler<Pointer<ISpeechContinuousRecognitionSession>, Pointer<ISpeechContinuousRecognitionCompletedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((ISpeechContinuousRecognitionSession*)Unsafe.AsPointer(ref this), value, returnValue);
     }
 
     /// <include file='ISpeechContinuousRecognitionSession.xml' path='doc/member[@name="ISpeechContinuousRecognitionSession.remove_Completed"]/*' />
@@ -154,9 +154,9 @@ public unsafe partial struct ISpeechContinuousRecognitionSession : ISpeechContin
     /// <include file='ISpeechContinuousRecognitionSession.xml' path='doc/member[@name="ISpeechContinuousRecognitionSession.add_ResultGenerated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT add_ResultGenerated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionResultGeneratedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* returnValue)
+    public HRESULT add_ResultGenerated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionResultGeneratedEventArgs_t *")] ITypedEventHandler<Pointer<ISpeechContinuousRecognitionSession>, Pointer<ISpeechContinuousRecognitionResultGeneratedEventArgs>>* value, EventRegistrationToken* returnValue)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpeechContinuousRecognitionSession*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[16]))((ISpeechContinuousRecognitionSession*)Unsafe.AsPointer(ref this), value, returnValue);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechContinuousRecognitionSession*, ITypedEventHandler<Pointer<ISpeechContinuousRecognitionSession>, Pointer<ISpeechContinuousRecognitionResultGeneratedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[16]))((ISpeechContinuousRecognitionSession*)Unsafe.AsPointer(ref this), value, returnValue);
     }
 
     /// <include file='ISpeechContinuousRecognitionSession.xml' path='doc/member[@name="ISpeechContinuousRecognitionSession.remove_ResultGenerated"]/*' />
@@ -194,13 +194,13 @@ public unsafe partial struct ISpeechContinuousRecognitionSession : ISpeechContin
         HRESULT Resume();
 
         [VtblIndex(14)]
-        HRESULT add_Completed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* returnValue);
+        HRESULT add_Completed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionCompletedEventArgs_t *")] ITypedEventHandler<Pointer<ISpeechContinuousRecognitionSession>, Pointer<ISpeechContinuousRecognitionCompletedEventArgs>>* value, EventRegistrationToken* returnValue);
 
         [VtblIndex(15)]
         HRESULT remove_Completed(EventRegistrationToken value);
 
         [VtblIndex(16)]
-        HRESULT add_ResultGenerated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionResultGeneratedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* returnValue);
+        HRESULT add_ResultGenerated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionResultGeneratedEventArgs_t *")] ITypedEventHandler<Pointer<ISpeechContinuousRecognitionSession>, Pointer<ISpeechContinuousRecognitionResultGeneratedEventArgs>>* value, EventRegistrationToken* returnValue);
 
         [VtblIndex(17)]
         HRESULT remove_ResultGenerated(EventRegistrationToken value);
@@ -252,13 +252,13 @@ public unsafe partial struct ISpeechContinuousRecognitionSession : ISpeechContin
         public delegate* unmanaged[MemberFunction]<TSelf*, int> Resume;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionCompletedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Completed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISpeechContinuousRecognitionSession>, Pointer<ISpeechContinuousRecognitionCompletedEventArgs>>*, EventRegistrationToken*, int> add_Completed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Completed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionSession_Windows__CMedia__CSpeechRecognition__CSpeechContinuousRecognitionResultGeneratedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ResultGenerated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISpeechContinuousRecognitionSession>, Pointer<ISpeechContinuousRecognitionResultGeneratedEventArgs>>*, EventRegistrationToken*, int> add_ResultGenerated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ResultGenerated;

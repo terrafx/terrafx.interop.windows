@@ -106,9 +106,9 @@ public unsafe partial struct IFaceDetectionEffect : IFaceDetectionEffect.Interfa
     /// <include file='IFaceDetectionEffect.xml' path='doc/member[@name="IFaceDetectionEffect.add_FaceDetected"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_FaceDetected([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CFaceDetectionEffect_Windows__CMedia__CCore__CFaceDetectedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_FaceDetected([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CFaceDetectionEffect_Windows__CMedia__CCore__CFaceDetectedEventArgs_t *")] ITypedEventHandler<Pointer<IFaceDetectionEffect>, Pointer<IFaceDetectedEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFaceDetectionEffect*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IFaceDetectionEffect*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IFaceDetectionEffect*, ITypedEventHandler<Pointer<IFaceDetectionEffect>, Pointer<IFaceDetectedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IFaceDetectionEffect*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IFaceDetectionEffect.xml' path='doc/member[@name="IFaceDetectionEffect.remove_FaceDetected"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IFaceDetectionEffect : IFaceDetectionEffect.Interfa
         HRESULT get_DesiredDetectionInterval([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value);
 
         [VtblIndex(10)]
-        HRESULT add_FaceDetected([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CFaceDetectionEffect_Windows__CMedia__CCore__CFaceDetectedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_FaceDetected([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CFaceDetectionEffect_Windows__CMedia__CCore__CFaceDetectedEventArgs_t *")] ITypedEventHandler<Pointer<IFaceDetectionEffect>, Pointer<IFaceDetectedEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(11)]
         HRESULT remove_FaceDetected(EventRegistrationToken cookie);
@@ -174,7 +174,7 @@ public unsafe partial struct IFaceDetectionEffect : IFaceDetectionEffect.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> get_DesiredDetectionInterval;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CFaceDetectionEffect_Windows__CMedia__CCore__CFaceDetectedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_FaceDetected;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IFaceDetectionEffect>, Pointer<IFaceDetectedEventArgs>>*, EventRegistrationToken*, int> add_FaceDetected;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_FaceDetected;

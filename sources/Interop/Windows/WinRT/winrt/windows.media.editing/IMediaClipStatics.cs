@@ -82,17 +82,17 @@ public unsafe partial struct IMediaClipStatics : IMediaClipStatics.Interface, IN
     /// <include file='IMediaClipStatics.xml' path='doc/member[@name="IMediaClipStatics.CreateFromFileAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateFromFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaClip_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateFromFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaClip_t **")] IAsyncOperation<Pointer<IMediaClip>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaClipStatics*, IStorageFile*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IMediaClipStatics*)Unsafe.AsPointer(ref this), file, operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaClipStatics*, IStorageFile*, IAsyncOperation<Pointer<IMediaClip>>**, int>)(lpVtbl[7]))((IMediaClipStatics*)Unsafe.AsPointer(ref this), file, operation);
     }
 
     /// <include file='IMediaClipStatics.xml' path='doc/member[@name="IMediaClipStatics.CreateFromImageFileAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT CreateFromImageFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan originalDuration, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaClip_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateFromImageFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan originalDuration, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaClip_t **")] IAsyncOperation<Pointer<IMediaClip>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaClipStatics*, IStorageFile*, TimeSpan, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IMediaClipStatics*)Unsafe.AsPointer(ref this), file, originalDuration, operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaClipStatics*, IStorageFile*, TimeSpan, IAsyncOperation<Pointer<IMediaClip>>**, int>)(lpVtbl[8]))((IMediaClipStatics*)Unsafe.AsPointer(ref this), file, originalDuration, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -101,10 +101,10 @@ public unsafe partial struct IMediaClipStatics : IMediaClipStatics.Interface, IN
         HRESULT CreateFromColor([NativeTypeName("ABI::Windows::UI::Color")] Color color, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan originalDuration, [NativeTypeName("ABI::Windows::Media::Editing::IMediaClip **")] IMediaClip** value);
 
         [VtblIndex(7)]
-        HRESULT CreateFromFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaClip_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateFromFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaClip_t **")] IAsyncOperation<Pointer<IMediaClip>>** operation);
 
         [VtblIndex(8)]
-        HRESULT CreateFromImageFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan originalDuration, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaClip_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateFromImageFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan originalDuration, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaClip_t **")] IAsyncOperation<Pointer<IMediaClip>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -132,9 +132,9 @@ public unsafe partial struct IMediaClipStatics : IMediaClipStatics.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, Color, TimeSpan, IMediaClip**, int> CreateFromColor;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaClip_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<IntPtr>**, int> CreateFromFileAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<Pointer<IMediaClip>>**, int> CreateFromFileAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::TimeSpan, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaClip_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, TimeSpan, IAsyncOperation<IntPtr>**, int> CreateFromImageFileAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, TimeSpan, IAsyncOperation<Pointer<IMediaClip>>**, int> CreateFromImageFileAsync;
     }
 }

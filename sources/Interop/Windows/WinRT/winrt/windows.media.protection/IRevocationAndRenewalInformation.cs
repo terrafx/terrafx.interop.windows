@@ -74,15 +74,15 @@ public unsafe partial struct IRevocationAndRenewalInformation : IRevocationAndRe
     /// <include file='IRevocationAndRenewalInformation.xml' path='doc/member[@name="IRevocationAndRenewalInformation.get_Items"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Items([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CProtection__CRevocationAndRenewalItem_t **")] IVector<IntPtr>** items)
+    public HRESULT get_Items([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CProtection__CRevocationAndRenewalItem_t **")] IVector<Pointer<IRevocationAndRenewalItem>>** items)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRevocationAndRenewalInformation*, IVector<IntPtr>**, int>)(lpVtbl[6]))((IRevocationAndRenewalInformation*)Unsafe.AsPointer(ref this), items);
+        return ((delegate* unmanaged[MemberFunction]<IRevocationAndRenewalInformation*, IVector<Pointer<IRevocationAndRenewalItem>>**, int>)(lpVtbl[6]))((IRevocationAndRenewalInformation*)Unsafe.AsPointer(ref this), items);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Items([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CProtection__CRevocationAndRenewalItem_t **")] IVector<IntPtr>** items);
+        HRESULT get_Items([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CProtection__CRevocationAndRenewalItem_t **")] IVector<Pointer<IRevocationAndRenewalItem>>** items);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IRevocationAndRenewalInformation : IRevocationAndRe
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CProtection__CRevocationAndRenewalItem_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Items;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IRevocationAndRenewalItem>>**, int> get_Items;
     }
 }

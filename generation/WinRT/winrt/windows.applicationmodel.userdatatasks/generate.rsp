@@ -1,0 +1,46 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTask *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTask *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskBatch *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskBatch *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskList *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskList *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskStore *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskStore *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTask *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTask *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTask *>
+ABI::Windows::Foundation::IReference<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskDaysOfWeek>
+ABI::Windows::Foundation::IReference<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskWeekOfMonth>
+ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::UserDataTasks::UserDataTaskListSyncManager *, IInspectable *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IUserDataTask
+IID_IUserDataTaskBatch
+IID_IUserDataTaskList
+IID_IUserDataTaskListLimitedWriteOperations
+IID_IUserDataTaskListSyncManager
+IID_IUserDataTaskManager
+IID_IUserDataTaskManagerStatics
+IID_IUserDataTaskQueryOptions
+IID_IUserDataTaskReader
+IID_IUserDataTaskRecurrenceProperties
+IID_IUserDataTaskRegenerationProperties
+IID_IUserDataTaskStore
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+--file
+winrt-windows.applicationmodel.userdatatasks.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.applicationmodel.userdatatasks
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.applicationmodel.userdatatasks
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.applicationmodel.userdatatasks.h

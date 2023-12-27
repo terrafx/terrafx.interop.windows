@@ -74,26 +74,26 @@ public unsafe partial struct IBackgroundTransferCompletionGroupTriggerDetails : 
     /// <include file='IBackgroundTransferCompletionGroupTriggerDetails.xml' path='doc/member[@name="IBackgroundTransferCompletionGroupTriggerDetails.get_Downloads"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Downloads([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Downloads([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IVectorView<Pointer<IDownloadOperation>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundTransferCompletionGroupTriggerDetails*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IBackgroundTransferCompletionGroupTriggerDetails*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundTransferCompletionGroupTriggerDetails*, IVectorView<Pointer<IDownloadOperation>>**, int>)(lpVtbl[6]))((IBackgroundTransferCompletionGroupTriggerDetails*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBackgroundTransferCompletionGroupTriggerDetails.xml' path='doc/member[@name="IBackgroundTransferCompletionGroupTriggerDetails.get_Uploads"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Uploads([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Uploads([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IVectorView<Pointer<IUploadOperation>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundTransferCompletionGroupTriggerDetails*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IBackgroundTransferCompletionGroupTriggerDetails*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundTransferCompletionGroupTriggerDetails*, IVectorView<Pointer<IUploadOperation>>**, int>)(lpVtbl[7]))((IBackgroundTransferCompletionGroupTriggerDetails*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Downloads([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Downloads([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IVectorView<Pointer<IDownloadOperation>>** value);
 
         [VtblIndex(7)]
-        HRESULT get_Uploads([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Uploads([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IVectorView<Pointer<IUploadOperation>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IBackgroundTransferCompletionGroupTriggerDetails : 
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Downloads;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IDownloadOperation>>**, int> get_Downloads;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Uploads;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IUploadOperation>>**, int> get_Uploads;
     }
 }

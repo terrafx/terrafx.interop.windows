@@ -74,9 +74,9 @@ public unsafe partial struct IMediaPlayer3 : IMediaPlayer3.Interface, INativeGui
     /// <include file='IMediaPlayer3.xml' path='doc/member[@name="IMediaPlayer3.add_IsMutedChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_IsMutedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_IsMutedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer3*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaPlayer3*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer3*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaPlayer3*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlayer3.xml' path='doc/member[@name="IMediaPlayer3.remove_IsMutedChanged"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IMediaPlayer3 : IMediaPlayer3.Interface, INativeGui
     /// <include file='IMediaPlayer3.xml' path='doc/member[@name="IMediaPlayer3.add_SourceChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_SourceChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_SourceChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer3*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IMediaPlayer3*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer3*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IMediaPlayer3*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlayer3.xml' path='doc/member[@name="IMediaPlayer3.remove_SourceChanged"]/*' />
@@ -250,13 +250,13 @@ public unsafe partial struct IMediaPlayer3 : IMediaPlayer3.Interface, INativeGui
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_IsMutedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_IsMutedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_IsMutedChanged(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_SourceChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_SourceChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_SourceChanged(EventRegistrationToken token);
@@ -338,13 +338,13 @@ public unsafe partial struct IMediaPlayer3 : IMediaPlayer3.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_IsMutedChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_IsMutedChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_IsMutedChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SourceChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_SourceChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SourceChanged;

@@ -98,25 +98,25 @@ public unsafe partial struct IPasswordVault : IPasswordVault.Interface, INativeG
     /// <include file='IPasswordVault.xml' path='doc/member[@name="IPasswordVault.FindAllByResource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT FindAllByResource(HSTRING resource, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CPasswordCredential_t **")] IVectorView<IntPtr>** credentials)
+    public HRESULT FindAllByResource(HSTRING resource, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CPasswordCredential_t **")] IVectorView<Pointer<IPasswordCredential>>** credentials)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPasswordVault*, HSTRING, IVectorView<IntPtr>**, int>)(lpVtbl[9]))((IPasswordVault*)Unsafe.AsPointer(ref this), resource, credentials);
+        return ((delegate* unmanaged[MemberFunction]<IPasswordVault*, HSTRING, IVectorView<Pointer<IPasswordCredential>>**, int>)(lpVtbl[9]))((IPasswordVault*)Unsafe.AsPointer(ref this), resource, credentials);
     }
 
     /// <include file='IPasswordVault.xml' path='doc/member[@name="IPasswordVault.FindAllByUserName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT FindAllByUserName(HSTRING userName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CPasswordCredential_t **")] IVectorView<IntPtr>** credentials)
+    public HRESULT FindAllByUserName(HSTRING userName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CPasswordCredential_t **")] IVectorView<Pointer<IPasswordCredential>>** credentials)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPasswordVault*, HSTRING, IVectorView<IntPtr>**, int>)(lpVtbl[10]))((IPasswordVault*)Unsafe.AsPointer(ref this), userName, credentials);
+        return ((delegate* unmanaged[MemberFunction]<IPasswordVault*, HSTRING, IVectorView<Pointer<IPasswordCredential>>**, int>)(lpVtbl[10]))((IPasswordVault*)Unsafe.AsPointer(ref this), userName, credentials);
     }
 
     /// <include file='IPasswordVault.xml' path='doc/member[@name="IPasswordVault.RetrieveAll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT RetrieveAll([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CPasswordCredential_t **")] IVectorView<IntPtr>** credentials)
+    public HRESULT RetrieveAll([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CPasswordCredential_t **")] IVectorView<Pointer<IPasswordCredential>>** credentials)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPasswordVault*, IVectorView<IntPtr>**, int>)(lpVtbl[11]))((IPasswordVault*)Unsafe.AsPointer(ref this), credentials);
+        return ((delegate* unmanaged[MemberFunction]<IPasswordVault*, IVectorView<Pointer<IPasswordCredential>>**, int>)(lpVtbl[11]))((IPasswordVault*)Unsafe.AsPointer(ref this), credentials);
     }
 
     public interface Interface : IInspectable.Interface
@@ -131,13 +131,13 @@ public unsafe partial struct IPasswordVault : IPasswordVault.Interface, INativeG
         HRESULT Retrieve(HSTRING resource, HSTRING userName, [NativeTypeName("ABI::Windows::Security::Credentials::IPasswordCredential **")] IPasswordCredential** credential);
 
         [VtblIndex(9)]
-        HRESULT FindAllByResource(HSTRING resource, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CPasswordCredential_t **")] IVectorView<IntPtr>** credentials);
+        HRESULT FindAllByResource(HSTRING resource, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CPasswordCredential_t **")] IVectorView<Pointer<IPasswordCredential>>** credentials);
 
         [VtblIndex(10)]
-        HRESULT FindAllByUserName(HSTRING userName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CPasswordCredential_t **")] IVectorView<IntPtr>** credentials);
+        HRESULT FindAllByUserName(HSTRING userName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CPasswordCredential_t **")] IVectorView<Pointer<IPasswordCredential>>** credentials);
 
         [VtblIndex(11)]
-        HRESULT RetrieveAll([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CPasswordCredential_t **")] IVectorView<IntPtr>** credentials);
+        HRESULT RetrieveAll([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CPasswordCredential_t **")] IVectorView<Pointer<IPasswordCredential>>** credentials);
     }
 
     public partial struct Vtbl<TSelf>
@@ -171,12 +171,12 @@ public unsafe partial struct IPasswordVault : IPasswordVault.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IPasswordCredential**, int> Retrieve;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CPasswordCredential_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<IntPtr>**, int> FindAllByResource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<Pointer<IPasswordCredential>>**, int> FindAllByResource;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CPasswordCredential_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<IntPtr>**, int> FindAllByUserName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<Pointer<IPasswordCredential>>**, int> FindAllByUserName;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCredentials__CPasswordCredential_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> RetrieveAll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IPasswordCredential>>**, int> RetrieveAll;
     }
 }

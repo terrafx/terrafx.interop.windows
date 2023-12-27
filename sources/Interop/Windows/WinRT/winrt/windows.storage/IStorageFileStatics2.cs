@@ -74,15 +74,15 @@ public unsafe partial struct IStorageFileStatics2 : IStorageFileStatics2.Interfa
     /// <include file='IStorageFileStatics2.xml' path='doc/member[@name="IStorageFileStatics2.GetFileFromPathForUserAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetFileFromPathForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING path, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetFileFromPathForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING path, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFileStatics2*, IUser*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStorageFileStatics2*)Unsafe.AsPointer(ref this), user, path, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFileStatics2*, IUser*, HSTRING, IAsyncOperation<Pointer<IStorageFile>>**, int>)(lpVtbl[6]))((IStorageFileStatics2*)Unsafe.AsPointer(ref this), user, path, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetFileFromPathForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING path, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetFileFromPathForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING path, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IStorageFileStatics2 : IStorageFileStatics2.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IUser *, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, HSTRING, IAsyncOperation<IntPtr>**, int> GetFileFromPathForUserAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, HSTRING, IAsyncOperation<Pointer<IStorageFile>>**, int> GetFileFromPathForUserAsync;
     }
 }

@@ -90,9 +90,9 @@ public unsafe partial struct ISelectableWordsSegmenter : ISelectableWordsSegment
     /// <include file='ISelectableWordsSegmenter.xml' path='doc/member[@name="ISelectableWordsSegmenter.GetTokens"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetTokens(HSTRING text, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CSelectableWordSegment_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetTokens(HSTRING text, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CSelectableWordSegment_t **")] IVectorView<Pointer<ISelectableWordSegment>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISelectableWordsSegmenter*, HSTRING, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((ISelectableWordsSegmenter*)Unsafe.AsPointer(ref this), text, result);
+        return ((delegate* unmanaged[MemberFunction]<ISelectableWordsSegmenter*, HSTRING, IVectorView<Pointer<ISelectableWordSegment>>**, int>)(lpVtbl[8]))((ISelectableWordsSegmenter*)Unsafe.AsPointer(ref this), text, result);
     }
 
     /// <include file='ISelectableWordsSegmenter.xml' path='doc/member[@name="ISelectableWordsSegmenter.Tokenize"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct ISelectableWordsSegmenter : ISelectableWordsSegment
         HRESULT GetTokenAt(HSTRING text, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("ABI::Windows::Data::Text::ISelectableWordSegment **")] ISelectableWordSegment** result);
 
         [VtblIndex(8)]
-        HRESULT GetTokens(HSTRING text, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CSelectableWordSegment_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetTokens(HSTRING text, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CSelectableWordSegment_t **")] IVectorView<Pointer<ISelectableWordSegment>>** result);
 
         [VtblIndex(9)]
         HRESULT Tokenize(HSTRING text, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("ABI::Windows::Data::Text::ISelectableWordSegmentsTokenizingHandler *")] ISelectableWordSegmentsTokenizingHandler* handler);
@@ -146,7 +146,7 @@ public unsafe partial struct ISelectableWordsSegmenter : ISelectableWordsSegment
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, uint, ISelectableWordSegment**, int> GetTokenAt;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CSelectableWordSegment_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<IntPtr>**, int> GetTokens;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<Pointer<ISelectableWordSegment>>**, int> GetTokens;
 
         [NativeTypeName("HRESULT (HSTRING, UINT32, ABI::Windows::Data::Text::ISelectableWordSegmentsTokenizingHandler *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, uint, ISelectableWordSegmentsTokenizingHandler*, int> Tokenize;

@@ -90,17 +90,17 @@ public unsafe partial struct IAppUriHandlerRegistration : IAppUriHandlerRegistra
     /// <include file='IAppUriHandlerRegistration.xml' path='doc/member[@name="IAppUriHandlerRegistration.GetAppAddedHostsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetAppAddedHostsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetAppAddedHostsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_t **")] IAsyncOperation<Pointer<IVector<Pointer<IAppUriHandlerHost>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppUriHandlerRegistration*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IAppUriHandlerRegistration*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppUriHandlerRegistration*, IAsyncOperation<Pointer<IVector<Pointer<IAppUriHandlerHost>>>>**, int>)(lpVtbl[8]))((IAppUriHandlerRegistration*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IAppUriHandlerRegistration.xml' path='doc/member[@name="IAppUriHandlerRegistration.SetAppAddedHostsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT SetAppAddedHostsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CAppUriHandlerHost_t *")] IIterable<IntPtr>* hosts, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation)
+    public HRESULT SetAppAddedHostsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CAppUriHandlerHost_t *")] IIterable<Pointer<IAppUriHandlerHost>>* hosts, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppUriHandlerRegistration*, IIterable<IntPtr>*, IAsyncAction**, int>)(lpVtbl[9]))((IAppUriHandlerRegistration*)Unsafe.AsPointer(ref this), hosts, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppUriHandlerRegistration*, IIterable<Pointer<IAppUriHandlerHost>>*, IAsyncAction**, int>)(lpVtbl[9]))((IAppUriHandlerRegistration*)Unsafe.AsPointer(ref this), hosts, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -112,10 +112,10 @@ public unsafe partial struct IAppUriHandlerRegistration : IAppUriHandlerRegistra
         HRESULT get_User([NativeTypeName("ABI::Windows::System::IUser **")] IUser** value);
 
         [VtblIndex(8)]
-        HRESULT GetAppAddedHostsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetAppAddedHostsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_t **")] IAsyncOperation<Pointer<IVector<Pointer<IAppUriHandlerHost>>>>** operation);
 
         [VtblIndex(9)]
-        HRESULT SetAppAddedHostsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CAppUriHandlerHost_t *")] IIterable<IntPtr>* hosts, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
+        HRESULT SetAppAddedHostsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CAppUriHandlerHost_t *")] IIterable<Pointer<IAppUriHandlerHost>>* hosts, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -146,9 +146,9 @@ public unsafe partial struct IAppUriHandlerRegistration : IAppUriHandlerRegistra
         public delegate* unmanaged[MemberFunction]<TSelf*, IUser**, int> get_User;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppUriHandlerHost_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetAppAddedHostsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVector<Pointer<IAppUriHandlerHost>>>>**, int> GetAppAddedHostsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CAppUriHandlerHost_t *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IAsyncAction**, int> SetAppAddedHostsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IAppUriHandlerHost>>*, IAsyncAction**, int> SetAppAddedHostsAsync;
     }
 }

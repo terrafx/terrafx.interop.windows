@@ -76,48 +76,48 @@ public unsafe partial struct IActiveBasicDeviceStatics : IActiveBasicDeviceStati
     /// <include file='IActiveBasicDeviceStatics.xml' path='doc/member[@name="IActiveBasicDeviceStatics.CreateBasicDeviceAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateBasicDeviceAsync(HSTRING deviceIdentifier, [NativeTypeName("ABI::Windows::Media::Streaming::DeviceTypes")] DeviceTypes type, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CActiveBasicDevice_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT CreateBasicDeviceAsync(HSTRING deviceIdentifier, [NativeTypeName("ABI::Windows::Media::Streaming::DeviceTypes")] DeviceTypes type, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CActiveBasicDevice_t **")] IAsyncOperation<Pointer<IActiveBasicDevice>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IActiveBasicDeviceStatics*, HSTRING, DeviceTypes, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IActiveBasicDeviceStatics*)Unsafe.AsPointer(ref this), deviceIdentifier, type, value);
+        return ((delegate* unmanaged[MemberFunction]<IActiveBasicDeviceStatics*, HSTRING, DeviceTypes, IAsyncOperation<Pointer<IActiveBasicDevice>>**, int>)(lpVtbl[6]))((IActiveBasicDeviceStatics*)Unsafe.AsPointer(ref this), deviceIdentifier, type, value);
     }
 
     /// <include file='IActiveBasicDeviceStatics.xml' path='doc/member[@name="IActiveBasicDeviceStatics.CloneBasicDeviceAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CloneBasicDeviceAsync([NativeTypeName("ABI::Windows::Media::Streaming::IBasicDevice *")] IBasicDevice* basicDevice, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CActiveBasicDevice_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT CloneBasicDeviceAsync([NativeTypeName("ABI::Windows::Media::Streaming::IBasicDevice *")] IBasicDevice* basicDevice, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CActiveBasicDevice_t **")] IAsyncOperation<Pointer<IActiveBasicDevice>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IActiveBasicDeviceStatics*, IBasicDevice*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IActiveBasicDeviceStatics*)Unsafe.AsPointer(ref this), basicDevice, value);
+        return ((delegate* unmanaged[MemberFunction]<IActiveBasicDeviceStatics*, IBasicDevice*, IAsyncOperation<Pointer<IActiveBasicDevice>>**, int>)(lpVtbl[7]))((IActiveBasicDeviceStatics*)Unsafe.AsPointer(ref this), basicDevice, value);
     }
 
     /// <include file='IActiveBasicDeviceStatics.xml' path='doc/member[@name="IActiveBasicDeviceStatics.GetDevicesOnMatchingNetworkAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetDevicesOnMatchingNetworkAsync([NativeTypeName("ABI::Windows::Media::Streaming::IActiveBasicDevice *")] IActiveBasicDevice* server, [NativeTypeName("ABI::Windows::Media::Streaming::IActiveBasicDevice *")] IActiveBasicDevice* renderer, [NativeTypeName("boolean")] byte optimizeForProxying, [NativeTypeName("boolean")] byte allowChangeRendererNetwork, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CDevicePair_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetDevicesOnMatchingNetworkAsync([NativeTypeName("ABI::Windows::Media::Streaming::IActiveBasicDevice *")] IActiveBasicDevice* server, [NativeTypeName("ABI::Windows::Media::Streaming::IActiveBasicDevice *")] IActiveBasicDevice* renderer, [NativeTypeName("boolean")] byte optimizeForProxying, [NativeTypeName("boolean")] byte allowChangeRendererNetwork, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CDevicePair_t **")] IAsyncOperation<Pointer<IDevicePair>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IActiveBasicDeviceStatics*, IActiveBasicDevice*, IActiveBasicDevice*, byte, byte, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IActiveBasicDeviceStatics*)Unsafe.AsPointer(ref this), server, renderer, optimizeForProxying, allowChangeRendererNetwork, operation);
+        return ((delegate* unmanaged[MemberFunction]<IActiveBasicDeviceStatics*, IActiveBasicDevice*, IActiveBasicDevice*, byte, byte, IAsyncOperation<Pointer<IDevicePair>>**, int>)(lpVtbl[8]))((IActiveBasicDeviceStatics*)Unsafe.AsPointer(ref this), server, renderer, optimizeForProxying, allowChangeRendererNetwork, operation);
     }
 
     /// <include file='IActiveBasicDeviceStatics.xml' path='doc/member[@name="IActiveBasicDeviceStatics.CreateDevicesOnMatchingNetworkAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT CreateDevicesOnMatchingNetworkAsync(HSTRING serverUDN, [NativeTypeName("ABI::Windows::Media::Streaming::IActiveBasicDevice *")] IActiveBasicDevice* renderer, [NativeTypeName("boolean")] byte optimizeForProxying, [NativeTypeName("boolean")] byte allowChangeRendererNetwork, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CDevicePair_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateDevicesOnMatchingNetworkAsync(HSTRING serverUDN, [NativeTypeName("ABI::Windows::Media::Streaming::IActiveBasicDevice *")] IActiveBasicDevice* renderer, [NativeTypeName("boolean")] byte optimizeForProxying, [NativeTypeName("boolean")] byte allowChangeRendererNetwork, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CDevicePair_t **")] IAsyncOperation<Pointer<IDevicePair>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IActiveBasicDeviceStatics*, HSTRING, IActiveBasicDevice*, byte, byte, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IActiveBasicDeviceStatics*)Unsafe.AsPointer(ref this), serverUDN, renderer, optimizeForProxying, allowChangeRendererNetwork, operation);
+        return ((delegate* unmanaged[MemberFunction]<IActiveBasicDeviceStatics*, HSTRING, IActiveBasicDevice*, byte, byte, IAsyncOperation<Pointer<IDevicePair>>**, int>)(lpVtbl[9]))((IActiveBasicDeviceStatics*)Unsafe.AsPointer(ref this), serverUDN, renderer, optimizeForProxying, allowChangeRendererNetwork, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CreateBasicDeviceAsync(HSTRING deviceIdentifier, [NativeTypeName("ABI::Windows::Media::Streaming::DeviceTypes")] DeviceTypes type, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CActiveBasicDevice_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT CreateBasicDeviceAsync(HSTRING deviceIdentifier, [NativeTypeName("ABI::Windows::Media::Streaming::DeviceTypes")] DeviceTypes type, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CActiveBasicDevice_t **")] IAsyncOperation<Pointer<IActiveBasicDevice>>** value);
 
         [VtblIndex(7)]
-        HRESULT CloneBasicDeviceAsync([NativeTypeName("ABI::Windows::Media::Streaming::IBasicDevice *")] IBasicDevice* basicDevice, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CActiveBasicDevice_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT CloneBasicDeviceAsync([NativeTypeName("ABI::Windows::Media::Streaming::IBasicDevice *")] IBasicDevice* basicDevice, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CActiveBasicDevice_t **")] IAsyncOperation<Pointer<IActiveBasicDevice>>** value);
 
         [VtblIndex(8)]
-        HRESULT GetDevicesOnMatchingNetworkAsync([NativeTypeName("ABI::Windows::Media::Streaming::IActiveBasicDevice *")] IActiveBasicDevice* server, [NativeTypeName("ABI::Windows::Media::Streaming::IActiveBasicDevice *")] IActiveBasicDevice* renderer, [NativeTypeName("boolean")] byte optimizeForProxying, [NativeTypeName("boolean")] byte allowChangeRendererNetwork, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CDevicePair_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetDevicesOnMatchingNetworkAsync([NativeTypeName("ABI::Windows::Media::Streaming::IActiveBasicDevice *")] IActiveBasicDevice* server, [NativeTypeName("ABI::Windows::Media::Streaming::IActiveBasicDevice *")] IActiveBasicDevice* renderer, [NativeTypeName("boolean")] byte optimizeForProxying, [NativeTypeName("boolean")] byte allowChangeRendererNetwork, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CDevicePair_t **")] IAsyncOperation<Pointer<IDevicePair>>** operation);
 
         [VtblIndex(9)]
-        HRESULT CreateDevicesOnMatchingNetworkAsync(HSTRING serverUDN, [NativeTypeName("ABI::Windows::Media::Streaming::IActiveBasicDevice *")] IActiveBasicDevice* renderer, [NativeTypeName("boolean")] byte optimizeForProxying, [NativeTypeName("boolean")] byte allowChangeRendererNetwork, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CDevicePair_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateDevicesOnMatchingNetworkAsync(HSTRING serverUDN, [NativeTypeName("ABI::Windows::Media::Streaming::IActiveBasicDevice *")] IActiveBasicDevice* renderer, [NativeTypeName("boolean")] byte optimizeForProxying, [NativeTypeName("boolean")] byte allowChangeRendererNetwork, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CDevicePair_t **")] IAsyncOperation<Pointer<IDevicePair>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -142,15 +142,15 @@ public unsafe partial struct IActiveBasicDeviceStatics : IActiveBasicDeviceStati
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Media::Streaming::DeviceTypes, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CActiveBasicDevice_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, DeviceTypes, IAsyncOperation<IntPtr>**, int> CreateBasicDeviceAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, DeviceTypes, IAsyncOperation<Pointer<IActiveBasicDevice>>**, int> CreateBasicDeviceAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Streaming::IBasicDevice *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CActiveBasicDevice_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IBasicDevice*, IAsyncOperation<IntPtr>**, int> CloneBasicDeviceAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBasicDevice*, IAsyncOperation<Pointer<IActiveBasicDevice>>**, int> CloneBasicDeviceAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Streaming::IActiveBasicDevice *, ABI::Windows::Media::Streaming::IActiveBasicDevice *, ::boolean, ::boolean, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CDevicePair_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IActiveBasicDevice*, IActiveBasicDevice*, byte, byte, IAsyncOperation<IntPtr>**, int> GetDevicesOnMatchingNetworkAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IActiveBasicDevice*, IActiveBasicDevice*, byte, byte, IAsyncOperation<Pointer<IDevicePair>>**, int> GetDevicesOnMatchingNetworkAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Media::Streaming::IActiveBasicDevice *, ::boolean, ::boolean, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CStreaming__CDevicePair_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IActiveBasicDevice*, byte, byte, IAsyncOperation<IntPtr>**, int> CreateDevicesOnMatchingNetworkAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IActiveBasicDevice*, byte, byte, IAsyncOperation<Pointer<IDevicePair>>**, int> CreateDevicesOnMatchingNetworkAsync;
     }
 }

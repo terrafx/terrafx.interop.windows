@@ -82,9 +82,9 @@ public unsafe partial struct IMediaStreamSampleStatics : IMediaStreamSampleStati
     /// <include file='IMediaStreamSampleStatics.xml' path='doc/member[@name="IMediaStreamSampleStatics.CreateFromStreamAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* stream, [NativeTypeName("UINT32")] uint count, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan timestamp, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCore__CMediaStreamSample_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT CreateFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* stream, [NativeTypeName("UINT32")] uint count, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan timestamp, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCore__CMediaStreamSample_t **")] IAsyncOperation<Pointer<IMediaStreamSample>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaStreamSampleStatics*, IInputStream*, uint, TimeSpan, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IMediaStreamSampleStatics*)Unsafe.AsPointer(ref this), stream, count, timestamp, value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaStreamSampleStatics*, IInputStream*, uint, TimeSpan, IAsyncOperation<Pointer<IMediaStreamSample>>**, int>)(lpVtbl[7]))((IMediaStreamSampleStatics*)Unsafe.AsPointer(ref this), stream, count, timestamp, value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IMediaStreamSampleStatics : IMediaStreamSampleStati
         HRESULT CreateFromBuffer([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* buffer, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan timestamp, [NativeTypeName("ABI::Windows::Media::Core::IMediaStreamSample **")] IMediaStreamSample** value);
 
         [VtblIndex(7)]
-        HRESULT CreateFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* stream, [NativeTypeName("UINT32")] uint count, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan timestamp, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCore__CMediaStreamSample_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT CreateFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* stream, [NativeTypeName("UINT32")] uint count, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan timestamp, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCore__CMediaStreamSample_t **")] IAsyncOperation<Pointer<IMediaStreamSample>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IMediaStreamSampleStatics : IMediaStreamSampleStati
         public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, TimeSpan, IMediaStreamSample**, int> CreateFromBuffer;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IInputStream *, UINT32, ABI::Windows::Foundation::TimeSpan, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCore__CMediaStreamSample_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IInputStream*, uint, TimeSpan, IAsyncOperation<IntPtr>**, int> CreateFromStreamAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInputStream*, uint, TimeSpan, IAsyncOperation<Pointer<IMediaStreamSample>>**, int> CreateFromStreamAsync;
     }
 }

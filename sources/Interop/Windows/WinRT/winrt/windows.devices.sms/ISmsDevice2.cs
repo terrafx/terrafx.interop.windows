@@ -138,17 +138,17 @@ public unsafe partial struct ISmsDevice2 : ISmsDevice2.Interface, INativeGuid
     /// <include file='ISmsDevice2.xml' path='doc/member[@name="ISmsDevice2.SendMessageAndGetResultAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT SendMessageAndGetResultAsync([NativeTypeName("ABI::Windows::Devices::Sms::ISmsMessageBase *")] ISmsMessageBase* message, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSms__CSmsSendMessageResult_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT SendMessageAndGetResultAsync([NativeTypeName("ABI::Windows::Devices::Sms::ISmsMessageBase *")] ISmsMessageBase* message, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSms__CSmsSendMessageResult_t **")] IAsyncOperation<Pointer<ISmsSendMessageResult>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmsDevice2*, ISmsMessageBase*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[14]))((ISmsDevice2*)Unsafe.AsPointer(ref this), message, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISmsDevice2*, ISmsMessageBase*, IAsyncOperation<Pointer<ISmsSendMessageResult>>**, int>)(lpVtbl[14]))((ISmsDevice2*)Unsafe.AsPointer(ref this), message, asyncInfo);
     }
 
     /// <include file='ISmsDevice2.xml' path='doc/member[@name="ISmsDevice2.add_DeviceStatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT add_DeviceStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSms__CSmsDevice2_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_DeviceStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSms__CSmsDevice2_IInspectable_t *")] ITypedEventHandler<Pointer<ISmsDevice2>, Pointer<IInspectable>>* eventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmsDevice2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((ISmsDevice2*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<ISmsDevice2*, ITypedEventHandler<Pointer<ISmsDevice2>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((ISmsDevice2*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
     }
 
     /// <include file='ISmsDevice2.xml' path='doc/member[@name="ISmsDevice2.remove_DeviceStatusChanged"]/*' />
@@ -186,10 +186,10 @@ public unsafe partial struct ISmsDevice2 : ISmsDevice2.Interface, INativeGuid
         HRESULT CalculateLength([NativeTypeName("ABI::Windows::Devices::Sms::ISmsMessageBase *")] ISmsMessageBase* message, [NativeTypeName("ABI::Windows::Devices::Sms::SmsEncodedLength *")] SmsEncodedLength* value);
 
         [VtblIndex(14)]
-        HRESULT SendMessageAndGetResultAsync([NativeTypeName("ABI::Windows::Devices::Sms::ISmsMessageBase *")] ISmsMessageBase* message, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSms__CSmsSendMessageResult_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT SendMessageAndGetResultAsync([NativeTypeName("ABI::Windows::Devices::Sms::ISmsMessageBase *")] ISmsMessageBase* message, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSms__CSmsSendMessageResult_t **")] IAsyncOperation<Pointer<ISmsSendMessageResult>>** asyncInfo);
 
         [VtblIndex(15)]
-        HRESULT add_DeviceStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSms__CSmsDevice2_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_DeviceStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSms__CSmsDevice2_IInspectable_t *")] ITypedEventHandler<Pointer<ISmsDevice2>, Pointer<IInspectable>>* eventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(16)]
         HRESULT remove_DeviceStatusChanged(EventRegistrationToken eventCookie);
@@ -241,10 +241,10 @@ public unsafe partial struct ISmsDevice2 : ISmsDevice2.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, ISmsMessageBase*, SmsEncodedLength*, int> CalculateLength;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Sms::ISmsMessageBase *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSms__CSmsSendMessageResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ISmsMessageBase*, IAsyncOperation<IntPtr>**, int> SendMessageAndGetResultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISmsMessageBase*, IAsyncOperation<Pointer<ISmsSendMessageResult>>**, int> SendMessageAndGetResultAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSms__CSmsDevice2_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DeviceStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISmsDevice2>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_DeviceStatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DeviceStatusChanged;

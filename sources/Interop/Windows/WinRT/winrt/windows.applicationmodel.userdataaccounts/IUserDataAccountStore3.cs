@@ -74,15 +74,15 @@ public unsafe partial struct IUserDataAccountStore3 : IUserDataAccountStore3.Int
     /// <include file='IUserDataAccountStore3.xml' path='doc/member[@name="IUserDataAccountStore3.CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, HSTRING enterpriseId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, HSTRING enterpriseId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<Pointer<IUserDataAccount>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountStore3*, HSTRING, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IUserDataAccountStore3*)Unsafe.AsPointer(ref this), userDisplayName, packageRelativeAppId, enterpriseId, result);
+        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountStore3*, HSTRING, HSTRING, HSTRING, IAsyncOperation<Pointer<IUserDataAccount>>**, int>)(lpVtbl[6]))((IUserDataAccountStore3*)Unsafe.AsPointer(ref this), userDisplayName, packageRelativeAppId, enterpriseId, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, HSTRING enterpriseId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, HSTRING enterpriseId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<Pointer<IUserDataAccount>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IUserDataAccountStore3 : IUserDataAccountStore3.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int> CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, HSTRING, IAsyncOperation<Pointer<IUserDataAccount>>**, int> CreateAccountWithPackageRelativeAppIdAndEnterpriseIdAsync;
     }
 }

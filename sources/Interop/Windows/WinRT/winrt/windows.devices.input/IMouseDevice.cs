@@ -74,9 +74,9 @@ public unsafe partial struct IMouseDevice : IMouseDevice.Interface, INativeGuid
     /// <include file='IMouseDevice.xml' path='doc/member[@name="IMouseDevice.add_MouseMoved"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_MouseMoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CMouseDevice_Windows__CDevices__CInput__CMouseEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_MouseMoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CMouseDevice_Windows__CDevices__CInput__CMouseEventArgs_t *")] ITypedEventHandler<Pointer<IMouseDevice>, Pointer<IMouseEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMouseDevice*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMouseDevice*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMouseDevice*, ITypedEventHandler<Pointer<IMouseDevice>, Pointer<IMouseEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMouseDevice*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMouseDevice.xml' path='doc/member[@name="IMouseDevice.remove_MouseMoved"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IMouseDevice : IMouseDevice.Interface, INativeGuid
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_MouseMoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CMouseDevice_Windows__CDevices__CInput__CMouseEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_MouseMoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CMouseDevice_Windows__CDevices__CInput__CMouseEventArgs_t *")] ITypedEventHandler<Pointer<IMouseDevice>, Pointer<IMouseEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(7)]
         HRESULT remove_MouseMoved(EventRegistrationToken cookie);
@@ -118,7 +118,7 @@ public unsafe partial struct IMouseDevice : IMouseDevice.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CMouseDevice_Windows__CDevices__CInput__CMouseEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_MouseMoved;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMouseDevice>, Pointer<IMouseEventArgs>>*, EventRegistrationToken*, int> add_MouseMoved;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_MouseMoved;

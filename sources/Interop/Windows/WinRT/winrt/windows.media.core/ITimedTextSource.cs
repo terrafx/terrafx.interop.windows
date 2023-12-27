@@ -74,9 +74,9 @@ public unsafe partial struct ITimedTextSource : ITimedTextSource.Interface, INat
     /// <include file='ITimedTextSource.xml' path='doc/member[@name="ITimedTextSource.add_Resolved"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_Resolved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedTextSource_Windows__CMedia__CCore__CTimedTextSourceResolveResultEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Resolved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedTextSource_Windows__CMedia__CCore__CTimedTextSourceResolveResultEventArgs_t *")] ITypedEventHandler<Pointer<ITimedTextSource>, Pointer<ITimedTextSourceResolveResultEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITimedTextSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ITimedTextSource*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ITimedTextSource*, ITypedEventHandler<Pointer<ITimedTextSource>, Pointer<ITimedTextSourceResolveResultEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ITimedTextSource*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ITimedTextSource.xml' path='doc/member[@name="ITimedTextSource.remove_Resolved"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct ITimedTextSource : ITimedTextSource.Interface, INat
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_Resolved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedTextSource_Windows__CMedia__CCore__CTimedTextSourceResolveResultEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Resolved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedTextSource_Windows__CMedia__CCore__CTimedTextSourceResolveResultEventArgs_t *")] ITypedEventHandler<Pointer<ITimedTextSource>, Pointer<ITimedTextSourceResolveResultEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_Resolved(EventRegistrationToken token);
@@ -118,7 +118,7 @@ public unsafe partial struct ITimedTextSource : ITimedTextSource.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CTimedTextSource_Windows__CMedia__CCore__CTimedTextSourceResolveResultEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Resolved;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ITimedTextSource>, Pointer<ITimedTextSourceResolveResultEventArgs>>*, EventRegistrationToken*, int> add_Resolved;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Resolved;

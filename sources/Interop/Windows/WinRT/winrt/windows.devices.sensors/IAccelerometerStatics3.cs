@@ -74,9 +74,9 @@ public unsafe partial struct IAccelerometerStatics3 : IAccelerometerStatics3.Int
     /// <include file='IAccelerometerStatics3.xml' path='doc/member[@name="IAccelerometerStatics3.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CAccelerometer_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CAccelerometer_t **")] IAsyncOperation<Pointer<IAccelerometer>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAccelerometerStatics3*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IAccelerometerStatics3*)Unsafe.AsPointer(ref this), deviceId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAccelerometerStatics3*, HSTRING, IAsyncOperation<Pointer<IAccelerometer>>**, int>)(lpVtbl[6]))((IAccelerometerStatics3*)Unsafe.AsPointer(ref this), deviceId, operation);
     }
 
     /// <include file='IAccelerometerStatics3.xml' path='doc/member[@name="IAccelerometerStatics3.GetDeviceSelector"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IAccelerometerStatics3 : IAccelerometerStatics3.Int
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CAccelerometer_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CAccelerometer_t **")] IAsyncOperation<Pointer<IAccelerometer>>** operation);
 
         [VtblIndex(7)]
         HRESULT GetDeviceSelector([NativeTypeName("ABI::Windows::Devices::Sensors::AccelerometerReadingType")] AccelerometerReadingType readingType, HSTRING* result);
@@ -118,7 +118,7 @@ public unsafe partial struct IAccelerometerStatics3 : IAccelerometerStatics3.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CAccelerometer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IAccelerometer>>**, int> FromIdAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Sensors::AccelerometerReadingType, HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, AccelerometerReadingType, HSTRING*, int> GetDeviceSelector;

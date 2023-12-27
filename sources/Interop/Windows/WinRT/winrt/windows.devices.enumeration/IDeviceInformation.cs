@@ -114,9 +114,9 @@ public unsafe partial struct IDeviceInformation : IDeviceInformation.Interface, 
     /// <include file='IDeviceInformation.xml' path='doc/member[@name="IDeviceInformation.get_Properties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_IInspectable_t **")] IMapView<HSTRING, IntPtr>** value)
+    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_IInspectable_t **")] IMapView<HSTRING, Pointer<IInspectable>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceInformation*, IMapView<HSTRING, IntPtr>**, int>)(lpVtbl[11]))((IDeviceInformation*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceInformation*, IMapView<HSTRING, Pointer<IInspectable>>**, int>)(lpVtbl[11]))((IDeviceInformation*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDeviceInformation.xml' path='doc/member[@name="IDeviceInformation.Update"]/*' />
@@ -161,7 +161,7 @@ public unsafe partial struct IDeviceInformation : IDeviceInformation.Interface, 
         HRESULT get_EnclosureLocation([NativeTypeName("ABI::Windows::Devices::Enumeration::IEnclosureLocation **")] IEnclosureLocation** value);
 
         [VtblIndex(11)]
-        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_IInspectable_t **")] IMapView<HSTRING, IntPtr>** value);
+        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_IInspectable_t **")] IMapView<HSTRING, Pointer<IInspectable>>** value);
 
         [VtblIndex(12)]
         HRESULT Update([NativeTypeName("ABI::Windows::Devices::Enumeration::IDeviceInformationUpdate *")] IDeviceInformationUpdate* updateInfo);
@@ -210,7 +210,7 @@ public unsafe partial struct IDeviceInformation : IDeviceInformation.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, IEnclosureLocation**, int> get_EnclosureLocation;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_IInspectable_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, IntPtr>**, int> get_Properties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, Pointer<IInspectable>>**, int> get_Properties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Enumeration::IDeviceInformationUpdate *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IDeviceInformationUpdate*, int> Update;

@@ -74,9 +74,9 @@ public unsafe partial struct ISingleSelectMediaTrackList : ISingleSelectMediaTra
     /// <include file='ISingleSelectMediaTrackList.xml' path='doc/member[@name="ISingleSelectMediaTrackList.add_SelectedIndexChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_SelectedIndexChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CISingleSelectMediaTrackList_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SelectedIndexChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CISingleSelectMediaTrackList_IInspectable_t *")] ITypedEventHandler<Pointer<ISingleSelectMediaTrackList>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISingleSelectMediaTrackList*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ISingleSelectMediaTrackList*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISingleSelectMediaTrackList*, ITypedEventHandler<Pointer<ISingleSelectMediaTrackList>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ISingleSelectMediaTrackList*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISingleSelectMediaTrackList.xml' path='doc/member[@name="ISingleSelectMediaTrackList.remove_SelectedIndexChanged"]/*' />
@@ -106,7 +106,7 @@ public unsafe partial struct ISingleSelectMediaTrackList : ISingleSelectMediaTra
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_SelectedIndexChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CISingleSelectMediaTrackList_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SelectedIndexChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CISingleSelectMediaTrackList_IInspectable_t *")] ITypedEventHandler<Pointer<ISingleSelectMediaTrackList>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_SelectedIndexChanged(EventRegistrationToken token);
@@ -140,7 +140,7 @@ public unsafe partial struct ISingleSelectMediaTrackList : ISingleSelectMediaTra
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CISingleSelectMediaTrackList_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SelectedIndexChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISingleSelectMediaTrackList>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_SelectedIndexChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SelectedIndexChanged;

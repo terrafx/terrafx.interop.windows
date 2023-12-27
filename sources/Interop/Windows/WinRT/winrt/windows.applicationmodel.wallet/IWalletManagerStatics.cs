@@ -76,16 +76,16 @@ public unsafe partial struct IWalletManagerStatics : IWalletManagerStatics.Inter
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [Obsolete("IWalletManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]
-    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CWallet__CWalletItemStore_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CWallet__CWalletItemStore_t **")] IAsyncOperation<Pointer<IWalletItemStore>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWalletManagerStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IWalletManagerStatics*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IWalletManagerStatics*, IAsyncOperation<Pointer<IWalletItemStore>>**, int>)(lpVtbl[6]))((IWalletManagerStatics*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
         [Obsolete("IWalletManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CWallet__CWalletItemStore_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CWallet__CWalletItemStore_t **")] IAsyncOperation<Pointer<IWalletItemStore>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -111,6 +111,6 @@ public unsafe partial struct IWalletManagerStatics : IWalletManagerStatics.Inter
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CWallet__CWalletItemStore_t **) __attribute__((stdcall))")]
         [Obsolete("IWalletManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> RequestStoreAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IWalletItemStore>>**, int> RequestStoreAsync;
     }
 }

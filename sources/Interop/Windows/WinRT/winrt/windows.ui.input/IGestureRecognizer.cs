@@ -354,9 +354,9 @@ public unsafe partial struct IGestureRecognizer : IGestureRecognizer.Interface, 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.ProcessMoveEvents"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
-    public HRESULT ProcessMoveEvents([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t *")] IVector<IntPtr>* value)
+    public HRESULT ProcessMoveEvents([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t *")] IVector<Pointer<IPointerPoint>>* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, IVector<IntPtr>*, int>)(lpVtbl[41]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, IVector<Pointer<IPointerPoint>>*, int>)(lpVtbl[41]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.ProcessUpEvent"]/*' />
@@ -394,9 +394,9 @@ public unsafe partial struct IGestureRecognizer : IGestureRecognizer.Interface, 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.add_Tapped"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(46)]
-    public HRESULT add_Tapped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CTappedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Tapped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CTappedEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<ITappedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[46]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<ITappedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[46]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.remove_Tapped"]/*' />
@@ -410,9 +410,9 @@ public unsafe partial struct IGestureRecognizer : IGestureRecognizer.Interface, 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.add_RightTapped"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(48)]
-    public HRESULT add_RightTapped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CRightTappedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_RightTapped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CRightTappedEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IRightTappedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[48]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IRightTappedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[48]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.remove_RightTapped"]/*' />
@@ -426,9 +426,9 @@ public unsafe partial struct IGestureRecognizer : IGestureRecognizer.Interface, 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.add_Holding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(50)]
-    public HRESULT add_Holding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CHoldingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Holding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CHoldingEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IHoldingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[50]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IHoldingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[50]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.remove_Holding"]/*' />
@@ -442,9 +442,9 @@ public unsafe partial struct IGestureRecognizer : IGestureRecognizer.Interface, 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.add_Dragging"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(52)]
-    public HRESULT add_Dragging([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CDraggingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Dragging([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CDraggingEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IDraggingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[52]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IDraggingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[52]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.remove_Dragging"]/*' />
@@ -458,9 +458,9 @@ public unsafe partial struct IGestureRecognizer : IGestureRecognizer.Interface, 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.add_ManipulationStarted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(54)]
-    public HRESULT add_ManipulationStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationStartedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ManipulationStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationStartedEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IManipulationStartedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[54]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IManipulationStartedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[54]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.remove_ManipulationStarted"]/*' />
@@ -474,9 +474,9 @@ public unsafe partial struct IGestureRecognizer : IGestureRecognizer.Interface, 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.add_ManipulationUpdated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(56)]
-    public HRESULT add_ManipulationUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationUpdatedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ManipulationUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationUpdatedEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IManipulationUpdatedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[56]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IManipulationUpdatedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[56]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.remove_ManipulationUpdated"]/*' />
@@ -490,9 +490,9 @@ public unsafe partial struct IGestureRecognizer : IGestureRecognizer.Interface, 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.add_ManipulationInertiaStarting"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(58)]
-    public HRESULT add_ManipulationInertiaStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationInertiaStartingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ManipulationInertiaStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationInertiaStartingEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IManipulationInertiaStartingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[58]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IManipulationInertiaStartingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[58]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.remove_ManipulationInertiaStarting"]/*' />
@@ -506,9 +506,9 @@ public unsafe partial struct IGestureRecognizer : IGestureRecognizer.Interface, 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.add_ManipulationCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(60)]
-    public HRESULT add_ManipulationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ManipulationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationCompletedEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IManipulationCompletedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[60]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IManipulationCompletedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[60]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.remove_ManipulationCompleted"]/*' />
@@ -522,9 +522,9 @@ public unsafe partial struct IGestureRecognizer : IGestureRecognizer.Interface, 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.add_CrossSliding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(62)]
-    public HRESULT add_CrossSliding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CCrossSlidingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_CrossSliding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CCrossSlidingEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<ICrossSlidingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[62]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGestureRecognizer*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<ICrossSlidingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[62]))((IGestureRecognizer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGestureRecognizer.xml' path='doc/member[@name="IGestureRecognizer.remove_CrossSliding"]/*' />
@@ -643,7 +643,7 @@ public unsafe partial struct IGestureRecognizer : IGestureRecognizer.Interface, 
         HRESULT ProcessDownEvent([NativeTypeName("ABI::Windows::UI::Input::IPointerPoint *")] IPointerPoint* value);
 
         [VtblIndex(41)]
-        HRESULT ProcessMoveEvents([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t *")] IVector<IntPtr>* value);
+        HRESULT ProcessMoveEvents([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t *")] IVector<Pointer<IPointerPoint>>* value);
 
         [VtblIndex(42)]
         HRESULT ProcessUpEvent([NativeTypeName("ABI::Windows::UI::Input::IPointerPoint *")] IPointerPoint* value);
@@ -658,55 +658,55 @@ public unsafe partial struct IGestureRecognizer : IGestureRecognizer.Interface, 
         HRESULT CompleteGesture();
 
         [VtblIndex(46)]
-        HRESULT add_Tapped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CTappedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Tapped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CTappedEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<ITappedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(47)]
         HRESULT remove_Tapped(EventRegistrationToken token);
 
         [VtblIndex(48)]
-        HRESULT add_RightTapped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CRightTappedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_RightTapped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CRightTappedEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IRightTappedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(49)]
         HRESULT remove_RightTapped(EventRegistrationToken token);
 
         [VtblIndex(50)]
-        HRESULT add_Holding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CHoldingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Holding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CHoldingEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IHoldingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(51)]
         HRESULT remove_Holding(EventRegistrationToken token);
 
         [VtblIndex(52)]
-        HRESULT add_Dragging([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CDraggingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Dragging([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CDraggingEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IDraggingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(53)]
         HRESULT remove_Dragging(EventRegistrationToken token);
 
         [VtblIndex(54)]
-        HRESULT add_ManipulationStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationStartedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ManipulationStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationStartedEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IManipulationStartedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(55)]
         HRESULT remove_ManipulationStarted(EventRegistrationToken token);
 
         [VtblIndex(56)]
-        HRESULT add_ManipulationUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationUpdatedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ManipulationUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationUpdatedEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IManipulationUpdatedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(57)]
         HRESULT remove_ManipulationUpdated(EventRegistrationToken token);
 
         [VtblIndex(58)]
-        HRESULT add_ManipulationInertiaStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationInertiaStartingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ManipulationInertiaStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationInertiaStartingEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IManipulationInertiaStartingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(59)]
         HRESULT remove_ManipulationInertiaStarting(EventRegistrationToken token);
 
         [VtblIndex(60)]
-        HRESULT add_ManipulationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ManipulationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationCompletedEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IManipulationCompletedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(61)]
         HRESULT remove_ManipulationCompleted(EventRegistrationToken token);
 
         [VtblIndex(62)]
-        HRESULT add_CrossSliding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CCrossSlidingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_CrossSliding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CCrossSlidingEventArgs_t *")] ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<ICrossSlidingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(63)]
         HRESULT remove_CrossSliding(EventRegistrationToken token);
@@ -839,7 +839,7 @@ public unsafe partial struct IGestureRecognizer : IGestureRecognizer.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, IPointerPoint*, int> ProcessDownEvent;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>*, int> ProcessMoveEvents;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IPointerPoint>>*, int> ProcessMoveEvents;
 
         [NativeTypeName("HRESULT (ABI::Windows::UI::Input::IPointerPoint *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IPointerPoint*, int> ProcessUpEvent;
@@ -854,55 +854,55 @@ public unsafe partial struct IGestureRecognizer : IGestureRecognizer.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, int> CompleteGesture;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CTappedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Tapped;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<ITappedEventArgs>>*, EventRegistrationToken*, int> add_Tapped;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Tapped;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CRightTappedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_RightTapped;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IRightTappedEventArgs>>*, EventRegistrationToken*, int> add_RightTapped;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RightTapped;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CHoldingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Holding;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IHoldingEventArgs>>*, EventRegistrationToken*, int> add_Holding;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Holding;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CDraggingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Dragging;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IDraggingEventArgs>>*, EventRegistrationToken*, int> add_Dragging;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Dragging;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationStartedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ManipulationStarted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IManipulationStartedEventArgs>>*, EventRegistrationToken*, int> add_ManipulationStarted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ManipulationStarted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationUpdatedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ManipulationUpdated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IManipulationUpdatedEventArgs>>*, EventRegistrationToken*, int> add_ManipulationUpdated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ManipulationUpdated;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationInertiaStartingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ManipulationInertiaStarting;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IManipulationInertiaStartingEventArgs>>*, EventRegistrationToken*, int> add_ManipulationInertiaStarting;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ManipulationInertiaStarting;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CManipulationCompletedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ManipulationCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<IManipulationCompletedEventArgs>>*, EventRegistrationToken*, int> add_ManipulationCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ManipulationCompleted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CGestureRecognizer_Windows__CUI__CInput__CCrossSlidingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CrossSliding;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGestureRecognizer>, Pointer<ICrossSlidingEventArgs>>*, EventRegistrationToken*, int> add_CrossSliding;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CrossSliding;

@@ -74,26 +74,26 @@ public unsafe partial struct ILowLagMediaRecording3 : ILowLagMediaRecording3.Int
     /// <include file='ILowLagMediaRecording3.xml' path='doc/member[@name="ILowLagMediaRecording3.PauseWithResultAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT PauseWithResultAsync([NativeTypeName("ABI::Windows::Media::Devices::MediaCapturePauseBehavior")] MediaCapturePauseBehavior behavior, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCapturePauseResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT PauseWithResultAsync([NativeTypeName("ABI::Windows::Media::Devices::MediaCapturePauseBehavior")] MediaCapturePauseBehavior behavior, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCapturePauseResult_t **")] IAsyncOperation<Pointer<IMediaCapturePauseResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ILowLagMediaRecording3*, MediaCapturePauseBehavior, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ILowLagMediaRecording3*)Unsafe.AsPointer(ref this), behavior, operation);
+        return ((delegate* unmanaged[MemberFunction]<ILowLagMediaRecording3*, MediaCapturePauseBehavior, IAsyncOperation<Pointer<IMediaCapturePauseResult>>**, int>)(lpVtbl[6]))((ILowLagMediaRecording3*)Unsafe.AsPointer(ref this), behavior, operation);
     }
 
     /// <include file='ILowLagMediaRecording3.xml' path='doc/member[@name="ILowLagMediaRecording3.StopWithResultAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT StopWithResultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCaptureStopResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT StopWithResultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCaptureStopResult_t **")] IAsyncOperation<Pointer<IMediaCaptureStopResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ILowLagMediaRecording3*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((ILowLagMediaRecording3*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<ILowLagMediaRecording3*, IAsyncOperation<Pointer<IMediaCaptureStopResult>>**, int>)(lpVtbl[7]))((ILowLagMediaRecording3*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT PauseWithResultAsync([NativeTypeName("ABI::Windows::Media::Devices::MediaCapturePauseBehavior")] MediaCapturePauseBehavior behavior, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCapturePauseResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT PauseWithResultAsync([NativeTypeName("ABI::Windows::Media::Devices::MediaCapturePauseBehavior")] MediaCapturePauseBehavior behavior, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCapturePauseResult_t **")] IAsyncOperation<Pointer<IMediaCapturePauseResult>>** operation);
 
         [VtblIndex(7)]
-        HRESULT StopWithResultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCaptureStopResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT StopWithResultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCaptureStopResult_t **")] IAsyncOperation<Pointer<IMediaCaptureStopResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct ILowLagMediaRecording3 : ILowLagMediaRecording3.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Devices::MediaCapturePauseBehavior, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCapturePauseResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, MediaCapturePauseBehavior, IAsyncOperation<IntPtr>**, int> PauseWithResultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MediaCapturePauseBehavior, IAsyncOperation<Pointer<IMediaCapturePauseResult>>**, int> PauseWithResultAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCaptureStopResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> StopWithResultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IMediaCaptureStopResult>>**, int> StopWithResultAsync;
     }
 }

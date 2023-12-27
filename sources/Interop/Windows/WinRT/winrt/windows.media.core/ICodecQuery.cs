@@ -74,15 +74,15 @@ public unsafe partial struct ICodecQuery : ICodecQuery.Interface, INativeGuid
     /// <include file='ICodecQuery.xml' path='doc/member[@name="ICodecQuery.FindAllAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Media::Core::CodecKind")] CodecKind kind, [NativeTypeName("ABI::Windows::Media::Core::CodecCategory")] CodecCategory category, HSTRING subType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCore__CCodecInfo_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Media::Core::CodecKind")] CodecKind kind, [NativeTypeName("ABI::Windows::Media::Core::CodecCategory")] CodecCategory category, HSTRING subType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCore__CCodecInfo_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<ICodecInfo>>>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICodecQuery*, CodecKind, CodecCategory, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ICodecQuery*)Unsafe.AsPointer(ref this), kind, category, subType, value);
+        return ((delegate* unmanaged[MemberFunction]<ICodecQuery*, CodecKind, CodecCategory, HSTRING, IAsyncOperation<Pointer<IVectorView<Pointer<ICodecInfo>>>>**, int>)(lpVtbl[6]))((ICodecQuery*)Unsafe.AsPointer(ref this), kind, category, subType, value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Media::Core::CodecKind")] CodecKind kind, [NativeTypeName("ABI::Windows::Media::Core::CodecCategory")] CodecCategory category, HSTRING subType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCore__CCodecInfo_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Media::Core::CodecKind")] CodecKind kind, [NativeTypeName("ABI::Windows::Media::Core::CodecCategory")] CodecCategory category, HSTRING subType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCore__CCodecInfo_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<ICodecInfo>>>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ICodecQuery : ICodecQuery.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Core::CodecKind, ABI::Windows::Media::Core::CodecCategory, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCore__CCodecInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, CodecKind, CodecCategory, HSTRING, IAsyncOperation<IntPtr>**, int> FindAllAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, CodecKind, CodecCategory, HSTRING, IAsyncOperation<Pointer<IVectorView<Pointer<ICodecInfo>>>>**, int> FindAllAsync;
     }
 }

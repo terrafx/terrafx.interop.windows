@@ -74,9 +74,9 @@ public unsafe partial struct IFileActivatedEventArgs : IFileActivatedEventArgs.I
     /// <include file='IFileActivatedEventArgs.xml' path='doc/member[@name="IFileActivatedEventArgs.get_Files"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Files([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CIStorageItem_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Files([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CIStorageItem_t **")] IVectorView<Pointer<IStorageItem>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileActivatedEventArgs*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IFileActivatedEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IFileActivatedEventArgs*, IVectorView<Pointer<IStorageItem>>**, int>)(lpVtbl[6]))((IFileActivatedEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IFileActivatedEventArgs.xml' path='doc/member[@name="IFileActivatedEventArgs.get_Verb"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IFileActivatedEventArgs : IFileActivatedEventArgs.I
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Files([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CIStorageItem_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Files([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CIStorageItem_t **")] IVectorView<Pointer<IStorageItem>>** value);
 
         [VtblIndex(7)]
         HRESULT get_Verb(HSTRING* value);
@@ -118,7 +118,7 @@ public unsafe partial struct IFileActivatedEventArgs : IFileActivatedEventArgs.I
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CIStorageItem_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Files;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IStorageItem>>**, int> get_Files;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_Verb;

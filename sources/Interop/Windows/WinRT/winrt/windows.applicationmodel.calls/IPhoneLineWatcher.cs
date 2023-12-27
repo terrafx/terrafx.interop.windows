@@ -90,9 +90,9 @@ public unsafe partial struct IPhoneLineWatcher : IPhoneLineWatcher.Interface, IN
     /// <include file='IPhoneLineWatcher.xml' path='doc/member[@name="IPhoneLineWatcher.add_LineAdded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_LineAdded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_LineAdded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t *")] ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IPhoneLineWatcherEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneLineWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IPhoneLineWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneLineWatcher*, ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IPhoneLineWatcherEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IPhoneLineWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPhoneLineWatcher.xml' path='doc/member[@name="IPhoneLineWatcher.remove_LineAdded"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IPhoneLineWatcher : IPhoneLineWatcher.Interface, IN
     /// <include file='IPhoneLineWatcher.xml' path='doc/member[@name="IPhoneLineWatcher.add_LineRemoved"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_LineRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_LineRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t *")] ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IPhoneLineWatcherEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneLineWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IPhoneLineWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneLineWatcher*, ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IPhoneLineWatcherEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IPhoneLineWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPhoneLineWatcher.xml' path='doc/member[@name="IPhoneLineWatcher.remove_LineRemoved"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IPhoneLineWatcher : IPhoneLineWatcher.Interface, IN
     /// <include file='IPhoneLineWatcher.xml' path='doc/member[@name="IPhoneLineWatcher.add_LineUpdated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_LineUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_LineUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t *")] ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IPhoneLineWatcherEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneLineWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IPhoneLineWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneLineWatcher*, ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IPhoneLineWatcherEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IPhoneLineWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPhoneLineWatcher.xml' path='doc/member[@name="IPhoneLineWatcher.remove_LineUpdated"]/*' />
@@ -138,9 +138,9 @@ public unsafe partial struct IPhoneLineWatcher : IPhoneLineWatcher.Interface, IN
     /// <include file='IPhoneLineWatcher.xml' path='doc/member[@name="IPhoneLineWatcher.add_EnumerationCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneLineWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IPhoneLineWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneLineWatcher*, ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IPhoneLineWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPhoneLineWatcher.xml' path='doc/member[@name="IPhoneLineWatcher.remove_EnumerationCompleted"]/*' />
@@ -154,9 +154,9 @@ public unsafe partial struct IPhoneLineWatcher : IPhoneLineWatcher.Interface, IN
     /// <include file='IPhoneLineWatcher.xml' path='doc/member[@name="IPhoneLineWatcher.add_Stopped"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneLineWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IPhoneLineWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneLineWatcher*, ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IPhoneLineWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPhoneLineWatcher.xml' path='doc/member[@name="IPhoneLineWatcher.remove_Stopped"]/*' />
@@ -184,31 +184,31 @@ public unsafe partial struct IPhoneLineWatcher : IPhoneLineWatcher.Interface, IN
         HRESULT Stop();
 
         [VtblIndex(8)]
-        HRESULT add_LineAdded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_LineAdded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t *")] ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IPhoneLineWatcherEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_LineAdded(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_LineRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_LineRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t *")] ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IPhoneLineWatcherEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_LineRemoved(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT add_LineUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_LineUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t *")] ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IPhoneLineWatcherEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_LineUpdated(EventRegistrationToken token);
 
         [VtblIndex(14)]
-        HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(15)]
         HRESULT remove_EnumerationCompleted(EventRegistrationToken token);
 
         [VtblIndex(16)]
-        HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(17)]
         HRESULT remove_Stopped(EventRegistrationToken token);
@@ -245,31 +245,31 @@ public unsafe partial struct IPhoneLineWatcher : IPhoneLineWatcher.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_LineAdded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IPhoneLineWatcherEventArgs>>*, EventRegistrationToken*, int> add_LineAdded;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_LineAdded;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_LineRemoved;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IPhoneLineWatcherEventArgs>>*, EventRegistrationToken*, int> add_LineRemoved;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_LineRemoved;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_Windows__CApplicationModel__CCalls__CPhoneLineWatcherEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_LineUpdated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IPhoneLineWatcherEventArgs>>*, EventRegistrationToken*, int> add_LineUpdated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_LineUpdated;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_EnumerationCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_EnumerationCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_EnumerationCompleted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineWatcher_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Stopped;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPhoneLineWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Stopped;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Stopped;

@@ -74,26 +74,26 @@ public unsafe partial struct IContactReader : IContactReader.Interface, INativeG
     /// <include file='IContactReader.xml' path='doc/member[@name="IContactReader.ReadBatchAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactBatch_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactBatch_t **")] IAsyncOperation<Pointer<IContactBatch>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactReader*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IContactReader*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContactReader*, IAsyncOperation<Pointer<IContactBatch>>**, int>)(lpVtbl[6]))((IContactReader*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContactReader.xml' path='doc/member[@name="IContactReader.GetMatchingPropertiesWithMatchReason"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetMatchingPropertiesWithMatchReason([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactMatchReason_t **")] IVectorView<IntPtr>** ppRetVal)
+    public HRESULT GetMatchingPropertiesWithMatchReason([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactMatchReason_t **")] IVectorView<Pointer<IContactMatchReason>>** ppRetVal)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactReader*, IContact*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IContactReader*)Unsafe.AsPointer(ref this), contact, ppRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IContactReader*, IContact*, IVectorView<Pointer<IContactMatchReason>>**, int>)(lpVtbl[7]))((IContactReader*)Unsafe.AsPointer(ref this), contact, ppRetVal);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactBatch_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactBatch_t **")] IAsyncOperation<Pointer<IContactBatch>>** value);
 
         [VtblIndex(7)]
-        HRESULT GetMatchingPropertiesWithMatchReason([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactMatchReason_t **")] IVectorView<IntPtr>** ppRetVal);
+        HRESULT GetMatchingPropertiesWithMatchReason([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactMatchReason_t **")] IVectorView<Pointer<IContactMatchReason>>** ppRetVal);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IContactReader : IContactReader.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactBatch_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> ReadBatchAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IContactBatch>>**, int> ReadBatchAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Contacts::IContact *, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactMatchReason_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IContact*, IVectorView<IntPtr>**, int> GetMatchingPropertiesWithMatchReason;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IContact*, IVectorView<Pointer<IContactMatchReason>>**, int> GetMatchingPropertiesWithMatchReason;
     }
 }

@@ -74,9 +74,9 @@ public unsafe partial struct IStorageLibrary : IStorageLibrary.Interface, INativ
     /// <include file='IStorageLibrary.xml' path='doc/member[@name="IStorageLibrary.RequestAddFolderAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT RequestAddFolderAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT RequestAddFolderAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageLibrary*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStorageLibrary*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageLibrary*, IAsyncOperation<Pointer<IStorageFolder>>**, int>)(lpVtbl[6]))((IStorageLibrary*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IStorageLibrary.xml' path='doc/member[@name="IStorageLibrary.RequestRemoveFolderAsync"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IStorageLibrary : IStorageLibrary.Interface, INativ
     /// <include file='IStorageLibrary.xml' path='doc/member[@name="IStorageLibrary.get_Folders"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Folders([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CStorage__CStorageFolder_t **")] IObservableVector<IntPtr>** value)
+    public HRESULT get_Folders([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CStorage__CStorageFolder_t **")] IObservableVector<Pointer<IStorageFolder>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageLibrary*, IObservableVector<IntPtr>**, int>)(lpVtbl[8]))((IStorageLibrary*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IStorageLibrary*, IObservableVector<Pointer<IStorageFolder>>**, int>)(lpVtbl[8]))((IStorageLibrary*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IStorageLibrary.xml' path='doc/member[@name="IStorageLibrary.get_SaveFolder"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IStorageLibrary : IStorageLibrary.Interface, INativ
     /// <include file='IStorageLibrary.xml' path='doc/member[@name="IStorageLibrary.add_DefinitionChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_DefinitionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CStorageLibrary_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* eventCookie)
+    public HRESULT add_DefinitionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CStorageLibrary_IInspectable_t *")] ITypedEventHandler<Pointer<IStorageLibrary>, Pointer<IInspectable>>* handler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageLibrary*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IStorageLibrary*)Unsafe.AsPointer(ref this), handler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IStorageLibrary*, ITypedEventHandler<Pointer<IStorageLibrary>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IStorageLibrary*)Unsafe.AsPointer(ref this), handler, eventCookie);
     }
 
     /// <include file='IStorageLibrary.xml' path='doc/member[@name="IStorageLibrary.remove_DefinitionChanged"]/*' />
@@ -122,19 +122,19 @@ public unsafe partial struct IStorageLibrary : IStorageLibrary.Interface, INativ
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT RequestAddFolderAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT RequestAddFolderAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation);
 
         [VtblIndex(7)]
         HRESULT RequestRemoveFolderAsync([NativeTypeName("ABI::Windows::Storage::IStorageFolder *")] IStorageFolder* folder, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
 
         [VtblIndex(8)]
-        HRESULT get_Folders([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CStorage__CStorageFolder_t **")] IObservableVector<IntPtr>** value);
+        HRESULT get_Folders([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CStorage__CStorageFolder_t **")] IObservableVector<Pointer<IStorageFolder>>** value);
 
         [VtblIndex(9)]
         HRESULT get_SaveFolder([NativeTypeName("ABI::Windows::Storage::IStorageFolder **")] IStorageFolder** value);
 
         [VtblIndex(10)]
-        HRESULT add_DefinitionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CStorageLibrary_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* eventCookie);
+        HRESULT add_DefinitionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CStorageLibrary_IInspectable_t *")] ITypedEventHandler<Pointer<IStorageLibrary>, Pointer<IInspectable>>* handler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(11)]
         HRESULT remove_DefinitionChanged(EventRegistrationToken eventCookie);
@@ -162,19 +162,19 @@ public unsafe partial struct IStorageLibrary : IStorageLibrary.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> RequestAddFolderAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IStorageFolder>>**, int> RequestAddFolderAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFolder *, ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFolder*, IAsyncOperation<bool>**, int> RequestRemoveFolderAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IObservableVector<IntPtr>**, int> get_Folders;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IObservableVector<Pointer<IStorageFolder>>**, int> get_Folders;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFolder **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFolder**, int> get_SaveFolder;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CStorageLibrary_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DefinitionChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IStorageLibrary>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_DefinitionChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DefinitionChanged;

@@ -74,15 +74,15 @@ public unsafe partial struct IContactAnnotationStore2 : IContactAnnotationStore2
     /// <include file='IContactAnnotationStore2.xml' path='doc/member[@name="IContactAnnotationStore2.FindAnnotationsForContactListAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindAnnotationsForContactListAsync(HSTRING contactListId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **")] IAsyncOperation<IntPtr>** annotations)
+    public HRESULT FindAnnotationsForContactListAsync(HSTRING contactListId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContactAnnotation>>>>** annotations)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactAnnotationStore2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IContactAnnotationStore2*)Unsafe.AsPointer(ref this), contactListId, annotations);
+        return ((delegate* unmanaged[MemberFunction]<IContactAnnotationStore2*, HSTRING, IAsyncOperation<Pointer<IVectorView<Pointer<IContactAnnotation>>>>**, int>)(lpVtbl[6]))((IContactAnnotationStore2*)Unsafe.AsPointer(ref this), contactListId, annotations);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FindAnnotationsForContactListAsync(HSTRING contactListId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **")] IAsyncOperation<IntPtr>** annotations);
+        HRESULT FindAnnotationsForContactListAsync(HSTRING contactListId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContactAnnotation>>>>** annotations);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IContactAnnotationStore2 : IContactAnnotationStore2
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FindAnnotationsForContactListAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IVectorView<Pointer<IContactAnnotation>>>>**, int> FindAnnotationsForContactListAsync;
     }
 }

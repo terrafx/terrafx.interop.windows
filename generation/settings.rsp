@@ -21,6 +21,7 @@ generate-cpp-attributes
 generate-disable-runtime-marshalling
 generate-doc-includes
 generate-file-scoped-namespaces
+generate-generic-pointer-wrapper
 generate-guid-member
 generate-macro-bindings
 generate-marker-interfaces

@@ -74,9 +74,9 @@ public unsafe partial struct IMediaStreamSample : IMediaStreamSample.Interface, 
     /// <include file='IMediaStreamSample.xml' path='doc/member[@name="IMediaStreamSample.add_Processed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_Processed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSample_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Processed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSample_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaStreamSample>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaStreamSample*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaStreamSample*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaStreamSample*, ITypedEventHandler<Pointer<IMediaStreamSample>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaStreamSample*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaStreamSample.xml' path='doc/member[@name="IMediaStreamSample.remove_Processed"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IMediaStreamSample : IMediaStreamSample.Interface, 
     /// <include file='IMediaStreamSample.xml' path='doc/member[@name="IMediaStreamSample.get_ExtendedProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_ExtendedProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_GUID_IInspectable_t **")] IMap<Guid, IntPtr>** value)
+    public HRESULT get_ExtendedProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_GUID_IInspectable_t **")] IMap<Guid, Pointer<IInspectable>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaStreamSample*, IMap<Guid, IntPtr>**, int>)(lpVtbl[10]))((IMediaStreamSample*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaStreamSample*, IMap<Guid, Pointer<IInspectable>>**, int>)(lpVtbl[10]))((IMediaStreamSample*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaStreamSample.xml' path='doc/member[@name="IMediaStreamSample.get_Protection"]/*' />
@@ -186,7 +186,7 @@ public unsafe partial struct IMediaStreamSample : IMediaStreamSample.Interface, 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_Processed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSample_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Processed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSample_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaStreamSample>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_Processed(EventRegistrationToken token);
@@ -198,7 +198,7 @@ public unsafe partial struct IMediaStreamSample : IMediaStreamSample.Interface, 
         HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value);
 
         [VtblIndex(10)]
-        HRESULT get_ExtendedProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_GUID_IInspectable_t **")] IMap<Guid, IntPtr>** value);
+        HRESULT get_ExtendedProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_GUID_IInspectable_t **")] IMap<Guid, Pointer<IInspectable>>** value);
 
         [VtblIndex(11)]
         HRESULT get_Protection([NativeTypeName("ABI::Windows::Media::Core::IMediaStreamSampleProtectionProperties **")] IMediaStreamSampleProtectionProperties** value);
@@ -250,7 +250,7 @@ public unsafe partial struct IMediaStreamSample : IMediaStreamSample.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSample_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Processed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaStreamSample>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Processed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Processed;
@@ -262,7 +262,7 @@ public unsafe partial struct IMediaStreamSample : IMediaStreamSample.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> get_Timestamp;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMap_2_GUID_IInspectable_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<Guid, IntPtr>**, int> get_ExtendedProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<Guid, Pointer<IInspectable>>**, int> get_ExtendedProperties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Core::IMediaStreamSampleProtectionProperties **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IMediaStreamSampleProtectionProperties**, int> get_Protection;

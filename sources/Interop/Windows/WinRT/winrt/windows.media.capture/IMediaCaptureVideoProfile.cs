@@ -90,33 +90,33 @@ public unsafe partial struct IMediaCaptureVideoProfile : IMediaCaptureVideoProfi
     /// <include file='IMediaCaptureVideoProfile.xml' path='doc/member[@name="IMediaCaptureVideoProfile.get_SupportedPreviewMediaDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_SupportedPreviewMediaDescription([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_SupportedPreviewMediaDescription([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **")] IVectorView<Pointer<IMediaCaptureVideoProfileMediaDescription>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureVideoProfile*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((IMediaCaptureVideoProfile*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureVideoProfile*, IVectorView<Pointer<IMediaCaptureVideoProfileMediaDescription>>**, int>)(lpVtbl[8]))((IMediaCaptureVideoProfile*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaCaptureVideoProfile.xml' path='doc/member[@name="IMediaCaptureVideoProfile.get_SupportedRecordMediaDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_SupportedRecordMediaDescription([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_SupportedRecordMediaDescription([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **")] IVectorView<Pointer<IMediaCaptureVideoProfileMediaDescription>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureVideoProfile*, IVectorView<IntPtr>**, int>)(lpVtbl[9]))((IMediaCaptureVideoProfile*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureVideoProfile*, IVectorView<Pointer<IMediaCaptureVideoProfileMediaDescription>>**, int>)(lpVtbl[9]))((IMediaCaptureVideoProfile*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaCaptureVideoProfile.xml' path='doc/member[@name="IMediaCaptureVideoProfile.get_SupportedPhotoMediaDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_SupportedPhotoMediaDescription([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_SupportedPhotoMediaDescription([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **")] IVectorView<Pointer<IMediaCaptureVideoProfileMediaDescription>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureVideoProfile*, IVectorView<IntPtr>**, int>)(lpVtbl[10]))((IMediaCaptureVideoProfile*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureVideoProfile*, IVectorView<Pointer<IMediaCaptureVideoProfileMediaDescription>>**, int>)(lpVtbl[10]))((IMediaCaptureVideoProfile*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaCaptureVideoProfile.xml' path='doc/member[@name="IMediaCaptureVideoProfile.GetConcurrency"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetConcurrency([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **")] IVectorView<IntPtr>** value)
+    public HRESULT GetConcurrency([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **")] IVectorView<Pointer<IMediaCaptureVideoProfile>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureVideoProfile*, IVectorView<IntPtr>**, int>)(lpVtbl[11]))((IMediaCaptureVideoProfile*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureVideoProfile*, IVectorView<Pointer<IMediaCaptureVideoProfile>>**, int>)(lpVtbl[11]))((IMediaCaptureVideoProfile*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -128,16 +128,16 @@ public unsafe partial struct IMediaCaptureVideoProfile : IMediaCaptureVideoProfi
         HRESULT get_VideoDeviceId(HSTRING* value);
 
         [VtblIndex(8)]
-        HRESULT get_SupportedPreviewMediaDescription([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_SupportedPreviewMediaDescription([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **")] IVectorView<Pointer<IMediaCaptureVideoProfileMediaDescription>>** value);
 
         [VtblIndex(9)]
-        HRESULT get_SupportedRecordMediaDescription([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_SupportedRecordMediaDescription([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **")] IVectorView<Pointer<IMediaCaptureVideoProfileMediaDescription>>** value);
 
         [VtblIndex(10)]
-        HRESULT get_SupportedPhotoMediaDescription([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_SupportedPhotoMediaDescription([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **")] IVectorView<Pointer<IMediaCaptureVideoProfileMediaDescription>>** value);
 
         [VtblIndex(11)]
-        HRESULT GetConcurrency([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **")] IVectorView<IntPtr>** value);
+        HRESULT GetConcurrency([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **")] IVectorView<Pointer<IMediaCaptureVideoProfile>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -168,15 +168,15 @@ public unsafe partial struct IMediaCaptureVideoProfile : IMediaCaptureVideoProfi
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_VideoDeviceId;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_SupportedPreviewMediaDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IMediaCaptureVideoProfileMediaDescription>>**, int> get_SupportedPreviewMediaDescription;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_SupportedRecordMediaDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IMediaCaptureVideoProfileMediaDescription>>**, int> get_SupportedRecordMediaDescription;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_SupportedPhotoMediaDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IMediaCaptureVideoProfileMediaDescription>>**, int> get_SupportedPhotoMediaDescription;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetConcurrency;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IMediaCaptureVideoProfile>>**, int> GetConcurrency;
     }
 }

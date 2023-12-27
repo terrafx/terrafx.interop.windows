@@ -106,9 +106,9 @@ public unsafe partial struct ILightSensor : ILightSensor.Interface, INativeGuid
     /// <include file='ILightSensor.xml' path='doc/member[@name="ILightSensor.add_ReadingChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CLightSensor_Windows__CDevices__CSensors__CLightSensorReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CLightSensor_Windows__CDevices__CSensors__CLightSensorReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<ILightSensor>, Pointer<ILightSensorReadingChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ILightSensor*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((ILightSensor*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ILightSensor*, ITypedEventHandler<Pointer<ILightSensor>, Pointer<ILightSensorReadingChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((ILightSensor*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ILightSensor.xml' path='doc/member[@name="ILightSensor.remove_ReadingChanged"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct ILightSensor : ILightSensor.Interface, INativeGuid
         HRESULT get_ReportInterval([NativeTypeName("UINT32 *")] uint* value);
 
         [VtblIndex(10)]
-        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CLightSensor_Windows__CDevices__CSensors__CLightSensorReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CLightSensor_Windows__CDevices__CSensors__CLightSensorReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<ILightSensor>, Pointer<ILightSensorReadingChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_ReadingChanged(EventRegistrationToken token);
@@ -174,7 +174,7 @@ public unsafe partial struct ILightSensor : ILightSensor.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_ReportInterval;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CLightSensor_Windows__CDevices__CSensors__CLightSensorReadingChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ReadingChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ILightSensor>, Pointer<ILightSensorReadingChangedEventArgs>>*, EventRegistrationToken*, int> add_ReadingChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ReadingChanged;

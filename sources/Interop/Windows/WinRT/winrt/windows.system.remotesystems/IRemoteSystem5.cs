@@ -74,15 +74,15 @@ public unsafe partial struct IRemoteSystem5 : IRemoteSystem5.Interface, INativeG
     /// <include file='IRemoteSystem5.xml' path='doc/member[@name="IRemoteSystem5.get_Apps"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Apps([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSystem__CRemoteSystems__CRemoteSystemApp_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Apps([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSystem__CRemoteSystems__CRemoteSystemApp_t **")] IVectorView<Pointer<IRemoteSystemApp>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRemoteSystem5*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IRemoteSystem5*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRemoteSystem5*, IVectorView<Pointer<IRemoteSystemApp>>**, int>)(lpVtbl[6]))((IRemoteSystem5*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Apps([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSystem__CRemoteSystems__CRemoteSystemApp_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Apps([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSystem__CRemoteSystems__CRemoteSystemApp_t **")] IVectorView<Pointer<IRemoteSystemApp>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IRemoteSystem5 : IRemoteSystem5.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSystem__CRemoteSystems__CRemoteSystemApp_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Apps;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IRemoteSystemApp>>**, int> get_Apps;
     }
 }

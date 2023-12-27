@@ -114,9 +114,9 @@ public unsafe partial struct IPedometer : IPedometer.Interface, INativeGuid
     /// <include file='IPedometer.xml' path='doc/member[@name="IPedometer.add_ReadingChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CPedometer_Windows__CDevices__CSensors__CPedometerReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CPedometer_Windows__CDevices__CSensors__CPedometerReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<IPedometer>, Pointer<IPedometerReadingChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPedometer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IPedometer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPedometer*, ITypedEventHandler<Pointer<IPedometer>, Pointer<IPedometerReadingChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IPedometer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPedometer.xml' path='doc/member[@name="IPedometer.remove_ReadingChanged"]/*' />
@@ -145,7 +145,7 @@ public unsafe partial struct IPedometer : IPedometer.Interface, INativeGuid
         HRESULT get_ReportInterval([NativeTypeName("UINT32 *")] uint* value);
 
         [VtblIndex(11)]
-        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CPedometer_Windows__CDevices__CSensors__CPedometerReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CPedometer_Windows__CDevices__CSensors__CPedometerReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<IPedometer>, Pointer<IPedometerReadingChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_ReadingChanged(EventRegistrationToken token);
@@ -188,7 +188,7 @@ public unsafe partial struct IPedometer : IPedometer.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_ReportInterval;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CPedometer_Windows__CDevices__CSensors__CPedometerReadingChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ReadingChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPedometer>, Pointer<IPedometerReadingChangedEventArgs>>*, EventRegistrationToken*, int> add_ReadingChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ReadingChanged;

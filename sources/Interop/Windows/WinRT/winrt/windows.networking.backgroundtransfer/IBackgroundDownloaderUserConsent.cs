@@ -76,16 +76,16 @@ public unsafe partial struct IBackgroundDownloaderUserConsent : IBackgroundDownl
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [Obsolete("RequestUnconstrainedDownloadsAsync is deprecated and may not work on all platforms. For more info, see MSDN.")]
-    public HRESULT RequestUnconstrainedDownloadsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t *")] IIterable<IntPtr>* operations, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUnconstrainedTransferRequestResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT RequestUnconstrainedDownloadsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t *")] IIterable<Pointer<IDownloadOperation>>* operations, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUnconstrainedTransferRequestResult_t **")] IAsyncOperation<Pointer<IUnconstrainedTransferRequestResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundDownloaderUserConsent*, IIterable<IntPtr>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IBackgroundDownloaderUserConsent*)Unsafe.AsPointer(ref this), operations, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundDownloaderUserConsent*, IIterable<Pointer<IDownloadOperation>>*, IAsyncOperation<Pointer<IUnconstrainedTransferRequestResult>>**, int>)(lpVtbl[6]))((IBackgroundDownloaderUserConsent*)Unsafe.AsPointer(ref this), operations, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
         [Obsolete("RequestUnconstrainedDownloadsAsync is deprecated and may not work on all platforms. For more info, see MSDN.")]
-        HRESULT RequestUnconstrainedDownloadsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t *")] IIterable<IntPtr>* operations, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUnconstrainedTransferRequestResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT RequestUnconstrainedDownloadsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t *")] IIterable<Pointer<IDownloadOperation>>* operations, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUnconstrainedTransferRequestResult_t **")] IAsyncOperation<Pointer<IUnconstrainedTransferRequestResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -111,6 +111,6 @@ public unsafe partial struct IBackgroundDownloaderUserConsent : IBackgroundDownl
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUnconstrainedTransferRequestResult_t **) __attribute__((stdcall))")]
         [Obsolete("RequestUnconstrainedDownloadsAsync is deprecated and may not work on all platforms. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IAsyncOperation<IntPtr>**, int> RequestUnconstrainedDownloadsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IDownloadOperation>>*, IAsyncOperation<Pointer<IUnconstrainedTransferRequestResult>>**, int> RequestUnconstrainedDownloadsAsync;
     }
 }

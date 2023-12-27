@@ -90,9 +90,9 @@ public unsafe partial struct IIppAttributeError : IIppAttributeError.Interface, 
     /// <include file='IIppAttributeError.xml' path='doc/member[@name="IIppAttributeError.GetUnsupportedValues"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetUnsupportedValues([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CPrinters__CIppAttributeValue_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetUnsupportedValues([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CPrinters__CIppAttributeValue_t **")] IVectorView<Pointer<IIppAttributeValue>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeError*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((IIppAttributeError*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeError*, IVectorView<Pointer<IIppAttributeValue>>**, int>)(lpVtbl[8]))((IIppAttributeError*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IIppAttributeError : IIppAttributeError.Interface, 
         HRESULT get_ExtendedError(HRESULT* value);
 
         [VtblIndex(8)]
-        HRESULT GetUnsupportedValues([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CPrinters__CIppAttributeValue_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetUnsupportedValues([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CPrinters__CIppAttributeValue_t **")] IVectorView<Pointer<IIppAttributeValue>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IIppAttributeError : IIppAttributeError.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT*, int> get_ExtendedError;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CPrinters__CIppAttributeValue_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetUnsupportedValues;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IIppAttributeValue>>**, int> GetUnsupportedValues;
     }
 }

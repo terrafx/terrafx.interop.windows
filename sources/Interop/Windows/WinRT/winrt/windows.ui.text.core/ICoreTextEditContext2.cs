@@ -74,9 +74,9 @@ public unsafe partial struct ICoreTextEditContext2 : ICoreTextEditContext2.Inter
     /// <include file='ICoreTextEditContext2.xml' path='doc/member[@name="ICoreTextEditContext2.add_NotifyFocusLeaveCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_NotifyFocusLeaveCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_NotifyFocusLeaveCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreTextEditContext2*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext2*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreTextEditContext2*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICoreTextEditContext2.xml' path='doc/member[@name="ICoreTextEditContext2.remove_NotifyFocusLeaveCompleted"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct ICoreTextEditContext2 : ICoreTextEditContext2.Inter
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_NotifyFocusLeaveCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_NotifyFocusLeaveCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(7)]
         HRESULT remove_NotifyFocusLeaveCompleted(EventRegistrationToken cookie);
@@ -118,7 +118,7 @@ public unsafe partial struct ICoreTextEditContext2 : ICoreTextEditContext2.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_NotifyFocusLeaveCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_NotifyFocusLeaveCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_NotifyFocusLeaveCompleted;

@@ -74,15 +74,15 @@ public unsafe partial struct IUISettingsControllerStatics : IUISettingsControlle
     /// <include file='IUISettingsControllerStatics.xml' path='doc/member[@name="IUISettingsControllerStatics.RequestDefaultAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT RequestDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CViewManagement__CCore__CUISettingsController_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT RequestDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CViewManagement__CCore__CUISettingsController_t **")] IAsyncOperation<Pointer<IUISettingsController>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUISettingsControllerStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IUISettingsControllerStatics*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IUISettingsControllerStatics*, IAsyncOperation<Pointer<IUISettingsController>>**, int>)(lpVtbl[6]))((IUISettingsControllerStatics*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT RequestDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CViewManagement__CCore__CUISettingsController_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT RequestDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CViewManagement__CCore__CUISettingsController_t **")] IAsyncOperation<Pointer<IUISettingsController>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IUISettingsControllerStatics : IUISettingsControlle
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CViewManagement__CCore__CUISettingsController_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> RequestDefaultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IUISettingsController>>**, int> RequestDefaultAsync;
     }
 }

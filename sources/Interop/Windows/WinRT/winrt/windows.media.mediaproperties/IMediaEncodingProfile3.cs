@@ -74,26 +74,26 @@ public unsafe partial struct IMediaEncodingProfile3 : IMediaEncodingProfile3.Int
     /// <include file='IMediaEncodingProfile3.xml' path='doc/member[@name="IMediaEncodingProfile3.SetTimedMetadataTracks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetTimedMetadataTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t *")] IIterable<IntPtr>* value)
+    public HRESULT SetTimedMetadataTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t *")] IIterable<Pointer<ITimedMetadataStreamDescriptor>>* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaEncodingProfile3*, IIterable<IntPtr>*, int>)(lpVtbl[6]))((IMediaEncodingProfile3*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaEncodingProfile3*, IIterable<Pointer<ITimedMetadataStreamDescriptor>>*, int>)(lpVtbl[6]))((IMediaEncodingProfile3*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaEncodingProfile3.xml' path='doc/member[@name="IMediaEncodingProfile3.GetTimedMetadataTracks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetTimedMetadataTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t **")] IVector<IntPtr>** result)
+    public HRESULT GetTimedMetadataTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t **")] IVector<Pointer<ITimedMetadataStreamDescriptor>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaEncodingProfile3*, IVector<IntPtr>**, int>)(lpVtbl[7]))((IMediaEncodingProfile3*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IMediaEncodingProfile3*, IVector<Pointer<ITimedMetadataStreamDescriptor>>**, int>)(lpVtbl[7]))((IMediaEncodingProfile3*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT SetTimedMetadataTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t *")] IIterable<IntPtr>* value);
+        HRESULT SetTimedMetadataTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t *")] IIterable<Pointer<ITimedMetadataStreamDescriptor>>* value);
 
         [VtblIndex(7)]
-        HRESULT GetTimedMetadataTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t **")] IVector<IntPtr>** result);
+        HRESULT GetTimedMetadataTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t **")] IVector<Pointer<ITimedMetadataStreamDescriptor>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IMediaEncodingProfile3 : IMediaEncodingProfile3.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, int> SetTimedMetadataTracks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<ITimedMetadataStreamDescriptor>>*, int> SetTimedMetadataTracks;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedMetadataStreamDescriptor_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> GetTimedMetadataTracks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<ITimedMetadataStreamDescriptor>>**, int> GetTimedMetadataTracks;
     }
 }

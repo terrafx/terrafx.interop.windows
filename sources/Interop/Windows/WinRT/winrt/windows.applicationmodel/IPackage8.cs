@@ -154,9 +154,9 @@ public unsafe partial struct IPackage8 : IPackage8.Interface, INativeGuid
     /// <include file='IPackage8.xml' path='doc/member[@name="IPackage8.GetAppListEntries"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT GetAppListEntries([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CCore__CAppListEntry_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetAppListEntries([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CCore__CAppListEntry_t **")] IVectorView<Pointer<IAppListEntry>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackage8*, IVectorView<IntPtr>**, int>)(lpVtbl[16]))((IPackage8*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IPackage8*, IVectorView<Pointer<IAppListEntry>>**, int>)(lpVtbl[16]))((IPackage8*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IPackage8.xml' path='doc/member[@name="IPackage8.get_IsStub"]/*' />
@@ -200,7 +200,7 @@ public unsafe partial struct IPackage8 : IPackage8.Interface, INativeGuid
         HRESULT GetLogoAsRandomAccessStreamReference([NativeTypeName("ABI::Windows::Foundation::Size")] Size size, [NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamReference **")] IRandomAccessStreamReference** result);
 
         [VtblIndex(16)]
-        HRESULT GetAppListEntries([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CCore__CAppListEntry_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetAppListEntries([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CCore__CAppListEntry_t **")] IVectorView<Pointer<IAppListEntry>>** result);
 
         [VtblIndex(17)]
         HRESULT get_IsStub([NativeTypeName("boolean *")] byte* value);
@@ -258,7 +258,7 @@ public unsafe partial struct IPackage8 : IPackage8.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, Size, IRandomAccessStreamReference**, int> GetLogoAsRandomAccessStreamReference;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CCore__CAppListEntry_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetAppListEntries;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IAppListEntry>>**, int> GetAppListEntries;
 
         [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsStub;

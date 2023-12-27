@@ -74,15 +74,15 @@ public unsafe partial struct IHttpFilter : IHttpFilter.Interface, INativeGuid
     /// <include file='IHttpFilter.xml' path='doc/member[@name="IHttpFilter.SendRequestAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SendRequestAsync([NativeTypeName("ABI::Windows::Web::Http::IHttpRequestMessage *")] IHttpRequestMessage* request, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation)
+    public HRESULT SendRequestAsync([NativeTypeName("ABI::Windows::Web::Http::IHttpRequestMessage *")] IHttpRequestMessage* request, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpFilter*, IHttpRequestMessage*, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int>)(lpVtbl[6]))((IHttpFilter*)Unsafe.AsPointer(ref this), request, operation);
+        return ((delegate* unmanaged[MemberFunction]<IHttpFilter*, IHttpRequestMessage*, IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>**, int>)(lpVtbl[6]))((IHttpFilter*)Unsafe.AsPointer(ref this), request, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT SendRequestAsync([NativeTypeName("ABI::Windows::Web::Http::IHttpRequestMessage *")] IHttpRequestMessage* request, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation);
+        HRESULT SendRequestAsync([NativeTypeName("ABI::Windows::Web::Http::IHttpRequestMessage *")] IHttpRequestMessage* request, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IHttpFilter : IHttpFilter.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Web::Http::IHttpRequestMessage *, ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IHttpRequestMessage*, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int> SendRequestAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHttpRequestMessage*, IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>**, int> SendRequestAsync;
     }
 }

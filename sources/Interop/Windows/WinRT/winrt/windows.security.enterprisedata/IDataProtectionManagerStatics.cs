@@ -74,70 +74,70 @@ public unsafe partial struct IDataProtectionManagerStatics : IDataProtectionMana
     /// <include file='IDataProtectionManagerStatics.xml' path='doc/member[@name="IDataProtectionManagerStatics.ProtectAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT ProtectAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, HSTRING identity, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT ProtectAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, HSTRING identity, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult_t **")] IAsyncOperation<Pointer<IBufferProtectUnprotectResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataProtectionManagerStatics*, IBuffer*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IDataProtectionManagerStatics*)Unsafe.AsPointer(ref this), data, identity, result);
+        return ((delegate* unmanaged[MemberFunction]<IDataProtectionManagerStatics*, IBuffer*, HSTRING, IAsyncOperation<Pointer<IBufferProtectUnprotectResult>>**, int>)(lpVtbl[6]))((IDataProtectionManagerStatics*)Unsafe.AsPointer(ref this), data, identity, result);
     }
 
     /// <include file='IDataProtectionManagerStatics.xml' path='doc/member[@name="IDataProtectionManagerStatics.UnprotectAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT UnprotectAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT UnprotectAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult_t **")] IAsyncOperation<Pointer<IBufferProtectUnprotectResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataProtectionManagerStatics*, IBuffer*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IDataProtectionManagerStatics*)Unsafe.AsPointer(ref this), data, result);
+        return ((delegate* unmanaged[MemberFunction]<IDataProtectionManagerStatics*, IBuffer*, IAsyncOperation<Pointer<IBufferProtectUnprotectResult>>**, int>)(lpVtbl[7]))((IDataProtectionManagerStatics*)Unsafe.AsPointer(ref this), data, result);
     }
 
     /// <include file='IDataProtectionManagerStatics.xml' path='doc/member[@name="IDataProtectionManagerStatics.ProtectStreamAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT ProtectStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* unprotectedStream, HSTRING identity, [NativeTypeName("ABI::Windows::Storage::Streams::IOutputStream *")] IOutputStream* protectedStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT ProtectStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* unprotectedStream, HSTRING identity, [NativeTypeName("ABI::Windows::Storage::Streams::IOutputStream *")] IOutputStream* protectedStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **")] IAsyncOperation<Pointer<IDataProtectionInfo>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataProtectionManagerStatics*, IInputStream*, HSTRING, IOutputStream*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IDataProtectionManagerStatics*)Unsafe.AsPointer(ref this), unprotectedStream, identity, protectedStream, result);
+        return ((delegate* unmanaged[MemberFunction]<IDataProtectionManagerStatics*, IInputStream*, HSTRING, IOutputStream*, IAsyncOperation<Pointer<IDataProtectionInfo>>**, int>)(lpVtbl[8]))((IDataProtectionManagerStatics*)Unsafe.AsPointer(ref this), unprotectedStream, identity, protectedStream, result);
     }
 
     /// <include file='IDataProtectionManagerStatics.xml' path='doc/member[@name="IDataProtectionManagerStatics.UnprotectStreamAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT UnprotectStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* protectedStream, [NativeTypeName("ABI::Windows::Storage::Streams::IOutputStream *")] IOutputStream* unprotectedStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT UnprotectStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* protectedStream, [NativeTypeName("ABI::Windows::Storage::Streams::IOutputStream *")] IOutputStream* unprotectedStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **")] IAsyncOperation<Pointer<IDataProtectionInfo>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataProtectionManagerStatics*, IInputStream*, IOutputStream*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IDataProtectionManagerStatics*)Unsafe.AsPointer(ref this), protectedStream, unprotectedStream, result);
+        return ((delegate* unmanaged[MemberFunction]<IDataProtectionManagerStatics*, IInputStream*, IOutputStream*, IAsyncOperation<Pointer<IDataProtectionInfo>>**, int>)(lpVtbl[9]))((IDataProtectionManagerStatics*)Unsafe.AsPointer(ref this), protectedStream, unprotectedStream, result);
     }
 
     /// <include file='IDataProtectionManagerStatics.xml' path='doc/member[@name="IDataProtectionManagerStatics.GetProtectionInfoAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetProtectionInfoAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* protectedData, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetProtectionInfoAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* protectedData, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **")] IAsyncOperation<Pointer<IDataProtectionInfo>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataProtectionManagerStatics*, IBuffer*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IDataProtectionManagerStatics*)Unsafe.AsPointer(ref this), protectedData, result);
+        return ((delegate* unmanaged[MemberFunction]<IDataProtectionManagerStatics*, IBuffer*, IAsyncOperation<Pointer<IDataProtectionInfo>>**, int>)(lpVtbl[10]))((IDataProtectionManagerStatics*)Unsafe.AsPointer(ref this), protectedData, result);
     }
 
     /// <include file='IDataProtectionManagerStatics.xml' path='doc/member[@name="IDataProtectionManagerStatics.GetStreamProtectionInfoAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetStreamProtectionInfoAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* protectedStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetStreamProtectionInfoAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* protectedStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **")] IAsyncOperation<Pointer<IDataProtectionInfo>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataProtectionManagerStatics*, IInputStream*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IDataProtectionManagerStatics*)Unsafe.AsPointer(ref this), protectedStream, result);
+        return ((delegate* unmanaged[MemberFunction]<IDataProtectionManagerStatics*, IInputStream*, IAsyncOperation<Pointer<IDataProtectionInfo>>**, int>)(lpVtbl[11]))((IDataProtectionManagerStatics*)Unsafe.AsPointer(ref this), protectedStream, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT ProtectAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, HSTRING identity, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT ProtectAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, HSTRING identity, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult_t **")] IAsyncOperation<Pointer<IBufferProtectUnprotectResult>>** result);
 
         [VtblIndex(7)]
-        HRESULT UnprotectAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT UnprotectAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult_t **")] IAsyncOperation<Pointer<IBufferProtectUnprotectResult>>** result);
 
         [VtblIndex(8)]
-        HRESULT ProtectStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* unprotectedStream, HSTRING identity, [NativeTypeName("ABI::Windows::Storage::Streams::IOutputStream *")] IOutputStream* protectedStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT ProtectStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* unprotectedStream, HSTRING identity, [NativeTypeName("ABI::Windows::Storage::Streams::IOutputStream *")] IOutputStream* protectedStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **")] IAsyncOperation<Pointer<IDataProtectionInfo>>** result);
 
         [VtblIndex(9)]
-        HRESULT UnprotectStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* protectedStream, [NativeTypeName("ABI::Windows::Storage::Streams::IOutputStream *")] IOutputStream* unprotectedStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT UnprotectStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* protectedStream, [NativeTypeName("ABI::Windows::Storage::Streams::IOutputStream *")] IOutputStream* unprotectedStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **")] IAsyncOperation<Pointer<IDataProtectionInfo>>** result);
 
         [VtblIndex(10)]
-        HRESULT GetProtectionInfoAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* protectedData, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetProtectionInfoAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* protectedData, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **")] IAsyncOperation<Pointer<IDataProtectionInfo>>** result);
 
         [VtblIndex(11)]
-        HRESULT GetStreamProtectionInfoAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* protectedStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetStreamProtectionInfoAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* protectedStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **")] IAsyncOperation<Pointer<IDataProtectionInfo>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -162,21 +162,21 @@ public unsafe partial struct IDataProtectionManagerStatics : IDataProtectionMana
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IBuffer *, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, HSTRING, IAsyncOperation<IntPtr>**, int> ProtectAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, HSTRING, IAsyncOperation<Pointer<IBufferProtectUnprotectResult>>**, int> ProtectAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CBufferProtectUnprotectResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IAsyncOperation<IntPtr>**, int> UnprotectAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IAsyncOperation<Pointer<IBufferProtectUnprotectResult>>**, int> UnprotectAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IInputStream *, HSTRING, ABI::Windows::Storage::Streams::IOutputStream *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IInputStream*, HSTRING, IOutputStream*, IAsyncOperation<IntPtr>**, int> ProtectStreamAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInputStream*, HSTRING, IOutputStream*, IAsyncOperation<Pointer<IDataProtectionInfo>>**, int> ProtectStreamAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IInputStream *, ABI::Windows::Storage::Streams::IOutputStream *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IInputStream*, IOutputStream*, IAsyncOperation<IntPtr>**, int> UnprotectStreamAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInputStream*, IOutputStream*, IAsyncOperation<Pointer<IDataProtectionInfo>>**, int> UnprotectStreamAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IAsyncOperation<IntPtr>**, int> GetProtectionInfoAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IAsyncOperation<Pointer<IDataProtectionInfo>>**, int> GetProtectionInfoAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IInputStream *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CDataProtectionInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IInputStream*, IAsyncOperation<IntPtr>**, int> GetStreamProtectionInfoAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInputStream*, IAsyncOperation<Pointer<IDataProtectionInfo>>**, int> GetStreamProtectionInfoAsync;
     }
 }

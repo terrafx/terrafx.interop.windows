@@ -74,81 +74,81 @@ public unsafe partial struct IWebAuthenticationCoreManagerStatics : IWebAuthenti
     /// <include file='IWebAuthenticationCoreManagerStatics.xml' path='doc/member[@name="IWebAuthenticationCoreManagerStatics.GetTokenSilentlyAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetTokenSilentlyAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *")] IWebTokenRequest* request, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT GetTokenSilentlyAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *")] IWebTokenRequest* request, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **")] IAsyncOperation<Pointer<IWebTokenRequestResult>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics*, IWebTokenRequest*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IWebAuthenticationCoreManagerStatics*)Unsafe.AsPointer(ref this), request, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics*, IWebTokenRequest*, IAsyncOperation<Pointer<IWebTokenRequestResult>>**, int>)(lpVtbl[6]))((IWebAuthenticationCoreManagerStatics*)Unsafe.AsPointer(ref this), request, asyncInfo);
     }
 
     /// <include file='IWebAuthenticationCoreManagerStatics.xml' path='doc/member[@name="IWebAuthenticationCoreManagerStatics.GetTokenSilentlyWithWebAccountAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetTokenSilentlyWithWebAccountAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *")] IWebTokenRequest* request, [NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT GetTokenSilentlyWithWebAccountAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *")] IWebTokenRequest* request, [NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **")] IAsyncOperation<Pointer<IWebTokenRequestResult>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics*, IWebTokenRequest*, IWebAccount*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IWebAuthenticationCoreManagerStatics*)Unsafe.AsPointer(ref this), request, webAccount, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics*, IWebTokenRequest*, IWebAccount*, IAsyncOperation<Pointer<IWebTokenRequestResult>>**, int>)(lpVtbl[7]))((IWebAuthenticationCoreManagerStatics*)Unsafe.AsPointer(ref this), request, webAccount, asyncInfo);
     }
 
     /// <include file='IWebAuthenticationCoreManagerStatics.xml' path='doc/member[@name="IWebAuthenticationCoreManagerStatics.RequestTokenAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT RequestTokenAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *")] IWebTokenRequest* request, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT RequestTokenAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *")] IWebTokenRequest* request, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **")] IAsyncOperation<Pointer<IWebTokenRequestResult>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics*, IWebTokenRequest*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IWebAuthenticationCoreManagerStatics*)Unsafe.AsPointer(ref this), request, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics*, IWebTokenRequest*, IAsyncOperation<Pointer<IWebTokenRequestResult>>**, int>)(lpVtbl[8]))((IWebAuthenticationCoreManagerStatics*)Unsafe.AsPointer(ref this), request, asyncInfo);
     }
 
     /// <include file='IWebAuthenticationCoreManagerStatics.xml' path='doc/member[@name="IWebAuthenticationCoreManagerStatics.RequestTokenWithWebAccountAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT RequestTokenWithWebAccountAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *")] IWebTokenRequest* request, [NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT RequestTokenWithWebAccountAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *")] IWebTokenRequest* request, [NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **")] IAsyncOperation<Pointer<IWebTokenRequestResult>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics*, IWebTokenRequest*, IWebAccount*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IWebAuthenticationCoreManagerStatics*)Unsafe.AsPointer(ref this), request, webAccount, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics*, IWebTokenRequest*, IWebAccount*, IAsyncOperation<Pointer<IWebTokenRequestResult>>**, int>)(lpVtbl[9]))((IWebAuthenticationCoreManagerStatics*)Unsafe.AsPointer(ref this), request, webAccount, asyncInfo);
     }
 
     /// <include file='IWebAuthenticationCoreManagerStatics.xml' path='doc/member[@name="IWebAuthenticationCoreManagerStatics.FindAccountAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT FindAccountAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccountProvider *")] IWebAccountProvider* provider, HSTRING webAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT FindAccountAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccountProvider *")] IWebAccountProvider* provider, HSTRING webAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<Pointer<IWebAccount>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics*, IWebAccountProvider*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IWebAuthenticationCoreManagerStatics*)Unsafe.AsPointer(ref this), provider, webAccountId, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics*, IWebAccountProvider*, HSTRING, IAsyncOperation<Pointer<IWebAccount>>**, int>)(lpVtbl[10]))((IWebAuthenticationCoreManagerStatics*)Unsafe.AsPointer(ref this), provider, webAccountId, asyncInfo);
     }
 
     /// <include file='IWebAuthenticationCoreManagerStatics.xml' path='doc/member[@name="IWebAuthenticationCoreManagerStatics.FindAccountProviderAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT FindAccountProviderAsync(HSTRING webAccountProviderId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccountProvider_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT FindAccountProviderAsync(HSTRING webAccountProviderId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccountProvider_t **")] IAsyncOperation<Pointer<IWebAccountProvider>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IWebAuthenticationCoreManagerStatics*)Unsafe.AsPointer(ref this), webAccountProviderId, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics*, HSTRING, IAsyncOperation<Pointer<IWebAccountProvider>>**, int>)(lpVtbl[11]))((IWebAuthenticationCoreManagerStatics*)Unsafe.AsPointer(ref this), webAccountProviderId, asyncInfo);
     }
 
     /// <include file='IWebAuthenticationCoreManagerStatics.xml' path='doc/member[@name="IWebAuthenticationCoreManagerStatics.FindAccountProviderWithAuthorityAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT FindAccountProviderWithAuthorityAsync(HSTRING webAccountProviderId, HSTRING authority, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccountProvider_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT FindAccountProviderWithAuthorityAsync(HSTRING webAccountProviderId, HSTRING authority, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccountProvider_t **")] IAsyncOperation<Pointer<IWebAccountProvider>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[12]))((IWebAuthenticationCoreManagerStatics*)Unsafe.AsPointer(ref this), webAccountProviderId, authority, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics*, HSTRING, HSTRING, IAsyncOperation<Pointer<IWebAccountProvider>>**, int>)(lpVtbl[12]))((IWebAuthenticationCoreManagerStatics*)Unsafe.AsPointer(ref this), webAccountProviderId, authority, asyncInfo);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetTokenSilentlyAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *")] IWebTokenRequest* request, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT GetTokenSilentlyAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *")] IWebTokenRequest* request, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **")] IAsyncOperation<Pointer<IWebTokenRequestResult>>** asyncInfo);
 
         [VtblIndex(7)]
-        HRESULT GetTokenSilentlyWithWebAccountAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *")] IWebTokenRequest* request, [NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT GetTokenSilentlyWithWebAccountAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *")] IWebTokenRequest* request, [NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **")] IAsyncOperation<Pointer<IWebTokenRequestResult>>** asyncInfo);
 
         [VtblIndex(8)]
-        HRESULT RequestTokenAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *")] IWebTokenRequest* request, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT RequestTokenAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *")] IWebTokenRequest* request, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **")] IAsyncOperation<Pointer<IWebTokenRequestResult>>** asyncInfo);
 
         [VtblIndex(9)]
-        HRESULT RequestTokenWithWebAccountAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *")] IWebTokenRequest* request, [NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT RequestTokenWithWebAccountAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *")] IWebTokenRequest* request, [NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* webAccount, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **")] IAsyncOperation<Pointer<IWebTokenRequestResult>>** asyncInfo);
 
         [VtblIndex(10)]
-        HRESULT FindAccountAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccountProvider *")] IWebAccountProvider* provider, HSTRING webAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT FindAccountAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccountProvider *")] IWebAccountProvider* provider, HSTRING webAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<Pointer<IWebAccount>>** asyncInfo);
 
         [VtblIndex(11)]
-        HRESULT FindAccountProviderAsync(HSTRING webAccountProviderId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccountProvider_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT FindAccountProviderAsync(HSTRING webAccountProviderId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccountProvider_t **")] IAsyncOperation<Pointer<IWebAccountProvider>>** asyncInfo);
 
         [VtblIndex(12)]
-        HRESULT FindAccountProviderWithAuthorityAsync(HSTRING webAccountProviderId, HSTRING authority, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccountProvider_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT FindAccountProviderWithAuthorityAsync(HSTRING webAccountProviderId, HSTRING authority, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccountProvider_t **")] IAsyncOperation<Pointer<IWebAccountProvider>>** asyncInfo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -173,24 +173,24 @@ public unsafe partial struct IWebAuthenticationCoreManagerStatics : IWebAuthenti
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IWebTokenRequest*, IAsyncOperation<IntPtr>**, int> GetTokenSilentlyAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWebTokenRequest*, IAsyncOperation<Pointer<IWebTokenRequestResult>>**, int> GetTokenSilentlyAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *, ABI::Windows::Security::Credentials::IWebAccount *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IWebTokenRequest*, IWebAccount*, IAsyncOperation<IntPtr>**, int> GetTokenSilentlyWithWebAccountAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWebTokenRequest*, IWebAccount*, IAsyncOperation<Pointer<IWebTokenRequestResult>>**, int> GetTokenSilentlyWithWebAccountAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IWebTokenRequest*, IAsyncOperation<IntPtr>**, int> RequestTokenAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWebTokenRequest*, IAsyncOperation<Pointer<IWebTokenRequestResult>>**, int> RequestTokenAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Authentication::Web::Core::IWebTokenRequest *, ABI::Windows::Security::Credentials::IWebAccount *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenRequestResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IWebTokenRequest*, IWebAccount*, IAsyncOperation<IntPtr>**, int> RequestTokenWithWebAccountAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWebTokenRequest*, IWebAccount*, IAsyncOperation<Pointer<IWebTokenRequestResult>>**, int> RequestTokenWithWebAccountAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Credentials::IWebAccountProvider *, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IWebAccountProvider*, HSTRING, IAsyncOperation<IntPtr>**, int> FindAccountAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWebAccountProvider*, HSTRING, IAsyncOperation<Pointer<IWebAccount>>**, int> FindAccountAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccountProvider_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FindAccountProviderAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IWebAccountProvider>>**, int> FindAccountProviderAsync;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccountProvider_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int> FindAccountProviderWithAuthorityAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IAsyncOperation<Pointer<IWebAccountProvider>>**, int> FindAccountProviderWithAuthorityAsync;
     }
 }

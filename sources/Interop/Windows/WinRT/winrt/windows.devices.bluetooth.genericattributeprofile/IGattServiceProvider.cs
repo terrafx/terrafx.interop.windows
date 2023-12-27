@@ -90,9 +90,9 @@ public unsafe partial struct IGattServiceProvider : IGattServiceProvider.Interfa
     /// <include file='IGattServiceProvider.xml' path='doc/member[@name="IGattServiceProvider.add_AdvertisementStatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_AdvertisementStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProvider_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProviderAdvertisementStatusChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AdvertisementStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProvider_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProviderAdvertisementStatusChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGattServiceProvider>, Pointer<IGattServiceProviderAdvertisementStatusChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattServiceProvider*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IGattServiceProvider*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGattServiceProvider*, ITypedEventHandler<Pointer<IGattServiceProvider>, Pointer<IGattServiceProviderAdvertisementStatusChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IGattServiceProvider*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGattServiceProvider.xml' path='doc/member[@name="IGattServiceProvider.remove_AdvertisementStatusChanged"]/*' />
@@ -136,7 +136,7 @@ public unsafe partial struct IGattServiceProvider : IGattServiceProvider.Interfa
         HRESULT get_AdvertisementStatus([NativeTypeName("ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattServiceProviderAdvertisementStatus *")] GattServiceProviderAdvertisementStatus* value);
 
         [VtblIndex(8)]
-        HRESULT add_AdvertisementStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProvider_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProviderAdvertisementStatusChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AdvertisementStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProvider_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProviderAdvertisementStatusChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGattServiceProvider>, Pointer<IGattServiceProviderAdvertisementStatusChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_AdvertisementStatusChanged(EventRegistrationToken token);
@@ -179,7 +179,7 @@ public unsafe partial struct IGattServiceProvider : IGattServiceProvider.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, GattServiceProviderAdvertisementStatus*, int> get_AdvertisementStatus;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProvider_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProviderAdvertisementStatusChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AdvertisementStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGattServiceProvider>, Pointer<IGattServiceProviderAdvertisementStatusChangedEventArgs>>*, EventRegistrationToken*, int> add_AdvertisementStatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AdvertisementStatusChanged;

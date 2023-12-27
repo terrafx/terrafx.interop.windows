@@ -74,17 +74,17 @@ public unsafe partial struct IAggregateContactManager : IAggregateContactManager
     /// <include file='IAggregateContactManager.xml' path='doc/member[@name="IAggregateContactManager.FindRawContactsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindRawContactsAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT FindRawContactsAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContact>>>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAggregateContactManager*, IContact*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IAggregateContactManager*)Unsafe.AsPointer(ref this), contact, value);
+        return ((delegate* unmanaged[MemberFunction]<IAggregateContactManager*, IContact*, IAsyncOperation<Pointer<IVectorView<Pointer<IContact>>>>**, int>)(lpVtbl[6]))((IAggregateContactManager*)Unsafe.AsPointer(ref this), contact, value);
     }
 
     /// <include file='IAggregateContactManager.xml' path='doc/member[@name="IAggregateContactManager.TryLinkContactsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT TryLinkContactsAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* primaryContact, [NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* secondaryContact, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** contact)
+    public HRESULT TryLinkContactsAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* primaryContact, [NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* secondaryContact, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IContact>>** contact)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAggregateContactManager*, IContact*, IContact*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IAggregateContactManager*)Unsafe.AsPointer(ref this), primaryContact, secondaryContact, contact);
+        return ((delegate* unmanaged[MemberFunction]<IAggregateContactManager*, IContact*, IContact*, IAsyncOperation<Pointer<IContact>>**, int>)(lpVtbl[7]))((IAggregateContactManager*)Unsafe.AsPointer(ref this), primaryContact, secondaryContact, contact);
     }
 
     /// <include file='IAggregateContactManager.xml' path='doc/member[@name="IAggregateContactManager.UnlinkRawContactAsync"]/*' />
@@ -106,10 +106,10 @@ public unsafe partial struct IAggregateContactManager : IAggregateContactManager
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FindRawContactsAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT FindRawContactsAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContact>>>>** value);
 
         [VtblIndex(7)]
-        HRESULT TryLinkContactsAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* primaryContact, [NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* secondaryContact, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** contact);
+        HRESULT TryLinkContactsAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* primaryContact, [NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* secondaryContact, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IContact>>** contact);
 
         [VtblIndex(8)]
         HRESULT UnlinkRawContactAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** value);
@@ -140,10 +140,10 @@ public unsafe partial struct IAggregateContactManager : IAggregateContactManager
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Contacts::IContact *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IContact*, IAsyncOperation<IntPtr>**, int> FindRawContactsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IContact*, IAsyncOperation<Pointer<IVectorView<Pointer<IContact>>>>**, int> FindRawContactsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Contacts::IContact *, ABI::Windows::ApplicationModel::Contacts::IContact *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IContact*, IContact*, IAsyncOperation<IntPtr>**, int> TryLinkContactsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IContact*, IContact*, IAsyncOperation<Pointer<IContact>>**, int> TryLinkContactsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Contacts::IContact *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IContact*, IAsyncAction**, int> UnlinkRawContactAsync;

@@ -258,9 +258,9 @@ public unsafe partial struct IAppBroadcastState : IAppBroadcastState.Interface, 
     /// <include file='IAppBroadcastState.xml' path='doc/member[@name="IAppBroadcastState.add_ViewerCountChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT add_ViewerCountChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastViewerCountChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_ViewerCountChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastViewerCountChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastViewerCountChangedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastState*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[29]))((IAppBroadcastState*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastState*, ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastViewerCountChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[29]))((IAppBroadcastState*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IAppBroadcastState.xml' path='doc/member[@name="IAppBroadcastState.remove_ViewerCountChanged"]/*' />
@@ -274,9 +274,9 @@ public unsafe partial struct IAppBroadcastState : IAppBroadcastState.Interface, 
     /// <include file='IAppBroadcastState.xml' path='doc/member[@name="IAppBroadcastState.add_MicrophoneCaptureStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
-    public HRESULT add_MicrophoneCaptureStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastMicrophoneCaptureStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_MicrophoneCaptureStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastMicrophoneCaptureStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastMicrophoneCaptureStateChangedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastState*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[31]))((IAppBroadcastState*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastState*, ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastMicrophoneCaptureStateChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[31]))((IAppBroadcastState*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IAppBroadcastState.xml' path='doc/member[@name="IAppBroadcastState.remove_MicrophoneCaptureStateChanged"]/*' />
@@ -290,9 +290,9 @@ public unsafe partial struct IAppBroadcastState : IAppBroadcastState.Interface, 
     /// <include file='IAppBroadcastState.xml' path='doc/member[@name="IAppBroadcastState.add_CameraCaptureStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
-    public HRESULT add_CameraCaptureStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastCameraCaptureStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_CameraCaptureStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastCameraCaptureStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastCameraCaptureStateChangedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastState*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[33]))((IAppBroadcastState*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastState*, ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastCameraCaptureStateChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[33]))((IAppBroadcastState*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IAppBroadcastState.xml' path='doc/member[@name="IAppBroadcastState.remove_CameraCaptureStateChanged"]/*' />
@@ -306,9 +306,9 @@ public unsafe partial struct IAppBroadcastState : IAppBroadcastState.Interface, 
     /// <include file='IAppBroadcastState.xml' path='doc/member[@name="IAppBroadcastState.add_PlugInStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
-    public HRESULT add_PlugInStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastPlugInStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PlugInStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastPlugInStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastPlugInStateChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastState*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[35]))((IAppBroadcastState*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastState*, ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastPlugInStateChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[35]))((IAppBroadcastState*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppBroadcastState.xml' path='doc/member[@name="IAppBroadcastState.remove_PlugInStateChanged"]/*' />
@@ -322,9 +322,9 @@ public unsafe partial struct IAppBroadcastState : IAppBroadcastState.Interface, 
     /// <include file='IAppBroadcastState.xml' path='doc/member[@name="IAppBroadcastState.add_StreamStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
-    public HRESULT add_StreamStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastStreamStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_StreamStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastStreamStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastStreamStateChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastState*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[37]))((IAppBroadcastState*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastState*, ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastStreamStateChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[37]))((IAppBroadcastState*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppBroadcastState.xml' path='doc/member[@name="IAppBroadcastState.remove_StreamStateChanged"]/*' />
@@ -338,9 +338,9 @@ public unsafe partial struct IAppBroadcastState : IAppBroadcastState.Interface, 
     /// <include file='IAppBroadcastState.xml' path='doc/member[@name="IAppBroadcastState.add_CaptureTargetClosed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
-    public HRESULT add_CaptureTargetClosed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_CaptureTargetClosed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastState*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[39]))((IAppBroadcastState*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastState*, ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[39]))((IAppBroadcastState*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IAppBroadcastState.xml' path='doc/member[@name="IAppBroadcastState.remove_CaptureTargetClosed"]/*' />
@@ -423,37 +423,37 @@ public unsafe partial struct IAppBroadcastState : IAppBroadcastState.Interface, 
         HRESULT get_TerminationReasonPlugInSpecific([NativeTypeName("UINT32 *")] uint* value);
 
         [VtblIndex(29)]
-        HRESULT add_ViewerCountChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastViewerCountChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_ViewerCountChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastViewerCountChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastViewerCountChangedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(30)]
         HRESULT remove_ViewerCountChanged(EventRegistrationToken token);
 
         [VtblIndex(31)]
-        HRESULT add_MicrophoneCaptureStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastMicrophoneCaptureStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_MicrophoneCaptureStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastMicrophoneCaptureStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastMicrophoneCaptureStateChangedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(32)]
         HRESULT remove_MicrophoneCaptureStateChanged(EventRegistrationToken token);
 
         [VtblIndex(33)]
-        HRESULT add_CameraCaptureStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastCameraCaptureStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_CameraCaptureStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastCameraCaptureStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastCameraCaptureStateChangedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(34)]
         HRESULT remove_CameraCaptureStateChanged(EventRegistrationToken token);
 
         [VtblIndex(35)]
-        HRESULT add_PlugInStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastPlugInStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PlugInStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastPlugInStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastPlugInStateChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(36)]
         HRESULT remove_PlugInStateChanged(EventRegistrationToken token);
 
         [VtblIndex(37)]
-        HRESULT add_StreamStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastStreamStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_StreamStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastStreamStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastStreamStateChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(38)]
         HRESULT remove_StreamStateChanged(EventRegistrationToken token);
 
         [VtblIndex(39)]
-        HRESULT add_CaptureTargetClosed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_CaptureTargetClosed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(40)]
         HRESULT remove_CaptureTargetClosed(EventRegistrationToken token);
@@ -550,37 +550,37 @@ public unsafe partial struct IAppBroadcastState : IAppBroadcastState.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_TerminationReasonPlugInSpecific;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastViewerCountChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ViewerCountChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastViewerCountChangedEventArgs>>*, EventRegistrationToken*, int> add_ViewerCountChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ViewerCountChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastMicrophoneCaptureStateChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_MicrophoneCaptureStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastMicrophoneCaptureStateChangedEventArgs>>*, EventRegistrationToken*, int> add_MicrophoneCaptureStateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_MicrophoneCaptureStateChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastCameraCaptureStateChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CameraCaptureStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastCameraCaptureStateChangedEventArgs>>*, EventRegistrationToken*, int> add_CameraCaptureStateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CameraCaptureStateChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastPlugInStateChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PlugInStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastPlugInStateChangedEventArgs>>*, EventRegistrationToken*, int> add_PlugInStateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PlugInStateChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_Windows__CMedia__CCapture__CAppBroadcastStreamStateChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_StreamStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IAppBroadcastStreamStateChangedEventArgs>>*, EventRegistrationToken*, int> add_StreamStateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StreamStateChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastState_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CaptureTargetClosed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastState>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_CaptureTargetClosed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CaptureTargetClosed;

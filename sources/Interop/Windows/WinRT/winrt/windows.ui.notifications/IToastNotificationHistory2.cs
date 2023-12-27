@@ -74,26 +74,26 @@ public unsafe partial struct IToastNotificationHistory2 : IToastNotificationHist
     /// <include file='IToastNotificationHistory2.xml' path='doc/member[@name="IToastNotificationHistory2.GetHistory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetHistory([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetHistory([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_t **")] IVectorView<Pointer<IToastNotification>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IToastNotificationHistory2*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IToastNotificationHistory2*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IToastNotificationHistory2*, IVectorView<Pointer<IToastNotification>>**, int>)(lpVtbl[6]))((IToastNotificationHistory2*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IToastNotificationHistory2.xml' path='doc/member[@name="IToastNotificationHistory2.GetHistoryWithId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetHistoryWithId(HSTRING applicationId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetHistoryWithId(HSTRING applicationId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_t **")] IVectorView<Pointer<IToastNotification>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IToastNotificationHistory2*, HSTRING, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IToastNotificationHistory2*)Unsafe.AsPointer(ref this), applicationId, result);
+        return ((delegate* unmanaged[MemberFunction]<IToastNotificationHistory2*, HSTRING, IVectorView<Pointer<IToastNotification>>**, int>)(lpVtbl[7]))((IToastNotificationHistory2*)Unsafe.AsPointer(ref this), applicationId, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetHistory([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetHistory([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_t **")] IVectorView<Pointer<IToastNotification>>** result);
 
         [VtblIndex(7)]
-        HRESULT GetHistoryWithId(HSTRING applicationId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetHistoryWithId(HSTRING applicationId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_t **")] IVectorView<Pointer<IToastNotification>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IToastNotificationHistory2 : IToastNotificationHist
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetHistory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IToastNotification>>**, int> GetHistory;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CToastNotification_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<IntPtr>**, int> GetHistoryWithId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<Pointer<IToastNotification>>**, int> GetHistoryWithId;
     }
 }

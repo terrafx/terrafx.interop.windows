@@ -74,9 +74,9 @@ public unsafe partial struct IAppBroadcastBackgroundServiceSignInInfo2 : IAppBro
     /// <include file='IAppBroadcastBackgroundServiceSignInInfo2.xml' path='doc/member[@name="IAppBroadcastBackgroundServiceSignInInfo2.add_UserNameChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_UserNameChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceSignInInfo_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_UserNameChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceSignInInfo_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastBackgroundServiceSignInInfo>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastBackgroundServiceSignInInfo2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IAppBroadcastBackgroundServiceSignInInfo2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastBackgroundServiceSignInInfo2*, ITypedEventHandler<Pointer<IAppBroadcastBackgroundServiceSignInInfo>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IAppBroadcastBackgroundServiceSignInInfo2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppBroadcastBackgroundServiceSignInInfo2.xml' path='doc/member[@name="IAppBroadcastBackgroundServiceSignInInfo2.remove_UserNameChanged"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IAppBroadcastBackgroundServiceSignInInfo2 : IAppBro
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_UserNameChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceSignInInfo_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_UserNameChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceSignInInfo_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastBackgroundServiceSignInInfo>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_UserNameChanged(EventRegistrationToken token);
@@ -118,7 +118,7 @@ public unsafe partial struct IAppBroadcastBackgroundServiceSignInInfo2 : IAppBro
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceSignInInfo_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_UserNameChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastBackgroundServiceSignInInfo>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_UserNameChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_UserNameChanged;

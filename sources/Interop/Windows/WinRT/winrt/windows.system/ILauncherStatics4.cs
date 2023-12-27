@@ -90,9 +90,9 @@ public unsafe partial struct ILauncherStatics4 : ILauncherStatics4.Interface, IN
     /// <include file='ILauncherStatics4.xml' path='doc/member[@name="ILauncherStatics4.FindAppUriHandlersAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT FindAppUriHandlersAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppInfo_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FindAppUriHandlersAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppInfo_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppInfo>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ILauncherStatics4*, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((ILauncherStatics4*)Unsafe.AsPointer(ref this), uri, operation);
+        return ((delegate* unmanaged[MemberFunction]<ILauncherStatics4*, IUriRuntimeClass*, IAsyncOperation<Pointer<IVectorView<Pointer<IAppInfo>>>>**, int>)(lpVtbl[8]))((ILauncherStatics4*)Unsafe.AsPointer(ref this), uri, operation);
     }
 
     /// <include file='ILauncherStatics4.xml' path='doc/member[@name="ILauncherStatics4.LaunchUriForUserAsync"]/*' />
@@ -122,17 +122,17 @@ public unsafe partial struct ILauncherStatics4 : ILauncherStatics4.Interface, IN
     /// <include file='ILauncherStatics4.xml' path='doc/member[@name="ILauncherStatics4.LaunchUriForResultsForUserAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT LaunchUriForResultsForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::System::ILauncherOptions *")] ILauncherOptions* options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT LaunchUriForResultsForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::System::ILauncherOptions *")] ILauncherOptions* options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult_t **")] IAsyncOperation<Pointer<ILaunchUriResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ILauncherStatics4*, IUser*, IUriRuntimeClass*, ILauncherOptions*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[12]))((ILauncherStatics4*)Unsafe.AsPointer(ref this), user, uri, options, operation);
+        return ((delegate* unmanaged[MemberFunction]<ILauncherStatics4*, IUser*, IUriRuntimeClass*, ILauncherOptions*, IAsyncOperation<Pointer<ILaunchUriResult>>**, int>)(lpVtbl[12]))((ILauncherStatics4*)Unsafe.AsPointer(ref this), user, uri, options, operation);
     }
 
     /// <include file='ILauncherStatics4.xml' path='doc/member[@name="ILauncherStatics4.LaunchUriForResultsWithDataForUserAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT LaunchUriForResultsWithDataForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::System::ILauncherOptions *")] ILauncherOptions* options, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* inputData, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT LaunchUriForResultsWithDataForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::System::ILauncherOptions *")] ILauncherOptions* options, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* inputData, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult_t **")] IAsyncOperation<Pointer<ILaunchUriResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ILauncherStatics4*, IUser*, IUriRuntimeClass*, ILauncherOptions*, IPropertySet*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[13]))((ILauncherStatics4*)Unsafe.AsPointer(ref this), user, uri, options, inputData, operation);
+        return ((delegate* unmanaged[MemberFunction]<ILauncherStatics4*, IUser*, IUriRuntimeClass*, ILauncherOptions*, IPropertySet*, IAsyncOperation<Pointer<ILaunchUriResult>>**, int>)(lpVtbl[13]))((ILauncherStatics4*)Unsafe.AsPointer(ref this), user, uri, options, inputData, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -144,7 +144,7 @@ public unsafe partial struct ILauncherStatics4 : ILauncherStatics4.Interface, IN
         HRESULT QueryAppUriSupportWithPackageFamilyNameAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, HSTRING packageFamilyName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CLaunchQuerySupportStatus_t **")] IAsyncOperation<LaunchQuerySupportStatus>** operation);
 
         [VtblIndex(8)]
-        HRESULT FindAppUriHandlersAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppInfo_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FindAppUriHandlersAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppInfo_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppInfo>>>>** operation);
 
         [VtblIndex(9)]
         HRESULT LaunchUriForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CLaunchUriStatus_t **")] IAsyncOperation<LaunchUriStatus>** operation);
@@ -156,10 +156,10 @@ public unsafe partial struct ILauncherStatics4 : ILauncherStatics4.Interface, IN
         HRESULT LaunchUriWithDataForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::System::ILauncherOptions *")] ILauncherOptions* options, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* inputData, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CLaunchUriStatus_t **")] IAsyncOperation<LaunchUriStatus>** operation);
 
         [VtblIndex(12)]
-        HRESULT LaunchUriForResultsForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::System::ILauncherOptions *")] ILauncherOptions* options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT LaunchUriForResultsForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::System::ILauncherOptions *")] ILauncherOptions* options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult_t **")] IAsyncOperation<Pointer<ILaunchUriResult>>** operation);
 
         [VtblIndex(13)]
-        HRESULT LaunchUriForResultsWithDataForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::System::ILauncherOptions *")] ILauncherOptions* options, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* inputData, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT LaunchUriForResultsWithDataForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::System::ILauncherOptions *")] ILauncherOptions* options, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* inputData, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult_t **")] IAsyncOperation<Pointer<ILaunchUriResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -190,7 +190,7 @@ public unsafe partial struct ILauncherStatics4 : ILauncherStatics4.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, HSTRING, IAsyncOperation<LaunchQuerySupportStatus>**, int> QueryAppUriSupportWithPackageFamilyNameAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int> FindAppUriHandlersAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperation<Pointer<IVectorView<Pointer<IAppInfo>>>>**, int> FindAppUriHandlersAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IUser *, ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CLaunchUriStatus_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, IUriRuntimeClass*, IAsyncOperation<LaunchUriStatus>**, int> LaunchUriForUserAsync;
@@ -202,9 +202,9 @@ public unsafe partial struct ILauncherStatics4 : ILauncherStatics4.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, IUriRuntimeClass*, ILauncherOptions*, IPropertySet*, IAsyncOperation<LaunchUriStatus>**, int> LaunchUriWithDataForUserAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IUser *, ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::System::ILauncherOptions *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, IUriRuntimeClass*, ILauncherOptions*, IAsyncOperation<IntPtr>**, int> LaunchUriForResultsForUserAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, IUriRuntimeClass*, ILauncherOptions*, IAsyncOperation<Pointer<ILaunchUriResult>>**, int> LaunchUriForResultsForUserAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IUser *, ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::System::ILauncherOptions *, ABI::Windows::Foundation::Collections::IPropertySet *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CLaunchUriResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, IUriRuntimeClass*, ILauncherOptions*, IPropertySet*, IAsyncOperation<IntPtr>**, int> LaunchUriForResultsWithDataForUserAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, IUriRuntimeClass*, ILauncherOptions*, IPropertySet*, IAsyncOperation<Pointer<ILaunchUriResult>>**, int> LaunchUriForResultsWithDataForUserAsync;
     }
 }

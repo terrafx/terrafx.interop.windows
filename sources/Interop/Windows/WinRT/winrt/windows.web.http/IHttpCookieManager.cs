@@ -98,9 +98,9 @@ public unsafe partial struct IHttpCookieManager : IHttpCookieManager.Interface, 
     /// <include file='IHttpCookieManager.xml' path='doc/member[@name="IHttpCookieManager.GetCookies"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetCookies([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CWeb__CHttp__CHttpCookie_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetCookies([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CWeb__CHttp__CHttpCookie_t **")] IVectorView<Pointer<IHttpCookie>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCookieManager*, IUriRuntimeClass*, IVectorView<IntPtr>**, int>)(lpVtbl[9]))((IHttpCookieManager*)Unsafe.AsPointer(ref this), uri, result);
+        return ((delegate* unmanaged[MemberFunction]<IHttpCookieManager*, IUriRuntimeClass*, IVectorView<Pointer<IHttpCookie>>**, int>)(lpVtbl[9]))((IHttpCookieManager*)Unsafe.AsPointer(ref this), uri, result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -115,7 +115,7 @@ public unsafe partial struct IHttpCookieManager : IHttpCookieManager.Interface, 
         HRESULT DeleteCookie([NativeTypeName("ABI::Windows::Web::Http::IHttpCookie *")] IHttpCookie* cookie);
 
         [VtblIndex(9)]
-        HRESULT GetCookies([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CWeb__CHttp__CHttpCookie_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetCookies([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CWeb__CHttp__CHttpCookie_t **")] IVectorView<Pointer<IHttpCookie>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -149,6 +149,6 @@ public unsafe partial struct IHttpCookieManager : IHttpCookieManager.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, IHttpCookie*, int> DeleteCookie;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CWeb__CHttp__CHttpCookie_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IVectorView<IntPtr>**, int> GetCookies;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IVectorView<Pointer<IHttpCookie>>**, int> GetCookies;
     }
 }

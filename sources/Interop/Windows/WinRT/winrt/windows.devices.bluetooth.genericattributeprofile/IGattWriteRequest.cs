@@ -106,9 +106,9 @@ public unsafe partial struct IGattWriteRequest : IGattWriteRequest.Interface, IN
     /// <include file='IGattWriteRequest.xml' path='doc/member[@name="IGattWriteRequest.add_StateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequest_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattRequestStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequest_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattRequestStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGattWriteRequest>, Pointer<IGattRequestStateChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattWriteRequest*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IGattWriteRequest*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGattWriteRequest*, ITypedEventHandler<Pointer<IGattWriteRequest>, Pointer<IGattRequestStateChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IGattWriteRequest*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGattWriteRequest.xml' path='doc/member[@name="IGattWriteRequest.remove_StateChanged"]/*' />
@@ -150,7 +150,7 @@ public unsafe partial struct IGattWriteRequest : IGattWriteRequest.Interface, IN
         HRESULT get_State([NativeTypeName("ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattRequestState *")] GattRequestState* value);
 
         [VtblIndex(10)]
-        HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequest_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattRequestStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequest_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattRequestStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGattWriteRequest>, Pointer<IGattRequestStateChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_StateChanged(EventRegistrationToken token);
@@ -196,7 +196,7 @@ public unsafe partial struct IGattWriteRequest : IGattWriteRequest.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, GattRequestState*, int> get_State;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequest_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattRequestStateChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_StateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGattWriteRequest>, Pointer<IGattRequestStateChangedEventArgs>>*, EventRegistrationToken*, int> add_StateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StateChanged;

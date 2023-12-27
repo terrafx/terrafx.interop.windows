@@ -90,17 +90,17 @@ public unsafe partial struct IDeviceInformationPairing2 : IDeviceInformationPair
     /// <include file='IDeviceInformationPairing2.xml' path='doc/member[@name="IDeviceInformationPairing2.PairWithProtectionLevelAndSettingsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT PairWithProtectionLevelAndSettingsAsync([NativeTypeName("ABI::Windows::Devices::Enumeration::DevicePairingProtectionLevel")] DevicePairingProtectionLevel minProtectionLevel, [NativeTypeName("ABI::Windows::Devices::Enumeration::IDevicePairingSettings *")] IDevicePairingSettings* devicePairingSettings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDevicePairingResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT PairWithProtectionLevelAndSettingsAsync([NativeTypeName("ABI::Windows::Devices::Enumeration::DevicePairingProtectionLevel")] DevicePairingProtectionLevel minProtectionLevel, [NativeTypeName("ABI::Windows::Devices::Enumeration::IDevicePairingSettings *")] IDevicePairingSettings* devicePairingSettings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDevicePairingResult_t **")] IAsyncOperation<Pointer<IDevicePairingResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationPairing2*, DevicePairingProtectionLevel, IDevicePairingSettings*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IDeviceInformationPairing2*)Unsafe.AsPointer(ref this), minProtectionLevel, devicePairingSettings, result);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationPairing2*, DevicePairingProtectionLevel, IDevicePairingSettings*, IAsyncOperation<Pointer<IDevicePairingResult>>**, int>)(lpVtbl[8]))((IDeviceInformationPairing2*)Unsafe.AsPointer(ref this), minProtectionLevel, devicePairingSettings, result);
     }
 
     /// <include file='IDeviceInformationPairing2.xml' path='doc/member[@name="IDeviceInformationPairing2.UnpairAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT UnpairAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceUnpairingResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT UnpairAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceUnpairingResult_t **")] IAsyncOperation<Pointer<IDeviceUnpairingResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationPairing2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IDeviceInformationPairing2*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationPairing2*, IAsyncOperation<Pointer<IDeviceUnpairingResult>>**, int>)(lpVtbl[9]))((IDeviceInformationPairing2*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -112,10 +112,10 @@ public unsafe partial struct IDeviceInformationPairing2 : IDeviceInformationPair
         HRESULT get_Custom([NativeTypeName("ABI::Windows::Devices::Enumeration::IDeviceInformationCustomPairing **")] IDeviceInformationCustomPairing** value);
 
         [VtblIndex(8)]
-        HRESULT PairWithProtectionLevelAndSettingsAsync([NativeTypeName("ABI::Windows::Devices::Enumeration::DevicePairingProtectionLevel")] DevicePairingProtectionLevel minProtectionLevel, [NativeTypeName("ABI::Windows::Devices::Enumeration::IDevicePairingSettings *")] IDevicePairingSettings* devicePairingSettings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDevicePairingResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT PairWithProtectionLevelAndSettingsAsync([NativeTypeName("ABI::Windows::Devices::Enumeration::DevicePairingProtectionLevel")] DevicePairingProtectionLevel minProtectionLevel, [NativeTypeName("ABI::Windows::Devices::Enumeration::IDevicePairingSettings *")] IDevicePairingSettings* devicePairingSettings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDevicePairingResult_t **")] IAsyncOperation<Pointer<IDevicePairingResult>>** result);
 
         [VtblIndex(9)]
-        HRESULT UnpairAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceUnpairingResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT UnpairAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceUnpairingResult_t **")] IAsyncOperation<Pointer<IDeviceUnpairingResult>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -146,9 +146,9 @@ public unsafe partial struct IDeviceInformationPairing2 : IDeviceInformationPair
         public delegate* unmanaged[MemberFunction]<TSelf*, IDeviceInformationCustomPairing**, int> get_Custom;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Enumeration::DevicePairingProtectionLevel, ABI::Windows::Devices::Enumeration::IDevicePairingSettings *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDevicePairingResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DevicePairingProtectionLevel, IDevicePairingSettings*, IAsyncOperation<IntPtr>**, int> PairWithProtectionLevelAndSettingsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DevicePairingProtectionLevel, IDevicePairingSettings*, IAsyncOperation<Pointer<IDevicePairingResult>>**, int> PairWithProtectionLevelAndSettingsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceUnpairingResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> UnpairAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IDeviceUnpairingResult>>**, int> UnpairAsync;
     }
 }

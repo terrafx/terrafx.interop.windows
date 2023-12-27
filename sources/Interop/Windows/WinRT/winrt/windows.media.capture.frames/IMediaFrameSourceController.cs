@@ -74,9 +74,9 @@ public unsafe partial struct IMediaFrameSourceController : IMediaFrameSourceCont
     /// <include file='IMediaFrameSourceController.xml' path='doc/member[@name="IMediaFrameSourceController.GetPropertyAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetPropertyAsync(HSTRING propertyId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetPropertyAsync(HSTRING propertyId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_t **")] IAsyncOperation<Pointer<IMediaFrameSourceGetPropertyResult>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSourceController*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IMediaFrameSourceController*)Unsafe.AsPointer(ref this), propertyId, value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSourceController*, HSTRING, IAsyncOperation<Pointer<IMediaFrameSourceGetPropertyResult>>**, int>)(lpVtbl[6]))((IMediaFrameSourceController*)Unsafe.AsPointer(ref this), propertyId, value);
     }
 
     /// <include file='IMediaFrameSourceController.xml' path='doc/member[@name="IMediaFrameSourceController.SetPropertyAsync"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IMediaFrameSourceController : IMediaFrameSourceCont
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetPropertyAsync(HSTRING propertyId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetPropertyAsync(HSTRING propertyId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_t **")] IAsyncOperation<Pointer<IMediaFrameSourceGetPropertyResult>>** value);
 
         [VtblIndex(7)]
         HRESULT SetPropertyAsync(HSTRING propertyId, IInspectable* propertyValue, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus_t **")] IAsyncOperation<MediaFrameSourceSetPropertyStatus>** value);
@@ -129,7 +129,7 @@ public unsafe partial struct IMediaFrameSourceController : IMediaFrameSourceCont
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetPropertyAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IMediaFrameSourceGetPropertyResult>>**, int> GetPropertyAsync;
 
         [NativeTypeName("HRESULT (HSTRING, IInspectable *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IInspectable*, IAsyncOperation<MediaFrameSourceSetPropertyStatus>**, int> SetPropertyAsync;

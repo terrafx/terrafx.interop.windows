@@ -184,9 +184,9 @@ public unsafe partial struct ISmsTextMessage : ISmsTextMessage.Interface, INativ
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     [Obsolete("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")]
-    public HRESULT ToBinaryMessages([NativeTypeName("ABI::Windows::Devices::Sms::SmsDataFormat")] SmsDataFormat format, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSms__CISmsBinaryMessage_t **")] IVectorView<IntPtr>** messages)
+    public HRESULT ToBinaryMessages([NativeTypeName("ABI::Windows::Devices::Sms::SmsDataFormat")] SmsDataFormat format, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSms__CISmsBinaryMessage_t **")] IVectorView<Pointer<ISmsBinaryMessage>>** messages)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmsTextMessage*, SmsDataFormat, IVectorView<IntPtr>**, int>)(lpVtbl[18]))((ISmsTextMessage*)Unsafe.AsPointer(ref this), format, messages);
+        return ((delegate* unmanaged[MemberFunction]<ISmsTextMessage*, SmsDataFormat, IVectorView<Pointer<ISmsBinaryMessage>>**, int>)(lpVtbl[18]))((ISmsTextMessage*)Unsafe.AsPointer(ref this), format, messages);
     }
 
     public interface Interface : IInspectable.Interface
@@ -241,7 +241,7 @@ public unsafe partial struct ISmsTextMessage : ISmsTextMessage.Interface, INativ
 
         [VtblIndex(18)]
         [Obsolete("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")]
-        HRESULT ToBinaryMessages([NativeTypeName("ABI::Windows::Devices::Sms::SmsDataFormat")] SmsDataFormat format, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSms__CISmsBinaryMessage_t **")] IVectorView<IntPtr>** messages);
+        HRESULT ToBinaryMessages([NativeTypeName("ABI::Windows::Devices::Sms::SmsDataFormat")] SmsDataFormat format, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSms__CISmsBinaryMessage_t **")] IVectorView<Pointer<ISmsBinaryMessage>>** messages);
     }
 
     public partial struct Vtbl<TSelf>
@@ -315,6 +315,6 @@ public unsafe partial struct ISmsTextMessage : ISmsTextMessage.Interface, INativ
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Sms::SmsDataFormat, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSms__CISmsBinaryMessage_t **) __attribute__((stdcall))")]
         [Obsolete("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, SmsDataFormat, IVectorView<IntPtr>**, int> ToBinaryMessages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SmsDataFormat, IVectorView<Pointer<ISmsBinaryMessage>>**, int> ToBinaryMessages;
     }
 }

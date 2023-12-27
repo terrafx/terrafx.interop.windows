@@ -90,9 +90,9 @@ public unsafe partial struct ISmartCardReaderStatics : ISmartCardReaderStatics.I
     /// <include file='ISmartCardReaderStatics.xml' path='doc/member[@name="ISmartCardReaderStatics.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardReader_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardReader_t **")] IAsyncOperation<Pointer<ISmartCardReader>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardReaderStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((ISmartCardReaderStatics*)Unsafe.AsPointer(ref this), deviceId, result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardReaderStatics*, HSTRING, IAsyncOperation<Pointer<ISmartCardReader>>**, int>)(lpVtbl[8]))((ISmartCardReaderStatics*)Unsafe.AsPointer(ref this), deviceId, result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct ISmartCardReaderStatics : ISmartCardReaderStatics.I
         HRESULT GetDeviceSelectorWithKind([NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardReaderKind")] SmartCardReaderKind kind, HSTRING* selector);
 
         [VtblIndex(8)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardReader_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardReader_t **")] IAsyncOperation<Pointer<ISmartCardReader>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct ISmartCardReaderStatics : ISmartCardReaderStatics.I
         public delegate* unmanaged[MemberFunction]<TSelf*, SmartCardReaderKind, HSTRING*, int> GetDeviceSelectorWithKind;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardReader_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<ISmartCardReader>>**, int> FromIdAsync;
     }
 }

@@ -82,9 +82,9 @@ public unsafe partial struct IRfcommDeviceServicesResult : IRfcommDeviceServices
     /// <include file='IRfcommDeviceServicesResult.xml' path='doc/member[@name="IRfcommDeviceServicesResult.get_Services"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Services([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_t **")] IVectorView<IntPtr>** services)
+    public HRESULT get_Services([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_t **")] IVectorView<Pointer<IRfcommDeviceService>>** services)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRfcommDeviceServicesResult*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IRfcommDeviceServicesResult*)Unsafe.AsPointer(ref this), services);
+        return ((delegate* unmanaged[MemberFunction]<IRfcommDeviceServicesResult*, IVectorView<Pointer<IRfcommDeviceService>>**, int>)(lpVtbl[7]))((IRfcommDeviceServicesResult*)Unsafe.AsPointer(ref this), services);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IRfcommDeviceServicesResult : IRfcommDeviceServices
         HRESULT get_Error([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothError *")] BluetoothError* value);
 
         [VtblIndex(7)]
-        HRESULT get_Services([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_t **")] IVectorView<IntPtr>** services);
+        HRESULT get_Services([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_t **")] IVectorView<Pointer<IRfcommDeviceService>>** services);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IRfcommDeviceServicesResult : IRfcommDeviceServices
         public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothError*, int> get_Error;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Services;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IRfcommDeviceService>>**, int> get_Services;
     }
 }

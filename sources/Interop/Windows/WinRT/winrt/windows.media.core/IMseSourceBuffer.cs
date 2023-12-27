@@ -74,9 +74,9 @@ public unsafe partial struct IMseSourceBuffer : IMseSourceBuffer.Interface, INat
     /// <include file='IMseSourceBuffer.xml' path='doc/member[@name="IMseSourceBuffer.add_UpdateStarting"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_UpdateStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_UpdateStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMseSourceBuffer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMseSourceBuffer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMseSourceBuffer*, ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMseSourceBuffer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMseSourceBuffer.xml' path='doc/member[@name="IMseSourceBuffer.remove_UpdateStarting"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IMseSourceBuffer : IMseSourceBuffer.Interface, INat
     /// <include file='IMseSourceBuffer.xml' path='doc/member[@name="IMseSourceBuffer.add_Updated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMseSourceBuffer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IMseSourceBuffer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMseSourceBuffer*, ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IMseSourceBuffer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMseSourceBuffer.xml' path='doc/member[@name="IMseSourceBuffer.remove_Updated"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IMseSourceBuffer : IMseSourceBuffer.Interface, INat
     /// <include file='IMseSourceBuffer.xml' path='doc/member[@name="IMseSourceBuffer.add_UpdateEnded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_UpdateEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_UpdateEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMseSourceBuffer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMseSourceBuffer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMseSourceBuffer*, ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMseSourceBuffer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMseSourceBuffer.xml' path='doc/member[@name="IMseSourceBuffer.remove_UpdateEnded"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IMseSourceBuffer : IMseSourceBuffer.Interface, INat
     /// <include file='IMseSourceBuffer.xml' path='doc/member[@name="IMseSourceBuffer.add_ErrorOccurred"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_ErrorOccurred([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ErrorOccurred([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMseSourceBuffer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IMseSourceBuffer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMseSourceBuffer*, ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IMseSourceBuffer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMseSourceBuffer.xml' path='doc/member[@name="IMseSourceBuffer.remove_ErrorOccurred"]/*' />
@@ -138,9 +138,9 @@ public unsafe partial struct IMseSourceBuffer : IMseSourceBuffer.Interface, INat
     /// <include file='IMseSourceBuffer.xml' path='doc/member[@name="IMseSourceBuffer.add_Aborted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_Aborted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Aborted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMseSourceBuffer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IMseSourceBuffer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMseSourceBuffer*, ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IMseSourceBuffer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMseSourceBuffer.xml' path='doc/member[@name="IMseSourceBuffer.remove_Aborted"]/*' />
@@ -274,31 +274,31 @@ public unsafe partial struct IMseSourceBuffer : IMseSourceBuffer.Interface, INat
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_UpdateStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_UpdateStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_UpdateStarting(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_Updated(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_UpdateEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_UpdateEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_UpdateEnded(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT add_ErrorOccurred([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ErrorOccurred([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_ErrorOccurred(EventRegistrationToken token);
 
         [VtblIndex(14)]
-        HRESULT add_Aborted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Aborted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *")] ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(15)]
         HRESULT remove_Aborted(EventRegistrationToken token);
@@ -371,31 +371,31 @@ public unsafe partial struct IMseSourceBuffer : IMseSourceBuffer.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_UpdateStarting;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_UpdateStarting;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_UpdateStarting;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Updated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Updated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Updated;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_UpdateEnded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_UpdateEnded;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_UpdateEnded;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ErrorOccurred;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ErrorOccurred;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ErrorOccurred;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBuffer_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Aborted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMseSourceBuffer>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Aborted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Aborted;

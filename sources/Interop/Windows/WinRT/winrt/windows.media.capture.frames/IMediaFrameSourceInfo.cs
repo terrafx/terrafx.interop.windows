@@ -114,9 +114,9 @@ public unsafe partial struct IMediaFrameSourceInfo : IMediaFrameSourceInfo.Inter
     /// <include file='IMediaFrameSourceInfo.xml' path='doc/member[@name="IMediaFrameSourceInfo.get_Properties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, IntPtr>** value)
+    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, Pointer<IInspectable>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSourceInfo*, IMapView<Guid, IntPtr>**, int>)(lpVtbl[11]))((IMediaFrameSourceInfo*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSourceInfo*, IMapView<Guid, Pointer<IInspectable>>**, int>)(lpVtbl[11]))((IMediaFrameSourceInfo*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaFrameSourceInfo.xml' path='doc/member[@name="IMediaFrameSourceInfo.get_CoordinateSystem"]/*' />
@@ -145,7 +145,7 @@ public unsafe partial struct IMediaFrameSourceInfo : IMediaFrameSourceInfo.Inter
         HRESULT get_DeviceInformation([NativeTypeName("ABI::Windows::Devices::Enumeration::IDeviceInformation **")] IDeviceInformation** value);
 
         [VtblIndex(11)]
-        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, IntPtr>** value);
+        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, Pointer<IInspectable>>** value);
 
         [VtblIndex(12)]
         HRESULT get_CoordinateSystem([NativeTypeName("ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem **")] ISpatialCoordinateSystem** value);
@@ -188,7 +188,7 @@ public unsafe partial struct IMediaFrameSourceInfo : IMediaFrameSourceInfo.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, IDeviceInformation**, int> get_DeviceInformation;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<Guid, IntPtr>**, int> get_Properties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<Guid, Pointer<IInspectable>>**, int> get_Properties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ISpatialCoordinateSystem**, int> get_CoordinateSystem;

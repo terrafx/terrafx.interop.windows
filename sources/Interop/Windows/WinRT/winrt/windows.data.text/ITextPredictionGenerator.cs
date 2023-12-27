@@ -90,17 +90,17 @@ public unsafe partial struct ITextPredictionGenerator : ITextPredictionGenerator
     /// <include file='ITextPredictionGenerator.xml' path='doc/member[@name="ITextPredictionGenerator.GetCandidatesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetCandidatesAsync(HSTRING input, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetCandidatesAsync(HSTRING input, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<Pointer<IVectorView<HSTRING>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITextPredictionGenerator*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((ITextPredictionGenerator*)Unsafe.AsPointer(ref this), input, result);
+        return ((delegate* unmanaged[MemberFunction]<ITextPredictionGenerator*, HSTRING, IAsyncOperation<Pointer<IVectorView<HSTRING>>>**, int>)(lpVtbl[8]))((ITextPredictionGenerator*)Unsafe.AsPointer(ref this), input, result);
     }
 
     /// <include file='ITextPredictionGenerator.xml' path='doc/member[@name="ITextPredictionGenerator.GetCandidatesWithMaxCountAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetCandidatesWithMaxCountAsync(HSTRING input, [NativeTypeName("UINT32")] uint maxCandidates, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetCandidatesWithMaxCountAsync(HSTRING input, [NativeTypeName("UINT32")] uint maxCandidates, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<Pointer<IVectorView<HSTRING>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITextPredictionGenerator*, HSTRING, uint, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((ITextPredictionGenerator*)Unsafe.AsPointer(ref this), input, maxCandidates, result);
+        return ((delegate* unmanaged[MemberFunction]<ITextPredictionGenerator*, HSTRING, uint, IAsyncOperation<Pointer<IVectorView<HSTRING>>>**, int>)(lpVtbl[9]))((ITextPredictionGenerator*)Unsafe.AsPointer(ref this), input, maxCandidates, result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -112,10 +112,10 @@ public unsafe partial struct ITextPredictionGenerator : ITextPredictionGenerator
         HRESULT get_LanguageAvailableButNotInstalled([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(8)]
-        HRESULT GetCandidatesAsync(HSTRING input, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetCandidatesAsync(HSTRING input, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<Pointer<IVectorView<HSTRING>>>** result);
 
         [VtblIndex(9)]
-        HRESULT GetCandidatesWithMaxCountAsync(HSTRING input, [NativeTypeName("UINT32")] uint maxCandidates, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetCandidatesWithMaxCountAsync(HSTRING input, [NativeTypeName("UINT32")] uint maxCandidates, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<Pointer<IVectorView<HSTRING>>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -146,9 +146,9 @@ public unsafe partial struct ITextPredictionGenerator : ITextPredictionGenerator
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_LanguageAvailableButNotInstalled;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetCandidatesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IVectorView<HSTRING>>>**, int> GetCandidatesAsync;
 
         [NativeTypeName("HRESULT (HSTRING, UINT32, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, uint, IAsyncOperation<IntPtr>**, int> GetCandidatesWithMaxCountAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, uint, IAsyncOperation<Pointer<IVectorView<HSTRING>>>**, int> GetCandidatesWithMaxCountAsync;
     }
 }

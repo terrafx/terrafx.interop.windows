@@ -74,15 +74,15 @@ public unsafe partial struct IStorageProviderSyncRootInfo3 : IStorageProviderSyn
     /// <include file='IStorageProviderSyncRootInfo3.xml' path='doc/member[@name="IStorageProviderSyncRootInfo3.get_FallbackFileTypeInfo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_FallbackFileTypeInfo([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CStorageProviderFileTypeInfo_t **")] IVector<IntPtr>** value)
+    public HRESULT get_FallbackFileTypeInfo([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CStorageProviderFileTypeInfo_t **")] IVector<Pointer<IStorageProviderFileTypeInfo>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageProviderSyncRootInfo3*, IVector<IntPtr>**, int>)(lpVtbl[6]))((IStorageProviderSyncRootInfo3*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderSyncRootInfo3*, IVector<Pointer<IStorageProviderFileTypeInfo>>**, int>)(lpVtbl[6]))((IStorageProviderSyncRootInfo3*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_FallbackFileTypeInfo([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CStorageProviderFileTypeInfo_t **")] IVector<IntPtr>** value);
+        HRESULT get_FallbackFileTypeInfo([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CStorageProviderFileTypeInfo_t **")] IVector<Pointer<IStorageProviderFileTypeInfo>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IStorageProviderSyncRootInfo3 : IStorageProviderSyn
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CStorageProviderFileTypeInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_FallbackFileTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IStorageProviderFileTypeInfo>>**, int> get_FallbackFileTypeInfo;
     }
 }

@@ -74,15 +74,15 @@ public unsafe partial struct IAdcControllerStatics2 : IAdcControllerStatics2.Int
     /// <include file='IAdcControllerStatics2.xml' path='doc/member[@name="IAdcControllerStatics2.GetDefaultAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CAdc__CAdcController_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CAdc__CAdcController_t **")] IAsyncOperation<Pointer<IAdcController>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdcControllerStatics2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IAdcControllerStatics2*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IAdcControllerStatics2*, IAsyncOperation<Pointer<IAdcController>>**, int>)(lpVtbl[6]))((IAdcControllerStatics2*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CAdc__CAdcController_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CAdc__CAdcController_t **")] IAsyncOperation<Pointer<IAdcController>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IAdcControllerStatics2 : IAdcControllerStatics2.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CAdc__CAdcController_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetDefaultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IAdcController>>**, int> GetDefaultAsync;
     }
 }

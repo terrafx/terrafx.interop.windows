@@ -98,9 +98,9 @@ public unsafe partial struct ISpeechRecognizer2 : ISpeechRecognizer2.Interface, 
     /// <include file='ISpeechRecognizer2.xml' path='doc/member[@name="ISpeechRecognizer2.add_HypothesisGenerated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_HypothesisGenerated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionHypothesisGeneratedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* returnValue)
+    public HRESULT add_HypothesisGenerated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionHypothesisGeneratedEventArgs_t *")] ITypedEventHandler<Pointer<ISpeechRecognizer>, Pointer<ISpeechRecognitionHypothesisGeneratedEventArgs>>* value, EventRegistrationToken* returnValue)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ISpeechRecognizer2*)Unsafe.AsPointer(ref this), value, returnValue);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer2*, ITypedEventHandler<Pointer<ISpeechRecognizer>, Pointer<ISpeechRecognitionHypothesisGeneratedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ISpeechRecognizer2*)Unsafe.AsPointer(ref this), value, returnValue);
     }
 
     /// <include file='ISpeechRecognizer2.xml' path='doc/member[@name="ISpeechRecognizer2.remove_HypothesisGenerated"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISpeechRecognizer2 : ISpeechRecognizer2.Interface, 
         HRESULT StopRecognitionAsync([NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** value);
 
         [VtblIndex(9)]
-        HRESULT add_HypothesisGenerated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionHypothesisGeneratedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* returnValue);
+        HRESULT add_HypothesisGenerated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionHypothesisGeneratedEventArgs_t *")] ITypedEventHandler<Pointer<ISpeechRecognizer>, Pointer<ISpeechRecognitionHypothesisGeneratedEventArgs>>* value, EventRegistrationToken* returnValue);
 
         [VtblIndex(10)]
         HRESULT remove_HypothesisGenerated(EventRegistrationToken value);
@@ -160,7 +160,7 @@ public unsafe partial struct ISpeechRecognizer2 : ISpeechRecognizer2.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncAction**, int> StopRecognitionAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionHypothesisGeneratedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_HypothesisGenerated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISpeechRecognizer>, Pointer<ISpeechRecognitionHypothesisGeneratedEventArgs>>*, EventRegistrationToken*, int> add_HypothesisGenerated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_HypothesisGenerated;

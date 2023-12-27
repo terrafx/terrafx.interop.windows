@@ -138,9 +138,9 @@ public unsafe partial struct ISearchSuggestionManager : ISearchSuggestionManager
     /// <include file='ISearchSuggestionManager.xml' path='doc/member[@name="ISearchSuggestionManager.get_Suggestions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_Suggestions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestion_t **")] IObservableVector<IntPtr>** value)
+    public HRESULT get_Suggestions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestion_t **")] IObservableVector<Pointer<ISearchSuggestion>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISearchSuggestionManager*, IObservableVector<IntPtr>**, int>)(lpVtbl[14]))((ISearchSuggestionManager*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISearchSuggestionManager*, IObservableVector<Pointer<ISearchSuggestion>>**, int>)(lpVtbl[14]))((ISearchSuggestionManager*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISearchSuggestionManager.xml' path='doc/member[@name="ISearchSuggestionManager.AddToHistory"]/*' />
@@ -170,9 +170,9 @@ public unsafe partial struct ISearchSuggestionManager : ISearchSuggestionManager
     /// <include file='ISearchSuggestionManager.xml' path='doc/member[@name="ISearchSuggestionManager.add_SuggestionsRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT add_SuggestionsRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestionManager_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestionsRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SuggestionsRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestionManager_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestionsRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ISearchSuggestionManager>, Pointer<ISearchSuggestionsRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISearchSuggestionManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[18]))((ISearchSuggestionManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISearchSuggestionManager*, ITypedEventHandler<Pointer<ISearchSuggestionManager>, Pointer<ISearchSuggestionsRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[18]))((ISearchSuggestionManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISearchSuggestionManager.xml' path='doc/member[@name="ISearchSuggestionManager.remove_SuggestionsRequested"]/*' />
@@ -186,9 +186,9 @@ public unsafe partial struct ISearchSuggestionManager : ISearchSuggestionManager
     /// <include file='ISearchSuggestionManager.xml' path='doc/member[@name="ISearchSuggestionManager.add_RequestingFocusOnKeyboardInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT add_RequestingFocusOnKeyboardInput([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestionManager_Windows__CApplicationModel__CSearch__CCore__CRequestingFocusOnKeyboardInputEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_RequestingFocusOnKeyboardInput([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestionManager_Windows__CApplicationModel__CSearch__CCore__CRequestingFocusOnKeyboardInputEventArgs_t *")] ITypedEventHandler<Pointer<ISearchSuggestionManager>, Pointer<IRequestingFocusOnKeyboardInputEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISearchSuggestionManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[20]))((ISearchSuggestionManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISearchSuggestionManager*, ITypedEventHandler<Pointer<ISearchSuggestionManager>, Pointer<IRequestingFocusOnKeyboardInputEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[20]))((ISearchSuggestionManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISearchSuggestionManager.xml' path='doc/member[@name="ISearchSuggestionManager.remove_RequestingFocusOnKeyboardInput"]/*' />
@@ -226,7 +226,7 @@ public unsafe partial struct ISearchSuggestionManager : ISearchSuggestionManager
         HRESULT SetQueryWithSearchQueryLinguisticDetails(HSTRING queryText, HSTRING language, [NativeTypeName("ABI::Windows::ApplicationModel::Search::ISearchQueryLinguisticDetails *")] ISearchQueryLinguisticDetails* linguisticDetails);
 
         [VtblIndex(14)]
-        HRESULT get_Suggestions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestion_t **")] IObservableVector<IntPtr>** value);
+        HRESULT get_Suggestions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestion_t **")] IObservableVector<Pointer<ISearchSuggestion>>** value);
 
         [VtblIndex(15)]
         HRESULT AddToHistory(HSTRING queryText);
@@ -238,13 +238,13 @@ public unsafe partial struct ISearchSuggestionManager : ISearchSuggestionManager
         HRESULT ClearHistory();
 
         [VtblIndex(18)]
-        HRESULT add_SuggestionsRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestionManager_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestionsRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SuggestionsRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestionManager_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestionsRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ISearchSuggestionManager>, Pointer<ISearchSuggestionsRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(19)]
         HRESULT remove_SuggestionsRequested(EventRegistrationToken token);
 
         [VtblIndex(20)]
-        HRESULT add_RequestingFocusOnKeyboardInput([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestionManager_Windows__CApplicationModel__CSearch__CCore__CRequestingFocusOnKeyboardInputEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_RequestingFocusOnKeyboardInput([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestionManager_Windows__CApplicationModel__CSearch__CCore__CRequestingFocusOnKeyboardInputEventArgs_t *")] ITypedEventHandler<Pointer<ISearchSuggestionManager>, Pointer<IRequestingFocusOnKeyboardInputEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(21)]
         HRESULT remove_RequestingFocusOnKeyboardInput(EventRegistrationToken token);
@@ -296,7 +296,7 @@ public unsafe partial struct ISearchSuggestionManager : ISearchSuggestionManager
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, ISearchQueryLinguisticDetails*, int> SetQueryWithSearchQueryLinguisticDetails;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestion_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IObservableVector<IntPtr>**, int> get_Suggestions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IObservableVector<Pointer<ISearchSuggestion>>**, int> get_Suggestions;
 
         [NativeTypeName("HRESULT (HSTRING) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> AddToHistory;
@@ -308,13 +308,13 @@ public unsafe partial struct ISearchSuggestionManager : ISearchSuggestionManager
         public delegate* unmanaged[MemberFunction]<TSelf*, int> ClearHistory;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestionManager_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestionsRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SuggestionsRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISearchSuggestionManager>, Pointer<ISearchSuggestionsRequestedEventArgs>>*, EventRegistrationToken*, int> add_SuggestionsRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SuggestionsRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CCore__CSearchSuggestionManager_Windows__CApplicationModel__CSearch__CCore__CRequestingFocusOnKeyboardInputEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_RequestingFocusOnKeyboardInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISearchSuggestionManager>, Pointer<IRequestingFocusOnKeyboardInputEventArgs>>*, EventRegistrationToken*, int> add_RequestingFocusOnKeyboardInput;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RequestingFocusOnKeyboardInput;

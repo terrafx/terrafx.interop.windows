@@ -106,17 +106,17 @@ public unsafe partial struct IGattDescriptor : IGattDescriptor.Interface, INativ
     /// <include file='IGattDescriptor.xml' path='doc/member[@name="IGattDescriptor.ReadValueAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT ReadValueAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT ReadValueAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **")] IAsyncOperation<Pointer<IGattReadResult>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDescriptor*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IGattDescriptor*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IGattDescriptor*, IAsyncOperation<Pointer<IGattReadResult>>**, int>)(lpVtbl[10]))((IGattDescriptor*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IGattDescriptor.xml' path='doc/member[@name="IGattDescriptor.ReadValueWithCacheModeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT ReadValueWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT ReadValueWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **")] IAsyncOperation<Pointer<IGattReadResult>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDescriptor*, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IGattDescriptor*)Unsafe.AsPointer(ref this), cacheMode, value);
+        return ((delegate* unmanaged[MemberFunction]<IGattDescriptor*, BluetoothCacheMode, IAsyncOperation<Pointer<IGattReadResult>>**, int>)(lpVtbl[11]))((IGattDescriptor*)Unsafe.AsPointer(ref this), cacheMode, value);
     }
 
     /// <include file='IGattDescriptor.xml' path='doc/member[@name="IGattDescriptor.WriteValueAsync"]/*' />
@@ -142,10 +142,10 @@ public unsafe partial struct IGattDescriptor : IGattDescriptor.Interface, INativ
         HRESULT get_AttributeHandle([NativeTypeName("UINT16 *")] ushort* value);
 
         [VtblIndex(10)]
-        HRESULT ReadValueAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT ReadValueAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **")] IAsyncOperation<Pointer<IGattReadResult>>** value);
 
         [VtblIndex(11)]
-        HRESULT ReadValueWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT ReadValueWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **")] IAsyncOperation<Pointer<IGattReadResult>>** value);
 
         [VtblIndex(12)]
         HRESULT WriteValueAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* value, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCommunicationStatus_t **")] IAsyncOperation<GattCommunicationStatus>** action);
@@ -185,10 +185,10 @@ public unsafe partial struct IGattDescriptor : IGattDescriptor.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_AttributeHandle;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> ReadValueAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IGattReadResult>>**, int> ReadValueAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Bluetooth::BluetoothCacheMode, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int> ReadValueWithCacheModeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothCacheMode, IAsyncOperation<Pointer<IGattReadResult>>**, int> ReadValueWithCacheModeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCommunicationStatus_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IAsyncOperation<GattCommunicationStatus>**, int> WriteValueAsync;

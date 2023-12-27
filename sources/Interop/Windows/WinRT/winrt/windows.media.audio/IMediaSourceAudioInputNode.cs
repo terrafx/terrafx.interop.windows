@@ -170,9 +170,9 @@ public unsafe partial struct IMediaSourceAudioInputNode : IMediaSourceAudioInput
     /// <include file='IMediaSourceAudioInputNode.xml' path='doc/member[@name="IMediaSourceAudioInputNode.add_MediaSourceCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT add_MediaSourceCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_MediaSourceCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaSourceAudioInputNode>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaSourceAudioInputNode*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[18]))((IMediaSourceAudioInputNode*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSourceAudioInputNode*, ITypedEventHandler<Pointer<IMediaSourceAudioInputNode>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[18]))((IMediaSourceAudioInputNode*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaSourceAudioInputNode.xml' path='doc/member[@name="IMediaSourceAudioInputNode.remove_MediaSourceCompleted"]/*' />
@@ -222,7 +222,7 @@ public unsafe partial struct IMediaSourceAudioInputNode : IMediaSourceAudioInput
         HRESULT get_MediaSource([NativeTypeName("ABI::Windows::Media::Core::IMediaSource2 **")] IMediaSource2** value);
 
         [VtblIndex(18)]
-        HRESULT add_MediaSourceCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_MediaSourceCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaSourceAudioInputNode>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(19)]
         HRESULT remove_MediaSourceCompleted(EventRegistrationToken token);
@@ -286,7 +286,7 @@ public unsafe partial struct IMediaSourceAudioInputNode : IMediaSourceAudioInput
         public delegate* unmanaged[MemberFunction]<TSelf*, IMediaSource2**, int> get_MediaSource;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CMediaSourceAudioInputNode_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_MediaSourceCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaSourceAudioInputNode>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_MediaSourceCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_MediaSourceCompleted;

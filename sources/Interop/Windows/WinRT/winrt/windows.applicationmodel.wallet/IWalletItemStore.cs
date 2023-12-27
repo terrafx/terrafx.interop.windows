@@ -94,36 +94,36 @@ public unsafe partial struct IWalletItemStore : IWalletItemStore.Interface, INat
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     [Obsolete("IWalletItemStore is deprecated and might not work on all platforms. For more info, see MSDN.")]
-    public HRESULT GetWalletItemAsync(HSTRING id, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CWallet__CWalletItem_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetWalletItemAsync(HSTRING id, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CWallet__CWalletItem_t **")] IAsyncOperation<Pointer<IWalletItem>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWalletItemStore*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IWalletItemStore*)Unsafe.AsPointer(ref this), id, operation);
+        return ((delegate* unmanaged[MemberFunction]<IWalletItemStore*, HSTRING, IAsyncOperation<Pointer<IWalletItem>>**, int>)(lpVtbl[8]))((IWalletItemStore*)Unsafe.AsPointer(ref this), id, operation);
     }
 
     /// <include file='IWalletItemStore.xml' path='doc/member[@name="IWalletItemStore.GetItemsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     [Obsolete("IWalletItemStore is deprecated and might not work on all platforms. For more info, see MSDN.")]
-    public HRESULT GetItemsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CWallet__CWalletItem_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetItemsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CWallet__CWalletItem_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IWalletItem>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWalletItemStore*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IWalletItemStore*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IWalletItemStore*, IAsyncOperation<Pointer<IVectorView<Pointer<IWalletItem>>>>**, int>)(lpVtbl[9]))((IWalletItemStore*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IWalletItemStore.xml' path='doc/member[@name="IWalletItemStore.GetItemsWithKindAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     [Obsolete("IWalletItemStore is deprecated and might not work on all platforms. For more info, see MSDN.")]
-    public HRESULT GetItemsWithKindAsync([NativeTypeName("ABI::Windows::ApplicationModel::Wallet::WalletItemKind")] WalletItemKind kind, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CWallet__CWalletItem_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetItemsWithKindAsync([NativeTypeName("ABI::Windows::ApplicationModel::Wallet::WalletItemKind")] WalletItemKind kind, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CWallet__CWalletItem_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IWalletItem>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWalletItemStore*, WalletItemKind, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IWalletItemStore*)Unsafe.AsPointer(ref this), kind, operation);
+        return ((delegate* unmanaged[MemberFunction]<IWalletItemStore*, WalletItemKind, IAsyncOperation<Pointer<IVectorView<Pointer<IWalletItem>>>>**, int>)(lpVtbl[10]))((IWalletItemStore*)Unsafe.AsPointer(ref this), kind, operation);
     }
 
     /// <include file='IWalletItemStore.xml' path='doc/member[@name="IWalletItemStore.ImportItemAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     [Obsolete("IWalletItemStore is deprecated and might not work on all platforms. For more info, see MSDN.")]
-    public HRESULT ImportItemAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamReference *")] IRandomAccessStreamReference* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CWallet__CWalletItem_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT ImportItemAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamReference *")] IRandomAccessStreamReference* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CWallet__CWalletItem_t **")] IAsyncOperation<Pointer<IWalletItem>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWalletItemStore*, IRandomAccessStreamReference*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IWalletItemStore*)Unsafe.AsPointer(ref this), stream, operation);
+        return ((delegate* unmanaged[MemberFunction]<IWalletItemStore*, IRandomAccessStreamReference*, IAsyncOperation<Pointer<IWalletItem>>**, int>)(lpVtbl[11]))((IWalletItemStore*)Unsafe.AsPointer(ref this), stream, operation);
     }
 
     /// <include file='IWalletItemStore.xml' path='doc/member[@name="IWalletItemStore.DeleteAsync"]/*' />
@@ -174,19 +174,19 @@ public unsafe partial struct IWalletItemStore : IWalletItemStore.Interface, INat
 
         [VtblIndex(8)]
         [Obsolete("IWalletItemStore is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        HRESULT GetWalletItemAsync(HSTRING id, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CWallet__CWalletItem_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetWalletItemAsync(HSTRING id, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CWallet__CWalletItem_t **")] IAsyncOperation<Pointer<IWalletItem>>** operation);
 
         [VtblIndex(9)]
         [Obsolete("IWalletItemStore is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        HRESULT GetItemsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CWallet__CWalletItem_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetItemsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CWallet__CWalletItem_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IWalletItem>>>>** operation);
 
         [VtblIndex(10)]
         [Obsolete("IWalletItemStore is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        HRESULT GetItemsWithKindAsync([NativeTypeName("ABI::Windows::ApplicationModel::Wallet::WalletItemKind")] WalletItemKind kind, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CWallet__CWalletItem_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetItemsWithKindAsync([NativeTypeName("ABI::Windows::ApplicationModel::Wallet::WalletItemKind")] WalletItemKind kind, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CWallet__CWalletItem_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IWalletItem>>>>** operation);
 
         [VtblIndex(11)]
         [Obsolete("IWalletItemStore is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        HRESULT ImportItemAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamReference *")] IRandomAccessStreamReference* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CWallet__CWalletItem_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT ImportItemAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamReference *")] IRandomAccessStreamReference* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CWallet__CWalletItem_t **")] IAsyncOperation<Pointer<IWalletItem>>** operation);
 
         [VtblIndex(12)]
         [Obsolete("IWalletItemStore is deprecated and might not work on all platforms. For more info, see MSDN.")]
@@ -236,19 +236,19 @@ public unsafe partial struct IWalletItemStore : IWalletItemStore.Interface, INat
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CWallet__CWalletItem_t **) __attribute__((stdcall))")]
         [Obsolete("IWalletItemStore is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetWalletItemAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IWalletItem>>**, int> GetWalletItemAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CWallet__CWalletItem_t **) __attribute__((stdcall))")]
         [Obsolete("IWalletItemStore is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetItemsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IWalletItem>>>>**, int> GetItemsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Wallet::WalletItemKind, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CWallet__CWalletItem_t **) __attribute__((stdcall))")]
         [Obsolete("IWalletItemStore is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, WalletItemKind, IAsyncOperation<IntPtr>**, int> GetItemsWithKindAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WalletItemKind, IAsyncOperation<Pointer<IVectorView<Pointer<IWalletItem>>>>**, int> GetItemsWithKindAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IRandomAccessStreamReference *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CWallet__CWalletItem_t **) __attribute__((stdcall))")]
         [Obsolete("IWalletItemStore is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStreamReference*, IAsyncOperation<IntPtr>**, int> ImportItemAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStreamReference*, IAsyncOperation<Pointer<IWalletItem>>**, int> ImportItemAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         [Obsolete("IWalletItemStore is deprecated and might not work on all platforms. For more info, see MSDN.")]

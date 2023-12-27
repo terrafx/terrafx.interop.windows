@@ -74,15 +74,15 @@ public unsafe partial struct IInputStreamReference : IInputStreamReference.Inter
     /// <include file='IInputStreamReference.xml' path='doc/member[@name="IInputStreamReference.OpenSequentialReadAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT OpenSequentialReadAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIInputStream_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT OpenSequentialReadAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIInputStream_t **")] IAsyncOperation<Pointer<IInputStream>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IInputStreamReference*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IInputStreamReference*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IInputStreamReference*, IAsyncOperation<Pointer<IInputStream>>**, int>)(lpVtbl[6]))((IInputStreamReference*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT OpenSequentialReadAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIInputStream_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT OpenSequentialReadAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIInputStream_t **")] IAsyncOperation<Pointer<IInputStream>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IInputStreamReference : IInputStreamReference.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIInputStream_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> OpenSequentialReadAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IInputStream>>**, int> OpenSequentialReadAsync;
     }
 }

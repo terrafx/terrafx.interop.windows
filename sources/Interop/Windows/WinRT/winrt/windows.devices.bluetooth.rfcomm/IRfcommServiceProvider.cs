@@ -82,9 +82,9 @@ public unsafe partial struct IRfcommServiceProvider : IRfcommServiceProvider.Int
     /// <include file='IRfcommServiceProvider.xml' path='doc/member[@name="IRfcommServiceProvider.get_SdpRawAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_SdpRawAttributes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_UINT32_Windows__CStorage__CStreams__CIBuffer_t **")] IMap<uint, IntPtr>** value)
+    public HRESULT get_SdpRawAttributes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_UINT32_Windows__CStorage__CStreams__CIBuffer_t **")] IMap<uint, Pointer<IBuffer>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRfcommServiceProvider*, IMap<uint, IntPtr>**, int>)(lpVtbl[7]))((IRfcommServiceProvider*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRfcommServiceProvider*, IMap<uint, Pointer<IBuffer>>**, int>)(lpVtbl[7]))((IRfcommServiceProvider*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRfcommServiceProvider.xml' path='doc/member[@name="IRfcommServiceProvider.StartAdvertising"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct IRfcommServiceProvider : IRfcommServiceProvider.Int
         HRESULT get_ServiceId([NativeTypeName("ABI::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId **")] IRfcommServiceId** value);
 
         [VtblIndex(7)]
-        HRESULT get_SdpRawAttributes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_UINT32_Windows__CStorage__CStreams__CIBuffer_t **")] IMap<uint, IntPtr>** value);
+        HRESULT get_SdpRawAttributes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_UINT32_Windows__CStorage__CStreams__CIBuffer_t **")] IMap<uint, Pointer<IBuffer>>** value);
 
         [VtblIndex(8)]
         HRESULT StartAdvertising([NativeTypeName("ABI::Windows::Networking::Sockets::IStreamSocketListener *")] IStreamSocketListener* listener);
@@ -143,7 +143,7 @@ public unsafe partial struct IRfcommServiceProvider : IRfcommServiceProvider.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, IRfcommServiceId**, int> get_ServiceId;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMap_2_UINT32_Windows__CStorage__CStreams__CIBuffer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<uint, IntPtr>**, int> get_SdpRawAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<uint, Pointer<IBuffer>>**, int> get_SdpRawAttributes;
 
         [NativeTypeName("HRESULT (ABI::Windows::Networking::Sockets::IStreamSocketListener *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IStreamSocketListener*, int> StartAdvertising;

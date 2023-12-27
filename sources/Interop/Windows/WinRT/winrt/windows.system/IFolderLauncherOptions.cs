@@ -74,15 +74,15 @@ public unsafe partial struct IFolderLauncherOptions : IFolderLauncherOptions.Int
     /// <include file='IFolderLauncherOptions.xml' path='doc/member[@name="IFolderLauncherOptions.get_ItemsToSelect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_ItemsToSelect([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CIStorageItem_t **")] IVector<IntPtr>** value)
+    public HRESULT get_ItemsToSelect([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CIStorageItem_t **")] IVector<Pointer<IStorageItem>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFolderLauncherOptions*, IVector<IntPtr>**, int>)(lpVtbl[6]))((IFolderLauncherOptions*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IFolderLauncherOptions*, IVector<Pointer<IStorageItem>>**, int>)(lpVtbl[6]))((IFolderLauncherOptions*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_ItemsToSelect([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CIStorageItem_t **")] IVector<IntPtr>** value);
+        HRESULT get_ItemsToSelect([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CIStorageItem_t **")] IVector<Pointer<IStorageItem>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IFolderLauncherOptions : IFolderLauncherOptions.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CIStorageItem_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_ItemsToSelect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IStorageItem>>**, int> get_ItemsToSelect;
     }
 }

@@ -74,17 +74,17 @@ public unsafe partial struct ICertificate : ICertificate.Interface, INativeGuid
     /// <include file='ICertificate.xml' path='doc/member[@name="ICertificate.BuildChainAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT BuildChainAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t *")] IIterable<IntPtr>* certificates, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT BuildChainAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t *")] IIterable<Pointer<ICertificate>>* certificates, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_t **")] IAsyncOperation<Pointer<ICertificateChain>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICertificate*, IIterable<IntPtr>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ICertificate*)Unsafe.AsPointer(ref this), certificates, value);
+        return ((delegate* unmanaged[MemberFunction]<ICertificate*, IIterable<Pointer<ICertificate>>*, IAsyncOperation<Pointer<ICertificateChain>>**, int>)(lpVtbl[6]))((ICertificate*)Unsafe.AsPointer(ref this), certificates, value);
     }
 
     /// <include file='ICertificate.xml' path='doc/member[@name="ICertificate.BuildChainWithParametersAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT BuildChainWithParametersAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t *")] IIterable<IntPtr>* certificates, [NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::IChainBuildingParameters *")] IChainBuildingParameters* parameters, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT BuildChainWithParametersAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t *")] IIterable<Pointer<ICertificate>>* certificates, [NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::IChainBuildingParameters *")] IChainBuildingParameters* parameters, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_t **")] IAsyncOperation<Pointer<ICertificateChain>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICertificate*, IIterable<IntPtr>*, IChainBuildingParameters*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((ICertificate*)Unsafe.AsPointer(ref this), certificates, parameters, value);
+        return ((delegate* unmanaged[MemberFunction]<ICertificate*, IIterable<Pointer<ICertificate>>*, IChainBuildingParameters*, IAsyncOperation<Pointer<ICertificateChain>>**, int>)(lpVtbl[7]))((ICertificate*)Unsafe.AsPointer(ref this), certificates, parameters, value);
     }
 
     /// <include file='ICertificate.xml' path='doc/member[@name="ICertificate.get_SerialNumber"]/*' />
@@ -194,10 +194,10 @@ public unsafe partial struct ICertificate : ICertificate.Interface, INativeGuid
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT BuildChainAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t *")] IIterable<IntPtr>* certificates, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT BuildChainAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t *")] IIterable<Pointer<ICertificate>>* certificates, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_t **")] IAsyncOperation<Pointer<ICertificateChain>>** value);
 
         [VtblIndex(7)]
-        HRESULT BuildChainWithParametersAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t *")] IIterable<IntPtr>* certificates, [NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::IChainBuildingParameters *")] IChainBuildingParameters* parameters, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT BuildChainWithParametersAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t *")] IIterable<Pointer<ICertificate>>* certificates, [NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::IChainBuildingParameters *")] IChainBuildingParameters* parameters, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_t **")] IAsyncOperation<Pointer<ICertificateChain>>** value);
 
         [VtblIndex(8)]
         HRESULT get_SerialNumber([NativeTypeName("UINT32 *")] uint* valueLength, byte** value);
@@ -261,10 +261,10 @@ public unsafe partial struct ICertificate : ICertificate.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IAsyncOperation<IntPtr>**, int> BuildChainAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<ICertificate>>*, IAsyncOperation<Pointer<ICertificateChain>>**, int> BuildChainAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t *, ABI::Windows::Security::Cryptography::Certificates::IChainBuildingParameters *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateChain_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IChainBuildingParameters*, IAsyncOperation<IntPtr>**, int> BuildChainWithParametersAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<ICertificate>>*, IChainBuildingParameters*, IAsyncOperation<Pointer<ICertificateChain>>**, int> BuildChainWithParametersAsync;
 
         [NativeTypeName("HRESULT (UINT32 *, BYTE **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, byte**, int> get_SerialNumber;

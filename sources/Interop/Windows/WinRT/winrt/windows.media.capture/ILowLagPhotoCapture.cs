@@ -74,9 +74,9 @@ public unsafe partial struct ILowLagPhotoCapture : ILowLagPhotoCapture.Interface
     /// <include file='ILowLagPhotoCapture.xml' path='doc/member[@name="ILowLagPhotoCapture.CaptureAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CaptureAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CCapturedPhoto_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CaptureAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CCapturedPhoto_t **")] IAsyncOperation<Pointer<ICapturedPhoto>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ILowLagPhotoCapture*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ILowLagPhotoCapture*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<ILowLagPhotoCapture*, IAsyncOperation<Pointer<ICapturedPhoto>>**, int>)(lpVtbl[6]))((ILowLagPhotoCapture*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='ILowLagPhotoCapture.xml' path='doc/member[@name="ILowLagPhotoCapture.FinishAsync"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct ILowLagPhotoCapture : ILowLagPhotoCapture.Interface
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CaptureAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CCapturedPhoto_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CaptureAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CCapturedPhoto_t **")] IAsyncOperation<Pointer<ICapturedPhoto>>** operation);
 
         [VtblIndex(7)]
         HRESULT FinishAsync([NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
@@ -118,7 +118,7 @@ public unsafe partial struct ILowLagPhotoCapture : ILowLagPhotoCapture.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CCapturedPhoto_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> CaptureAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<ICapturedPhoto>>**, int> CaptureAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncAction**, int> FinishAsync;

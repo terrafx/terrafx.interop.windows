@@ -74,9 +74,9 @@ public unsafe partial struct IAppDiagnosticInfoWatcher : IAppDiagnosticInfoWatch
     /// <include file='IAppDiagnosticInfoWatcher.xml' path='doc/member[@name="IAppDiagnosticInfoWatcher.add_Added"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_Added([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Added([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs_t *")] ITypedEventHandler<Pointer<IAppDiagnosticInfoWatcher>, Pointer<IAppDiagnosticInfoWatcherEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfoWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IAppDiagnosticInfoWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfoWatcher*, ITypedEventHandler<Pointer<IAppDiagnosticInfoWatcher>, Pointer<IAppDiagnosticInfoWatcherEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IAppDiagnosticInfoWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppDiagnosticInfoWatcher.xml' path='doc/member[@name="IAppDiagnosticInfoWatcher.remove_Added"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IAppDiagnosticInfoWatcher : IAppDiagnosticInfoWatch
     /// <include file='IAppDiagnosticInfoWatcher.xml' path='doc/member[@name="IAppDiagnosticInfoWatcher.add_Removed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs_t *")] ITypedEventHandler<Pointer<IAppDiagnosticInfoWatcher>, Pointer<IAppDiagnosticInfoWatcherEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfoWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IAppDiagnosticInfoWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfoWatcher*, ITypedEventHandler<Pointer<IAppDiagnosticInfoWatcher>, Pointer<IAppDiagnosticInfoWatcherEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IAppDiagnosticInfoWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppDiagnosticInfoWatcher.xml' path='doc/member[@name="IAppDiagnosticInfoWatcher.remove_Removed"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IAppDiagnosticInfoWatcher : IAppDiagnosticInfoWatch
     /// <include file='IAppDiagnosticInfoWatcher.xml' path='doc/member[@name="IAppDiagnosticInfoWatcher.add_EnumerationCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IAppDiagnosticInfoWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfoWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IAppDiagnosticInfoWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfoWatcher*, ITypedEventHandler<Pointer<IAppDiagnosticInfoWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IAppDiagnosticInfoWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppDiagnosticInfoWatcher.xml' path='doc/member[@name="IAppDiagnosticInfoWatcher.remove_EnumerationCompleted"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IAppDiagnosticInfoWatcher : IAppDiagnosticInfoWatch
     /// <include file='IAppDiagnosticInfoWatcher.xml' path='doc/member[@name="IAppDiagnosticInfoWatcher.add_Stopped"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IAppDiagnosticInfoWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfoWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IAppDiagnosticInfoWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfoWatcher*, ITypedEventHandler<Pointer<IAppDiagnosticInfoWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IAppDiagnosticInfoWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppDiagnosticInfoWatcher.xml' path='doc/member[@name="IAppDiagnosticInfoWatcher.remove_Stopped"]/*' />
@@ -162,25 +162,25 @@ public unsafe partial struct IAppDiagnosticInfoWatcher : IAppDiagnosticInfoWatch
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_Added([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Added([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs_t *")] ITypedEventHandler<Pointer<IAppDiagnosticInfoWatcher>, Pointer<IAppDiagnosticInfoWatcherEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_Added(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs_t *")] ITypedEventHandler<Pointer<IAppDiagnosticInfoWatcher>, Pointer<IAppDiagnosticInfoWatcherEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_Removed(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IAppDiagnosticInfoWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_EnumerationCompleted(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IAppDiagnosticInfoWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_Stopped(EventRegistrationToken token);
@@ -217,25 +217,25 @@ public unsafe partial struct IAppDiagnosticInfoWatcher : IAppDiagnosticInfoWatch
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Added;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppDiagnosticInfoWatcher>, Pointer<IAppDiagnosticInfoWatcherEventArgs>>*, EventRegistrationToken*, int> add_Added;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Added;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_Windows__CSystem__CAppDiagnosticInfoWatcherEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Removed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppDiagnosticInfoWatcher>, Pointer<IAppDiagnosticInfoWatcherEventArgs>>*, EventRegistrationToken*, int> add_Removed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Removed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_EnumerationCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppDiagnosticInfoWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_EnumerationCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_EnumerationCompleted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CAppDiagnosticInfoWatcher_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Stopped;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppDiagnosticInfoWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Stopped;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Stopped;

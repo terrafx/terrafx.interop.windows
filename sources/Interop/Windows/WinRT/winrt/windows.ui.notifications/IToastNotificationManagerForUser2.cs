@@ -74,17 +74,17 @@ public unsafe partial struct IToastNotificationManagerForUser2 : IToastNotificat
     /// <include file='IToastNotificationManagerForUser2.xml' path='doc/member[@name="IToastNotificationManagerForUser2.GetToastNotifierForToastCollectionIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetToastNotifierForToastCollectionIdAsync(HSTRING collectionId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetToastNotifierForToastCollectionIdAsync(HSTRING collectionId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_t **")] IAsyncOperation<Pointer<IToastNotifier>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IToastNotificationManagerForUser2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IToastNotificationManagerForUser2*)Unsafe.AsPointer(ref this), collectionId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IToastNotificationManagerForUser2*, HSTRING, IAsyncOperation<Pointer<IToastNotifier>>**, int>)(lpVtbl[6]))((IToastNotificationManagerForUser2*)Unsafe.AsPointer(ref this), collectionId, operation);
     }
 
     /// <include file='IToastNotificationManagerForUser2.xml' path='doc/member[@name="IToastNotificationManagerForUser2.GetHistoryForToastCollectionIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetHistoryForToastCollectionIdAsync(HSTRING collectionId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetHistoryForToastCollectionIdAsync(HSTRING collectionId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_t **")] IAsyncOperation<Pointer<IToastNotificationHistory>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IToastNotificationManagerForUser2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IToastNotificationManagerForUser2*)Unsafe.AsPointer(ref this), collectionId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IToastNotificationManagerForUser2*, HSTRING, IAsyncOperation<Pointer<IToastNotificationHistory>>**, int>)(lpVtbl[7]))((IToastNotificationManagerForUser2*)Unsafe.AsPointer(ref this), collectionId, operation);
     }
 
     /// <include file='IToastNotificationManagerForUser2.xml' path='doc/member[@name="IToastNotificationManagerForUser2.GetToastCollectionManager"]/*' />
@@ -106,10 +106,10 @@ public unsafe partial struct IToastNotificationManagerForUser2 : IToastNotificat
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetToastNotifierForToastCollectionIdAsync(HSTRING collectionId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetToastNotifierForToastCollectionIdAsync(HSTRING collectionId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_t **")] IAsyncOperation<Pointer<IToastNotifier>>** operation);
 
         [VtblIndex(7)]
-        HRESULT GetHistoryForToastCollectionIdAsync(HSTRING collectionId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetHistoryForToastCollectionIdAsync(HSTRING collectionId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_t **")] IAsyncOperation<Pointer<IToastNotificationHistory>>** operation);
 
         [VtblIndex(8)]
         HRESULT GetToastCollectionManager([NativeTypeName("ABI::Windows::UI::Notifications::IToastCollectionManager **")] IToastCollectionManager** result);
@@ -140,10 +140,10 @@ public unsafe partial struct IToastNotificationManagerForUser2 : IToastNotificat
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotifier_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetToastNotifierForToastCollectionIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IToastNotifier>>**, int> GetToastNotifierForToastCollectionIdAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CNotifications__CToastNotificationHistory_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetHistoryForToastCollectionIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IToastNotificationHistory>>**, int> GetHistoryForToastCollectionIdAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::UI::Notifications::IToastCollectionManager **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IToastCollectionManager**, int> GetToastCollectionManager;

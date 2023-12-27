@@ -74,9 +74,9 @@ public unsafe partial struct IAppointmentStore2 : IAppointmentStore2.Interface, 
     /// <include file='IAppointmentStore2.xml' path='doc/member[@name="IAppointmentStore2.add_StoreChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_StoreChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentStore_Windows__CApplicationModel__CAppointments__CAppointmentStoreChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* pHandler, EventRegistrationToken* pToken)
+    public HRESULT add_StoreChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentStore_Windows__CApplicationModel__CAppointments__CAppointmentStoreChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppointmentStore>, Pointer<IAppointmentStoreChangedEventArgs>>* pHandler, EventRegistrationToken* pToken)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IAppointmentStore2*)Unsafe.AsPointer(ref this), pHandler, pToken);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore2*, ITypedEventHandler<Pointer<IAppointmentStore>, Pointer<IAppointmentStoreChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IAppointmentStore2*)Unsafe.AsPointer(ref this), pHandler, pToken);
     }
 
     /// <include file='IAppointmentStore2.xml' path='doc/member[@name="IAppointmentStore2.remove_StoreChanged"]/*' />
@@ -90,21 +90,21 @@ public unsafe partial struct IAppointmentStore2 : IAppointmentStore2.Interface, 
     /// <include file='IAppointmentStore2.xml' path='doc/member[@name="IAppointmentStore2.CreateAppointmentCalendarInAccountAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT CreateAppointmentCalendarInAccountAsync(HSTRING name, HSTRING userDataAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateAppointmentCalendarInAccountAsync(HSTRING name, HSTRING userDataAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<Pointer<IAppointmentCalendar>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore2*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IAppointmentStore2*)Unsafe.AsPointer(ref this), name, userDataAccountId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentStore2*, HSTRING, HSTRING, IAsyncOperation<Pointer<IAppointmentCalendar>>**, int>)(lpVtbl[8]))((IAppointmentStore2*)Unsafe.AsPointer(ref this), name, userDataAccountId, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_StoreChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentStore_Windows__CApplicationModel__CAppointments__CAppointmentStoreChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* pHandler, EventRegistrationToken* pToken);
+        HRESULT add_StoreChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentStore_Windows__CApplicationModel__CAppointments__CAppointmentStoreChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppointmentStore>, Pointer<IAppointmentStoreChangedEventArgs>>* pHandler, EventRegistrationToken* pToken);
 
         [VtblIndex(7)]
         HRESULT remove_StoreChanged(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT CreateAppointmentCalendarInAccountAsync(HSTRING name, HSTRING userDataAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateAppointmentCalendarInAccountAsync(HSTRING name, HSTRING userDataAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<Pointer<IAppointmentCalendar>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -129,12 +129,12 @@ public unsafe partial struct IAppointmentStore2 : IAppointmentStore2.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentStore_Windows__CApplicationModel__CAppointments__CAppointmentStoreChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_StoreChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppointmentStore>, Pointer<IAppointmentStoreChangedEventArgs>>*, EventRegistrationToken*, int> add_StoreChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StoreChanged;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int> CreateAppointmentCalendarInAccountAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IAsyncOperation<Pointer<IAppointmentCalendar>>**, int> CreateAppointmentCalendarInAccountAsync;
     }
 }

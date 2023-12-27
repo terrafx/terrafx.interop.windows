@@ -74,9 +74,9 @@ public unsafe partial struct IRfcommDeviceServiceStatics : IRfcommDeviceServiceS
     /// <include file='IRfcommDeviceServiceStatics.xml' path='doc/member[@name="IRfcommDeviceServiceStatics.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_t **")] IAsyncOperation<IntPtr>** asyncOp)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_t **")] IAsyncOperation<Pointer<IRfcommDeviceService>>** asyncOp)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRfcommDeviceServiceStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IRfcommDeviceServiceStatics*)Unsafe.AsPointer(ref this), deviceId, asyncOp);
+        return ((delegate* unmanaged[MemberFunction]<IRfcommDeviceServiceStatics*, HSTRING, IAsyncOperation<Pointer<IRfcommDeviceService>>**, int>)(lpVtbl[6]))((IRfcommDeviceServiceStatics*)Unsafe.AsPointer(ref this), deviceId, asyncOp);
     }
 
     /// <include file='IRfcommDeviceServiceStatics.xml' path='doc/member[@name="IRfcommDeviceServiceStatics.GetDeviceSelector"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IRfcommDeviceServiceStatics : IRfcommDeviceServiceS
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_t **")] IAsyncOperation<IntPtr>** asyncOp);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_t **")] IAsyncOperation<Pointer<IRfcommDeviceService>>** asyncOp);
 
         [VtblIndex(7)]
         HRESULT GetDeviceSelector([NativeTypeName("ABI::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId *")] IRfcommServiceId* serviceId, HSTRING* selector);
@@ -118,7 +118,7 @@ public unsafe partial struct IRfcommDeviceServiceStatics : IRfcommDeviceServiceS
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IRfcommDeviceService>>**, int> FromIdAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId *, HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IRfcommServiceId*, HSTRING*, int> GetDeviceSelector;

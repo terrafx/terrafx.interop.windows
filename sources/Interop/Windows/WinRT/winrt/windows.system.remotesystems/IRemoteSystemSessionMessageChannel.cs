@@ -98,17 +98,17 @@ public unsafe partial struct IRemoteSystemSessionMessageChannel : IRemoteSystemS
     /// <include file='IRemoteSystemSessionMessageChannel.xml' path='doc/member[@name="IRemoteSystemSessionMessageChannel.SendValueSetToParticipantsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT SendValueSetToParticipantsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* messageData, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionParticipant_t *")] IIterable<IntPtr>* participants, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation)
+    public HRESULT SendValueSetToParticipantsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* messageData, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionParticipant_t *")] IIterable<Pointer<IRemoteSystemSessionParticipant>>* participants, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemSessionMessageChannel*, IPropertySet*, IIterable<IntPtr>*, IAsyncOperation<bool>**, int>)(lpVtbl[9]))((IRemoteSystemSessionMessageChannel*)Unsafe.AsPointer(ref this), messageData, participants, operation);
+        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemSessionMessageChannel*, IPropertySet*, IIterable<Pointer<IRemoteSystemSessionParticipant>>*, IAsyncOperation<bool>**, int>)(lpVtbl[9]))((IRemoteSystemSessionMessageChannel*)Unsafe.AsPointer(ref this), messageData, participants, operation);
     }
 
     /// <include file='IRemoteSystemSessionMessageChannel.xml' path='doc/member[@name="IRemoteSystemSessionMessageChannel.add_ValueSetReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_ValueSetReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionMessageChannel_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionValueSetReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ValueSetReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionMessageChannel_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionValueSetReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IRemoteSystemSessionMessageChannel>, Pointer<IRemoteSystemSessionValueSetReceivedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemSessionMessageChannel*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IRemoteSystemSessionMessageChannel*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemSessionMessageChannel*, ITypedEventHandler<Pointer<IRemoteSystemSessionMessageChannel>, Pointer<IRemoteSystemSessionValueSetReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IRemoteSystemSessionMessageChannel*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IRemoteSystemSessionMessageChannel.xml' path='doc/member[@name="IRemoteSystemSessionMessageChannel.remove_ValueSetReceived"]/*' />
@@ -131,10 +131,10 @@ public unsafe partial struct IRemoteSystemSessionMessageChannel : IRemoteSystemS
         HRESULT SendValueSetAsync([NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* messageData, [NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystemSessionParticipant *")] IRemoteSystemSessionParticipant* participant, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
 
         [VtblIndex(9)]
-        HRESULT SendValueSetToParticipantsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* messageData, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionParticipant_t *")] IIterable<IntPtr>* participants, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
+        HRESULT SendValueSetToParticipantsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* messageData, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionParticipant_t *")] IIterable<Pointer<IRemoteSystemSessionParticipant>>* participants, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
 
         [VtblIndex(10)]
-        HRESULT add_ValueSetReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionMessageChannel_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionValueSetReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ValueSetReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionMessageChannel_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionValueSetReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IRemoteSystemSessionMessageChannel>, Pointer<IRemoteSystemSessionValueSetReceivedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_ValueSetReceived(EventRegistrationToken token);
@@ -171,10 +171,10 @@ public unsafe partial struct IRemoteSystemSessionMessageChannel : IRemoteSystemS
         public delegate* unmanaged[MemberFunction]<TSelf*, IPropertySet*, IRemoteSystemSessionParticipant*, IAsyncOperation<bool>**, int> SendValueSetAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::IPropertySet *, ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionParticipant_t *, ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertySet*, IIterable<IntPtr>*, IAsyncOperation<bool>**, int> SendValueSetToParticipantsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertySet*, IIterable<Pointer<IRemoteSystemSessionParticipant>>*, IAsyncOperation<bool>**, int> SendValueSetToParticipantsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionMessageChannel_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionValueSetReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ValueSetReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRemoteSystemSessionMessageChannel>, Pointer<IRemoteSystemSessionValueSetReceivedEventArgs>>*, EventRegistrationToken*, int> add_ValueSetReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ValueSetReceived;

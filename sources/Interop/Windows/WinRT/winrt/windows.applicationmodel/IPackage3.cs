@@ -90,9 +90,9 @@ public unsafe partial struct IPackage3 : IPackage3.Interface, INativeGuid
     /// <include file='IPackage3.xml' path='doc/member[@name="IPackage3.GetAppListEntriesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetAppListEntriesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CCore__CAppListEntry_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetAppListEntriesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CCore__CAppListEntry_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppListEntry>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackage3*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IPackage3*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IPackage3*, IAsyncOperation<Pointer<IVectorView<Pointer<IAppListEntry>>>>**, int>)(lpVtbl[8]))((IPackage3*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IPackage3 : IPackage3.Interface, INativeGuid
         HRESULT get_InstalledDate([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
 
         [VtblIndex(8)]
-        HRESULT GetAppListEntriesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CCore__CAppListEntry_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetAppListEntriesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CCore__CAppListEntry_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppListEntry>>>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IPackage3 : IPackage3.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_InstalledDate;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CCore__CAppListEntry_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetAppListEntriesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IAppListEntry>>>>**, int> GetAppListEntriesAsync;
     }
 }

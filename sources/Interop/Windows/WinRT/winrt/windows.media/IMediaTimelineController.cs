@@ -138,9 +138,9 @@ public unsafe partial struct IMediaTimelineController : IMediaTimelineController
     /// <include file='IMediaTimelineController.xml' path='doc/member[@name="IMediaTimelineController.add_PositionChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_PositionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* positionChangedEventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_PositionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaTimelineController>, Pointer<IInspectable>>* positionChangedEventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaTimelineController*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IMediaTimelineController*)Unsafe.AsPointer(ref this), positionChangedEventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IMediaTimelineController*, ITypedEventHandler<Pointer<IMediaTimelineController>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IMediaTimelineController*)Unsafe.AsPointer(ref this), positionChangedEventHandler, eventCookie);
     }
 
     /// <include file='IMediaTimelineController.xml' path='doc/member[@name="IMediaTimelineController.remove_PositionChanged"]/*' />
@@ -154,9 +154,9 @@ public unsafe partial struct IMediaTimelineController : IMediaTimelineController
     /// <include file='IMediaTimelineController.xml' path='doc/member[@name="IMediaTimelineController.add_StateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* stateChangedEventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaTimelineController>, Pointer<IInspectable>>* stateChangedEventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaTimelineController*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IMediaTimelineController*)Unsafe.AsPointer(ref this), stateChangedEventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IMediaTimelineController*, ITypedEventHandler<Pointer<IMediaTimelineController>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IMediaTimelineController*)Unsafe.AsPointer(ref this), stateChangedEventHandler, eventCookie);
     }
 
     /// <include file='IMediaTimelineController.xml' path='doc/member[@name="IMediaTimelineController.remove_StateChanged"]/*' />
@@ -194,13 +194,13 @@ public unsafe partial struct IMediaTimelineController : IMediaTimelineController
         HRESULT get_State([NativeTypeName("ABI::Windows::Media::MediaTimelineControllerState *")] MediaTimelineControllerState* value);
 
         [VtblIndex(14)]
-        HRESULT add_PositionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* positionChangedEventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_PositionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaTimelineController>, Pointer<IInspectable>>* positionChangedEventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(15)]
         HRESULT remove_PositionChanged(EventRegistrationToken eventCookie);
 
         [VtblIndex(16)]
-        HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* stateChangedEventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaTimelineController>, Pointer<IInspectable>>* stateChangedEventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(17)]
         HRESULT remove_StateChanged(EventRegistrationToken eventCookie);
@@ -252,13 +252,13 @@ public unsafe partial struct IMediaTimelineController : IMediaTimelineController
         public delegate* unmanaged[MemberFunction]<TSelf*, MediaTimelineControllerState*, int> get_State;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PositionChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaTimelineController>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_PositionChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PositionChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_StateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaTimelineController>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_StateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StateChanged;

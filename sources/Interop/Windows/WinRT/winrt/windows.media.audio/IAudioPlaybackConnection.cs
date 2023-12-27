@@ -114,17 +114,17 @@ public unsafe partial struct IAudioPlaybackConnection : IAudioPlaybackConnection
     /// <include file='IAudioPlaybackConnection.xml' path='doc/member[@name="IAudioPlaybackConnection.OpenAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT OpenAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CAudioPlaybackConnectionOpenResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT OpenAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CAudioPlaybackConnectionOpenResult_t **")] IAsyncOperation<Pointer<IAudioPlaybackConnectionOpenResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioPlaybackConnection*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IAudioPlaybackConnection*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IAudioPlaybackConnection*, IAsyncOperation<Pointer<IAudioPlaybackConnectionOpenResult>>**, int>)(lpVtbl[11]))((IAudioPlaybackConnection*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IAudioPlaybackConnection.xml' path='doc/member[@name="IAudioPlaybackConnection.add_StateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioPlaybackConnection_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioPlaybackConnection_IInspectable_t *")] ITypedEventHandler<Pointer<IAudioPlaybackConnection>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioPlaybackConnection*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IAudioPlaybackConnection*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAudioPlaybackConnection*, ITypedEventHandler<Pointer<IAudioPlaybackConnection>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IAudioPlaybackConnection*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAudioPlaybackConnection.xml' path='doc/member[@name="IAudioPlaybackConnection.remove_StateChanged"]/*' />
@@ -153,10 +153,10 @@ public unsafe partial struct IAudioPlaybackConnection : IAudioPlaybackConnection
         HRESULT Open([NativeTypeName("ABI::Windows::Media::Audio::IAudioPlaybackConnectionOpenResult **")] IAudioPlaybackConnectionOpenResult** result);
 
         [VtblIndex(11)]
-        HRESULT OpenAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CAudioPlaybackConnectionOpenResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT OpenAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CAudioPlaybackConnectionOpenResult_t **")] IAsyncOperation<Pointer<IAudioPlaybackConnectionOpenResult>>** operation);
 
         [VtblIndex(12)]
-        HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioPlaybackConnection_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioPlaybackConnection_IInspectable_t *")] ITypedEventHandler<Pointer<IAudioPlaybackConnection>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_StateChanged(EventRegistrationToken token);
@@ -199,10 +199,10 @@ public unsafe partial struct IAudioPlaybackConnection : IAudioPlaybackConnection
         public delegate* unmanaged[MemberFunction]<TSelf*, IAudioPlaybackConnectionOpenResult**, int> Open;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CAudioPlaybackConnectionOpenResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> OpenAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IAudioPlaybackConnectionOpenResult>>**, int> OpenAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioPlaybackConnection_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_StateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAudioPlaybackConnection>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_StateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StateChanged;

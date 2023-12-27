@@ -90,9 +90,9 @@ public unsafe partial struct ISmsMessageRegistration : ISmsMessageRegistration.I
     /// <include file='ISmsMessageRegistration.xml' path='doc/member[@name="ISmsMessageRegistration.add_MessageReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_MessageReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSms__CSmsMessageRegistration_Windows__CDevices__CSms__CSmsMessageReceivedTriggerDetails_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_MessageReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSms__CSmsMessageRegistration_Windows__CDevices__CSms__CSmsMessageReceivedTriggerDetails_t *")] ITypedEventHandler<Pointer<ISmsMessageRegistration>, Pointer<ISmsMessageReceivedTriggerDetails>>* eventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmsMessageRegistration*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ISmsMessageRegistration*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<ISmsMessageRegistration*, ITypedEventHandler<Pointer<ISmsMessageRegistration>, Pointer<ISmsMessageReceivedTriggerDetails>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ISmsMessageRegistration*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
     }
 
     /// <include file='ISmsMessageRegistration.xml' path='doc/member[@name="ISmsMessageRegistration.remove_MessageReceived"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct ISmsMessageRegistration : ISmsMessageRegistration.I
         HRESULT Unregister();
 
         [VtblIndex(8)]
-        HRESULT add_MessageReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSms__CSmsMessageRegistration_Windows__CDevices__CSms__CSmsMessageReceivedTriggerDetails_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_MessageReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSms__CSmsMessageRegistration_Windows__CDevices__CSms__CSmsMessageReceivedTriggerDetails_t *")] ITypedEventHandler<Pointer<ISmsMessageRegistration>, Pointer<ISmsMessageReceivedTriggerDetails>>* eventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(9)]
         HRESULT remove_MessageReceived(EventRegistrationToken eventCookie);
@@ -146,7 +146,7 @@ public unsafe partial struct ISmsMessageRegistration : ISmsMessageRegistration.I
         public delegate* unmanaged[MemberFunction]<TSelf*, int> Unregister;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSms__CSmsMessageRegistration_Windows__CDevices__CSms__CSmsMessageReceivedTriggerDetails_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_MessageReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISmsMessageRegistration>, Pointer<ISmsMessageReceivedTriggerDetails>>*, EventRegistrationToken*, int> add_MessageReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_MessageReceived;

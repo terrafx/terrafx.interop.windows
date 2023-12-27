@@ -74,15 +74,15 @@ public unsafe partial struct ICompositionGraphicsDevice4 : ICompositionGraphicsD
     /// <include file='ICompositionGraphicsDevice4.xml' path='doc/member[@name="ICompositionGraphicsDevice4.CaptureAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CaptureAsync([NativeTypeName("ABI::Windows::UI::Composition::IVisual *")] IVisual* captureVisual, [NativeTypeName("ABI::Windows::Graphics::SizeInt32")] SizeInt32 size, [NativeTypeName("ABI::Windows::Graphics::DirectX::DirectXPixelFormat")] DirectXPixelFormat pixelFormat, [NativeTypeName("ABI::Windows::Graphics::DirectX::DirectXAlphaMode")] DirectXAlphaMode alphaMode, float sdrBoost, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CComposition__CICompositionSurface_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CaptureAsync([NativeTypeName("ABI::Windows::UI::Composition::IVisual *")] IVisual* captureVisual, [NativeTypeName("ABI::Windows::Graphics::SizeInt32")] SizeInt32 size, [NativeTypeName("ABI::Windows::Graphics::DirectX::DirectXPixelFormat")] DirectXPixelFormat pixelFormat, [NativeTypeName("ABI::Windows::Graphics::DirectX::DirectXAlphaMode")] DirectXAlphaMode alphaMode, float sdrBoost, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CComposition__CICompositionSurface_t **")] IAsyncOperation<Pointer<ICompositionSurface>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICompositionGraphicsDevice4*, IVisual*, SizeInt32, DirectXPixelFormat, DirectXAlphaMode, float, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ICompositionGraphicsDevice4*)Unsafe.AsPointer(ref this), captureVisual, size, pixelFormat, alphaMode, sdrBoost, operation);
+        return ((delegate* unmanaged[MemberFunction]<ICompositionGraphicsDevice4*, IVisual*, SizeInt32, DirectXPixelFormat, DirectXAlphaMode, float, IAsyncOperation<Pointer<ICompositionSurface>>**, int>)(lpVtbl[6]))((ICompositionGraphicsDevice4*)Unsafe.AsPointer(ref this), captureVisual, size, pixelFormat, alphaMode, sdrBoost, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CaptureAsync([NativeTypeName("ABI::Windows::UI::Composition::IVisual *")] IVisual* captureVisual, [NativeTypeName("ABI::Windows::Graphics::SizeInt32")] SizeInt32 size, [NativeTypeName("ABI::Windows::Graphics::DirectX::DirectXPixelFormat")] DirectXPixelFormat pixelFormat, [NativeTypeName("ABI::Windows::Graphics::DirectX::DirectXAlphaMode")] DirectXAlphaMode alphaMode, float sdrBoost, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CComposition__CICompositionSurface_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CaptureAsync([NativeTypeName("ABI::Windows::UI::Composition::IVisual *")] IVisual* captureVisual, [NativeTypeName("ABI::Windows::Graphics::SizeInt32")] SizeInt32 size, [NativeTypeName("ABI::Windows::Graphics::DirectX::DirectXPixelFormat")] DirectXPixelFormat pixelFormat, [NativeTypeName("ABI::Windows::Graphics::DirectX::DirectXAlphaMode")] DirectXAlphaMode alphaMode, float sdrBoost, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CComposition__CICompositionSurface_t **")] IAsyncOperation<Pointer<ICompositionSurface>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ICompositionGraphicsDevice4 : ICompositionGraphicsD
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::UI::Composition::IVisual *, ABI::Windows::Graphics::SizeInt32, ABI::Windows::Graphics::DirectX::DirectXPixelFormat, ABI::Windows::Graphics::DirectX::DirectXAlphaMode, FLOAT, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CComposition__CICompositionSurface_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVisual*, SizeInt32, DirectXPixelFormat, DirectXAlphaMode, float, IAsyncOperation<IntPtr>**, int> CaptureAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVisual*, SizeInt32, DirectXPixelFormat, DirectXAlphaMode, float, IAsyncOperation<Pointer<ICompositionSurface>>**, int> CaptureAsync;
     }
 }

@@ -74,15 +74,15 @@ public unsafe partial struct IAppServiceConnectionStatics : IAppServiceConnectio
     /// <include file='IAppServiceConnectionStatics.xml' path='doc/member[@name="IAppServiceConnectionStatics.SendStatelessMessageAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SendStatelessMessageAsync([NativeTypeName("ABI::Windows::ApplicationModel::AppService::IAppServiceConnection *")] IAppServiceConnection* connection, [NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystemConnectionRequest *")] IRemoteSystemConnectionRequest* connectionRequest, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* message, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppService__CStatelessAppServiceResponse_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT SendStatelessMessageAsync([NativeTypeName("ABI::Windows::ApplicationModel::AppService::IAppServiceConnection *")] IAppServiceConnection* connection, [NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystemConnectionRequest *")] IRemoteSystemConnectionRequest* connectionRequest, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* message, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppService__CStatelessAppServiceResponse_t **")] IAsyncOperation<Pointer<IStatelessAppServiceResponse>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppServiceConnectionStatics*, IAppServiceConnection*, IRemoteSystemConnectionRequest*, IPropertySet*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IAppServiceConnectionStatics*)Unsafe.AsPointer(ref this), connection, connectionRequest, message, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppServiceConnectionStatics*, IAppServiceConnection*, IRemoteSystemConnectionRequest*, IPropertySet*, IAsyncOperation<Pointer<IStatelessAppServiceResponse>>**, int>)(lpVtbl[6]))((IAppServiceConnectionStatics*)Unsafe.AsPointer(ref this), connection, connectionRequest, message, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT SendStatelessMessageAsync([NativeTypeName("ABI::Windows::ApplicationModel::AppService::IAppServiceConnection *")] IAppServiceConnection* connection, [NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystemConnectionRequest *")] IRemoteSystemConnectionRequest* connectionRequest, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* message, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppService__CStatelessAppServiceResponse_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT SendStatelessMessageAsync([NativeTypeName("ABI::Windows::ApplicationModel::AppService::IAppServiceConnection *")] IAppServiceConnection* connection, [NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystemConnectionRequest *")] IRemoteSystemConnectionRequest* connectionRequest, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* message, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppService__CStatelessAppServiceResponse_t **")] IAsyncOperation<Pointer<IStatelessAppServiceResponse>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IAppServiceConnectionStatics : IAppServiceConnectio
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::AppService::IAppServiceConnection *, ABI::Windows::System::RemoteSystems::IRemoteSystemConnectionRequest *, ABI::Windows::Foundation::Collections::IPropertySet *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppService__CStatelessAppServiceResponse_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAppServiceConnection*, IRemoteSystemConnectionRequest*, IPropertySet*, IAsyncOperation<IntPtr>**, int> SendStatelessMessageAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppServiceConnection*, IRemoteSystemConnectionRequest*, IPropertySet*, IAsyncOperation<Pointer<IStatelessAppServiceResponse>>**, int> SendStatelessMessageAsync;
     }
 }

@@ -90,9 +90,9 @@ public unsafe partial struct IRemoteSystemSessionInfo : IRemoteSystemSessionInfo
     /// <include file='IRemoteSystemSessionInfo.xml' path='doc/member[@name="IRemoteSystemSessionInfo.JoinAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT JoinAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionJoinResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT JoinAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionJoinResult_t **")] IAsyncOperation<Pointer<IRemoteSystemSessionJoinResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemSessionInfo*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IRemoteSystemSessionInfo*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemSessionInfo*, IAsyncOperation<Pointer<IRemoteSystemSessionJoinResult>>**, int>)(lpVtbl[8]))((IRemoteSystemSessionInfo*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IRemoteSystemSessionInfo : IRemoteSystemSessionInfo
         HRESULT get_ControllerDisplayName(HSTRING* value);
 
         [VtblIndex(8)]
-        HRESULT JoinAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionJoinResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT JoinAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionJoinResult_t **")] IAsyncOperation<Pointer<IRemoteSystemSessionJoinResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IRemoteSystemSessionInfo : IRemoteSystemSessionInfo
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_ControllerDisplayName;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionJoinResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> JoinAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IRemoteSystemSessionJoinResult>>**, int> JoinAsync;
     }
 }

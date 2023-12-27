@@ -75,18 +75,18 @@ public unsafe partial struct IGattDeviceService : IGattDeviceService.Interface, 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [Obsolete("Use GetCharacteristicsForUuidAsync instead of GetCharacteristics.  For more information, see MSDN.")]
-    public HRESULT GetCharacteristics(Guid characteristicUuid, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_t **")] IVectorView<IntPtr>** value)
+    public HRESULT GetCharacteristics(Guid characteristicUuid, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_t **")] IVectorView<Pointer<IGattCharacteristic>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService*, Guid, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IGattDeviceService*)Unsafe.AsPointer(ref this), characteristicUuid, value);
+        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService*, Guid, IVectorView<Pointer<IGattCharacteristic>>**, int>)(lpVtbl[6]))((IGattDeviceService*)Unsafe.AsPointer(ref this), characteristicUuid, value);
     }
 
     /// <include file='IGattDeviceService.xml' path='doc/member[@name="IGattDeviceService.GetIncludedServices"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [Obsolete("Use GetIncludedServicesForUuidAsync instead of GetIncludedServices.  For more information, see MSDN.")]
-    public HRESULT GetIncludedServices(Guid serviceUuid, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **")] IVectorView<IntPtr>** value)
+    public HRESULT GetIncludedServices(Guid serviceUuid, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **")] IVectorView<Pointer<IGattDeviceService>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService*, Guid, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IGattDeviceService*)Unsafe.AsPointer(ref this), serviceUuid, value);
+        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService*, Guid, IVectorView<Pointer<IGattDeviceService>>**, int>)(lpVtbl[7]))((IGattDeviceService*)Unsafe.AsPointer(ref this), serviceUuid, value);
     }
 
     /// <include file='IGattDeviceService.xml' path='doc/member[@name="IGattDeviceService.get_DeviceId"]/*' />
@@ -117,11 +117,11 @@ public unsafe partial struct IGattDeviceService : IGattDeviceService.Interface, 
     {
         [VtblIndex(6)]
         [Obsolete("Use GetCharacteristicsForUuidAsync instead of GetCharacteristics.  For more information, see MSDN.")]
-        HRESULT GetCharacteristics(Guid characteristicUuid, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_t **")] IVectorView<IntPtr>** value);
+        HRESULT GetCharacteristics(Guid characteristicUuid, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_t **")] IVectorView<Pointer<IGattCharacteristic>>** value);
 
         [VtblIndex(7)]
         [Obsolete("Use GetIncludedServicesForUuidAsync instead of GetIncludedServices.  For more information, see MSDN.")]
-        HRESULT GetIncludedServices(Guid serviceUuid, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **")] IVectorView<IntPtr>** value);
+        HRESULT GetIncludedServices(Guid serviceUuid, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **")] IVectorView<Pointer<IGattDeviceService>>** value);
 
         [VtblIndex(8)]
         HRESULT get_DeviceId(HSTRING* value);
@@ -156,11 +156,11 @@ public unsafe partial struct IGattDeviceService : IGattDeviceService.Interface, 
 
         [NativeTypeName("HRESULT (GUID, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_t **) __attribute__((stdcall))")]
         [Obsolete("Use GetCharacteristicsForUuidAsync instead of GetCharacteristics.  For more information, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IVectorView<IntPtr>**, int> GetCharacteristics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IVectorView<Pointer<IGattCharacteristic>>**, int> GetCharacteristics;
 
         [NativeTypeName("HRESULT (GUID, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **) __attribute__((stdcall))")]
         [Obsolete("Use GetIncludedServicesForUuidAsync instead of GetIncludedServices.  For more information, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IVectorView<IntPtr>**, int> GetIncludedServices;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IVectorView<Pointer<IGattDeviceService>>**, int> GetIncludedServices;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_DeviceId;

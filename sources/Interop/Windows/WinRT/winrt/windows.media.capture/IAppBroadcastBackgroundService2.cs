@@ -114,9 +114,9 @@ public unsafe partial struct IAppBroadcastBackgroundService2 : IAppBroadcastBack
     /// <include file='IAppBroadcastBackgroundService2.xml' path='doc/member[@name="IAppBroadcastBackgroundService2.add_BroadcastTitleChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_BroadcastTitleChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_BroadcastTitleChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastBackgroundService>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastBackgroundService2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IAppBroadcastBackgroundService2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastBackgroundService2*, ITypedEventHandler<Pointer<IAppBroadcastBackgroundService>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IAppBroadcastBackgroundService2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppBroadcastBackgroundService2.xml' path='doc/member[@name="IAppBroadcastBackgroundService2.remove_BroadcastTitleChanged"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IAppBroadcastBackgroundService2 : IAppBroadcastBack
     /// <include file='IAppBroadcastBackgroundService2.xml' path='doc/member[@name="IAppBroadcastBackgroundService2.add_BroadcastLanguageChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_BroadcastLanguageChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_BroadcastLanguageChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastBackgroundService>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastBackgroundService2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IAppBroadcastBackgroundService2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastBackgroundService2*, ITypedEventHandler<Pointer<IAppBroadcastBackgroundService>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IAppBroadcastBackgroundService2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppBroadcastBackgroundService2.xml' path='doc/member[@name="IAppBroadcastBackgroundService2.remove_BroadcastLanguageChanged"]/*' />
@@ -146,9 +146,9 @@ public unsafe partial struct IAppBroadcastBackgroundService2 : IAppBroadcastBack
     /// <include file='IAppBroadcastBackgroundService2.xml' path='doc/member[@name="IAppBroadcastBackgroundService2.add_BroadcastChannelChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT add_BroadcastChannelChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_BroadcastChannelChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastBackgroundService>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastBackgroundService2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IAppBroadcastBackgroundService2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastBackgroundService2*, ITypedEventHandler<Pointer<IAppBroadcastBackgroundService>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IAppBroadcastBackgroundService2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppBroadcastBackgroundService2.xml' path='doc/member[@name="IAppBroadcastBackgroundService2.remove_BroadcastChannelChanged"]/*' />
@@ -177,19 +177,19 @@ public unsafe partial struct IAppBroadcastBackgroundService2 : IAppBroadcastBack
         HRESULT put_BroadcastChannel(HSTRING value);
 
         [VtblIndex(11)]
-        HRESULT add_BroadcastTitleChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_BroadcastTitleChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastBackgroundService>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_BroadcastTitleChanged(EventRegistrationToken token);
 
         [VtblIndex(13)]
-        HRESULT add_BroadcastLanguageChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_BroadcastLanguageChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastBackgroundService>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_BroadcastLanguageChanged(EventRegistrationToken token);
 
         [VtblIndex(15)]
-        HRESULT add_BroadcastChannelChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_BroadcastChannelChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastBackgroundService>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(16)]
         HRESULT remove_BroadcastChannelChanged(EventRegistrationToken token);
@@ -232,19 +232,19 @@ public unsafe partial struct IAppBroadcastBackgroundService2 : IAppBroadcastBack
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_BroadcastChannel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_BroadcastTitleChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastBackgroundService>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_BroadcastTitleChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_BroadcastTitleChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_BroadcastLanguageChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastBackgroundService>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_BroadcastLanguageChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_BroadcastLanguageChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_BroadcastChannelChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastBackgroundService>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_BroadcastChannelChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_BroadcastChannelChanged;

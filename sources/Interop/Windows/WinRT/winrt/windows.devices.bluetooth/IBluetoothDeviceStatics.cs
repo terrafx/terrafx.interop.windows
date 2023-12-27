@@ -74,25 +74,25 @@ public unsafe partial struct IBluetoothDeviceStatics : IBluetoothDeviceStatics.I
     /// <include file='IBluetoothDeviceStatics.xml' path='doc/member[@name="IBluetoothDeviceStatics.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_t **")] IAsyncOperation<Pointer<IBluetoothDevice>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothDeviceStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IBluetoothDeviceStatics*)Unsafe.AsPointer(ref this), deviceId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothDeviceStatics*, HSTRING, IAsyncOperation<Pointer<IBluetoothDevice>>**, int>)(lpVtbl[6]))((IBluetoothDeviceStatics*)Unsafe.AsPointer(ref this), deviceId, operation);
     }
 
     /// <include file='IBluetoothDeviceStatics.xml' path='doc/member[@name="IBluetoothDeviceStatics.FromHostNameAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FromHostNameAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* hostName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromHostNameAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* hostName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_t **")] IAsyncOperation<Pointer<IBluetoothDevice>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothDeviceStatics*, IHostName*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IBluetoothDeviceStatics*)Unsafe.AsPointer(ref this), hostName, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothDeviceStatics*, IHostName*, IAsyncOperation<Pointer<IBluetoothDevice>>**, int>)(lpVtbl[7]))((IBluetoothDeviceStatics*)Unsafe.AsPointer(ref this), hostName, operation);
     }
 
     /// <include file='IBluetoothDeviceStatics.xml' path='doc/member[@name="IBluetoothDeviceStatics.FromBluetoothAddressAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT FromBluetoothAddressAsync([NativeTypeName("UINT64")] ulong address, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromBluetoothAddressAsync([NativeTypeName("UINT64")] ulong address, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_t **")] IAsyncOperation<Pointer<IBluetoothDevice>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothDeviceStatics*, ulong, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IBluetoothDeviceStatics*)Unsafe.AsPointer(ref this), address, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothDeviceStatics*, ulong, IAsyncOperation<Pointer<IBluetoothDevice>>**, int>)(lpVtbl[8]))((IBluetoothDeviceStatics*)Unsafe.AsPointer(ref this), address, operation);
     }
 
     /// <include file='IBluetoothDeviceStatics.xml' path='doc/member[@name="IBluetoothDeviceStatics.GetDeviceSelector"]/*' />
@@ -106,13 +106,13 @@ public unsafe partial struct IBluetoothDeviceStatics : IBluetoothDeviceStatics.I
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_t **")] IAsyncOperation<Pointer<IBluetoothDevice>>** operation);
 
         [VtblIndex(7)]
-        HRESULT FromHostNameAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* hostName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromHostNameAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* hostName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_t **")] IAsyncOperation<Pointer<IBluetoothDevice>>** operation);
 
         [VtblIndex(8)]
-        HRESULT FromBluetoothAddressAsync([NativeTypeName("UINT64")] ulong address, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromBluetoothAddressAsync([NativeTypeName("UINT64")] ulong address, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_t **")] IAsyncOperation<Pointer<IBluetoothDevice>>** operation);
 
         [VtblIndex(9)]
         HRESULT GetDeviceSelector(HSTRING* deviceSelector);
@@ -140,13 +140,13 @@ public unsafe partial struct IBluetoothDeviceStatics : IBluetoothDeviceStatics.I
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IBluetoothDevice>>**, int> FromIdAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Networking::IHostName *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IHostName*, IAsyncOperation<IntPtr>**, int> FromHostNameAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHostName*, IAsyncOperation<Pointer<IBluetoothDevice>>**, int> FromHostNameAsync;
 
         [NativeTypeName("HRESULT (UINT64, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothDevice_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, IAsyncOperation<IntPtr>**, int> FromBluetoothAddressAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, IAsyncOperation<Pointer<IBluetoothDevice>>**, int> FromBluetoothAddressAsync;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetDeviceSelector;

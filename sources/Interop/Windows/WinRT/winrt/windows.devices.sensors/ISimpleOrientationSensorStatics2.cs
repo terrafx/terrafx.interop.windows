@@ -82,9 +82,9 @@ public unsafe partial struct ISimpleOrientationSensorStatics2 : ISimpleOrientati
     /// <include file='ISimpleOrientationSensorStatics2.xml' path='doc/member[@name="ISimpleOrientationSensorStatics2.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_t **")] IAsyncOperation<Pointer<ISimpleOrientationSensor>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISimpleOrientationSensorStatics2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((ISimpleOrientationSensorStatics2*)Unsafe.AsPointer(ref this), deviceId, result);
+        return ((delegate* unmanaged[MemberFunction]<ISimpleOrientationSensorStatics2*, HSTRING, IAsyncOperation<Pointer<ISimpleOrientationSensor>>**, int>)(lpVtbl[7]))((ISimpleOrientationSensorStatics2*)Unsafe.AsPointer(ref this), deviceId, result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct ISimpleOrientationSensorStatics2 : ISimpleOrientati
         HRESULT GetDeviceSelector(HSTRING* value);
 
         [VtblIndex(7)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_t **")] IAsyncOperation<Pointer<ISimpleOrientationSensor>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct ISimpleOrientationSensorStatics2 : ISimpleOrientati
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetDeviceSelector;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CSimpleOrientationSensor_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<ISimpleOrientationSensor>>**, int> FromIdAsync;
     }
 }

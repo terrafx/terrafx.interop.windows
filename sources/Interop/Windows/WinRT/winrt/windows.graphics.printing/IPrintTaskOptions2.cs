@@ -82,9 +82,9 @@ public unsafe partial struct IPrintTaskOptions2 : IPrintTaskOptions2.Interface, 
     /// <include file='IPrintTaskOptions2.xml' path='doc/member[@name="IPrintTaskOptions2.get_CustomPageRanges"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_CustomPageRanges([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CGraphics__CPrinting__CPrintPageRange_t **")] IVector<IntPtr>** value)
+    public HRESULT get_CustomPageRanges([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CGraphics__CPrinting__CPrintPageRange_t **")] IVector<Pointer<IPrintPageRange>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPrintTaskOptions2*, IVector<IntPtr>**, int>)(lpVtbl[7]))((IPrintTaskOptions2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPrintTaskOptions2*, IVector<Pointer<IPrintPageRange>>**, int>)(lpVtbl[7]))((IPrintTaskOptions2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IPrintTaskOptions2 : IPrintTaskOptions2.Interface, 
         HRESULT get_PageRangeOptions([NativeTypeName("ABI::Windows::Graphics::Printing::IPrintPageRangeOptions **")] IPrintPageRangeOptions** value);
 
         [VtblIndex(7)]
-        HRESULT get_CustomPageRanges([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CGraphics__CPrinting__CPrintPageRange_t **")] IVector<IntPtr>** value);
+        HRESULT get_CustomPageRanges([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CGraphics__CPrinting__CPrintPageRange_t **")] IVector<Pointer<IPrintPageRange>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IPrintTaskOptions2 : IPrintTaskOptions2.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, IPrintPageRangeOptions**, int> get_PageRangeOptions;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CGraphics__CPrinting__CPrintPageRange_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_CustomPageRanges;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IPrintPageRange>>**, int> get_CustomPageRanges;
     }
 }

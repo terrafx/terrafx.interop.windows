@@ -74,9 +74,9 @@ public unsafe partial struct IMediaSource2 : IMediaSource2.Interface, INativeGui
     /// <include file='IMediaSource2.xml' path='doc/member[@name="IMediaSource2.add_OpenOperationCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_OpenOperationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceOpenOperationCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_OpenOperationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceOpenOperationCompletedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaSource>, Pointer<IMediaSourceOpenOperationCompletedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaSource2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaSource2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSource2*, ITypedEventHandler<Pointer<IMediaSource>, Pointer<IMediaSourceOpenOperationCompletedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaSource2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaSource2.xml' path='doc/member[@name="IMediaSource2.remove_OpenOperationCompleted"]/*' />
@@ -114,23 +114,23 @@ public unsafe partial struct IMediaSource2 : IMediaSource2.Interface, INativeGui
     /// <include file='IMediaSource2.xml' path='doc/member[@name="IMediaSource2.get_ExternalTimedTextSources"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_ExternalTimedTextSources([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CMedia__CCore__CTimedTextSource_t **")] IObservableVector<IntPtr>** value)
+    public HRESULT get_ExternalTimedTextSources([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CMedia__CCore__CTimedTextSource_t **")] IObservableVector<Pointer<ITimedTextSource>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaSource2*, IObservableVector<IntPtr>**, int>)(lpVtbl[11]))((IMediaSource2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSource2*, IObservableVector<Pointer<ITimedTextSource>>**, int>)(lpVtbl[11]))((IMediaSource2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaSource2.xml' path='doc/member[@name="IMediaSource2.get_ExternalTimedMetadataTracks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_ExternalTimedMetadataTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CMedia__CCore__CTimedMetadataTrack_t **")] IObservableVector<IntPtr>** value)
+    public HRESULT get_ExternalTimedMetadataTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CMedia__CCore__CTimedMetadataTrack_t **")] IObservableVector<Pointer<ITimedMetadataTrack>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaSource2*, IObservableVector<IntPtr>**, int>)(lpVtbl[12]))((IMediaSource2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSource2*, IObservableVector<Pointer<ITimedMetadataTrack>>**, int>)(lpVtbl[12]))((IMediaSource2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_OpenOperationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceOpenOperationCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_OpenOperationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceOpenOperationCompletedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaSource>, Pointer<IMediaSourceOpenOperationCompletedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_OpenOperationCompleted(EventRegistrationToken token);
@@ -145,10 +145,10 @@ public unsafe partial struct IMediaSource2 : IMediaSource2.Interface, INativeGui
         HRESULT get_IsOpen([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(11)]
-        HRESULT get_ExternalTimedTextSources([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CMedia__CCore__CTimedTextSource_t **")] IObservableVector<IntPtr>** value);
+        HRESULT get_ExternalTimedTextSources([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CMedia__CCore__CTimedTextSource_t **")] IObservableVector<Pointer<ITimedTextSource>>** value);
 
         [VtblIndex(12)]
-        HRESULT get_ExternalTimedMetadataTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CMedia__CCore__CTimedMetadataTrack_t **")] IObservableVector<IntPtr>** value);
+        HRESULT get_ExternalTimedMetadataTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CMedia__CCore__CTimedMetadataTrack_t **")] IObservableVector<Pointer<ITimedMetadataTrack>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -173,7 +173,7 @@ public unsafe partial struct IMediaSource2 : IMediaSource2.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSource_Windows__CMedia__CCore__CMediaSourceOpenOperationCompletedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_OpenOperationCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaSource>, Pointer<IMediaSourceOpenOperationCompletedEventArgs>>*, EventRegistrationToken*, int> add_OpenOperationCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_OpenOperationCompleted;
@@ -188,9 +188,9 @@ public unsafe partial struct IMediaSource2 : IMediaSource2.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsOpen;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CMedia__CCore__CTimedTextSource_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IObservableVector<IntPtr>**, int> get_ExternalTimedTextSources;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IObservableVector<Pointer<ITimedTextSource>>**, int> get_ExternalTimedTextSources;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CMedia__CCore__CTimedMetadataTrack_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IObservableVector<IntPtr>**, int> get_ExternalTimedMetadataTracks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IObservableVector<Pointer<ITimedMetadataTrack>>**, int> get_ExternalTimedMetadataTracks;
     }
 }

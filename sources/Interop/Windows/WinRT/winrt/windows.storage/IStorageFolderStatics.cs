@@ -74,15 +74,15 @@ public unsafe partial struct IStorageFolderStatics : IStorageFolderStatics.Inter
     /// <include file='IStorageFolderStatics.xml' path='doc/member[@name="IStorageFolderStatics.GetFolderFromPathAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetFolderFromPathAsync(HSTRING path, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetFolderFromPathAsync(HSTRING path, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolderStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStorageFolderStatics*)Unsafe.AsPointer(ref this), path, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolderStatics*, HSTRING, IAsyncOperation<Pointer<IStorageFolder>>**, int>)(lpVtbl[6]))((IStorageFolderStatics*)Unsafe.AsPointer(ref this), path, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetFolderFromPathAsync(HSTRING path, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetFolderFromPathAsync(HSTRING path, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IStorageFolderStatics : IStorageFolderStatics.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetFolderFromPathAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IStorageFolder>>**, int> GetFolderFromPathAsync;
     }
 }

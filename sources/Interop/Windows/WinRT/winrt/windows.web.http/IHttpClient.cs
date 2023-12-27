@@ -74,41 +74,41 @@ public unsafe partial struct IHttpClient : IHttpClient.Interface, INativeGuid
     /// <include file='IHttpClient.xml' path='doc/member[@name="IHttpClient.DeleteAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT DeleteAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation)
+    public HRESULT DeleteAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IUriRuntimeClass*, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int>)(lpVtbl[6]))((IHttpClient*)Unsafe.AsPointer(ref this), uri, operation);
+        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IUriRuntimeClass*, IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>**, int>)(lpVtbl[6]))((IHttpClient*)Unsafe.AsPointer(ref this), uri, operation);
     }
 
     /// <include file='IHttpClient.xml' path='doc/member[@name="IHttpClient.GetAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation)
+    public HRESULT GetAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IUriRuntimeClass*, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int>)(lpVtbl[7]))((IHttpClient*)Unsafe.AsPointer(ref this), uri, operation);
+        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IUriRuntimeClass*, IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>**, int>)(lpVtbl[7]))((IHttpClient*)Unsafe.AsPointer(ref this), uri, operation);
     }
 
     /// <include file='IHttpClient.xml' path='doc/member[@name="IHttpClient.GetWithOptionAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetWithOptionAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Web::Http::HttpCompletionOption")] HttpCompletionOption completionOption, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation)
+    public HRESULT GetWithOptionAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Web::Http::HttpCompletionOption")] HttpCompletionOption completionOption, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IUriRuntimeClass*, HttpCompletionOption, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int>)(lpVtbl[8]))((IHttpClient*)Unsafe.AsPointer(ref this), uri, completionOption, operation);
+        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IUriRuntimeClass*, HttpCompletionOption, IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>**, int>)(lpVtbl[8]))((IHttpClient*)Unsafe.AsPointer(ref this), uri, completionOption, operation);
     }
 
     /// <include file='IHttpClient.xml' path='doc/member[@name="IHttpClient.GetBufferAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetBufferAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIBuffer_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation)
+    public HRESULT GetBufferAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIBuffer_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IBuffer>, HttpProgress>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IUriRuntimeClass*, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int>)(lpVtbl[9]))((IHttpClient*)Unsafe.AsPointer(ref this), uri, operation);
+        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IUriRuntimeClass*, IAsyncOperationWithProgress<Pointer<IBuffer>, HttpProgress>**, int>)(lpVtbl[9]))((IHttpClient*)Unsafe.AsPointer(ref this), uri, operation);
     }
 
     /// <include file='IHttpClient.xml' path='doc/member[@name="IHttpClient.GetInputStreamAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetInputStreamAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIInputStream_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation)
+    public HRESULT GetInputStreamAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIInputStream_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IInputStream>, HttpProgress>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IUriRuntimeClass*, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int>)(lpVtbl[10]))((IHttpClient*)Unsafe.AsPointer(ref this), uri, operation);
+        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IUriRuntimeClass*, IAsyncOperationWithProgress<Pointer<IInputStream>, HttpProgress>**, int>)(lpVtbl[10]))((IHttpClient*)Unsafe.AsPointer(ref this), uri, operation);
     }
 
     /// <include file='IHttpClient.xml' path='doc/member[@name="IHttpClient.GetStringAsync"]/*' />
@@ -122,33 +122,33 @@ public unsafe partial struct IHttpClient : IHttpClient.Interface, INativeGuid
     /// <include file='IHttpClient.xml' path='doc/member[@name="IHttpClient.PostAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT PostAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Web::Http::IHttpContent *")] IHttpContent* content, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation)
+    public HRESULT PostAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Web::Http::IHttpContent *")] IHttpContent* content, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IUriRuntimeClass*, IHttpContent*, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int>)(lpVtbl[12]))((IHttpClient*)Unsafe.AsPointer(ref this), uri, content, operation);
+        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IUriRuntimeClass*, IHttpContent*, IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>**, int>)(lpVtbl[12]))((IHttpClient*)Unsafe.AsPointer(ref this), uri, content, operation);
     }
 
     /// <include file='IHttpClient.xml' path='doc/member[@name="IHttpClient.PutAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT PutAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Web::Http::IHttpContent *")] IHttpContent* content, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation)
+    public HRESULT PutAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Web::Http::IHttpContent *")] IHttpContent* content, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IUriRuntimeClass*, IHttpContent*, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int>)(lpVtbl[13]))((IHttpClient*)Unsafe.AsPointer(ref this), uri, content, operation);
+        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IUriRuntimeClass*, IHttpContent*, IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>**, int>)(lpVtbl[13]))((IHttpClient*)Unsafe.AsPointer(ref this), uri, content, operation);
     }
 
     /// <include file='IHttpClient.xml' path='doc/member[@name="IHttpClient.SendRequestAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT SendRequestAsync([NativeTypeName("ABI::Windows::Web::Http::IHttpRequestMessage *")] IHttpRequestMessage* request, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation)
+    public HRESULT SendRequestAsync([NativeTypeName("ABI::Windows::Web::Http::IHttpRequestMessage *")] IHttpRequestMessage* request, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IHttpRequestMessage*, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int>)(lpVtbl[14]))((IHttpClient*)Unsafe.AsPointer(ref this), request, operation);
+        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IHttpRequestMessage*, IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>**, int>)(lpVtbl[14]))((IHttpClient*)Unsafe.AsPointer(ref this), request, operation);
     }
 
     /// <include file='IHttpClient.xml' path='doc/member[@name="IHttpClient.SendRequestWithOptionAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT SendRequestWithOptionAsync([NativeTypeName("ABI::Windows::Web::Http::IHttpRequestMessage *")] IHttpRequestMessage* request, [NativeTypeName("ABI::Windows::Web::Http::HttpCompletionOption")] HttpCompletionOption completionOption, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation)
+    public HRESULT SendRequestWithOptionAsync([NativeTypeName("ABI::Windows::Web::Http::IHttpRequestMessage *")] IHttpRequestMessage* request, [NativeTypeName("ABI::Windows::Web::Http::HttpCompletionOption")] HttpCompletionOption completionOption, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IHttpRequestMessage*, HttpCompletionOption, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int>)(lpVtbl[15]))((IHttpClient*)Unsafe.AsPointer(ref this), request, completionOption, operation);
+        return ((delegate* unmanaged[MemberFunction]<IHttpClient*, IHttpRequestMessage*, HttpCompletionOption, IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>**, int>)(lpVtbl[15]))((IHttpClient*)Unsafe.AsPointer(ref this), request, completionOption, operation);
     }
 
     /// <include file='IHttpClient.xml' path='doc/member[@name="IHttpClient.get_DefaultRequestHeaders"]/*' />
@@ -162,34 +162,34 @@ public unsafe partial struct IHttpClient : IHttpClient.Interface, INativeGuid
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT DeleteAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation);
+        HRESULT DeleteAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>** operation);
 
         [VtblIndex(7)]
-        HRESULT GetAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation);
+        HRESULT GetAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>** operation);
 
         [VtblIndex(8)]
-        HRESULT GetWithOptionAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Web::Http::HttpCompletionOption")] HttpCompletionOption completionOption, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation);
+        HRESULT GetWithOptionAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Web::Http::HttpCompletionOption")] HttpCompletionOption completionOption, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>** operation);
 
         [VtblIndex(9)]
-        HRESULT GetBufferAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIBuffer_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation);
+        HRESULT GetBufferAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIBuffer_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IBuffer>, HttpProgress>** operation);
 
         [VtblIndex(10)]
-        HRESULT GetInputStreamAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIInputStream_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation);
+        HRESULT GetInputStreamAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIInputStream_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IInputStream>, HttpProgress>** operation);
 
         [VtblIndex(11)]
         HRESULT GetStringAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_HSTRING_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<HSTRING, HttpProgress>** operation);
 
         [VtblIndex(12)]
-        HRESULT PostAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Web::Http::IHttpContent *")] IHttpContent* content, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation);
+        HRESULT PostAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Web::Http::IHttpContent *")] IHttpContent* content, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>** operation);
 
         [VtblIndex(13)]
-        HRESULT PutAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Web::Http::IHttpContent *")] IHttpContent* content, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation);
+        HRESULT PutAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Web::Http::IHttpContent *")] IHttpContent* content, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>** operation);
 
         [VtblIndex(14)]
-        HRESULT SendRequestAsync([NativeTypeName("ABI::Windows::Web::Http::IHttpRequestMessage *")] IHttpRequestMessage* request, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation);
+        HRESULT SendRequestAsync([NativeTypeName("ABI::Windows::Web::Http::IHttpRequestMessage *")] IHttpRequestMessage* request, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>** operation);
 
         [VtblIndex(15)]
-        HRESULT SendRequestWithOptionAsync([NativeTypeName("ABI::Windows::Web::Http::IHttpRequestMessage *")] IHttpRequestMessage* request, [NativeTypeName("ABI::Windows::Web::Http::HttpCompletionOption")] HttpCompletionOption completionOption, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<IntPtr, HttpProgress>** operation);
+        HRESULT SendRequestWithOptionAsync([NativeTypeName("ABI::Windows::Web::Http::IHttpRequestMessage *")] IHttpRequestMessage* request, [NativeTypeName("ABI::Windows::Web::Http::HttpCompletionOption")] HttpCompletionOption completionOption, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **")] IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>** operation);
 
         [VtblIndex(16)]
         HRESULT get_DefaultRequestHeaders([NativeTypeName("ABI::Windows::Web::Http::Headers::IHttpRequestHeaderCollection **")] IHttpRequestHeaderCollection** value);
@@ -217,34 +217,34 @@ public unsafe partial struct IHttpClient : IHttpClient.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int> DeleteAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>**, int> DeleteAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int> GetAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>**, int> GetAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Web::Http::HttpCompletionOption, ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, HttpCompletionOption, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int> GetWithOptionAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, HttpCompletionOption, IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>**, int> GetWithOptionAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIBuffer_Windows__CWeb__CHttp__CHttpProgress_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int> GetBufferAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperationWithProgress<Pointer<IBuffer>, HttpProgress>**, int> GetBufferAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIInputStream_Windows__CWeb__CHttp__CHttpProgress_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int> GetInputStreamAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperationWithProgress<Pointer<IInputStream>, HttpProgress>**, int> GetInputStreamAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_HSTRING_Windows__CWeb__CHttp__CHttpProgress_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperationWithProgress<HSTRING, HttpProgress>**, int> GetStringAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Web::Http::IHttpContent *, ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IHttpContent*, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int> PostAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IHttpContent*, IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>**, int> PostAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Web::Http::IHttpContent *, ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IHttpContent*, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int> PutAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IHttpContent*, IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>**, int> PutAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Web::Http::IHttpRequestMessage *, ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IHttpRequestMessage*, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int> SendRequestAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHttpRequestMessage*, IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>**, int> SendRequestAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Web::Http::IHttpRequestMessage *, ABI::Windows::Web::Http::HttpCompletionOption, ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CWeb__CHttp__CHttpResponseMessage_Windows__CWeb__CHttp__CHttpProgress_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IHttpRequestMessage*, HttpCompletionOption, IAsyncOperationWithProgress<IntPtr, HttpProgress>**, int> SendRequestWithOptionAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHttpRequestMessage*, HttpCompletionOption, IAsyncOperationWithProgress<Pointer<IHttpResponseMessage>, HttpProgress>**, int> SendRequestWithOptionAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Web::Http::Headers::IHttpRequestHeaderCollection **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IHttpRequestHeaderCollection**, int> get_DefaultRequestHeaders;

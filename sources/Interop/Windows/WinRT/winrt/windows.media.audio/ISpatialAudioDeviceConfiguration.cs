@@ -114,17 +114,17 @@ public unsafe partial struct ISpatialAudioDeviceConfiguration : ISpatialAudioDev
     /// <include file='ISpatialAudioDeviceConfiguration.xml' path='doc/member[@name="ISpatialAudioDeviceConfiguration.SetDefaultSpatialAudioFormatAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT SetDefaultSpatialAudioFormatAsync(HSTRING subtype, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CSetDefaultSpatialAudioFormatResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT SetDefaultSpatialAudioFormatAsync(HSTRING subtype, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CSetDefaultSpatialAudioFormatResult_t **")] IAsyncOperation<Pointer<ISetDefaultSpatialAudioFormatResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioDeviceConfiguration*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((ISpatialAudioDeviceConfiguration*)Unsafe.AsPointer(ref this), subtype, operation);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioDeviceConfiguration*, HSTRING, IAsyncOperation<Pointer<ISetDefaultSpatialAudioFormatResult>>**, int>)(lpVtbl[11]))((ISpatialAudioDeviceConfiguration*)Unsafe.AsPointer(ref this), subtype, operation);
     }
 
     /// <include file='ISpatialAudioDeviceConfiguration.xml' path='doc/member[@name="ISpatialAudioDeviceConfiguration.add_ConfigurationChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_ConfigurationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CSpatialAudioDeviceConfiguration_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ConfigurationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CSpatialAudioDeviceConfiguration_IInspectable_t *")] ITypedEventHandler<Pointer<ISpatialAudioDeviceConfiguration>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioDeviceConfiguration*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((ISpatialAudioDeviceConfiguration*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioDeviceConfiguration*, ITypedEventHandler<Pointer<ISpatialAudioDeviceConfiguration>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((ISpatialAudioDeviceConfiguration*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISpatialAudioDeviceConfiguration.xml' path='doc/member[@name="ISpatialAudioDeviceConfiguration.remove_ConfigurationChanged"]/*' />
@@ -153,10 +153,10 @@ public unsafe partial struct ISpatialAudioDeviceConfiguration : ISpatialAudioDev
         HRESULT get_DefaultSpatialAudioFormat(HSTRING* value);
 
         [VtblIndex(11)]
-        HRESULT SetDefaultSpatialAudioFormatAsync(HSTRING subtype, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CSetDefaultSpatialAudioFormatResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT SetDefaultSpatialAudioFormatAsync(HSTRING subtype, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CSetDefaultSpatialAudioFormatResult_t **")] IAsyncOperation<Pointer<ISetDefaultSpatialAudioFormatResult>>** operation);
 
         [VtblIndex(12)]
-        HRESULT add_ConfigurationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CSpatialAudioDeviceConfiguration_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ConfigurationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CSpatialAudioDeviceConfiguration_IInspectable_t *")] ITypedEventHandler<Pointer<ISpatialAudioDeviceConfiguration>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_ConfigurationChanged(EventRegistrationToken token);
@@ -199,10 +199,10 @@ public unsafe partial struct ISpatialAudioDeviceConfiguration : ISpatialAudioDev
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_DefaultSpatialAudioFormat;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CSetDefaultSpatialAudioFormatResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> SetDefaultSpatialAudioFormatAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<ISetDefaultSpatialAudioFormatResult>>**, int> SetDefaultSpatialAudioFormatAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CSpatialAudioDeviceConfiguration_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ConfigurationChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISpatialAudioDeviceConfiguration>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ConfigurationChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ConfigurationChanged;

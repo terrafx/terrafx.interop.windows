@@ -74,15 +74,15 @@ public unsafe partial struct IBitmapProperties : IBitmapProperties.Interface, IN
     /// <include file='IBitmapProperties.xml' path='doc/member[@name="IBitmapProperties.SetPropertiesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTypedValue_t *")] IIterable<IntPtr>* propertiesToSet, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo)
+    public HRESULT SetPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTypedValue_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IBitmapTypedValue>>>>* propertiesToSet, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBitmapProperties*, IIterable<IntPtr>*, IAsyncAction**, int>)(lpVtbl[6]))((IBitmapProperties*)Unsafe.AsPointer(ref this), propertiesToSet, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IBitmapProperties*, IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IBitmapTypedValue>>>>*, IAsyncAction**, int>)(lpVtbl[6]))((IBitmapProperties*)Unsafe.AsPointer(ref this), propertiesToSet, asyncInfo);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT SetPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTypedValue_t *")] IIterable<IntPtr>* propertiesToSet, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
+        HRESULT SetPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTypedValue_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IBitmapTypedValue>>>>* propertiesToSet, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IBitmapProperties : IBitmapProperties.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTypedValue_t *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IAsyncAction**, int> SetPropertiesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IBitmapTypedValue>>>>*, IAsyncAction**, int> SetPropertiesAsync;
     }
 }

@@ -114,9 +114,9 @@ public unsafe partial struct IAudioFrameInputNode : IAudioFrameInputNode.Interfa
     /// <include file='IAudioFrameInputNode.xml' path='doc/member[@name="IAudioFrameInputNode.add_AudioFrameCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_AudioFrameCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CAudioFrameCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AudioFrameCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CAudioFrameCompletedEventArgs_t *")] ITypedEventHandler<Pointer<IAudioFrameInputNode>, Pointer<IAudioFrameCompletedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioFrameInputNode*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IAudioFrameInputNode*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAudioFrameInputNode*, ITypedEventHandler<Pointer<IAudioFrameInputNode>, Pointer<IAudioFrameCompletedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IAudioFrameInputNode*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAudioFrameInputNode.xml' path='doc/member[@name="IAudioFrameInputNode.remove_AudioFrameCompleted"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IAudioFrameInputNode : IAudioFrameInputNode.Interfa
     /// <include file='IAudioFrameInputNode.xml' path='doc/member[@name="IAudioFrameInputNode.add_QuantumStarted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_QuantumStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CFrameInputNodeQuantumStartedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_QuantumStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CFrameInputNodeQuantumStartedEventArgs_t *")] ITypedEventHandler<Pointer<IAudioFrameInputNode>, Pointer<IFrameInputNodeQuantumStartedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioFrameInputNode*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IAudioFrameInputNode*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAudioFrameInputNode*, ITypedEventHandler<Pointer<IAudioFrameInputNode>, Pointer<IFrameInputNodeQuantumStartedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IAudioFrameInputNode*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAudioFrameInputNode.xml' path='doc/member[@name="IAudioFrameInputNode.remove_QuantumStarted"]/*' />
@@ -161,13 +161,13 @@ public unsafe partial struct IAudioFrameInputNode : IAudioFrameInputNode.Interfa
         HRESULT get_QueuedSampleCount([NativeTypeName("UINT64 *")] ulong* value);
 
         [VtblIndex(11)]
-        HRESULT add_AudioFrameCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CAudioFrameCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AudioFrameCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CAudioFrameCompletedEventArgs_t *")] ITypedEventHandler<Pointer<IAudioFrameInputNode>, Pointer<IAudioFrameCompletedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_AudioFrameCompleted(EventRegistrationToken token);
 
         [VtblIndex(13)]
-        HRESULT add_QuantumStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CFrameInputNodeQuantumStartedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_QuantumStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CFrameInputNodeQuantumStartedEventArgs_t *")] ITypedEventHandler<Pointer<IAudioFrameInputNode>, Pointer<IFrameInputNodeQuantumStartedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_QuantumStarted(EventRegistrationToken token);
@@ -210,13 +210,13 @@ public unsafe partial struct IAudioFrameInputNode : IAudioFrameInputNode.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_QueuedSampleCount;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CAudioFrameCompletedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AudioFrameCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAudioFrameInputNode>, Pointer<IAudioFrameCompletedEventArgs>>*, EventRegistrationToken*, int> add_AudioFrameCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AudioFrameCompleted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFrameInputNode_Windows__CMedia__CAudio__CFrameInputNodeQuantumStartedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_QuantumStarted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAudioFrameInputNode>, Pointer<IFrameInputNodeQuantumStartedEventArgs>>*, EventRegistrationToken*, int> add_QuantumStarted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_QuantumStarted;

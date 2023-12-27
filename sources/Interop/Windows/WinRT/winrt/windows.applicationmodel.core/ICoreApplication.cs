@@ -82,9 +82,9 @@ public unsafe partial struct ICoreApplication : ICoreApplication.Interface, INat
     /// <include file='ICoreApplication.xml' path='doc/member[@name="ICoreApplication.add_Suspending"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_Suspending([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CSuspendingEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Suspending([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CSuspendingEventArgs_t *")] IEventHandler<Pointer<ISuspendingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreApplication*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ICoreApplication*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreApplication*, IEventHandler<Pointer<ISuspendingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ICoreApplication*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreApplication.xml' path='doc/member[@name="ICoreApplication.remove_Suspending"]/*' />
@@ -98,9 +98,9 @@ public unsafe partial struct ICoreApplication : ICoreApplication.Interface, INat
     /// <include file='ICoreApplication.xml' path='doc/member[@name="ICoreApplication.add_Resuming"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_Resuming([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Resuming([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreApplication*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ICoreApplication*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreApplication*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ICoreApplication*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreApplication.xml' path='doc/member[@name="ICoreApplication.remove_Resuming"]/*' />
@@ -149,13 +149,13 @@ public unsafe partial struct ICoreApplication : ICoreApplication.Interface, INat
         HRESULT get_Id(HSTRING* value);
 
         [VtblIndex(7)]
-        HRESULT add_Suspending([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CSuspendingEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Suspending([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CSuspendingEventArgs_t *")] IEventHandler<Pointer<ISuspendingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_Suspending(EventRegistrationToken token);
 
         [VtblIndex(9)]
-        HRESULT add_Resuming([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Resuming([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_Resuming(EventRegistrationToken token);
@@ -198,13 +198,13 @@ public unsafe partial struct ICoreApplication : ICoreApplication.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_Id;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CSuspendingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_Suspending;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<ISuspendingEventArgs>>*, EventRegistrationToken*, int> add_Suspending;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Suspending;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_Resuming;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Resuming;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Resuming;

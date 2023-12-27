@@ -114,9 +114,9 @@ public unsafe partial struct INotificationBinding : INotificationBinding.Interfa
     /// <include file='INotificationBinding.xml' path='doc/member[@name="INotificationBinding.GetTextElements"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetTextElements([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CAdaptiveNotificationText_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetTextElements([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CAdaptiveNotificationText_t **")] IVectorView<Pointer<IAdaptiveNotificationText>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<INotificationBinding*, IVectorView<IntPtr>**, int>)(lpVtbl[11]))((INotificationBinding*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<INotificationBinding*, IVectorView<Pointer<IAdaptiveNotificationText>>**, int>)(lpVtbl[11]))((INotificationBinding*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -137,7 +137,7 @@ public unsafe partial struct INotificationBinding : INotificationBinding.Interfa
         HRESULT get_Hints([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_HSTRING_t **")] IMap<HSTRING, HSTRING>** value);
 
         [VtblIndex(11)]
-        HRESULT GetTextElements([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CAdaptiveNotificationText_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetTextElements([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CAdaptiveNotificationText_t **")] IVectorView<Pointer<IAdaptiveNotificationText>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -177,6 +177,6 @@ public unsafe partial struct INotificationBinding : INotificationBinding.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, HSTRING>**, int> get_Hints;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CAdaptiveNotificationText_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetTextElements;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IAdaptiveNotificationText>>**, int> GetTextElements;
     }
 }

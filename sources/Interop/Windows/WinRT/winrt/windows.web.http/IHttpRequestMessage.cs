@@ -114,9 +114,9 @@ public unsafe partial struct IHttpRequestMessage : IHttpRequestMessage.Interface
     /// <include file='IHttpRequestMessage.xml' path='doc/member[@name="IHttpRequestMessage.get_Properties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_IInspectable_t **")] IMap<HSTRING, IntPtr>** value)
+    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_IInspectable_t **")] IMap<HSTRING, Pointer<IInspectable>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpRequestMessage*, IMap<HSTRING, IntPtr>**, int>)(lpVtbl[11]))((IHttpRequestMessage*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IHttpRequestMessage*, IMap<HSTRING, Pointer<IInspectable>>**, int>)(lpVtbl[11]))((IHttpRequestMessage*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IHttpRequestMessage.xml' path='doc/member[@name="IHttpRequestMessage.get_RequestUri"]/*' />
@@ -161,7 +161,7 @@ public unsafe partial struct IHttpRequestMessage : IHttpRequestMessage.Interface
         HRESULT put_Method([NativeTypeName("ABI::Windows::Web::Http::IHttpMethod *")] IHttpMethod* value);
 
         [VtblIndex(11)]
-        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_IInspectable_t **")] IMap<HSTRING, IntPtr>** value);
+        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_IInspectable_t **")] IMap<HSTRING, Pointer<IInspectable>>** value);
 
         [VtblIndex(12)]
         HRESULT get_RequestUri([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass **")] IUriRuntimeClass** value);
@@ -210,7 +210,7 @@ public unsafe partial struct IHttpRequestMessage : IHttpRequestMessage.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, IHttpMethod*, int> put_Method;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_IInspectable_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, IntPtr>**, int> get_Properties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, Pointer<IInspectable>>**, int> get_Properties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass**, int> get_RequestUri;

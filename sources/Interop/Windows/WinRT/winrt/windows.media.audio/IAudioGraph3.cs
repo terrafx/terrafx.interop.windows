@@ -74,26 +74,26 @@ public unsafe partial struct IAudioGraph3 : IAudioGraph3.Interface, INativeGuid
     /// <include file='IAudioGraph3.xml' path='doc/member[@name="IAudioGraph3.CreateMediaSourceAudioInputNodeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateMediaSourceAudioInputNodeAsync([NativeTypeName("ABI::Windows::Media::Core::IMediaSource2 *")] IMediaSource2* mediaSource, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateMediaSourceAudioInputNodeAsync([NativeTypeName("ABI::Windows::Media::Core::IMediaSource2 *")] IMediaSource2* mediaSource, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_t **")] IAsyncOperation<Pointer<ICreateMediaSourceAudioInputNodeResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioGraph3*, IMediaSource2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IAudioGraph3*)Unsafe.AsPointer(ref this), mediaSource, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAudioGraph3*, IMediaSource2*, IAsyncOperation<Pointer<ICreateMediaSourceAudioInputNodeResult>>**, int>)(lpVtbl[6]))((IAudioGraph3*)Unsafe.AsPointer(ref this), mediaSource, operation);
     }
 
     /// <include file='IAudioGraph3.xml' path='doc/member[@name="IAudioGraph3.CreateMediaSourceAudioInputNodeWithEmitterAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateMediaSourceAudioInputNodeWithEmitterAsync([NativeTypeName("ABI::Windows::Media::Core::IMediaSource2 *")] IMediaSource2* mediaSource, [NativeTypeName("ABI::Windows::Media::Audio::IAudioNodeEmitter *")] IAudioNodeEmitter* emitter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateMediaSourceAudioInputNodeWithEmitterAsync([NativeTypeName("ABI::Windows::Media::Core::IMediaSource2 *")] IMediaSource2* mediaSource, [NativeTypeName("ABI::Windows::Media::Audio::IAudioNodeEmitter *")] IAudioNodeEmitter* emitter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_t **")] IAsyncOperation<Pointer<ICreateMediaSourceAudioInputNodeResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioGraph3*, IMediaSource2*, IAudioNodeEmitter*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IAudioGraph3*)Unsafe.AsPointer(ref this), mediaSource, emitter, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAudioGraph3*, IMediaSource2*, IAudioNodeEmitter*, IAsyncOperation<Pointer<ICreateMediaSourceAudioInputNodeResult>>**, int>)(lpVtbl[7]))((IAudioGraph3*)Unsafe.AsPointer(ref this), mediaSource, emitter, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CreateMediaSourceAudioInputNodeAsync([NativeTypeName("ABI::Windows::Media::Core::IMediaSource2 *")] IMediaSource2* mediaSource, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateMediaSourceAudioInputNodeAsync([NativeTypeName("ABI::Windows::Media::Core::IMediaSource2 *")] IMediaSource2* mediaSource, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_t **")] IAsyncOperation<Pointer<ICreateMediaSourceAudioInputNodeResult>>** operation);
 
         [VtblIndex(7)]
-        HRESULT CreateMediaSourceAudioInputNodeWithEmitterAsync([NativeTypeName("ABI::Windows::Media::Core::IMediaSource2 *")] IMediaSource2* mediaSource, [NativeTypeName("ABI::Windows::Media::Audio::IAudioNodeEmitter *")] IAudioNodeEmitter* emitter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateMediaSourceAudioInputNodeWithEmitterAsync([NativeTypeName("ABI::Windows::Media::Core::IMediaSource2 *")] IMediaSource2* mediaSource, [NativeTypeName("ABI::Windows::Media::Audio::IAudioNodeEmitter *")] IAudioNodeEmitter* emitter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_t **")] IAsyncOperation<Pointer<ICreateMediaSourceAudioInputNodeResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IAudioGraph3 : IAudioGraph3.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Core::IMediaSource2 *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaSource2*, IAsyncOperation<IntPtr>**, int> CreateMediaSourceAudioInputNodeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaSource2*, IAsyncOperation<Pointer<ICreateMediaSourceAudioInputNodeResult>>**, int> CreateMediaSourceAudioInputNodeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Core::IMediaSource2 *, ABI::Windows::Media::Audio::IAudioNodeEmitter *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateMediaSourceAudioInputNodeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaSource2*, IAudioNodeEmitter*, IAsyncOperation<IntPtr>**, int> CreateMediaSourceAudioInputNodeWithEmitterAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaSource2*, IAudioNodeEmitter*, IAsyncOperation<Pointer<ICreateMediaSourceAudioInputNodeResult>>**, int> CreateMediaSourceAudioInputNodeWithEmitterAsync;
     }
 }

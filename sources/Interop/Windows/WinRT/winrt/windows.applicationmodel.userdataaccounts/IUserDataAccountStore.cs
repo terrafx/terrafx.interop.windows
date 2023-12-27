@@ -74,37 +74,37 @@ public unsafe partial struct IUserDataAccountStore : IUserDataAccountStore.Inter
     /// <include file='IUserDataAccountStore.xml' path='doc/member[@name="IUserDataAccountStore.FindAccountsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindAccountsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FindAccountsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IUserDataAccount>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountStore*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IUserDataAccountStore*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountStore*, IAsyncOperation<Pointer<IVectorView<Pointer<IUserDataAccount>>>>**, int>)(lpVtbl[6]))((IUserDataAccountStore*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IUserDataAccountStore.xml' path='doc/member[@name="IUserDataAccountStore.GetAccountAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetAccountAsync(HSTRING id, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetAccountAsync(HSTRING id, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<Pointer<IUserDataAccount>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountStore*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IUserDataAccountStore*)Unsafe.AsPointer(ref this), id, result);
+        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountStore*, HSTRING, IAsyncOperation<Pointer<IUserDataAccount>>**, int>)(lpVtbl[7]))((IUserDataAccountStore*)Unsafe.AsPointer(ref this), id, result);
     }
 
     /// <include file='IUserDataAccountStore.xml' path='doc/member[@name="IUserDataAccountStore.CreateAccountAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT CreateAccountAsync(HSTRING userDisplayName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateAccountAsync(HSTRING userDisplayName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<Pointer<IUserDataAccount>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountStore*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IUserDataAccountStore*)Unsafe.AsPointer(ref this), userDisplayName, result);
+        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountStore*, HSTRING, IAsyncOperation<Pointer<IUserDataAccount>>**, int>)(lpVtbl[8]))((IUserDataAccountStore*)Unsafe.AsPointer(ref this), userDisplayName, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FindAccountsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FindAccountsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IUserDataAccount>>>>** result);
 
         [VtblIndex(7)]
-        HRESULT GetAccountAsync(HSTRING id, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetAccountAsync(HSTRING id, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<Pointer<IUserDataAccount>>** result);
 
         [VtblIndex(8)]
-        HRESULT CreateAccountAsync(HSTRING userDisplayName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateAccountAsync(HSTRING userDisplayName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<Pointer<IUserDataAccount>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -129,12 +129,12 @@ public unsafe partial struct IUserDataAccountStore : IUserDataAccountStore.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindAccountsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IUserDataAccount>>>>**, int> FindAccountsAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetAccountAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IUserDataAccount>>**, int> GetAccountAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> CreateAccountAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IUserDataAccount>>**, int> CreateAccountAsync;
     }
 }

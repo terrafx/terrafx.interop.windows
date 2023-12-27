@@ -98,9 +98,9 @@ public unsafe partial struct IAppointmentManagerStatics2 : IAppointmentManagerSt
     /// <include file='IAppointmentManagerStatics2.xml' path='doc/member[@name="IAppointmentManagerStatics2.RequestStoreAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::AppointmentStoreAccessType")] AppointmentStoreAccessType options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentStore_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::AppointmentStoreAccessType")] AppointmentStoreAccessType options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentStore_t **")] IAsyncOperation<Pointer<IAppointmentStore>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentManagerStatics2*, AppointmentStoreAccessType, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IAppointmentManagerStatics2*)Unsafe.AsPointer(ref this), options, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentManagerStatics2*, AppointmentStoreAccessType, IAsyncOperation<Pointer<IAppointmentStore>>**, int>)(lpVtbl[9]))((IAppointmentManagerStatics2*)Unsafe.AsPointer(ref this), options, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -115,7 +115,7 @@ public unsafe partial struct IAppointmentManagerStatics2 : IAppointmentManagerSt
         HRESULT ShowEditNewAppointmentAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **")] IAsyncOperation<HSTRING>** operation);
 
         [VtblIndex(9)]
-        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::AppointmentStoreAccessType")] AppointmentStoreAccessType options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentStore_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::AppointmentStoreAccessType")] AppointmentStoreAccessType options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentStore_t **")] IAsyncOperation<Pointer<IAppointmentStore>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -149,6 +149,6 @@ public unsafe partial struct IAppointmentManagerStatics2 : IAppointmentManagerSt
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppointment*, IAsyncOperation<HSTRING>**, int> ShowEditNewAppointmentAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Appointments::AppointmentStoreAccessType, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentStore_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, AppointmentStoreAccessType, IAsyncOperation<IntPtr>**, int> RequestStoreAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AppointmentStoreAccessType, IAsyncOperation<Pointer<IAppointmentStore>>**, int> RequestStoreAsync;
     }
 }

@@ -122,17 +122,17 @@ public unsafe partial struct IFileIOStatics : IFileIOStatics.Interface, INativeG
     /// <include file='IFileIOStatics.xml' path='doc/member[@name="IFileIOStatics.ReadLinesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT ReadLinesAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_HSTRING_t **")] IAsyncOperation<IntPtr>** linesOperation)
+    public HRESULT ReadLinesAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_HSTRING_t **")] IAsyncOperation<Pointer<IVector<HSTRING>>>** linesOperation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileIOStatics*, IStorageFile*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[12]))((IFileIOStatics*)Unsafe.AsPointer(ref this), file, linesOperation);
+        return ((delegate* unmanaged[MemberFunction]<IFileIOStatics*, IStorageFile*, IAsyncOperation<Pointer<IVector<HSTRING>>>**, int>)(lpVtbl[12]))((IFileIOStatics*)Unsafe.AsPointer(ref this), file, linesOperation);
     }
 
     /// <include file='IFileIOStatics.xml' path='doc/member[@name="IFileIOStatics.ReadLinesWithEncodingAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT ReadLinesWithEncodingAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Storage::Streams::UnicodeEncoding")] UnicodeEncoding encoding, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_HSTRING_t **")] IAsyncOperation<IntPtr>** linesOperation)
+    public HRESULT ReadLinesWithEncodingAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Storage::Streams::UnicodeEncoding")] UnicodeEncoding encoding, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_HSTRING_t **")] IAsyncOperation<Pointer<IVector<HSTRING>>>** linesOperation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileIOStatics*, IStorageFile*, UnicodeEncoding, IAsyncOperation<IntPtr>**, int>)(lpVtbl[13]))((IFileIOStatics*)Unsafe.AsPointer(ref this), file, encoding, linesOperation);
+        return ((delegate* unmanaged[MemberFunction]<IFileIOStatics*, IStorageFile*, UnicodeEncoding, IAsyncOperation<Pointer<IVector<HSTRING>>>**, int>)(lpVtbl[13]))((IFileIOStatics*)Unsafe.AsPointer(ref this), file, encoding, linesOperation);
     }
 
     /// <include file='IFileIOStatics.xml' path='doc/member[@name="IFileIOStatics.WriteLinesAsync"]/*' />
@@ -170,9 +170,9 @@ public unsafe partial struct IFileIOStatics : IFileIOStatics.Interface, INativeG
     /// <include file='IFileIOStatics.xml' path='doc/member[@name="IFileIOStatics.ReadBufferAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT ReadBufferAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT ReadBufferAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IBuffer>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileIOStatics*, IStorageFile*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[18]))((IFileIOStatics*)Unsafe.AsPointer(ref this), file, operation);
+        return ((delegate* unmanaged[MemberFunction]<IFileIOStatics*, IStorageFile*, IAsyncOperation<Pointer<IBuffer>>**, int>)(lpVtbl[18]))((IFileIOStatics*)Unsafe.AsPointer(ref this), file, operation);
     }
 
     /// <include file='IFileIOStatics.xml' path='doc/member[@name="IFileIOStatics.WriteBufferAsync"]/*' />
@@ -212,10 +212,10 @@ public unsafe partial struct IFileIOStatics : IFileIOStatics.Interface, INativeG
         HRESULT AppendTextWithEncodingAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, HSTRING contents, [NativeTypeName("ABI::Windows::Storage::Streams::UnicodeEncoding")] UnicodeEncoding encoding, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** textOperation);
 
         [VtblIndex(12)]
-        HRESULT ReadLinesAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_HSTRING_t **")] IAsyncOperation<IntPtr>** linesOperation);
+        HRESULT ReadLinesAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_HSTRING_t **")] IAsyncOperation<Pointer<IVector<HSTRING>>>** linesOperation);
 
         [VtblIndex(13)]
-        HRESULT ReadLinesWithEncodingAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Storage::Streams::UnicodeEncoding")] UnicodeEncoding encoding, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_HSTRING_t **")] IAsyncOperation<IntPtr>** linesOperation);
+        HRESULT ReadLinesWithEncodingAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Storage::Streams::UnicodeEncoding")] UnicodeEncoding encoding, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_HSTRING_t **")] IAsyncOperation<Pointer<IVector<HSTRING>>>** linesOperation);
 
         [VtblIndex(14)]
         HRESULT WriteLinesAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* lines, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
@@ -230,7 +230,7 @@ public unsafe partial struct IFileIOStatics : IFileIOStatics.Interface, INativeG
         HRESULT AppendLinesWithEncodingAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* lines, [NativeTypeName("ABI::Windows::Storage::Streams::UnicodeEncoding")] UnicodeEncoding encoding, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
 
         [VtblIndex(18)]
-        HRESULT ReadBufferAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT ReadBufferAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IBuffer>>** operation);
 
         [VtblIndex(19)]
         HRESULT WriteBufferAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* buffer, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
@@ -279,10 +279,10 @@ public unsafe partial struct IFileIOStatics : IFileIOStatics.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, HSTRING, UnicodeEncoding, IAsyncAction**, int> AppendTextWithEncodingAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_HSTRING_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<IntPtr>**, int> ReadLinesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<Pointer<IVector<HSTRING>>>**, int> ReadLinesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Storage::Streams::UnicodeEncoding, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_HSTRING_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, UnicodeEncoding, IAsyncOperation<IntPtr>**, int> ReadLinesWithEncodingAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, UnicodeEncoding, IAsyncOperation<Pointer<IVector<HSTRING>>>**, int> ReadLinesWithEncodingAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IIterable<HSTRING>*, IAsyncAction**, int> WriteLinesAsync;
@@ -297,7 +297,7 @@ public unsafe partial struct IFileIOStatics : IFileIOStatics.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IIterable<HSTRING>*, UnicodeEncoding, IAsyncAction**, int> AppendLinesWithEncodingAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<IntPtr>**, int> ReadBufferAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<Pointer<IBuffer>>**, int> ReadBufferAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IBuffer*, IAsyncAction**, int> WriteBufferAsync;

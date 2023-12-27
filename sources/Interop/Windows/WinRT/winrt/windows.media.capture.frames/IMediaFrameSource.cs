@@ -90,9 +90,9 @@ public unsafe partial struct IMediaFrameSource : IMediaFrameSource.Interface, IN
     /// <include file='IMediaFrameSource.xml' path='doc/member[@name="IMediaFrameSource.get_SupportedFormats"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_SupportedFormats([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_SupportedFormats([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_t **")] IVectorView<Pointer<IMediaFrameFormat>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSource*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((IMediaFrameSource*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSource*, IVectorView<Pointer<IMediaFrameFormat>>**, int>)(lpVtbl[8]))((IMediaFrameSource*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaFrameSource.xml' path='doc/member[@name="IMediaFrameSource.get_CurrentFormat"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct IMediaFrameSource : IMediaFrameSource.Interface, IN
     /// <include file='IMediaFrameSource.xml' path='doc/member[@name="IMediaFrameSource.add_FormatChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_FormatChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_FormatChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaFrameSource>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IMediaFrameSource*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSource*, ITypedEventHandler<Pointer<IMediaFrameSource>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IMediaFrameSource*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaFrameSource.xml' path='doc/member[@name="IMediaFrameSource.remove_FormatChanged"]/*' />
@@ -144,7 +144,7 @@ public unsafe partial struct IMediaFrameSource : IMediaFrameSource.Interface, IN
         HRESULT get_Controller([NativeTypeName("ABI::Windows::Media::Capture::Frames::IMediaFrameSourceController **")] IMediaFrameSourceController** value);
 
         [VtblIndex(8)]
-        HRESULT get_SupportedFormats([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_SupportedFormats([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_t **")] IVectorView<Pointer<IMediaFrameFormat>>** value);
 
         [VtblIndex(9)]
         HRESULT get_CurrentFormat([NativeTypeName("ABI::Windows::Media::Capture::Frames::IMediaFrameFormat **")] IMediaFrameFormat** value);
@@ -153,7 +153,7 @@ public unsafe partial struct IMediaFrameSource : IMediaFrameSource.Interface, IN
         HRESULT SetFormatAsync([NativeTypeName("ABI::Windows::Media::Capture::Frames::IMediaFrameFormat *")] IMediaFrameFormat* format, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** value);
 
         [VtblIndex(11)]
-        HRESULT add_FormatChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_FormatChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaFrameSource>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_FormatChanged(EventRegistrationToken token);
@@ -190,7 +190,7 @@ public unsafe partial struct IMediaFrameSource : IMediaFrameSource.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, IMediaFrameSourceController**, int> get_Controller;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameFormat_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_SupportedFormats;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IMediaFrameFormat>>**, int> get_SupportedFormats;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Capture::Frames::IMediaFrameFormat **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IMediaFrameFormat**, int> get_CurrentFormat;
@@ -199,7 +199,7 @@ public unsafe partial struct IMediaFrameSource : IMediaFrameSource.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, IMediaFrameFormat*, IAsyncAction**, int> SetFormatAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_FormatChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaFrameSource>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_FormatChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_FormatChanged;

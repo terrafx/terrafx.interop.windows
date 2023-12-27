@@ -74,9 +74,9 @@ public unsafe partial struct IHdmiDisplayInformation : IHdmiDisplayInformation.I
     /// <include file='IHdmiDisplayInformation.xml' path='doc/member[@name="IHdmiDisplayInformation.GetSupportedDisplayModes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetSupportedDisplayModes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CDisplay__CCore__CHdmiDisplayMode_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetSupportedDisplayModes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CDisplay__CCore__CHdmiDisplayMode_t **")] IVectorView<Pointer<IHdmiDisplayMode>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHdmiDisplayInformation*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IHdmiDisplayInformation*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IHdmiDisplayInformation*, IVectorView<Pointer<IHdmiDisplayMode>>**, int>)(lpVtbl[6]))((IHdmiDisplayInformation*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IHdmiDisplayInformation.xml' path='doc/member[@name="IHdmiDisplayInformation.GetCurrentDisplayMode"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IHdmiDisplayInformation : IHdmiDisplayInformation.I
     /// <include file='IHdmiDisplayInformation.xml' path='doc/member[@name="IHdmiDisplayInformation.add_DisplayModesChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_DisplayModesChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CCore__CHdmiDisplayInformation_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_DisplayModesChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CCore__CHdmiDisplayInformation_IInspectable_t *")] ITypedEventHandler<Pointer<IHdmiDisplayInformation>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHdmiDisplayInformation*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IHdmiDisplayInformation*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IHdmiDisplayInformation*, ITypedEventHandler<Pointer<IHdmiDisplayInformation>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IHdmiDisplayInformation*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IHdmiDisplayInformation.xml' path='doc/member[@name="IHdmiDisplayInformation.remove_DisplayModesChanged"]/*' />
@@ -138,7 +138,7 @@ public unsafe partial struct IHdmiDisplayInformation : IHdmiDisplayInformation.I
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetSupportedDisplayModes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CDisplay__CCore__CHdmiDisplayMode_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetSupportedDisplayModes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CDisplay__CCore__CHdmiDisplayMode_t **")] IVectorView<Pointer<IHdmiDisplayMode>>** result);
 
         [VtblIndex(7)]
         HRESULT GetCurrentDisplayMode([NativeTypeName("ABI::Windows::Graphics::Display::Core::IHdmiDisplayMode **")] IHdmiDisplayMode** result);
@@ -156,7 +156,7 @@ public unsafe partial struct IHdmiDisplayInformation : IHdmiDisplayInformation.I
         HRESULT RequestSetCurrentDisplayModeWithHdrAndMetadataAsync([NativeTypeName("ABI::Windows::Graphics::Display::Core::IHdmiDisplayMode *")] IHdmiDisplayMode* mode, [NativeTypeName("ABI::Windows::Graphics::Display::Core::HdmiDisplayHdrOption")] HdmiDisplayHdrOption hdrOption, [NativeTypeName("ABI::Windows::Graphics::Display::Core::HdmiDisplayHdr2086Metadata")] HdmiDisplayHdr2086Metadata hdrMetadata, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
 
         [VtblIndex(12)]
-        HRESULT add_DisplayModesChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CCore__CHdmiDisplayInformation_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_DisplayModesChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CCore__CHdmiDisplayInformation_IInspectable_t *")] ITypedEventHandler<Pointer<IHdmiDisplayInformation>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_DisplayModesChanged(EventRegistrationToken token);
@@ -184,7 +184,7 @@ public unsafe partial struct IHdmiDisplayInformation : IHdmiDisplayInformation.I
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CDisplay__CCore__CHdmiDisplayMode_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetSupportedDisplayModes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IHdmiDisplayMode>>**, int> GetSupportedDisplayModes;
 
         [NativeTypeName("HRESULT (ABI::Windows::Graphics::Display::Core::IHdmiDisplayMode **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IHdmiDisplayMode**, int> GetCurrentDisplayMode;
@@ -202,7 +202,7 @@ public unsafe partial struct IHdmiDisplayInformation : IHdmiDisplayInformation.I
         public delegate* unmanaged[MemberFunction]<TSelf*, IHdmiDisplayMode*, HdmiDisplayHdrOption, HdmiDisplayHdr2086Metadata, IAsyncOperation<bool>**, int> RequestSetCurrentDisplayModeWithHdrAndMetadataAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CCore__CHdmiDisplayInformation_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DisplayModesChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IHdmiDisplayInformation>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_DisplayModesChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DisplayModesChanged;

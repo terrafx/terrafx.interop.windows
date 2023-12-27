@@ -74,26 +74,26 @@ public unsafe partial struct IGpioControllerStatics2 : IGpioControllerStatics2.I
     /// <include file='IGpioControllerStatics2.xml' path='doc/member[@name="IGpioControllerStatics2.GetControllersAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetControllersAsync([NativeTypeName("ABI::Windows::Devices::Gpio::Provider::IGpioProvider *")] IGpioProvider* provider, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGpio__CGpioController_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetControllersAsync([NativeTypeName("ABI::Windows::Devices::Gpio::Provider::IGpioProvider *")] IGpioProvider* provider, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGpio__CGpioController_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IGpioController>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGpioControllerStatics2*, IGpioProvider*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IGpioControllerStatics2*)Unsafe.AsPointer(ref this), provider, operation);
+        return ((delegate* unmanaged[MemberFunction]<IGpioControllerStatics2*, IGpioProvider*, IAsyncOperation<Pointer<IVectorView<Pointer<IGpioController>>>>**, int>)(lpVtbl[6]))((IGpioControllerStatics2*)Unsafe.AsPointer(ref this), provider, operation);
     }
 
     /// <include file='IGpioControllerStatics2.xml' path='doc/member[@name="IGpioControllerStatics2.GetDefaultAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGpio__CGpioController_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGpio__CGpioController_t **")] IAsyncOperation<Pointer<IGpioController>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGpioControllerStatics2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IGpioControllerStatics2*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IGpioControllerStatics2*, IAsyncOperation<Pointer<IGpioController>>**, int>)(lpVtbl[7]))((IGpioControllerStatics2*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetControllersAsync([NativeTypeName("ABI::Windows::Devices::Gpio::Provider::IGpioProvider *")] IGpioProvider* provider, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGpio__CGpioController_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetControllersAsync([NativeTypeName("ABI::Windows::Devices::Gpio::Provider::IGpioProvider *")] IGpioProvider* provider, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGpio__CGpioController_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IGpioController>>>>** operation);
 
         [VtblIndex(7)]
-        HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGpio__CGpioController_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGpio__CGpioController_t **")] IAsyncOperation<Pointer<IGpioController>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IGpioControllerStatics2 : IGpioControllerStatics2.I
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Gpio::Provider::IGpioProvider *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGpio__CGpioController_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IGpioProvider*, IAsyncOperation<IntPtr>**, int> GetControllersAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IGpioProvider*, IAsyncOperation<Pointer<IVectorView<Pointer<IGpioController>>>>**, int> GetControllersAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGpio__CGpioController_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetDefaultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IGpioController>>**, int> GetDefaultAsync;
     }
 }

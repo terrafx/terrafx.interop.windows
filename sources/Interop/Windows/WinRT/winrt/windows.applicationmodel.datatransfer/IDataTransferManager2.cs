@@ -74,9 +74,9 @@ public unsafe partial struct IDataTransferManager2 : IDataTransferManager2.Inter
     /// <include file='IDataTransferManager2.xml' path='doc/member[@name="IDataTransferManager2.add_ShareProvidersRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_ShareProvidersRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CShareProvidersRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ShareProvidersRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CShareProvidersRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IDataTransferManager>, Pointer<IShareProvidersRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataTransferManager2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IDataTransferManager2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDataTransferManager2*, ITypedEventHandler<Pointer<IDataTransferManager>, Pointer<IShareProvidersRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IDataTransferManager2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDataTransferManager2.xml' path='doc/member[@name="IDataTransferManager2.remove_ShareProvidersRequested"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IDataTransferManager2 : IDataTransferManager2.Inter
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_ShareProvidersRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CShareProvidersRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ShareProvidersRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CShareProvidersRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IDataTransferManager>, Pointer<IShareProvidersRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_ShareProvidersRequested(EventRegistrationToken token);
@@ -118,7 +118,7 @@ public unsafe partial struct IDataTransferManager2 : IDataTransferManager2.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataTransferManager_Windows__CApplicationModel__CDataTransfer__CShareProvidersRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ShareProvidersRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDataTransferManager>, Pointer<IShareProvidersRequestedEventArgs>>*, EventRegistrationToken*, int> add_ShareProvidersRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ShareProvidersRequested;

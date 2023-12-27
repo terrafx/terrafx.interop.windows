@@ -98,17 +98,17 @@ public unsafe partial struct IKeyCredential : IKeyCredential.Interface, INativeG
     /// <include file='IKeyCredential.xml' path='doc/member[@name="IKeyCredential.RequestSignAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT RequestSignAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialOperationResult_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT RequestSignAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialOperationResult_t **")] IAsyncOperation<Pointer<IKeyCredentialOperationResult>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IKeyCredential*, IBuffer*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IKeyCredential*)Unsafe.AsPointer(ref this), data, value);
+        return ((delegate* unmanaged[MemberFunction]<IKeyCredential*, IBuffer*, IAsyncOperation<Pointer<IKeyCredentialOperationResult>>**, int>)(lpVtbl[9]))((IKeyCredential*)Unsafe.AsPointer(ref this), data, value);
     }
 
     /// <include file='IKeyCredential.xml' path='doc/member[@name="IKeyCredential.GetAttestationAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetAttestationAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialAttestationResult_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetAttestationAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialAttestationResult_t **")] IAsyncOperation<Pointer<IKeyCredentialAttestationResult>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IKeyCredential*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IKeyCredential*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IKeyCredential*, IAsyncOperation<Pointer<IKeyCredentialAttestationResult>>**, int>)(lpVtbl[10]))((IKeyCredential*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -123,10 +123,10 @@ public unsafe partial struct IKeyCredential : IKeyCredential.Interface, INativeG
         HRESULT RetrievePublicKeyWithBlobType([NativeTypeName("ABI::Windows::Security::Cryptography::Core::CryptographicPublicKeyBlobType")] CryptographicPublicKeyBlobType blobType, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer **")] IBuffer** value);
 
         [VtblIndex(9)]
-        HRESULT RequestSignAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialOperationResult_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT RequestSignAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* data, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialOperationResult_t **")] IAsyncOperation<Pointer<IKeyCredentialOperationResult>>** value);
 
         [VtblIndex(10)]
-        HRESULT GetAttestationAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialAttestationResult_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetAttestationAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialAttestationResult_t **")] IAsyncOperation<Pointer<IKeyCredentialAttestationResult>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -160,9 +160,9 @@ public unsafe partial struct IKeyCredential : IKeyCredential.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, CryptographicPublicKeyBlobType, IBuffer**, int> RetrievePublicKeyWithBlobType;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialOperationResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IAsyncOperation<IntPtr>**, int> RequestSignAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IAsyncOperation<Pointer<IKeyCredentialOperationResult>>**, int> RequestSignAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialAttestationResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetAttestationAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IKeyCredentialAttestationResult>>**, int> GetAttestationAsync;
     }
 }

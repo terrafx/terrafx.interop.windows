@@ -74,17 +74,17 @@ public unsafe partial struct ITextPredictionGenerator2 : ITextPredictionGenerato
     /// <include file='ITextPredictionGenerator2.xml' path='doc/member[@name="ITextPredictionGenerator2.GetCandidatesWithParametersAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetCandidatesWithParametersAsync(HSTRING input, [NativeTypeName("UINT32")] uint maxCandidates, [NativeTypeName("ABI::Windows::Data::Text::TextPredictionOptions")] TextPredictionOptions predictionOptions, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* previousStrings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetCandidatesWithParametersAsync(HSTRING input, [NativeTypeName("UINT32")] uint maxCandidates, [NativeTypeName("ABI::Windows::Data::Text::TextPredictionOptions")] TextPredictionOptions predictionOptions, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* previousStrings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<Pointer<IVectorView<HSTRING>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITextPredictionGenerator2*, HSTRING, uint, TextPredictionOptions, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ITextPredictionGenerator2*)Unsafe.AsPointer(ref this), input, maxCandidates, predictionOptions, previousStrings, result);
+        return ((delegate* unmanaged[MemberFunction]<ITextPredictionGenerator2*, HSTRING, uint, TextPredictionOptions, IIterable<HSTRING>*, IAsyncOperation<Pointer<IVectorView<HSTRING>>>**, int>)(lpVtbl[6]))((ITextPredictionGenerator2*)Unsafe.AsPointer(ref this), input, maxCandidates, predictionOptions, previousStrings, result);
     }
 
     /// <include file='ITextPredictionGenerator2.xml' path='doc/member[@name="ITextPredictionGenerator2.GetNextWordCandidatesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetNextWordCandidatesAsync([NativeTypeName("UINT32")] uint maxCandidates, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* previousStrings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetNextWordCandidatesAsync([NativeTypeName("UINT32")] uint maxCandidates, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* previousStrings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<Pointer<IVectorView<HSTRING>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITextPredictionGenerator2*, uint, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((ITextPredictionGenerator2*)Unsafe.AsPointer(ref this), maxCandidates, previousStrings, result);
+        return ((delegate* unmanaged[MemberFunction]<ITextPredictionGenerator2*, uint, IIterable<HSTRING>*, IAsyncOperation<Pointer<IVectorView<HSTRING>>>**, int>)(lpVtbl[7]))((ITextPredictionGenerator2*)Unsafe.AsPointer(ref this), maxCandidates, previousStrings, result);
     }
 
     /// <include file='ITextPredictionGenerator2.xml' path='doc/member[@name="ITextPredictionGenerator2.get_InputScope"]/*' />
@@ -106,10 +106,10 @@ public unsafe partial struct ITextPredictionGenerator2 : ITextPredictionGenerato
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetCandidatesWithParametersAsync(HSTRING input, [NativeTypeName("UINT32")] uint maxCandidates, [NativeTypeName("ABI::Windows::Data::Text::TextPredictionOptions")] TextPredictionOptions predictionOptions, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* previousStrings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetCandidatesWithParametersAsync(HSTRING input, [NativeTypeName("UINT32")] uint maxCandidates, [NativeTypeName("ABI::Windows::Data::Text::TextPredictionOptions")] TextPredictionOptions predictionOptions, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* previousStrings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<Pointer<IVectorView<HSTRING>>>** result);
 
         [VtblIndex(7)]
-        HRESULT GetNextWordCandidatesAsync([NativeTypeName("UINT32")] uint maxCandidates, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* previousStrings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetNextWordCandidatesAsync([NativeTypeName("UINT32")] uint maxCandidates, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* previousStrings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **")] IAsyncOperation<Pointer<IVectorView<HSTRING>>>** result);
 
         [VtblIndex(8)]
         HRESULT get_InputScope([NativeTypeName("ABI::Windows::UI::Text::Core::CoreTextInputScope *")] CoreTextInputScope* value);
@@ -140,10 +140,10 @@ public unsafe partial struct ITextPredictionGenerator2 : ITextPredictionGenerato
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, UINT32, ABI::Windows::Data::Text::TextPredictionOptions, ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, uint, TextPredictionOptions, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int> GetCandidatesWithParametersAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, uint, TextPredictionOptions, IIterable<HSTRING>*, IAsyncOperation<Pointer<IVectorView<HSTRING>>>**, int> GetCandidatesWithParametersAsync;
 
         [NativeTypeName("HRESULT (UINT32, ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_HSTRING_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int> GetNextWordCandidatesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IIterable<HSTRING>*, IAsyncOperation<Pointer<IVectorView<HSTRING>>>**, int> GetNextWordCandidatesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::UI::Text::Core::CoreTextInputScope *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, CoreTextInputScope*, int> get_InputScope;

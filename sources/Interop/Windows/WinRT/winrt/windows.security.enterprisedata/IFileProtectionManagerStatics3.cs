@@ -74,26 +74,26 @@ public unsafe partial struct IFileProtectionManagerStatics3 : IFileProtectionMan
     /// <include file='IFileProtectionManagerStatics3.xml' path='doc/member[@name="IFileProtectionManagerStatics3.UnprotectAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT UnprotectAsync([NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* target, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT UnprotectAsync([NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* target, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo_t **")] IAsyncOperation<Pointer<IFileProtectionInfo>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileProtectionManagerStatics3*, IStorageItem*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IFileProtectionManagerStatics3*)Unsafe.AsPointer(ref this), target, result);
+        return ((delegate* unmanaged[MemberFunction]<IFileProtectionManagerStatics3*, IStorageItem*, IAsyncOperation<Pointer<IFileProtectionInfo>>**, int>)(lpVtbl[6]))((IFileProtectionManagerStatics3*)Unsafe.AsPointer(ref this), target, result);
     }
 
     /// <include file='IFileProtectionManagerStatics3.xml' path='doc/member[@name="IFileProtectionManagerStatics3.UnprotectWithOptionsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT UnprotectWithOptionsAsync([NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* target, [NativeTypeName("ABI::Windows::Security::EnterpriseData::IFileUnprotectOptions *")] IFileUnprotectOptions* options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT UnprotectWithOptionsAsync([NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* target, [NativeTypeName("ABI::Windows::Security::EnterpriseData::IFileUnprotectOptions *")] IFileUnprotectOptions* options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo_t **")] IAsyncOperation<Pointer<IFileProtectionInfo>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileProtectionManagerStatics3*, IStorageItem*, IFileUnprotectOptions*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IFileProtectionManagerStatics3*)Unsafe.AsPointer(ref this), target, options, result);
+        return ((delegate* unmanaged[MemberFunction]<IFileProtectionManagerStatics3*, IStorageItem*, IFileUnprotectOptions*, IAsyncOperation<Pointer<IFileProtectionInfo>>**, int>)(lpVtbl[7]))((IFileProtectionManagerStatics3*)Unsafe.AsPointer(ref this), target, options, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT UnprotectAsync([NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* target, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT UnprotectAsync([NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* target, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo_t **")] IAsyncOperation<Pointer<IFileProtectionInfo>>** result);
 
         [VtblIndex(7)]
-        HRESULT UnprotectWithOptionsAsync([NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* target, [NativeTypeName("ABI::Windows::Security::EnterpriseData::IFileUnprotectOptions *")] IFileUnprotectOptions* options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT UnprotectWithOptionsAsync([NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* target, [NativeTypeName("ABI::Windows::Security::EnterpriseData::IFileUnprotectOptions *")] IFileUnprotectOptions* options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo_t **")] IAsyncOperation<Pointer<IFileProtectionInfo>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IFileProtectionManagerStatics3 : IFileProtectionMan
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageItem *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageItem*, IAsyncOperation<IntPtr>**, int> UnprotectAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageItem*, IAsyncOperation<Pointer<IFileProtectionInfo>>**, int> UnprotectAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageItem *, ABI::Windows::Security::EnterpriseData::IFileUnprotectOptions *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CFileProtectionInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageItem*, IFileUnprotectOptions*, IAsyncOperation<IntPtr>**, int> UnprotectWithOptionsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageItem*, IFileUnprotectOptions*, IAsyncOperation<Pointer<IFileProtectionInfo>>**, int> UnprotectWithOptionsAsync;
     }
 }

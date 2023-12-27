@@ -74,9 +74,9 @@ public unsafe partial struct IMediaStreamSource : IMediaStreamSource.Interface, 
     /// <include file='IMediaStreamSource.xml' path='doc/member[@name="IMediaStreamSource.add_Closed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceClosedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceClosedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IMediaStreamSourceClosedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaStreamSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaStreamSource*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaStreamSource*, ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IMediaStreamSourceClosedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaStreamSource*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaStreamSource.xml' path='doc/member[@name="IMediaStreamSource.remove_Closed"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IMediaStreamSource : IMediaStreamSource.Interface, 
     /// <include file='IMediaStreamSource.xml' path='doc/member[@name="IMediaStreamSource.add_Starting"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_Starting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceStartingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Starting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceStartingEventArgs_t *")] ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IMediaStreamSourceStartingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaStreamSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IMediaStreamSource*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaStreamSource*, ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IMediaStreamSourceStartingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IMediaStreamSource*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaStreamSource.xml' path='doc/member[@name="IMediaStreamSource.remove_Starting"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IMediaStreamSource : IMediaStreamSource.Interface, 
     /// <include file='IMediaStreamSource.xml' path='doc/member[@name="IMediaStreamSource.add_Paused"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_Paused([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Paused([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaStreamSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMediaStreamSource*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaStreamSource*, ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMediaStreamSource*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaStreamSource.xml' path='doc/member[@name="IMediaStreamSource.remove_Paused"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IMediaStreamSource : IMediaStreamSource.Interface, 
     /// <include file='IMediaStreamSource.xml' path='doc/member[@name="IMediaStreamSource.add_SampleRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_SampleRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSampleRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SampleRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSampleRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IMediaStreamSourceSampleRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaStreamSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IMediaStreamSource*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaStreamSource*, ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IMediaStreamSourceSampleRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IMediaStreamSource*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaStreamSource.xml' path='doc/member[@name="IMediaStreamSource.remove_SampleRequested"]/*' />
@@ -138,9 +138,9 @@ public unsafe partial struct IMediaStreamSource : IMediaStreamSource.Interface, 
     /// <include file='IMediaStreamSource.xml' path='doc/member[@name="IMediaStreamSource.add_SwitchStreamsRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_SwitchStreamsRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSwitchStreamsRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SwitchStreamsRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSwitchStreamsRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IMediaStreamSourceSwitchStreamsRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaStreamSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IMediaStreamSource*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaStreamSource*, ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IMediaStreamSourceSwitchStreamsRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IMediaStreamSource*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaStreamSource.xml' path='doc/member[@name="IMediaStreamSource.remove_SwitchStreamsRequested"]/*' />
@@ -282,31 +282,31 @@ public unsafe partial struct IMediaStreamSource : IMediaStreamSource.Interface, 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceClosedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceClosedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IMediaStreamSourceClosedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_Closed(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_Starting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceStartingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Starting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceStartingEventArgs_t *")] ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IMediaStreamSourceStartingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_Starting(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_Paused([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Paused([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_Paused(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT add_SampleRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSampleRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SampleRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSampleRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IMediaStreamSourceSampleRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_SampleRequested(EventRegistrationToken token);
 
         [VtblIndex(14)]
-        HRESULT add_SwitchStreamsRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSwitchStreamsRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SwitchStreamsRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSwitchStreamsRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IMediaStreamSourceSwitchStreamsRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(15)]
         HRESULT remove_SwitchStreamsRequested(EventRegistrationToken token);
@@ -382,31 +382,31 @@ public unsafe partial struct IMediaStreamSource : IMediaStreamSource.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceClosedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Closed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IMediaStreamSourceClosedEventArgs>>*, EventRegistrationToken*, int> add_Closed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Closed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceStartingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Starting;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IMediaStreamSourceStartingEventArgs>>*, EventRegistrationToken*, int> add_Starting;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Starting;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Paused;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Paused;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Paused;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSampleRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SampleRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IMediaStreamSourceSampleRequestedEventArgs>>*, EventRegistrationToken*, int> add_SampleRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SampleRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaStreamSource_Windows__CMedia__CCore__CMediaStreamSourceSwitchStreamsRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SwitchStreamsRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaStreamSource>, Pointer<IMediaStreamSourceSwitchStreamsRequestedEventArgs>>*, EventRegistrationToken*, int> add_SwitchStreamsRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SwitchStreamsRequested;

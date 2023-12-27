@@ -106,9 +106,9 @@ public unsafe partial struct ITimedTextCue : ITimedTextCue.Interface, INativeGui
     /// <include file='ITimedTextCue.xml' path='doc/member[@name="ITimedTextCue.get_Lines"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_Lines([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedTextLine_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Lines([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedTextLine_t **")] IVector<Pointer<ITimedTextLine>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITimedTextCue*, IVector<IntPtr>**, int>)(lpVtbl[10]))((ITimedTextCue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ITimedTextCue*, IVector<Pointer<ITimedTextLine>>**, int>)(lpVtbl[10]))((ITimedTextCue*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -126,7 +126,7 @@ public unsafe partial struct ITimedTextCue : ITimedTextCue.Interface, INativeGui
         HRESULT put_CueStyle([NativeTypeName("ABI::Windows::Media::Core::ITimedTextStyle *")] ITimedTextStyle* value);
 
         [VtblIndex(10)]
-        HRESULT get_Lines([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedTextLine_t **")] IVector<IntPtr>** value);
+        HRESULT get_Lines([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedTextLine_t **")] IVector<Pointer<ITimedTextLine>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -163,6 +163,6 @@ public unsafe partial struct ITimedTextCue : ITimedTextCue.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, ITimedTextStyle*, int> put_CueStyle;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCore__CTimedTextLine_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Lines;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<ITimedTextLine>>**, int> get_Lines;
     }
 }

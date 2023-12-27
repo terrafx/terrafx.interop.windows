@@ -130,25 +130,25 @@ public unsafe partial struct IGeolocator : IGeolocator.Interface, INativeGuid
     /// <include file='IGeolocator.xml' path='doc/member[@name="IGeolocator.GetGeopositionAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetGeopositionAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetGeopositionAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition_t **")] IAsyncOperation<Pointer<IGeoposition>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGeolocator*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[13]))((IGeolocator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IGeolocator*, IAsyncOperation<Pointer<IGeoposition>>**, int>)(lpVtbl[13]))((IGeolocator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IGeolocator.xml' path='doc/member[@name="IGeolocator.GetGeopositionAsyncWithAgeAndTimeout"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetGeopositionAsyncWithAgeAndTimeout([NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan maximumAge, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan timeout, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetGeopositionAsyncWithAgeAndTimeout([NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan maximumAge, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan timeout, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition_t **")] IAsyncOperation<Pointer<IGeoposition>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGeolocator*, TimeSpan, TimeSpan, IAsyncOperation<IntPtr>**, int>)(lpVtbl[14]))((IGeolocator*)Unsafe.AsPointer(ref this), maximumAge, timeout, value);
+        return ((delegate* unmanaged[MemberFunction]<IGeolocator*, TimeSpan, TimeSpan, IAsyncOperation<Pointer<IGeoposition>>**, int>)(lpVtbl[14]))((IGeolocator*)Unsafe.AsPointer(ref this), maximumAge, timeout, value);
     }
 
     /// <include file='IGeolocator.xml' path='doc/member[@name="IGeolocator.add_PositionChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT add_PositionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PositionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGeolocator>, Pointer<IPositionChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGeolocator*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IGeolocator*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGeolocator*, ITypedEventHandler<Pointer<IGeolocator>, Pointer<IPositionChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IGeolocator*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGeolocator.xml' path='doc/member[@name="IGeolocator.remove_PositionChanged"]/*' />
@@ -162,9 +162,9 @@ public unsafe partial struct IGeolocator : IGeolocator.Interface, INativeGuid
     /// <include file='IGeolocator.xml' path='doc/member[@name="IGeolocator.add_StatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT add_StatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CStatusChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_StatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CStatusChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGeolocator>, Pointer<IStatusChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGeolocator*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IGeolocator*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGeolocator*, ITypedEventHandler<Pointer<IGeolocator>, Pointer<IStatusChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IGeolocator*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGeolocator.xml' path='doc/member[@name="IGeolocator.remove_StatusChanged"]/*' />
@@ -199,19 +199,19 @@ public unsafe partial struct IGeolocator : IGeolocator.Interface, INativeGuid
         HRESULT get_LocationStatus([NativeTypeName("ABI::Windows::Devices::Geolocation::PositionStatus *")] PositionStatus* value);
 
         [VtblIndex(13)]
-        HRESULT GetGeopositionAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetGeopositionAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition_t **")] IAsyncOperation<Pointer<IGeoposition>>** value);
 
         [VtblIndex(14)]
-        HRESULT GetGeopositionAsyncWithAgeAndTimeout([NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan maximumAge, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan timeout, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetGeopositionAsyncWithAgeAndTimeout([NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan maximumAge, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan timeout, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition_t **")] IAsyncOperation<Pointer<IGeoposition>>** value);
 
         [VtblIndex(15)]
-        HRESULT add_PositionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PositionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGeolocator>, Pointer<IPositionChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(16)]
         HRESULT remove_PositionChanged(EventRegistrationToken token);
 
         [VtblIndex(17)]
-        HRESULT add_StatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CStatusChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_StatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CStatusChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGeolocator>, Pointer<IStatusChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(18)]
         HRESULT remove_StatusChanged(EventRegistrationToken token);
@@ -260,19 +260,19 @@ public unsafe partial struct IGeolocator : IGeolocator.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, PositionStatus*, int> get_LocationStatus;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetGeopositionAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IGeoposition>>**, int> GetGeopositionAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::TimeSpan, ABI::Windows::Foundation::TimeSpan, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeoposition_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan, TimeSpan, IAsyncOperation<IntPtr>**, int> GetGeopositionAsyncWithAgeAndTimeout;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan, TimeSpan, IAsyncOperation<Pointer<IGeoposition>>**, int> GetGeopositionAsyncWithAgeAndTimeout;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CPositionChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PositionChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGeolocator>, Pointer<IPositionChangedEventArgs>>*, EventRegistrationToken*, int> add_PositionChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PositionChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeolocator_Windows__CDevices__CGeolocation__CStatusChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_StatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGeolocator>, Pointer<IStatusChangedEventArgs>>*, EventRegistrationToken*, int> add_StatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StatusChanged;

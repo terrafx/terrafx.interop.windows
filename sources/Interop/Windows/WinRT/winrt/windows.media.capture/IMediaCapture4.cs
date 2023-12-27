@@ -74,17 +74,17 @@ public unsafe partial struct IMediaCapture4 : IMediaCapture4.Interface, INativeG
     /// <include file='IMediaCapture4.xml' path='doc/member[@name="IMediaCapture4.AddAudioEffectAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT AddAudioEffectAsync([NativeTypeName("ABI::Windows::Media::Effects::IAudioEffectDefinition *")] IAudioEffectDefinition* definition, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CIMediaExtension_t **")] IAsyncOperation<IntPtr>** op)
+    public HRESULT AddAudioEffectAsync([NativeTypeName("ABI::Windows::Media::Effects::IAudioEffectDefinition *")] IAudioEffectDefinition* definition, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CIMediaExtension_t **")] IAsyncOperation<Pointer<IMediaExtension>>** op)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture4*, IAudioEffectDefinition*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IMediaCapture4*)Unsafe.AsPointer(ref this), definition, op);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture4*, IAudioEffectDefinition*, IAsyncOperation<Pointer<IMediaExtension>>**, int>)(lpVtbl[6]))((IMediaCapture4*)Unsafe.AsPointer(ref this), definition, op);
     }
 
     /// <include file='IMediaCapture4.xml' path='doc/member[@name="IMediaCapture4.AddVideoEffectAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT AddVideoEffectAsync([NativeTypeName("ABI::Windows::Media::Effects::IVideoEffectDefinition *")] IVideoEffectDefinition* definition, [NativeTypeName("ABI::Windows::Media::Capture::MediaStreamType")] MediaStreamType mediaStreamType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CIMediaExtension_t **")] IAsyncOperation<IntPtr>** op)
+    public HRESULT AddVideoEffectAsync([NativeTypeName("ABI::Windows::Media::Effects::IVideoEffectDefinition *")] IVideoEffectDefinition* definition, [NativeTypeName("ABI::Windows::Media::Capture::MediaStreamType")] MediaStreamType mediaStreamType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CIMediaExtension_t **")] IAsyncOperation<Pointer<IMediaExtension>>** op)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture4*, IVideoEffectDefinition*, MediaStreamType, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IMediaCapture4*)Unsafe.AsPointer(ref this), definition, mediaStreamType, op);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture4*, IVideoEffectDefinition*, MediaStreamType, IAsyncOperation<Pointer<IMediaExtension>>**, int>)(lpVtbl[7]))((IMediaCapture4*)Unsafe.AsPointer(ref this), definition, mediaStreamType, op);
     }
 
     /// <include file='IMediaCapture4.xml' path='doc/member[@name="IMediaCapture4.PauseRecordAsync"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IMediaCapture4 : IMediaCapture4.Interface, INativeG
     /// <include file='IMediaCapture4.xml' path='doc/member[@name="IMediaCapture4.add_CameraStreamStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_CameraStreamStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_CameraStreamStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture4*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMediaCapture4*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture4*, ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMediaCapture4*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaCapture4.xml' path='doc/member[@name="IMediaCapture4.remove_CameraStreamStateChanged"]/*' />
@@ -130,25 +130,25 @@ public unsafe partial struct IMediaCapture4 : IMediaCapture4.Interface, INativeG
     /// <include file='IMediaCapture4.xml' path='doc/member[@name="IMediaCapture4.GetPreviewFrameAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetPreviewFrameAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CVideoFrame_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetPreviewFrameAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CVideoFrame_t **")] IAsyncOperation<Pointer<IVideoFrame>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture4*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[13]))((IMediaCapture4*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture4*, IAsyncOperation<Pointer<IVideoFrame>>**, int>)(lpVtbl[13]))((IMediaCapture4*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IMediaCapture4.xml' path='doc/member[@name="IMediaCapture4.GetPreviewFrameCopyAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetPreviewFrameCopyAsync([NativeTypeName("ABI::Windows::Media::IVideoFrame *")] IVideoFrame* destination, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CVideoFrame_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetPreviewFrameCopyAsync([NativeTypeName("ABI::Windows::Media::IVideoFrame *")] IVideoFrame* destination, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CVideoFrame_t **")] IAsyncOperation<Pointer<IVideoFrame>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture4*, IVideoFrame*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[14]))((IMediaCapture4*)Unsafe.AsPointer(ref this), destination, operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture4*, IVideoFrame*, IAsyncOperation<Pointer<IVideoFrame>>**, int>)(lpVtbl[14]))((IMediaCapture4*)Unsafe.AsPointer(ref this), destination, operation);
     }
 
     /// <include file='IMediaCapture4.xml' path='doc/member[@name="IMediaCapture4.add_ThermalStatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT add_ThermalStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ThermalStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture4*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IMediaCapture4*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture4*, ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IMediaCapture4*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaCapture4.xml' path='doc/member[@name="IMediaCapture4.remove_ThermalStatusChanged"]/*' />
@@ -170,18 +170,18 @@ public unsafe partial struct IMediaCapture4 : IMediaCapture4.Interface, INativeG
     /// <include file='IMediaCapture4.xml' path='doc/member[@name="IMediaCapture4.PrepareAdvancedPhotoCaptureAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT PrepareAdvancedPhotoCaptureAsync([NativeTypeName("ABI::Windows::Media::MediaProperties::IImageEncodingProperties *")] IImageEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CAdvancedPhotoCapture_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT PrepareAdvancedPhotoCaptureAsync([NativeTypeName("ABI::Windows::Media::MediaProperties::IImageEncodingProperties *")] IImageEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CAdvancedPhotoCapture_t **")] IAsyncOperation<Pointer<IAdvancedPhotoCapture>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture4*, IImageEncodingProperties*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[18]))((IMediaCapture4*)Unsafe.AsPointer(ref this), encodingProperties, operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture4*, IImageEncodingProperties*, IAsyncOperation<Pointer<IAdvancedPhotoCapture>>**, int>)(lpVtbl[18]))((IMediaCapture4*)Unsafe.AsPointer(ref this), encodingProperties, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT AddAudioEffectAsync([NativeTypeName("ABI::Windows::Media::Effects::IAudioEffectDefinition *")] IAudioEffectDefinition* definition, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CIMediaExtension_t **")] IAsyncOperation<IntPtr>** op);
+        HRESULT AddAudioEffectAsync([NativeTypeName("ABI::Windows::Media::Effects::IAudioEffectDefinition *")] IAudioEffectDefinition* definition, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CIMediaExtension_t **")] IAsyncOperation<Pointer<IMediaExtension>>** op);
 
         [VtblIndex(7)]
-        HRESULT AddVideoEffectAsync([NativeTypeName("ABI::Windows::Media::Effects::IVideoEffectDefinition *")] IVideoEffectDefinition* definition, [NativeTypeName("ABI::Windows::Media::Capture::MediaStreamType")] MediaStreamType mediaStreamType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CIMediaExtension_t **")] IAsyncOperation<IntPtr>** op);
+        HRESULT AddVideoEffectAsync([NativeTypeName("ABI::Windows::Media::Effects::IVideoEffectDefinition *")] IVideoEffectDefinition* definition, [NativeTypeName("ABI::Windows::Media::Capture::MediaStreamType")] MediaStreamType mediaStreamType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CIMediaExtension_t **")] IAsyncOperation<Pointer<IMediaExtension>>** op);
 
         [VtblIndex(8)]
         HRESULT PauseRecordAsync([NativeTypeName("ABI::Windows::Media::Devices::MediaCapturePauseBehavior")] MediaCapturePauseBehavior behavior, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
@@ -190,7 +190,7 @@ public unsafe partial struct IMediaCapture4 : IMediaCapture4.Interface, INativeG
         HRESULT ResumeRecordAsync([NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
 
         [VtblIndex(10)]
-        HRESULT add_CameraStreamStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_CameraStreamStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_CameraStreamStateChanged(EventRegistrationToken token);
@@ -199,13 +199,13 @@ public unsafe partial struct IMediaCapture4 : IMediaCapture4.Interface, INativeG
         HRESULT get_CameraStreamState([NativeTypeName("ABI::Windows::Media::Devices::CameraStreamState *")] CameraStreamState* streamState);
 
         [VtblIndex(13)]
-        HRESULT GetPreviewFrameAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CVideoFrame_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetPreviewFrameAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CVideoFrame_t **")] IAsyncOperation<Pointer<IVideoFrame>>** operation);
 
         [VtblIndex(14)]
-        HRESULT GetPreviewFrameCopyAsync([NativeTypeName("ABI::Windows::Media::IVideoFrame *")] IVideoFrame* destination, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CVideoFrame_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetPreviewFrameCopyAsync([NativeTypeName("ABI::Windows::Media::IVideoFrame *")] IVideoFrame* destination, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CVideoFrame_t **")] IAsyncOperation<Pointer<IVideoFrame>>** operation);
 
         [VtblIndex(15)]
-        HRESULT add_ThermalStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ThermalStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(16)]
         HRESULT remove_ThermalStatusChanged(EventRegistrationToken token);
@@ -214,7 +214,7 @@ public unsafe partial struct IMediaCapture4 : IMediaCapture4.Interface, INativeG
         HRESULT get_ThermalStatus([NativeTypeName("ABI::Windows::Media::Capture::MediaCaptureThermalStatus *")] MediaCaptureThermalStatus* value);
 
         [VtblIndex(18)]
-        HRESULT PrepareAdvancedPhotoCaptureAsync([NativeTypeName("ABI::Windows::Media::MediaProperties::IImageEncodingProperties *")] IImageEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CAdvancedPhotoCapture_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT PrepareAdvancedPhotoCaptureAsync([NativeTypeName("ABI::Windows::Media::MediaProperties::IImageEncodingProperties *")] IImageEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CAdvancedPhotoCapture_t **")] IAsyncOperation<Pointer<IAdvancedPhotoCapture>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -239,10 +239,10 @@ public unsafe partial struct IMediaCapture4 : IMediaCapture4.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Effects::IAudioEffectDefinition *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CIMediaExtension_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAudioEffectDefinition*, IAsyncOperation<IntPtr>**, int> AddAudioEffectAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAudioEffectDefinition*, IAsyncOperation<Pointer<IMediaExtension>>**, int> AddAudioEffectAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Effects::IVideoEffectDefinition *, ABI::Windows::Media::Capture::MediaStreamType, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CIMediaExtension_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVideoEffectDefinition*, MediaStreamType, IAsyncOperation<IntPtr>**, int> AddVideoEffectAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVideoEffectDefinition*, MediaStreamType, IAsyncOperation<Pointer<IMediaExtension>>**, int> AddVideoEffectAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Devices::MediaCapturePauseBehavior, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, MediaCapturePauseBehavior, IAsyncAction**, int> PauseRecordAsync;
@@ -251,7 +251,7 @@ public unsafe partial struct IMediaCapture4 : IMediaCapture4.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncAction**, int> ResumeRecordAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CameraStreamStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_CameraStreamStateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CameraStreamStateChanged;
@@ -260,13 +260,13 @@ public unsafe partial struct IMediaCapture4 : IMediaCapture4.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, CameraStreamState*, int> get_CameraStreamState;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CVideoFrame_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetPreviewFrameAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVideoFrame>>**, int> GetPreviewFrameAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::IVideoFrame *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CVideoFrame_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVideoFrame*, IAsyncOperation<IntPtr>**, int> GetPreviewFrameCopyAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVideoFrame*, IAsyncOperation<Pointer<IVideoFrame>>**, int> GetPreviewFrameCopyAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ThermalStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ThermalStatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ThermalStatusChanged;
@@ -275,6 +275,6 @@ public unsafe partial struct IMediaCapture4 : IMediaCapture4.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, MediaCaptureThermalStatus*, int> get_ThermalStatus;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::MediaProperties::IImageEncodingProperties *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CAdvancedPhotoCapture_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IImageEncodingProperties*, IAsyncOperation<IntPtr>**, int> PrepareAdvancedPhotoCaptureAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IImageEncodingProperties*, IAsyncOperation<Pointer<IAdvancedPhotoCapture>>**, int> PrepareAdvancedPhotoCaptureAsync;
     }
 }

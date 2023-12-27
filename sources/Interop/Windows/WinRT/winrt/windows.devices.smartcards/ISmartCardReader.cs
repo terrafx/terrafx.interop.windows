@@ -106,17 +106,17 @@ public unsafe partial struct ISmartCardReader : ISmartCardReader.Interface, INat
     /// <include file='ISmartCardReader.xml' path='doc/member[@name="ISmartCardReader.FindAllCardsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT FindAllCardsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCard_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FindAllCardsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCard_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<ISmartCard>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardReader*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((ISmartCardReader*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardReader*, IAsyncOperation<Pointer<IVectorView<Pointer<ISmartCard>>>>**, int>)(lpVtbl[10]))((ISmartCardReader*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='ISmartCardReader.xml' path='doc/member[@name="ISmartCardReader.add_CardAdded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_CardAdded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardAddedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_CardAdded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardAddedEventArgs_t *")] ITypedEventHandler<Pointer<ISmartCardReader>, Pointer<ICardAddedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardReader*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((ISmartCardReader*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardReader*, ITypedEventHandler<Pointer<ISmartCardReader>, Pointer<ICardAddedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((ISmartCardReader*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISmartCardReader.xml' path='doc/member[@name="ISmartCardReader.remove_CardAdded"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct ISmartCardReader : ISmartCardReader.Interface, INat
     /// <include file='ISmartCardReader.xml' path='doc/member[@name="ISmartCardReader.add_CardRemoved"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_CardRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardRemovedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_CardRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardRemovedEventArgs_t *")] ITypedEventHandler<Pointer<ISmartCardReader>, Pointer<ICardRemovedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardReader*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((ISmartCardReader*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardReader*, ITypedEventHandler<Pointer<ISmartCardReader>, Pointer<ICardRemovedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((ISmartCardReader*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISmartCardReader.xml' path='doc/member[@name="ISmartCardReader.remove_CardRemoved"]/*' />
@@ -158,16 +158,16 @@ public unsafe partial struct ISmartCardReader : ISmartCardReader.Interface, INat
         HRESULT GetStatusAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardReaderStatus_t **")] IAsyncOperation<SmartCardReaderStatus>** result);
 
         [VtblIndex(10)]
-        HRESULT FindAllCardsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCard_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FindAllCardsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCard_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<ISmartCard>>>>** result);
 
         [VtblIndex(11)]
-        HRESULT add_CardAdded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardAddedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_CardAdded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardAddedEventArgs_t *")] ITypedEventHandler<Pointer<ISmartCardReader>, Pointer<ICardAddedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_CardAdded(EventRegistrationToken token);
 
         [VtblIndex(13)]
-        HRESULT add_CardRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardRemovedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_CardRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardRemovedEventArgs_t *")] ITypedEventHandler<Pointer<ISmartCardReader>, Pointer<ICardRemovedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_CardRemoved(EventRegistrationToken token);
@@ -207,16 +207,16 @@ public unsafe partial struct ISmartCardReader : ISmartCardReader.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<SmartCardReaderStatus>**, int> GetStatusAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCard_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindAllCardsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<ISmartCard>>>>**, int> FindAllCardsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardAddedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CardAdded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISmartCardReader>, Pointer<ICardAddedEventArgs>>*, EventRegistrationToken*, int> add_CardAdded;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CardAdded;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardReader_Windows__CDevices__CSmartCards__CCardRemovedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CardRemoved;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISmartCardReader>, Pointer<ICardRemovedEventArgs>>*, EventRegistrationToken*, int> add_CardRemoved;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CardRemoved;

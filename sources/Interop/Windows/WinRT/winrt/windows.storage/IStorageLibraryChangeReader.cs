@@ -74,9 +74,9 @@ public unsafe partial struct IStorageLibraryChangeReader : IStorageLibraryChange
     /// <include file='IStorageLibraryChangeReader.xml' path='doc/member[@name="IStorageLibraryChangeReader.ReadBatchAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageLibraryChange_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageLibraryChange_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageLibraryChange>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageLibraryChangeReader*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStorageLibraryChangeReader*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageLibraryChangeReader*, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageLibraryChange>>>>**, int>)(lpVtbl[6]))((IStorageLibraryChangeReader*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IStorageLibraryChangeReader.xml' path='doc/member[@name="IStorageLibraryChangeReader.AcceptChangesAsync"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IStorageLibraryChangeReader : IStorageLibraryChange
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageLibraryChange_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageLibraryChange_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageLibraryChange>>>>** operation);
 
         [VtblIndex(7)]
         HRESULT AcceptChangesAsync([NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
@@ -118,7 +118,7 @@ public unsafe partial struct IStorageLibraryChangeReader : IStorageLibraryChange
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageLibraryChange_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> ReadBatchAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageLibraryChange>>>>**, int> ReadBatchAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncAction**, int> AcceptChangesAsync;

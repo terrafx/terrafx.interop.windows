@@ -74,15 +74,15 @@ public unsafe partial struct IWebAuthenticationCoreManagerStatics2 : IWebAuthent
     /// <include file='IWebAuthenticationCoreManagerStatics2.xml' path='doc/member[@name="IWebAuthenticationCoreManagerStatics2.FindAccountProviderWithAuthorityForUserAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindAccountProviderWithAuthorityForUserAsync(HSTRING webAccountProviderId, HSTRING authority, [NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccountProvider_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT FindAccountProviderWithAuthorityForUserAsync(HSTRING webAccountProviderId, HSTRING authority, [NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccountProvider_t **")] IAsyncOperation<Pointer<IWebAccountProvider>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics2*, HSTRING, HSTRING, IUser*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IWebAuthenticationCoreManagerStatics2*)Unsafe.AsPointer(ref this), webAccountProviderId, authority, user, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics2*, HSTRING, HSTRING, IUser*, IAsyncOperation<Pointer<IWebAccountProvider>>**, int>)(lpVtbl[6]))((IWebAuthenticationCoreManagerStatics2*)Unsafe.AsPointer(ref this), webAccountProviderId, authority, user, asyncInfo);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FindAccountProviderWithAuthorityForUserAsync(HSTRING webAccountProviderId, HSTRING authority, [NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccountProvider_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT FindAccountProviderWithAuthorityForUserAsync(HSTRING webAccountProviderId, HSTRING authority, [NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccountProvider_t **")] IAsyncOperation<Pointer<IWebAccountProvider>>** asyncInfo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IWebAuthenticationCoreManagerStatics2 : IWebAuthent
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, ABI::Windows::System::IUser *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccountProvider_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IUser*, IAsyncOperation<IntPtr>**, int> FindAccountProviderWithAuthorityForUserAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IUser*, IAsyncOperation<Pointer<IWebAccountProvider>>**, int> FindAccountProviderWithAuthorityForUserAsync;
     }
 }

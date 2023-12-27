@@ -74,15 +74,15 @@ public unsafe partial struct ISmartCardConnect : ISmartCardConnect.Interface, IN
     /// <include file='ISmartCardConnect.xml' path='doc/member[@name="ISmartCardConnect.ConnectAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT ConnectAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardConnection_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT ConnectAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardConnection_t **")] IAsyncOperation<Pointer<ISmartCardConnection>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardConnect*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ISmartCardConnect*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardConnect*, IAsyncOperation<Pointer<ISmartCardConnection>>**, int>)(lpVtbl[6]))((ISmartCardConnect*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT ConnectAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardConnection_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT ConnectAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardConnection_t **")] IAsyncOperation<Pointer<ISmartCardConnection>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ISmartCardConnect : ISmartCardConnect.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardConnection_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> ConnectAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<ISmartCardConnection>>**, int> ConnectAsync;
     }
 }

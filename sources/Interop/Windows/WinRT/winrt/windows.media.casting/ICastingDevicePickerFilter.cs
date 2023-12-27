@@ -122,9 +122,9 @@ public unsafe partial struct ICastingDevicePickerFilter : ICastingDevicePickerFi
     /// <include file='ICastingDevicePickerFilter.xml' path='doc/member[@name="ICastingDevicePickerFilter.get_SupportedCastingSources"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_SupportedCastingSources([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCasting__CCastingSource_t **")] IVector<IntPtr>** value)
+    public HRESULT get_SupportedCastingSources([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCasting__CCastingSource_t **")] IVector<Pointer<ICastingSource>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICastingDevicePickerFilter*, IVector<IntPtr>**, int>)(lpVtbl[12]))((ICastingDevicePickerFilter*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICastingDevicePickerFilter*, IVector<Pointer<ICastingSource>>**, int>)(lpVtbl[12]))((ICastingDevicePickerFilter*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -148,7 +148,7 @@ public unsafe partial struct ICastingDevicePickerFilter : ICastingDevicePickerFi
         HRESULT put_SupportsPictures([NativeTypeName("boolean")] byte value);
 
         [VtblIndex(12)]
-        HRESULT get_SupportedCastingSources([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCasting__CCastingSource_t **")] IVector<IntPtr>** value);
+        HRESULT get_SupportedCastingSources([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCasting__CCastingSource_t **")] IVector<Pointer<ICastingSource>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -191,6 +191,6 @@ public unsafe partial struct ICastingDevicePickerFilter : ICastingDevicePickerFi
         public delegate* unmanaged[MemberFunction]<TSelf*, byte, int> put_SupportsPictures;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CCasting__CCastingSource_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_SupportedCastingSources;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<ICastingSource>>**, int> get_SupportedCastingSources;
     }
 }

@@ -90,9 +90,9 @@ public unsafe partial struct ISpatialAnchor : ISpatialAnchor.Interface, INativeG
     /// <include file='ISpatialAnchor.xml' path='doc/member[@name="ISpatialAnchor.add_RawCoordinateSystemAdjusted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_RawCoordinateSystemAdjusted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_RawCoordinateSystemAdjusted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs_t *")] ITypedEventHandler<Pointer<ISpatialAnchor>, Pointer<ISpatialAnchorRawCoordinateSystemAdjustedEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpatialAnchor*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ISpatialAnchor*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAnchor*, ITypedEventHandler<Pointer<ISpatialAnchor>, Pointer<ISpatialAnchorRawCoordinateSystemAdjustedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ISpatialAnchor*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ISpatialAnchor.xml' path='doc/member[@name="ISpatialAnchor.remove_RawCoordinateSystemAdjusted"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct ISpatialAnchor : ISpatialAnchor.Interface, INativeG
         HRESULT get_RawCoordinateSystem([NativeTypeName("ABI::Windows::Perception::Spatial::ISpatialCoordinateSystem **")] ISpatialCoordinateSystem** value);
 
         [VtblIndex(8)]
-        HRESULT add_RawCoordinateSystemAdjusted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_RawCoordinateSystemAdjusted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs_t *")] ITypedEventHandler<Pointer<ISpatialAnchor>, Pointer<ISpatialAnchorRawCoordinateSystemAdjustedEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(9)]
         HRESULT remove_RawCoordinateSystemAdjusted(EventRegistrationToken cookie);
@@ -146,7 +146,7 @@ public unsafe partial struct ISpatialAnchor : ISpatialAnchor.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, ISpatialCoordinateSystem**, int> get_RawCoordinateSystem;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialAnchor_Windows__CPerception__CSpatial__CSpatialAnchorRawCoordinateSystemAdjustedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_RawCoordinateSystemAdjusted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISpatialAnchor>, Pointer<ISpatialAnchorRawCoordinateSystemAdjustedEventArgs>>*, EventRegistrationToken*, int> add_RawCoordinateSystemAdjusted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RawCoordinateSystemAdjusted;

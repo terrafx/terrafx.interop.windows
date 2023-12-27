@@ -90,25 +90,25 @@ public unsafe partial struct IAudioGraph : IAudioGraph.Interface, INativeGuid
     /// <include file='IAudioGraph.xml' path='doc/member[@name="IAudioGraph.CreateDeviceInputNodeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT CreateDeviceInputNodeAsync([NativeTypeName("ABI::Windows::Media::Capture::MediaCategory")] MediaCategory category, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateDeviceInputNodeAsync([NativeTypeName("ABI::Windows::Media::Capture::MediaCategory")] MediaCategory category, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioDeviceInputNodeResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, MediaCategory, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IAudioGraph*)Unsafe.AsPointer(ref this), category, result);
+        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, MediaCategory, IAsyncOperation<Pointer<ICreateAudioDeviceInputNodeResult>>**, int>)(lpVtbl[8]))((IAudioGraph*)Unsafe.AsPointer(ref this), category, result);
     }
 
     /// <include file='IAudioGraph.xml' path='doc/member[@name="IAudioGraph.CreateDeviceInputNodeWithFormatAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT CreateDeviceInputNodeWithFormatAsync([NativeTypeName("ABI::Windows::Media::Capture::MediaCategory")] MediaCategory category, [NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateDeviceInputNodeWithFormatAsync([NativeTypeName("ABI::Windows::Media::Capture::MediaCategory")] MediaCategory category, [NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioDeviceInputNodeResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, MediaCategory, IAudioEncodingProperties*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IAudioGraph*)Unsafe.AsPointer(ref this), category, encodingProperties, result);
+        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, MediaCategory, IAudioEncodingProperties*, IAsyncOperation<Pointer<ICreateAudioDeviceInputNodeResult>>**, int>)(lpVtbl[9]))((IAudioGraph*)Unsafe.AsPointer(ref this), category, encodingProperties, result);
     }
 
     /// <include file='IAudioGraph.xml' path='doc/member[@name="IAudioGraph.CreateDeviceInputNodeWithFormatOnDeviceAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT CreateDeviceInputNodeWithFormatOnDeviceAsync([NativeTypeName("ABI::Windows::Media::Capture::MediaCategory")] MediaCategory category, [NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Devices::Enumeration::IDeviceInformation *")] IDeviceInformation* device, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateDeviceInputNodeWithFormatOnDeviceAsync([NativeTypeName("ABI::Windows::Media::Capture::MediaCategory")] MediaCategory category, [NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Devices::Enumeration::IDeviceInformation *")] IDeviceInformation* device, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioDeviceInputNodeResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, MediaCategory, IAudioEncodingProperties*, IDeviceInformation*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IAudioGraph*)Unsafe.AsPointer(ref this), category, encodingProperties, device, result);
+        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, MediaCategory, IAudioEncodingProperties*, IDeviceInformation*, IAsyncOperation<Pointer<ICreateAudioDeviceInputNodeResult>>**, int>)(lpVtbl[10]))((IAudioGraph*)Unsafe.AsPointer(ref this), category, encodingProperties, device, result);
     }
 
     /// <include file='IAudioGraph.xml' path='doc/member[@name="IAudioGraph.CreateFrameOutputNode"]/*' />
@@ -130,33 +130,33 @@ public unsafe partial struct IAudioGraph : IAudioGraph.Interface, INativeGuid
     /// <include file='IAudioGraph.xml' path='doc/member[@name="IAudioGraph.CreateDeviceOutputNodeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT CreateDeviceOutputNodeAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceOutputNodeResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateDeviceOutputNodeAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceOutputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioDeviceOutputNodeResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[13]))((IAudioGraph*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, IAsyncOperation<Pointer<ICreateAudioDeviceOutputNodeResult>>**, int>)(lpVtbl[13]))((IAudioGraph*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IAudioGraph.xml' path='doc/member[@name="IAudioGraph.CreateFileInputNodeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT CreateFileInputNodeAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileInputNodeResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateFileInputNodeAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileInputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioFileInputNodeResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, IStorageFile*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[14]))((IAudioGraph*)Unsafe.AsPointer(ref this), file, result);
+        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, IStorageFile*, IAsyncOperation<Pointer<ICreateAudioFileInputNodeResult>>**, int>)(lpVtbl[14]))((IAudioGraph*)Unsafe.AsPointer(ref this), file, result);
     }
 
     /// <include file='IAudioGraph.xml' path='doc/member[@name="IAudioGraph.CreateFileOutputNodeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT CreateFileOutputNodeAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileOutputNodeResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateFileOutputNodeAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileOutputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioFileOutputNodeResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, IStorageFile*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[15]))((IAudioGraph*)Unsafe.AsPointer(ref this), file, result);
+        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, IStorageFile*, IAsyncOperation<Pointer<ICreateAudioFileOutputNodeResult>>**, int>)(lpVtbl[15]))((IAudioGraph*)Unsafe.AsPointer(ref this), file, result);
     }
 
     /// <include file='IAudioGraph.xml' path='doc/member[@name="IAudioGraph.CreateFileOutputNodeWithFileProfileAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT CreateFileOutputNodeWithFileProfileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *")] IMediaEncodingProfile* fileEncodingProfile, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileOutputNodeResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateFileOutputNodeWithFileProfileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *")] IMediaEncodingProfile* fileEncodingProfile, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileOutputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioFileOutputNodeResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, IStorageFile*, IMediaEncodingProfile*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[16]))((IAudioGraph*)Unsafe.AsPointer(ref this), file, fileEncodingProfile, result);
+        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, IStorageFile*, IMediaEncodingProfile*, IAsyncOperation<Pointer<ICreateAudioFileOutputNodeResult>>**, int>)(lpVtbl[16]))((IAudioGraph*)Unsafe.AsPointer(ref this), file, fileEncodingProfile, result);
     }
 
     /// <include file='IAudioGraph.xml' path='doc/member[@name="IAudioGraph.CreateSubmixNode"]/*' />
@@ -202,9 +202,9 @@ public unsafe partial struct IAudioGraph : IAudioGraph.Interface, INativeGuid
     /// <include file='IAudioGraph.xml' path='doc/member[@name="IAudioGraph.add_QuantumStarted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT add_QuantumStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_QuantumStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_IInspectable_t *")] ITypedEventHandler<Pointer<IAudioGraph>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[22]))((IAudioGraph*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, ITypedEventHandler<Pointer<IAudioGraph>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[22]))((IAudioGraph*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAudioGraph.xml' path='doc/member[@name="IAudioGraph.remove_QuantumStarted"]/*' />
@@ -218,9 +218,9 @@ public unsafe partial struct IAudioGraph : IAudioGraph.Interface, INativeGuid
     /// <include file='IAudioGraph.xml' path='doc/member[@name="IAudioGraph.add_QuantumProcessed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
-    public HRESULT add_QuantumProcessed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_QuantumProcessed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_IInspectable_t *")] ITypedEventHandler<Pointer<IAudioGraph>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[24]))((IAudioGraph*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, ITypedEventHandler<Pointer<IAudioGraph>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[24]))((IAudioGraph*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAudioGraph.xml' path='doc/member[@name="IAudioGraph.remove_QuantumProcessed"]/*' />
@@ -234,9 +234,9 @@ public unsafe partial struct IAudioGraph : IAudioGraph.Interface, INativeGuid
     /// <include file='IAudioGraph.xml' path='doc/member[@name="IAudioGraph.add_UnrecoverableErrorOccurred"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
-    public HRESULT add_UnrecoverableErrorOccurred([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_Windows__CMedia__CAudio__CAudioGraphUnrecoverableErrorOccurredEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_UnrecoverableErrorOccurred([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_Windows__CMedia__CAudio__CAudioGraphUnrecoverableErrorOccurredEventArgs_t *")] ITypedEventHandler<Pointer<IAudioGraph>, Pointer<IAudioGraphUnrecoverableErrorOccurredEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[26]))((IAudioGraph*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAudioGraph*, ITypedEventHandler<Pointer<IAudioGraph>, Pointer<IAudioGraphUnrecoverableErrorOccurredEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[26]))((IAudioGraph*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAudioGraph.xml' path='doc/member[@name="IAudioGraph.remove_UnrecoverableErrorOccurred"]/*' />
@@ -304,13 +304,13 @@ public unsafe partial struct IAudioGraph : IAudioGraph.Interface, INativeGuid
         HRESULT CreateFrameInputNodeWithFormat([NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Media::Audio::IAudioFrameInputNode **")] IAudioFrameInputNode** frameInputNode);
 
         [VtblIndex(8)]
-        HRESULT CreateDeviceInputNodeAsync([NativeTypeName("ABI::Windows::Media::Capture::MediaCategory")] MediaCategory category, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateDeviceInputNodeAsync([NativeTypeName("ABI::Windows::Media::Capture::MediaCategory")] MediaCategory category, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioDeviceInputNodeResult>>** result);
 
         [VtblIndex(9)]
-        HRESULT CreateDeviceInputNodeWithFormatAsync([NativeTypeName("ABI::Windows::Media::Capture::MediaCategory")] MediaCategory category, [NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateDeviceInputNodeWithFormatAsync([NativeTypeName("ABI::Windows::Media::Capture::MediaCategory")] MediaCategory category, [NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioDeviceInputNodeResult>>** result);
 
         [VtblIndex(10)]
-        HRESULT CreateDeviceInputNodeWithFormatOnDeviceAsync([NativeTypeName("ABI::Windows::Media::Capture::MediaCategory")] MediaCategory category, [NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Devices::Enumeration::IDeviceInformation *")] IDeviceInformation* device, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateDeviceInputNodeWithFormatOnDeviceAsync([NativeTypeName("ABI::Windows::Media::Capture::MediaCategory")] MediaCategory category, [NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Devices::Enumeration::IDeviceInformation *")] IDeviceInformation* device, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioDeviceInputNodeResult>>** result);
 
         [VtblIndex(11)]
         HRESULT CreateFrameOutputNode([NativeTypeName("ABI::Windows::Media::Audio::IAudioFrameOutputNode **")] IAudioFrameOutputNode** frameOutputNode);
@@ -319,16 +319,16 @@ public unsafe partial struct IAudioGraph : IAudioGraph.Interface, INativeGuid
         HRESULT CreateFrameOutputNodeWithFormat([NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Media::Audio::IAudioFrameOutputNode **")] IAudioFrameOutputNode** frameOutputNode);
 
         [VtblIndex(13)]
-        HRESULT CreateDeviceOutputNodeAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceOutputNodeResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateDeviceOutputNodeAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceOutputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioDeviceOutputNodeResult>>** result);
 
         [VtblIndex(14)]
-        HRESULT CreateFileInputNodeAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileInputNodeResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateFileInputNodeAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileInputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioFileInputNodeResult>>** result);
 
         [VtblIndex(15)]
-        HRESULT CreateFileOutputNodeAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileOutputNodeResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateFileOutputNodeAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileOutputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioFileOutputNodeResult>>** result);
 
         [VtblIndex(16)]
-        HRESULT CreateFileOutputNodeWithFileProfileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *")] IMediaEncodingProfile* fileEncodingProfile, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileOutputNodeResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateFileOutputNodeWithFileProfileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *")] IMediaEncodingProfile* fileEncodingProfile, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileOutputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioFileOutputNodeResult>>** result);
 
         [VtblIndex(17)]
         HRESULT CreateSubmixNode([NativeTypeName("ABI::Windows::Media::Audio::IAudioInputNode **")] IAudioInputNode** submixNode);
@@ -346,19 +346,19 @@ public unsafe partial struct IAudioGraph : IAudioGraph.Interface, INativeGuid
         HRESULT ResetAllNodes();
 
         [VtblIndex(22)]
-        HRESULT add_QuantumStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_QuantumStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_IInspectable_t *")] ITypedEventHandler<Pointer<IAudioGraph>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(23)]
         HRESULT remove_QuantumStarted(EventRegistrationToken token);
 
         [VtblIndex(24)]
-        HRESULT add_QuantumProcessed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_QuantumProcessed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_IInspectable_t *")] ITypedEventHandler<Pointer<IAudioGraph>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(25)]
         HRESULT remove_QuantumProcessed(EventRegistrationToken token);
 
         [VtblIndex(26)]
-        HRESULT add_UnrecoverableErrorOccurred([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_Windows__CMedia__CAudio__CAudioGraphUnrecoverableErrorOccurredEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_UnrecoverableErrorOccurred([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_Windows__CMedia__CAudio__CAudioGraphUnrecoverableErrorOccurredEventArgs_t *")] ITypedEventHandler<Pointer<IAudioGraph>, Pointer<IAudioGraphUnrecoverableErrorOccurredEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(27)]
         HRESULT remove_UnrecoverableErrorOccurred(EventRegistrationToken token);
@@ -410,13 +410,13 @@ public unsafe partial struct IAudioGraph : IAudioGraph.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IAudioEncodingProperties*, IAudioFrameInputNode**, int> CreateFrameInputNodeWithFormat;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Capture::MediaCategory, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, MediaCategory, IAsyncOperation<IntPtr>**, int> CreateDeviceInputNodeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MediaCategory, IAsyncOperation<Pointer<ICreateAudioDeviceInputNodeResult>>**, int> CreateDeviceInputNodeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Capture::MediaCategory, ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, MediaCategory, IAudioEncodingProperties*, IAsyncOperation<IntPtr>**, int> CreateDeviceInputNodeWithFormatAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MediaCategory, IAudioEncodingProperties*, IAsyncOperation<Pointer<ICreateAudioDeviceInputNodeResult>>**, int> CreateDeviceInputNodeWithFormatAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Capture::MediaCategory, ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *, ABI::Windows::Devices::Enumeration::IDeviceInformation *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, MediaCategory, IAudioEncodingProperties*, IDeviceInformation*, IAsyncOperation<IntPtr>**, int> CreateDeviceInputNodeWithFormatOnDeviceAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MediaCategory, IAudioEncodingProperties*, IDeviceInformation*, IAsyncOperation<Pointer<ICreateAudioDeviceInputNodeResult>>**, int> CreateDeviceInputNodeWithFormatOnDeviceAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Audio::IAudioFrameOutputNode **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAudioFrameOutputNode**, int> CreateFrameOutputNode;
@@ -425,16 +425,16 @@ public unsafe partial struct IAudioGraph : IAudioGraph.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IAudioEncodingProperties*, IAudioFrameOutputNode**, int> CreateFrameOutputNodeWithFormat;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceOutputNodeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> CreateDeviceOutputNodeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<ICreateAudioDeviceOutputNodeResult>>**, int> CreateDeviceOutputNodeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileInputNodeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<IntPtr>**, int> CreateFileInputNodeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<Pointer<ICreateAudioFileInputNodeResult>>**, int> CreateFileInputNodeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileOutputNodeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<IntPtr>**, int> CreateFileOutputNodeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<Pointer<ICreateAudioFileOutputNodeResult>>**, int> CreateFileOutputNodeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileOutputNodeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IMediaEncodingProfile*, IAsyncOperation<IntPtr>**, int> CreateFileOutputNodeWithFileProfileAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IMediaEncodingProfile*, IAsyncOperation<Pointer<ICreateAudioFileOutputNodeResult>>**, int> CreateFileOutputNodeWithFileProfileAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Audio::IAudioInputNode **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAudioInputNode**, int> CreateSubmixNode;
@@ -452,19 +452,19 @@ public unsafe partial struct IAudioGraph : IAudioGraph.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, int> ResetAllNodes;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_QuantumStarted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAudioGraph>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_QuantumStarted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_QuantumStarted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_QuantumProcessed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAudioGraph>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_QuantumProcessed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_QuantumProcessed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioGraph_Windows__CMedia__CAudio__CAudioGraphUnrecoverableErrorOccurredEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_UnrecoverableErrorOccurred;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAudioGraph>, Pointer<IAudioGraphUnrecoverableErrorOccurredEventArgs>>*, EventRegistrationToken*, int> add_UnrecoverableErrorOccurred;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_UnrecoverableErrorOccurred;

@@ -85,9 +85,9 @@ public unsafe partial struct IVoiceCommandManager : IVoiceCommandManager.Interfa
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [Obsolete("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")]
-    public HRESULT get_InstalledCommandSets([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t **")] IMapView<HSTRING, IntPtr>** voiceCommandSets)
+    public HRESULT get_InstalledCommandSets([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t **")] IMapView<HSTRING, Pointer<IVoiceCommandSet>>** voiceCommandSets)
     {
-        return ((delegate* unmanaged[MemberFunction]<IVoiceCommandManager*, IMapView<HSTRING, IntPtr>**, int>)(lpVtbl[7]))((IVoiceCommandManager*)Unsafe.AsPointer(ref this), voiceCommandSets);
+        return ((delegate* unmanaged[MemberFunction]<IVoiceCommandManager*, IMapView<HSTRING, Pointer<IVoiceCommandSet>>**, int>)(lpVtbl[7]))((IVoiceCommandManager*)Unsafe.AsPointer(ref this), voiceCommandSets);
     }
 
     public interface Interface : IInspectable.Interface
@@ -98,7 +98,7 @@ public unsafe partial struct IVoiceCommandManager : IVoiceCommandManager.Interfa
 
         [VtblIndex(7)]
         [Obsolete("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")]
-        HRESULT get_InstalledCommandSets([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t **")] IMapView<HSTRING, IntPtr>** voiceCommandSets);
+        HRESULT get_InstalledCommandSets([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t **")] IMapView<HSTRING, Pointer<IVoiceCommandSet>>** voiceCommandSets);
     }
 
     public partial struct Vtbl<TSelf>
@@ -128,6 +128,6 @@ public unsafe partial struct IVoiceCommandManager : IVoiceCommandManager.Interfa
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CMedia__CSpeechRecognition__CVoiceCommandSet_t **) __attribute__((stdcall))")]
         [Obsolete("Use Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager instead of Windows.Media.SpeechRecognition.VoiceComandManager. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, IntPtr>**, int> get_InstalledCommandSets;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, Pointer<IVoiceCommandSet>>**, int> get_InstalledCommandSets;
     }
 }

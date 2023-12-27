@@ -82,9 +82,9 @@ public unsafe partial struct IClipboardHistoryItemsResult : IClipboardHistoryIte
     /// <include file='IClipboardHistoryItemsResult.xml' path='doc/member[@name="IClipboardHistoryItemsResult.get_Items"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Items([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Items([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_t **")] IVectorView<Pointer<IClipboardHistoryItem>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IClipboardHistoryItemsResult*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IClipboardHistoryItemsResult*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IClipboardHistoryItemsResult*, IVectorView<Pointer<IClipboardHistoryItem>>**, int>)(lpVtbl[7]))((IClipboardHistoryItemsResult*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IClipboardHistoryItemsResult : IClipboardHistoryIte
         HRESULT get_Status([NativeTypeName("ABI::Windows::ApplicationModel::DataTransfer::ClipboardHistoryItemsResultStatus *")] ClipboardHistoryItemsResultStatus* value);
 
         [VtblIndex(7)]
-        HRESULT get_Items([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Items([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_t **")] IVectorView<Pointer<IClipboardHistoryItem>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IClipboardHistoryItemsResult : IClipboardHistoryIte
         public delegate* unmanaged[MemberFunction]<TSelf*, ClipboardHistoryItemsResultStatus*, int> get_Status;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItem_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Items;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IClipboardHistoryItem>>**, int> get_Items;
     }
 }

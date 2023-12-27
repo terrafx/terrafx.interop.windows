@@ -74,15 +74,15 @@ public unsafe partial struct IDeviceWatcherTriggerDetails : IDeviceWatcherTrigge
     /// <include file='IDeviceWatcherTriggerDetails.xml' path='doc/member[@name="IDeviceWatcherTriggerDetails.get_DeviceWatcherEvents"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_DeviceWatcherEvents([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CEnumeration__CDeviceWatcherEvent_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_DeviceWatcherEvents([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CEnumeration__CDeviceWatcherEvent_t **")] IVectorView<Pointer<IDeviceWatcherEvent>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceWatcherTriggerDetails*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IDeviceWatcherTriggerDetails*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceWatcherTriggerDetails*, IVectorView<Pointer<IDeviceWatcherEvent>>**, int>)(lpVtbl[6]))((IDeviceWatcherTriggerDetails*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_DeviceWatcherEvents([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CEnumeration__CDeviceWatcherEvent_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_DeviceWatcherEvents([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CEnumeration__CDeviceWatcherEvent_t **")] IVectorView<Pointer<IDeviceWatcherEvent>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IDeviceWatcherTriggerDetails : IDeviceWatcherTrigge
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CEnumeration__CDeviceWatcherEvent_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_DeviceWatcherEvents;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IDeviceWatcherEvent>>**, int> get_DeviceWatcherEvents;
     }
 }

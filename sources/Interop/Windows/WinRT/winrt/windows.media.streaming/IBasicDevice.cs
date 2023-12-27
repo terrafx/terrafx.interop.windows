@@ -210,9 +210,9 @@ public unsafe partial struct IBasicDevice : IBasicDevice.Interface, INativeGuid
     /// <include file='IBasicDevice.xml' path='doc/member[@name="IBasicDevice.get_Icons"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT get_Icons([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CStreaming__CIDeviceIcon_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Icons([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CStreaming__CIDeviceIcon_t **")] IVector<Pointer<IDeviceIcon>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBasicDevice*, IVector<IntPtr>**, int>)(lpVtbl[23]))((IBasicDevice*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBasicDevice*, IVector<Pointer<IDeviceIcon>>**, int>)(lpVtbl[23]))((IBasicDevice*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBasicDevice.xml' path='doc/member[@name="IBasicDevice.get_ConnectionStatus"]/*' />
@@ -293,7 +293,7 @@ public unsafe partial struct IBasicDevice : IBasicDevice.Interface, INativeGuid
         HRESULT get_Type([NativeTypeName("ABI::Windows::Media::Streaming::DeviceTypes *")] DeviceTypes* value);
 
         [VtblIndex(23)]
-        HRESULT get_Icons([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CStreaming__CIDeviceIcon_t **")] IVector<IntPtr>** value);
+        HRESULT get_Icons([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CStreaming__CIDeviceIcon_t **")] IVector<Pointer<IDeviceIcon>>** value);
 
         [VtblIndex(24)]
         HRESULT get_ConnectionStatus([NativeTypeName("ABI::Windows::Media::Streaming::ConnectionStatus *")] ConnectionStatus* value);
@@ -378,7 +378,7 @@ public unsafe partial struct IBasicDevice : IBasicDevice.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, DeviceTypes*, int> get_Type;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CStreaming__CIDeviceIcon_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Icons;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IDeviceIcon>>**, int> get_Icons;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Streaming::ConnectionStatus *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ConnectionStatus*, int> get_ConnectionStatus;

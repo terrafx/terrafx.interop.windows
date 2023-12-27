@@ -74,37 +74,37 @@ public unsafe partial struct IBitmapFrameWithSoftwareBitmap : IBitmapFrameWithSo
     /// <include file='IBitmapFrameWithSoftwareBitmap.xml' path='doc/member[@name="IBitmapFrameWithSoftwareBitmap.GetSoftwareBitmapAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetSoftwareBitmapAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetSoftwareBitmapAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<Pointer<ISoftwareBitmap>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBitmapFrameWithSoftwareBitmap*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IBitmapFrameWithSoftwareBitmap*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBitmapFrameWithSoftwareBitmap*, IAsyncOperation<Pointer<ISoftwareBitmap>>**, int>)(lpVtbl[6]))((IBitmapFrameWithSoftwareBitmap*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBitmapFrameWithSoftwareBitmap.xml' path='doc/member[@name="IBitmapFrameWithSoftwareBitmap.GetSoftwareBitmapConvertedAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetSoftwareBitmapConvertedAsync([NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapPixelFormat")] BitmapPixelFormat pixelFormat, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapAlphaMode")] BitmapAlphaMode alphaMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetSoftwareBitmapConvertedAsync([NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapPixelFormat")] BitmapPixelFormat pixelFormat, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapAlphaMode")] BitmapAlphaMode alphaMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<Pointer<ISoftwareBitmap>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBitmapFrameWithSoftwareBitmap*, BitmapPixelFormat, BitmapAlphaMode, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IBitmapFrameWithSoftwareBitmap*)Unsafe.AsPointer(ref this), pixelFormat, alphaMode, value);
+        return ((delegate* unmanaged[MemberFunction]<IBitmapFrameWithSoftwareBitmap*, BitmapPixelFormat, BitmapAlphaMode, IAsyncOperation<Pointer<ISoftwareBitmap>>**, int>)(lpVtbl[7]))((IBitmapFrameWithSoftwareBitmap*)Unsafe.AsPointer(ref this), pixelFormat, alphaMode, value);
     }
 
     /// <include file='IBitmapFrameWithSoftwareBitmap.xml' path='doc/member[@name="IBitmapFrameWithSoftwareBitmap.GetSoftwareBitmapTransformedAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetSoftwareBitmapTransformedAsync([NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapPixelFormat")] BitmapPixelFormat pixelFormat, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapAlphaMode")] BitmapAlphaMode alphaMode, [NativeTypeName("ABI::Windows::Graphics::Imaging::IBitmapTransform *")] IBitmapTransform* transform, [NativeTypeName("ABI::Windows::Graphics::Imaging::ExifOrientationMode")] ExifOrientationMode exifOrientationMode, [NativeTypeName("ABI::Windows::Graphics::Imaging::ColorManagementMode")] ColorManagementMode colorManagementMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetSoftwareBitmapTransformedAsync([NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapPixelFormat")] BitmapPixelFormat pixelFormat, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapAlphaMode")] BitmapAlphaMode alphaMode, [NativeTypeName("ABI::Windows::Graphics::Imaging::IBitmapTransform *")] IBitmapTransform* transform, [NativeTypeName("ABI::Windows::Graphics::Imaging::ExifOrientationMode")] ExifOrientationMode exifOrientationMode, [NativeTypeName("ABI::Windows::Graphics::Imaging::ColorManagementMode")] ColorManagementMode colorManagementMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<Pointer<ISoftwareBitmap>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBitmapFrameWithSoftwareBitmap*, BitmapPixelFormat, BitmapAlphaMode, IBitmapTransform*, ExifOrientationMode, ColorManagementMode, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IBitmapFrameWithSoftwareBitmap*)Unsafe.AsPointer(ref this), pixelFormat, alphaMode, transform, exifOrientationMode, colorManagementMode, value);
+        return ((delegate* unmanaged[MemberFunction]<IBitmapFrameWithSoftwareBitmap*, BitmapPixelFormat, BitmapAlphaMode, IBitmapTransform*, ExifOrientationMode, ColorManagementMode, IAsyncOperation<Pointer<ISoftwareBitmap>>**, int>)(lpVtbl[8]))((IBitmapFrameWithSoftwareBitmap*)Unsafe.AsPointer(ref this), pixelFormat, alphaMode, transform, exifOrientationMode, colorManagementMode, value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetSoftwareBitmapAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetSoftwareBitmapAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<Pointer<ISoftwareBitmap>>** value);
 
         [VtblIndex(7)]
-        HRESULT GetSoftwareBitmapConvertedAsync([NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapPixelFormat")] BitmapPixelFormat pixelFormat, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapAlphaMode")] BitmapAlphaMode alphaMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetSoftwareBitmapConvertedAsync([NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapPixelFormat")] BitmapPixelFormat pixelFormat, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapAlphaMode")] BitmapAlphaMode alphaMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<Pointer<ISoftwareBitmap>>** value);
 
         [VtblIndex(8)]
-        HRESULT GetSoftwareBitmapTransformedAsync([NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapPixelFormat")] BitmapPixelFormat pixelFormat, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapAlphaMode")] BitmapAlphaMode alphaMode, [NativeTypeName("ABI::Windows::Graphics::Imaging::IBitmapTransform *")] IBitmapTransform* transform, [NativeTypeName("ABI::Windows::Graphics::Imaging::ExifOrientationMode")] ExifOrientationMode exifOrientationMode, [NativeTypeName("ABI::Windows::Graphics::Imaging::ColorManagementMode")] ColorManagementMode colorManagementMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetSoftwareBitmapTransformedAsync([NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapPixelFormat")] BitmapPixelFormat pixelFormat, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapAlphaMode")] BitmapAlphaMode alphaMode, [NativeTypeName("ABI::Windows::Graphics::Imaging::IBitmapTransform *")] IBitmapTransform* transform, [NativeTypeName("ABI::Windows::Graphics::Imaging::ExifOrientationMode")] ExifOrientationMode exifOrientationMode, [NativeTypeName("ABI::Windows::Graphics::Imaging::ColorManagementMode")] ColorManagementMode colorManagementMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **")] IAsyncOperation<Pointer<ISoftwareBitmap>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -129,12 +129,12 @@ public unsafe partial struct IBitmapFrameWithSoftwareBitmap : IBitmapFrameWithSo
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetSoftwareBitmapAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<ISoftwareBitmap>>**, int> GetSoftwareBitmapAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Graphics::Imaging::BitmapPixelFormat, ABI::Windows::Graphics::Imaging::BitmapAlphaMode, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, BitmapPixelFormat, BitmapAlphaMode, IAsyncOperation<IntPtr>**, int> GetSoftwareBitmapConvertedAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BitmapPixelFormat, BitmapAlphaMode, IAsyncOperation<Pointer<ISoftwareBitmap>>**, int> GetSoftwareBitmapConvertedAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Graphics::Imaging::BitmapPixelFormat, ABI::Windows::Graphics::Imaging::BitmapAlphaMode, ABI::Windows::Graphics::Imaging::IBitmapTransform *, ABI::Windows::Graphics::Imaging::ExifOrientationMode, ABI::Windows::Graphics::Imaging::ColorManagementMode, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, BitmapPixelFormat, BitmapAlphaMode, IBitmapTransform*, ExifOrientationMode, ColorManagementMode, IAsyncOperation<IntPtr>**, int> GetSoftwareBitmapTransformedAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BitmapPixelFormat, BitmapAlphaMode, IBitmapTransform*, ExifOrientationMode, ColorManagementMode, IAsyncOperation<Pointer<ISoftwareBitmap>>**, int> GetSoftwareBitmapTransformedAsync;
     }
 }

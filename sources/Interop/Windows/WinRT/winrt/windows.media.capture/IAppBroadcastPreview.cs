@@ -98,9 +98,9 @@ public unsafe partial struct IAppBroadcastPreview : IAppBroadcastPreview.Interfa
     /// <include file='IAppBroadcastPreview.xml' path='doc/member[@name="IAppBroadcastPreview.add_PreviewStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_PreviewStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastPreview_Windows__CMedia__CCapture__CAppBroadcastPreviewStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_PreviewStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastPreview_Windows__CMedia__CCapture__CAppBroadcastPreviewStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppBroadcastPreview>, Pointer<IAppBroadcastPreviewStateChangedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastPreview*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IAppBroadcastPreview*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastPreview*, ITypedEventHandler<Pointer<IAppBroadcastPreview>, Pointer<IAppBroadcastPreviewStateChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IAppBroadcastPreview*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IAppBroadcastPreview.xml' path='doc/member[@name="IAppBroadcastPreview.remove_PreviewStateChanged"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IAppBroadcastPreview : IAppBroadcastPreview.Interfa
         HRESULT get_ErrorCode([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_UINT32_t **")] IReference<uint>** value);
 
         [VtblIndex(9)]
-        HRESULT add_PreviewStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastPreview_Windows__CMedia__CCapture__CAppBroadcastPreviewStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_PreviewStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastPreview_Windows__CMedia__CCapture__CAppBroadcastPreviewStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppBroadcastPreview>, Pointer<IAppBroadcastPreviewStateChangedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_PreviewStateChanged(EventRegistrationToken token);
@@ -171,7 +171,7 @@ public unsafe partial struct IAppBroadcastPreview : IAppBroadcastPreview.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, IReference<uint>**, int> get_ErrorCode;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastPreview_Windows__CMedia__CCapture__CAppBroadcastPreviewStateChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PreviewStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastPreview>, Pointer<IAppBroadcastPreviewStateChangedEventArgs>>*, EventRegistrationToken*, int> add_PreviewStateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PreviewStateChanged;

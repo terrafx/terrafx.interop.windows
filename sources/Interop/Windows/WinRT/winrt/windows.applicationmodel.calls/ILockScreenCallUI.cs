@@ -82,9 +82,9 @@ public unsafe partial struct ILockScreenCallUI : ILockScreenCallUI.Interface, IN
     /// <include file='ILockScreenCallUI.xml' path='doc/member[@name="ILockScreenCallUI.add_EndRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_EndRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScreenCallUI_Windows__CApplicationModel__CCalls__CLockScreenCallEndRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_EndRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScreenCallUI_Windows__CApplicationModel__CCalls__CLockScreenCallEndRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ILockScreenCallUI>, Pointer<ILockScreenCallEndRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ILockScreenCallUI*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ILockScreenCallUI*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ILockScreenCallUI*, ITypedEventHandler<Pointer<ILockScreenCallUI>, Pointer<ILockScreenCallEndRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ILockScreenCallUI*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ILockScreenCallUI.xml' path='doc/member[@name="ILockScreenCallUI.remove_EndRequested"]/*' />
@@ -98,9 +98,9 @@ public unsafe partial struct ILockScreenCallUI : ILockScreenCallUI.Interface, IN
     /// <include file='ILockScreenCallUI.xml' path='doc/member[@name="ILockScreenCallUI.add_Closed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScreenCallUI_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScreenCallUI_IInspectable_t *")] ITypedEventHandler<Pointer<ILockScreenCallUI>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ILockScreenCallUI*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ILockScreenCallUI*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ILockScreenCallUI*, ITypedEventHandler<Pointer<ILockScreenCallUI>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ILockScreenCallUI*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ILockScreenCallUI.xml' path='doc/member[@name="ILockScreenCallUI.remove_Closed"]/*' />
@@ -133,13 +133,13 @@ public unsafe partial struct ILockScreenCallUI : ILockScreenCallUI.Interface, IN
         HRESULT Dismiss();
 
         [VtblIndex(7)]
-        HRESULT add_EndRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScreenCallUI_Windows__CApplicationModel__CCalls__CLockScreenCallEndRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_EndRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScreenCallUI_Windows__CApplicationModel__CCalls__CLockScreenCallEndRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ILockScreenCallUI>, Pointer<ILockScreenCallEndRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_EndRequested(EventRegistrationToken token);
 
         [VtblIndex(9)]
-        HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScreenCallUI_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScreenCallUI_IInspectable_t *")] ITypedEventHandler<Pointer<ILockScreenCallUI>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_Closed(EventRegistrationToken token);
@@ -176,13 +176,13 @@ public unsafe partial struct ILockScreenCallUI : ILockScreenCallUI.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, int> Dismiss;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScreenCallUI_Windows__CApplicationModel__CCalls__CLockScreenCallEndRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_EndRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ILockScreenCallUI>, Pointer<ILockScreenCallEndRequestedEventArgs>>*, EventRegistrationToken*, int> add_EndRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_EndRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CLockScreenCallUI_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Closed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ILockScreenCallUI>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Closed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Closed;

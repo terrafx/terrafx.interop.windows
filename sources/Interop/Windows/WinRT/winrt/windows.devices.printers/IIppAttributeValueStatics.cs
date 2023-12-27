@@ -154,9 +154,9 @@ public unsafe partial struct IIppAttributeValueStatics : IIppAttributeValueStati
     /// <include file='IIppAttributeValueStatics.xml' path='doc/member[@name="IIppAttributeValueStatics.CreateOctetStringArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT CreateOctetStringArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CStreams__CIBuffer_t *")] IIterable<IntPtr>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
+    public HRESULT CreateOctetStringArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CStreams__CIBuffer_t *")] IIterable<Pointer<IBuffer>>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, IIterable<IntPtr>*, IIppAttributeValue**, int>)(lpVtbl[16]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), values, result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, IIterable<Pointer<IBuffer>>*, IIppAttributeValue**, int>)(lpVtbl[16]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), values, result);
     }
 
     /// <include file='IIppAttributeValueStatics.xml' path='doc/member[@name="IIppAttributeValueStatics.CreateDateTime"]/*' />
@@ -186,9 +186,9 @@ public unsafe partial struct IIppAttributeValueStatics : IIppAttributeValueStati
     /// <include file='IIppAttributeValueStatics.xml' path='doc/member[@name="IIppAttributeValueStatics.CreateResolutionArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT CreateResolutionArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppResolution_t *")] IIterable<IntPtr>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
+    public HRESULT CreateResolutionArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppResolution_t *")] IIterable<Pointer<IIppResolution>>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, IIterable<IntPtr>*, IIppAttributeValue**, int>)(lpVtbl[20]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), values, result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, IIterable<Pointer<IIppResolution>>*, IIppAttributeValue**, int>)(lpVtbl[20]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), values, result);
     }
 
     /// <include file='IIppAttributeValueStatics.xml' path='doc/member[@name="IIppAttributeValueStatics.CreateRangeOfInteger"]/*' />
@@ -202,25 +202,25 @@ public unsafe partial struct IIppAttributeValueStatics : IIppAttributeValueStati
     /// <include file='IIppAttributeValueStatics.xml' path='doc/member[@name="IIppAttributeValueStatics.CreateRangeOfIntegerArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT CreateRangeOfIntegerArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppIntegerRange_t *")] IIterable<IntPtr>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
+    public HRESULT CreateRangeOfIntegerArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppIntegerRange_t *")] IIterable<Pointer<IIppIntegerRange>>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, IIterable<IntPtr>*, IIppAttributeValue**, int>)(lpVtbl[22]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), values, result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, IIterable<Pointer<IIppIntegerRange>>*, IIppAttributeValue**, int>)(lpVtbl[22]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), values, result);
     }
 
     /// <include file='IIppAttributeValueStatics.xml' path='doc/member[@name="IIppAttributeValueStatics.CreateCollection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT CreateCollection([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t *")] IIterable<IntPtr>* memberAttributes, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
+    public HRESULT CreateCollection([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IIppAttributeValue>>>>* memberAttributes, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, IIterable<IntPtr>*, IIppAttributeValue**, int>)(lpVtbl[23]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), memberAttributes, result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IIppAttributeValue>>>>*, IIppAttributeValue**, int>)(lpVtbl[23]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), memberAttributes, result);
     }
 
     /// <include file='IIppAttributeValueStatics.xml' path='doc/member[@name="IIppAttributeValueStatics.CreateCollectionArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
-    public HRESULT CreateCollectionArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t *")] IIterable<IntPtr>* memberAttributesArray, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
+    public HRESULT CreateCollectionArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t *")] IIterable<Pointer<IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IIppAttributeValue>>>>>>* memberAttributesArray, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, IIterable<IntPtr>*, IIppAttributeValue**, int>)(lpVtbl[24]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), memberAttributesArray, result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, IIterable<Pointer<IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IIppAttributeValue>>>>>>*, IIppAttributeValue**, int>)(lpVtbl[24]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), memberAttributesArray, result);
     }
 
     /// <include file='IIppAttributeValueStatics.xml' path='doc/member[@name="IIppAttributeValueStatics.CreateTextWithLanguage"]/*' />
@@ -234,9 +234,9 @@ public unsafe partial struct IIppAttributeValueStatics : IIppAttributeValueStati
     /// <include file='IIppAttributeValueStatics.xml' path='doc/member[@name="IIppAttributeValueStatics.CreateTextWithLanguageArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
-    public HRESULT CreateTextWithLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t *")] IIterable<IntPtr>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
+    public HRESULT CreateTextWithLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t *")] IIterable<Pointer<IIppTextWithLanguage>>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, IIterable<IntPtr>*, IIppAttributeValue**, int>)(lpVtbl[26]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), values, result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, IIterable<Pointer<IIppTextWithLanguage>>*, IIppAttributeValue**, int>)(lpVtbl[26]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), values, result);
     }
 
     /// <include file='IIppAttributeValueStatics.xml' path='doc/member[@name="IIppAttributeValueStatics.CreateNameWithLanguage"]/*' />
@@ -250,9 +250,9 @@ public unsafe partial struct IIppAttributeValueStatics : IIppAttributeValueStati
     /// <include file='IIppAttributeValueStatics.xml' path='doc/member[@name="IIppAttributeValueStatics.CreateNameWithLanguageArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT CreateNameWithLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t *")] IIterable<IntPtr>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
+    public HRESULT CreateNameWithLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t *")] IIterable<Pointer<IIppTextWithLanguage>>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, IIterable<IntPtr>*, IIppAttributeValue**, int>)(lpVtbl[28]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), values, result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, IIterable<Pointer<IIppTextWithLanguage>>*, IIppAttributeValue**, int>)(lpVtbl[28]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), values, result);
     }
 
     /// <include file='IIppAttributeValueStatics.xml' path='doc/member[@name="IIppAttributeValueStatics.CreateTextWithoutLanguage"]/*' />
@@ -314,9 +314,9 @@ public unsafe partial struct IIppAttributeValueStatics : IIppAttributeValueStati
     /// <include file='IIppAttributeValueStatics.xml' path='doc/member[@name="IIppAttributeValueStatics.CreateUriArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
-    public HRESULT CreateUriArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CUri_t *")] IIterable<IntPtr>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
+    public HRESULT CreateUriArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CUri_t *")] IIterable<Pointer<IUri>>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, IIterable<IntPtr>*, IIppAttributeValue**, int>)(lpVtbl[36]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), values, result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValueStatics*, IIterable<Pointer<IUri>>*, IIppAttributeValue**, int>)(lpVtbl[36]))((IIppAttributeValueStatics*)Unsafe.AsPointer(ref this), values, result);
     }
 
     /// <include file='IIppAttributeValueStatics.xml' path='doc/member[@name="IIppAttributeValueStatics.CreateUriSchema"]/*' />
@@ -416,7 +416,7 @@ public unsafe partial struct IIppAttributeValueStatics : IIppAttributeValueStati
         HRESULT CreateOctetString([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* value, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
 
         [VtblIndex(16)]
-        HRESULT CreateOctetStringArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CStreams__CIBuffer_t *")] IIterable<IntPtr>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
+        HRESULT CreateOctetStringArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CStreams__CIBuffer_t *")] IIterable<Pointer<IBuffer>>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
 
         [VtblIndex(17)]
         HRESULT CreateDateTime([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime value, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
@@ -428,31 +428,31 @@ public unsafe partial struct IIppAttributeValueStatics : IIppAttributeValueStati
         HRESULT CreateResolution([NativeTypeName("ABI::Windows::Devices::Printers::IIppResolution *")] IIppResolution* value, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
 
         [VtblIndex(20)]
-        HRESULT CreateResolutionArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppResolution_t *")] IIterable<IntPtr>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
+        HRESULT CreateResolutionArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppResolution_t *")] IIterable<Pointer<IIppResolution>>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
 
         [VtblIndex(21)]
         HRESULT CreateRangeOfInteger([NativeTypeName("ABI::Windows::Devices::Printers::IIppIntegerRange *")] IIppIntegerRange* value, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
 
         [VtblIndex(22)]
-        HRESULT CreateRangeOfIntegerArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppIntegerRange_t *")] IIterable<IntPtr>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
+        HRESULT CreateRangeOfIntegerArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppIntegerRange_t *")] IIterable<Pointer<IIppIntegerRange>>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
 
         [VtblIndex(23)]
-        HRESULT CreateCollection([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t *")] IIterable<IntPtr>* memberAttributes, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
+        HRESULT CreateCollection([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IIppAttributeValue>>>>* memberAttributes, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
 
         [VtblIndex(24)]
-        HRESULT CreateCollectionArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t *")] IIterable<IntPtr>* memberAttributesArray, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
+        HRESULT CreateCollectionArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t *")] IIterable<Pointer<IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IIppAttributeValue>>>>>>* memberAttributesArray, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
 
         [VtblIndex(25)]
         HRESULT CreateTextWithLanguage([NativeTypeName("ABI::Windows::Devices::Printers::IIppTextWithLanguage *")] IIppTextWithLanguage* value, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
 
         [VtblIndex(26)]
-        HRESULT CreateTextWithLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t *")] IIterable<IntPtr>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
+        HRESULT CreateTextWithLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t *")] IIterable<Pointer<IIppTextWithLanguage>>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
 
         [VtblIndex(27)]
         HRESULT CreateNameWithLanguage([NativeTypeName("ABI::Windows::Devices::Printers::IIppTextWithLanguage *")] IIppTextWithLanguage* value, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
 
         [VtblIndex(28)]
-        HRESULT CreateNameWithLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t *")] IIterable<IntPtr>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
+        HRESULT CreateNameWithLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t *")] IIterable<Pointer<IIppTextWithLanguage>>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
 
         [VtblIndex(29)]
         HRESULT CreateTextWithoutLanguage(HSTRING value, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
@@ -476,7 +476,7 @@ public unsafe partial struct IIppAttributeValueStatics : IIppAttributeValueStati
         HRESULT CreateUri([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* value, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
 
         [VtblIndex(36)]
-        HRESULT CreateUriArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CUri_t *")] IIterable<IntPtr>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
+        HRESULT CreateUriArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CUri_t *")] IIterable<Pointer<IUri>>* values, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
 
         [VtblIndex(37)]
         HRESULT CreateUriSchema(HSTRING value, [NativeTypeName("ABI::Windows::Devices::Printers::IIppAttributeValue **")] IIppAttributeValue** result);
@@ -555,7 +555,7 @@ public unsafe partial struct IIppAttributeValueStatics : IIppAttributeValueStati
         public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IIppAttributeValue**, int> CreateOctetString;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CStreams__CIBuffer_t *, ABI::Windows::Devices::Printers::IIppAttributeValue **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IIppAttributeValue**, int> CreateOctetStringArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IBuffer>>*, IIppAttributeValue**, int> CreateOctetStringArray;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Devices::Printers::IIppAttributeValue **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, IIppAttributeValue**, int> CreateDateTime;
@@ -567,31 +567,31 @@ public unsafe partial struct IIppAttributeValueStatics : IIppAttributeValueStati
         public delegate* unmanaged[MemberFunction]<TSelf*, IIppResolution*, IIppAttributeValue**, int> CreateResolution;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppResolution_t *, ABI::Windows::Devices::Printers::IIppAttributeValue **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IIppAttributeValue**, int> CreateResolutionArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IIppResolution>>*, IIppAttributeValue**, int> CreateResolutionArray;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Printers::IIppIntegerRange *, ABI::Windows::Devices::Printers::IIppAttributeValue **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IIppIntegerRange*, IIppAttributeValue**, int> CreateRangeOfInteger;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppIntegerRange_t *, ABI::Windows::Devices::Printers::IIppAttributeValue **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IIppAttributeValue**, int> CreateRangeOfIntegerArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IIppIntegerRange>>*, IIppAttributeValue**, int> CreateRangeOfIntegerArray;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t *, ABI::Windows::Devices::Printers::IIppAttributeValue **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IIppAttributeValue**, int> CreateCollection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IIppAttributeValue>>>>*, IIppAttributeValue**, int> CreateCollection;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1___FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t *, ABI::Windows::Devices::Printers::IIppAttributeValue **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IIppAttributeValue**, int> CreateCollectionArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IIppAttributeValue>>>>>>*, IIppAttributeValue**, int> CreateCollectionArray;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Printers::IIppTextWithLanguage *, ABI::Windows::Devices::Printers::IIppAttributeValue **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IIppTextWithLanguage*, IIppAttributeValue**, int> CreateTextWithLanguage;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t *, ABI::Windows::Devices::Printers::IIppAttributeValue **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IIppAttributeValue**, int> CreateTextWithLanguageArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IIppTextWithLanguage>>*, IIppAttributeValue**, int> CreateTextWithLanguageArray;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Printers::IIppTextWithLanguage *, ABI::Windows::Devices::Printers::IIppAttributeValue **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IIppTextWithLanguage*, IIppAttributeValue**, int> CreateNameWithLanguage;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t *, ABI::Windows::Devices::Printers::IIppAttributeValue **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IIppAttributeValue**, int> CreateNameWithLanguageArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IIppTextWithLanguage>>*, IIppAttributeValue**, int> CreateNameWithLanguageArray;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Devices::Printers::IIppAttributeValue **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IIppAttributeValue**, int> CreateTextWithoutLanguage;
@@ -615,7 +615,7 @@ public unsafe partial struct IIppAttributeValueStatics : IIppAttributeValueStati
         public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IIppAttributeValue**, int> CreateUri;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CUri_t *, ABI::Windows::Devices::Printers::IIppAttributeValue **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IIppAttributeValue**, int> CreateUriArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IUri>>*, IIppAttributeValue**, int> CreateUriArray;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Devices::Printers::IIppAttributeValue **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IIppAttributeValue**, int> CreateUriSchema;

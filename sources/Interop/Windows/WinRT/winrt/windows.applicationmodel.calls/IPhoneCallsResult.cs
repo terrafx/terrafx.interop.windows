@@ -82,9 +82,9 @@ public unsafe partial struct IPhoneCallsResult : IPhoneCallsResult.Interface, IN
     /// <include file='IPhoneCallsResult.xml' path='doc/member[@name="IPhoneCallsResult.get_AllActivePhoneCalls"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_AllActivePhoneCalls([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CCalls__CPhoneCall_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_AllActivePhoneCalls([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CCalls__CPhoneCall_t **")] IVectorView<Pointer<IPhoneCall>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneCallsResult*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IPhoneCallsResult*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneCallsResult*, IVectorView<Pointer<IPhoneCall>>**, int>)(lpVtbl[7]))((IPhoneCallsResult*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IPhoneCallsResult : IPhoneCallsResult.Interface, IN
         HRESULT get_OperationStatus([NativeTypeName("ABI::Windows::ApplicationModel::Calls::PhoneLineOperationStatus *")] PhoneLineOperationStatus* value);
 
         [VtblIndex(7)]
-        HRESULT get_AllActivePhoneCalls([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CCalls__CPhoneCall_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_AllActivePhoneCalls([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CCalls__CPhoneCall_t **")] IVectorView<Pointer<IPhoneCall>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IPhoneCallsResult : IPhoneCallsResult.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, PhoneLineOperationStatus*, int> get_OperationStatus;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CCalls__CPhoneCall_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_AllActivePhoneCalls;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IPhoneCall>>**, int> get_AllActivePhoneCalls;
     }
 }

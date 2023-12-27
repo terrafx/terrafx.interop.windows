@@ -74,17 +74,17 @@ public unsafe partial struct ISmartCardEmulatorStatics2 : ISmartCardEmulatorStat
     /// <include file='ISmartCardEmulatorStatics2.xml' path='doc/member[@name="ISmartCardEmulatorStatics2.GetAppletIdGroupRegistrationsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetAppletIdGroupRegistrationsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCardAppletIdGroupRegistration_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetAppletIdGroupRegistrationsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCardAppletIdGroupRegistration_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<ISmartCardAppletIdGroupRegistration>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardEmulatorStatics2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ISmartCardEmulatorStatics2*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardEmulatorStatics2*, IAsyncOperation<Pointer<IVectorView<Pointer<ISmartCardAppletIdGroupRegistration>>>>**, int>)(lpVtbl[6]))((ISmartCardEmulatorStatics2*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='ISmartCardEmulatorStatics2.xml' path='doc/member[@name="ISmartCardEmulatorStatics2.RegisterAppletIdGroupAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT RegisterAppletIdGroupAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardAppletIdGroup *")] ISmartCardAppletIdGroup* appletIdGroup, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardAppletIdGroupRegistration_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT RegisterAppletIdGroupAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardAppletIdGroup *")] ISmartCardAppletIdGroup* appletIdGroup, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardAppletIdGroupRegistration_t **")] IAsyncOperation<Pointer<ISmartCardAppletIdGroupRegistration>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardEmulatorStatics2*, ISmartCardAppletIdGroup*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((ISmartCardEmulatorStatics2*)Unsafe.AsPointer(ref this), appletIdGroup, result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardEmulatorStatics2*, ISmartCardAppletIdGroup*, IAsyncOperation<Pointer<ISmartCardAppletIdGroupRegistration>>**, int>)(lpVtbl[7]))((ISmartCardEmulatorStatics2*)Unsafe.AsPointer(ref this), appletIdGroup, result);
     }
 
     /// <include file='ISmartCardEmulatorStatics2.xml' path='doc/member[@name="ISmartCardEmulatorStatics2.UnregisterAppletIdGroupAsync"]/*' />
@@ -106,10 +106,10 @@ public unsafe partial struct ISmartCardEmulatorStatics2 : ISmartCardEmulatorStat
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetAppletIdGroupRegistrationsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCardAppletIdGroupRegistration_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetAppletIdGroupRegistrationsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCardAppletIdGroupRegistration_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<ISmartCardAppletIdGroupRegistration>>>>** result);
 
         [VtblIndex(7)]
-        HRESULT RegisterAppletIdGroupAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardAppletIdGroup *")] ISmartCardAppletIdGroup* appletIdGroup, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardAppletIdGroupRegistration_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT RegisterAppletIdGroupAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardAppletIdGroup *")] ISmartCardAppletIdGroup* appletIdGroup, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardAppletIdGroupRegistration_t **")] IAsyncOperation<Pointer<ISmartCardAppletIdGroupRegistration>>** result);
 
         [VtblIndex(8)]
         HRESULT UnregisterAppletIdGroupAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardAppletIdGroupRegistration *")] ISmartCardAppletIdGroupRegistration* registration, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** result);
@@ -140,10 +140,10 @@ public unsafe partial struct ISmartCardEmulatorStatics2 : ISmartCardEmulatorStat
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCardAppletIdGroupRegistration_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetAppletIdGroupRegistrationsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<ISmartCardAppletIdGroupRegistration>>>>**, int> GetAppletIdGroupRegistrationsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::SmartCards::ISmartCardAppletIdGroup *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardAppletIdGroupRegistration_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ISmartCardAppletIdGroup*, IAsyncOperation<IntPtr>**, int> RegisterAppletIdGroupAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISmartCardAppletIdGroup*, IAsyncOperation<Pointer<ISmartCardAppletIdGroupRegistration>>**, int> RegisterAppletIdGroupAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::SmartCards::ISmartCardAppletIdGroupRegistration *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ISmartCardAppletIdGroupRegistration*, IAsyncAction**, int> UnregisterAppletIdGroupAsync;

@@ -146,9 +146,9 @@ public unsafe partial struct IApplicationData : IApplicationData.Interface, INat
     /// <include file='IApplicationData.xml' path='doc/member[@name="IApplicationData.add_DataChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT add_DataChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_DataChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_t *")] ITypedEventHandler<Pointer<IApplicationData>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IApplicationData*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IApplicationData*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationData*, ITypedEventHandler<Pointer<IApplicationData>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IApplicationData*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IApplicationData.xml' path='doc/member[@name="IApplicationData.remove_DataChanged"]/*' />
@@ -205,7 +205,7 @@ public unsafe partial struct IApplicationData : IApplicationData.Interface, INat
         HRESULT get_TemporaryFolder([NativeTypeName("ABI::Windows::Storage::IStorageFolder **")] IStorageFolder** value);
 
         [VtblIndex(15)]
-        HRESULT add_DataChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_DataChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_t *")] ITypedEventHandler<Pointer<IApplicationData>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(16)]
         HRESULT remove_DataChanged(EventRegistrationToken token);
@@ -266,7 +266,7 @@ public unsafe partial struct IApplicationData : IApplicationData.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFolder**, int> get_TemporaryFolder;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CApplicationData_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DataChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IApplicationData>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_DataChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DataChanged;

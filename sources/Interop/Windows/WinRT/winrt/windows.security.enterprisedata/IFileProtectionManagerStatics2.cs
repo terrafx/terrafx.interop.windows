@@ -82,17 +82,17 @@ public unsafe partial struct IFileProtectionManagerStatics2 : IFileProtectionMan
     /// <include file='IFileProtectionManagerStatics2.xml' path='doc/member[@name="IFileProtectionManagerStatics2.LoadFileFromContainerWithTargetAndNameCollisionOptionAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT LoadFileFromContainerWithTargetAndNameCollisionOptionAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* containerFile, [NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* target, [NativeTypeName("ABI::Windows::Storage::NameCollisionOption")] NameCollisionOption collisionOption, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerImportResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT LoadFileFromContainerWithTargetAndNameCollisionOptionAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* containerFile, [NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* target, [NativeTypeName("ABI::Windows::Storage::NameCollisionOption")] NameCollisionOption collisionOption, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerImportResult_t **")] IAsyncOperation<Pointer<IProtectedContainerImportResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileProtectionManagerStatics2*, IStorageFile*, IStorageItem*, NameCollisionOption, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IFileProtectionManagerStatics2*)Unsafe.AsPointer(ref this), containerFile, target, collisionOption, result);
+        return ((delegate* unmanaged[MemberFunction]<IFileProtectionManagerStatics2*, IStorageFile*, IStorageItem*, NameCollisionOption, IAsyncOperation<Pointer<IProtectedContainerImportResult>>**, int>)(lpVtbl[7]))((IFileProtectionManagerStatics2*)Unsafe.AsPointer(ref this), containerFile, target, collisionOption, result);
     }
 
     /// <include file='IFileProtectionManagerStatics2.xml' path='doc/member[@name="IFileProtectionManagerStatics2.SaveFileAsContainerWithSharingAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SaveFileAsContainerWithSharingAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* protectedFile, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* sharedWithIdentities, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerExportResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT SaveFileAsContainerWithSharingAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* protectedFile, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* sharedWithIdentities, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerExportResult_t **")] IAsyncOperation<Pointer<IProtectedContainerExportResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileProtectionManagerStatics2*, IStorageFile*, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IFileProtectionManagerStatics2*)Unsafe.AsPointer(ref this), protectedFile, sharedWithIdentities, result);
+        return ((delegate* unmanaged[MemberFunction]<IFileProtectionManagerStatics2*, IStorageFile*, IIterable<HSTRING>*, IAsyncOperation<Pointer<IProtectedContainerExportResult>>**, int>)(lpVtbl[8]))((IFileProtectionManagerStatics2*)Unsafe.AsPointer(ref this), protectedFile, sharedWithIdentities, result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -101,10 +101,10 @@ public unsafe partial struct IFileProtectionManagerStatics2 : IFileProtectionMan
         HRESULT IsContainerAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** result);
 
         [VtblIndex(7)]
-        HRESULT LoadFileFromContainerWithTargetAndNameCollisionOptionAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* containerFile, [NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* target, [NativeTypeName("ABI::Windows::Storage::NameCollisionOption")] NameCollisionOption collisionOption, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerImportResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT LoadFileFromContainerWithTargetAndNameCollisionOptionAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* containerFile, [NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* target, [NativeTypeName("ABI::Windows::Storage::NameCollisionOption")] NameCollisionOption collisionOption, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerImportResult_t **")] IAsyncOperation<Pointer<IProtectedContainerImportResult>>** result);
 
         [VtblIndex(8)]
-        HRESULT SaveFileAsContainerWithSharingAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* protectedFile, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* sharedWithIdentities, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerExportResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT SaveFileAsContainerWithSharingAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* protectedFile, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* sharedWithIdentities, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerExportResult_t **")] IAsyncOperation<Pointer<IProtectedContainerExportResult>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -132,9 +132,9 @@ public unsafe partial struct IFileProtectionManagerStatics2 : IFileProtectionMan
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<bool>**, int> IsContainerAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Storage::IStorageItem *, ABI::Windows::Storage::NameCollisionOption, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerImportResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IStorageItem*, NameCollisionOption, IAsyncOperation<IntPtr>**, int> LoadFileFromContainerWithTargetAndNameCollisionOptionAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IStorageItem*, NameCollisionOption, IAsyncOperation<Pointer<IProtectedContainerImportResult>>**, int> LoadFileFromContainerWithTargetAndNameCollisionOptionAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CEnterpriseData__CProtectedContainerExportResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int> SaveFileAsContainerWithSharingAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IIterable<HSTRING>*, IAsyncOperation<Pointer<IProtectedContainerExportResult>>**, int> SaveFileAsContainerWithSharingAsync;
     }
 }

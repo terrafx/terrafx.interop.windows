@@ -50,15 +50,15 @@ public unsafe partial struct ISelectableWordSegmentsTokenizingHandler : ISelecta
     /// <include file='ISelectableWordSegmentsTokenizingHandler.xml' path='doc/member[@name="ISelectableWordSegmentsTokenizingHandler.Invoke"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Invoke([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CSelectableWordSegment_t *")] IIterable<IntPtr>* precedingWords, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CSelectableWordSegment_t *")] IIterable<IntPtr>* words)
+    public HRESULT Invoke([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CSelectableWordSegment_t *")] IIterable<Pointer<ISelectableWordSegment>>* precedingWords, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CSelectableWordSegment_t *")] IIterable<Pointer<ISelectableWordSegment>>* words)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISelectableWordSegmentsTokenizingHandler*, IIterable<IntPtr>*, IIterable<IntPtr>*, int>)(lpVtbl[3]))((ISelectableWordSegmentsTokenizingHandler*)Unsafe.AsPointer(ref this), precedingWords, words);
+        return ((delegate* unmanaged[MemberFunction]<ISelectableWordSegmentsTokenizingHandler*, IIterable<Pointer<ISelectableWordSegment>>*, IIterable<Pointer<ISelectableWordSegment>>*, int>)(lpVtbl[3]))((ISelectableWordSegmentsTokenizingHandler*)Unsafe.AsPointer(ref this), precedingWords, words);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Invoke([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CSelectableWordSegment_t *")] IIterable<IntPtr>* precedingWords, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CSelectableWordSegment_t *")] IIterable<IntPtr>* words);
+        HRESULT Invoke([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CSelectableWordSegment_t *")] IIterable<Pointer<ISelectableWordSegment>>* precedingWords, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CSelectableWordSegment_t *")] IIterable<Pointer<ISelectableWordSegment>>* words);
     }
 
     public partial struct Vtbl<TSelf>
@@ -74,6 +74,6 @@ public unsafe partial struct ISelectableWordSegmentsTokenizingHandler : ISelecta
         public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CSelectableWordSegment_t *, ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CSelectableWordSegment_t *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IIterable<IntPtr>*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<ISelectableWordSegment>>*, IIterable<Pointer<ISelectableWordSegment>>*, int> Invoke;
     }
 }

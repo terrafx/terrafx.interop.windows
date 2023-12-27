@@ -74,9 +74,9 @@ public unsafe partial struct ISpatialAnchorExporter : ISpatialAnchorExporter.Int
     /// <include file='ISpatialAnchorExporter.xml' path='doc/member[@name="ISpatialAnchorExporter.GetAnchorExportSufficiencyAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetAnchorExportSufficiencyAsync([NativeTypeName("ABI::Windows::Perception::Spatial::ISpatialAnchor *")] ISpatialAnchor* anchor, [NativeTypeName("ABI::Windows::Perception::Spatial::SpatialAnchorExportPurpose")] SpatialAnchorExportPurpose purpose, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetAnchorExportSufficiencyAsync([NativeTypeName("ABI::Windows::Perception::Spatial::ISpatialAnchor *")] ISpatialAnchor* anchor, [NativeTypeName("ABI::Windows::Perception::Spatial::SpatialAnchorExportPurpose")] SpatialAnchorExportPurpose purpose, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_t **")] IAsyncOperation<Pointer<ISpatialAnchorExportSufficiency>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpatialAnchorExporter*, ISpatialAnchor*, SpatialAnchorExportPurpose, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ISpatialAnchorExporter*)Unsafe.AsPointer(ref this), anchor, purpose, operation);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAnchorExporter*, ISpatialAnchor*, SpatialAnchorExportPurpose, IAsyncOperation<Pointer<ISpatialAnchorExportSufficiency>>**, int>)(lpVtbl[6]))((ISpatialAnchorExporter*)Unsafe.AsPointer(ref this), anchor, purpose, operation);
     }
 
     /// <include file='ISpatialAnchorExporter.xml' path='doc/member[@name="ISpatialAnchorExporter.TryExportAnchorAsync"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct ISpatialAnchorExporter : ISpatialAnchorExporter.Int
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetAnchorExportSufficiencyAsync([NativeTypeName("ABI::Windows::Perception::Spatial::ISpatialAnchor *")] ISpatialAnchor* anchor, [NativeTypeName("ABI::Windows::Perception::Spatial::SpatialAnchorExportPurpose")] SpatialAnchorExportPurpose purpose, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetAnchorExportSufficiencyAsync([NativeTypeName("ABI::Windows::Perception::Spatial::ISpatialAnchor *")] ISpatialAnchor* anchor, [NativeTypeName("ABI::Windows::Perception::Spatial::SpatialAnchorExportPurpose")] SpatialAnchorExportPurpose purpose, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_t **")] IAsyncOperation<Pointer<ISpatialAnchorExportSufficiency>>** operation);
 
         [VtblIndex(7)]
         HRESULT TryExportAnchorAsync([NativeTypeName("ABI::Windows::Perception::Spatial::ISpatialAnchor *")] ISpatialAnchor* anchor, [NativeTypeName("ABI::Windows::Perception::Spatial::SpatialAnchorExportPurpose")] SpatialAnchorExportPurpose purpose, [NativeTypeName("ABI::Windows::Storage::Streams::IOutputStream *")] IOutputStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
@@ -118,7 +118,7 @@ public unsafe partial struct ISpatialAnchorExporter : ISpatialAnchorExporter.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Perception::Spatial::ISpatialAnchor *, ABI::Windows::Perception::Spatial::SpatialAnchorExportPurpose, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorExportSufficiency_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ISpatialAnchor*, SpatialAnchorExportPurpose, IAsyncOperation<IntPtr>**, int> GetAnchorExportSufficiencyAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpatialAnchor*, SpatialAnchorExportPurpose, IAsyncOperation<Pointer<ISpatialAnchorExportSufficiency>>**, int> GetAnchorExportSufficiencyAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Perception::Spatial::ISpatialAnchor *, ABI::Windows::Perception::Spatial::SpatialAnchorExportPurpose, ABI::Windows::Storage::Streams::IOutputStream *, ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ISpatialAnchor*, SpatialAnchorExportPurpose, IOutputStream*, IAsyncOperation<bool>**, int> TryExportAnchorAsync;

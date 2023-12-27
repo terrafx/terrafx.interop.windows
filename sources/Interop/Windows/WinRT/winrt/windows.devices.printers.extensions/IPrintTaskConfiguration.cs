@@ -82,9 +82,9 @@ public unsafe partial struct IPrintTaskConfiguration : IPrintTaskConfiguration.I
     /// <include file='IPrintTaskConfiguration.xml' path='doc/member[@name="IPrintTaskConfiguration.add_SaveRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_SaveRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfiguration_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfigurationSaveRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_SaveRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfiguration_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfigurationSaveRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IPrintTaskConfiguration>, Pointer<IPrintTaskConfigurationSaveRequestedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPrintTaskConfiguration*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IPrintTaskConfiguration*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IPrintTaskConfiguration*, ITypedEventHandler<Pointer<IPrintTaskConfiguration>, Pointer<IPrintTaskConfigurationSaveRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IPrintTaskConfiguration*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
     }
 
     /// <include file='IPrintTaskConfiguration.xml' path='doc/member[@name="IPrintTaskConfiguration.remove_SaveRequested"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IPrintTaskConfiguration : IPrintTaskConfiguration.I
         HRESULT get_PrinterExtensionContext(IInspectable** context);
 
         [VtblIndex(7)]
-        HRESULT add_SaveRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfiguration_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfigurationSaveRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_SaveRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfiguration_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfigurationSaveRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IPrintTaskConfiguration>, Pointer<IPrintTaskConfigurationSaveRequestedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(8)]
         HRESULT remove_SaveRequested(EventRegistrationToken eventCookie);
@@ -132,7 +132,7 @@ public unsafe partial struct IPrintTaskConfiguration : IPrintTaskConfiguration.I
         public delegate* unmanaged[MemberFunction]<TSelf*, IInspectable**, int> get_PrinterExtensionContext;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfiguration_Windows__CDevices__CPrinters__CExtensions__CPrintTaskConfigurationSaveRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SaveRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPrintTaskConfiguration>, Pointer<IPrintTaskConfigurationSaveRequestedEventArgs>>*, EventRegistrationToken*, int> add_SaveRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SaveRequested;

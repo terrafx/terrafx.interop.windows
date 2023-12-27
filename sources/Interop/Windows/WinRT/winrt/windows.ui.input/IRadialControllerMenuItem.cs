@@ -98,9 +98,9 @@ public unsafe partial struct IRadialControllerMenuItem : IRadialControllerMenuIt
     /// <include file='IRadialControllerMenuItem.xml' path='doc/member[@name="IRadialControllerMenuItem.add_Invoked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_Invoked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialControllerMenuItem_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Invoked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialControllerMenuItem_IInspectable_t *")] ITypedEventHandler<Pointer<IRadialControllerMenuItem>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRadialControllerMenuItem*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IRadialControllerMenuItem*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IRadialControllerMenuItem*, ITypedEventHandler<Pointer<IRadialControllerMenuItem>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IRadialControllerMenuItem*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IRadialControllerMenuItem.xml' path='doc/member[@name="IRadialControllerMenuItem.remove_Invoked"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IRadialControllerMenuItem : IRadialControllerMenuIt
         HRESULT put_Tag(IInspectable* value);
 
         [VtblIndex(9)]
-        HRESULT add_Invoked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialControllerMenuItem_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Invoked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialControllerMenuItem_IInspectable_t *")] ITypedEventHandler<Pointer<IRadialControllerMenuItem>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_Invoked(EventRegistrationToken token);
@@ -160,7 +160,7 @@ public unsafe partial struct IRadialControllerMenuItem : IRadialControllerMenuIt
         public delegate* unmanaged[MemberFunction]<TSelf*, IInspectable*, int> put_Tag;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialControllerMenuItem_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Invoked;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRadialControllerMenuItem>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Invoked;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Invoked;

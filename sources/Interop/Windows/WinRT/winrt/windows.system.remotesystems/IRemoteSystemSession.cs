@@ -98,9 +98,9 @@ public unsafe partial struct IRemoteSystemSession : IRemoteSystemSession.Interfa
     /// <include file='IRemoteSystemSession.xml' path='doc/member[@name="IRemoteSystemSession.add_Disconnected"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_Disconnected([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemSession_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionDisconnectedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Disconnected([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemSession_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionDisconnectedEventArgs_t *")] ITypedEventHandler<Pointer<IRemoteSystemSession>, Pointer<IRemoteSystemSessionDisconnectedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemSession*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IRemoteSystemSession*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemSession*, ITypedEventHandler<Pointer<IRemoteSystemSession>, Pointer<IRemoteSystemSessionDisconnectedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IRemoteSystemSession*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IRemoteSystemSession.xml' path='doc/member[@name="IRemoteSystemSession.remove_Disconnected"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IRemoteSystemSession : IRemoteSystemSession.Interfa
         HRESULT get_ControllerDisplayName(HSTRING* value);
 
         [VtblIndex(9)]
-        HRESULT add_Disconnected([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemSession_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionDisconnectedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Disconnected([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemSession_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionDisconnectedEventArgs_t *")] ITypedEventHandler<Pointer<IRemoteSystemSession>, Pointer<IRemoteSystemSessionDisconnectedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_Disconnected(EventRegistrationToken token);
@@ -182,7 +182,7 @@ public unsafe partial struct IRemoteSystemSession : IRemoteSystemSession.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_ControllerDisplayName;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemSession_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionDisconnectedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Disconnected;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRemoteSystemSession>, Pointer<IRemoteSystemSessionDisconnectedEventArgs>>*, EventRegistrationToken*, int> add_Disconnected;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Disconnected;

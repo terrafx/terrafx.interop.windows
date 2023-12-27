@@ -106,9 +106,9 @@ public unsafe partial struct IBitmapDecoder : IBitmapDecoder.Interface, INativeG
     /// <include file='IBitmapDecoder.xml' path='doc/member[@name="IBitmapDecoder.GetFrameAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetFrameAsync([NativeTypeName("UINT32")] uint frameIndex, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapFrame_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT GetFrameAsync([NativeTypeName("UINT32")] uint frameIndex, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapFrame_t **")] IAsyncOperation<Pointer<IBitmapFrame>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBitmapDecoder*, uint, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IBitmapDecoder*)Unsafe.AsPointer(ref this), frameIndex, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IBitmapDecoder*, uint, IAsyncOperation<Pointer<IBitmapFrame>>**, int>)(lpVtbl[10]))((IBitmapDecoder*)Unsafe.AsPointer(ref this), frameIndex, asyncInfo);
     }
 
     public interface Interface : IInspectable.Interface
@@ -126,7 +126,7 @@ public unsafe partial struct IBitmapDecoder : IBitmapDecoder.Interface, INativeG
         HRESULT GetPreviewAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<IntPtr>** asyncInfo);
 
         [VtblIndex(10)]
-        HRESULT GetFrameAsync([NativeTypeName("UINT32")] uint frameIndex, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapFrame_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT GetFrameAsync([NativeTypeName("UINT32")] uint frameIndex, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapFrame_t **")] IAsyncOperation<Pointer<IBitmapFrame>>** asyncInfo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -163,6 +163,6 @@ public unsafe partial struct IBitmapDecoder : IBitmapDecoder.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetPreviewAsync;
 
         [NativeTypeName("HRESULT (UINT32, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapFrame_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IAsyncOperation<IntPtr>**, int> GetFrameAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IAsyncOperation<Pointer<IBitmapFrame>>**, int> GetFrameAsync;
     }
 }

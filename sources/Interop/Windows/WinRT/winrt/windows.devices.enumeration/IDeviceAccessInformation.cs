@@ -74,9 +74,9 @@ public unsafe partial struct IDeviceAccessInformation : IDeviceAccessInformation
     /// <include file='IDeviceAccessInformation.xml' path='doc/member[@name="IDeviceAccessInformation.add_AccessChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_AccessChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceAccessInformation_Windows__CDevices__CEnumeration__CDeviceAccessChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_AccessChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceAccessInformation_Windows__CDevices__CEnumeration__CDeviceAccessChangedEventArgs_t *")] ITypedEventHandler<Pointer<IDeviceAccessInformation>, Pointer<IDeviceAccessChangedEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceAccessInformation*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IDeviceAccessInformation*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceAccessInformation*, ITypedEventHandler<Pointer<IDeviceAccessInformation>, Pointer<IDeviceAccessChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IDeviceAccessInformation*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IDeviceAccessInformation.xml' path='doc/member[@name="IDeviceAccessInformation.remove_AccessChanged"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IDeviceAccessInformation : IDeviceAccessInformation
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_AccessChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceAccessInformation_Windows__CDevices__CEnumeration__CDeviceAccessChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_AccessChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceAccessInformation_Windows__CDevices__CEnumeration__CDeviceAccessChangedEventArgs_t *")] ITypedEventHandler<Pointer<IDeviceAccessInformation>, Pointer<IDeviceAccessChangedEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(7)]
         HRESULT remove_AccessChanged(EventRegistrationToken cookie);
@@ -129,7 +129,7 @@ public unsafe partial struct IDeviceAccessInformation : IDeviceAccessInformation
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceAccessInformation_Windows__CDevices__CEnumeration__CDeviceAccessChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AccessChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDeviceAccessInformation>, Pointer<IDeviceAccessChangedEventArgs>>*, EventRegistrationToken*, int> add_AccessChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AccessChanged;

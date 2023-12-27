@@ -82,25 +82,25 @@ public unsafe partial struct IHingeAngleSensorStatics : IHingeAngleSensorStatics
     /// <include file='IHingeAngleSensorStatics.xml' path='doc/member[@name="IHingeAngleSensorStatics.GetDefaultAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t **")] IAsyncOperation<Pointer<IHingeAngleSensor>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHingeAngleSensorStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IHingeAngleSensorStatics*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IHingeAngleSensorStatics*, IAsyncOperation<Pointer<IHingeAngleSensor>>**, int>)(lpVtbl[7]))((IHingeAngleSensorStatics*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IHingeAngleSensorStatics.xml' path='doc/member[@name="IHingeAngleSensorStatics.GetRelatedToAdjacentPanelsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetRelatedToAdjacentPanelsAsync(HSTRING firstPanelId, HSTRING secondPanelId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetRelatedToAdjacentPanelsAsync(HSTRING firstPanelId, HSTRING secondPanelId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t **")] IAsyncOperation<Pointer<IHingeAngleSensor>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHingeAngleSensorStatics*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IHingeAngleSensorStatics*)Unsafe.AsPointer(ref this), firstPanelId, secondPanelId, result);
+        return ((delegate* unmanaged[MemberFunction]<IHingeAngleSensorStatics*, HSTRING, HSTRING, IAsyncOperation<Pointer<IHingeAngleSensor>>**, int>)(lpVtbl[8]))((IHingeAngleSensorStatics*)Unsafe.AsPointer(ref this), firstPanelId, secondPanelId, result);
     }
 
     /// <include file='IHingeAngleSensorStatics.xml' path='doc/member[@name="IHingeAngleSensorStatics.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t **")] IAsyncOperation<Pointer<IHingeAngleSensor>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHingeAngleSensorStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IHingeAngleSensorStatics*)Unsafe.AsPointer(ref this), deviceId, result);
+        return ((delegate* unmanaged[MemberFunction]<IHingeAngleSensorStatics*, HSTRING, IAsyncOperation<Pointer<IHingeAngleSensor>>**, int>)(lpVtbl[9]))((IHingeAngleSensorStatics*)Unsafe.AsPointer(ref this), deviceId, result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -109,13 +109,13 @@ public unsafe partial struct IHingeAngleSensorStatics : IHingeAngleSensorStatics
         HRESULT GetDeviceSelector(HSTRING* result);
 
         [VtblIndex(7)]
-        HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t **")] IAsyncOperation<Pointer<IHingeAngleSensor>>** result);
 
         [VtblIndex(8)]
-        HRESULT GetRelatedToAdjacentPanelsAsync(HSTRING firstPanelId, HSTRING secondPanelId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetRelatedToAdjacentPanelsAsync(HSTRING firstPanelId, HSTRING secondPanelId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t **")] IAsyncOperation<Pointer<IHingeAngleSensor>>** result);
 
         [VtblIndex(9)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t **")] IAsyncOperation<Pointer<IHingeAngleSensor>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -143,12 +143,12 @@ public unsafe partial struct IHingeAngleSensorStatics : IHingeAngleSensorStatics
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetDeviceSelector;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetDefaultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IHingeAngleSensor>>**, int> GetDefaultAsync;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int> GetRelatedToAdjacentPanelsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IAsyncOperation<Pointer<IHingeAngleSensor>>**, int> GetRelatedToAdjacentPanelsAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleSensor_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IHingeAngleSensor>>**, int> FromIdAsync;
     }
 }

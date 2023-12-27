@@ -82,9 +82,9 @@ public unsafe partial struct IMediaFrameSourceInfo2 : IMediaFrameSourceInfo2.Int
     /// <include file='IMediaFrameSourceInfo2.xml' path='doc/member[@name="IMediaFrameSourceInfo2.get_VideoProfileMediaDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_VideoProfileMediaDescription([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_VideoProfileMediaDescription([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **")] IVectorView<Pointer<IMediaCaptureVideoProfileMediaDescription>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSourceInfo2*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IMediaFrameSourceInfo2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSourceInfo2*, IVectorView<Pointer<IMediaCaptureVideoProfileMediaDescription>>**, int>)(lpVtbl[7]))((IMediaFrameSourceInfo2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IMediaFrameSourceInfo2 : IMediaFrameSourceInfo2.Int
         HRESULT get_ProfileId(HSTRING* value);
 
         [VtblIndex(7)]
-        HRESULT get_VideoProfileMediaDescription([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_VideoProfileMediaDescription([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **")] IVectorView<Pointer<IMediaCaptureVideoProfileMediaDescription>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IMediaFrameSourceInfo2 : IMediaFrameSourceInfo2.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_ProfileId;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfileMediaDescription_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_VideoProfileMediaDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IMediaCaptureVideoProfileMediaDescription>>**, int> get_VideoProfileMediaDescription;
     }
 }

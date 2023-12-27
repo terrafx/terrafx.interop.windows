@@ -90,9 +90,9 @@ public unsafe partial struct IStorageProviderKnownFolderSyncInfo : IStorageProvi
     /// <include file='IStorageProviderKnownFolderSyncInfo.xml' path='doc/member[@name="IStorageProviderKnownFolderSyncInfo.get_KnownFolderEntries"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_KnownFolderEntries([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CStorageProviderKnownFolderEntry_t **")] IVector<IntPtr>** value)
+    public HRESULT get_KnownFolderEntries([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CStorageProviderKnownFolderEntry_t **")] IVector<Pointer<IStorageProviderKnownFolderEntry>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageProviderKnownFolderSyncInfo*, IVector<IntPtr>**, int>)(lpVtbl[8]))((IStorageProviderKnownFolderSyncInfo*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderKnownFolderSyncInfo*, IVector<Pointer<IStorageProviderKnownFolderEntry>>**, int>)(lpVtbl[8]))((IStorageProviderKnownFolderSyncInfo*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IStorageProviderKnownFolderSyncInfo.xml' path='doc/member[@name="IStorageProviderKnownFolderSyncInfo.get_SyncRequested"]/*' />
@@ -120,7 +120,7 @@ public unsafe partial struct IStorageProviderKnownFolderSyncInfo : IStorageProvi
         HRESULT put_ProviderDisplayName(HSTRING value);
 
         [VtblIndex(8)]
-        HRESULT get_KnownFolderEntries([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CStorageProviderKnownFolderEntry_t **")] IVector<IntPtr>** value);
+        HRESULT get_KnownFolderEntries([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CStorageProviderKnownFolderEntry_t **")] IVector<Pointer<IStorageProviderKnownFolderEntry>>** value);
 
         [VtblIndex(9)]
         HRESULT get_SyncRequested([NativeTypeName("ABI::Windows::Storage::Provider::IStorageProviderKnownFolderSyncRequestedHandler **")] IStorageProviderKnownFolderSyncRequestedHandler** value);
@@ -157,7 +157,7 @@ public unsafe partial struct IStorageProviderKnownFolderSyncInfo : IStorageProvi
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_ProviderDisplayName;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CStorageProviderKnownFolderEntry_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_KnownFolderEntries;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IStorageProviderKnownFolderEntry>>**, int> get_KnownFolderEntries;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Provider::IStorageProviderKnownFolderSyncRequestedHandler **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageProviderKnownFolderSyncRequestedHandler**, int> get_SyncRequested;

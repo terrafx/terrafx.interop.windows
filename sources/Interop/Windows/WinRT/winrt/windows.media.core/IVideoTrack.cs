@@ -74,9 +74,9 @@ public unsafe partial struct IVideoTrack : IVideoTrack.Interface, INativeGuid
     /// <include file='IVideoTrack.xml' path='doc/member[@name="IVideoTrack.add_OpenFailed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_OpenFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CVideoTrack_Windows__CMedia__CCore__CVideoTrackOpenFailedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_OpenFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CVideoTrack_Windows__CMedia__CCore__CVideoTrackOpenFailedEventArgs_t *")] ITypedEventHandler<Pointer<IVideoTrack>, Pointer<IVideoTrackOpenFailedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IVideoTrack*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IVideoTrack*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IVideoTrack*, ITypedEventHandler<Pointer<IVideoTrack>, Pointer<IVideoTrackOpenFailedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IVideoTrack*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IVideoTrack.xml' path='doc/member[@name="IVideoTrack.remove_OpenFailed"]/*' />
@@ -122,7 +122,7 @@ public unsafe partial struct IVideoTrack : IVideoTrack.Interface, INativeGuid
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_OpenFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CVideoTrack_Windows__CMedia__CCore__CVideoTrackOpenFailedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_OpenFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CVideoTrack_Windows__CMedia__CCore__CVideoTrackOpenFailedEventArgs_t *")] ITypedEventHandler<Pointer<IVideoTrack>, Pointer<IVideoTrackOpenFailedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_OpenFailed(EventRegistrationToken token);
@@ -162,7 +162,7 @@ public unsafe partial struct IVideoTrack : IVideoTrack.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CVideoTrack_Windows__CMedia__CCore__CVideoTrackOpenFailedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_OpenFailed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IVideoTrack>, Pointer<IVideoTrackOpenFailedEventArgs>>*, EventRegistrationToken*, int> add_OpenFailed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_OpenFailed;

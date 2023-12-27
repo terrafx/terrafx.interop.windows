@@ -74,9 +74,9 @@ public unsafe partial struct ISmartCardEmulator2 : ISmartCardEmulator2.Interface
     /// <include file='ISmartCardEmulator2.xml' path='doc/member[@name="ISmartCardEmulator2.add_ApduReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_ApduReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorApduReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_ApduReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorApduReceivedEventArgs_t *")] ITypedEventHandler<Pointer<ISmartCardEmulator>, Pointer<ISmartCardEmulatorApduReceivedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardEmulator2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ISmartCardEmulator2*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardEmulator2*, ITypedEventHandler<Pointer<ISmartCardEmulator>, Pointer<ISmartCardEmulatorApduReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ISmartCardEmulator2*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='ISmartCardEmulator2.xml' path='doc/member[@name="ISmartCardEmulator2.remove_ApduReceived"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct ISmartCardEmulator2 : ISmartCardEmulator2.Interface
     /// <include file='ISmartCardEmulator2.xml' path='doc/member[@name="ISmartCardEmulator2.add_ConnectionDeactivated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_ConnectionDeactivated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorConnectionDeactivatedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_ConnectionDeactivated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorConnectionDeactivatedEventArgs_t *")] ITypedEventHandler<Pointer<ISmartCardEmulator>, Pointer<ISmartCardEmulatorConnectionDeactivatedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardEmulator2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ISmartCardEmulator2*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardEmulator2*, ITypedEventHandler<Pointer<ISmartCardEmulator>, Pointer<ISmartCardEmulatorConnectionDeactivatedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ISmartCardEmulator2*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='ISmartCardEmulator2.xml' path='doc/member[@name="ISmartCardEmulator2.remove_ConnectionDeactivated"]/*' />
@@ -122,13 +122,13 @@ public unsafe partial struct ISmartCardEmulator2 : ISmartCardEmulator2.Interface
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_ApduReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorApduReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_ApduReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorApduReceivedEventArgs_t *")] ITypedEventHandler<Pointer<ISmartCardEmulator>, Pointer<ISmartCardEmulatorApduReceivedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_ApduReceived(EventRegistrationToken value);
 
         [VtblIndex(8)]
-        HRESULT add_ConnectionDeactivated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorConnectionDeactivatedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_ConnectionDeactivated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorConnectionDeactivatedEventArgs_t *")] ITypedEventHandler<Pointer<ISmartCardEmulator>, Pointer<ISmartCardEmulatorConnectionDeactivatedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_ConnectionDeactivated(EventRegistrationToken value);
@@ -162,13 +162,13 @@ public unsafe partial struct ISmartCardEmulator2 : ISmartCardEmulator2.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorApduReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ApduReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISmartCardEmulator>, Pointer<ISmartCardEmulatorApduReceivedEventArgs>>*, EventRegistrationToken*, int> add_ApduReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ApduReceived;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSmartCards__CSmartCardEmulator_Windows__CDevices__CSmartCards__CSmartCardEmulatorConnectionDeactivatedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ConnectionDeactivated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISmartCardEmulator>, Pointer<ISmartCardEmulatorConnectionDeactivatedEventArgs>>*, EventRegistrationToken*, int> add_ConnectionDeactivated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ConnectionDeactivated;

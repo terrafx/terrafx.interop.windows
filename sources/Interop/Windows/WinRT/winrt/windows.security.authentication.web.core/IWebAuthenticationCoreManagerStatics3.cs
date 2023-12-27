@@ -74,15 +74,15 @@ public unsafe partial struct IWebAuthenticationCoreManagerStatics3 : IWebAuthent
     /// <include file='IWebAuthenticationCoreManagerStatics3.xml' path='doc/member[@name="IWebAuthenticationCoreManagerStatics3.CreateWebAccountMonitor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateWebAccountMonitor([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCredentials__CWebAccount_t *")] IIterable<IntPtr>* webAccounts, [NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebAccountMonitor **")] IWebAccountMonitor** result)
+    public HRESULT CreateWebAccountMonitor([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCredentials__CWebAccount_t *")] IIterable<Pointer<IWebAccount>>* webAccounts, [NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebAccountMonitor **")] IWebAccountMonitor** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics3*, IIterable<IntPtr>*, IWebAccountMonitor**, int>)(lpVtbl[6]))((IWebAuthenticationCoreManagerStatics3*)Unsafe.AsPointer(ref this), webAccounts, result);
+        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationCoreManagerStatics3*, IIterable<Pointer<IWebAccount>>*, IWebAccountMonitor**, int>)(lpVtbl[6]))((IWebAuthenticationCoreManagerStatics3*)Unsafe.AsPointer(ref this), webAccounts, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CreateWebAccountMonitor([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCredentials__CWebAccount_t *")] IIterable<IntPtr>* webAccounts, [NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebAccountMonitor **")] IWebAccountMonitor** result);
+        HRESULT CreateWebAccountMonitor([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCredentials__CWebAccount_t *")] IIterable<Pointer<IWebAccount>>* webAccounts, [NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::IWebAccountMonitor **")] IWebAccountMonitor** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IWebAuthenticationCoreManagerStatics3 : IWebAuthent
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCredentials__CWebAccount_t *, ABI::Windows::Security::Authentication::Web::Core::IWebAccountMonitor **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IWebAccountMonitor**, int> CreateWebAccountMonitor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IWebAccount>>*, IWebAccountMonitor**, int> CreateWebAccountMonitor;
     }
 }

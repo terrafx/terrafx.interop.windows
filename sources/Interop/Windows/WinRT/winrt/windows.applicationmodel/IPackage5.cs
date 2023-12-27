@@ -74,33 +74,33 @@ public unsafe partial struct IPackage5 : IPackage5.Interface, INativeGuid
     /// <include file='IPackage5.xml' path='doc/member[@name="IPackage5.GetContentGroupsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetContentGroupsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CPackageContentGroup_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetContentGroupsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CPackageContentGroup_t **")] IAsyncOperation<Pointer<IVector<Pointer<IPackageContentGroup>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackage5*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IPackage5*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IPackage5*, IAsyncOperation<Pointer<IVector<Pointer<IPackageContentGroup>>>>**, int>)(lpVtbl[6]))((IPackage5*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IPackage5.xml' path='doc/member[@name="IPackage5.GetContentGroupAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetContentGroupAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageContentGroup_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetContentGroupAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageContentGroup_t **")] IAsyncOperation<Pointer<IPackageContentGroup>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackage5*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IPackage5*)Unsafe.AsPointer(ref this), name, operation);
+        return ((delegate* unmanaged[MemberFunction]<IPackage5*, HSTRING, IAsyncOperation<Pointer<IPackageContentGroup>>**, int>)(lpVtbl[7]))((IPackage5*)Unsafe.AsPointer(ref this), name, operation);
     }
 
     /// <include file='IPackage5.xml' path='doc/member[@name="IPackage5.StageContentGroupsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT StageContentGroupsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* names, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CPackageContentGroup_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT StageContentGroupsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* names, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CPackageContentGroup_t **")] IAsyncOperation<Pointer<IVector<Pointer<IPackageContentGroup>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackage5*, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IPackage5*)Unsafe.AsPointer(ref this), names, operation);
+        return ((delegate* unmanaged[MemberFunction]<IPackage5*, IIterable<HSTRING>*, IAsyncOperation<Pointer<IVector<Pointer<IPackageContentGroup>>>>**, int>)(lpVtbl[8]))((IPackage5*)Unsafe.AsPointer(ref this), names, operation);
     }
 
     /// <include file='IPackage5.xml' path='doc/member[@name="IPackage5.StageContentGroupsWithPriorityAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT StageContentGroupsWithPriorityAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* names, [NativeTypeName("boolean")] byte moveToHeadOfQueue, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CPackageContentGroup_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT StageContentGroupsWithPriorityAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* names, [NativeTypeName("boolean")] byte moveToHeadOfQueue, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CPackageContentGroup_t **")] IAsyncOperation<Pointer<IVector<Pointer<IPackageContentGroup>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackage5*, IIterable<HSTRING>*, byte, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IPackage5*)Unsafe.AsPointer(ref this), names, moveToHeadOfQueue, operation);
+        return ((delegate* unmanaged[MemberFunction]<IPackage5*, IIterable<HSTRING>*, byte, IAsyncOperation<Pointer<IVector<Pointer<IPackageContentGroup>>>>**, int>)(lpVtbl[9]))((IPackage5*)Unsafe.AsPointer(ref this), names, moveToHeadOfQueue, operation);
     }
 
     /// <include file='IPackage5.xml' path='doc/member[@name="IPackage5.SetInUseAsync"]/*' />
@@ -114,16 +114,16 @@ public unsafe partial struct IPackage5 : IPackage5.Interface, INativeGuid
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetContentGroupsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CPackageContentGroup_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetContentGroupsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CPackageContentGroup_t **")] IAsyncOperation<Pointer<IVector<Pointer<IPackageContentGroup>>>>** operation);
 
         [VtblIndex(7)]
-        HRESULT GetContentGroupAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageContentGroup_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetContentGroupAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageContentGroup_t **")] IAsyncOperation<Pointer<IPackageContentGroup>>** operation);
 
         [VtblIndex(8)]
-        HRESULT StageContentGroupsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* names, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CPackageContentGroup_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT StageContentGroupsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* names, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CPackageContentGroup_t **")] IAsyncOperation<Pointer<IVector<Pointer<IPackageContentGroup>>>>** operation);
 
         [VtblIndex(9)]
-        HRESULT StageContentGroupsWithPriorityAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* names, [NativeTypeName("boolean")] byte moveToHeadOfQueue, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CPackageContentGroup_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT StageContentGroupsWithPriorityAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* names, [NativeTypeName("boolean")] byte moveToHeadOfQueue, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CPackageContentGroup_t **")] IAsyncOperation<Pointer<IVector<Pointer<IPackageContentGroup>>>>** operation);
 
         [VtblIndex(10)]
         HRESULT SetInUseAsync([NativeTypeName("boolean")] byte inUse, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
@@ -151,16 +151,16 @@ public unsafe partial struct IPackage5 : IPackage5.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CPackageContentGroup_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetContentGroupsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVector<Pointer<IPackageContentGroup>>>>**, int> GetContentGroupsAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageContentGroup_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetContentGroupAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IPackageContentGroup>>**, int> GetContentGroupAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CPackageContentGroup_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int> StageContentGroupsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<HSTRING>*, IAsyncOperation<Pointer<IVector<Pointer<IPackageContentGroup>>>>**, int> StageContentGroupsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *, boolean, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CPackageContentGroup_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<HSTRING>*, byte, IAsyncOperation<IntPtr>**, int> StageContentGroupsWithPriorityAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<HSTRING>*, byte, IAsyncOperation<Pointer<IVector<Pointer<IPackageContentGroup>>>>**, int> StageContentGroupsWithPriorityAsync;
 
         [NativeTypeName("HRESULT (boolean, ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, byte, IAsyncOperation<bool>**, int> SetInUseAsync;

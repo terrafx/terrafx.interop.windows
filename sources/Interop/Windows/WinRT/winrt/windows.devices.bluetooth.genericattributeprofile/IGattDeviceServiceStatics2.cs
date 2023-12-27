@@ -74,9 +74,9 @@ public unsafe partial struct IGattDeviceServiceStatics2 : IGattDeviceServiceStat
     /// <include file='IGattDeviceServiceStatics2.xml' path='doc/member[@name="IGattDeviceServiceStatics2.FromIdWithSharingModeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FromIdWithSharingModeAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode")] GattSharingMode sharingMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromIdWithSharingModeAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode")] GattSharingMode sharingMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **")] IAsyncOperation<Pointer<IGattDeviceService>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDeviceServiceStatics2*, HSTRING, GattSharingMode, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IGattDeviceServiceStatics2*)Unsafe.AsPointer(ref this), deviceId, sharingMode, operation);
+        return ((delegate* unmanaged[MemberFunction]<IGattDeviceServiceStatics2*, HSTRING, GattSharingMode, IAsyncOperation<Pointer<IGattDeviceService>>**, int>)(lpVtbl[6]))((IGattDeviceServiceStatics2*)Unsafe.AsPointer(ref this), deviceId, sharingMode, operation);
     }
 
     /// <include file='IGattDeviceServiceStatics2.xml' path='doc/member[@name="IGattDeviceServiceStatics2.GetDeviceSelectorForBluetoothDeviceId"]/*' />
@@ -114,7 +114,7 @@ public unsafe partial struct IGattDeviceServiceStatics2 : IGattDeviceServiceStat
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FromIdWithSharingModeAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode")] GattSharingMode sharingMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromIdWithSharingModeAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode")] GattSharingMode sharingMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **")] IAsyncOperation<Pointer<IGattDeviceService>>** operation);
 
         [VtblIndex(7)]
         HRESULT GetDeviceSelectorForBluetoothDeviceId([NativeTypeName("ABI::Windows::Devices::Bluetooth::IBluetoothDeviceId *")] IBluetoothDeviceId* bluetoothDeviceId, HSTRING* result);
@@ -151,7 +151,7 @@ public unsafe partial struct IGattDeviceServiceStatics2 : IGattDeviceServiceStat
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, GattSharingMode, IAsyncOperation<IntPtr>**, int> FromIdWithSharingModeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, GattSharingMode, IAsyncOperation<Pointer<IGattDeviceService>>**, int> FromIdWithSharingModeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Bluetooth::IBluetoothDeviceId *, HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IBluetoothDeviceId*, HSTRING*, int> GetDeviceSelectorForBluetoothDeviceId;

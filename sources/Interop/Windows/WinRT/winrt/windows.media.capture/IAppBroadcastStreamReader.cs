@@ -146,9 +146,9 @@ public unsafe partial struct IAppBroadcastStreamReader : IAppBroadcastStreamRead
     /// <include file='IAppBroadcastStreamReader.xml' path='doc/member[@name="IAppBroadcastStreamReader.add_AudioFrameArrived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT add_AudioFrameArrived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastStreamReader_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_AudioFrameArrived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastStreamReader_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastStreamReader>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastStreamReader*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IAppBroadcastStreamReader*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastStreamReader*, ITypedEventHandler<Pointer<IAppBroadcastStreamReader>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IAppBroadcastStreamReader*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IAppBroadcastStreamReader.xml' path='doc/member[@name="IAppBroadcastStreamReader.remove_AudioFrameArrived"]/*' />
@@ -162,9 +162,9 @@ public unsafe partial struct IAppBroadcastStreamReader : IAppBroadcastStreamRead
     /// <include file='IAppBroadcastStreamReader.xml' path='doc/member[@name="IAppBroadcastStreamReader.add_VideoFrameArrived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT add_VideoFrameArrived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastStreamReader_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_VideoFrameArrived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastStreamReader_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastStreamReader>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastStreamReader*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IAppBroadcastStreamReader*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastStreamReader*, ITypedEventHandler<Pointer<IAppBroadcastStreamReader>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IAppBroadcastStreamReader*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IAppBroadcastStreamReader.xml' path='doc/member[@name="IAppBroadcastStreamReader.remove_VideoFrameArrived"]/*' />
@@ -205,13 +205,13 @@ public unsafe partial struct IAppBroadcastStreamReader : IAppBroadcastStreamRead
         HRESULT TryGetNextVideoFrame([NativeTypeName("ABI::Windows::Media::Capture::IAppBroadcastStreamVideoFrame **")] IAppBroadcastStreamVideoFrame** frame);
 
         [VtblIndex(15)]
-        HRESULT add_AudioFrameArrived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastStreamReader_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_AudioFrameArrived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastStreamReader_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastStreamReader>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(16)]
         HRESULT remove_AudioFrameArrived(EventRegistrationToken token);
 
         [VtblIndex(17)]
-        HRESULT add_VideoFrameArrived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastStreamReader_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_VideoFrameArrived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastStreamReader_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastStreamReader>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(18)]
         HRESULT remove_VideoFrameArrived(EventRegistrationToken token);
@@ -266,13 +266,13 @@ public unsafe partial struct IAppBroadcastStreamReader : IAppBroadcastStreamRead
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppBroadcastStreamVideoFrame**, int> TryGetNextVideoFrame;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastStreamReader_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AudioFrameArrived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastStreamReader>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_AudioFrameArrived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AudioFrameArrived;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastStreamReader_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_VideoFrameArrived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastStreamReader>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_VideoFrameArrived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_VideoFrameArrived;

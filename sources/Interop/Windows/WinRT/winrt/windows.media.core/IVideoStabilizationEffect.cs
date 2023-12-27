@@ -90,9 +90,9 @@ public unsafe partial struct IVideoStabilizationEffect : IVideoStabilizationEffe
     /// <include file='IVideoStabilizationEffect.xml' path='doc/member[@name="IVideoStabilizationEffect.add_EnabledChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_EnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CVideoStabilizationEffect_Windows__CMedia__CCore__CVideoStabilizationEffectEnabledChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_EnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CVideoStabilizationEffect_Windows__CMedia__CCore__CVideoStabilizationEffectEnabledChangedEventArgs_t *")] ITypedEventHandler<Pointer<IVideoStabilizationEffect>, Pointer<IVideoStabilizationEffectEnabledChangedEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IVideoStabilizationEffect*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IVideoStabilizationEffect*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IVideoStabilizationEffect*, ITypedEventHandler<Pointer<IVideoStabilizationEffect>, Pointer<IVideoStabilizationEffectEnabledChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IVideoStabilizationEffect*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IVideoStabilizationEffect.xml' path='doc/member[@name="IVideoStabilizationEffect.remove_EnabledChanged"]/*' />
@@ -120,7 +120,7 @@ public unsafe partial struct IVideoStabilizationEffect : IVideoStabilizationEffe
         HRESULT get_Enabled([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(8)]
-        HRESULT add_EnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CVideoStabilizationEffect_Windows__CMedia__CCore__CVideoStabilizationEffectEnabledChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_EnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CVideoStabilizationEffect_Windows__CMedia__CCore__CVideoStabilizationEffectEnabledChangedEventArgs_t *")] ITypedEventHandler<Pointer<IVideoStabilizationEffect>, Pointer<IVideoStabilizationEffectEnabledChangedEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(9)]
         HRESULT remove_EnabledChanged(EventRegistrationToken cookie);
@@ -157,7 +157,7 @@ public unsafe partial struct IVideoStabilizationEffect : IVideoStabilizationEffe
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_Enabled;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CVideoStabilizationEffect_Windows__CMedia__CCore__CVideoStabilizationEffectEnabledChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_EnabledChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IVideoStabilizationEffect>, Pointer<IVideoStabilizationEffectEnabledChangedEventArgs>>*, EventRegistrationToken*, int> add_EnabledChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_EnabledChanged;

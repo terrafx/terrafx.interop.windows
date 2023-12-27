@@ -82,9 +82,9 @@ public unsafe partial struct ISimpleOrientationSensor : ISimpleOrientationSensor
     /// <include file='ISimpleOrientationSensor.xml' path='doc/member[@name="ISimpleOrientationSensor.add_OrientationChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_OrientationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CSimpleOrientationSensor_Windows__CDevices__CSensors__CSimpleOrientationSensorOrientationChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_OrientationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CSimpleOrientationSensor_Windows__CDevices__CSensors__CSimpleOrientationSensorOrientationChangedEventArgs_t *")] ITypedEventHandler<Pointer<ISimpleOrientationSensor>, Pointer<ISimpleOrientationSensorOrientationChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISimpleOrientationSensor*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ISimpleOrientationSensor*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISimpleOrientationSensor*, ITypedEventHandler<Pointer<ISimpleOrientationSensor>, Pointer<ISimpleOrientationSensorOrientationChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ISimpleOrientationSensor*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISimpleOrientationSensor.xml' path='doc/member[@name="ISimpleOrientationSensor.remove_OrientationChanged"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct ISimpleOrientationSensor : ISimpleOrientationSensor
         HRESULT GetCurrentOrientation([NativeTypeName("ABI::Windows::Devices::Sensors::SimpleOrientation *")] SimpleOrientation* value);
 
         [VtblIndex(7)]
-        HRESULT add_OrientationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CSimpleOrientationSensor_Windows__CDevices__CSensors__CSimpleOrientationSensorOrientationChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_OrientationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CSimpleOrientationSensor_Windows__CDevices__CSensors__CSimpleOrientationSensorOrientationChangedEventArgs_t *")] ITypedEventHandler<Pointer<ISimpleOrientationSensor>, Pointer<ISimpleOrientationSensorOrientationChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_OrientationChanged(EventRegistrationToken token);
@@ -132,7 +132,7 @@ public unsafe partial struct ISimpleOrientationSensor : ISimpleOrientationSensor
         public delegate* unmanaged[MemberFunction]<TSelf*, SimpleOrientation*, int> GetCurrentOrientation;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CSimpleOrientationSensor_Windows__CDevices__CSensors__CSimpleOrientationSensorOrientationChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_OrientationChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISimpleOrientationSensor>, Pointer<ISimpleOrientationSensorOrientationChangedEventArgs>>*, EventRegistrationToken*, int> add_OrientationChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_OrientationChanged;

@@ -106,9 +106,9 @@ public unsafe partial struct IMediaFrameReference : IMediaFrameReference.Interfa
     /// <include file='IMediaFrameReference.xml' path='doc/member[@name="IMediaFrameReference.get_Properties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, IntPtr>** value)
+    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, Pointer<IInspectable>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaFrameReference*, IMapView<Guid, IntPtr>**, int>)(lpVtbl[10]))((IMediaFrameReference*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaFrameReference*, IMapView<Guid, Pointer<IInspectable>>**, int>)(lpVtbl[10]))((IMediaFrameReference*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaFrameReference.xml' path='doc/member[@name="IMediaFrameReference.get_BufferMediaFrame"]/*' />
@@ -150,7 +150,7 @@ public unsafe partial struct IMediaFrameReference : IMediaFrameReference.Interfa
         HRESULT get_Duration([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value);
 
         [VtblIndex(10)]
-        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, IntPtr>** value);
+        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, Pointer<IInspectable>>** value);
 
         [VtblIndex(11)]
         HRESULT get_BufferMediaFrame([NativeTypeName("ABI::Windows::Media::Capture::Frames::IBufferMediaFrame **")] IBufferMediaFrame** value);
@@ -196,7 +196,7 @@ public unsafe partial struct IMediaFrameReference : IMediaFrameReference.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> get_Duration;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<Guid, IntPtr>**, int> get_Properties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<Guid, Pointer<IInspectable>>**, int> get_Properties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Capture::Frames::IBufferMediaFrame **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IBufferMediaFrame**, int> get_BufferMediaFrame;

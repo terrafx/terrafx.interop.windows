@@ -146,9 +146,9 @@ public unsafe partial struct IAppCaptureMetadataWriter : IAppCaptureMetadataWrit
     /// <include file='IAppCaptureMetadataWriter.xml' path='doc/member[@name="IAppCaptureMetadataWriter.add_MetadataPurged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT add_MetadataPurged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureMetadataWriter_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_MetadataPurged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureMetadataWriter_IInspectable_t *")] ITypedEventHandler<Pointer<IAppCaptureMetadataWriter>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppCaptureMetadataWriter*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IAppCaptureMetadataWriter*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppCaptureMetadataWriter*, ITypedEventHandler<Pointer<IAppCaptureMetadataWriter>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IAppCaptureMetadataWriter*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppCaptureMetadataWriter.xml' path='doc/member[@name="IAppCaptureMetadataWriter.remove_MetadataPurged"]/*' />
@@ -189,7 +189,7 @@ public unsafe partial struct IAppCaptureMetadataWriter : IAppCaptureMetadataWrit
         HRESULT get_RemainingStorageBytesAvailable([NativeTypeName("UINT64 *")] ulong* value);
 
         [VtblIndex(15)]
-        HRESULT add_MetadataPurged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureMetadataWriter_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_MetadataPurged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureMetadataWriter_IInspectable_t *")] ITypedEventHandler<Pointer<IAppCaptureMetadataWriter>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(16)]
         HRESULT remove_MetadataPurged(EventRegistrationToken token);
@@ -244,7 +244,7 @@ public unsafe partial struct IAppCaptureMetadataWriter : IAppCaptureMetadataWrit
         public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_RemainingStorageBytesAvailable;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureMetadataWriter_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_MetadataPurged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppCaptureMetadataWriter>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_MetadataPurged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_MetadataPurged;

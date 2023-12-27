@@ -82,9 +82,9 @@ public unsafe partial struct IUISettings3 : IUISettings3.Interface, INativeGuid
     /// <include file='IUISettings3.xml' path='doc/member[@name="IUISettings3.add_ColorValuesChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_ColorValuesChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_ColorValuesChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_IInspectable_t *")] ITypedEventHandler<Pointer<IUISettings>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUISettings3*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IUISettings3*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IUISettings3*, ITypedEventHandler<Pointer<IUISettings>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IUISettings3*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IUISettings3.xml' path='doc/member[@name="IUISettings3.remove_ColorValuesChanged"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IUISettings3 : IUISettings3.Interface, INativeGuid
         HRESULT GetColorValue([NativeTypeName("ABI::Windows::UI::ViewManagement::UIColorType")] UIColorType desiredColor, [NativeTypeName("ABI::Windows::UI::Color *")] Color* value);
 
         [VtblIndex(7)]
-        HRESULT add_ColorValuesChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_ColorValuesChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_IInspectable_t *")] ITypedEventHandler<Pointer<IUISettings>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(8)]
         HRESULT remove_ColorValuesChanged(EventRegistrationToken cookie);
@@ -132,7 +132,7 @@ public unsafe partial struct IUISettings3 : IUISettings3.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, UIColorType, Color*, int> GetColorValue;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ColorValuesChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IUISettings>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ColorValuesChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ColorValuesChanged;

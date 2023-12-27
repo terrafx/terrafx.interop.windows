@@ -154,33 +154,33 @@ public unsafe partial struct IUserDataAccount : IUserDataAccount.Interface, INat
     /// <include file='IUserDataAccount.xml' path='doc/member[@name="IUserDataAccount.FindAppointmentCalendarsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT FindAppointmentCalendarsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FindAppointmentCalendarsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppointmentCalendar>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserDataAccount*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[16]))((IUserDataAccount*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IUserDataAccount*, IAsyncOperation<Pointer<IVectorView<Pointer<IAppointmentCalendar>>>>**, int>)(lpVtbl[16]))((IUserDataAccount*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IUserDataAccount.xml' path='doc/member[@name="IUserDataAccount.FindEmailMailboxesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT FindEmailMailboxesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CEmail__CEmailMailbox_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FindEmailMailboxesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CEmail__CEmailMailbox_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IEmailMailbox>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserDataAccount*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[17]))((IUserDataAccount*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IUserDataAccount*, IAsyncOperation<Pointer<IVectorView<Pointer<IEmailMailbox>>>>**, int>)(lpVtbl[17]))((IUserDataAccount*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IUserDataAccount.xml' path='doc/member[@name="IUserDataAccount.FindContactListsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT FindContactListsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FindContactListsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContactList>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserDataAccount*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[18]))((IUserDataAccount*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IUserDataAccount*, IAsyncOperation<Pointer<IVectorView<Pointer<IContactList>>>>**, int>)(lpVtbl[18]))((IUserDataAccount*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IUserDataAccount.xml' path='doc/member[@name="IUserDataAccount.FindContactAnnotationListsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT FindContactAnnotationListsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FindContactAnnotationListsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContactAnnotationList>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserDataAccount*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[19]))((IUserDataAccount*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IUserDataAccount*, IAsyncOperation<Pointer<IVectorView<Pointer<IContactAnnotationList>>>>**, int>)(lpVtbl[19]))((IUserDataAccount*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -216,16 +216,16 @@ public unsafe partial struct IUserDataAccount : IUserDataAccount.Interface, INat
         HRESULT DeleteAsync([NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** result);
 
         [VtblIndex(16)]
-        HRESULT FindAppointmentCalendarsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FindAppointmentCalendarsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppointmentCalendar>>>>** result);
 
         [VtblIndex(17)]
-        HRESULT FindEmailMailboxesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CEmail__CEmailMailbox_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FindEmailMailboxesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CEmail__CEmailMailbox_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IEmailMailbox>>>>** result);
 
         [VtblIndex(18)]
-        HRESULT FindContactListsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FindContactListsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContactList>>>>** result);
 
         [VtblIndex(19)]
-        HRESULT FindContactAnnotationListsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FindContactAnnotationListsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContactAnnotationList>>>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -280,15 +280,15 @@ public unsafe partial struct IUserDataAccount : IUserDataAccount.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncAction**, int> DeleteAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppointments__CAppointmentCalendar_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindAppointmentCalendarsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IAppointmentCalendar>>>>**, int> FindAppointmentCalendarsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CEmail__CEmailMailbox_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindEmailMailboxesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IEmailMailbox>>>>**, int> FindEmailMailboxesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindContactListsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IContactList>>>>**, int> FindContactListsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactAnnotationList_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindContactAnnotationListsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IContactAnnotationList>>>>**, int> FindContactAnnotationListsAsync;
     }
 }

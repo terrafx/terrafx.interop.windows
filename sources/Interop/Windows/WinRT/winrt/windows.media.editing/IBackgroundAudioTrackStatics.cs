@@ -82,9 +82,9 @@ public unsafe partial struct IBackgroundAudioTrackStatics : IBackgroundAudioTrac
     /// <include file='IBackgroundAudioTrackStatics.xml' path='doc/member[@name="IBackgroundAudioTrackStatics.CreateFromFileAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateFromFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CBackgroundAudioTrack_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateFromFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CBackgroundAudioTrack_t **")] IAsyncOperation<Pointer<IBackgroundAudioTrack>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundAudioTrackStatics*, IStorageFile*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IBackgroundAudioTrackStatics*)Unsafe.AsPointer(ref this), file, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundAudioTrackStatics*, IStorageFile*, IAsyncOperation<Pointer<IBackgroundAudioTrack>>**, int>)(lpVtbl[7]))((IBackgroundAudioTrackStatics*)Unsafe.AsPointer(ref this), file, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IBackgroundAudioTrackStatics : IBackgroundAudioTrac
         HRESULT CreateFromEmbeddedAudioTrack([NativeTypeName("ABI::Windows::Media::Editing::IEmbeddedAudioTrack *")] IEmbeddedAudioTrack* embeddedAudioTrack, [NativeTypeName("ABI::Windows::Media::Editing::IBackgroundAudioTrack **")] IBackgroundAudioTrack** value);
 
         [VtblIndex(7)]
-        HRESULT CreateFromFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CBackgroundAudioTrack_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateFromFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CBackgroundAudioTrack_t **")] IAsyncOperation<Pointer<IBackgroundAudioTrack>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IBackgroundAudioTrackStatics : IBackgroundAudioTrac
         public delegate* unmanaged[MemberFunction]<TSelf*, IEmbeddedAudioTrack*, IBackgroundAudioTrack**, int> CreateFromEmbeddedAudioTrack;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CBackgroundAudioTrack_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<IntPtr>**, int> CreateFromFileAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<Pointer<IBackgroundAudioTrack>>**, int> CreateFromFileAsync;
     }
 }

@@ -74,15 +74,15 @@ public unsafe partial struct IStorageProviderItemPropertySource : IStorageProvid
     /// <include file='IStorageProviderItemPropertySource.xml' path='doc/member[@name="IStorageProviderItemPropertySource.GetItemProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetItemProperties(HSTRING itemPath, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CProvider__CStorageProviderItemProperty_t **")] IIterable<IntPtr>** result)
+    public HRESULT GetItemProperties(HSTRING itemPath, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CProvider__CStorageProviderItemProperty_t **")] IIterable<Pointer<IStorageProviderItemProperty>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageProviderItemPropertySource*, HSTRING, IIterable<IntPtr>**, int>)(lpVtbl[6]))((IStorageProviderItemPropertySource*)Unsafe.AsPointer(ref this), itemPath, result);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderItemPropertySource*, HSTRING, IIterable<Pointer<IStorageProviderItemProperty>>**, int>)(lpVtbl[6]))((IStorageProviderItemPropertySource*)Unsafe.AsPointer(ref this), itemPath, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetItemProperties(HSTRING itemPath, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CProvider__CStorageProviderItemProperty_t **")] IIterable<IntPtr>** result);
+        HRESULT GetItemProperties(HSTRING itemPath, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CProvider__CStorageProviderItemProperty_t **")] IIterable<Pointer<IStorageProviderItemProperty>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IStorageProviderItemPropertySource : IStorageProvid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CProvider__CStorageProviderItemProperty_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IIterable<IntPtr>**, int> GetItemProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IIterable<Pointer<IStorageProviderItemProperty>>**, int> GetItemProperties;
     }
 }

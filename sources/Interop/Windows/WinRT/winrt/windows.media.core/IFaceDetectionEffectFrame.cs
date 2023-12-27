@@ -74,15 +74,15 @@ public unsafe partial struct IFaceDetectionEffectFrame : IFaceDetectionEffectFra
     /// <include file='IFaceDetectionEffectFrame.xml' path='doc/member[@name="IFaceDetectionEffectFrame.get_DetectedFaces"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_DetectedFaces([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CFaceAnalysis__CDetectedFace_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_DetectedFaces([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CFaceAnalysis__CDetectedFace_t **")] IVectorView<Pointer<IDetectedFace>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFaceDetectionEffectFrame*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IFaceDetectionEffectFrame*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IFaceDetectionEffectFrame*, IVectorView<Pointer<IDetectedFace>>**, int>)(lpVtbl[6]))((IFaceDetectionEffectFrame*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_DetectedFaces([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CFaceAnalysis__CDetectedFace_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_DetectedFaces([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CFaceAnalysis__CDetectedFace_t **")] IVectorView<Pointer<IDetectedFace>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IFaceDetectionEffectFrame : IFaceDetectionEffectFra
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CFaceAnalysis__CDetectedFace_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_DetectedFaces;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IDetectedFace>>**, int> get_DetectedFaces;
     }
 }

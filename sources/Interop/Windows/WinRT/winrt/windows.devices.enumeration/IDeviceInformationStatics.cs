@@ -74,17 +74,17 @@ public unsafe partial struct IDeviceInformationStatics : IDeviceInformationStati
     /// <include file='IDeviceInformationStatics.xml' path='doc/member[@name="IDeviceInformationStatics.CreateFromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateFromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<IntPtr>** asyncOp)
+    public HRESULT CreateFromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<Pointer<IDeviceInformation>>** asyncOp)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IDeviceInformationStatics*)Unsafe.AsPointer(ref this), deviceId, asyncOp);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationStatics*, HSTRING, IAsyncOperation<Pointer<IDeviceInformation>>**, int>)(lpVtbl[6]))((IDeviceInformationStatics*)Unsafe.AsPointer(ref this), deviceId, asyncOp);
     }
 
     /// <include file='IDeviceInformationStatics.xml' path='doc/member[@name="IDeviceInformationStatics.CreateFromIdAsyncAdditionalProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateFromIdAsyncAdditionalProperties(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* additionalProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<IntPtr>** asyncOp)
+    public HRESULT CreateFromIdAsyncAdditionalProperties(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* additionalProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<Pointer<IDeviceInformation>>** asyncOp)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationStatics*, HSTRING, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IDeviceInformationStatics*)Unsafe.AsPointer(ref this), deviceId, additionalProperties, asyncOp);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationStatics*, HSTRING, IIterable<HSTRING>*, IAsyncOperation<Pointer<IDeviceInformation>>**, int>)(lpVtbl[7]))((IDeviceInformationStatics*)Unsafe.AsPointer(ref this), deviceId, additionalProperties, asyncOp);
     }
 
     /// <include file='IDeviceInformationStatics.xml' path='doc/member[@name="IDeviceInformationStatics.FindAllAsync"]/*' />
@@ -154,10 +154,10 @@ public unsafe partial struct IDeviceInformationStatics : IDeviceInformationStati
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CreateFromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<IntPtr>** asyncOp);
+        HRESULT CreateFromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<Pointer<IDeviceInformation>>** asyncOp);
 
         [VtblIndex(7)]
-        HRESULT CreateFromIdAsyncAdditionalProperties(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* additionalProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<IntPtr>** asyncOp);
+        HRESULT CreateFromIdAsyncAdditionalProperties(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* additionalProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<Pointer<IDeviceInformation>>** asyncOp);
 
         [VtblIndex(8)]
         HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<IntPtr>** asyncOp);
@@ -206,10 +206,10 @@ public unsafe partial struct IDeviceInformationStatics : IDeviceInformationStati
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> CreateFromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IDeviceInformation>>**, int> CreateFromIdAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int> CreateFromIdAsyncAdditionalProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IIterable<HSTRING>*, IAsyncOperation<Pointer<IDeviceInformation>>**, int> CreateFromIdAsyncAdditionalProperties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindAllAsync;

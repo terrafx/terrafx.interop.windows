@@ -82,9 +82,9 @@ public unsafe partial struct ICapturedFrame2 : ICapturedFrame2.Interface, INativ
     /// <include file='ICapturedFrame2.xml' path='doc/member[@name="ICapturedFrame2.get_BitmapProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_BitmapProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTypedValue_t **")] IMap<HSTRING, IntPtr>** value)
+    public HRESULT get_BitmapProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTypedValue_t **")] IMap<HSTRING, Pointer<IBitmapTypedValue>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICapturedFrame2*, IMap<HSTRING, IntPtr>**, int>)(lpVtbl[7]))((ICapturedFrame2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICapturedFrame2*, IMap<HSTRING, Pointer<IBitmapTypedValue>>**, int>)(lpVtbl[7]))((ICapturedFrame2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct ICapturedFrame2 : ICapturedFrame2.Interface, INativ
         HRESULT get_ControlValues([NativeTypeName("ABI::Windows::Media::Capture::ICapturedFrameControlValues **")] ICapturedFrameControlValues** value);
 
         [VtblIndex(7)]
-        HRESULT get_BitmapProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTypedValue_t **")] IMap<HSTRING, IntPtr>** value);
+        HRESULT get_BitmapProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTypedValue_t **")] IMap<HSTRING, Pointer<IBitmapTypedValue>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct ICapturedFrame2 : ICapturedFrame2.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, ICapturedFrameControlValues**, int> get_ControlValues;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CGraphics__CImaging__CBitmapTypedValue_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, IntPtr>**, int> get_BitmapProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, Pointer<IBitmapTypedValue>>**, int> get_BitmapProperties;
     }
 }

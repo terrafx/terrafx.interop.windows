@@ -90,9 +90,9 @@ public unsafe partial struct ICastingDevicePicker : ICastingDevicePicker.Interfa
     /// <include file='ICastingDevicePicker.xml' path='doc/member[@name="ICastingDevicePicker.add_CastingDeviceSelected"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_CastingDeviceSelected([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingDevicePicker_Windows__CMedia__CCasting__CCastingDeviceSelectedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_CastingDeviceSelected([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingDevicePicker_Windows__CMedia__CCasting__CCastingDeviceSelectedEventArgs_t *")] ITypedEventHandler<Pointer<ICastingDevicePicker>, Pointer<ICastingDeviceSelectedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICastingDevicePicker*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICastingDevicePicker*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICastingDevicePicker*, ITypedEventHandler<Pointer<ICastingDevicePicker>, Pointer<ICastingDeviceSelectedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICastingDevicePicker*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICastingDevicePicker.xml' path='doc/member[@name="ICastingDevicePicker.remove_CastingDeviceSelected"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct ICastingDevicePicker : ICastingDevicePicker.Interfa
     /// <include file='ICastingDevicePicker.xml' path='doc/member[@name="ICastingDevicePicker.add_CastingDevicePickerDismissed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_CastingDevicePickerDismissed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingDevicePicker_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_CastingDevicePickerDismissed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingDevicePicker_IInspectable_t *")] ITypedEventHandler<Pointer<ICastingDevicePicker>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICastingDevicePicker*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((ICastingDevicePicker*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICastingDevicePicker*, ITypedEventHandler<Pointer<ICastingDevicePicker>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((ICastingDevicePicker*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICastingDevicePicker.xml' path='doc/member[@name="ICastingDevicePicker.remove_CastingDevicePickerDismissed"]/*' />
@@ -152,13 +152,13 @@ public unsafe partial struct ICastingDevicePicker : ICastingDevicePicker.Interfa
         HRESULT get_Appearance([NativeTypeName("ABI::Windows::Devices::Enumeration::IDevicePickerAppearance **")] IDevicePickerAppearance** value);
 
         [VtblIndex(8)]
-        HRESULT add_CastingDeviceSelected([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingDevicePicker_Windows__CMedia__CCasting__CCastingDeviceSelectedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_CastingDeviceSelected([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingDevicePicker_Windows__CMedia__CCasting__CCastingDeviceSelectedEventArgs_t *")] ITypedEventHandler<Pointer<ICastingDevicePicker>, Pointer<ICastingDeviceSelectedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_CastingDeviceSelected(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_CastingDevicePickerDismissed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingDevicePicker_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_CastingDevicePickerDismissed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingDevicePicker_IInspectable_t *")] ITypedEventHandler<Pointer<ICastingDevicePicker>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_CastingDevicePickerDismissed(EventRegistrationToken token);
@@ -201,13 +201,13 @@ public unsafe partial struct ICastingDevicePicker : ICastingDevicePicker.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, IDevicePickerAppearance**, int> get_Appearance;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingDevicePicker_Windows__CMedia__CCasting__CCastingDeviceSelectedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CastingDeviceSelected;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICastingDevicePicker>, Pointer<ICastingDeviceSelectedEventArgs>>*, EventRegistrationToken*, int> add_CastingDeviceSelected;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CastingDeviceSelected;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingDevicePicker_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CastingDevicePickerDismissed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICastingDevicePicker>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_CastingDevicePickerDismissed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CastingDevicePickerDismissed;

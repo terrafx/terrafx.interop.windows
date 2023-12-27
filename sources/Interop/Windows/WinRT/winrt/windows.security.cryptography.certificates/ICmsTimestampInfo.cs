@@ -82,9 +82,9 @@ public unsafe partial struct ICmsTimestampInfo : ICmsTimestampInfo.Interface, IN
     /// <include file='ICmsTimestampInfo.xml' path='doc/member[@name="ICmsTimestampInfo.get_Certificates"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Certificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Certificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<Pointer<ICertificate>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICmsTimestampInfo*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((ICmsTimestampInfo*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICmsTimestampInfo*, IVectorView<Pointer<ICertificate>>**, int>)(lpVtbl[7]))((ICmsTimestampInfo*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICmsTimestampInfo.xml' path='doc/member[@name="ICmsTimestampInfo.get_Timestamp"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct ICmsTimestampInfo : ICmsTimestampInfo.Interface, IN
         HRESULT get_SigningCertificate([NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::ICertificate **")] ICertificate** value);
 
         [VtblIndex(7)]
-        HRESULT get_Certificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Certificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<Pointer<ICertificate>>** value);
 
         [VtblIndex(8)]
         HRESULT get_Timestamp([NativeTypeName("ABI::Windows::Foundation::DateTime *")] WinRTDateTime* value);
@@ -132,7 +132,7 @@ public unsafe partial struct ICmsTimestampInfo : ICmsTimestampInfo.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, ICertificate**, int> get_SigningCertificate;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Certificates;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ICertificate>>**, int> get_Certificates;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime*, int> get_Timestamp;

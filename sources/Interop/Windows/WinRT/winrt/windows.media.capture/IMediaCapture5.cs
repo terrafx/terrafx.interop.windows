@@ -82,49 +82,49 @@ public unsafe partial struct IMediaCapture5 : IMediaCapture5.Interface, INativeG
     /// <include file='IMediaCapture5.xml' path='doc/member[@name="IMediaCapture5.PauseRecordWithResultAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT PauseRecordWithResultAsync([NativeTypeName("ABI::Windows::Media::Devices::MediaCapturePauseBehavior")] MediaCapturePauseBehavior behavior, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCapturePauseResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT PauseRecordWithResultAsync([NativeTypeName("ABI::Windows::Media::Devices::MediaCapturePauseBehavior")] MediaCapturePauseBehavior behavior, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCapturePauseResult_t **")] IAsyncOperation<Pointer<IMediaCapturePauseResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture5*, MediaCapturePauseBehavior, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IMediaCapture5*)Unsafe.AsPointer(ref this), behavior, operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture5*, MediaCapturePauseBehavior, IAsyncOperation<Pointer<IMediaCapturePauseResult>>**, int>)(lpVtbl[7]))((IMediaCapture5*)Unsafe.AsPointer(ref this), behavior, operation);
     }
 
     /// <include file='IMediaCapture5.xml' path='doc/member[@name="IMediaCapture5.StopRecordWithResultAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT StopRecordWithResultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCaptureStopResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT StopRecordWithResultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCaptureStopResult_t **")] IAsyncOperation<Pointer<IMediaCaptureStopResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture5*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IMediaCapture5*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture5*, IAsyncOperation<Pointer<IMediaCaptureStopResult>>**, int>)(lpVtbl[8]))((IMediaCapture5*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IMediaCapture5.xml' path='doc/member[@name="IMediaCapture5.get_FrameSources"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_FrameSources([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_t **")] IMapView<HSTRING, IntPtr>** value)
+    public HRESULT get_FrameSources([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_t **")] IMapView<HSTRING, Pointer<IMediaFrameSource>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture5*, IMapView<HSTRING, IntPtr>**, int>)(lpVtbl[9]))((IMediaCapture5*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture5*, IMapView<HSTRING, Pointer<IMediaFrameSource>>**, int>)(lpVtbl[9]))((IMediaCapture5*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaCapture5.xml' path='doc/member[@name="IMediaCapture5.CreateFrameReaderAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT CreateFrameReaderAsync([NativeTypeName("ABI::Windows::Media::Capture::Frames::IMediaFrameSource *")] IMediaFrameSource* inputSource, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT CreateFrameReaderAsync([NativeTypeName("ABI::Windows::Media::Capture::Frames::IMediaFrameSource *")] IMediaFrameSource* inputSource, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_t **")] IAsyncOperation<Pointer<IMediaFrameReader>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture5*, IMediaFrameSource*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IMediaCapture5*)Unsafe.AsPointer(ref this), inputSource, value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture5*, IMediaFrameSource*, IAsyncOperation<Pointer<IMediaFrameReader>>**, int>)(lpVtbl[10]))((IMediaCapture5*)Unsafe.AsPointer(ref this), inputSource, value);
     }
 
     /// <include file='IMediaCapture5.xml' path='doc/member[@name="IMediaCapture5.CreateFrameReaderWithSubtypeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT CreateFrameReaderWithSubtypeAsync([NativeTypeName("ABI::Windows::Media::Capture::Frames::IMediaFrameSource *")] IMediaFrameSource* inputSource, HSTRING outputSubtype, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT CreateFrameReaderWithSubtypeAsync([NativeTypeName("ABI::Windows::Media::Capture::Frames::IMediaFrameSource *")] IMediaFrameSource* inputSource, HSTRING outputSubtype, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_t **")] IAsyncOperation<Pointer<IMediaFrameReader>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture5*, IMediaFrameSource*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IMediaCapture5*)Unsafe.AsPointer(ref this), inputSource, outputSubtype, value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture5*, IMediaFrameSource*, HSTRING, IAsyncOperation<Pointer<IMediaFrameReader>>**, int>)(lpVtbl[11]))((IMediaCapture5*)Unsafe.AsPointer(ref this), inputSource, outputSubtype, value);
     }
 
     /// <include file='IMediaCapture5.xml' path='doc/member[@name="IMediaCapture5.CreateFrameReaderWithSubtypeAndSizeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT CreateFrameReaderWithSubtypeAndSizeAsync([NativeTypeName("ABI::Windows::Media::Capture::Frames::IMediaFrameSource *")] IMediaFrameSource* inputSource, HSTRING outputSubtype, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapSize")] BitmapSize outputSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT CreateFrameReaderWithSubtypeAndSizeAsync([NativeTypeName("ABI::Windows::Media::Capture::Frames::IMediaFrameSource *")] IMediaFrameSource* inputSource, HSTRING outputSubtype, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapSize")] BitmapSize outputSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_t **")] IAsyncOperation<Pointer<IMediaFrameReader>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture5*, IMediaFrameSource*, HSTRING, BitmapSize, IAsyncOperation<IntPtr>**, int>)(lpVtbl[12]))((IMediaCapture5*)Unsafe.AsPointer(ref this), inputSource, outputSubtype, outputSize, value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture5*, IMediaFrameSource*, HSTRING, BitmapSize, IAsyncOperation<Pointer<IMediaFrameReader>>**, int>)(lpVtbl[12]))((IMediaCapture5*)Unsafe.AsPointer(ref this), inputSource, outputSubtype, outputSize, value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -133,22 +133,22 @@ public unsafe partial struct IMediaCapture5 : IMediaCapture5.Interface, INativeG
         HRESULT RemoveEffectAsync([NativeTypeName("ABI::Windows::Media::IMediaExtension *")] IMediaExtension* effect, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
 
         [VtblIndex(7)]
-        HRESULT PauseRecordWithResultAsync([NativeTypeName("ABI::Windows::Media::Devices::MediaCapturePauseBehavior")] MediaCapturePauseBehavior behavior, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCapturePauseResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT PauseRecordWithResultAsync([NativeTypeName("ABI::Windows::Media::Devices::MediaCapturePauseBehavior")] MediaCapturePauseBehavior behavior, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCapturePauseResult_t **")] IAsyncOperation<Pointer<IMediaCapturePauseResult>>** operation);
 
         [VtblIndex(8)]
-        HRESULT StopRecordWithResultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCaptureStopResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT StopRecordWithResultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCaptureStopResult_t **")] IAsyncOperation<Pointer<IMediaCaptureStopResult>>** operation);
 
         [VtblIndex(9)]
-        HRESULT get_FrameSources([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_t **")] IMapView<HSTRING, IntPtr>** value);
+        HRESULT get_FrameSources([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_t **")] IMapView<HSTRING, Pointer<IMediaFrameSource>>** value);
 
         [VtblIndex(10)]
-        HRESULT CreateFrameReaderAsync([NativeTypeName("ABI::Windows::Media::Capture::Frames::IMediaFrameSource *")] IMediaFrameSource* inputSource, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT CreateFrameReaderAsync([NativeTypeName("ABI::Windows::Media::Capture::Frames::IMediaFrameSource *")] IMediaFrameSource* inputSource, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_t **")] IAsyncOperation<Pointer<IMediaFrameReader>>** value);
 
         [VtblIndex(11)]
-        HRESULT CreateFrameReaderWithSubtypeAsync([NativeTypeName("ABI::Windows::Media::Capture::Frames::IMediaFrameSource *")] IMediaFrameSource* inputSource, HSTRING outputSubtype, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT CreateFrameReaderWithSubtypeAsync([NativeTypeName("ABI::Windows::Media::Capture::Frames::IMediaFrameSource *")] IMediaFrameSource* inputSource, HSTRING outputSubtype, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_t **")] IAsyncOperation<Pointer<IMediaFrameReader>>** value);
 
         [VtblIndex(12)]
-        HRESULT CreateFrameReaderWithSubtypeAndSizeAsync([NativeTypeName("ABI::Windows::Media::Capture::Frames::IMediaFrameSource *")] IMediaFrameSource* inputSource, HSTRING outputSubtype, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapSize")] BitmapSize outputSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT CreateFrameReaderWithSubtypeAndSizeAsync([NativeTypeName("ABI::Windows::Media::Capture::Frames::IMediaFrameSource *")] IMediaFrameSource* inputSource, HSTRING outputSubtype, [NativeTypeName("ABI::Windows::Graphics::Imaging::BitmapSize")] BitmapSize outputSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_t **")] IAsyncOperation<Pointer<IMediaFrameReader>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -176,21 +176,21 @@ public unsafe partial struct IMediaCapture5 : IMediaCapture5.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, IMediaExtension*, IAsyncAction**, int> RemoveEffectAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Devices::MediaCapturePauseBehavior, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCapturePauseResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, MediaCapturePauseBehavior, IAsyncOperation<IntPtr>**, int> PauseRecordWithResultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MediaCapturePauseBehavior, IAsyncOperation<Pointer<IMediaCapturePauseResult>>**, int> PauseRecordWithResultAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CMediaCaptureStopResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> StopRecordWithResultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IMediaCaptureStopResult>>**, int> StopRecordWithResultAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, IntPtr>**, int> get_FrameSources;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, Pointer<IMediaFrameSource>>**, int> get_FrameSources;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Capture::Frames::IMediaFrameSource *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaFrameSource*, IAsyncOperation<IntPtr>**, int> CreateFrameReaderAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaFrameSource*, IAsyncOperation<Pointer<IMediaFrameReader>>**, int> CreateFrameReaderAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Capture::Frames::IMediaFrameSource *, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaFrameSource*, HSTRING, IAsyncOperation<IntPtr>**, int> CreateFrameReaderWithSubtypeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaFrameSource*, HSTRING, IAsyncOperation<Pointer<IMediaFrameReader>>**, int> CreateFrameReaderWithSubtypeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Capture::Frames::IMediaFrameSource *, HSTRING, ABI::Windows::Graphics::Imaging::BitmapSize, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameReader_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaFrameSource*, HSTRING, BitmapSize, IAsyncOperation<IntPtr>**, int> CreateFrameReaderWithSubtypeAndSizeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaFrameSource*, HSTRING, BitmapSize, IAsyncOperation<Pointer<IMediaFrameReader>>**, int> CreateFrameReaderWithSubtypeAndSizeAsync;
     }
 }

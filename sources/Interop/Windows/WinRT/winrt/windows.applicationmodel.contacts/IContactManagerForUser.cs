@@ -74,41 +74,41 @@ public unsafe partial struct IContactManagerForUser : IContactManagerForUser.Int
     /// <include file='IContactManagerForUser.xml' path='doc/member[@name="IContactManagerForUser.ConvertContactToVCardAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT ConvertContactToVCardAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT ConvertContactToVCardAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IAsyncOperation<Pointer<IRandomAccessStreamReference>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactManagerForUser*, IContact*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IContactManagerForUser*)Unsafe.AsPointer(ref this), contact, result);
+        return ((delegate* unmanaged[MemberFunction]<IContactManagerForUser*, IContact*, IAsyncOperation<Pointer<IRandomAccessStreamReference>>**, int>)(lpVtbl[6]))((IContactManagerForUser*)Unsafe.AsPointer(ref this), contact, result);
     }
 
     /// <include file='IContactManagerForUser.xml' path='doc/member[@name="IContactManagerForUser.ConvertContactToVCardAsyncWithMaxBytes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT ConvertContactToVCardAsyncWithMaxBytes([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("UINT32")] uint maxBytes, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT ConvertContactToVCardAsyncWithMaxBytes([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("UINT32")] uint maxBytes, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IAsyncOperation<Pointer<IRandomAccessStreamReference>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactManagerForUser*, IContact*, uint, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IContactManagerForUser*)Unsafe.AsPointer(ref this), contact, maxBytes, result);
+        return ((delegate* unmanaged[MemberFunction]<IContactManagerForUser*, IContact*, uint, IAsyncOperation<Pointer<IRandomAccessStreamReference>>**, int>)(lpVtbl[7]))((IContactManagerForUser*)Unsafe.AsPointer(ref this), contact, maxBytes, result);
     }
 
     /// <include file='IContactManagerForUser.xml' path='doc/member[@name="IContactManagerForUser.ConvertVCardToContactAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT ConvertVCardToContactAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamReference *")] IRandomAccessStreamReference* vCard, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT ConvertVCardToContactAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamReference *")] IRandomAccessStreamReference* vCard, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IContact>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactManagerForUser*, IRandomAccessStreamReference*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IContactManagerForUser*)Unsafe.AsPointer(ref this), vCard, result);
+        return ((delegate* unmanaged[MemberFunction]<IContactManagerForUser*, IRandomAccessStreamReference*, IAsyncOperation<Pointer<IContact>>**, int>)(lpVtbl[8]))((IContactManagerForUser*)Unsafe.AsPointer(ref this), vCard, result);
     }
 
     /// <include file='IContactManagerForUser.xml' path='doc/member[@name="IContactManagerForUser.RequestStoreAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::ContactStoreAccessType")] ContactStoreAccessType accessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::ContactStoreAccessType")] ContactStoreAccessType accessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore_t **")] IAsyncOperation<Pointer<IContactStore>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactManagerForUser*, ContactStoreAccessType, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IContactManagerForUser*)Unsafe.AsPointer(ref this), accessType, result);
+        return ((delegate* unmanaged[MemberFunction]<IContactManagerForUser*, ContactStoreAccessType, IAsyncOperation<Pointer<IContactStore>>**, int>)(lpVtbl[9]))((IContactManagerForUser*)Unsafe.AsPointer(ref this), accessType, result);
     }
 
     /// <include file='IContactManagerForUser.xml' path='doc/member[@name="IContactManagerForUser.RequestAnnotationStoreAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT RequestAnnotationStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType")] ContactAnnotationStoreAccessType accessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT RequestAnnotationStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType")] ContactAnnotationStoreAccessType accessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore_t **")] IAsyncOperation<Pointer<IContactAnnotationStore>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactManagerForUser*, ContactAnnotationStoreAccessType, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IContactManagerForUser*)Unsafe.AsPointer(ref this), accessType, result);
+        return ((delegate* unmanaged[MemberFunction]<IContactManagerForUser*, ContactAnnotationStoreAccessType, IAsyncOperation<Pointer<IContactAnnotationStore>>**, int>)(lpVtbl[10]))((IContactManagerForUser*)Unsafe.AsPointer(ref this), accessType, result);
     }
 
     /// <include file='IContactManagerForUser.xml' path='doc/member[@name="IContactManagerForUser.get_SystemDisplayNameOrder"]/*' />
@@ -154,19 +154,19 @@ public unsafe partial struct IContactManagerForUser : IContactManagerForUser.Int
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT ConvertContactToVCardAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT ConvertContactToVCardAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IAsyncOperation<Pointer<IRandomAccessStreamReference>>** result);
 
         [VtblIndex(7)]
-        HRESULT ConvertContactToVCardAsyncWithMaxBytes([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("UINT32")] uint maxBytes, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT ConvertContactToVCardAsyncWithMaxBytes([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("UINT32")] uint maxBytes, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IAsyncOperation<Pointer<IRandomAccessStreamReference>>** result);
 
         [VtblIndex(8)]
-        HRESULT ConvertVCardToContactAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamReference *")] IRandomAccessStreamReference* vCard, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT ConvertVCardToContactAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamReference *")] IRandomAccessStreamReference* vCard, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IContact>>** result);
 
         [VtblIndex(9)]
-        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::ContactStoreAccessType")] ContactStoreAccessType accessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::ContactStoreAccessType")] ContactStoreAccessType accessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore_t **")] IAsyncOperation<Pointer<IContactStore>>** result);
 
         [VtblIndex(10)]
-        HRESULT RequestAnnotationStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType")] ContactAnnotationStoreAccessType accessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT RequestAnnotationStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType")] ContactAnnotationStoreAccessType accessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore_t **")] IAsyncOperation<Pointer<IContactAnnotationStore>>** result);
 
         [VtblIndex(11)]
         HRESULT get_SystemDisplayNameOrder([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::ContactNameOrder *")] ContactNameOrder* value);
@@ -206,19 +206,19 @@ public unsafe partial struct IContactManagerForUser : IContactManagerForUser.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Contacts::IContact *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IContact*, IAsyncOperation<IntPtr>**, int> ConvertContactToVCardAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IContact*, IAsyncOperation<Pointer<IRandomAccessStreamReference>>**, int> ConvertContactToVCardAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Contacts::IContact *, UINT32, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IContact*, uint, IAsyncOperation<IntPtr>**, int> ConvertContactToVCardAsyncWithMaxBytes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IContact*, uint, IAsyncOperation<Pointer<IRandomAccessStreamReference>>**, int> ConvertContactToVCardAsyncWithMaxBytes;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IRandomAccessStreamReference *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStreamReference*, IAsyncOperation<IntPtr>**, int> ConvertVCardToContactAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStreamReference*, IAsyncOperation<Pointer<IContact>>**, int> ConvertVCardToContactAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Contacts::ContactStoreAccessType, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ContactStoreAccessType, IAsyncOperation<IntPtr>**, int> RequestStoreAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ContactStoreAccessType, IAsyncOperation<Pointer<IContactStore>>**, int> RequestStoreAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Contacts::ContactAnnotationStoreAccessType, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactAnnotationStore_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ContactAnnotationStoreAccessType, IAsyncOperation<IntPtr>**, int> RequestAnnotationStoreAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ContactAnnotationStoreAccessType, IAsyncOperation<Pointer<IContactAnnotationStore>>**, int> RequestAnnotationStoreAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Contacts::ContactNameOrder *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ContactNameOrder*, int> get_SystemDisplayNameOrder;

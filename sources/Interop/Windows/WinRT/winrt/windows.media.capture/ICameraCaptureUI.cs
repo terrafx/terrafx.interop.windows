@@ -90,9 +90,9 @@ public unsafe partial struct ICameraCaptureUI : ICameraCaptureUI.Interface, INat
     /// <include file='ICameraCaptureUI.xml' path='doc/member[@name="ICameraCaptureUI.CaptureFileAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT CaptureFileAsync([NativeTypeName("ABI::Windows::Media::Capture::CameraCaptureUIMode")] CameraCaptureUIMode mode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT CaptureFileAsync([NativeTypeName("ABI::Windows::Media::Capture::CameraCaptureUIMode")] CameraCaptureUIMode mode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICameraCaptureUI*, CameraCaptureUIMode, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((ICameraCaptureUI*)Unsafe.AsPointer(ref this), mode, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<ICameraCaptureUI*, CameraCaptureUIMode, IAsyncOperation<Pointer<IStorageFile>>**, int>)(lpVtbl[8]))((ICameraCaptureUI*)Unsafe.AsPointer(ref this), mode, asyncInfo);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct ICameraCaptureUI : ICameraCaptureUI.Interface, INat
         HRESULT get_VideoSettings([NativeTypeName("ABI::Windows::Media::Capture::ICameraCaptureUIVideoCaptureSettings **")] ICameraCaptureUIVideoCaptureSettings** value);
 
         [VtblIndex(8)]
-        HRESULT CaptureFileAsync([NativeTypeName("ABI::Windows::Media::Capture::CameraCaptureUIMode")] CameraCaptureUIMode mode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT CaptureFileAsync([NativeTypeName("ABI::Windows::Media::Capture::CameraCaptureUIMode")] CameraCaptureUIMode mode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** asyncInfo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct ICameraCaptureUI : ICameraCaptureUI.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, ICameraCaptureUIVideoCaptureSettings**, int> get_VideoSettings;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Capture::CameraCaptureUIMode, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, CameraCaptureUIMode, IAsyncOperation<IntPtr>**, int> CaptureFileAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, CameraCaptureUIMode, IAsyncOperation<Pointer<IStorageFile>>**, int> CaptureFileAsync;
     }
 }

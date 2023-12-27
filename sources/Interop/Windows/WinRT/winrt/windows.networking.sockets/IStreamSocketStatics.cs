@@ -74,26 +74,26 @@ public unsafe partial struct IStreamSocketStatics : IStreamSocketStatics.Interfa
     /// <include file='IStreamSocketStatics.xml' path='doc/member[@name="IStreamSocketStatics.GetEndpointPairsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetEndpointPairsAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* remoteHostName, HSTRING remoteServiceName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CEndpointPair_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetEndpointPairsAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* remoteHostName, HSTRING remoteServiceName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CEndpointPair_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IEndpointPair>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStreamSocketStatics*, IHostName*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStreamSocketStatics*)Unsafe.AsPointer(ref this), remoteHostName, remoteServiceName, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStreamSocketStatics*, IHostName*, HSTRING, IAsyncOperation<Pointer<IVectorView<Pointer<IEndpointPair>>>>**, int>)(lpVtbl[6]))((IStreamSocketStatics*)Unsafe.AsPointer(ref this), remoteHostName, remoteServiceName, operation);
     }
 
     /// <include file='IStreamSocketStatics.xml' path='doc/member[@name="IStreamSocketStatics.GetEndpointPairsWithSortOptionsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetEndpointPairsWithSortOptionsAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* remoteHostName, HSTRING remoteServiceName, [NativeTypeName("ABI::Windows::Networking::HostNameSortOptions")] HostNameSortOptions sortOptions, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CEndpointPair_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetEndpointPairsWithSortOptionsAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* remoteHostName, HSTRING remoteServiceName, [NativeTypeName("ABI::Windows::Networking::HostNameSortOptions")] HostNameSortOptions sortOptions, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CEndpointPair_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IEndpointPair>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStreamSocketStatics*, IHostName*, HSTRING, HostNameSortOptions, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IStreamSocketStatics*)Unsafe.AsPointer(ref this), remoteHostName, remoteServiceName, sortOptions, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStreamSocketStatics*, IHostName*, HSTRING, HostNameSortOptions, IAsyncOperation<Pointer<IVectorView<Pointer<IEndpointPair>>>>**, int>)(lpVtbl[7]))((IStreamSocketStatics*)Unsafe.AsPointer(ref this), remoteHostName, remoteServiceName, sortOptions, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetEndpointPairsAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* remoteHostName, HSTRING remoteServiceName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CEndpointPair_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetEndpointPairsAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* remoteHostName, HSTRING remoteServiceName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CEndpointPair_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IEndpointPair>>>>** operation);
 
         [VtblIndex(7)]
-        HRESULT GetEndpointPairsWithSortOptionsAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* remoteHostName, HSTRING remoteServiceName, [NativeTypeName("ABI::Windows::Networking::HostNameSortOptions")] HostNameSortOptions sortOptions, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CEndpointPair_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetEndpointPairsWithSortOptionsAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* remoteHostName, HSTRING remoteServiceName, [NativeTypeName("ABI::Windows::Networking::HostNameSortOptions")] HostNameSortOptions sortOptions, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CEndpointPair_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IEndpointPair>>>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IStreamSocketStatics : IStreamSocketStatics.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Networking::IHostName *, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CEndpointPair_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IHostName*, HSTRING, IAsyncOperation<IntPtr>**, int> GetEndpointPairsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHostName*, HSTRING, IAsyncOperation<Pointer<IVectorView<Pointer<IEndpointPair>>>>**, int> GetEndpointPairsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Networking::IHostName *, HSTRING, ABI::Windows::Networking::HostNameSortOptions, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CEndpointPair_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IHostName*, HSTRING, HostNameSortOptions, IAsyncOperation<IntPtr>**, int> GetEndpointPairsWithSortOptionsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHostName*, HSTRING, HostNameSortOptions, IAsyncOperation<Pointer<IVectorView<Pointer<IEndpointPair>>>>**, int> GetEndpointPairsWithSortOptionsAsync;
     }
 }

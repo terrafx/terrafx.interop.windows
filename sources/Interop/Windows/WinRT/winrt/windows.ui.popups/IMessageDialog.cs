@@ -90,9 +90,9 @@ public unsafe partial struct IMessageDialog : IMessageDialog.Interface, INativeG
     /// <include file='IMessageDialog.xml' path='doc/member[@name="IMessageDialog.get_Commands"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Commands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CPopups__CIUICommand_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Commands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CPopups__CIUICommand_t **")] IVector<Pointer<IUICommand>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMessageDialog*, IVector<IntPtr>**, int>)(lpVtbl[8]))((IMessageDialog*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMessageDialog*, IVector<Pointer<IUICommand>>**, int>)(lpVtbl[8]))((IMessageDialog*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMessageDialog.xml' path='doc/member[@name="IMessageDialog.get_DefaultCommandIndex"]/*' />
@@ -146,9 +146,9 @@ public unsafe partial struct IMessageDialog : IMessageDialog.Interface, INativeG
     /// <include file='IMessageDialog.xml' path='doc/member[@name="IMessageDialog.ShowAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT ShowAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<IntPtr>** messageDialogAsyncOperation)
+    public HRESULT ShowAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<Pointer<IUICommand>>** messageDialogAsyncOperation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMessageDialog*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[15]))((IMessageDialog*)Unsafe.AsPointer(ref this), messageDialogAsyncOperation);
+        return ((delegate* unmanaged[MemberFunction]<IMessageDialog*, IAsyncOperation<Pointer<IUICommand>>**, int>)(lpVtbl[15]))((IMessageDialog*)Unsafe.AsPointer(ref this), messageDialogAsyncOperation);
     }
 
     /// <include file='IMessageDialog.xml' path='doc/member[@name="IMessageDialog.get_Options"]/*' />
@@ -176,7 +176,7 @@ public unsafe partial struct IMessageDialog : IMessageDialog.Interface, INativeG
         HRESULT put_Title(HSTRING value);
 
         [VtblIndex(8)]
-        HRESULT get_Commands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CPopups__CIUICommand_t **")] IVector<IntPtr>** value);
+        HRESULT get_Commands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CPopups__CIUICommand_t **")] IVector<Pointer<IUICommand>>** value);
 
         [VtblIndex(9)]
         HRESULT get_DefaultCommandIndex([NativeTypeName("UINT32 *")] uint* value);
@@ -197,7 +197,7 @@ public unsafe partial struct IMessageDialog : IMessageDialog.Interface, INativeG
         HRESULT put_Content(HSTRING value);
 
         [VtblIndex(15)]
-        HRESULT ShowAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<IntPtr>** messageDialogAsyncOperation);
+        HRESULT ShowAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<Pointer<IUICommand>>** messageDialogAsyncOperation);
 
         [VtblIndex(16)]
         HRESULT get_Options([NativeTypeName("ABI::Windows::UI::Popups::MessageDialogOptions *")] MessageDialogOptions* value);
@@ -234,7 +234,7 @@ public unsafe partial struct IMessageDialog : IMessageDialog.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_Title;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CPopups__CIUICommand_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Commands;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IUICommand>>**, int> get_Commands;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_DefaultCommandIndex;
@@ -255,7 +255,7 @@ public unsafe partial struct IMessageDialog : IMessageDialog.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_Content;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> ShowAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IUICommand>>**, int> ShowAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::UI::Popups::MessageDialogOptions *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, MessageDialogOptions*, int> get_Options;

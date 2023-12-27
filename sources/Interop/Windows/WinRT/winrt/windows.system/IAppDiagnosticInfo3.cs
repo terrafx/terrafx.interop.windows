@@ -74,15 +74,15 @@ public unsafe partial struct IAppDiagnosticInfo3 : IAppDiagnosticInfo3.Interface
     /// <include file='IAppDiagnosticInfo3.xml' path='doc/member[@name="IAppDiagnosticInfo3.LaunchAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT LaunchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT LaunchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_t **")] IAsyncOperation<Pointer<IAppActivationResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfo3*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IAppDiagnosticInfo3*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfo3*, IAsyncOperation<Pointer<IAppActivationResult>>**, int>)(lpVtbl[6]))((IAppDiagnosticInfo3*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT LaunchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT LaunchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_t **")] IAsyncOperation<Pointer<IAppActivationResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IAppDiagnosticInfo3 : IAppDiagnosticInfo3.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppActivationResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> LaunchAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IAppActivationResult>>**, int> LaunchAsync;
     }
 }

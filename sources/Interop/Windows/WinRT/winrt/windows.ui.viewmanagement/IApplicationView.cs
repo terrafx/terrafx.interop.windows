@@ -155,9 +155,9 @@ public unsafe partial struct IApplicationView : IApplicationView.Interface, INat
     /// <include file='IApplicationView.xml' path='doc/member[@name="IApplicationView.add_Consolidated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT add_Consolidated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationView_Windows__CUI__CViewManagement__CApplicationViewConsolidatedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Consolidated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationView_Windows__CUI__CViewManagement__CApplicationViewConsolidatedEventArgs_t *")] ITypedEventHandler<Pointer<IApplicationView>, Pointer<IApplicationViewConsolidatedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IApplicationView*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IApplicationView*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationView*, ITypedEventHandler<Pointer<IApplicationView>, Pointer<IApplicationViewConsolidatedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IApplicationView*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IApplicationView.xml' path='doc/member[@name="IApplicationView.remove_Consolidated"]/*' />
@@ -202,7 +202,7 @@ public unsafe partial struct IApplicationView : IApplicationView.Interface, INat
         HRESULT get_Id([NativeTypeName("INT32 *")] int* value);
 
         [VtblIndex(16)]
-        HRESULT add_Consolidated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationView_Windows__CUI__CViewManagement__CApplicationViewConsolidatedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Consolidated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationView_Windows__CUI__CViewManagement__CApplicationViewConsolidatedEventArgs_t *")] ITypedEventHandler<Pointer<IApplicationView>, Pointer<IApplicationViewConsolidatedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(17)]
         HRESULT remove_Consolidated(EventRegistrationToken token);
@@ -261,7 +261,7 @@ public unsafe partial struct IApplicationView : IApplicationView.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Id;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationView_Windows__CUI__CViewManagement__CApplicationViewConsolidatedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Consolidated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IApplicationView>, Pointer<IApplicationViewConsolidatedEventArgs>>*, EventRegistrationToken*, int> add_Consolidated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Consolidated;

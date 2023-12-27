@@ -74,9 +74,9 @@ public unsafe partial struct IMediaTranscoder2 : IMediaTranscoder2.Interface, IN
     /// <include file='IMediaTranscoder2.xml' path='doc/member[@name="IMediaTranscoder2.PrepareMediaStreamSourceTranscodeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT PrepareMediaStreamSourceTranscodeAsync([NativeTypeName("ABI::Windows::Media::Core::IMediaSource *")] IMediaSource* source, [NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* destination, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *")] IMediaEncodingProfile* profile, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CTranscoding__CPrepareTranscodeResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT PrepareMediaStreamSourceTranscodeAsync([NativeTypeName("ABI::Windows::Media::Core::IMediaSource *")] IMediaSource* source, [NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* destination, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *")] IMediaEncodingProfile* profile, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CTranscoding__CPrepareTranscodeResult_t **")] IAsyncOperation<Pointer<IPrepareTranscodeResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaTranscoder2*, IMediaSource*, IRandomAccessStream*, IMediaEncodingProfile*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IMediaTranscoder2*)Unsafe.AsPointer(ref this), source, destination, profile, operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaTranscoder2*, IMediaSource*, IRandomAccessStream*, IMediaEncodingProfile*, IAsyncOperation<Pointer<IPrepareTranscodeResult>>**, int>)(lpVtbl[6]))((IMediaTranscoder2*)Unsafe.AsPointer(ref this), source, destination, profile, operation);
     }
 
     /// <include file='IMediaTranscoder2.xml' path='doc/member[@name="IMediaTranscoder2.put_VideoProcessingAlgorithm"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IMediaTranscoder2 : IMediaTranscoder2.Interface, IN
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT PrepareMediaStreamSourceTranscodeAsync([NativeTypeName("ABI::Windows::Media::Core::IMediaSource *")] IMediaSource* source, [NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* destination, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *")] IMediaEncodingProfile* profile, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CTranscoding__CPrepareTranscodeResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT PrepareMediaStreamSourceTranscodeAsync([NativeTypeName("ABI::Windows::Media::Core::IMediaSource *")] IMediaSource* source, [NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* destination, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *")] IMediaEncodingProfile* profile, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CTranscoding__CPrepareTranscodeResult_t **")] IAsyncOperation<Pointer<IPrepareTranscodeResult>>** operation);
 
         [VtblIndex(7)]
         HRESULT put_VideoProcessingAlgorithm([NativeTypeName("ABI::Windows::Media::Transcoding::MediaVideoProcessingAlgorithm")] MediaVideoProcessingAlgorithm value);
@@ -129,7 +129,7 @@ public unsafe partial struct IMediaTranscoder2 : IMediaTranscoder2.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Core::IMediaSource *, ABI::Windows::Storage::Streams::IRandomAccessStream *, ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CTranscoding__CPrepareTranscodeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaSource*, IRandomAccessStream*, IMediaEncodingProfile*, IAsyncOperation<IntPtr>**, int> PrepareMediaStreamSourceTranscodeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMediaSource*, IRandomAccessStream*, IMediaEncodingProfile*, IAsyncOperation<Pointer<IPrepareTranscodeResult>>**, int> PrepareMediaStreamSourceTranscodeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Transcoding::MediaVideoProcessingAlgorithm) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, MediaVideoProcessingAlgorithm, int> put_VideoProcessingAlgorithm;

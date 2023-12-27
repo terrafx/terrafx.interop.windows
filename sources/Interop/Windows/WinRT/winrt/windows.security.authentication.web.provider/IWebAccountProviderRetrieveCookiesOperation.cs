@@ -82,9 +82,9 @@ public unsafe partial struct IWebAccountProviderRetrieveCookiesOperation : IWebA
     /// <include file='IWebAccountProviderRetrieveCookiesOperation.xml' path='doc/member[@name="IWebAccountProviderRetrieveCookiesOperation.get_Cookies"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Cookies([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHttpCookie_t **")] IVector<IntPtr>** cookies)
+    public HRESULT get_Cookies([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHttpCookie_t **")] IVector<Pointer<IHttpCookie>>** cookies)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAccountProviderRetrieveCookiesOperation*, IVector<IntPtr>**, int>)(lpVtbl[7]))((IWebAccountProviderRetrieveCookiesOperation*)Unsafe.AsPointer(ref this), cookies);
+        return ((delegate* unmanaged[MemberFunction]<IWebAccountProviderRetrieveCookiesOperation*, IVector<Pointer<IHttpCookie>>**, int>)(lpVtbl[7]))((IWebAccountProviderRetrieveCookiesOperation*)Unsafe.AsPointer(ref this), cookies);
     }
 
     /// <include file='IWebAccountProviderRetrieveCookiesOperation.xml' path='doc/member[@name="IWebAccountProviderRetrieveCookiesOperation.put_Uri"]/*' />
@@ -117,7 +117,7 @@ public unsafe partial struct IWebAccountProviderRetrieveCookiesOperation : IWebA
         HRESULT get_Context([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass **")] IUriRuntimeClass** webCookieRequestContext);
 
         [VtblIndex(7)]
-        HRESULT get_Cookies([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHttpCookie_t **")] IVector<IntPtr>** cookies);
+        HRESULT get_Cookies([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHttpCookie_t **")] IVector<Pointer<IHttpCookie>>** cookies);
 
         [VtblIndex(8)]
         HRESULT put_Uri([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri);
@@ -154,7 +154,7 @@ public unsafe partial struct IWebAccountProviderRetrieveCookiesOperation : IWebA
         public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass**, int> get_Context;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHttpCookie_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Cookies;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IHttpCookie>>**, int> get_Cookies;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, int> put_Uri;

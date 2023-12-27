@@ -90,9 +90,9 @@ public unsafe partial struct IBluetoothLEAdvertisementFilter : IBluetoothLEAdver
     /// <include file='IBluetoothLEAdvertisementFilter.xml' path='doc/member[@name="IBluetoothLEAdvertisementFilter.get_BytePatterns"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_BytePatterns([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementBytePattern_t **")] IVector<IntPtr>** value)
+    public HRESULT get_BytePatterns([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementBytePattern_t **")] IVector<Pointer<IBluetoothLEAdvertisementBytePattern>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisementFilter*, IVector<IntPtr>**, int>)(lpVtbl[8]))((IBluetoothLEAdvertisementFilter*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisementFilter*, IVector<Pointer<IBluetoothLEAdvertisementBytePattern>>**, int>)(lpVtbl[8]))((IBluetoothLEAdvertisementFilter*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IBluetoothLEAdvertisementFilter : IBluetoothLEAdver
         HRESULT put_Advertisement([NativeTypeName("ABI::Windows::Devices::Bluetooth::Advertisement::IBluetoothLEAdvertisement *")] IBluetoothLEAdvertisement* value);
 
         [VtblIndex(8)]
-        HRESULT get_BytePatterns([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementBytePattern_t **")] IVector<IntPtr>** value);
+        HRESULT get_BytePatterns([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementBytePattern_t **")] IVector<Pointer<IBluetoothLEAdvertisementBytePattern>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IBluetoothLEAdvertisementFilter : IBluetoothLEAdver
         public delegate* unmanaged[MemberFunction]<TSelf*, IBluetoothLEAdvertisement*, int> put_Advertisement;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementBytePattern_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_BytePatterns;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IBluetoothLEAdvertisementBytePattern>>**, int> get_BytePatterns;
     }
 }

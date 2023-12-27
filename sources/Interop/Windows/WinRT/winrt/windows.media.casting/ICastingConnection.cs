@@ -106,9 +106,9 @@ public unsafe partial struct ICastingConnection : ICastingConnection.Interface, 
     /// <include file='ICastingConnection.xml' path='doc/member[@name="ICastingConnection.add_StateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingConnection_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingConnection_IInspectable_t *")] ITypedEventHandler<Pointer<ICastingConnection>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICastingConnection*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((ICastingConnection*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICastingConnection*, ITypedEventHandler<Pointer<ICastingConnection>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((ICastingConnection*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICastingConnection.xml' path='doc/member[@name="ICastingConnection.remove_StateChanged"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct ICastingConnection : ICastingConnection.Interface, 
     /// <include file='ICastingConnection.xml' path='doc/member[@name="ICastingConnection.add_ErrorOccurred"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_ErrorOccurred([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingConnection_Windows__CMedia__CCasting__CCastingConnectionErrorOccurredEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ErrorOccurred([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingConnection_Windows__CMedia__CCasting__CCastingConnectionErrorOccurredEventArgs_t *")] ITypedEventHandler<Pointer<ICastingConnection>, Pointer<ICastingConnectionErrorOccurredEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICastingConnection*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((ICastingConnection*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICastingConnection*, ITypedEventHandler<Pointer<ICastingConnection>, Pointer<ICastingConnectionErrorOccurredEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((ICastingConnection*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICastingConnection.xml' path='doc/member[@name="ICastingConnection.remove_ErrorOccurred"]/*' />
@@ -166,13 +166,13 @@ public unsafe partial struct ICastingConnection : ICastingConnection.Interface, 
         HRESULT put_Source([NativeTypeName("ABI::Windows::Media::Casting::ICastingSource *")] ICastingSource* value);
 
         [VtblIndex(10)]
-        HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingConnection_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingConnection_IInspectable_t *")] ITypedEventHandler<Pointer<ICastingConnection>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_StateChanged(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT add_ErrorOccurred([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingConnection_Windows__CMedia__CCasting__CCastingConnectionErrorOccurredEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ErrorOccurred([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingConnection_Windows__CMedia__CCasting__CCastingConnectionErrorOccurredEventArgs_t *")] ITypedEventHandler<Pointer<ICastingConnection>, Pointer<ICastingConnectionErrorOccurredEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_ErrorOccurred(EventRegistrationToken token);
@@ -218,13 +218,13 @@ public unsafe partial struct ICastingConnection : ICastingConnection.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, ICastingSource*, int> put_Source;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingConnection_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_StateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICastingConnection>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_StateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StateChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCasting__CCastingConnection_Windows__CMedia__CCasting__CCastingConnectionErrorOccurredEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ErrorOccurred;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICastingConnection>, Pointer<ICastingConnectionErrorOccurredEventArgs>>*, EventRegistrationToken*, int> add_ErrorOccurred;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ErrorOccurred;

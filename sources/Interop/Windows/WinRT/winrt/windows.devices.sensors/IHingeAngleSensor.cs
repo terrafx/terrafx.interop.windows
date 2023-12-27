@@ -74,9 +74,9 @@ public unsafe partial struct IHingeAngleSensor : IHingeAngleSensor.Interface, IN
     /// <include file='IHingeAngleSensor.xml' path='doc/member[@name="IHingeAngleSensor.GetCurrentReadingAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetCurrentReadingAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetCurrentReadingAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_t **")] IAsyncOperation<Pointer<IHingeAngleReading>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHingeAngleSensor*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IHingeAngleSensor*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IHingeAngleSensor*, IAsyncOperation<Pointer<IHingeAngleReading>>**, int>)(lpVtbl[6]))((IHingeAngleSensor*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IHingeAngleSensor.xml' path='doc/member[@name="IHingeAngleSensor.get_DeviceId"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct IHingeAngleSensor : IHingeAngleSensor.Interface, IN
     /// <include file='IHingeAngleSensor.xml' path='doc/member[@name="IHingeAngleSensor.add_ReadingChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<IHingeAngleSensor>, Pointer<IHingeAngleSensorReadingChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHingeAngleSensor*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IHingeAngleSensor*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IHingeAngleSensor*, ITypedEventHandler<Pointer<IHingeAngleSensor>, Pointer<IHingeAngleSensorReadingChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IHingeAngleSensor*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IHingeAngleSensor.xml' path='doc/member[@name="IHingeAngleSensor.remove_ReadingChanged"]/*' />
@@ -130,7 +130,7 @@ public unsafe partial struct IHingeAngleSensor : IHingeAngleSensor.Interface, IN
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetCurrentReadingAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetCurrentReadingAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_t **")] IAsyncOperation<Pointer<IHingeAngleReading>>** value);
 
         [VtblIndex(7)]
         HRESULT get_DeviceId(HSTRING* value);
@@ -145,7 +145,7 @@ public unsafe partial struct IHingeAngleSensor : IHingeAngleSensor.Interface, IN
         HRESULT put_ReportThresholdInDegrees(double value);
 
         [VtblIndex(11)]
-        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<IHingeAngleSensor>, Pointer<IHingeAngleSensorReadingChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_ReadingChanged(EventRegistrationToken token);
@@ -173,7 +173,7 @@ public unsafe partial struct IHingeAngleSensor : IHingeAngleSensor.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHingeAngleReading_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetCurrentReadingAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IHingeAngleReading>>**, int> GetCurrentReadingAsync;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_DeviceId;
@@ -188,7 +188,7 @@ public unsafe partial struct IHingeAngleSensor : IHingeAngleSensor.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, double, int> put_ReportThresholdInDegrees;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CHingeAngleSensor_Windows__CDevices__CSensors__CHingeAngleSensorReadingChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ReadingChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IHingeAngleSensor>, Pointer<IHingeAngleSensorReadingChangedEventArgs>>*, EventRegistrationToken*, int> add_ReadingChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ReadingChanged;

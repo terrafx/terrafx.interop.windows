@@ -74,9 +74,9 @@ public unsafe partial struct ICoreWindowDialog : ICoreWindowDialog.Interface, IN
     /// <include file='ICoreWindowDialog.xml' path='doc/member[@name="ICoreWindowDialog.add_Showing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_Showing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreWindow_Windows__CUI__CCore__CCoreWindowPopupShowingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_Showing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreWindow_Windows__CUI__CCore__CCoreWindowPopupShowingEventArgs_t *")] ITypedEventHandler<Pointer<ICoreWindow>, Pointer<ICoreWindowPopupShowingEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreWindowDialog*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreWindowDialog*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowDialog*, ITypedEventHandler<Pointer<ICoreWindow>, Pointer<ICoreWindowPopupShowingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreWindowDialog*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICoreWindowDialog.xml' path='doc/member[@name="ICoreWindowDialog.remove_Showing"]/*' />
@@ -138,9 +138,9 @@ public unsafe partial struct ICoreWindowDialog : ICoreWindowDialog.Interface, IN
     /// <include file='ICoreWindowDialog.xml' path='doc/member[@name="ICoreWindowDialog.get_Commands"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_Commands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CPopups__CIUICommand_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Commands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CPopups__CIUICommand_t **")] IVector<Pointer<IUICommand>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreWindowDialog*, IVector<IntPtr>**, int>)(lpVtbl[14]))((ICoreWindowDialog*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowDialog*, IVector<Pointer<IUICommand>>**, int>)(lpVtbl[14]))((ICoreWindowDialog*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICoreWindowDialog.xml' path='doc/member[@name="ICoreWindowDialog.get_DefaultCommandIndex"]/*' />
@@ -194,15 +194,15 @@ public unsafe partial struct ICoreWindowDialog : ICoreWindowDialog.Interface, IN
     /// <include file='ICoreWindowDialog.xml' path='doc/member[@name="ICoreWindowDialog.ShowAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT ShowAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT ShowAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<Pointer<IUICommand>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreWindowDialog*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[21]))((ICoreWindowDialog*)Unsafe.AsPointer(ref this), asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowDialog*, IAsyncOperation<Pointer<IUICommand>>**, int>)(lpVtbl[21]))((ICoreWindowDialog*)Unsafe.AsPointer(ref this), asyncInfo);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_Showing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreWindow_Windows__CUI__CCore__CCoreWindowPopupShowingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_Showing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreWindow_Windows__CUI__CCore__CCoreWindowPopupShowingEventArgs_t *")] ITypedEventHandler<Pointer<ICoreWindow>, Pointer<ICoreWindowPopupShowingEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(7)]
         HRESULT remove_Showing(EventRegistrationToken cookie);
@@ -226,7 +226,7 @@ public unsafe partial struct ICoreWindowDialog : ICoreWindowDialog.Interface, IN
         HRESULT put_IsInteractionDelayed([NativeTypeName("INT32")] int value);
 
         [VtblIndex(14)]
-        HRESULT get_Commands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CPopups__CIUICommand_t **")] IVector<IntPtr>** value);
+        HRESULT get_Commands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CPopups__CIUICommand_t **")] IVector<Pointer<IUICommand>>** value);
 
         [VtblIndex(15)]
         HRESULT get_DefaultCommandIndex([NativeTypeName("UINT32 *")] uint* value);
@@ -247,7 +247,7 @@ public unsafe partial struct ICoreWindowDialog : ICoreWindowDialog.Interface, IN
         HRESULT put_BackButtonCommand([NativeTypeName("ABI::Windows::UI::Popups::IUICommandInvokedHandler *")] IUICommandInvokedHandler* value);
 
         [VtblIndex(21)]
-        HRESULT ShowAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT ShowAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **")] IAsyncOperation<Pointer<IUICommand>>** asyncInfo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -272,7 +272,7 @@ public unsafe partial struct ICoreWindowDialog : ICoreWindowDialog.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreWindow_Windows__CUI__CCore__CCoreWindowPopupShowingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Showing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreWindow>, Pointer<ICoreWindowPopupShowingEventArgs>>*, EventRegistrationToken*, int> add_Showing;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Showing;
@@ -296,7 +296,7 @@ public unsafe partial struct ICoreWindowDialog : ICoreWindowDialog.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_IsInteractionDelayed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CPopups__CIUICommand_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Commands;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IUICommand>>**, int> get_Commands;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_DefaultCommandIndex;
@@ -317,6 +317,6 @@ public unsafe partial struct ICoreWindowDialog : ICoreWindowDialog.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, IUICommandInvokedHandler*, int> put_BackButtonCommand;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CPopups__CIUICommand_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> ShowAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IUICommand>>**, int> ShowAsync;
     }
 }

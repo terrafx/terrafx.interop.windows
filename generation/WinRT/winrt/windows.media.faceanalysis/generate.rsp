@@ -1,0 +1,32 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::FaceAnalysis::DetectedFace *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::FaceAnalysis::DetectedFace *> *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::FaceAnalysis::FaceDetector *>
+ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::FaceAnalysis::FaceTracker *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::FaceAnalysis::DetectedFace *> *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::FaceAnalysis::FaceDetector *>
+ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::FaceAnalysis::FaceTracker *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IDetectedFace
+IID_IFaceDetector
+IID_IFaceDetectorStatics
+IID_IFaceTracker
+IID_IFaceTrackerStatics
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION
+--file
+winrt-windows.media.faceanalysis.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.media.faceanalysis
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.media.faceanalysis
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.faceanalysis.h

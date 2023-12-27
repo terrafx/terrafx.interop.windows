@@ -82,9 +82,9 @@ public unsafe partial struct IContactStore2 : IContactStore2.Interface, INativeG
     /// <include file='IContactStore2.xml' path='doc/member[@name="IContactStore2.add_ContactChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_ContactChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* returnValue)
+    public HRESULT add_ContactChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_t *")] ITypedEventHandler<Pointer<IContactStore>, Pointer<IContactChangedEventArgs>>* value, EventRegistrationToken* returnValue)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactStore2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IContactStore2*)Unsafe.AsPointer(ref this), value, returnValue);
+        return ((delegate* unmanaged[MemberFunction]<IContactStore2*, ITypedEventHandler<Pointer<IContactStore>, Pointer<IContactChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IContactStore2*)Unsafe.AsPointer(ref this), value, returnValue);
     }
 
     /// <include file='IContactStore2.xml' path='doc/member[@name="IContactStore2.remove_ContactChanged"]/*' />
@@ -106,33 +106,33 @@ public unsafe partial struct IContactStore2 : IContactStore2.Interface, INativeG
     /// <include file='IContactStore2.xml' path='doc/member[@name="IContactStore2.FindContactListsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT FindContactListsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT FindContactListsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContactList>>>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactStore2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IContactStore2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContactStore2*, IAsyncOperation<Pointer<IVectorView<Pointer<IContactList>>>>**, int>)(lpVtbl[10]))((IContactStore2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContactStore2.xml' path='doc/member[@name="IContactStore2.GetContactListAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetContactListAsync(HSTRING contactListId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetContactListAsync(HSTRING contactListId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<Pointer<IContactList>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactStore2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IContactStore2*)Unsafe.AsPointer(ref this), contactListId, value);
+        return ((delegate* unmanaged[MemberFunction]<IContactStore2*, HSTRING, IAsyncOperation<Pointer<IContactList>>**, int>)(lpVtbl[11]))((IContactStore2*)Unsafe.AsPointer(ref this), contactListId, value);
     }
 
     /// <include file='IContactStore2.xml' path='doc/member[@name="IContactStore2.CreateContactListAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT CreateContactListAsync(HSTRING displayName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT CreateContactListAsync(HSTRING displayName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<Pointer<IContactList>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactStore2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[12]))((IContactStore2*)Unsafe.AsPointer(ref this), displayName, value);
+        return ((delegate* unmanaged[MemberFunction]<IContactStore2*, HSTRING, IAsyncOperation<Pointer<IContactList>>**, int>)(lpVtbl[12]))((IContactStore2*)Unsafe.AsPointer(ref this), displayName, value);
     }
 
     /// <include file='IContactStore2.xml' path='doc/member[@name="IContactStore2.GetMeContactAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetMeContactAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** meContact)
+    public HRESULT GetMeContactAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IContact>>** meContact)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactStore2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[13]))((IContactStore2*)Unsafe.AsPointer(ref this), meContact);
+        return ((delegate* unmanaged[MemberFunction]<IContactStore2*, IAsyncOperation<Pointer<IContact>>**, int>)(lpVtbl[13]))((IContactStore2*)Unsafe.AsPointer(ref this), meContact);
     }
 
     /// <include file='IContactStore2.xml' path='doc/member[@name="IContactStore2.GetContactReader"]/*' />
@@ -154,9 +154,9 @@ public unsafe partial struct IContactStore2 : IContactStore2.Interface, INativeG
     /// <include file='IContactStore2.xml' path='doc/member[@name="IContactStore2.CreateContactListInAccountAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT CreateContactListInAccountAsync(HSTRING displayName, HSTRING userDataAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT CreateContactListInAccountAsync(HSTRING displayName, HSTRING userDataAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<Pointer<IContactList>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactStore2*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[16]))((IContactStore2*)Unsafe.AsPointer(ref this), displayName, userDataAccountId, value);
+        return ((delegate* unmanaged[MemberFunction]<IContactStore2*, HSTRING, HSTRING, IAsyncOperation<Pointer<IContactList>>**, int>)(lpVtbl[16]))((IContactStore2*)Unsafe.AsPointer(ref this), displayName, userDataAccountId, value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -165,7 +165,7 @@ public unsafe partial struct IContactStore2 : IContactStore2.Interface, INativeG
         HRESULT get_ChangeTracker([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContactChangeTracker **")] IContactChangeTracker** value);
 
         [VtblIndex(7)]
-        HRESULT add_ContactChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* returnValue);
+        HRESULT add_ContactChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_t *")] ITypedEventHandler<Pointer<IContactStore>, Pointer<IContactChangedEventArgs>>* value, EventRegistrationToken* returnValue);
 
         [VtblIndex(8)]
         HRESULT remove_ContactChanged(EventRegistrationToken value);
@@ -174,16 +174,16 @@ public unsafe partial struct IContactStore2 : IContactStore2.Interface, INativeG
         HRESULT get_AggregateContactManager([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IAggregateContactManager **")] IAggregateContactManager** value);
 
         [VtblIndex(10)]
-        HRESULT FindContactListsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT FindContactListsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContactList>>>>** value);
 
         [VtblIndex(11)]
-        HRESULT GetContactListAsync(HSTRING contactListId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetContactListAsync(HSTRING contactListId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<Pointer<IContactList>>** value);
 
         [VtblIndex(12)]
-        HRESULT CreateContactListAsync(HSTRING displayName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT CreateContactListAsync(HSTRING displayName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<Pointer<IContactList>>** value);
 
         [VtblIndex(13)]
-        HRESULT GetMeContactAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** meContact);
+        HRESULT GetMeContactAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IContact>>** meContact);
 
         [VtblIndex(14)]
         HRESULT GetContactReader([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContactReader **")] IContactReader** value);
@@ -192,7 +192,7 @@ public unsafe partial struct IContactStore2 : IContactStore2.Interface, INativeG
         HRESULT GetContactReaderWithOptions([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContactQueryOptions *")] IContactQueryOptions* options, [NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContactReader **")] IContactReader** value);
 
         [VtblIndex(16)]
-        HRESULT CreateContactListInAccountAsync(HSTRING displayName, HSTRING userDataAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT CreateContactListInAccountAsync(HSTRING displayName, HSTRING userDataAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_t **")] IAsyncOperation<Pointer<IContactList>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -220,7 +220,7 @@ public unsafe partial struct IContactStore2 : IContactStore2.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, IContactChangeTracker**, int> get_ChangeTracker;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactStore_Windows__CApplicationModel__CContacts__CContactChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ContactChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IContactStore>, Pointer<IContactChangedEventArgs>>*, EventRegistrationToken*, int> add_ContactChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ContactChanged;
@@ -229,16 +229,16 @@ public unsafe partial struct IContactStore2 : IContactStore2.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, IAggregateContactManager**, int> get_AggregateContactManager;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactList_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindContactListsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IContactList>>>>**, int> FindContactListsAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetContactListAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IContactList>>**, int> GetContactListAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> CreateContactListAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IContactList>>**, int> CreateContactListAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetMeContactAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IContact>>**, int> GetMeContactAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Contacts::IContactReader **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IContactReader**, int> GetContactReader;
@@ -247,6 +247,6 @@ public unsafe partial struct IContactStore2 : IContactStore2.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, IContactQueryOptions*, IContactReader**, int> GetContactReaderWithOptions;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactList_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int> CreateContactListInAccountAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IAsyncOperation<Pointer<IContactList>>**, int> CreateContactListInAccountAsync;
     }
 }

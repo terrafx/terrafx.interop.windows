@@ -74,9 +74,9 @@ public unsafe partial struct ICoreTouchHitTesting : ICoreTouchHitTesting.Interfa
     /// <include file='ICoreTouchHitTesting.xml' path='doc/member[@name="ICoreTouchHitTesting.add_TouchHitTesting"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_TouchHitTesting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CTouchHitTestingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie)
+    public HRESULT add_TouchHitTesting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CTouchHitTestingEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<ITouchHitTestingEventArgs>>* handler, EventRegistrationToken* pCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreTouchHitTesting*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreTouchHitTesting*)Unsafe.AsPointer(ref this), handler, pCookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreTouchHitTesting*, ITypedEventHandler<Pointer<IInspectable>, Pointer<ITouchHitTestingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreTouchHitTesting*)Unsafe.AsPointer(ref this), handler, pCookie);
     }
 
     /// <include file='ICoreTouchHitTesting.xml' path='doc/member[@name="ICoreTouchHitTesting.remove_TouchHitTesting"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct ICoreTouchHitTesting : ICoreTouchHitTesting.Interfa
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_TouchHitTesting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CTouchHitTestingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie);
+        HRESULT add_TouchHitTesting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CTouchHitTestingEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<ITouchHitTestingEventArgs>>* handler, EventRegistrationToken* pCookie);
 
         [VtblIndex(7)]
         HRESULT remove_TouchHitTesting(EventRegistrationToken cookie);
@@ -118,7 +118,7 @@ public unsafe partial struct ICoreTouchHitTesting : ICoreTouchHitTesting.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CTouchHitTestingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_TouchHitTesting;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, Pointer<ITouchHitTestingEventArgs>>*, EventRegistrationToken*, int> add_TouchHitTesting;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_TouchHitTesting;

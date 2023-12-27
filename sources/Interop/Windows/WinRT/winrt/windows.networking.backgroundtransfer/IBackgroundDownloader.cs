@@ -90,9 +90,9 @@ public unsafe partial struct IBackgroundDownloader : IBackgroundDownloader.Inter
     /// <include file='IBackgroundDownloader.xml' path='doc/member[@name="IBackgroundDownloader.CreateDownloadAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT CreateDownloadAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* resultFile, [NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* requestBodyStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateDownloadAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* resultFile, [NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* requestBodyStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IAsyncOperation<Pointer<IDownloadOperation>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundDownloader*, IUriRuntimeClass*, IStorageFile*, IInputStream*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IBackgroundDownloader*)Unsafe.AsPointer(ref this), uri, resultFile, requestBodyStream, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundDownloader*, IUriRuntimeClass*, IStorageFile*, IInputStream*, IAsyncOperation<Pointer<IDownloadOperation>>**, int>)(lpVtbl[8]))((IBackgroundDownloader*)Unsafe.AsPointer(ref this), uri, resultFile, requestBodyStream, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IBackgroundDownloader : IBackgroundDownloader.Inter
         HRESULT CreateDownloadFromFile([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* resultFile, [NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* requestBodyFile, [NativeTypeName("ABI::Windows::Networking::BackgroundTransfer::IDownloadOperation **")] IDownloadOperation** operation);
 
         [VtblIndex(8)]
-        HRESULT CreateDownloadAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* resultFile, [NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* requestBodyStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateDownloadAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* resultFile, [NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* requestBodyStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IAsyncOperation<Pointer<IDownloadOperation>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IBackgroundDownloader : IBackgroundDownloader.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IStorageFile*, IStorageFile*, IDownloadOperation**, int> CreateDownloadFromFile;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Storage::IStorageFile *, ABI::Windows::Storage::Streams::IInputStream *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IStorageFile*, IInputStream*, IAsyncOperation<IntPtr>**, int> CreateDownloadAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IStorageFile*, IInputStream*, IAsyncOperation<Pointer<IDownloadOperation>>**, int> CreateDownloadAsync;
     }
 }

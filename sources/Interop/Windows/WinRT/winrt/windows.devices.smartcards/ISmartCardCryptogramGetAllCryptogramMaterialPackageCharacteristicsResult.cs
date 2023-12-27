@@ -82,9 +82,9 @@ public unsafe partial struct ISmartCardCryptogramGetAllCryptogramMaterialPackage
     /// <include file='ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult.xml' path='doc/member[@name="ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult.get_Characteristics"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Characteristics([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramMaterialPackageCharacteristics_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Characteristics([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramMaterialPackageCharacteristics_t **")] IVectorView<Pointer<ISmartCardCryptogramMaterialPackageCharacteristics>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult*, IVectorView<Pointer<ISmartCardCryptogramMaterialPackageCharacteristics>>**, int>)(lpVtbl[7]))((ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct ISmartCardCryptogramGetAllCryptogramMaterialPackage
         HRESULT get_OperationStatus([NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardCryptogramGeneratorOperationStatus *")] SmartCardCryptogramGeneratorOperationStatus* value);
 
         [VtblIndex(7)]
-        HRESULT get_Characteristics([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramMaterialPackageCharacteristics_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Characteristics([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramMaterialPackageCharacteristics_t **")] IVectorView<Pointer<ISmartCardCryptogramMaterialPackageCharacteristics>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct ISmartCardCryptogramGetAllCryptogramMaterialPackage
         public delegate* unmanaged[MemberFunction]<TSelf*, SmartCardCryptogramGeneratorOperationStatus*, int> get_OperationStatus;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramMaterialPackageCharacteristics_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Characteristics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ISmartCardCryptogramMaterialPackageCharacteristics>>**, int> get_Characteristics;
     }
 }

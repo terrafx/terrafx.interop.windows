@@ -106,9 +106,9 @@ public unsafe partial struct IMediaPlaybackCommandManagerCommandBehavior : IMedi
     /// <include file='IMediaPlaybackCommandManagerCommandBehavior.xml' path='doc/member[@name="IMediaPlaybackCommandManagerCommandBehavior.add_IsEnabledChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_IsEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerCommandBehavior_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_IsEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerCommandBehavior_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManagerCommandBehavior>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManagerCommandBehavior*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMediaPlaybackCommandManagerCommandBehavior*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManagerCommandBehavior*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManagerCommandBehavior>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMediaPlaybackCommandManagerCommandBehavior*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaPlaybackCommandManagerCommandBehavior.xml' path='doc/member[@name="IMediaPlaybackCommandManagerCommandBehavior.remove_IsEnabledChanged"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IMediaPlaybackCommandManagerCommandBehavior : IMedi
         HRESULT put_EnablingRule([NativeTypeName("ABI::Windows::Media::Playback::MediaCommandEnablingRule")] MediaCommandEnablingRule value);
 
         [VtblIndex(10)]
-        HRESULT add_IsEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerCommandBehavior_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_IsEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerCommandBehavior_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManagerCommandBehavior>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_IsEnabledChanged(EventRegistrationToken token);
@@ -174,7 +174,7 @@ public unsafe partial struct IMediaPlaybackCommandManagerCommandBehavior : IMedi
         public delegate* unmanaged[MemberFunction]<TSelf*, MediaCommandEnablingRule, int> put_EnablingRule;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerCommandBehavior_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_IsEnabledChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManagerCommandBehavior>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_IsEnabledChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_IsEnabledChanged;

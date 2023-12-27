@@ -74,9 +74,9 @@ public unsafe partial struct IWebTokenRequestResult : IWebTokenRequestResult.Int
     /// <include file='IWebTokenRequestResult.xml' path='doc/member[@name="IWebTokenRequestResult.get_ResponseData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_ResponseData([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenResponse_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_ResponseData([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenResponse_t **")] IVectorView<Pointer<IWebTokenResponse>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebTokenRequestResult*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IWebTokenRequestResult*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWebTokenRequestResult*, IVectorView<Pointer<IWebTokenResponse>>**, int>)(lpVtbl[6]))((IWebTokenRequestResult*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWebTokenRequestResult.xml' path='doc/member[@name="IWebTokenRequestResult.get_ResponseStatus"]/*' />
@@ -106,7 +106,7 @@ public unsafe partial struct IWebTokenRequestResult : IWebTokenRequestResult.Int
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_ResponseData([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenResponse_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_ResponseData([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenResponse_t **")] IVectorView<Pointer<IWebTokenResponse>>** value);
 
         [VtblIndex(7)]
         HRESULT get_ResponseStatus([NativeTypeName("ABI::Windows::Security::Authentication::Web::Core::WebTokenRequestStatus *")] WebTokenRequestStatus* value);
@@ -140,7 +140,7 @@ public unsafe partial struct IWebTokenRequestResult : IWebTokenRequestResult.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebTokenResponse_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_ResponseData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IWebTokenResponse>>**, int> get_ResponseData;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Authentication::Web::Core::WebTokenRequestStatus *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, WebTokenRequestStatus*, int> get_ResponseStatus;

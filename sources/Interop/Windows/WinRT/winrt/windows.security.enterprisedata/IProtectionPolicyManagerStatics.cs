@@ -130,9 +130,9 @@ public unsafe partial struct IProtectionPolicyManagerStatics : IProtectionPolicy
     /// <include file='IProtectionPolicyManagerStatics.xml' path='doc/member[@name="IProtectionPolicyManagerStatics.add_ProtectedAccessSuspending"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_ProtectedAccessSuspending([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessSuspendingEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ProtectedAccessSuspending([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessSuspendingEventArgs_t *")] IEventHandler<Pointer<IProtectedAccessSuspendingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IProtectionPolicyManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerStatics*, IEventHandler<Pointer<IProtectedAccessSuspendingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IProtectionPolicyManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IProtectionPolicyManagerStatics.xml' path='doc/member[@name="IProtectionPolicyManagerStatics.remove_ProtectedAccessSuspending"]/*' />
@@ -146,9 +146,9 @@ public unsafe partial struct IProtectionPolicyManagerStatics : IProtectionPolicy
     /// <include file='IProtectionPolicyManagerStatics.xml' path='doc/member[@name="IProtectionPolicyManagerStatics.add_ProtectedAccessResumed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT add_ProtectedAccessResumed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessResumedEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ProtectedAccessResumed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessResumedEventArgs_t *")] IEventHandler<Pointer<IProtectedAccessResumedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IProtectionPolicyManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerStatics*, IEventHandler<Pointer<IProtectedAccessResumedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IProtectionPolicyManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IProtectionPolicyManagerStatics.xml' path='doc/member[@name="IProtectionPolicyManagerStatics.remove_ProtectedAccessResumed"]/*' />
@@ -162,9 +162,9 @@ public unsafe partial struct IProtectionPolicyManagerStatics : IProtectionPolicy
     /// <include file='IProtectionPolicyManagerStatics.xml' path='doc/member[@name="IProtectionPolicyManagerStatics.add_ProtectedContentRevoked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT add_ProtectedContentRevoked([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContentRevokedEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ProtectedContentRevoked([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContentRevokedEventArgs_t *")] IEventHandler<Pointer<IProtectedContentRevokedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IProtectionPolicyManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerStatics*, IEventHandler<Pointer<IProtectedContentRevokedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IProtectionPolicyManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IProtectionPolicyManagerStatics.xml' path='doc/member[@name="IProtectionPolicyManagerStatics.remove_ProtectedContentRevoked"]/*' />
@@ -215,19 +215,19 @@ public unsafe partial struct IProtectionPolicyManagerStatics : IProtectionPolicy
         HRESULT GetForCurrentView([NativeTypeName("ABI::Windows::Security::EnterpriseData::IProtectionPolicyManager **")] IProtectionPolicyManager** result);
 
         [VtblIndex(13)]
-        HRESULT add_ProtectedAccessSuspending([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessSuspendingEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ProtectedAccessSuspending([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessSuspendingEventArgs_t *")] IEventHandler<Pointer<IProtectedAccessSuspendingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_ProtectedAccessSuspending(EventRegistrationToken token);
 
         [VtblIndex(15)]
-        HRESULT add_ProtectedAccessResumed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessResumedEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ProtectedAccessResumed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessResumedEventArgs_t *")] IEventHandler<Pointer<IProtectedAccessResumedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(16)]
         HRESULT remove_ProtectedAccessResumed(EventRegistrationToken token);
 
         [VtblIndex(17)]
-        HRESULT add_ProtectedContentRevoked([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContentRevokedEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ProtectedContentRevoked([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContentRevokedEventArgs_t *")] IEventHandler<Pointer<IProtectedContentRevokedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(18)]
         HRESULT remove_ProtectedContentRevoked(EventRegistrationToken token);
@@ -282,19 +282,19 @@ public unsafe partial struct IProtectionPolicyManagerStatics : IProtectionPolicy
         public delegate* unmanaged[MemberFunction]<TSelf*, IProtectionPolicyManager**, int> GetForCurrentView;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessSuspendingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_ProtectedAccessSuspending;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IProtectedAccessSuspendingEventArgs>>*, EventRegistrationToken*, int> add_ProtectedAccessSuspending;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ProtectedAccessSuspending;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedAccessResumedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_ProtectedAccessResumed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IProtectedAccessResumedEventArgs>>*, EventRegistrationToken*, int> add_ProtectedAccessResumed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ProtectedAccessResumed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSecurity__CEnterpriseData__CProtectedContentRevokedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_ProtectedContentRevoked;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IProtectedContentRevokedEventArgs>>*, EventRegistrationToken*, int> add_ProtectedContentRevoked;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ProtectedContentRevoked;

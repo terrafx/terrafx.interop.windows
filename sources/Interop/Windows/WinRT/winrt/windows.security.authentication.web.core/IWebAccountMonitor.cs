@@ -74,9 +74,9 @@ public unsafe partial struct IWebAccountMonitor : IWebAccountMonitor.Interface, 
     /// <include file='IWebAccountMonitor.xml' path='doc/member[@name="IWebAccountMonitor.add_Updated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountEventArgs_t *")] ITypedEventHandler<Pointer<IWebAccountMonitor>, Pointer<IWebAccountEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAccountMonitor*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IWebAccountMonitor*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IWebAccountMonitor*, ITypedEventHandler<Pointer<IWebAccountMonitor>, Pointer<IWebAccountEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IWebAccountMonitor*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IWebAccountMonitor.xml' path='doc/member[@name="IWebAccountMonitor.remove_Updated"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IWebAccountMonitor : IWebAccountMonitor.Interface, 
     /// <include file='IWebAccountMonitor.xml' path='doc/member[@name="IWebAccountMonitor.add_Removed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountEventArgs_t *")] ITypedEventHandler<Pointer<IWebAccountMonitor>, Pointer<IWebAccountEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAccountMonitor*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IWebAccountMonitor*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IWebAccountMonitor*, ITypedEventHandler<Pointer<IWebAccountMonitor>, Pointer<IWebAccountEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IWebAccountMonitor*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IWebAccountMonitor.xml' path='doc/member[@name="IWebAccountMonitor.remove_Removed"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IWebAccountMonitor : IWebAccountMonitor.Interface, 
     /// <include file='IWebAccountMonitor.xml' path='doc/member[@name="IWebAccountMonitor.add_DefaultSignInAccountChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_DefaultSignInAccountChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_DefaultSignInAccountChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_IInspectable_t *")] ITypedEventHandler<Pointer<IWebAccountMonitor>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAccountMonitor*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IWebAccountMonitor*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IWebAccountMonitor*, ITypedEventHandler<Pointer<IWebAccountMonitor>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IWebAccountMonitor*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IWebAccountMonitor.xml' path='doc/member[@name="IWebAccountMonitor.remove_DefaultSignInAccountChanged"]/*' />
@@ -122,19 +122,19 @@ public unsafe partial struct IWebAccountMonitor : IWebAccountMonitor.Interface, 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountEventArgs_t *")] ITypedEventHandler<Pointer<IWebAccountMonitor>, Pointer<IWebAccountEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_Updated(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountEventArgs_t *")] ITypedEventHandler<Pointer<IWebAccountMonitor>, Pointer<IWebAccountEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_Removed(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_DefaultSignInAccountChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_DefaultSignInAccountChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_IInspectable_t *")] ITypedEventHandler<Pointer<IWebAccountMonitor>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_DefaultSignInAccountChanged(EventRegistrationToken token);
@@ -162,19 +162,19 @@ public unsafe partial struct IWebAccountMonitor : IWebAccountMonitor.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Updated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IWebAccountMonitor>, Pointer<IWebAccountEventArgs>>*, EventRegistrationToken*, int> add_Updated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Updated;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Removed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IWebAccountMonitor>, Pointer<IWebAccountEventArgs>>*, EventRegistrationToken*, int> add_Removed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Removed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DefaultSignInAccountChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IWebAccountMonitor>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_DefaultSignInAccountChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DefaultSignInAccountChanged;

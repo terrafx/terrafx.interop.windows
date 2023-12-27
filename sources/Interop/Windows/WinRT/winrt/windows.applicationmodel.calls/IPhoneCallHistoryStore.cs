@@ -74,9 +74,9 @@ public unsafe partial struct IPhoneCallHistoryStore : IPhoneCallHistoryStore.Int
     /// <include file='IPhoneCallHistoryStore.xml' path='doc/member[@name="IPhoneCallHistoryStore.GetEntryAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetEntryAsync(HSTRING callHistoryEntryId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetEntryAsync(HSTRING callHistoryEntryId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t **")] IAsyncOperation<Pointer<IPhoneCallHistoryEntry>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneCallHistoryStore*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IPhoneCallHistoryStore*)Unsafe.AsPointer(ref this), callHistoryEntryId, result);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneCallHistoryStore*, HSTRING, IAsyncOperation<Pointer<IPhoneCallHistoryEntry>>**, int>)(lpVtbl[6]))((IPhoneCallHistoryStore*)Unsafe.AsPointer(ref this), callHistoryEntryId, result);
     }
 
     /// <include file='IPhoneCallHistoryStore.xml' path='doc/member[@name="IPhoneCallHistoryStore.GetEntryReader"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct IPhoneCallHistoryStore : IPhoneCallHistoryStore.Int
     /// <include file='IPhoneCallHistoryStore.xml' path='doc/member[@name="IPhoneCallHistoryStore.DeleteEntriesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT DeleteEntriesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t *")] IIterable<IntPtr>* callHistoryEntries, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** result)
+    public HRESULT DeleteEntriesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t *")] IIterable<Pointer<IPhoneCallHistoryEntry>>* callHistoryEntries, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneCallHistoryStore*, IIterable<IntPtr>*, IAsyncAction**, int>)(lpVtbl[11]))((IPhoneCallHistoryStore*)Unsafe.AsPointer(ref this), callHistoryEntries, result);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneCallHistoryStore*, IIterable<Pointer<IPhoneCallHistoryEntry>>*, IAsyncAction**, int>)(lpVtbl[11]))((IPhoneCallHistoryStore*)Unsafe.AsPointer(ref this), callHistoryEntries, result);
     }
 
     /// <include file='IPhoneCallHistoryStore.xml' path='doc/member[@name="IPhoneCallHistoryStore.MarkEntryAsSeenAsync"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IPhoneCallHistoryStore : IPhoneCallHistoryStore.Int
     /// <include file='IPhoneCallHistoryStore.xml' path='doc/member[@name="IPhoneCallHistoryStore.MarkEntriesAsSeenAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT MarkEntriesAsSeenAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t *")] IIterable<IntPtr>* callHistoryEntries, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** result)
+    public HRESULT MarkEntriesAsSeenAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t *")] IIterable<Pointer<IPhoneCallHistoryEntry>>* callHistoryEntries, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneCallHistoryStore*, IIterable<IntPtr>*, IAsyncAction**, int>)(lpVtbl[13]))((IPhoneCallHistoryStore*)Unsafe.AsPointer(ref this), callHistoryEntries, result);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneCallHistoryStore*, IIterable<Pointer<IPhoneCallHistoryEntry>>*, IAsyncAction**, int>)(lpVtbl[13]))((IPhoneCallHistoryStore*)Unsafe.AsPointer(ref this), callHistoryEntries, result);
     }
 
     /// <include file='IPhoneCallHistoryStore.xml' path='doc/member[@name="IPhoneCallHistoryStore.GetUnseenCountAsync"]/*' />
@@ -170,7 +170,7 @@ public unsafe partial struct IPhoneCallHistoryStore : IPhoneCallHistoryStore.Int
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetEntryAsync(HSTRING callHistoryEntryId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetEntryAsync(HSTRING callHistoryEntryId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t **")] IAsyncOperation<Pointer<IPhoneCallHistoryEntry>>** result);
 
         [VtblIndex(7)]
         HRESULT GetEntryReader([NativeTypeName("ABI::Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryReader **")] IPhoneCallHistoryEntryReader** result);
@@ -185,13 +185,13 @@ public unsafe partial struct IPhoneCallHistoryStore : IPhoneCallHistoryStore.Int
         HRESULT DeleteEntryAsync([NativeTypeName("ABI::Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry *")] IPhoneCallHistoryEntry* callHistoryEntry, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** result);
 
         [VtblIndex(11)]
-        HRESULT DeleteEntriesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t *")] IIterable<IntPtr>* callHistoryEntries, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** result);
+        HRESULT DeleteEntriesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t *")] IIterable<Pointer<IPhoneCallHistoryEntry>>* callHistoryEntries, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** result);
 
         [VtblIndex(12)]
         HRESULT MarkEntryAsSeenAsync([NativeTypeName("ABI::Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry *")] IPhoneCallHistoryEntry* callHistoryEntry, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** result);
 
         [VtblIndex(13)]
-        HRESULT MarkEntriesAsSeenAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t *")] IIterable<IntPtr>* callHistoryEntries, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** result);
+        HRESULT MarkEntriesAsSeenAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t *")] IIterable<Pointer<IPhoneCallHistoryEntry>>* callHistoryEntries, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** result);
 
         [VtblIndex(14)]
         HRESULT GetUnseenCountAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_UINT32_t **")] IAsyncOperation<uint>** result);
@@ -228,7 +228,7 @@ public unsafe partial struct IPhoneCallHistoryStore : IPhoneCallHistoryStore.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetEntryAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IPhoneCallHistoryEntry>>**, int> GetEntryAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Calls::IPhoneCallHistoryEntryReader **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IPhoneCallHistoryEntryReader**, int> GetEntryReader;
@@ -243,13 +243,13 @@ public unsafe partial struct IPhoneCallHistoryStore : IPhoneCallHistoryStore.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, IPhoneCallHistoryEntry*, IAsyncAction**, int> DeleteEntryAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IAsyncAction**, int> DeleteEntriesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IPhoneCallHistoryEntry>>*, IAsyncAction**, int> DeleteEntriesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Calls::IPhoneCallHistoryEntry *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IPhoneCallHistoryEntry*, IAsyncAction**, int> MarkEntryAsSeenAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IAsyncAction**, int> MarkEntriesAsSeenAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IPhoneCallHistoryEntry>>*, IAsyncAction**, int> MarkEntriesAsSeenAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_UINT32_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<uint>**, int> GetUnseenCountAsync;

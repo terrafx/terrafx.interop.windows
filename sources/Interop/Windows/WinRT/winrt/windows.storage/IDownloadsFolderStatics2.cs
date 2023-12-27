@@ -74,48 +74,48 @@ public unsafe partial struct IDownloadsFolderStatics2 : IDownloadsFolderStatics2
     /// <include file='IDownloadsFolderStatics2.xml' path='doc/member[@name="IDownloadsFolderStatics2.CreateFileForUserAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateFileForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING desiredName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateFileForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING desiredName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDownloadsFolderStatics2*, IUser*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IDownloadsFolderStatics2*)Unsafe.AsPointer(ref this), user, desiredName, operation);
+        return ((delegate* unmanaged[MemberFunction]<IDownloadsFolderStatics2*, IUser*, HSTRING, IAsyncOperation<Pointer<IStorageFile>>**, int>)(lpVtbl[6]))((IDownloadsFolderStatics2*)Unsafe.AsPointer(ref this), user, desiredName, operation);
     }
 
     /// <include file='IDownloadsFolderStatics2.xml' path='doc/member[@name="IDownloadsFolderStatics2.CreateFolderForUserAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateFolderForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING desiredName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateFolderForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING desiredName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDownloadsFolderStatics2*, IUser*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IDownloadsFolderStatics2*)Unsafe.AsPointer(ref this), user, desiredName, operation);
+        return ((delegate* unmanaged[MemberFunction]<IDownloadsFolderStatics2*, IUser*, HSTRING, IAsyncOperation<Pointer<IStorageFolder>>**, int>)(lpVtbl[7]))((IDownloadsFolderStatics2*)Unsafe.AsPointer(ref this), user, desiredName, operation);
     }
 
     /// <include file='IDownloadsFolderStatics2.xml' path='doc/member[@name="IDownloadsFolderStatics2.CreateFileForUserWithCollisionOptionAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT CreateFileForUserWithCollisionOptionAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING desiredName, [NativeTypeName("ABI::Windows::Storage::CreationCollisionOption")] CreationCollisionOption option, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateFileForUserWithCollisionOptionAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING desiredName, [NativeTypeName("ABI::Windows::Storage::CreationCollisionOption")] CreationCollisionOption option, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDownloadsFolderStatics2*, IUser*, HSTRING, CreationCollisionOption, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IDownloadsFolderStatics2*)Unsafe.AsPointer(ref this), user, desiredName, option, operation);
+        return ((delegate* unmanaged[MemberFunction]<IDownloadsFolderStatics2*, IUser*, HSTRING, CreationCollisionOption, IAsyncOperation<Pointer<IStorageFile>>**, int>)(lpVtbl[8]))((IDownloadsFolderStatics2*)Unsafe.AsPointer(ref this), user, desiredName, option, operation);
     }
 
     /// <include file='IDownloadsFolderStatics2.xml' path='doc/member[@name="IDownloadsFolderStatics2.CreateFolderForUserWithCollisionOptionAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT CreateFolderForUserWithCollisionOptionAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING desiredName, [NativeTypeName("ABI::Windows::Storage::CreationCollisionOption")] CreationCollisionOption option, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateFolderForUserWithCollisionOptionAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING desiredName, [NativeTypeName("ABI::Windows::Storage::CreationCollisionOption")] CreationCollisionOption option, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDownloadsFolderStatics2*, IUser*, HSTRING, CreationCollisionOption, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IDownloadsFolderStatics2*)Unsafe.AsPointer(ref this), user, desiredName, option, operation);
+        return ((delegate* unmanaged[MemberFunction]<IDownloadsFolderStatics2*, IUser*, HSTRING, CreationCollisionOption, IAsyncOperation<Pointer<IStorageFolder>>**, int>)(lpVtbl[9]))((IDownloadsFolderStatics2*)Unsafe.AsPointer(ref this), user, desiredName, option, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CreateFileForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING desiredName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateFileForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING desiredName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation);
 
         [VtblIndex(7)]
-        HRESULT CreateFolderForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING desiredName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateFolderForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING desiredName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation);
 
         [VtblIndex(8)]
-        HRESULT CreateFileForUserWithCollisionOptionAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING desiredName, [NativeTypeName("ABI::Windows::Storage::CreationCollisionOption")] CreationCollisionOption option, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateFileForUserWithCollisionOptionAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING desiredName, [NativeTypeName("ABI::Windows::Storage::CreationCollisionOption")] CreationCollisionOption option, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation);
 
         [VtblIndex(9)]
-        HRESULT CreateFolderForUserWithCollisionOptionAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING desiredName, [NativeTypeName("ABI::Windows::Storage::CreationCollisionOption")] CreationCollisionOption option, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateFolderForUserWithCollisionOptionAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING desiredName, [NativeTypeName("ABI::Windows::Storage::CreationCollisionOption")] CreationCollisionOption option, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -140,15 +140,15 @@ public unsafe partial struct IDownloadsFolderStatics2 : IDownloadsFolderStatics2
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IUser *, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, HSTRING, IAsyncOperation<IntPtr>**, int> CreateFileForUserAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, HSTRING, IAsyncOperation<Pointer<IStorageFile>>**, int> CreateFileForUserAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IUser *, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, HSTRING, IAsyncOperation<IntPtr>**, int> CreateFolderForUserAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, HSTRING, IAsyncOperation<Pointer<IStorageFolder>>**, int> CreateFolderForUserAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IUser *, HSTRING, ABI::Windows::Storage::CreationCollisionOption, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, HSTRING, CreationCollisionOption, IAsyncOperation<IntPtr>**, int> CreateFileForUserWithCollisionOptionAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, HSTRING, CreationCollisionOption, IAsyncOperation<Pointer<IStorageFile>>**, int> CreateFileForUserWithCollisionOptionAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IUser *, HSTRING, ABI::Windows::Storage::CreationCollisionOption, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, HSTRING, CreationCollisionOption, IAsyncOperation<IntPtr>**, int> CreateFolderForUserWithCollisionOptionAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, HSTRING, CreationCollisionOption, IAsyncOperation<Pointer<IStorageFolder>>**, int> CreateFolderForUserWithCollisionOptionAsync;
     }
 }

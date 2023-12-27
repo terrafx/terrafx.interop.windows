@@ -74,9 +74,9 @@ public unsafe partial struct IPackageCatalogRemoveResourcePackagesResult : IPack
     /// <include file='IPackageCatalogRemoveResourcePackagesResult.xml' path='doc/member[@name="IPackageCatalogRemoveResourcePackagesResult.get_PackagesRemoved"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_PackagesRemoved([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CPackage_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_PackagesRemoved([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CPackage_t **")] IVectorView<Pointer<IPackage>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackageCatalogRemoveResourcePackagesResult*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IPackageCatalogRemoveResourcePackagesResult*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPackageCatalogRemoveResourcePackagesResult*, IVectorView<Pointer<IPackage>>**, int>)(lpVtbl[6]))((IPackageCatalogRemoveResourcePackagesResult*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IPackageCatalogRemoveResourcePackagesResult.xml' path='doc/member[@name="IPackageCatalogRemoveResourcePackagesResult.get_ExtendedError"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IPackageCatalogRemoveResourcePackagesResult : IPack
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_PackagesRemoved([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CPackage_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_PackagesRemoved([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CPackage_t **")] IVectorView<Pointer<IPackage>>** value);
 
         [VtblIndex(7)]
         HRESULT get_ExtendedError(HRESULT* value);
@@ -118,7 +118,7 @@ public unsafe partial struct IPackageCatalogRemoveResourcePackagesResult : IPack
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CPackage_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_PackagesRemoved;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IPackage>>**, int> get_PackagesRemoved;
 
         [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT*, int> get_ExtendedError;

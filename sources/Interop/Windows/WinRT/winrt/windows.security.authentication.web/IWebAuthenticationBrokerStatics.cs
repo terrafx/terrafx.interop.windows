@@ -74,17 +74,17 @@ public unsafe partial struct IWebAuthenticationBrokerStatics : IWebAuthenticatio
     /// <include file='IWebAuthenticationBrokerStatics.xml' path='doc/member[@name="IWebAuthenticationBrokerStatics.AuthenticateWithCallbackUriAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT AuthenticateWithCallbackUriAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::WebAuthenticationOptions")] WebAuthenticationOptions options, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* callbackUri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT AuthenticateWithCallbackUriAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::WebAuthenticationOptions")] WebAuthenticationOptions options, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* callbackUri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **")] IAsyncOperation<Pointer<IWebAuthenticationResult>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationBrokerStatics*, WebAuthenticationOptions, IUriRuntimeClass*, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IWebAuthenticationBrokerStatics*)Unsafe.AsPointer(ref this), options, requestUri, callbackUri, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationBrokerStatics*, WebAuthenticationOptions, IUriRuntimeClass*, IUriRuntimeClass*, IAsyncOperation<Pointer<IWebAuthenticationResult>>**, int>)(lpVtbl[6]))((IWebAuthenticationBrokerStatics*)Unsafe.AsPointer(ref this), options, requestUri, callbackUri, asyncInfo);
     }
 
     /// <include file='IWebAuthenticationBrokerStatics.xml' path='doc/member[@name="IWebAuthenticationBrokerStatics.AuthenticateWithoutCallbackUriAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT AuthenticateWithoutCallbackUriAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::WebAuthenticationOptions")] WebAuthenticationOptions options, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT AuthenticateWithoutCallbackUriAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::WebAuthenticationOptions")] WebAuthenticationOptions options, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **")] IAsyncOperation<Pointer<IWebAuthenticationResult>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationBrokerStatics*, WebAuthenticationOptions, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IWebAuthenticationBrokerStatics*)Unsafe.AsPointer(ref this), options, requestUri, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationBrokerStatics*, WebAuthenticationOptions, IUriRuntimeClass*, IAsyncOperation<Pointer<IWebAuthenticationResult>>**, int>)(lpVtbl[7]))((IWebAuthenticationBrokerStatics*)Unsafe.AsPointer(ref this), options, requestUri, asyncInfo);
     }
 
     /// <include file='IWebAuthenticationBrokerStatics.xml' path='doc/member[@name="IWebAuthenticationBrokerStatics.GetCurrentApplicationCallbackUri"]/*' />
@@ -98,10 +98,10 @@ public unsafe partial struct IWebAuthenticationBrokerStatics : IWebAuthenticatio
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT AuthenticateWithCallbackUriAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::WebAuthenticationOptions")] WebAuthenticationOptions options, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* callbackUri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT AuthenticateWithCallbackUriAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::WebAuthenticationOptions")] WebAuthenticationOptions options, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* callbackUri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **")] IAsyncOperation<Pointer<IWebAuthenticationResult>>** asyncInfo);
 
         [VtblIndex(7)]
-        HRESULT AuthenticateWithoutCallbackUriAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::WebAuthenticationOptions")] WebAuthenticationOptions options, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT AuthenticateWithoutCallbackUriAsync([NativeTypeName("ABI::Windows::Security::Authentication::Web::WebAuthenticationOptions")] WebAuthenticationOptions options, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **")] IAsyncOperation<Pointer<IWebAuthenticationResult>>** asyncInfo);
 
         [VtblIndex(8)]
         HRESULT GetCurrentApplicationCallbackUri([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass **")] IUriRuntimeClass** callbackUri);
@@ -129,10 +129,10 @@ public unsafe partial struct IWebAuthenticationBrokerStatics : IWebAuthenticatio
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Authentication::Web::WebAuthenticationOptions, ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, WebAuthenticationOptions, IUriRuntimeClass*, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int> AuthenticateWithCallbackUriAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WebAuthenticationOptions, IUriRuntimeClass*, IUriRuntimeClass*, IAsyncOperation<Pointer<IWebAuthenticationResult>>**, int> AuthenticateWithCallbackUriAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Authentication::Web::WebAuthenticationOptions, ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, WebAuthenticationOptions, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int> AuthenticateWithoutCallbackUriAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WebAuthenticationOptions, IUriRuntimeClass*, IAsyncOperation<Pointer<IWebAuthenticationResult>>**, int> AuthenticateWithoutCallbackUriAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass**, int> GetCurrentApplicationCallbackUri;

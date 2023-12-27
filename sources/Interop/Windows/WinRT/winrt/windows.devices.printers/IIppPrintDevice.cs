@@ -98,9 +98,9 @@ public unsafe partial struct IIppPrintDevice : IIppPrintDevice.Interface, INativ
     /// <include file='IIppPrintDevice.xml' path='doc/member[@name="IIppPrintDevice.GetPrinterAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetPrinterAttributes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* attributeNames, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t **")] IMap<HSTRING, IntPtr>** result)
+    public HRESULT GetPrinterAttributes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* attributeNames, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t **")] IMap<HSTRING, Pointer<IIppAttributeValue>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppPrintDevice*, IIterable<HSTRING>*, IMap<HSTRING, IntPtr>**, int>)(lpVtbl[9]))((IIppPrintDevice*)Unsafe.AsPointer(ref this), attributeNames, result);
+        return ((delegate* unmanaged[MemberFunction]<IIppPrintDevice*, IIterable<HSTRING>*, IMap<HSTRING, Pointer<IIppAttributeValue>>**, int>)(lpVtbl[9]))((IIppPrintDevice*)Unsafe.AsPointer(ref this), attributeNames, result);
     }
 
     /// <include file='IIppPrintDevice.xml' path='doc/member[@name="IIppPrintDevice.SetPrinterAttributesFromBuffer"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct IIppPrintDevice : IIppPrintDevice.Interface, INativ
     /// <include file='IIppPrintDevice.xml' path='doc/member[@name="IIppPrintDevice.SetPrinterAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT SetPrinterAttributes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t *")] IIterable<IntPtr>* printerAttributes, [NativeTypeName("ABI::Windows::Devices::Printers::IIppSetAttributesResult **")] IIppSetAttributesResult** result)
+    public HRESULT SetPrinterAttributes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IIppAttributeValue>>>>* printerAttributes, [NativeTypeName("ABI::Windows::Devices::Printers::IIppSetAttributesResult **")] IIppSetAttributesResult** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppPrintDevice*, IIterable<IntPtr>*, IIppSetAttributesResult**, int>)(lpVtbl[11]))((IIppPrintDevice*)Unsafe.AsPointer(ref this), printerAttributes, result);
+        return ((delegate* unmanaged[MemberFunction]<IIppPrintDevice*, IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IIppAttributeValue>>>>*, IIppSetAttributesResult**, int>)(lpVtbl[11]))((IIppPrintDevice*)Unsafe.AsPointer(ref this), printerAttributes, result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -131,13 +131,13 @@ public unsafe partial struct IIppPrintDevice : IIppPrintDevice.Interface, INativ
         HRESULT GetPrinterAttributesAsBuffer([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* attributeNames, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer **")] IBuffer** result);
 
         [VtblIndex(9)]
-        HRESULT GetPrinterAttributes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* attributeNames, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t **")] IMap<HSTRING, IntPtr>** result);
+        HRESULT GetPrinterAttributes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* attributeNames, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t **")] IMap<HSTRING, Pointer<IIppAttributeValue>>** result);
 
         [VtblIndex(10)]
         HRESULT SetPrinterAttributesFromBuffer([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* printerAttributesBuffer, [NativeTypeName("ABI::Windows::Devices::Printers::IIppSetAttributesResult **")] IIppSetAttributesResult** result);
 
         [VtblIndex(11)]
-        HRESULT SetPrinterAttributes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t *")] IIterable<IntPtr>* printerAttributes, [NativeTypeName("ABI::Windows::Devices::Printers::IIppSetAttributesResult **")] IIppSetAttributesResult** result);
+        HRESULT SetPrinterAttributes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IIppAttributeValue>>>>* printerAttributes, [NativeTypeName("ABI::Windows::Devices::Printers::IIppSetAttributesResult **")] IIppSetAttributesResult** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -171,12 +171,12 @@ public unsafe partial struct IIppPrintDevice : IIppPrintDevice.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<HSTRING>*, IBuffer**, int> GetPrinterAttributesAsBuffer;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *, ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<HSTRING>*, IMap<HSTRING, IntPtr>**, int> GetPrinterAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<HSTRING>*, IMap<HSTRING, Pointer<IIppAttributeValue>>**, int> GetPrinterAttributes;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Devices::Printers::IIppSetAttributesResult **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IIppSetAttributesResult**, int> SetPrinterAttributesFromBuffer;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t *, ABI::Windows::Devices::Printers::IIppSetAttributesResult **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IIppSetAttributesResult**, int> SetPrinterAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IIppAttributeValue>>>>*, IIppSetAttributesResult**, int> SetPrinterAttributes;
     }
 }

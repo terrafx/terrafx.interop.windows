@@ -90,9 +90,9 @@ public unsafe partial struct IRemoteSystemWatcher : IRemoteSystemWatcher.Interfa
     /// <include file='IRemoteSystemWatcher.xml' path='doc/member[@name="IRemoteSystemWatcher.add_RemoteSystemAdded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_RemoteSystemAdded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemWatcher_Windows__CSystem__CRemoteSystems__CRemoteSystemAddedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_RemoteSystemAdded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemWatcher_Windows__CSystem__CRemoteSystems__CRemoteSystemAddedEventArgs_t *")] ITypedEventHandler<Pointer<IRemoteSystemWatcher>, Pointer<IRemoteSystemAddedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IRemoteSystemWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemWatcher*, ITypedEventHandler<Pointer<IRemoteSystemWatcher>, Pointer<IRemoteSystemAddedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IRemoteSystemWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IRemoteSystemWatcher.xml' path='doc/member[@name="IRemoteSystemWatcher.remove_RemoteSystemAdded"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IRemoteSystemWatcher : IRemoteSystemWatcher.Interfa
     /// <include file='IRemoteSystemWatcher.xml' path='doc/member[@name="IRemoteSystemWatcher.add_RemoteSystemUpdated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_RemoteSystemUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemWatcher_Windows__CSystem__CRemoteSystems__CRemoteSystemUpdatedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_RemoteSystemUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemWatcher_Windows__CSystem__CRemoteSystems__CRemoteSystemUpdatedEventArgs_t *")] ITypedEventHandler<Pointer<IRemoteSystemWatcher>, Pointer<IRemoteSystemUpdatedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IRemoteSystemWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemWatcher*, ITypedEventHandler<Pointer<IRemoteSystemWatcher>, Pointer<IRemoteSystemUpdatedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IRemoteSystemWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IRemoteSystemWatcher.xml' path='doc/member[@name="IRemoteSystemWatcher.remove_RemoteSystemUpdated"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IRemoteSystemWatcher : IRemoteSystemWatcher.Interfa
     /// <include file='IRemoteSystemWatcher.xml' path='doc/member[@name="IRemoteSystemWatcher.add_RemoteSystemRemoved"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_RemoteSystemRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemWatcher_Windows__CSystem__CRemoteSystems__CRemoteSystemRemovedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_RemoteSystemRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemWatcher_Windows__CSystem__CRemoteSystems__CRemoteSystemRemovedEventArgs_t *")] ITypedEventHandler<Pointer<IRemoteSystemWatcher>, Pointer<IRemoteSystemRemovedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IRemoteSystemWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemWatcher*, ITypedEventHandler<Pointer<IRemoteSystemWatcher>, Pointer<IRemoteSystemRemovedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IRemoteSystemWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IRemoteSystemWatcher.xml' path='doc/member[@name="IRemoteSystemWatcher.remove_RemoteSystemRemoved"]/*' />
@@ -144,19 +144,19 @@ public unsafe partial struct IRemoteSystemWatcher : IRemoteSystemWatcher.Interfa
         HRESULT Stop();
 
         [VtblIndex(8)]
-        HRESULT add_RemoteSystemAdded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemWatcher_Windows__CSystem__CRemoteSystems__CRemoteSystemAddedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_RemoteSystemAdded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemWatcher_Windows__CSystem__CRemoteSystems__CRemoteSystemAddedEventArgs_t *")] ITypedEventHandler<Pointer<IRemoteSystemWatcher>, Pointer<IRemoteSystemAddedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_RemoteSystemAdded(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_RemoteSystemUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemWatcher_Windows__CSystem__CRemoteSystems__CRemoteSystemUpdatedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_RemoteSystemUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemWatcher_Windows__CSystem__CRemoteSystems__CRemoteSystemUpdatedEventArgs_t *")] ITypedEventHandler<Pointer<IRemoteSystemWatcher>, Pointer<IRemoteSystemUpdatedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_RemoteSystemUpdated(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT add_RemoteSystemRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemWatcher_Windows__CSystem__CRemoteSystems__CRemoteSystemRemovedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_RemoteSystemRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemWatcher_Windows__CSystem__CRemoteSystems__CRemoteSystemRemovedEventArgs_t *")] ITypedEventHandler<Pointer<IRemoteSystemWatcher>, Pointer<IRemoteSystemRemovedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_RemoteSystemRemoved(EventRegistrationToken token);
@@ -190,19 +190,19 @@ public unsafe partial struct IRemoteSystemWatcher : IRemoteSystemWatcher.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemWatcher_Windows__CSystem__CRemoteSystems__CRemoteSystemAddedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_RemoteSystemAdded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRemoteSystemWatcher>, Pointer<IRemoteSystemAddedEventArgs>>*, EventRegistrationToken*, int> add_RemoteSystemAdded;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RemoteSystemAdded;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemWatcher_Windows__CSystem__CRemoteSystems__CRemoteSystemUpdatedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_RemoteSystemUpdated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRemoteSystemWatcher>, Pointer<IRemoteSystemUpdatedEventArgs>>*, EventRegistrationToken*, int> add_RemoteSystemUpdated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RemoteSystemUpdated;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemWatcher_Windows__CSystem__CRemoteSystems__CRemoteSystemRemovedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_RemoteSystemRemoved;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRemoteSystemWatcher>, Pointer<IRemoteSystemRemovedEventArgs>>*, EventRegistrationToken*, int> add_RemoteSystemRemoved;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RemoteSystemRemoved;

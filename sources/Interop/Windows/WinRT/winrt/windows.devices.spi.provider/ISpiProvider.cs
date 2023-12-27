@@ -74,15 +74,15 @@ public unsafe partial struct ISpiProvider : ISpiProvider.Interface, INativeGuid
     /// <include file='ISpiProvider.xml' path='doc/member[@name="ISpiProvider.GetControllersAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetControllersAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetControllersAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<ISpiControllerProvider>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpiProvider*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ISpiProvider*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<ISpiProvider*, IAsyncOperation<Pointer<IVectorView<Pointer<ISpiControllerProvider>>>>**, int>)(lpVtbl[6]))((ISpiProvider*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetControllersAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetControllersAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<ISpiControllerProvider>>>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ISpiProvider : ISpiProvider.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSpi__CProvider__CISpiControllerProvider_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetControllersAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<ISpiControllerProvider>>>>**, int> GetControllersAsync;
     }
 }

@@ -82,9 +82,9 @@ public unsafe partial struct ICompositionGraphicsDevice : ICompositionGraphicsDe
     /// <include file='ICompositionGraphicsDevice.xml' path='doc/member[@name="ICompositionGraphicsDevice.add_RenderingDeviceReplaced"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_RenderingDeviceReplaced([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_RenderingDeviceReplaced([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_t *")] ITypedEventHandler<Pointer<ICompositionGraphicsDevice>, Pointer<IRenderingDeviceReplacedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICompositionGraphicsDevice*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ICompositionGraphicsDevice*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICompositionGraphicsDevice*, ITypedEventHandler<Pointer<ICompositionGraphicsDevice>, Pointer<IRenderingDeviceReplacedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ICompositionGraphicsDevice*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICompositionGraphicsDevice.xml' path='doc/member[@name="ICompositionGraphicsDevice.remove_RenderingDeviceReplaced"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct ICompositionGraphicsDevice : ICompositionGraphicsDe
         HRESULT CreateDrawingSurface([NativeTypeName("ABI::Windows::Foundation::Size")] Size sizePixels, [NativeTypeName("ABI::Windows::Graphics::DirectX::DirectXPixelFormat")] DirectXPixelFormat pixelFormat, [NativeTypeName("ABI::Windows::Graphics::DirectX::DirectXAlphaMode")] DirectXAlphaMode alphaMode, [NativeTypeName("ABI::Windows::UI::Composition::ICompositionDrawingSurface **")] ICompositionDrawingSurface** result);
 
         [VtblIndex(7)]
-        HRESULT add_RenderingDeviceReplaced([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_RenderingDeviceReplaced([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_t *")] ITypedEventHandler<Pointer<ICompositionGraphicsDevice>, Pointer<IRenderingDeviceReplacedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_RenderingDeviceReplaced(EventRegistrationToken token);
@@ -132,7 +132,7 @@ public unsafe partial struct ICompositionGraphicsDevice : ICompositionGraphicsDe
         public delegate* unmanaged[MemberFunction]<TSelf*, Size, DirectXPixelFormat, DirectXAlphaMode, ICompositionDrawingSurface**, int> CreateDrawingSurface;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionGraphicsDevice_Windows__CUI__CComposition__CRenderingDeviceReplacedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_RenderingDeviceReplaced;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICompositionGraphicsDevice>, Pointer<IRenderingDeviceReplacedEventArgs>>*, EventRegistrationToken*, int> add_RenderingDeviceReplaced;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RenderingDeviceReplaced;

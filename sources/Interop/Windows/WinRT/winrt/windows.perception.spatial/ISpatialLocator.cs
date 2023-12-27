@@ -83,9 +83,9 @@ public unsafe partial struct ISpatialLocator : ISpatialLocator.Interface, INativ
     /// <include file='ISpatialLocator.xml' path='doc/member[@name="ISpatialLocator.add_LocatabilityChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_LocatabilityChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_LocatabilityChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_IInspectable_t *")] ITypedEventHandler<Pointer<ISpatialLocator>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpatialLocator*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ISpatialLocator*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialLocator*, ITypedEventHandler<Pointer<ISpatialLocator>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ISpatialLocator*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ISpatialLocator.xml' path='doc/member[@name="ISpatialLocator.remove_LocatabilityChanged"]/*' />
@@ -99,9 +99,9 @@ public unsafe partial struct ISpatialLocator : ISpatialLocator.Interface, INativ
     /// <include file='ISpatialLocator.xml' path='doc/member[@name="ISpatialLocator.add_PositionalTrackingDeactivating"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_PositionalTrackingDeactivating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_PositionalTrackingDeactivating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs_t *")] ITypedEventHandler<Pointer<ISpatialLocator>, Pointer<ISpatialLocatorPositionalTrackingDeactivatingEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpatialLocator*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ISpatialLocator*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialLocator*, ITypedEventHandler<Pointer<ISpatialLocator>, Pointer<ISpatialLocatorPositionalTrackingDeactivatingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ISpatialLocator*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ISpatialLocator.xml' path='doc/member[@name="ISpatialLocator.remove_PositionalTrackingDeactivating"]/*' />
@@ -190,13 +190,13 @@ public unsafe partial struct ISpatialLocator : ISpatialLocator.Interface, INativ
         HRESULT get_Locatability([NativeTypeName("ABI::Windows::Perception::Spatial::SpatialLocatability *")] SpatialLocatability* value);
 
         [VtblIndex(7)]
-        HRESULT add_LocatabilityChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_LocatabilityChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_IInspectable_t *")] ITypedEventHandler<Pointer<ISpatialLocator>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(8)]
         HRESULT remove_LocatabilityChanged(EventRegistrationToken cookie);
 
         [VtblIndex(9)]
-        HRESULT add_PositionalTrackingDeactivating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_PositionalTrackingDeactivating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs_t *")] ITypedEventHandler<Pointer<ISpatialLocator>, Pointer<ISpatialLocatorPositionalTrackingDeactivatingEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(10)]
         HRESULT remove_PositionalTrackingDeactivating(EventRegistrationToken cookie);
@@ -254,13 +254,13 @@ public unsafe partial struct ISpatialLocator : ISpatialLocator.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, SpatialLocatability*, int> get_Locatability;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_LocatabilityChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISpatialLocator>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_LocatabilityChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_LocatabilityChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CPerception__CSpatial__CSpatialLocator_Windows__CPerception__CSpatial__CSpatialLocatorPositionalTrackingDeactivatingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PositionalTrackingDeactivating;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISpatialLocator>, Pointer<ISpatialLocatorPositionalTrackingDeactivatingEventArgs>>*, EventRegistrationToken*, int> add_PositionalTrackingDeactivating;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PositionalTrackingDeactivating;

@@ -170,9 +170,9 @@ public unsafe partial struct IAudioFileInputNode : IAudioFileInputNode.Interface
     /// <include file='IAudioFileInputNode.xml' path='doc/member[@name="IAudioFileInputNode.add_FileCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT add_FileCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFileInputNode_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_FileCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFileInputNode_IInspectable_t *")] ITypedEventHandler<Pointer<IAudioFileInputNode>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioFileInputNode*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[18]))((IAudioFileInputNode*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAudioFileInputNode*, ITypedEventHandler<Pointer<IAudioFileInputNode>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[18]))((IAudioFileInputNode*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAudioFileInputNode.xml' path='doc/member[@name="IAudioFileInputNode.remove_FileCompleted"]/*' />
@@ -222,7 +222,7 @@ public unsafe partial struct IAudioFileInputNode : IAudioFileInputNode.Interface
         HRESULT get_SourceFile([NativeTypeName("ABI::Windows::Storage::IStorageFile **")] IStorageFile** value);
 
         [VtblIndex(18)]
-        HRESULT add_FileCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFileInputNode_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_FileCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFileInputNode_IInspectable_t *")] ITypedEventHandler<Pointer<IAudioFileInputNode>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(19)]
         HRESULT remove_FileCompleted(EventRegistrationToken token);
@@ -286,7 +286,7 @@ public unsafe partial struct IAudioFileInputNode : IAudioFileInputNode.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile**, int> get_SourceFile;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioFileInputNode_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_FileCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAudioFileInputNode>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_FileCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_FileCompleted;

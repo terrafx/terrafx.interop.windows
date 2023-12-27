@@ -90,17 +90,17 @@ public unsafe partial struct IWindowingEnvironment : IWindowingEnvironment.Inter
     /// <include file='IWindowingEnvironment.xml' path='doc/member[@name="IWindowingEnvironment.GetDisplayRegions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetDisplayRegions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CDisplayRegion_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetDisplayRegions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CDisplayRegion_t **")] IVectorView<Pointer<IDisplayRegion>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWindowingEnvironment*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((IWindowingEnvironment*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IWindowingEnvironment*, IVectorView<Pointer<IDisplayRegion>>**, int>)(lpVtbl[8]))((IWindowingEnvironment*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IWindowingEnvironment.xml' path='doc/member[@name="IWindowingEnvironment.add_Changed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CWindowingEnvironment_Windows__CUI__CWindowManagement__CWindowingEnvironmentChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CWindowingEnvironment_Windows__CUI__CWindowManagement__CWindowingEnvironmentChangedEventArgs_t *")] ITypedEventHandler<Pointer<IWindowingEnvironment>, Pointer<IWindowingEnvironmentChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWindowingEnvironment*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IWindowingEnvironment*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IWindowingEnvironment*, ITypedEventHandler<Pointer<IWindowingEnvironment>, Pointer<IWindowingEnvironmentChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IWindowingEnvironment*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IWindowingEnvironment.xml' path='doc/member[@name="IWindowingEnvironment.remove_Changed"]/*' />
@@ -120,10 +120,10 @@ public unsafe partial struct IWindowingEnvironment : IWindowingEnvironment.Inter
         HRESULT get_Kind([NativeTypeName("ABI::Windows::UI::WindowManagement::WindowingEnvironmentKind *")] WindowingEnvironmentKind* value);
 
         [VtblIndex(8)]
-        HRESULT GetDisplayRegions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CDisplayRegion_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetDisplayRegions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CDisplayRegion_t **")] IVectorView<Pointer<IDisplayRegion>>** result);
 
         [VtblIndex(9)]
-        HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CWindowingEnvironment_Windows__CUI__CWindowManagement__CWindowingEnvironmentChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CWindowingEnvironment_Windows__CUI__CWindowManagement__CWindowingEnvironmentChangedEventArgs_t *")] ITypedEventHandler<Pointer<IWindowingEnvironment>, Pointer<IWindowingEnvironmentChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_Changed(EventRegistrationToken token);
@@ -157,10 +157,10 @@ public unsafe partial struct IWindowingEnvironment : IWindowingEnvironment.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, WindowingEnvironmentKind*, int> get_Kind;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CDisplayRegion_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetDisplayRegions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IDisplayRegion>>**, int> GetDisplayRegions;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CWindowingEnvironment_Windows__CUI__CWindowManagement__CWindowingEnvironmentChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Changed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IWindowingEnvironment>, Pointer<IWindowingEnvironmentChangedEventArgs>>*, EventRegistrationToken*, int> add_Changed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Changed;

@@ -74,9 +74,9 @@ public unsafe partial struct IServerMessageWebSocket : IServerMessageWebSocket.I
     /// <include file='IServerMessageWebSocket.xml' path='doc/member[@name="IServerMessageWebSocket.add_MessageReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_MessageReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_MessageReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IServerMessageWebSocket>, Pointer<IMessageWebSocketMessageReceivedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IServerMessageWebSocket*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IServerMessageWebSocket*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IServerMessageWebSocket*, ITypedEventHandler<Pointer<IServerMessageWebSocket>, Pointer<IMessageWebSocketMessageReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IServerMessageWebSocket*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IServerMessageWebSocket.xml' path='doc/member[@name="IServerMessageWebSocket.remove_MessageReceived"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct IServerMessageWebSocket : IServerMessageWebSocket.I
     /// <include file='IServerMessageWebSocket.xml' path='doc/member[@name="IServerMessageWebSocket.add_Closed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_t *")] ITypedEventHandler<Pointer<IServerMessageWebSocket>, Pointer<IWebSocketClosedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IServerMessageWebSocket*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IServerMessageWebSocket*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IServerMessageWebSocket*, ITypedEventHandler<Pointer<IServerMessageWebSocket>, Pointer<IWebSocketClosedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IServerMessageWebSocket*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IServerMessageWebSocket.xml' path='doc/member[@name="IServerMessageWebSocket.remove_Closed"]/*' />
@@ -138,7 +138,7 @@ public unsafe partial struct IServerMessageWebSocket : IServerMessageWebSocket.I
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_MessageReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_MessageReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IServerMessageWebSocket>, Pointer<IMessageWebSocketMessageReceivedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_MessageReceived(EventRegistrationToken token);
@@ -153,7 +153,7 @@ public unsafe partial struct IServerMessageWebSocket : IServerMessageWebSocket.I
         HRESULT get_OutputStream([NativeTypeName("ABI::Windows::Storage::Streams::IOutputStream **")] IOutputStream** value);
 
         [VtblIndex(11)]
-        HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_t *")] ITypedEventHandler<Pointer<IServerMessageWebSocket>, Pointer<IWebSocketClosedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_Closed(EventRegistrationToken token);
@@ -184,7 +184,7 @@ public unsafe partial struct IServerMessageWebSocket : IServerMessageWebSocket.I
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CMessageWebSocketMessageReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_MessageReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IServerMessageWebSocket>, Pointer<IMessageWebSocketMessageReceivedEventArgs>>*, EventRegistrationToken*, int> add_MessageReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_MessageReceived;
@@ -199,7 +199,7 @@ public unsafe partial struct IServerMessageWebSocket : IServerMessageWebSocket.I
         public delegate* unmanaged[MemberFunction]<TSelf*, IOutputStream**, int> get_OutputStream;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CServerMessageWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Closed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IServerMessageWebSocket>, Pointer<IWebSocketClosedEventArgs>>*, EventRegistrationToken*, int> add_Closed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Closed;

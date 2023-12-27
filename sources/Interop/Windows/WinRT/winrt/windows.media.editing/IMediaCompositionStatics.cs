@@ -74,15 +74,15 @@ public unsafe partial struct IMediaCompositionStatics : IMediaCompositionStatics
     /// <include file='IMediaCompositionStatics.xml' path='doc/member[@name="IMediaCompositionStatics.LoadAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT LoadAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaComposition_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT LoadAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaComposition_t **")] IAsyncOperation<Pointer<IMediaComposition>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCompositionStatics*, IStorageFile*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IMediaCompositionStatics*)Unsafe.AsPointer(ref this), file, operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCompositionStatics*, IStorageFile*, IAsyncOperation<Pointer<IMediaComposition>>**, int>)(lpVtbl[6]))((IMediaCompositionStatics*)Unsafe.AsPointer(ref this), file, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT LoadAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaComposition_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT LoadAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaComposition_t **")] IAsyncOperation<Pointer<IMediaComposition>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IMediaCompositionStatics : IMediaCompositionStatics
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CEditing__CMediaComposition_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<IntPtr>**, int> LoadAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<Pointer<IMediaComposition>>**, int> LoadAsync;
     }
 }

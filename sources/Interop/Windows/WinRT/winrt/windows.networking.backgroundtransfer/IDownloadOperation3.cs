@@ -106,9 +106,9 @@ public unsafe partial struct IDownloadOperation3 : IDownloadOperation3.Interface
     /// <include file='IDownloadOperation3.xml' path='doc/member[@name="IDownloadOperation3.add_RangesDownloaded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_RangesDownloaded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferRangesDownloadedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_RangesDownloaded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferRangesDownloadedEventArgs_t *")] ITypedEventHandler<Pointer<IDownloadOperation>, Pointer<IBackgroundTransferRangesDownloadedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDownloadOperation3*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IDownloadOperation3*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IDownloadOperation3*, ITypedEventHandler<Pointer<IDownloadOperation>, Pointer<IBackgroundTransferRangesDownloadedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IDownloadOperation3*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
     }
 
     /// <include file='IDownloadOperation3.xml' path='doc/member[@name="IDownloadOperation3.remove_RangesDownloaded"]/*' />
@@ -158,7 +158,7 @@ public unsafe partial struct IDownloadOperation3 : IDownloadOperation3.Interface
         HRESULT GetDownloadedRanges([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferFileRange_t **")] IVector<BackgroundTransferFileRange>** value);
 
         [VtblIndex(10)]
-        HRESULT add_RangesDownloaded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferRangesDownloadedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_RangesDownloaded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferRangesDownloadedEventArgs_t *")] ITypedEventHandler<Pointer<IDownloadOperation>, Pointer<IBackgroundTransferRangesDownloadedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(11)]
         HRESULT remove_RangesDownloaded(EventRegistrationToken eventCookie);
@@ -207,7 +207,7 @@ public unsafe partial struct IDownloadOperation3 : IDownloadOperation3.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, IVector<BackgroundTransferFileRange>**, int> GetDownloadedRanges;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferRangesDownloadedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_RangesDownloaded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDownloadOperation>, Pointer<IBackgroundTransferRangesDownloadedEventArgs>>*, EventRegistrationToken*, int> add_RangesDownloaded;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RangesDownloaded;

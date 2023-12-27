@@ -74,9 +74,9 @@ public unsafe partial struct ISystemNavigationManager : ISystemNavigationManager
     /// <include file='ISystemNavigationManager.xml' path='doc/member[@name="ISystemNavigationManager.add_BackRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_BackRequested([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CUI__CCore__CBackRequestedEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_BackRequested([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CUI__CCore__CBackRequestedEventArgs_t *")] IEventHandler<Pointer<IBackRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISystemNavigationManager*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ISystemNavigationManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISystemNavigationManager*, IEventHandler<Pointer<IBackRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ISystemNavigationManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISystemNavigationManager.xml' path='doc/member[@name="ISystemNavigationManager.remove_BackRequested"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct ISystemNavigationManager : ISystemNavigationManager
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_BackRequested([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CUI__CCore__CBackRequestedEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_BackRequested([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CUI__CCore__CBackRequestedEventArgs_t *")] IEventHandler<Pointer<IBackRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_BackRequested(EventRegistrationToken token);
@@ -118,7 +118,7 @@ public unsafe partial struct ISystemNavigationManager : ISystemNavigationManager
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_Windows__CUI__CCore__CBackRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_BackRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IBackRequestedEventArgs>>*, EventRegistrationToken*, int> add_BackRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_BackRequested;

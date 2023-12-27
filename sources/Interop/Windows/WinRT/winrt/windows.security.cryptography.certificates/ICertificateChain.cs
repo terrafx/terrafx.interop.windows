@@ -90,9 +90,9 @@ public unsafe partial struct ICertificateChain : ICertificateChain.Interface, IN
     /// <include file='ICertificateChain.xml' path='doc/member[@name="ICertificateChain.GetCertificates"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetCertificates([NativeTypeName("boolean")] byte includeRoot, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<IntPtr>** certificates)
+    public HRESULT GetCertificates([NativeTypeName("boolean")] byte includeRoot, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<Pointer<ICertificate>>** certificates)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICertificateChain*, byte, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((ICertificateChain*)Unsafe.AsPointer(ref this), includeRoot, certificates);
+        return ((delegate* unmanaged[MemberFunction]<ICertificateChain*, byte, IVectorView<Pointer<ICertificate>>**, int>)(lpVtbl[8]))((ICertificateChain*)Unsafe.AsPointer(ref this), includeRoot, certificates);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct ICertificateChain : ICertificateChain.Interface, IN
         HRESULT ValidateWithParameters([NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::IChainValidationParameters *")] IChainValidationParameters* parameter, [NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::ChainValidationResult *")] ChainValidationResult* status);
 
         [VtblIndex(8)]
-        HRESULT GetCertificates([NativeTypeName("boolean")] byte includeRoot, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<IntPtr>** certificates);
+        HRESULT GetCertificates([NativeTypeName("boolean")] byte includeRoot, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<Pointer<ICertificate>>** certificates);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct ICertificateChain : ICertificateChain.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, IChainValidationParameters*, ChainValidationResult*, int> ValidateWithParameters;
 
         [NativeTypeName("HRESULT (boolean, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, byte, IVectorView<IntPtr>**, int> GetCertificates;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte, IVectorView<Pointer<ICertificate>>**, int> GetCertificates;
     }
 }

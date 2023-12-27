@@ -74,17 +74,17 @@ public unsafe partial struct IMediaCapture3 : IMediaCapture3.Interface, INativeG
     /// <include file='IMediaCapture3.xml' path='doc/member[@name="IMediaCapture3.PrepareVariablePhotoSequenceCaptureAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT PrepareVariablePhotoSequenceCaptureAsync([NativeTypeName("ABI::Windows::Media::MediaProperties::IImageEncodingProperties *")] IImageEncodingProperties* type, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CCore__CVariablePhotoSequenceCapture_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT PrepareVariablePhotoSequenceCaptureAsync([NativeTypeName("ABI::Windows::Media::MediaProperties::IImageEncodingProperties *")] IImageEncodingProperties* type, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CCore__CVariablePhotoSequenceCapture_t **")] IAsyncOperation<Pointer<IVariablePhotoSequenceCapture>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture3*, IImageEncodingProperties*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IMediaCapture3*)Unsafe.AsPointer(ref this), type, operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture3*, IImageEncodingProperties*, IAsyncOperation<Pointer<IVariablePhotoSequenceCapture>>**, int>)(lpVtbl[6]))((IMediaCapture3*)Unsafe.AsPointer(ref this), type, operation);
     }
 
     /// <include file='IMediaCapture3.xml' path='doc/member[@name="IMediaCapture3.add_FocusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_FocusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_Windows__CMedia__CCapture__CMediaCaptureFocusChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_FocusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_Windows__CMedia__CCapture__CMediaCaptureFocusChangedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IMediaCaptureFocusChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture3*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IMediaCapture3*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture3*, ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IMediaCaptureFocusChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IMediaCapture3*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaCapture3.xml' path='doc/member[@name="IMediaCapture3.remove_FocusChanged"]/*' />
@@ -98,9 +98,9 @@ public unsafe partial struct IMediaCapture3 : IMediaCapture3.Interface, INativeG
     /// <include file='IMediaCapture3.xml' path='doc/member[@name="IMediaCapture3.add_PhotoConfirmationCaptured"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_PhotoConfirmationCaptured([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_Windows__CMedia__CCapture__CPhotoConfirmationCapturedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PhotoConfirmationCaptured([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_Windows__CMedia__CCapture__CPhotoConfirmationCapturedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IPhotoConfirmationCapturedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture3*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IMediaCapture3*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture3*, ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IPhotoConfirmationCapturedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IMediaCapture3*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaCapture3.xml' path='doc/member[@name="IMediaCapture3.remove_PhotoConfirmationCaptured"]/*' />
@@ -114,16 +114,16 @@ public unsafe partial struct IMediaCapture3 : IMediaCapture3.Interface, INativeG
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT PrepareVariablePhotoSequenceCaptureAsync([NativeTypeName("ABI::Windows::Media::MediaProperties::IImageEncodingProperties *")] IImageEncodingProperties* type, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CCore__CVariablePhotoSequenceCapture_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT PrepareVariablePhotoSequenceCaptureAsync([NativeTypeName("ABI::Windows::Media::MediaProperties::IImageEncodingProperties *")] IImageEncodingProperties* type, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CCore__CVariablePhotoSequenceCapture_t **")] IAsyncOperation<Pointer<IVariablePhotoSequenceCapture>>** operation);
 
         [VtblIndex(7)]
-        HRESULT add_FocusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_Windows__CMedia__CCapture__CMediaCaptureFocusChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_FocusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_Windows__CMedia__CCapture__CMediaCaptureFocusChangedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IMediaCaptureFocusChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_FocusChanged(EventRegistrationToken token);
 
         [VtblIndex(9)]
-        HRESULT add_PhotoConfirmationCaptured([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_Windows__CMedia__CCapture__CPhotoConfirmationCapturedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PhotoConfirmationCaptured([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_Windows__CMedia__CCapture__CPhotoConfirmationCapturedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IPhotoConfirmationCapturedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_PhotoConfirmationCaptured(EventRegistrationToken token);
@@ -151,16 +151,16 @@ public unsafe partial struct IMediaCapture3 : IMediaCapture3.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::MediaProperties::IImageEncodingProperties *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CCore__CVariablePhotoSequenceCapture_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IImageEncodingProperties*, IAsyncOperation<IntPtr>**, int> PrepareVariablePhotoSequenceCaptureAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IImageEncodingProperties*, IAsyncOperation<Pointer<IVariablePhotoSequenceCapture>>**, int> PrepareVariablePhotoSequenceCaptureAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_Windows__CMedia__CCapture__CMediaCaptureFocusChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_FocusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IMediaCaptureFocusChangedEventArgs>>*, EventRegistrationToken*, int> add_FocusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_FocusChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_Windows__CMedia__CCapture__CPhotoConfirmationCapturedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PhotoConfirmationCaptured;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IPhotoConfirmationCapturedEventArgs>>*, EventRegistrationToken*, int> add_PhotoConfirmationCaptured;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PhotoConfirmationCaptured;

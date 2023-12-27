@@ -186,9 +186,9 @@ public unsafe partial struct IAppointment : IAppointment.Interface, INativeGuid
     /// <include file='IAppointment.xml' path='doc/member[@name="IAppointment.get_Invitees"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT get_Invitees([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CAppointments__CAppointmentInvitee_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Invitees([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CAppointments__CAppointmentInvitee_t **")] IVector<Pointer<IAppointmentInvitee>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointment*, IVector<IntPtr>**, int>)(lpVtbl[20]))((IAppointment*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppointment*, IVector<Pointer<IAppointmentInvitee>>**, int>)(lpVtbl[20]))((IAppointment*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppointment.xml' path='doc/member[@name="IAppointment.get_Recurrence"]/*' />
@@ -316,7 +316,7 @@ public unsafe partial struct IAppointment : IAppointment.Interface, INativeGuid
         HRESULT put_Organizer([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointmentParticipant *")] IAppointmentParticipant* value);
 
         [VtblIndex(20)]
-        HRESULT get_Invitees([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CAppointments__CAppointmentInvitee_t **")] IVector<IntPtr>** value);
+        HRESULT get_Invitees([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CAppointments__CAppointmentInvitee_t **")] IVector<Pointer<IAppointmentInvitee>>** value);
 
         [VtblIndex(21)]
         HRESULT get_Recurrence([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointmentRecurrence **")] IAppointmentRecurrence** value);
@@ -413,7 +413,7 @@ public unsafe partial struct IAppointment : IAppointment.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppointmentParticipant*, int> put_Organizer;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CAppointments__CAppointmentInvitee_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Invitees;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IAppointmentInvitee>>**, int> get_Invitees;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Appointments::IAppointmentRecurrence **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppointmentRecurrence**, int> get_Recurrence;

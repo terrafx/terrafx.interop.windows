@@ -74,9 +74,9 @@ public unsafe partial struct IContactBatch : IContactBatch.Interface, INativeGui
     /// <include file='IContactBatch.xml' path='doc/member[@name="IContactBatch.get_Contacts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Contacts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Contacts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IVectorView<Pointer<IContact>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactBatch*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IContactBatch*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContactBatch*, IVectorView<Pointer<IContact>>**, int>)(lpVtbl[6]))((IContactBatch*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContactBatch.xml' path='doc/member[@name="IContactBatch.get_Status"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IContactBatch : IContactBatch.Interface, INativeGui
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Contacts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Contacts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IVectorView<Pointer<IContact>>** value);
 
         [VtblIndex(7)]
         HRESULT get_Status([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::ContactBatchStatus *")] ContactBatchStatus* value);
@@ -118,7 +118,7 @@ public unsafe partial struct IContactBatch : IContactBatch.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Contacts;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IContact>>**, int> get_Contacts;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Contacts::ContactBatchStatus *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ContactBatchStatus*, int> get_Status;

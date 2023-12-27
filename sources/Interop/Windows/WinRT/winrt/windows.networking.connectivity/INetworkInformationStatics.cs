@@ -74,9 +74,9 @@ public unsafe partial struct INetworkInformationStatics : INetworkInformationSta
     /// <include file='INetworkInformationStatics.xml' path='doc/member[@name="INetworkInformationStatics.GetConnectionProfiles"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetConnectionProfiles([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_t **")] IVectorView<IntPtr>** value)
+    public HRESULT GetConnectionProfiles([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_t **")] IVectorView<Pointer<IConnectionProfile>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<INetworkInformationStatics*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((INetworkInformationStatics*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<INetworkInformationStatics*, IVectorView<Pointer<IConnectionProfile>>**, int>)(lpVtbl[6]))((INetworkInformationStatics*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='INetworkInformationStatics.xml' path='doc/member[@name="INetworkInformationStatics.GetInternetConnectionProfile"]/*' />
@@ -90,33 +90,33 @@ public unsafe partial struct INetworkInformationStatics : INetworkInformationSta
     /// <include file='INetworkInformationStatics.xml' path='doc/member[@name="INetworkInformationStatics.GetLanIdentifiers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetLanIdentifiers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CConnectivity__CLanIdentifier_t **")] IVectorView<IntPtr>** value)
+    public HRESULT GetLanIdentifiers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CConnectivity__CLanIdentifier_t **")] IVectorView<Pointer<ILanIdentifier>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<INetworkInformationStatics*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((INetworkInformationStatics*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<INetworkInformationStatics*, IVectorView<Pointer<ILanIdentifier>>**, int>)(lpVtbl[8]))((INetworkInformationStatics*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='INetworkInformationStatics.xml' path='doc/member[@name="INetworkInformationStatics.GetHostNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetHostNames([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CHostName_t **")] IVectorView<IntPtr>** value)
+    public HRESULT GetHostNames([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CHostName_t **")] IVectorView<Pointer<IHostName>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<INetworkInformationStatics*, IVectorView<IntPtr>**, int>)(lpVtbl[9]))((INetworkInformationStatics*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<INetworkInformationStatics*, IVectorView<Pointer<IHostName>>**, int>)(lpVtbl[9]))((INetworkInformationStatics*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='INetworkInformationStatics.xml' path='doc/member[@name="INetworkInformationStatics.GetProxyConfigurationAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetProxyConfigurationAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CProxyConfiguration_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetProxyConfigurationAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CProxyConfiguration_t **")] IAsyncOperation<Pointer<IProxyConfiguration>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<INetworkInformationStatics*, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((INetworkInformationStatics*)Unsafe.AsPointer(ref this), uri, value);
+        return ((delegate* unmanaged[MemberFunction]<INetworkInformationStatics*, IUriRuntimeClass*, IAsyncOperation<Pointer<IProxyConfiguration>>**, int>)(lpVtbl[10]))((INetworkInformationStatics*)Unsafe.AsPointer(ref this), uri, value);
     }
 
     /// <include file='INetworkInformationStatics.xml' path='doc/member[@name="INetworkInformationStatics.GetSortedEndpointPairs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetSortedEndpointPairs([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CEndpointPair_t *")] IIterable<IntPtr>* destinationList, [NativeTypeName("ABI::Windows::Networking::HostNameSortOptions")] HostNameSortOptions sortOptions, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CEndpointPair_t **")] IVectorView<IntPtr>** value)
+    public HRESULT GetSortedEndpointPairs([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CEndpointPair_t *")] IIterable<Pointer<IEndpointPair>>* destinationList, [NativeTypeName("ABI::Windows::Networking::HostNameSortOptions")] HostNameSortOptions sortOptions, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CEndpointPair_t **")] IVectorView<Pointer<IEndpointPair>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<INetworkInformationStatics*, IIterable<IntPtr>*, HostNameSortOptions, IVectorView<IntPtr>**, int>)(lpVtbl[11]))((INetworkInformationStatics*)Unsafe.AsPointer(ref this), destinationList, sortOptions, value);
+        return ((delegate* unmanaged[MemberFunction]<INetworkInformationStatics*, IIterable<Pointer<IEndpointPair>>*, HostNameSortOptions, IVectorView<Pointer<IEndpointPair>>**, int>)(lpVtbl[11]))((INetworkInformationStatics*)Unsafe.AsPointer(ref this), destinationList, sortOptions, value);
     }
 
     /// <include file='INetworkInformationStatics.xml' path='doc/member[@name="INetworkInformationStatics.add_NetworkStatusChanged"]/*' />
@@ -138,22 +138,22 @@ public unsafe partial struct INetworkInformationStatics : INetworkInformationSta
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetConnectionProfiles([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_t **")] IVectorView<IntPtr>** value);
+        HRESULT GetConnectionProfiles([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_t **")] IVectorView<Pointer<IConnectionProfile>>** value);
 
         [VtblIndex(7)]
         HRESULT GetInternetConnectionProfile([NativeTypeName("ABI::Windows::Networking::Connectivity::IConnectionProfile **")] IConnectionProfile** value);
 
         [VtblIndex(8)]
-        HRESULT GetLanIdentifiers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CConnectivity__CLanIdentifier_t **")] IVectorView<IntPtr>** value);
+        HRESULT GetLanIdentifiers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CConnectivity__CLanIdentifier_t **")] IVectorView<Pointer<ILanIdentifier>>** value);
 
         [VtblIndex(9)]
-        HRESULT GetHostNames([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CHostName_t **")] IVectorView<IntPtr>** value);
+        HRESULT GetHostNames([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CHostName_t **")] IVectorView<Pointer<IHostName>>** value);
 
         [VtblIndex(10)]
-        HRESULT GetProxyConfigurationAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CProxyConfiguration_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetProxyConfigurationAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CProxyConfiguration_t **")] IAsyncOperation<Pointer<IProxyConfiguration>>** value);
 
         [VtblIndex(11)]
-        HRESULT GetSortedEndpointPairs([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CEndpointPair_t *")] IIterable<IntPtr>* destinationList, [NativeTypeName("ABI::Windows::Networking::HostNameSortOptions")] HostNameSortOptions sortOptions, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CEndpointPair_t **")] IVectorView<IntPtr>** value);
+        HRESULT GetSortedEndpointPairs([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CEndpointPair_t *")] IIterable<Pointer<IEndpointPair>>* destinationList, [NativeTypeName("ABI::Windows::Networking::HostNameSortOptions")] HostNameSortOptions sortOptions, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CEndpointPair_t **")] IVectorView<Pointer<IEndpointPair>>** value);
 
         [VtblIndex(12)]
         HRESULT add_NetworkStatusChanged([NativeTypeName("ABI::Windows::Networking::Connectivity::INetworkStatusChangedEventHandler *")] INetworkStatusChangedEventHandler* networkStatusHandler, EventRegistrationToken* eventCookie);
@@ -184,22 +184,22 @@ public unsafe partial struct INetworkInformationStatics : INetworkInformationSta
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CConnectivity__CConnectionProfile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetConnectionProfiles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IConnectionProfile>>**, int> GetConnectionProfiles;
 
         [NativeTypeName("HRESULT (ABI::Windows::Networking::Connectivity::IConnectionProfile **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IConnectionProfile**, int> GetInternetConnectionProfile;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CConnectivity__CLanIdentifier_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetLanIdentifiers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ILanIdentifier>>**, int> GetLanIdentifiers;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CHostName_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetHostNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IHostName>>**, int> GetHostNames;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CProxyConfiguration_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int> GetProxyConfigurationAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperation<Pointer<IProxyConfiguration>>**, int> GetProxyConfigurationAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CEndpointPair_t *, ABI::Windows::Networking::HostNameSortOptions, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CEndpointPair_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, HostNameSortOptions, IVectorView<IntPtr>**, int> GetSortedEndpointPairs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IEndpointPair>>*, HostNameSortOptions, IVectorView<Pointer<IEndpointPair>>**, int> GetSortedEndpointPairs;
 
         [NativeTypeName("HRESULT (ABI::Windows::Networking::Connectivity::INetworkStatusChangedEventHandler *, EventRegistrationToken *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, INetworkStatusChangedEventHandler*, EventRegistrationToken*, int> add_NetworkStatusChanged;

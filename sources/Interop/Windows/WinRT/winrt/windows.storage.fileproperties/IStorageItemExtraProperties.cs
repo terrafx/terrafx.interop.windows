@@ -74,17 +74,17 @@ public unsafe partial struct IStorageItemExtraProperties : IStorageItemExtraProp
     /// <include file='IStorageItemExtraProperties.xml' path='doc/member[@name="IStorageItemExtraProperties.RetrievePropertiesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT RetrievePropertiesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* propertiesToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT RetrievePropertiesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* propertiesToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_t **")] IAsyncOperation<Pointer<IMap<HSTRING, Pointer<IInspectable>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageItemExtraProperties*, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStorageItemExtraProperties*)Unsafe.AsPointer(ref this), propertiesToRetrieve, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageItemExtraProperties*, IIterable<HSTRING>*, IAsyncOperation<Pointer<IMap<HSTRING, Pointer<IInspectable>>>>**, int>)(lpVtbl[6]))((IStorageItemExtraProperties*)Unsafe.AsPointer(ref this), propertiesToRetrieve, operation);
     }
 
     /// <include file='IStorageItemExtraProperties.xml' path='doc/member[@name="IStorageItemExtraProperties.SavePropertiesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SavePropertiesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_t *")] IIterable<IntPtr>* propertiesToSave, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation)
+    public HRESULT SavePropertiesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IInspectable>>>>* propertiesToSave, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageItemExtraProperties*, IIterable<IntPtr>*, IAsyncAction**, int>)(lpVtbl[7]))((IStorageItemExtraProperties*)Unsafe.AsPointer(ref this), propertiesToSave, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageItemExtraProperties*, IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IInspectable>>>>*, IAsyncAction**, int>)(lpVtbl[7]))((IStorageItemExtraProperties*)Unsafe.AsPointer(ref this), propertiesToSave, operation);
     }
 
     /// <include file='IStorageItemExtraProperties.xml' path='doc/member[@name="IStorageItemExtraProperties.SavePropertiesAsyncOverloadDefault"]/*' />
@@ -98,10 +98,10 @@ public unsafe partial struct IStorageItemExtraProperties : IStorageItemExtraProp
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT RetrievePropertiesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* propertiesToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT RetrievePropertiesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* propertiesToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_t **")] IAsyncOperation<Pointer<IMap<HSTRING, Pointer<IInspectable>>>>** operation);
 
         [VtblIndex(7)]
-        HRESULT SavePropertiesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_t *")] IIterable<IntPtr>* propertiesToSave, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
+        HRESULT SavePropertiesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IInspectable>>>>* propertiesToSave, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
 
         [VtblIndex(8)]
         HRESULT SavePropertiesAsyncOverloadDefault([NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
@@ -129,10 +129,10 @@ public unsafe partial struct IStorageItemExtraProperties : IStorageItemExtraProp
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIMap_2_HSTRING_IInspectable_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int> RetrievePropertiesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<HSTRING>*, IAsyncOperation<Pointer<IMap<HSTRING, Pointer<IInspectable>>>>**, int> RetrievePropertiesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_IInspectable_t *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IAsyncAction**, int> SavePropertiesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<IInspectable>>>>*, IAsyncAction**, int> SavePropertiesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncAction**, int> SavePropertiesAsyncOverloadDefault;

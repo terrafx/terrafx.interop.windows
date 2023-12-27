@@ -74,26 +74,26 @@ public unsafe partial struct IJapanesePhoneticAnalyzerStatics : IJapanesePhoneti
     /// <include file='IJapanesePhoneticAnalyzerStatics.xml' path='doc/member[@name="IJapanesePhoneticAnalyzerStatics.GetWords"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetWords(HSTRING input, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CJapanesePhoneme_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetWords(HSTRING input, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CJapanesePhoneme_t **")] IVectorView<Pointer<IJapanesePhoneme>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IJapanesePhoneticAnalyzerStatics*, HSTRING, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IJapanesePhoneticAnalyzerStatics*)Unsafe.AsPointer(ref this), input, result);
+        return ((delegate* unmanaged[MemberFunction]<IJapanesePhoneticAnalyzerStatics*, HSTRING, IVectorView<Pointer<IJapanesePhoneme>>**, int>)(lpVtbl[6]))((IJapanesePhoneticAnalyzerStatics*)Unsafe.AsPointer(ref this), input, result);
     }
 
     /// <include file='IJapanesePhoneticAnalyzerStatics.xml' path='doc/member[@name="IJapanesePhoneticAnalyzerStatics.GetWordsWithMonoRubyOption"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetWordsWithMonoRubyOption(HSTRING input, [NativeTypeName("boolean")] byte monoRuby, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CJapanesePhoneme_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetWordsWithMonoRubyOption(HSTRING input, [NativeTypeName("boolean")] byte monoRuby, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CJapanesePhoneme_t **")] IVectorView<Pointer<IJapanesePhoneme>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IJapanesePhoneticAnalyzerStatics*, HSTRING, byte, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IJapanesePhoneticAnalyzerStatics*)Unsafe.AsPointer(ref this), input, monoRuby, result);
+        return ((delegate* unmanaged[MemberFunction]<IJapanesePhoneticAnalyzerStatics*, HSTRING, byte, IVectorView<Pointer<IJapanesePhoneme>>**, int>)(lpVtbl[7]))((IJapanesePhoneticAnalyzerStatics*)Unsafe.AsPointer(ref this), input, monoRuby, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetWords(HSTRING input, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CJapanesePhoneme_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetWords(HSTRING input, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CJapanesePhoneme_t **")] IVectorView<Pointer<IJapanesePhoneme>>** result);
 
         [VtblIndex(7)]
-        HRESULT GetWordsWithMonoRubyOption(HSTRING input, [NativeTypeName("boolean")] byte monoRuby, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CJapanesePhoneme_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetWordsWithMonoRubyOption(HSTRING input, [NativeTypeName("boolean")] byte monoRuby, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CJapanesePhoneme_t **")] IVectorView<Pointer<IJapanesePhoneme>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IJapanesePhoneticAnalyzerStatics : IJapanesePhoneti
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CJapanesePhoneme_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<IntPtr>**, int> GetWords;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<Pointer<IJapanesePhoneme>>**, int> GetWords;
 
         [NativeTypeName("HRESULT (HSTRING, boolean, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CJapanesePhoneme_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, byte, IVectorView<IntPtr>**, int> GetWordsWithMonoRubyOption;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, byte, IVectorView<Pointer<IJapanesePhoneme>>**, int> GetWordsWithMonoRubyOption;
     }
 }

@@ -90,9 +90,9 @@ public unsafe partial struct IPointerEventArgs : IPointerEventArgs.Interface, IN
     /// <include file='IPointerEventArgs.xml' path='doc/member[@name="IPointerEventArgs.GetIntermediatePoints"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetIntermediatePoints([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t **")] IVector<IntPtr>** value)
+    public HRESULT GetIntermediatePoints([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t **")] IVector<Pointer<IPointerPoint>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPointerEventArgs*, IVector<IntPtr>**, int>)(lpVtbl[8]))((IPointerEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPointerEventArgs*, IVector<Pointer<IPointerPoint>>**, int>)(lpVtbl[8]))((IPointerEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IPointerEventArgs : IPointerEventArgs.Interface, IN
         HRESULT get_KeyModifiers([NativeTypeName("ABI::Windows::System::VirtualKeyModifiers *")] VirtualKeyModifiers* value);
 
         [VtblIndex(8)]
-        HRESULT GetIntermediatePoints([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t **")] IVector<IntPtr>** value);
+        HRESULT GetIntermediatePoints([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t **")] IVector<Pointer<IPointerPoint>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IPointerEventArgs : IPointerEventArgs.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, VirtualKeyModifiers*, int> get_KeyModifiers;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CPointerPoint_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> GetIntermediatePoints;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IPointerPoint>>**, int> GetIntermediatePoints;
     }
 }

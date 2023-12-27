@@ -98,9 +98,9 @@ public unsafe partial struct ISpiDeviceStatics : ISpiDeviceStatics.Interface, IN
     /// <include file='ISpiDeviceStatics.xml' path='doc/member[@name="ISpiDeviceStatics.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT FromIdAsync(HSTRING busId, [NativeTypeName("ABI::Windows::Devices::Spi::ISpiConnectionSettings *")] ISpiConnectionSettings* settings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSpi__CSpiDevice_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromIdAsync(HSTRING busId, [NativeTypeName("ABI::Windows::Devices::Spi::ISpiConnectionSettings *")] ISpiConnectionSettings* settings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSpi__CSpiDevice_t **")] IAsyncOperation<Pointer<ISpiDevice>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpiDeviceStatics*, HSTRING, ISpiConnectionSettings*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((ISpiDeviceStatics*)Unsafe.AsPointer(ref this), busId, settings, operation);
+        return ((delegate* unmanaged[MemberFunction]<ISpiDeviceStatics*, HSTRING, ISpiConnectionSettings*, IAsyncOperation<Pointer<ISpiDevice>>**, int>)(lpVtbl[9]))((ISpiDeviceStatics*)Unsafe.AsPointer(ref this), busId, settings, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -115,7 +115,7 @@ public unsafe partial struct ISpiDeviceStatics : ISpiDeviceStatics.Interface, IN
         HRESULT GetBusInfo(HSTRING busId, [NativeTypeName("ABI::Windows::Devices::Spi::ISpiBusInfo **")] ISpiBusInfo** busInfo);
 
         [VtblIndex(9)]
-        HRESULT FromIdAsync(HSTRING busId, [NativeTypeName("ABI::Windows::Devices::Spi::ISpiConnectionSettings *")] ISpiConnectionSettings* settings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSpi__CSpiDevice_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromIdAsync(HSTRING busId, [NativeTypeName("ABI::Windows::Devices::Spi::ISpiConnectionSettings *")] ISpiConnectionSettings* settings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSpi__CSpiDevice_t **")] IAsyncOperation<Pointer<ISpiDevice>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -149,6 +149,6 @@ public unsafe partial struct ISpiDeviceStatics : ISpiDeviceStatics.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, ISpiBusInfo**, int> GetBusInfo;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Devices::Spi::ISpiConnectionSettings *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSpi__CSpiDevice_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, ISpiConnectionSettings*, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, ISpiConnectionSettings*, IAsyncOperation<Pointer<ISpiDevice>>**, int> FromIdAsync;
     }
 }

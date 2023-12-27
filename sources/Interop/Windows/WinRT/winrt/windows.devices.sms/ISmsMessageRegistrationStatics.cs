@@ -74,9 +74,9 @@ public unsafe partial struct ISmsMessageRegistrationStatics : ISmsMessageRegistr
     /// <include file='ISmsMessageRegistrationStatics.xml' path='doc/member[@name="ISmsMessageRegistrationStatics.get_AllRegistrations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_AllRegistrations([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSms__CSmsMessageRegistration_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_AllRegistrations([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSms__CSmsMessageRegistration_t **")] IVectorView<Pointer<ISmsMessageRegistration>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmsMessageRegistrationStatics*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((ISmsMessageRegistrationStatics*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISmsMessageRegistrationStatics*, IVectorView<Pointer<ISmsMessageRegistration>>**, int>)(lpVtbl[6]))((ISmsMessageRegistrationStatics*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISmsMessageRegistrationStatics.xml' path='doc/member[@name="ISmsMessageRegistrationStatics.Register"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct ISmsMessageRegistrationStatics : ISmsMessageRegistr
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_AllRegistrations([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSms__CSmsMessageRegistration_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_AllRegistrations([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSms__CSmsMessageRegistration_t **")] IVectorView<Pointer<ISmsMessageRegistration>>** value);
 
         [VtblIndex(7)]
         HRESULT Register(HSTRING id, [NativeTypeName("ABI::Windows::Devices::Sms::ISmsFilterRules *")] ISmsFilterRules* filterRules, [NativeTypeName("ABI::Windows::Devices::Sms::ISmsMessageRegistration **")] ISmsMessageRegistration** value);
@@ -118,7 +118,7 @@ public unsafe partial struct ISmsMessageRegistrationStatics : ISmsMessageRegistr
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSms__CSmsMessageRegistration_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_AllRegistrations;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ISmsMessageRegistration>>**, int> get_AllRegistrations;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Devices::Sms::ISmsFilterRules *, ABI::Windows::Devices::Sms::ISmsMessageRegistration **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, ISmsFilterRules*, ISmsMessageRegistration**, int> Register;

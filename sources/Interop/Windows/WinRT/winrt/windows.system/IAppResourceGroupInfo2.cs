@@ -74,37 +74,37 @@ public unsafe partial struct IAppResourceGroupInfo2 : IAppResourceGroupInfo2.Int
     /// <include file='IAppResourceGroupInfo2.xml' path='doc/member[@name="IAppResourceGroupInfo2.StartSuspendAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT StartSuspendAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT StartSuspendAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t **")] IAsyncOperation<Pointer<IAppExecutionStateChangeResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppResourceGroupInfo2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IAppResourceGroupInfo2*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppResourceGroupInfo2*, IAsyncOperation<Pointer<IAppExecutionStateChangeResult>>**, int>)(lpVtbl[6]))((IAppResourceGroupInfo2*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IAppResourceGroupInfo2.xml' path='doc/member[@name="IAppResourceGroupInfo2.StartResumeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT StartResumeAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT StartResumeAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t **")] IAsyncOperation<Pointer<IAppExecutionStateChangeResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppResourceGroupInfo2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IAppResourceGroupInfo2*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppResourceGroupInfo2*, IAsyncOperation<Pointer<IAppExecutionStateChangeResult>>**, int>)(lpVtbl[7]))((IAppResourceGroupInfo2*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IAppResourceGroupInfo2.xml' path='doc/member[@name="IAppResourceGroupInfo2.StartTerminateAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT StartTerminateAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT StartTerminateAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t **")] IAsyncOperation<Pointer<IAppExecutionStateChangeResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppResourceGroupInfo2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IAppResourceGroupInfo2*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppResourceGroupInfo2*, IAsyncOperation<Pointer<IAppExecutionStateChangeResult>>**, int>)(lpVtbl[8]))((IAppResourceGroupInfo2*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT StartSuspendAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT StartSuspendAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t **")] IAsyncOperation<Pointer<IAppExecutionStateChangeResult>>** operation);
 
         [VtblIndex(7)]
-        HRESULT StartResumeAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT StartResumeAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t **")] IAsyncOperation<Pointer<IAppExecutionStateChangeResult>>** operation);
 
         [VtblIndex(8)]
-        HRESULT StartTerminateAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT StartTerminateAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t **")] IAsyncOperation<Pointer<IAppExecutionStateChangeResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -129,12 +129,12 @@ public unsafe partial struct IAppResourceGroupInfo2 : IAppResourceGroupInfo2.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> StartSuspendAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IAppExecutionStateChangeResult>>**, int> StartSuspendAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> StartResumeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IAppExecutionStateChangeResult>>**, int> StartResumeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CAppExecutionStateChangeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> StartTerminateAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IAppExecutionStateChangeResult>>**, int> StartTerminateAsync;
     }
 }

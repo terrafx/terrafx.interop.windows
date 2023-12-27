@@ -148,9 +148,9 @@ public unsafe partial struct IBackgroundEnergyManagerStatics : IBackgroundEnergy
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     [Obsolete("Background Energy Manager has been deprecated. For more info, see MSDN.")]
-    public HRESULT add_RecentEnergyUsageIncreased([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_RecentEnergyUsageIncreased([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundEnergyManagerStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IBackgroundEnergyManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundEnergyManagerStatics*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IBackgroundEnergyManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBackgroundEnergyManagerStatics.xml' path='doc/member[@name="IBackgroundEnergyManagerStatics.remove_RecentEnergyUsageIncreased"]/*' />
@@ -166,9 +166,9 @@ public unsafe partial struct IBackgroundEnergyManagerStatics : IBackgroundEnergy
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     [Obsolete("Background Energy Manager has been deprecated. For more info, see MSDN.")]
-    public HRESULT add_RecentEnergyUsageReturnedToLow([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_RecentEnergyUsageReturnedToLow([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundEnergyManagerStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IBackgroundEnergyManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundEnergyManagerStatics*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IBackgroundEnergyManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBackgroundEnergyManagerStatics.xml' path='doc/member[@name="IBackgroundEnergyManagerStatics.remove_RecentEnergyUsageReturnedToLow"]/*' />
@@ -216,7 +216,7 @@ public unsafe partial struct IBackgroundEnergyManagerStatics : IBackgroundEnergy
 
         [VtblIndex(14)]
         [Obsolete("Background Energy Manager has been deprecated. For more info, see MSDN.")]
-        HRESULT add_RecentEnergyUsageIncreased([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_RecentEnergyUsageIncreased([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(15)]
         [Obsolete("Background Energy Manager has been deprecated. For more info, see MSDN.")]
@@ -224,7 +224,7 @@ public unsafe partial struct IBackgroundEnergyManagerStatics : IBackgroundEnergy
 
         [VtblIndex(16)]
         [Obsolete("Background Energy Manager has been deprecated. For more info, see MSDN.")]
-        HRESULT add_RecentEnergyUsageReturnedToLow([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_RecentEnergyUsageReturnedToLow([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(17)]
         [Obsolete("Background Energy Manager has been deprecated. For more info, see MSDN.")]
@@ -286,7 +286,7 @@ public unsafe partial struct IBackgroundEnergyManagerStatics : IBackgroundEnergy
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("Background Energy Manager has been deprecated. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_RecentEnergyUsageIncreased;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_RecentEnergyUsageIncreased;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("Background Energy Manager has been deprecated. For more info, see MSDN.")]
@@ -294,7 +294,7 @@ public unsafe partial struct IBackgroundEnergyManagerStatics : IBackgroundEnergy
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("Background Energy Manager has been deprecated. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_RecentEnergyUsageReturnedToLow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_RecentEnergyUsageReturnedToLow;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("Background Energy Manager has been deprecated. For more info, see MSDN.")]

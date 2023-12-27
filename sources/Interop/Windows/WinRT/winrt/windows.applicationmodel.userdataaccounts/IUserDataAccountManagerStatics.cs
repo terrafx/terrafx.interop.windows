@@ -74,9 +74,9 @@ public unsafe partial struct IUserDataAccountManagerStatics : IUserDataAccountMa
     /// <include file='IUserDataAccountManagerStatics.xml' path='doc/member[@name="IUserDataAccountManagerStatics.RequestStoreAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType")] UserDataAccountStoreAccessType storeAccessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType")] UserDataAccountStoreAccessType storeAccessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_t **")] IAsyncOperation<Pointer<IUserDataAccountStore>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountManagerStatics*, UserDataAccountStoreAccessType, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IUserDataAccountManagerStatics*)Unsafe.AsPointer(ref this), storeAccessType, result);
+        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountManagerStatics*, UserDataAccountStoreAccessType, IAsyncOperation<Pointer<IUserDataAccountStore>>**, int>)(lpVtbl[6]))((IUserDataAccountManagerStatics*)Unsafe.AsPointer(ref this), storeAccessType, result);
     }
 
     /// <include file='IUserDataAccountManagerStatics.xml' path='doc/member[@name="IUserDataAccountManagerStatics.ShowAddAccountAsync"]/*' />
@@ -106,7 +106,7 @@ public unsafe partial struct IUserDataAccountManagerStatics : IUserDataAccountMa
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType")] UserDataAccountStoreAccessType storeAccessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType")] UserDataAccountStoreAccessType storeAccessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_t **")] IAsyncOperation<Pointer<IUserDataAccountStore>>** result);
 
         [VtblIndex(7)]
         HRESULT ShowAddAccountAsync([NativeTypeName("ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountContentKinds")] UserDataAccountContentKinds contentKinds, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **")] IAsyncOperation<HSTRING>** result);
@@ -140,7 +140,7 @@ public unsafe partial struct IUserDataAccountManagerStatics : IUserDataAccountMa
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, UserDataAccountStoreAccessType, IAsyncOperation<IntPtr>**, int> RequestStoreAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, UserDataAccountStoreAccessType, IAsyncOperation<Pointer<IUserDataAccountStore>>**, int> RequestStoreAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountContentKinds, ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, UserDataAccountContentKinds, IAsyncOperation<HSTRING>**, int> ShowAddAccountAsync;

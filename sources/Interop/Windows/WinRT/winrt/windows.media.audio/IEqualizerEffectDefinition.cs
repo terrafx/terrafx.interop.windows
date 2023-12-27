@@ -74,15 +74,15 @@ public unsafe partial struct IEqualizerEffectDefinition : IEqualizerEffectDefini
     /// <include file='IEqualizerEffectDefinition.xml' path='doc/member[@name="IEqualizerEffectDefinition.get_Bands"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Bands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CAudio__CEqualizerBand_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Bands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CAudio__CEqualizerBand_t **")] IVectorView<Pointer<IEqualizerBand>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IEqualizerEffectDefinition*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IEqualizerEffectDefinition*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IEqualizerEffectDefinition*, IVectorView<Pointer<IEqualizerBand>>**, int>)(lpVtbl[6]))((IEqualizerEffectDefinition*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Bands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CAudio__CEqualizerBand_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Bands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CAudio__CEqualizerBand_t **")] IVectorView<Pointer<IEqualizerBand>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IEqualizerEffectDefinition : IEqualizerEffectDefini
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CAudio__CEqualizerBand_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Bands;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IEqualizerBand>>**, int> get_Bands;
     }
 }

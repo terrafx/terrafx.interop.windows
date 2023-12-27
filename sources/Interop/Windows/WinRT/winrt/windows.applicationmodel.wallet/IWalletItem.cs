@@ -490,18 +490,18 @@ public unsafe partial struct IWalletItem : IWalletItem.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(52)]
     [Obsolete("IWalletItem is deprecated and might not work on all platforms. For more info, see MSDN.")]
-    public HRESULT get_TransactionHistory([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletTransaction_t **")] IMap<HSTRING, IntPtr>** value)
+    public HRESULT get_TransactionHistory([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletTransaction_t **")] IMap<HSTRING, Pointer<IWalletTransaction>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWalletItem*, IMap<HSTRING, IntPtr>**, int>)(lpVtbl[52]))((IWalletItem*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWalletItem*, IMap<HSTRING, Pointer<IWalletTransaction>>**, int>)(lpVtbl[52]))((IWalletItem*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWalletItem.xml' path='doc/member[@name="IWalletItem.get_RelevantLocations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(53)]
     [Obsolete("IWalletItem is deprecated and might not work on all platforms. For more info, see MSDN.")]
-    public HRESULT get_RelevantLocations([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletRelevantLocation_t **")] IMap<HSTRING, IntPtr>** value)
+    public HRESULT get_RelevantLocations([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletRelevantLocation_t **")] IMap<HSTRING, Pointer<IWalletRelevantLocation>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWalletItem*, IMap<HSTRING, IntPtr>**, int>)(lpVtbl[53]))((IWalletItem*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWalletItem*, IMap<HSTRING, Pointer<IWalletRelevantLocation>>**, int>)(lpVtbl[53]))((IWalletItem*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWalletItem.xml' path='doc/member[@name="IWalletItem.get_IsMoreTransactionHistoryLaunchable"]/*' />
@@ -526,18 +526,18 @@ public unsafe partial struct IWalletItem : IWalletItem.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(56)]
     [Obsolete("IWalletItem is deprecated and might not work on all platforms. For more info, see MSDN.")]
-    public HRESULT get_DisplayProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletItemCustomProperty_t **")] IMap<HSTRING, IntPtr>** value)
+    public HRESULT get_DisplayProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletItemCustomProperty_t **")] IMap<HSTRING, Pointer<IWalletItemCustomProperty>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWalletItem*, IMap<HSTRING, IntPtr>**, int>)(lpVtbl[56]))((IWalletItem*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWalletItem*, IMap<HSTRING, Pointer<IWalletItemCustomProperty>>**, int>)(lpVtbl[56]))((IWalletItem*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IWalletItem.xml' path='doc/member[@name="IWalletItem.get_Verbs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(57)]
     [Obsolete("IWalletItem is deprecated and might not work on all platforms. For more info, see MSDN.")]
-    public HRESULT get_Verbs([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletVerb_t **")] IMap<HSTRING, IntPtr>** value)
+    public HRESULT get_Verbs([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletVerb_t **")] IMap<HSTRING, Pointer<IWalletVerb>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWalletItem*, IMap<HSTRING, IntPtr>**, int>)(lpVtbl[57]))((IWalletItem*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWalletItem*, IMap<HSTRING, Pointer<IWalletVerb>>**, int>)(lpVtbl[57]))((IWalletItem*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -728,11 +728,11 @@ public unsafe partial struct IWalletItem : IWalletItem.Interface, INativeGuid
 
         [VtblIndex(52)]
         [Obsolete("IWalletItem is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        HRESULT get_TransactionHistory([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletTransaction_t **")] IMap<HSTRING, IntPtr>** value);
+        HRESULT get_TransactionHistory([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletTransaction_t **")] IMap<HSTRING, Pointer<IWalletTransaction>>** value);
 
         [VtblIndex(53)]
         [Obsolete("IWalletItem is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        HRESULT get_RelevantLocations([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletRelevantLocation_t **")] IMap<HSTRING, IntPtr>** value);
+        HRESULT get_RelevantLocations([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletRelevantLocation_t **")] IMap<HSTRING, Pointer<IWalletRelevantLocation>>** value);
 
         [VtblIndex(54)]
         [Obsolete("IWalletItem is deprecated and might not work on all platforms. For more info, see MSDN.")]
@@ -744,11 +744,11 @@ public unsafe partial struct IWalletItem : IWalletItem.Interface, INativeGuid
 
         [VtblIndex(56)]
         [Obsolete("IWalletItem is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        HRESULT get_DisplayProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletItemCustomProperty_t **")] IMap<HSTRING, IntPtr>** value);
+        HRESULT get_DisplayProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletItemCustomProperty_t **")] IMap<HSTRING, Pointer<IWalletItemCustomProperty>>** value);
 
         [VtblIndex(57)]
         [Obsolete("IWalletItem is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        HRESULT get_Verbs([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletVerb_t **")] IMap<HSTRING, IntPtr>** value);
+        HRESULT get_Verbs([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletVerb_t **")] IMap<HSTRING, Pointer<IWalletVerb>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -958,11 +958,11 @@ public unsafe partial struct IWalletItem : IWalletItem.Interface, INativeGuid
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletTransaction_t **) __attribute__((stdcall))")]
         [Obsolete("IWalletItem is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, IntPtr>**, int> get_TransactionHistory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, Pointer<IWalletTransaction>>**, int> get_TransactionHistory;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletRelevantLocation_t **) __attribute__((stdcall))")]
         [Obsolete("IWalletItem is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, IntPtr>**, int> get_RelevantLocations;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, Pointer<IWalletRelevantLocation>>**, int> get_RelevantLocations;
 
         [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
         [Obsolete("IWalletItem is deprecated and might not work on all platforms. For more info, see MSDN.")]
@@ -974,10 +974,10 @@ public unsafe partial struct IWalletItem : IWalletItem.Interface, INativeGuid
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletItemCustomProperty_t **) __attribute__((stdcall))")]
         [Obsolete("IWalletItem is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, IntPtr>**, int> get_DisplayProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, Pointer<IWalletItemCustomProperty>>**, int> get_DisplayProperties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CApplicationModel__CWallet__CWalletVerb_t **) __attribute__((stdcall))")]
         [Obsolete("IWalletItem is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, IntPtr>**, int> get_Verbs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, Pointer<IWalletVerb>>**, int> get_Verbs;
     }
 }

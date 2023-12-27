@@ -106,18 +106,18 @@ public unsafe partial struct IBluetoothDevice : IBluetoothDevice.Interface, INat
     /// <include file='IBluetoothDevice.xml' path='doc/member[@name="IBluetoothDevice.get_SdpRecords"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_SdpRecords([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CStreams__CIBuffer_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_SdpRecords([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CStreams__CIBuffer_t **")] IVectorView<Pointer<IBuffer>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice*, IVectorView<IntPtr>**, int>)(lpVtbl[10]))((IBluetoothDevice*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice*, IVectorView<Pointer<IBuffer>>**, int>)(lpVtbl[10]))((IBluetoothDevice*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBluetoothDevice.xml' path='doc/member[@name="IBluetoothDevice.get_RfcommServices"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     [Obsolete("Use GetRfcommServicesAsync instead of RfcommServices.  For more info, see MSDN.")]
-    public HRESULT get_RfcommServices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_RfcommServices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_t **")] IVectorView<Pointer<IRfcommDeviceService>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice*, IVectorView<IntPtr>**, int>)(lpVtbl[11]))((IBluetoothDevice*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice*, IVectorView<Pointer<IRfcommDeviceService>>**, int>)(lpVtbl[11]))((IBluetoothDevice*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBluetoothDevice.xml' path='doc/member[@name="IBluetoothDevice.get_ConnectionStatus"]/*' />
@@ -139,9 +139,9 @@ public unsafe partial struct IBluetoothDevice : IBluetoothDevice.Interface, INat
     /// <include file='IBluetoothDevice.xml' path='doc/member[@name="IBluetoothDevice.add_NameChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_NameChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_NameChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_t *")] ITypedEventHandler<Pointer<IBluetoothDevice>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IBluetoothDevice*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice*, ITypedEventHandler<Pointer<IBluetoothDevice>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IBluetoothDevice*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBluetoothDevice.xml' path='doc/member[@name="IBluetoothDevice.remove_NameChanged"]/*' />
@@ -155,9 +155,9 @@ public unsafe partial struct IBluetoothDevice : IBluetoothDevice.Interface, INat
     /// <include file='IBluetoothDevice.xml' path='doc/member[@name="IBluetoothDevice.add_SdpRecordsChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT add_SdpRecordsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SdpRecordsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_t *")] ITypedEventHandler<Pointer<IBluetoothDevice>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IBluetoothDevice*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice*, ITypedEventHandler<Pointer<IBluetoothDevice>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IBluetoothDevice*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBluetoothDevice.xml' path='doc/member[@name="IBluetoothDevice.remove_SdpRecordsChanged"]/*' />
@@ -171,9 +171,9 @@ public unsafe partial struct IBluetoothDevice : IBluetoothDevice.Interface, INat
     /// <include file='IBluetoothDevice.xml' path='doc/member[@name="IBluetoothDevice.add_ConnectionStatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT add_ConnectionStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ConnectionStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_t *")] ITypedEventHandler<Pointer<IBluetoothDevice>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[18]))((IBluetoothDevice*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice*, ITypedEventHandler<Pointer<IBluetoothDevice>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[18]))((IBluetoothDevice*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBluetoothDevice.xml' path='doc/member[@name="IBluetoothDevice.remove_ConnectionStatusChanged"]/*' />
@@ -199,11 +199,11 @@ public unsafe partial struct IBluetoothDevice : IBluetoothDevice.Interface, INat
         HRESULT get_ClassOfDevice([NativeTypeName("ABI::Windows::Devices::Bluetooth::IBluetoothClassOfDevice **")] IBluetoothClassOfDevice** value);
 
         [VtblIndex(10)]
-        HRESULT get_SdpRecords([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CStreams__CIBuffer_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_SdpRecords([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CStreams__CIBuffer_t **")] IVectorView<Pointer<IBuffer>>** value);
 
         [VtblIndex(11)]
         [Obsolete("Use GetRfcommServicesAsync instead of RfcommServices.  For more info, see MSDN.")]
-        HRESULT get_RfcommServices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_RfcommServices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_t **")] IVectorView<Pointer<IRfcommDeviceService>>** value);
 
         [VtblIndex(12)]
         HRESULT get_ConnectionStatus([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothConnectionStatus *")] BluetoothConnectionStatus* value);
@@ -212,19 +212,19 @@ public unsafe partial struct IBluetoothDevice : IBluetoothDevice.Interface, INat
         HRESULT get_BluetoothAddress([NativeTypeName("UINT64 *")] ulong* value);
 
         [VtblIndex(14)]
-        HRESULT add_NameChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_NameChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_t *")] ITypedEventHandler<Pointer<IBluetoothDevice>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(15)]
         HRESULT remove_NameChanged(EventRegistrationToken token);
 
         [VtblIndex(16)]
-        HRESULT add_SdpRecordsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SdpRecordsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_t *")] ITypedEventHandler<Pointer<IBluetoothDevice>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(17)]
         HRESULT remove_SdpRecordsChanged(EventRegistrationToken token);
 
         [VtblIndex(18)]
-        HRESULT add_ConnectionStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ConnectionStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_t *")] ITypedEventHandler<Pointer<IBluetoothDevice>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(19)]
         HRESULT remove_ConnectionStatusChanged(EventRegistrationToken token);
@@ -264,11 +264,11 @@ public unsafe partial struct IBluetoothDevice : IBluetoothDevice.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, IBluetoothClassOfDevice**, int> get_ClassOfDevice;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CStreams__CIBuffer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_SdpRecords;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IBuffer>>**, int> get_SdpRecords;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceService_t **) __attribute__((stdcall))")]
         [Obsolete("Use GetRfcommServicesAsync instead of RfcommServices.  For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_RfcommServices;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IRfcommDeviceService>>**, int> get_RfcommServices;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Bluetooth::BluetoothConnectionStatus *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothConnectionStatus*, int> get_ConnectionStatus;
@@ -277,19 +277,19 @@ public unsafe partial struct IBluetoothDevice : IBluetoothDevice.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_BluetoothAddress;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_NameChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IBluetoothDevice>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_NameChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_NameChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SdpRecordsChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IBluetoothDevice>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_SdpRecordsChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SdpRecordsChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothDevice_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ConnectionStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IBluetoothDevice>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ConnectionStatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ConnectionStatusChanged;

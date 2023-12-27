@@ -98,9 +98,9 @@ public unsafe partial struct IToastNotification : IToastNotification.Interface, 
     /// <include file='IToastNotification.xml' path='doc/member[@name="IToastNotification.add_Dismissed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_Dismissed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Dismissed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs_t *")] ITypedEventHandler<Pointer<IToastNotification>, Pointer<IToastDismissedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IToastNotification*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IToastNotification*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IToastNotification*, ITypedEventHandler<Pointer<IToastNotification>, Pointer<IToastDismissedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IToastNotification*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IToastNotification.xml' path='doc/member[@name="IToastNotification.remove_Dismissed"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct IToastNotification : IToastNotification.Interface, 
     /// <include file='IToastNotification.xml' path='doc/member[@name="IToastNotification.add_Activated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_Activated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Activated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_IInspectable_t *")] ITypedEventHandler<Pointer<IToastNotification>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IToastNotification*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IToastNotification*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IToastNotification*, ITypedEventHandler<Pointer<IToastNotification>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IToastNotification*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IToastNotification.xml' path='doc/member[@name="IToastNotification.remove_Activated"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IToastNotification : IToastNotification.Interface, 
     /// <include file='IToastNotification.xml' path='doc/member[@name="IToastNotification.add_Failed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_Failed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Failed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs_t *")] ITypedEventHandler<Pointer<IToastNotification>, Pointer<IToastFailedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IToastNotification*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IToastNotification*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IToastNotification*, ITypedEventHandler<Pointer<IToastNotification>, Pointer<IToastFailedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IToastNotification*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IToastNotification.xml' path='doc/member[@name="IToastNotification.remove_Failed"]/*' />
@@ -155,19 +155,19 @@ public unsafe partial struct IToastNotification : IToastNotification.Interface, 
         HRESULT get_ExpirationTime([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CDateTime_t **")] IReference<DateTime>** value);
 
         [VtblIndex(9)]
-        HRESULT add_Dismissed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Dismissed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs_t *")] ITypedEventHandler<Pointer<IToastNotification>, Pointer<IToastDismissedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_Dismissed(EventRegistrationToken token);
 
         [VtblIndex(11)]
-        HRESULT add_Activated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Activated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_IInspectable_t *")] ITypedEventHandler<Pointer<IToastNotification>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_Activated(EventRegistrationToken token);
 
         [VtblIndex(13)]
-        HRESULT add_Failed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Failed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs_t *")] ITypedEventHandler<Pointer<IToastNotification>, Pointer<IToastFailedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_Failed(EventRegistrationToken token);
@@ -204,19 +204,19 @@ public unsafe partial struct IToastNotification : IToastNotification.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, IReference<DateTime>**, int> get_ExpirationTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastDismissedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Dismissed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IToastNotification>, Pointer<IToastDismissedEventArgs>>*, EventRegistrationToken*, int> add_Dismissed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Dismissed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Activated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IToastNotification>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Activated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Activated;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotification_Windows__CUI__CNotifications__CToastFailedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Failed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IToastNotification>, Pointer<IToastFailedEventArgs>>*, EventRegistrationToken*, int> add_Failed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Failed;

@@ -74,15 +74,15 @@ public unsafe partial struct IGattServiceProviderStatics : IGattServiceProviderS
     /// <include file='IGattServiceProviderStatics.xml' path='doc/member[@name="IGattServiceProviderStatics.CreateAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateAsync(Guid serviceUuid, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProviderResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateAsync(Guid serviceUuid, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProviderResult_t **")] IAsyncOperation<Pointer<IGattServiceProviderResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattServiceProviderStatics*, Guid, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IGattServiceProviderStatics*)Unsafe.AsPointer(ref this), serviceUuid, operation);
+        return ((delegate* unmanaged[MemberFunction]<IGattServiceProviderStatics*, Guid, IAsyncOperation<Pointer<IGattServiceProviderResult>>**, int>)(lpVtbl[6]))((IGattServiceProviderStatics*)Unsafe.AsPointer(ref this), serviceUuid, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CreateAsync(Guid serviceUuid, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProviderResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateAsync(Guid serviceUuid, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProviderResult_t **")] IAsyncOperation<Pointer<IGattServiceProviderResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IGattServiceProviderStatics : IGattServiceProviderS
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (GUID, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattServiceProviderResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IAsyncOperation<IntPtr>**, int> CreateAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IAsyncOperation<Pointer<IGattServiceProviderResult>>**, int> CreateAsync;
     }
 }

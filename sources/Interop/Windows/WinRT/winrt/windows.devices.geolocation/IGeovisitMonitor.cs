@@ -98,9 +98,9 @@ public unsafe partial struct IGeovisitMonitor : IGeovisitMonitor.Interface, INat
     /// <include file='IGeovisitMonitor.xml' path='doc/member[@name="IGeovisitMonitor.add_VisitStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_VisitStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeovisitMonitor_Windows__CDevices__CGeolocation__CGeovisitStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_VisitStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeovisitMonitor_Windows__CDevices__CGeolocation__CGeovisitStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGeovisitMonitor>, Pointer<IGeovisitStateChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGeovisitMonitor*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IGeovisitMonitor*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGeovisitMonitor*, ITypedEventHandler<Pointer<IGeovisitMonitor>, Pointer<IGeovisitStateChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IGeovisitMonitor*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGeovisitMonitor.xml' path='doc/member[@name="IGeovisitMonitor.remove_VisitStateChanged"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IGeovisitMonitor : IGeovisitMonitor.Interface, INat
         HRESULT Stop();
 
         [VtblIndex(9)]
-        HRESULT add_VisitStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeovisitMonitor_Windows__CDevices__CGeolocation__CGeovisitStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_VisitStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeovisitMonitor_Windows__CDevices__CGeolocation__CGeovisitStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGeovisitMonitor>, Pointer<IGeovisitStateChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_VisitStateChanged(EventRegistrationToken token);
@@ -160,7 +160,7 @@ public unsafe partial struct IGeovisitMonitor : IGeovisitMonitor.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGeolocation__CGeovisitMonitor_Windows__CDevices__CGeolocation__CGeovisitStateChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_VisitStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGeovisitMonitor>, Pointer<IGeovisitStateChangedEventArgs>>*, EventRegistrationToken*, int> add_VisitStateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_VisitStateChanged;

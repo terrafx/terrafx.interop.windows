@@ -90,9 +90,9 @@ public unsafe partial struct ICoreApplicationView3 : ICoreApplicationView3.Inter
     /// <include file='ICoreApplicationView3.xml' path='doc/member[@name="ICoreApplicationView3.add_HostedViewClosing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_HostedViewClosing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CCore__CHostedViewClosingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_HostedViewClosing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CCore__CHostedViewClosingEventArgs_t *")] ITypedEventHandler<Pointer<ICoreApplicationView>, Pointer<IHostedViewClosingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreApplicationView3*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICoreApplicationView3*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreApplicationView3*, ITypedEventHandler<Pointer<ICoreApplicationView>, Pointer<IHostedViewClosingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICoreApplicationView3*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreApplicationView3.xml' path='doc/member[@name="ICoreApplicationView3.remove_HostedViewClosing"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct ICoreApplicationView3 : ICoreApplicationView3.Inter
         HRESULT get_TitleBar([NativeTypeName("ABI::Windows::ApplicationModel::Core::ICoreApplicationViewTitleBar **")] ICoreApplicationViewTitleBar** value);
 
         [VtblIndex(8)]
-        HRESULT add_HostedViewClosing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CCore__CHostedViewClosingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_HostedViewClosing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CCore__CHostedViewClosingEventArgs_t *")] ITypedEventHandler<Pointer<ICoreApplicationView>, Pointer<IHostedViewClosingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_HostedViewClosing(EventRegistrationToken token);
@@ -146,7 +146,7 @@ public unsafe partial struct ICoreApplicationView3 : ICoreApplicationView3.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, ICoreApplicationViewTitleBar**, int> get_TitleBar;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CCore__CHostedViewClosingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_HostedViewClosing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreApplicationView>, Pointer<IHostedViewClosingEventArgs>>*, EventRegistrationToken*, int> add_HostedViewClosing;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_HostedViewClosing;

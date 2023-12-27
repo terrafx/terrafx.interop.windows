@@ -90,9 +90,9 @@ public unsafe partial struct IKeyboardDeliveryInterceptor : IKeyboardDeliveryInt
     /// <include file='IKeyboardDeliveryInterceptor.xml' path='doc/member[@name="IKeyboardDeliveryInterceptor.add_KeyDown"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_KeyDown([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_KeyDown([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_t *")] ITypedEventHandler<Pointer<IKeyboardDeliveryInterceptor>, Pointer<IKeyEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IKeyboardDeliveryInterceptor*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IKeyboardDeliveryInterceptor*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IKeyboardDeliveryInterceptor*, ITypedEventHandler<Pointer<IKeyboardDeliveryInterceptor>, Pointer<IKeyEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IKeyboardDeliveryInterceptor*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IKeyboardDeliveryInterceptor.xml' path='doc/member[@name="IKeyboardDeliveryInterceptor.remove_KeyDown"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IKeyboardDeliveryInterceptor : IKeyboardDeliveryInt
     /// <include file='IKeyboardDeliveryInterceptor.xml' path='doc/member[@name="IKeyboardDeliveryInterceptor.add_KeyUp"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_KeyUp([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_KeyUp([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_t *")] ITypedEventHandler<Pointer<IKeyboardDeliveryInterceptor>, Pointer<IKeyEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IKeyboardDeliveryInterceptor*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IKeyboardDeliveryInterceptor*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IKeyboardDeliveryInterceptor*, ITypedEventHandler<Pointer<IKeyboardDeliveryInterceptor>, Pointer<IKeyEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IKeyboardDeliveryInterceptor*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IKeyboardDeliveryInterceptor.xml' path='doc/member[@name="IKeyboardDeliveryInterceptor.remove_KeyUp"]/*' />
@@ -128,13 +128,13 @@ public unsafe partial struct IKeyboardDeliveryInterceptor : IKeyboardDeliveryInt
         HRESULT put_IsInterceptionEnabledWhenInForeground([NativeTypeName("boolean")] byte value);
 
         [VtblIndex(8)]
-        HRESULT add_KeyDown([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_KeyDown([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_t *")] ITypedEventHandler<Pointer<IKeyboardDeliveryInterceptor>, Pointer<IKeyEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_KeyDown(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_KeyUp([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_KeyUp([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_t *")] ITypedEventHandler<Pointer<IKeyboardDeliveryInterceptor>, Pointer<IKeyEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_KeyUp(EventRegistrationToken token);
@@ -168,13 +168,13 @@ public unsafe partial struct IKeyboardDeliveryInterceptor : IKeyboardDeliveryInt
         public delegate* unmanaged[MemberFunction]<TSelf*, byte, int> put_IsInterceptionEnabledWhenInForeground;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_KeyDown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IKeyboardDeliveryInterceptor>, Pointer<IKeyEventArgs>>*, EventRegistrationToken*, int> add_KeyDown;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_KeyDown;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CKeyboardDeliveryInterceptor_Windows__CUI__CCore__CKeyEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_KeyUp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IKeyboardDeliveryInterceptor>, Pointer<IKeyEventArgs>>*, EventRegistrationToken*, int> add_KeyUp;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_KeyUp;

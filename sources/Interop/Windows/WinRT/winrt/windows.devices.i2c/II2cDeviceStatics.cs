@@ -90,9 +90,9 @@ public unsafe partial struct II2cDeviceStatics : II2cDeviceStatics.Interface, IN
     /// <include file='II2cDeviceStatics.xml' path='doc/member[@name="II2cDeviceStatics.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Devices::I2c::II2cConnectionSettings *")] II2cConnectionSettings* settings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CI2c__CI2cDevice_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Devices::I2c::II2cConnectionSettings *")] II2cConnectionSettings* settings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CI2c__CI2cDevice_t **")] IAsyncOperation<Pointer<II2cDevice>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<II2cDeviceStatics*, HSTRING, II2cConnectionSettings*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((II2cDeviceStatics*)Unsafe.AsPointer(ref this), deviceId, settings, operation);
+        return ((delegate* unmanaged[MemberFunction]<II2cDeviceStatics*, HSTRING, II2cConnectionSettings*, IAsyncOperation<Pointer<II2cDevice>>**, int>)(lpVtbl[8]))((II2cDeviceStatics*)Unsafe.AsPointer(ref this), deviceId, settings, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct II2cDeviceStatics : II2cDeviceStatics.Interface, IN
         HRESULT GetDeviceSelectorFromFriendlyName(HSTRING friendlyName, HSTRING* value);
 
         [VtblIndex(8)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Devices::I2c::II2cConnectionSettings *")] II2cConnectionSettings* settings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CI2c__CI2cDevice_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Devices::I2c::II2cConnectionSettings *")] II2cConnectionSettings* settings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CI2c__CI2cDevice_t **")] IAsyncOperation<Pointer<II2cDevice>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct II2cDeviceStatics : II2cDeviceStatics.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING*, int> GetDeviceSelectorFromFriendlyName;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Devices::I2c::II2cConnectionSettings *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CI2c__CI2cDevice_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, II2cConnectionSettings*, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, II2cConnectionSettings*, IAsyncOperation<Pointer<II2cDevice>>**, int> FromIdAsync;
     }
 }

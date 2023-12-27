@@ -82,33 +82,33 @@ public unsafe partial struct IBackgroundUploader : IBackgroundUploader.Interface
     /// <include file='IBackgroundUploader.xml' path='doc/member[@name="IBackgroundUploader.CreateUploadFromStreamAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateUploadFromStreamAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* sourceStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateUploadFromStreamAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* sourceStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<Pointer<IUploadOperation>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundUploader*, IUriRuntimeClass*, IInputStream*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IBackgroundUploader*)Unsafe.AsPointer(ref this), uri, sourceStream, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundUploader*, IUriRuntimeClass*, IInputStream*, IAsyncOperation<Pointer<IUploadOperation>>**, int>)(lpVtbl[7]))((IBackgroundUploader*)Unsafe.AsPointer(ref this), uri, sourceStream, operation);
     }
 
     /// <include file='IBackgroundUploader.xml' path='doc/member[@name="IBackgroundUploader.CreateUploadWithFormDataAndAutoBoundaryAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT CreateUploadWithFormDataAndAutoBoundaryAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferContentPart_t *")] IIterable<IntPtr>* parts, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateUploadWithFormDataAndAutoBoundaryAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferContentPart_t *")] IIterable<Pointer<IBackgroundTransferContentPart>>* parts, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<Pointer<IUploadOperation>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundUploader*, IUriRuntimeClass*, IIterable<IntPtr>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IBackgroundUploader*)Unsafe.AsPointer(ref this), uri, parts, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundUploader*, IUriRuntimeClass*, IIterable<Pointer<IBackgroundTransferContentPart>>*, IAsyncOperation<Pointer<IUploadOperation>>**, int>)(lpVtbl[8]))((IBackgroundUploader*)Unsafe.AsPointer(ref this), uri, parts, operation);
     }
 
     /// <include file='IBackgroundUploader.xml' path='doc/member[@name="IBackgroundUploader.CreateUploadWithSubTypeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT CreateUploadWithSubTypeAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferContentPart_t *")] IIterable<IntPtr>* parts, HSTRING subType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateUploadWithSubTypeAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferContentPart_t *")] IIterable<Pointer<IBackgroundTransferContentPart>>* parts, HSTRING subType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<Pointer<IUploadOperation>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundUploader*, IUriRuntimeClass*, IIterable<IntPtr>*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IBackgroundUploader*)Unsafe.AsPointer(ref this), uri, parts, subType, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundUploader*, IUriRuntimeClass*, IIterable<Pointer<IBackgroundTransferContentPart>>*, HSTRING, IAsyncOperation<Pointer<IUploadOperation>>**, int>)(lpVtbl[9]))((IBackgroundUploader*)Unsafe.AsPointer(ref this), uri, parts, subType, operation);
     }
 
     /// <include file='IBackgroundUploader.xml' path='doc/member[@name="IBackgroundUploader.CreateUploadWithSubTypeAndBoundaryAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT CreateUploadWithSubTypeAndBoundaryAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferContentPart_t *")] IIterable<IntPtr>* parts, HSTRING subType, HSTRING boundary, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateUploadWithSubTypeAndBoundaryAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferContentPart_t *")] IIterable<Pointer<IBackgroundTransferContentPart>>* parts, HSTRING subType, HSTRING boundary, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<Pointer<IUploadOperation>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundUploader*, IUriRuntimeClass*, IIterable<IntPtr>*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IBackgroundUploader*)Unsafe.AsPointer(ref this), uri, parts, subType, boundary, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundUploader*, IUriRuntimeClass*, IIterable<Pointer<IBackgroundTransferContentPart>>*, HSTRING, HSTRING, IAsyncOperation<Pointer<IUploadOperation>>**, int>)(lpVtbl[10]))((IBackgroundUploader*)Unsafe.AsPointer(ref this), uri, parts, subType, boundary, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -117,16 +117,16 @@ public unsafe partial struct IBackgroundUploader : IBackgroundUploader.Interface
         HRESULT CreateUpload([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* sourceFile, [NativeTypeName("ABI::Windows::Networking::BackgroundTransfer::IUploadOperation **")] IUploadOperation** operation);
 
         [VtblIndex(7)]
-        HRESULT CreateUploadFromStreamAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* sourceStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateUploadFromStreamAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* sourceStream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<Pointer<IUploadOperation>>** operation);
 
         [VtblIndex(8)]
-        HRESULT CreateUploadWithFormDataAndAutoBoundaryAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferContentPart_t *")] IIterable<IntPtr>* parts, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateUploadWithFormDataAndAutoBoundaryAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferContentPart_t *")] IIterable<Pointer<IBackgroundTransferContentPart>>* parts, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<Pointer<IUploadOperation>>** operation);
 
         [VtblIndex(9)]
-        HRESULT CreateUploadWithSubTypeAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferContentPart_t *")] IIterable<IntPtr>* parts, HSTRING subType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateUploadWithSubTypeAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferContentPart_t *")] IIterable<Pointer<IBackgroundTransferContentPart>>* parts, HSTRING subType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<Pointer<IUploadOperation>>** operation);
 
         [VtblIndex(10)]
-        HRESULT CreateUploadWithSubTypeAndBoundaryAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferContentPart_t *")] IIterable<IntPtr>* parts, HSTRING subType, HSTRING boundary, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateUploadWithSubTypeAndBoundaryAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferContentPart_t *")] IIterable<Pointer<IBackgroundTransferContentPart>>* parts, HSTRING subType, HSTRING boundary, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<Pointer<IUploadOperation>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -154,15 +154,15 @@ public unsafe partial struct IBackgroundUploader : IBackgroundUploader.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IStorageFile*, IUploadOperation**, int> CreateUpload;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Storage::Streams::IInputStream *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IInputStream*, IAsyncOperation<IntPtr>**, int> CreateUploadFromStreamAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IInputStream*, IAsyncOperation<Pointer<IUploadOperation>>**, int> CreateUploadFromStreamAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferContentPart_t *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IIterable<IntPtr>*, IAsyncOperation<IntPtr>**, int> CreateUploadWithFormDataAndAutoBoundaryAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IIterable<Pointer<IBackgroundTransferContentPart>>*, IAsyncOperation<Pointer<IUploadOperation>>**, int> CreateUploadWithFormDataAndAutoBoundaryAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferContentPart_t *, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IIterable<IntPtr>*, HSTRING, IAsyncOperation<IntPtr>**, int> CreateUploadWithSubTypeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IIterable<Pointer<IBackgroundTransferContentPart>>*, HSTRING, IAsyncOperation<Pointer<IUploadOperation>>**, int> CreateUploadWithSubTypeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CNetworking__CBackgroundTransfer__CBackgroundTransferContentPart_t *, HSTRING, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IIterable<IntPtr>*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int> CreateUploadWithSubTypeAndBoundaryAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IIterable<Pointer<IBackgroundTransferContentPart>>*, HSTRING, HSTRING, IAsyncOperation<Pointer<IUploadOperation>>**, int> CreateUploadWithSubTypeAndBoundaryAsync;
     }
 }

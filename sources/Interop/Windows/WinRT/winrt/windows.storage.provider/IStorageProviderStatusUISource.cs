@@ -82,9 +82,9 @@ public unsafe partial struct IStorageProviderStatusUISource : IStorageProviderSt
     /// <include file='IStorageProviderStatusUISource.xml' path='doc/member[@name="IStorageProviderStatusUISource.add_StatusUIChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_StatusUIChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CIStorageProviderStatusUISource_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_StatusUIChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CIStorageProviderStatusUISource_IInspectable_t *")] ITypedEventHandler<Pointer<IStorageProviderStatusUISource>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageProviderStatusUISource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IStorageProviderStatusUISource*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderStatusUISource*, ITypedEventHandler<Pointer<IStorageProviderStatusUISource>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IStorageProviderStatusUISource*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IStorageProviderStatusUISource.xml' path='doc/member[@name="IStorageProviderStatusUISource.remove_StatusUIChanged"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IStorageProviderStatusUISource : IStorageProviderSt
         HRESULT GetStatusUI([NativeTypeName("ABI::Windows::Storage::Provider::IStorageProviderStatusUI **")] IStorageProviderStatusUI** result);
 
         [VtblIndex(7)]
-        HRESULT add_StatusUIChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CIStorageProviderStatusUISource_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_StatusUIChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CIStorageProviderStatusUISource_IInspectable_t *")] ITypedEventHandler<Pointer<IStorageProviderStatusUISource>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_StatusUIChanged(EventRegistrationToken token);
@@ -132,7 +132,7 @@ public unsafe partial struct IStorageProviderStatusUISource : IStorageProviderSt
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageProviderStatusUI**, int> GetStatusUI;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CIStorageProviderStatusUISource_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_StatusUIChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IStorageProviderStatusUISource>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_StatusUIChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StatusUIChanged;

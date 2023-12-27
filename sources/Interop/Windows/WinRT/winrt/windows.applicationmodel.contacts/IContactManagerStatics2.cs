@@ -74,15 +74,15 @@ public unsafe partial struct IContactManagerStatics2 : IContactManagerStatics2.I
     /// <include file='IContactManagerStatics2.xml' path='doc/member[@name="IContactManagerStatics2.RequestStoreAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore_t **")] IAsyncOperation<IntPtr>** store)
+    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore_t **")] IAsyncOperation<Pointer<IContactStore>>** store)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactManagerStatics2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IContactManagerStatics2*)Unsafe.AsPointer(ref this), store);
+        return ((delegate* unmanaged[MemberFunction]<IContactManagerStatics2*, IAsyncOperation<Pointer<IContactStore>>**, int>)(lpVtbl[6]))((IContactManagerStatics2*)Unsafe.AsPointer(ref this), store);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore_t **")] IAsyncOperation<IntPtr>** store);
+        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore_t **")] IAsyncOperation<Pointer<IContactStore>>** store);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IContactManagerStatics2 : IContactManagerStatics2.I
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContactStore_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> RequestStoreAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IContactStore>>**, int> RequestStoreAsync;
     }
 }

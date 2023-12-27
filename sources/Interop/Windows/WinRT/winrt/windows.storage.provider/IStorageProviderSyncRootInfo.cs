@@ -298,9 +298,9 @@ public unsafe partial struct IStorageProviderSyncRootInfo : IStorageProviderSync
     /// <include file='IStorageProviderSyncRootInfo.xml' path='doc/member[@name="IStorageProviderSyncRootInfo.get_StorageProviderItemPropertyDefinitions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
-    public HRESULT get_StorageProviderItemPropertyDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CStorageProviderItemPropertyDefinition_t **")] IVector<IntPtr>** value)
+    public HRESULT get_StorageProviderItemPropertyDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CStorageProviderItemPropertyDefinition_t **")] IVector<Pointer<IStorageProviderItemPropertyDefinition>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageProviderSyncRootInfo*, IVector<IntPtr>**, int>)(lpVtbl[34]))((IStorageProviderSyncRootInfo*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderSyncRootInfo*, IVector<Pointer<IStorageProviderItemPropertyDefinition>>**, int>)(lpVtbl[34]))((IStorageProviderSyncRootInfo*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IStorageProviderSyncRootInfo.xml' path='doc/member[@name="IStorageProviderSyncRootInfo.get_RecycleBinUri"]/*' />
@@ -406,7 +406,7 @@ public unsafe partial struct IStorageProviderSyncRootInfo : IStorageProviderSync
         HRESULT put_AllowPinning([NativeTypeName("boolean")] byte value);
 
         [VtblIndex(34)]
-        HRESULT get_StorageProviderItemPropertyDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CStorageProviderItemPropertyDefinition_t **")] IVector<IntPtr>** value);
+        HRESULT get_StorageProviderItemPropertyDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CStorageProviderItemPropertyDefinition_t **")] IVector<Pointer<IStorageProviderItemPropertyDefinition>>** value);
 
         [VtblIndex(35)]
         HRESULT get_RecycleBinUri([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass **")] IUriRuntimeClass** value);
@@ -521,7 +521,7 @@ public unsafe partial struct IStorageProviderSyncRootInfo : IStorageProviderSync
         public delegate* unmanaged[MemberFunction]<TSelf*, byte, int> put_AllowPinning;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CStorageProviderItemPropertyDefinition_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_StorageProviderItemPropertyDefinitions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IStorageProviderItemPropertyDefinition>>**, int> get_StorageProviderItemPropertyDefinitions;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass**, int> get_RecycleBinUri;
