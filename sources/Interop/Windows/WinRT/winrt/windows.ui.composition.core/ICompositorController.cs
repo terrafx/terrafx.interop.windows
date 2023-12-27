@@ -98,9 +98,9 @@ public unsafe partial struct ICompositorController : ICompositorController.Inter
     /// <include file='ICompositorController.xml' path='doc/member[@name="ICompositorController.add_CommitNeeded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_CommitNeeded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CComposition__CCore__CCompositorController_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_CommitNeeded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CComposition__CCore__CCompositorController_IInspectable_t *")] ITypedEventHandler<Pointer<ICompositorController>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICompositorController*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ICompositorController*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICompositorController*, ITypedEventHandler<Pointer<ICompositorController>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ICompositorController*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICompositorController.xml' path='doc/member[@name="ICompositorController.remove_CommitNeeded"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ICompositorController : ICompositorController.Inter
         HRESULT EnsurePreviousCommitCompletedAsync([NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
 
         [VtblIndex(9)]
-        HRESULT add_CommitNeeded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CComposition__CCore__CCompositorController_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_CommitNeeded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CComposition__CCore__CCompositorController_IInspectable_t *")] ITypedEventHandler<Pointer<ICompositorController>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_CommitNeeded(EventRegistrationToken token);
@@ -160,7 +160,7 @@ public unsafe partial struct ICompositorController : ICompositorController.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncAction**, int> EnsurePreviousCommitCompletedAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CComposition__CCore__CCompositorController_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CommitNeeded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICompositorController>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_CommitNeeded;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CommitNeeded;

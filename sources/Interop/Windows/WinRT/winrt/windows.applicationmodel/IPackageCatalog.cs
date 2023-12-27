@@ -74,9 +74,9 @@ public unsafe partial struct IPackageCatalog : IPackageCatalog.Interface, INativ
     /// <include file='IPackageCatalog.xml' path='doc/member[@name="IPackageCatalog.add_PackageStaging"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_PackageStaging([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStagingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PackageStaging([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStagingEventArgs_t *")] ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageStagingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IPackageCatalog*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog*, ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageStagingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IPackageCatalog*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPackageCatalog.xml' path='doc/member[@name="IPackageCatalog.remove_PackageStaging"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IPackageCatalog : IPackageCatalog.Interface, INativ
     /// <include file='IPackageCatalog.xml' path='doc/member[@name="IPackageCatalog.add_PackageInstalling"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_PackageInstalling([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageInstallingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PackageInstalling([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageInstallingEventArgs_t *")] ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageInstallingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IPackageCatalog*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog*, ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageInstallingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IPackageCatalog*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPackageCatalog.xml' path='doc/member[@name="IPackageCatalog.remove_PackageInstalling"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IPackageCatalog : IPackageCatalog.Interface, INativ
     /// <include file='IPackageCatalog.xml' path='doc/member[@name="IPackageCatalog.add_PackageUpdating"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_PackageUpdating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUpdatingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PackageUpdating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUpdatingEventArgs_t *")] ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageUpdatingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IPackageCatalog*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog*, ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageUpdatingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IPackageCatalog*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPackageCatalog.xml' path='doc/member[@name="IPackageCatalog.remove_PackageUpdating"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IPackageCatalog : IPackageCatalog.Interface, INativ
     /// <include file='IPackageCatalog.xml' path='doc/member[@name="IPackageCatalog.add_PackageUninstalling"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_PackageUninstalling([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUninstallingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PackageUninstalling([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUninstallingEventArgs_t *")] ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageUninstallingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IPackageCatalog*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog*, ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageUninstallingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IPackageCatalog*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPackageCatalog.xml' path='doc/member[@name="IPackageCatalog.remove_PackageUninstalling"]/*' />
@@ -138,9 +138,9 @@ public unsafe partial struct IPackageCatalog : IPackageCatalog.Interface, INativ
     /// <include file='IPackageCatalog.xml' path='doc/member[@name="IPackageCatalog.add_PackageStatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_PackageStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStatusChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PackageStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStatusChangedEventArgs_t *")] ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageStatusChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IPackageCatalog*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog*, ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageStatusChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IPackageCatalog*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPackageCatalog.xml' path='doc/member[@name="IPackageCatalog.remove_PackageStatusChanged"]/*' />
@@ -154,31 +154,31 @@ public unsafe partial struct IPackageCatalog : IPackageCatalog.Interface, INativ
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_PackageStaging([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStagingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PackageStaging([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStagingEventArgs_t *")] ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageStagingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_PackageStaging(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_PackageInstalling([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageInstallingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PackageInstalling([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageInstallingEventArgs_t *")] ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageInstallingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_PackageInstalling(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_PackageUpdating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUpdatingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PackageUpdating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUpdatingEventArgs_t *")] ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageUpdatingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_PackageUpdating(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT add_PackageUninstalling([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUninstallingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PackageUninstalling([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUninstallingEventArgs_t *")] ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageUninstallingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_PackageUninstalling(EventRegistrationToken token);
 
         [VtblIndex(14)]
-        HRESULT add_PackageStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStatusChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PackageStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStatusChangedEventArgs_t *")] ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageStatusChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(15)]
         HRESULT remove_PackageStatusChanged(EventRegistrationToken token);
@@ -206,31 +206,31 @@ public unsafe partial struct IPackageCatalog : IPackageCatalog.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStagingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PackageStaging;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageStagingEventArgs>>*, EventRegistrationToken*, int> add_PackageStaging;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PackageStaging;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageInstallingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PackageInstalling;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageInstallingEventArgs>>*, EventRegistrationToken*, int> add_PackageInstalling;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PackageInstalling;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUpdatingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PackageUpdating;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageUpdatingEventArgs>>*, EventRegistrationToken*, int> add_PackageUpdating;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PackageUpdating;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageUninstallingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PackageUninstalling;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageUninstallingEventArgs>>*, EventRegistrationToken*, int> add_PackageUninstalling;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PackageUninstalling;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageStatusChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PackageStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageStatusChangedEventArgs>>*, EventRegistrationToken*, int> add_PackageStatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PackageStatusChanged;

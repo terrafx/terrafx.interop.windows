@@ -106,17 +106,17 @@ public unsafe partial struct IMediaPlaybackList2 : IMediaPlaybackList2.Interface
     /// <include file='IMediaPlaybackList2.xml' path='doc/member[@name="IMediaPlaybackList2.get_ShuffledItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_ShuffledItems([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_ShuffledItems([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_t **")] IVectorView<Pointer<IMediaPlaybackItem>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackList2*, IVectorView<IntPtr>**, int>)(lpVtbl[10]))((IMediaPlaybackList2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackList2*, IVectorView<Pointer<IMediaPlaybackItem>>**, int>)(lpVtbl[10]))((IMediaPlaybackList2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaPlaybackList2.xml' path='doc/member[@name="IMediaPlaybackList2.SetShuffledItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT SetShuffledItems([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_t *")] IIterable<IntPtr>* value)
+    public HRESULT SetShuffledItems([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_t *")] IIterable<Pointer<IMediaPlaybackItem>>* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackList2*, IIterable<IntPtr>*, int>)(lpVtbl[11]))((IMediaPlaybackList2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackList2*, IIterable<Pointer<IMediaPlaybackItem>>*, int>)(lpVtbl[11]))((IMediaPlaybackList2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -134,10 +134,10 @@ public unsafe partial struct IMediaPlaybackList2 : IMediaPlaybackList2.Interface
         HRESULT put_StartingItem([NativeTypeName("ABI::Windows::Media::Playback::IMediaPlaybackItem *")] IMediaPlaybackItem* value);
 
         [VtblIndex(10)]
-        HRESULT get_ShuffledItems([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_ShuffledItems([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_t **")] IVectorView<Pointer<IMediaPlaybackItem>>** value);
 
         [VtblIndex(11)]
-        HRESULT SetShuffledItems([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_t *")] IIterable<IntPtr>* value);
+        HRESULT SetShuffledItems([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_t *")] IIterable<Pointer<IMediaPlaybackItem>>* value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -174,9 +174,9 @@ public unsafe partial struct IMediaPlaybackList2 : IMediaPlaybackList2.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, IMediaPlaybackItem*, int> put_StartingItem;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_ShuffledItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IMediaPlaybackItem>>**, int> get_ShuffledItems;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_t *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, int> SetShuffledItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IMediaPlaybackItem>>*, int> SetShuffledItems;
     }
 }

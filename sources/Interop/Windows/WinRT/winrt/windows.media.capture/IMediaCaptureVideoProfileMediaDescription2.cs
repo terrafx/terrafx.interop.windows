@@ -82,9 +82,9 @@ public unsafe partial struct IMediaCaptureVideoProfileMediaDescription2 : IMedia
     /// <include file='IMediaCaptureVideoProfileMediaDescription2.xml' path='doc/member[@name="IMediaCaptureVideoProfileMediaDescription2.get_Properties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, IntPtr>** value)
+    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, Pointer<IInspectable>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureVideoProfileMediaDescription2*, IMapView<Guid, IntPtr>**, int>)(lpVtbl[7]))((IMediaCaptureVideoProfileMediaDescription2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureVideoProfileMediaDescription2*, IMapView<Guid, Pointer<IInspectable>>**, int>)(lpVtbl[7]))((IMediaCaptureVideoProfileMediaDescription2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IMediaCaptureVideoProfileMediaDescription2 : IMedia
         HRESULT get_Subtype(HSTRING* value);
 
         [VtblIndex(7)]
-        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, IntPtr>** value);
+        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, Pointer<IInspectable>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IMediaCaptureVideoProfileMediaDescription2 : IMedia
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_Subtype;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<Guid, IntPtr>**, int> get_Properties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<Guid, Pointer<IInspectable>>**, int> get_Properties;
     }
 }

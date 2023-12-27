@@ -106,9 +106,9 @@ public unsafe partial struct IStorageProviderSyncRootManagerStatics : IStoragePr
     /// <include file='IStorageProviderSyncRootManagerStatics.xml' path='doc/member[@name="IStorageProviderSyncRootManagerStatics.GetCurrentSyncRoots"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetCurrentSyncRoots([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CProvider__CStorageProviderSyncRootInfo_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetCurrentSyncRoots([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CProvider__CStorageProviderSyncRootInfo_t **")] IVectorView<Pointer<IStorageProviderSyncRootInfo>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageProviderSyncRootManagerStatics*, IVectorView<IntPtr>**, int>)(lpVtbl[10]))((IStorageProviderSyncRootManagerStatics*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderSyncRootManagerStatics*, IVectorView<Pointer<IStorageProviderSyncRootInfo>>**, int>)(lpVtbl[10]))((IStorageProviderSyncRootManagerStatics*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -126,7 +126,7 @@ public unsafe partial struct IStorageProviderSyncRootManagerStatics : IStoragePr
         HRESULT GetSyncRootInformationForId(HSTRING id, [NativeTypeName("ABI::Windows::Storage::Provider::IStorageProviderSyncRootInfo **")] IStorageProviderSyncRootInfo** result);
 
         [VtblIndex(10)]
-        HRESULT GetCurrentSyncRoots([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CProvider__CStorageProviderSyncRootInfo_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetCurrentSyncRoots([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CProvider__CStorageProviderSyncRootInfo_t **")] IVectorView<Pointer<IStorageProviderSyncRootInfo>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -163,6 +163,6 @@ public unsafe partial struct IStorageProviderSyncRootManagerStatics : IStoragePr
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IStorageProviderSyncRootInfo**, int> GetSyncRootInformationForId;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CStorage__CProvider__CStorageProviderSyncRootInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetCurrentSyncRoots;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IStorageProviderSyncRootInfo>>**, int> GetCurrentSyncRoots;
     }
 }

@@ -162,9 +162,9 @@ public unsafe partial struct IAppBroadcastBackgroundService : IAppBroadcastBackg
     /// <include file='IAppBroadcastBackgroundService.xml' path='doc/member[@name="IAppBroadcastBackgroundService.add_HeartbeatRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT add_HeartbeatRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_Windows__CMedia__CCapture__CAppBroadcastHeartbeatRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_HeartbeatRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_Windows__CMedia__CCapture__CAppBroadcastHeartbeatRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IAppBroadcastBackgroundService>, Pointer<IAppBroadcastHeartbeatRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastBackgroundService*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IAppBroadcastBackgroundService*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastBackgroundService*, ITypedEventHandler<Pointer<IAppBroadcastBackgroundService>, Pointer<IAppBroadcastHeartbeatRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IAppBroadcastBackgroundService*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppBroadcastBackgroundService.xml' path='doc/member[@name="IAppBroadcastBackgroundService.remove_HeartbeatRequested"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IAppBroadcastBackgroundService : IAppBroadcastBackg
         HRESULT TerminateBroadcast([NativeTypeName("ABI::Windows::Media::Capture::AppBroadcastTerminationReason")] AppBroadcastTerminationReason reason, [NativeTypeName("UINT32")] uint providerSpecificReason);
 
         [VtblIndex(17)]
-        HRESULT add_HeartbeatRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_Windows__CMedia__CCapture__CAppBroadcastHeartbeatRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_HeartbeatRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_Windows__CMedia__CCapture__CAppBroadcastHeartbeatRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IAppBroadcastBackgroundService>, Pointer<IAppBroadcastHeartbeatRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(18)]
         HRESULT remove_HeartbeatRequested(EventRegistrationToken token);
@@ -283,7 +283,7 @@ public unsafe partial struct IAppBroadcastBackgroundService : IAppBroadcastBackg
         public delegate* unmanaged[MemberFunction]<TSelf*, AppBroadcastTerminationReason, uint, int> TerminateBroadcast;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundService_Windows__CMedia__CCapture__CAppBroadcastHeartbeatRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_HeartbeatRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastBackgroundService>, Pointer<IAppBroadcastHeartbeatRequestedEventArgs>>*, EventRegistrationToken*, int> add_HeartbeatRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_HeartbeatRequested;

@@ -82,9 +82,9 @@ public unsafe partial struct IUserDeviceAssociationStatics : IUserDeviceAssociat
     /// <include file='IUserDeviceAssociationStatics.xml' path='doc/member[@name="IUserDeviceAssociationStatics.add_UserDeviceAssociationChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_UserDeviceAssociationChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSystem__CUserDeviceAssociationChangedEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_UserDeviceAssociationChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSystem__CUserDeviceAssociationChangedEventArgs_t *")] IEventHandler<Pointer<IUserDeviceAssociationChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserDeviceAssociationStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IUserDeviceAssociationStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IUserDeviceAssociationStatics*, IEventHandler<Pointer<IUserDeviceAssociationChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IUserDeviceAssociationStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IUserDeviceAssociationStatics.xml' path='doc/member[@name="IUserDeviceAssociationStatics.remove_UserDeviceAssociationChanged"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IUserDeviceAssociationStatics : IUserDeviceAssociat
         HRESULT FindUserFromDeviceId(HSTRING deviceId, [NativeTypeName("ABI::Windows::System::IUser **")] IUser** user);
 
         [VtblIndex(7)]
-        HRESULT add_UserDeviceAssociationChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSystem__CUserDeviceAssociationChangedEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_UserDeviceAssociationChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSystem__CUserDeviceAssociationChangedEventArgs_t *")] IEventHandler<Pointer<IUserDeviceAssociationChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_UserDeviceAssociationChanged(EventRegistrationToken token);
@@ -132,7 +132,7 @@ public unsafe partial struct IUserDeviceAssociationStatics : IUserDeviceAssociat
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IUser**, int> FindUserFromDeviceId;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSystem__CUserDeviceAssociationChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_UserDeviceAssociationChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IUserDeviceAssociationChangedEventArgs>>*, EventRegistrationToken*, int> add_UserDeviceAssociationChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_UserDeviceAssociationChanged;

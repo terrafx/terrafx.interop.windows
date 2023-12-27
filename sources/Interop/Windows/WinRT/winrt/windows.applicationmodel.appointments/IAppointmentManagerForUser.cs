@@ -170,9 +170,9 @@ public unsafe partial struct IAppointmentManagerForUser : IAppointmentManagerFor
     /// <include file='IAppointmentManagerForUser.xml' path='doc/member[@name="IAppointmentManagerForUser.RequestStoreAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::AppointmentStoreAccessType")] AppointmentStoreAccessType options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentStore_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::AppointmentStoreAccessType")] AppointmentStoreAccessType options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentStore_t **")] IAsyncOperation<Pointer<IAppointmentStore>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentManagerForUser*, AppointmentStoreAccessType, IAsyncOperation<IntPtr>**, int>)(lpVtbl[18]))((IAppointmentManagerForUser*)Unsafe.AsPointer(ref this), options, result);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentManagerForUser*, AppointmentStoreAccessType, IAsyncOperation<Pointer<IAppointmentStore>>**, int>)(lpVtbl[18]))((IAppointmentManagerForUser*)Unsafe.AsPointer(ref this), options, result);
     }
 
     /// <include file='IAppointmentManagerForUser.xml' path='doc/member[@name="IAppointmentManagerForUser.get_User"]/*' />
@@ -222,7 +222,7 @@ public unsafe partial struct IAppointmentManagerForUser : IAppointmentManagerFor
         HRESULT ShowEditNewAppointmentAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::IAppointment *")] IAppointment* appointment, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **")] IAsyncOperation<HSTRING>** result);
 
         [VtblIndex(18)]
-        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::AppointmentStoreAccessType")] AppointmentStoreAccessType options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentStore_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Appointments::AppointmentStoreAccessType")] AppointmentStoreAccessType options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentStore_t **")] IAsyncOperation<Pointer<IAppointmentStore>>** result);
 
         [VtblIndex(19)]
         HRESULT get_User([NativeTypeName("ABI::Windows::System::IUser **")] IUser** value);
@@ -286,7 +286,7 @@ public unsafe partial struct IAppointmentManagerForUser : IAppointmentManagerFor
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppointment*, IAsyncOperation<HSTRING>**, int> ShowEditNewAppointmentAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Appointments::AppointmentStoreAccessType, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppointments__CAppointmentStore_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, AppointmentStoreAccessType, IAsyncOperation<IntPtr>**, int> RequestStoreAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AppointmentStoreAccessType, IAsyncOperation<Pointer<IAppointmentStore>>**, int> RequestStoreAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IUser **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IUser**, int> get_User;

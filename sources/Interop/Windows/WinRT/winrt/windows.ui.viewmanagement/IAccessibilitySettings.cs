@@ -90,9 +90,9 @@ public unsafe partial struct IAccessibilitySettings : IAccessibilitySettings.Int
     /// <include file='IAccessibilitySettings.xml' path='doc/member[@name="IAccessibilitySettings.add_HighContrastChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_HighContrastChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CAccessibilitySettings_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_HighContrastChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CAccessibilitySettings_IInspectable_t *")] ITypedEventHandler<Pointer<IAccessibilitySettings>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAccessibilitySettings*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IAccessibilitySettings*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IAccessibilitySettings*, ITypedEventHandler<Pointer<IAccessibilitySettings>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IAccessibilitySettings*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IAccessibilitySettings.xml' path='doc/member[@name="IAccessibilitySettings.remove_HighContrastChanged"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct IAccessibilitySettings : IAccessibilitySettings.Int
         HRESULT get_HighContrastScheme(HSTRING* value);
 
         [VtblIndex(8)]
-        HRESULT add_HighContrastChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CAccessibilitySettings_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_HighContrastChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CAccessibilitySettings_IInspectable_t *")] ITypedEventHandler<Pointer<IAccessibilitySettings>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(9)]
         HRESULT remove_HighContrastChanged(EventRegistrationToken cookie);
@@ -146,7 +146,7 @@ public unsafe partial struct IAccessibilitySettings : IAccessibilitySettings.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_HighContrastScheme;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CAccessibilitySettings_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_HighContrastChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAccessibilitySettings>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_HighContrastChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_HighContrastChanged;

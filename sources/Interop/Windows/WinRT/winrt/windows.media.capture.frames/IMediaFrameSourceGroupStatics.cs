@@ -74,17 +74,17 @@ public unsafe partial struct IMediaFrameSourceGroupStatics : IMediaFrameSourceGr
     /// <include file='IMediaFrameSourceGroupStatics.xml' path='doc/member[@name="IMediaFrameSourceGroupStatics.FindAllAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IMediaFrameSourceGroup>>>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSourceGroupStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IMediaFrameSourceGroupStatics*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSourceGroupStatics*, IAsyncOperation<Pointer<IVectorView<Pointer<IMediaFrameSourceGroup>>>>**, int>)(lpVtbl[6]))((IMediaFrameSourceGroupStatics*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaFrameSourceGroupStatics.xml' path='doc/member[@name="IMediaFrameSourceGroupStatics.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FromIdAsync(HSTRING id, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT FromIdAsync(HSTRING id, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_t **")] IAsyncOperation<Pointer<IMediaFrameSourceGroup>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSourceGroupStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IMediaFrameSourceGroupStatics*)Unsafe.AsPointer(ref this), id, value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSourceGroupStatics*, HSTRING, IAsyncOperation<Pointer<IMediaFrameSourceGroup>>**, int>)(lpVtbl[7]))((IMediaFrameSourceGroupStatics*)Unsafe.AsPointer(ref this), id, value);
     }
 
     /// <include file='IMediaFrameSourceGroupStatics.xml' path='doc/member[@name="IMediaFrameSourceGroupStatics.GetDeviceSelector"]/*' />
@@ -98,10 +98,10 @@ public unsafe partial struct IMediaFrameSourceGroupStatics : IMediaFrameSourceGr
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IMediaFrameSourceGroup>>>>** value);
 
         [VtblIndex(7)]
-        HRESULT FromIdAsync(HSTRING id, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT FromIdAsync(HSTRING id, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_t **")] IAsyncOperation<Pointer<IMediaFrameSourceGroup>>** value);
 
         [VtblIndex(8)]
         HRESULT GetDeviceSelector(HSTRING* value);
@@ -129,10 +129,10 @@ public unsafe partial struct IMediaFrameSourceGroupStatics : IMediaFrameSourceGr
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindAllAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IMediaFrameSourceGroup>>>>**, int> FindAllAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGroup_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IMediaFrameSourceGroup>>**, int> FromIdAsync;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetDeviceSelector;

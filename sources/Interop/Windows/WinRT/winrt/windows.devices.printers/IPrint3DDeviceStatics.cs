@@ -74,9 +74,9 @@ public unsafe partial struct IPrint3DDeviceStatics : IPrint3DDeviceStatics.Inter
     /// <include file='IPrint3DDeviceStatics.xml' path='doc/member[@name="IPrint3DDeviceStatics.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPrinters__CPrint3DDevice_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPrinters__CPrint3DDevice_t **")] IAsyncOperation<Pointer<IPrint3DDevice>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPrint3DDeviceStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IPrint3DDeviceStatics*)Unsafe.AsPointer(ref this), deviceId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IPrint3DDeviceStatics*, HSTRING, IAsyncOperation<Pointer<IPrint3DDevice>>**, int>)(lpVtbl[6]))((IPrint3DDeviceStatics*)Unsafe.AsPointer(ref this), deviceId, operation);
     }
 
     /// <include file='IPrint3DDeviceStatics.xml' path='doc/member[@name="IPrint3DDeviceStatics.GetDeviceSelector"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IPrint3DDeviceStatics : IPrint3DDeviceStatics.Inter
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPrinters__CPrint3DDevice_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPrinters__CPrint3DDevice_t **")] IAsyncOperation<Pointer<IPrint3DDevice>>** operation);
 
         [VtblIndex(7)]
         HRESULT GetDeviceSelector(HSTRING* result);
@@ -118,7 +118,7 @@ public unsafe partial struct IPrint3DDeviceStatics : IPrint3DDeviceStatics.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPrinters__CPrint3DDevice_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IPrint3DDevice>>**, int> FromIdAsync;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetDeviceSelector;

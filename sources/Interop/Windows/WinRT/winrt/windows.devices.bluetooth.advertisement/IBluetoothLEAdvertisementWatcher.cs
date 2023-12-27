@@ -178,9 +178,9 @@ public unsafe partial struct IBluetoothLEAdvertisementWatcher : IBluetoothLEAdve
     /// <include file='IBluetoothLEAdvertisementWatcher.xml' path='doc/member[@name="IBluetoothLEAdvertisementWatcher.add_Received"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT add_Received([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Received([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IBluetoothLEAdvertisementWatcher>, Pointer<IBluetoothLEAdvertisementReceivedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisementWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[19]))((IBluetoothLEAdvertisementWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisementWatcher*, ITypedEventHandler<Pointer<IBluetoothLEAdvertisementWatcher>, Pointer<IBluetoothLEAdvertisementReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[19]))((IBluetoothLEAdvertisementWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBluetoothLEAdvertisementWatcher.xml' path='doc/member[@name="IBluetoothLEAdvertisementWatcher.remove_Received"]/*' />
@@ -194,9 +194,9 @@ public unsafe partial struct IBluetoothLEAdvertisementWatcher : IBluetoothLEAdve
     /// <include file='IBluetoothLEAdvertisementWatcher.xml' path='doc/member[@name="IBluetoothLEAdvertisementWatcher.add_Stopped"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcherStoppedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcherStoppedEventArgs_t *")] ITypedEventHandler<Pointer<IBluetoothLEAdvertisementWatcher>, Pointer<IBluetoothLEAdvertisementWatcherStoppedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisementWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[21]))((IBluetoothLEAdvertisementWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisementWatcher*, ITypedEventHandler<Pointer<IBluetoothLEAdvertisementWatcher>, Pointer<IBluetoothLEAdvertisementWatcherStoppedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[21]))((IBluetoothLEAdvertisementWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBluetoothLEAdvertisementWatcher.xml' path='doc/member[@name="IBluetoothLEAdvertisementWatcher.remove_Stopped"]/*' />
@@ -249,13 +249,13 @@ public unsafe partial struct IBluetoothLEAdvertisementWatcher : IBluetoothLEAdve
         HRESULT Stop();
 
         [VtblIndex(19)]
-        HRESULT add_Received([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Received([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IBluetoothLEAdvertisementWatcher>, Pointer<IBluetoothLEAdvertisementReceivedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(20)]
         HRESULT remove_Received(EventRegistrationToken token);
 
         [VtblIndex(21)]
-        HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcherStoppedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcherStoppedEventArgs_t *")] ITypedEventHandler<Pointer<IBluetoothLEAdvertisementWatcher>, Pointer<IBluetoothLEAdvertisementWatcherStoppedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(22)]
         HRESULT remove_Stopped(EventRegistrationToken token);
@@ -322,13 +322,13 @@ public unsafe partial struct IBluetoothLEAdvertisementWatcher : IBluetoothLEAdve
         public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Received;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IBluetoothLEAdvertisementWatcher>, Pointer<IBluetoothLEAdvertisementReceivedEventArgs>>*, EventRegistrationToken*, int> add_Received;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Received;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementWatcherStoppedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Stopped;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IBluetoothLEAdvertisementWatcher>, Pointer<IBluetoothLEAdvertisementWatcherStoppedEventArgs>>*, EventRegistrationToken*, int> add_Stopped;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Stopped;

@@ -106,9 +106,9 @@ public unsafe partial struct IPinnedContactManager : IPinnedContactManager.Inter
     /// <include file='IPinnedContactManager.xml' path='doc/member[@name="IPinnedContactManager.RequestPinContactsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT RequestPinContactsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CContacts__CContact_t *")] IIterable<IntPtr>* contacts, [NativeTypeName("ABI::Windows::ApplicationModel::Contacts::PinnedContactSurface")] PinnedContactSurface surface, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation)
+    public HRESULT RequestPinContactsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CContacts__CContact_t *")] IIterable<Pointer<IContact>>* contacts, [NativeTypeName("ABI::Windows::ApplicationModel::Contacts::PinnedContactSurface")] PinnedContactSurface surface, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPinnedContactManager*, IIterable<IntPtr>*, PinnedContactSurface, IAsyncOperation<bool>**, int>)(lpVtbl[10]))((IPinnedContactManager*)Unsafe.AsPointer(ref this), contacts, surface, operation);
+        return ((delegate* unmanaged[MemberFunction]<IPinnedContactManager*, IIterable<Pointer<IContact>>*, PinnedContactSurface, IAsyncOperation<bool>**, int>)(lpVtbl[10]))((IPinnedContactManager*)Unsafe.AsPointer(ref this), contacts, surface, operation);
     }
 
     /// <include file='IPinnedContactManager.xml' path='doc/member[@name="IPinnedContactManager.RequestUnpinContactAsync"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IPinnedContactManager : IPinnedContactManager.Inter
     /// <include file='IPinnedContactManager.xml' path='doc/member[@name="IPinnedContactManager.GetPinnedContactIdsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetPinnedContactIdsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetPinnedContactIdsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_t **")] IAsyncOperation<Pointer<IPinnedContactIdsQueryResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPinnedContactManager*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[13]))((IPinnedContactManager*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IPinnedContactManager*, IAsyncOperation<Pointer<IPinnedContactIdsQueryResult>>**, int>)(lpVtbl[13]))((IPinnedContactManager*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -150,7 +150,7 @@ public unsafe partial struct IPinnedContactManager : IPinnedContactManager.Inter
         HRESULT RequestPinContactAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("ABI::Windows::ApplicationModel::Contacts::PinnedContactSurface")] PinnedContactSurface surface, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
 
         [VtblIndex(10)]
-        HRESULT RequestPinContactsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CContacts__CContact_t *")] IIterable<IntPtr>* contacts, [NativeTypeName("ABI::Windows::ApplicationModel::Contacts::PinnedContactSurface")] PinnedContactSurface surface, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
+        HRESULT RequestPinContactsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CContacts__CContact_t *")] IIterable<Pointer<IContact>>* contacts, [NativeTypeName("ABI::Windows::ApplicationModel::Contacts::PinnedContactSurface")] PinnedContactSurface surface, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
 
         [VtblIndex(11)]
         HRESULT RequestUnpinContactAsync([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact, [NativeTypeName("ABI::Windows::ApplicationModel::Contacts::PinnedContactSurface")] PinnedContactSurface surface, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
@@ -159,7 +159,7 @@ public unsafe partial struct IPinnedContactManager : IPinnedContactManager.Inter
         HRESULT SignalContactActivity([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::IContact *")] IContact* contact);
 
         [VtblIndex(13)]
-        HRESULT GetPinnedContactIdsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetPinnedContactIdsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_t **")] IAsyncOperation<Pointer<IPinnedContactIdsQueryResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -196,7 +196,7 @@ public unsafe partial struct IPinnedContactManager : IPinnedContactManager.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, IContact*, PinnedContactSurface, IAsyncOperation<bool>**, int> RequestPinContactAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CContacts__CContact_t *, ABI::Windows::ApplicationModel::Contacts::PinnedContactSurface, ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, PinnedContactSurface, IAsyncOperation<bool>**, int> RequestPinContactsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IContact>>*, PinnedContactSurface, IAsyncOperation<bool>**, int> RequestPinContactsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Contacts::IContact *, ABI::Windows::ApplicationModel::Contacts::PinnedContactSurface, ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IContact*, PinnedContactSurface, IAsyncOperation<bool>**, int> RequestUnpinContactAsync;
@@ -205,6 +205,6 @@ public unsafe partial struct IPinnedContactManager : IPinnedContactManager.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, IContact*, int> SignalContactActivity;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CPinnedContactIdsQueryResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetPinnedContactIdsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IPinnedContactIdsQueryResult>>**, int> GetPinnedContactIdsAsync;
     }
 }

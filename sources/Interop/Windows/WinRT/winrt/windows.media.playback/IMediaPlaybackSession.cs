@@ -74,9 +74,9 @@ public unsafe partial struct IMediaPlaybackSession : IMediaPlaybackSession.Inter
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.add_PlaybackStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_PlaybackStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_PlaybackStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.remove_PlaybackStateChanged"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IMediaPlaybackSession : IMediaPlaybackSession.Inter
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.add_PlaybackRateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_PlaybackRateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_PlaybackRateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.remove_PlaybackRateChanged"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IMediaPlaybackSession : IMediaPlaybackSession.Inter
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.add_SeekCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_SeekCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_SeekCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.remove_SeekCompleted"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IMediaPlaybackSession : IMediaPlaybackSession.Inter
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.add_BufferingStarted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_BufferingStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_BufferingStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.remove_BufferingStarted"]/*' />
@@ -138,9 +138,9 @@ public unsafe partial struct IMediaPlaybackSession : IMediaPlaybackSession.Inter
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.add_BufferingEnded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_BufferingEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_BufferingEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.remove_BufferingEnded"]/*' />
@@ -154,9 +154,9 @@ public unsafe partial struct IMediaPlaybackSession : IMediaPlaybackSession.Inter
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.add_BufferingProgressChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT add_BufferingProgressChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_BufferingProgressChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.remove_BufferingProgressChanged"]/*' />
@@ -170,9 +170,9 @@ public unsafe partial struct IMediaPlaybackSession : IMediaPlaybackSession.Inter
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.add_DownloadProgressChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT add_DownloadProgressChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_DownloadProgressChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[18]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[18]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.remove_DownloadProgressChanged"]/*' />
@@ -186,9 +186,9 @@ public unsafe partial struct IMediaPlaybackSession : IMediaPlaybackSession.Inter
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.add_NaturalDurationChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT add_NaturalDurationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_NaturalDurationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[20]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[20]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.remove_NaturalDurationChanged"]/*' />
@@ -202,9 +202,9 @@ public unsafe partial struct IMediaPlaybackSession : IMediaPlaybackSession.Inter
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.add_PositionChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT add_PositionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_PositionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[22]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[22]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.remove_PositionChanged"]/*' />
@@ -218,9 +218,9 @@ public unsafe partial struct IMediaPlaybackSession : IMediaPlaybackSession.Inter
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.add_NaturalVideoSizeChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
-    public HRESULT add_NaturalVideoSizeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_NaturalVideoSizeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[24]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackSession*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[24]))((IMediaPlaybackSession*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlaybackSession.xml' path='doc/member[@name="IMediaPlaybackSession.remove_NaturalVideoSizeChanged"]/*' />
@@ -378,61 +378,61 @@ public unsafe partial struct IMediaPlaybackSession : IMediaPlaybackSession.Inter
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_PlaybackStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_PlaybackStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_PlaybackStateChanged(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_PlaybackRateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_PlaybackRateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_PlaybackRateChanged(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_SeekCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_SeekCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_SeekCompleted(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT add_BufferingStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_BufferingStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_BufferingStarted(EventRegistrationToken token);
 
         [VtblIndex(14)]
-        HRESULT add_BufferingEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_BufferingEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(15)]
         HRESULT remove_BufferingEnded(EventRegistrationToken token);
 
         [VtblIndex(16)]
-        HRESULT add_BufferingProgressChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_BufferingProgressChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(17)]
         HRESULT remove_BufferingProgressChanged(EventRegistrationToken token);
 
         [VtblIndex(18)]
-        HRESULT add_DownloadProgressChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_DownloadProgressChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(19)]
         HRESULT remove_DownloadProgressChanged(EventRegistrationToken token);
 
         [VtblIndex(20)]
-        HRESULT add_NaturalDurationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_NaturalDurationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(21)]
         HRESULT remove_NaturalDurationChanged(EventRegistrationToken token);
 
         [VtblIndex(22)]
-        HRESULT add_PositionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_PositionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(23)]
         HRESULT remove_PositionChanged(EventRegistrationToken token);
 
         [VtblIndex(24)]
-        HRESULT add_NaturalVideoSizeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_NaturalVideoSizeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(25)]
         HRESULT remove_NaturalVideoSizeChanged(EventRegistrationToken token);
@@ -514,61 +514,61 @@ public unsafe partial struct IMediaPlaybackSession : IMediaPlaybackSession.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PlaybackStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_PlaybackStateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PlaybackStateChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PlaybackRateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_PlaybackRateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PlaybackRateChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SeekCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_SeekCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SeekCompleted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_BufferingStarted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_BufferingStarted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_BufferingStarted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_BufferingEnded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_BufferingEnded;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_BufferingEnded;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_BufferingProgressChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_BufferingProgressChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_BufferingProgressChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DownloadProgressChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_DownloadProgressChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DownloadProgressChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_NaturalDurationChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_NaturalDurationChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_NaturalDurationChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PositionChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_PositionChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PositionChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackSession_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_NaturalVideoSizeChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_NaturalVideoSizeChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_NaturalVideoSizeChanged;

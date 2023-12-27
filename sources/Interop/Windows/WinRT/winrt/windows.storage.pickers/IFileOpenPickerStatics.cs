@@ -75,16 +75,16 @@ public unsafe partial struct IFileOpenPickerStatics : IFileOpenPickerStatics.Int
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [Obsolete("Instead, use PickSingleFileAsync")]
-    public HRESULT ResumePickSingleFileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT ResumePickSingleFileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileOpenPickerStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IFileOpenPickerStatics*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IFileOpenPickerStatics*, IAsyncOperation<Pointer<IStorageFile>>**, int>)(lpVtbl[6]))((IFileOpenPickerStatics*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
         [Obsolete("Instead, use PickSingleFileAsync")]
-        HRESULT ResumePickSingleFileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT ResumePickSingleFileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -110,6 +110,6 @@ public unsafe partial struct IFileOpenPickerStatics : IFileOpenPickerStatics.Int
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
         [Obsolete("Instead, use PickSingleFileAsync")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> ResumePickSingleFileAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IStorageFile>>**, int> ResumePickSingleFileAsync;
     }
 }

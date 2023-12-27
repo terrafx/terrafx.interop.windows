@@ -74,15 +74,15 @@ public unsafe partial struct ISpeechRecognitionSemanticInterpretation : ISpeechR
     /// <include file='ISpeechRecognitionSemanticInterpretation.xml' path='doc/member[@name="ISpeechRecognitionSemanticInterpretation.get_Properties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING___FIVectorView_1_HSTRING_t **")] IMapView<HSTRING, IntPtr>** value)
+    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING___FIVectorView_1_HSTRING_t **")] IMapView<HSTRING, Pointer<IVectorView<HSTRING>>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognitionSemanticInterpretation*, IMapView<HSTRING, IntPtr>**, int>)(lpVtbl[6]))((ISpeechRecognitionSemanticInterpretation*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognitionSemanticInterpretation*, IMapView<HSTRING, Pointer<IVectorView<HSTRING>>>**, int>)(lpVtbl[6]))((ISpeechRecognitionSemanticInterpretation*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING___FIVectorView_1_HSTRING_t **")] IMapView<HSTRING, IntPtr>** value);
+        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING___FIVectorView_1_HSTRING_t **")] IMapView<HSTRING, Pointer<IVectorView<HSTRING>>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ISpeechRecognitionSemanticInterpretation : ISpeechR
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING___FIVectorView_1_HSTRING_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, IntPtr>**, int> get_Properties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, Pointer<IVectorView<HSTRING>>>**, int> get_Properties;
     }
 }

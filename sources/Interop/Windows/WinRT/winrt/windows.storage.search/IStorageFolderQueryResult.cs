@@ -74,26 +74,26 @@ public unsafe partial struct IStorageFolderQueryResult : IStorageFolderQueryResu
     /// <include file='IStorageFolderQueryResult.xml' path='doc/member[@name="IStorageFolderQueryResult.GetFoldersAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetFoldersAsync([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxNumberOfItems, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetFoldersAsync([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxNumberOfItems, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolderQueryResult*, uint, uint, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStorageFolderQueryResult*)Unsafe.AsPointer(ref this), startIndex, maxNumberOfItems, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolderQueryResult*, uint, uint, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>**, int>)(lpVtbl[6]))((IStorageFolderQueryResult*)Unsafe.AsPointer(ref this), startIndex, maxNumberOfItems, operation);
     }
 
     /// <include file='IStorageFolderQueryResult.xml' path='doc/member[@name="IStorageFolderQueryResult.GetFoldersAsyncDefaultStartAndCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetFoldersAsyncDefaultStartAndCount([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetFoldersAsyncDefaultStartAndCount([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolderQueryResult*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IStorageFolderQueryResult*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolderQueryResult*, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>**, int>)(lpVtbl[7]))((IStorageFolderQueryResult*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetFoldersAsync([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxNumberOfItems, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetFoldersAsync([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxNumberOfItems, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>** operation);
 
         [VtblIndex(7)]
-        HRESULT GetFoldersAsyncDefaultStartAndCount([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetFoldersAsyncDefaultStartAndCount([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IStorageFolderQueryResult : IStorageFolderQueryResu
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (UINT32, UINT32, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IAsyncOperation<IntPtr>**, int> GetFoldersAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>**, int> GetFoldersAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetFoldersAsyncDefaultStartAndCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>**, int> GetFoldersAsyncDefaultStartAndCount;
     }
 }

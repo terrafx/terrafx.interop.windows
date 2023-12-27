@@ -106,9 +106,9 @@ public unsafe partial struct IStorageItem : IStorageItem.Interface, INativeGuid
     /// <include file='IStorageItem.xml' path='doc/member[@name="IStorageItem.GetBasicPropertiesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetBasicPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CBasicProperties_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetBasicPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CBasicProperties_t **")] IAsyncOperation<Pointer<IBasicProperties>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageItem*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IStorageItem*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageItem*, IAsyncOperation<Pointer<IBasicProperties>>**, int>)(lpVtbl[10]))((IStorageItem*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IStorageItem.xml' path='doc/member[@name="IStorageItem.get_Name"]/*' />
@@ -166,7 +166,7 @@ public unsafe partial struct IStorageItem : IStorageItem.Interface, INativeGuid
         HRESULT DeleteAsync([NativeTypeName("ABI::Windows::Storage::StorageDeleteOption")] StorageDeleteOption option, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
 
         [VtblIndex(10)]
-        HRESULT GetBasicPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CBasicProperties_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetBasicPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CBasicProperties_t **")] IAsyncOperation<Pointer<IBasicProperties>>** operation);
 
         [VtblIndex(11)]
         HRESULT get_Name(HSTRING* value);
@@ -218,7 +218,7 @@ public unsafe partial struct IStorageItem : IStorageItem.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, StorageDeleteOption, IAsyncAction**, int> DeleteAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CBasicProperties_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetBasicPropertiesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IBasicProperties>>**, int> GetBasicPropertiesAsync;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_Name;

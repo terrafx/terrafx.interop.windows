@@ -138,9 +138,9 @@ public unsafe partial struct IHttpContentDispositionHeaderValue : IHttpContentDi
     /// <include file='IHttpContentDispositionHeaderValue.xml' path='doc/member[@name="IHttpContentDispositionHeaderValue.get_Parameters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_Parameters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Parameters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **")] IVector<Pointer<IHttpNameValueHeaderValue>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpContentDispositionHeaderValue*, IVector<IntPtr>**, int>)(lpVtbl[14]))((IHttpContentDispositionHeaderValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IHttpContentDispositionHeaderValue*, IVector<Pointer<IHttpNameValueHeaderValue>>**, int>)(lpVtbl[14]))((IHttpContentDispositionHeaderValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IHttpContentDispositionHeaderValue.xml' path='doc/member[@name="IHttpContentDispositionHeaderValue.get_Size"]/*' />
@@ -186,7 +186,7 @@ public unsafe partial struct IHttpContentDispositionHeaderValue : IHttpContentDi
         HRESULT put_Name(HSTRING value);
 
         [VtblIndex(14)]
-        HRESULT get_Parameters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **")] IVector<IntPtr>** value);
+        HRESULT get_Parameters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **")] IVector<Pointer<IHttpNameValueHeaderValue>>** value);
 
         [VtblIndex(15)]
         HRESULT get_Size([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_UINT64_t **")] IReference<ulong>** value);
@@ -241,7 +241,7 @@ public unsafe partial struct IHttpContentDispositionHeaderValue : IHttpContentDi
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_Name;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Parameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IHttpNameValueHeaderValue>>**, int> get_Parameters;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIReference_1_UINT64_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IReference<ulong>**, int> get_Size;

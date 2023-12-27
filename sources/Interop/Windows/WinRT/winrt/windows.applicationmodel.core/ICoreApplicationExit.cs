@@ -82,9 +82,9 @@ public unsafe partial struct ICoreApplicationExit : ICoreApplicationExit.Interfa
     /// <include file='ICoreApplicationExit.xml' path='doc/member[@name="ICoreApplicationExit.add_Exiting"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_Exiting([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Exiting([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreApplicationExit*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ICoreApplicationExit*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreApplicationExit*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ICoreApplicationExit*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreApplicationExit.xml' path='doc/member[@name="ICoreApplicationExit.remove_Exiting"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct ICoreApplicationExit : ICoreApplicationExit.Interfa
         HRESULT Exit();
 
         [VtblIndex(7)]
-        HRESULT add_Exiting([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Exiting([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_Exiting(EventRegistrationToken token);
@@ -132,7 +132,7 @@ public unsafe partial struct ICoreApplicationExit : ICoreApplicationExit.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, int> Exit;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_Exiting;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Exiting;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Exiting;

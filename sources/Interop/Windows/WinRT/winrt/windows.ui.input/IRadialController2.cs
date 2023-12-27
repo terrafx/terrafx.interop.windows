@@ -74,9 +74,9 @@ public unsafe partial struct IRadialController2 : IRadialController2.Interface, 
     /// <include file='IRadialController2.xml' path='doc/member[@name="IRadialController2.add_ButtonPressed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_ButtonPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ButtonPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerButtonPressedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRadialController2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IRadialController2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IRadialController2*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerButtonPressedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IRadialController2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IRadialController2.xml' path='doc/member[@name="IRadialController2.remove_ButtonPressed"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IRadialController2 : IRadialController2.Interface, 
     /// <include file='IRadialController2.xml' path='doc/member[@name="IRadialController2.add_ButtonHolding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_ButtonHolding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ButtonHolding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerButtonHoldingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRadialController2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IRadialController2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IRadialController2*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerButtonHoldingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IRadialController2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IRadialController2.xml' path='doc/member[@name="IRadialController2.remove_ButtonHolding"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IRadialController2 : IRadialController2.Interface, 
     /// <include file='IRadialController2.xml' path='doc/member[@name="IRadialController2.add_ButtonReleased"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_ButtonReleased([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ButtonReleased([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerButtonReleasedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRadialController2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IRadialController2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IRadialController2*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerButtonReleasedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IRadialController2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IRadialController2.xml' path='doc/member[@name="IRadialController2.remove_ButtonReleased"]/*' />
@@ -122,19 +122,19 @@ public unsafe partial struct IRadialController2 : IRadialController2.Interface, 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_ButtonPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ButtonPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerButtonPressedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_ButtonPressed(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_ButtonHolding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ButtonHolding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerButtonHoldingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_ButtonHolding(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_ButtonReleased([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ButtonReleased([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerButtonReleasedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_ButtonReleased(EventRegistrationToken token);
@@ -162,19 +162,19 @@ public unsafe partial struct IRadialController2 : IRadialController2.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonPressedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ButtonPressed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerButtonPressedEventArgs>>*, EventRegistrationToken*, int> add_ButtonPressed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ButtonPressed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonHoldingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ButtonHolding;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerButtonHoldingEventArgs>>*, EventRegistrationToken*, int> add_ButtonHolding;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ButtonHolding;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonReleasedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ButtonReleased;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerButtonReleasedEventArgs>>*, EventRegistrationToken*, int> add_ButtonReleased;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ButtonReleased;

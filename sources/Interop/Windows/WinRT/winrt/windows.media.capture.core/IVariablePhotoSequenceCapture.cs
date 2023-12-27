@@ -98,9 +98,9 @@ public unsafe partial struct IVariablePhotoSequenceCapture : IVariablePhotoSeque
     /// <include file='IVariablePhotoSequenceCapture.xml' path='doc/member[@name="IVariablePhotoSequenceCapture.add_PhotoCaptured"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_PhotoCaptured([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CCore__CVariablePhotoSequenceCapture_Windows__CMedia__CCapture__CCore__CVariablePhotoCapturedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PhotoCaptured([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CCore__CVariablePhotoSequenceCapture_Windows__CMedia__CCapture__CCore__CVariablePhotoCapturedEventArgs_t *")] ITypedEventHandler<Pointer<IVariablePhotoSequenceCapture>, Pointer<IVariablePhotoCapturedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IVariablePhotoSequenceCapture*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IVariablePhotoSequenceCapture*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IVariablePhotoSequenceCapture*, ITypedEventHandler<Pointer<IVariablePhotoSequenceCapture>, Pointer<IVariablePhotoCapturedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IVariablePhotoSequenceCapture*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IVariablePhotoSequenceCapture.xml' path='doc/member[@name="IVariablePhotoSequenceCapture.remove_PhotoCaptured"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct IVariablePhotoSequenceCapture : IVariablePhotoSeque
     /// <include file='IVariablePhotoSequenceCapture.xml' path='doc/member[@name="IVariablePhotoSequenceCapture.add_Stopped"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CCore__CVariablePhotoSequenceCapture_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CCore__CVariablePhotoSequenceCapture_IInspectable_t *")] ITypedEventHandler<Pointer<IVariablePhotoSequenceCapture>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IVariablePhotoSequenceCapture*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IVariablePhotoSequenceCapture*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IVariablePhotoSequenceCapture*, ITypedEventHandler<Pointer<IVariablePhotoSequenceCapture>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IVariablePhotoSequenceCapture*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IVariablePhotoSequenceCapture.xml' path='doc/member[@name="IVariablePhotoSequenceCapture.remove_Stopped"]/*' />
@@ -139,13 +139,13 @@ public unsafe partial struct IVariablePhotoSequenceCapture : IVariablePhotoSeque
         HRESULT FinishAsync([NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
 
         [VtblIndex(9)]
-        HRESULT add_PhotoCaptured([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CCore__CVariablePhotoSequenceCapture_Windows__CMedia__CCapture__CCore__CVariablePhotoCapturedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PhotoCaptured([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CCore__CVariablePhotoSequenceCapture_Windows__CMedia__CCapture__CCore__CVariablePhotoCapturedEventArgs_t *")] ITypedEventHandler<Pointer<IVariablePhotoSequenceCapture>, Pointer<IVariablePhotoCapturedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_PhotoCaptured(EventRegistrationToken token);
 
         [VtblIndex(11)]
-        HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CCore__CVariablePhotoSequenceCapture_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CCore__CVariablePhotoSequenceCapture_IInspectable_t *")] ITypedEventHandler<Pointer<IVariablePhotoSequenceCapture>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_Stopped(EventRegistrationToken token);
@@ -182,13 +182,13 @@ public unsafe partial struct IVariablePhotoSequenceCapture : IVariablePhotoSeque
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncAction**, int> FinishAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CCore__CVariablePhotoSequenceCapture_Windows__CMedia__CCapture__CCore__CVariablePhotoCapturedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PhotoCaptured;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IVariablePhotoSequenceCapture>, Pointer<IVariablePhotoCapturedEventArgs>>*, EventRegistrationToken*, int> add_PhotoCaptured;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PhotoCaptured;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CCore__CVariablePhotoSequenceCapture_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Stopped;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IVariablePhotoSequenceCapture>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Stopped;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Stopped;

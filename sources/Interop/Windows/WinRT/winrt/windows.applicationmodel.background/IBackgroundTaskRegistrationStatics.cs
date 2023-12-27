@@ -74,15 +74,15 @@ public unsafe partial struct IBackgroundTaskRegistrationStatics : IBackgroundTas
     /// <include file='IBackgroundTaskRegistrationStatics.xml' path='doc/member[@name="IBackgroundTaskRegistrationStatics.get_AllTasks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_AllTasks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_t **")] IMapView<Guid, IntPtr>** tasks)
+    public HRESULT get_AllTasks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_t **")] IMapView<Guid, Pointer<IBackgroundTaskRegistration>>** tasks)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundTaskRegistrationStatics*, IMapView<Guid, IntPtr>**, int>)(lpVtbl[6]))((IBackgroundTaskRegistrationStatics*)Unsafe.AsPointer(ref this), tasks);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundTaskRegistrationStatics*, IMapView<Guid, Pointer<IBackgroundTaskRegistration>>**, int>)(lpVtbl[6]))((IBackgroundTaskRegistrationStatics*)Unsafe.AsPointer(ref this), tasks);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_AllTasks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_t **")] IMapView<Guid, IntPtr>** tasks);
+        HRESULT get_AllTasks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_t **")] IMapView<Guid, Pointer<IBackgroundTaskRegistration>>** tasks);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IBackgroundTaskRegistrationStatics : IBackgroundTas
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CIBackgroundTaskRegistration_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<Guid, IntPtr>**, int> get_AllTasks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<Guid, Pointer<IBackgroundTaskRegistration>>**, int> get_AllTasks;
     }
 }

@@ -106,9 +106,9 @@ public unsafe partial struct IAppInstanceStatics : IAppInstanceStatics.Interface
     /// <include file='IAppInstanceStatics.xml' path='doc/member[@name="IAppInstanceStatics.GetInstances"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetInstances([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CAppInstance_t **")] IVector<IntPtr>** result)
+    public HRESULT GetInstances([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CAppInstance_t **")] IVector<Pointer<IAppInstance>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppInstanceStatics*, IVector<IntPtr>**, int>)(lpVtbl[10]))((IAppInstanceStatics*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IAppInstanceStatics*, IVector<Pointer<IAppInstance>>**, int>)(lpVtbl[10]))((IAppInstanceStatics*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -126,7 +126,7 @@ public unsafe partial struct IAppInstanceStatics : IAppInstanceStatics.Interface
         HRESULT Unregister();
 
         [VtblIndex(10)]
-        HRESULT GetInstances([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CAppInstance_t **")] IVector<IntPtr>** result);
+        HRESULT GetInstances([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CAppInstance_t **")] IVector<Pointer<IAppInstance>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -163,6 +163,6 @@ public unsafe partial struct IAppInstanceStatics : IAppInstanceStatics.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, int> Unregister;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CAppInstance_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> GetInstances;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IAppInstance>>**, int> GetInstances;
     }
 }

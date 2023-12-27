@@ -114,9 +114,9 @@ public unsafe partial struct INetworkAdapter : INetworkAdapter.Interface, INativ
     /// <include file='INetworkAdapter.xml' path='doc/member[@name="INetworkAdapter.GetConnectedProfileAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetConnectedProfileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfile_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetConnectedProfileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfile_t **")] IAsyncOperation<Pointer<IConnectionProfile>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<INetworkAdapter*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((INetworkAdapter*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<INetworkAdapter*, IAsyncOperation<Pointer<IConnectionProfile>>**, int>)(lpVtbl[11]))((INetworkAdapter*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -137,7 +137,7 @@ public unsafe partial struct INetworkAdapter : INetworkAdapter.Interface, INativ
         HRESULT get_NetworkAdapterId(Guid* value);
 
         [VtblIndex(11)]
-        HRESULT GetConnectedProfileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfile_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetConnectedProfileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfile_t **")] IAsyncOperation<Pointer<IConnectionProfile>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -177,6 +177,6 @@ public unsafe partial struct INetworkAdapter : INetworkAdapter.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> get_NetworkAdapterId;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionProfile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetConnectedProfileAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IConnectionProfile>>**, int> GetConnectedProfileAsync;
     }
 }

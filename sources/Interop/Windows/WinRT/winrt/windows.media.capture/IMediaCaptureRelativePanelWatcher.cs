@@ -82,9 +82,9 @@ public unsafe partial struct IMediaCaptureRelativePanelWatcher : IMediaCaptureRe
     /// <include file='IMediaCaptureRelativePanelWatcher.xml' path='doc/member[@name="IMediaCaptureRelativePanelWatcher.add_Changed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCaptureRelativePanelWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCaptureRelativePanelWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaCaptureRelativePanelWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureRelativePanelWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IMediaCaptureRelativePanelWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureRelativePanelWatcher*, ITypedEventHandler<Pointer<IMediaCaptureRelativePanelWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IMediaCaptureRelativePanelWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaCaptureRelativePanelWatcher.xml' path='doc/member[@name="IMediaCaptureRelativePanelWatcher.remove_Changed"]/*' />
@@ -117,7 +117,7 @@ public unsafe partial struct IMediaCaptureRelativePanelWatcher : IMediaCaptureRe
         HRESULT get_RelativePanel([NativeTypeName("ABI::Windows::Devices::Enumeration::Panel *")] Panel* value);
 
         [VtblIndex(7)]
-        HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCaptureRelativePanelWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCaptureRelativePanelWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaCaptureRelativePanelWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_Changed(EventRegistrationToken token);
@@ -154,7 +154,7 @@ public unsafe partial struct IMediaCaptureRelativePanelWatcher : IMediaCaptureRe
         public delegate* unmanaged[MemberFunction]<TSelf*, Panel*, int> get_RelativePanel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCaptureRelativePanelWatcher_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Changed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaCaptureRelativePanelWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Changed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Changed;

@@ -74,15 +74,15 @@ public unsafe partial struct ISocketActivityInformationStatics : ISocketActivity
     /// <include file='ISocketActivityInformationStatics.xml' path='doc/member[@name="ISocketActivityInformationStatics.get_AllSockets"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_AllSockets([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CNetworking__CSockets__CSocketActivityInformation_t **")] IMapView<HSTRING, IntPtr>** sockets)
+    public HRESULT get_AllSockets([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CNetworking__CSockets__CSocketActivityInformation_t **")] IMapView<HSTRING, Pointer<ISocketActivityInformation>>** sockets)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISocketActivityInformationStatics*, IMapView<HSTRING, IntPtr>**, int>)(lpVtbl[6]))((ISocketActivityInformationStatics*)Unsafe.AsPointer(ref this), sockets);
+        return ((delegate* unmanaged[MemberFunction]<ISocketActivityInformationStatics*, IMapView<HSTRING, Pointer<ISocketActivityInformation>>**, int>)(lpVtbl[6]))((ISocketActivityInformationStatics*)Unsafe.AsPointer(ref this), sockets);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_AllSockets([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CNetworking__CSockets__CSocketActivityInformation_t **")] IMapView<HSTRING, IntPtr>** sockets);
+        HRESULT get_AllSockets([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CNetworking__CSockets__CSocketActivityInformation_t **")] IMapView<HSTRING, Pointer<ISocketActivityInformation>>** sockets);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ISocketActivityInformationStatics : ISocketActivity
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CNetworking__CSockets__CSocketActivityInformation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, IntPtr>**, int> get_AllSockets;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, Pointer<ISocketActivityInformation>>**, int> get_AllSockets;
     }
 }

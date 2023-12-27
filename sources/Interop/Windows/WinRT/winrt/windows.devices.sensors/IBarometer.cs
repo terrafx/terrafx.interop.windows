@@ -114,9 +114,9 @@ public unsafe partial struct IBarometer : IBarometer.Interface, INativeGuid
     /// <include file='IBarometer.xml' path='doc/member[@name="IBarometer.add_ReadingChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CBarometer_Windows__CDevices__CSensors__CBarometerReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CBarometer_Windows__CDevices__CSensors__CBarometerReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<IBarometer>, Pointer<IBarometerReadingChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBarometer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IBarometer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBarometer*, ITypedEventHandler<Pointer<IBarometer>, Pointer<IBarometerReadingChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IBarometer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBarometer.xml' path='doc/member[@name="IBarometer.remove_ReadingChanged"]/*' />
@@ -145,7 +145,7 @@ public unsafe partial struct IBarometer : IBarometer.Interface, INativeGuid
         HRESULT get_ReportInterval([NativeTypeName("UINT32 *")] uint* value);
 
         [VtblIndex(11)]
-        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CBarometer_Windows__CDevices__CSensors__CBarometerReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CBarometer_Windows__CDevices__CSensors__CBarometerReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<IBarometer>, Pointer<IBarometerReadingChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_ReadingChanged(EventRegistrationToken token);
@@ -188,7 +188,7 @@ public unsafe partial struct IBarometer : IBarometer.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_ReportInterval;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CBarometer_Windows__CDevices__CSensors__CBarometerReadingChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ReadingChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IBarometer>, Pointer<IBarometerReadingChangedEventArgs>>*, EventRegistrationToken*, int> add_ReadingChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ReadingChanged;

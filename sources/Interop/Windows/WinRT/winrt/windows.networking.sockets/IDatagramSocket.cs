@@ -138,25 +138,25 @@ public unsafe partial struct IDatagramSocket : IDatagramSocket.Interface, INativ
     /// <include file='IDatagramSocket.xml' path='doc/member[@name="IDatagramSocket.GetOutputStreamAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetOutputStreamAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* remoteHostName, HSTRING remoteServiceName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIOutputStream_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetOutputStreamAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* remoteHostName, HSTRING remoteServiceName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIOutputStream_t **")] IAsyncOperation<Pointer<IOutputStream>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDatagramSocket*, IHostName*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[14]))((IDatagramSocket*)Unsafe.AsPointer(ref this), remoteHostName, remoteServiceName, value);
+        return ((delegate* unmanaged[MemberFunction]<IDatagramSocket*, IHostName*, HSTRING, IAsyncOperation<Pointer<IOutputStream>>**, int>)(lpVtbl[14]))((IDatagramSocket*)Unsafe.AsPointer(ref this), remoteHostName, remoteServiceName, value);
     }
 
     /// <include file='IDatagramSocket.xml' path='doc/member[@name="IDatagramSocket.GetOutputStreamWithEndpointPairAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT GetOutputStreamWithEndpointPairAsync([NativeTypeName("ABI::Windows::Networking::IEndpointPair *")] IEndpointPair* endpointPair, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIOutputStream_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetOutputStreamWithEndpointPairAsync([NativeTypeName("ABI::Windows::Networking::IEndpointPair *")] IEndpointPair* endpointPair, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIOutputStream_t **")] IAsyncOperation<Pointer<IOutputStream>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDatagramSocket*, IEndpointPair*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[15]))((IDatagramSocket*)Unsafe.AsPointer(ref this), endpointPair, value);
+        return ((delegate* unmanaged[MemberFunction]<IDatagramSocket*, IEndpointPair*, IAsyncOperation<Pointer<IOutputStream>>**, int>)(lpVtbl[15]))((IDatagramSocket*)Unsafe.AsPointer(ref this), endpointPair, value);
     }
 
     /// <include file='IDatagramSocket.xml' path='doc/member[@name="IDatagramSocket.add_MessageReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT add_MessageReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CDatagramSocket_Windows__CNetworking__CSockets__CDatagramSocketMessageReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_MessageReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CDatagramSocket_Windows__CNetworking__CSockets__CDatagramSocketMessageReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IDatagramSocket>, Pointer<IDatagramSocketMessageReceivedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDatagramSocket*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IDatagramSocket*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IDatagramSocket*, ITypedEventHandler<Pointer<IDatagramSocket>, Pointer<IDatagramSocketMessageReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IDatagramSocket*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
     }
 
     /// <include file='IDatagramSocket.xml' path='doc/member[@name="IDatagramSocket.remove_MessageReceived"]/*' />
@@ -194,13 +194,13 @@ public unsafe partial struct IDatagramSocket : IDatagramSocket.Interface, INativ
         HRESULT JoinMulticastGroup([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* host);
 
         [VtblIndex(14)]
-        HRESULT GetOutputStreamAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* remoteHostName, HSTRING remoteServiceName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIOutputStream_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetOutputStreamAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* remoteHostName, HSTRING remoteServiceName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIOutputStream_t **")] IAsyncOperation<Pointer<IOutputStream>>** value);
 
         [VtblIndex(15)]
-        HRESULT GetOutputStreamWithEndpointPairAsync([NativeTypeName("ABI::Windows::Networking::IEndpointPair *")] IEndpointPair* endpointPair, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIOutputStream_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetOutputStreamWithEndpointPairAsync([NativeTypeName("ABI::Windows::Networking::IEndpointPair *")] IEndpointPair* endpointPair, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIOutputStream_t **")] IAsyncOperation<Pointer<IOutputStream>>** value);
 
         [VtblIndex(16)]
-        HRESULT add_MessageReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CDatagramSocket_Windows__CNetworking__CSockets__CDatagramSocketMessageReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_MessageReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CDatagramSocket_Windows__CNetworking__CSockets__CDatagramSocketMessageReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IDatagramSocket>, Pointer<IDatagramSocketMessageReceivedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(17)]
         HRESULT remove_MessageReceived(EventRegistrationToken eventCookie);
@@ -252,13 +252,13 @@ public unsafe partial struct IDatagramSocket : IDatagramSocket.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, IHostName*, int> JoinMulticastGroup;
 
         [NativeTypeName("HRESULT (ABI::Windows::Networking::IHostName *, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIOutputStream_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IHostName*, HSTRING, IAsyncOperation<IntPtr>**, int> GetOutputStreamAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHostName*, HSTRING, IAsyncOperation<Pointer<IOutputStream>>**, int> GetOutputStreamAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Networking::IEndpointPair *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIOutputStream_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEndpointPair*, IAsyncOperation<IntPtr>**, int> GetOutputStreamWithEndpointPairAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEndpointPair*, IAsyncOperation<Pointer<IOutputStream>>**, int> GetOutputStreamWithEndpointPairAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CDatagramSocket_Windows__CNetworking__CSockets__CDatagramSocketMessageReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_MessageReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDatagramSocket>, Pointer<IDatagramSocketMessageReceivedEventArgs>>*, EventRegistrationToken*, int> add_MessageReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_MessageReceived;

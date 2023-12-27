@@ -74,9 +74,9 @@ public unsafe partial struct IMediaPlaybackTimedMetadataTrackList : IMediaPlayba
     /// <include file='IMediaPlaybackTimedMetadataTrackList.xml' path='doc/member[@name="IMediaPlaybackTimedMetadataTrackList.add_PresentationModeChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_PresentationModeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PresentationModeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackTimedMetadataTrackList>, Pointer<ITimedMetadataPresentationModeChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackTimedMetadataTrackList*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaPlaybackTimedMetadataTrackList*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackTimedMetadataTrackList*, ITypedEventHandler<Pointer<IMediaPlaybackTimedMetadataTrackList>, Pointer<ITimedMetadataPresentationModeChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaPlaybackTimedMetadataTrackList*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaPlaybackTimedMetadataTrackList.xml' path='doc/member[@name="IMediaPlaybackTimedMetadataTrackList.remove_PresentationModeChanged"]/*' />
@@ -106,7 +106,7 @@ public unsafe partial struct IMediaPlaybackTimedMetadataTrackList : IMediaPlayba
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_PresentationModeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PresentationModeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackTimedMetadataTrackList>, Pointer<ITimedMetadataPresentationModeChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_PresentationModeChanged(EventRegistrationToken token);
@@ -140,7 +140,7 @@ public unsafe partial struct IMediaPlaybackTimedMetadataTrackList : IMediaPlayba
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackTimedMetadataTrackList_Windows__CMedia__CPlayback__CTimedMetadataPresentationModeChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PresentationModeChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackTimedMetadataTrackList>, Pointer<ITimedMetadataPresentationModeChangedEventArgs>>*, EventRegistrationToken*, int> add_PresentationModeChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PresentationModeChanged;

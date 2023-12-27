@@ -74,15 +74,15 @@ public unsafe partial struct ITimedMetadataTrackProvider : ITimedMetadataTrackPr
     /// <include file='ITimedMetadataTrackProvider.xml' path='doc/member[@name="ITimedMetadataTrackProvider.get_TimedMetadataTracks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_TimedMetadataTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataTrack_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_TimedMetadataTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataTrack_t **")] IVectorView<Pointer<ITimedMetadataTrack>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITimedMetadataTrackProvider*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((ITimedMetadataTrackProvider*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ITimedMetadataTrackProvider*, IVectorView<Pointer<ITimedMetadataTrack>>**, int>)(lpVtbl[6]))((ITimedMetadataTrackProvider*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_TimedMetadataTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataTrack_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_TimedMetadataTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataTrack_t **")] IVectorView<Pointer<ITimedMetadataTrack>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ITimedMetadataTrackProvider : ITimedMetadataTrackPr
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataTrack_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_TimedMetadataTracks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ITimedMetadataTrack>>**, int> get_TimedMetadataTracks;
     }
 }

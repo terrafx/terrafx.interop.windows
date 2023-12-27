@@ -74,15 +74,15 @@ public unsafe partial struct IBackgroundUploaderStaticMethods2 : IBackgroundUplo
     /// <include file='IBackgroundUploaderStaticMethods2.xml' path='doc/member[@name="IBackgroundUploaderStaticMethods2.GetCurrentUploadsForTransferGroupAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetCurrentUploadsForTransferGroupAsync([NativeTypeName("ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup *")] IBackgroundTransferGroup* group, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetCurrentUploadsForTransferGroupAsync([NativeTypeName("ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup *")] IBackgroundTransferGroup* group, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IUploadOperation>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundUploaderStaticMethods2*, IBackgroundTransferGroup*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IBackgroundUploaderStaticMethods2*)Unsafe.AsPointer(ref this), group, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundUploaderStaticMethods2*, IBackgroundTransferGroup*, IAsyncOperation<Pointer<IVectorView<Pointer<IUploadOperation>>>>**, int>)(lpVtbl[6]))((IBackgroundUploaderStaticMethods2*)Unsafe.AsPointer(ref this), group, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetCurrentUploadsForTransferGroupAsync([NativeTypeName("ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup *")] IBackgroundTransferGroup* group, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetCurrentUploadsForTransferGroupAsync([NativeTypeName("ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup *")] IBackgroundTransferGroup* group, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IUploadOperation>>>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IBackgroundUploaderStaticMethods2 : IBackgroundUplo
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IBackgroundTransferGroup*, IAsyncOperation<IntPtr>**, int> GetCurrentUploadsForTransferGroupAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBackgroundTransferGroup*, IAsyncOperation<Pointer<IVectorView<Pointer<IUploadOperation>>>>**, int> GetCurrentUploadsForTransferGroupAsync;
     }
 }

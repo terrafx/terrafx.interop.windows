@@ -90,9 +90,9 @@ public unsafe partial struct ISmartCard : ISmartCard.Interface, INativeGuid
     /// <include file='ISmartCard.xml' path='doc/member[@name="ISmartCard.GetAnswerToResetAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetAnswerToResetAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetAnswerToResetAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IBuffer>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCard*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((ISmartCard*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCard*, IAsyncOperation<Pointer<IBuffer>>**, int>)(lpVtbl[8]))((ISmartCard*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct ISmartCard : ISmartCard.Interface, INativeGuid
         HRESULT GetStatusAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardStatus_t **")] IAsyncOperation<SmartCardStatus>** result);
 
         [VtblIndex(8)]
-        HRESULT GetAnswerToResetAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetAnswerToResetAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IBuffer>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct ISmartCard : ISmartCard.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<SmartCardStatus>**, int> GetStatusAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetAnswerToResetAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IBuffer>>**, int> GetAnswerToResetAsync;
     }
 }

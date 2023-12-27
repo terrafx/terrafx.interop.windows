@@ -74,9 +74,9 @@ public unsafe partial struct IGpioPinProvider : IGpioPinProvider.Interface, INat
     /// <include file='IGpioPinProvider.xml' path='doc/member[@name="IGpioPinProvider.add_ValueChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_ValueChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGpio__CProvider__CIGpioPinProvider_Windows__CDevices__CGpio__CProvider__CGpioPinProviderValueChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ValueChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGpio__CProvider__CIGpioPinProvider_Windows__CDevices__CGpio__CProvider__CGpioPinProviderValueChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGpioPinProvider>, Pointer<IGpioPinProviderValueChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGpioPinProvider*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IGpioPinProvider*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGpioPinProvider*, ITypedEventHandler<Pointer<IGpioPinProvider>, Pointer<IGpioPinProviderValueChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IGpioPinProvider*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGpioPinProvider.xml' path='doc/member[@name="IGpioPinProvider.remove_ValueChanged"]/*' />
@@ -162,7 +162,7 @@ public unsafe partial struct IGpioPinProvider : IGpioPinProvider.Interface, INat
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_ValueChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGpio__CProvider__CIGpioPinProvider_Windows__CDevices__CGpio__CProvider__CGpioPinProviderValueChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ValueChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGpio__CProvider__CIGpioPinProvider_Windows__CDevices__CGpio__CProvider__CGpioPinProviderValueChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGpioPinProvider>, Pointer<IGpioPinProviderValueChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_ValueChanged(EventRegistrationToken token);
@@ -217,7 +217,7 @@ public unsafe partial struct IGpioPinProvider : IGpioPinProvider.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CGpio__CProvider__CIGpioPinProvider_Windows__CDevices__CGpio__CProvider__CGpioPinProviderValueChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ValueChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGpioPinProvider>, Pointer<IGpioPinProviderValueChangedEventArgs>>*, EventRegistrationToken*, int> add_ValueChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ValueChanged;

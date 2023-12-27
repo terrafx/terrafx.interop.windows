@@ -74,9 +74,9 @@ public unsafe partial struct IBarometerStatics2 : IBarometerStatics2.Interface, 
     /// <include file='IBarometerStatics2.xml' path='doc/member[@name="IBarometerStatics2.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CBarometer_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CBarometer_t **")] IAsyncOperation<Pointer<IBarometer>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBarometerStatics2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IBarometerStatics2*)Unsafe.AsPointer(ref this), deviceId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBarometerStatics2*, HSTRING, IAsyncOperation<Pointer<IBarometer>>**, int>)(lpVtbl[6]))((IBarometerStatics2*)Unsafe.AsPointer(ref this), deviceId, operation);
     }
 
     /// <include file='IBarometerStatics2.xml' path='doc/member[@name="IBarometerStatics2.GetDeviceSelector"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IBarometerStatics2 : IBarometerStatics2.Interface, 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CBarometer_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CBarometer_t **")] IAsyncOperation<Pointer<IBarometer>>** operation);
 
         [VtblIndex(7)]
         HRESULT GetDeviceSelector(HSTRING* result);
@@ -118,7 +118,7 @@ public unsafe partial struct IBarometerStatics2 : IBarometerStatics2.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CBarometer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IBarometer>>**, int> FromIdAsync;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetDeviceSelector;

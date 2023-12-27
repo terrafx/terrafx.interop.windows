@@ -82,9 +82,9 @@ public unsafe partial struct IStorageLibraryContentChangedTriggerStatics : IStor
     /// <include file='IStorageLibraryContentChangedTriggerStatics.xml' path='doc/member[@name="IStorageLibraryContentChangedTriggerStatics.CreateFromLibraries"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateFromLibraries([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CStorageLibrary_t *")] IIterable<IntPtr>* storageLibraries, [NativeTypeName("ABI::Windows::ApplicationModel::Background::IStorageLibraryContentChangedTrigger **")] IStorageLibraryContentChangedTrigger** result)
+    public HRESULT CreateFromLibraries([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CStorageLibrary_t *")] IIterable<Pointer<IStorageLibrary>>* storageLibraries, [NativeTypeName("ABI::Windows::ApplicationModel::Background::IStorageLibraryContentChangedTrigger **")] IStorageLibraryContentChangedTrigger** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageLibraryContentChangedTriggerStatics*, IIterable<IntPtr>*, IStorageLibraryContentChangedTrigger**, int>)(lpVtbl[7]))((IStorageLibraryContentChangedTriggerStatics*)Unsafe.AsPointer(ref this), storageLibraries, result);
+        return ((delegate* unmanaged[MemberFunction]<IStorageLibraryContentChangedTriggerStatics*, IIterable<Pointer<IStorageLibrary>>*, IStorageLibraryContentChangedTrigger**, int>)(lpVtbl[7]))((IStorageLibraryContentChangedTriggerStatics*)Unsafe.AsPointer(ref this), storageLibraries, result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IStorageLibraryContentChangedTriggerStatics : IStor
         HRESULT Create([NativeTypeName("ABI::Windows::Storage::IStorageLibrary *")] IStorageLibrary* storageLibrary, [NativeTypeName("ABI::Windows::ApplicationModel::Background::IStorageLibraryContentChangedTrigger **")] IStorageLibraryContentChangedTrigger** result);
 
         [VtblIndex(7)]
-        HRESULT CreateFromLibraries([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CStorageLibrary_t *")] IIterable<IntPtr>* storageLibraries, [NativeTypeName("ABI::Windows::ApplicationModel::Background::IStorageLibraryContentChangedTrigger **")] IStorageLibraryContentChangedTrigger** result);
+        HRESULT CreateFromLibraries([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CStorageLibrary_t *")] IIterable<Pointer<IStorageLibrary>>* storageLibraries, [NativeTypeName("ABI::Windows::ApplicationModel::Background::IStorageLibraryContentChangedTrigger **")] IStorageLibraryContentChangedTrigger** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IStorageLibraryContentChangedTriggerStatics : IStor
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageLibrary*, IStorageLibraryContentChangedTrigger**, int> Create;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CStorageLibrary_t *, ABI::Windows::ApplicationModel::Background::IStorageLibraryContentChangedTrigger **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IStorageLibraryContentChangedTrigger**, int> CreateFromLibraries;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IStorageLibrary>>*, IStorageLibraryContentChangedTrigger**, int> CreateFromLibraries;
     }
 }

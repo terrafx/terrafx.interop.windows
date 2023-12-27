@@ -74,9 +74,9 @@ public unsafe partial struct IAppWindowStatics : IAppWindowStatics.Interface, IN
     /// <include file='IAppWindowStatics.xml' path='doc/member[@name="IAppWindowStatics.TryCreateAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT TryCreateAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CWindowManagement__CAppWindow_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT TryCreateAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CWindowManagement__CAppWindow_t **")] IAsyncOperation<Pointer<IAppWindow>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppWindowStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IAppWindowStatics*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppWindowStatics*, IAsyncOperation<Pointer<IAppWindow>>**, int>)(lpVtbl[6]))((IAppWindowStatics*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IAppWindowStatics.xml' path='doc/member[@name="IAppWindowStatics.ClearAllPersistedState"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IAppWindowStatics : IAppWindowStatics.Interface, IN
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT TryCreateAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CWindowManagement__CAppWindow_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT TryCreateAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CWindowManagement__CAppWindow_t **")] IAsyncOperation<Pointer<IAppWindow>>** operation);
 
         [VtblIndex(7)]
         HRESULT ClearAllPersistedState();
@@ -129,7 +129,7 @@ public unsafe partial struct IAppWindowStatics : IAppWindowStatics.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CUI__CWindowManagement__CAppWindow_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> TryCreateAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IAppWindow>>**, int> TryCreateAsync;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, int> ClearAllPersistedState;

@@ -82,17 +82,17 @@ public unsafe partial struct IHumanPresenceSensorStatics : IHumanPresenceSensorS
     /// <include file='IHumanPresenceSensorStatics.xml' path='doc/member[@name="IHumanPresenceSensorStatics.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FromIdAsync(HSTRING sensorId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceSensor_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromIdAsync(HSTRING sensorId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceSensor_t **")] IAsyncOperation<Pointer<IHumanPresenceSensor>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IHumanPresenceSensorStatics*)Unsafe.AsPointer(ref this), sensorId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorStatics*, HSTRING, IAsyncOperation<Pointer<IHumanPresenceSensor>>**, int>)(lpVtbl[7]))((IHumanPresenceSensorStatics*)Unsafe.AsPointer(ref this), sensorId, operation);
     }
 
     /// <include file='IHumanPresenceSensorStatics.xml' path='doc/member[@name="IHumanPresenceSensorStatics.GetDefaultAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceSensor_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceSensor_t **")] IAsyncOperation<Pointer<IHumanPresenceSensor>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IHumanPresenceSensorStatics*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorStatics*, IAsyncOperation<Pointer<IHumanPresenceSensor>>**, int>)(lpVtbl[8]))((IHumanPresenceSensorStatics*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -101,10 +101,10 @@ public unsafe partial struct IHumanPresenceSensorStatics : IHumanPresenceSensorS
         HRESULT GetDeviceSelector(HSTRING* result);
 
         [VtblIndex(7)]
-        HRESULT FromIdAsync(HSTRING sensorId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceSensor_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromIdAsync(HSTRING sensorId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceSensor_t **")] IAsyncOperation<Pointer<IHumanPresenceSensor>>** operation);
 
         [VtblIndex(8)]
-        HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceSensor_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceSensor_t **")] IAsyncOperation<Pointer<IHumanPresenceSensor>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -132,9 +132,9 @@ public unsafe partial struct IHumanPresenceSensorStatics : IHumanPresenceSensorS
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetDeviceSelector;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceSensor_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IHumanPresenceSensor>>**, int> FromIdAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceSensor_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetDefaultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IHumanPresenceSensor>>**, int> GetDefaultAsync;
     }
 }

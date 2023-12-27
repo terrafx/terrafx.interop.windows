@@ -98,9 +98,9 @@ public unsafe partial struct IDispatcherQueue : IDispatcherQueue.Interface, INat
     /// <include file='IDispatcherQueue.xml' path='doc/member[@name="IDispatcherQueue.add_ShutdownStarting"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_ShutdownStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_Windows__CSystem__CDispatcherQueueShutdownStartingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ShutdownStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_Windows__CSystem__CDispatcherQueueShutdownStartingEventArgs_t *")] ITypedEventHandler<Pointer<IDispatcherQueue>, Pointer<IDispatcherQueueShutdownStartingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDispatcherQueue*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IDispatcherQueue*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDispatcherQueue*, ITypedEventHandler<Pointer<IDispatcherQueue>, Pointer<IDispatcherQueueShutdownStartingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IDispatcherQueue*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDispatcherQueue.xml' path='doc/member[@name="IDispatcherQueue.remove_ShutdownStarting"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct IDispatcherQueue : IDispatcherQueue.Interface, INat
     /// <include file='IDispatcherQueue.xml' path='doc/member[@name="IDispatcherQueue.add_ShutdownCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_ShutdownCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ShutdownCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_IInspectable_t *")] ITypedEventHandler<Pointer<IDispatcherQueue>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDispatcherQueue*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IDispatcherQueue*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDispatcherQueue*, ITypedEventHandler<Pointer<IDispatcherQueue>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IDispatcherQueue*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDispatcherQueue.xml' path='doc/member[@name="IDispatcherQueue.remove_ShutdownCompleted"]/*' />
@@ -139,13 +139,13 @@ public unsafe partial struct IDispatcherQueue : IDispatcherQueue.Interface, INat
         HRESULT TryEnqueueWithPriority([NativeTypeName("ABI::Windows::System::DispatcherQueuePriority")] DispatcherQueuePriority priority, [NativeTypeName("ABI::Windows::System::IDispatcherQueueHandler *")] IDispatcherQueueHandler* callback, [NativeTypeName("boolean *")] byte* result);
 
         [VtblIndex(9)]
-        HRESULT add_ShutdownStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_Windows__CSystem__CDispatcherQueueShutdownStartingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ShutdownStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_Windows__CSystem__CDispatcherQueueShutdownStartingEventArgs_t *")] ITypedEventHandler<Pointer<IDispatcherQueue>, Pointer<IDispatcherQueueShutdownStartingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_ShutdownStarting(EventRegistrationToken token);
 
         [VtblIndex(11)]
-        HRESULT add_ShutdownCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ShutdownCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_IInspectable_t *")] ITypedEventHandler<Pointer<IDispatcherQueue>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_ShutdownCompleted(EventRegistrationToken token);
@@ -182,13 +182,13 @@ public unsafe partial struct IDispatcherQueue : IDispatcherQueue.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, DispatcherQueuePriority, IDispatcherQueueHandler*, byte*, int> TryEnqueueWithPriority;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_Windows__CSystem__CDispatcherQueueShutdownStartingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ShutdownStarting;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDispatcherQueue>, Pointer<IDispatcherQueueShutdownStartingEventArgs>>*, EventRegistrationToken*, int> add_ShutdownStarting;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ShutdownStarting;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CDispatcherQueue_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ShutdownCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDispatcherQueue>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ShutdownCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ShutdownCompleted;

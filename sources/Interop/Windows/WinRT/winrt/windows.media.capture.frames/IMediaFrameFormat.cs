@@ -98,9 +98,9 @@ public unsafe partial struct IMediaFrameFormat : IMediaFrameFormat.Interface, IN
     /// <include file='IMediaFrameFormat.xml' path='doc/member[@name="IMediaFrameFormat.get_Properties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, IntPtr>** value)
+    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, Pointer<IInspectable>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaFrameFormat*, IMapView<Guid, IntPtr>**, int>)(lpVtbl[9]))((IMediaFrameFormat*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaFrameFormat*, IMapView<Guid, Pointer<IInspectable>>**, int>)(lpVtbl[9]))((IMediaFrameFormat*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaFrameFormat.xml' path='doc/member[@name="IMediaFrameFormat.get_VideoFormat"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IMediaFrameFormat : IMediaFrameFormat.Interface, IN
         HRESULT get_FrameRate([NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaRatio **")] IMediaRatio** value);
 
         [VtblIndex(9)]
-        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, IntPtr>** value);
+        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, Pointer<IInspectable>>** value);
 
         [VtblIndex(10)]
         HRESULT get_VideoFormat([NativeTypeName("ABI::Windows::Media::Capture::Frames::IVideoMediaFrameFormat **")] IVideoMediaFrameFormat** value);
@@ -160,7 +160,7 @@ public unsafe partial struct IMediaFrameFormat : IMediaFrameFormat.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, IMediaRatio**, int> get_FrameRate;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<Guid, IntPtr>**, int> get_Properties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<Guid, Pointer<IInspectable>>**, int> get_Properties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Capture::Frames::IVideoMediaFrameFormat **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IVideoMediaFrameFormat**, int> get_VideoFormat;

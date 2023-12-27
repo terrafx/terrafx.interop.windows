@@ -74,9 +74,9 @@ public unsafe partial struct IHttpTransferCodingHeaderValue : IHttpTransferCodin
     /// <include file='IHttpTransferCodingHeaderValue.xml' path='doc/member[@name="IHttpTransferCodingHeaderValue.get_Parameters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Parameters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Parameters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **")] IVector<Pointer<IHttpNameValueHeaderValue>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpTransferCodingHeaderValue*, IVector<IntPtr>**, int>)(lpVtbl[6]))((IHttpTransferCodingHeaderValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IHttpTransferCodingHeaderValue*, IVector<Pointer<IHttpNameValueHeaderValue>>**, int>)(lpVtbl[6]))((IHttpTransferCodingHeaderValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IHttpTransferCodingHeaderValue.xml' path='doc/member[@name="IHttpTransferCodingHeaderValue.get_Value"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IHttpTransferCodingHeaderValue : IHttpTransferCodin
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Parameters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **")] IVector<IntPtr>** value);
+        HRESULT get_Parameters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **")] IVector<Pointer<IHttpNameValueHeaderValue>>** value);
 
         [VtblIndex(7)]
         HRESULT get_Value(HSTRING* value);
@@ -118,7 +118,7 @@ public unsafe partial struct IHttpTransferCodingHeaderValue : IHttpTransferCodin
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Parameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IHttpNameValueHeaderValue>>**, int> get_Parameters;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_Value;

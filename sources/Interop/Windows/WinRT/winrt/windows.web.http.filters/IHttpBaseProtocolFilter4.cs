@@ -74,9 +74,9 @@ public unsafe partial struct IHttpBaseProtocolFilter4 : IHttpBaseProtocolFilter4
     /// <include file='IHttpBaseProtocolFilter4.xml' path='doc/member[@name="IHttpBaseProtocolFilter4.add_ServerCustomValidationRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_ServerCustomValidationRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CWeb__CHttp__CFilters__CHttpBaseProtocolFilter_Windows__CWeb__CHttp__CFilters__CHttpServerCustomValidationRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ServerCustomValidationRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CWeb__CHttp__CFilters__CHttpBaseProtocolFilter_Windows__CWeb__CHttp__CFilters__CHttpServerCustomValidationRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IHttpBaseProtocolFilter>, Pointer<IHttpServerCustomValidationRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpBaseProtocolFilter4*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IHttpBaseProtocolFilter4*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IHttpBaseProtocolFilter4*, ITypedEventHandler<Pointer<IHttpBaseProtocolFilter>, Pointer<IHttpServerCustomValidationRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IHttpBaseProtocolFilter4*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IHttpBaseProtocolFilter4.xml' path='doc/member[@name="IHttpBaseProtocolFilter4.remove_ServerCustomValidationRequested"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IHttpBaseProtocolFilter4 : IHttpBaseProtocolFilter4
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_ServerCustomValidationRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CWeb__CHttp__CFilters__CHttpBaseProtocolFilter_Windows__CWeb__CHttp__CFilters__CHttpServerCustomValidationRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ServerCustomValidationRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CWeb__CHttp__CFilters__CHttpBaseProtocolFilter_Windows__CWeb__CHttp__CFilters__CHttpServerCustomValidationRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IHttpBaseProtocolFilter>, Pointer<IHttpServerCustomValidationRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_ServerCustomValidationRequested(EventRegistrationToken token);
@@ -129,7 +129,7 @@ public unsafe partial struct IHttpBaseProtocolFilter4 : IHttpBaseProtocolFilter4
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CWeb__CHttp__CFilters__CHttpBaseProtocolFilter_Windows__CWeb__CHttp__CFilters__CHttpServerCustomValidationRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ServerCustomValidationRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IHttpBaseProtocolFilter>, Pointer<IHttpServerCustomValidationRequestedEventArgs>>*, EventRegistrationToken*, int> add_ServerCustomValidationRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ServerCustomValidationRequested;

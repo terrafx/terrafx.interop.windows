@@ -154,9 +154,9 @@ public unsafe partial struct IGattLocalCharacteristicParameters : IGattLocalChar
     /// <include file='IGattLocalCharacteristicParameters.xml' path='doc/member[@name="IGattLocalCharacteristicParameters.get_PresentationFormats"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT get_PresentationFormats([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattPresentationFormat_t **")] IVector<IntPtr>** value)
+    public HRESULT get_PresentationFormats([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattPresentationFormat_t **")] IVector<Pointer<IGattPresentationFormat>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattLocalCharacteristicParameters*, IVector<IntPtr>**, int>)(lpVtbl[16]))((IGattLocalCharacteristicParameters*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IGattLocalCharacteristicParameters*, IVector<Pointer<IGattPresentationFormat>>**, int>)(lpVtbl[16]))((IGattLocalCharacteristicParameters*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -192,7 +192,7 @@ public unsafe partial struct IGattLocalCharacteristicParameters : IGattLocalChar
         HRESULT get_UserDescription(HSTRING* value);
 
         [VtblIndex(16)]
-        HRESULT get_PresentationFormats([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattPresentationFormat_t **")] IVector<IntPtr>** value);
+        HRESULT get_PresentationFormats([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattPresentationFormat_t **")] IVector<Pointer<IGattPresentationFormat>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -247,6 +247,6 @@ public unsafe partial struct IGattLocalCharacteristicParameters : IGattLocalChar
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_UserDescription;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattPresentationFormat_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_PresentationFormats;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IGattPresentationFormat>>**, int> get_PresentationFormats;
     }
 }

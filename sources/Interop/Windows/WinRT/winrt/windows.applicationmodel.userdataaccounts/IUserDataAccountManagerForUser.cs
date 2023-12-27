@@ -74,9 +74,9 @@ public unsafe partial struct IUserDataAccountManagerForUser : IUserDataAccountMa
     /// <include file='IUserDataAccountManagerForUser.xml' path='doc/member[@name="IUserDataAccountManagerForUser.RequestStoreAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType")] UserDataAccountStoreAccessType storeAccessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType")] UserDataAccountStoreAccessType storeAccessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_t **")] IAsyncOperation<Pointer<IUserDataAccountStore>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountManagerForUser*, UserDataAccountStoreAccessType, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IUserDataAccountManagerForUser*)Unsafe.AsPointer(ref this), storeAccessType, result);
+        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountManagerForUser*, UserDataAccountStoreAccessType, IAsyncOperation<Pointer<IUserDataAccountStore>>**, int>)(lpVtbl[6]))((IUserDataAccountManagerForUser*)Unsafe.AsPointer(ref this), storeAccessType, result);
     }
 
     /// <include file='IUserDataAccountManagerForUser.xml' path='doc/member[@name="IUserDataAccountManagerForUser.get_User"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IUserDataAccountManagerForUser : IUserDataAccountMa
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType")] UserDataAccountStoreAccessType storeAccessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType")] UserDataAccountStoreAccessType storeAccessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_t **")] IAsyncOperation<Pointer<IUserDataAccountStore>>** result);
 
         [VtblIndex(7)]
         HRESULT get_User([NativeTypeName("ABI::Windows::System::IUser **")] IUser** value);
@@ -118,7 +118,7 @@ public unsafe partial struct IUserDataAccountManagerForUser : IUserDataAccountMa
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountStoreAccessType, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, UserDataAccountStoreAccessType, IAsyncOperation<IntPtr>**, int> RequestStoreAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, UserDataAccountStoreAccessType, IAsyncOperation<Pointer<IUserDataAccountStore>>**, int> RequestStoreAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IUser **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IUser**, int> get_User;

@@ -74,15 +74,15 @@ public unsafe partial struct IKnownFoldersStatics3 : IKnownFoldersStatics3.Inter
     /// <include file='IKnownFoldersStatics3.xml' path='doc/member[@name="IKnownFoldersStatics3.GetFolderForUserAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetFolderForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Storage::KnownFolderId")] KnownFolderId folderId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetFolderForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Storage::KnownFolderId")] KnownFolderId folderId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IKnownFoldersStatics3*, IUser*, KnownFolderId, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IKnownFoldersStatics3*)Unsafe.AsPointer(ref this), user, folderId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IKnownFoldersStatics3*, IUser*, KnownFolderId, IAsyncOperation<Pointer<IStorageFolder>>**, int>)(lpVtbl[6]))((IKnownFoldersStatics3*)Unsafe.AsPointer(ref this), user, folderId, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetFolderForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Storage::KnownFolderId")] KnownFolderId folderId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetFolderForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Storage::KnownFolderId")] KnownFolderId folderId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IKnownFoldersStatics3 : IKnownFoldersStatics3.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IUser *, ABI::Windows::Storage::KnownFolderId, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, KnownFolderId, IAsyncOperation<IntPtr>**, int> GetFolderForUserAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, KnownFolderId, IAsyncOperation<Pointer<IStorageFolder>>**, int> GetFolderForUserAsync;
     }
 }

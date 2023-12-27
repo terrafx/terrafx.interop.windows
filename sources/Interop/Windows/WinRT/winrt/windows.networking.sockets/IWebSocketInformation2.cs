@@ -98,9 +98,9 @@ public unsafe partial struct IWebSocketInformation2 : IWebSocketInformation2.Int
     /// <include file='IWebSocketInformation2.xml' path='doc/member[@name="IWebSocketInformation2.get_ServerIntermediateCertificates"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_ServerIntermediateCertificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_ServerIntermediateCertificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<Pointer<ICertificate>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebSocketInformation2*, IVectorView<IntPtr>**, int>)(lpVtbl[9]))((IWebSocketInformation2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWebSocketInformation2*, IVectorView<Pointer<ICertificate>>**, int>)(lpVtbl[9]))((IWebSocketInformation2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -115,7 +115,7 @@ public unsafe partial struct IWebSocketInformation2 : IWebSocketInformation2.Int
         HRESULT get_ServerCertificateErrors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_t **")] IVectorView<ChainValidationResult>** value);
 
         [VtblIndex(9)]
-        HRESULT get_ServerIntermediateCertificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_ServerIntermediateCertificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<Pointer<ICertificate>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -149,6 +149,6 @@ public unsafe partial struct IWebSocketInformation2 : IWebSocketInformation2.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<ChainValidationResult>**, int> get_ServerCertificateErrors;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_ServerIntermediateCertificates;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ICertificate>>**, int> get_ServerIntermediateCertificates;
     }
 }

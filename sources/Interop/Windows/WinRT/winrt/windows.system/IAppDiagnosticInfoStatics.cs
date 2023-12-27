@@ -74,15 +74,15 @@ public unsafe partial struct IAppDiagnosticInfoStatics : IAppDiagnosticInfoStati
     /// <include file='IAppDiagnosticInfoStatics.xml' path='doc/member[@name="IAppDiagnosticInfoStatics.RequestInfoAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT RequestInfoAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT RequestInfoAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IAsyncOperation<Pointer<IVector<Pointer<IAppDiagnosticInfo>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfoStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IAppDiagnosticInfoStatics*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfoStatics*, IAsyncOperation<Pointer<IVector<Pointer<IAppDiagnosticInfo>>>>**, int>)(lpVtbl[6]))((IAppDiagnosticInfoStatics*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT RequestInfoAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT RequestInfoAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IAsyncOperation<Pointer<IVector<Pointer<IAppDiagnosticInfo>>>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IAppDiagnosticInfoStatics : IAppDiagnosticInfoStati
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CSystem__CAppDiagnosticInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> RequestInfoAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVector<Pointer<IAppDiagnosticInfo>>>>**, int> RequestInfoAsync;
     }
 }

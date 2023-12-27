@@ -74,9 +74,9 @@ public unsafe partial struct IAudioInputNode : IAudioInputNode.Interface, INativ
     /// <include file='IAudioInputNode.xml' path='doc/member[@name="IAudioInputNode.get_OutgoingConnections"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_OutgoingConnections([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CAudio__CAudioGraphConnection_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_OutgoingConnections([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CAudio__CAudioGraphConnection_t **")] IVectorView<Pointer<IAudioGraphConnection>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioInputNode*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IAudioInputNode*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAudioInputNode*, IVectorView<Pointer<IAudioGraphConnection>>**, int>)(lpVtbl[6]))((IAudioInputNode*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAudioInputNode.xml' path='doc/member[@name="IAudioInputNode.AddOutgoingConnection"]/*' />
@@ -106,7 +106,7 @@ public unsafe partial struct IAudioInputNode : IAudioInputNode.Interface, INativ
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_OutgoingConnections([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CAudio__CAudioGraphConnection_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_OutgoingConnections([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CAudio__CAudioGraphConnection_t **")] IVectorView<Pointer<IAudioGraphConnection>>** value);
 
         [VtblIndex(7)]
         HRESULT AddOutgoingConnection([NativeTypeName("ABI::Windows::Media::Audio::IAudioNode *")] IAudioNode* destination);
@@ -140,7 +140,7 @@ public unsafe partial struct IAudioInputNode : IAudioInputNode.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CAudio__CAudioGraphConnection_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_OutgoingConnections;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IAudioGraphConnection>>**, int> get_OutgoingConnections;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Audio::IAudioNode *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAudioNode*, int> AddOutgoingConnection;

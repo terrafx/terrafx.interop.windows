@@ -74,26 +74,26 @@ public unsafe partial struct IWindowingEnvironmentStatics : IWindowingEnvironmen
     /// <include file='IWindowingEnvironmentStatics.xml' path='doc/member[@name="IWindowingEnvironmentStatics.FindAll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindAll([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CWindowingEnvironment_t **")] IVectorView<IntPtr>** result)
+    public HRESULT FindAll([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CWindowingEnvironment_t **")] IVectorView<Pointer<IWindowingEnvironment>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWindowingEnvironmentStatics*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IWindowingEnvironmentStatics*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IWindowingEnvironmentStatics*, IVectorView<Pointer<IWindowingEnvironment>>**, int>)(lpVtbl[6]))((IWindowingEnvironmentStatics*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IWindowingEnvironmentStatics.xml' path='doc/member[@name="IWindowingEnvironmentStatics.FindAllWithKind"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FindAllWithKind([NativeTypeName("ABI::Windows::UI::WindowManagement::WindowingEnvironmentKind")] WindowingEnvironmentKind kind, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CWindowingEnvironment_t **")] IVectorView<IntPtr>** result)
+    public HRESULT FindAllWithKind([NativeTypeName("ABI::Windows::UI::WindowManagement::WindowingEnvironmentKind")] WindowingEnvironmentKind kind, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CWindowingEnvironment_t **")] IVectorView<Pointer<IWindowingEnvironment>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWindowingEnvironmentStatics*, WindowingEnvironmentKind, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IWindowingEnvironmentStatics*)Unsafe.AsPointer(ref this), kind, result);
+        return ((delegate* unmanaged[MemberFunction]<IWindowingEnvironmentStatics*, WindowingEnvironmentKind, IVectorView<Pointer<IWindowingEnvironment>>**, int>)(lpVtbl[7]))((IWindowingEnvironmentStatics*)Unsafe.AsPointer(ref this), kind, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FindAll([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CWindowingEnvironment_t **")] IVectorView<IntPtr>** result);
+        HRESULT FindAll([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CWindowingEnvironment_t **")] IVectorView<Pointer<IWindowingEnvironment>>** result);
 
         [VtblIndex(7)]
-        HRESULT FindAllWithKind([NativeTypeName("ABI::Windows::UI::WindowManagement::WindowingEnvironmentKind")] WindowingEnvironmentKind kind, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CWindowingEnvironment_t **")] IVectorView<IntPtr>** result);
+        HRESULT FindAllWithKind([NativeTypeName("ABI::Windows::UI::WindowManagement::WindowingEnvironmentKind")] WindowingEnvironmentKind kind, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CWindowingEnvironment_t **")] IVectorView<Pointer<IWindowingEnvironment>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IWindowingEnvironmentStatics : IWindowingEnvironmen
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CWindowingEnvironment_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> FindAll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IWindowingEnvironment>>**, int> FindAll;
 
         [NativeTypeName("HRESULT (ABI::Windows::UI::WindowManagement::WindowingEnvironmentKind, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CWindowingEnvironment_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, WindowingEnvironmentKind, IVectorView<IntPtr>**, int> FindAllWithKind;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WindowingEnvironmentKind, IVectorView<Pointer<IWindowingEnvironment>>**, int> FindAllWithKind;
     }
 }

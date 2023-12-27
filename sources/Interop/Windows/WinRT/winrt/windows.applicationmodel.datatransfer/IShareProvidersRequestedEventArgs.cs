@@ -74,9 +74,9 @@ public unsafe partial struct IShareProvidersRequestedEventArgs : IShareProviders
     /// <include file='IShareProvidersRequestedEventArgs.xml' path='doc/member[@name="IShareProvidersRequestedEventArgs.get_Providers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Providers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CDataTransfer__CShareProvider_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Providers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CDataTransfer__CShareProvider_t **")] IVector<Pointer<IShareProvider>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IShareProvidersRequestedEventArgs*, IVector<IntPtr>**, int>)(lpVtbl[6]))((IShareProvidersRequestedEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IShareProvidersRequestedEventArgs*, IVector<Pointer<IShareProvider>>**, int>)(lpVtbl[6]))((IShareProvidersRequestedEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IShareProvidersRequestedEventArgs.xml' path='doc/member[@name="IShareProvidersRequestedEventArgs.get_Data"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IShareProvidersRequestedEventArgs : IShareProviders
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Providers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CDataTransfer__CShareProvider_t **")] IVector<IntPtr>** value);
+        HRESULT get_Providers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CDataTransfer__CShareProvider_t **")] IVector<Pointer<IShareProvider>>** value);
 
         [VtblIndex(7)]
         HRESULT get_Data([NativeTypeName("ABI::Windows::ApplicationModel::DataTransfer::IDataPackageView **")] IDataPackageView** value);
@@ -129,7 +129,7 @@ public unsafe partial struct IShareProvidersRequestedEventArgs : IShareProviders
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CDataTransfer__CShareProvider_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Providers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IShareProvider>>**, int> get_Providers;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::DataTransfer::IDataPackageView **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IDataPackageView**, int> get_Data;

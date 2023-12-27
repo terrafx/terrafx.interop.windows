@@ -98,9 +98,9 @@ public unsafe partial struct ISceneAnalysisEffect : ISceneAnalysisEffect.Interfa
     /// <include file='ISceneAnalysisEffect.xml' path='doc/member[@name="ISceneAnalysisEffect.add_SceneAnalyzed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_SceneAnalyzed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CSceneAnalysisEffect_Windows__CMedia__CCore__CSceneAnalyzedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_SceneAnalyzed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CSceneAnalysisEffect_Windows__CMedia__CCore__CSceneAnalyzedEventArgs_t *")] ITypedEventHandler<Pointer<ISceneAnalysisEffect>, Pointer<ISceneAnalyzedEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISceneAnalysisEffect*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ISceneAnalysisEffect*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ISceneAnalysisEffect*, ITypedEventHandler<Pointer<ISceneAnalysisEffect>, Pointer<ISceneAnalyzedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ISceneAnalysisEffect*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ISceneAnalysisEffect.xml' path='doc/member[@name="ISceneAnalysisEffect.remove_SceneAnalyzed"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISceneAnalysisEffect : ISceneAnalysisEffect.Interfa
         HRESULT get_DesiredAnalysisInterval([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value);
 
         [VtblIndex(9)]
-        HRESULT add_SceneAnalyzed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CSceneAnalysisEffect_Windows__CMedia__CCore__CSceneAnalyzedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_SceneAnalyzed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CSceneAnalysisEffect_Windows__CMedia__CCore__CSceneAnalyzedEventArgs_t *")] ITypedEventHandler<Pointer<ISceneAnalysisEffect>, Pointer<ISceneAnalyzedEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(10)]
         HRESULT remove_SceneAnalyzed(EventRegistrationToken cookie);
@@ -160,7 +160,7 @@ public unsafe partial struct ISceneAnalysisEffect : ISceneAnalysisEffect.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> get_DesiredAnalysisInterval;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CSceneAnalysisEffect_Windows__CMedia__CCore__CSceneAnalyzedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SceneAnalyzed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISceneAnalysisEffect>, Pointer<ISceneAnalyzedEventArgs>>*, EventRegistrationToken*, int> add_SceneAnalyzed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SceneAnalyzed;

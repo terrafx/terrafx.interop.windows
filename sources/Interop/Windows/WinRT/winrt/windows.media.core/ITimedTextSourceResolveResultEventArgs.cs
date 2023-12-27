@@ -82,9 +82,9 @@ public unsafe partial struct ITimedTextSourceResolveResultEventArgs : ITimedText
     /// <include file='ITimedTextSourceResolveResultEventArgs.xml' path='doc/member[@name="ITimedTextSourceResolveResultEventArgs.get_Tracks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Tracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataTrack_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Tracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataTrack_t **")] IVectorView<Pointer<ITimedMetadataTrack>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITimedTextSourceResolveResultEventArgs*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((ITimedTextSourceResolveResultEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ITimedTextSourceResolveResultEventArgs*, IVectorView<Pointer<ITimedMetadataTrack>>**, int>)(lpVtbl[7]))((ITimedTextSourceResolveResultEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct ITimedTextSourceResolveResultEventArgs : ITimedText
         HRESULT get_Error([NativeTypeName("ABI::Windows::Media::Core::ITimedMetadataTrackError **")] ITimedMetadataTrackError** value);
 
         [VtblIndex(7)]
-        HRESULT get_Tracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataTrack_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Tracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataTrack_t **")] IVectorView<Pointer<ITimedMetadataTrack>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct ITimedTextSourceResolveResultEventArgs : ITimedText
         public delegate* unmanaged[MemberFunction]<TSelf*, ITimedMetadataTrackError**, int> get_Error;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CTimedMetadataTrack_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Tracks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ITimedMetadataTrack>>**, int> get_Tracks;
     }
 }

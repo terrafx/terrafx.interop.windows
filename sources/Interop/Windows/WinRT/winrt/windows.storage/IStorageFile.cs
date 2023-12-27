@@ -90,41 +90,41 @@ public unsafe partial struct IStorageFile : IStorageFile.Interface, INativeGuid
     /// <include file='IStorageFile.xml' path='doc/member[@name="IStorageFile.OpenAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT OpenAsync([NativeTypeName("ABI::Windows::Storage::FileAccessMode")] FileAccessMode accessMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT OpenAsync([NativeTypeName("ABI::Windows::Storage::FileAccessMode")] FileAccessMode accessMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **")] IAsyncOperation<Pointer<IRandomAccessStream>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFile*, FileAccessMode, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IStorageFile*)Unsafe.AsPointer(ref this), accessMode, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFile*, FileAccessMode, IAsyncOperation<Pointer<IRandomAccessStream>>**, int>)(lpVtbl[8]))((IStorageFile*)Unsafe.AsPointer(ref this), accessMode, operation);
     }
 
     /// <include file='IStorageFile.xml' path='doc/member[@name="IStorageFile.OpenTransactedWriteAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT OpenTransactedWriteAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageStreamTransaction_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT OpenTransactedWriteAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageStreamTransaction_t **")] IAsyncOperation<Pointer<IStorageStreamTransaction>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFile*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IStorageFile*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFile*, IAsyncOperation<Pointer<IStorageStreamTransaction>>**, int>)(lpVtbl[9]))((IStorageFile*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IStorageFile.xml' path='doc/member[@name="IStorageFile.CopyOverloadDefaultNameAndOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT CopyOverloadDefaultNameAndOptions([NativeTypeName("ABI::Windows::Storage::IStorageFolder *")] IStorageFolder* destinationFolder, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CopyOverloadDefaultNameAndOptions([NativeTypeName("ABI::Windows::Storage::IStorageFolder *")] IStorageFolder* destinationFolder, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFile*, IStorageFolder*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IStorageFile*)Unsafe.AsPointer(ref this), destinationFolder, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFile*, IStorageFolder*, IAsyncOperation<Pointer<IStorageFile>>**, int>)(lpVtbl[10]))((IStorageFile*)Unsafe.AsPointer(ref this), destinationFolder, operation);
     }
 
     /// <include file='IStorageFile.xml' path='doc/member[@name="IStorageFile.CopyOverloadDefaultOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT CopyOverloadDefaultOptions([NativeTypeName("ABI::Windows::Storage::IStorageFolder *")] IStorageFolder* destinationFolder, HSTRING desiredNewName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CopyOverloadDefaultOptions([NativeTypeName("ABI::Windows::Storage::IStorageFolder *")] IStorageFolder* destinationFolder, HSTRING desiredNewName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFile*, IStorageFolder*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IStorageFile*)Unsafe.AsPointer(ref this), destinationFolder, desiredNewName, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFile*, IStorageFolder*, HSTRING, IAsyncOperation<Pointer<IStorageFile>>**, int>)(lpVtbl[11]))((IStorageFile*)Unsafe.AsPointer(ref this), destinationFolder, desiredNewName, operation);
     }
 
     /// <include file='IStorageFile.xml' path='doc/member[@name="IStorageFile.CopyOverload"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT CopyOverload([NativeTypeName("ABI::Windows::Storage::IStorageFolder *")] IStorageFolder* destinationFolder, HSTRING desiredNewName, [NativeTypeName("ABI::Windows::Storage::NameCollisionOption")] NameCollisionOption option, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CopyOverload([NativeTypeName("ABI::Windows::Storage::IStorageFolder *")] IStorageFolder* destinationFolder, HSTRING desiredNewName, [NativeTypeName("ABI::Windows::Storage::NameCollisionOption")] NameCollisionOption option, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFile*, IStorageFolder*, HSTRING, NameCollisionOption, IAsyncOperation<IntPtr>**, int>)(lpVtbl[12]))((IStorageFile*)Unsafe.AsPointer(ref this), destinationFolder, desiredNewName, option, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFile*, IStorageFolder*, HSTRING, NameCollisionOption, IAsyncOperation<Pointer<IStorageFile>>**, int>)(lpVtbl[12]))((IStorageFile*)Unsafe.AsPointer(ref this), destinationFolder, desiredNewName, option, operation);
     }
 
     /// <include file='IStorageFile.xml' path='doc/member[@name="IStorageFile.CopyAndReplaceAsync"]/*' />
@@ -176,19 +176,19 @@ public unsafe partial struct IStorageFile : IStorageFile.Interface, INativeGuid
         HRESULT get_ContentType(HSTRING* value);
 
         [VtblIndex(8)]
-        HRESULT OpenAsync([NativeTypeName("ABI::Windows::Storage::FileAccessMode")] FileAccessMode accessMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT OpenAsync([NativeTypeName("ABI::Windows::Storage::FileAccessMode")] FileAccessMode accessMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **")] IAsyncOperation<Pointer<IRandomAccessStream>>** operation);
 
         [VtblIndex(9)]
-        HRESULT OpenTransactedWriteAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageStreamTransaction_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT OpenTransactedWriteAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageStreamTransaction_t **")] IAsyncOperation<Pointer<IStorageStreamTransaction>>** operation);
 
         [VtblIndex(10)]
-        HRESULT CopyOverloadDefaultNameAndOptions([NativeTypeName("ABI::Windows::Storage::IStorageFolder *")] IStorageFolder* destinationFolder, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CopyOverloadDefaultNameAndOptions([NativeTypeName("ABI::Windows::Storage::IStorageFolder *")] IStorageFolder* destinationFolder, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation);
 
         [VtblIndex(11)]
-        HRESULT CopyOverloadDefaultOptions([NativeTypeName("ABI::Windows::Storage::IStorageFolder *")] IStorageFolder* destinationFolder, HSTRING desiredNewName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CopyOverloadDefaultOptions([NativeTypeName("ABI::Windows::Storage::IStorageFolder *")] IStorageFolder* destinationFolder, HSTRING desiredNewName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation);
 
         [VtblIndex(12)]
-        HRESULT CopyOverload([NativeTypeName("ABI::Windows::Storage::IStorageFolder *")] IStorageFolder* destinationFolder, HSTRING desiredNewName, [NativeTypeName("ABI::Windows::Storage::NameCollisionOption")] NameCollisionOption option, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CopyOverload([NativeTypeName("ABI::Windows::Storage::IStorageFolder *")] IStorageFolder* destinationFolder, HSTRING desiredNewName, [NativeTypeName("ABI::Windows::Storage::NameCollisionOption")] NameCollisionOption option, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation);
 
         [VtblIndex(13)]
         HRESULT CopyAndReplaceAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* fileToReplace, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
@@ -234,19 +234,19 @@ public unsafe partial struct IStorageFile : IStorageFile.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_ContentType;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::FileAccessMode, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, FileAccessMode, IAsyncOperation<IntPtr>**, int> OpenAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FileAccessMode, IAsyncOperation<Pointer<IRandomAccessStream>>**, int> OpenAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageStreamTransaction_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> OpenTransactedWriteAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IStorageStreamTransaction>>**, int> OpenTransactedWriteAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFolder *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFolder*, IAsyncOperation<IntPtr>**, int> CopyOverloadDefaultNameAndOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFolder*, IAsyncOperation<Pointer<IStorageFile>>**, int> CopyOverloadDefaultNameAndOptions;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFolder *, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFolder*, HSTRING, IAsyncOperation<IntPtr>**, int> CopyOverloadDefaultOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFolder*, HSTRING, IAsyncOperation<Pointer<IStorageFile>>**, int> CopyOverloadDefaultOptions;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFolder *, HSTRING, ABI::Windows::Storage::NameCollisionOption, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFolder*, HSTRING, NameCollisionOption, IAsyncOperation<IntPtr>**, int> CopyOverload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFolder*, HSTRING, NameCollisionOption, IAsyncOperation<Pointer<IStorageFile>>**, int> CopyOverload;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncAction**, int> CopyAndReplaceAsync;

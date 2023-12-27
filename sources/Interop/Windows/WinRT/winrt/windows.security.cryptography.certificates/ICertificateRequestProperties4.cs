@@ -90,9 +90,9 @@ public unsafe partial struct ICertificateRequestProperties4 : ICertificateReques
     /// <include file='ICertificateRequestProperties4.xml' path='doc/member[@name="ICertificateRequestProperties4.get_Extensions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Extensions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Extensions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_t **")] IVector<Pointer<ICertificateExtension>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICertificateRequestProperties4*, IVector<IntPtr>**, int>)(lpVtbl[8]))((ICertificateRequestProperties4*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICertificateRequestProperties4*, IVector<Pointer<ICertificateExtension>>**, int>)(lpVtbl[8]))((ICertificateRequestProperties4*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct ICertificateRequestProperties4 : ICertificateReques
         HRESULT get_SubjectAlternativeName([NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::ISubjectAlternativeNameInfo **")] ISubjectAlternativeNameInfo** value);
 
         [VtblIndex(8)]
-        HRESULT get_Extensions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_t **")] IVector<IntPtr>** value);
+        HRESULT get_Extensions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_t **")] IVector<Pointer<ICertificateExtension>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct ICertificateRequestProperties4 : ICertificateReques
         public delegate* unmanaged[MemberFunction]<TSelf*, ISubjectAlternativeNameInfo**, int> get_SubjectAlternativeName;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificateExtension_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Extensions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<ICertificateExtension>>**, int> get_Extensions;
     }
 }

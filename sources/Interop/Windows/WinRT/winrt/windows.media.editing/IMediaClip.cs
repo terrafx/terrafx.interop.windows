@@ -154,9 +154,9 @@ public unsafe partial struct IMediaClip : IMediaClip.Interface, INativeGuid
     /// <include file='IMediaClip.xml' path='doc/member[@name="IMediaClip.get_EmbeddedAudioTracks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT get_EmbeddedAudioTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CEditing__CEmbeddedAudioTrack_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_EmbeddedAudioTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CEditing__CEmbeddedAudioTrack_t **")] IVectorView<Pointer<IEmbeddedAudioTrack>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaClip*, IVectorView<IntPtr>**, int>)(lpVtbl[16]))((IMediaClip*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaClip*, IVectorView<Pointer<IEmbeddedAudioTrack>>**, int>)(lpVtbl[16]))((IMediaClip*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaClip.xml' path='doc/member[@name="IMediaClip.get_SelectedEmbeddedAudioTrackIndex"]/*' />
@@ -202,17 +202,17 @@ public unsafe partial struct IMediaClip : IMediaClip.Interface, INativeGuid
     /// <include file='IMediaClip.xml' path='doc/member[@name="IMediaClip.get_AudioEffectDefinitions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT get_AudioEffectDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefinition_t **")] IVector<IntPtr>** value)
+    public HRESULT get_AudioEffectDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefinition_t **")] IVector<Pointer<IAudioEffectDefinition>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaClip*, IVector<IntPtr>**, int>)(lpVtbl[22]))((IMediaClip*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaClip*, IVector<Pointer<IAudioEffectDefinition>>**, int>)(lpVtbl[22]))((IMediaClip*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaClip.xml' path='doc/member[@name="IMediaClip.get_VideoEffectDefinitions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT get_VideoEffectDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIVideoEffectDefinition_t **")] IVector<IntPtr>** value)
+    public HRESULT get_VideoEffectDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIVideoEffectDefinition_t **")] IVector<Pointer<IVideoEffectDefinition>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaClip*, IVector<IntPtr>**, int>)(lpVtbl[23]))((IMediaClip*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaClip*, IVector<Pointer<IVideoEffectDefinition>>**, int>)(lpVtbl[23]))((IMediaClip*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -248,7 +248,7 @@ public unsafe partial struct IMediaClip : IMediaClip.Interface, INativeGuid
         HRESULT get_EndTimeInComposition([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value);
 
         [VtblIndex(16)]
-        HRESULT get_EmbeddedAudioTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CEditing__CEmbeddedAudioTrack_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_EmbeddedAudioTracks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CEditing__CEmbeddedAudioTrack_t **")] IVectorView<Pointer<IEmbeddedAudioTrack>>** value);
 
         [VtblIndex(17)]
         HRESULT get_SelectedEmbeddedAudioTrackIndex([NativeTypeName("UINT32 *")] uint* value);
@@ -266,10 +266,10 @@ public unsafe partial struct IMediaClip : IMediaClip.Interface, INativeGuid
         HRESULT GetVideoEncodingProperties([NativeTypeName("ABI::Windows::Media::MediaProperties::IVideoEncodingProperties **")] IVideoEncodingProperties** value);
 
         [VtblIndex(22)]
-        HRESULT get_AudioEffectDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefinition_t **")] IVector<IntPtr>** value);
+        HRESULT get_AudioEffectDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefinition_t **")] IVector<Pointer<IAudioEffectDefinition>>** value);
 
         [VtblIndex(23)]
-        HRESULT get_VideoEffectDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIVideoEffectDefinition_t **")] IVector<IntPtr>** value);
+        HRESULT get_VideoEffectDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIVideoEffectDefinition_t **")] IVector<Pointer<IVideoEffectDefinition>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -324,7 +324,7 @@ public unsafe partial struct IMediaClip : IMediaClip.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> get_EndTimeInComposition;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CEditing__CEmbeddedAudioTrack_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_EmbeddedAudioTracks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IEmbeddedAudioTrack>>**, int> get_EmbeddedAudioTracks;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_SelectedEmbeddedAudioTrackIndex;
@@ -342,9 +342,9 @@ public unsafe partial struct IMediaClip : IMediaClip.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IVideoEncodingProperties**, int> GetVideoEncodingProperties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefinition_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_AudioEffectDefinitions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IAudioEffectDefinition>>**, int> get_AudioEffectDefinitions;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIVideoEffectDefinition_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_VideoEffectDefinitions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IVideoEffectDefinition>>**, int> get_VideoEffectDefinitions;
     }
 }

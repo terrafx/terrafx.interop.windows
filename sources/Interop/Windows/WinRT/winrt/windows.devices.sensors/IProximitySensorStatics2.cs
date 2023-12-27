@@ -74,15 +74,15 @@ public unsafe partial struct IProximitySensorStatics2 : IProximitySensorStatics2
     /// <include file='IProximitySensorStatics2.xml' path='doc/member[@name="IProximitySensorStatics2.GetReadingsFromTriggerDetails"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetReadingsFromTriggerDetails([NativeTypeName("ABI::Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails *")] ISensorDataThresholdTriggerDetails* triggerDetails, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CProximitySensorReading_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetReadingsFromTriggerDetails([NativeTypeName("ABI::Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails *")] ISensorDataThresholdTriggerDetails* triggerDetails, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CProximitySensorReading_t **")] IVectorView<Pointer<IProximitySensorReading>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IProximitySensorStatics2*, ISensorDataThresholdTriggerDetails*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IProximitySensorStatics2*)Unsafe.AsPointer(ref this), triggerDetails, result);
+        return ((delegate* unmanaged[MemberFunction]<IProximitySensorStatics2*, ISensorDataThresholdTriggerDetails*, IVectorView<Pointer<IProximitySensorReading>>**, int>)(lpVtbl[6]))((IProximitySensorStatics2*)Unsafe.AsPointer(ref this), triggerDetails, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetReadingsFromTriggerDetails([NativeTypeName("ABI::Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails *")] ISensorDataThresholdTriggerDetails* triggerDetails, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CProximitySensorReading_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetReadingsFromTriggerDetails([NativeTypeName("ABI::Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails *")] ISensorDataThresholdTriggerDetails* triggerDetails, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CProximitySensorReading_t **")] IVectorView<Pointer<IProximitySensorReading>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IProximitySensorStatics2 : IProximitySensorStatics2
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Sensors::ISensorDataThresholdTriggerDetails *, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CProximitySensorReading_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ISensorDataThresholdTriggerDetails*, IVectorView<IntPtr>**, int> GetReadingsFromTriggerDetails;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISensorDataThresholdTriggerDetails*, IVectorView<Pointer<IProximitySensorReading>>**, int> GetReadingsFromTriggerDetails;
     }
 }

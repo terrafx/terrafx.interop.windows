@@ -74,9 +74,9 @@ public unsafe partial struct IMediaPlayer5 : IMediaPlayer5.Interface, INativeGui
     /// <include file='IMediaPlayer5.xml' path='doc/member[@name="IMediaPlayer5.add_VideoFrameAvailable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_VideoFrameAvailable([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_VideoFrameAvailable([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer5*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaPlayer5*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer5*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaPlayer5*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlayer5.xml' path='doc/member[@name="IMediaPlayer5.remove_VideoFrameAvailable"]/*' />
@@ -130,7 +130,7 @@ public unsafe partial struct IMediaPlayer5 : IMediaPlayer5.Interface, INativeGui
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_VideoFrameAvailable([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_VideoFrameAvailable([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_VideoFrameAvailable(EventRegistrationToken token);
@@ -173,7 +173,7 @@ public unsafe partial struct IMediaPlayer5 : IMediaPlayer5.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_VideoFrameAvailable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_VideoFrameAvailable;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_VideoFrameAvailable;

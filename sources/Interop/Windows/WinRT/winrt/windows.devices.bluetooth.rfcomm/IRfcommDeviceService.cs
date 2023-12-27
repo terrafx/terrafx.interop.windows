@@ -114,17 +114,17 @@ public unsafe partial struct IRfcommDeviceService : IRfcommDeviceService.Interfa
     /// <include file='IRfcommDeviceService.xml' path='doc/member[@name="IRfcommDeviceService.GetSdpRawAttributesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetSdpRawAttributesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_UINT32_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** asyncOp)
+    public HRESULT GetSdpRawAttributesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_UINT32_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IMapView<uint, Pointer<IBuffer>>>>** asyncOp)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRfcommDeviceService*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IRfcommDeviceService*)Unsafe.AsPointer(ref this), asyncOp);
+        return ((delegate* unmanaged[MemberFunction]<IRfcommDeviceService*, IAsyncOperation<Pointer<IMapView<uint, Pointer<IBuffer>>>>**, int>)(lpVtbl[11]))((IRfcommDeviceService*)Unsafe.AsPointer(ref this), asyncOp);
     }
 
     /// <include file='IRfcommDeviceService.xml' path='doc/member[@name="IRfcommDeviceService.GetSdpRawAttributesWithCacheModeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetSdpRawAttributesWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_UINT32_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** asyncOp)
+    public HRESULT GetSdpRawAttributesWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_UINT32_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IMapView<uint, Pointer<IBuffer>>>>** asyncOp)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRfcommDeviceService*, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int>)(lpVtbl[12]))((IRfcommDeviceService*)Unsafe.AsPointer(ref this), cacheMode, asyncOp);
+        return ((delegate* unmanaged[MemberFunction]<IRfcommDeviceService*, BluetoothCacheMode, IAsyncOperation<Pointer<IMapView<uint, Pointer<IBuffer>>>>**, int>)(lpVtbl[12]))((IRfcommDeviceService*)Unsafe.AsPointer(ref this), cacheMode, asyncOp);
     }
 
     public interface Interface : IInspectable.Interface
@@ -145,10 +145,10 @@ public unsafe partial struct IRfcommDeviceService : IRfcommDeviceService.Interfa
         HRESULT get_MaxProtectionLevel([NativeTypeName("ABI::Windows::Networking::Sockets::SocketProtectionLevel *")] SocketProtectionLevel* value);
 
         [VtblIndex(11)]
-        HRESULT GetSdpRawAttributesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_UINT32_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** asyncOp);
+        HRESULT GetSdpRawAttributesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_UINT32_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IMapView<uint, Pointer<IBuffer>>>>** asyncOp);
 
         [VtblIndex(12)]
-        HRESULT GetSdpRawAttributesWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_UINT32_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** asyncOp);
+        HRESULT GetSdpRawAttributesWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_UINT32_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IMapView<uint, Pointer<IBuffer>>>>** asyncOp);
     }
 
     public partial struct Vtbl<TSelf>
@@ -188,9 +188,9 @@ public unsafe partial struct IRfcommDeviceService : IRfcommDeviceService.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, SocketProtectionLevel*, int> get_MaxProtectionLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_UINT32_Windows__CStorage__CStreams__CIBuffer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetSdpRawAttributesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IMapView<uint, Pointer<IBuffer>>>>**, int> GetSdpRawAttributesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Bluetooth::BluetoothCacheMode, ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_UINT32_Windows__CStorage__CStreams__CIBuffer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int> GetSdpRawAttributesWithCacheModeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothCacheMode, IAsyncOperation<Pointer<IMapView<uint, Pointer<IBuffer>>>>**, int> GetSdpRawAttributesWithCacheModeAsync;
     }
 }

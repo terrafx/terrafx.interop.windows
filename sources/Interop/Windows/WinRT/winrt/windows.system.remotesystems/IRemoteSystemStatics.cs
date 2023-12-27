@@ -74,9 +74,9 @@ public unsafe partial struct IRemoteSystemStatics : IRemoteSystemStatics.Interfa
     /// <include file='IRemoteSystemStatics.xml' path='doc/member[@name="IRemoteSystemStatics.FindByHostNameAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindByHostNameAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* hostName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystem_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FindByHostNameAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* hostName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystem_t **")] IAsyncOperation<Pointer<IRemoteSystem>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemStatics*, IHostName*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IRemoteSystemStatics*)Unsafe.AsPointer(ref this), hostName, operation);
+        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemStatics*, IHostName*, IAsyncOperation<Pointer<IRemoteSystem>>**, int>)(lpVtbl[6]))((IRemoteSystemStatics*)Unsafe.AsPointer(ref this), hostName, operation);
     }
 
     /// <include file='IRemoteSystemStatics.xml' path='doc/member[@name="IRemoteSystemStatics.CreateWatcher"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IRemoteSystemStatics : IRemoteSystemStatics.Interfa
     /// <include file='IRemoteSystemStatics.xml' path='doc/member[@name="IRemoteSystemStatics.CreateWatcherWithFilters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT CreateWatcherWithFilters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CRemoteSystems__CIRemoteSystemFilter_t *")] IIterable<IntPtr>* filters, [NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystemWatcher **")] IRemoteSystemWatcher** result)
+    public HRESULT CreateWatcherWithFilters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CRemoteSystems__CIRemoteSystemFilter_t *")] IIterable<Pointer<IRemoteSystemFilter>>* filters, [NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystemWatcher **")] IRemoteSystemWatcher** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemStatics*, IIterable<IntPtr>*, IRemoteSystemWatcher**, int>)(lpVtbl[8]))((IRemoteSystemStatics*)Unsafe.AsPointer(ref this), filters, result);
+        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemStatics*, IIterable<Pointer<IRemoteSystemFilter>>*, IRemoteSystemWatcher**, int>)(lpVtbl[8]))((IRemoteSystemStatics*)Unsafe.AsPointer(ref this), filters, result);
     }
 
     /// <include file='IRemoteSystemStatics.xml' path='doc/member[@name="IRemoteSystemStatics.RequestAccessAsync"]/*' />
@@ -106,13 +106,13 @@ public unsafe partial struct IRemoteSystemStatics : IRemoteSystemStatics.Interfa
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FindByHostNameAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* hostName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystem_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FindByHostNameAsync([NativeTypeName("ABI::Windows::Networking::IHostName *")] IHostName* hostName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystem_t **")] IAsyncOperation<Pointer<IRemoteSystem>>** operation);
 
         [VtblIndex(7)]
         HRESULT CreateWatcher([NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystemWatcher **")] IRemoteSystemWatcher** result);
 
         [VtblIndex(8)]
-        HRESULT CreateWatcherWithFilters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CRemoteSystems__CIRemoteSystemFilter_t *")] IIterable<IntPtr>* filters, [NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystemWatcher **")] IRemoteSystemWatcher** result);
+        HRESULT CreateWatcherWithFilters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CRemoteSystems__CIRemoteSystemFilter_t *")] IIterable<Pointer<IRemoteSystemFilter>>* filters, [NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystemWatcher **")] IRemoteSystemWatcher** result);
 
         [VtblIndex(9)]
         HRESULT RequestAccessAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystemAccessStatus_t **")] IAsyncOperation<RemoteSystemAccessStatus>** operation);
@@ -140,13 +140,13 @@ public unsafe partial struct IRemoteSystemStatics : IRemoteSystemStatics.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Networking::IHostName *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystem_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IHostName*, IAsyncOperation<IntPtr>**, int> FindByHostNameAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHostName*, IAsyncOperation<Pointer<IRemoteSystem>>**, int> FindByHostNameAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::RemoteSystems::IRemoteSystemWatcher **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IRemoteSystemWatcher**, int> CreateWatcher;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CRemoteSystems__CIRemoteSystemFilter_t *, ABI::Windows::System::RemoteSystems::IRemoteSystemWatcher **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IRemoteSystemWatcher**, int> CreateWatcherWithFilters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IRemoteSystemFilter>>*, IRemoteSystemWatcher**, int> CreateWatcherWithFilters;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystemAccessStatus_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<RemoteSystemAccessStatus>**, int> RequestAccessAsync;

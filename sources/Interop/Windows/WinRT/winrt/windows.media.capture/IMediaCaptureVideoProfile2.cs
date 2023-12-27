@@ -74,26 +74,26 @@ public unsafe partial struct IMediaCaptureVideoProfile2 : IMediaCaptureVideoProf
     /// <include file='IMediaCaptureVideoProfile2.xml' path='doc/member[@name="IMediaCaptureVideoProfile2.get_FrameSourceInfos"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_FrameSourceInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_FrameSourceInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_t **")] IVectorView<Pointer<IMediaFrameSourceInfo>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureVideoProfile2*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IMediaCaptureVideoProfile2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureVideoProfile2*, IVectorView<Pointer<IMediaFrameSourceInfo>>**, int>)(lpVtbl[6]))((IMediaCaptureVideoProfile2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaCaptureVideoProfile2.xml' path='doc/member[@name="IMediaCaptureVideoProfile2.get_Properties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, IntPtr>** value)
+    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, Pointer<IInspectable>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureVideoProfile2*, IMapView<Guid, IntPtr>**, int>)(lpVtbl[7]))((IMediaCaptureVideoProfile2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureVideoProfile2*, IMapView<Guid, Pointer<IInspectable>>**, int>)(lpVtbl[7]))((IMediaCaptureVideoProfile2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_FrameSourceInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_FrameSourceInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_t **")] IVectorView<Pointer<IMediaFrameSourceInfo>>** value);
 
         [VtblIndex(7)]
-        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, IntPtr>** value);
+        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **")] IMapView<Guid, Pointer<IInspectable>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IMediaCaptureVideoProfile2 : IMediaCaptureVideoProf
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_FrameSourceInfos;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IMediaFrameSourceInfo>>**, int> get_FrameSourceInfos;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_IInspectable_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<Guid, IntPtr>**, int> get_Properties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<Guid, Pointer<IInspectable>>**, int> get_Properties;
     }
 }

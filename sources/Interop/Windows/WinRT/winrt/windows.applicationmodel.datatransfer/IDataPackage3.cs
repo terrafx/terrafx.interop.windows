@@ -74,9 +74,9 @@ public unsafe partial struct IDataPackage3 : IDataPackage3.Interface, INativeGui
     /// <include file='IDataPackage3.xml' path='doc/member[@name="IDataPackage3.add_ShareCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_ShareCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__CShareCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ShareCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__CShareCompletedEventArgs_t *")] ITypedEventHandler<Pointer<IDataPackage>, Pointer<IShareCompletedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataPackage3*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IDataPackage3*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDataPackage3*, ITypedEventHandler<Pointer<IDataPackage>, Pointer<IShareCompletedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IDataPackage3*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDataPackage3.xml' path='doc/member[@name="IDataPackage3.remove_ShareCompleted"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IDataPackage3 : IDataPackage3.Interface, INativeGui
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_ShareCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__CShareCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ShareCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__CShareCompletedEventArgs_t *")] ITypedEventHandler<Pointer<IDataPackage>, Pointer<IShareCompletedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_ShareCompleted(EventRegistrationToken token);
@@ -118,7 +118,7 @@ public unsafe partial struct IDataPackage3 : IDataPackage3.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__CShareCompletedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ShareCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDataPackage>, Pointer<IShareCompletedEventArgs>>*, EventRegistrationToken*, int> add_ShareCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ShareCompleted;

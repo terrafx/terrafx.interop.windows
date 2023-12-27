@@ -98,9 +98,9 @@ public unsafe partial struct IDevicePicker : IDevicePicker.Interface, INativeGui
     /// <include file='IDevicePicker.xml' path='doc/member[@name="IDevicePicker.add_DeviceSelected"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_DeviceSelected([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceSelectedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_DeviceSelected([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceSelectedEventArgs_t *")] ITypedEventHandler<Pointer<IDevicePicker>, Pointer<IDeviceSelectedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDevicePicker*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IDevicePicker*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDevicePicker*, ITypedEventHandler<Pointer<IDevicePicker>, Pointer<IDeviceSelectedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IDevicePicker*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDevicePicker.xml' path='doc/member[@name="IDevicePicker.remove_DeviceSelected"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct IDevicePicker : IDevicePicker.Interface, INativeGui
     /// <include file='IDevicePicker.xml' path='doc/member[@name="IDevicePicker.add_DisconnectButtonClicked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_DisconnectButtonClicked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceDisconnectButtonClickedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_DisconnectButtonClicked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceDisconnectButtonClickedEventArgs_t *")] ITypedEventHandler<Pointer<IDevicePicker>, Pointer<IDeviceDisconnectButtonClickedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDevicePicker*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IDevicePicker*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDevicePicker*, ITypedEventHandler<Pointer<IDevicePicker>, Pointer<IDeviceDisconnectButtonClickedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IDevicePicker*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDevicePicker.xml' path='doc/member[@name="IDevicePicker.remove_DisconnectButtonClicked"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IDevicePicker : IDevicePicker.Interface, INativeGui
     /// <include file='IDevicePicker.xml' path='doc/member[@name="IDevicePicker.add_DevicePickerDismissed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_DevicePickerDismissed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_DevicePickerDismissed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_IInspectable_t *")] ITypedEventHandler<Pointer<IDevicePicker>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDevicePicker*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IDevicePicker*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDevicePicker*, ITypedEventHandler<Pointer<IDevicePicker>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IDevicePicker*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDevicePicker.xml' path='doc/member[@name="IDevicePicker.remove_DevicePickerDismissed"]/*' />
@@ -162,17 +162,17 @@ public unsafe partial struct IDevicePicker : IDevicePicker.Interface, INativeGui
     /// <include file='IDevicePicker.xml' path='doc/member[@name="IDevicePicker.PickSingleDeviceAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT PickSingleDeviceAsync([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT PickSingleDeviceAsync([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<Pointer<IDeviceInformation>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDevicePicker*, Rect, IAsyncOperation<IntPtr>**, int>)(lpVtbl[17]))((IDevicePicker*)Unsafe.AsPointer(ref this), selection, operation);
+        return ((delegate* unmanaged[MemberFunction]<IDevicePicker*, Rect, IAsyncOperation<Pointer<IDeviceInformation>>**, int>)(lpVtbl[17]))((IDevicePicker*)Unsafe.AsPointer(ref this), selection, operation);
     }
 
     /// <include file='IDevicePicker.xml' path='doc/member[@name="IDevicePicker.PickSingleDeviceAsyncWithPlacement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT PickSingleDeviceAsyncWithPlacement([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement placement, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT PickSingleDeviceAsyncWithPlacement([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement placement, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<Pointer<IDeviceInformation>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDevicePicker*, Rect, Placement, IAsyncOperation<IntPtr>**, int>)(lpVtbl[18]))((IDevicePicker*)Unsafe.AsPointer(ref this), selection, placement, operation);
+        return ((delegate* unmanaged[MemberFunction]<IDevicePicker*, Rect, Placement, IAsyncOperation<Pointer<IDeviceInformation>>**, int>)(lpVtbl[18]))((IDevicePicker*)Unsafe.AsPointer(ref this), selection, placement, operation);
     }
 
     /// <include file='IDevicePicker.xml' path='doc/member[@name="IDevicePicker.Hide"]/*' />
@@ -203,19 +203,19 @@ public unsafe partial struct IDevicePicker : IDevicePicker.Interface, INativeGui
         HRESULT get_RequestedProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t **")] IVector<HSTRING>** value);
 
         [VtblIndex(9)]
-        HRESULT add_DeviceSelected([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceSelectedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_DeviceSelected([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceSelectedEventArgs_t *")] ITypedEventHandler<Pointer<IDevicePicker>, Pointer<IDeviceSelectedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_DeviceSelected(EventRegistrationToken token);
 
         [VtblIndex(11)]
-        HRESULT add_DisconnectButtonClicked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceDisconnectButtonClickedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_DisconnectButtonClicked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceDisconnectButtonClickedEventArgs_t *")] ITypedEventHandler<Pointer<IDevicePicker>, Pointer<IDeviceDisconnectButtonClickedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_DisconnectButtonClicked(EventRegistrationToken token);
 
         [VtblIndex(13)]
-        HRESULT add_DevicePickerDismissed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_DevicePickerDismissed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_IInspectable_t *")] ITypedEventHandler<Pointer<IDevicePicker>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_DevicePickerDismissed(EventRegistrationToken token);
@@ -227,10 +227,10 @@ public unsafe partial struct IDevicePicker : IDevicePicker.Interface, INativeGui
         HRESULT ShowWithPlacement([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement placement);
 
         [VtblIndex(17)]
-        HRESULT PickSingleDeviceAsync([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT PickSingleDeviceAsync([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<Pointer<IDeviceInformation>>** operation);
 
         [VtblIndex(18)]
-        HRESULT PickSingleDeviceAsyncWithPlacement([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement placement, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT PickSingleDeviceAsyncWithPlacement([NativeTypeName("ABI::Windows::Foundation::Rect")] Rect selection, [NativeTypeName("ABI::Windows::UI::Popups::Placement")] Placement placement, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<Pointer<IDeviceInformation>>** operation);
 
         [VtblIndex(19)]
         HRESULT Hide();
@@ -270,19 +270,19 @@ public unsafe partial struct IDevicePicker : IDevicePicker.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, IVector<HSTRING>**, int> get_RequestedProperties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceSelectedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DeviceSelected;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDevicePicker>, Pointer<IDeviceSelectedEventArgs>>*, EventRegistrationToken*, int> add_DeviceSelected;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DeviceSelected;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_Windows__CDevices__CEnumeration__CDeviceDisconnectButtonClickedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DisconnectButtonClicked;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDevicePicker>, Pointer<IDeviceDisconnectButtonClickedEventArgs>>*, EventRegistrationToken*, int> add_DisconnectButtonClicked;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DisconnectButtonClicked;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDevicePicker_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DevicePickerDismissed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDevicePicker>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_DevicePickerDismissed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DevicePickerDismissed;
@@ -294,10 +294,10 @@ public unsafe partial struct IDevicePicker : IDevicePicker.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, Rect, Placement, int> ShowWithPlacement;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Rect, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, Rect, IAsyncOperation<IntPtr>**, int> PickSingleDeviceAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Rect, IAsyncOperation<Pointer<IDeviceInformation>>**, int> PickSingleDeviceAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Rect, ABI::Windows::UI::Popups::Placement, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, Rect, Placement, IAsyncOperation<IntPtr>**, int> PickSingleDeviceAsyncWithPlacement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Rect, Placement, IAsyncOperation<Pointer<IDeviceInformation>>**, int> PickSingleDeviceAsyncWithPlacement;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, int> Hide;

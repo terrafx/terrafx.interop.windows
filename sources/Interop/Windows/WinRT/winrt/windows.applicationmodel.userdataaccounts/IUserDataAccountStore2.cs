@@ -74,17 +74,17 @@ public unsafe partial struct IUserDataAccountStore2 : IUserDataAccountStore2.Int
     /// <include file='IUserDataAccountStore2.xml' path='doc/member[@name="IUserDataAccountStore2.CreateAccountWithPackageRelativeAppIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateAccountWithPackageRelativeAppIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateAccountWithPackageRelativeAppIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<Pointer<IUserDataAccount>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountStore2*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IUserDataAccountStore2*)Unsafe.AsPointer(ref this), userDisplayName, packageRelativeAppId, result);
+        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountStore2*, HSTRING, HSTRING, IAsyncOperation<Pointer<IUserDataAccount>>**, int>)(lpVtbl[6]))((IUserDataAccountStore2*)Unsafe.AsPointer(ref this), userDisplayName, packageRelativeAppId, result);
     }
 
     /// <include file='IUserDataAccountStore2.xml' path='doc/member[@name="IUserDataAccountStore2.add_StoreChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_StoreChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStoreChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_StoreChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStoreChangedEventArgs_t *")] ITypedEventHandler<Pointer<IUserDataAccountStore>, Pointer<IUserDataAccountStoreChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountStore2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IUserDataAccountStore2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountStore2*, ITypedEventHandler<Pointer<IUserDataAccountStore>, Pointer<IUserDataAccountStoreChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IUserDataAccountStore2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IUserDataAccountStore2.xml' path='doc/member[@name="IUserDataAccountStore2.remove_StoreChanged"]/*' />
@@ -98,10 +98,10 @@ public unsafe partial struct IUserDataAccountStore2 : IUserDataAccountStore2.Int
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CreateAccountWithPackageRelativeAppIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateAccountWithPackageRelativeAppIdAsync(HSTRING userDisplayName, HSTRING packageRelativeAppId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **")] IAsyncOperation<Pointer<IUserDataAccount>>** result);
 
         [VtblIndex(7)]
-        HRESULT add_StoreChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStoreChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_StoreChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStoreChangedEventArgs_t *")] ITypedEventHandler<Pointer<IUserDataAccountStore>, Pointer<IUserDataAccountStoreChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_StoreChanged(EventRegistrationToken token);
@@ -129,10 +129,10 @@ public unsafe partial struct IUserDataAccountStore2 : IUserDataAccountStore2.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccount_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int> CreateAccountWithPackageRelativeAppIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IAsyncOperation<Pointer<IUserDataAccount>>**, int> CreateAccountWithPackageRelativeAppIdAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStore_Windows__CApplicationModel__CUserDataAccounts__CUserDataAccountStoreChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_StoreChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IUserDataAccountStore>, Pointer<IUserDataAccountStoreChangedEventArgs>>*, EventRegistrationToken*, int> add_StoreChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StoreChanged;

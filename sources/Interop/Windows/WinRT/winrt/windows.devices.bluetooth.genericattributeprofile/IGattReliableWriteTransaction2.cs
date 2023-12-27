@@ -74,15 +74,15 @@ public unsafe partial struct IGattReliableWriteTransaction2 : IGattReliableWrite
     /// <include file='IGattReliableWriteTransaction2.xml' path='doc/member[@name="IGattReliableWriteTransaction2.CommitWithResultAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CommitWithResultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CommitWithResultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteResult_t **")] IAsyncOperation<Pointer<IGattWriteResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattReliableWriteTransaction2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IGattReliableWriteTransaction2*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IGattReliableWriteTransaction2*, IAsyncOperation<Pointer<IGattWriteResult>>**, int>)(lpVtbl[6]))((IGattReliableWriteTransaction2*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CommitWithResultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CommitWithResultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteResult_t **")] IAsyncOperation<Pointer<IGattWriteResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IGattReliableWriteTransaction2 : IGattReliableWrite
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> CommitWithResultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IGattWriteResult>>**, int> CommitWithResultAsync;
     }
 }

@@ -82,9 +82,9 @@ public unsafe partial struct IToastNotificationManagerForUser3 : IToastNotificat
     /// <include file='IToastNotificationManagerForUser3.xml' path='doc/member[@name="IToastNotificationManagerForUser3.add_NotificationModeChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_NotificationModeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotificationManagerForUser_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_NotificationModeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotificationManagerForUser_IInspectable_t *")] ITypedEventHandler<Pointer<IToastNotificationManagerForUser>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IToastNotificationManagerForUser3*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IToastNotificationManagerForUser3*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IToastNotificationManagerForUser3*, ITypedEventHandler<Pointer<IToastNotificationManagerForUser>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IToastNotificationManagerForUser3*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IToastNotificationManagerForUser3.xml' path='doc/member[@name="IToastNotificationManagerForUser3.remove_NotificationModeChanged"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IToastNotificationManagerForUser3 : IToastNotificat
         HRESULT get_NotificationMode([NativeTypeName("ABI::Windows::UI::Notifications::ToastNotificationMode *")] ToastNotificationMode* value);
 
         [VtblIndex(7)]
-        HRESULT add_NotificationModeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotificationManagerForUser_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_NotificationModeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotificationManagerForUser_IInspectable_t *")] ITypedEventHandler<Pointer<IToastNotificationManagerForUser>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_NotificationModeChanged(EventRegistrationToken token);
@@ -132,7 +132,7 @@ public unsafe partial struct IToastNotificationManagerForUser3 : IToastNotificat
         public delegate* unmanaged[MemberFunction]<TSelf*, ToastNotificationMode*, int> get_NotificationMode;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotificationManagerForUser_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_NotificationModeChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IToastNotificationManagerForUser>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_NotificationModeChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_NotificationModeChanged;

@@ -130,9 +130,9 @@ public unsafe partial struct ISystemMediaTransportControls2 : ISystemMediaTransp
     /// <include file='ISystemMediaTransportControls2.xml' path='doc/member[@name="ISystemMediaTransportControls2.add_PlaybackPositionChangeRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_PlaybackPositionChangeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CPlaybackPositionChangeRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PlaybackPositionChangeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CPlaybackPositionChangeRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<IPlaybackPositionChangeRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISystemMediaTransportControls2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((ISystemMediaTransportControls2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISystemMediaTransportControls2*, ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<IPlaybackPositionChangeRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((ISystemMediaTransportControls2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISystemMediaTransportControls2.xml' path='doc/member[@name="ISystemMediaTransportControls2.remove_PlaybackPositionChangeRequested"]/*' />
@@ -146,9 +146,9 @@ public unsafe partial struct ISystemMediaTransportControls2 : ISystemMediaTransp
     /// <include file='ISystemMediaTransportControls2.xml' path='doc/member[@name="ISystemMediaTransportControls2.add_PlaybackRateChangeRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT add_PlaybackRateChangeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CPlaybackRateChangeRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PlaybackRateChangeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CPlaybackRateChangeRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<IPlaybackRateChangeRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISystemMediaTransportControls2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((ISystemMediaTransportControls2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISystemMediaTransportControls2*, ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<IPlaybackRateChangeRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((ISystemMediaTransportControls2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISystemMediaTransportControls2.xml' path='doc/member[@name="ISystemMediaTransportControls2.remove_PlaybackRateChangeRequested"]/*' />
@@ -162,9 +162,9 @@ public unsafe partial struct ISystemMediaTransportControls2 : ISystemMediaTransp
     /// <include file='ISystemMediaTransportControls2.xml' path='doc/member[@name="ISystemMediaTransportControls2.add_ShuffleEnabledChangeRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT add_ShuffleEnabledChangeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CShuffleEnabledChangeRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ShuffleEnabledChangeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CShuffleEnabledChangeRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<IShuffleEnabledChangeRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISystemMediaTransportControls2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[17]))((ISystemMediaTransportControls2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISystemMediaTransportControls2*, ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<IShuffleEnabledChangeRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[17]))((ISystemMediaTransportControls2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISystemMediaTransportControls2.xml' path='doc/member[@name="ISystemMediaTransportControls2.remove_ShuffleEnabledChangeRequested"]/*' />
@@ -178,9 +178,9 @@ public unsafe partial struct ISystemMediaTransportControls2 : ISystemMediaTransp
     /// <include file='ISystemMediaTransportControls2.xml' path='doc/member[@name="ISystemMediaTransportControls2.add_AutoRepeatModeChangeRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT add_AutoRepeatModeChangeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CAutoRepeatModeChangeRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AutoRepeatModeChangeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CAutoRepeatModeChangeRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<IAutoRepeatModeChangeRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISystemMediaTransportControls2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[19]))((ISystemMediaTransportControls2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISystemMediaTransportControls2*, ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<IAutoRepeatModeChangeRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[19]))((ISystemMediaTransportControls2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISystemMediaTransportControls2.xml' path='doc/member[@name="ISystemMediaTransportControls2.remove_AutoRepeatModeChangeRequested"]/*' />
@@ -215,25 +215,25 @@ public unsafe partial struct ISystemMediaTransportControls2 : ISystemMediaTransp
         HRESULT UpdateTimelineProperties([NativeTypeName("ABI::Windows::Media::ISystemMediaTransportControlsTimelineProperties *")] ISystemMediaTransportControlsTimelineProperties* timelineProperties);
 
         [VtblIndex(13)]
-        HRESULT add_PlaybackPositionChangeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CPlaybackPositionChangeRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PlaybackPositionChangeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CPlaybackPositionChangeRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<IPlaybackPositionChangeRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_PlaybackPositionChangeRequested(EventRegistrationToken token);
 
         [VtblIndex(15)]
-        HRESULT add_PlaybackRateChangeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CPlaybackRateChangeRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PlaybackRateChangeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CPlaybackRateChangeRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<IPlaybackRateChangeRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(16)]
         HRESULT remove_PlaybackRateChangeRequested(EventRegistrationToken token);
 
         [VtblIndex(17)]
-        HRESULT add_ShuffleEnabledChangeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CShuffleEnabledChangeRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ShuffleEnabledChangeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CShuffleEnabledChangeRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<IShuffleEnabledChangeRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(18)]
         HRESULT remove_ShuffleEnabledChangeRequested(EventRegistrationToken token);
 
         [VtblIndex(19)]
-        HRESULT add_AutoRepeatModeChangeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CAutoRepeatModeChangeRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AutoRepeatModeChangeRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CAutoRepeatModeChangeRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<IAutoRepeatModeChangeRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(20)]
         HRESULT remove_AutoRepeatModeChangeRequested(EventRegistrationToken token);
@@ -282,25 +282,25 @@ public unsafe partial struct ISystemMediaTransportControls2 : ISystemMediaTransp
         public delegate* unmanaged[MemberFunction]<TSelf*, ISystemMediaTransportControlsTimelineProperties*, int> UpdateTimelineProperties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CPlaybackPositionChangeRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PlaybackPositionChangeRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<IPlaybackPositionChangeRequestedEventArgs>>*, EventRegistrationToken*, int> add_PlaybackPositionChangeRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PlaybackPositionChangeRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CPlaybackRateChangeRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PlaybackRateChangeRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<IPlaybackRateChangeRequestedEventArgs>>*, EventRegistrationToken*, int> add_PlaybackRateChangeRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PlaybackRateChangeRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CShuffleEnabledChangeRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ShuffleEnabledChangeRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<IShuffleEnabledChangeRequestedEventArgs>>*, EventRegistrationToken*, int> add_ShuffleEnabledChangeRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ShuffleEnabledChangeRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CAutoRepeatModeChangeRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AutoRepeatModeChangeRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<IAutoRepeatModeChangeRequestedEventArgs>>*, EventRegistrationToken*, int> add_AutoRepeatModeChangeRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AutoRepeatModeChangeRequested;

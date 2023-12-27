@@ -82,9 +82,9 @@ public unsafe partial struct IUserDataAccountProviderAddAccountOperation : IUser
     /// <include file='IUserDataAccountProviderAddAccountOperation.xml' path='doc/member[@name="IUserDataAccountProviderAddAccountOperation.get_PartnerAccountInfos"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_PartnerAccountInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CProvider__CUserDataAccountPartnerAccountInfo_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_PartnerAccountInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CProvider__CUserDataAccountPartnerAccountInfo_t **")] IVectorView<Pointer<IUserDataAccountPartnerAccountInfo>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountProviderAddAccountOperation*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IUserDataAccountProviderAddAccountOperation*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IUserDataAccountProviderAddAccountOperation*, IVectorView<Pointer<IUserDataAccountPartnerAccountInfo>>**, int>)(lpVtbl[7]))((IUserDataAccountProviderAddAccountOperation*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IUserDataAccountProviderAddAccountOperation.xml' path='doc/member[@name="IUserDataAccountProviderAddAccountOperation.ReportCompleted"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IUserDataAccountProviderAddAccountOperation : IUser
         HRESULT get_ContentKinds([NativeTypeName("ABI::Windows::ApplicationModel::UserDataAccounts::UserDataAccountContentKinds *")] UserDataAccountContentKinds* value);
 
         [VtblIndex(7)]
-        HRESULT get_PartnerAccountInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CProvider__CUserDataAccountPartnerAccountInfo_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_PartnerAccountInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CProvider__CUserDataAccountPartnerAccountInfo_t **")] IVectorView<Pointer<IUserDataAccountPartnerAccountInfo>>** value);
 
         [VtblIndex(8)]
         HRESULT ReportCompleted(HSTRING userDataAccountId);
@@ -132,7 +132,7 @@ public unsafe partial struct IUserDataAccountProviderAddAccountOperation : IUser
         public delegate* unmanaged[MemberFunction]<TSelf*, UserDataAccountContentKinds*, int> get_ContentKinds;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CUserDataAccounts__CProvider__CUserDataAccountPartnerAccountInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_PartnerAccountInfos;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IUserDataAccountPartnerAccountInfo>>**, int> get_PartnerAccountInfos;
 
         [NativeTypeName("HRESULT (HSTRING) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> ReportCompleted;

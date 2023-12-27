@@ -74,15 +74,15 @@ public unsafe partial struct IAppServiceCatalogStatics : IAppServiceCatalogStati
     /// <include file='IAppServiceCatalogStatics.xml' path='doc/member[@name="IAppServiceCatalogStatics.FindAppServiceProvidersAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindAppServiceProvidersAsync(HSTRING appServiceName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppInfo_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FindAppServiceProvidersAsync(HSTRING appServiceName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppInfo_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppInfo>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppServiceCatalogStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IAppServiceCatalogStatics*)Unsafe.AsPointer(ref this), appServiceName, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppServiceCatalogStatics*, HSTRING, IAsyncOperation<Pointer<IVectorView<Pointer<IAppInfo>>>>**, int>)(lpVtbl[6]))((IAppServiceCatalogStatics*)Unsafe.AsPointer(ref this), appServiceName, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FindAppServiceProvidersAsync(HSTRING appServiceName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppInfo_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FindAppServiceProvidersAsync(HSTRING appServiceName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppInfo_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAppInfo>>>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IAppServiceCatalogStatics : IAppServiceCatalogStati
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CAppInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FindAppServiceProvidersAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IVectorView<Pointer<IAppInfo>>>>**, int> FindAppServiceProvidersAsync;
     }
 }

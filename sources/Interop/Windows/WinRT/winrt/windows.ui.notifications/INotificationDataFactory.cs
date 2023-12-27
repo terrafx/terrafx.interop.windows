@@ -74,26 +74,26 @@ public unsafe partial struct INotificationDataFactory : INotificationDataFactory
     /// <include file='INotificationDataFactory.xml' path='doc/member[@name="INotificationDataFactory.CreateNotificationDataWithValuesAndSequenceNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CreateNotificationDataWithValuesAndSequenceNumber([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t *")] IIterable<IntPtr>* initialValues, [NativeTypeName("UINT32")] uint sequenceNumber, [NativeTypeName("ABI::Windows::UI::Notifications::INotificationData **")] INotificationData** value)
+    public HRESULT CreateNotificationDataWithValuesAndSequenceNumber([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, HSTRING>>>* initialValues, [NativeTypeName("UINT32")] uint sequenceNumber, [NativeTypeName("ABI::Windows::UI::Notifications::INotificationData **")] INotificationData** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<INotificationDataFactory*, IIterable<IntPtr>*, uint, INotificationData**, int>)(lpVtbl[6]))((INotificationDataFactory*)Unsafe.AsPointer(ref this), initialValues, sequenceNumber, value);
+        return ((delegate* unmanaged[MemberFunction]<INotificationDataFactory*, IIterable<Pointer<IKeyValuePair<HSTRING, HSTRING>>>*, uint, INotificationData**, int>)(lpVtbl[6]))((INotificationDataFactory*)Unsafe.AsPointer(ref this), initialValues, sequenceNumber, value);
     }
 
     /// <include file='INotificationDataFactory.xml' path='doc/member[@name="INotificationDataFactory.CreateNotificationDataWithValues"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateNotificationDataWithValues([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t *")] IIterable<IntPtr>* initialValues, [NativeTypeName("ABI::Windows::UI::Notifications::INotificationData **")] INotificationData** value)
+    public HRESULT CreateNotificationDataWithValues([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, HSTRING>>>* initialValues, [NativeTypeName("ABI::Windows::UI::Notifications::INotificationData **")] INotificationData** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<INotificationDataFactory*, IIterable<IntPtr>*, INotificationData**, int>)(lpVtbl[7]))((INotificationDataFactory*)Unsafe.AsPointer(ref this), initialValues, value);
+        return ((delegate* unmanaged[MemberFunction]<INotificationDataFactory*, IIterable<Pointer<IKeyValuePair<HSTRING, HSTRING>>>*, INotificationData**, int>)(lpVtbl[7]))((INotificationDataFactory*)Unsafe.AsPointer(ref this), initialValues, value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CreateNotificationDataWithValuesAndSequenceNumber([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t *")] IIterable<IntPtr>* initialValues, [NativeTypeName("UINT32")] uint sequenceNumber, [NativeTypeName("ABI::Windows::UI::Notifications::INotificationData **")] INotificationData** value);
+        HRESULT CreateNotificationDataWithValuesAndSequenceNumber([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, HSTRING>>>* initialValues, [NativeTypeName("UINT32")] uint sequenceNumber, [NativeTypeName("ABI::Windows::UI::Notifications::INotificationData **")] INotificationData** value);
 
         [VtblIndex(7)]
-        HRESULT CreateNotificationDataWithValues([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t *")] IIterable<IntPtr>* initialValues, [NativeTypeName("ABI::Windows::UI::Notifications::INotificationData **")] INotificationData** value);
+        HRESULT CreateNotificationDataWithValues([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, HSTRING>>>* initialValues, [NativeTypeName("ABI::Windows::UI::Notifications::INotificationData **")] INotificationData** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct INotificationDataFactory : INotificationDataFactory
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t *, UINT32, ABI::Windows::UI::Notifications::INotificationData **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, uint, INotificationData**, int> CreateNotificationDataWithValuesAndSequenceNumber;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IKeyValuePair<HSTRING, HSTRING>>>*, uint, INotificationData**, int> CreateNotificationDataWithValuesAndSequenceNumber;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t *, ABI::Windows::UI::Notifications::INotificationData **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, INotificationData**, int> CreateNotificationDataWithValues;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IKeyValuePair<HSTRING, HSTRING>>>*, INotificationData**, int> CreateNotificationDataWithValues;
     }
 }

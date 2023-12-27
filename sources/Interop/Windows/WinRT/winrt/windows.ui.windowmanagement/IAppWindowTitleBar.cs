@@ -290,9 +290,9 @@ public unsafe partial struct IAppWindowTitleBar : IAppWindowTitleBar.Interface, 
     /// <include file='IAppWindowTitleBar.xml' path='doc/member[@name="IAppWindowTitleBar.GetTitleBarOcclusions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
-    public HRESULT GetTitleBarOcclusions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CAppWindowTitleBarOcclusion_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetTitleBarOcclusions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CAppWindowTitleBarOcclusion_t **")] IVectorView<Pointer<IAppWindowTitleBarOcclusion>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppWindowTitleBar*, IVectorView<IntPtr>**, int>)(lpVtbl[33]))((IAppWindowTitleBar*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IAppWindowTitleBar*, IVectorView<Pointer<IAppWindowTitleBarOcclusion>>**, int>)(lpVtbl[33]))((IAppWindowTitleBar*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -379,7 +379,7 @@ public unsafe partial struct IAppWindowTitleBar : IAppWindowTitleBar.Interface, 
         HRESULT get_IsVisible([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(33)]
-        HRESULT GetTitleBarOcclusions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CAppWindowTitleBarOcclusion_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetTitleBarOcclusions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CAppWindowTitleBarOcclusion_t **")] IVectorView<Pointer<IAppWindowTitleBarOcclusion>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -485,6 +485,6 @@ public unsafe partial struct IAppWindowTitleBar : IAppWindowTitleBar.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsVisible;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CAppWindowTitleBarOcclusion_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetTitleBarOcclusions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IAppWindowTitleBarOcclusion>>**, int> GetTitleBarOcclusions;
     }
 }

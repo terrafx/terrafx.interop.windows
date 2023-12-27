@@ -122,9 +122,9 @@ public unsafe partial struct IBluetoothLEDeviceStatics2 : IBluetoothLEDeviceStat
     /// <include file='IBluetoothLEDeviceStatics2.xml' path='doc/member[@name="IBluetoothLEDeviceStatics2.FromBluetoothAddressWithBluetoothAddressTypeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT FromBluetoothAddressWithBluetoothAddressTypeAsync([NativeTypeName("UINT64")] ulong bluetoothAddress, [NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothAddressType")] BluetoothAddressType bluetoothAddressType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromBluetoothAddressWithBluetoothAddressTypeAsync([NativeTypeName("UINT64")] ulong bluetoothAddress, [NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothAddressType")] BluetoothAddressType bluetoothAddressType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice_t **")] IAsyncOperation<Pointer<IBluetoothLEDevice>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEDeviceStatics2*, ulong, BluetoothAddressType, IAsyncOperation<IntPtr>**, int>)(lpVtbl[12]))((IBluetoothLEDeviceStatics2*)Unsafe.AsPointer(ref this), bluetoothAddress, bluetoothAddressType, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEDeviceStatics2*, ulong, BluetoothAddressType, IAsyncOperation<Pointer<IBluetoothLEDevice>>**, int>)(lpVtbl[12]))((IBluetoothLEDeviceStatics2*)Unsafe.AsPointer(ref this), bluetoothAddress, bluetoothAddressType, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -148,7 +148,7 @@ public unsafe partial struct IBluetoothLEDeviceStatics2 : IBluetoothLEDeviceStat
         HRESULT GetDeviceSelectorFromAppearance([NativeTypeName("ABI::Windows::Devices::Bluetooth::IBluetoothLEAppearance *")] IBluetoothLEAppearance* appearance, HSTRING* deviceSelector);
 
         [VtblIndex(12)]
-        HRESULT FromBluetoothAddressWithBluetoothAddressTypeAsync([NativeTypeName("UINT64")] ulong bluetoothAddress, [NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothAddressType")] BluetoothAddressType bluetoothAddressType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromBluetoothAddressWithBluetoothAddressTypeAsync([NativeTypeName("UINT64")] ulong bluetoothAddress, [NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothAddressType")] BluetoothAddressType bluetoothAddressType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice_t **")] IAsyncOperation<Pointer<IBluetoothLEDevice>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -191,6 +191,6 @@ public unsafe partial struct IBluetoothLEDeviceStatics2 : IBluetoothLEDeviceStat
         public delegate* unmanaged[MemberFunction]<TSelf*, IBluetoothLEAppearance*, HSTRING*, int> GetDeviceSelectorFromAppearance;
 
         [NativeTypeName("HRESULT (UINT64, ABI::Windows::Devices::Bluetooth::BluetoothAddressType, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CBluetoothLEDevice_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, BluetoothAddressType, IAsyncOperation<IntPtr>**, int> FromBluetoothAddressWithBluetoothAddressTypeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, BluetoothAddressType, IAsyncOperation<Pointer<IBluetoothLEDevice>>**, int> FromBluetoothAddressWithBluetoothAddressTypeAsync;
     }
 }

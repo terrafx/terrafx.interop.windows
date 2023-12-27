@@ -106,9 +106,9 @@ public unsafe partial struct IContact : IContact.Interface, INativeGuid
     /// <include file='IContact.xml' path='doc/member[@name="IContact.get_Fields"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_Fields([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CIContactField_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Fields([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CIContactField_t **")] IVector<Pointer<IContactField>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContact*, IVector<IntPtr>**, int>)(lpVtbl[10]))((IContact*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContact*, IVector<Pointer<IContactField>>**, int>)(lpVtbl[10]))((IContact*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -126,7 +126,7 @@ public unsafe partial struct IContact : IContact.Interface, INativeGuid
         HRESULT put_Thumbnail([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamReference *")] IRandomAccessStreamReference* value);
 
         [VtblIndex(10)]
-        HRESULT get_Fields([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CIContactField_t **")] IVector<IntPtr>** value);
+        HRESULT get_Fields([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CIContactField_t **")] IVector<Pointer<IContactField>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -163,6 +163,6 @@ public unsafe partial struct IContact : IContact.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStreamReference*, int> put_Thumbnail;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CIContactField_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Fields;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IContactField>>**, int> get_Fields;
     }
 }

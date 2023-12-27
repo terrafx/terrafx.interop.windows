@@ -82,9 +82,9 @@ public unsafe partial struct ICoreInputView5 : ICoreInputView5.Interface, INativ
     /// <include file='ICoreInputView5.xml' path='doc/member[@name="ICoreInputView5.add_SupportedKindsChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_SupportedKindsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SupportedKindsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreInputView>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreInputView5*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ICoreInputView5*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreInputView5*, ITypedEventHandler<Pointer<ICoreInputView>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ICoreInputView5*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreInputView5.xml' path='doc/member[@name="ICoreInputView5.remove_SupportedKindsChanged"]/*' />
@@ -98,9 +98,9 @@ public unsafe partial struct ICoreInputView5 : ICoreInputView5.Interface, INativ
     /// <include file='ICoreInputView5.xml' path='doc/member[@name="ICoreInputView5.add_PrimaryViewAnimationStarting"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_PrimaryViewAnimationStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_Windows__CUI__CViewManagement__CCore__CCoreInputViewAnimationStartingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PrimaryViewAnimationStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_Windows__CUI__CViewManagement__CCore__CCoreInputViewAnimationStartingEventArgs_t *")] ITypedEventHandler<Pointer<ICoreInputView>, Pointer<ICoreInputViewAnimationStartingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreInputView5*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ICoreInputView5*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreInputView5*, ITypedEventHandler<Pointer<ICoreInputView>, Pointer<ICoreInputViewAnimationStartingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ICoreInputView5*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreInputView5.xml' path='doc/member[@name="ICoreInputView5.remove_PrimaryViewAnimationStarting"]/*' />
@@ -117,13 +117,13 @@ public unsafe partial struct ICoreInputView5 : ICoreInputView5.Interface, INativ
         HRESULT IsKindSupported([NativeTypeName("ABI::Windows::UI::ViewManagement::Core::CoreInputViewKind")] CoreInputViewKind type, [NativeTypeName("boolean *")] byte* result);
 
         [VtblIndex(7)]
-        HRESULT add_SupportedKindsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SupportedKindsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreInputView>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_SupportedKindsChanged(EventRegistrationToken token);
 
         [VtblIndex(9)]
-        HRESULT add_PrimaryViewAnimationStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_Windows__CUI__CViewManagement__CCore__CCoreInputViewAnimationStartingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PrimaryViewAnimationStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_Windows__CUI__CViewManagement__CCore__CCoreInputViewAnimationStartingEventArgs_t *")] ITypedEventHandler<Pointer<ICoreInputView>, Pointer<ICoreInputViewAnimationStartingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_PrimaryViewAnimationStarting(EventRegistrationToken token);
@@ -154,13 +154,13 @@ public unsafe partial struct ICoreInputView5 : ICoreInputView5.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, CoreInputViewKind, byte*, int> IsKindSupported;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SupportedKindsChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreInputView>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_SupportedKindsChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SupportedKindsChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_Windows__CUI__CViewManagement__CCore__CCoreInputViewAnimationStartingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PrimaryViewAnimationStarting;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreInputView>, Pointer<ICoreInputViewAnimationStartingEventArgs>>*, EventRegistrationToken*, int> add_PrimaryViewAnimationStarting;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PrimaryViewAnimationStarting;

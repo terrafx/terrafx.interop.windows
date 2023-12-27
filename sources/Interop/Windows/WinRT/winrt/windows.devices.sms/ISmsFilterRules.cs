@@ -82,9 +82,9 @@ public unsafe partial struct ISmsFilterRules : ISmsFilterRules.Interface, INativ
     /// <include file='ISmsFilterRules.xml' path='doc/member[@name="ISmsFilterRules.get_Rules"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Rules([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CSms__CSmsFilterRule_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Rules([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CSms__CSmsFilterRule_t **")] IVector<Pointer<ISmsFilterRule>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmsFilterRules*, IVector<IntPtr>**, int>)(lpVtbl[7]))((ISmsFilterRules*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISmsFilterRules*, IVector<Pointer<ISmsFilterRule>>**, int>)(lpVtbl[7]))((ISmsFilterRules*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct ISmsFilterRules : ISmsFilterRules.Interface, INativ
         HRESULT get_ActionType([NativeTypeName("ABI::Windows::Devices::Sms::SmsFilterActionType *")] SmsFilterActionType* value);
 
         [VtblIndex(7)]
-        HRESULT get_Rules([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CSms__CSmsFilterRule_t **")] IVector<IntPtr>** value);
+        HRESULT get_Rules([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CSms__CSmsFilterRule_t **")] IVector<Pointer<ISmsFilterRule>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct ISmsFilterRules : ISmsFilterRules.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, SmsFilterActionType*, int> get_ActionType;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CSms__CSmsFilterRule_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Rules;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<ISmsFilterRule>>**, int> get_Rules;
     }
 }

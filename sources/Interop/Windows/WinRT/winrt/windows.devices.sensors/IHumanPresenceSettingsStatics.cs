@@ -74,9 +74,9 @@ public unsafe partial struct IHumanPresenceSettingsStatics : IHumanPresenceSetti
     /// <include file='IHumanPresenceSettingsStatics.xml' path='doc/member[@name="IHumanPresenceSettingsStatics.GetCurrentSettingsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetCurrentSettingsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceSettings_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetCurrentSettingsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceSettings_t **")] IAsyncOperation<Pointer<IHumanPresenceSettings>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSettingsStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IHumanPresenceSettingsStatics*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSettingsStatics*, IAsyncOperation<Pointer<IHumanPresenceSettings>>**, int>)(lpVtbl[6]))((IHumanPresenceSettingsStatics*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IHumanPresenceSettingsStatics.xml' path='doc/member[@name="IHumanPresenceSettingsStatics.GetCurrentSettings"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IHumanPresenceSettingsStatics : IHumanPresenceSetti
     /// <include file='IHumanPresenceSettingsStatics.xml' path='doc/member[@name="IHumanPresenceSettingsStatics.GetSupportedFeaturesForSensorIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetSupportedFeaturesForSensorIdAsync(HSTRING sensorId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceFeatures_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetSupportedFeaturesForSensorIdAsync(HSTRING sensorId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceFeatures_t **")] IAsyncOperation<Pointer<IHumanPresenceFeatures>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSettingsStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IHumanPresenceSettingsStatics*)Unsafe.AsPointer(ref this), sensorId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSettingsStatics*, HSTRING, IAsyncOperation<Pointer<IHumanPresenceFeatures>>**, int>)(lpVtbl[10]))((IHumanPresenceSettingsStatics*)Unsafe.AsPointer(ref this), sensorId, operation);
     }
 
     /// <include file='IHumanPresenceSettingsStatics.xml' path='doc/member[@name="IHumanPresenceSettingsStatics.GetSupportedFeaturesForSensorId"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IHumanPresenceSettingsStatics : IHumanPresenceSetti
     /// <include file='IHumanPresenceSettingsStatics.xml' path='doc/member[@name="IHumanPresenceSettingsStatics.add_SettingsChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_SettingsChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SettingsChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSettingsStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IHumanPresenceSettingsStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSettingsStatics*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IHumanPresenceSettingsStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IHumanPresenceSettingsStatics.xml' path='doc/member[@name="IHumanPresenceSettingsStatics.remove_SettingsChanged"]/*' />
@@ -146,7 +146,7 @@ public unsafe partial struct IHumanPresenceSettingsStatics : IHumanPresenceSetti
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetCurrentSettingsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceSettings_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetCurrentSettingsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceSettings_t **")] IAsyncOperation<Pointer<IHumanPresenceSettings>>** operation);
 
         [VtblIndex(7)]
         HRESULT GetCurrentSettings([NativeTypeName("ABI::Windows::Devices::Sensors::IHumanPresenceSettings **")] IHumanPresenceSettings** result);
@@ -158,7 +158,7 @@ public unsafe partial struct IHumanPresenceSettingsStatics : IHumanPresenceSetti
         HRESULT UpdateSettings([NativeTypeName("ABI::Windows::Devices::Sensors::IHumanPresenceSettings *")] IHumanPresenceSettings* settings);
 
         [VtblIndex(10)]
-        HRESULT GetSupportedFeaturesForSensorIdAsync(HSTRING sensorId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceFeatures_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetSupportedFeaturesForSensorIdAsync(HSTRING sensorId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceFeatures_t **")] IAsyncOperation<Pointer<IHumanPresenceFeatures>>** operation);
 
         [VtblIndex(11)]
         HRESULT GetSupportedFeaturesForSensorId(HSTRING sensorId, [NativeTypeName("ABI::Windows::Devices::Sensors::IHumanPresenceFeatures **")] IHumanPresenceFeatures** result);
@@ -167,7 +167,7 @@ public unsafe partial struct IHumanPresenceSettingsStatics : IHumanPresenceSetti
         HRESULT GetSupportedLockOnLeaveTimeouts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CTimeSpan_t **")] IVectorView<TimeSpan>** result);
 
         [VtblIndex(13)]
-        HRESULT add_SettingsChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SettingsChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_SettingsChanged(EventRegistrationToken token);
@@ -195,7 +195,7 @@ public unsafe partial struct IHumanPresenceSettingsStatics : IHumanPresenceSetti
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceSettings_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetCurrentSettingsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IHumanPresenceSettings>>**, int> GetCurrentSettingsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Sensors::IHumanPresenceSettings **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IHumanPresenceSettings**, int> GetCurrentSettings;
@@ -207,7 +207,7 @@ public unsafe partial struct IHumanPresenceSettingsStatics : IHumanPresenceSetti
         public delegate* unmanaged[MemberFunction]<TSelf*, IHumanPresenceSettings*, int> UpdateSettings;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CHumanPresenceFeatures_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetSupportedFeaturesForSensorIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IHumanPresenceFeatures>>**, int> GetSupportedFeaturesForSensorIdAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Devices::Sensors::IHumanPresenceFeatures **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IHumanPresenceFeatures**, int> GetSupportedFeaturesForSensorId;
@@ -216,7 +216,7 @@ public unsafe partial struct IHumanPresenceSettingsStatics : IHumanPresenceSetti
         public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<TimeSpan>**, int> GetSupportedLockOnLeaveTimeouts;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_SettingsChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_SettingsChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SettingsChanged;

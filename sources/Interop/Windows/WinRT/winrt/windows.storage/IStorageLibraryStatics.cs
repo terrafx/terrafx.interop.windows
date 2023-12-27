@@ -74,15 +74,15 @@ public unsafe partial struct IStorageLibraryStatics : IStorageLibraryStatics.Int
     /// <include file='IStorageLibraryStatics.xml' path='doc/member[@name="IStorageLibraryStatics.GetLibraryAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetLibraryAsync([NativeTypeName("ABI::Windows::Storage::KnownLibraryId")] KnownLibraryId libraryId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageLibrary_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetLibraryAsync([NativeTypeName("ABI::Windows::Storage::KnownLibraryId")] KnownLibraryId libraryId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageLibrary_t **")] IAsyncOperation<Pointer<IStorageLibrary>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageLibraryStatics*, KnownLibraryId, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStorageLibraryStatics*)Unsafe.AsPointer(ref this), libraryId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageLibraryStatics*, KnownLibraryId, IAsyncOperation<Pointer<IStorageLibrary>>**, int>)(lpVtbl[6]))((IStorageLibraryStatics*)Unsafe.AsPointer(ref this), libraryId, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetLibraryAsync([NativeTypeName("ABI::Windows::Storage::KnownLibraryId")] KnownLibraryId libraryId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageLibrary_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetLibraryAsync([NativeTypeName("ABI::Windows::Storage::KnownLibraryId")] KnownLibraryId libraryId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageLibrary_t **")] IAsyncOperation<Pointer<IStorageLibrary>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IStorageLibraryStatics : IStorageLibraryStatics.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::KnownLibraryId, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageLibrary_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, KnownLibraryId, IAsyncOperation<IntPtr>**, int> GetLibraryAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, KnownLibraryId, IAsyncOperation<Pointer<IStorageLibrary>>**, int> GetLibraryAsync;
     }
 }

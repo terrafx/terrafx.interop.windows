@@ -90,9 +90,9 @@ public unsafe partial struct ILowLightFusionStatics : ILowLightFusionStatics.Int
     /// <include file='ILowLightFusionStatics.xml' path='doc/member[@name="ILowLightFusionStatics.FuseAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT FuseAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t *")] IIterable<IntPtr>* frameSet, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CMedia__CCore__CLowLightFusionResult_double_t **")] IAsyncOperationWithProgress<IntPtr, double>** result)
+    public HRESULT FuseAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t *")] IIterable<Pointer<ISoftwareBitmap>>* frameSet, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CMedia__CCore__CLowLightFusionResult_double_t **")] IAsyncOperationWithProgress<Pointer<ILowLightFusionResult>, double>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ILowLightFusionStatics*, IIterable<IntPtr>*, IAsyncOperationWithProgress<IntPtr, double>**, int>)(lpVtbl[8]))((ILowLightFusionStatics*)Unsafe.AsPointer(ref this), frameSet, result);
+        return ((delegate* unmanaged[MemberFunction]<ILowLightFusionStatics*, IIterable<Pointer<ISoftwareBitmap>>*, IAsyncOperationWithProgress<Pointer<ILowLightFusionResult>, double>**, int>)(lpVtbl[8]))((ILowLightFusionStatics*)Unsafe.AsPointer(ref this), frameSet, result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct ILowLightFusionStatics : ILowLightFusionStatics.Int
         HRESULT get_MaxSupportedFrameCount([NativeTypeName("INT32 *")] int* value);
 
         [VtblIndex(8)]
-        HRESULT FuseAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t *")] IIterable<IntPtr>* frameSet, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CMedia__CCore__CLowLightFusionResult_double_t **")] IAsyncOperationWithProgress<IntPtr, double>** result);
+        HRESULT FuseAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t *")] IIterable<Pointer<ISoftwareBitmap>>* frameSet, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CMedia__CCore__CLowLightFusionResult_double_t **")] IAsyncOperationWithProgress<Pointer<ILowLightFusionResult>, double>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct ILowLightFusionStatics : ILowLightFusionStatics.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_MaxSupportedFrameCount;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CGraphics__CImaging__CSoftwareBitmap_t *, ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CMedia__CCore__CLowLightFusionResult_double_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IAsyncOperationWithProgress<IntPtr, double>**, int> FuseAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<ISoftwareBitmap>>*, IAsyncOperationWithProgress<Pointer<ILowLightFusionResult>, double>**, int> FuseAsync;
     }
 }

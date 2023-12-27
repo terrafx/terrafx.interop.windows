@@ -74,9 +74,9 @@ public unsafe partial struct IAudioTrack : IAudioTrack.Interface, INativeGuid
     /// <include file='IAudioTrack.xml' path='doc/member[@name="IAudioTrack.add_OpenFailed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_OpenFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CAudioTrack_Windows__CMedia__CCore__CAudioTrackOpenFailedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_OpenFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CAudioTrack_Windows__CMedia__CCore__CAudioTrackOpenFailedEventArgs_t *")] ITypedEventHandler<Pointer<IAudioTrack>, Pointer<IAudioTrackOpenFailedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioTrack*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IAudioTrack*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAudioTrack*, ITypedEventHandler<Pointer<IAudioTrack>, Pointer<IAudioTrackOpenFailedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IAudioTrack*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAudioTrack.xml' path='doc/member[@name="IAudioTrack.remove_OpenFailed"]/*' />
@@ -122,7 +122,7 @@ public unsafe partial struct IAudioTrack : IAudioTrack.Interface, INativeGuid
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_OpenFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CAudioTrack_Windows__CMedia__CCore__CAudioTrackOpenFailedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_OpenFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CAudioTrack_Windows__CMedia__CCore__CAudioTrackOpenFailedEventArgs_t *")] ITypedEventHandler<Pointer<IAudioTrack>, Pointer<IAudioTrackOpenFailedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_OpenFailed(EventRegistrationToken token);
@@ -162,7 +162,7 @@ public unsafe partial struct IAudioTrack : IAudioTrack.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CAudioTrack_Windows__CMedia__CCore__CAudioTrackOpenFailedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_OpenFailed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAudioTrack>, Pointer<IAudioTrackOpenFailedEventArgs>>*, EventRegistrationToken*, int> add_OpenFailed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_OpenFailed;

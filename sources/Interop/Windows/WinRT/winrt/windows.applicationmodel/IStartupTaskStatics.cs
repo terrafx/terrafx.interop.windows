@@ -74,26 +74,26 @@ public unsafe partial struct IStartupTaskStatics : IStartupTaskStatics.Interface
     /// <include file='IStartupTaskStatics.xml' path='doc/member[@name="IStartupTaskStatics.GetForCurrentPackageAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetForCurrentPackageAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStartupTask_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetForCurrentPackageAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStartupTask_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStartupTask>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStartupTaskStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStartupTaskStatics*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IStartupTaskStatics*, IAsyncOperation<Pointer<IVectorView<Pointer<IStartupTask>>>>**, int>)(lpVtbl[6]))((IStartupTaskStatics*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IStartupTaskStatics.xml' path='doc/member[@name="IStartupTaskStatics.GetAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetAsync(HSTRING taskId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CStartupTask_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetAsync(HSTRING taskId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CStartupTask_t **")] IAsyncOperation<Pointer<IStartupTask>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStartupTaskStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IStartupTaskStatics*)Unsafe.AsPointer(ref this), taskId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStartupTaskStatics*, HSTRING, IAsyncOperation<Pointer<IStartupTask>>**, int>)(lpVtbl[7]))((IStartupTaskStatics*)Unsafe.AsPointer(ref this), taskId, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetForCurrentPackageAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStartupTask_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetForCurrentPackageAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStartupTask_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStartupTask>>>>** operation);
 
         [VtblIndex(7)]
-        HRESULT GetAsync(HSTRING taskId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CStartupTask_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetAsync(HSTRING taskId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CStartupTask_t **")] IAsyncOperation<Pointer<IStartupTask>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IStartupTaskStatics : IStartupTaskStatics.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CStartupTask_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetForCurrentPackageAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IStartupTask>>>>**, int> GetForCurrentPackageAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CStartupTask_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IStartupTask>>**, int> GetAsync;
     }
 }

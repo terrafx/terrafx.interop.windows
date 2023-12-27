@@ -74,15 +74,15 @@ public unsafe partial struct IStorageFileQueryResult2 : IStorageFileQueryResult2
     /// <include file='IStorageFileQueryResult2.xml' path='doc/member[@name="IStorageFileQueryResult2.GetMatchingPropertiesWithRanges"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetMatchingPropertiesWithRanges([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING___FIVectorView_1_Windows__CData__CText__CTextSegment_t **")] IMap<HSTRING, IntPtr>** result)
+    public HRESULT GetMatchingPropertiesWithRanges([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING___FIVectorView_1_Windows__CData__CText__CTextSegment_t **")] IMap<HSTRING, Pointer<IVectorView<TextSegment>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFileQueryResult2*, IStorageFile*, IMap<HSTRING, IntPtr>**, int>)(lpVtbl[6]))((IStorageFileQueryResult2*)Unsafe.AsPointer(ref this), file, result);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFileQueryResult2*, IStorageFile*, IMap<HSTRING, Pointer<IVectorView<TextSegment>>>**, int>)(lpVtbl[6]))((IStorageFileQueryResult2*)Unsafe.AsPointer(ref this), file, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetMatchingPropertiesWithRanges([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING___FIVectorView_1_Windows__CData__CText__CTextSegment_t **")] IMap<HSTRING, IntPtr>** result);
+        HRESULT GetMatchingPropertiesWithRanges([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING___FIVectorView_1_Windows__CData__CText__CTextSegment_t **")] IMap<HSTRING, Pointer<IVectorView<TextSegment>>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IStorageFileQueryResult2 : IStorageFileQueryResult2
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING___FIVectorView_1_Windows__CData__CText__CTextSegment_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IMap<HSTRING, IntPtr>**, int> GetMatchingPropertiesWithRanges;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IMap<HSTRING, Pointer<IVectorView<TextSegment>>>**, int> GetMatchingPropertiesWithRanges;
     }
 }

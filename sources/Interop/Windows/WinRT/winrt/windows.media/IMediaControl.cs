@@ -76,9 +76,9 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-    public HRESULT add_SoundLevelChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_SoundLevelChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.remove_SoundLevelChanged"]/*' />
@@ -94,9 +94,9 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-    public HRESULT add_PlayPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_PlayPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.remove_PlayPressed"]/*' />
@@ -112,9 +112,9 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-    public HRESULT add_PausePressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_PausePressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.remove_PausePressed"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-    public HRESULT add_StopPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_StopPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.remove_StopPressed"]/*' />
@@ -148,9 +148,9 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-    public HRESULT add_PlayPauseTogglePressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_PlayPauseTogglePressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.remove_PlayPauseTogglePressed"]/*' />
@@ -166,9 +166,9 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
     [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-    public HRESULT add_RecordPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_RecordPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.remove_RecordPressed"]/*' />
@@ -184,9 +184,9 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-    public HRESULT add_NextTrackPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_NextTrackPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[18]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[18]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.remove_NextTrackPressed"]/*' />
@@ -202,9 +202,9 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
     [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-    public HRESULT add_PreviousTrackPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_PreviousTrackPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[20]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[20]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.remove_PreviousTrackPressed"]/*' />
@@ -220,9 +220,9 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-    public HRESULT add_FastForwardPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_FastForwardPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[22]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[22]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.remove_FastForwardPressed"]/*' />
@@ -238,9 +238,9 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
     [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-    public HRESULT add_RewindPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_RewindPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[24]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[24]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.remove_RewindPressed"]/*' />
@@ -256,9 +256,9 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
     [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-    public HRESULT add_ChannelUpPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_ChannelUpPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[26]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[26]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.remove_ChannelUpPressed"]/*' />
@@ -274,9 +274,9 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
     [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-    public HRESULT add_ChannelDownPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_ChannelDownPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[28]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMediaControl*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[28]))((IMediaControl*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMediaControl.xml' path='doc/member[@name="IMediaControl.remove_ChannelDownPressed"]/*' />
@@ -373,7 +373,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
     {
         [VtblIndex(6)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        HRESULT add_SoundLevelChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_SoundLevelChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(7)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -381,7 +381,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [VtblIndex(8)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        HRESULT add_PlayPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_PlayPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(9)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -389,7 +389,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [VtblIndex(10)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        HRESULT add_PausePressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_PausePressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(11)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -397,7 +397,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [VtblIndex(12)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        HRESULT add_StopPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_StopPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(13)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -405,7 +405,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [VtblIndex(14)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        HRESULT add_PlayPauseTogglePressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_PlayPauseTogglePressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(15)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -413,7 +413,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [VtblIndex(16)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        HRESULT add_RecordPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_RecordPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(17)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -421,7 +421,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [VtblIndex(18)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        HRESULT add_NextTrackPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_NextTrackPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(19)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -429,7 +429,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [VtblIndex(20)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        HRESULT add_PreviousTrackPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_PreviousTrackPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(21)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -437,7 +437,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [VtblIndex(22)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        HRESULT add_FastForwardPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_FastForwardPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(23)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -445,7 +445,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [VtblIndex(24)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        HRESULT add_RewindPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_RewindPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(25)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -453,7 +453,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [VtblIndex(26)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        HRESULT add_ChannelUpPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_ChannelUpPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(27)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -461,7 +461,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [VtblIndex(28)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        HRESULT add_ChannelDownPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_ChannelDownPressed([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(29)]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -527,7 +527,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_SoundLevelChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_SoundLevelChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -535,7 +535,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_PlayPressed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_PlayPressed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -543,7 +543,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_PausePressed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_PausePressed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -551,7 +551,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_StopPressed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_StopPressed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -559,7 +559,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_PlayPauseTogglePressed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_PlayPauseTogglePressed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -567,7 +567,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_RecordPressed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_RecordPressed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -575,7 +575,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_NextTrackPressed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_NextTrackPressed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -583,7 +583,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_PreviousTrackPressed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_PreviousTrackPressed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -591,7 +591,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_FastForwardPressed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_FastForwardPressed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -599,7 +599,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_RewindPressed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_RewindPressed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -607,7 +607,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_ChannelUpPressed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ChannelUpPressed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
@@ -615,7 +615,7 @@ public unsafe partial struct IMediaControl : IMediaControl.Interface, INativeGui
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_ChannelDownPressed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ChannelDownPressed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("MediaControl may be altered or unavailable for releases after Windows 8.1. Instead, use SystemMediaTransportControls.")]

@@ -74,15 +74,15 @@ public unsafe partial struct IBackgroundDownloaderStaticMethods2 : IBackgroundDo
     /// <include file='IBackgroundDownloaderStaticMethods2.xml' path='doc/member[@name="IBackgroundDownloaderStaticMethods2.GetCurrentDownloadsForTransferGroupAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetCurrentDownloadsForTransferGroupAsync([NativeTypeName("ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup *")] IBackgroundTransferGroup* group, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetCurrentDownloadsForTransferGroupAsync([NativeTypeName("ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup *")] IBackgroundTransferGroup* group, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IDownloadOperation>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundDownloaderStaticMethods2*, IBackgroundTransferGroup*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IBackgroundDownloaderStaticMethods2*)Unsafe.AsPointer(ref this), group, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundDownloaderStaticMethods2*, IBackgroundTransferGroup*, IAsyncOperation<Pointer<IVectorView<Pointer<IDownloadOperation>>>>**, int>)(lpVtbl[6]))((IBackgroundDownloaderStaticMethods2*)Unsafe.AsPointer(ref this), group, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetCurrentDownloadsForTransferGroupAsync([NativeTypeName("ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup *")] IBackgroundTransferGroup* group, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetCurrentDownloadsForTransferGroupAsync([NativeTypeName("ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup *")] IBackgroundTransferGroup* group, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IDownloadOperation>>>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IBackgroundDownloaderStaticMethods2 : IBackgroundDo
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Networking::BackgroundTransfer::IBackgroundTransferGroup *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IBackgroundTransferGroup*, IAsyncOperation<IntPtr>**, int> GetCurrentDownloadsForTransferGroupAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBackgroundTransferGroup*, IAsyncOperation<Pointer<IVectorView<Pointer<IDownloadOperation>>>>**, int> GetCurrentDownloadsForTransferGroupAsync;
     }
 }

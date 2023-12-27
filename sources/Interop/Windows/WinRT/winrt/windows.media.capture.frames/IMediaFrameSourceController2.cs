@@ -74,9 +74,9 @@ public unsafe partial struct IMediaFrameSourceController2 : IMediaFrameSourceCon
     /// <include file='IMediaFrameSourceController2.xml' path='doc/member[@name="IMediaFrameSourceController2.GetPropertyByExtendedIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetPropertyByExtendedIdAsync([NativeTypeName("UINT32")] uint extendedPropertyIdLength, byte* extendedPropertyId, [NativeTypeName("ABI::Windows::Foundation::__FIReference_1_UINT32_t *")] IReference<uint>* maxPropertyValueSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetPropertyByExtendedIdAsync([NativeTypeName("UINT32")] uint extendedPropertyIdLength, byte* extendedPropertyId, [NativeTypeName("ABI::Windows::Foundation::__FIReference_1_UINT32_t *")] IReference<uint>* maxPropertyValueSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_t **")] IAsyncOperation<Pointer<IMediaFrameSourceGetPropertyResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSourceController2*, uint, byte*, IReference<uint>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IMediaFrameSourceController2*)Unsafe.AsPointer(ref this), extendedPropertyIdLength, extendedPropertyId, maxPropertyValueSize, operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSourceController2*, uint, byte*, IReference<uint>*, IAsyncOperation<Pointer<IMediaFrameSourceGetPropertyResult>>**, int>)(lpVtbl[6]))((IMediaFrameSourceController2*)Unsafe.AsPointer(ref this), extendedPropertyIdLength, extendedPropertyId, maxPropertyValueSize, operation);
     }
 
     /// <include file='IMediaFrameSourceController2.xml' path='doc/member[@name="IMediaFrameSourceController2.SetPropertyByExtendedIdAsync"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IMediaFrameSourceController2 : IMediaFrameSourceCon
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetPropertyByExtendedIdAsync([NativeTypeName("UINT32")] uint extendedPropertyIdLength, byte* extendedPropertyId, [NativeTypeName("ABI::Windows::Foundation::__FIReference_1_UINT32_t *")] IReference<uint>* maxPropertyValueSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetPropertyByExtendedIdAsync([NativeTypeName("UINT32")] uint extendedPropertyIdLength, byte* extendedPropertyId, [NativeTypeName("ABI::Windows::Foundation::__FIReference_1_UINT32_t *")] IReference<uint>* maxPropertyValueSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_t **")] IAsyncOperation<Pointer<IMediaFrameSourceGetPropertyResult>>** operation);
 
         [VtblIndex(7)]
         HRESULT SetPropertyByExtendedIdAsync([NativeTypeName("UINT32")] uint extendedPropertyIdLength, byte* extendedPropertyId, [NativeTypeName("UINT32")] uint propertyValueLength, byte* propertyValue, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus_t **")] IAsyncOperation<MediaFrameSourceSetPropertyStatus>** operation);
@@ -118,7 +118,7 @@ public unsafe partial struct IMediaFrameSourceController2 : IMediaFrameSourceCon
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (UINT32, BYTE *, ABI::Windows::Foundation::__FIReference_1_UINT32_t *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceGetPropertyResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, uint, byte*, IReference<uint>*, IAsyncOperation<IntPtr>**, int> GetPropertyByExtendedIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, byte*, IReference<uint>*, IAsyncOperation<Pointer<IMediaFrameSourceGetPropertyResult>>**, int> GetPropertyByExtendedIdAsync;
 
         [NativeTypeName("HRESULT (UINT32, BYTE *, UINT32, BYTE *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceSetPropertyStatus_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, uint, byte*, uint, byte*, IAsyncOperation<MediaFrameSourceSetPropertyStatus>**, int> SetPropertyByExtendedIdAsync;

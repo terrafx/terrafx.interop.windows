@@ -90,9 +90,9 @@ public unsafe partial struct IGattDescriptorsResult : IGattDescriptorsResult.Int
     /// <include file='IGattDescriptorsResult.xml' path='doc/member[@name="IGattDescriptorsResult.get_Descriptors"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Descriptors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDescriptor_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Descriptors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDescriptor_t **")] IVectorView<Pointer<IGattDescriptor>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDescriptorsResult*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((IGattDescriptorsResult*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IGattDescriptorsResult*, IVectorView<Pointer<IGattDescriptor>>**, int>)(lpVtbl[8]))((IGattDescriptorsResult*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IGattDescriptorsResult : IGattDescriptorsResult.Int
         HRESULT get_ProtocolError([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_byte_t **")] IReference<byte>** value);
 
         [VtblIndex(8)]
-        HRESULT get_Descriptors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDescriptor_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Descriptors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDescriptor_t **")] IVectorView<Pointer<IGattDescriptor>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IGattDescriptorsResult : IGattDescriptorsResult.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, IReference<byte>**, int> get_ProtocolError;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDescriptor_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Descriptors;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IGattDescriptor>>**, int> get_Descriptors;
     }
 }

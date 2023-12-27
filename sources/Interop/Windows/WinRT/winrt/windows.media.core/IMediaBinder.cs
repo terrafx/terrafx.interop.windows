@@ -74,9 +74,9 @@ public unsafe partial struct IMediaBinder : IMediaBinder.Interface, INativeGuid
     /// <include file='IMediaBinder.xml' path='doc/member[@name="IMediaBinder.add_Binding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_Binding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBinder_Windows__CMedia__CCore__CMediaBindingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Binding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBinder_Windows__CMedia__CCore__CMediaBindingEventArgs_t *")] ITypedEventHandler<Pointer<IMediaBinder>, Pointer<IMediaBindingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaBinder*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaBinder*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaBinder*, ITypedEventHandler<Pointer<IMediaBinder>, Pointer<IMediaBindingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaBinder*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaBinder.xml' path='doc/member[@name="IMediaBinder.remove_Binding"]/*' />
@@ -114,7 +114,7 @@ public unsafe partial struct IMediaBinder : IMediaBinder.Interface, INativeGuid
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_Binding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBinder_Windows__CMedia__CCore__CMediaBindingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Binding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBinder_Windows__CMedia__CCore__CMediaBindingEventArgs_t *")] ITypedEventHandler<Pointer<IMediaBinder>, Pointer<IMediaBindingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_Binding(EventRegistrationToken token);
@@ -151,7 +151,7 @@ public unsafe partial struct IMediaBinder : IMediaBinder.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBinder_Windows__CMedia__CCore__CMediaBindingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Binding;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaBinder>, Pointer<IMediaBindingEventArgs>>*, EventRegistrationToken*, int> add_Binding;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Binding;

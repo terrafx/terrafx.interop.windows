@@ -74,59 +74,59 @@ public unsafe partial struct ISmartCardCryptogramGenerator2 : ISmartCardCryptogr
     /// <include file='ISmartCardCryptogramGenerator2.xml' path='doc/member[@name="ISmartCardCryptogramGenerator2.ValidateRequestApduAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT ValidateRequestApduAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardUnlockPromptingBehavior")] SmartCardUnlockPromptingBehavior promptingBehavior, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* apduToValidate, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramPlacementStep_t *")] IIterable<IntPtr>* cryptogramPlacementSteps, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGeneratorOperationStatus_t **")] IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>** result)
+    public HRESULT ValidateRequestApduAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardUnlockPromptingBehavior")] SmartCardUnlockPromptingBehavior promptingBehavior, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* apduToValidate, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramPlacementStep_t *")] IIterable<Pointer<ISmartCardCryptogramPlacementStep>>* cryptogramPlacementSteps, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGeneratorOperationStatus_t **")] IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardCryptogramGenerator2*, SmartCardUnlockPromptingBehavior, IBuffer*, IIterable<IntPtr>*, IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>**, int>)(lpVtbl[6]))((ISmartCardCryptogramGenerator2*)Unsafe.AsPointer(ref this), promptingBehavior, apduToValidate, cryptogramPlacementSteps, result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardCryptogramGenerator2*, SmartCardUnlockPromptingBehavior, IBuffer*, IIterable<Pointer<ISmartCardCryptogramPlacementStep>>*, IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>**, int>)(lpVtbl[6]))((ISmartCardCryptogramGenerator2*)Unsafe.AsPointer(ref this), promptingBehavior, apduToValidate, cryptogramPlacementSteps, result);
     }
 
     /// <include file='ISmartCardCryptogramGenerator2.xml' path='doc/member[@name="ISmartCardCryptogramGenerator2.GetAllCryptogramStorageKeyCharacteristicsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetAllCryptogramStorageKeyCharacteristicsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetAllCryptogramStorageKeyCharacteristicsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult_t **")] IAsyncOperation<Pointer<ISmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardCryptogramGenerator2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((ISmartCardCryptogramGenerator2*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardCryptogramGenerator2*, IAsyncOperation<Pointer<ISmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult>>**, int>)(lpVtbl[7]))((ISmartCardCryptogramGenerator2*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='ISmartCardCryptogramGenerator2.xml' path='doc/member[@name="ISmartCardCryptogramGenerator2.GetAllCryptogramMaterialPackageCharacteristicsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetAllCryptogramMaterialPackageCharacteristicsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetAllCryptogramMaterialPackageCharacteristicsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult_t **")] IAsyncOperation<Pointer<ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardCryptogramGenerator2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((ISmartCardCryptogramGenerator2*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardCryptogramGenerator2*, IAsyncOperation<Pointer<ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult>>**, int>)(lpVtbl[8]))((ISmartCardCryptogramGenerator2*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='ISmartCardCryptogramGenerator2.xml' path='doc/member[@name="ISmartCardCryptogramGenerator2.GetAllCryptogramMaterialPackageCharacteristicsWithStorageKeyAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetAllCryptogramMaterialPackageCharacteristicsWithStorageKeyAsync(HSTRING storageKeyName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetAllCryptogramMaterialPackageCharacteristicsWithStorageKeyAsync(HSTRING storageKeyName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult_t **")] IAsyncOperation<Pointer<ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardCryptogramGenerator2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((ISmartCardCryptogramGenerator2*)Unsafe.AsPointer(ref this), storageKeyName, result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardCryptogramGenerator2*, HSTRING, IAsyncOperation<Pointer<ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult>>**, int>)(lpVtbl[9]))((ISmartCardCryptogramGenerator2*)Unsafe.AsPointer(ref this), storageKeyName, result);
     }
 
     /// <include file='ISmartCardCryptogramGenerator2.xml' path='doc/member[@name="ISmartCardCryptogramGenerator2.GetAllCryptogramMaterialCharacteristicsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetAllCryptogramMaterialCharacteristicsAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardUnlockPromptingBehavior")] SmartCardUnlockPromptingBehavior promptingBehavior, HSTRING materialPackageName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetAllCryptogramMaterialCharacteristicsAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardUnlockPromptingBehavior")] SmartCardUnlockPromptingBehavior promptingBehavior, HSTRING materialPackageName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult_t **")] IAsyncOperation<Pointer<ISmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardCryptogramGenerator2*, SmartCardUnlockPromptingBehavior, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((ISmartCardCryptogramGenerator2*)Unsafe.AsPointer(ref this), promptingBehavior, materialPackageName, result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardCryptogramGenerator2*, SmartCardUnlockPromptingBehavior, HSTRING, IAsyncOperation<Pointer<ISmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult>>**, int>)(lpVtbl[10]))((ISmartCardCryptogramGenerator2*)Unsafe.AsPointer(ref this), promptingBehavior, materialPackageName, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT ValidateRequestApduAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardUnlockPromptingBehavior")] SmartCardUnlockPromptingBehavior promptingBehavior, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* apduToValidate, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramPlacementStep_t *")] IIterable<IntPtr>* cryptogramPlacementSteps, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGeneratorOperationStatus_t **")] IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>** result);
+        HRESULT ValidateRequestApduAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardUnlockPromptingBehavior")] SmartCardUnlockPromptingBehavior promptingBehavior, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* apduToValidate, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramPlacementStep_t *")] IIterable<Pointer<ISmartCardCryptogramPlacementStep>>* cryptogramPlacementSteps, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGeneratorOperationStatus_t **")] IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>** result);
 
         [VtblIndex(7)]
-        HRESULT GetAllCryptogramStorageKeyCharacteristicsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetAllCryptogramStorageKeyCharacteristicsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult_t **")] IAsyncOperation<Pointer<ISmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult>>** result);
 
         [VtblIndex(8)]
-        HRESULT GetAllCryptogramMaterialPackageCharacteristicsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetAllCryptogramMaterialPackageCharacteristicsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult_t **")] IAsyncOperation<Pointer<ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult>>** result);
 
         [VtblIndex(9)]
-        HRESULT GetAllCryptogramMaterialPackageCharacteristicsWithStorageKeyAsync(HSTRING storageKeyName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetAllCryptogramMaterialPackageCharacteristicsWithStorageKeyAsync(HSTRING storageKeyName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult_t **")] IAsyncOperation<Pointer<ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult>>** result);
 
         [VtblIndex(10)]
-        HRESULT GetAllCryptogramMaterialCharacteristicsAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardUnlockPromptingBehavior")] SmartCardUnlockPromptingBehavior promptingBehavior, HSTRING materialPackageName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetAllCryptogramMaterialCharacteristicsAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardUnlockPromptingBehavior")] SmartCardUnlockPromptingBehavior promptingBehavior, HSTRING materialPackageName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult_t **")] IAsyncOperation<Pointer<ISmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -151,18 +151,18 @@ public unsafe partial struct ISmartCardCryptogramGenerator2 : ISmartCardCryptogr
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::SmartCards::SmartCardUnlockPromptingBehavior, ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramPlacementStep_t *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGeneratorOperationStatus_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, SmartCardUnlockPromptingBehavior, IBuffer*, IIterable<IntPtr>*, IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>**, int> ValidateRequestApduAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SmartCardUnlockPromptingBehavior, IBuffer*, IIterable<Pointer<ISmartCardCryptogramPlacementStep>>*, IAsyncOperation<SmartCardCryptogramGeneratorOperationStatus>**, int> ValidateRequestApduAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetAllCryptogramStorageKeyCharacteristicsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<ISmartCardCryptogramGetAllCryptogramStorageKeyCharacteristicsResult>>**, int> GetAllCryptogramStorageKeyCharacteristicsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetAllCryptogramMaterialPackageCharacteristicsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult>>**, int> GetAllCryptogramMaterialPackageCharacteristicsAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetAllCryptogramMaterialPackageCharacteristicsWithStorageKeyAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<ISmartCardCryptogramGetAllCryptogramMaterialPackageCharacteristicsResult>>**, int> GetAllCryptogramMaterialPackageCharacteristicsWithStorageKeyAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::SmartCards::SmartCardUnlockPromptingBehavior, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, SmartCardUnlockPromptingBehavior, HSTRING, IAsyncOperation<IntPtr>**, int> GetAllCryptogramMaterialCharacteristicsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SmartCardUnlockPromptingBehavior, HSTRING, IAsyncOperation<Pointer<ISmartCardCryptogramGetAllCryptogramMaterialCharacteristicsResult>>**, int> GetAllCryptogramMaterialCharacteristicsAsync;
     }
 }

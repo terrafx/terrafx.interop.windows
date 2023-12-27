@@ -74,9 +74,9 @@ public unsafe partial struct IToastNotifier3 : IToastNotifier3.Interface, INativ
     /// <include file='IToastNotifier3.xml' path='doc/member[@name="IToastNotifier3.add_ScheduledToastNotificationShowing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_ScheduledToastNotificationShowing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ScheduledToastNotificationShowing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_t *")] ITypedEventHandler<Pointer<IToastNotifier>, Pointer<IScheduledToastNotificationShowingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IToastNotifier3*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IToastNotifier3*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IToastNotifier3*, ITypedEventHandler<Pointer<IToastNotifier>, Pointer<IScheduledToastNotificationShowingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IToastNotifier3*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IToastNotifier3.xml' path='doc/member[@name="IToastNotifier3.remove_ScheduledToastNotificationShowing"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IToastNotifier3 : IToastNotifier3.Interface, INativ
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_ScheduledToastNotificationShowing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ScheduledToastNotificationShowing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_t *")] ITypedEventHandler<Pointer<IToastNotifier>, Pointer<IScheduledToastNotificationShowingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_ScheduledToastNotificationShowing(EventRegistrationToken token);
@@ -118,7 +118,7 @@ public unsafe partial struct IToastNotifier3 : IToastNotifier3.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CNotifications__CToastNotifier_Windows__CUI__CNotifications__CScheduledToastNotificationShowingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ScheduledToastNotificationShowing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IToastNotifier>, Pointer<IScheduledToastNotificationShowingEventArgs>>*, EventRegistrationToken*, int> add_ScheduledToastNotificationShowing;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ScheduledToastNotificationShowing;

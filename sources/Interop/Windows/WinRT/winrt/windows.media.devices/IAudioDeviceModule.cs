@@ -114,9 +114,9 @@ public unsafe partial struct IAudioDeviceModule : IAudioDeviceModule.Interface, 
     /// <include file='IAudioDeviceModule.xml' path='doc/member[@name="IAudioDeviceModule.SendCommandAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT SendCommandAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* Command, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT SendCommandAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* Command, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_t **")] IAsyncOperation<Pointer<IModuleCommandResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioDeviceModule*, IBuffer*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IAudioDeviceModule*)Unsafe.AsPointer(ref this), Command, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAudioDeviceModule*, IBuffer*, IAsyncOperation<Pointer<IModuleCommandResult>>**, int>)(lpVtbl[11]))((IAudioDeviceModule*)Unsafe.AsPointer(ref this), Command, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -137,7 +137,7 @@ public unsafe partial struct IAudioDeviceModule : IAudioDeviceModule.Interface, 
         HRESULT get_MinorVersion([NativeTypeName("UINT32 *")] uint* value);
 
         [VtblIndex(11)]
-        HRESULT SendCommandAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* Command, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT SendCommandAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* Command, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_t **")] IAsyncOperation<Pointer<IModuleCommandResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -177,6 +177,6 @@ public unsafe partial struct IAudioDeviceModule : IAudioDeviceModule.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_MinorVersion;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CDevices__CModuleCommandResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IAsyncOperation<IntPtr>**, int> SendCommandAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IAsyncOperation<Pointer<IModuleCommandResult>>**, int> SendCommandAsync;
     }
 }

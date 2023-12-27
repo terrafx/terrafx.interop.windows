@@ -74,9 +74,9 @@ public unsafe partial struct IProxyConfiguration : IProxyConfiguration.Interface
     /// <include file='IProxyConfiguration.xml' path='doc/member[@name="IProxyConfiguration.get_ProxyUris"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_ProxyUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_ProxyUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<Pointer<IUri>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IProxyConfiguration*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IProxyConfiguration*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IProxyConfiguration*, IVectorView<Pointer<IUri>>**, int>)(lpVtbl[6]))((IProxyConfiguration*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IProxyConfiguration.xml' path='doc/member[@name="IProxyConfiguration.get_CanConnectDirectly"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IProxyConfiguration : IProxyConfiguration.Interface
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_ProxyUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_ProxyUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<Pointer<IUri>>** value);
 
         [VtblIndex(7)]
         HRESULT get_CanConnectDirectly([NativeTypeName("boolean *")] byte* value);
@@ -118,7 +118,7 @@ public unsafe partial struct IProxyConfiguration : IProxyConfiguration.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_ProxyUris;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IUri>>**, int> get_ProxyUris;
 
         [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_CanConnectDirectly;

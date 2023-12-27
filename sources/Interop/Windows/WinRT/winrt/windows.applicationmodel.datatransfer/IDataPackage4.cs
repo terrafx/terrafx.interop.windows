@@ -74,9 +74,9 @@ public unsafe partial struct IDataPackage4 : IDataPackage4.Interface, INativeGui
     /// <include file='IDataPackage4.xml' path='doc/member[@name="IDataPackage4.add_ShareCanceled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_ShareCanceled([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ShareCanceled([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_IInspectable_t *")] ITypedEventHandler<Pointer<IDataPackage>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataPackage4*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IDataPackage4*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDataPackage4*, ITypedEventHandler<Pointer<IDataPackage>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IDataPackage4*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDataPackage4.xml' path='doc/member[@name="IDataPackage4.remove_ShareCanceled"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IDataPackage4 : IDataPackage4.Interface, INativeGui
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_ShareCanceled([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ShareCanceled([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_IInspectable_t *")] ITypedEventHandler<Pointer<IDataPackage>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_ShareCanceled(EventRegistrationToken token);
@@ -118,7 +118,7 @@ public unsafe partial struct IDataPackage4 : IDataPackage4.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ShareCanceled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDataPackage>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ShareCanceled;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ShareCanceled;

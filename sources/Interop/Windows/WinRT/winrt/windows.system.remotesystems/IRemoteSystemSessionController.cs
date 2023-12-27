@@ -74,9 +74,9 @@ public unsafe partial struct IRemoteSystemSessionController : IRemoteSystemSessi
     /// <include file='IRemoteSystemSessionController.xml' path='doc/member[@name="IRemoteSystemSessionController.add_JoinRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_JoinRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionController_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionJoinRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_JoinRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionController_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionJoinRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IRemoteSystemSessionController>, Pointer<IRemoteSystemSessionJoinRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemSessionController*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IRemoteSystemSessionController*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemSessionController*, ITypedEventHandler<Pointer<IRemoteSystemSessionController>, Pointer<IRemoteSystemSessionJoinRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IRemoteSystemSessionController*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IRemoteSystemSessionController.xml' path='doc/member[@name="IRemoteSystemSessionController.remove_JoinRequested"]/*' />
@@ -98,15 +98,15 @@ public unsafe partial struct IRemoteSystemSessionController : IRemoteSystemSessi
     /// <include file='IRemoteSystemSessionController.xml' path='doc/member[@name="IRemoteSystemSessionController.CreateSessionAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT CreateSessionAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionCreationResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateSessionAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionCreationResult_t **")] IAsyncOperation<Pointer<IRemoteSystemSessionCreationResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemSessionController*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IRemoteSystemSessionController*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemSessionController*, IAsyncOperation<Pointer<IRemoteSystemSessionCreationResult>>**, int>)(lpVtbl[9]))((IRemoteSystemSessionController*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_JoinRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionController_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionJoinRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_JoinRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionController_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionJoinRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IRemoteSystemSessionController>, Pointer<IRemoteSystemSessionJoinRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_JoinRequested(EventRegistrationToken token);
@@ -115,7 +115,7 @@ public unsafe partial struct IRemoteSystemSessionController : IRemoteSystemSessi
         HRESULT RemoveParticipantAsync([NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystemSessionParticipant *")] IRemoteSystemSessionParticipant* pParticipant, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
 
         [VtblIndex(9)]
-        HRESULT CreateSessionAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionCreationResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateSessionAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionCreationResult_t **")] IAsyncOperation<Pointer<IRemoteSystemSessionCreationResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -140,7 +140,7 @@ public unsafe partial struct IRemoteSystemSessionController : IRemoteSystemSessi
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionController_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionJoinRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_JoinRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRemoteSystemSessionController>, Pointer<IRemoteSystemSessionJoinRequestedEventArgs>>*, EventRegistrationToken*, int> add_JoinRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_JoinRequested;
@@ -149,6 +149,6 @@ public unsafe partial struct IRemoteSystemSessionController : IRemoteSystemSessi
         public delegate* unmanaged[MemberFunction]<TSelf*, IRemoteSystemSessionParticipant*, IAsyncOperation<bool>**, int> RemoveParticipantAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CRemoteSystems__CRemoteSystemSessionCreationResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> CreateSessionAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IRemoteSystemSessionCreationResult>>**, int> CreateSessionAsync;
     }
 }

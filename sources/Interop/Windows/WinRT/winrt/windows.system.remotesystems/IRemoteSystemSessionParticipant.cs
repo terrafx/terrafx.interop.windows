@@ -82,9 +82,9 @@ public unsafe partial struct IRemoteSystemSessionParticipant : IRemoteSystemSess
     /// <include file='IRemoteSystemSessionParticipant.xml' path='doc/member[@name="IRemoteSystemSessionParticipant.GetHostNames"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetHostNames([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CHostName_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetHostNames([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CHostName_t **")] IVectorView<Pointer<IHostName>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemSessionParticipant*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IRemoteSystemSessionParticipant*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemSessionParticipant*, IVectorView<Pointer<IHostName>>**, int>)(lpVtbl[7]))((IRemoteSystemSessionParticipant*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IRemoteSystemSessionParticipant : IRemoteSystemSess
         HRESULT get_RemoteSystem([NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystem **")] IRemoteSystem** value);
 
         [VtblIndex(7)]
-        HRESULT GetHostNames([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CHostName_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetHostNames([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CHostName_t **")] IVectorView<Pointer<IHostName>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IRemoteSystemSessionParticipant : IRemoteSystemSess
         public delegate* unmanaged[MemberFunction]<TSelf*, IRemoteSystem**, int> get_RemoteSystem;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CNetworking__CHostName_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetHostNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IHostName>>**, int> GetHostNames;
     }
 }

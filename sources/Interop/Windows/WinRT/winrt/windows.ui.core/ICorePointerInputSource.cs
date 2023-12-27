@@ -122,9 +122,9 @@ public unsafe partial struct ICorePointerInputSource : ICorePointerInputSource.I
     /// <include file='ICorePointerInputSource.xml' path='doc/member[@name="ICorePointerInputSource.add_PointerCaptureLost"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_PointerCaptureLost([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_PointerCaptureLost([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICorePointerInputSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((ICorePointerInputSource*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICorePointerInputSource*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((ICorePointerInputSource*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICorePointerInputSource.xml' path='doc/member[@name="ICorePointerInputSource.remove_PointerCaptureLost"]/*' />
@@ -138,9 +138,9 @@ public unsafe partial struct ICorePointerInputSource : ICorePointerInputSource.I
     /// <include file='ICorePointerInputSource.xml' path='doc/member[@name="ICorePointerInputSource.add_PointerEntered"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_PointerEntered([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_PointerEntered([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICorePointerInputSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((ICorePointerInputSource*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICorePointerInputSource*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((ICorePointerInputSource*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICorePointerInputSource.xml' path='doc/member[@name="ICorePointerInputSource.remove_PointerEntered"]/*' />
@@ -154,9 +154,9 @@ public unsafe partial struct ICorePointerInputSource : ICorePointerInputSource.I
     /// <include file='ICorePointerInputSource.xml' path='doc/member[@name="ICorePointerInputSource.add_PointerExited"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT add_PointerExited([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_PointerExited([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICorePointerInputSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[16]))((ICorePointerInputSource*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICorePointerInputSource*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[16]))((ICorePointerInputSource*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICorePointerInputSource.xml' path='doc/member[@name="ICorePointerInputSource.remove_PointerExited"]/*' />
@@ -170,9 +170,9 @@ public unsafe partial struct ICorePointerInputSource : ICorePointerInputSource.I
     /// <include file='ICorePointerInputSource.xml' path='doc/member[@name="ICorePointerInputSource.add_PointerMoved"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT add_PointerMoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_PointerMoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICorePointerInputSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[18]))((ICorePointerInputSource*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICorePointerInputSource*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[18]))((ICorePointerInputSource*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICorePointerInputSource.xml' path='doc/member[@name="ICorePointerInputSource.remove_PointerMoved"]/*' />
@@ -186,9 +186,9 @@ public unsafe partial struct ICorePointerInputSource : ICorePointerInputSource.I
     /// <include file='ICorePointerInputSource.xml' path='doc/member[@name="ICorePointerInputSource.add_PointerPressed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT add_PointerPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_PointerPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICorePointerInputSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[20]))((ICorePointerInputSource*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICorePointerInputSource*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[20]))((ICorePointerInputSource*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICorePointerInputSource.xml' path='doc/member[@name="ICorePointerInputSource.remove_PointerPressed"]/*' />
@@ -202,9 +202,9 @@ public unsafe partial struct ICorePointerInputSource : ICorePointerInputSource.I
     /// <include file='ICorePointerInputSource.xml' path='doc/member[@name="ICorePointerInputSource.add_PointerReleased"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT add_PointerReleased([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_PointerReleased([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICorePointerInputSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[22]))((ICorePointerInputSource*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICorePointerInputSource*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[22]))((ICorePointerInputSource*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICorePointerInputSource.xml' path='doc/member[@name="ICorePointerInputSource.remove_PointerReleased"]/*' />
@@ -218,9 +218,9 @@ public unsafe partial struct ICorePointerInputSource : ICorePointerInputSource.I
     /// <include file='ICorePointerInputSource.xml' path='doc/member[@name="ICorePointerInputSource.add_PointerWheelChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
-    public HRESULT add_PointerWheelChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_PointerWheelChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICorePointerInputSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[24]))((ICorePointerInputSource*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICorePointerInputSource*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[24]))((ICorePointerInputSource*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICorePointerInputSource.xml' path='doc/member[@name="ICorePointerInputSource.remove_PointerWheelChanged"]/*' />
@@ -252,43 +252,43 @@ public unsafe partial struct ICorePointerInputSource : ICorePointerInputSource.I
         HRESULT put_PointerCursor([NativeTypeName("ABI::Windows::UI::Core::ICoreCursor *")] ICoreCursor* value);
 
         [VtblIndex(12)]
-        HRESULT add_PointerCaptureLost([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_PointerCaptureLost([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(13)]
         HRESULT remove_PointerCaptureLost(EventRegistrationToken cookie);
 
         [VtblIndex(14)]
-        HRESULT add_PointerEntered([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_PointerEntered([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(15)]
         HRESULT remove_PointerEntered(EventRegistrationToken cookie);
 
         [VtblIndex(16)]
-        HRESULT add_PointerExited([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_PointerExited([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(17)]
         HRESULT remove_PointerExited(EventRegistrationToken cookie);
 
         [VtblIndex(18)]
-        HRESULT add_PointerMoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_PointerMoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(19)]
         HRESULT remove_PointerMoved(EventRegistrationToken cookie);
 
         [VtblIndex(20)]
-        HRESULT add_PointerPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_PointerPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(21)]
         HRESULT remove_PointerPressed(EventRegistrationToken cookie);
 
         [VtblIndex(22)]
-        HRESULT add_PointerReleased([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_PointerReleased([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(23)]
         HRESULT remove_PointerReleased(EventRegistrationToken cookie);
 
         [VtblIndex(24)]
-        HRESULT add_PointerWheelChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_PointerWheelChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(25)]
         HRESULT remove_PointerWheelChanged(EventRegistrationToken cookie);
@@ -334,43 +334,43 @@ public unsafe partial struct ICorePointerInputSource : ICorePointerInputSource.I
         public delegate* unmanaged[MemberFunction]<TSelf*, ICoreCursor*, int> put_PointerCursor;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PointerCaptureLost;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int> add_PointerCaptureLost;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PointerCaptureLost;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PointerEntered;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int> add_PointerEntered;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PointerEntered;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PointerExited;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int> add_PointerExited;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PointerExited;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PointerMoved;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int> add_PointerMoved;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PointerMoved;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PointerPressed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int> add_PointerPressed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PointerPressed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PointerReleased;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int> add_PointerReleased;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PointerReleased;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CPointerEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PointerWheelChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int> add_PointerWheelChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PointerWheelChanged;

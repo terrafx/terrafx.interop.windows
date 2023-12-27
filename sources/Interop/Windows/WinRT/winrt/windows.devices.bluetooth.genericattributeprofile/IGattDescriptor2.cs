@@ -74,15 +74,15 @@ public unsafe partial struct IGattDescriptor2 : IGattDescriptor2.Interface, INat
     /// <include file='IGattDescriptor2.xml' path='doc/member[@name="IGattDescriptor2.WriteValueWithResultAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT WriteValueWithResultAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* value, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT WriteValueWithResultAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* value, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteResult_t **")] IAsyncOperation<Pointer<IGattWriteResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDescriptor2*, IBuffer*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IGattDescriptor2*)Unsafe.AsPointer(ref this), value, operation);
+        return ((delegate* unmanaged[MemberFunction]<IGattDescriptor2*, IBuffer*, IAsyncOperation<Pointer<IGattWriteResult>>**, int>)(lpVtbl[6]))((IGattDescriptor2*)Unsafe.AsPointer(ref this), value, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT WriteValueWithResultAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* value, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT WriteValueWithResultAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* value, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteResult_t **")] IAsyncOperation<Pointer<IGattWriteResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IGattDescriptor2 : IGattDescriptor2.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IAsyncOperation<IntPtr>**, int> WriteValueWithResultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IAsyncOperation<Pointer<IGattWriteResult>>**, int> WriteValueWithResultAsync;
     }
 }

@@ -98,9 +98,9 @@ public unsafe partial struct IHdcpSession : IHdcpSession.Interface, INativeGuid
     /// <include file='IHdcpSession.xml' path='doc/member[@name="IHdcpSession.add_ProtectionChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_ProtectionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CProtection__CHdcpSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ProtectionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CProtection__CHdcpSession_IInspectable_t *")] ITypedEventHandler<Pointer<IHdcpSession>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHdcpSession*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IHdcpSession*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IHdcpSession*, ITypedEventHandler<Pointer<IHdcpSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IHdcpSession*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IHdcpSession.xml' path='doc/member[@name="IHdcpSession.remove_ProtectionChanged"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IHdcpSession : IHdcpSession.Interface, INativeGuid
         HRESULT SetDesiredMinProtectionAsync([NativeTypeName("ABI::Windows::Media::Protection::HdcpProtection")] HdcpProtection protection, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CProtection__CHdcpSetProtectionResult_t **")] IAsyncOperation<HdcpSetProtectionResult>** value);
 
         [VtblIndex(9)]
-        HRESULT add_ProtectionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CProtection__CHdcpSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ProtectionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CProtection__CHdcpSession_IInspectable_t *")] ITypedEventHandler<Pointer<IHdcpSession>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_ProtectionChanged(EventRegistrationToken token);
@@ -160,7 +160,7 @@ public unsafe partial struct IHdcpSession : IHdcpSession.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, HdcpProtection, IAsyncOperation<HdcpSetProtectionResult>**, int> SetDesiredMinProtectionAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CProtection__CHdcpSession_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ProtectionChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IHdcpSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ProtectionChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ProtectionChanged;

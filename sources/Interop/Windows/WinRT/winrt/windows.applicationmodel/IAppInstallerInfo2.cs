@@ -154,33 +154,33 @@ public unsafe partial struct IAppInstallerInfo2 : IAppInstallerInfo2.Interface, 
     /// <include file='IAppInstallerInfo2.xml' path='doc/member[@name="IAppInstallerInfo2.get_UpdateUris"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT get_UpdateUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_UpdateUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<Pointer<IUri>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppInstallerInfo2*, IVectorView<IntPtr>**, int>)(lpVtbl[16]))((IAppInstallerInfo2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppInstallerInfo2*, IVectorView<Pointer<IUri>>**, int>)(lpVtbl[16]))((IAppInstallerInfo2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppInstallerInfo2.xml' path='doc/member[@name="IAppInstallerInfo2.get_RepairUris"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT get_RepairUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_RepairUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<Pointer<IUri>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppInstallerInfo2*, IVectorView<IntPtr>**, int>)(lpVtbl[17]))((IAppInstallerInfo2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppInstallerInfo2*, IVectorView<Pointer<IUri>>**, int>)(lpVtbl[17]))((IAppInstallerInfo2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppInstallerInfo2.xml' path='doc/member[@name="IAppInstallerInfo2.get_DependencyPackageUris"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT get_DependencyPackageUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_DependencyPackageUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<Pointer<IUri>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppInstallerInfo2*, IVectorView<IntPtr>**, int>)(lpVtbl[18]))((IAppInstallerInfo2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppInstallerInfo2*, IVectorView<Pointer<IUri>>**, int>)(lpVtbl[18]))((IAppInstallerInfo2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppInstallerInfo2.xml' path='doc/member[@name="IAppInstallerInfo2.get_OptionalPackageUris"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT get_OptionalPackageUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_OptionalPackageUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<Pointer<IUri>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppInstallerInfo2*, IVectorView<IntPtr>**, int>)(lpVtbl[19]))((IAppInstallerInfo2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppInstallerInfo2*, IVectorView<Pointer<IUri>>**, int>)(lpVtbl[19]))((IAppInstallerInfo2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppInstallerInfo2.xml' path='doc/member[@name="IAppInstallerInfo2.get_PolicySource"]/*' />
@@ -224,16 +224,16 @@ public unsafe partial struct IAppInstallerInfo2 : IAppInstallerInfo2.Interface, 
         HRESULT get_PausedUntil([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_Windows__CFoundation__CDateTime_t **")] IReference<DateTime>** value);
 
         [VtblIndex(16)]
-        HRESULT get_UpdateUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_UpdateUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<Pointer<IUri>>** value);
 
         [VtblIndex(17)]
-        HRESULT get_RepairUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_RepairUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<Pointer<IUri>>** value);
 
         [VtblIndex(18)]
-        HRESULT get_DependencyPackageUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_DependencyPackageUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<Pointer<IUri>>** value);
 
         [VtblIndex(19)]
-        HRESULT get_OptionalPackageUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_OptionalPackageUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **")] IVectorView<Pointer<IUri>>** value);
 
         [VtblIndex(20)]
         HRESULT get_PolicySource([NativeTypeName("ABI::Windows::ApplicationModel::AppInstallerPolicySource *")] AppInstallerPolicySource* value);
@@ -291,16 +291,16 @@ public unsafe partial struct IAppInstallerInfo2 : IAppInstallerInfo2.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, IReference<DateTime>**, int> get_PausedUntil;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_UpdateUris;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IUri>>**, int> get_UpdateUris;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_RepairUris;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IUri>>**, int> get_RepairUris;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_DependencyPackageUris;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IUri>>**, int> get_DependencyPackageUris;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CFoundation__CUri_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_OptionalPackageUris;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IUri>>**, int> get_OptionalPackageUris;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::AppInstallerPolicySource *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, AppInstallerPolicySource*, int> get_PolicySource;

@@ -106,9 +106,9 @@ public unsafe partial struct IStorageLibraryChange : IStorageLibraryChange.Inter
     /// <include file='IStorageLibraryChange.xml' path='doc/member[@name="IStorageLibraryChange.GetStorageItemAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetStorageItemAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetStorageItemAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<Pointer<IStorageItem>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageLibraryChange*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IStorageLibraryChange*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageLibraryChange*, IAsyncOperation<Pointer<IStorageItem>>**, int>)(lpVtbl[10]))((IStorageLibraryChange*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -126,7 +126,7 @@ public unsafe partial struct IStorageLibraryChange : IStorageLibraryChange.Inter
         HRESULT IsOfType([NativeTypeName("ABI::Windows::Storage::StorageItemTypes")] StorageItemTypes type, [NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(10)]
-        HRESULT GetStorageItemAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetStorageItemAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<Pointer<IStorageItem>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -163,6 +163,6 @@ public unsafe partial struct IStorageLibraryChange : IStorageLibraryChange.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, StorageItemTypes, byte*, int> IsOfType;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CIStorageItem_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetStorageItemAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IStorageItem>>**, int> GetStorageItemAsync;
     }
 }

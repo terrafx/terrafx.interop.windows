@@ -202,9 +202,9 @@ public unsafe partial struct IAdaptiveMediaSource : IAdaptiveMediaSource.Interfa
     /// <include file='IAdaptiveMediaSource.xml' path='doc/member[@name="IAdaptiveMediaSource.add_DownloadBitrateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT add_DownloadBitrateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadBitrateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_DownloadBitrateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadBitrateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourceDownloadBitrateChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[22]))((IAdaptiveMediaSource*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSource*, ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourceDownloadBitrateChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[22]))((IAdaptiveMediaSource*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAdaptiveMediaSource.xml' path='doc/member[@name="IAdaptiveMediaSource.remove_DownloadBitrateChanged"]/*' />
@@ -218,9 +218,9 @@ public unsafe partial struct IAdaptiveMediaSource : IAdaptiveMediaSource.Interfa
     /// <include file='IAdaptiveMediaSource.xml' path='doc/member[@name="IAdaptiveMediaSource.add_PlaybackBitrateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
-    public HRESULT add_PlaybackBitrateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PlaybackBitrateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[24]))((IAdaptiveMediaSource*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSource*, ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[24]))((IAdaptiveMediaSource*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAdaptiveMediaSource.xml' path='doc/member[@name="IAdaptiveMediaSource.remove_PlaybackBitrateChanged"]/*' />
@@ -234,9 +234,9 @@ public unsafe partial struct IAdaptiveMediaSource : IAdaptiveMediaSource.Interfa
     /// <include file='IAdaptiveMediaSource.xml' path='doc/member[@name="IAdaptiveMediaSource.add_DownloadRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
-    public HRESULT add_DownloadRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_DownloadRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourceDownloadRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[26]))((IAdaptiveMediaSource*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSource*, ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourceDownloadRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[26]))((IAdaptiveMediaSource*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAdaptiveMediaSource.xml' path='doc/member[@name="IAdaptiveMediaSource.remove_DownloadRequested"]/*' />
@@ -250,9 +250,9 @@ public unsafe partial struct IAdaptiveMediaSource : IAdaptiveMediaSource.Interfa
     /// <include file='IAdaptiveMediaSource.xml' path='doc/member[@name="IAdaptiveMediaSource.add_DownloadCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT add_DownloadCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_DownloadCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadCompletedEventArgs_t *")] ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourceDownloadCompletedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[28]))((IAdaptiveMediaSource*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSource*, ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourceDownloadCompletedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[28]))((IAdaptiveMediaSource*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAdaptiveMediaSource.xml' path='doc/member[@name="IAdaptiveMediaSource.remove_DownloadCompleted"]/*' />
@@ -266,9 +266,9 @@ public unsafe partial struct IAdaptiveMediaSource : IAdaptiveMediaSource.Interfa
     /// <include file='IAdaptiveMediaSource.xml' path='doc/member[@name="IAdaptiveMediaSource.add_DownloadFailed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
-    public HRESULT add_DownloadFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadFailedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_DownloadFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadFailedEventArgs_t *")] ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourceDownloadFailedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[30]))((IAdaptiveMediaSource*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSource*, ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourceDownloadFailedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[30]))((IAdaptiveMediaSource*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAdaptiveMediaSource.xml' path='doc/member[@name="IAdaptiveMediaSource.remove_DownloadFailed"]/*' />
@@ -330,31 +330,31 @@ public unsafe partial struct IAdaptiveMediaSource : IAdaptiveMediaSource.Interfa
         HRESULT put_InboundBitsPerSecondWindow([NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan value);
 
         [VtblIndex(22)]
-        HRESULT add_DownloadBitrateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadBitrateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_DownloadBitrateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadBitrateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourceDownloadBitrateChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(23)]
         HRESULT remove_DownloadBitrateChanged(EventRegistrationToken token);
 
         [VtblIndex(24)]
-        HRESULT add_PlaybackBitrateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PlaybackBitrateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(25)]
         HRESULT remove_PlaybackBitrateChanged(EventRegistrationToken token);
 
         [VtblIndex(26)]
-        HRESULT add_DownloadRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_DownloadRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourceDownloadRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(27)]
         HRESULT remove_DownloadRequested(EventRegistrationToken token);
 
         [VtblIndex(28)]
-        HRESULT add_DownloadCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_DownloadCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadCompletedEventArgs_t *")] ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourceDownloadCompletedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(29)]
         HRESULT remove_DownloadCompleted(EventRegistrationToken token);
 
         [VtblIndex(30)]
-        HRESULT add_DownloadFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadFailedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_DownloadFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadFailedEventArgs_t *")] ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourceDownloadFailedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(31)]
         HRESULT remove_DownloadFailed(EventRegistrationToken token);
@@ -430,31 +430,31 @@ public unsafe partial struct IAdaptiveMediaSource : IAdaptiveMediaSource.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan, int> put_InboundBitsPerSecondWindow;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadBitrateChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DownloadBitrateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourceDownloadBitrateChangedEventArgs>>*, EventRegistrationToken*, int> add_DownloadBitrateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DownloadBitrateChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourcePlaybackBitrateChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PlaybackBitrateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourcePlaybackBitrateChangedEventArgs>>*, EventRegistrationToken*, int> add_PlaybackBitrateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PlaybackBitrateChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DownloadRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourceDownloadRequestedEventArgs>>*, EventRegistrationToken*, int> add_DownloadRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DownloadRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadCompletedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DownloadCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourceDownloadCompletedEventArgs>>*, EventRegistrationToken*, int> add_DownloadCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DownloadCompleted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSource_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDownloadFailedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DownloadFailed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAdaptiveMediaSource>, Pointer<IAdaptiveMediaSourceDownloadFailedEventArgs>>*, EventRegistrationToken*, int> add_DownloadFailed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DownloadFailed;

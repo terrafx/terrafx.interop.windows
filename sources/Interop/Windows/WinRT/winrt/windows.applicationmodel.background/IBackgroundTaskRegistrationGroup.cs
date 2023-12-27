@@ -90,9 +90,9 @@ public unsafe partial struct IBackgroundTaskRegistrationGroup : IBackgroundTaskR
     /// <include file='IBackgroundTaskRegistrationGroup.xml' path='doc/member[@name="IBackgroundTaskRegistrationGroup.add_BackgroundActivated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_BackgroundActivated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_BackgroundActivated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_t *")] ITypedEventHandler<Pointer<IBackgroundTaskRegistrationGroup>, Pointer<IBackgroundActivatedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundTaskRegistrationGroup*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IBackgroundTaskRegistrationGroup*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundTaskRegistrationGroup*, ITypedEventHandler<Pointer<IBackgroundTaskRegistrationGroup>, Pointer<IBackgroundActivatedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IBackgroundTaskRegistrationGroup*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBackgroundTaskRegistrationGroup.xml' path='doc/member[@name="IBackgroundTaskRegistrationGroup.remove_BackgroundActivated"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IBackgroundTaskRegistrationGroup : IBackgroundTaskR
     /// <include file='IBackgroundTaskRegistrationGroup.xml' path='doc/member[@name="IBackgroundTaskRegistrationGroup.get_AllTasks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_AllTasks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_t **")] IMapView<Guid, IntPtr>** value)
+    public HRESULT get_AllTasks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_t **")] IMapView<Guid, Pointer<IBackgroundTaskRegistration>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundTaskRegistrationGroup*, IMapView<Guid, IntPtr>**, int>)(lpVtbl[10]))((IBackgroundTaskRegistrationGroup*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundTaskRegistrationGroup*, IMapView<Guid, Pointer<IBackgroundTaskRegistration>>**, int>)(lpVtbl[10]))((IBackgroundTaskRegistrationGroup*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -120,13 +120,13 @@ public unsafe partial struct IBackgroundTaskRegistrationGroup : IBackgroundTaskR
         HRESULT get_Name(HSTRING* value);
 
         [VtblIndex(8)]
-        HRESULT add_BackgroundActivated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_BackgroundActivated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_t *")] ITypedEventHandler<Pointer<IBackgroundTaskRegistrationGroup>, Pointer<IBackgroundActivatedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_BackgroundActivated(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT get_AllTasks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_t **")] IMapView<Guid, IntPtr>** value);
+        HRESULT get_AllTasks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_t **")] IMapView<Guid, Pointer<IBackgroundTaskRegistration>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -157,12 +157,12 @@ public unsafe partial struct IBackgroundTaskRegistrationGroup : IBackgroundTaskR
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_Name;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_BackgroundActivated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IBackgroundTaskRegistrationGroup>, Pointer<IBackgroundActivatedEventArgs>>*, EventRegistrationToken*, int> add_BackgroundActivated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_BackgroundActivated;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_GUID_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistration_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<Guid, IntPtr>**, int> get_AllTasks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<Guid, Pointer<IBackgroundTaskRegistration>>**, int> get_AllTasks;
     }
 }

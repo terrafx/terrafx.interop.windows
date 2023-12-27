@@ -82,9 +82,9 @@ public unsafe partial struct IPenDockListener : IPenDockListener.Interface, INat
     /// <include file='IPenDockListener.xml' path='doc/member[@name="IPenDockListener.add_IsSupportedChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_IsSupportedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenDockListener_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_IsSupportedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenDockListener_IInspectable_t *")] ITypedEventHandler<Pointer<IPenDockListener>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPenDockListener*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IPenDockListener*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPenDockListener*, ITypedEventHandler<Pointer<IPenDockListener>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IPenDockListener*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPenDockListener.xml' path='doc/member[@name="IPenDockListener.remove_IsSupportedChanged"]/*' />
@@ -98,9 +98,9 @@ public unsafe partial struct IPenDockListener : IPenDockListener.Interface, INat
     /// <include file='IPenDockListener.xml' path='doc/member[@name="IPenDockListener.add_Docked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_Docked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenDockListener_Windows__CDevices__CInput__CPenDockedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Docked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenDockListener_Windows__CDevices__CInput__CPenDockedEventArgs_t *")] ITypedEventHandler<Pointer<IPenDockListener>, Pointer<IPenDockedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPenDockListener*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IPenDockListener*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPenDockListener*, ITypedEventHandler<Pointer<IPenDockListener>, Pointer<IPenDockedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IPenDockListener*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPenDockListener.xml' path='doc/member[@name="IPenDockListener.remove_Docked"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct IPenDockListener : IPenDockListener.Interface, INat
     /// <include file='IPenDockListener.xml' path='doc/member[@name="IPenDockListener.add_Undocked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_Undocked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenDockListener_Windows__CDevices__CInput__CPenUndockedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Undocked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenDockListener_Windows__CDevices__CInput__CPenUndockedEventArgs_t *")] ITypedEventHandler<Pointer<IPenDockListener>, Pointer<IPenUndockedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPenDockListener*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IPenDockListener*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPenDockListener*, ITypedEventHandler<Pointer<IPenDockListener>, Pointer<IPenUndockedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IPenDockListener*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPenDockListener.xml' path='doc/member[@name="IPenDockListener.remove_Undocked"]/*' />
@@ -133,19 +133,19 @@ public unsafe partial struct IPenDockListener : IPenDockListener.Interface, INat
         HRESULT IsSupported([NativeTypeName("boolean *")] byte* result);
 
         [VtblIndex(7)]
-        HRESULT add_IsSupportedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenDockListener_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_IsSupportedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenDockListener_IInspectable_t *")] ITypedEventHandler<Pointer<IPenDockListener>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_IsSupportedChanged(EventRegistrationToken token);
 
         [VtblIndex(9)]
-        HRESULT add_Docked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenDockListener_Windows__CDevices__CInput__CPenDockedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Docked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenDockListener_Windows__CDevices__CInput__CPenDockedEventArgs_t *")] ITypedEventHandler<Pointer<IPenDockListener>, Pointer<IPenDockedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_Docked(EventRegistrationToken token);
 
         [VtblIndex(11)]
-        HRESULT add_Undocked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenDockListener_Windows__CDevices__CInput__CPenUndockedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Undocked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenDockListener_Windows__CDevices__CInput__CPenUndockedEventArgs_t *")] ITypedEventHandler<Pointer<IPenDockListener>, Pointer<IPenUndockedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_Undocked(EventRegistrationToken token);
@@ -176,19 +176,19 @@ public unsafe partial struct IPenDockListener : IPenDockListener.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> IsSupported;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenDockListener_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_IsSupportedChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPenDockListener>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_IsSupportedChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_IsSupportedChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenDockListener_Windows__CDevices__CInput__CPenDockedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Docked;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPenDockListener>, Pointer<IPenDockedEventArgs>>*, EventRegistrationToken*, int> add_Docked;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Docked;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CInput__CPenDockListener_Windows__CDevices__CInput__CPenUndockedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Undocked;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPenDockListener>, Pointer<IPenUndockedEventArgs>>*, EventRegistrationToken*, int> add_Undocked;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Undocked;

@@ -106,9 +106,9 @@ public unsafe partial struct IBluetoothLEAdvertisementPublisher : IBluetoothLEAd
     /// <include file='IBluetoothLEAdvertisementPublisher.xml' path='doc/member[@name="IBluetoothLEAdvertisementPublisher.add_StatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_StatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisherStatusChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_StatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisherStatusChangedEventArgs_t *")] ITypedEventHandler<Pointer<IBluetoothLEAdvertisementPublisher>, Pointer<IBluetoothLEAdvertisementPublisherStatusChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisementPublisher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IBluetoothLEAdvertisementPublisher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisementPublisher*, ITypedEventHandler<Pointer<IBluetoothLEAdvertisementPublisher>, Pointer<IBluetoothLEAdvertisementPublisherStatusChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IBluetoothLEAdvertisementPublisher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBluetoothLEAdvertisementPublisher.xml' path='doc/member[@name="IBluetoothLEAdvertisementPublisher.remove_StatusChanged"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IBluetoothLEAdvertisementPublisher : IBluetoothLEAd
         HRESULT Stop();
 
         [VtblIndex(10)]
-        HRESULT add_StatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisherStatusChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_StatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisherStatusChangedEventArgs_t *")] ITypedEventHandler<Pointer<IBluetoothLEAdvertisementPublisher>, Pointer<IBluetoothLEAdvertisementPublisherStatusChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_StatusChanged(EventRegistrationToken token);
@@ -174,7 +174,7 @@ public unsafe partial struct IBluetoothLEAdvertisementPublisher : IBluetoothLEAd
         public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisher_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementPublisherStatusChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_StatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IBluetoothLEAdvertisementPublisher>, Pointer<IBluetoothLEAdvertisementPublisherStatusChangedEventArgs>>*, EventRegistrationToken*, int> add_StatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StatusChanged;

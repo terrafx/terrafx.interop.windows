@@ -90,9 +90,9 @@ public unsafe partial struct ICompositionCapabilities : ICompositionCapabilities
     /// <include file='ICompositionCapabilities.xml' path='doc/member[@name="ICompositionCapabilities.add_Changed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_t *")] ITypedEventHandler<Pointer<ICompositionCapabilities>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICompositionCapabilities*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICompositionCapabilities*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICompositionCapabilities*, ITypedEventHandler<Pointer<ICompositionCapabilities>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICompositionCapabilities*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICompositionCapabilities.xml' path='doc/member[@name="ICompositionCapabilities.remove_Changed"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct ICompositionCapabilities : ICompositionCapabilities
         HRESULT AreEffectsFast([NativeTypeName("boolean *")] byte* result);
 
         [VtblIndex(8)]
-        HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_t *")] ITypedEventHandler<Pointer<ICompositionCapabilities>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_Changed(EventRegistrationToken token);
@@ -146,7 +146,7 @@ public unsafe partial struct ICompositionCapabilities : ICompositionCapabilities
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> AreEffectsFast;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CComposition__CCompositionCapabilities_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Changed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICompositionCapabilities>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Changed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Changed;

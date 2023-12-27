@@ -98,25 +98,25 @@ public unsafe partial struct IUser : IUser.Interface, INativeGuid
     /// <include file='IUser.xml' path='doc/member[@name="IUser.GetPropertyAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetPropertyAsync(HSTRING value, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_IInspectable_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetPropertyAsync(HSTRING value, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_IInspectable_t **")] IAsyncOperation<Pointer<IInspectable>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUser*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IUser*)Unsafe.AsPointer(ref this), value, operation);
+        return ((delegate* unmanaged[MemberFunction]<IUser*, HSTRING, IAsyncOperation<Pointer<IInspectable>>**, int>)(lpVtbl[9]))((IUser*)Unsafe.AsPointer(ref this), value, operation);
     }
 
     /// <include file='IUser.xml' path='doc/member[@name="IUser.GetPropertiesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_HSTRING_t *")] IVectorView<HSTRING>* values, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___F__CIPropertySet_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_HSTRING_t *")] IVectorView<HSTRING>* values, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___F__CIPropertySet_t **")] IAsyncOperation<Pointer<IPropertySet>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUser*, IVectorView<HSTRING>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IUser*)Unsafe.AsPointer(ref this), values, operation);
+        return ((delegate* unmanaged[MemberFunction]<IUser*, IVectorView<HSTRING>*, IAsyncOperation<Pointer<IPropertySet>>**, int>)(lpVtbl[10]))((IUser*)Unsafe.AsPointer(ref this), values, operation);
     }
 
     /// <include file='IUser.xml' path='doc/member[@name="IUser.GetPictureAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetPictureAsync([NativeTypeName("ABI::Windows::System::UserPictureSize")] UserPictureSize desiredSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamReference_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetPictureAsync([NativeTypeName("ABI::Windows::System::UserPictureSize")] UserPictureSize desiredSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamReference_t **")] IAsyncOperation<Pointer<IRandomAccessStreamReference>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUser*, UserPictureSize, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IUser*)Unsafe.AsPointer(ref this), desiredSize, operation);
+        return ((delegate* unmanaged[MemberFunction]<IUser*, UserPictureSize, IAsyncOperation<Pointer<IRandomAccessStreamReference>>**, int>)(lpVtbl[11]))((IUser*)Unsafe.AsPointer(ref this), desiredSize, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -131,13 +131,13 @@ public unsafe partial struct IUser : IUser.Interface, INativeGuid
         HRESULT get_Type([NativeTypeName("ABI::Windows::System::UserType *")] UserType* value);
 
         [VtblIndex(9)]
-        HRESULT GetPropertyAsync(HSTRING value, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_IInspectable_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetPropertyAsync(HSTRING value, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_IInspectable_t **")] IAsyncOperation<Pointer<IInspectable>>** operation);
 
         [VtblIndex(10)]
-        HRESULT GetPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_HSTRING_t *")] IVectorView<HSTRING>* values, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___F__CIPropertySet_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_HSTRING_t *")] IVectorView<HSTRING>* values, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___F__CIPropertySet_t **")] IAsyncOperation<Pointer<IPropertySet>>** operation);
 
         [VtblIndex(11)]
-        HRESULT GetPictureAsync([NativeTypeName("ABI::Windows::System::UserPictureSize")] UserPictureSize desiredSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamReference_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetPictureAsync([NativeTypeName("ABI::Windows::System::UserPictureSize")] UserPictureSize desiredSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamReference_t **")] IAsyncOperation<Pointer<IRandomAccessStreamReference>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -171,12 +171,12 @@ public unsafe partial struct IUser : IUser.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, UserType*, int> get_Type;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_IInspectable_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetPropertyAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IInspectable>>**, int> GetPropertyAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_HSTRING_t *, ABI::Windows::Foundation::__FIAsyncOperation_1___F__CIPropertySet_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<HSTRING>*, IAsyncOperation<IntPtr>**, int> GetPropertiesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<HSTRING>*, IAsyncOperation<Pointer<IPropertySet>>**, int> GetPropertiesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::UserPictureSize, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamReference_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, UserPictureSize, IAsyncOperation<IntPtr>**, int> GetPictureAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, UserPictureSize, IAsyncOperation<Pointer<IRandomAccessStreamReference>>**, int> GetPictureAsync;
     }
 }

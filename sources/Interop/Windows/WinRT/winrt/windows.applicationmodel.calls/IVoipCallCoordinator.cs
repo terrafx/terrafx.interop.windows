@@ -82,9 +82,9 @@ public unsafe partial struct IVoipCallCoordinator : IVoipCallCoordinator.Interfa
     /// <include file='IVoipCallCoordinator.xml' path='doc/member[@name="IVoipCallCoordinator.add_MuteStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_MuteStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipCallCoordinator_Windows__CApplicationModel__CCalls__CMuteChangeEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* muteChangeHandler, EventRegistrationToken* token)
+    public HRESULT add_MuteStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipCallCoordinator_Windows__CApplicationModel__CCalls__CMuteChangeEventArgs_t *")] ITypedEventHandler<Pointer<IVoipCallCoordinator>, Pointer<IMuteChangeEventArgs>>* muteChangeHandler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IVoipCallCoordinator*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IVoipCallCoordinator*)Unsafe.AsPointer(ref this), muteChangeHandler, token);
+        return ((delegate* unmanaged[MemberFunction]<IVoipCallCoordinator*, ITypedEventHandler<Pointer<IVoipCallCoordinator>, Pointer<IMuteChangeEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IVoipCallCoordinator*)Unsafe.AsPointer(ref this), muteChangeHandler, token);
     }
 
     /// <include file='IVoipCallCoordinator.xml' path='doc/member[@name="IVoipCallCoordinator.remove_MuteStateChanged"]/*' />
@@ -165,7 +165,7 @@ public unsafe partial struct IVoipCallCoordinator : IVoipCallCoordinator.Interfa
         HRESULT ReserveCallResourcesAsync(HSTRING taskEntryPoint, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CVoipPhoneCallResourceReservationStatus_t **")] IAsyncOperation<VoipPhoneCallResourceReservationStatus>** operation);
 
         [VtblIndex(7)]
-        HRESULT add_MuteStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipCallCoordinator_Windows__CApplicationModel__CCalls__CMuteChangeEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* muteChangeHandler, EventRegistrationToken* token);
+        HRESULT add_MuteStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipCallCoordinator_Windows__CApplicationModel__CCalls__CMuteChangeEventArgs_t *")] ITypedEventHandler<Pointer<IVoipCallCoordinator>, Pointer<IMuteChangeEventArgs>>* muteChangeHandler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_MuteStateChanged(EventRegistrationToken token);
@@ -220,7 +220,7 @@ public unsafe partial struct IVoipCallCoordinator : IVoipCallCoordinator.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<VoipPhoneCallResourceReservationStatus>**, int> ReserveCallResourcesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CVoipCallCoordinator_Windows__CApplicationModel__CCalls__CMuteChangeEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_MuteStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IVoipCallCoordinator>, Pointer<IMuteChangeEventArgs>>*, EventRegistrationToken*, int> add_MuteStateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_MuteStateChanged;

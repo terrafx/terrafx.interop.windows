@@ -90,9 +90,9 @@ public unsafe partial struct ISmartCardAppletIdGroup : ISmartCardAppletIdGroup.I
     /// <include file='ISmartCardAppletIdGroup.xml' path='doc/member[@name="ISmartCardAppletIdGroup.get_AppletIds"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_AppletIds([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStreams__CIBuffer_t **")] IVector<IntPtr>** value)
+    public HRESULT get_AppletIds([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStreams__CIBuffer_t **")] IVector<Pointer<IBuffer>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardAppletIdGroup*, IVector<IntPtr>**, int>)(lpVtbl[8]))((ISmartCardAppletIdGroup*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardAppletIdGroup*, IVector<Pointer<IBuffer>>**, int>)(lpVtbl[8]))((ISmartCardAppletIdGroup*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISmartCardAppletIdGroup.xml' path='doc/member[@name="ISmartCardAppletIdGroup.get_SmartCardEmulationCategory"]/*' />
@@ -152,7 +152,7 @@ public unsafe partial struct ISmartCardAppletIdGroup : ISmartCardAppletIdGroup.I
         HRESULT put_DisplayName(HSTRING value);
 
         [VtblIndex(8)]
-        HRESULT get_AppletIds([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStreams__CIBuffer_t **")] IVector<IntPtr>** value);
+        HRESULT get_AppletIds([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStreams__CIBuffer_t **")] IVector<Pointer<IBuffer>>** value);
 
         [VtblIndex(9)]
         HRESULT get_SmartCardEmulationCategory([NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardEmulationCategory *")] SmartCardEmulationCategory* value);
@@ -201,7 +201,7 @@ public unsafe partial struct ISmartCardAppletIdGroup : ISmartCardAppletIdGroup.I
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_DisplayName;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStreams__CIBuffer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_AppletIds;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IBuffer>>**, int> get_AppletIds;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::SmartCards::SmartCardEmulationCategory *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, SmartCardEmulationCategory*, int> get_SmartCardEmulationCategory;

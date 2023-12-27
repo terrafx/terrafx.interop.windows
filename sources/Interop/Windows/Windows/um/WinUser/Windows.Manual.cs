@@ -125,19 +125,19 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("INT_PTR")]
-    public static IntPtr DialogBoxA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => DialogBoxParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+    public static nint DialogBoxA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => DialogBoxParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("INT_PTR")]
-    public static IntPtr DialogBoxW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] char* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => DialogBoxParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+    public static nint DialogBoxW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] char* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => DialogBoxParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("INT_PTR")]
-    public static IntPtr DialogBoxIndirectA(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => DialogBoxIndirectParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+    public static nint DialogBoxIndirectA(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEA")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => DialogBoxIndirectParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("INT_PTR")]
-    public static IntPtr DialogBoxIndirectW(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => DialogBoxIndirectParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+    public static nint DialogBoxIndirectW(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => DialogBoxIndirectParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static int TOUCH_COORD_TO_PIXEL(int l) => l / 100;
@@ -330,7 +330,7 @@ public static unsafe partial class Windows
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static BOOL EnumTaskWindows(IntPtr hTask, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<HWND, LPARAM, BOOL> lpfn, LPARAM lParam) => EnumThreadWindows((uint)hTask, lpfn, lParam);
+    public static BOOL EnumTaskWindows(HTASK hTask, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<HWND, LPARAM, BOOL> lpfn, LPARAM lParam) => EnumThreadWindows((uint)hTask, lpfn, lParam);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static HWND GetNextWindow(HWND hWnd, ushort wCmd) => GetWindow(hWnd, wCmd);

@@ -74,37 +74,37 @@ public unsafe partial struct IContactStore : IContactStore.Interface, INativeGui
     /// <include file='IContactStore.xml' path='doc/member[@name="IContactStore.FindContactsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindContactsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** contacts)
+    public HRESULT FindContactsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContact>>>>** contacts)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactStore*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IContactStore*)Unsafe.AsPointer(ref this), contacts);
+        return ((delegate* unmanaged[MemberFunction]<IContactStore*, IAsyncOperation<Pointer<IVectorView<Pointer<IContact>>>>**, int>)(lpVtbl[6]))((IContactStore*)Unsafe.AsPointer(ref this), contacts);
     }
 
     /// <include file='IContactStore.xml' path='doc/member[@name="IContactStore.FindContactsWithSearchTextAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FindContactsWithSearchTextAsync(HSTRING searchText, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** contacts)
+    public HRESULT FindContactsWithSearchTextAsync(HSTRING searchText, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContact>>>>** contacts)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactStore*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IContactStore*)Unsafe.AsPointer(ref this), searchText, contacts);
+        return ((delegate* unmanaged[MemberFunction]<IContactStore*, HSTRING, IAsyncOperation<Pointer<IVectorView<Pointer<IContact>>>>**, int>)(lpVtbl[7]))((IContactStore*)Unsafe.AsPointer(ref this), searchText, contacts);
     }
 
     /// <include file='IContactStore.xml' path='doc/member[@name="IContactStore.GetContactAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetContactAsync(HSTRING contactId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** contacts)
+    public HRESULT GetContactAsync(HSTRING contactId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IContact>>** contacts)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactStore*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IContactStore*)Unsafe.AsPointer(ref this), contactId, contacts);
+        return ((delegate* unmanaged[MemberFunction]<IContactStore*, HSTRING, IAsyncOperation<Pointer<IContact>>**, int>)(lpVtbl[8]))((IContactStore*)Unsafe.AsPointer(ref this), contactId, contacts);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FindContactsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** contacts);
+        HRESULT FindContactsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContact>>>>** contacts);
 
         [VtblIndex(7)]
-        HRESULT FindContactsWithSearchTextAsync(HSTRING searchText, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** contacts);
+        HRESULT FindContactsWithSearchTextAsync(HSTRING searchText, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContact>>>>** contacts);
 
         [VtblIndex(8)]
-        HRESULT GetContactAsync(HSTRING contactId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** contacts);
+        HRESULT GetContactAsync(HSTRING contactId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IContact>>** contacts);
     }
 
     public partial struct Vtbl<TSelf>
@@ -129,12 +129,12 @@ public unsafe partial struct IContactStore : IContactStore.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindContactsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IContact>>>>**, int> FindContactsAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FindContactsWithSearchTextAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IVectorView<Pointer<IContact>>>>**, int> FindContactsWithSearchTextAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetContactAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IContact>>**, int> GetContactAsync;
     }
 }

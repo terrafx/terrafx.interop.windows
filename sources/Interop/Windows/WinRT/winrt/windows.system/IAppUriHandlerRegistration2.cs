@@ -74,17 +74,17 @@ public unsafe partial struct IAppUriHandlerRegistration2 : IAppUriHandlerRegistr
     /// <include file='IAppUriHandlerRegistration2.xml' path='doc/member[@name="IAppUriHandlerRegistration2.GetAllHosts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetAllHosts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppUriHandlerHost_t **")] IVector<IntPtr>** result)
+    public HRESULT GetAllHosts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppUriHandlerHost_t **")] IVector<Pointer<IAppUriHandlerHost>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppUriHandlerRegistration2*, IVector<IntPtr>**, int>)(lpVtbl[6]))((IAppUriHandlerRegistration2*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IAppUriHandlerRegistration2*, IVector<Pointer<IAppUriHandlerHost>>**, int>)(lpVtbl[6]))((IAppUriHandlerRegistration2*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IAppUriHandlerRegistration2.xml' path='doc/member[@name="IAppUriHandlerRegistration2.UpdateHosts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT UpdateHosts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CAppUriHandlerHost_t *")] IIterable<IntPtr>* hosts)
+    public HRESULT UpdateHosts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CAppUriHandlerHost_t *")] IIterable<Pointer<IAppUriHandlerHost>>* hosts)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppUriHandlerRegistration2*, IIterable<IntPtr>*, int>)(lpVtbl[7]))((IAppUriHandlerRegistration2*)Unsafe.AsPointer(ref this), hosts);
+        return ((delegate* unmanaged[MemberFunction]<IAppUriHandlerRegistration2*, IIterable<Pointer<IAppUriHandlerHost>>*, int>)(lpVtbl[7]))((IAppUriHandlerRegistration2*)Unsafe.AsPointer(ref this), hosts);
     }
 
     /// <include file='IAppUriHandlerRegistration2.xml' path='doc/member[@name="IAppUriHandlerRegistration2.get_PackageFamilyName"]/*' />
@@ -98,10 +98,10 @@ public unsafe partial struct IAppUriHandlerRegistration2 : IAppUriHandlerRegistr
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetAllHosts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppUriHandlerHost_t **")] IVector<IntPtr>** result);
+        HRESULT GetAllHosts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppUriHandlerHost_t **")] IVector<Pointer<IAppUriHandlerHost>>** result);
 
         [VtblIndex(7)]
-        HRESULT UpdateHosts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CAppUriHandlerHost_t *")] IIterable<IntPtr>* hosts);
+        HRESULT UpdateHosts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CAppUriHandlerHost_t *")] IIterable<Pointer<IAppUriHandlerHost>>* hosts);
 
         [VtblIndex(8)]
         HRESULT get_PackageFamilyName(HSTRING* value);
@@ -129,10 +129,10 @@ public unsafe partial struct IAppUriHandlerRegistration2 : IAppUriHandlerRegistr
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppUriHandlerHost_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> GetAllHosts;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IAppUriHandlerHost>>**, int> GetAllHosts;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CAppUriHandlerHost_t *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, int> UpdateHosts;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IAppUriHandlerHost>>*, int> UpdateHosts;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_PackageFamilyName;

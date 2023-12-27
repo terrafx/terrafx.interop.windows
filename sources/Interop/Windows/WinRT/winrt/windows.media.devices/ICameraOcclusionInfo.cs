@@ -90,9 +90,9 @@ public unsafe partial struct ICameraOcclusionInfo : ICameraOcclusionInfo.Interfa
     /// <include file='ICameraOcclusionInfo.xml' path='doc/member[@name="ICameraOcclusionInfo.add_StateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CDevices__CCameraOcclusionInfo_Windows__CMedia__CDevices__CCameraOcclusionStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CDevices__CCameraOcclusionInfo_Windows__CMedia__CDevices__CCameraOcclusionStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<ICameraOcclusionInfo>, Pointer<ICameraOcclusionStateChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICameraOcclusionInfo*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICameraOcclusionInfo*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICameraOcclusionInfo*, ITypedEventHandler<Pointer<ICameraOcclusionInfo>, Pointer<ICameraOcclusionStateChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICameraOcclusionInfo*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICameraOcclusionInfo.xml' path='doc/member[@name="ICameraOcclusionInfo.remove_StateChanged"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct ICameraOcclusionInfo : ICameraOcclusionInfo.Interfa
         HRESULT IsOcclusionKindSupported([NativeTypeName("ABI::Windows::Media::Devices::CameraOcclusionKind")] CameraOcclusionKind occlusionKind, [NativeTypeName("boolean *")] byte* result);
 
         [VtblIndex(8)]
-        HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CDevices__CCameraOcclusionInfo_Windows__CMedia__CDevices__CCameraOcclusionStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CDevices__CCameraOcclusionInfo_Windows__CMedia__CDevices__CCameraOcclusionStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<ICameraOcclusionInfo>, Pointer<ICameraOcclusionStateChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_StateChanged(EventRegistrationToken token);
@@ -146,7 +146,7 @@ public unsafe partial struct ICameraOcclusionInfo : ICameraOcclusionInfo.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, CameraOcclusionKind, byte*, int> IsOcclusionKindSupported;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CDevices__CCameraOcclusionInfo_Windows__CMedia__CDevices__CCameraOcclusionStateChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_StateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICameraOcclusionInfo>, Pointer<ICameraOcclusionStateChangedEventArgs>>*, EventRegistrationToken*, int> add_StateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StateChanged;

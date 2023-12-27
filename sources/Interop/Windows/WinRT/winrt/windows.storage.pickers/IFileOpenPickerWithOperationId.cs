@@ -74,15 +74,15 @@ public unsafe partial struct IFileOpenPickerWithOperationId : IFileOpenPickerWit
     /// <include file='IFileOpenPickerWithOperationId.xml' path='doc/member[@name="IFileOpenPickerWithOperationId.PickSingleFileAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT PickSingleFileAsync(HSTRING pickerOperationId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT PickSingleFileAsync(HSTRING pickerOperationId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileOpenPickerWithOperationId*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IFileOpenPickerWithOperationId*)Unsafe.AsPointer(ref this), pickerOperationId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IFileOpenPickerWithOperationId*, HSTRING, IAsyncOperation<Pointer<IStorageFile>>**, int>)(lpVtbl[6]))((IFileOpenPickerWithOperationId*)Unsafe.AsPointer(ref this), pickerOperationId, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT PickSingleFileAsync(HSTRING pickerOperationId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT PickSingleFileAsync(HSTRING pickerOperationId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IFileOpenPickerWithOperationId : IFileOpenPickerWit
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> PickSingleFileAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IStorageFile>>**, int> PickSingleFileAsync;
     }
 }

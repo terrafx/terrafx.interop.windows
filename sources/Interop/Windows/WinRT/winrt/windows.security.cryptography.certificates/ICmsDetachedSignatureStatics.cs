@@ -74,15 +74,15 @@ public unsafe partial struct ICmsDetachedSignatureStatics : ICmsDetachedSignatur
     /// <include file='ICmsDetachedSignatureStatics.xml' path='doc/member[@name="ICmsDetachedSignatureStatics.GenerateSignatureAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GenerateSignatureAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* data, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_t *")] IIterable<IntPtr>* signers, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t *")] IIterable<IntPtr>* certificates, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** outputBlob)
+    public HRESULT GenerateSignatureAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* data, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_t *")] IIterable<Pointer<ICmsSignerInfo>>* signers, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t *")] IIterable<Pointer<ICertificate>>* certificates, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IBuffer>>** outputBlob)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICmsDetachedSignatureStatics*, IInputStream*, IIterable<IntPtr>*, IIterable<IntPtr>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ICmsDetachedSignatureStatics*)Unsafe.AsPointer(ref this), data, signers, certificates, outputBlob);
+        return ((delegate* unmanaged[MemberFunction]<ICmsDetachedSignatureStatics*, IInputStream*, IIterable<Pointer<ICmsSignerInfo>>*, IIterable<Pointer<ICertificate>>*, IAsyncOperation<Pointer<IBuffer>>**, int>)(lpVtbl[6]))((ICmsDetachedSignatureStatics*)Unsafe.AsPointer(ref this), data, signers, certificates, outputBlob);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GenerateSignatureAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* data, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_t *")] IIterable<IntPtr>* signers, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t *")] IIterable<IntPtr>* certificates, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<IntPtr>** outputBlob);
+        HRESULT GenerateSignatureAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* data, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_t *")] IIterable<Pointer<ICmsSignerInfo>>* signers, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t *")] IIterable<Pointer<ICertificate>>* certificates, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **")] IAsyncOperation<Pointer<IBuffer>>** outputBlob);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ICmsDetachedSignatureStatics : ICmsDetachedSignatur
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IInputStream *, ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_t *, ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIBuffer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IInputStream*, IIterable<IntPtr>*, IIterable<IntPtr>*, IAsyncOperation<IntPtr>**, int> GenerateSignatureAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInputStream*, IIterable<Pointer<ICmsSignerInfo>>*, IIterable<Pointer<ICertificate>>*, IAsyncOperation<Pointer<IBuffer>>**, int> GenerateSignatureAsync;
     }
 }

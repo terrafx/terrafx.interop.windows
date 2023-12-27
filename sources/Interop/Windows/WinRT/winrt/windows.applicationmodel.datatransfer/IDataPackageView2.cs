@@ -74,26 +74,26 @@ public unsafe partial struct IDataPackageView2 : IDataPackageView2.Interface, IN
     /// <include file='IDataPackageView2.xml' path='doc/member[@name="IDataPackageView2.GetApplicationLinkAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetApplicationLinkAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetApplicationLinkAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t **")] IAsyncOperation<Pointer<IUri>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataPackageView2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IDataPackageView2*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IDataPackageView2*, IAsyncOperation<Pointer<IUri>>**, int>)(lpVtbl[6]))((IDataPackageView2*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IDataPackageView2.xml' path='doc/member[@name="IDataPackageView2.GetWebLinkAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetWebLinkAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetWebLinkAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t **")] IAsyncOperation<Pointer<IUri>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataPackageView2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IDataPackageView2*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IDataPackageView2*, IAsyncOperation<Pointer<IUri>>**, int>)(lpVtbl[7]))((IDataPackageView2*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetApplicationLinkAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetApplicationLinkAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t **")] IAsyncOperation<Pointer<IUri>>** operation);
 
         [VtblIndex(7)]
-        HRESULT GetWebLinkAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetWebLinkAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t **")] IAsyncOperation<Pointer<IUri>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IDataPackageView2 : IDataPackageView2.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetApplicationLinkAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IUri>>**, int> GetApplicationLinkAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CFoundation__CUri_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetWebLinkAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IUri>>**, int> GetWebLinkAsync;
     }
 }

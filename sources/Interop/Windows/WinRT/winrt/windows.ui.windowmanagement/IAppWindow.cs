@@ -186,9 +186,9 @@ public unsafe partial struct IAppWindow : IAppWindow.Interface, INativeGuid
     /// <include file='IAppWindow.xml' path='doc/member[@name="IAppWindow.GetDisplayRegions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT GetDisplayRegions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CDisplayRegion_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetDisplayRegions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CDisplayRegion_t **")] IVectorView<Pointer<IDisplayRegion>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppWindow*, IVectorView<IntPtr>**, int>)(lpVtbl[20]))((IAppWindow*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IAppWindow*, IVectorView<Pointer<IDisplayRegion>>**, int>)(lpVtbl[20]))((IAppWindow*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IAppWindow.xml' path='doc/member[@name="IAppWindow.RequestMoveToDisplayRegion"]/*' />
@@ -258,9 +258,9 @@ public unsafe partial struct IAppWindow : IAppWindow.Interface, INativeGuid
     /// <include file='IAppWindow.xml' path='doc/member[@name="IAppWindow.add_Changed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CAppWindow_Windows__CUI__CWindowManagement__CAppWindowChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CAppWindow_Windows__CUI__CWindowManagement__CAppWindowChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppWindow>, Pointer<IAppWindowChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppWindow*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[29]))((IAppWindow*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppWindow*, ITypedEventHandler<Pointer<IAppWindow>, Pointer<IAppWindowChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[29]))((IAppWindow*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppWindow.xml' path='doc/member[@name="IAppWindow.remove_Changed"]/*' />
@@ -274,9 +274,9 @@ public unsafe partial struct IAppWindow : IAppWindow.Interface, INativeGuid
     /// <include file='IAppWindow.xml' path='doc/member[@name="IAppWindow.add_Closed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
-    public HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CAppWindow_Windows__CUI__CWindowManagement__CAppWindowClosedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CAppWindow_Windows__CUI__CWindowManagement__CAppWindowClosedEventArgs_t *")] ITypedEventHandler<Pointer<IAppWindow>, Pointer<IAppWindowClosedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppWindow*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[31]))((IAppWindow*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppWindow*, ITypedEventHandler<Pointer<IAppWindow>, Pointer<IAppWindowClosedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[31]))((IAppWindow*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppWindow.xml' path='doc/member[@name="IAppWindow.remove_Closed"]/*' />
@@ -290,9 +290,9 @@ public unsafe partial struct IAppWindow : IAppWindow.Interface, INativeGuid
     /// <include file='IAppWindow.xml' path='doc/member[@name="IAppWindow.add_CloseRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
-    public HRESULT add_CloseRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CAppWindow_Windows__CUI__CWindowManagement__CAppWindowCloseRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_CloseRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CAppWindow_Windows__CUI__CWindowManagement__CAppWindowCloseRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IAppWindow>, Pointer<IAppWindowCloseRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppWindow*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[33]))((IAppWindow*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppWindow*, ITypedEventHandler<Pointer<IAppWindow>, Pointer<IAppWindowCloseRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[33]))((IAppWindow*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppWindow.xml' path='doc/member[@name="IAppWindow.remove_CloseRequested"]/*' />
@@ -348,7 +348,7 @@ public unsafe partial struct IAppWindow : IAppWindow.Interface, INativeGuid
         HRESULT GetPlacement([NativeTypeName("ABI::Windows::UI::WindowManagement::IAppWindowPlacement **")] IAppWindowPlacement** result);
 
         [VtblIndex(20)]
-        HRESULT GetDisplayRegions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CDisplayRegion_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetDisplayRegions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CDisplayRegion_t **")] IVectorView<Pointer<IDisplayRegion>>** result);
 
         [VtblIndex(21)]
         HRESULT RequestMoveToDisplayRegion([NativeTypeName("ABI::Windows::UI::WindowManagement::IDisplayRegion *")] IDisplayRegion* displayRegion);
@@ -375,19 +375,19 @@ public unsafe partial struct IAppWindow : IAppWindow.Interface, INativeGuid
         HRESULT TryShowAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
 
         [VtblIndex(29)]
-        HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CAppWindow_Windows__CUI__CWindowManagement__CAppWindowChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Changed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CAppWindow_Windows__CUI__CWindowManagement__CAppWindowChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppWindow>, Pointer<IAppWindowChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(30)]
         HRESULT remove_Changed(EventRegistrationToken token);
 
         [VtblIndex(31)]
-        HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CAppWindow_Windows__CUI__CWindowManagement__CAppWindowClosedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CAppWindow_Windows__CUI__CWindowManagement__CAppWindowClosedEventArgs_t *")] ITypedEventHandler<Pointer<IAppWindow>, Pointer<IAppWindowClosedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(32)]
         HRESULT remove_Closed(EventRegistrationToken token);
 
         [VtblIndex(33)]
-        HRESULT add_CloseRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CAppWindow_Windows__CUI__CWindowManagement__CAppWindowCloseRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_CloseRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CAppWindow_Windows__CUI__CWindowManagement__CAppWindowCloseRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IAppWindow>, Pointer<IAppWindowCloseRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(34)]
         HRESULT remove_CloseRequested(EventRegistrationToken token);
@@ -457,7 +457,7 @@ public unsafe partial struct IAppWindow : IAppWindow.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppWindowPlacement**, int> GetPlacement;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CWindowManagement__CDisplayRegion_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetDisplayRegions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IDisplayRegion>>**, int> GetDisplayRegions;
 
         [NativeTypeName("HRESULT (ABI::Windows::UI::WindowManagement::IDisplayRegion *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IDisplayRegion*, int> RequestMoveToDisplayRegion;
@@ -484,19 +484,19 @@ public unsafe partial struct IAppWindow : IAppWindow.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<bool>**, int> TryShowAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CAppWindow_Windows__CUI__CWindowManagement__CAppWindowChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Changed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppWindow>, Pointer<IAppWindowChangedEventArgs>>*, EventRegistrationToken*, int> add_Changed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Changed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CAppWindow_Windows__CUI__CWindowManagement__CAppWindowClosedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Closed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppWindow>, Pointer<IAppWindowClosedEventArgs>>*, EventRegistrationToken*, int> add_Closed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Closed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CWindowManagement__CAppWindow_Windows__CUI__CWindowManagement__CAppWindowCloseRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CloseRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppWindow>, Pointer<IAppWindowCloseRequestedEventArgs>>*, EventRegistrationToken*, int> add_CloseRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CloseRequested;

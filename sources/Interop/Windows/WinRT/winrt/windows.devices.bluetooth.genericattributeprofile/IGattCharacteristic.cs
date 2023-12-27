@@ -75,9 +75,9 @@ public unsafe partial struct IGattCharacteristic : IGattCharacteristic.Interface
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [Obsolete("Use GetDescriptorsForUuidAsync instead of GetDescriptors.  For more information, see MSDN.")]
-    public HRESULT GetDescriptors(Guid descriptorUuid, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDescriptor_t **")] IVectorView<IntPtr>** value)
+    public HRESULT GetDescriptors(Guid descriptorUuid, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDescriptor_t **")] IVectorView<Pointer<IGattDescriptor>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristic*, Guid, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IGattCharacteristic*)Unsafe.AsPointer(ref this), descriptorUuid, value);
+        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristic*, Guid, IVectorView<Pointer<IGattDescriptor>>**, int>)(lpVtbl[6]))((IGattCharacteristic*)Unsafe.AsPointer(ref this), descriptorUuid, value);
     }
 
     /// <include file='IGattCharacteristic.xml' path='doc/member[@name="IGattCharacteristic.get_CharacteristicProperties"]/*' />
@@ -131,25 +131,25 @@ public unsafe partial struct IGattCharacteristic : IGattCharacteristic.Interface
     /// <include file='IGattCharacteristic.xml' path='doc/member[@name="IGattCharacteristic.get_PresentationFormats"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_PresentationFormats([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattPresentationFormat_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_PresentationFormats([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattPresentationFormat_t **")] IVectorView<Pointer<IGattPresentationFormat>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristic*, IVectorView<IntPtr>**, int>)(lpVtbl[13]))((IGattCharacteristic*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristic*, IVectorView<Pointer<IGattPresentationFormat>>**, int>)(lpVtbl[13]))((IGattCharacteristic*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IGattCharacteristic.xml' path='doc/member[@name="IGattCharacteristic.ReadValueAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT ReadValueAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT ReadValueAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **")] IAsyncOperation<Pointer<IGattReadResult>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristic*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[14]))((IGattCharacteristic*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristic*, IAsyncOperation<Pointer<IGattReadResult>>**, int>)(lpVtbl[14]))((IGattCharacteristic*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IGattCharacteristic.xml' path='doc/member[@name="IGattCharacteristic.ReadValueWithCacheModeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT ReadValueWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT ReadValueWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **")] IAsyncOperation<Pointer<IGattReadResult>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristic*, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int>)(lpVtbl[15]))((IGattCharacteristic*)Unsafe.AsPointer(ref this), cacheMode, value);
+        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristic*, BluetoothCacheMode, IAsyncOperation<Pointer<IGattReadResult>>**, int>)(lpVtbl[15]))((IGattCharacteristic*)Unsafe.AsPointer(ref this), cacheMode, value);
     }
 
     /// <include file='IGattCharacteristic.xml' path='doc/member[@name="IGattCharacteristic.WriteValueAsync"]/*' />
@@ -171,9 +171,9 @@ public unsafe partial struct IGattCharacteristic : IGattCharacteristic.Interface
     /// <include file='IGattCharacteristic.xml' path='doc/member[@name="IGattCharacteristic.ReadClientCharacteristicConfigurationDescriptorAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT ReadClientCharacteristicConfigurationDescriptorAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadClientCharacteristicConfigurationDescriptorResult_t **")] IAsyncOperation<IntPtr>** asyncOp)
+    public HRESULT ReadClientCharacteristicConfigurationDescriptorAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadClientCharacteristicConfigurationDescriptorResult_t **")] IAsyncOperation<Pointer<IGattReadClientCharacteristicConfigurationDescriptorResult>>** asyncOp)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristic*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[18]))((IGattCharacteristic*)Unsafe.AsPointer(ref this), asyncOp);
+        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristic*, IAsyncOperation<Pointer<IGattReadClientCharacteristicConfigurationDescriptorResult>>**, int>)(lpVtbl[18]))((IGattCharacteristic*)Unsafe.AsPointer(ref this), asyncOp);
     }
 
     /// <include file='IGattCharacteristic.xml' path='doc/member[@name="IGattCharacteristic.WriteClientCharacteristicConfigurationDescriptorAsync"]/*' />
@@ -187,9 +187,9 @@ public unsafe partial struct IGattCharacteristic : IGattCharacteristic.Interface
     /// <include file='IGattCharacteristic.xml' path='doc/member[@name="IGattCharacteristic.add_ValueChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT add_ValueChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattValueChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* valueChangedHandler, EventRegistrationToken* valueChangedEventCookie)
+    public HRESULT add_ValueChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattValueChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGattCharacteristic>, Pointer<IGattValueChangedEventArgs>>* valueChangedHandler, EventRegistrationToken* valueChangedEventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristic*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[20]))((IGattCharacteristic*)Unsafe.AsPointer(ref this), valueChangedHandler, valueChangedEventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristic*, ITypedEventHandler<Pointer<IGattCharacteristic>, Pointer<IGattValueChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[20]))((IGattCharacteristic*)Unsafe.AsPointer(ref this), valueChangedHandler, valueChangedEventCookie);
     }
 
     /// <include file='IGattCharacteristic.xml' path='doc/member[@name="IGattCharacteristic.remove_ValueChanged"]/*' />
@@ -204,7 +204,7 @@ public unsafe partial struct IGattCharacteristic : IGattCharacteristic.Interface
     {
         [VtblIndex(6)]
         [Obsolete("Use GetDescriptorsForUuidAsync instead of GetDescriptors.  For more information, see MSDN.")]
-        HRESULT GetDescriptors(Guid descriptorUuid, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDescriptor_t **")] IVectorView<IntPtr>** value);
+        HRESULT GetDescriptors(Guid descriptorUuid, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDescriptor_t **")] IVectorView<Pointer<IGattDescriptor>>** value);
 
         [VtblIndex(7)]
         HRESULT get_CharacteristicProperties([NativeTypeName("ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties *")] GattCharacteristicProperties* value);
@@ -225,13 +225,13 @@ public unsafe partial struct IGattCharacteristic : IGattCharacteristic.Interface
         HRESULT get_AttributeHandle([NativeTypeName("UINT16 *")] ushort* value);
 
         [VtblIndex(13)]
-        HRESULT get_PresentationFormats([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattPresentationFormat_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_PresentationFormats([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattPresentationFormat_t **")] IVectorView<Pointer<IGattPresentationFormat>>** value);
 
         [VtblIndex(14)]
-        HRESULT ReadValueAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT ReadValueAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **")] IAsyncOperation<Pointer<IGattReadResult>>** value);
 
         [VtblIndex(15)]
-        HRESULT ReadValueWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT ReadValueWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **")] IAsyncOperation<Pointer<IGattReadResult>>** value);
 
         [VtblIndex(16)]
         HRESULT WriteValueAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* value, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCommunicationStatus_t **")] IAsyncOperation<GattCommunicationStatus>** asyncOp);
@@ -240,13 +240,13 @@ public unsafe partial struct IGattCharacteristic : IGattCharacteristic.Interface
         HRESULT WriteValueWithOptionAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* value, [NativeTypeName("ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattWriteOption")] GattWriteOption writeOption, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCommunicationStatus_t **")] IAsyncOperation<GattCommunicationStatus>** asyncOp);
 
         [VtblIndex(18)]
-        HRESULT ReadClientCharacteristicConfigurationDescriptorAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadClientCharacteristicConfigurationDescriptorResult_t **")] IAsyncOperation<IntPtr>** asyncOp);
+        HRESULT ReadClientCharacteristicConfigurationDescriptorAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadClientCharacteristicConfigurationDescriptorResult_t **")] IAsyncOperation<Pointer<IGattReadClientCharacteristicConfigurationDescriptorResult>>** asyncOp);
 
         [VtblIndex(19)]
         HRESULT WriteClientCharacteristicConfigurationDescriptorAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue")] GattClientCharacteristicConfigurationDescriptorValue clientCharacteristicConfigurationDescriptorValue, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCommunicationStatus_t **")] IAsyncOperation<GattCommunicationStatus>** asyncOp);
 
         [VtblIndex(20)]
-        HRESULT add_ValueChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattValueChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* valueChangedHandler, EventRegistrationToken* valueChangedEventCookie);
+        HRESULT add_ValueChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattValueChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGattCharacteristic>, Pointer<IGattValueChangedEventArgs>>* valueChangedHandler, EventRegistrationToken* valueChangedEventCookie);
 
         [VtblIndex(21)]
         HRESULT remove_ValueChanged(EventRegistrationToken valueChangedEventCookie);
@@ -275,7 +275,7 @@ public unsafe partial struct IGattCharacteristic : IGattCharacteristic.Interface
 
         [NativeTypeName("HRESULT (GUID, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDescriptor_t **) __attribute__((stdcall))")]
         [Obsolete("Use GetDescriptorsForUuidAsync instead of GetDescriptors.  For more information, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IVectorView<IntPtr>**, int> GetDescriptors;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IVectorView<Pointer<IGattDescriptor>>**, int> GetDescriptors;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattCharacteristicProperties *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, GattCharacteristicProperties*, int> get_CharacteristicProperties;
@@ -296,13 +296,13 @@ public unsafe partial struct IGattCharacteristic : IGattCharacteristic.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_AttributeHandle;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattPresentationFormat_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_PresentationFormats;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IGattPresentationFormat>>**, int> get_PresentationFormats;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> ReadValueAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IGattReadResult>>**, int> ReadValueAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Bluetooth::BluetoothCacheMode, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int> ReadValueWithCacheModeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothCacheMode, IAsyncOperation<Pointer<IGattReadResult>>**, int> ReadValueWithCacheModeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCommunicationStatus_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IAsyncOperation<GattCommunicationStatus>**, int> WriteValueAsync;
@@ -311,13 +311,13 @@ public unsafe partial struct IGattCharacteristic : IGattCharacteristic.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, GattWriteOption, IAsyncOperation<GattCommunicationStatus>**, int> WriteValueWithOptionAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadClientCharacteristicConfigurationDescriptorResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> ReadClientCharacteristicConfigurationDescriptorAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IGattReadClientCharacteristicConfigurationDescriptorResult>>**, int> ReadClientCharacteristicConfigurationDescriptorAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattClientCharacteristicConfigurationDescriptorValue, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCommunicationStatus_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, GattClientCharacteristicConfigurationDescriptorValue, IAsyncOperation<GattCommunicationStatus>**, int> WriteClientCharacteristicConfigurationDescriptorAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattValueChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ValueChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGattCharacteristic>, Pointer<IGattValueChangedEventArgs>>*, EventRegistrationToken*, int> add_ValueChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ValueChanged;

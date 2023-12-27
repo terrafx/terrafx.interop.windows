@@ -178,9 +178,9 @@ public unsafe partial struct IBackgroundAudioTrack : IBackgroundAudioTrack.Inter
     /// <include file='IBackgroundAudioTrack.xml' path='doc/member[@name="IBackgroundAudioTrack.get_AudioEffectDefinitions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT get_AudioEffectDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefinition_t **")] IVector<IntPtr>** value)
+    public HRESULT get_AudioEffectDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefinition_t **")] IVector<Pointer<IAudioEffectDefinition>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundAudioTrack*, IVector<IntPtr>**, int>)(lpVtbl[19]))((IBackgroundAudioTrack*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundAudioTrack*, IVector<Pointer<IAudioEffectDefinition>>**, int>)(lpVtbl[19]))((IBackgroundAudioTrack*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -225,7 +225,7 @@ public unsafe partial struct IBackgroundAudioTrack : IBackgroundAudioTrack.Inter
         HRESULT GetAudioEncodingProperties([NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties **")] IAudioEncodingProperties** value);
 
         [VtblIndex(19)]
-        HRESULT get_AudioEffectDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefinition_t **")] IVector<IntPtr>** value);
+        HRESULT get_AudioEffectDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefinition_t **")] IVector<Pointer<IAudioEffectDefinition>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -289,6 +289,6 @@ public unsafe partial struct IBackgroundAudioTrack : IBackgroundAudioTrack.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, IAudioEncodingProperties**, int> GetAudioEncodingProperties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefinition_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_AudioEffectDefinitions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IAudioEffectDefinition>>**, int> get_AudioEffectDefinitions;
     }
 }

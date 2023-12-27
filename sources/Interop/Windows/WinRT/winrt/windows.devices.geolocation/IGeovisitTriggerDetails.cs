@@ -74,15 +74,15 @@ public unsafe partial struct IGeovisitTriggerDetails : IGeovisitTriggerDetails.I
     /// <include file='IGeovisitTriggerDetails.xml' path='doc/member[@name="IGeovisitTriggerDetails.ReadReports"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT ReadReports([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CGeolocation__CGeovisit_t **")] IVectorView<IntPtr>** values)
+    public HRESULT ReadReports([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CGeolocation__CGeovisit_t **")] IVectorView<Pointer<IGeovisit>>** values)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGeovisitTriggerDetails*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IGeovisitTriggerDetails*)Unsafe.AsPointer(ref this), values);
+        return ((delegate* unmanaged[MemberFunction]<IGeovisitTriggerDetails*, IVectorView<Pointer<IGeovisit>>**, int>)(lpVtbl[6]))((IGeovisitTriggerDetails*)Unsafe.AsPointer(ref this), values);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT ReadReports([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CGeolocation__CGeovisit_t **")] IVectorView<IntPtr>** values);
+        HRESULT ReadReports([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CGeolocation__CGeovisit_t **")] IVectorView<Pointer<IGeovisit>>** values);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IGeovisitTriggerDetails : IGeovisitTriggerDetails.I
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CGeolocation__CGeovisit_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> ReadReports;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IGeovisit>>**, int> ReadReports;
     }
 }

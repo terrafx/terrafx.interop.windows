@@ -74,15 +74,15 @@ public unsafe partial struct ISpatialAnchorManagerStatics : ISpatialAnchorManage
     /// <include file='ISpatialAnchorManagerStatics.xml' path='doc/member[@name="ISpatialAnchorManagerStatics.RequestStoreAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorStore_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorStore_t **")] IAsyncOperation<Pointer<ISpatialAnchorStore>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpatialAnchorManagerStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ISpatialAnchorManagerStatics*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAnchorManagerStatics*, IAsyncOperation<Pointer<ISpatialAnchorStore>>**, int>)(lpVtbl[6]))((ISpatialAnchorManagerStatics*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorStore_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorStore_t **")] IAsyncOperation<Pointer<ISpatialAnchorStore>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ISpatialAnchorManagerStatics : ISpatialAnchorManage
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialAnchorStore_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> RequestStoreAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<ISpatialAnchorStore>>**, int> RequestStoreAsync;
     }
 }

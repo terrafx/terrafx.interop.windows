@@ -74,15 +74,15 @@ public unsafe partial struct IStorageFolder2 : IStorageFolder2.Interface, INativ
     /// <include file='IStorageFolder2.xml' path='doc/member[@name="IStorageFolder2.TryGetItemAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT TryGetItemAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT TryGetItemAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<Pointer<IStorageItem>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolder2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStorageFolder2*)Unsafe.AsPointer(ref this), name, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolder2*, HSTRING, IAsyncOperation<Pointer<IStorageItem>>**, int>)(lpVtbl[6]))((IStorageFolder2*)Unsafe.AsPointer(ref this), name, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT TryGetItemAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT TryGetItemAsync(HSTRING name, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<Pointer<IStorageItem>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IStorageFolder2 : IStorageFolder2.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CIStorageItem_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> TryGetItemAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IStorageItem>>**, int> TryGetItemAsync;
     }
 }

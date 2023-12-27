@@ -74,9 +74,9 @@ public unsafe partial struct IStorageItem2 : IStorageItem2.Interface, INativeGui
     /// <include file='IStorageItem2.xml' path='doc/member[@name="IStorageItem2.GetParentAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetParentAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetParentAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageItem2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStorageItem2*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageItem2*, IAsyncOperation<Pointer<IStorageFolder>>**, int>)(lpVtbl[6]))((IStorageItem2*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IStorageItem2.xml' path='doc/member[@name="IStorageItem2.IsEqual"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IStorageItem2 : IStorageItem2.Interface, INativeGui
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetParentAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetParentAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation);
 
         [VtblIndex(7)]
         HRESULT IsEqual([NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* item, [NativeTypeName("boolean *")] byte* value);
@@ -118,7 +118,7 @@ public unsafe partial struct IStorageItem2 : IStorageItem2.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetParentAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IStorageFolder>>**, int> GetParentAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageItem *, boolean *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageItem*, byte*, int> IsEqual;

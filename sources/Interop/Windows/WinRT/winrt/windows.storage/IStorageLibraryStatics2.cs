@@ -74,15 +74,15 @@ public unsafe partial struct IStorageLibraryStatics2 : IStorageLibraryStatics2.I
     /// <include file='IStorageLibraryStatics2.xml' path='doc/member[@name="IStorageLibraryStatics2.GetLibraryForUserAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetLibraryForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Storage::KnownLibraryId")] KnownLibraryId libraryId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageLibrary_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetLibraryForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Storage::KnownLibraryId")] KnownLibraryId libraryId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageLibrary_t **")] IAsyncOperation<Pointer<IStorageLibrary>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageLibraryStatics2*, IUser*, KnownLibraryId, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStorageLibraryStatics2*)Unsafe.AsPointer(ref this), user, libraryId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageLibraryStatics2*, IUser*, KnownLibraryId, IAsyncOperation<Pointer<IStorageLibrary>>**, int>)(lpVtbl[6]))((IStorageLibraryStatics2*)Unsafe.AsPointer(ref this), user, libraryId, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetLibraryForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Storage::KnownLibraryId")] KnownLibraryId libraryId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageLibrary_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetLibraryForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Storage::KnownLibraryId")] KnownLibraryId libraryId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageLibrary_t **")] IAsyncOperation<Pointer<IStorageLibrary>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IStorageLibraryStatics2 : IStorageLibraryStatics2.I
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IUser *, ABI::Windows::Storage::KnownLibraryId, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageLibrary_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, KnownLibraryId, IAsyncOperation<IntPtr>**, int> GetLibraryForUserAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, KnownLibraryId, IAsyncOperation<Pointer<IStorageLibrary>>**, int> GetLibraryForUserAsync;
     }
 }

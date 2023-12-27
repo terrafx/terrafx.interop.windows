@@ -90,9 +90,9 @@ public unsafe partial struct IStorageQueryResultBase : IStorageQueryResultBase.I
     /// <include file='IStorageQueryResultBase.xml' path='doc/member[@name="IStorageQueryResultBase.add_ContentsChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_ContentsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CSearch__CIStorageQueryResultBase_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* eventCookie)
+    public HRESULT add_ContentsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CSearch__CIStorageQueryResultBase_IInspectable_t *")] ITypedEventHandler<Pointer<IStorageQueryResultBase>, Pointer<IInspectable>>* handler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageQueryResultBase*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IStorageQueryResultBase*)Unsafe.AsPointer(ref this), handler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IStorageQueryResultBase*, ITypedEventHandler<Pointer<IStorageQueryResultBase>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IStorageQueryResultBase*)Unsafe.AsPointer(ref this), handler, eventCookie);
     }
 
     /// <include file='IStorageQueryResultBase.xml' path='doc/member[@name="IStorageQueryResultBase.remove_ContentsChanged"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IStorageQueryResultBase : IStorageQueryResultBase.I
     /// <include file='IStorageQueryResultBase.xml' path='doc/member[@name="IStorageQueryResultBase.add_OptionsChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_OptionsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CSearch__CIStorageQueryResultBase_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* changedHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_OptionsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CSearch__CIStorageQueryResultBase_IInspectable_t *")] ITypedEventHandler<Pointer<IStorageQueryResultBase>, Pointer<IInspectable>>* changedHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageQueryResultBase*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IStorageQueryResultBase*)Unsafe.AsPointer(ref this), changedHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IStorageQueryResultBase*, ITypedEventHandler<Pointer<IStorageQueryResultBase>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IStorageQueryResultBase*)Unsafe.AsPointer(ref this), changedHandler, eventCookie);
     }
 
     /// <include file='IStorageQueryResultBase.xml' path='doc/member[@name="IStorageQueryResultBase.remove_OptionsChanged"]/*' />
@@ -152,13 +152,13 @@ public unsafe partial struct IStorageQueryResultBase : IStorageQueryResultBase.I
         HRESULT get_Folder([NativeTypeName("ABI::Windows::Storage::IStorageFolder **")] IStorageFolder** container);
 
         [VtblIndex(8)]
-        HRESULT add_ContentsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CSearch__CIStorageQueryResultBase_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* eventCookie);
+        HRESULT add_ContentsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CSearch__CIStorageQueryResultBase_IInspectable_t *")] ITypedEventHandler<Pointer<IStorageQueryResultBase>, Pointer<IInspectable>>* handler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(9)]
         HRESULT remove_ContentsChanged(EventRegistrationToken eventCookie);
 
         [VtblIndex(10)]
-        HRESULT add_OptionsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CSearch__CIStorageQueryResultBase_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* changedHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_OptionsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CSearch__CIStorageQueryResultBase_IInspectable_t *")] ITypedEventHandler<Pointer<IStorageQueryResultBase>, Pointer<IInspectable>>* changedHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(11)]
         HRESULT remove_OptionsChanged(EventRegistrationToken eventCookie);
@@ -201,13 +201,13 @@ public unsafe partial struct IStorageQueryResultBase : IStorageQueryResultBase.I
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFolder**, int> get_Folder;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CSearch__CIStorageQueryResultBase_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ContentsChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IStorageQueryResultBase>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ContentsChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ContentsChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CSearch__CIStorageQueryResultBase_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_OptionsChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IStorageQueryResultBase>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_OptionsChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_OptionsChanged;

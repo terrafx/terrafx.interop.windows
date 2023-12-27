@@ -90,9 +90,9 @@ public unsafe partial struct IGattCharacteristicsResult : IGattCharacteristicsRe
     /// <include file='IGattCharacteristicsResult.xml' path='doc/member[@name="IGattCharacteristicsResult.get_Characteristics"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Characteristics([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Characteristics([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_t **")] IVectorView<Pointer<IGattCharacteristic>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristicsResult*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((IGattCharacteristicsResult*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristicsResult*, IVectorView<Pointer<IGattCharacteristic>>**, int>)(lpVtbl[8]))((IGattCharacteristicsResult*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IGattCharacteristicsResult : IGattCharacteristicsRe
         HRESULT get_ProtocolError([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_byte_t **")] IReference<byte>** value);
 
         [VtblIndex(8)]
-        HRESULT get_Characteristics([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Characteristics([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_t **")] IVectorView<Pointer<IGattCharacteristic>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IGattCharacteristicsResult : IGattCharacteristicsRe
         public delegate* unmanaged[MemberFunction]<TSelf*, IReference<byte>**, int> get_ProtocolError;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristic_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Characteristics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IGattCharacteristic>>**, int> get_Characteristics;
     }
 }

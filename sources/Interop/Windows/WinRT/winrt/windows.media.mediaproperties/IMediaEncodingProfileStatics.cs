@@ -114,17 +114,17 @@ public unsafe partial struct IMediaEncodingProfileStatics : IMediaEncodingProfil
     /// <include file='IMediaEncodingProfileStatics.xml' path='doc/member[@name="IMediaEncodingProfileStatics.CreateFromFileAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT CreateFromFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CMediaProperties__CMediaEncodingProfile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateFromFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CMediaProperties__CMediaEncodingProfile_t **")] IAsyncOperation<Pointer<IMediaEncodingProfile>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaEncodingProfileStatics*, IStorageFile*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IMediaEncodingProfileStatics*)Unsafe.AsPointer(ref this), file, operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaEncodingProfileStatics*, IStorageFile*, IAsyncOperation<Pointer<IMediaEncodingProfile>>**, int>)(lpVtbl[11]))((IMediaEncodingProfileStatics*)Unsafe.AsPointer(ref this), file, operation);
     }
 
     /// <include file='IMediaEncodingProfileStatics.xml' path='doc/member[@name="IMediaEncodingProfileStatics.CreateFromStreamAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT CreateFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CMediaProperties__CMediaEncodingProfile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CMediaProperties__CMediaEncodingProfile_t **")] IAsyncOperation<Pointer<IMediaEncodingProfile>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaEncodingProfileStatics*, IRandomAccessStream*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[12]))((IMediaEncodingProfileStatics*)Unsafe.AsPointer(ref this), stream, operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaEncodingProfileStatics*, IRandomAccessStream*, IAsyncOperation<Pointer<IMediaEncodingProfile>>**, int>)(lpVtbl[12]))((IMediaEncodingProfileStatics*)Unsafe.AsPointer(ref this), stream, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -145,10 +145,10 @@ public unsafe partial struct IMediaEncodingProfileStatics : IMediaEncodingProfil
         HRESULT CreateWmv([NativeTypeName("ABI::Windows::Media::MediaProperties::VideoEncodingQuality")] VideoEncodingQuality quality, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile **")] IMediaEncodingProfile** value);
 
         [VtblIndex(11)]
-        HRESULT CreateFromFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CMediaProperties__CMediaEncodingProfile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateFromFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CMediaProperties__CMediaEncodingProfile_t **")] IAsyncOperation<Pointer<IMediaEncodingProfile>>** operation);
 
         [VtblIndex(12)]
-        HRESULT CreateFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CMediaProperties__CMediaEncodingProfile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateFromStreamAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CMediaProperties__CMediaEncodingProfile_t **")] IAsyncOperation<Pointer<IMediaEncodingProfile>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -188,9 +188,9 @@ public unsafe partial struct IMediaEncodingProfileStatics : IMediaEncodingProfil
         public delegate* unmanaged[MemberFunction]<TSelf*, VideoEncodingQuality, IMediaEncodingProfile**, int> CreateWmv;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CMediaProperties__CMediaEncodingProfile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<IntPtr>**, int> CreateFromFileAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<Pointer<IMediaEncodingProfile>>**, int> CreateFromFileAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IRandomAccessStream *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CMediaProperties__CMediaEncodingProfile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStream*, IAsyncOperation<IntPtr>**, int> CreateFromStreamAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStream*, IAsyncOperation<Pointer<IMediaEncodingProfile>>**, int> CreateFromStreamAsync;
     }
 }

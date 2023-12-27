@@ -90,9 +90,9 @@ public unsafe partial struct IWordSegment : IWordSegment.Interface, INativeGuid
     /// <include file='IWordSegment.xml' path='doc/member[@name="IWordSegment.get_AlternateForms"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_AlternateForms([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CAlternateWordForm_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_AlternateForms([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CAlternateWordForm_t **")] IVectorView<Pointer<IAlternateWordForm>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWordSegment*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((IWordSegment*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IWordSegment*, IVectorView<Pointer<IAlternateWordForm>>**, int>)(lpVtbl[8]))((IWordSegment*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IWordSegment : IWordSegment.Interface, INativeGuid
         HRESULT get_SourceTextSegment([NativeTypeName("ABI::Windows::Data::Text::TextSegment *")] TextSegment* value);
 
         [VtblIndex(8)]
-        HRESULT get_AlternateForms([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CAlternateWordForm_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_AlternateForms([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CAlternateWordForm_t **")] IVectorView<Pointer<IAlternateWordForm>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IWordSegment : IWordSegment.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TextSegment*, int> get_SourceTextSegment;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CData__CText__CAlternateWordForm_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_AlternateForms;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IAlternateWordForm>>**, int> get_AlternateForms;
     }
 }

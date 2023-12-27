@@ -74,9 +74,9 @@ public unsafe partial struct IActivitySensorStatics : IActivitySensorStatics.Int
     /// <include file='IActivitySensorStatics.xml' path='doc/member[@name="IActivitySensorStatics.GetDefaultAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensor_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensor_t **")] IAsyncOperation<Pointer<IActivitySensor>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IActivitySensorStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IActivitySensorStatics*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IActivitySensorStatics*, IAsyncOperation<Pointer<IActivitySensor>>**, int>)(lpVtbl[6]))((IActivitySensorStatics*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IActivitySensorStatics.xml' path='doc/member[@name="IActivitySensorStatics.GetDeviceSelector"]/*' />
@@ -90,43 +90,43 @@ public unsafe partial struct IActivitySensorStatics : IActivitySensorStatics.Int
     /// <include file='IActivitySensorStatics.xml' path='doc/member[@name="IActivitySensorStatics.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensor_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensor_t **")] IAsyncOperation<Pointer<IActivitySensor>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IActivitySensorStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IActivitySensorStatics*)Unsafe.AsPointer(ref this), deviceId, result);
+        return ((delegate* unmanaged[MemberFunction]<IActivitySensorStatics*, HSTRING, IAsyncOperation<Pointer<IActivitySensor>>**, int>)(lpVtbl[8]))((IActivitySensorStatics*)Unsafe.AsPointer(ref this), deviceId, result);
     }
 
     /// <include file='IActivitySensorStatics.xml' path='doc/member[@name="IActivitySensorStatics.GetSystemHistoryAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetSystemHistoryAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime fromTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CActivitySensorReading_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetSystemHistoryAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime fromTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CActivitySensorReading_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IActivitySensorReading>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IActivitySensorStatics*, WinRTDateTime, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IActivitySensorStatics*)Unsafe.AsPointer(ref this), fromTime, result);
+        return ((delegate* unmanaged[MemberFunction]<IActivitySensorStatics*, WinRTDateTime, IAsyncOperation<Pointer<IVectorView<Pointer<IActivitySensorReading>>>>**, int>)(lpVtbl[9]))((IActivitySensorStatics*)Unsafe.AsPointer(ref this), fromTime, result);
     }
 
     /// <include file='IActivitySensorStatics.xml' path='doc/member[@name="IActivitySensorStatics.GetSystemHistoryWithDurationAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetSystemHistoryWithDurationAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime fromTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CActivitySensorReading_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetSystemHistoryWithDurationAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime fromTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CActivitySensorReading_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IActivitySensorReading>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IActivitySensorStatics*, WinRTDateTime, TimeSpan, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IActivitySensorStatics*)Unsafe.AsPointer(ref this), fromTime, duration, result);
+        return ((delegate* unmanaged[MemberFunction]<IActivitySensorStatics*, WinRTDateTime, TimeSpan, IAsyncOperation<Pointer<IVectorView<Pointer<IActivitySensorReading>>>>**, int>)(lpVtbl[10]))((IActivitySensorStatics*)Unsafe.AsPointer(ref this), fromTime, duration, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensor_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensor_t **")] IAsyncOperation<Pointer<IActivitySensor>>** result);
 
         [VtblIndex(7)]
         HRESULT GetDeviceSelector(HSTRING* value);
 
         [VtblIndex(8)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensor_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensor_t **")] IAsyncOperation<Pointer<IActivitySensor>>** result);
 
         [VtblIndex(9)]
-        HRESULT GetSystemHistoryAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime fromTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CActivitySensorReading_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetSystemHistoryAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime fromTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CActivitySensorReading_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IActivitySensorReading>>>>** result);
 
         [VtblIndex(10)]
-        HRESULT GetSystemHistoryWithDurationAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime fromTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CActivitySensorReading_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetSystemHistoryWithDurationAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime fromTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CActivitySensorReading_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IActivitySensorReading>>>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -151,18 +151,18 @@ public unsafe partial struct IActivitySensorStatics : IActivitySensorStatics.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensor_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetDefaultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IActivitySensor>>**, int> GetDefaultAsync;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetDeviceSelector;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CActivitySensor_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IActivitySensor>>**, int> FromIdAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CActivitySensorReading_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, IAsyncOperation<IntPtr>**, int> GetSystemHistoryAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, IAsyncOperation<Pointer<IVectorView<Pointer<IActivitySensorReading>>>>**, int> GetSystemHistoryAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::TimeSpan, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CSensors__CActivitySensorReading_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, TimeSpan, IAsyncOperation<IntPtr>**, int> GetSystemHistoryWithDurationAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, TimeSpan, IAsyncOperation<Pointer<IVectorView<Pointer<IActivitySensorReading>>>>**, int> GetSystemHistoryWithDurationAsync;
     }
 }

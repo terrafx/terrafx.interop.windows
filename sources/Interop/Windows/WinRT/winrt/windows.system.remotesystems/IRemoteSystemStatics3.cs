@@ -82,9 +82,9 @@ public unsafe partial struct IRemoteSystemStatics3 : IRemoteSystemStatics3.Inter
     /// <include file='IRemoteSystemStatics3.xml' path='doc/member[@name="IRemoteSystemStatics3.CreateWatcherWithFiltersForUser"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateWatcherWithFiltersForUser([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CRemoteSystems__CIRemoteSystemFilter_t *")] IIterable<IntPtr>* filters, [NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystemWatcher **")] IRemoteSystemWatcher** result)
+    public HRESULT CreateWatcherWithFiltersForUser([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CRemoteSystems__CIRemoteSystemFilter_t *")] IIterable<Pointer<IRemoteSystemFilter>>* filters, [NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystemWatcher **")] IRemoteSystemWatcher** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemStatics3*, IUser*, IIterable<IntPtr>*, IRemoteSystemWatcher**, int>)(lpVtbl[7]))((IRemoteSystemStatics3*)Unsafe.AsPointer(ref this), user, filters, result);
+        return ((delegate* unmanaged[MemberFunction]<IRemoteSystemStatics3*, IUser*, IIterable<Pointer<IRemoteSystemFilter>>*, IRemoteSystemWatcher**, int>)(lpVtbl[7]))((IRemoteSystemStatics3*)Unsafe.AsPointer(ref this), user, filters, result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IRemoteSystemStatics3 : IRemoteSystemStatics3.Inter
         HRESULT CreateWatcherForUser([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystemWatcher **")] IRemoteSystemWatcher** result);
 
         [VtblIndex(7)]
-        HRESULT CreateWatcherWithFiltersForUser([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CRemoteSystems__CIRemoteSystemFilter_t *")] IIterable<IntPtr>* filters, [NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystemWatcher **")] IRemoteSystemWatcher** result);
+        HRESULT CreateWatcherWithFiltersForUser([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CRemoteSystems__CIRemoteSystemFilter_t *")] IIterable<Pointer<IRemoteSystemFilter>>* filters, [NativeTypeName("ABI::Windows::System::RemoteSystems::IRemoteSystemWatcher **")] IRemoteSystemWatcher** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IRemoteSystemStatics3 : IRemoteSystemStatics3.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, IRemoteSystemWatcher**, int> CreateWatcherForUser;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IUser *, ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CSystem__CRemoteSystems__CIRemoteSystemFilter_t *, ABI::Windows::System::RemoteSystems::IRemoteSystemWatcher **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, IIterable<IntPtr>*, IRemoteSystemWatcher**, int> CreateWatcherWithFiltersForUser;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, IIterable<Pointer<IRemoteSystemFilter>>*, IRemoteSystemWatcher**, int> CreateWatcherWithFiltersForUser;
     }
 }

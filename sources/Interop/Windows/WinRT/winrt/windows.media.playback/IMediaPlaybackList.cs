@@ -74,9 +74,9 @@ public unsafe partial struct IMediaPlaybackList : IMediaPlaybackList.Interface, 
     /// <include file='IMediaPlaybackList.xml' path='doc/member[@name="IMediaPlaybackList.add_ItemFailed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_ItemFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemFailedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ItemFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemFailedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackList>, Pointer<IMediaPlaybackItemFailedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackList*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaPlaybackList*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackList*, ITypedEventHandler<Pointer<IMediaPlaybackList>, Pointer<IMediaPlaybackItemFailedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaPlaybackList*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaPlaybackList.xml' path='doc/member[@name="IMediaPlaybackList.remove_ItemFailed"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IMediaPlaybackList : IMediaPlaybackList.Interface, 
     /// <include file='IMediaPlaybackList.xml' path='doc/member[@name="IMediaPlaybackList.add_CurrentItemChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_CurrentItemChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_CurrentItemChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackList>, Pointer<ICurrentMediaPlaybackItemChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackList*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IMediaPlaybackList*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackList*, ITypedEventHandler<Pointer<IMediaPlaybackList>, Pointer<ICurrentMediaPlaybackItemChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IMediaPlaybackList*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaPlaybackList.xml' path='doc/member[@name="IMediaPlaybackList.remove_CurrentItemChanged"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IMediaPlaybackList : IMediaPlaybackList.Interface, 
     /// <include file='IMediaPlaybackList.xml' path='doc/member[@name="IMediaPlaybackList.add_ItemOpened"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_ItemOpened([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemOpenedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ItemOpened([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemOpenedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackList>, Pointer<IMediaPlaybackItemOpenedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackList*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMediaPlaybackList*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackList*, ITypedEventHandler<Pointer<IMediaPlaybackList>, Pointer<IMediaPlaybackItemOpenedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMediaPlaybackList*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaPlaybackList.xml' path='doc/member[@name="IMediaPlaybackList.remove_ItemOpened"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IMediaPlaybackList : IMediaPlaybackList.Interface, 
     /// <include file='IMediaPlaybackList.xml' path='doc/member[@name="IMediaPlaybackList.get_Items"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_Items([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_t **")] IObservableVector<IntPtr>** value)
+    public HRESULT get_Items([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_t **")] IObservableVector<Pointer<IMediaPlaybackItem>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackList*, IObservableVector<IntPtr>**, int>)(lpVtbl[12]))((IMediaPlaybackList*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackList*, IObservableVector<Pointer<IMediaPlaybackItem>>**, int>)(lpVtbl[12]))((IMediaPlaybackList*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaPlaybackList.xml' path='doc/member[@name="IMediaPlaybackList.get_AutoRepeatEnabled"]/*' />
@@ -202,25 +202,25 @@ public unsafe partial struct IMediaPlaybackList : IMediaPlaybackList.Interface, 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_ItemFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemFailedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ItemFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemFailedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackList>, Pointer<IMediaPlaybackItemFailedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_ItemFailed(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_CurrentItemChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_CurrentItemChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackList>, Pointer<ICurrentMediaPlaybackItemChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_CurrentItemChanged(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_ItemOpened([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemOpenedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ItemOpened([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemOpenedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackList>, Pointer<IMediaPlaybackItemOpenedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_ItemOpened(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT get_Items([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_t **")] IObservableVector<IntPtr>** value);
+        HRESULT get_Items([NativeTypeName("ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_t **")] IObservableVector<Pointer<IMediaPlaybackItem>>** value);
 
         [VtblIndex(13)]
         HRESULT get_AutoRepeatEnabled([NativeTypeName("boolean *")] byte* value);
@@ -272,25 +272,25 @@ public unsafe partial struct IMediaPlaybackList : IMediaPlaybackList.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemFailedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ItemFailed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackList>, Pointer<IMediaPlaybackItemFailedEventArgs>>*, EventRegistrationToken*, int> add_ItemFailed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ItemFailed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CCurrentMediaPlaybackItemChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CurrentItemChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackList>, Pointer<ICurrentMediaPlaybackItemChangedEventArgs>>*, EventRegistrationToken*, int> add_CurrentItemChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CurrentItemChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackList_Windows__CMedia__CPlayback__CMediaPlaybackItemOpenedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ItemOpened;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackList>, Pointer<IMediaPlaybackItemOpenedEventArgs>>*, EventRegistrationToken*, int> add_ItemOpened;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ItemOpened;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIObservableVector_1_Windows__CMedia__CPlayback__CMediaPlaybackItem_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IObservableVector<IntPtr>**, int> get_Items;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IObservableVector<Pointer<IMediaPlaybackItem>>**, int> get_Items;
 
         [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_AutoRepeatEnabled;

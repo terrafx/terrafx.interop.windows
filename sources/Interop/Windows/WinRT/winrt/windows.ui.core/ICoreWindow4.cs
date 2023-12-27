@@ -74,9 +74,9 @@ public unsafe partial struct ICoreWindow4 : ICoreWindow4.Interface, INativeGuid
     /// <include file='ICoreWindow4.xml' path='doc/member[@name="ICoreWindow4.add_ResizeStarted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_ResizeStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreWindow_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie)
+    public HRESULT add_ResizeStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreWindow_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreWindow>, Pointer<IInspectable>>* handler, EventRegistrationToken* pCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreWindow4*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreWindow4*)Unsafe.AsPointer(ref this), handler, pCookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindow4*, ITypedEventHandler<Pointer<ICoreWindow>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreWindow4*)Unsafe.AsPointer(ref this), handler, pCookie);
     }
 
     /// <include file='ICoreWindow4.xml' path='doc/member[@name="ICoreWindow4.remove_ResizeStarted"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct ICoreWindow4 : ICoreWindow4.Interface, INativeGuid
     /// <include file='ICoreWindow4.xml' path='doc/member[@name="ICoreWindow4.add_ResizeCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_ResizeCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreWindow_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie)
+    public HRESULT add_ResizeCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreWindow_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreWindow>, Pointer<IInspectable>>* handler, EventRegistrationToken* pCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreWindow4*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICoreWindow4*)Unsafe.AsPointer(ref this), handler, pCookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindow4*, ITypedEventHandler<Pointer<ICoreWindow>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICoreWindow4*)Unsafe.AsPointer(ref this), handler, pCookie);
     }
 
     /// <include file='ICoreWindow4.xml' path='doc/member[@name="ICoreWindow4.remove_ResizeCompleted"]/*' />
@@ -106,13 +106,13 @@ public unsafe partial struct ICoreWindow4 : ICoreWindow4.Interface, INativeGuid
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_ResizeStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreWindow_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie);
+        HRESULT add_ResizeStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreWindow_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreWindow>, Pointer<IInspectable>>* handler, EventRegistrationToken* pCookie);
 
         [VtblIndex(7)]
         HRESULT remove_ResizeStarted(EventRegistrationToken cookie);
 
         [VtblIndex(8)]
-        HRESULT add_ResizeCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreWindow_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie);
+        HRESULT add_ResizeCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreWindow_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreWindow>, Pointer<IInspectable>>* handler, EventRegistrationToken* pCookie);
 
         [VtblIndex(9)]
         HRESULT remove_ResizeCompleted(EventRegistrationToken cookie);
@@ -140,13 +140,13 @@ public unsafe partial struct ICoreWindow4 : ICoreWindow4.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreWindow_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ResizeStarted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreWindow>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ResizeStarted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ResizeStarted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreWindow_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ResizeCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreWindow>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ResizeCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ResizeCompleted;

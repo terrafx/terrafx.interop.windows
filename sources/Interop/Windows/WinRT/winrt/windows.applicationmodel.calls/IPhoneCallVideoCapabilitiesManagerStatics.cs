@@ -74,15 +74,15 @@ public unsafe partial struct IPhoneCallVideoCapabilitiesManagerStatics : IPhoneC
     /// <include file='IPhoneCallVideoCapabilitiesManagerStatics.xml' path='doc/member[@name="IPhoneCallVideoCapabilitiesManagerStatics.GetCapabilitiesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetCapabilitiesAsync(HSTRING phoneNumber, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetCapabilitiesAsync(HSTRING phoneNumber, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_t **")] IAsyncOperation<Pointer<IPhoneCallVideoCapabilities>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneCallVideoCapabilitiesManagerStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IPhoneCallVideoCapabilitiesManagerStatics*)Unsafe.AsPointer(ref this), phoneNumber, result);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneCallVideoCapabilitiesManagerStatics*, HSTRING, IAsyncOperation<Pointer<IPhoneCallVideoCapabilities>>**, int>)(lpVtbl[6]))((IPhoneCallVideoCapabilitiesManagerStatics*)Unsafe.AsPointer(ref this), phoneNumber, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetCapabilitiesAsync(HSTRING phoneNumber, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetCapabilitiesAsync(HSTRING phoneNumber, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_t **")] IAsyncOperation<Pointer<IPhoneCallVideoCapabilities>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IPhoneCallVideoCapabilitiesManagerStatics : IPhoneC
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallVideoCapabilities_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetCapabilitiesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IPhoneCallVideoCapabilities>>**, int> GetCapabilitiesAsync;
     }
 }

@@ -74,15 +74,15 @@ public unsafe partial struct IConnectionProfile4 : IConnectionProfile4.Interface
     /// <include file='IConnectionProfile4.xml' path='doc/member[@name="IConnectionProfile4.GetProviderNetworkUsageAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetProviderNetworkUsageAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime endTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::NetworkUsageStates")] NetworkUsageStates states, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CProviderNetworkUsage_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT GetProviderNetworkUsageAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime endTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::NetworkUsageStates")] NetworkUsageStates states, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CProviderNetworkUsage_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IProviderNetworkUsage>>>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IConnectionProfile4*, WinRTDateTime, WinRTDateTime, NetworkUsageStates, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IConnectionProfile4*)Unsafe.AsPointer(ref this), startTime, endTime, states, value);
+        return ((delegate* unmanaged[MemberFunction]<IConnectionProfile4*, WinRTDateTime, WinRTDateTime, NetworkUsageStates, IAsyncOperation<Pointer<IVectorView<Pointer<IProviderNetworkUsage>>>>**, int>)(lpVtbl[6]))((IConnectionProfile4*)Unsafe.AsPointer(ref this), startTime, endTime, states, value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetProviderNetworkUsageAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime endTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::NetworkUsageStates")] NetworkUsageStates states, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CProviderNetworkUsage_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT GetProviderNetworkUsageAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime endTime, [NativeTypeName("ABI::Windows::Networking::Connectivity::NetworkUsageStates")] NetworkUsageStates states, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CProviderNetworkUsage_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IProviderNetworkUsage>>>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IConnectionProfile4 : IConnectionProfile4.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::DateTime, ABI::Windows::Networking::Connectivity::NetworkUsageStates, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CConnectivity__CProviderNetworkUsage_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, WinRTDateTime, NetworkUsageStates, IAsyncOperation<IntPtr>**, int> GetProviderNetworkUsageAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, WinRTDateTime, NetworkUsageStates, IAsyncOperation<Pointer<IVectorView<Pointer<IProviderNetworkUsage>>>>**, int> GetProviderNetworkUsageAsync;
     }
 }

@@ -74,9 +74,9 @@ public unsafe partial struct IPrint3DWorkflow2 : IPrint3DWorkflow2.Interface, IN
     /// <include file='IPrint3DWorkflow2.xml' path='doc/member[@name="IPrint3DWorkflow2.add_PrinterChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_PrinterChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrinterChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_PrinterChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrinterChangedEventArgs_t *")] ITypedEventHandler<Pointer<IPrint3DWorkflow>, Pointer<IPrint3DWorkflowPrinterChangedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPrint3DWorkflow2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IPrint3DWorkflow2*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IPrint3DWorkflow2*, ITypedEventHandler<Pointer<IPrint3DWorkflow>, Pointer<IPrint3DWorkflowPrinterChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IPrint3DWorkflow2*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
     }
 
     /// <include file='IPrint3DWorkflow2.xml' path='doc/member[@name="IPrint3DWorkflow2.remove_PrinterChanged"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IPrint3DWorkflow2 : IPrint3DWorkflow2.Interface, IN
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_PrinterChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrinterChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_PrinterChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrinterChangedEventArgs_t *")] ITypedEventHandler<Pointer<IPrint3DWorkflow>, Pointer<IPrint3DWorkflowPrinterChangedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(7)]
         HRESULT remove_PrinterChanged(EventRegistrationToken eventCookie);
@@ -118,7 +118,7 @@ public unsafe partial struct IPrint3DWorkflow2 : IPrint3DWorkflow2.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrinterChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PrinterChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPrint3DWorkflow>, Pointer<IPrint3DWorkflowPrinterChangedEventArgs>>*, EventRegistrationToken*, int> add_PrinterChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PrinterChanged;

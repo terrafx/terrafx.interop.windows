@@ -74,9 +74,9 @@ public unsafe partial struct IRadialControllerMenu : IRadialControllerMenu.Inter
     /// <include file='IRadialControllerMenu.xml' path='doc/member[@name="IRadialControllerMenu.get_Items"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Items([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CRadialControllerMenuItem_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Items([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CRadialControllerMenuItem_t **")] IVector<Pointer<IRadialControllerMenuItem>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRadialControllerMenu*, IVector<IntPtr>**, int>)(lpVtbl[6]))((IRadialControllerMenu*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRadialControllerMenu*, IVector<Pointer<IRadialControllerMenuItem>>**, int>)(lpVtbl[6]))((IRadialControllerMenu*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRadialControllerMenu.xml' path='doc/member[@name="IRadialControllerMenu.get_IsEnabled"]/*' />
@@ -122,7 +122,7 @@ public unsafe partial struct IRadialControllerMenu : IRadialControllerMenu.Inter
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Items([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CRadialControllerMenuItem_t **")] IVector<IntPtr>** value);
+        HRESULT get_Items([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CRadialControllerMenuItem_t **")] IVector<Pointer<IRadialControllerMenuItem>>** value);
 
         [VtblIndex(7)]
         HRESULT get_IsEnabled([NativeTypeName("boolean *")] byte* value);
@@ -162,7 +162,7 @@ public unsafe partial struct IRadialControllerMenu : IRadialControllerMenu.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CInput__CRadialControllerMenuItem_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Items;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IRadialControllerMenuItem>>**, int> get_Items;
 
         [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsEnabled;

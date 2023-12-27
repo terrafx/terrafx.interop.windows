@@ -90,9 +90,9 @@ public unsafe partial struct IGattDeviceServicesResult : IGattDeviceServicesResu
     /// <include file='IGattDeviceServicesResult.xml' path='doc/member[@name="IGattDeviceServicesResult.get_Services"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Services([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Services([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **")] IVectorView<Pointer<IGattDeviceService>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDeviceServicesResult*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((IGattDeviceServicesResult*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IGattDeviceServicesResult*, IVectorView<Pointer<IGattDeviceService>>**, int>)(lpVtbl[8]))((IGattDeviceServicesResult*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IGattDeviceServicesResult : IGattDeviceServicesResu
         HRESULT get_ProtocolError([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_byte_t **")] IReference<byte>** value);
 
         [VtblIndex(8)]
-        HRESULT get_Services([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Services([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **")] IVectorView<Pointer<IGattDeviceService>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IGattDeviceServicesResult : IGattDeviceServicesResu
         public delegate* unmanaged[MemberFunction]<TSelf*, IReference<byte>**, int> get_ProtocolError;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Services;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IGattDeviceService>>**, int> get_Services;
     }
 }

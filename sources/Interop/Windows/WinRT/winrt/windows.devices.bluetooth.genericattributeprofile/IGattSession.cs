@@ -122,9 +122,9 @@ public unsafe partial struct IGattSession : IGattSession.Interface, INativeGuid
     /// <include file='IGattSession.xml' path='doc/member[@name="IGattSession.add_MaxPduSizeChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_MaxPduSizeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_MaxPduSizeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_IInspectable_t *")] ITypedEventHandler<Pointer<IGattSession>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattSession*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IGattSession*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGattSession*, ITypedEventHandler<Pointer<IGattSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IGattSession*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGattSession.xml' path='doc/member[@name="IGattSession.remove_MaxPduSizeChanged"]/*' />
@@ -138,9 +138,9 @@ public unsafe partial struct IGattSession : IGattSession.Interface, INativeGuid
     /// <include file='IGattSession.xml' path='doc/member[@name="IGattSession.add_SessionStatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_SessionStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSessionStatusChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SessionStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSessionStatusChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGattSession>, Pointer<IGattSessionStatusChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattSession*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IGattSession*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGattSession*, ITypedEventHandler<Pointer<IGattSession>, Pointer<IGattSessionStatusChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IGattSession*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGattSession.xml' path='doc/member[@name="IGattSession.remove_SessionStatusChanged"]/*' />
@@ -172,13 +172,13 @@ public unsafe partial struct IGattSession : IGattSession.Interface, INativeGuid
         HRESULT get_SessionStatus([NativeTypeName("ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSessionStatus *")] GattSessionStatus* value);
 
         [VtblIndex(12)]
-        HRESULT add_MaxPduSizeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_MaxPduSizeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_IInspectable_t *")] ITypedEventHandler<Pointer<IGattSession>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_MaxPduSizeChanged(EventRegistrationToken token);
 
         [VtblIndex(14)]
-        HRESULT add_SessionStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSessionStatusChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SessionStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSessionStatusChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGattSession>, Pointer<IGattSessionStatusChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(15)]
         HRESULT remove_SessionStatusChanged(EventRegistrationToken token);
@@ -224,13 +224,13 @@ public unsafe partial struct IGattSession : IGattSession.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, GattSessionStatus*, int> get_SessionStatus;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_MaxPduSizeChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGattSession>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_MaxPduSizeChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_MaxPduSizeChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSessionStatusChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SessionStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGattSession>, Pointer<IGattSessionStatusChangedEventArgs>>*, EventRegistrationToken*, int> add_SessionStatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SessionStatusChanged;

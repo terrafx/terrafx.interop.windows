@@ -76,18 +76,18 @@ public unsafe partial struct ISpatialAnchorTransferManagerStatics : ISpatialAnch
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [Obsolete("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]
-    public HRESULT TryImportAnchorsAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT TryImportAnchorsAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_t **")] IAsyncOperation<Pointer<IMapView<HSTRING, Pointer<ISpatialAnchor>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpatialAnchorTransferManagerStatics*, IInputStream*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ISpatialAnchorTransferManagerStatics*)Unsafe.AsPointer(ref this), stream, operation);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAnchorTransferManagerStatics*, IInputStream*, IAsyncOperation<Pointer<IMapView<HSTRING, Pointer<ISpatialAnchor>>>>**, int>)(lpVtbl[6]))((ISpatialAnchorTransferManagerStatics*)Unsafe.AsPointer(ref this), stream, operation);
     }
 
     /// <include file='ISpatialAnchorTransferManagerStatics.xml' path='doc/member[@name="ISpatialAnchorTransferManagerStatics.TryExportAnchorsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [Obsolete("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]
-    public HRESULT TryExportAnchorsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_t *")] IIterable<IntPtr>* anchors, [NativeTypeName("ABI::Windows::Storage::Streams::IOutputStream *")] IOutputStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation)
+    public HRESULT TryExportAnchorsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<ISpatialAnchor>>>>* anchors, [NativeTypeName("ABI::Windows::Storage::Streams::IOutputStream *")] IOutputStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpatialAnchorTransferManagerStatics*, IIterable<IntPtr>*, IOutputStream*, IAsyncOperation<bool>**, int>)(lpVtbl[7]))((ISpatialAnchorTransferManagerStatics*)Unsafe.AsPointer(ref this), anchors, stream, operation);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAnchorTransferManagerStatics*, IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<ISpatialAnchor>>>>*, IOutputStream*, IAsyncOperation<bool>**, int>)(lpVtbl[7]))((ISpatialAnchorTransferManagerStatics*)Unsafe.AsPointer(ref this), anchors, stream, operation);
     }
 
     /// <include file='ISpatialAnchorTransferManagerStatics.xml' path='doc/member[@name="ISpatialAnchorTransferManagerStatics.RequestAccessAsync"]/*' />
@@ -103,11 +103,11 @@ public unsafe partial struct ISpatialAnchorTransferManagerStatics : ISpatialAnch
     {
         [VtblIndex(6)]
         [Obsolete("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]
-        HRESULT TryImportAnchorsAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT TryImportAnchorsAsync([NativeTypeName("ABI::Windows::Storage::Streams::IInputStream *")] IInputStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_t **")] IAsyncOperation<Pointer<IMapView<HSTRING, Pointer<ISpatialAnchor>>>>** operation);
 
         [VtblIndex(7)]
         [Obsolete("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]
-        HRESULT TryExportAnchorsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_t *")] IIterable<IntPtr>* anchors, [NativeTypeName("ABI::Windows::Storage::Streams::IOutputStream *")] IOutputStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
+        HRESULT TryExportAnchorsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<ISpatialAnchor>>>>* anchors, [NativeTypeName("ABI::Windows::Storage::Streams::IOutputStream *")] IOutputStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
 
         [VtblIndex(8)]
         [Obsolete("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]
@@ -137,11 +137,11 @@ public unsafe partial struct ISpatialAnchorTransferManagerStatics : ISpatialAnch
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IInputStream *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_t **) __attribute__((stdcall))")]
         [Obsolete("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IInputStream*, IAsyncOperation<IntPtr>**, int> TryImportAnchorsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInputStream*, IAsyncOperation<Pointer<IMapView<HSTRING, Pointer<ISpatialAnchor>>>>**, int> TryImportAnchorsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_Windows__CPerception__CSpatial__CSpatialAnchor_t *, ABI::Windows::Storage::Streams::IOutputStream *, ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **) __attribute__((stdcall))")]
         [Obsolete("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IOutputStream*, IAsyncOperation<bool>**, int> TryExportAnchorsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IKeyValuePair<HSTRING, Pointer<ISpatialAnchor>>>>*, IOutputStream*, IAsyncOperation<bool>**, int> TryExportAnchorsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CPerception__CSpatial__CSpatialPerceptionAccessStatus_t **) __attribute__((stdcall))")]
         [Obsolete("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]

@@ -74,9 +74,9 @@ public unsafe partial struct ICoreApplicationUnhandledError : ICoreApplicationUn
     /// <include file='ICoreApplicationUnhandledError.xml' path='doc/member[@name="ICoreApplicationUnhandledError.add_UnhandledErrorDetected"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_UnhandledErrorDetected([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CCore__CUnhandledErrorDetectedEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_UnhandledErrorDetected([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CCore__CUnhandledErrorDetectedEventArgs_t *")] IEventHandler<Pointer<IUnhandledErrorDetectedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreApplicationUnhandledError*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreApplicationUnhandledError*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreApplicationUnhandledError*, IEventHandler<Pointer<IUnhandledErrorDetectedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreApplicationUnhandledError*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreApplicationUnhandledError.xml' path='doc/member[@name="ICoreApplicationUnhandledError.remove_UnhandledErrorDetected"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct ICoreApplicationUnhandledError : ICoreApplicationUn
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_UnhandledErrorDetected([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CCore__CUnhandledErrorDetectedEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_UnhandledErrorDetected([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CCore__CUnhandledErrorDetectedEventArgs_t *")] IEventHandler<Pointer<IUnhandledErrorDetectedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_UnhandledErrorDetected(EventRegistrationToken token);
@@ -118,7 +118,7 @@ public unsafe partial struct ICoreApplicationUnhandledError : ICoreApplicationUn
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CCore__CUnhandledErrorDetectedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_UnhandledErrorDetected;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IUnhandledErrorDetectedEventArgs>>*, EventRegistrationToken*, int> add_UnhandledErrorDetected;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_UnhandledErrorDetected;

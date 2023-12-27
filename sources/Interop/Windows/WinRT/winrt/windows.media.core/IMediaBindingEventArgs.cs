@@ -74,9 +74,9 @@ public unsafe partial struct IMediaBindingEventArgs : IMediaBindingEventArgs.Int
     /// <include file='IMediaBindingEventArgs.xml' path='doc/member[@name="IMediaBindingEventArgs.add_Canceled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_Canceled([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBindingEventArgs_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Canceled([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBindingEventArgs_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaBindingEventArgs>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaBindingEventArgs*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaBindingEventArgs*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaBindingEventArgs*, ITypedEventHandler<Pointer<IMediaBindingEventArgs>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaBindingEventArgs*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaBindingEventArgs.xml' path='doc/member[@name="IMediaBindingEventArgs.remove_Canceled"]/*' />
@@ -130,7 +130,7 @@ public unsafe partial struct IMediaBindingEventArgs : IMediaBindingEventArgs.Int
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_Canceled([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBindingEventArgs_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Canceled([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBindingEventArgs_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaBindingEventArgs>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_Canceled(EventRegistrationToken token);
@@ -173,7 +173,7 @@ public unsafe partial struct IMediaBindingEventArgs : IMediaBindingEventArgs.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaBindingEventArgs_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Canceled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaBindingEventArgs>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Canceled;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Canceled;

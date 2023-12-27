@@ -90,9 +90,9 @@ public unsafe partial struct IWebAccount2 : IWebAccount2.Interface, INativeGuid
     /// <include file='IWebAccount2.xml' path='doc/member[@name="IWebAccount2.GetPictureAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetPictureAsync([NativeTypeName("ABI::Windows::Security::Credentials::WebAccountPictureSize")] WebAccountPictureSize desizedSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT GetPictureAsync([NativeTypeName("ABI::Windows::Security::Credentials::WebAccountPictureSize")] WebAccountPictureSize desizedSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **")] IAsyncOperation<Pointer<IRandomAccessStream>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAccount2*, WebAccountPictureSize, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IWebAccount2*)Unsafe.AsPointer(ref this), desizedSize, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAccount2*, WebAccountPictureSize, IAsyncOperation<Pointer<IRandomAccessStream>>**, int>)(lpVtbl[8]))((IWebAccount2*)Unsafe.AsPointer(ref this), desizedSize, asyncInfo);
     }
 
     /// <include file='IWebAccount2.xml' path='doc/member[@name="IWebAccount2.SignOutAsync"]/*' />
@@ -120,7 +120,7 @@ public unsafe partial struct IWebAccount2 : IWebAccount2.Interface, INativeGuid
         HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_HSTRING_t **")] IMapView<HSTRING, HSTRING>** value);
 
         [VtblIndex(8)]
-        HRESULT GetPictureAsync([NativeTypeName("ABI::Windows::Security::Credentials::WebAccountPictureSize")] WebAccountPictureSize desizedSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT GetPictureAsync([NativeTypeName("ABI::Windows::Security::Credentials::WebAccountPictureSize")] WebAccountPictureSize desizedSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **")] IAsyncOperation<Pointer<IRandomAccessStream>>** asyncInfo);
 
         [VtblIndex(9)]
         HRESULT SignOutAsync([NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
@@ -157,7 +157,7 @@ public unsafe partial struct IWebAccount2 : IWebAccount2.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, HSTRING>**, int> get_Properties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Credentials::WebAccountPictureSize, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, WebAccountPictureSize, IAsyncOperation<IntPtr>**, int> GetPictureAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WebAccountPictureSize, IAsyncOperation<Pointer<IRandomAccessStream>>**, int> GetPictureAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncAction**, int> SignOutAsync;

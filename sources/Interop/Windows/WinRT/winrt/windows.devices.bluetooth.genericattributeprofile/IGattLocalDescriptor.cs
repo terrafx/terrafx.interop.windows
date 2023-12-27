@@ -106,9 +106,9 @@ public unsafe partial struct IGattLocalDescriptor : IGattLocalDescriptor.Interfa
     /// <include file='IGattLocalDescriptor.xml' path='doc/member[@name="IGattLocalDescriptor.add_ReadRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_ReadRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ReadRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IGattLocalDescriptor>, Pointer<IGattReadRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattLocalDescriptor*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IGattLocalDescriptor*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGattLocalDescriptor*, ITypedEventHandler<Pointer<IGattLocalDescriptor>, Pointer<IGattReadRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IGattLocalDescriptor*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGattLocalDescriptor.xml' path='doc/member[@name="IGattLocalDescriptor.remove_ReadRequested"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IGattLocalDescriptor : IGattLocalDescriptor.Interfa
     /// <include file='IGattLocalDescriptor.xml' path='doc/member[@name="IGattLocalDescriptor.add_WriteRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_WriteRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_WriteRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IGattLocalDescriptor>, Pointer<IGattWriteRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattLocalDescriptor*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IGattLocalDescriptor*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGattLocalDescriptor*, ITypedEventHandler<Pointer<IGattLocalDescriptor>, Pointer<IGattWriteRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IGattLocalDescriptor*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGattLocalDescriptor.xml' path='doc/member[@name="IGattLocalDescriptor.remove_WriteRequested"]/*' />
@@ -150,13 +150,13 @@ public unsafe partial struct IGattLocalDescriptor : IGattLocalDescriptor.Interfa
         HRESULT get_WriteProtectionLevel([NativeTypeName("ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattProtectionLevel *")] GattProtectionLevel* value);
 
         [VtblIndex(10)]
-        HRESULT add_ReadRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ReadRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IGattLocalDescriptor>, Pointer<IGattReadRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_ReadRequested(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT add_WriteRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_WriteRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IGattLocalDescriptor>, Pointer<IGattWriteRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_WriteRequested(EventRegistrationToken token);
@@ -196,13 +196,13 @@ public unsafe partial struct IGattLocalDescriptor : IGattLocalDescriptor.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, GattProtectionLevel*, int> get_WriteProtectionLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ReadRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGattLocalDescriptor>, Pointer<IGattReadRequestedEventArgs>>*, EventRegistrationToken*, int> add_ReadRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ReadRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalDescriptor_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattWriteRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_WriteRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGattLocalDescriptor>, Pointer<IGattWriteRequestedEventArgs>>*, EventRegistrationToken*, int> add_WriteRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_WriteRequested;

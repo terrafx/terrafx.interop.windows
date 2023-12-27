@@ -74,15 +74,15 @@ public unsafe partial struct ICompositionContainerShape : ICompositionContainerS
     /// <include file='ICompositionContainerShape.xml' path='doc/member[@name="ICompositionContainerShape.get_Shapes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Shapes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CComposition__CCompositionShape_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Shapes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CComposition__CCompositionShape_t **")] IVector<Pointer<ICompositionShape>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICompositionContainerShape*, IVector<IntPtr>**, int>)(lpVtbl[6]))((ICompositionContainerShape*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICompositionContainerShape*, IVector<Pointer<ICompositionShape>>**, int>)(lpVtbl[6]))((ICompositionContainerShape*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Shapes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CComposition__CCompositionShape_t **")] IVector<IntPtr>** value);
+        HRESULT get_Shapes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CComposition__CCompositionShape_t **")] IVector<Pointer<ICompositionShape>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ICompositionContainerShape : ICompositionContainerS
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CComposition__CCompositionShape_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Shapes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<ICompositionShape>>**, int> get_Shapes;
     }
 }

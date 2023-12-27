@@ -74,9 +74,9 @@ public unsafe partial struct IMediaDeviceController : IMediaDeviceController.Int
     /// <include file='IMediaDeviceController.xml' path='doc/member[@name="IMediaDeviceController.GetAvailableMediaStreamProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetAvailableMediaStreamProperties([NativeTypeName("ABI::Windows::Media::Capture::MediaStreamType")] MediaStreamType mediaStreamType, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CMediaProperties__CIMediaEncodingProperties_t **")] IVectorView<IntPtr>** value)
+    public HRESULT GetAvailableMediaStreamProperties([NativeTypeName("ABI::Windows::Media::Capture::MediaStreamType")] MediaStreamType mediaStreamType, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CMediaProperties__CIMediaEncodingProperties_t **")] IVectorView<Pointer<IMediaEncodingProperties>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaDeviceController*, MediaStreamType, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IMediaDeviceController*)Unsafe.AsPointer(ref this), mediaStreamType, value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaDeviceController*, MediaStreamType, IVectorView<Pointer<IMediaEncodingProperties>>**, int>)(lpVtbl[6]))((IMediaDeviceController*)Unsafe.AsPointer(ref this), mediaStreamType, value);
     }
 
     /// <include file='IMediaDeviceController.xml' path='doc/member[@name="IMediaDeviceController.GetMediaStreamProperties"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IMediaDeviceController : IMediaDeviceController.Int
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetAvailableMediaStreamProperties([NativeTypeName("ABI::Windows::Media::Capture::MediaStreamType")] MediaStreamType mediaStreamType, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CMediaProperties__CIMediaEncodingProperties_t **")] IVectorView<IntPtr>** value);
+        HRESULT GetAvailableMediaStreamProperties([NativeTypeName("ABI::Windows::Media::Capture::MediaStreamType")] MediaStreamType mediaStreamType, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CMediaProperties__CIMediaEncodingProperties_t **")] IVectorView<Pointer<IMediaEncodingProperties>>** value);
 
         [VtblIndex(7)]
         HRESULT GetMediaStreamProperties([NativeTypeName("ABI::Windows::Media::Capture::MediaStreamType")] MediaStreamType mediaStreamType, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProperties **")] IMediaEncodingProperties** value);
@@ -129,7 +129,7 @@ public unsafe partial struct IMediaDeviceController : IMediaDeviceController.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Capture::MediaStreamType, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CMediaProperties__CIMediaEncodingProperties_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, MediaStreamType, IVectorView<IntPtr>**, int> GetAvailableMediaStreamProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MediaStreamType, IVectorView<Pointer<IMediaEncodingProperties>>**, int> GetAvailableMediaStreamProperties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Capture::MediaStreamType, ABI::Windows::Media::MediaProperties::IMediaEncodingProperties **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, MediaStreamType, IMediaEncodingProperties**, int> GetMediaStreamProperties;

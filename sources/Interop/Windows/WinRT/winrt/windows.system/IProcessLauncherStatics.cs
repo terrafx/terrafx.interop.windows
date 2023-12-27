@@ -74,26 +74,26 @@ public unsafe partial struct IProcessLauncherStatics : IProcessLauncherStatics.I
     /// <include file='IProcessLauncherStatics.xml' path='doc/member[@name="IProcessLauncherStatics.RunToCompletionAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT RunToCompletionAsync(HSTRING fileName, HSTRING args, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_t **")] IAsyncOperation<IntPtr>** asyncOperationResult)
+    public HRESULT RunToCompletionAsync(HSTRING fileName, HSTRING args, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_t **")] IAsyncOperation<Pointer<IProcessLauncherResult>>** asyncOperationResult)
     {
-        return ((delegate* unmanaged[MemberFunction]<IProcessLauncherStatics*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IProcessLauncherStatics*)Unsafe.AsPointer(ref this), fileName, args, asyncOperationResult);
+        return ((delegate* unmanaged[MemberFunction]<IProcessLauncherStatics*, HSTRING, HSTRING, IAsyncOperation<Pointer<IProcessLauncherResult>>**, int>)(lpVtbl[6]))((IProcessLauncherStatics*)Unsafe.AsPointer(ref this), fileName, args, asyncOperationResult);
     }
 
     /// <include file='IProcessLauncherStatics.xml' path='doc/member[@name="IProcessLauncherStatics.RunToCompletionAsyncWithOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT RunToCompletionAsyncWithOptions(HSTRING fileName, HSTRING args, [NativeTypeName("ABI::Windows::System::IProcessLauncherOptions *")] IProcessLauncherOptions* options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_t **")] IAsyncOperation<IntPtr>** asyncOperationResult)
+    public HRESULT RunToCompletionAsyncWithOptions(HSTRING fileName, HSTRING args, [NativeTypeName("ABI::Windows::System::IProcessLauncherOptions *")] IProcessLauncherOptions* options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_t **")] IAsyncOperation<Pointer<IProcessLauncherResult>>** asyncOperationResult)
     {
-        return ((delegate* unmanaged[MemberFunction]<IProcessLauncherStatics*, HSTRING, HSTRING, IProcessLauncherOptions*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IProcessLauncherStatics*)Unsafe.AsPointer(ref this), fileName, args, options, asyncOperationResult);
+        return ((delegate* unmanaged[MemberFunction]<IProcessLauncherStatics*, HSTRING, HSTRING, IProcessLauncherOptions*, IAsyncOperation<Pointer<IProcessLauncherResult>>**, int>)(lpVtbl[7]))((IProcessLauncherStatics*)Unsafe.AsPointer(ref this), fileName, args, options, asyncOperationResult);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT RunToCompletionAsync(HSTRING fileName, HSTRING args, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_t **")] IAsyncOperation<IntPtr>** asyncOperationResult);
+        HRESULT RunToCompletionAsync(HSTRING fileName, HSTRING args, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_t **")] IAsyncOperation<Pointer<IProcessLauncherResult>>** asyncOperationResult);
 
         [VtblIndex(7)]
-        HRESULT RunToCompletionAsyncWithOptions(HSTRING fileName, HSTRING args, [NativeTypeName("ABI::Windows::System::IProcessLauncherOptions *")] IProcessLauncherOptions* options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_t **")] IAsyncOperation<IntPtr>** asyncOperationResult);
+        HRESULT RunToCompletionAsyncWithOptions(HSTRING fileName, HSTRING args, [NativeTypeName("ABI::Windows::System::IProcessLauncherOptions *")] IProcessLauncherOptions* options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_t **")] IAsyncOperation<Pointer<IProcessLauncherResult>>** asyncOperationResult);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IProcessLauncherStatics : IProcessLauncherStatics.I
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int> RunToCompletionAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IAsyncOperation<Pointer<IProcessLauncherResult>>**, int> RunToCompletionAsync;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, ABI::Windows::System::IProcessLauncherOptions *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CProcessLauncherResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IProcessLauncherOptions*, IAsyncOperation<IntPtr>**, int> RunToCompletionAsyncWithOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IProcessLauncherOptions*, IAsyncOperation<Pointer<IProcessLauncherResult>>**, int> RunToCompletionAsyncWithOptions;
     }
 }

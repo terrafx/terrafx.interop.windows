@@ -94,18 +94,18 @@ public unsafe partial struct ISmsDeviceMessageStore : ISmsDeviceMessageStore.Int
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     [Obsolete("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")]
-    public HRESULT GetMessageAsync([NativeTypeName("UINT32")] uint messageId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSms__CISmsMessage_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT GetMessageAsync([NativeTypeName("UINT32")] uint messageId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSms__CISmsMessage_t **")] IAsyncOperation<Pointer<ISmsMessage>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmsDeviceMessageStore*, uint, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((ISmsDeviceMessageStore*)Unsafe.AsPointer(ref this), messageId, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISmsDeviceMessageStore*, uint, IAsyncOperation<Pointer<ISmsMessage>>**, int>)(lpVtbl[8]))((ISmsDeviceMessageStore*)Unsafe.AsPointer(ref this), messageId, asyncInfo);
     }
 
     /// <include file='ISmsDeviceMessageStore.xml' path='doc/member[@name="ISmsDeviceMessageStore.GetMessagesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     [Obsolete("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")]
-    public HRESULT GetMessagesAsync([NativeTypeName("ABI::Windows::Devices::Sms::SmsMessageFilter")] SmsMessageFilter messageFilter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2___FIVectorView_1_Windows__CDevices__CSms__CISmsMessage_int_t **")] IAsyncOperationWithProgress<IntPtr, int>** asyncInfo)
+    public HRESULT GetMessagesAsync([NativeTypeName("ABI::Windows::Devices::Sms::SmsMessageFilter")] SmsMessageFilter messageFilter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2___FIVectorView_1_Windows__CDevices__CSms__CISmsMessage_int_t **")] IAsyncOperationWithProgress<Pointer<IVectorView<Pointer<ISmsMessage>>>, int>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmsDeviceMessageStore*, SmsMessageFilter, IAsyncOperationWithProgress<IntPtr, int>**, int>)(lpVtbl[9]))((ISmsDeviceMessageStore*)Unsafe.AsPointer(ref this), messageFilter, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISmsDeviceMessageStore*, SmsMessageFilter, IAsyncOperationWithProgress<Pointer<IVectorView<Pointer<ISmsMessage>>>, int>**, int>)(lpVtbl[9]))((ISmsDeviceMessageStore*)Unsafe.AsPointer(ref this), messageFilter, asyncInfo);
     }
 
     /// <include file='ISmsDeviceMessageStore.xml' path='doc/member[@name="ISmsDeviceMessageStore.get_MaxMessages"]/*' />
@@ -129,11 +129,11 @@ public unsafe partial struct ISmsDeviceMessageStore : ISmsDeviceMessageStore.Int
 
         [VtblIndex(8)]
         [Obsolete("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")]
-        HRESULT GetMessageAsync([NativeTypeName("UINT32")] uint messageId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSms__CISmsMessage_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT GetMessageAsync([NativeTypeName("UINT32")] uint messageId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSms__CISmsMessage_t **")] IAsyncOperation<Pointer<ISmsMessage>>** asyncInfo);
 
         [VtblIndex(9)]
         [Obsolete("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")]
-        HRESULT GetMessagesAsync([NativeTypeName("ABI::Windows::Devices::Sms::SmsMessageFilter")] SmsMessageFilter messageFilter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2___FIVectorView_1_Windows__CDevices__CSms__CISmsMessage_int_t **")] IAsyncOperationWithProgress<IntPtr, int>** asyncInfo);
+        HRESULT GetMessagesAsync([NativeTypeName("ABI::Windows::Devices::Sms::SmsMessageFilter")] SmsMessageFilter messageFilter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2___FIVectorView_1_Windows__CDevices__CSms__CISmsMessage_int_t **")] IAsyncOperationWithProgress<Pointer<IVectorView<Pointer<ISmsMessage>>>, int>** asyncInfo);
 
         [VtblIndex(10)]
         [Obsolete("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")]
@@ -171,11 +171,11 @@ public unsafe partial struct ISmsDeviceMessageStore : ISmsDeviceMessageStore.Int
 
         [NativeTypeName("HRESULT (UINT32, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSms__CISmsMessage_t **) __attribute__((stdcall))")]
         [Obsolete("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IAsyncOperation<IntPtr>**, int> GetMessageAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IAsyncOperation<Pointer<ISmsMessage>>**, int> GetMessageAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Sms::SmsMessageFilter, ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2___FIVectorView_1_Windows__CDevices__CSms__CISmsMessage_int_t **) __attribute__((stdcall))")]
         [Obsolete("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, SmsMessageFilter, IAsyncOperationWithProgress<IntPtr, int>**, int> GetMessagesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SmsMessageFilter, IAsyncOperationWithProgress<Pointer<IVectorView<Pointer<ISmsMessage>>>, int>**, int> GetMessagesAsync;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
         [Obsolete("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")]

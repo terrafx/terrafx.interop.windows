@@ -98,9 +98,9 @@ public unsafe partial struct IWebSocket : IWebSocket.Interface, INativeGuid
     /// <include file='IWebSocket.xml' path='doc/member[@name="IWebSocket.add_Closed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CIWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CIWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_t *")] ITypedEventHandler<Pointer<IWebSocket>, Pointer<IWebSocketClosedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebSocket*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IWebSocket*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IWebSocket*, ITypedEventHandler<Pointer<IWebSocket>, Pointer<IWebSocketClosedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IWebSocket*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
     }
 
     /// <include file='IWebSocket.xml' path='doc/member[@name="IWebSocket.remove_Closed"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IWebSocket : IWebSocket.Interface, INativeGuid
         HRESULT SetRequestHeader(HSTRING headerName, HSTRING headerValue);
 
         [VtblIndex(9)]
-        HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CIWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_Closed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CIWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_t *")] ITypedEventHandler<Pointer<IWebSocket>, Pointer<IWebSocketClosedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(10)]
         HRESULT remove_Closed(EventRegistrationToken eventCookie);
@@ -171,7 +171,7 @@ public unsafe partial struct IWebSocket : IWebSocket.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, int> SetRequestHeader;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CIWebSocket_Windows__CNetworking__CSockets__CWebSocketClosedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Closed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IWebSocket>, Pointer<IWebSocketClosedEventArgs>>*, EventRegistrationToken*, int> add_Closed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Closed;

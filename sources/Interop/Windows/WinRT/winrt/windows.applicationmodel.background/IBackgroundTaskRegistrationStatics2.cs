@@ -74,9 +74,9 @@ public unsafe partial struct IBackgroundTaskRegistrationStatics2 : IBackgroundTa
     /// <include file='IBackgroundTaskRegistrationStatics2.xml' path='doc/member[@name="IBackgroundTaskRegistrationStatics2.get_AllTaskGroups"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_AllTaskGroups([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_t **")] IMapView<HSTRING, IntPtr>** value)
+    public HRESULT get_AllTaskGroups([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_t **")] IMapView<HSTRING, Pointer<IBackgroundTaskRegistrationGroup>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundTaskRegistrationStatics2*, IMapView<HSTRING, IntPtr>**, int>)(lpVtbl[6]))((IBackgroundTaskRegistrationStatics2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundTaskRegistrationStatics2*, IMapView<HSTRING, Pointer<IBackgroundTaskRegistrationGroup>>**, int>)(lpVtbl[6]))((IBackgroundTaskRegistrationStatics2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBackgroundTaskRegistrationStatics2.xml' path='doc/member[@name="IBackgroundTaskRegistrationStatics2.GetTaskGroup"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IBackgroundTaskRegistrationStatics2 : IBackgroundTa
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_AllTaskGroups([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_t **")] IMapView<HSTRING, IntPtr>** value);
+        HRESULT get_AllTaskGroups([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_t **")] IMapView<HSTRING, Pointer<IBackgroundTaskRegistrationGroup>>** value);
 
         [VtblIndex(7)]
         HRESULT GetTaskGroup(HSTRING groupId, [NativeTypeName("ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup **")] IBackgroundTaskRegistrationGroup** value);
@@ -118,7 +118,7 @@ public unsafe partial struct IBackgroundTaskRegistrationStatics2 : IBackgroundTa
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CApplicationModel__CBackground__CBackgroundTaskRegistrationGroup_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, IntPtr>**, int> get_AllTaskGroups;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, Pointer<IBackgroundTaskRegistrationGroup>>**, int> get_AllTaskGroups;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::ApplicationModel::Background::IBackgroundTaskRegistrationGroup **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IBackgroundTaskRegistrationGroup**, int> GetTaskGroup;

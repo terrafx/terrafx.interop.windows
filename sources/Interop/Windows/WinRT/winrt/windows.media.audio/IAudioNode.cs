@@ -74,9 +74,9 @@ public unsafe partial struct IAudioNode : IAudioNode.Interface, INativeGuid
     /// <include file='IAudioNode.xml' path='doc/member[@name="IAudioNode.get_EffectDefinitions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_EffectDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefinition_t **")] IVector<IntPtr>** value)
+    public HRESULT get_EffectDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefinition_t **")] IVector<Pointer<IAudioEffectDefinition>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioNode*, IVector<IntPtr>**, int>)(lpVtbl[6]))((IAudioNode*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAudioNode*, IVector<Pointer<IAudioEffectDefinition>>**, int>)(lpVtbl[6]))((IAudioNode*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAudioNode.xml' path='doc/member[@name="IAudioNode.put_OutgoingGain"]/*' />
@@ -162,7 +162,7 @@ public unsafe partial struct IAudioNode : IAudioNode.Interface, INativeGuid
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_EffectDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefinition_t **")] IVector<IntPtr>** value);
+        HRESULT get_EffectDefinitions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefinition_t **")] IVector<Pointer<IAudioEffectDefinition>>** value);
 
         [VtblIndex(7)]
         HRESULT put_OutgoingGain(double value);
@@ -217,7 +217,7 @@ public unsafe partial struct IAudioNode : IAudioNode.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEffects__CIAudioEffectDefinition_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_EffectDefinitions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IAudioEffectDefinition>>**, int> get_EffectDefinitions;
 
         [NativeTypeName("HRESULT (DOUBLE) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, double, int> put_OutgoingGain;

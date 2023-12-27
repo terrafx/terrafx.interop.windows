@@ -90,9 +90,9 @@ public unsafe partial struct IMediaFrameSourceGroup : IMediaFrameSourceGroup.Int
     /// <include file='IMediaFrameSourceGroup.xml' path='doc/member[@name="IMediaFrameSourceGroup.get_SourceInfos"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_SourceInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_SourceInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_t **")] IVectorView<Pointer<IMediaFrameSourceInfo>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSourceGroup*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((IMediaFrameSourceGroup*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaFrameSourceGroup*, IVectorView<Pointer<IMediaFrameSourceInfo>>**, int>)(lpVtbl[8]))((IMediaFrameSourceGroup*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IMediaFrameSourceGroup : IMediaFrameSourceGroup.Int
         HRESULT get_DisplayName(HSTRING* value);
 
         [VtblIndex(8)]
-        HRESULT get_SourceInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_SourceInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_t **")] IVectorView<Pointer<IMediaFrameSourceInfo>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IMediaFrameSourceGroup : IMediaFrameSourceGroup.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_DisplayName;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSourceInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_SourceInfos;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IMediaFrameSourceInfo>>**, int> get_SourceInfos;
     }
 }

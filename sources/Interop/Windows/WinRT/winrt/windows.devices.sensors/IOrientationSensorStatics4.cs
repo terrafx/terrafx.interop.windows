@@ -90,9 +90,9 @@ public unsafe partial struct IOrientationSensorStatics4 : IOrientationSensorStat
     /// <include file='IOrientationSensorStatics4.xml' path='doc/member[@name="IOrientationSensorStatics4.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__COrientationSensor_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__COrientationSensor_t **")] IAsyncOperation<Pointer<IOrientationSensor>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IOrientationSensorStatics4*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IOrientationSensorStatics4*)Unsafe.AsPointer(ref this), deviceId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IOrientationSensorStatics4*, HSTRING, IAsyncOperation<Pointer<IOrientationSensor>>**, int>)(lpVtbl[8]))((IOrientationSensorStatics4*)Unsafe.AsPointer(ref this), deviceId, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IOrientationSensorStatics4 : IOrientationSensorStat
         HRESULT GetDeviceSelectorWithSensorReadingTypeAndSensorOptimizationGoal([NativeTypeName("ABI::Windows::Devices::Sensors::SensorReadingType")] SensorReadingType readingType, [NativeTypeName("ABI::Windows::Devices::Sensors::SensorOptimizationGoal")] SensorOptimizationGoal optimizationGoal, HSTRING* result);
 
         [VtblIndex(8)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__COrientationSensor_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__COrientationSensor_t **")] IAsyncOperation<Pointer<IOrientationSensor>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IOrientationSensorStatics4 : IOrientationSensorStat
         public delegate* unmanaged[MemberFunction]<TSelf*, SensorReadingType, SensorOptimizationGoal, HSTRING*, int> GetDeviceSelectorWithSensorReadingTypeAndSensorOptimizationGoal;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__COrientationSensor_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IOrientationSensor>>**, int> FromIdAsync;
     }
 }

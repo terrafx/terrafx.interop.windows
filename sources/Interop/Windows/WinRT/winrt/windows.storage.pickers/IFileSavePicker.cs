@@ -122,9 +122,9 @@ public unsafe partial struct IFileSavePicker : IFileSavePicker.Interface, INativ
     /// <include file='IFileSavePicker.xml' path='doc/member[@name="IFileSavePicker.get_FileTypeChoices"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_FileTypeChoices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING___FIVector_1_HSTRING_t **")] IMap<HSTRING, IntPtr>** value)
+    public HRESULT get_FileTypeChoices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING___FIVector_1_HSTRING_t **")] IMap<HSTRING, Pointer<IVector<HSTRING>>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileSavePicker*, IMap<HSTRING, IntPtr>**, int>)(lpVtbl[12]))((IFileSavePicker*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IFileSavePicker*, IMap<HSTRING, Pointer<IVector<HSTRING>>>**, int>)(lpVtbl[12]))((IFileSavePicker*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IFileSavePicker.xml' path='doc/member[@name="IFileSavePicker.get_DefaultFileExtension"]/*' />
@@ -178,9 +178,9 @@ public unsafe partial struct IFileSavePicker : IFileSavePicker.Interface, INativ
     /// <include file='IFileSavePicker.xml' path='doc/member[@name="IFileSavePicker.PickSaveFileAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT PickSaveFileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT PickSaveFileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileSavePicker*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[19]))((IFileSavePicker*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IFileSavePicker*, IAsyncOperation<Pointer<IStorageFile>>**, int>)(lpVtbl[19]))((IFileSavePicker*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -204,7 +204,7 @@ public unsafe partial struct IFileSavePicker : IFileSavePicker.Interface, INativ
         HRESULT put_CommitButtonText(HSTRING value);
 
         [VtblIndex(12)]
-        HRESULT get_FileTypeChoices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING___FIVector_1_HSTRING_t **")] IMap<HSTRING, IntPtr>** value);
+        HRESULT get_FileTypeChoices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING___FIVector_1_HSTRING_t **")] IMap<HSTRING, Pointer<IVector<HSTRING>>>** value);
 
         [VtblIndex(13)]
         HRESULT get_DefaultFileExtension(HSTRING* value);
@@ -225,7 +225,7 @@ public unsafe partial struct IFileSavePicker : IFileSavePicker.Interface, INativ
         HRESULT put_SuggestedFileName(HSTRING value);
 
         [VtblIndex(19)]
-        HRESULT PickSaveFileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT PickSaveFileAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IStorageFile>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -268,7 +268,7 @@ public unsafe partial struct IFileSavePicker : IFileSavePicker.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_CommitButtonText;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING___FIVector_1_HSTRING_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, IntPtr>**, int> get_FileTypeChoices;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, Pointer<IVector<HSTRING>>>**, int> get_FileTypeChoices;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_DefaultFileExtension;
@@ -289,6 +289,6 @@ public unsafe partial struct IFileSavePicker : IFileSavePicker.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_SuggestedFileName;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> PickSaveFileAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IStorageFile>>**, int> PickSaveFileAsync;
     }
 }

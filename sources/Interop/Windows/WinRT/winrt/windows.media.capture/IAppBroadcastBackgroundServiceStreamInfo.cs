@@ -138,9 +138,9 @@ public unsafe partial struct IAppBroadcastBackgroundServiceStreamInfo : IAppBroa
     /// <include file='IAppBroadcastBackgroundServiceStreamInfo.xml' path='doc/member[@name="IAppBroadcastBackgroundServiceStreamInfo.add_StreamStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_StreamStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceStreamInfo_Windows__CMedia__CCapture__CAppBroadcastStreamStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_StreamStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceStreamInfo_Windows__CMedia__CCapture__CAppBroadcastStreamStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppBroadcastBackgroundServiceStreamInfo>, Pointer<IAppBroadcastStreamStateChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastBackgroundServiceStreamInfo*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IAppBroadcastBackgroundServiceStreamInfo*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastBackgroundServiceStreamInfo*, ITypedEventHandler<Pointer<IAppBroadcastBackgroundServiceStreamInfo>, Pointer<IAppBroadcastStreamStateChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IAppBroadcastBackgroundServiceStreamInfo*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppBroadcastBackgroundServiceStreamInfo.xml' path='doc/member[@name="IAppBroadcastBackgroundServiceStreamInfo.remove_StreamStateChanged"]/*' />
@@ -154,9 +154,9 @@ public unsafe partial struct IAppBroadcastBackgroundServiceStreamInfo : IAppBroa
     /// <include file='IAppBroadcastBackgroundServiceStreamInfo.xml' path='doc/member[@name="IAppBroadcastBackgroundServiceStreamInfo.add_VideoEncodingResolutionChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT add_VideoEncodingResolutionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceStreamInfo_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_VideoEncodingResolutionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceStreamInfo_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastBackgroundServiceStreamInfo>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastBackgroundServiceStreamInfo*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IAppBroadcastBackgroundServiceStreamInfo*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastBackgroundServiceStreamInfo*, ITypedEventHandler<Pointer<IAppBroadcastBackgroundServiceStreamInfo>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IAppBroadcastBackgroundServiceStreamInfo*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppBroadcastBackgroundServiceStreamInfo.xml' path='doc/member[@name="IAppBroadcastBackgroundServiceStreamInfo.remove_VideoEncodingResolutionChanged"]/*' />
@@ -170,9 +170,9 @@ public unsafe partial struct IAppBroadcastBackgroundServiceStreamInfo : IAppBroa
     /// <include file='IAppBroadcastBackgroundServiceStreamInfo.xml' path='doc/member[@name="IAppBroadcastBackgroundServiceStreamInfo.add_VideoEncodingBitrateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT add_VideoEncodingBitrateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceStreamInfo_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_VideoEncodingBitrateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceStreamInfo_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastBackgroundServiceStreamInfo>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastBackgroundServiceStreamInfo*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[18]))((IAppBroadcastBackgroundServiceStreamInfo*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastBackgroundServiceStreamInfo*, ITypedEventHandler<Pointer<IAppBroadcastBackgroundServiceStreamInfo>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[18]))((IAppBroadcastBackgroundServiceStreamInfo*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppBroadcastBackgroundServiceStreamInfo.xml' path='doc/member[@name="IAppBroadcastBackgroundServiceStreamInfo.remove_VideoEncodingBitrateChanged"]/*' />
@@ -210,19 +210,19 @@ public unsafe partial struct IAppBroadcastBackgroundServiceStreamInfo : IAppBroa
         HRESULT get_BroadcastStreamReader([NativeTypeName("ABI::Windows::Media::Capture::IAppBroadcastStreamReader **")] IAppBroadcastStreamReader** value);
 
         [VtblIndex(14)]
-        HRESULT add_StreamStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceStreamInfo_Windows__CMedia__CCapture__CAppBroadcastStreamStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_StreamStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceStreamInfo_Windows__CMedia__CCapture__CAppBroadcastStreamStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppBroadcastBackgroundServiceStreamInfo>, Pointer<IAppBroadcastStreamStateChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(15)]
         HRESULT remove_StreamStateChanged(EventRegistrationToken token);
 
         [VtblIndex(16)]
-        HRESULT add_VideoEncodingResolutionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceStreamInfo_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_VideoEncodingResolutionChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceStreamInfo_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastBackgroundServiceStreamInfo>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(17)]
         HRESULT remove_VideoEncodingResolutionChanged(EventRegistrationToken token);
 
         [VtblIndex(18)]
-        HRESULT add_VideoEncodingBitrateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceStreamInfo_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_VideoEncodingBitrateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceStreamInfo_IInspectable_t *")] ITypedEventHandler<Pointer<IAppBroadcastBackgroundServiceStreamInfo>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(19)]
         HRESULT remove_VideoEncodingBitrateChanged(EventRegistrationToken token);
@@ -274,19 +274,19 @@ public unsafe partial struct IAppBroadcastBackgroundServiceStreamInfo : IAppBroa
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppBroadcastStreamReader**, int> get_BroadcastStreamReader;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceStreamInfo_Windows__CMedia__CCapture__CAppBroadcastStreamStateChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_StreamStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastBackgroundServiceStreamInfo>, Pointer<IAppBroadcastStreamStateChangedEventArgs>>*, EventRegistrationToken*, int> add_StreamStateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StreamStateChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceStreamInfo_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_VideoEncodingResolutionChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastBackgroundServiceStreamInfo>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_VideoEncodingResolutionChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_VideoEncodingResolutionChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppBroadcastBackgroundServiceStreamInfo_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_VideoEncodingBitrateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppBroadcastBackgroundServiceStreamInfo>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_VideoEncodingBitrateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_VideoEncodingBitrateChanged;

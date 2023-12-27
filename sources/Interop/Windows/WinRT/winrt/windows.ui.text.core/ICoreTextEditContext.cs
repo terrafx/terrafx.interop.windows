@@ -138,9 +138,9 @@ public unsafe partial struct ICoreTextEditContext : ICoreTextEditContext.Interfa
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.add_TextRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_TextRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_TextRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextTextRequestedEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextTextRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.remove_TextRequested"]/*' />
@@ -154,9 +154,9 @@ public unsafe partial struct ICoreTextEditContext : ICoreTextEditContext.Interfa
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.add_SelectionRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT add_SelectionRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_SelectionRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextSelectionRequestedEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[16]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextSelectionRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[16]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.remove_SelectionRequested"]/*' />
@@ -170,9 +170,9 @@ public unsafe partial struct ICoreTextEditContext : ICoreTextEditContext.Interfa
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.add_LayoutRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT add_LayoutRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextLayoutRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_LayoutRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextLayoutRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextLayoutRequestedEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[18]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextLayoutRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[18]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.remove_LayoutRequested"]/*' />
@@ -186,9 +186,9 @@ public unsafe partial struct ICoreTextEditContext : ICoreTextEditContext.Interfa
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.add_TextUpdating"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT add_TextUpdating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextUpdatingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_TextUpdating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextUpdatingEventArgs_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextTextUpdatingEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[20]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextTextUpdatingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[20]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.remove_TextUpdating"]/*' />
@@ -202,9 +202,9 @@ public unsafe partial struct ICoreTextEditContext : ICoreTextEditContext.Interfa
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.add_SelectionUpdating"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT add_SelectionUpdating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionUpdatingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_SelectionUpdating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionUpdatingEventArgs_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextSelectionUpdatingEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[22]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextSelectionUpdatingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[22]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.remove_SelectionUpdating"]/*' />
@@ -218,9 +218,9 @@ public unsafe partial struct ICoreTextEditContext : ICoreTextEditContext.Interfa
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.add_FormatUpdating"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
-    public HRESULT add_FormatUpdating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextFormatUpdatingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_FormatUpdating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextFormatUpdatingEventArgs_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextFormatUpdatingEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[24]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextFormatUpdatingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[24]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.remove_FormatUpdating"]/*' />
@@ -234,9 +234,9 @@ public unsafe partial struct ICoreTextEditContext : ICoreTextEditContext.Interfa
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.add_CompositionStarted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
-    public HRESULT add_CompositionStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionStartedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_CompositionStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionStartedEventArgs_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextCompositionStartedEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[26]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextCompositionStartedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[26]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.remove_CompositionStarted"]/*' />
@@ -250,9 +250,9 @@ public unsafe partial struct ICoreTextEditContext : ICoreTextEditContext.Interfa
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.add_CompositionCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT add_CompositionCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_CompositionCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionCompletedEventArgs_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextCompositionCompletedEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[28]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextCompositionCompletedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[28]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.remove_CompositionCompleted"]/*' />
@@ -266,9 +266,9 @@ public unsafe partial struct ICoreTextEditContext : ICoreTextEditContext.Interfa
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.add_FocusRemoved"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
-    public HRESULT add_FocusRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_FocusRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[30]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreTextEditContext*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[30]))((ICoreTextEditContext*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICoreTextEditContext.xml' path='doc/member[@name="ICoreTextEditContext.remove_FocusRemoved"]/*' />
@@ -346,55 +346,55 @@ public unsafe partial struct ICoreTextEditContext : ICoreTextEditContext.Interfa
         HRESULT put_InputPaneDisplayPolicy([NativeTypeName("ABI::Windows::UI::Text::Core::CoreTextInputPaneDisplayPolicy")] CoreTextInputPaneDisplayPolicy value);
 
         [VtblIndex(14)]
-        HRESULT add_TextRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_TextRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextTextRequestedEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(15)]
         HRESULT remove_TextRequested(EventRegistrationToken cookie);
 
         [VtblIndex(16)]
-        HRESULT add_SelectionRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_SelectionRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextSelectionRequestedEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(17)]
         HRESULT remove_SelectionRequested(EventRegistrationToken cookie);
 
         [VtblIndex(18)]
-        HRESULT add_LayoutRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextLayoutRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_LayoutRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextLayoutRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextLayoutRequestedEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(19)]
         HRESULT remove_LayoutRequested(EventRegistrationToken cookie);
 
         [VtblIndex(20)]
-        HRESULT add_TextUpdating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextUpdatingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_TextUpdating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextUpdatingEventArgs_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextTextUpdatingEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(21)]
         HRESULT remove_TextUpdating(EventRegistrationToken cookie);
 
         [VtblIndex(22)]
-        HRESULT add_SelectionUpdating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionUpdatingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_SelectionUpdating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionUpdatingEventArgs_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextSelectionUpdatingEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(23)]
         HRESULT remove_SelectionUpdating(EventRegistrationToken cookie);
 
         [VtblIndex(24)]
-        HRESULT add_FormatUpdating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextFormatUpdatingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_FormatUpdating([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextFormatUpdatingEventArgs_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextFormatUpdatingEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(25)]
         HRESULT remove_FormatUpdating(EventRegistrationToken cookie);
 
         [VtblIndex(26)]
-        HRESULT add_CompositionStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionStartedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_CompositionStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionStartedEventArgs_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextCompositionStartedEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(27)]
         HRESULT remove_CompositionStarted(EventRegistrationToken cookie);
 
         [VtblIndex(28)]
-        HRESULT add_CompositionCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_CompositionCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionCompletedEventArgs_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextCompositionCompletedEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(29)]
         HRESULT remove_CompositionCompleted(EventRegistrationToken cookie);
 
         [VtblIndex(30)]
-        HRESULT add_FocusRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_FocusRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(31)]
         HRESULT remove_FocusRemoved(EventRegistrationToken cookie);
@@ -461,55 +461,55 @@ public unsafe partial struct ICoreTextEditContext : ICoreTextEditContext.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, CoreTextInputPaneDisplayPolicy, int> put_InputPaneDisplayPolicy;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_TextRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextTextRequestedEventArgs>>*, EventRegistrationToken*, int> add_TextRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_TextRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SelectionRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextSelectionRequestedEventArgs>>*, EventRegistrationToken*, int> add_SelectionRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SelectionRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextLayoutRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_LayoutRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextLayoutRequestedEventArgs>>*, EventRegistrationToken*, int> add_LayoutRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_LayoutRequested;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextTextUpdatingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_TextUpdating;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextTextUpdatingEventArgs>>*, EventRegistrationToken*, int> add_TextUpdating;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_TextUpdating;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextSelectionUpdatingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SelectionUpdating;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextSelectionUpdatingEventArgs>>*, EventRegistrationToken*, int> add_SelectionUpdating;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SelectionUpdating;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextFormatUpdatingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_FormatUpdating;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextFormatUpdatingEventArgs>>*, EventRegistrationToken*, int> add_FormatUpdating;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_FormatUpdating;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionStartedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CompositionStarted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextCompositionStartedEventArgs>>*, EventRegistrationToken*, int> add_CompositionStarted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CompositionStarted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_Windows__CUI__CText__CCore__CCoreTextCompositionCompletedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CompositionCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<ICoreTextCompositionCompletedEventArgs>>*, EventRegistrationToken*, int> add_CompositionCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CompositionCompleted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextEditContext_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_FocusRemoved;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreTextEditContext>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_FocusRemoved;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_FocusRemoved;

@@ -90,33 +90,33 @@ public unsafe partial struct IBluetoothDevice3 : IBluetoothDevice3.Interface, IN
     /// <include file='IBluetoothDevice3.xml' path='doc/member[@name="IBluetoothDevice3.GetRfcommServicesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetRfcommServicesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetRfcommServicesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **")] IAsyncOperation<Pointer<IRfcommDeviceServicesResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice3*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IBluetoothDevice3*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice3*, IAsyncOperation<Pointer<IRfcommDeviceServicesResult>>**, int>)(lpVtbl[8]))((IBluetoothDevice3*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IBluetoothDevice3.xml' path='doc/member[@name="IBluetoothDevice3.GetRfcommServicesWithCacheModeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetRfcommServicesWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetRfcommServicesWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **")] IAsyncOperation<Pointer<IRfcommDeviceServicesResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice3*, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IBluetoothDevice3*)Unsafe.AsPointer(ref this), cacheMode, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice3*, BluetoothCacheMode, IAsyncOperation<Pointer<IRfcommDeviceServicesResult>>**, int>)(lpVtbl[9]))((IBluetoothDevice3*)Unsafe.AsPointer(ref this), cacheMode, operation);
     }
 
     /// <include file='IBluetoothDevice3.xml' path='doc/member[@name="IBluetoothDevice3.GetRfcommServicesForIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetRfcommServicesForIdAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId *")] IRfcommServiceId* serviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetRfcommServicesForIdAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId *")] IRfcommServiceId* serviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **")] IAsyncOperation<Pointer<IRfcommDeviceServicesResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice3*, IRfcommServiceId*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IBluetoothDevice3*)Unsafe.AsPointer(ref this), serviceId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice3*, IRfcommServiceId*, IAsyncOperation<Pointer<IRfcommDeviceServicesResult>>**, int>)(lpVtbl[10]))((IBluetoothDevice3*)Unsafe.AsPointer(ref this), serviceId, operation);
     }
 
     /// <include file='IBluetoothDevice3.xml' path='doc/member[@name="IBluetoothDevice3.GetRfcommServicesForIdWithCacheModeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetRfcommServicesForIdWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId *")] IRfcommServiceId* serviceId, [NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetRfcommServicesForIdWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId *")] IRfcommServiceId* serviceId, [NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **")] IAsyncOperation<Pointer<IRfcommDeviceServicesResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice3*, IRfcommServiceId*, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IBluetoothDevice3*)Unsafe.AsPointer(ref this), serviceId, cacheMode, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothDevice3*, IRfcommServiceId*, BluetoothCacheMode, IAsyncOperation<Pointer<IRfcommDeviceServicesResult>>**, int>)(lpVtbl[11]))((IBluetoothDevice3*)Unsafe.AsPointer(ref this), serviceId, cacheMode, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -128,16 +128,16 @@ public unsafe partial struct IBluetoothDevice3 : IBluetoothDevice3.Interface, IN
         HRESULT RequestAccessAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceAccessStatus_t **")] IAsyncOperation<DeviceAccessStatus>** value);
 
         [VtblIndex(8)]
-        HRESULT GetRfcommServicesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetRfcommServicesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **")] IAsyncOperation<Pointer<IRfcommDeviceServicesResult>>** operation);
 
         [VtblIndex(9)]
-        HRESULT GetRfcommServicesWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetRfcommServicesWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **")] IAsyncOperation<Pointer<IRfcommDeviceServicesResult>>** operation);
 
         [VtblIndex(10)]
-        HRESULT GetRfcommServicesForIdAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId *")] IRfcommServiceId* serviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetRfcommServicesForIdAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId *")] IRfcommServiceId* serviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **")] IAsyncOperation<Pointer<IRfcommDeviceServicesResult>>** operation);
 
         [VtblIndex(11)]
-        HRESULT GetRfcommServicesForIdWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId *")] IRfcommServiceId* serviceId, [NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetRfcommServicesForIdWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId *")] IRfcommServiceId* serviceId, [NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **")] IAsyncOperation<Pointer<IRfcommDeviceServicesResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -168,15 +168,15 @@ public unsafe partial struct IBluetoothDevice3 : IBluetoothDevice3.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<DeviceAccessStatus>**, int> RequestAccessAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetRfcommServicesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IRfcommDeviceServicesResult>>**, int> GetRfcommServicesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Bluetooth::BluetoothCacheMode, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int> GetRfcommServicesWithCacheModeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothCacheMode, IAsyncOperation<Pointer<IRfcommDeviceServicesResult>>**, int> GetRfcommServicesWithCacheModeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IRfcommServiceId*, IAsyncOperation<IntPtr>**, int> GetRfcommServicesForIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IRfcommServiceId*, IAsyncOperation<Pointer<IRfcommDeviceServicesResult>>**, int> GetRfcommServicesForIdAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Bluetooth::Rfcomm::IRfcommServiceId *, ABI::Windows::Devices::Bluetooth::BluetoothCacheMode, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CRfcomm__CRfcommDeviceServicesResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IRfcommServiceId*, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int> GetRfcommServicesForIdWithCacheModeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IRfcommServiceId*, BluetoothCacheMode, IAsyncOperation<Pointer<IRfcommDeviceServicesResult>>**, int> GetRfcommServicesForIdWithCacheModeAsync;
     }
 }

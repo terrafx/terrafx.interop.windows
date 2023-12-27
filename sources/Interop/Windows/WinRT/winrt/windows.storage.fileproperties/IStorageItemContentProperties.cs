@@ -74,48 +74,48 @@ public unsafe partial struct IStorageItemContentProperties : IStorageItemContent
     /// <include file='IStorageItemContentProperties.xml' path='doc/member[@name="IStorageItemContentProperties.GetMusicPropertiesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetMusicPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CMusicProperties_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetMusicPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CMusicProperties_t **")] IAsyncOperation<Pointer<IMusicProperties>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageItemContentProperties*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStorageItemContentProperties*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageItemContentProperties*, IAsyncOperation<Pointer<IMusicProperties>>**, int>)(lpVtbl[6]))((IStorageItemContentProperties*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IStorageItemContentProperties.xml' path='doc/member[@name="IStorageItemContentProperties.GetVideoPropertiesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetVideoPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CVideoProperties_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetVideoPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CVideoProperties_t **")] IAsyncOperation<Pointer<IVideoProperties>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageItemContentProperties*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IStorageItemContentProperties*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageItemContentProperties*, IAsyncOperation<Pointer<IVideoProperties>>**, int>)(lpVtbl[7]))((IStorageItemContentProperties*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IStorageItemContentProperties.xml' path='doc/member[@name="IStorageItemContentProperties.GetImagePropertiesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetImagePropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CImageProperties_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetImagePropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CImageProperties_t **")] IAsyncOperation<Pointer<ImageProperties>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageItemContentProperties*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IStorageItemContentProperties*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageItemContentProperties*, IAsyncOperation<Pointer<ImageProperties>>**, int>)(lpVtbl[8]))((IStorageItemContentProperties*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IStorageItemContentProperties.xml' path='doc/member[@name="IStorageItemContentProperties.GetDocumentPropertiesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetDocumentPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CDocumentProperties_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetDocumentPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CDocumentProperties_t **")] IAsyncOperation<Pointer<IDocumentProperties>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageItemContentProperties*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IStorageItemContentProperties*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageItemContentProperties*, IAsyncOperation<Pointer<IDocumentProperties>>**, int>)(lpVtbl[9]))((IStorageItemContentProperties*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetMusicPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CMusicProperties_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetMusicPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CMusicProperties_t **")] IAsyncOperation<Pointer<IMusicProperties>>** operation);
 
         [VtblIndex(7)]
-        HRESULT GetVideoPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CVideoProperties_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetVideoPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CVideoProperties_t **")] IAsyncOperation<Pointer<IVideoProperties>>** operation);
 
         [VtblIndex(8)]
-        HRESULT GetImagePropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CImageProperties_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetImagePropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CImageProperties_t **")] IAsyncOperation<Pointer<ImageProperties>>** operation);
 
         [VtblIndex(9)]
-        HRESULT GetDocumentPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CDocumentProperties_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetDocumentPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CDocumentProperties_t **")] IAsyncOperation<Pointer<IDocumentProperties>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -140,15 +140,15 @@ public unsafe partial struct IStorageItemContentProperties : IStorageItemContent
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CMusicProperties_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetMusicPropertiesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IMusicProperties>>**, int> GetMusicPropertiesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CVideoProperties_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetVideoPropertiesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVideoProperties>>**, int> GetVideoPropertiesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CImageProperties_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetImagePropertiesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<ImageProperties>>**, int> GetImagePropertiesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CDocumentProperties_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetDocumentPropertiesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IDocumentProperties>>**, int> GetDocumentPropertiesAsync;
     }
 }

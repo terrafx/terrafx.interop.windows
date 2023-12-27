@@ -106,9 +106,9 @@ public unsafe partial struct IGyrometer : IGyrometer.Interface, INativeGuid
     /// <include file='IGyrometer.xml' path='doc/member[@name="IGyrometer.add_ReadingChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CGyrometer_Windows__CDevices__CSensors__CGyrometerReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CGyrometer_Windows__CDevices__CSensors__CGyrometerReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGyrometer>, Pointer<IGyrometerReadingChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGyrometer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IGyrometer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGyrometer*, ITypedEventHandler<Pointer<IGyrometer>, Pointer<IGyrometerReadingChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IGyrometer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGyrometer.xml' path='doc/member[@name="IGyrometer.remove_ReadingChanged"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IGyrometer : IGyrometer.Interface, INativeGuid
         HRESULT get_ReportInterval([NativeTypeName("UINT32 *")] uint* value);
 
         [VtblIndex(10)]
-        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CGyrometer_Windows__CDevices__CSensors__CGyrometerReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CGyrometer_Windows__CDevices__CSensors__CGyrometerReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<IGyrometer>, Pointer<IGyrometerReadingChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_ReadingChanged(EventRegistrationToken token);
@@ -174,7 +174,7 @@ public unsafe partial struct IGyrometer : IGyrometer.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_ReportInterval;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CGyrometer_Windows__CDevices__CSensors__CGyrometerReadingChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ReadingChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGyrometer>, Pointer<IGyrometerReadingChangedEventArgs>>*, EventRegistrationToken*, int> add_ReadingChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ReadingChanged;

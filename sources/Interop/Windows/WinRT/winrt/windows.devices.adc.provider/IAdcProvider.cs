@@ -74,15 +74,15 @@ public unsafe partial struct IAdcProvider : IAdcProvider.Interface, INativeGuid
     /// <include file='IAdcProvider.xml' path='doc/member[@name="IAdcProvider.GetControllers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetControllers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetControllers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_t **")] IVectorView<Pointer<IAdcControllerProvider>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdcProvider*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IAdcProvider*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IAdcProvider*, IVectorView<Pointer<IAdcControllerProvider>>**, int>)(lpVtbl[6]))((IAdcProvider*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetControllers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetControllers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_t **")] IVectorView<Pointer<IAdcControllerProvider>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IAdcProvider : IAdcProvider.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CAdc__CProvider__CIAdcControllerProvider_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetControllers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IAdcControllerProvider>>**, int> GetControllers;
     }
 }

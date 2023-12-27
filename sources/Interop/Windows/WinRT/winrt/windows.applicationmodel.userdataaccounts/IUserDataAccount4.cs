@@ -98,17 +98,17 @@ public unsafe partial struct IUserDataAccount4 : IUserDataAccount4.Interface, IN
     /// <include file='IUserDataAccount4.xml' path='doc/member[@name="IUserDataAccount4.FindUserDataTaskListsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT FindUserDataTaskListsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FindUserDataTaskListsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IUserDataTaskList>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserDataAccount4*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IUserDataAccount4*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IUserDataAccount4*, IAsyncOperation<Pointer<IVectorView<Pointer<IUserDataTaskList>>>>**, int>)(lpVtbl[9]))((IUserDataAccount4*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IUserDataAccount4.xml' path='doc/member[@name="IUserDataAccount4.FindContactGroupsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT FindContactGroupsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FindContactGroupsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContactGroup>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserDataAccount4*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IUserDataAccount4*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IUserDataAccount4*, IAsyncOperation<Pointer<IVectorView<Pointer<IContactGroup>>>>**, int>)(lpVtbl[10]))((IUserDataAccount4*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IUserDataAccount4.xml' path='doc/member[@name="IUserDataAccount4.TryShowCreateContactGroupAsync"]/*' />
@@ -147,10 +147,10 @@ public unsafe partial struct IUserDataAccount4 : IUserDataAccount4.Interface, IN
         HRESULT get_ProviderProperties([NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet **")] IPropertySet** value);
 
         [VtblIndex(9)]
-        HRESULT FindUserDataTaskListsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FindUserDataTaskListsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IUserDataTaskList>>>>** operation);
 
         [VtblIndex(10)]
-        HRESULT FindContactGroupsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FindContactGroupsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IContactGroup>>>>** operation);
 
         [VtblIndex(11)]
         HRESULT TryShowCreateContactGroupAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **")] IAsyncOperation<HSTRING>** operation);
@@ -193,10 +193,10 @@ public unsafe partial struct IUserDataAccount4 : IUserDataAccount4.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, IPropertySet**, int> get_ProviderProperties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CUserDataTasks__CUserDataTaskList_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindUserDataTaskListsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IUserDataTaskList>>>>**, int> FindUserDataTaskListsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CContacts__CContactGroup_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindContactGroupsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IContactGroup>>>>**, int> FindContactGroupsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<HSTRING>**, int> TryShowCreateContactGroupAsync;

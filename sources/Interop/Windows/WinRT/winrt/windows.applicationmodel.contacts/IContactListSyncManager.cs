@@ -106,9 +106,9 @@ public unsafe partial struct IContactListSyncManager : IContactListSyncManager.I
     /// <include file='IContactListSyncManager.xml' path='doc/member[@name="IContactListSyncManager.add_SyncStatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_SyncStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactListSyncManager_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SyncStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactListSyncManager_IInspectable_t *")] ITypedEventHandler<Pointer<IContactListSyncManager>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactListSyncManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IContactListSyncManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IContactListSyncManager*, ITypedEventHandler<Pointer<IContactListSyncManager>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IContactListSyncManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IContactListSyncManager.xml' path='doc/member[@name="IContactListSyncManager.remove_SyncStatusChanged"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IContactListSyncManager : IContactListSyncManager.I
         HRESULT SyncAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** result);
 
         [VtblIndex(10)]
-        HRESULT add_SyncStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactListSyncManager_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SyncStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactListSyncManager_IInspectable_t *")] ITypedEventHandler<Pointer<IContactListSyncManager>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_SyncStatusChanged(EventRegistrationToken token);
@@ -174,7 +174,7 @@ public unsafe partial struct IContactListSyncManager : IContactListSyncManager.I
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<bool>**, int> SyncAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CContactListSyncManager_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SyncStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IContactListSyncManager>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_SyncStatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SyncStatusChanged;

@@ -74,15 +74,15 @@ public unsafe partial struct IPhoneLineStatics : IPhoneLineStatics.Interface, IN
     /// <include file='IPhoneLineStatics.xml' path='doc/member[@name="IPhoneLineStatics.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FromIdAsync(Guid lineId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FromIdAsync(Guid lineId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_t **")] IAsyncOperation<Pointer<IPhoneLine>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneLineStatics*, Guid, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IPhoneLineStatics*)Unsafe.AsPointer(ref this), lineId, result);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneLineStatics*, Guid, IAsyncOperation<Pointer<IPhoneLine>>**, int>)(lpVtbl[6]))((IPhoneLineStatics*)Unsafe.AsPointer(ref this), lineId, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FromIdAsync(Guid lineId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FromIdAsync(Guid lineId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_t **")] IAsyncOperation<Pointer<IPhoneLine>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IPhoneLineStatics : IPhoneLineStatics.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (GUID, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLine_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IAsyncOperation<Pointer<IPhoneLine>>**, int> FromIdAsync;
     }
 }

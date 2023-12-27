@@ -74,9 +74,9 @@ public unsafe partial struct IPhoneCallHistoryManagerForUser : IPhoneCallHistory
     /// <include file='IPhoneCallHistoryManagerForUser.xml' path='doc/member[@name="IPhoneCallHistoryManagerForUser.RequestStoreAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Calls::PhoneCallHistoryStoreAccessType")] PhoneCallHistoryStoreAccessType accessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryStore_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Calls::PhoneCallHistoryStoreAccessType")] PhoneCallHistoryStoreAccessType accessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryStore_t **")] IAsyncOperation<Pointer<IPhoneCallHistoryStore>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneCallHistoryManagerForUser*, PhoneCallHistoryStoreAccessType, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IPhoneCallHistoryManagerForUser*)Unsafe.AsPointer(ref this), accessType, result);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneCallHistoryManagerForUser*, PhoneCallHistoryStoreAccessType, IAsyncOperation<Pointer<IPhoneCallHistoryStore>>**, int>)(lpVtbl[6]))((IPhoneCallHistoryManagerForUser*)Unsafe.AsPointer(ref this), accessType, result);
     }
 
     /// <include file='IPhoneCallHistoryManagerForUser.xml' path='doc/member[@name="IPhoneCallHistoryManagerForUser.get_User"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IPhoneCallHistoryManagerForUser : IPhoneCallHistory
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Calls::PhoneCallHistoryStoreAccessType")] PhoneCallHistoryStoreAccessType accessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryStore_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::ApplicationModel::Calls::PhoneCallHistoryStoreAccessType")] PhoneCallHistoryStoreAccessType accessType, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryStore_t **")] IAsyncOperation<Pointer<IPhoneCallHistoryStore>>** result);
 
         [VtblIndex(7)]
         HRESULT get_User([NativeTypeName("ABI::Windows::System::IUser **")] IUser** value);
@@ -118,7 +118,7 @@ public unsafe partial struct IPhoneCallHistoryManagerForUser : IPhoneCallHistory
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Calls::PhoneCallHistoryStoreAccessType, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryStore_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, PhoneCallHistoryStoreAccessType, IAsyncOperation<IntPtr>**, int> RequestStoreAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PhoneCallHistoryStoreAccessType, IAsyncOperation<Pointer<IPhoneCallHistoryStore>>**, int> RequestStoreAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IUser **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IUser**, int> get_User;

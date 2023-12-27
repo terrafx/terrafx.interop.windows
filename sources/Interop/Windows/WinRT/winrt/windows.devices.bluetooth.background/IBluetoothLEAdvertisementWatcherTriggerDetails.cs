@@ -82,9 +82,9 @@ public unsafe partial struct IBluetoothLEAdvertisementWatcherTriggerDetails : IB
     /// <include file='IBluetoothLEAdvertisementWatcherTriggerDetails.xml' path='doc/member[@name="IBluetoothLEAdvertisementWatcherTriggerDetails.get_Advertisements"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Advertisements([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementReceivedEventArgs_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Advertisements([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementReceivedEventArgs_t **")] IVectorView<Pointer<IBluetoothLEAdvertisementReceivedEventArgs>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisementWatcherTriggerDetails*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IBluetoothLEAdvertisementWatcherTriggerDetails*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisementWatcherTriggerDetails*, IVectorView<Pointer<IBluetoothLEAdvertisementReceivedEventArgs>>**, int>)(lpVtbl[7]))((IBluetoothLEAdvertisementWatcherTriggerDetails*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBluetoothLEAdvertisementWatcherTriggerDetails.xml' path='doc/member[@name="IBluetoothLEAdvertisementWatcherTriggerDetails.get_SignalStrengthFilter"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IBluetoothLEAdvertisementWatcherTriggerDetails : IB
         HRESULT get_Error([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothError *")] BluetoothError* value);
 
         [VtblIndex(7)]
-        HRESULT get_Advertisements([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementReceivedEventArgs_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Advertisements([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementReceivedEventArgs_t **")] IVectorView<Pointer<IBluetoothLEAdvertisementReceivedEventArgs>>** value);
 
         [VtblIndex(8)]
         HRESULT get_SignalStrengthFilter([NativeTypeName("ABI::Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter **")] IBluetoothSignalStrengthFilter** value);
@@ -132,7 +132,7 @@ public unsafe partial struct IBluetoothLEAdvertisementWatcherTriggerDetails : IB
         public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothError*, int> get_Error;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementReceivedEventArgs_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Advertisements;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IBluetoothLEAdvertisementReceivedEventArgs>>**, int> get_Advertisements;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Bluetooth::IBluetoothSignalStrengthFilter **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IBluetoothSignalStrengthFilter**, int> get_SignalStrengthFilter;

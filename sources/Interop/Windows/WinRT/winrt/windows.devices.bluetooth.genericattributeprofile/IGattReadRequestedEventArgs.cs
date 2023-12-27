@@ -90,9 +90,9 @@ public unsafe partial struct IGattReadRequestedEventArgs : IGattReadRequestedEve
     /// <include file='IGattReadRequestedEventArgs.xml' path='doc/member[@name="IGattReadRequestedEventArgs.GetRequestAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetRequestAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequest_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetRequestAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequest_t **")] IAsyncOperation<Pointer<IGattReadRequest>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattReadRequestedEventArgs*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IGattReadRequestedEventArgs*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IGattReadRequestedEventArgs*, IAsyncOperation<Pointer<IGattReadRequest>>**, int>)(lpVtbl[8]))((IGattReadRequestedEventArgs*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IGattReadRequestedEventArgs : IGattReadRequestedEve
         HRESULT GetDeferral([NativeTypeName("ABI::Windows::Foundation::IDeferral **")] IDeferral** value);
 
         [VtblIndex(8)]
-        HRESULT GetRequestAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequest_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetRequestAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequest_t **")] IAsyncOperation<Pointer<IGattReadRequest>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IGattReadRequestedEventArgs : IGattReadRequestedEve
         public delegate* unmanaged[MemberFunction]<TSelf*, IDeferral**, int> GetDeferral;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattReadRequest_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetRequestAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IGattReadRequest>>**, int> GetRequestAsync;
     }
 }

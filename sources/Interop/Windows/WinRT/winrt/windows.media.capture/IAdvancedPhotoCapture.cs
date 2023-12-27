@@ -74,25 +74,25 @@ public unsafe partial struct IAdvancedPhotoCapture : IAdvancedPhotoCapture.Inter
     /// <include file='IAdvancedPhotoCapture.xml' path='doc/member[@name="IAdvancedPhotoCapture.CaptureAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT CaptureAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CAdvancedCapturedPhoto_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CaptureAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CAdvancedCapturedPhoto_t **")] IAsyncOperation<Pointer<IAdvancedCapturedPhoto>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdvancedPhotoCapture*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IAdvancedPhotoCapture*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IAdvancedPhotoCapture*, IAsyncOperation<Pointer<IAdvancedCapturedPhoto>>**, int>)(lpVtbl[6]))((IAdvancedPhotoCapture*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IAdvancedPhotoCapture.xml' path='doc/member[@name="IAdvancedPhotoCapture.CaptureWithContextAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CaptureWithContextAsync(IInspectable* context, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CAdvancedCapturedPhoto_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CaptureWithContextAsync(IInspectable* context, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CAdvancedCapturedPhoto_t **")] IAsyncOperation<Pointer<IAdvancedCapturedPhoto>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdvancedPhotoCapture*, IInspectable*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IAdvancedPhotoCapture*)Unsafe.AsPointer(ref this), context, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAdvancedPhotoCapture*, IInspectable*, IAsyncOperation<Pointer<IAdvancedCapturedPhoto>>**, int>)(lpVtbl[7]))((IAdvancedPhotoCapture*)Unsafe.AsPointer(ref this), context, operation);
     }
 
     /// <include file='IAdvancedPhotoCapture.xml' path='doc/member[@name="IAdvancedPhotoCapture.add_OptionalReferencePhotoCaptured"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_OptionalReferencePhotoCaptured([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAdvancedPhotoCapture_Windows__CMedia__CCapture__COptionalReferencePhotoCapturedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_OptionalReferencePhotoCaptured([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAdvancedPhotoCapture_Windows__CMedia__CCapture__COptionalReferencePhotoCapturedEventArgs_t *")] ITypedEventHandler<Pointer<IAdvancedPhotoCapture>, Pointer<IOptionalReferencePhotoCapturedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdvancedPhotoCapture*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IAdvancedPhotoCapture*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAdvancedPhotoCapture*, ITypedEventHandler<Pointer<IAdvancedPhotoCapture>, Pointer<IOptionalReferencePhotoCapturedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IAdvancedPhotoCapture*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAdvancedPhotoCapture.xml' path='doc/member[@name="IAdvancedPhotoCapture.remove_OptionalReferencePhotoCaptured"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IAdvancedPhotoCapture : IAdvancedPhotoCapture.Inter
     /// <include file='IAdvancedPhotoCapture.xml' path='doc/member[@name="IAdvancedPhotoCapture.add_AllPhotosCaptured"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_AllPhotosCaptured([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAdvancedPhotoCapture_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AllPhotosCaptured([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAdvancedPhotoCapture_IInspectable_t *")] ITypedEventHandler<Pointer<IAdvancedPhotoCapture>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdvancedPhotoCapture*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IAdvancedPhotoCapture*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAdvancedPhotoCapture*, ITypedEventHandler<Pointer<IAdvancedPhotoCapture>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IAdvancedPhotoCapture*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAdvancedPhotoCapture.xml' path='doc/member[@name="IAdvancedPhotoCapture.remove_AllPhotosCaptured"]/*' />
@@ -130,19 +130,19 @@ public unsafe partial struct IAdvancedPhotoCapture : IAdvancedPhotoCapture.Inter
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT CaptureAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CAdvancedCapturedPhoto_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CaptureAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CAdvancedCapturedPhoto_t **")] IAsyncOperation<Pointer<IAdvancedCapturedPhoto>>** operation);
 
         [VtblIndex(7)]
-        HRESULT CaptureWithContextAsync(IInspectable* context, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CAdvancedCapturedPhoto_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CaptureWithContextAsync(IInspectable* context, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CAdvancedCapturedPhoto_t **")] IAsyncOperation<Pointer<IAdvancedCapturedPhoto>>** operation);
 
         [VtblIndex(8)]
-        HRESULT add_OptionalReferencePhotoCaptured([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAdvancedPhotoCapture_Windows__CMedia__CCapture__COptionalReferencePhotoCapturedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_OptionalReferencePhotoCaptured([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAdvancedPhotoCapture_Windows__CMedia__CCapture__COptionalReferencePhotoCapturedEventArgs_t *")] ITypedEventHandler<Pointer<IAdvancedPhotoCapture>, Pointer<IOptionalReferencePhotoCapturedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_OptionalReferencePhotoCaptured(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_AllPhotosCaptured([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAdvancedPhotoCapture_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AllPhotosCaptured([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAdvancedPhotoCapture_IInspectable_t *")] ITypedEventHandler<Pointer<IAdvancedPhotoCapture>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_AllPhotosCaptured(EventRegistrationToken token);
@@ -173,19 +173,19 @@ public unsafe partial struct IAdvancedPhotoCapture : IAdvancedPhotoCapture.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CAdvancedCapturedPhoto_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> CaptureAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IAdvancedCapturedPhoto>>**, int> CaptureAsync;
 
         [NativeTypeName("HRESULT (IInspectable *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CAdvancedCapturedPhoto_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IInspectable*, IAsyncOperation<IntPtr>**, int> CaptureWithContextAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInspectable*, IAsyncOperation<Pointer<IAdvancedCapturedPhoto>>**, int> CaptureWithContextAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAdvancedPhotoCapture_Windows__CMedia__CCapture__COptionalReferencePhotoCapturedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_OptionalReferencePhotoCaptured;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAdvancedPhotoCapture>, Pointer<IOptionalReferencePhotoCapturedEventArgs>>*, EventRegistrationToken*, int> add_OptionalReferencePhotoCaptured;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_OptionalReferencePhotoCaptured;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAdvancedPhotoCapture_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AllPhotosCaptured;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAdvancedPhotoCapture>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_AllPhotosCaptured;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AllPhotosCaptured;

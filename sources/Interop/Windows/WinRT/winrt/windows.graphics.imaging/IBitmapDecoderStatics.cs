@@ -130,25 +130,25 @@ public unsafe partial struct IBitmapDecoderStatics : IBitmapDecoderStatics.Inter
     /// <include file='IBitmapDecoderStatics.xml' path='doc/member[@name="IBitmapDecoderStatics.GetDecoderInformationEnumerator"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetDecoderInformationEnumerator([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CImaging__CBitmapCodecInformation_t **")] IVectorView<IntPtr>** decoderInformationEnumerator)
+    public HRESULT GetDecoderInformationEnumerator([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CImaging__CBitmapCodecInformation_t **")] IVectorView<Pointer<IBitmapCodecInformation>>** decoderInformationEnumerator)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBitmapDecoderStatics*, IVectorView<IntPtr>**, int>)(lpVtbl[13]))((IBitmapDecoderStatics*)Unsafe.AsPointer(ref this), decoderInformationEnumerator);
+        return ((delegate* unmanaged[MemberFunction]<IBitmapDecoderStatics*, IVectorView<Pointer<IBitmapCodecInformation>>**, int>)(lpVtbl[13]))((IBitmapDecoderStatics*)Unsafe.AsPointer(ref this), decoderInformationEnumerator);
     }
 
     /// <include file='IBitmapDecoderStatics.xml' path='doc/member[@name="IBitmapDecoderStatics.CreateAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT CreateAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapDecoder_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT CreateAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapDecoder_t **")] IAsyncOperation<Pointer<IBitmapDecoder>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBitmapDecoderStatics*, IRandomAccessStream*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[14]))((IBitmapDecoderStatics*)Unsafe.AsPointer(ref this), stream, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IBitmapDecoderStatics*, IRandomAccessStream*, IAsyncOperation<Pointer<IBitmapDecoder>>**, int>)(lpVtbl[14]))((IBitmapDecoderStatics*)Unsafe.AsPointer(ref this), stream, asyncInfo);
     }
 
     /// <include file='IBitmapDecoderStatics.xml' path='doc/member[@name="IBitmapDecoderStatics.CreateWithIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT CreateWithIdAsync(Guid decoderId, [NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapDecoder_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT CreateWithIdAsync(Guid decoderId, [NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapDecoder_t **")] IAsyncOperation<Pointer<IBitmapDecoder>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBitmapDecoderStatics*, Guid, IRandomAccessStream*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[15]))((IBitmapDecoderStatics*)Unsafe.AsPointer(ref this), decoderId, stream, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IBitmapDecoderStatics*, Guid, IRandomAccessStream*, IAsyncOperation<Pointer<IBitmapDecoder>>**, int>)(lpVtbl[15]))((IBitmapDecoderStatics*)Unsafe.AsPointer(ref this), decoderId, stream, asyncInfo);
     }
 
     public interface Interface : IInspectable.Interface
@@ -175,13 +175,13 @@ public unsafe partial struct IBitmapDecoderStatics : IBitmapDecoderStatics.Inter
         HRESULT get_IcoDecoderId(Guid* value);
 
         [VtblIndex(13)]
-        HRESULT GetDecoderInformationEnumerator([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CImaging__CBitmapCodecInformation_t **")] IVectorView<IntPtr>** decoderInformationEnumerator);
+        HRESULT GetDecoderInformationEnumerator([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CImaging__CBitmapCodecInformation_t **")] IVectorView<Pointer<IBitmapCodecInformation>>** decoderInformationEnumerator);
 
         [VtblIndex(14)]
-        HRESULT CreateAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapDecoder_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT CreateAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapDecoder_t **")] IAsyncOperation<Pointer<IBitmapDecoder>>** asyncInfo);
 
         [VtblIndex(15)]
-        HRESULT CreateWithIdAsync(Guid decoderId, [NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapDecoder_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT CreateWithIdAsync(Guid decoderId, [NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* stream, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapDecoder_t **")] IAsyncOperation<Pointer<IBitmapDecoder>>** asyncInfo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -227,12 +227,12 @@ public unsafe partial struct IBitmapDecoderStatics : IBitmapDecoderStatics.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> get_IcoDecoderId;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CImaging__CBitmapCodecInformation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetDecoderInformationEnumerator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IBitmapCodecInformation>>**, int> GetDecoderInformationEnumerator;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IRandomAccessStream *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapDecoder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStream*, IAsyncOperation<IntPtr>**, int> CreateAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStream*, IAsyncOperation<Pointer<IBitmapDecoder>>**, int> CreateAsync;
 
         [NativeTypeName("HRESULT (GUID, ABI::Windows::Storage::Streams::IRandomAccessStream *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapDecoder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IRandomAccessStream*, IAsyncOperation<IntPtr>**, int> CreateWithIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IRandomAccessStream*, IAsyncOperation<Pointer<IBitmapDecoder>>**, int> CreateWithIdAsync;
     }
 }

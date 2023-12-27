@@ -82,17 +82,17 @@ public unsafe partial struct ISpeechRecognizerStatics : ISpeechRecognizerStatics
     /// <include file='ISpeechRecognizerStatics.xml' path='doc/member[@name="ISpeechRecognizerStatics.get_SupportedTopicLanguages"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_SupportedTopicLanguages([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CLanguage_t **")] IVectorView<IntPtr>** languages)
+    public HRESULT get_SupportedTopicLanguages([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CLanguage_t **")] IVectorView<Pointer<ILanguage>>** languages)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizerStatics*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((ISpeechRecognizerStatics*)Unsafe.AsPointer(ref this), languages);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizerStatics*, IVectorView<Pointer<ILanguage>>**, int>)(lpVtbl[7]))((ISpeechRecognizerStatics*)Unsafe.AsPointer(ref this), languages);
     }
 
     /// <include file='ISpeechRecognizerStatics.xml' path='doc/member[@name="ISpeechRecognizerStatics.get_SupportedGrammarLanguages"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_SupportedGrammarLanguages([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CLanguage_t **")] IVectorView<IntPtr>** languages)
+    public HRESULT get_SupportedGrammarLanguages([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CLanguage_t **")] IVectorView<Pointer<ILanguage>>** languages)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizerStatics*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((ISpeechRecognizerStatics*)Unsafe.AsPointer(ref this), languages);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizerStatics*, IVectorView<Pointer<ILanguage>>**, int>)(lpVtbl[8]))((ISpeechRecognizerStatics*)Unsafe.AsPointer(ref this), languages);
     }
 
     public interface Interface : IInspectable.Interface
@@ -101,10 +101,10 @@ public unsafe partial struct ISpeechRecognizerStatics : ISpeechRecognizerStatics
         HRESULT get_SystemSpeechLanguage([NativeTypeName("ABI::Windows::Globalization::ILanguage **")] ILanguage** language);
 
         [VtblIndex(7)]
-        HRESULT get_SupportedTopicLanguages([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CLanguage_t **")] IVectorView<IntPtr>** languages);
+        HRESULT get_SupportedTopicLanguages([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CLanguage_t **")] IVectorView<Pointer<ILanguage>>** languages);
 
         [VtblIndex(8)]
-        HRESULT get_SupportedGrammarLanguages([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CLanguage_t **")] IVectorView<IntPtr>** languages);
+        HRESULT get_SupportedGrammarLanguages([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CLanguage_t **")] IVectorView<Pointer<ILanguage>>** languages);
     }
 
     public partial struct Vtbl<TSelf>
@@ -132,9 +132,9 @@ public unsafe partial struct ISpeechRecognizerStatics : ISpeechRecognizerStatics
         public delegate* unmanaged[MemberFunction]<TSelf*, ILanguage**, int> get_SystemSpeechLanguage;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CLanguage_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_SupportedTopicLanguages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ILanguage>>**, int> get_SupportedTopicLanguages;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGlobalization__CLanguage_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_SupportedGrammarLanguages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ILanguage>>**, int> get_SupportedGrammarLanguages;
     }
 }

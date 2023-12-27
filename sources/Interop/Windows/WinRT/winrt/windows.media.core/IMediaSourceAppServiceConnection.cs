@@ -74,9 +74,9 @@ public unsafe partial struct IMediaSourceAppServiceConnection : IMediaSourceAppS
     /// <include file='IMediaSourceAppServiceConnection.xml' path='doc/member[@name="IMediaSourceAppServiceConnection.add_InitializeMediaStreamSourceRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_InitializeMediaStreamSourceRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSourceAppServiceConnection_Windows__CMedia__CCore__CInitializeMediaStreamSourceRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_InitializeMediaStreamSourceRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSourceAppServiceConnection_Windows__CMedia__CCore__CInitializeMediaStreamSourceRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaSourceAppServiceConnection>, Pointer<IInitializeMediaStreamSourceRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaSourceAppServiceConnection*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaSourceAppServiceConnection*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSourceAppServiceConnection*, ITypedEventHandler<Pointer<IMediaSourceAppServiceConnection>, Pointer<IInitializeMediaStreamSourceRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaSourceAppServiceConnection*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaSourceAppServiceConnection.xml' path='doc/member[@name="IMediaSourceAppServiceConnection.remove_InitializeMediaStreamSourceRequested"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IMediaSourceAppServiceConnection : IMediaSourceAppS
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_InitializeMediaStreamSourceRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSourceAppServiceConnection_Windows__CMedia__CCore__CInitializeMediaStreamSourceRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_InitializeMediaStreamSourceRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSourceAppServiceConnection_Windows__CMedia__CCore__CInitializeMediaStreamSourceRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaSourceAppServiceConnection>, Pointer<IInitializeMediaStreamSourceRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_InitializeMediaStreamSourceRequested(EventRegistrationToken token);
@@ -129,7 +129,7 @@ public unsafe partial struct IMediaSourceAppServiceConnection : IMediaSourceAppS
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMediaSourceAppServiceConnection_Windows__CMedia__CCore__CInitializeMediaStreamSourceRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_InitializeMediaStreamSourceRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaSourceAppServiceConnection>, Pointer<IInitializeMediaStreamSourceRequestedEventArgs>>*, EventRegistrationToken*, int> add_InitializeMediaStreamSourceRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_InitializeMediaStreamSourceRequested;

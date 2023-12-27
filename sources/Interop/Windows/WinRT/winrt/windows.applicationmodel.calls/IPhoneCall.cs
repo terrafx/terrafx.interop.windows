@@ -74,9 +74,9 @@ public unsafe partial struct IPhoneCall : IPhoneCall.Interface, INativeGuid
     /// <include file='IPhoneCall.xml' path='doc/member[@name="IPhoneCall.add_StatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_StatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneCall_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_StatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneCall_IInspectable_t *")] ITypedEventHandler<Pointer<IPhoneCall>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneCall*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IPhoneCall*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneCall*, ITypedEventHandler<Pointer<IPhoneCall>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IPhoneCall*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPhoneCall.xml' path='doc/member[@name="IPhoneCall.remove_StatusChanged"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IPhoneCall : IPhoneCall.Interface, INativeGuid
     /// <include file='IPhoneCall.xml' path='doc/member[@name="IPhoneCall.add_AudioDeviceChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_AudioDeviceChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneCall_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AudioDeviceChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneCall_IInspectable_t *")] ITypedEventHandler<Pointer<IPhoneCall>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneCall*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IPhoneCall*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneCall*, ITypedEventHandler<Pointer<IPhoneCall>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IPhoneCall*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPhoneCall.xml' path='doc/member[@name="IPhoneCall.remove_AudioDeviceChanged"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IPhoneCall : IPhoneCall.Interface, INativeGuid
     /// <include file='IPhoneCall.xml' path='doc/member[@name="IPhoneCall.add_IsMutedChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_IsMutedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneCall_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_IsMutedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneCall_IInspectable_t *")] ITypedEventHandler<Pointer<IPhoneCall>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneCall*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IPhoneCall*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneCall*, ITypedEventHandler<Pointer<IPhoneCall>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IPhoneCall*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPhoneCall.xml' path='doc/member[@name="IPhoneCall.remove_IsMutedChanged"]/*' />
@@ -162,9 +162,9 @@ public unsafe partial struct IPhoneCall : IPhoneCall.Interface, INativeGuid
     /// <include file='IPhoneCall.xml' path='doc/member[@name="IPhoneCall.GetPhoneCallInfoAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT GetPhoneCallInfoAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallInfo_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetPhoneCallInfoAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallInfo_t **")] IAsyncOperation<Pointer<IPhoneCallInfo>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneCall*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[17]))((IPhoneCall*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneCall*, IAsyncOperation<Pointer<IPhoneCallInfo>>**, int>)(lpVtbl[17]))((IPhoneCall*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IPhoneCall.xml' path='doc/member[@name="IPhoneCall.End"]/*' />
@@ -314,19 +314,19 @@ public unsafe partial struct IPhoneCall : IPhoneCall.Interface, INativeGuid
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_StatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneCall_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_StatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneCall_IInspectable_t *")] ITypedEventHandler<Pointer<IPhoneCall>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_StatusChanged(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_AudioDeviceChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneCall_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AudioDeviceChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneCall_IInspectable_t *")] ITypedEventHandler<Pointer<IPhoneCall>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_AudioDeviceChanged(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_IsMutedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneCall_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_IsMutedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneCall_IInspectable_t *")] ITypedEventHandler<Pointer<IPhoneCall>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_IsMutedChanged(EventRegistrationToken token);
@@ -347,7 +347,7 @@ public unsafe partial struct IPhoneCall : IPhoneCall.Interface, INativeGuid
         HRESULT GetPhoneCallInfo([NativeTypeName("ABI::Windows::ApplicationModel::Calls::IPhoneCallInfo **")] IPhoneCallInfo** result);
 
         [VtblIndex(17)]
-        HRESULT GetPhoneCallInfoAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallInfo_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetPhoneCallInfoAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallInfo_t **")] IAsyncOperation<Pointer<IPhoneCallInfo>>** operation);
 
         [VtblIndex(18)]
         HRESULT End([NativeTypeName("ABI::Windows::ApplicationModel::Calls::PhoneCallOperationStatus *")] PhoneCallOperationStatus* result);
@@ -426,19 +426,19 @@ public unsafe partial struct IPhoneCall : IPhoneCall.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneCall_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_StatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPhoneCall>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_StatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StatusChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneCall_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AudioDeviceChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPhoneCall>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_AudioDeviceChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AudioDeviceChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneCall_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_IsMutedChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPhoneCall>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_IsMutedChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_IsMutedChanged;
@@ -459,7 +459,7 @@ public unsafe partial struct IPhoneCall : IPhoneCall.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IPhoneCallInfo**, int> GetPhoneCallInfo;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetPhoneCallInfoAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IPhoneCallInfo>>**, int> GetPhoneCallInfoAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Calls::PhoneCallOperationStatus *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, PhoneCallOperationStatus*, int> End;

@@ -74,28 +74,28 @@ public unsafe partial struct IBackgroundDownloaderStaticMethods : IBackgroundDow
     /// <include file='IBackgroundDownloaderStaticMethods.xml' path='doc/member[@name="IBackgroundDownloaderStaticMethods.GetCurrentDownloadsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetCurrentDownloadsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetCurrentDownloadsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IDownloadOperation>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundDownloaderStaticMethods*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IBackgroundDownloaderStaticMethods*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundDownloaderStaticMethods*, IAsyncOperation<Pointer<IVectorView<Pointer<IDownloadOperation>>>>**, int>)(lpVtbl[6]))((IBackgroundDownloaderStaticMethods*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IBackgroundDownloaderStaticMethods.xml' path='doc/member[@name="IBackgroundDownloaderStaticMethods.GetCurrentDownloadsForGroupAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [Obsolete("GetCurrentDownloadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentDownloadsForTransferGroupAsync.")]
-    public HRESULT GetCurrentDownloadsForGroupAsync(HSTRING group, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetCurrentDownloadsForGroupAsync(HSTRING group, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IDownloadOperation>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBackgroundDownloaderStaticMethods*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IBackgroundDownloaderStaticMethods*)Unsafe.AsPointer(ref this), group, operation);
+        return ((delegate* unmanaged[MemberFunction]<IBackgroundDownloaderStaticMethods*, HSTRING, IAsyncOperation<Pointer<IVectorView<Pointer<IDownloadOperation>>>>**, int>)(lpVtbl[7]))((IBackgroundDownloaderStaticMethods*)Unsafe.AsPointer(ref this), group, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetCurrentDownloadsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetCurrentDownloadsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IDownloadOperation>>>>** operation);
 
         [VtblIndex(7)]
         [Obsolete("GetCurrentDownloadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentDownloadsForTransferGroupAsync.")]
-        HRESULT GetCurrentDownloadsForGroupAsync(HSTRING group, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetCurrentDownloadsForGroupAsync(HSTRING group, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IDownloadOperation>>>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -120,10 +120,10 @@ public unsafe partial struct IBackgroundDownloaderStaticMethods : IBackgroundDow
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetCurrentDownloadsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IDownloadOperation>>>>**, int> GetCurrentDownloadsAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CNetworking__CBackgroundTransfer__CDownloadOperation_t **) __attribute__((stdcall))")]
         [Obsolete("GetCurrentDownloadsAsync(group) may be altered or unavailable for releases after Windows 8.1. Instead, use GetCurrentDownloadsForTransferGroupAsync.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetCurrentDownloadsForGroupAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IVectorView<Pointer<IDownloadOperation>>>>**, int> GetCurrentDownloadsForGroupAsync;
     }
 }

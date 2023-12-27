@@ -82,9 +82,9 @@ public unsafe partial struct IBasicAudioEffect : IBasicAudioEffect.Interface, IN
     /// <include file='IBasicAudioEffect.xml' path='doc/member[@name="IBasicAudioEffect.get_SupportedEncodingProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_SupportedEncodingProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CMediaProperties__CAudioEncodingProperties_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_SupportedEncodingProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CMediaProperties__CAudioEncodingProperties_t **")] IVectorView<Pointer<IAudioEncodingProperties>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBasicAudioEffect*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IBasicAudioEffect*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBasicAudioEffect*, IVectorView<Pointer<IAudioEncodingProperties>>**, int>)(lpVtbl[7]))((IBasicAudioEffect*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBasicAudioEffect.xml' path='doc/member[@name="IBasicAudioEffect.SetEncodingProperties"]/*' />
@@ -125,7 +125,7 @@ public unsafe partial struct IBasicAudioEffect : IBasicAudioEffect.Interface, IN
         HRESULT get_UseInputFrameForOutput([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(7)]
-        HRESULT get_SupportedEncodingProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CMediaProperties__CAudioEncodingProperties_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_SupportedEncodingProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CMediaProperties__CAudioEncodingProperties_t **")] IVectorView<Pointer<IAudioEncodingProperties>>** value);
 
         [VtblIndex(8)]
         HRESULT SetEncodingProperties([NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties);
@@ -165,7 +165,7 @@ public unsafe partial struct IBasicAudioEffect : IBasicAudioEffect.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_UseInputFrameForOutput;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CMediaProperties__CAudioEncodingProperties_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_SupportedEncodingProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IAudioEncodingProperties>>**, int> get_SupportedEncodingProperties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAudioEncodingProperties*, int> SetEncodingProperties;

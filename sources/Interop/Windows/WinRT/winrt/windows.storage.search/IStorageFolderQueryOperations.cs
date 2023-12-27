@@ -146,41 +146,41 @@ public unsafe partial struct IStorageFolderQueryOperations : IStorageFolderQuery
     /// <include file='IStorageFolderQueryOperations.xml' path='doc/member[@name="IStorageFolderQueryOperations.GetFilesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT GetFilesAsync([NativeTypeName("ABI::Windows::Storage::Search::CommonFileQuery")] CommonFileQuery query, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItemsToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetFilesAsync([NativeTypeName("ABI::Windows::Storage::Search::CommonFileQuery")] CommonFileQuery query, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItemsToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFile>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolderQueryOperations*, CommonFileQuery, uint, uint, IAsyncOperation<IntPtr>**, int>)(lpVtbl[15]))((IStorageFolderQueryOperations*)Unsafe.AsPointer(ref this), query, startIndex, maxItemsToRetrieve, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolderQueryOperations*, CommonFileQuery, uint, uint, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFile>>>>**, int>)(lpVtbl[15]))((IStorageFolderQueryOperations*)Unsafe.AsPointer(ref this), query, startIndex, maxItemsToRetrieve, operation);
     }
 
     /// <include file='IStorageFolderQueryOperations.xml' path='doc/member[@name="IStorageFolderQueryOperations.GetFilesAsyncOverloadDefaultStartAndCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT GetFilesAsyncOverloadDefaultStartAndCount([NativeTypeName("ABI::Windows::Storage::Search::CommonFileQuery")] CommonFileQuery query, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetFilesAsyncOverloadDefaultStartAndCount([NativeTypeName("ABI::Windows::Storage::Search::CommonFileQuery")] CommonFileQuery query, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFile>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolderQueryOperations*, CommonFileQuery, IAsyncOperation<IntPtr>**, int>)(lpVtbl[16]))((IStorageFolderQueryOperations*)Unsafe.AsPointer(ref this), query, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolderQueryOperations*, CommonFileQuery, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFile>>>>**, int>)(lpVtbl[16]))((IStorageFolderQueryOperations*)Unsafe.AsPointer(ref this), query, operation);
     }
 
     /// <include file='IStorageFolderQueryOperations.xml' path='doc/member[@name="IStorageFolderQueryOperations.GetFoldersAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT GetFoldersAsync([NativeTypeName("ABI::Windows::Storage::Search::CommonFolderQuery")] CommonFolderQuery query, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItemsToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetFoldersAsync([NativeTypeName("ABI::Windows::Storage::Search::CommonFolderQuery")] CommonFolderQuery query, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItemsToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolderQueryOperations*, CommonFolderQuery, uint, uint, IAsyncOperation<IntPtr>**, int>)(lpVtbl[17]))((IStorageFolderQueryOperations*)Unsafe.AsPointer(ref this), query, startIndex, maxItemsToRetrieve, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolderQueryOperations*, CommonFolderQuery, uint, uint, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>**, int>)(lpVtbl[17]))((IStorageFolderQueryOperations*)Unsafe.AsPointer(ref this), query, startIndex, maxItemsToRetrieve, operation);
     }
 
     /// <include file='IStorageFolderQueryOperations.xml' path='doc/member[@name="IStorageFolderQueryOperations.GetFoldersAsyncOverloadDefaultStartAndCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT GetFoldersAsyncOverloadDefaultStartAndCount([NativeTypeName("ABI::Windows::Storage::Search::CommonFolderQuery")] CommonFolderQuery query, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetFoldersAsyncOverloadDefaultStartAndCount([NativeTypeName("ABI::Windows::Storage::Search::CommonFolderQuery")] CommonFolderQuery query, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolderQueryOperations*, CommonFolderQuery, IAsyncOperation<IntPtr>**, int>)(lpVtbl[18]))((IStorageFolderQueryOperations*)Unsafe.AsPointer(ref this), query, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolderQueryOperations*, CommonFolderQuery, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>**, int>)(lpVtbl[18]))((IStorageFolderQueryOperations*)Unsafe.AsPointer(ref this), query, operation);
     }
 
     /// <include file='IStorageFolderQueryOperations.xml' path='doc/member[@name="IStorageFolderQueryOperations.GetItemsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT GetItemsAsync([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItemsToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetItemsAsync([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItemsToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageItem>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolderQueryOperations*, uint, uint, IAsyncOperation<IntPtr>**, int>)(lpVtbl[19]))((IStorageFolderQueryOperations*)Unsafe.AsPointer(ref this), startIndex, maxItemsToRetrieve, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolderQueryOperations*, uint, uint, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageItem>>>>**, int>)(lpVtbl[19]))((IStorageFolderQueryOperations*)Unsafe.AsPointer(ref this), startIndex, maxItemsToRetrieve, operation);
     }
 
     /// <include file='IStorageFolderQueryOperations.xml' path='doc/member[@name="IStorageFolderQueryOperations.AreQueryOptionsSupported"]/*' />
@@ -237,19 +237,19 @@ public unsafe partial struct IStorageFolderQueryOperations : IStorageFolderQuery
         HRESULT CreateItemQueryWithOptions([NativeTypeName("ABI::Windows::Storage::Search::IQueryOptions *")] IQueryOptions* queryOptions, [NativeTypeName("ABI::Windows::Storage::Search::IStorageItemQueryResult **")] IStorageItemQueryResult** value);
 
         [VtblIndex(15)]
-        HRESULT GetFilesAsync([NativeTypeName("ABI::Windows::Storage::Search::CommonFileQuery")] CommonFileQuery query, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItemsToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetFilesAsync([NativeTypeName("ABI::Windows::Storage::Search::CommonFileQuery")] CommonFileQuery query, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItemsToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFile>>>>** operation);
 
         [VtblIndex(16)]
-        HRESULT GetFilesAsyncOverloadDefaultStartAndCount([NativeTypeName("ABI::Windows::Storage::Search::CommonFileQuery")] CommonFileQuery query, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetFilesAsyncOverloadDefaultStartAndCount([NativeTypeName("ABI::Windows::Storage::Search::CommonFileQuery")] CommonFileQuery query, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFile>>>>** operation);
 
         [VtblIndex(17)]
-        HRESULT GetFoldersAsync([NativeTypeName("ABI::Windows::Storage::Search::CommonFolderQuery")] CommonFolderQuery query, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItemsToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetFoldersAsync([NativeTypeName("ABI::Windows::Storage::Search::CommonFolderQuery")] CommonFolderQuery query, [NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItemsToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>** operation);
 
         [VtblIndex(18)]
-        HRESULT GetFoldersAsyncOverloadDefaultStartAndCount([NativeTypeName("ABI::Windows::Storage::Search::CommonFolderQuery")] CommonFolderQuery query, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetFoldersAsyncOverloadDefaultStartAndCount([NativeTypeName("ABI::Windows::Storage::Search::CommonFolderQuery")] CommonFolderQuery query, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>** operation);
 
         [VtblIndex(19)]
-        HRESULT GetItemsAsync([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItemsToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetItemsAsync([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItemsToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CIStorageItem_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IStorageItem>>>>** operation);
 
         [VtblIndex(20)]
         HRESULT AreQueryOptionsSupported([NativeTypeName("ABI::Windows::Storage::Search::IQueryOptions *")] IQueryOptions* queryOptions, [NativeTypeName("boolean *")] byte* value);
@@ -310,19 +310,19 @@ public unsafe partial struct IStorageFolderQueryOperations : IStorageFolderQuery
         public delegate* unmanaged[MemberFunction]<TSelf*, IQueryOptions*, IStorageItemQueryResult**, int> CreateItemQueryWithOptions;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Search::CommonFileQuery, UINT32, UINT32, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, CommonFileQuery, uint, uint, IAsyncOperation<IntPtr>**, int> GetFilesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, CommonFileQuery, uint, uint, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFile>>>>**, int> GetFilesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Search::CommonFileQuery, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, CommonFileQuery, IAsyncOperation<IntPtr>**, int> GetFilesAsyncOverloadDefaultStartAndCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, CommonFileQuery, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFile>>>>**, int> GetFilesAsyncOverloadDefaultStartAndCount;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Search::CommonFolderQuery, UINT32, UINT32, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, CommonFolderQuery, uint, uint, IAsyncOperation<IntPtr>**, int> GetFoldersAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, CommonFolderQuery, uint, uint, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>**, int> GetFoldersAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Search::CommonFolderQuery, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, CommonFolderQuery, IAsyncOperation<IntPtr>**, int> GetFoldersAsyncOverloadDefaultStartAndCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, CommonFolderQuery, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageFolder>>>>**, int> GetFoldersAsyncOverloadDefaultStartAndCount;
 
         [NativeTypeName("HRESULT (UINT32, UINT32, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CIStorageItem_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IAsyncOperation<IntPtr>**, int> GetItemsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IAsyncOperation<Pointer<IVectorView<Pointer<IStorageItem>>>>**, int> GetItemsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Search::IQueryOptions *, boolean *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IQueryOptions*, byte*, int> AreQueryOptionsSupported;

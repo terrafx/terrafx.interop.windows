@@ -82,9 +82,9 @@ public unsafe partial struct IPhoneLineConfiguration : IPhoneLineConfiguration.I
     /// <include file='IPhoneLineConfiguration.xml' path='doc/member[@name="IPhoneLineConfiguration.get_ExtendedProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_ExtendedProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_IInspectable_t **")] IMapView<HSTRING, IntPtr>** value)
+    public HRESULT get_ExtendedProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_IInspectable_t **")] IMapView<HSTRING, Pointer<IInspectable>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneLineConfiguration*, IMapView<HSTRING, IntPtr>**, int>)(lpVtbl[7]))((IPhoneLineConfiguration*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneLineConfiguration*, IMapView<HSTRING, Pointer<IInspectable>>**, int>)(lpVtbl[7]))((IPhoneLineConfiguration*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IPhoneLineConfiguration : IPhoneLineConfiguration.I
         HRESULT get_IsVideoCallingEnabled([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(7)]
-        HRESULT get_ExtendedProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_IInspectable_t **")] IMapView<HSTRING, IntPtr>** value);
+        HRESULT get_ExtendedProperties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_IInspectable_t **")] IMapView<HSTRING, Pointer<IInspectable>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IPhoneLineConfiguration : IPhoneLineConfiguration.I
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsVideoCallingEnabled;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_IInspectable_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, IntPtr>**, int> get_ExtendedProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, Pointer<IInspectable>>**, int> get_ExtendedProperties;
     }
 }

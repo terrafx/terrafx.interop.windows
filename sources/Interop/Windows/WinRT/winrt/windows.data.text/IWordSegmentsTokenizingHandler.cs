@@ -50,15 +50,15 @@ public unsafe partial struct IWordSegmentsTokenizingHandler : IWordSegmentsToken
     /// <include file='IWordSegmentsTokenizingHandler.xml' path='doc/member[@name="IWordSegmentsTokenizingHandler.Invoke"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Invoke([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CWordSegment_t *")] IIterable<IntPtr>* precedingWords, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CWordSegment_t *")] IIterable<IntPtr>* words)
+    public HRESULT Invoke([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CWordSegment_t *")] IIterable<Pointer<IWordSegment>>* precedingWords, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CWordSegment_t *")] IIterable<Pointer<IWordSegment>>* words)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWordSegmentsTokenizingHandler*, IIterable<IntPtr>*, IIterable<IntPtr>*, int>)(lpVtbl[3]))((IWordSegmentsTokenizingHandler*)Unsafe.AsPointer(ref this), precedingWords, words);
+        return ((delegate* unmanaged[MemberFunction]<IWordSegmentsTokenizingHandler*, IIterable<Pointer<IWordSegment>>*, IIterable<Pointer<IWordSegment>>*, int>)(lpVtbl[3]))((IWordSegmentsTokenizingHandler*)Unsafe.AsPointer(ref this), precedingWords, words);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Invoke([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CWordSegment_t *")] IIterable<IntPtr>* precedingWords, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CWordSegment_t *")] IIterable<IntPtr>* words);
+        HRESULT Invoke([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CWordSegment_t *")] IIterable<Pointer<IWordSegment>>* precedingWords, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CWordSegment_t *")] IIterable<Pointer<IWordSegment>>* words);
     }
 
     public partial struct Vtbl<TSelf>
@@ -74,6 +74,6 @@ public unsafe partial struct IWordSegmentsTokenizingHandler : IWordSegmentsToken
         public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CWordSegment_t *, ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CData__CText__CWordSegment_t *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IIterable<IntPtr>*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IWordSegment>>*, IIterable<Pointer<IWordSegment>>*, int> Invoke;
     }
 }

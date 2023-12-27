@@ -178,17 +178,17 @@ public unsafe partial struct IMediaTranscoder : IMediaTranscoder.Interface, INat
     /// <include file='IMediaTranscoder.xml' path='doc/member[@name="IMediaTranscoder.PrepareFileTranscodeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT PrepareFileTranscodeAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* source, [NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* destination, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *")] IMediaEncodingProfile* profile, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CTranscoding__CPrepareTranscodeResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT PrepareFileTranscodeAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* source, [NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* destination, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *")] IMediaEncodingProfile* profile, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CTranscoding__CPrepareTranscodeResult_t **")] IAsyncOperation<Pointer<IPrepareTranscodeResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaTranscoder*, IStorageFile*, IStorageFile*, IMediaEncodingProfile*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[19]))((IMediaTranscoder*)Unsafe.AsPointer(ref this), source, destination, profile, operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaTranscoder*, IStorageFile*, IStorageFile*, IMediaEncodingProfile*, IAsyncOperation<Pointer<IPrepareTranscodeResult>>**, int>)(lpVtbl[19]))((IMediaTranscoder*)Unsafe.AsPointer(ref this), source, destination, profile, operation);
     }
 
     /// <include file='IMediaTranscoder.xml' path='doc/member[@name="IMediaTranscoder.PrepareStreamTranscodeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT PrepareStreamTranscodeAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* source, [NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* destination, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *")] IMediaEncodingProfile* profile, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CTranscoding__CPrepareTranscodeResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT PrepareStreamTranscodeAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* source, [NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* destination, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *")] IMediaEncodingProfile* profile, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CTranscoding__CPrepareTranscodeResult_t **")] IAsyncOperation<Pointer<IPrepareTranscodeResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaTranscoder*, IRandomAccessStream*, IRandomAccessStream*, IMediaEncodingProfile*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[20]))((IMediaTranscoder*)Unsafe.AsPointer(ref this), source, destination, profile, operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaTranscoder*, IRandomAccessStream*, IRandomAccessStream*, IMediaEncodingProfile*, IAsyncOperation<Pointer<IPrepareTranscodeResult>>**, int>)(lpVtbl[20]))((IMediaTranscoder*)Unsafe.AsPointer(ref this), source, destination, profile, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -233,10 +233,10 @@ public unsafe partial struct IMediaTranscoder : IMediaTranscoder.Interface, INat
         HRESULT ClearEffects();
 
         [VtblIndex(19)]
-        HRESULT PrepareFileTranscodeAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* source, [NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* destination, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *")] IMediaEncodingProfile* profile, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CTranscoding__CPrepareTranscodeResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT PrepareFileTranscodeAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* source, [NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* destination, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *")] IMediaEncodingProfile* profile, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CTranscoding__CPrepareTranscodeResult_t **")] IAsyncOperation<Pointer<IPrepareTranscodeResult>>** operation);
 
         [VtblIndex(20)]
-        HRESULT PrepareStreamTranscodeAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* source, [NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* destination, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *")] IMediaEncodingProfile* profile, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CTranscoding__CPrepareTranscodeResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT PrepareStreamTranscodeAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* source, [NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStream *")] IRandomAccessStream* destination, [NativeTypeName("ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *")] IMediaEncodingProfile* profile, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CTranscoding__CPrepareTranscodeResult_t **")] IAsyncOperation<Pointer<IPrepareTranscodeResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -300,9 +300,9 @@ public unsafe partial struct IMediaTranscoder : IMediaTranscoder.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, int> ClearEffects;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Storage::IStorageFile *, ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CTranscoding__CPrepareTranscodeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IStorageFile*, IMediaEncodingProfile*, IAsyncOperation<IntPtr>**, int> PrepareFileTranscodeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IStorageFile*, IMediaEncodingProfile*, IAsyncOperation<Pointer<IPrepareTranscodeResult>>**, int> PrepareFileTranscodeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IRandomAccessStream *, ABI::Windows::Storage::Streams::IRandomAccessStream *, ABI::Windows::Media::MediaProperties::IMediaEncodingProfile *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CTranscoding__CPrepareTranscodeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStream*, IRandomAccessStream*, IMediaEncodingProfile*, IAsyncOperation<IntPtr>**, int> PrepareStreamTranscodeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStream*, IRandomAccessStream*, IMediaEncodingProfile*, IAsyncOperation<Pointer<IPrepareTranscodeResult>>**, int> PrepareStreamTranscodeAsync;
     }
 }

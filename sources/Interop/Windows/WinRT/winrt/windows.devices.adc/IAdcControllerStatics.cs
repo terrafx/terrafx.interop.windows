@@ -74,15 +74,15 @@ public unsafe partial struct IAdcControllerStatics : IAdcControllerStatics.Inter
     /// <include file='IAdcControllerStatics.xml' path='doc/member[@name="IAdcControllerStatics.GetControllersAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetControllersAsync([NativeTypeName("ABI::Windows::Devices::Adc::Provider::IAdcProvider *")] IAdcProvider* provider, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CAdc__CAdcController_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetControllersAsync([NativeTypeName("ABI::Windows::Devices::Adc::Provider::IAdcProvider *")] IAdcProvider* provider, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CAdc__CAdcController_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAdcController>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdcControllerStatics*, IAdcProvider*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IAdcControllerStatics*)Unsafe.AsPointer(ref this), provider, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAdcControllerStatics*, IAdcProvider*, IAsyncOperation<Pointer<IVectorView<Pointer<IAdcController>>>>**, int>)(lpVtbl[6]))((IAdcControllerStatics*)Unsafe.AsPointer(ref this), provider, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetControllersAsync([NativeTypeName("ABI::Windows::Devices::Adc::Provider::IAdcProvider *")] IAdcProvider* provider, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CAdc__CAdcController_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetControllersAsync([NativeTypeName("ABI::Windows::Devices::Adc::Provider::IAdcProvider *")] IAdcProvider* provider, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CAdc__CAdcController_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IAdcController>>>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IAdcControllerStatics : IAdcControllerStatics.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Adc::Provider::IAdcProvider *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CAdc__CAdcController_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAdcProvider*, IAsyncOperation<IntPtr>**, int> GetControllersAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAdcProvider*, IAsyncOperation<Pointer<IVectorView<Pointer<IAdcController>>>>**, int> GetControllersAsync;
     }
 }

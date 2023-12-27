@@ -90,9 +90,9 @@ public unsafe partial struct IAppResourceGroupInfo : IAppResourceGroupInfo.Inter
     /// <include file='IAppResourceGroupInfo.xml' path='doc/member[@name="IAppResourceGroupInfo.GetBackgroundTaskReports"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetBackgroundTaskReports([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppResourceGroupBackgroundTaskReport_t **")] IVector<IntPtr>** result)
+    public HRESULT GetBackgroundTaskReports([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppResourceGroupBackgroundTaskReport_t **")] IVector<Pointer<IAppResourceGroupBackgroundTaskReport>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppResourceGroupInfo*, IVector<IntPtr>**, int>)(lpVtbl[8]))((IAppResourceGroupInfo*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IAppResourceGroupInfo*, IVector<Pointer<IAppResourceGroupBackgroundTaskReport>>**, int>)(lpVtbl[8]))((IAppResourceGroupInfo*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IAppResourceGroupInfo.xml' path='doc/member[@name="IAppResourceGroupInfo.GetMemoryReport"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IAppResourceGroupInfo : IAppResourceGroupInfo.Inter
     /// <include file='IAppResourceGroupInfo.xml' path='doc/member[@name="IAppResourceGroupInfo.GetProcessDiagnosticInfos"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetProcessDiagnosticInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CDiagnostics__CProcessDiagnosticInfo_t **")] IVector<IntPtr>** result)
+    public HRESULT GetProcessDiagnosticInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CDiagnostics__CProcessDiagnosticInfo_t **")] IVector<Pointer<IProcessDiagnosticInfo>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppResourceGroupInfo*, IVector<IntPtr>**, int>)(lpVtbl[10]))((IAppResourceGroupInfo*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IAppResourceGroupInfo*, IVector<Pointer<IProcessDiagnosticInfo>>**, int>)(lpVtbl[10]))((IAppResourceGroupInfo*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IAppResourceGroupInfo.xml' path='doc/member[@name="IAppResourceGroupInfo.GetStateReport"]/*' />
@@ -128,13 +128,13 @@ public unsafe partial struct IAppResourceGroupInfo : IAppResourceGroupInfo.Inter
         HRESULT get_IsShared([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(8)]
-        HRESULT GetBackgroundTaskReports([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppResourceGroupBackgroundTaskReport_t **")] IVector<IntPtr>** result);
+        HRESULT GetBackgroundTaskReports([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppResourceGroupBackgroundTaskReport_t **")] IVector<Pointer<IAppResourceGroupBackgroundTaskReport>>** result);
 
         [VtblIndex(9)]
         HRESULT GetMemoryReport([NativeTypeName("ABI::Windows::System::IAppResourceGroupMemoryReport **")] IAppResourceGroupMemoryReport** result);
 
         [VtblIndex(10)]
-        HRESULT GetProcessDiagnosticInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CDiagnostics__CProcessDiagnosticInfo_t **")] IVector<IntPtr>** result);
+        HRESULT GetProcessDiagnosticInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CDiagnostics__CProcessDiagnosticInfo_t **")] IVector<Pointer<IProcessDiagnosticInfo>>** result);
 
         [VtblIndex(11)]
         HRESULT GetStateReport([NativeTypeName("ABI::Windows::System::IAppResourceGroupStateReport **")] IAppResourceGroupStateReport** result);
@@ -168,13 +168,13 @@ public unsafe partial struct IAppResourceGroupInfo : IAppResourceGroupInfo.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsShared;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppResourceGroupBackgroundTaskReport_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> GetBackgroundTaskReports;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IAppResourceGroupBackgroundTaskReport>>**, int> GetBackgroundTaskReports;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IAppResourceGroupMemoryReport **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppResourceGroupMemoryReport**, int> GetMemoryReport;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CDiagnostics__CProcessDiagnosticInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> GetProcessDiagnosticInfos;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IProcessDiagnosticInfo>>**, int> GetProcessDiagnosticInfos;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IAppResourceGroupStateReport **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppResourceGroupStateReport**, int> GetStateReport;

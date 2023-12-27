@@ -122,9 +122,9 @@ public unsafe partial struct IAppCaptureRecordOperation : IAppCaptureRecordOpera
     /// <include file='IAppCaptureRecordOperation.xml' path='doc/member[@name="IAppCaptureRecordOperation.add_StateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureRecordOperation_Windows__CMedia__CCapture__CAppCaptureRecordingStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureRecordOperation_Windows__CMedia__CCapture__CAppCaptureRecordingStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppCaptureRecordOperation>, Pointer<IAppCaptureRecordingStateChangedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppCaptureRecordOperation*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IAppCaptureRecordOperation*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppCaptureRecordOperation*, ITypedEventHandler<Pointer<IAppCaptureRecordOperation>, Pointer<IAppCaptureRecordingStateChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IAppCaptureRecordOperation*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IAppCaptureRecordOperation.xml' path='doc/member[@name="IAppCaptureRecordOperation.remove_StateChanged"]/*' />
@@ -138,9 +138,9 @@ public unsafe partial struct IAppCaptureRecordOperation : IAppCaptureRecordOpera
     /// <include file='IAppCaptureRecordOperation.xml' path='doc/member[@name="IAppCaptureRecordOperation.add_DurationGenerated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_DurationGenerated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureRecordOperation_Windows__CMedia__CCapture__CAppCaptureDurationGeneratedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_DurationGenerated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureRecordOperation_Windows__CMedia__CCapture__CAppCaptureDurationGeneratedEventArgs_t *")] ITypedEventHandler<Pointer<IAppCaptureRecordOperation>, Pointer<IAppCaptureDurationGeneratedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppCaptureRecordOperation*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IAppCaptureRecordOperation*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppCaptureRecordOperation*, ITypedEventHandler<Pointer<IAppCaptureRecordOperation>, Pointer<IAppCaptureDurationGeneratedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IAppCaptureRecordOperation*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IAppCaptureRecordOperation.xml' path='doc/member[@name="IAppCaptureRecordOperation.remove_DurationGenerated"]/*' />
@@ -154,9 +154,9 @@ public unsafe partial struct IAppCaptureRecordOperation : IAppCaptureRecordOpera
     /// <include file='IAppCaptureRecordOperation.xml' path='doc/member[@name="IAppCaptureRecordOperation.add_FileGenerated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT add_FileGenerated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureRecordOperation_Windows__CMedia__CCapture__CAppCaptureFileGeneratedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_FileGenerated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureRecordOperation_Windows__CMedia__CCapture__CAppCaptureFileGeneratedEventArgs_t *")] ITypedEventHandler<Pointer<IAppCaptureRecordOperation>, Pointer<IAppCaptureFileGeneratedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppCaptureRecordOperation*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IAppCaptureRecordOperation*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppCaptureRecordOperation*, ITypedEventHandler<Pointer<IAppCaptureRecordOperation>, Pointer<IAppCaptureFileGeneratedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IAppCaptureRecordOperation*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IAppCaptureRecordOperation.xml' path='doc/member[@name="IAppCaptureRecordOperation.remove_FileGenerated"]/*' />
@@ -188,19 +188,19 @@ public unsafe partial struct IAppCaptureRecordOperation : IAppCaptureRecordOpera
         HRESULT get_IsFileTruncated([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_boolean_t **")] IReference<bool>** value);
 
         [VtblIndex(12)]
-        HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureRecordOperation_Windows__CMedia__CCapture__CAppCaptureRecordingStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureRecordOperation_Windows__CMedia__CCapture__CAppCaptureRecordingStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppCaptureRecordOperation>, Pointer<IAppCaptureRecordingStateChangedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_StateChanged(EventRegistrationToken token);
 
         [VtblIndex(14)]
-        HRESULT add_DurationGenerated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureRecordOperation_Windows__CMedia__CCapture__CAppCaptureDurationGeneratedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_DurationGenerated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureRecordOperation_Windows__CMedia__CCapture__CAppCaptureDurationGeneratedEventArgs_t *")] ITypedEventHandler<Pointer<IAppCaptureRecordOperation>, Pointer<IAppCaptureDurationGeneratedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(15)]
         HRESULT remove_DurationGenerated(EventRegistrationToken token);
 
         [VtblIndex(16)]
-        HRESULT add_FileGenerated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureRecordOperation_Windows__CMedia__CCapture__CAppCaptureFileGeneratedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_FileGenerated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureRecordOperation_Windows__CMedia__CCapture__CAppCaptureFileGeneratedEventArgs_t *")] ITypedEventHandler<Pointer<IAppCaptureRecordOperation>, Pointer<IAppCaptureFileGeneratedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(17)]
         HRESULT remove_FileGenerated(EventRegistrationToken token);
@@ -246,19 +246,19 @@ public unsafe partial struct IAppCaptureRecordOperation : IAppCaptureRecordOpera
         public delegate* unmanaged[MemberFunction]<TSelf*, IReference<bool>**, int> get_IsFileTruncated;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureRecordOperation_Windows__CMedia__CCapture__CAppCaptureRecordingStateChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_StateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppCaptureRecordOperation>, Pointer<IAppCaptureRecordingStateChangedEventArgs>>*, EventRegistrationToken*, int> add_StateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StateChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureRecordOperation_Windows__CMedia__CCapture__CAppCaptureDurationGeneratedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DurationGenerated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppCaptureRecordOperation>, Pointer<IAppCaptureDurationGeneratedEventArgs>>*, EventRegistrationToken*, int> add_DurationGenerated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DurationGenerated;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureRecordOperation_Windows__CMedia__CCapture__CAppCaptureFileGeneratedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_FileGenerated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppCaptureRecordOperation>, Pointer<IAppCaptureFileGeneratedEventArgs>>*, EventRegistrationToken*, int> add_FileGenerated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_FileGenerated;

@@ -74,9 +74,9 @@ public unsafe partial struct IStreamWebSocket2 : IStreamWebSocket2.Interface, IN
     /// <include file='IStreamWebSocket2.xml' path='doc/member[@name="IStreamWebSocket2.add_ServerCustomValidationRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_ServerCustomValidationRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketServerCustomValidationRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_ServerCustomValidationRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketServerCustomValidationRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IStreamWebSocket>, Pointer<IWebSocketServerCustomValidationRequestedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStreamWebSocket2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IStreamWebSocket2*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IStreamWebSocket2*, ITypedEventHandler<Pointer<IStreamWebSocket>, Pointer<IWebSocketServerCustomValidationRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IStreamWebSocket2*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
     }
 
     /// <include file='IStreamWebSocket2.xml' path='doc/member[@name="IStreamWebSocket2.remove_ServerCustomValidationRequested"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IStreamWebSocket2 : IStreamWebSocket2.Interface, IN
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_ServerCustomValidationRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketServerCustomValidationRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_ServerCustomValidationRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketServerCustomValidationRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IStreamWebSocket>, Pointer<IWebSocketServerCustomValidationRequestedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(7)]
         HRESULT remove_ServerCustomValidationRequested(EventRegistrationToken eventCookie);
@@ -118,7 +118,7 @@ public unsafe partial struct IStreamWebSocket2 : IStreamWebSocket2.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CNetworking__CSockets__CStreamWebSocket_Windows__CNetworking__CSockets__CWebSocketServerCustomValidationRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ServerCustomValidationRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IStreamWebSocket>, Pointer<IWebSocketServerCustomValidationRequestedEventArgs>>*, EventRegistrationToken*, int> add_ServerCustomValidationRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ServerCustomValidationRequested;

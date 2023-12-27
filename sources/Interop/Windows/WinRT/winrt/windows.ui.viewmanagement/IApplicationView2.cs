@@ -100,9 +100,9 @@ public unsafe partial struct IApplicationView2 : IApplicationView2.Interface, IN
     /// <include file='IApplicationView2.xml' path='doc/member[@name="IApplicationView2.add_VisibleBoundsChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_VisibleBoundsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationView_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_VisibleBoundsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationView_IInspectable_t *")] ITypedEventHandler<Pointer<IApplicationView>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IApplicationView2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IApplicationView2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationView2*, ITypedEventHandler<Pointer<IApplicationView>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IApplicationView2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IApplicationView2.xml' path='doc/member[@name="IApplicationView2.remove_VisibleBoundsChanged"]/*' />
@@ -143,7 +143,7 @@ public unsafe partial struct IApplicationView2 : IApplicationView2.Interface, IN
         HRESULT get_VisibleBounds([NativeTypeName("ABI::Windows::Foundation::Rect *")] Rect* value);
 
         [VtblIndex(9)]
-        HRESULT add_VisibleBoundsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationView_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_VisibleBoundsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationView_IInspectable_t *")] ITypedEventHandler<Pointer<IApplicationView>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_VisibleBoundsChanged(EventRegistrationToken token);
@@ -188,7 +188,7 @@ public unsafe partial struct IApplicationView2 : IApplicationView2.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, Rect*, int> get_VisibleBounds;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CApplicationView_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_VisibleBoundsChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IApplicationView>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_VisibleBoundsChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_VisibleBoundsChanged;

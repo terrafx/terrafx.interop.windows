@@ -106,9 +106,9 @@ public unsafe partial struct IInclinometer : IInclinometer.Interface, INativeGui
     /// <include file='IInclinometer.xml' path='doc/member[@name="IInclinometer.add_ReadingChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CInclinometer_Windows__CDevices__CSensors__CInclinometerReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CInclinometer_Windows__CDevices__CSensors__CInclinometerReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<IInclinometer>, Pointer<IInclinometerReadingChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IInclinometer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IInclinometer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IInclinometer*, ITypedEventHandler<Pointer<IInclinometer>, Pointer<IInclinometerReadingChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IInclinometer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IInclinometer.xml' path='doc/member[@name="IInclinometer.remove_ReadingChanged"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IInclinometer : IInclinometer.Interface, INativeGui
         HRESULT get_ReportInterval([NativeTypeName("UINT32 *")] uint* value);
 
         [VtblIndex(10)]
-        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CInclinometer_Windows__CDevices__CSensors__CInclinometerReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CInclinometer_Windows__CDevices__CSensors__CInclinometerReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<IInclinometer>, Pointer<IInclinometerReadingChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_ReadingChanged(EventRegistrationToken token);
@@ -174,7 +174,7 @@ public unsafe partial struct IInclinometer : IInclinometer.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_ReportInterval;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CInclinometer_Windows__CDevices__CSensors__CInclinometerReadingChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ReadingChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInclinometer>, Pointer<IInclinometerReadingChangedEventArgs>>*, EventRegistrationToken*, int> add_ReadingChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ReadingChanged;

@@ -74,15 +74,15 @@ public unsafe partial struct IGattServiceProviderConnectionStatics : IGattServic
     /// <include file='IGattServiceProviderConnectionStatics.xml' path='doc/member[@name="IGattServiceProviderConnectionStatics.get_AllServices"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_AllServices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CDevices__CBluetooth__CBackground__CGattServiceProviderConnection_t **")] IMapView<HSTRING, IntPtr>** value)
+    public HRESULT get_AllServices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CDevices__CBluetooth__CBackground__CGattServiceProviderConnection_t **")] IMapView<HSTRING, Pointer<IGattServiceProviderConnection>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattServiceProviderConnectionStatics*, IMapView<HSTRING, IntPtr>**, int>)(lpVtbl[6]))((IGattServiceProviderConnectionStatics*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IGattServiceProviderConnectionStatics*, IMapView<HSTRING, Pointer<IGattServiceProviderConnection>>**, int>)(lpVtbl[6]))((IGattServiceProviderConnectionStatics*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_AllServices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CDevices__CBluetooth__CBackground__CGattServiceProviderConnection_t **")] IMapView<HSTRING, IntPtr>** value);
+        HRESULT get_AllServices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CDevices__CBluetooth__CBackground__CGattServiceProviderConnection_t **")] IMapView<HSTRING, Pointer<IGattServiceProviderConnection>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IGattServiceProviderConnectionStatics : IGattServic
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CDevices__CBluetooth__CBackground__CGattServiceProviderConnection_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, IntPtr>**, int> get_AllServices;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, Pointer<IGattServiceProviderConnection>>**, int> get_AllServices;
     }
 }

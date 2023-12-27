@@ -98,17 +98,17 @@ public unsafe partial struct IWebAuthenticationBrokerStatics2 : IWebAuthenticati
     /// <include file='IWebAuthenticationBrokerStatics2.xml' path='doc/member[@name="IWebAuthenticationBrokerStatics2.AuthenticateSilentlyAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT AuthenticateSilentlyAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT AuthenticateSilentlyAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **")] IAsyncOperation<Pointer<IWebAuthenticationResult>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationBrokerStatics2*, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IWebAuthenticationBrokerStatics2*)Unsafe.AsPointer(ref this), requestUri, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationBrokerStatics2*, IUriRuntimeClass*, IAsyncOperation<Pointer<IWebAuthenticationResult>>**, int>)(lpVtbl[9]))((IWebAuthenticationBrokerStatics2*)Unsafe.AsPointer(ref this), requestUri, asyncInfo);
     }
 
     /// <include file='IWebAuthenticationBrokerStatics2.xml' path='doc/member[@name="IWebAuthenticationBrokerStatics2.AuthenticateSilentlyWithOptionsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT AuthenticateSilentlyWithOptionsAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Security::Authentication::Web::WebAuthenticationOptions")] WebAuthenticationOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT AuthenticateSilentlyWithOptionsAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Security::Authentication::Web::WebAuthenticationOptions")] WebAuthenticationOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **")] IAsyncOperation<Pointer<IWebAuthenticationResult>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationBrokerStatics2*, IUriRuntimeClass*, WebAuthenticationOptions, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IWebAuthenticationBrokerStatics2*)Unsafe.AsPointer(ref this), requestUri, options, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAuthenticationBrokerStatics2*, IUriRuntimeClass*, WebAuthenticationOptions, IAsyncOperation<Pointer<IWebAuthenticationResult>>**, int>)(lpVtbl[10]))((IWebAuthenticationBrokerStatics2*)Unsafe.AsPointer(ref this), requestUri, options, asyncInfo);
     }
 
     public interface Interface : IInspectable.Interface
@@ -123,10 +123,10 @@ public unsafe partial struct IWebAuthenticationBrokerStatics2 : IWebAuthenticati
         HRESULT AuthenticateWithCallbackUriContinuationDataAndOptionsAndContinue([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* callbackUri, [NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* continuationData, [NativeTypeName("ABI::Windows::Security::Authentication::Web::WebAuthenticationOptions")] WebAuthenticationOptions options);
 
         [VtblIndex(9)]
-        HRESULT AuthenticateSilentlyAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT AuthenticateSilentlyAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **")] IAsyncOperation<Pointer<IWebAuthenticationResult>>** asyncInfo);
 
         [VtblIndex(10)]
-        HRESULT AuthenticateSilentlyWithOptionsAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Security::Authentication::Web::WebAuthenticationOptions")] WebAuthenticationOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT AuthenticateSilentlyWithOptionsAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* requestUri, [NativeTypeName("ABI::Windows::Security::Authentication::Web::WebAuthenticationOptions")] WebAuthenticationOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **")] IAsyncOperation<Pointer<IWebAuthenticationResult>>** asyncInfo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -160,9 +160,9 @@ public unsafe partial struct IWebAuthenticationBrokerStatics2 : IWebAuthenticati
         public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IUriRuntimeClass*, IPropertySet*, WebAuthenticationOptions, int> AuthenticateWithCallbackUriContinuationDataAndOptionsAndContinue;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int> AuthenticateSilentlyAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperation<Pointer<IWebAuthenticationResult>>**, int> AuthenticateSilentlyAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Security::Authentication::Web::WebAuthenticationOptions, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CAuthentication__CWeb__CWebAuthenticationResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, WebAuthenticationOptions, IAsyncOperation<IntPtr>**, int> AuthenticateSilentlyWithOptionsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, WebAuthenticationOptions, IAsyncOperation<Pointer<IWebAuthenticationResult>>**, int> AuthenticateSilentlyWithOptionsAsync;
     }
 }

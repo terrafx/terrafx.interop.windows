@@ -106,9 +106,9 @@ public unsafe partial struct IProjectionManagerStatics : IProjectionManagerStati
     /// <include file='IProjectionManagerStatics.xml' path='doc/member[@name="IProjectionManagerStatics.add_ProjectionDisplayAvailableChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_ProjectionDisplayAvailableChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ProjectionDisplayAvailableChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IProjectionManagerStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IProjectionManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IProjectionManagerStatics*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IProjectionManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IProjectionManagerStatics.xml' path='doc/member[@name="IProjectionManagerStatics.remove_ProjectionDisplayAvailableChanged"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IProjectionManagerStatics : IProjectionManagerStati
         HRESULT get_ProjectionDisplayAvailable([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(10)]
-        HRESULT add_ProjectionDisplayAvailableChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ProjectionDisplayAvailableChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_ProjectionDisplayAvailableChanged(EventRegistrationToken token);
@@ -174,7 +174,7 @@ public unsafe partial struct IProjectionManagerStatics : IProjectionManagerStati
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_ProjectionDisplayAvailable;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_ProjectionDisplayAvailableChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ProjectionDisplayAvailableChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ProjectionDisplayAvailableChanged;

@@ -90,9 +90,9 @@ public unsafe partial struct IGattCharacteristicNotificationTriggerDetails2 : IG
     /// <include file='IGattCharacteristicNotificationTriggerDetails2.xml' path='doc/member[@name="IGattCharacteristicNotificationTriggerDetails2.get_ValueChangedEvents"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_ValueChangedEvents([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattValueChangedEventArgs_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_ValueChangedEvents([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattValueChangedEventArgs_t **")] IVectorView<Pointer<IGattValueChangedEventArgs>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristicNotificationTriggerDetails2*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((IGattCharacteristicNotificationTriggerDetails2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IGattCharacteristicNotificationTriggerDetails2*, IVectorView<Pointer<IGattValueChangedEventArgs>>**, int>)(lpVtbl[8]))((IGattCharacteristicNotificationTriggerDetails2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IGattCharacteristicNotificationTriggerDetails2 : IG
         HRESULT get_EventTriggeringMode([NativeTypeName("ABI::Windows::Devices::Bluetooth::Background::BluetoothEventTriggeringMode *")] BluetoothEventTriggeringMode* value);
 
         [VtblIndex(8)]
-        HRESULT get_ValueChangedEvents([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattValueChangedEventArgs_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_ValueChangedEvents([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattValueChangedEventArgs_t **")] IVectorView<Pointer<IGattValueChangedEventArgs>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IGattCharacteristicNotificationTriggerDetails2 : IG
         public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothEventTriggeringMode*, int> get_EventTriggeringMode;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattValueChangedEventArgs_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_ValueChangedEvents;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IGattValueChangedEventArgs>>**, int> get_ValueChangedEvents;
     }
 }

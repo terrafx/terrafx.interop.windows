@@ -116,9 +116,9 @@ public unsafe partial struct IContactPickerUI : IContactPickerUI.Interface, INat
     /// <include file='IContactPickerUI.xml' path='doc/member[@name="IContactPickerUI.add_ContactRemoved"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_ContactRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CProvider__CContactPickerUI_Windows__CApplicationModel__CContacts__CProvider__CContactRemovedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ContactRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CProvider__CContactPickerUI_Windows__CApplicationModel__CContacts__CProvider__CContactRemovedEventArgs_t *")] ITypedEventHandler<Pointer<IContactPickerUI>, Pointer<IContactRemovedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactPickerUI*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IContactPickerUI*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IContactPickerUI*, ITypedEventHandler<Pointer<IContactPickerUI>, Pointer<IContactRemovedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IContactPickerUI*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IContactPickerUI.xml' path='doc/member[@name="IContactPickerUI.remove_ContactRemoved"]/*' />
@@ -149,7 +149,7 @@ public unsafe partial struct IContactPickerUI : IContactPickerUI.Interface, INat
         HRESULT get_SelectionMode([NativeTypeName("ABI::Windows::ApplicationModel::Contacts::ContactSelectionMode *")] ContactSelectionMode* value);
 
         [VtblIndex(11)]
-        HRESULT add_ContactRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CProvider__CContactPickerUI_Windows__CApplicationModel__CContacts__CProvider__CContactRemovedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ContactRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CProvider__CContactPickerUI_Windows__CApplicationModel__CContacts__CProvider__CContactRemovedEventArgs_t *")] ITypedEventHandler<Pointer<IContactPickerUI>, Pointer<IContactRemovedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_ContactRemoved(EventRegistrationToken token);
@@ -194,7 +194,7 @@ public unsafe partial struct IContactPickerUI : IContactPickerUI.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, ContactSelectionMode*, int> get_SelectionMode;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CContacts__CProvider__CContactPickerUI_Windows__CApplicationModel__CContacts__CProvider__CContactRemovedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ContactRemoved;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IContactPickerUI>, Pointer<IContactRemovedEventArgs>>*, EventRegistrationToken*, int> add_ContactRemoved;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ContactRemoved;

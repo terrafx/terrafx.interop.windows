@@ -106,9 +106,9 @@ public unsafe partial struct IAccelerometer : IAccelerometer.Interface, INativeG
     /// <include file='IAccelerometer.xml' path='doc/member[@name="IAccelerometer.add_ReadingChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAccelerometer>, Pointer<IAccelerometerReadingChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAccelerometer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IAccelerometer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAccelerometer*, ITypedEventHandler<Pointer<IAccelerometer>, Pointer<IAccelerometerReadingChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IAccelerometer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAccelerometer.xml' path='doc/member[@name="IAccelerometer.remove_ReadingChanged"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IAccelerometer : IAccelerometer.Interface, INativeG
     /// <include file='IAccelerometer.xml' path='doc/member[@name="IAccelerometer.add_Shaken"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_Shaken([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerShakenEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Shaken([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerShakenEventArgs_t *")] ITypedEventHandler<Pointer<IAccelerometer>, Pointer<IAccelerometerShakenEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAccelerometer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IAccelerometer*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAccelerometer*, ITypedEventHandler<Pointer<IAccelerometer>, Pointer<IAccelerometerShakenEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IAccelerometer*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAccelerometer.xml' path='doc/member[@name="IAccelerometer.remove_Shaken"]/*' />
@@ -150,13 +150,13 @@ public unsafe partial struct IAccelerometer : IAccelerometer.Interface, INativeG
         HRESULT get_ReportInterval([NativeTypeName("UINT32 *")] uint* value);
 
         [VtblIndex(10)]
-        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerReadingChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ReadingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerReadingChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAccelerometer>, Pointer<IAccelerometerReadingChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_ReadingChanged(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT add_Shaken([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerShakenEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Shaken([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerShakenEventArgs_t *")] ITypedEventHandler<Pointer<IAccelerometer>, Pointer<IAccelerometerShakenEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_Shaken(EventRegistrationToken token);
@@ -196,13 +196,13 @@ public unsafe partial struct IAccelerometer : IAccelerometer.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_ReportInterval;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerReadingChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ReadingChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAccelerometer>, Pointer<IAccelerometerReadingChangedEventArgs>>*, EventRegistrationToken*, int> add_ReadingChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ReadingChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CSensors__CAccelerometer_Windows__CDevices__CSensors__CAccelerometerShakenEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Shaken;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAccelerometer>, Pointer<IAccelerometerShakenEventArgs>>*, EventRegistrationToken*, int> add_Shaken;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Shaken;

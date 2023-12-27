@@ -74,9 +74,9 @@ public unsafe partial struct IMediaCapture6 : IMediaCapture6.Interface, INativeG
     /// <include file='IMediaCapture6.xml' path='doc/member[@name="IMediaCapture6.add_CaptureDeviceExclusiveControlStatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_CaptureDeviceExclusiveControlStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_Windows__CMedia__CCapture__CMediaCaptureDeviceExclusiveControlStatusChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_CaptureDeviceExclusiveControlStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_Windows__CMedia__CCapture__CMediaCaptureDeviceExclusiveControlStatusChangedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture6*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaCapture6*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture6*, ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaCapture6*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaCapture6.xml' path='doc/member[@name="IMediaCapture6.remove_CaptureDeviceExclusiveControlStatusChanged"]/*' />
@@ -90,21 +90,21 @@ public unsafe partial struct IMediaCapture6 : IMediaCapture6.Interface, INativeG
     /// <include file='IMediaCapture6.xml' path='doc/member[@name="IMediaCapture6.CreateMultiSourceFrameReaderAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT CreateMultiSourceFrameReaderAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_t *")] IIterable<IntPtr>* inputSources, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT CreateMultiSourceFrameReaderAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_t *")] IIterable<Pointer<IMediaFrameSource>>* inputSources, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_t **")] IAsyncOperation<Pointer<IMultiSourceMediaFrameReader>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCapture6*, IIterable<IntPtr>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IMediaCapture6*)Unsafe.AsPointer(ref this), inputSources, value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCapture6*, IIterable<Pointer<IMediaFrameSource>>*, IAsyncOperation<Pointer<IMultiSourceMediaFrameReader>>**, int>)(lpVtbl[8]))((IMediaCapture6*)Unsafe.AsPointer(ref this), inputSources, value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_CaptureDeviceExclusiveControlStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_Windows__CMedia__CCapture__CMediaCaptureDeviceExclusiveControlStatusChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_CaptureDeviceExclusiveControlStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_Windows__CMedia__CCapture__CMediaCaptureDeviceExclusiveControlStatusChangedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_CaptureDeviceExclusiveControlStatusChanged(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT CreateMultiSourceFrameReaderAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_t *")] IIterable<IntPtr>* inputSources, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT CreateMultiSourceFrameReaderAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_t *")] IIterable<Pointer<IMediaFrameSource>>* inputSources, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_t **")] IAsyncOperation<Pointer<IMultiSourceMediaFrameReader>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -129,12 +129,12 @@ public unsafe partial struct IMediaCapture6 : IMediaCapture6.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CMediaCapture_Windows__CMedia__CCapture__CMediaCaptureDeviceExclusiveControlStatusChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CaptureDeviceExclusiveControlStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaCapture>, Pointer<IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs>>*, EventRegistrationToken*, int> add_CaptureDeviceExclusiveControlStatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CaptureDeviceExclusiveControlStatusChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CCapture__CFrames__CMediaFrameSource_t *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCapture__CFrames__CMultiSourceMediaFrameReader_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IAsyncOperation<IntPtr>**, int> CreateMultiSourceFrameReaderAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IMediaFrameSource>>*, IAsyncOperation<Pointer<IMultiSourceMediaFrameReader>>**, int> CreateMultiSourceFrameReaderAsync;
     }
 }

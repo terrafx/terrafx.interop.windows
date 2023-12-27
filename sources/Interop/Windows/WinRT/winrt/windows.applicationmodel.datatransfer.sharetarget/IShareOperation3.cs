@@ -74,15 +74,15 @@ public unsafe partial struct IShareOperation3 : IShareOperation3.Interface, INat
     /// <include file='IShareOperation3.xml' path='doc/member[@name="IShareOperation3.get_Contacts"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Contacts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Contacts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IVectorView<Pointer<IContact>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IShareOperation3*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IShareOperation3*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IShareOperation3*, IVectorView<Pointer<IContact>>**, int>)(lpVtbl[6]))((IShareOperation3*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Contacts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Contacts([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **")] IVectorView<Pointer<IContact>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IShareOperation3 : IShareOperation3.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContact_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Contacts;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IContact>>**, int> get_Contacts;
     }
 }

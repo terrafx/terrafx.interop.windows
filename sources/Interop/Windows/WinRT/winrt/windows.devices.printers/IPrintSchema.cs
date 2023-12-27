@@ -74,37 +74,37 @@ public unsafe partial struct IPrintSchema : IPrintSchema.Interface, INativeGuid
     /// <include file='IPrintSchema.xml' path='doc/member[@name="IPrintSchema.GetDefaultPrintTicketAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetDefaultPrintTicketAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetDefaultPrintTicketAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPrintSchema*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IPrintSchema*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IPrintSchema*, IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>**, int>)(lpVtbl[6]))((IPrintSchema*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IPrintSchema.xml' path='doc/member[@name="IPrintSchema.GetCapabilitiesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetCapabilitiesAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType *")] IRandomAccessStreamWithContentType* constrainTicket, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetCapabilitiesAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType *")] IRandomAccessStreamWithContentType* constrainTicket, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPrintSchema*, IRandomAccessStreamWithContentType*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IPrintSchema*)Unsafe.AsPointer(ref this), constrainTicket, operation);
+        return ((delegate* unmanaged[MemberFunction]<IPrintSchema*, IRandomAccessStreamWithContentType*, IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>**, int>)(lpVtbl[7]))((IPrintSchema*)Unsafe.AsPointer(ref this), constrainTicket, operation);
     }
 
     /// <include file='IPrintSchema.xml' path='doc/member[@name="IPrintSchema.MergeAndValidateWithDefaultPrintTicketAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT MergeAndValidateWithDefaultPrintTicketAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType *")] IRandomAccessStreamWithContentType* deltaTicket, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT MergeAndValidateWithDefaultPrintTicketAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType *")] IRandomAccessStreamWithContentType* deltaTicket, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPrintSchema*, IRandomAccessStreamWithContentType*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IPrintSchema*)Unsafe.AsPointer(ref this), deltaTicket, operation);
+        return ((delegate* unmanaged[MemberFunction]<IPrintSchema*, IRandomAccessStreamWithContentType*, IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>**, int>)(lpVtbl[8]))((IPrintSchema*)Unsafe.AsPointer(ref this), deltaTicket, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetDefaultPrintTicketAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetDefaultPrintTicketAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>** operation);
 
         [VtblIndex(7)]
-        HRESULT GetCapabilitiesAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType *")] IRandomAccessStreamWithContentType* constrainTicket, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetCapabilitiesAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType *")] IRandomAccessStreamWithContentType* constrainTicket, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>** operation);
 
         [VtblIndex(8)]
-        HRESULT MergeAndValidateWithDefaultPrintTicketAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType *")] IRandomAccessStreamWithContentType* deltaTicket, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT MergeAndValidateWithDefaultPrintTicketAsync([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType *")] IRandomAccessStreamWithContentType* deltaTicket, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -129,12 +129,12 @@ public unsafe partial struct IPrintSchema : IPrintSchema.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetDefaultPrintTicketAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>**, int> GetDefaultPrintTicketAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStreamWithContentType*, IAsyncOperation<IntPtr>**, int> GetCapabilitiesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStreamWithContentType*, IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>**, int> GetCapabilitiesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IRandomAccessStreamWithContentType *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStreamWithContentType*, IAsyncOperation<IntPtr>**, int> MergeAndValidateWithDefaultPrintTicketAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStreamWithContentType*, IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>**, int> MergeAndValidateWithDefaultPrintTicketAsync;
     }
 }

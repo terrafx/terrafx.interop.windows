@@ -74,9 +74,9 @@ public unsafe partial struct ICoreInputView2 : ICoreInputView2.Interface, INativ
     /// <include file='ICoreInputView2.xml' path='doc/member[@name="ICoreInputView2.add_XYFocusTransferringFromPrimaryView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_XYFocusTransferringFromPrimaryView([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_Windows__CUI__CViewManagement__CCore__CCoreInputViewTransferringXYFocusEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_XYFocusTransferringFromPrimaryView([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_Windows__CUI__CViewManagement__CCore__CCoreInputViewTransferringXYFocusEventArgs_t *")] ITypedEventHandler<Pointer<ICoreInputView>, Pointer<ICoreInputViewTransferringXYFocusEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreInputView2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreInputView2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreInputView2*, ITypedEventHandler<Pointer<ICoreInputView>, Pointer<ICoreInputViewTransferringXYFocusEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreInputView2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreInputView2.xml' path='doc/member[@name="ICoreInputView2.remove_XYFocusTransferringFromPrimaryView"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct ICoreInputView2 : ICoreInputView2.Interface, INativ
     /// <include file='ICoreInputView2.xml' path='doc/member[@name="ICoreInputView2.add_XYFocusTransferredToPrimaryView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_XYFocusTransferredToPrimaryView([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_XYFocusTransferredToPrimaryView([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreInputView>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreInputView2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICoreInputView2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreInputView2*, ITypedEventHandler<Pointer<ICoreInputView>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICoreInputView2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreInputView2.xml' path='doc/member[@name="ICoreInputView2.remove_XYFocusTransferredToPrimaryView"]/*' />
@@ -114,13 +114,13 @@ public unsafe partial struct ICoreInputView2 : ICoreInputView2.Interface, INativ
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_XYFocusTransferringFromPrimaryView([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_Windows__CUI__CViewManagement__CCore__CCoreInputViewTransferringXYFocusEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_XYFocusTransferringFromPrimaryView([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_Windows__CUI__CViewManagement__CCore__CCoreInputViewTransferringXYFocusEventArgs_t *")] ITypedEventHandler<Pointer<ICoreInputView>, Pointer<ICoreInputViewTransferringXYFocusEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_XYFocusTransferringFromPrimaryView(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_XYFocusTransferredToPrimaryView([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_XYFocusTransferredToPrimaryView([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreInputView>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_XYFocusTransferredToPrimaryView(EventRegistrationToken token);
@@ -151,13 +151,13 @@ public unsafe partial struct ICoreInputView2 : ICoreInputView2.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_Windows__CUI__CViewManagement__CCore__CCoreInputViewTransferringXYFocusEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_XYFocusTransferringFromPrimaryView;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreInputView>, Pointer<ICoreInputViewTransferringXYFocusEventArgs>>*, EventRegistrationToken*, int> add_XYFocusTransferringFromPrimaryView;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_XYFocusTransferringFromPrimaryView;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_XYFocusTransferredToPrimaryView;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreInputView>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_XYFocusTransferredToPrimaryView;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_XYFocusTransferredToPrimaryView;

@@ -114,33 +114,33 @@ public unsafe partial struct IBluetoothLEAdvertisement : IBluetoothLEAdvertiseme
     /// <include file='IBluetoothLEAdvertisement.xml' path='doc/member[@name="IBluetoothLEAdvertisement.get_ManufacturerData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_ManufacturerData([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEManufacturerData_t **")] IVector<IntPtr>** value)
+    public HRESULT get_ManufacturerData([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEManufacturerData_t **")] IVector<Pointer<IBluetoothLEManufacturerData>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisement*, IVector<IntPtr>**, int>)(lpVtbl[11]))((IBluetoothLEAdvertisement*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisement*, IVector<Pointer<IBluetoothLEManufacturerData>>**, int>)(lpVtbl[11]))((IBluetoothLEAdvertisement*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBluetoothLEAdvertisement.xml' path='doc/member[@name="IBluetoothLEAdvertisement.get_DataSections"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_DataSections([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementDataSection_t **")] IVector<IntPtr>** value)
+    public HRESULT get_DataSections([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementDataSection_t **")] IVector<Pointer<IBluetoothLEAdvertisementDataSection>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisement*, IVector<IntPtr>**, int>)(lpVtbl[12]))((IBluetoothLEAdvertisement*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisement*, IVector<Pointer<IBluetoothLEAdvertisementDataSection>>**, int>)(lpVtbl[12]))((IBluetoothLEAdvertisement*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IBluetoothLEAdvertisement.xml' path='doc/member[@name="IBluetoothLEAdvertisement.GetManufacturerDataByCompanyId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetManufacturerDataByCompanyId([NativeTypeName("UINT16")] ushort companyId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEManufacturerData_t **")] IVectorView<IntPtr>** dataList)
+    public HRESULT GetManufacturerDataByCompanyId([NativeTypeName("UINT16")] ushort companyId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEManufacturerData_t **")] IVectorView<Pointer<IBluetoothLEManufacturerData>>** dataList)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisement*, ushort, IVectorView<IntPtr>**, int>)(lpVtbl[13]))((IBluetoothLEAdvertisement*)Unsafe.AsPointer(ref this), companyId, dataList);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisement*, ushort, IVectorView<Pointer<IBluetoothLEManufacturerData>>**, int>)(lpVtbl[13]))((IBluetoothLEAdvertisement*)Unsafe.AsPointer(ref this), companyId, dataList);
     }
 
     /// <include file='IBluetoothLEAdvertisement.xml' path='doc/member[@name="IBluetoothLEAdvertisement.GetSectionsByType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetSectionsByType(byte type, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementDataSection_t **")] IVectorView<IntPtr>** sectionList)
+    public HRESULT GetSectionsByType(byte type, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementDataSection_t **")] IVectorView<Pointer<IBluetoothLEAdvertisementDataSection>>** sectionList)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisement*, byte, IVectorView<IntPtr>**, int>)(lpVtbl[14]))((IBluetoothLEAdvertisement*)Unsafe.AsPointer(ref this), type, sectionList);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEAdvertisement*, byte, IVectorView<Pointer<IBluetoothLEAdvertisementDataSection>>**, int>)(lpVtbl[14]))((IBluetoothLEAdvertisement*)Unsafe.AsPointer(ref this), type, sectionList);
     }
 
     public interface Interface : IInspectable.Interface
@@ -161,16 +161,16 @@ public unsafe partial struct IBluetoothLEAdvertisement : IBluetoothLEAdvertiseme
         HRESULT get_ServiceUuids([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_GUID_t **")] IVector<Guid>** value);
 
         [VtblIndex(11)]
-        HRESULT get_ManufacturerData([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEManufacturerData_t **")] IVector<IntPtr>** value);
+        HRESULT get_ManufacturerData([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEManufacturerData_t **")] IVector<Pointer<IBluetoothLEManufacturerData>>** value);
 
         [VtblIndex(12)]
-        HRESULT get_DataSections([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementDataSection_t **")] IVector<IntPtr>** value);
+        HRESULT get_DataSections([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementDataSection_t **")] IVector<Pointer<IBluetoothLEAdvertisementDataSection>>** value);
 
         [VtblIndex(13)]
-        HRESULT GetManufacturerDataByCompanyId([NativeTypeName("UINT16")] ushort companyId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEManufacturerData_t **")] IVectorView<IntPtr>** dataList);
+        HRESULT GetManufacturerDataByCompanyId([NativeTypeName("UINT16")] ushort companyId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEManufacturerData_t **")] IVectorView<Pointer<IBluetoothLEManufacturerData>>** dataList);
 
         [VtblIndex(14)]
-        HRESULT GetSectionsByType(byte type, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementDataSection_t **")] IVectorView<IntPtr>** sectionList);
+        HRESULT GetSectionsByType(byte type, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementDataSection_t **")] IVectorView<Pointer<IBluetoothLEAdvertisementDataSection>>** sectionList);
     }
 
     public partial struct Vtbl<TSelf>
@@ -210,15 +210,15 @@ public unsafe partial struct IBluetoothLEAdvertisement : IBluetoothLEAdvertiseme
         public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Guid>**, int> get_ServiceUuids;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEManufacturerData_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_ManufacturerData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IBluetoothLEManufacturerData>>**, int> get_ManufacturerData;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementDataSection_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_DataSections;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IBluetoothLEAdvertisementDataSection>>**, int> get_DataSections;
 
         [NativeTypeName("HRESULT (UINT16, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEManufacturerData_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, IVectorView<IntPtr>**, int> GetManufacturerDataByCompanyId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, IVectorView<Pointer<IBluetoothLEManufacturerData>>**, int> GetManufacturerDataByCompanyId;
 
         [NativeTypeName("HRESULT (BYTE, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CAdvertisement__CBluetoothLEAdvertisementDataSection_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, byte, IVectorView<IntPtr>**, int> GetSectionsByType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte, IVectorView<Pointer<IBluetoothLEAdvertisementDataSection>>**, int> GetSectionsByType;
     }
 }

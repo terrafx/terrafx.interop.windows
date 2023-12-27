@@ -76,16 +76,16 @@ public unsafe partial struct ISmsDeviceStatics2 : ISmsDeviceStatics2.Interface, 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [Obsolete("ISmsDeviceStatics2 may be altered or unavailable for releases after Windows 10.")]
-    public HRESULT FromNetworkAccountIdAsync(HSTRING networkAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSms__CSmsDevice_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT FromNetworkAccountIdAsync(HSTRING networkAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSms__CSmsDevice_t **")] IAsyncOperation<Pointer<ISmsDevice>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmsDeviceStatics2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ISmsDeviceStatics2*)Unsafe.AsPointer(ref this), networkAccountId, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISmsDeviceStatics2*, HSTRING, IAsyncOperation<Pointer<ISmsDevice>>**, int>)(lpVtbl[6]))((ISmsDeviceStatics2*)Unsafe.AsPointer(ref this), networkAccountId, asyncInfo);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
         [Obsolete("ISmsDeviceStatics2 may be altered or unavailable for releases after Windows 10.")]
-        HRESULT FromNetworkAccountIdAsync(HSTRING networkAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSms__CSmsDevice_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT FromNetworkAccountIdAsync(HSTRING networkAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSms__CSmsDevice_t **")] IAsyncOperation<Pointer<ISmsDevice>>** asyncInfo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -111,6 +111,6 @@ public unsafe partial struct ISmsDeviceStatics2 : ISmsDeviceStatics2.Interface, 
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSms__CSmsDevice_t **) __attribute__((stdcall))")]
         [Obsolete("ISmsDeviceStatics2 may be altered or unavailable for releases after Windows 10.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromNetworkAccountIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<ISmsDevice>>**, int> FromNetworkAccountIdAsync;
     }
 }

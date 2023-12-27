@@ -74,26 +74,26 @@ public unsafe partial struct IStorageFile2 : IStorageFile2.Interface, INativeGui
     /// <include file='IStorageFile2.xml' path='doc/member[@name="IStorageFile2.OpenWithOptionsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT OpenWithOptionsAsync([NativeTypeName("ABI::Windows::Storage::FileAccessMode")] FileAccessMode accessMode, [NativeTypeName("ABI::Windows::Storage::StorageOpenOptions")] StorageOpenOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT OpenWithOptionsAsync([NativeTypeName("ABI::Windows::Storage::FileAccessMode")] FileAccessMode accessMode, [NativeTypeName("ABI::Windows::Storage::StorageOpenOptions")] StorageOpenOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **")] IAsyncOperation<Pointer<IRandomAccessStream>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFile2*, FileAccessMode, StorageOpenOptions, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStorageFile2*)Unsafe.AsPointer(ref this), accessMode, options, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFile2*, FileAccessMode, StorageOpenOptions, IAsyncOperation<Pointer<IRandomAccessStream>>**, int>)(lpVtbl[6]))((IStorageFile2*)Unsafe.AsPointer(ref this), accessMode, options, operation);
     }
 
     /// <include file='IStorageFile2.xml' path='doc/member[@name="IStorageFile2.OpenTransactedWriteWithOptionsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT OpenTransactedWriteWithOptionsAsync([NativeTypeName("ABI::Windows::Storage::StorageOpenOptions")] StorageOpenOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageStreamTransaction_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT OpenTransactedWriteWithOptionsAsync([NativeTypeName("ABI::Windows::Storage::StorageOpenOptions")] StorageOpenOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageStreamTransaction_t **")] IAsyncOperation<Pointer<IStorageStreamTransaction>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFile2*, StorageOpenOptions, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IStorageFile2*)Unsafe.AsPointer(ref this), options, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFile2*, StorageOpenOptions, IAsyncOperation<Pointer<IStorageStreamTransaction>>**, int>)(lpVtbl[7]))((IStorageFile2*)Unsafe.AsPointer(ref this), options, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT OpenWithOptionsAsync([NativeTypeName("ABI::Windows::Storage::FileAccessMode")] FileAccessMode accessMode, [NativeTypeName("ABI::Windows::Storage::StorageOpenOptions")] StorageOpenOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT OpenWithOptionsAsync([NativeTypeName("ABI::Windows::Storage::FileAccessMode")] FileAccessMode accessMode, [NativeTypeName("ABI::Windows::Storage::StorageOpenOptions")] StorageOpenOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **")] IAsyncOperation<Pointer<IRandomAccessStream>>** operation);
 
         [VtblIndex(7)]
-        HRESULT OpenTransactedWriteWithOptionsAsync([NativeTypeName("ABI::Windows::Storage::StorageOpenOptions")] StorageOpenOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageStreamTransaction_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT OpenTransactedWriteWithOptionsAsync([NativeTypeName("ABI::Windows::Storage::StorageOpenOptions")] StorageOpenOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageStreamTransaction_t **")] IAsyncOperation<Pointer<IStorageStreamTransaction>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IStorageFile2 : IStorageFile2.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::FileAccessMode, ABI::Windows::Storage::StorageOpenOptions, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStream_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, FileAccessMode, StorageOpenOptions, IAsyncOperation<IntPtr>**, int> OpenWithOptionsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FileAccessMode, StorageOpenOptions, IAsyncOperation<Pointer<IRandomAccessStream>>**, int> OpenWithOptionsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::StorageOpenOptions, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageStreamTransaction_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, StorageOpenOptions, IAsyncOperation<IntPtr>**, int> OpenTransactedWriteWithOptionsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, StorageOpenOptions, IAsyncOperation<Pointer<IStorageStreamTransaction>>**, int> OpenTransactedWriteWithOptionsAsync;
     }
 }

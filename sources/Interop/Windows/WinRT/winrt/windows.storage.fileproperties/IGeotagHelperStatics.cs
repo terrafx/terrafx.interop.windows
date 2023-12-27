@@ -74,9 +74,9 @@ public unsafe partial struct IGeotagHelperStatics : IGeotagHelperStatics.Interfa
     /// <include file='IGeotagHelperStatics.xml' path='doc/member[@name="IGeotagHelperStatics.GetGeotagAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetGeotagAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeopoint_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetGeotagAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeopoint_t **")] IAsyncOperation<Pointer<IGeopoint>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGeotagHelperStatics*, IStorageFile*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IGeotagHelperStatics*)Unsafe.AsPointer(ref this), file, operation);
+        return ((delegate* unmanaged[MemberFunction]<IGeotagHelperStatics*, IStorageFile*, IAsyncOperation<Pointer<IGeopoint>>**, int>)(lpVtbl[6]))((IGeotagHelperStatics*)Unsafe.AsPointer(ref this), file, operation);
     }
 
     /// <include file='IGeotagHelperStatics.xml' path='doc/member[@name="IGeotagHelperStatics.SetGeotagFromGeolocatorAsync"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IGeotagHelperStatics : IGeotagHelperStatics.Interfa
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetGeotagAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeopoint_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetGeotagAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeopoint_t **")] IAsyncOperation<Pointer<IGeopoint>>** operation);
 
         [VtblIndex(7)]
         HRESULT SetGeotagFromGeolocatorAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Devices::Geolocation::IGeolocator *")] IGeolocator* geolocator, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
@@ -129,7 +129,7 @@ public unsafe partial struct IGeotagHelperStatics : IGeotagHelperStatics.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeopoint_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<IntPtr>**, int> GetGeotagAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<Pointer<IGeopoint>>**, int> GetGeotagAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Devices::Geolocation::IGeolocator *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IGeolocator*, IAsyncAction**, int> SetGeotagFromGeolocatorAsync;

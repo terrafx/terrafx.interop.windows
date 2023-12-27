@@ -114,9 +114,9 @@ public unsafe partial struct IToastNotifier : IToastNotifier.Interface, INativeG
     /// <include file='IToastNotifier.xml' path='doc/member[@name="IToastNotifier.GetScheduledToastNotifications"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetScheduledToastNotifications([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CScheduledToastNotification_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetScheduledToastNotifications([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CScheduledToastNotification_t **")] IVectorView<Pointer<IScheduledToastNotification>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IToastNotifier*, IVectorView<IntPtr>**, int>)(lpVtbl[11]))((IToastNotifier*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IToastNotifier*, IVectorView<Pointer<IScheduledToastNotification>>**, int>)(lpVtbl[11]))((IToastNotifier*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -137,7 +137,7 @@ public unsafe partial struct IToastNotifier : IToastNotifier.Interface, INativeG
         HRESULT RemoveFromSchedule([NativeTypeName("ABI::Windows::UI::Notifications::IScheduledToastNotification *")] IScheduledToastNotification* scheduledToast);
 
         [VtblIndex(11)]
-        HRESULT GetScheduledToastNotifications([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CScheduledToastNotification_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetScheduledToastNotifications([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CScheduledToastNotification_t **")] IVectorView<Pointer<IScheduledToastNotification>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -177,6 +177,6 @@ public unsafe partial struct IToastNotifier : IToastNotifier.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, IScheduledToastNotification*, int> RemoveFromSchedule;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CScheduledToastNotification_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetScheduledToastNotifications;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IScheduledToastNotification>>**, int> GetScheduledToastNotifications;
     }
 }

@@ -74,15 +74,15 @@ public unsafe partial struct ITileActivatedInfo : ITileActivatedInfo.Interface, 
     /// <include file='ITileActivatedInfo.xml' path='doc/member[@name="ITileActivatedInfo.get_RecentlyShownNotifications"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_RecentlyShownNotifications([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CShownTileNotification_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_RecentlyShownNotifications([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CShownTileNotification_t **")] IVectorView<Pointer<IShownTileNotification>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITileActivatedInfo*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((ITileActivatedInfo*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ITileActivatedInfo*, IVectorView<Pointer<IShownTileNotification>>**, int>)(lpVtbl[6]))((ITileActivatedInfo*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_RecentlyShownNotifications([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CShownTileNotification_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_RecentlyShownNotifications([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CShownTileNotification_t **")] IVectorView<Pointer<IShownTileNotification>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ITileActivatedInfo : ITileActivatedInfo.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CNotifications__CShownTileNotification_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_RecentlyShownNotifications;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IShownTileNotification>>**, int> get_RecentlyShownNotifications;
     }
 }

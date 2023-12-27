@@ -74,9 +74,9 @@ public unsafe partial struct IWebAccountMonitor2 : IWebAccountMonitor2.Interface
     /// <include file='IWebAccountMonitor2.xml' path='doc/member[@name="IWebAccountMonitor2.add_AccountPictureUpdated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_AccountPictureUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AccountPictureUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountEventArgs_t *")] ITypedEventHandler<Pointer<IWebAccountMonitor>, Pointer<IWebAccountEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAccountMonitor2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IWebAccountMonitor2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IWebAccountMonitor2*, ITypedEventHandler<Pointer<IWebAccountMonitor>, Pointer<IWebAccountEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IWebAccountMonitor2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IWebAccountMonitor2.xml' path='doc/member[@name="IWebAccountMonitor2.remove_AccountPictureUpdated"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IWebAccountMonitor2 : IWebAccountMonitor2.Interface
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_AccountPictureUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AccountPictureUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountEventArgs_t *")] ITypedEventHandler<Pointer<IWebAccountMonitor>, Pointer<IWebAccountEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_AccountPictureUpdated(EventRegistrationToken token);
@@ -118,7 +118,7 @@ public unsafe partial struct IWebAccountMonitor2 : IWebAccountMonitor2.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountMonitor_Windows__CSecurity__CAuthentication__CWeb__CCore__CWebAccountEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AccountPictureUpdated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IWebAccountMonitor>, Pointer<IWebAccountEventArgs>>*, EventRegistrationToken*, int> add_AccountPictureUpdated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AccountPictureUpdated;

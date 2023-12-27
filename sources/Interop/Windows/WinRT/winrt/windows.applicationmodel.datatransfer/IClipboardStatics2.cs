@@ -74,9 +74,9 @@ public unsafe partial struct IClipboardStatics2 : IClipboardStatics2.Interface, 
     /// <include file='IClipboardStatics2.xml' path='doc/member[@name="IClipboardStatics2.GetHistoryItemsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetHistoryItemsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetHistoryItemsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_t **")] IAsyncOperation<Pointer<IClipboardHistoryItemsResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IClipboardStatics2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IClipboardStatics2*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IClipboardStatics2*, IAsyncOperation<Pointer<IClipboardHistoryItemsResult>>**, int>)(lpVtbl[6]))((IClipboardStatics2*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IClipboardStatics2.xml' path='doc/member[@name="IClipboardStatics2.ClearHistory"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IClipboardStatics2 : IClipboardStatics2.Interface, 
     /// <include file='IClipboardStatics2.xml' path='doc/member[@name="IClipboardStatics2.add_HistoryChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_HistoryChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_HistoryChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_t *")] IEventHandler<Pointer<IClipboardHistoryChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IClipboardStatics2*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IClipboardStatics2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IClipboardStatics2*, IEventHandler<Pointer<IClipboardHistoryChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IClipboardStatics2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IClipboardStatics2.xml' path='doc/member[@name="IClipboardStatics2.remove_HistoryChanged"]/*' />
@@ -146,9 +146,9 @@ public unsafe partial struct IClipboardStatics2 : IClipboardStatics2.Interface, 
     /// <include file='IClipboardStatics2.xml' path='doc/member[@name="IClipboardStatics2.add_RoamingEnabledChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT add_RoamingEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_RoamingEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IClipboardStatics2*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IClipboardStatics2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IClipboardStatics2*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IClipboardStatics2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IClipboardStatics2.xml' path='doc/member[@name="IClipboardStatics2.remove_RoamingEnabledChanged"]/*' />
@@ -162,9 +162,9 @@ public unsafe partial struct IClipboardStatics2 : IClipboardStatics2.Interface, 
     /// <include file='IClipboardStatics2.xml' path='doc/member[@name="IClipboardStatics2.add_HistoryEnabledChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT add_HistoryEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_HistoryEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IClipboardStatics2*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IClipboardStatics2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IClipboardStatics2*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IClipboardStatics2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IClipboardStatics2.xml' path='doc/member[@name="IClipboardStatics2.remove_HistoryEnabledChanged"]/*' />
@@ -178,7 +178,7 @@ public unsafe partial struct IClipboardStatics2 : IClipboardStatics2.Interface, 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetHistoryItemsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetHistoryItemsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_t **")] IAsyncOperation<Pointer<IClipboardHistoryItemsResult>>** operation);
 
         [VtblIndex(7)]
         HRESULT ClearHistory([NativeTypeName("boolean *")] byte* result);
@@ -199,19 +199,19 @@ public unsafe partial struct IClipboardStatics2 : IClipboardStatics2.Interface, 
         HRESULT SetContentWithOptions([NativeTypeName("ABI::Windows::ApplicationModel::DataTransfer::IDataPackage *")] IDataPackage* content, [NativeTypeName("ABI::Windows::ApplicationModel::DataTransfer::IClipboardContentOptions *")] IClipboardContentOptions* options, [NativeTypeName("boolean *")] byte* result);
 
         [VtblIndex(13)]
-        HRESULT add_HistoryChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_HistoryChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_t *")] IEventHandler<Pointer<IClipboardHistoryChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_HistoryChanged(EventRegistrationToken token);
 
         [VtblIndex(15)]
-        HRESULT add_RoamingEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_RoamingEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(16)]
         HRESULT remove_RoamingEnabledChanged(EventRegistrationToken token);
 
         [VtblIndex(17)]
-        HRESULT add_HistoryEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_HistoryEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(18)]
         HRESULT remove_HistoryEnabledChanged(EventRegistrationToken token);
@@ -239,7 +239,7 @@ public unsafe partial struct IClipboardStatics2 : IClipboardStatics2.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryItemsResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetHistoryItemsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IClipboardHistoryItemsResult>>**, int> GetHistoryItemsAsync;
 
         [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> ClearHistory;
@@ -260,19 +260,19 @@ public unsafe partial struct IClipboardStatics2 : IClipboardStatics2.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, IDataPackage*, IClipboardContentOptions*, byte*, int> SetContentWithOptions;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CDataTransfer__CClipboardHistoryChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_HistoryChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IClipboardHistoryChangedEventArgs>>*, EventRegistrationToken*, int> add_HistoryChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_HistoryChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_RoamingEnabledChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_RoamingEnabledChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RoamingEnabledChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_HistoryEnabledChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_HistoryEnabledChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_HistoryEnabledChanged;

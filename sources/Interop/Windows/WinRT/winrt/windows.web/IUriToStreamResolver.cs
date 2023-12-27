@@ -74,15 +74,15 @@ public unsafe partial struct IUriToStreamResolver : IUriToStreamResolver.Interfa
     /// <include file='IUriToStreamResolver.xml' path='doc/member[@name="IUriToStreamResolver.UriToStreamAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT UriToStreamAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIInputStream_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT UriToStreamAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIInputStream_t **")] IAsyncOperation<Pointer<IInputStream>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUriToStreamResolver*, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IUriToStreamResolver*)Unsafe.AsPointer(ref this), uri, operation);
+        return ((delegate* unmanaged[MemberFunction]<IUriToStreamResolver*, IUriRuntimeClass*, IAsyncOperation<Pointer<IInputStream>>**, int>)(lpVtbl[6]))((IUriToStreamResolver*)Unsafe.AsPointer(ref this), uri, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT UriToStreamAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIInputStream_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT UriToStreamAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIInputStream_t **")] IAsyncOperation<Pointer<IInputStream>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IUriToStreamResolver : IUriToStreamResolver.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIInputStream_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int> UriToStreamAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperation<Pointer<IInputStream>>**, int> UriToStreamAsync;
     }
 }

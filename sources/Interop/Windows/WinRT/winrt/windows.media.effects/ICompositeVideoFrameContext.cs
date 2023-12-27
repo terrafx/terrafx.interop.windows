@@ -74,9 +74,9 @@ public unsafe partial struct ICompositeVideoFrameContext : ICompositeVideoFrameC
     /// <include file='ICompositeVideoFrameContext.xml' path='doc/member[@name="ICompositeVideoFrameContext.get_SurfacesToOverlay"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_SurfacesToOverlay([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_SurfacesToOverlay([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_t **")] IVectorView<Pointer<IDirect3DSurface>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICompositeVideoFrameContext*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((ICompositeVideoFrameContext*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICompositeVideoFrameContext*, IVectorView<Pointer<IDirect3DSurface>>**, int>)(lpVtbl[6]))((ICompositeVideoFrameContext*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICompositeVideoFrameContext.xml' path='doc/member[@name="ICompositeVideoFrameContext.get_BackgroundFrame"]/*' />
@@ -106,7 +106,7 @@ public unsafe partial struct ICompositeVideoFrameContext : ICompositeVideoFrameC
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_SurfacesToOverlay([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_SurfacesToOverlay([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_t **")] IVectorView<Pointer<IDirect3DSurface>>** value);
 
         [VtblIndex(7)]
         HRESULT get_BackgroundFrame([NativeTypeName("ABI::Windows::Media::IVideoFrame **")] IVideoFrame** value);
@@ -140,7 +140,7 @@ public unsafe partial struct ICompositeVideoFrameContext : ICompositeVideoFrameC
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CGraphics__CDirectX__CDirect3D11__CIDirect3DSurface_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_SurfacesToOverlay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IDirect3DSurface>>**, int> get_SurfacesToOverlay;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::IVideoFrame **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IVideoFrame**, int> get_BackgroundFrame;

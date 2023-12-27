@@ -74,15 +74,15 @@ public unsafe partial struct ITextReverseConversionGenerator2 : ITextReverseConv
     /// <include file='ITextReverseConversionGenerator2.xml' path='doc/member[@name="ITextReverseConversionGenerator2.GetPhonemesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetPhonemesAsync(HSTRING input, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CData__CText__CTextPhoneme_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetPhonemesAsync(HSTRING input, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CData__CText__CTextPhoneme_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<ITextPhoneme>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ITextReverseConversionGenerator2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ITextReverseConversionGenerator2*)Unsafe.AsPointer(ref this), input, result);
+        return ((delegate* unmanaged[MemberFunction]<ITextReverseConversionGenerator2*, HSTRING, IAsyncOperation<Pointer<IVectorView<Pointer<ITextPhoneme>>>>**, int>)(lpVtbl[6]))((ITextReverseConversionGenerator2*)Unsafe.AsPointer(ref this), input, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetPhonemesAsync(HSTRING input, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CData__CText__CTextPhoneme_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetPhonemesAsync(HSTRING input, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CData__CText__CTextPhoneme_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<ITextPhoneme>>>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ITextReverseConversionGenerator2 : ITextReverseConv
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CData__CText__CTextPhoneme_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> GetPhonemesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IVectorView<Pointer<ITextPhoneme>>>>**, int> GetPhonemesAsync;
     }
 }

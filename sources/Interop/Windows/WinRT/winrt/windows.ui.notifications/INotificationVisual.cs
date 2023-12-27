@@ -90,9 +90,9 @@ public unsafe partial struct INotificationVisual : INotificationVisual.Interface
     /// <include file='INotificationVisual.xml' path='doc/member[@name="INotificationVisual.get_Bindings"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Bindings([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CNotifications__CNotificationBinding_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Bindings([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CNotifications__CNotificationBinding_t **")] IVector<Pointer<INotificationBinding>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<INotificationVisual*, IVector<IntPtr>**, int>)(lpVtbl[8]))((INotificationVisual*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<INotificationVisual*, IVector<Pointer<INotificationBinding>>**, int>)(lpVtbl[8]))((INotificationVisual*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='INotificationVisual.xml' path='doc/member[@name="INotificationVisual.GetBinding"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct INotificationVisual : INotificationVisual.Interface
         HRESULT put_Language(HSTRING value);
 
         [VtblIndex(8)]
-        HRESULT get_Bindings([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CNotifications__CNotificationBinding_t **")] IVector<IntPtr>** value);
+        HRESULT get_Bindings([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CNotifications__CNotificationBinding_t **")] IVector<Pointer<INotificationBinding>>** value);
 
         [VtblIndex(9)]
         HRESULT GetBinding(HSTRING templateName, [NativeTypeName("ABI::Windows::UI::Notifications::INotificationBinding **")] INotificationBinding** result);
@@ -146,7 +146,7 @@ public unsafe partial struct INotificationVisual : INotificationVisual.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_Language;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CNotifications__CNotificationBinding_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Bindings;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<INotificationBinding>>**, int> get_Bindings;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::UI::Notifications::INotificationBinding **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, INotificationBinding**, int> GetBinding;

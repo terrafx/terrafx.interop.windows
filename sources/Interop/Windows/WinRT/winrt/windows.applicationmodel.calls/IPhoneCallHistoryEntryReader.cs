@@ -74,15 +74,15 @@ public unsafe partial struct IPhoneCallHistoryEntryReader : IPhoneCallHistoryEnt
     /// <include file='IPhoneCallHistoryEntryReader.xml' path='doc/member[@name="IPhoneCallHistoryEntryReader.ReadBatchAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IPhoneCallHistoryEntry>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneCallHistoryEntryReader*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IPhoneCallHistoryEntryReader*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneCallHistoryEntryReader*, IAsyncOperation<Pointer<IVectorView<Pointer<IPhoneCallHistoryEntry>>>>**, int>)(lpVtbl[6]))((IPhoneCallHistoryEntryReader*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT ReadBatchAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IPhoneCallHistoryEntry>>>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IPhoneCallHistoryEntryReader : IPhoneCallHistoryEnt
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CApplicationModel__CCalls__CPhoneCallHistoryEntry_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> ReadBatchAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IPhoneCallHistoryEntry>>>>**, int> ReadBatchAsync;
     }
 }

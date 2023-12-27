@@ -74,9 +74,9 @@ public unsafe partial struct ICoreInputView : ICoreInputView.Interface, INativeG
     /// <include file='ICoreInputView.xml' path='doc/member[@name="ICoreInputView.add_OcclusionsChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_OcclusionsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_Windows__CUI__CViewManagement__CCore__CCoreInputViewOcclusionsChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_OcclusionsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_Windows__CUI__CViewManagement__CCore__CCoreInputViewOcclusionsChangedEventArgs_t *")] ITypedEventHandler<Pointer<ICoreInputView>, Pointer<ICoreInputViewOcclusionsChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreInputView*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreInputView*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreInputView*, ITypedEventHandler<Pointer<ICoreInputView>, Pointer<ICoreInputViewOcclusionsChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreInputView*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreInputView.xml' path='doc/member[@name="ICoreInputView.remove_OcclusionsChanged"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct ICoreInputView : ICoreInputView.Interface, INativeG
     /// <include file='ICoreInputView.xml' path='doc/member[@name="ICoreInputView.GetCoreInputViewOcclusions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetCoreInputViewOcclusions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CViewManagement__CCore__CCoreInputViewOcclusion_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetCoreInputViewOcclusions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CViewManagement__CCore__CCoreInputViewOcclusion_t **")] IVectorView<Pointer<ICoreInputViewOcclusion>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreInputView*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((ICoreInputView*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<ICoreInputView*, IVectorView<Pointer<ICoreInputViewOcclusion>>**, int>)(lpVtbl[8]))((ICoreInputView*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='ICoreInputView.xml' path='doc/member[@name="ICoreInputView.TryShowPrimaryView"]/*' />
@@ -114,13 +114,13 @@ public unsafe partial struct ICoreInputView : ICoreInputView.Interface, INativeG
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_OcclusionsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_Windows__CUI__CViewManagement__CCore__CCoreInputViewOcclusionsChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_OcclusionsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_Windows__CUI__CViewManagement__CCore__CCoreInputViewOcclusionsChangedEventArgs_t *")] ITypedEventHandler<Pointer<ICoreInputView>, Pointer<ICoreInputViewOcclusionsChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_OcclusionsChanged(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT GetCoreInputViewOcclusions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CViewManagement__CCore__CCoreInputViewOcclusion_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetCoreInputViewOcclusions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CViewManagement__CCore__CCoreInputViewOcclusion_t **")] IVectorView<Pointer<ICoreInputViewOcclusion>>** result);
 
         [VtblIndex(9)]
         HRESULT TryShowPrimaryView([NativeTypeName("boolean *")] byte* result);
@@ -151,13 +151,13 @@ public unsafe partial struct ICoreInputView : ICoreInputView.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreInputView_Windows__CUI__CViewManagement__CCore__CCoreInputViewOcclusionsChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_OcclusionsChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreInputView>, Pointer<ICoreInputViewOcclusionsChangedEventArgs>>*, EventRegistrationToken*, int> add_OcclusionsChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_OcclusionsChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CViewManagement__CCore__CCoreInputViewOcclusion_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetCoreInputViewOcclusions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ICoreInputViewOcclusion>>**, int> GetCoreInputViewOcclusions;
 
         [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> TryShowPrimaryView;

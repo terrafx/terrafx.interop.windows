@@ -162,9 +162,9 @@ public unsafe partial struct IChainBuildingParameters : IChainBuildingParameters
     /// <include file='IChainBuildingParameters.xml' path='doc/member[@name="IChainBuildingParameters.get_ExclusiveTrustRoots"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT get_ExclusiveTrustRoots([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVector<IntPtr>** certificates)
+    public HRESULT get_ExclusiveTrustRoots([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVector<Pointer<ICertificate>>** certificates)
     {
-        return ((delegate* unmanaged[MemberFunction]<IChainBuildingParameters*, IVector<IntPtr>**, int>)(lpVtbl[17]))((IChainBuildingParameters*)Unsafe.AsPointer(ref this), certificates);
+        return ((delegate* unmanaged[MemberFunction]<IChainBuildingParameters*, IVector<Pointer<ICertificate>>**, int>)(lpVtbl[17]))((IChainBuildingParameters*)Unsafe.AsPointer(ref this), certificates);
     }
 
     public interface Interface : IInspectable.Interface
@@ -203,7 +203,7 @@ public unsafe partial struct IChainBuildingParameters : IChainBuildingParameters
         HRESULT put_CurrentTimeValidationEnabled([NativeTypeName("boolean")] byte value);
 
         [VtblIndex(17)]
-        HRESULT get_ExclusiveTrustRoots([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVector<IntPtr>** certificates);
+        HRESULT get_ExclusiveTrustRoots([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVector<Pointer<ICertificate>>** certificates);
     }
 
     public partial struct Vtbl<TSelf>
@@ -261,6 +261,6 @@ public unsafe partial struct IChainBuildingParameters : IChainBuildingParameters
         public delegate* unmanaged[MemberFunction]<TSelf*, byte, int> put_CurrentTimeValidationEnabled;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_ExclusiveTrustRoots;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<ICertificate>>**, int> get_ExclusiveTrustRoots;
     }
 }

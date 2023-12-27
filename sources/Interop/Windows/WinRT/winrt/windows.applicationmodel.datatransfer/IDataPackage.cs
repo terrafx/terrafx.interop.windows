@@ -106,9 +106,9 @@ public unsafe partial struct IDataPackage : IDataPackage.Interface, INativeGuid
     /// <include file='IDataPackage.xml' path='doc/member[@name="IDataPackage.add_OperationCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_OperationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__COperationCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_OperationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__COperationCompletedEventArgs_t *")] ITypedEventHandler<Pointer<IDataPackage>, Pointer<IOperationCompletedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataPackage*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IDataPackage*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDataPackage*, ITypedEventHandler<Pointer<IDataPackage>, Pointer<IOperationCompletedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IDataPackage*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDataPackage.xml' path='doc/member[@name="IDataPackage.remove_OperationCompleted"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IDataPackage : IDataPackage.Interface, INativeGuid
     /// <include file='IDataPackage.xml' path='doc/member[@name="IDataPackage.add_Destroyed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_Destroyed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Destroyed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_IInspectable_t *")] ITypedEventHandler<Pointer<IDataPackage>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataPackage*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IDataPackage*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDataPackage*, ITypedEventHandler<Pointer<IDataPackage>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IDataPackage*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDataPackage.xml' path='doc/member[@name="IDataPackage.remove_Destroyed"]/*' />
@@ -179,9 +179,9 @@ public unsafe partial struct IDataPackage : IDataPackage.Interface, INativeGuid
     /// <include file='IDataPackage.xml' path='doc/member[@name="IDataPackage.get_ResourceMap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT get_ResourceMap([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IMap<HSTRING, IntPtr>** value)
+    public HRESULT get_ResourceMap([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IMap<HSTRING, Pointer<IRandomAccessStreamReference>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataPackage*, IMap<HSTRING, IntPtr>**, int>)(lpVtbl[19]))((IDataPackage*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDataPackage*, IMap<HSTRING, Pointer<IRandomAccessStreamReference>>**, int>)(lpVtbl[19]))((IDataPackage*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDataPackage.xml' path='doc/member[@name="IDataPackage.SetRtf"]/*' />
@@ -203,17 +203,17 @@ public unsafe partial struct IDataPackage : IDataPackage.Interface, INativeGuid
     /// <include file='IDataPackage.xml' path='doc/member[@name="IDataPackage.SetStorageItemsReadOnly"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT SetStorageItemsReadOnly([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CIStorageItem_t *")] IIterable<IntPtr>* value)
+    public HRESULT SetStorageItemsReadOnly([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CIStorageItem_t *")] IIterable<Pointer<IStorageItem>>* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataPackage*, IIterable<IntPtr>*, int>)(lpVtbl[22]))((IDataPackage*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDataPackage*, IIterable<Pointer<IStorageItem>>*, int>)(lpVtbl[22]))((IDataPackage*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDataPackage.xml' path='doc/member[@name="IDataPackage.SetStorageItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT SetStorageItems([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CIStorageItem_t *")] IIterable<IntPtr>* value, [NativeTypeName("boolean")] byte readOnly)
+    public HRESULT SetStorageItems([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CIStorageItem_t *")] IIterable<Pointer<IStorageItem>>* value, [NativeTypeName("boolean")] byte readOnly)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDataPackage*, IIterable<IntPtr>*, byte, int>)(lpVtbl[23]))((IDataPackage*)Unsafe.AsPointer(ref this), value, readOnly);
+        return ((delegate* unmanaged[MemberFunction]<IDataPackage*, IIterable<Pointer<IStorageItem>>*, byte, int>)(lpVtbl[23]))((IDataPackage*)Unsafe.AsPointer(ref this), value, readOnly);
     }
 
     public interface Interface : IInspectable.Interface
@@ -231,13 +231,13 @@ public unsafe partial struct IDataPackage : IDataPackage.Interface, INativeGuid
         HRESULT put_RequestedOperation([NativeTypeName("ABI::Windows::ApplicationModel::DataTransfer::DataPackageOperation")] DataPackageOperation value);
 
         [VtblIndex(10)]
-        HRESULT add_OperationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__COperationCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_OperationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__COperationCompletedEventArgs_t *")] ITypedEventHandler<Pointer<IDataPackage>, Pointer<IOperationCompletedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_OperationCompleted(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT add_Destroyed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Destroyed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_IInspectable_t *")] ITypedEventHandler<Pointer<IDataPackage>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_Destroyed(EventRegistrationToken token);
@@ -259,7 +259,7 @@ public unsafe partial struct IDataPackage : IDataPackage.Interface, INativeGuid
         HRESULT SetHtmlFormat(HSTRING value);
 
         [VtblIndex(19)]
-        HRESULT get_ResourceMap([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IMap<HSTRING, IntPtr>** value);
+        HRESULT get_ResourceMap([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **")] IMap<HSTRING, Pointer<IRandomAccessStreamReference>>** value);
 
         [VtblIndex(20)]
         HRESULT SetRtf(HSTRING value);
@@ -268,10 +268,10 @@ public unsafe partial struct IDataPackage : IDataPackage.Interface, INativeGuid
         HRESULT SetBitmap([NativeTypeName("ABI::Windows::Storage::Streams::IRandomAccessStreamReference *")] IRandomAccessStreamReference* value);
 
         [VtblIndex(22)]
-        HRESULT SetStorageItemsReadOnly([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CIStorageItem_t *")] IIterable<IntPtr>* value);
+        HRESULT SetStorageItemsReadOnly([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CIStorageItem_t *")] IIterable<Pointer<IStorageItem>>* value);
 
         [VtblIndex(23)]
-        HRESULT SetStorageItems([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CIStorageItem_t *")] IIterable<IntPtr>* value, [NativeTypeName("boolean")] byte readOnly);
+        HRESULT SetStorageItems([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CIStorageItem_t *")] IIterable<Pointer<IStorageItem>>* value, [NativeTypeName("boolean")] byte readOnly);
     }
 
     public partial struct Vtbl<TSelf>
@@ -308,13 +308,13 @@ public unsafe partial struct IDataPackage : IDataPackage.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, DataPackageOperation, int> put_RequestedOperation;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_Windows__CApplicationModel__CDataTransfer__COperationCompletedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_OperationCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDataPackage>, Pointer<IOperationCompletedEventArgs>>*, EventRegistrationToken*, int> add_OperationCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_OperationCompleted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CDataTransfer__CDataPackage_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Destroyed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDataPackage>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Destroyed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Destroyed;
@@ -336,7 +336,7 @@ public unsafe partial struct IDataPackage : IDataPackage.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> SetHtmlFormat;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMap_2_HSTRING_Windows__CStorage__CStreams__CRandomAccessStreamReference_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, IntPtr>**, int> get_ResourceMap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<HSTRING, Pointer<IRandomAccessStreamReference>>**, int> get_ResourceMap;
 
         [NativeTypeName("HRESULT (HSTRING) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> SetRtf;
@@ -345,9 +345,9 @@ public unsafe partial struct IDataPackage : IDataPackage.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IRandomAccessStreamReference*, int> SetBitmap;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CIStorageItem_t *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, int> SetStorageItemsReadOnly;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IStorageItem>>*, int> SetStorageItemsReadOnly;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CIStorageItem_t *, boolean) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, byte, int> SetStorageItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IStorageItem>>*, byte, int> SetStorageItems;
     }
 }

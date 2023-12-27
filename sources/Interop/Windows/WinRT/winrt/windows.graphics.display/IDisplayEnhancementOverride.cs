@@ -146,9 +146,9 @@ public unsafe partial struct IDisplayEnhancementOverride : IDisplayEnhancementOv
     /// <include file='IDisplayEnhancementOverride.xml' path='doc/member[@name="IDisplayEnhancementOverride.add_CanOverrideChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT add_CanOverrideChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayEnhancementOverride_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_CanOverrideChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayEnhancementOverride_IInspectable_t *")] ITypedEventHandler<Pointer<IDisplayEnhancementOverride>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDisplayEnhancementOverride*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IDisplayEnhancementOverride*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayEnhancementOverride*, ITypedEventHandler<Pointer<IDisplayEnhancementOverride>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IDisplayEnhancementOverride*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDisplayEnhancementOverride.xml' path='doc/member[@name="IDisplayEnhancementOverride.remove_CanOverrideChanged"]/*' />
@@ -162,9 +162,9 @@ public unsafe partial struct IDisplayEnhancementOverride : IDisplayEnhancementOv
     /// <include file='IDisplayEnhancementOverride.xml' path='doc/member[@name="IDisplayEnhancementOverride.add_IsOverrideActiveChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT add_IsOverrideActiveChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayEnhancementOverride_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_IsOverrideActiveChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayEnhancementOverride_IInspectable_t *")] ITypedEventHandler<Pointer<IDisplayEnhancementOverride>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDisplayEnhancementOverride*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IDisplayEnhancementOverride*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayEnhancementOverride*, ITypedEventHandler<Pointer<IDisplayEnhancementOverride>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IDisplayEnhancementOverride*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDisplayEnhancementOverride.xml' path='doc/member[@name="IDisplayEnhancementOverride.remove_IsOverrideActiveChanged"]/*' />
@@ -178,9 +178,9 @@ public unsafe partial struct IDisplayEnhancementOverride : IDisplayEnhancementOv
     /// <include file='IDisplayEnhancementOverride.xml' path='doc/member[@name="IDisplayEnhancementOverride.add_DisplayEnhancementOverrideCapabilitiesChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT add_DisplayEnhancementOverrideCapabilitiesChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayEnhancementOverride_Windows__CGraphics__CDisplay__CDisplayEnhancementOverrideCapabilitiesChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_DisplayEnhancementOverrideCapabilitiesChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayEnhancementOverride_Windows__CGraphics__CDisplay__CDisplayEnhancementOverrideCapabilitiesChangedEventArgs_t *")] ITypedEventHandler<Pointer<IDisplayEnhancementOverride>, Pointer<IDisplayEnhancementOverrideCapabilitiesChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDisplayEnhancementOverride*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[19]))((IDisplayEnhancementOverride*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayEnhancementOverride*, ITypedEventHandler<Pointer<IDisplayEnhancementOverride>, Pointer<IDisplayEnhancementOverrideCapabilitiesChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[19]))((IDisplayEnhancementOverride*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDisplayEnhancementOverride.xml' path='doc/member[@name="IDisplayEnhancementOverride.remove_DisplayEnhancementOverrideCapabilitiesChanged"]/*' />
@@ -221,19 +221,19 @@ public unsafe partial struct IDisplayEnhancementOverride : IDisplayEnhancementOv
         HRESULT StopOverride();
 
         [VtblIndex(15)]
-        HRESULT add_CanOverrideChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayEnhancementOverride_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_CanOverrideChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayEnhancementOverride_IInspectable_t *")] ITypedEventHandler<Pointer<IDisplayEnhancementOverride>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(16)]
         HRESULT remove_CanOverrideChanged(EventRegistrationToken token);
 
         [VtblIndex(17)]
-        HRESULT add_IsOverrideActiveChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayEnhancementOverride_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_IsOverrideActiveChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayEnhancementOverride_IInspectable_t *")] ITypedEventHandler<Pointer<IDisplayEnhancementOverride>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(18)]
         HRESULT remove_IsOverrideActiveChanged(EventRegistrationToken token);
 
         [VtblIndex(19)]
-        HRESULT add_DisplayEnhancementOverrideCapabilitiesChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayEnhancementOverride_Windows__CGraphics__CDisplay__CDisplayEnhancementOverrideCapabilitiesChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_DisplayEnhancementOverrideCapabilitiesChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayEnhancementOverride_Windows__CGraphics__CDisplay__CDisplayEnhancementOverrideCapabilitiesChangedEventArgs_t *")] ITypedEventHandler<Pointer<IDisplayEnhancementOverride>, Pointer<IDisplayEnhancementOverrideCapabilitiesChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(20)]
         HRESULT remove_DisplayEnhancementOverrideCapabilitiesChanged(EventRegistrationToken token);
@@ -288,19 +288,19 @@ public unsafe partial struct IDisplayEnhancementOverride : IDisplayEnhancementOv
         public delegate* unmanaged[MemberFunction]<TSelf*, int> StopOverride;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayEnhancementOverride_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CanOverrideChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDisplayEnhancementOverride>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_CanOverrideChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CanOverrideChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayEnhancementOverride_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_IsOverrideActiveChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDisplayEnhancementOverride>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_IsOverrideActiveChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_IsOverrideActiveChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayEnhancementOverride_Windows__CGraphics__CDisplay__CDisplayEnhancementOverrideCapabilitiesChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DisplayEnhancementOverrideCapabilitiesChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDisplayEnhancementOverride>, Pointer<IDisplayEnhancementOverrideCapabilitiesChangedEventArgs>>*, EventRegistrationToken*, int> add_DisplayEnhancementOverrideCapabilitiesChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DisplayEnhancementOverrideCapabilitiesChanged;

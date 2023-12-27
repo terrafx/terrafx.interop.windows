@@ -74,15 +74,15 @@ public unsafe partial struct IDeviceConnectionChangeTriggerStatics : IDeviceConn
     /// <include file='IDeviceConnectionChangeTriggerStatics.xml' path='doc/member[@name="IDeviceConnectionChangeTriggerStatics.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger_t **")] IAsyncOperation<IntPtr>** deviceChangeTrigger)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger_t **")] IAsyncOperation<Pointer<IDeviceConnectionChangeTrigger>>** deviceChangeTrigger)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceConnectionChangeTriggerStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IDeviceConnectionChangeTriggerStatics*)Unsafe.AsPointer(ref this), deviceId, deviceChangeTrigger);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceConnectionChangeTriggerStatics*, HSTRING, IAsyncOperation<Pointer<IDeviceConnectionChangeTrigger>>**, int>)(lpVtbl[6]))((IDeviceConnectionChangeTriggerStatics*)Unsafe.AsPointer(ref this), deviceId, deviceChangeTrigger);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger_t **")] IAsyncOperation<IntPtr>** deviceChangeTrigger);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger_t **")] IAsyncOperation<Pointer<IDeviceConnectionChangeTrigger>>** deviceChangeTrigger);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IDeviceConnectionChangeTriggerStatics : IDeviceConn
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CBackground__CDeviceConnectionChangeTrigger_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IDeviceConnectionChangeTrigger>>**, int> FromIdAsync;
     }
 }

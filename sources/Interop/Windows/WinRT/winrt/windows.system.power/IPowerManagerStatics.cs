@@ -82,9 +82,9 @@ public unsafe partial struct IPowerManagerStatics : IPowerManagerStatics.Interfa
     /// <include file='IPowerManagerStatics.xml' path='doc/member[@name="IPowerManagerStatics.add_EnergySaverStatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_EnergySaverStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_EnergySaverStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPowerManagerStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IPowerManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPowerManagerStatics*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IPowerManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPowerManagerStatics.xml' path='doc/member[@name="IPowerManagerStatics.remove_EnergySaverStatusChanged"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IPowerManagerStatics : IPowerManagerStatics.Interfa
     /// <include file='IPowerManagerStatics.xml' path='doc/member[@name="IPowerManagerStatics.add_BatteryStatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_BatteryStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_BatteryStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPowerManagerStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IPowerManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPowerManagerStatics*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IPowerManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPowerManagerStatics.xml' path='doc/member[@name="IPowerManagerStatics.remove_BatteryStatusChanged"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IPowerManagerStatics : IPowerManagerStatics.Interfa
     /// <include file='IPowerManagerStatics.xml' path='doc/member[@name="IPowerManagerStatics.add_PowerSupplyStatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_PowerSupplyStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PowerSupplyStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPowerManagerStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IPowerManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPowerManagerStatics*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IPowerManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPowerManagerStatics.xml' path='doc/member[@name="IPowerManagerStatics.remove_PowerSupplyStatusChanged"]/*' />
@@ -154,9 +154,9 @@ public unsafe partial struct IPowerManagerStatics : IPowerManagerStatics.Interfa
     /// <include file='IPowerManagerStatics.xml' path='doc/member[@name="IPowerManagerStatics.add_RemainingChargePercentChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT add_RemainingChargePercentChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_RemainingChargePercentChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPowerManagerStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IPowerManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPowerManagerStatics*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IPowerManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPowerManagerStatics.xml' path='doc/member[@name="IPowerManagerStatics.remove_RemainingChargePercentChanged"]/*' />
@@ -178,9 +178,9 @@ public unsafe partial struct IPowerManagerStatics : IPowerManagerStatics.Interfa
     /// <include file='IPowerManagerStatics.xml' path='doc/member[@name="IPowerManagerStatics.add_RemainingDischargeTimeChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT add_RemainingDischargeTimeChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_RemainingDischargeTimeChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPowerManagerStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[19]))((IPowerManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPowerManagerStatics*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[19]))((IPowerManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPowerManagerStatics.xml' path='doc/member[@name="IPowerManagerStatics.remove_RemainingDischargeTimeChanged"]/*' />
@@ -197,7 +197,7 @@ public unsafe partial struct IPowerManagerStatics : IPowerManagerStatics.Interfa
         HRESULT get_EnergySaverStatus([NativeTypeName("ABI::Windows::System::Power::EnergySaverStatus *")] EnergySaverStatus* value);
 
         [VtblIndex(7)]
-        HRESULT add_EnergySaverStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_EnergySaverStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_EnergySaverStatusChanged(EventRegistrationToken token);
@@ -206,7 +206,7 @@ public unsafe partial struct IPowerManagerStatics : IPowerManagerStatics.Interfa
         HRESULT get_BatteryStatus([NativeTypeName("ABI::Windows::System::Power::BatteryStatus *")] BatteryStatus* value);
 
         [VtblIndex(10)]
-        HRESULT add_BatteryStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_BatteryStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_BatteryStatusChanged(EventRegistrationToken token);
@@ -215,7 +215,7 @@ public unsafe partial struct IPowerManagerStatics : IPowerManagerStatics.Interfa
         HRESULT get_PowerSupplyStatus([NativeTypeName("ABI::Windows::System::Power::PowerSupplyStatus *")] PowerSupplyStatus* value);
 
         [VtblIndex(13)]
-        HRESULT add_PowerSupplyStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PowerSupplyStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_PowerSupplyStatusChanged(EventRegistrationToken token);
@@ -224,7 +224,7 @@ public unsafe partial struct IPowerManagerStatics : IPowerManagerStatics.Interfa
         HRESULT get_RemainingChargePercent([NativeTypeName("INT32 *")] int* value);
 
         [VtblIndex(16)]
-        HRESULT add_RemainingChargePercentChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_RemainingChargePercentChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(17)]
         HRESULT remove_RemainingChargePercentChanged(EventRegistrationToken token);
@@ -233,7 +233,7 @@ public unsafe partial struct IPowerManagerStatics : IPowerManagerStatics.Interfa
         HRESULT get_RemainingDischargeTime([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value);
 
         [VtblIndex(19)]
-        HRESULT add_RemainingDischargeTimeChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_RemainingDischargeTimeChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(20)]
         HRESULT remove_RemainingDischargeTimeChanged(EventRegistrationToken token);
@@ -264,7 +264,7 @@ public unsafe partial struct IPowerManagerStatics : IPowerManagerStatics.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, EnergySaverStatus*, int> get_EnergySaverStatus;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_EnergySaverStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_EnergySaverStatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_EnergySaverStatusChanged;
@@ -273,7 +273,7 @@ public unsafe partial struct IPowerManagerStatics : IPowerManagerStatics.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, BatteryStatus*, int> get_BatteryStatus;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_BatteryStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_BatteryStatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_BatteryStatusChanged;
@@ -282,7 +282,7 @@ public unsafe partial struct IPowerManagerStatics : IPowerManagerStatics.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, PowerSupplyStatus*, int> get_PowerSupplyStatus;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_PowerSupplyStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_PowerSupplyStatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PowerSupplyStatusChanged;
@@ -291,7 +291,7 @@ public unsafe partial struct IPowerManagerStatics : IPowerManagerStatics.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_RemainingChargePercent;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_RemainingChargePercentChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_RemainingChargePercentChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RemainingChargePercentChanged;
@@ -300,7 +300,7 @@ public unsafe partial struct IPowerManagerStatics : IPowerManagerStatics.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> get_RemainingDischargeTime;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_RemainingDischargeTimeChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_RemainingDischargeTimeChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RemainingDischargeTimeChanged;

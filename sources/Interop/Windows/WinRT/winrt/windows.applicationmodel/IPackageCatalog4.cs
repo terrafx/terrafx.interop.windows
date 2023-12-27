@@ -74,26 +74,26 @@ public unsafe partial struct IPackageCatalog4 : IPackageCatalog4.Interface, INat
     /// <include file='IPackageCatalog4.xml' path='doc/member[@name="IPackageCatalog4.AddResourcePackageAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT AddResourcePackageAsync(HSTRING resourcePackageFamilyName, HSTRING resourceID, [NativeTypeName("ABI::Windows::ApplicationModel::AddResourcePackageOptions")] AddResourcePackageOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_t **")] IAsyncOperationWithProgress<IntPtr, PackageInstallProgress>** operation)
+    public HRESULT AddResourcePackageAsync(HSTRING resourcePackageFamilyName, HSTRING resourceID, [NativeTypeName("ABI::Windows::ApplicationModel::AddResourcePackageOptions")] AddResourcePackageOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_t **")] IAsyncOperationWithProgress<Pointer<IPackageCatalogAddResourcePackageResult>, PackageInstallProgress>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog4*, HSTRING, HSTRING, AddResourcePackageOptions, IAsyncOperationWithProgress<IntPtr, PackageInstallProgress>**, int>)(lpVtbl[6]))((IPackageCatalog4*)Unsafe.AsPointer(ref this), resourcePackageFamilyName, resourceID, options, operation);
+        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog4*, HSTRING, HSTRING, AddResourcePackageOptions, IAsyncOperationWithProgress<Pointer<IPackageCatalogAddResourcePackageResult>, PackageInstallProgress>**, int>)(lpVtbl[6]))((IPackageCatalog4*)Unsafe.AsPointer(ref this), resourcePackageFamilyName, resourceID, options, operation);
     }
 
     /// <include file='IPackageCatalog4.xml' path='doc/member[@name="IPackageCatalog4.RemoveResourcePackagesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT RemoveResourcePackagesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CPackage_t *")] IIterable<IntPtr>* resourcePackages, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT RemoveResourcePackagesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CPackage_t *")] IIterable<Pointer<IPackage>>* resourcePackages, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_t **")] IAsyncOperation<Pointer<IPackageCatalogRemoveResourcePackagesResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog4*, IIterable<IntPtr>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IPackageCatalog4*)Unsafe.AsPointer(ref this), resourcePackages, operation);
+        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog4*, IIterable<Pointer<IPackage>>*, IAsyncOperation<Pointer<IPackageCatalogRemoveResourcePackagesResult>>**, int>)(lpVtbl[7]))((IPackageCatalog4*)Unsafe.AsPointer(ref this), resourcePackages, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT AddResourcePackageAsync(HSTRING resourcePackageFamilyName, HSTRING resourceID, [NativeTypeName("ABI::Windows::ApplicationModel::AddResourcePackageOptions")] AddResourcePackageOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_t **")] IAsyncOperationWithProgress<IntPtr, PackageInstallProgress>** operation);
+        HRESULT AddResourcePackageAsync(HSTRING resourcePackageFamilyName, HSTRING resourceID, [NativeTypeName("ABI::Windows::ApplicationModel::AddResourcePackageOptions")] AddResourcePackageOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_t **")] IAsyncOperationWithProgress<Pointer<IPackageCatalogAddResourcePackageResult>, PackageInstallProgress>** operation);
 
         [VtblIndex(7)]
-        HRESULT RemoveResourcePackagesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CPackage_t *")] IIterable<IntPtr>* resourcePackages, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT RemoveResourcePackagesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CPackage_t *")] IIterable<Pointer<IPackage>>* resourcePackages, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_t **")] IAsyncOperation<Pointer<IPackageCatalogRemoveResourcePackagesResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -118,9 +118,9 @@ public unsafe partial struct IPackageCatalog4 : IPackageCatalog4.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, ABI::Windows::ApplicationModel::AddResourcePackageOptions, ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CApplicationModel__CPackageCatalogAddResourcePackageResult_Windows__CApplicationModel__CPackageInstallProgress_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, AddResourcePackageOptions, IAsyncOperationWithProgress<IntPtr, PackageInstallProgress>**, int> AddResourcePackageAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, AddResourcePackageOptions, IAsyncOperationWithProgress<Pointer<IPackageCatalogAddResourcePackageResult>, PackageInstallProgress>**, int> AddResourcePackageAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CApplicationModel__CPackage_t *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveResourcePackagesResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IAsyncOperation<IntPtr>**, int> RemoveResourcePackagesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IPackage>>*, IAsyncOperation<Pointer<IPackageCatalogRemoveResourcePackagesResult>>**, int> RemoveResourcePackagesAsync;
     }
 }

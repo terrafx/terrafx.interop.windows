@@ -74,15 +74,15 @@ public unsafe partial struct IAppWindowFrame : IAppWindowFrame.Interface, INativ
     /// <include file='IAppWindowFrame.xml' path='doc/member[@name="IAppWindowFrame.get_DragRegionVisuals"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_DragRegionVisuals([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CComposition__CIVisualElement_t **")] IVector<IntPtr>** value)
+    public HRESULT get_DragRegionVisuals([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CComposition__CIVisualElement_t **")] IVector<Pointer<IVisualElement>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppWindowFrame*, IVector<IntPtr>**, int>)(lpVtbl[6]))((IAppWindowFrame*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppWindowFrame*, IVector<Pointer<IVisualElement>>**, int>)(lpVtbl[6]))((IAppWindowFrame*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_DragRegionVisuals([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CComposition__CIVisualElement_t **")] IVector<IntPtr>** value);
+        HRESULT get_DragRegionVisuals([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CComposition__CIVisualElement_t **")] IVector<Pointer<IVisualElement>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IAppWindowFrame : IAppWindowFrame.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CComposition__CIVisualElement_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_DragRegionVisuals;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IVisualElement>>**, int> get_DragRegionVisuals;
     }
 }

@@ -94,9 +94,9 @@ public unsafe partial struct IWalletBarcode : IWalletBarcode.Interface, INativeG
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     [Obsolete("IWalletBarcode is deprecated and might not work on all platforms. For more info, see MSDN.")]
-    public HRESULT GetImageAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamReference_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetImageAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamReference_t **")] IAsyncOperation<Pointer<IRandomAccessStreamReference>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWalletBarcode*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IWalletBarcode*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IWalletBarcode*, IAsyncOperation<Pointer<IRandomAccessStreamReference>>**, int>)(lpVtbl[8]))((IWalletBarcode*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -111,7 +111,7 @@ public unsafe partial struct IWalletBarcode : IWalletBarcode.Interface, INativeG
 
         [VtblIndex(8)]
         [Obsolete("IWalletBarcode is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        HRESULT GetImageAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamReference_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetImageAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamReference_t **")] IAsyncOperation<Pointer<IRandomAccessStreamReference>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -145,6 +145,6 @@ public unsafe partial struct IWalletBarcode : IWalletBarcode.Interface, INativeG
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamReference_t **) __attribute__((stdcall))")]
         [Obsolete("IWalletBarcode is deprecated and might not work on all platforms. For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetImageAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IRandomAccessStreamReference>>**, int> GetImageAsync;
     }
 }

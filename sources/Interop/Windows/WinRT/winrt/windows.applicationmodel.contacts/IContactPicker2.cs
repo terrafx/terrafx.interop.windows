@@ -82,17 +82,17 @@ public unsafe partial struct IContactPicker2 : IContactPicker2.Interface, INativ
     /// <include file='IContactPicker2.xml' path='doc/member[@name="IContactPicker2.PickContactAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT PickContactAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT PickContactAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IContact>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactPicker2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IContactPicker2*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IContactPicker2*, IAsyncOperation<Pointer<IContact>>**, int>)(lpVtbl[7]))((IContactPicker2*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IContactPicker2.xml' path='doc/member[@name="IContactPicker2.PickContactsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT PickContactsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT PickContactsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IVector<Pointer<IContact>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactPicker2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IContactPicker2*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IContactPicker2*, IAsyncOperation<Pointer<IVector<Pointer<IContact>>>>**, int>)(lpVtbl[8]))((IContactPicker2*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -101,10 +101,10 @@ public unsafe partial struct IContactPicker2 : IContactPicker2.Interface, INativ
         HRESULT get_DesiredFieldsWithContactFieldType([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CContacts__CContactFieldType_t **")] IVector<ContactFieldType>** value);
 
         [VtblIndex(7)]
-        HRESULT PickContactAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT PickContactAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IContact>>** result);
 
         [VtblIndex(8)]
-        HRESULT PickContactsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT PickContactsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact_t **")] IAsyncOperation<Pointer<IVector<Pointer<IContact>>>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -132,9 +132,9 @@ public unsafe partial struct IContactPicker2 : IContactPicker2.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, IVector<ContactFieldType>**, int> get_DesiredFieldsWithContactFieldType;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CContacts__CContact_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> PickContactAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IContact>>**, int> PickContactAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVector_1_Windows__CApplicationModel__CContacts__CContact_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> PickContactsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVector<Pointer<IContact>>>>**, int> PickContactsAsync;
     }
 }

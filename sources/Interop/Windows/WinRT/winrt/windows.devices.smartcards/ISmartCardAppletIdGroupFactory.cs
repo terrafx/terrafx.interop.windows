@@ -74,15 +74,15 @@ public unsafe partial struct ISmartCardAppletIdGroupFactory : ISmartCardAppletId
     /// <include file='ISmartCardAppletIdGroupFactory.xml' path='doc/member[@name="ISmartCardAppletIdGroupFactory.Create"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT Create(HSTRING displayName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStreams__CIBuffer_t *")] IVector<IntPtr>* appletIds, [NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardEmulationCategory")] SmartCardEmulationCategory emulationCategory, [NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardEmulationType")] SmartCardEmulationType emulationType, [NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardAppletIdGroup **")] ISmartCardAppletIdGroup** result)
+    public HRESULT Create(HSTRING displayName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStreams__CIBuffer_t *")] IVector<Pointer<IBuffer>>* appletIds, [NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardEmulationCategory")] SmartCardEmulationCategory emulationCategory, [NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardEmulationType")] SmartCardEmulationType emulationType, [NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardAppletIdGroup **")] ISmartCardAppletIdGroup** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardAppletIdGroupFactory*, HSTRING, IVector<IntPtr>*, SmartCardEmulationCategory, SmartCardEmulationType, ISmartCardAppletIdGroup**, int>)(lpVtbl[6]))((ISmartCardAppletIdGroupFactory*)Unsafe.AsPointer(ref this), displayName, appletIds, emulationCategory, emulationType, result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardAppletIdGroupFactory*, HSTRING, IVector<Pointer<IBuffer>>*, SmartCardEmulationCategory, SmartCardEmulationType, ISmartCardAppletIdGroup**, int>)(lpVtbl[6]))((ISmartCardAppletIdGroupFactory*)Unsafe.AsPointer(ref this), displayName, appletIds, emulationCategory, emulationType, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT Create(HSTRING displayName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStreams__CIBuffer_t *")] IVector<IntPtr>* appletIds, [NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardEmulationCategory")] SmartCardEmulationCategory emulationCategory, [NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardEmulationType")] SmartCardEmulationType emulationType, [NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardAppletIdGroup **")] ISmartCardAppletIdGroup** result);
+        HRESULT Create(HSTRING displayName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStreams__CIBuffer_t *")] IVector<Pointer<IBuffer>>* appletIds, [NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardEmulationCategory")] SmartCardEmulationCategory emulationCategory, [NativeTypeName("ABI::Windows::Devices::SmartCards::SmartCardEmulationType")] SmartCardEmulationType emulationType, [NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardAppletIdGroup **")] ISmartCardAppletIdGroup** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ISmartCardAppletIdGroupFactory : ISmartCardAppletId
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStreams__CIBuffer_t *, ABI::Windows::Devices::SmartCards::SmartCardEmulationCategory, ABI::Windows::Devices::SmartCards::SmartCardEmulationType, ABI::Windows::Devices::SmartCards::ISmartCardAppletIdGroup **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVector<IntPtr>*, SmartCardEmulationCategory, SmartCardEmulationType, ISmartCardAppletIdGroup**, int> Create;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVector<Pointer<IBuffer>>*, SmartCardEmulationCategory, SmartCardEmulationType, ISmartCardAppletIdGroup**, int> Create;
     }
 }

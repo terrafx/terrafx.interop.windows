@@ -74,9 +74,9 @@ public unsafe partial struct ICorePointerRedirector : ICorePointerRedirector.Int
     /// <include file='ICorePointerRedirector.xml' path='doc/member[@name="ICorePointerRedirector.add_PointerRoutedAway"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_PointerRoutedAway([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CICorePointerRedirector_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_PointerRoutedAway([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CICorePointerRedirector_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<ICorePointerRedirector>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICorePointerRedirector*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICorePointerRedirector*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICorePointerRedirector*, ITypedEventHandler<Pointer<ICorePointerRedirector>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICorePointerRedirector*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICorePointerRedirector.xml' path='doc/member[@name="ICorePointerRedirector.remove_PointerRoutedAway"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct ICorePointerRedirector : ICorePointerRedirector.Int
     /// <include file='ICorePointerRedirector.xml' path='doc/member[@name="ICorePointerRedirector.add_PointerRoutedTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_PointerRoutedTo([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CICorePointerRedirector_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_PointerRoutedTo([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CICorePointerRedirector_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<ICorePointerRedirector>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICorePointerRedirector*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICorePointerRedirector*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICorePointerRedirector*, ITypedEventHandler<Pointer<ICorePointerRedirector>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICorePointerRedirector*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICorePointerRedirector.xml' path='doc/member[@name="ICorePointerRedirector.remove_PointerRoutedTo"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct ICorePointerRedirector : ICorePointerRedirector.Int
     /// <include file='ICorePointerRedirector.xml' path='doc/member[@name="ICorePointerRedirector.add_PointerRoutedReleased"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_PointerRoutedReleased([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CICorePointerRedirector_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_PointerRoutedReleased([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CICorePointerRedirector_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<ICorePointerRedirector>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICorePointerRedirector*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((ICorePointerRedirector*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICorePointerRedirector*, ITypedEventHandler<Pointer<ICorePointerRedirector>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((ICorePointerRedirector*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICorePointerRedirector.xml' path='doc/member[@name="ICorePointerRedirector.remove_PointerRoutedReleased"]/*' />
@@ -122,19 +122,19 @@ public unsafe partial struct ICorePointerRedirector : ICorePointerRedirector.Int
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_PointerRoutedAway([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CICorePointerRedirector_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_PointerRoutedAway([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CICorePointerRedirector_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<ICorePointerRedirector>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(7)]
         HRESULT remove_PointerRoutedAway(EventRegistrationToken cookie);
 
         [VtblIndex(8)]
-        HRESULT add_PointerRoutedTo([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CICorePointerRedirector_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_PointerRoutedTo([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CICorePointerRedirector_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<ICorePointerRedirector>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(9)]
         HRESULT remove_PointerRoutedTo(EventRegistrationToken cookie);
 
         [VtblIndex(10)]
-        HRESULT add_PointerRoutedReleased([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CICorePointerRedirector_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_PointerRoutedReleased([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CICorePointerRedirector_Windows__CUI__CCore__CPointerEventArgs_t *")] ITypedEventHandler<Pointer<ICorePointerRedirector>, Pointer<IPointerEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(11)]
         HRESULT remove_PointerRoutedReleased(EventRegistrationToken cookie);
@@ -162,19 +162,19 @@ public unsafe partial struct ICorePointerRedirector : ICorePointerRedirector.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CICorePointerRedirector_Windows__CUI__CCore__CPointerEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PointerRoutedAway;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICorePointerRedirector>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int> add_PointerRoutedAway;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PointerRoutedAway;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CICorePointerRedirector_Windows__CUI__CCore__CPointerEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PointerRoutedTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICorePointerRedirector>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int> add_PointerRoutedTo;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PointerRoutedTo;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CICorePointerRedirector_Windows__CUI__CCore__CPointerEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PointerRoutedReleased;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICorePointerRedirector>, Pointer<IPointerEventArgs>>*, EventRegistrationToken*, int> add_PointerRoutedReleased;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PointerRoutedReleased;

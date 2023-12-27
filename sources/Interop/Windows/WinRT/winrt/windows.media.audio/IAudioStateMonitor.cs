@@ -74,9 +74,9 @@ public unsafe partial struct IAudioStateMonitor : IAudioStateMonitor.Interface, 
     /// <include file='IAudioStateMonitor.xml' path='doc/member[@name="IAudioStateMonitor.add_SoundLevelChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_SoundLevelChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SoundLevelChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_t *")] ITypedEventHandler<Pointer<IAudioStateMonitor>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioStateMonitor*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IAudioStateMonitor*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAudioStateMonitor*, ITypedEventHandler<Pointer<IAudioStateMonitor>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IAudioStateMonitor*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAudioStateMonitor.xml' path='doc/member[@name="IAudioStateMonitor.remove_SoundLevelChanged"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IAudioStateMonitor : IAudioStateMonitor.Interface, 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_SoundLevelChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SoundLevelChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_t *")] ITypedEventHandler<Pointer<IAudioStateMonitor>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_SoundLevelChanged(EventRegistrationToken token);
@@ -129,7 +129,7 @@ public unsafe partial struct IAudioStateMonitor : IAudioStateMonitor.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioStateMonitor_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SoundLevelChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAudioStateMonitor>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_SoundLevelChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SoundLevelChanged;

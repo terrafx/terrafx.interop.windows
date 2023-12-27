@@ -98,9 +98,9 @@ public unsafe partial struct ICoreInputSourceBase : ICoreInputSourceBase.Interfa
     /// <include file='ICoreInputSourceBase.xml' path='doc/member[@name="ICoreInputSourceBase.add_InputEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_InputEnabled([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CInputEnabledEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie)
+    public HRESULT add_InputEnabled([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CInputEnabledEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IInputEnabledEventArgs>>* handler, EventRegistrationToken* pCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreInputSourceBase*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ICoreInputSourceBase*)Unsafe.AsPointer(ref this), handler, pCookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreInputSourceBase*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IInputEnabledEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ICoreInputSourceBase*)Unsafe.AsPointer(ref this), handler, pCookie);
     }
 
     /// <include file='ICoreInputSourceBase.xml' path='doc/member[@name="ICoreInputSourceBase.remove_InputEnabled"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ICoreInputSourceBase : ICoreInputSourceBase.Interfa
         HRESULT put_IsInputEnabled([NativeTypeName("boolean")] byte value);
 
         [VtblIndex(9)]
-        HRESULT add_InputEnabled([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CInputEnabledEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie);
+        HRESULT add_InputEnabled([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CInputEnabledEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<IInputEnabledEventArgs>>* handler, EventRegistrationToken* pCookie);
 
         [VtblIndex(10)]
         HRESULT remove_InputEnabled(EventRegistrationToken cookie);
@@ -160,7 +160,7 @@ public unsafe partial struct ICoreInputSourceBase : ICoreInputSourceBase.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, byte, int> put_IsInputEnabled;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CInputEnabledEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_InputEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, Pointer<IInputEnabledEventArgs>>*, EventRegistrationToken*, int> add_InputEnabled;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_InputEnabled;

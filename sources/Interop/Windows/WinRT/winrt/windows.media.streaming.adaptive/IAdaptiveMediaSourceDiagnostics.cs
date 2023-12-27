@@ -74,9 +74,9 @@ public unsafe partial struct IAdaptiveMediaSourceDiagnostics : IAdaptiveMediaSou
     /// <include file='IAdaptiveMediaSourceDiagnostics.xml' path='doc/member[@name="IAdaptiveMediaSourceDiagnostics.add_DiagnosticAvailable"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_DiagnosticAvailable([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_DiagnosticAvailable([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_t *")] ITypedEventHandler<Pointer<IAdaptiveMediaSourceDiagnostics>, Pointer<IAdaptiveMediaSourceDiagnosticAvailableEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSourceDiagnostics*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IAdaptiveMediaSourceDiagnostics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAdaptiveMediaSourceDiagnostics*, ITypedEventHandler<Pointer<IAdaptiveMediaSourceDiagnostics>, Pointer<IAdaptiveMediaSourceDiagnosticAvailableEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IAdaptiveMediaSourceDiagnostics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAdaptiveMediaSourceDiagnostics.xml' path='doc/member[@name="IAdaptiveMediaSourceDiagnostics.remove_DiagnosticAvailable"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IAdaptiveMediaSourceDiagnostics : IAdaptiveMediaSou
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_DiagnosticAvailable([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_DiagnosticAvailable([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_t *")] ITypedEventHandler<Pointer<IAdaptiveMediaSourceDiagnostics>, Pointer<IAdaptiveMediaSourceDiagnosticAvailableEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_DiagnosticAvailable(EventRegistrationToken token);
@@ -118,7 +118,7 @@ public unsafe partial struct IAdaptiveMediaSourceDiagnostics : IAdaptiveMediaSou
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnostics_Windows__CMedia__CStreaming__CAdaptive__CAdaptiveMediaSourceDiagnosticAvailableEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DiagnosticAvailable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAdaptiveMediaSourceDiagnostics>, Pointer<IAdaptiveMediaSourceDiagnosticAvailableEventArgs>>*, EventRegistrationToken*, int> add_DiagnosticAvailable;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DiagnosticAvailable;

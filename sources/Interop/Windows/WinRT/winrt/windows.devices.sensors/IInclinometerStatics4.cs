@@ -82,9 +82,9 @@ public unsafe partial struct IInclinometerStatics4 : IInclinometerStatics4.Inter
     /// <include file='IInclinometerStatics4.xml' path='doc/member[@name="IInclinometerStatics4.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CInclinometer_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CInclinometer_t **")] IAsyncOperation<Pointer<IInclinometer>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IInclinometerStatics4*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IInclinometerStatics4*)Unsafe.AsPointer(ref this), deviceId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IInclinometerStatics4*, HSTRING, IAsyncOperation<Pointer<IInclinometer>>**, int>)(lpVtbl[7]))((IInclinometerStatics4*)Unsafe.AsPointer(ref this), deviceId, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IInclinometerStatics4 : IInclinometerStatics4.Inter
         HRESULT GetDeviceSelector([NativeTypeName("ABI::Windows::Devices::Sensors::SensorReadingType")] SensorReadingType readingType, HSTRING* result);
 
         [VtblIndex(7)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CInclinometer_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CInclinometer_t **")] IAsyncOperation<Pointer<IInclinometer>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IInclinometerStatics4 : IInclinometerStatics4.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, SensorReadingType, HSTRING*, int> GetDeviceSelector;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CInclinometer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IInclinometer>>**, int> FromIdAsync;
     }
 }

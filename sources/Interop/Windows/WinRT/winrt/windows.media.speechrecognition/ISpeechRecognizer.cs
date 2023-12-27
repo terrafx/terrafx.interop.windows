@@ -82,9 +82,9 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_Constraints"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_Constraints([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CSpeechRecognition__CISpeechRecognitionConstraint_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Constraints([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CSpeechRecognition__CISpeechRecognitionConstraint_t **")] IVector<Pointer<ISpeechRecognitionConstraint>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, IVector<IntPtr>**, int>)(lpVtbl[7]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, IVector<Pointer<ISpeechRecognitionConstraint>>**, int>)(lpVtbl[7]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.get_Timeouts"]/*' />
@@ -106,33 +106,33 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.CompileConstraintsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT CompileConstraintsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionCompilationResult_t **")] IAsyncOperation<IntPtr>** asyncOperation)
+    public HRESULT CompileConstraintsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionCompilationResult_t **")] IAsyncOperation<Pointer<ISpeechRecognitionCompilationResult>>** asyncOperation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), asyncOperation);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, IAsyncOperation<Pointer<ISpeechRecognitionCompilationResult>>**, int>)(lpVtbl[10]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), asyncOperation);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.RecognizeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT RecognizeAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionResult_t **")] IAsyncOperation<IntPtr>** asyncOperation)
+    public HRESULT RecognizeAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionResult_t **")] IAsyncOperation<Pointer<ISpeechRecognitionResult>>** asyncOperation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), asyncOperation);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, IAsyncOperation<Pointer<ISpeechRecognitionResult>>**, int>)(lpVtbl[11]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), asyncOperation);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.RecognizeWithUIAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT RecognizeWithUIAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionResult_t **")] IAsyncOperation<IntPtr>** asyncOperation)
+    public HRESULT RecognizeWithUIAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionResult_t **")] IAsyncOperation<Pointer<ISpeechRecognitionResult>>** asyncOperation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[12]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), asyncOperation);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, IAsyncOperation<Pointer<ISpeechRecognitionResult>>**, int>)(lpVtbl[12]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), asyncOperation);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.add_RecognitionQualityDegrading"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_RecognitionQualityDegrading([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionQualityDegradingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* speechRecognitionQualityDegradingHandler, EventRegistrationToken* cookie)
+    public HRESULT add_RecognitionQualityDegrading([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionQualityDegradingEventArgs_t *")] ITypedEventHandler<Pointer<ISpeechRecognizer>, Pointer<ISpeechRecognitionQualityDegradingEventArgs>>* speechRecognitionQualityDegradingHandler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), speechRecognitionQualityDegradingHandler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, ITypedEventHandler<Pointer<ISpeechRecognizer>, Pointer<ISpeechRecognitionQualityDegradingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), speechRecognitionQualityDegradingHandler, cookie);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.remove_RecognitionQualityDegrading"]/*' />
@@ -146,9 +146,9 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.add_StateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognizerStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* stateChangedHandler, EventRegistrationToken* cookie)
+    public HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognizerStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<ISpeechRecognizer>, Pointer<ISpeechRecognizerStateChangedEventArgs>>* stateChangedHandler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), stateChangedHandler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognizer*, ITypedEventHandler<Pointer<ISpeechRecognizer>, Pointer<ISpeechRecognizerStateChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((ISpeechRecognizer*)Unsafe.AsPointer(ref this), stateChangedHandler, cookie);
     }
 
     /// <include file='ISpeechRecognizer.xml' path='doc/member[@name="ISpeechRecognizer.remove_StateChanged"]/*' />
@@ -165,7 +165,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
         HRESULT get_CurrentLanguage([NativeTypeName("ABI::Windows::Globalization::ILanguage **")] ILanguage** language);
 
         [VtblIndex(7)]
-        HRESULT get_Constraints([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CSpeechRecognition__CISpeechRecognitionConstraint_t **")] IVector<IntPtr>** value);
+        HRESULT get_Constraints([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CSpeechRecognition__CISpeechRecognitionConstraint_t **")] IVector<Pointer<ISpeechRecognitionConstraint>>** value);
 
         [VtblIndex(8)]
         HRESULT get_Timeouts([NativeTypeName("ABI::Windows::Media::SpeechRecognition::ISpeechRecognizerTimeouts **")] ISpeechRecognizerTimeouts** value);
@@ -174,22 +174,22 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
         HRESULT get_UIOptions([NativeTypeName("ABI::Windows::Media::SpeechRecognition::ISpeechRecognizerUIOptions **")] ISpeechRecognizerUIOptions** value);
 
         [VtblIndex(10)]
-        HRESULT CompileConstraintsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionCompilationResult_t **")] IAsyncOperation<IntPtr>** asyncOperation);
+        HRESULT CompileConstraintsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionCompilationResult_t **")] IAsyncOperation<Pointer<ISpeechRecognitionCompilationResult>>** asyncOperation);
 
         [VtblIndex(11)]
-        HRESULT RecognizeAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionResult_t **")] IAsyncOperation<IntPtr>** asyncOperation);
+        HRESULT RecognizeAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionResult_t **")] IAsyncOperation<Pointer<ISpeechRecognitionResult>>** asyncOperation);
 
         [VtblIndex(12)]
-        HRESULT RecognizeWithUIAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionResult_t **")] IAsyncOperation<IntPtr>** asyncOperation);
+        HRESULT RecognizeWithUIAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionResult_t **")] IAsyncOperation<Pointer<ISpeechRecognitionResult>>** asyncOperation);
 
         [VtblIndex(13)]
-        HRESULT add_RecognitionQualityDegrading([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionQualityDegradingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* speechRecognitionQualityDegradingHandler, EventRegistrationToken* cookie);
+        HRESULT add_RecognitionQualityDegrading([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionQualityDegradingEventArgs_t *")] ITypedEventHandler<Pointer<ISpeechRecognizer>, Pointer<ISpeechRecognitionQualityDegradingEventArgs>>* speechRecognitionQualityDegradingHandler, EventRegistrationToken* cookie);
 
         [VtblIndex(14)]
         HRESULT remove_RecognitionQualityDegrading(EventRegistrationToken cookie);
 
         [VtblIndex(15)]
-        HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognizerStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* stateChangedHandler, EventRegistrationToken* cookie);
+        HRESULT add_StateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognizerStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<ISpeechRecognizer>, Pointer<ISpeechRecognizerStateChangedEventArgs>>* stateChangedHandler, EventRegistrationToken* cookie);
 
         [VtblIndex(16)]
         HRESULT remove_StateChanged(EventRegistrationToken cookie);
@@ -220,7 +220,7 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, ILanguage**, int> get_CurrentLanguage;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CSpeechRecognition__CISpeechRecognitionConstraint_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Constraints;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<ISpeechRecognitionConstraint>>**, int> get_Constraints;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::SpeechRecognition::ISpeechRecognizerTimeouts **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechRecognizerTimeouts**, int> get_Timeouts;
@@ -229,22 +229,22 @@ public unsafe partial struct ISpeechRecognizer : ISpeechRecognizer.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechRecognizerUIOptions**, int> get_UIOptions;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionCompilationResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> CompileConstraintsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<ISpeechRecognitionCompilationResult>>**, int> CompileConstraintsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> RecognizeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<ISpeechRecognitionResult>>**, int> RecognizeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> RecognizeWithUIAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<ISpeechRecognitionResult>>**, int> RecognizeWithUIAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionQualityDegradingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_RecognitionQualityDegrading;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISpeechRecognizer>, Pointer<ISpeechRecognitionQualityDegradingEventArgs>>*, EventRegistrationToken*, int> add_RecognitionQualityDegrading;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RecognitionQualityDegrading;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSpeechRecognition__CSpeechRecognizer_Windows__CMedia__CSpeechRecognition__CSpeechRecognizerStateChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_StateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISpeechRecognizer>, Pointer<ISpeechRecognizerStateChangedEventArgs>>*, EventRegistrationToken*, int> add_StateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StateChanged;

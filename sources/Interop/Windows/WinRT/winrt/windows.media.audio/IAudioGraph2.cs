@@ -82,17 +82,17 @@ public unsafe partial struct IAudioGraph2 : IAudioGraph2.Interface, INativeGuid
     /// <include file='IAudioGraph2.xml' path='doc/member[@name="IAudioGraph2.CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync([NativeTypeName("ABI::Windows::Media::Capture::MediaCategory")] MediaCategory category, [NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Devices::Enumeration::IDeviceInformation *")] IDeviceInformation* device, [NativeTypeName("ABI::Windows::Media::Audio::IAudioNodeEmitter *")] IAudioNodeEmitter* emitter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync([NativeTypeName("ABI::Windows::Media::Capture::MediaCategory")] MediaCategory category, [NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Devices::Enumeration::IDeviceInformation *")] IDeviceInformation* device, [NativeTypeName("ABI::Windows::Media::Audio::IAudioNodeEmitter *")] IAudioNodeEmitter* emitter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioDeviceInputNodeResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioGraph2*, MediaCategory, IAudioEncodingProperties*, IDeviceInformation*, IAudioNodeEmitter*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IAudioGraph2*)Unsafe.AsPointer(ref this), category, encodingProperties, device, emitter, result);
+        return ((delegate* unmanaged[MemberFunction]<IAudioGraph2*, MediaCategory, IAudioEncodingProperties*, IDeviceInformation*, IAudioNodeEmitter*, IAsyncOperation<Pointer<ICreateAudioDeviceInputNodeResult>>**, int>)(lpVtbl[7]))((IAudioGraph2*)Unsafe.AsPointer(ref this), category, encodingProperties, device, emitter, result);
     }
 
     /// <include file='IAudioGraph2.xml' path='doc/member[@name="IAudioGraph2.CreateFileInputNodeWithEmitterAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT CreateFileInputNodeWithEmitterAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Media::Audio::IAudioNodeEmitter *")] IAudioNodeEmitter* emitter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileInputNodeResult_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT CreateFileInputNodeWithEmitterAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Media::Audio::IAudioNodeEmitter *")] IAudioNodeEmitter* emitter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileInputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioFileInputNodeResult>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioGraph2*, IStorageFile*, IAudioNodeEmitter*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IAudioGraph2*)Unsafe.AsPointer(ref this), file, emitter, result);
+        return ((delegate* unmanaged[MemberFunction]<IAudioGraph2*, IStorageFile*, IAudioNodeEmitter*, IAsyncOperation<Pointer<ICreateAudioFileInputNodeResult>>**, int>)(lpVtbl[8]))((IAudioGraph2*)Unsafe.AsPointer(ref this), file, emitter, result);
     }
 
     /// <include file='IAudioGraph2.xml' path='doc/member[@name="IAudioGraph2.CreateSubmixNodeWithFormatAndEmitter"]/*' />
@@ -117,10 +117,10 @@ public unsafe partial struct IAudioGraph2 : IAudioGraph2.Interface, INativeGuid
         HRESULT CreateFrameInputNodeWithFormatAndEmitter([NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Media::Audio::IAudioNodeEmitter *")] IAudioNodeEmitter* emitter, [NativeTypeName("ABI::Windows::Media::Audio::IAudioFrameInputNode **")] IAudioFrameInputNode** frameInputNode);
 
         [VtblIndex(7)]
-        HRESULT CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync([NativeTypeName("ABI::Windows::Media::Capture::MediaCategory")] MediaCategory category, [NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Devices::Enumeration::IDeviceInformation *")] IDeviceInformation* device, [NativeTypeName("ABI::Windows::Media::Audio::IAudioNodeEmitter *")] IAudioNodeEmitter* emitter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync([NativeTypeName("ABI::Windows::Media::Capture::MediaCategory")] MediaCategory category, [NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Devices::Enumeration::IDeviceInformation *")] IDeviceInformation* device, [NativeTypeName("ABI::Windows::Media::Audio::IAudioNodeEmitter *")] IAudioNodeEmitter* emitter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioDeviceInputNodeResult>>** result);
 
         [VtblIndex(8)]
-        HRESULT CreateFileInputNodeWithEmitterAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Media::Audio::IAudioNodeEmitter *")] IAudioNodeEmitter* emitter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileInputNodeResult_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT CreateFileInputNodeWithEmitterAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Media::Audio::IAudioNodeEmitter *")] IAudioNodeEmitter* emitter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileInputNodeResult_t **")] IAsyncOperation<Pointer<ICreateAudioFileInputNodeResult>>** result);
 
         [VtblIndex(9)]
         HRESULT CreateSubmixNodeWithFormatAndEmitter([NativeTypeName("ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *")] IAudioEncodingProperties* encodingProperties, [NativeTypeName("ABI::Windows::Media::Audio::IAudioNodeEmitter *")] IAudioNodeEmitter* emitter, [NativeTypeName("ABI::Windows::Media::Audio::IAudioInputNode **")] IAudioInputNode** submixNode);
@@ -154,10 +154,10 @@ public unsafe partial struct IAudioGraph2 : IAudioGraph2.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IAudioEncodingProperties*, IAudioNodeEmitter*, IAudioFrameInputNode**, int> CreateFrameInputNodeWithFormatAndEmitter;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Capture::MediaCategory, ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *, ABI::Windows::Devices::Enumeration::IDeviceInformation *, ABI::Windows::Media::Audio::IAudioNodeEmitter *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioDeviceInputNodeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, MediaCategory, IAudioEncodingProperties*, IDeviceInformation*, IAudioNodeEmitter*, IAsyncOperation<IntPtr>**, int> CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MediaCategory, IAudioEncodingProperties*, IDeviceInformation*, IAudioNodeEmitter*, IAsyncOperation<Pointer<ICreateAudioDeviceInputNodeResult>>**, int> CreateDeviceInputNodeWithFormatAndEmitterOnDeviceAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Media::Audio::IAudioNodeEmitter *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CAudio__CCreateAudioFileInputNodeResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAudioNodeEmitter*, IAsyncOperation<IntPtr>**, int> CreateFileInputNodeWithEmitterAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAudioNodeEmitter*, IAsyncOperation<Pointer<ICreateAudioFileInputNodeResult>>**, int> CreateFileInputNodeWithEmitterAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::MediaProperties::IAudioEncodingProperties *, ABI::Windows::Media::Audio::IAudioNodeEmitter *, ABI::Windows::Media::Audio::IAudioInputNode **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAudioEncodingProperties*, IAudioNodeEmitter*, IAudioInputNode**, int> CreateSubmixNodeWithFormatAndEmitter;

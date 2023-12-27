@@ -90,17 +90,17 @@ public unsafe partial struct IUploadOperation : IUploadOperation.Interface, INat
     /// <include file='IUploadOperation.xml' path='doc/member[@name="IUploadOperation.StartAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT StartAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperationWithProgress<IntPtr, IntPtr>** operation)
+    public HRESULT StartAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperationWithProgress<Pointer<IUploadOperation>, Pointer<IUploadOperation>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUploadOperation*, IAsyncOperationWithProgress<IntPtr, IntPtr>**, int>)(lpVtbl[8]))((IUploadOperation*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IUploadOperation*, IAsyncOperationWithProgress<Pointer<IUploadOperation>, Pointer<IUploadOperation>>**, int>)(lpVtbl[8]))((IUploadOperation*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IUploadOperation.xml' path='doc/member[@name="IUploadOperation.AttachAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT AttachAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperationWithProgress<IntPtr, IntPtr>** operation)
+    public HRESULT AttachAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperationWithProgress<Pointer<IUploadOperation>, Pointer<IUploadOperation>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUploadOperation*, IAsyncOperationWithProgress<IntPtr, IntPtr>**, int>)(lpVtbl[9]))((IUploadOperation*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IUploadOperation*, IAsyncOperationWithProgress<Pointer<IUploadOperation>, Pointer<IUploadOperation>>**, int>)(lpVtbl[9]))((IUploadOperation*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -112,10 +112,10 @@ public unsafe partial struct IUploadOperation : IUploadOperation.Interface, INat
         HRESULT get_Progress([NativeTypeName("ABI::Windows::Networking::BackgroundTransfer::BackgroundUploadProgress *")] BackgroundUploadProgress* value);
 
         [VtblIndex(8)]
-        HRESULT StartAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperationWithProgress<IntPtr, IntPtr>** operation);
+        HRESULT StartAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperationWithProgress<Pointer<IUploadOperation>, Pointer<IUploadOperation>>** operation);
 
         [VtblIndex(9)]
-        HRESULT AttachAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperationWithProgress<IntPtr, IntPtr>** operation);
+        HRESULT AttachAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **")] IAsyncOperationWithProgress<Pointer<IUploadOperation>, Pointer<IUploadOperation>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -146,9 +146,9 @@ public unsafe partial struct IUploadOperation : IUploadOperation.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, BackgroundUploadProgress*, int> get_Progress;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperationWithProgress<IntPtr, IntPtr>**, int> StartAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperationWithProgress<Pointer<IUploadOperation>, Pointer<IUploadOperation>>**, int> StartAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_Windows__CNetworking__CBackgroundTransfer__CUploadOperation_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperationWithProgress<IntPtr, IntPtr>**, int> AttachAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperationWithProgress<Pointer<IUploadOperation>, Pointer<IUploadOperation>>**, int> AttachAsync;
     }
 }

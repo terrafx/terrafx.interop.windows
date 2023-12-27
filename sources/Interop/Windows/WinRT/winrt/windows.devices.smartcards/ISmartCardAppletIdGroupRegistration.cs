@@ -106,9 +106,9 @@ public unsafe partial struct ISmartCardAppletIdGroupRegistration : ISmartCardApp
     /// <include file='ISmartCardAppletIdGroupRegistration.xml' path='doc/member[@name="ISmartCardAppletIdGroupRegistration.SetAutomaticResponseApdusAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT SetAutomaticResponseApdusAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CSmartCards__CSmartCardAutomaticResponseApdu_t *")] IIterable<IntPtr>* apdus, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** result)
+    public HRESULT SetAutomaticResponseApdusAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CSmartCards__CSmartCardAutomaticResponseApdu_t *")] IIterable<Pointer<ISmartCardAutomaticResponseApdu>>* apdus, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardAppletIdGroupRegistration*, IIterable<IntPtr>*, IAsyncAction**, int>)(lpVtbl[10]))((ISmartCardAppletIdGroupRegistration*)Unsafe.AsPointer(ref this), apdus, result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardAppletIdGroupRegistration*, IIterable<Pointer<ISmartCardAutomaticResponseApdu>>*, IAsyncAction**, int>)(lpVtbl[10]))((ISmartCardAppletIdGroupRegistration*)Unsafe.AsPointer(ref this), apdus, result);
     }
 
     public interface Interface : IInspectable.Interface
@@ -126,7 +126,7 @@ public unsafe partial struct ISmartCardAppletIdGroupRegistration : ISmartCardApp
         HRESULT get_Id(Guid* value);
 
         [VtblIndex(10)]
-        HRESULT SetAutomaticResponseApdusAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CSmartCards__CSmartCardAutomaticResponseApdu_t *")] IIterable<IntPtr>* apdus, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** result);
+        HRESULT SetAutomaticResponseApdusAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CSmartCards__CSmartCardAutomaticResponseApdu_t *")] IIterable<Pointer<ISmartCardAutomaticResponseApdu>>* apdus, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -163,6 +163,6 @@ public unsafe partial struct ISmartCardAppletIdGroupRegistration : ISmartCardApp
         public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> get_Id;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CDevices__CSmartCards__CSmartCardAutomaticResponseApdu_t *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IAsyncAction**, int> SetAutomaticResponseApdusAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<ISmartCardAutomaticResponseApdu>>*, IAsyncAction**, int> SetAutomaticResponseApdusAsync;
     }
 }

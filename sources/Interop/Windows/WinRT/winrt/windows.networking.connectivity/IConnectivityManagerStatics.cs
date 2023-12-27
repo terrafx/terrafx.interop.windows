@@ -74,9 +74,9 @@ public unsafe partial struct IConnectivityManagerStatics : IConnectivityManagerS
     /// <include file='IConnectivityManagerStatics.xml' path='doc/member[@name="IConnectivityManagerStatics.AcquireConnectionAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT AcquireConnectionAsync([NativeTypeName("ABI::Windows::Networking::Connectivity::ICellularApnContext *")] ICellularApnContext* cellularApnContext, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionSession_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT AcquireConnectionAsync([NativeTypeName("ABI::Windows::Networking::Connectivity::ICellularApnContext *")] ICellularApnContext* cellularApnContext, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionSession_t **")] IAsyncOperation<Pointer<IConnectionSession>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IConnectivityManagerStatics*, ICellularApnContext*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IConnectivityManagerStatics*)Unsafe.AsPointer(ref this), cellularApnContext, operation);
+        return ((delegate* unmanaged[MemberFunction]<IConnectivityManagerStatics*, ICellularApnContext*, IAsyncOperation<Pointer<IConnectionSession>>**, int>)(lpVtbl[6]))((IConnectivityManagerStatics*)Unsafe.AsPointer(ref this), cellularApnContext, operation);
     }
 
     /// <include file='IConnectivityManagerStatics.xml' path='doc/member[@name="IConnectivityManagerStatics.AddHttpRoutePolicy"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IConnectivityManagerStatics : IConnectivityManagerS
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT AcquireConnectionAsync([NativeTypeName("ABI::Windows::Networking::Connectivity::ICellularApnContext *")] ICellularApnContext* cellularApnContext, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionSession_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT AcquireConnectionAsync([NativeTypeName("ABI::Windows::Networking::Connectivity::ICellularApnContext *")] ICellularApnContext* cellularApnContext, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionSession_t **")] IAsyncOperation<Pointer<IConnectionSession>>** operation);
 
         [VtblIndex(7)]
         HRESULT AddHttpRoutePolicy([NativeTypeName("ABI::Windows::Networking::Connectivity::IRoutePolicy *")] IRoutePolicy* routePolicy);
@@ -129,7 +129,7 @@ public unsafe partial struct IConnectivityManagerStatics : IConnectivityManagerS
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Networking::Connectivity::ICellularApnContext *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CNetworking__CConnectivity__CConnectionSession_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ICellularApnContext*, IAsyncOperation<IntPtr>**, int> AcquireConnectionAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICellularApnContext*, IAsyncOperation<Pointer<IConnectionSession>>**, int> AcquireConnectionAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Networking::Connectivity::IRoutePolicy *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IRoutePolicy*, int> AddHttpRoutePolicy;

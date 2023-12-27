@@ -74,9 +74,9 @@ public unsafe partial struct IMseSourceBufferList : IMseSourceBufferList.Interfa
     /// <include file='IMseSourceBufferList.xml' path='doc/member[@name="IMseSourceBufferList.add_SourceBufferAdded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_SourceBufferAdded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBufferList_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SourceBufferAdded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBufferList_IInspectable_t *")] ITypedEventHandler<Pointer<IMseSourceBufferList>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMseSourceBufferList*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMseSourceBufferList*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMseSourceBufferList*, ITypedEventHandler<Pointer<IMseSourceBufferList>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMseSourceBufferList*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMseSourceBufferList.xml' path='doc/member[@name="IMseSourceBufferList.remove_SourceBufferAdded"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IMseSourceBufferList : IMseSourceBufferList.Interfa
     /// <include file='IMseSourceBufferList.xml' path='doc/member[@name="IMseSourceBufferList.add_SourceBufferRemoved"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_SourceBufferRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBufferList_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SourceBufferRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBufferList_IInspectable_t *")] ITypedEventHandler<Pointer<IMseSourceBufferList>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMseSourceBufferList*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IMseSourceBufferList*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMseSourceBufferList*, ITypedEventHandler<Pointer<IMseSourceBufferList>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IMseSourceBufferList*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMseSourceBufferList.xml' path='doc/member[@name="IMseSourceBufferList.remove_SourceBufferRemoved"]/*' />
@@ -106,27 +106,27 @@ public unsafe partial struct IMseSourceBufferList : IMseSourceBufferList.Interfa
     /// <include file='IMseSourceBufferList.xml' path='doc/member[@name="IMseSourceBufferList.get_Buffers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_Buffers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CMseSourceBuffer_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Buffers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CMseSourceBuffer_t **")] IVectorView<Pointer<IMseSourceBuffer>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMseSourceBufferList*, IVectorView<IntPtr>**, int>)(lpVtbl[10]))((IMseSourceBufferList*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMseSourceBufferList*, IVectorView<Pointer<IMseSourceBuffer>>**, int>)(lpVtbl[10]))((IMseSourceBufferList*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_SourceBufferAdded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBufferList_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SourceBufferAdded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBufferList_IInspectable_t *")] ITypedEventHandler<Pointer<IMseSourceBufferList>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_SourceBufferAdded(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_SourceBufferRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBufferList_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SourceBufferRemoved([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBufferList_IInspectable_t *")] ITypedEventHandler<Pointer<IMseSourceBufferList>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_SourceBufferRemoved(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT get_Buffers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CMseSourceBuffer_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Buffers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CMseSourceBuffer_t **")] IVectorView<Pointer<IMseSourceBuffer>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -151,18 +151,18 @@ public unsafe partial struct IMseSourceBufferList : IMseSourceBufferList.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBufferList_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SourceBufferAdded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMseSourceBufferList>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_SourceBufferAdded;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SourceBufferAdded;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCore__CMseSourceBufferList_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SourceBufferRemoved;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMseSourceBufferList>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_SourceBufferRemoved;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SourceBufferRemoved;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCore__CMseSourceBuffer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Buffers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IMseSourceBuffer>>**, int> get_Buffers;
     }
 }

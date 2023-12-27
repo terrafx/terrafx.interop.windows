@@ -98,9 +98,9 @@ public unsafe partial struct IHttpExpectationHeaderValue : IHttpExpectationHeade
     /// <include file='IHttpExpectationHeaderValue.xml' path='doc/member[@name="IHttpExpectationHeaderValue.get_Parameters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_Parameters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Parameters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **")] IVector<Pointer<IHttpNameValueHeaderValue>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpExpectationHeaderValue*, IVector<IntPtr>**, int>)(lpVtbl[9]))((IHttpExpectationHeaderValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IHttpExpectationHeaderValue*, IVector<Pointer<IHttpNameValueHeaderValue>>**, int>)(lpVtbl[9]))((IHttpExpectationHeaderValue*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -115,7 +115,7 @@ public unsafe partial struct IHttpExpectationHeaderValue : IHttpExpectationHeade
         HRESULT put_Value(HSTRING value);
 
         [VtblIndex(9)]
-        HRESULT get_Parameters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **")] IVector<IntPtr>** value);
+        HRESULT get_Parameters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **")] IVector<Pointer<IHttpNameValueHeaderValue>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -149,6 +149,6 @@ public unsafe partial struct IHttpExpectationHeaderValue : IHttpExpectationHeade
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_Value;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Parameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IHttpNameValueHeaderValue>>**, int> get_Parameters;
     }
 }

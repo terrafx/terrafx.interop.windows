@@ -122,9 +122,9 @@ public unsafe partial struct IFileSavePickerUI : IFileSavePickerUI.Interface, IN
     /// <include file='IFileSavePickerUI.xml' path='doc/member[@name="IFileSavePickerUI.add_FileNameChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_FileNameChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileSavePickerUI_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_FileNameChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileSavePickerUI_IInspectable_t *")] ITypedEventHandler<Pointer<IFileSavePickerUI>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileSavePickerUI*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IFileSavePickerUI*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IFileSavePickerUI*, ITypedEventHandler<Pointer<IFileSavePickerUI>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IFileSavePickerUI*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IFileSavePickerUI.xml' path='doc/member[@name="IFileSavePickerUI.remove_FileNameChanged"]/*' />
@@ -138,9 +138,9 @@ public unsafe partial struct IFileSavePickerUI : IFileSavePickerUI.Interface, IN
     /// <include file='IFileSavePickerUI.xml' path='doc/member[@name="IFileSavePickerUI.add_TargetFileRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_TargetFileRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileSavePickerUI_Windows__CStorage__CPickers__CProvider__CTargetFileRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_TargetFileRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileSavePickerUI_Windows__CStorage__CPickers__CProvider__CTargetFileRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IFileSavePickerUI>, Pointer<ITargetFileRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IFileSavePickerUI*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IFileSavePickerUI*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IFileSavePickerUI*, ITypedEventHandler<Pointer<IFileSavePickerUI>, Pointer<ITargetFileRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IFileSavePickerUI*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IFileSavePickerUI.xml' path='doc/member[@name="IFileSavePickerUI.remove_TargetFileRequested"]/*' />
@@ -172,13 +172,13 @@ public unsafe partial struct IFileSavePickerUI : IFileSavePickerUI.Interface, IN
         HRESULT TrySetFileName(HSTRING value, [NativeTypeName("ABI::Windows::Storage::Pickers::Provider::SetFileNameResult *")] SetFileNameResult* result);
 
         [VtblIndex(12)]
-        HRESULT add_FileNameChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileSavePickerUI_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_FileNameChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileSavePickerUI_IInspectable_t *")] ITypedEventHandler<Pointer<IFileSavePickerUI>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_FileNameChanged(EventRegistrationToken token);
 
         [VtblIndex(14)]
-        HRESULT add_TargetFileRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileSavePickerUI_Windows__CStorage__CPickers__CProvider__CTargetFileRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_TargetFileRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileSavePickerUI_Windows__CStorage__CPickers__CProvider__CTargetFileRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IFileSavePickerUI>, Pointer<ITargetFileRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(15)]
         HRESULT remove_TargetFileRequested(EventRegistrationToken token);
@@ -224,13 +224,13 @@ public unsafe partial struct IFileSavePickerUI : IFileSavePickerUI.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, SetFileNameResult*, int> TrySetFileName;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileSavePickerUI_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_FileNameChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IFileSavePickerUI>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_FileNameChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_FileNameChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CPickers__CProvider__CFileSavePickerUI_Windows__CStorage__CPickers__CProvider__CTargetFileRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_TargetFileRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IFileSavePickerUI>, Pointer<ITargetFileRequestedEventArgs>>*, EventRegistrationToken*, int> add_TargetFileRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_TargetFileRequested;

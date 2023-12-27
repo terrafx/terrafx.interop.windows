@@ -98,9 +98,9 @@ public unsafe partial struct IPackage : IPackage.Interface, INativeGuid
     /// <include file='IPackage.xml' path='doc/member[@name="IPackage.get_Dependencies"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_Dependencies([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CPackage_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Dependencies([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CPackage_t **")] IVectorView<Pointer<IPackage>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackage*, IVectorView<IntPtr>**, int>)(lpVtbl[9]))((IPackage*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPackage*, IVectorView<Pointer<IPackage>>**, int>)(lpVtbl[9]))((IPackage*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -115,7 +115,7 @@ public unsafe partial struct IPackage : IPackage.Interface, INativeGuid
         HRESULT get_IsFramework([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(9)]
-        HRESULT get_Dependencies([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CPackage_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Dependencies([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CPackage_t **")] IVectorView<Pointer<IPackage>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -149,6 +149,6 @@ public unsafe partial struct IPackage : IPackage.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsFramework;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CPackage_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Dependencies;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IPackage>>**, int> get_Dependencies;
     }
 }

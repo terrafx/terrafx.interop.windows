@@ -106,9 +106,9 @@ public unsafe partial struct IHttpMediaTypeWithQualityHeaderValue : IHttpMediaTy
     /// <include file='IHttpMediaTypeWithQualityHeaderValue.xml' path='doc/member[@name="IHttpMediaTypeWithQualityHeaderValue.get_Parameters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_Parameters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Parameters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **")] IVector<Pointer<IHttpNameValueHeaderValue>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpMediaTypeWithQualityHeaderValue*, IVector<IntPtr>**, int>)(lpVtbl[10]))((IHttpMediaTypeWithQualityHeaderValue*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IHttpMediaTypeWithQualityHeaderValue*, IVector<Pointer<IHttpNameValueHeaderValue>>**, int>)(lpVtbl[10]))((IHttpMediaTypeWithQualityHeaderValue*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IHttpMediaTypeWithQualityHeaderValue.xml' path='doc/member[@name="IHttpMediaTypeWithQualityHeaderValue.get_Quality"]/*' />
@@ -142,7 +142,7 @@ public unsafe partial struct IHttpMediaTypeWithQualityHeaderValue : IHttpMediaTy
         HRESULT put_MediaType(HSTRING value);
 
         [VtblIndex(10)]
-        HRESULT get_Parameters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **")] IVector<IntPtr>** value);
+        HRESULT get_Parameters([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **")] IVector<Pointer<IHttpNameValueHeaderValue>>** value);
 
         [VtblIndex(11)]
         HRESULT get_Quality([NativeTypeName("ABI::Windows::Foundation::__FIReference_1_double_t **")] IReference<double>** value);
@@ -185,7 +185,7 @@ public unsafe partial struct IHttpMediaTypeWithQualityHeaderValue : IHttpMediaTy
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> put_MediaType;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CWeb__CHttp__CHeaders__CHttpNameValueHeaderValue_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Parameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IHttpNameValueHeaderValue>>**, int> get_Parameters;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIReference_1_double_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IReference<double>**, int> get_Quality;

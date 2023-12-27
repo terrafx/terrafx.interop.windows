@@ -74,9 +74,9 @@ public unsafe partial struct ICmsAttachedSignature : ICmsAttachedSignature.Inter
     /// <include file='ICmsAttachedSignature.xml' path='doc/member[@name="ICmsAttachedSignature.get_Certificates"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Certificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Certificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<Pointer<ICertificate>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICmsAttachedSignature*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((ICmsAttachedSignature*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICmsAttachedSignature*, IVectorView<Pointer<ICertificate>>**, int>)(lpVtbl[6]))((ICmsAttachedSignature*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICmsAttachedSignature.xml' path='doc/member[@name="ICmsAttachedSignature.get_Content"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct ICmsAttachedSignature : ICmsAttachedSignature.Inter
     /// <include file='ICmsAttachedSignature.xml' path='doc/member[@name="ICmsAttachedSignature.get_Signers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Signers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Signers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_t **")] IVectorView<Pointer<ICmsSignerInfo>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICmsAttachedSignature*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((ICmsAttachedSignature*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICmsAttachedSignature*, IVectorView<Pointer<ICmsSignerInfo>>**, int>)(lpVtbl[8]))((ICmsAttachedSignature*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICmsAttachedSignature.xml' path='doc/member[@name="ICmsAttachedSignature.VerifySignature"]/*' />
@@ -106,13 +106,13 @@ public unsafe partial struct ICmsAttachedSignature : ICmsAttachedSignature.Inter
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Certificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Certificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<Pointer<ICertificate>>** value);
 
         [VtblIndex(7)]
         HRESULT get_Content([NativeTypeName("UINT32 *")] uint* valueLength, byte** value);
 
         [VtblIndex(8)]
-        HRESULT get_Signers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Signers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_t **")] IVectorView<Pointer<ICmsSignerInfo>>** value);
 
         [VtblIndex(9)]
         HRESULT VerifySignature([NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::SignatureValidationResult *")] SignatureValidationResult* value);
@@ -140,13 +140,13 @@ public unsafe partial struct ICmsAttachedSignature : ICmsAttachedSignature.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Certificates;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ICertificate>>**, int> get_Certificates;
 
         [NativeTypeName("HRESULT (UINT32 *, BYTE **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, byte**, int> get_Content;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCmsSignerInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Signers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ICmsSignerInfo>>**, int> get_Signers;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Cryptography::Certificates::SignatureValidationResult *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, SignatureValidationResult*, int> VerifySignature;

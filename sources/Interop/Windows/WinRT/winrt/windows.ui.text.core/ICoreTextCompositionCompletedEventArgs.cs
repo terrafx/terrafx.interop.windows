@@ -82,9 +82,9 @@ public unsafe partial struct ICoreTextCompositionCompletedEventArgs : ICoreTextC
     /// <include file='ICoreTextCompositionCompletedEventArgs.xml' path='doc/member[@name="ICoreTextCompositionCompletedEventArgs.get_CompositionSegments"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_CompositionSegments([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CText__CCore__CCoreTextCompositionSegment_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_CompositionSegments([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CText__CCore__CCoreTextCompositionSegment_t **")] IVectorView<Pointer<ICoreTextCompositionSegment>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreTextCompositionCompletedEventArgs*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((ICoreTextCompositionCompletedEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICoreTextCompositionCompletedEventArgs*, IVectorView<Pointer<ICoreTextCompositionSegment>>**, int>)(lpVtbl[7]))((ICoreTextCompositionCompletedEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICoreTextCompositionCompletedEventArgs.xml' path='doc/member[@name="ICoreTextCompositionCompletedEventArgs.GetDeferral"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct ICoreTextCompositionCompletedEventArgs : ICoreTextC
         HRESULT get_IsCanceled([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(7)]
-        HRESULT get_CompositionSegments([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CText__CCore__CCoreTextCompositionSegment_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_CompositionSegments([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CText__CCore__CCoreTextCompositionSegment_t **")] IVectorView<Pointer<ICoreTextCompositionSegment>>** value);
 
         [VtblIndex(8)]
         HRESULT GetDeferral([NativeTypeName("ABI::Windows::Foundation::IDeferral **")] IDeferral** value);
@@ -132,7 +132,7 @@ public unsafe partial struct ICoreTextCompositionCompletedEventArgs : ICoreTextC
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsCanceled;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CText__CCore__CCoreTextCompositionSegment_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_CompositionSegments;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ICoreTextCompositionSegment>>**, int> get_CompositionSegments;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IDeferral **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IDeferral**, int> GetDeferral;

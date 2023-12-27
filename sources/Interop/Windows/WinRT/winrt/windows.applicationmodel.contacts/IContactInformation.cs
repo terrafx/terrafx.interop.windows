@@ -82,57 +82,57 @@ public unsafe partial struct IContactInformation : IContactInformation.Interface
     /// <include file='IContactInformation.xml' path='doc/member[@name="IContactInformation.GetThumbnailAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactInformation*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IContactInformation*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IContactInformation*, IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>**, int>)(lpVtbl[7]))((IContactInformation*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IContactInformation.xml' path='doc/member[@name="IContactInformation.get_Emails"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Emails([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Emails([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **")] IVectorView<Pointer<IContactField>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactInformation*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((IContactInformation*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContactInformation*, IVectorView<Pointer<IContactField>>**, int>)(lpVtbl[8]))((IContactInformation*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContactInformation.xml' path='doc/member[@name="IContactInformation.get_PhoneNumbers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_PhoneNumbers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_PhoneNumbers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **")] IVectorView<Pointer<IContactField>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactInformation*, IVectorView<IntPtr>**, int>)(lpVtbl[9]))((IContactInformation*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContactInformation*, IVectorView<Pointer<IContactField>>**, int>)(lpVtbl[9]))((IContactInformation*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContactInformation.xml' path='doc/member[@name="IContactInformation.get_Locations"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_Locations([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactLocationField_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Locations([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactLocationField_t **")] IVectorView<Pointer<IContactLocationField>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactInformation*, IVectorView<IntPtr>**, int>)(lpVtbl[10]))((IContactInformation*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContactInformation*, IVectorView<Pointer<IContactLocationField>>**, int>)(lpVtbl[10]))((IContactInformation*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContactInformation.xml' path='doc/member[@name="IContactInformation.get_InstantMessages"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_InstantMessages([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_InstantMessages([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_t **")] IVectorView<Pointer<IContactInstantMessageField>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactInformation*, IVectorView<IntPtr>**, int>)(lpVtbl[11]))((IContactInformation*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContactInformation*, IVectorView<Pointer<IContactInstantMessageField>>**, int>)(lpVtbl[11]))((IContactInformation*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContactInformation.xml' path='doc/member[@name="IContactInformation.get_CustomFields"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_CustomFields([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_CustomFields([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **")] IVectorView<Pointer<IContactField>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactInformation*, IVectorView<IntPtr>**, int>)(lpVtbl[12]))((IContactInformation*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContactInformation*, IVectorView<Pointer<IContactField>>**, int>)(lpVtbl[12]))((IContactInformation*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContactInformation.xml' path='doc/member[@name="IContactInformation.QueryCustomFields"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT QueryCustomFields(HSTRING customName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **")] IVectorView<IntPtr>** value)
+    public HRESULT QueryCustomFields(HSTRING customName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **")] IVectorView<Pointer<IContactField>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContactInformation*, HSTRING, IVectorView<IntPtr>**, int>)(lpVtbl[13]))((IContactInformation*)Unsafe.AsPointer(ref this), customName, value);
+        return ((delegate* unmanaged[MemberFunction]<IContactInformation*, HSTRING, IVectorView<Pointer<IContactField>>**, int>)(lpVtbl[13]))((IContactInformation*)Unsafe.AsPointer(ref this), customName, value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -141,25 +141,25 @@ public unsafe partial struct IContactInformation : IContactInformation.Interface
         HRESULT get_Name(HSTRING* value);
 
         [VtblIndex(7)]
-        HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **")] IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>** operation);
 
         [VtblIndex(8)]
-        HRESULT get_Emails([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Emails([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **")] IVectorView<Pointer<IContactField>>** value);
 
         [VtblIndex(9)]
-        HRESULT get_PhoneNumbers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_PhoneNumbers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **")] IVectorView<Pointer<IContactField>>** value);
 
         [VtblIndex(10)]
-        HRESULT get_Locations([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactLocationField_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Locations([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactLocationField_t **")] IVectorView<Pointer<IContactLocationField>>** value);
 
         [VtblIndex(11)]
-        HRESULT get_InstantMessages([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_InstantMessages([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_t **")] IVectorView<Pointer<IContactInstantMessageField>>** value);
 
         [VtblIndex(12)]
-        HRESULT get_CustomFields([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_CustomFields([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **")] IVectorView<Pointer<IContactField>>** value);
 
         [VtblIndex(13)]
-        HRESULT QueryCustomFields(HSTRING customName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **")] IVectorView<IntPtr>** value);
+        HRESULT QueryCustomFields(HSTRING customName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **")] IVectorView<Pointer<IContactField>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -187,24 +187,24 @@ public unsafe partial struct IContactInformation : IContactInformation.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_Name;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStreams__CIRandomAccessStreamWithContentType_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetThumbnailAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IRandomAccessStreamWithContentType>>**, int> GetThumbnailAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Emails;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IContactField>>**, int> get_Emails;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_PhoneNumbers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IContactField>>**, int> get_PhoneNumbers;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactLocationField_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Locations;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IContactLocationField>>**, int> get_Locations;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactInstantMessageField_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_InstantMessages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IContactInstantMessageField>>**, int> get_InstantMessages;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_CustomFields;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IContactField>>**, int> get_CustomFields;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CContacts__CContactField_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<IntPtr>**, int> QueryCustomFields;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<Pointer<IContactField>>**, int> QueryCustomFields;
     }
 }

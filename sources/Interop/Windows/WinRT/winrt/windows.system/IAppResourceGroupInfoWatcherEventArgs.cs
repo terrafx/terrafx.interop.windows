@@ -74,9 +74,9 @@ public unsafe partial struct IAppResourceGroupInfoWatcherEventArgs : IAppResourc
     /// <include file='IAppResourceGroupInfoWatcherEventArgs.xml' path='doc/member[@name="IAppResourceGroupInfoWatcherEventArgs.get_AppDiagnosticInfos"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_AppDiagnosticInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_AppDiagnosticInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IVectorView<Pointer<IAppDiagnosticInfo>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppResourceGroupInfoWatcherEventArgs*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IAppResourceGroupInfoWatcherEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppResourceGroupInfoWatcherEventArgs*, IVectorView<Pointer<IAppDiagnosticInfo>>**, int>)(lpVtbl[6]))((IAppResourceGroupInfoWatcherEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppResourceGroupInfoWatcherEventArgs.xml' path='doc/member[@name="IAppResourceGroupInfoWatcherEventArgs.get_AppResourceGroupInfo"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IAppResourceGroupInfoWatcherEventArgs : IAppResourc
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_AppDiagnosticInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_AppDiagnosticInfos([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_t **")] IVectorView<Pointer<IAppDiagnosticInfo>>** value);
 
         [VtblIndex(7)]
         HRESULT get_AppResourceGroupInfo([NativeTypeName("ABI::Windows::System::IAppResourceGroupInfo **")] IAppResourceGroupInfo** value);
@@ -118,7 +118,7 @@ public unsafe partial struct IAppResourceGroupInfoWatcherEventArgs : IAppResourc
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSystem__CAppDiagnosticInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_AppDiagnosticInfos;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IAppDiagnosticInfo>>**, int> get_AppDiagnosticInfos;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IAppResourceGroupInfo **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppResourceGroupInfo**, int> get_AppResourceGroupInfo;

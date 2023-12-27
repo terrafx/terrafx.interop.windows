@@ -74,15 +74,15 @@ public unsafe partial struct IStorageFolderStatics2 : IStorageFolderStatics2.Int
     /// <include file='IStorageFolderStatics2.xml' path='doc/member[@name="IStorageFolderStatics2.GetFolderFromPathForUserAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetFolderFromPathForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING path, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetFolderFromPathForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING path, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageFolderStatics2*, IUser*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStorageFolderStatics2*)Unsafe.AsPointer(ref this), user, path, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageFolderStatics2*, IUser*, HSTRING, IAsyncOperation<Pointer<IStorageFolder>>**, int>)(lpVtbl[6]))((IStorageFolderStatics2*)Unsafe.AsPointer(ref this), user, path, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetFolderFromPathForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING path, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetFolderFromPathForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, HSTRING path, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **")] IAsyncOperation<Pointer<IStorageFolder>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IStorageFolderStatics2 : IStorageFolderStatics2.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IUser *, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CStorageFolder_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, HSTRING, IAsyncOperation<IntPtr>**, int> GetFolderFromPathForUserAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, HSTRING, IAsyncOperation<Pointer<IStorageFolder>>**, int> GetFolderFromPathForUserAsync;
     }
 }

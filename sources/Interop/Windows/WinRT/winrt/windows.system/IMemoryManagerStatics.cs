@@ -98,9 +98,9 @@ public unsafe partial struct IMemoryManagerStatics : IMemoryManagerStatics.Inter
     /// <include file='IMemoryManagerStatics.xml' path='doc/member[@name="IMemoryManagerStatics.add_AppMemoryUsageIncreased"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_AppMemoryUsageIncreased([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AppMemoryUsageIncreased([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMemoryManagerStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IMemoryManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMemoryManagerStatics*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IMemoryManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMemoryManagerStatics.xml' path='doc/member[@name="IMemoryManagerStatics.remove_AppMemoryUsageIncreased"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct IMemoryManagerStatics : IMemoryManagerStatics.Inter
     /// <include file='IMemoryManagerStatics.xml' path='doc/member[@name="IMemoryManagerStatics.add_AppMemoryUsageDecreased"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_AppMemoryUsageDecreased([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AppMemoryUsageDecreased([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMemoryManagerStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IMemoryManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMemoryManagerStatics*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IMemoryManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMemoryManagerStatics.xml' path='doc/member[@name="IMemoryManagerStatics.remove_AppMemoryUsageDecreased"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IMemoryManagerStatics : IMemoryManagerStatics.Inter
     /// <include file='IMemoryManagerStatics.xml' path='doc/member[@name="IMemoryManagerStatics.add_AppMemoryUsageLimitChanging"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_AppMemoryUsageLimitChanging([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSystem__CAppMemoryUsageLimitChangingEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AppMemoryUsageLimitChanging([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSystem__CAppMemoryUsageLimitChangingEventArgs_t *")] IEventHandler<Pointer<IAppMemoryUsageLimitChangingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMemoryManagerStatics*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IMemoryManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMemoryManagerStatics*, IEventHandler<Pointer<IAppMemoryUsageLimitChangingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IMemoryManagerStatics*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMemoryManagerStatics.xml' path='doc/member[@name="IMemoryManagerStatics.remove_AppMemoryUsageLimitChanging"]/*' />
@@ -155,19 +155,19 @@ public unsafe partial struct IMemoryManagerStatics : IMemoryManagerStatics.Inter
         HRESULT get_AppMemoryUsageLevel([NativeTypeName("ABI::Windows::System::AppMemoryUsageLevel *")] AppMemoryUsageLevel* value);
 
         [VtblIndex(9)]
-        HRESULT add_AppMemoryUsageIncreased([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AppMemoryUsageIncreased([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_AppMemoryUsageIncreased(EventRegistrationToken token);
 
         [VtblIndex(11)]
-        HRESULT add_AppMemoryUsageDecreased([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AppMemoryUsageDecreased([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_AppMemoryUsageDecreased(EventRegistrationToken token);
 
         [VtblIndex(13)]
-        HRESULT add_AppMemoryUsageLimitChanging([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSystem__CAppMemoryUsageLimitChangingEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AppMemoryUsageLimitChanging([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSystem__CAppMemoryUsageLimitChangingEventArgs_t *")] IEventHandler<Pointer<IAppMemoryUsageLimitChangingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_AppMemoryUsageLimitChanging(EventRegistrationToken token);
@@ -204,19 +204,19 @@ public unsafe partial struct IMemoryManagerStatics : IMemoryManagerStatics.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, AppMemoryUsageLevel*, int> get_AppMemoryUsageLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_AppMemoryUsageIncreased;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_AppMemoryUsageIncreased;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AppMemoryUsageIncreased;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_AppMemoryUsageDecreased;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_AppMemoryUsageDecreased;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AppMemoryUsageDecreased;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_Windows__CSystem__CAppMemoryUsageLimitChangingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_AppMemoryUsageLimitChanging;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IAppMemoryUsageLimitChangingEventArgs>>*, EventRegistrationToken*, int> add_AppMemoryUsageLimitChanging;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AppMemoryUsageLimitChanging;

@@ -74,9 +74,9 @@ public unsafe partial struct IShapeVisual : IShapeVisual.Interface, INativeGuid
     /// <include file='IShapeVisual.xml' path='doc/member[@name="IShapeVisual.get_Shapes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Shapes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CComposition__CCompositionShape_t **")] IVector<IntPtr>** value)
+    public HRESULT get_Shapes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CComposition__CCompositionShape_t **")] IVector<Pointer<ICompositionShape>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IShapeVisual*, IVector<IntPtr>**, int>)(lpVtbl[6]))((IShapeVisual*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IShapeVisual*, IVector<Pointer<ICompositionShape>>**, int>)(lpVtbl[6]))((IShapeVisual*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IShapeVisual.xml' path='doc/member[@name="IShapeVisual.get_ViewBox"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IShapeVisual : IShapeVisual.Interface, INativeGuid
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Shapes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CComposition__CCompositionShape_t **")] IVector<IntPtr>** value);
+        HRESULT get_Shapes([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CComposition__CCompositionShape_t **")] IVector<Pointer<ICompositionShape>>** value);
 
         [VtblIndex(7)]
         HRESULT get_ViewBox([NativeTypeName("ABI::Windows::UI::Composition::ICompositionViewBox **")] ICompositionViewBox** value);
@@ -129,7 +129,7 @@ public unsafe partial struct IShapeVisual : IShapeVisual.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CUI__CComposition__CCompositionShape_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_Shapes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<ICompositionShape>>**, int> get_Shapes;
 
         [NativeTypeName("HRESULT (ABI::Windows::UI::Composition::ICompositionViewBox **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ICompositionViewBox**, int> get_ViewBox;

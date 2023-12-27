@@ -74,15 +74,15 @@ public unsafe partial struct IApplicationDataStatics2 : IApplicationDataStatics2
     /// <include file='IApplicationDataStatics2.xml' path='doc/member[@name="IApplicationDataStatics2.GetForUserAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CApplicationData_t **")] IAsyncOperation<IntPtr>** getForUserOperation)
+    public HRESULT GetForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CApplicationData_t **")] IAsyncOperation<Pointer<IApplicationData>>** getForUserOperation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IApplicationDataStatics2*, IUser*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IApplicationDataStatics2*)Unsafe.AsPointer(ref this), user, getForUserOperation);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDataStatics2*, IUser*, IAsyncOperation<Pointer<IApplicationData>>**, int>)(lpVtbl[6]))((IApplicationDataStatics2*)Unsafe.AsPointer(ref this), user, getForUserOperation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CApplicationData_t **")] IAsyncOperation<IntPtr>** getForUserOperation);
+        HRESULT GetForUserAsync([NativeTypeName("ABI::Windows::System::IUser *")] IUser* user, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CApplicationData_t **")] IAsyncOperation<Pointer<IApplicationData>>** getForUserOperation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IApplicationDataStatics2 : IApplicationDataStatics2
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IUser *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CApplicationData_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, IAsyncOperation<IntPtr>**, int> GetForUserAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, IAsyncOperation<Pointer<IApplicationData>>**, int> GetForUserAsync;
     }
 }

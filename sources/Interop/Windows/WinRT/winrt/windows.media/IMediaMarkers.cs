@@ -74,15 +74,15 @@ public unsafe partial struct IMediaMarkers : IMediaMarkers.Interface, INativeGui
     /// <include file='IMediaMarkers.xml' path='doc/member[@name="IMediaMarkers.get_Markers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Markers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CIMediaMarker_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Markers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CIMediaMarker_t **")] IVectorView<Pointer<IMediaMarker>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaMarkers*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IMediaMarkers*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaMarkers*, IVectorView<Pointer<IMediaMarker>>**, int>)(lpVtbl[6]))((IMediaMarkers*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Markers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CIMediaMarker_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Markers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CIMediaMarker_t **")] IVectorView<Pointer<IMediaMarker>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IMediaMarkers : IMediaMarkers.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CIMediaMarker_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Markers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IMediaMarker>>**, int> get_Markers;
     }
 }

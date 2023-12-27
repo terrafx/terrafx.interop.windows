@@ -74,15 +74,15 @@ public unsafe partial struct IHttpFormUrlEncodedContentFactory : IHttpFormUrlEnc
     /// <include file='IHttpFormUrlEncodedContentFactory.xml' path='doc/member[@name="IHttpFormUrlEncodedContentFactory.Create"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT Create([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t *")] IIterable<IntPtr>* content, [NativeTypeName("ABI::Windows::Web::Http::IHttpContent **")] IHttpContent** value)
+    public HRESULT Create([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, HSTRING>>>* content, [NativeTypeName("ABI::Windows::Web::Http::IHttpContent **")] IHttpContent** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpFormUrlEncodedContentFactory*, IIterable<IntPtr>*, IHttpContent**, int>)(lpVtbl[6]))((IHttpFormUrlEncodedContentFactory*)Unsafe.AsPointer(ref this), content, value);
+        return ((delegate* unmanaged[MemberFunction]<IHttpFormUrlEncodedContentFactory*, IIterable<Pointer<IKeyValuePair<HSTRING, HSTRING>>>*, IHttpContent**, int>)(lpVtbl[6]))((IHttpFormUrlEncodedContentFactory*)Unsafe.AsPointer(ref this), content, value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT Create([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t *")] IIterable<IntPtr>* content, [NativeTypeName("ABI::Windows::Web::Http::IHttpContent **")] IHttpContent** value);
+        HRESULT Create([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t *")] IIterable<Pointer<IKeyValuePair<HSTRING, HSTRING>>>* content, [NativeTypeName("ABI::Windows::Web::Http::IHttpContent **")] IHttpContent** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IHttpFormUrlEncodedContentFactory : IHttpFormUrlEnc
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1___FIKeyValuePair_2_HSTRING_HSTRING_t *, ABI::Windows::Web::Http::IHttpContent **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IHttpContent**, int> Create;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IKeyValuePair<HSTRING, HSTRING>>>*, IHttpContent**, int> Create;
     }
 }

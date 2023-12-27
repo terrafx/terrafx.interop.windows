@@ -74,9 +74,9 @@ public unsafe partial struct IAudioRenderEffectsManager : IAudioRenderEffectsMan
     /// <include file='IAudioRenderEffectsManager.xml' path='doc/member[@name="IAudioRenderEffectsManager.add_AudioRenderEffectsChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_AudioRenderEffectsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CEffects__CAudioRenderEffectsManager_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AudioRenderEffectsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CEffects__CAudioRenderEffectsManager_IInspectable_t *")] ITypedEventHandler<Pointer<IAudioRenderEffectsManager>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioRenderEffectsManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IAudioRenderEffectsManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAudioRenderEffectsManager*, ITypedEventHandler<Pointer<IAudioRenderEffectsManager>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IAudioRenderEffectsManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAudioRenderEffectsManager.xml' path='doc/member[@name="IAudioRenderEffectsManager.remove_AudioRenderEffectsChanged"]/*' />
@@ -90,21 +90,21 @@ public unsafe partial struct IAudioRenderEffectsManager : IAudioRenderEffectsMan
     /// <include file='IAudioRenderEffectsManager.xml' path='doc/member[@name="IAudioRenderEffectsManager.GetAudioRenderEffects"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetAudioRenderEffects([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CEffects__CAudioEffect_t **")] IVectorView<IntPtr>** effects)
+    public HRESULT GetAudioRenderEffects([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CEffects__CAudioEffect_t **")] IVectorView<Pointer<IAudioEffect>>** effects)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioRenderEffectsManager*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((IAudioRenderEffectsManager*)Unsafe.AsPointer(ref this), effects);
+        return ((delegate* unmanaged[MemberFunction]<IAudioRenderEffectsManager*, IVectorView<Pointer<IAudioEffect>>**, int>)(lpVtbl[8]))((IAudioRenderEffectsManager*)Unsafe.AsPointer(ref this), effects);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_AudioRenderEffectsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CEffects__CAudioRenderEffectsManager_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AudioRenderEffectsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CEffects__CAudioRenderEffectsManager_IInspectable_t *")] ITypedEventHandler<Pointer<IAudioRenderEffectsManager>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_AudioRenderEffectsChanged(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT GetAudioRenderEffects([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CEffects__CAudioEffect_t **")] IVectorView<IntPtr>** effects);
+        HRESULT GetAudioRenderEffects([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CEffects__CAudioEffect_t **")] IVectorView<Pointer<IAudioEffect>>** effects);
     }
 
     public partial struct Vtbl<TSelf>
@@ -129,12 +129,12 @@ public unsafe partial struct IAudioRenderEffectsManager : IAudioRenderEffectsMan
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CEffects__CAudioRenderEffectsManager_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AudioRenderEffectsChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAudioRenderEffectsManager>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_AudioRenderEffectsChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AudioRenderEffectsChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CEffects__CAudioEffect_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetAudioRenderEffects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IAudioEffect>>**, int> GetAudioRenderEffects;
     }
 }

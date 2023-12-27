@@ -157,9 +157,9 @@ public unsafe partial struct ISearchPane : ISearchPane.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
-    public HRESULT add_VisibilityChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneVisibilityChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_VisibilityChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneVisibilityChangedEventArgs_t *")] ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneVisibilityChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISearchPane*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((ISearchPane*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISearchPane*, ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneVisibilityChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((ISearchPane*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISearchPane.xml' path='doc/member[@name="ISearchPane.remove_VisibilityChanged"]/*' />
@@ -175,9 +175,9 @@ public unsafe partial struct ISearchPane : ISearchPane.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
-    public HRESULT add_QueryChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQueryChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_QueryChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQueryChangedEventArgs_t *")] ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneQueryChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISearchPane*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[17]))((ISearchPane*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISearchPane*, ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneQueryChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[17]))((ISearchPane*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISearchPane.xml' path='doc/member[@name="ISearchPane.remove_QueryChanged"]/*' />
@@ -193,9 +193,9 @@ public unsafe partial struct ISearchPane : ISearchPane.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
     [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
-    public HRESULT add_SuggestionsRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneSuggestionsRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SuggestionsRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneSuggestionsRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneSuggestionsRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISearchPane*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[19]))((ISearchPane*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISearchPane*, ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneSuggestionsRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[19]))((ISearchPane*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISearchPane.xml' path='doc/member[@name="ISearchPane.remove_SuggestionsRequested"]/*' />
@@ -211,9 +211,9 @@ public unsafe partial struct ISearchPane : ISearchPane.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
     [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
-    public HRESULT add_QuerySubmitted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQuerySubmittedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_QuerySubmitted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQuerySubmittedEventArgs_t *")] ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneQuerySubmittedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISearchPane*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[21]))((ISearchPane*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISearchPane*, ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneQuerySubmittedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[21]))((ISearchPane*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISearchPane.xml' path='doc/member[@name="ISearchPane.remove_QuerySubmitted"]/*' />
@@ -229,9 +229,9 @@ public unsafe partial struct ISearchPane : ISearchPane.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
     [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
-    public HRESULT add_ResultSuggestionChosen([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneResultSuggestionChosenEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ResultSuggestionChosen([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneResultSuggestionChosenEventArgs_t *")] ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneResultSuggestionChosenEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISearchPane*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[23]))((ISearchPane*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISearchPane*, ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneResultSuggestionChosenEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[23]))((ISearchPane*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISearchPane.xml' path='doc/member[@name="ISearchPane.remove_ResultSuggestionChosen"]/*' />
@@ -337,7 +337,7 @@ public unsafe partial struct ISearchPane : ISearchPane.Interface, INativeGuid
 
         [VtblIndex(15)]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
-        HRESULT add_VisibilityChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneVisibilityChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_VisibilityChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneVisibilityChangedEventArgs_t *")] ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneVisibilityChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(16)]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
@@ -345,7 +345,7 @@ public unsafe partial struct ISearchPane : ISearchPane.Interface, INativeGuid
 
         [VtblIndex(17)]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
-        HRESULT add_QueryChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQueryChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_QueryChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQueryChangedEventArgs_t *")] ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneQueryChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(18)]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
@@ -353,7 +353,7 @@ public unsafe partial struct ISearchPane : ISearchPane.Interface, INativeGuid
 
         [VtblIndex(19)]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
-        HRESULT add_SuggestionsRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneSuggestionsRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SuggestionsRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneSuggestionsRequestedEventArgs_t *")] ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneSuggestionsRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(20)]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
@@ -361,7 +361,7 @@ public unsafe partial struct ISearchPane : ISearchPane.Interface, INativeGuid
 
         [VtblIndex(21)]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
-        HRESULT add_QuerySubmitted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQuerySubmittedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_QuerySubmitted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQuerySubmittedEventArgs_t *")] ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneQuerySubmittedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(22)]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
@@ -369,7 +369,7 @@ public unsafe partial struct ISearchPane : ISearchPane.Interface, INativeGuid
 
         [VtblIndex(23)]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
-        HRESULT add_ResultSuggestionChosen([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneResultSuggestionChosenEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ResultSuggestionChosen([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneResultSuggestionChosenEventArgs_t *")] ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneResultSuggestionChosenEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(24)]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
@@ -459,7 +459,7 @@ public unsafe partial struct ISearchPane : ISearchPane.Interface, INativeGuid
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneVisibilityChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_VisibilityChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneVisibilityChangedEventArgs>>*, EventRegistrationToken*, int> add_VisibilityChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
@@ -467,7 +467,7 @@ public unsafe partial struct ISearchPane : ISearchPane.Interface, INativeGuid
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQueryChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_QueryChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneQueryChangedEventArgs>>*, EventRegistrationToken*, int> add_QueryChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
@@ -475,7 +475,7 @@ public unsafe partial struct ISearchPane : ISearchPane.Interface, INativeGuid
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneSuggestionsRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SuggestionsRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneSuggestionsRequestedEventArgs>>*, EventRegistrationToken*, int> add_SuggestionsRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
@@ -483,7 +483,7 @@ public unsafe partial struct ISearchPane : ISearchPane.Interface, INativeGuid
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneQuerySubmittedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_QuerySubmitted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneQuerySubmittedEventArgs>>*, EventRegistrationToken*, int> add_QuerySubmitted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
@@ -491,7 +491,7 @@ public unsafe partial struct ISearchPane : ISearchPane.Interface, INativeGuid
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CSearch__CSearchPane_Windows__CApplicationModel__CSearch__CSearchPaneResultSuggestionChosenEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ResultSuggestionChosen;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISearchPane>, Pointer<ISearchPaneResultSuggestionChosenEventArgs>>*, EventRegistrationToken*, int> add_ResultSuggestionChosen;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("ISearchPane may be altered or unavailable for releases after Windows 10.")]

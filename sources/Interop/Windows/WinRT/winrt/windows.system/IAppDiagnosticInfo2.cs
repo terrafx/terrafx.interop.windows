@@ -74,9 +74,9 @@ public unsafe partial struct IAppDiagnosticInfo2 : IAppDiagnosticInfo2.Interface
     /// <include file='IAppDiagnosticInfo2.xml' path='doc/member[@name="IAppDiagnosticInfo2.GetResourceGroups"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetResourceGroups([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppResourceGroupInfo_t **")] IVector<IntPtr>** result)
+    public HRESULT GetResourceGroups([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppResourceGroupInfo_t **")] IVector<Pointer<IAppResourceGroupInfo>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfo2*, IVector<IntPtr>**, int>)(lpVtbl[6]))((IAppDiagnosticInfo2*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IAppDiagnosticInfo2*, IVector<Pointer<IAppResourceGroupInfo>>**, int>)(lpVtbl[6]))((IAppDiagnosticInfo2*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IAppDiagnosticInfo2.xml' path='doc/member[@name="IAppDiagnosticInfo2.CreateResourceGroupWatcher"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IAppDiagnosticInfo2 : IAppDiagnosticInfo2.Interface
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetResourceGroups([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppResourceGroupInfo_t **")] IVector<IntPtr>** result);
+        HRESULT GetResourceGroups([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppResourceGroupInfo_t **")] IVector<Pointer<IAppResourceGroupInfo>>** result);
 
         [VtblIndex(7)]
         HRESULT CreateResourceGroupWatcher([NativeTypeName("ABI::Windows::System::IAppResourceGroupInfoWatcher **")] IAppResourceGroupInfoWatcher** result);
@@ -118,7 +118,7 @@ public unsafe partial struct IAppDiagnosticInfo2 : IAppDiagnosticInfo2.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CSystem__CAppResourceGroupInfo_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> GetResourceGroups;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IAppResourceGroupInfo>>**, int> GetResourceGroups;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::IAppResourceGroupInfoWatcher **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppResourceGroupInfoWatcher**, int> CreateResourceGroupWatcher;

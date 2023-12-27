@@ -106,9 +106,9 @@ public unsafe partial struct IIppAttributeValue : IIppAttributeValue.Interface, 
     /// <include file='IIppAttributeValue.xml' path='doc/member[@name="IIppAttributeValue.GetOctetStringArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetOctetStringArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStreams__CIBuffer_t **")] IVector<IntPtr>** result)
+    public HRESULT GetOctetStringArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStreams__CIBuffer_t **")] IVector<Pointer<IBuffer>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValue*, IVector<IntPtr>**, int>)(lpVtbl[10]))((IIppAttributeValue*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValue*, IVector<Pointer<IBuffer>>**, int>)(lpVtbl[10]))((IIppAttributeValue*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IIppAttributeValue.xml' path='doc/member[@name="IIppAttributeValue.GetDateTimeArray"]/*' />
@@ -122,41 +122,41 @@ public unsafe partial struct IIppAttributeValue : IIppAttributeValue.Interface, 
     /// <include file='IIppAttributeValue.xml' path='doc/member[@name="IIppAttributeValue.GetResolutionArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetResolutionArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppResolution_t **")] IVector<IntPtr>** result)
+    public HRESULT GetResolutionArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppResolution_t **")] IVector<Pointer<IIppResolution>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValue*, IVector<IntPtr>**, int>)(lpVtbl[12]))((IIppAttributeValue*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValue*, IVector<Pointer<IIppResolution>>**, int>)(lpVtbl[12]))((IIppAttributeValue*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IIppAttributeValue.xml' path='doc/member[@name="IIppAttributeValue.GetRangeOfIntegerArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetRangeOfIntegerArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppIntegerRange_t **")] IVector<IntPtr>** result)
+    public HRESULT GetRangeOfIntegerArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppIntegerRange_t **")] IVector<Pointer<IIppIntegerRange>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValue*, IVector<IntPtr>**, int>)(lpVtbl[13]))((IIppAttributeValue*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValue*, IVector<Pointer<IIppIntegerRange>>**, int>)(lpVtbl[13]))((IIppAttributeValue*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IIppAttributeValue.xml' path='doc/member[@name="IIppAttributeValue.GetCollectionArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetCollectionArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1___FIMapView_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t **")] IVector<IntPtr>** result)
+    public HRESULT GetCollectionArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1___FIMapView_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t **")] IVector<Pointer<IMapView<HSTRING, Pointer<IIppAttributeValue>>>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValue*, IVector<IntPtr>**, int>)(lpVtbl[14]))((IIppAttributeValue*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValue*, IVector<Pointer<IMapView<HSTRING, Pointer<IIppAttributeValue>>>>**, int>)(lpVtbl[14]))((IIppAttributeValue*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IIppAttributeValue.xml' path='doc/member[@name="IIppAttributeValue.GetTextWithLanguageArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT GetTextWithLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t **")] IVector<IntPtr>** result)
+    public HRESULT GetTextWithLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t **")] IVector<Pointer<IIppTextWithLanguage>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValue*, IVector<IntPtr>**, int>)(lpVtbl[15]))((IIppAttributeValue*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValue*, IVector<Pointer<IIppTextWithLanguage>>**, int>)(lpVtbl[15]))((IIppAttributeValue*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IIppAttributeValue.xml' path='doc/member[@name="IIppAttributeValue.GetNameWithLanguageArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT GetNameWithLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t **")] IVector<IntPtr>** result)
+    public HRESULT GetNameWithLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t **")] IVector<Pointer<IIppTextWithLanguage>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValue*, IVector<IntPtr>**, int>)(lpVtbl[16]))((IIppAttributeValue*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValue*, IVector<Pointer<IIppTextWithLanguage>>**, int>)(lpVtbl[16]))((IIppAttributeValue*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IIppAttributeValue.xml' path='doc/member[@name="IIppAttributeValue.GetTextWithoutLanguageArray"]/*' />
@@ -186,9 +186,9 @@ public unsafe partial struct IIppAttributeValue : IIppAttributeValue.Interface, 
     /// <include file='IIppAttributeValue.xml' path='doc/member[@name="IIppAttributeValue.GetUriArray"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT GetUriArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CUri_t **")] IVector<IntPtr>** result)
+    public HRESULT GetUriArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CUri_t **")] IVector<Pointer<IUri>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValue*, IVector<IntPtr>**, int>)(lpVtbl[20]))((IIppAttributeValue*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IIppAttributeValue*, IVector<Pointer<IUri>>**, int>)(lpVtbl[20]))((IIppAttributeValue*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='IIppAttributeValue.xml' path='doc/member[@name="IIppAttributeValue.GetUriSchemaArray"]/*' />
@@ -238,25 +238,25 @@ public unsafe partial struct IIppAttributeValue : IIppAttributeValue.Interface, 
         HRESULT GetEnumArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_int_t **")] IVector<int>** result);
 
         [VtblIndex(10)]
-        HRESULT GetOctetStringArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStreams__CIBuffer_t **")] IVector<IntPtr>** result);
+        HRESULT GetOctetStringArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStreams__CIBuffer_t **")] IVector<Pointer<IBuffer>>** result);
 
         [VtblIndex(11)]
         HRESULT GetDateTimeArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CDateTime_t **")] IVector<DateTime>** result);
 
         [VtblIndex(12)]
-        HRESULT GetResolutionArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppResolution_t **")] IVector<IntPtr>** result);
+        HRESULT GetResolutionArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppResolution_t **")] IVector<Pointer<IIppResolution>>** result);
 
         [VtblIndex(13)]
-        HRESULT GetRangeOfIntegerArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppIntegerRange_t **")] IVector<IntPtr>** result);
+        HRESULT GetRangeOfIntegerArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppIntegerRange_t **")] IVector<Pointer<IIppIntegerRange>>** result);
 
         [VtblIndex(14)]
-        HRESULT GetCollectionArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1___FIMapView_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t **")] IVector<IntPtr>** result);
+        HRESULT GetCollectionArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1___FIMapView_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t **")] IVector<Pointer<IMapView<HSTRING, Pointer<IIppAttributeValue>>>>** result);
 
         [VtblIndex(15)]
-        HRESULT GetTextWithLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t **")] IVector<IntPtr>** result);
+        HRESULT GetTextWithLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t **")] IVector<Pointer<IIppTextWithLanguage>>** result);
 
         [VtblIndex(16)]
-        HRESULT GetNameWithLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t **")] IVector<IntPtr>** result);
+        HRESULT GetNameWithLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t **")] IVector<Pointer<IIppTextWithLanguage>>** result);
 
         [VtblIndex(17)]
         HRESULT GetTextWithoutLanguageArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t **")] IVector<HSTRING>** result);
@@ -268,7 +268,7 @@ public unsafe partial struct IIppAttributeValue : IIppAttributeValue.Interface, 
         HRESULT GetKeywordArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t **")] IVector<HSTRING>** result);
 
         [VtblIndex(20)]
-        HRESULT GetUriArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CUri_t **")] IVector<IntPtr>** result);
+        HRESULT GetUriArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CUri_t **")] IVector<Pointer<IUri>>** result);
 
         [VtblIndex(21)]
         HRESULT GetUriSchemaArray([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t **")] IVector<HSTRING>** result);
@@ -317,25 +317,25 @@ public unsafe partial struct IIppAttributeValue : IIppAttributeValue.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, IVector<int>**, int> GetEnumArray;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CStreams__CIBuffer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> GetOctetStringArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IBuffer>>**, int> GetOctetStringArray;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CDateTime_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IVector<DateTime>**, int> GetDateTimeArray;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppResolution_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> GetResolutionArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IIppResolution>>**, int> GetResolutionArray;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppIntegerRange_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> GetRangeOfIntegerArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IIppIntegerRange>>**, int> GetRangeOfIntegerArray;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1___FIMapView_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeValue_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> GetCollectionArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IMapView<HSTRING, Pointer<IIppAttributeValue>>>>**, int> GetCollectionArray;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> GetTextWithLanguageArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IIppTextWithLanguage>>**, int> GetTextWithLanguageArray;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CDevices__CPrinters__CIppTextWithLanguage_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> GetNameWithLanguageArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IIppTextWithLanguage>>**, int> GetNameWithLanguageArray;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IVector<HSTRING>**, int> GetTextWithoutLanguageArray;
@@ -347,7 +347,7 @@ public unsafe partial struct IIppAttributeValue : IIppAttributeValue.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, IVector<HSTRING>**, int> GetKeywordArray;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CUri_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> GetUriArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IUri>>**, int> GetUriArray;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_HSTRING_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IVector<HSTRING>**, int> GetUriSchemaArray;

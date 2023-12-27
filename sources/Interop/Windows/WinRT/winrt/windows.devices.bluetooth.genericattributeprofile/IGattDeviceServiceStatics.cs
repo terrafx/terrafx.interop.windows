@@ -74,9 +74,9 @@ public unsafe partial struct IGattDeviceServiceStatics : IGattDeviceServiceStati
     /// <include file='IGattDeviceServiceStatics.xml' path='doc/member[@name="IGattDeviceServiceStatics.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **")] IAsyncOperation<IntPtr>** asyncOp)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **")] IAsyncOperation<Pointer<IGattDeviceService>>** asyncOp)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDeviceServiceStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IGattDeviceServiceStatics*)Unsafe.AsPointer(ref this), deviceId, asyncOp);
+        return ((delegate* unmanaged[MemberFunction]<IGattDeviceServiceStatics*, HSTRING, IAsyncOperation<Pointer<IGattDeviceService>>**, int>)(lpVtbl[6]))((IGattDeviceServiceStatics*)Unsafe.AsPointer(ref this), deviceId, asyncOp);
     }
 
     /// <include file='IGattDeviceServiceStatics.xml' path='doc/member[@name="IGattDeviceServiceStatics.GetDeviceSelectorFromUuid"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IGattDeviceServiceStatics : IGattDeviceServiceStati
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **")] IAsyncOperation<IntPtr>** asyncOp);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **")] IAsyncOperation<Pointer<IGattDeviceService>>** asyncOp);
 
         [VtblIndex(7)]
         HRESULT GetDeviceSelectorFromUuid(Guid serviceUuid, HSTRING* selector);
@@ -144,7 +144,7 @@ public unsafe partial struct IGattDeviceServiceStatics : IGattDeviceServiceStati
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceService_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IGattDeviceService>>**, int> FromIdAsync;
 
         [NativeTypeName("HRESULT (GUID, HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, Guid, HSTRING*, int> GetDeviceSelectorFromUuid;

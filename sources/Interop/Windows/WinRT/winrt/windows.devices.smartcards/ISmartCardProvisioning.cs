@@ -98,9 +98,9 @@ public unsafe partial struct ISmartCardProvisioning : ISmartCardProvisioning.Int
     /// <include file='ISmartCardProvisioning.xml' path='doc/member[@name="ISmartCardProvisioning.GetChallengeContextAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetChallengeContextAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardChallengeContext_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetChallengeContextAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardChallengeContext_t **")] IAsyncOperation<Pointer<ISmartCardChallengeContext>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardProvisioning*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((ISmartCardProvisioning*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardProvisioning*, IAsyncOperation<Pointer<ISmartCardChallengeContext>>**, int>)(lpVtbl[9]))((ISmartCardProvisioning*)Unsafe.AsPointer(ref this), result);
     }
 
     /// <include file='ISmartCardProvisioning.xml' path='doc/member[@name="ISmartCardProvisioning.RequestPinChangeAsync"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISmartCardProvisioning : ISmartCardProvisioning.Int
         HRESULT GetNameAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **")] IAsyncOperation<HSTRING>** result);
 
         [VtblIndex(9)]
-        HRESULT GetChallengeContextAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardChallengeContext_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetChallengeContextAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardChallengeContext_t **")] IAsyncOperation<Pointer<ISmartCardChallengeContext>>** result);
 
         [VtblIndex(10)]
         HRESULT RequestPinChangeAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** result);
@@ -171,7 +171,7 @@ public unsafe partial struct ISmartCardProvisioning : ISmartCardProvisioning.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<HSTRING>**, int> GetNameAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardChallengeContext_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetChallengeContextAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<ISmartCardChallengeContext>>**, int> GetChallengeContextAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<bool>**, int> RequestPinChangeAsync;

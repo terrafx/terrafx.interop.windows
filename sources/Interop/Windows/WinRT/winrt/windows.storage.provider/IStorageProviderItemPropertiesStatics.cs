@@ -74,15 +74,15 @@ public unsafe partial struct IStorageProviderItemPropertiesStatics : IStoragePro
     /// <include file='IStorageProviderItemPropertiesStatics.xml' path='doc/member[@name="IStorageProviderItemPropertiesStatics.SetAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetAsync([NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* item, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CProvider__CStorageProviderItemProperty_t *")] IIterable<IntPtr>* itemProperties, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation)
+    public HRESULT SetAsync([NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* item, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CProvider__CStorageProviderItemProperty_t *")] IIterable<Pointer<IStorageProviderItemProperty>>* itemProperties, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageProviderItemPropertiesStatics*, IStorageItem*, IIterable<IntPtr>*, IAsyncAction**, int>)(lpVtbl[6]))((IStorageProviderItemPropertiesStatics*)Unsafe.AsPointer(ref this), item, itemProperties, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderItemPropertiesStatics*, IStorageItem*, IIterable<Pointer<IStorageProviderItemProperty>>*, IAsyncAction**, int>)(lpVtbl[6]))((IStorageProviderItemPropertiesStatics*)Unsafe.AsPointer(ref this), item, itemProperties, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT SetAsync([NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* item, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CProvider__CStorageProviderItemProperty_t *")] IIterable<IntPtr>* itemProperties, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
+        HRESULT SetAsync([NativeTypeName("ABI::Windows::Storage::IStorageItem *")] IStorageItem* item, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CProvider__CStorageProviderItemProperty_t *")] IIterable<Pointer<IStorageProviderItemProperty>>* itemProperties, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IStorageProviderItemPropertiesStatics : IStoragePro
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageItem *, ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CStorage__CProvider__CStorageProviderItemProperty_t *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageItem*, IIterable<IntPtr>*, IAsyncAction**, int> SetAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageItem*, IIterable<Pointer<IStorageProviderItemProperty>>*, IAsyncAction**, int> SetAsync;
     }
 }

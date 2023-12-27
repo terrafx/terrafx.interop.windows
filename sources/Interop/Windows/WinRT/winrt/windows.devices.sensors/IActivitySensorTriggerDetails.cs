@@ -74,15 +74,15 @@ public unsafe partial struct IActivitySensorTriggerDetails : IActivitySensorTrig
     /// <include file='IActivitySensorTriggerDetails.xml' path='doc/member[@name="IActivitySensorTriggerDetails.ReadReports"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT ReadReports([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CActivitySensorReadingChangeReport_t **")] IVectorView<IntPtr>** value)
+    public HRESULT ReadReports([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CActivitySensorReadingChangeReport_t **")] IVectorView<Pointer<IActivitySensorReadingChangeReport>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IActivitySensorTriggerDetails*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IActivitySensorTriggerDetails*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IActivitySensorTriggerDetails*, IVectorView<Pointer<IActivitySensorReadingChangeReport>>**, int>)(lpVtbl[6]))((IActivitySensorTriggerDetails*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT ReadReports([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CActivitySensorReadingChangeReport_t **")] IVectorView<IntPtr>** value);
+        HRESULT ReadReports([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CActivitySensorReadingChangeReport_t **")] IVectorView<Pointer<IActivitySensorReadingChangeReport>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IActivitySensorTriggerDetails : IActivitySensorTrig
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CActivitySensorReadingChangeReport_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> ReadReports;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IActivitySensorReadingChangeReport>>**, int> ReadReports;
     }
 }

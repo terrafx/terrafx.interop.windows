@@ -82,9 +82,9 @@ public unsafe partial struct IAppBroadcastPlugInManager : IAppBroadcastPlugInMan
     /// <include file='IAppBroadcastPlugInManager.xml' path='doc/member[@name="IAppBroadcastPlugInManager.get_PlugInList"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_PlugInList([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CAppBroadcastPlugIn_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_PlugInList([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CAppBroadcastPlugIn_t **")] IVectorView<Pointer<IAppBroadcastPlugIn>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastPlugInManager*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IAppBroadcastPlugInManager*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IAppBroadcastPlugInManager*, IVectorView<Pointer<IAppBroadcastPlugIn>>**, int>)(lpVtbl[7]))((IAppBroadcastPlugInManager*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IAppBroadcastPlugInManager.xml' path='doc/member[@name="IAppBroadcastPlugInManager.get_DefaultPlugIn"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct IAppBroadcastPlugInManager : IAppBroadcastPlugInMan
         HRESULT get_IsBroadcastProviderAvailable([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(7)]
-        HRESULT get_PlugInList([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CAppBroadcastPlugIn_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_PlugInList([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CAppBroadcastPlugIn_t **")] IVectorView<Pointer<IAppBroadcastPlugIn>>** value);
 
         [VtblIndex(8)]
         HRESULT get_DefaultPlugIn([NativeTypeName("ABI::Windows::Media::Capture::IAppBroadcastPlugIn **")] IAppBroadcastPlugIn** value);
@@ -143,7 +143,7 @@ public unsafe partial struct IAppBroadcastPlugInManager : IAppBroadcastPlugInMan
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsBroadcastProviderAvailable;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CAppBroadcastPlugIn_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_PlugInList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IAppBroadcastPlugIn>>**, int> get_PlugInList;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Capture::IAppBroadcastPlugIn **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppBroadcastPlugIn**, int> get_DefaultPlugIn;

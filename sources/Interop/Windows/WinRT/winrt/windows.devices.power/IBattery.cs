@@ -90,9 +90,9 @@ public unsafe partial struct IBattery : IBattery.Interface, INativeGuid
     /// <include file='IBattery.xml' path='doc/member[@name="IBattery.add_ReportUpdated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_ReportUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPower__CBattery_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ReportUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPower__CBattery_IInspectable_t *")] ITypedEventHandler<Pointer<IBattery>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBattery*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IBattery*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBattery*, ITypedEventHandler<Pointer<IBattery>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IBattery*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBattery.xml' path='doc/member[@name="IBattery.remove_ReportUpdated"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct IBattery : IBattery.Interface, INativeGuid
         HRESULT GetReport([NativeTypeName("ABI::Windows::Devices::Power::IBatteryReport **")] IBatteryReport** result);
 
         [VtblIndex(8)]
-        HRESULT add_ReportUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPower__CBattery_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ReportUpdated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPower__CBattery_IInspectable_t *")] ITypedEventHandler<Pointer<IBattery>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_ReportUpdated(EventRegistrationToken token);
@@ -146,7 +146,7 @@ public unsafe partial struct IBattery : IBattery.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IBatteryReport**, int> GetReport;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPower__CBattery_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ReportUpdated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IBattery>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ReportUpdated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ReportUpdated;

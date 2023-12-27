@@ -74,48 +74,48 @@ public unsafe partial struct IXmlDocumentStatics : IXmlDocumentStatics.Interface
     /// <include file='IXmlDocumentStatics.xml' path='doc/member[@name="IXmlDocumentStatics.LoadFromUriAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT LoadFromUriAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT LoadFromUriAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **")] IAsyncOperation<Pointer<IXmlDocument>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IXmlDocumentStatics*, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IXmlDocumentStatics*)Unsafe.AsPointer(ref this), uri, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IXmlDocumentStatics*, IUriRuntimeClass*, IAsyncOperation<Pointer<IXmlDocument>>**, int>)(lpVtbl[6]))((IXmlDocumentStatics*)Unsafe.AsPointer(ref this), uri, asyncInfo);
     }
 
     /// <include file='IXmlDocumentStatics.xml' path='doc/member[@name="IXmlDocumentStatics.LoadFromUriWithSettingsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT LoadFromUriWithSettingsAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlLoadSettings *")] IXmlLoadSettings* loadSettings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT LoadFromUriWithSettingsAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlLoadSettings *")] IXmlLoadSettings* loadSettings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **")] IAsyncOperation<Pointer<IXmlDocument>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IXmlDocumentStatics*, IUriRuntimeClass*, IXmlLoadSettings*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IXmlDocumentStatics*)Unsafe.AsPointer(ref this), uri, loadSettings, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IXmlDocumentStatics*, IUriRuntimeClass*, IXmlLoadSettings*, IAsyncOperation<Pointer<IXmlDocument>>**, int>)(lpVtbl[7]))((IXmlDocumentStatics*)Unsafe.AsPointer(ref this), uri, loadSettings, asyncInfo);
     }
 
     /// <include file='IXmlDocumentStatics.xml' path='doc/member[@name="IXmlDocumentStatics.LoadFromFileAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT LoadFromFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT LoadFromFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **")] IAsyncOperation<Pointer<IXmlDocument>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IXmlDocumentStatics*, IStorageFile*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IXmlDocumentStatics*)Unsafe.AsPointer(ref this), file, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IXmlDocumentStatics*, IStorageFile*, IAsyncOperation<Pointer<IXmlDocument>>**, int>)(lpVtbl[8]))((IXmlDocumentStatics*)Unsafe.AsPointer(ref this), file, asyncInfo);
     }
 
     /// <include file='IXmlDocumentStatics.xml' path='doc/member[@name="IXmlDocumentStatics.LoadFromFileWithSettingsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT LoadFromFileWithSettingsAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlLoadSettings *")] IXmlLoadSettings* loadSettings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT LoadFromFileWithSettingsAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlLoadSettings *")] IXmlLoadSettings* loadSettings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **")] IAsyncOperation<Pointer<IXmlDocument>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IXmlDocumentStatics*, IStorageFile*, IXmlLoadSettings*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IXmlDocumentStatics*)Unsafe.AsPointer(ref this), file, loadSettings, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IXmlDocumentStatics*, IStorageFile*, IXmlLoadSettings*, IAsyncOperation<Pointer<IXmlDocument>>**, int>)(lpVtbl[9]))((IXmlDocumentStatics*)Unsafe.AsPointer(ref this), file, loadSettings, asyncInfo);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT LoadFromUriAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT LoadFromUriAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **")] IAsyncOperation<Pointer<IXmlDocument>>** asyncInfo);
 
         [VtblIndex(7)]
-        HRESULT LoadFromUriWithSettingsAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlLoadSettings *")] IXmlLoadSettings* loadSettings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT LoadFromUriWithSettingsAsync([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* uri, [NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlLoadSettings *")] IXmlLoadSettings* loadSettings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **")] IAsyncOperation<Pointer<IXmlDocument>>** asyncInfo);
 
         [VtblIndex(8)]
-        HRESULT LoadFromFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT LoadFromFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **")] IAsyncOperation<Pointer<IXmlDocument>>** asyncInfo);
 
         [VtblIndex(9)]
-        HRESULT LoadFromFileWithSettingsAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlLoadSettings *")] IXmlLoadSettings* loadSettings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT LoadFromFileWithSettingsAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Data::Xml::Dom::IXmlLoadSettings *")] IXmlLoadSettings* loadSettings, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **")] IAsyncOperation<Pointer<IXmlDocument>>** asyncInfo);
     }
 
     public partial struct Vtbl<TSelf>
@@ -140,15 +140,15 @@ public unsafe partial struct IXmlDocumentStatics : IXmlDocumentStatics.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperation<IntPtr>**, int> LoadFromUriAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IAsyncOperation<Pointer<IXmlDocument>>**, int> LoadFromUriAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *, ABI::Windows::Data::Xml::Dom::IXmlLoadSettings *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IXmlLoadSettings*, IAsyncOperation<IntPtr>**, int> LoadFromUriWithSettingsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, IXmlLoadSettings*, IAsyncOperation<Pointer<IXmlDocument>>**, int> LoadFromUriWithSettingsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<IntPtr>**, int> LoadFromFileAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperation<Pointer<IXmlDocument>>**, int> LoadFromFileAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Data::Xml::Dom::IXmlLoadSettings *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CData__CXml__CDom__CXmlDocument_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IXmlLoadSettings*, IAsyncOperation<IntPtr>**, int> LoadFromFileWithSettingsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IXmlLoadSettings*, IAsyncOperation<Pointer<IXmlDocument>>**, int> LoadFromFileWithSettingsAsync;
     }
 }

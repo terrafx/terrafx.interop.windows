@@ -74,9 +74,9 @@ public unsafe partial struct ICoreClosestInteractiveBoundsRequested : ICoreClose
     /// <include file='ICoreClosestInteractiveBoundsRequested.xml' path='doc/member[@name="ICoreClosestInteractiveBoundsRequested.add_ClosestInteractiveBoundsRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_ClosestInteractiveBoundsRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreComponentInputSource_Windows__CUI__CCore__CClosestInteractiveBoundsRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie)
+    public HRESULT add_ClosestInteractiveBoundsRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreComponentInputSource_Windows__CUI__CCore__CClosestInteractiveBoundsRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, Pointer<IClosestInteractiveBoundsRequestedEventArgs>>* handler, EventRegistrationToken* pCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreClosestInteractiveBoundsRequested*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreClosestInteractiveBoundsRequested*)Unsafe.AsPointer(ref this), handler, pCookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreClosestInteractiveBoundsRequested*, ITypedEventHandler<IntPtr, Pointer<IClosestInteractiveBoundsRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreClosestInteractiveBoundsRequested*)Unsafe.AsPointer(ref this), handler, pCookie);
     }
 
     /// <include file='ICoreClosestInteractiveBoundsRequested.xml' path='doc/member[@name="ICoreClosestInteractiveBoundsRequested.remove_ClosestInteractiveBoundsRequested"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct ICoreClosestInteractiveBoundsRequested : ICoreClose
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_ClosestInteractiveBoundsRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreComponentInputSource_Windows__CUI__CCore__CClosestInteractiveBoundsRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie);
+        HRESULT add_ClosestInteractiveBoundsRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreComponentInputSource_Windows__CUI__CCore__CClosestInteractiveBoundsRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, Pointer<IClosestInteractiveBoundsRequestedEventArgs>>* handler, EventRegistrationToken* pCookie);
 
         [VtblIndex(7)]
         HRESULT remove_ClosestInteractiveBoundsRequested(EventRegistrationToken cookie);
@@ -118,7 +118,7 @@ public unsafe partial struct ICoreClosestInteractiveBoundsRequested : ICoreClose
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CCore__CCoreComponentInputSource_Windows__CUI__CCore__CClosestInteractiveBoundsRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ClosestInteractiveBoundsRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, Pointer<IClosestInteractiveBoundsRequestedEventArgs>>*, EventRegistrationToken*, int> add_ClosestInteractiveBoundsRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ClosestInteractiveBoundsRequested;

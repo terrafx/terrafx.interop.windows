@@ -74,9 +74,9 @@ public unsafe partial struct IMediaEncodingProperties : IMediaEncodingProperties
     /// <include file='IMediaEncodingProperties.xml' path='doc/member[@name="IMediaEncodingProperties.get_Properties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_GUID_IInspectable_t **")] IMap<Guid, IntPtr>** value)
+    public HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_GUID_IInspectable_t **")] IMap<Guid, Pointer<IInspectable>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaEncodingProperties*, IMap<Guid, IntPtr>**, int>)(lpVtbl[6]))((IMediaEncodingProperties*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaEncodingProperties*, IMap<Guid, Pointer<IInspectable>>**, int>)(lpVtbl[6]))((IMediaEncodingProperties*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaEncodingProperties.xml' path='doc/member[@name="IMediaEncodingProperties.get_Type"]/*' />
@@ -106,7 +106,7 @@ public unsafe partial struct IMediaEncodingProperties : IMediaEncodingProperties
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_GUID_IInspectable_t **")] IMap<Guid, IntPtr>** value);
+        HRESULT get_Properties([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMap_2_GUID_IInspectable_t **")] IMap<Guid, Pointer<IInspectable>>** value);
 
         [VtblIndex(7)]
         HRESULT get_Type(HSTRING* value);
@@ -140,7 +140,7 @@ public unsafe partial struct IMediaEncodingProperties : IMediaEncodingProperties
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMap_2_GUID_IInspectable_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<Guid, IntPtr>**, int> get_Properties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMap<Guid, Pointer<IInspectable>>**, int> get_Properties;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_Type;

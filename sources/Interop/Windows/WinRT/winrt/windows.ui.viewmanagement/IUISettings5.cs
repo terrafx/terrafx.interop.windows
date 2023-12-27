@@ -82,9 +82,9 @@ public unsafe partial struct IUISettings5 : IUISettings5.Interface, INativeGuid
     /// <include file='IUISettings5.xml' path='doc/member[@name="IUISettings5.add_AutoHideScrollBarsChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_AutoHideScrollBarsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_Windows__CUI__CViewManagement__CUISettingsAutoHideScrollBarsChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AutoHideScrollBarsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_Windows__CUI__CViewManagement__CUISettingsAutoHideScrollBarsChangedEventArgs_t *")] ITypedEventHandler<Pointer<IUISettings>, Pointer<IUISettingsAutoHideScrollBarsChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUISettings5*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IUISettings5*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IUISettings5*, ITypedEventHandler<Pointer<IUISettings>, Pointer<IUISettingsAutoHideScrollBarsChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IUISettings5*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IUISettings5.xml' path='doc/member[@name="IUISettings5.remove_AutoHideScrollBarsChanged"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IUISettings5 : IUISettings5.Interface, INativeGuid
         HRESULT get_AutoHideScrollBars([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(7)]
-        HRESULT add_AutoHideScrollBarsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_Windows__CUI__CViewManagement__CUISettingsAutoHideScrollBarsChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AutoHideScrollBarsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_Windows__CUI__CViewManagement__CUISettingsAutoHideScrollBarsChangedEventArgs_t *")] ITypedEventHandler<Pointer<IUISettings>, Pointer<IUISettingsAutoHideScrollBarsChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_AutoHideScrollBarsChanged(EventRegistrationToken token);
@@ -132,7 +132,7 @@ public unsafe partial struct IUISettings5 : IUISettings5.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_AutoHideScrollBars;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_Windows__CUI__CViewManagement__CUISettingsAutoHideScrollBarsChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AutoHideScrollBarsChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IUISettings>, Pointer<IUISettingsAutoHideScrollBarsChangedEventArgs>>*, EventRegistrationToken*, int> add_AutoHideScrollBarsChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AutoHideScrollBarsChanged;

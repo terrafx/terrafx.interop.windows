@@ -74,9 +74,9 @@ public unsafe partial struct IPackageCatalog2 : IPackageCatalog2.Interface, INat
     /// <include file='IPackageCatalog2.xml' path='doc/member[@name="IPackageCatalog2.add_PackageContentGroupStaging"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_PackageContentGroupStaging([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageContentGroupStagingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PackageContentGroupStaging([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageContentGroupStagingEventArgs_t *")] ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageContentGroupStagingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IPackageCatalog2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog2*, ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageContentGroupStagingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IPackageCatalog2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPackageCatalog2.xml' path='doc/member[@name="IPackageCatalog2.remove_PackageContentGroupStaging"]/*' />
@@ -90,21 +90,21 @@ public unsafe partial struct IPackageCatalog2 : IPackageCatalog2.Interface, INat
     /// <include file='IPackageCatalog2.xml' path='doc/member[@name="IPackageCatalog2.AddOptionalPackageAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT AddOptionalPackageAsync(HSTRING optionalPackageFamilyName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogAddOptionalPackageResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT AddOptionalPackageAsync(HSTRING optionalPackageFamilyName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogAddOptionalPackageResult_t **")] IAsyncOperation<Pointer<IPackageCatalogAddOptionalPackageResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IPackageCatalog2*)Unsafe.AsPointer(ref this), optionalPackageFamilyName, operation);
+        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog2*, HSTRING, IAsyncOperation<Pointer<IPackageCatalogAddOptionalPackageResult>>**, int>)(lpVtbl[8]))((IPackageCatalog2*)Unsafe.AsPointer(ref this), optionalPackageFamilyName, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_PackageContentGroupStaging([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageContentGroupStagingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PackageContentGroupStaging([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageContentGroupStagingEventArgs_t *")] ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageContentGroupStagingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_PackageContentGroupStaging(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT AddOptionalPackageAsync(HSTRING optionalPackageFamilyName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogAddOptionalPackageResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT AddOptionalPackageAsync(HSTRING optionalPackageFamilyName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogAddOptionalPackageResult_t **")] IAsyncOperation<Pointer<IPackageCatalogAddOptionalPackageResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -129,12 +129,12 @@ public unsafe partial struct IPackageCatalog2 : IPackageCatalog2.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CPackageCatalog_Windows__CApplicationModel__CPackageContentGroupStagingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PackageContentGroupStaging;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPackageCatalog>, Pointer<IPackageContentGroupStagingEventArgs>>*, EventRegistrationToken*, int> add_PackageContentGroupStaging;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PackageContentGroupStaging;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogAddOptionalPackageResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> AddOptionalPackageAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IPackageCatalogAddOptionalPackageResult>>**, int> AddOptionalPackageAsync;
     }
 }

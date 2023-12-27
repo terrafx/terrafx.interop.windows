@@ -90,9 +90,9 @@ public unsafe partial struct IAppCapture : IAppCapture.Interface, INativeGuid
     /// <include file='IAppCapture.xml' path='doc/member[@name="IAppCapture.add_CapturingChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_CapturingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCapture_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_CapturingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCapture_IInspectable_t *")] ITypedEventHandler<Pointer<IAppCapture>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppCapture*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IAppCapture*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppCapture*, ITypedEventHandler<Pointer<IAppCapture>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IAppCapture*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppCapture.xml' path='doc/member[@name="IAppCapture.remove_CapturingChanged"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct IAppCapture : IAppCapture.Interface, INativeGuid
         HRESULT get_IsCapturingVideo([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(8)]
-        HRESULT add_CapturingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCapture_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_CapturingChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCapture_IInspectable_t *")] ITypedEventHandler<Pointer<IAppCapture>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_CapturingChanged(EventRegistrationToken token);
@@ -146,7 +146,7 @@ public unsafe partial struct IAppCapture : IAppCapture.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsCapturingVideo;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCapture_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CapturingChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppCapture>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_CapturingChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CapturingChanged;

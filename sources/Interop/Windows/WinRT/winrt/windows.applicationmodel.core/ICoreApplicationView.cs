@@ -82,9 +82,9 @@ public unsafe partial struct ICoreApplicationView : ICoreApplicationView.Interfa
     /// <include file='ICoreApplicationView.xml' path='doc/member[@name="ICoreApplicationView.add_Activated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_Activated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Activated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_t *")] ITypedEventHandler<Pointer<ICoreApplicationView>, Pointer<IActivatedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreApplicationView*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ICoreApplicationView*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreApplicationView*, ITypedEventHandler<Pointer<ICoreApplicationView>, Pointer<IActivatedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ICoreApplicationView*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreApplicationView.xml' path='doc/member[@name="ICoreApplicationView.remove_Activated"]/*' />
@@ -117,7 +117,7 @@ public unsafe partial struct ICoreApplicationView : ICoreApplicationView.Interfa
         HRESULT get_CoreWindow([NativeTypeName("ABI::Windows::UI::Core::ICoreWindow **")] ICoreWindow** value);
 
         [VtblIndex(7)]
-        HRESULT add_Activated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Activated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_t *")] ITypedEventHandler<Pointer<ICoreApplicationView>, Pointer<IActivatedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_Activated(EventRegistrationToken token);
@@ -154,7 +154,7 @@ public unsafe partial struct ICoreApplicationView : ICoreApplicationView.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, ICoreWindow**, int> get_CoreWindow;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCore__CCoreApplicationView_Windows__CApplicationModel__CActivation__CIActivatedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Activated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreApplicationView>, Pointer<IActivatedEventArgs>>*, EventRegistrationToken*, int> add_Activated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Activated;

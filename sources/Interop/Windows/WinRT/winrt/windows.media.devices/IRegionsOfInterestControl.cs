@@ -82,17 +82,17 @@ public unsafe partial struct IRegionsOfInterestControl : IRegionsOfInterestContr
     /// <include file='IRegionsOfInterestControl.xml' path='doc/member[@name="IRegionsOfInterestControl.SetRegionsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SetRegionsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest_t *")] IIterable<IntPtr>* regions, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo)
+    public HRESULT SetRegionsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest_t *")] IIterable<Pointer<IRegionOfInterest>>* regions, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRegionsOfInterestControl*, IIterable<IntPtr>*, IAsyncAction**, int>)(lpVtbl[7]))((IRegionsOfInterestControl*)Unsafe.AsPointer(ref this), regions, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IRegionsOfInterestControl*, IIterable<Pointer<IRegionOfInterest>>*, IAsyncAction**, int>)(lpVtbl[7]))((IRegionsOfInterestControl*)Unsafe.AsPointer(ref this), regions, asyncInfo);
     }
 
     /// <include file='IRegionsOfInterestControl.xml' path='doc/member[@name="IRegionsOfInterestControl.SetRegionsWithLockAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetRegionsWithLockAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest_t *")] IIterable<IntPtr>* regions, [NativeTypeName("boolean")] byte lockValues, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo)
+    public HRESULT SetRegionsWithLockAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest_t *")] IIterable<Pointer<IRegionOfInterest>>* regions, [NativeTypeName("boolean")] byte lockValues, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRegionsOfInterestControl*, IIterable<IntPtr>*, byte, IAsyncAction**, int>)(lpVtbl[8]))((IRegionsOfInterestControl*)Unsafe.AsPointer(ref this), regions, lockValues, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IRegionsOfInterestControl*, IIterable<Pointer<IRegionOfInterest>>*, byte, IAsyncAction**, int>)(lpVtbl[8]))((IRegionsOfInterestControl*)Unsafe.AsPointer(ref this), regions, lockValues, asyncInfo);
     }
 
     /// <include file='IRegionsOfInterestControl.xml' path='doc/member[@name="IRegionsOfInterestControl.ClearRegionsAsync"]/*' />
@@ -133,10 +133,10 @@ public unsafe partial struct IRegionsOfInterestControl : IRegionsOfInterestContr
         HRESULT get_MaxRegions([NativeTypeName("UINT32 *")] uint* value);
 
         [VtblIndex(7)]
-        HRESULT SetRegionsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest_t *")] IIterable<IntPtr>* regions, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
+        HRESULT SetRegionsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest_t *")] IIterable<Pointer<IRegionOfInterest>>* regions, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
 
         [VtblIndex(8)]
-        HRESULT SetRegionsWithLockAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest_t *")] IIterable<IntPtr>* regions, [NativeTypeName("boolean")] byte lockValues, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
+        HRESULT SetRegionsWithLockAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest_t *")] IIterable<Pointer<IRegionOfInterest>>* regions, [NativeTypeName("boolean")] byte lockValues, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
 
         [VtblIndex(9)]
         HRESULT ClearRegionsAsync([NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
@@ -176,10 +176,10 @@ public unsafe partial struct IRegionsOfInterestControl : IRegionsOfInterestContr
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_MaxRegions;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest_t *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, IAsyncAction**, int> SetRegionsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IRegionOfInterest>>*, IAsyncAction**, int> SetRegionsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CMedia__CDevices__CRegionOfInterest_t *, boolean, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<IntPtr>*, byte, IAsyncAction**, int> SetRegionsWithLockAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<Pointer<IRegionOfInterest>>*, byte, IAsyncAction**, int> SetRegionsWithLockAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncAction**, int> ClearRegionsAsync;

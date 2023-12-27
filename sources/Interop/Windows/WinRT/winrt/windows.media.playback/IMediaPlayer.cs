@@ -237,9 +237,9 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
     /// <include file='IMediaPlayer.xml' path='doc/member[@name="IMediaPlayer.add_MediaOpened"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public HRESULT add_MediaOpened([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_MediaOpened([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[25]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[25]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlayer.xml' path='doc/member[@name="IMediaPlayer.remove_MediaOpened"]/*' />
@@ -253,9 +253,9 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
     /// <include file='IMediaPlayer.xml' path='doc/member[@name="IMediaPlayer.add_MediaEnded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT add_MediaEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_MediaEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[27]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[27]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlayer.xml' path='doc/member[@name="IMediaPlayer.remove_MediaEnded"]/*' />
@@ -269,9 +269,9 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
     /// <include file='IMediaPlayer.xml' path='doc/member[@name="IMediaPlayer.add_MediaFailed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT add_MediaFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerFailedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_MediaFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerFailedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IMediaPlayerFailedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[29]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IMediaPlayerFailedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[29]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlayer.xml' path='doc/member[@name="IMediaPlayer.remove_MediaFailed"]/*' />
@@ -286,9 +286,9 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
     [Obsolete("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")]
-    public HRESULT add_CurrentStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_CurrentStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[31]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[31]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlayer.xml' path='doc/member[@name="IMediaPlayer.remove_CurrentStateChanged"]/*' />
@@ -304,9 +304,9 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
     [Obsolete("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.  For more info, see MSDN.")]
-    public HRESULT add_PlaybackMediaMarkerReached([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_PlaybackMediaMarkerReached([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IPlaybackMediaMarkerReachedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[33]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IPlaybackMediaMarkerReachedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[33]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlayer.xml' path='doc/member[@name="IMediaPlayer.remove_PlaybackMediaMarkerReached"]/*' />
@@ -322,9 +322,9 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
     [Obsolete("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.  For more info, see MSDN.")]
-    public HRESULT add_MediaPlayerRateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerRateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_MediaPlayerRateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerRateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IMediaPlayerRateChangedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[35]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IMediaPlayerRateChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[35]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlayer.xml' path='doc/member[@name="IMediaPlayer.remove_MediaPlayerRateChanged"]/*' />
@@ -339,9 +339,9 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
     /// <include file='IMediaPlayer.xml' path='doc/member[@name="IMediaPlayer.add_VolumeChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
-    public HRESULT add_VolumeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_VolumeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[37]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[37]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlayer.xml' path='doc/member[@name="IMediaPlayer.remove_VolumeChanged"]/*' />
@@ -356,9 +356,9 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
     [Obsolete("Use PlaybackSession.SeekCompleted instead of SeekCompleted.  For more info, see MSDN.")]
-    public HRESULT add_SeekCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_SeekCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[39]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[39]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlayer.xml' path='doc/member[@name="IMediaPlayer.remove_SeekCompleted"]/*' />
@@ -374,9 +374,9 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
     [Obsolete("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")]
-    public HRESULT add_BufferingStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_BufferingStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[41]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[41]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlayer.xml' path='doc/member[@name="IMediaPlayer.remove_BufferingStarted"]/*' />
@@ -392,9 +392,9 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(43)]
     [Obsolete("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")]
-    public HRESULT add_BufferingEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_BufferingEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[43]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlayer*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[43]))((IMediaPlayer*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IMediaPlayer.xml' path='doc/member[@name="IMediaPlayer.remove_BufferingEnded"]/*' />
@@ -502,26 +502,26 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
         HRESULT get_PlaybackMediaMarkers([NativeTypeName("ABI::Windows::Media::Playback::IPlaybackMediaMarkerSequence **")] IPlaybackMediaMarkerSequence** value);
 
         [VtblIndex(25)]
-        HRESULT add_MediaOpened([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_MediaOpened([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(26)]
         HRESULT remove_MediaOpened(EventRegistrationToken token);
 
         [VtblIndex(27)]
-        HRESULT add_MediaEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_MediaEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(28)]
         HRESULT remove_MediaEnded(EventRegistrationToken token);
 
         [VtblIndex(29)]
-        HRESULT add_MediaFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerFailedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_MediaFailed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerFailedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IMediaPlayerFailedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(30)]
         HRESULT remove_MediaFailed(EventRegistrationToken token);
 
         [VtblIndex(31)]
         [Obsolete("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")]
-        HRESULT add_CurrentStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_CurrentStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(32)]
         [Obsolete("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")]
@@ -529,7 +529,7 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
 
         [VtblIndex(33)]
         [Obsolete("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.  For more info, see MSDN.")]
-        HRESULT add_PlaybackMediaMarkerReached([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_PlaybackMediaMarkerReached([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IPlaybackMediaMarkerReachedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(34)]
         [Obsolete("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.  For more info, see MSDN.")]
@@ -537,21 +537,21 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
 
         [VtblIndex(35)]
         [Obsolete("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.  For more info, see MSDN.")]
-        HRESULT add_MediaPlayerRateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerRateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_MediaPlayerRateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerRateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IMediaPlayerRateChangedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(36)]
         [Obsolete("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.  For more info, see MSDN.")]
         HRESULT remove_MediaPlayerRateChanged(EventRegistrationToken token);
 
         [VtblIndex(37)]
-        HRESULT add_VolumeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_VolumeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(38)]
         HRESULT remove_VolumeChanged(EventRegistrationToken token);
 
         [VtblIndex(39)]
         [Obsolete("Use PlaybackSession.SeekCompleted instead of SeekCompleted.  For more info, see MSDN.")]
-        HRESULT add_SeekCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_SeekCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(40)]
         [Obsolete("Use PlaybackSession.SeekCompleted instead of SeekCompleted.  For more info, see MSDN.")]
@@ -559,7 +559,7 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
 
         [VtblIndex(41)]
         [Obsolete("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")]
-        HRESULT add_BufferingStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_BufferingStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(42)]
         [Obsolete("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")]
@@ -567,7 +567,7 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
 
         [VtblIndex(43)]
         [Obsolete("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")]
-        HRESULT add_BufferingEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_BufferingEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(44)]
         [Obsolete("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")]
@@ -674,26 +674,26 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IPlaybackMediaMarkerSequence**, int> get_PlaybackMediaMarkers;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_MediaOpened;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_MediaOpened;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_MediaOpened;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_MediaEnded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_MediaEnded;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_MediaEnded;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerFailedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_MediaFailed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IMediaPlayerFailedEventArgs>>*, EventRegistrationToken*, int> add_MediaFailed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_MediaFailed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CurrentStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_CurrentStateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("Use PlaybackSession.PlaybackStateChanged instead of CurrentStateChanged.  For more info, see MSDN.")]
@@ -701,7 +701,7 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CPlaybackMediaMarkerReachedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.  For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PlaybackMediaMarkerReached;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IPlaybackMediaMarkerReachedEventArgs>>*, EventRegistrationToken*, int> add_PlaybackMediaMarkerReached;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("Use media tracks on MediaPlaybackItem instead of PlaybackMediaMarkers.  For more info, see MSDN.")]
@@ -709,21 +709,21 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_Windows__CMedia__CPlayback__CMediaPlayerRateChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.  For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_MediaPlayerRateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IMediaPlayerRateChangedEventArgs>>*, EventRegistrationToken*, int> add_MediaPlayerRateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("Use PlaybackSession.PlaybackRateChanged instead of MediaPlayerRateChanged.  For more info, see MSDN.")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_MediaPlayerRateChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_VolumeChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_VolumeChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_VolumeChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("Use PlaybackSession.SeekCompleted instead of SeekCompleted.  For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SeekCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_SeekCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("Use PlaybackSession.SeekCompleted instead of SeekCompleted.  For more info, see MSDN.")]
@@ -731,7 +731,7 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_BufferingStarted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_BufferingStarted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("Use PlaybackSession.BufferingStarted instead of BufferingStarted.  For more info, see MSDN.")]
@@ -739,7 +739,7 @@ public unsafe partial struct IMediaPlayer : IMediaPlayer.Interface, INativeGuid
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlayer_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
         [Obsolete("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_BufferingEnded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlayer>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_BufferingEnded;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         [Obsolete("Use PlaybackSession.BufferingEnded instead of BufferingEnded.  For more info, see MSDN.")]

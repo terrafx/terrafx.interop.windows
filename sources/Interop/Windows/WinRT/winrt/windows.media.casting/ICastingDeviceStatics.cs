@@ -90,9 +90,9 @@ public unsafe partial struct ICastingDeviceStatics : ICastingDeviceStatics.Inter
     /// <include file='ICastingDeviceStatics.xml' path='doc/member[@name="ICastingDeviceStatics.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT FromIdAsync(HSTRING value, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCasting__CCastingDevice_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromIdAsync(HSTRING value, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCasting__CCastingDevice_t **")] IAsyncOperation<Pointer<ICastingDevice>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICastingDeviceStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((ICastingDeviceStatics*)Unsafe.AsPointer(ref this), value, operation);
+        return ((delegate* unmanaged[MemberFunction]<ICastingDeviceStatics*, HSTRING, IAsyncOperation<Pointer<ICastingDevice>>**, int>)(lpVtbl[8]))((ICastingDeviceStatics*)Unsafe.AsPointer(ref this), value, operation);
     }
 
     /// <include file='ICastingDeviceStatics.xml' path='doc/member[@name="ICastingDeviceStatics.DeviceInfoSupportsCastingAsync"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct ICastingDeviceStatics : ICastingDeviceStatics.Inter
         HRESULT GetDeviceSelectorFromCastingSourceAsync([NativeTypeName("ABI::Windows::Media::Casting::ICastingSource *")] ICastingSource* castingSource, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_HSTRING_t **")] IAsyncOperation<HSTRING>** operation);
 
         [VtblIndex(8)]
-        HRESULT FromIdAsync(HSTRING value, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCasting__CCastingDevice_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromIdAsync(HSTRING value, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCasting__CCastingDevice_t **")] IAsyncOperation<Pointer<ICastingDevice>>** operation);
 
         [VtblIndex(9)]
         HRESULT DeviceInfoSupportsCastingAsync([NativeTypeName("ABI::Windows::Devices::Enumeration::IDeviceInformation *")] IDeviceInformation* device, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** operation);
@@ -146,7 +146,7 @@ public unsafe partial struct ICastingDeviceStatics : ICastingDeviceStatics.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, ICastingSource*, IAsyncOperation<HSTRING>**, int> GetDeviceSelectorFromCastingSourceAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CMedia__CCasting__CCastingDevice_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<ICastingDevice>>**, int> FromIdAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Enumeration::IDeviceInformation *, ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IDeviceInformation*, IAsyncOperation<bool>**, int> DeviceInfoSupportsCastingAsync;

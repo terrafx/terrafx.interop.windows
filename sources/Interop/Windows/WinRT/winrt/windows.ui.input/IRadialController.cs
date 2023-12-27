@@ -114,9 +114,9 @@ public unsafe partial struct IRadialController : IRadialController.Interface, IN
     /// <include file='IRadialController.xml' path='doc/member[@name="IRadialController.add_ScreenContactStarted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_ScreenContactStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_ScreenContactStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerScreenContactStartedEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRadialController*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IRadialController*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IRadialController*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerScreenContactStartedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IRadialController*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IRadialController.xml' path='doc/member[@name="IRadialController.remove_ScreenContactStarted"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IRadialController : IRadialController.Interface, IN
     /// <include file='IRadialController.xml' path='doc/member[@name="IRadialController.add_ScreenContactEnded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_ScreenContactEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_ScreenContactEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_IInspectable_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRadialController*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IRadialController*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IRadialController*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IRadialController*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IRadialController.xml' path='doc/member[@name="IRadialController.remove_ScreenContactEnded"]/*' />
@@ -146,9 +146,9 @@ public unsafe partial struct IRadialController : IRadialController.Interface, IN
     /// <include file='IRadialController.xml' path='doc/member[@name="IRadialController.add_ScreenContactContinued"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT add_ScreenContactContinued([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactContinuedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_ScreenContactContinued([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactContinuedEventArgs_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerScreenContactContinuedEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRadialController*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IRadialController*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IRadialController*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerScreenContactContinuedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IRadialController*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IRadialController.xml' path='doc/member[@name="IRadialController.remove_ScreenContactContinued"]/*' />
@@ -162,9 +162,9 @@ public unsafe partial struct IRadialController : IRadialController.Interface, IN
     /// <include file='IRadialController.xml' path='doc/member[@name="IRadialController.add_ControlLost"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT add_ControlLost([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_ControlLost([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_IInspectable_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRadialController*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IRadialController*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IRadialController*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IRadialController*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IRadialController.xml' path='doc/member[@name="IRadialController.remove_ControlLost"]/*' />
@@ -178,9 +178,9 @@ public unsafe partial struct IRadialController : IRadialController.Interface, IN
     /// <include file='IRadialController.xml' path='doc/member[@name="IRadialController.add_RotationChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT add_RotationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerRotationChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_RotationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerRotationChangedEventArgs_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerRotationChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRadialController*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[19]))((IRadialController*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IRadialController*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerRotationChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[19]))((IRadialController*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IRadialController.xml' path='doc/member[@name="IRadialController.remove_RotationChanged"]/*' />
@@ -194,9 +194,9 @@ public unsafe partial struct IRadialController : IRadialController.Interface, IN
     /// <include file='IRadialController.xml' path='doc/member[@name="IRadialController.add_ButtonClicked"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT add_ButtonClicked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ButtonClicked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerButtonClickedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRadialController*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[21]))((IRadialController*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IRadialController*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerButtonClickedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[21]))((IRadialController*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IRadialController.xml' path='doc/member[@name="IRadialController.remove_ButtonClicked"]/*' />
@@ -210,9 +210,9 @@ public unsafe partial struct IRadialController : IRadialController.Interface, IN
     /// <include file='IRadialController.xml' path='doc/member[@name="IRadialController.add_ControlAcquired"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT add_ControlAcquired([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_ControlAcquired([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerControlAcquiredEventArgs>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRadialController*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[23]))((IRadialController*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IRadialController*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerControlAcquiredEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[23]))((IRadialController*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IRadialController.xml' path='doc/member[@name="IRadialController.remove_ControlAcquired"]/*' />
@@ -241,43 +241,43 @@ public unsafe partial struct IRadialController : IRadialController.Interface, IN
         HRESULT put_UseAutomaticHapticFeedback([NativeTypeName("boolean")] byte value);
 
         [VtblIndex(11)]
-        HRESULT add_ScreenContactStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_ScreenContactStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerScreenContactStartedEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(12)]
         HRESULT remove_ScreenContactStarted(EventRegistrationToken cookie);
 
         [VtblIndex(13)]
-        HRESULT add_ScreenContactEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_ScreenContactEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_IInspectable_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(14)]
         HRESULT remove_ScreenContactEnded(EventRegistrationToken cookie);
 
         [VtblIndex(15)]
-        HRESULT add_ScreenContactContinued([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactContinuedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_ScreenContactContinued([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactContinuedEventArgs_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerScreenContactContinuedEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(16)]
         HRESULT remove_ScreenContactContinued(EventRegistrationToken cookie);
 
         [VtblIndex(17)]
-        HRESULT add_ControlLost([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_ControlLost([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_IInspectable_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(18)]
         HRESULT remove_ControlLost(EventRegistrationToken cookie);
 
         [VtblIndex(19)]
-        HRESULT add_RotationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerRotationChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_RotationChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerRotationChangedEventArgs_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerRotationChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(20)]
         HRESULT remove_RotationChanged(EventRegistrationToken token);
 
         [VtblIndex(21)]
-        HRESULT add_ButtonClicked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ButtonClicked([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerButtonClickedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(22)]
         HRESULT remove_ButtonClicked(EventRegistrationToken token);
 
         [VtblIndex(23)]
-        HRESULT add_ControlAcquired([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_ControlAcquired([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs_t *")] ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerControlAcquiredEventArgs>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(24)]
         HRESULT remove_ControlAcquired(EventRegistrationToken cookie);
@@ -320,43 +320,43 @@ public unsafe partial struct IRadialController : IRadialController.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, byte, int> put_UseAutomaticHapticFeedback;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactStartedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ScreenContactStarted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerScreenContactStartedEventArgs>>*, EventRegistrationToken*, int> add_ScreenContactStarted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ScreenContactStarted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ScreenContactEnded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ScreenContactEnded;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ScreenContactEnded;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerScreenContactContinuedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ScreenContactContinued;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerScreenContactContinuedEventArgs>>*, EventRegistrationToken*, int> add_ScreenContactContinued;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ScreenContactContinued;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ControlLost;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ControlLost;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ControlLost;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerRotationChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_RotationChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerRotationChangedEventArgs>>*, EventRegistrationToken*, int> add_RotationChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RotationChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerButtonClickedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ButtonClicked;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerButtonClickedEventArgs>>*, EventRegistrationToken*, int> add_ButtonClicked;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ButtonClicked;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CInput__CRadialController_Windows__CUI__CInput__CRadialControllerControlAcquiredEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ControlAcquired;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IRadialController>, Pointer<IRadialControllerControlAcquiredEventArgs>>*, EventRegistrationToken*, int> add_ControlAcquired;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ControlAcquired;

@@ -74,9 +74,9 @@ public unsafe partial struct IPackage9 : IPackage9.Interface, INativeGuid
     /// <include file='IPackage9.xml' path='doc/member[@name="IPackage9.FindRelatedPackages"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindRelatedPackages([NativeTypeName("ABI::Windows::ApplicationModel::IFindRelatedPackagesOptions *")] IFindRelatedPackagesOptions* options, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CPackage_t **")] IVector<IntPtr>** result)
+    public HRESULT FindRelatedPackages([NativeTypeName("ABI::Windows::ApplicationModel::IFindRelatedPackagesOptions *")] IFindRelatedPackagesOptions* options, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CPackage_t **")] IVector<Pointer<IPackage>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackage9*, IFindRelatedPackagesOptions*, IVector<IntPtr>**, int>)(lpVtbl[6]))((IPackage9*)Unsafe.AsPointer(ref this), options, result);
+        return ((delegate* unmanaged[MemberFunction]<IPackage9*, IFindRelatedPackagesOptions*, IVector<Pointer<IPackage>>**, int>)(lpVtbl[6]))((IPackage9*)Unsafe.AsPointer(ref this), options, result);
     }
 
     /// <include file='IPackage9.xml' path='doc/member[@name="IPackage9.get_SourceUriSchemeName"]/*' />
@@ -90,7 +90,7 @@ public unsafe partial struct IPackage9 : IPackage9.Interface, INativeGuid
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FindRelatedPackages([NativeTypeName("ABI::Windows::ApplicationModel::IFindRelatedPackagesOptions *")] IFindRelatedPackagesOptions* options, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CPackage_t **")] IVector<IntPtr>** result);
+        HRESULT FindRelatedPackages([NativeTypeName("ABI::Windows::ApplicationModel::IFindRelatedPackagesOptions *")] IFindRelatedPackagesOptions* options, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CPackage_t **")] IVector<Pointer<IPackage>>** result);
 
         [VtblIndex(7)]
         HRESULT get_SourceUriSchemeName(HSTRING* value);
@@ -118,7 +118,7 @@ public unsafe partial struct IPackage9 : IPackage9.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::IFindRelatedPackagesOptions *, ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CApplicationModel__CPackage_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IFindRelatedPackagesOptions*, IVector<IntPtr>**, int> FindRelatedPackages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IFindRelatedPackagesOptions*, IVector<Pointer<IPackage>>**, int> FindRelatedPackages;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_SourceUriSchemeName;

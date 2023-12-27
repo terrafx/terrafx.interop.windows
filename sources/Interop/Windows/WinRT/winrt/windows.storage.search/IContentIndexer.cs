@@ -114,9 +114,9 @@ public unsafe partial struct IContentIndexer : IContentIndexer.Interface, INativ
     /// <include file='IContentIndexer.xml' path='doc/member[@name="IContentIndexer.RetrievePropertiesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT RetrievePropertiesAsync(HSTRING contentId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* propertiesToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT RetrievePropertiesAsync(HSTRING contentId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* propertiesToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_t **")] IAsyncOperation<Pointer<IMapView<HSTRING, Pointer<IInspectable>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContentIndexer*, HSTRING, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IContentIndexer*)Unsafe.AsPointer(ref this), contentId, propertiesToRetrieve, operation);
+        return ((delegate* unmanaged[MemberFunction]<IContentIndexer*, HSTRING, IIterable<HSTRING>*, IAsyncOperation<Pointer<IMapView<HSTRING, Pointer<IInspectable>>>>**, int>)(lpVtbl[11]))((IContentIndexer*)Unsafe.AsPointer(ref this), contentId, propertiesToRetrieve, operation);
     }
 
     /// <include file='IContentIndexer.xml' path='doc/member[@name="IContentIndexer.get_Revision"]/*' />
@@ -145,7 +145,7 @@ public unsafe partial struct IContentIndexer : IContentIndexer.Interface, INativ
         HRESULT DeleteAllAsync([NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
 
         [VtblIndex(11)]
-        HRESULT RetrievePropertiesAsync(HSTRING contentId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* propertiesToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT RetrievePropertiesAsync(HSTRING contentId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* propertiesToRetrieve, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_t **")] IAsyncOperation<Pointer<IMapView<HSTRING, Pointer<IInspectable>>>>** operation);
 
         [VtblIndex(12)]
         HRESULT get_Revision([NativeTypeName("UINT64 *")] ulong* value);
@@ -188,7 +188,7 @@ public unsafe partial struct IContentIndexer : IContentIndexer.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncAction**, int> DeleteAllAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIMapView_2_HSTRING_IInspectable_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int> RetrievePropertiesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IIterable<HSTRING>*, IAsyncOperation<Pointer<IMapView<HSTRING, Pointer<IInspectable>>>>**, int> RetrievePropertiesAsync;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_Revision;

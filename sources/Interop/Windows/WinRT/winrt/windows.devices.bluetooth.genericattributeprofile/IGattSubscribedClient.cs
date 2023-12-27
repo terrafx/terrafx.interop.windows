@@ -90,9 +90,9 @@ public unsafe partial struct IGattSubscribedClient : IGattSubscribedClient.Inter
     /// <include file='IGattSubscribedClient.xml' path='doc/member[@name="IGattSubscribedClient.add_MaxNotificationSizeChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_MaxNotificationSizeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSubscribedClient_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_MaxNotificationSizeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSubscribedClient_IInspectable_t *")] ITypedEventHandler<Pointer<IGattSubscribedClient>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattSubscribedClient*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IGattSubscribedClient*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IGattSubscribedClient*, ITypedEventHandler<Pointer<IGattSubscribedClient>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IGattSubscribedClient*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IGattSubscribedClient.xml' path='doc/member[@name="IGattSubscribedClient.remove_MaxNotificationSizeChanged"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct IGattSubscribedClient : IGattSubscribedClient.Inter
         HRESULT get_MaxNotificationSize([NativeTypeName("UINT16 *")] ushort* value);
 
         [VtblIndex(8)]
-        HRESULT add_MaxNotificationSizeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSubscribedClient_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_MaxNotificationSizeChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSubscribedClient_IInspectable_t *")] ITypedEventHandler<Pointer<IGattSubscribedClient>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_MaxNotificationSizeChanged(EventRegistrationToken token);
@@ -146,7 +146,7 @@ public unsafe partial struct IGattSubscribedClient : IGattSubscribedClient.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_MaxNotificationSize;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSubscribedClient_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_MaxNotificationSizeChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGattSubscribedClient>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_MaxNotificationSizeChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_MaxNotificationSizeChanged;

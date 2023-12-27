@@ -82,9 +82,9 @@ public unsafe partial struct ICoreComponentFocusable : ICoreComponentFocusable.I
     /// <include file='ICoreComponentFocusable.xml' path='doc/member[@name="ICoreComponentFocusable.add_GotFocus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_GotFocus([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CCoreWindowEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie)
+    public HRESULT add_GotFocus([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CCoreWindowEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<ICoreWindowEventArgs>>* handler, EventRegistrationToken* pCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreComponentFocusable*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ICoreComponentFocusable*)Unsafe.AsPointer(ref this), handler, pCookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreComponentFocusable*, ITypedEventHandler<Pointer<IInspectable>, Pointer<ICoreWindowEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ICoreComponentFocusable*)Unsafe.AsPointer(ref this), handler, pCookie);
     }
 
     /// <include file='ICoreComponentFocusable.xml' path='doc/member[@name="ICoreComponentFocusable.remove_GotFocus"]/*' />
@@ -98,9 +98,9 @@ public unsafe partial struct ICoreComponentFocusable : ICoreComponentFocusable.I
     /// <include file='ICoreComponentFocusable.xml' path='doc/member[@name="ICoreComponentFocusable.add_LostFocus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_LostFocus([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CCoreWindowEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie)
+    public HRESULT add_LostFocus([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CCoreWindowEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<ICoreWindowEventArgs>>* handler, EventRegistrationToken* pCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreComponentFocusable*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ICoreComponentFocusable*)Unsafe.AsPointer(ref this), handler, pCookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreComponentFocusable*, ITypedEventHandler<Pointer<IInspectable>, Pointer<ICoreWindowEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((ICoreComponentFocusable*)Unsafe.AsPointer(ref this), handler, pCookie);
     }
 
     /// <include file='ICoreComponentFocusable.xml' path='doc/member[@name="ICoreComponentFocusable.remove_LostFocus"]/*' />
@@ -117,13 +117,13 @@ public unsafe partial struct ICoreComponentFocusable : ICoreComponentFocusable.I
         HRESULT get_HasFocus([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(7)]
-        HRESULT add_GotFocus([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CCoreWindowEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie);
+        HRESULT add_GotFocus([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CCoreWindowEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<ICoreWindowEventArgs>>* handler, EventRegistrationToken* pCookie);
 
         [VtblIndex(8)]
         HRESULT remove_GotFocus(EventRegistrationToken cookie);
 
         [VtblIndex(9)]
-        HRESULT add_LostFocus([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CCoreWindowEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* pCookie);
+        HRESULT add_LostFocus([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CCoreWindowEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<ICoreWindowEventArgs>>* handler, EventRegistrationToken* pCookie);
 
         [VtblIndex(10)]
         HRESULT remove_LostFocus(EventRegistrationToken cookie);
@@ -154,13 +154,13 @@ public unsafe partial struct ICoreComponentFocusable : ICoreComponentFocusable.I
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_HasFocus;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CCoreWindowEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_GotFocus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, Pointer<ICoreWindowEventArgs>>*, EventRegistrationToken*, int> add_GotFocus;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_GotFocus;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CCore__CCoreWindowEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_LostFocus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, Pointer<ICoreWindowEventArgs>>*, EventRegistrationToken*, int> add_LostFocus;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_LostFocus;

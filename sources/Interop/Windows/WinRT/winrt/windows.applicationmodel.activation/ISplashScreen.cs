@@ -82,9 +82,9 @@ public unsafe partial struct ISplashScreen : ISplashScreen.Interface, INativeGui
     /// <include file='ISplashScreen.xml' path='doc/member[@name="ISplashScreen.add_Dismissed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_Dismissed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_Dismissed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable_t *")] ITypedEventHandler<Pointer<ISplashScreen>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISplashScreen*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ISplashScreen*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ISplashScreen*, ITypedEventHandler<Pointer<ISplashScreen>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ISplashScreen*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ISplashScreen.xml' path='doc/member[@name="ISplashScreen.remove_Dismissed"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct ISplashScreen : ISplashScreen.Interface, INativeGui
         HRESULT get_ImageLocation([NativeTypeName("ABI::Windows::Foundation::Rect *")] Rect* value);
 
         [VtblIndex(7)]
-        HRESULT add_Dismissed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_Dismissed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable_t *")] ITypedEventHandler<Pointer<ISplashScreen>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(8)]
         HRESULT remove_Dismissed(EventRegistrationToken cookie);
@@ -132,7 +132,7 @@ public unsafe partial struct ISplashScreen : ISplashScreen.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, Rect*, int> get_ImageLocation;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CActivation__CSplashScreen_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Dismissed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISplashScreen>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Dismissed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Dismissed;

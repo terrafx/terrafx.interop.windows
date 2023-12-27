@@ -282,9 +282,9 @@ public unsafe partial struct ISystemMediaTransportControls : ISystemMediaTranspo
     /// <include file='ISystemMediaTransportControls.xml' path='doc/member[@name="ISystemMediaTransportControls.add_ButtonPressed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
-    public HRESULT add_ButtonPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CSystemMediaTransportControlsButtonPressedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ButtonPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CSystemMediaTransportControlsButtonPressedEventArgs_t *")] ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<ISystemMediaTransportControlsButtonPressedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISystemMediaTransportControls*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[32]))((ISystemMediaTransportControls*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISystemMediaTransportControls*, ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<ISystemMediaTransportControlsButtonPressedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[32]))((ISystemMediaTransportControls*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISystemMediaTransportControls.xml' path='doc/member[@name="ISystemMediaTransportControls.remove_ButtonPressed"]/*' />
@@ -298,9 +298,9 @@ public unsafe partial struct ISystemMediaTransportControls : ISystemMediaTranspo
     /// <include file='ISystemMediaTransportControls.xml' path='doc/member[@name="ISystemMediaTransportControls.add_PropertyChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
-    public HRESULT add_PropertyChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CSystemMediaTransportControlsPropertyChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PropertyChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CSystemMediaTransportControlsPropertyChangedEventArgs_t *")] ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<ISystemMediaTransportControlsPropertyChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISystemMediaTransportControls*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[34]))((ISystemMediaTransportControls*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ISystemMediaTransportControls*, ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<ISystemMediaTransportControlsPropertyChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[34]))((ISystemMediaTransportControls*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ISystemMediaTransportControls.xml' path='doc/member[@name="ISystemMediaTransportControls.remove_PropertyChanged"]/*' />
@@ -392,13 +392,13 @@ public unsafe partial struct ISystemMediaTransportControls : ISystemMediaTranspo
         HRESULT put_IsChannelDownEnabled([NativeTypeName("boolean")] byte value);
 
         [VtblIndex(32)]
-        HRESULT add_ButtonPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CSystemMediaTransportControlsButtonPressedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ButtonPressed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CSystemMediaTransportControlsButtonPressedEventArgs_t *")] ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<ISystemMediaTransportControlsButtonPressedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(33)]
         HRESULT remove_ButtonPressed(EventRegistrationToken token);
 
         [VtblIndex(34)]
-        HRESULT add_PropertyChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CSystemMediaTransportControlsPropertyChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PropertyChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CSystemMediaTransportControlsPropertyChangedEventArgs_t *")] ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<ISystemMediaTransportControlsPropertyChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(35)]
         HRESULT remove_PropertyChanged(EventRegistrationToken token);
@@ -504,13 +504,13 @@ public unsafe partial struct ISystemMediaTransportControls : ISystemMediaTranspo
         public delegate* unmanaged[MemberFunction]<TSelf*, byte, int> put_IsChannelDownEnabled;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CSystemMediaTransportControlsButtonPressedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ButtonPressed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<ISystemMediaTransportControlsButtonPressedEventArgs>>*, EventRegistrationToken*, int> add_ButtonPressed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ButtonPressed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CSystemMediaTransportControls_Windows__CMedia__CSystemMediaTransportControlsPropertyChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PropertyChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ISystemMediaTransportControls>, Pointer<ISystemMediaTransportControlsPropertyChangedEventArgs>>*, EventRegistrationToken*, int> add_PropertyChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PropertyChanged;

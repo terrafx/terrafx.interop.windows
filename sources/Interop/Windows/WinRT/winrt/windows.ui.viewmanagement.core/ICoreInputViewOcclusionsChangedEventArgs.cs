@@ -74,9 +74,9 @@ public unsafe partial struct ICoreInputViewOcclusionsChangedEventArgs : ICoreInp
     /// <include file='ICoreInputViewOcclusionsChangedEventArgs.xml' path='doc/member[@name="ICoreInputViewOcclusionsChangedEventArgs.get_Occlusions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Occlusions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CViewManagement__CCore__CCoreInputViewOcclusion_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Occlusions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CViewManagement__CCore__CCoreInputViewOcclusion_t **")] IVectorView<Pointer<ICoreInputViewOcclusion>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreInputViewOcclusionsChangedEventArgs*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((ICoreInputViewOcclusionsChangedEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICoreInputViewOcclusionsChangedEventArgs*, IVectorView<Pointer<ICoreInputViewOcclusion>>**, int>)(lpVtbl[6]))((ICoreInputViewOcclusionsChangedEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICoreInputViewOcclusionsChangedEventArgs.xml' path='doc/member[@name="ICoreInputViewOcclusionsChangedEventArgs.get_Handled"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct ICoreInputViewOcclusionsChangedEventArgs : ICoreInp
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Occlusions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CViewManagement__CCore__CCoreInputViewOcclusion_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Occlusions([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CViewManagement__CCore__CCoreInputViewOcclusion_t **")] IVectorView<Pointer<ICoreInputViewOcclusion>>** value);
 
         [VtblIndex(7)]
         HRESULT get_Handled([NativeTypeName("boolean *")] byte* value);
@@ -129,7 +129,7 @@ public unsafe partial struct ICoreInputViewOcclusionsChangedEventArgs : ICoreInp
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CUI__CViewManagement__CCore__CCoreInputViewOcclusion_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Occlusions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ICoreInputViewOcclusion>>**, int> get_Occlusions;
 
         [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_Handled;

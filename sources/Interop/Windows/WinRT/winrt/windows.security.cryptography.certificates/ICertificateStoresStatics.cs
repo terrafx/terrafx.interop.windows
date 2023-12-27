@@ -74,17 +74,17 @@ public unsafe partial struct ICertificateStoresStatics : ICertificateStoresStati
     /// <include file='ICertificateStoresStatics.xml' path='doc/member[@name="ICertificateStoresStatics.FindAllAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<ICertificate>>>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICertificateStoresStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ICertificateStoresStatics*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICertificateStoresStatics*, IAsyncOperation<Pointer<IVectorView<Pointer<ICertificate>>>>**, int>)(lpVtbl[6]))((ICertificateStoresStatics*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICertificateStoresStatics.xml' path='doc/member[@name="ICertificateStoresStatics.FindAllWithQueryAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FindAllWithQueryAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::ICertificateQuery *")] ICertificateQuery* query, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IAsyncOperation<IntPtr>** value)
+    public HRESULT FindAllWithQueryAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::ICertificateQuery *")] ICertificateQuery* query, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<ICertificate>>>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICertificateStoresStatics*, ICertificateQuery*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((ICertificateStoresStatics*)Unsafe.AsPointer(ref this), query, value);
+        return ((delegate* unmanaged[MemberFunction]<ICertificateStoresStatics*, ICertificateQuery*, IAsyncOperation<Pointer<IVectorView<Pointer<ICertificate>>>>**, int>)(lpVtbl[7]))((ICertificateStoresStatics*)Unsafe.AsPointer(ref this), query, value);
     }
 
     /// <include file='ICertificateStoresStatics.xml' path='doc/member[@name="ICertificateStoresStatics.get_TrustedRootCertificationAuthorities"]/*' />
@@ -114,10 +114,10 @@ public unsafe partial struct ICertificateStoresStatics : ICertificateStoresStati
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<ICertificate>>>>** value);
 
         [VtblIndex(7)]
-        HRESULT FindAllWithQueryAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::ICertificateQuery *")] ICertificateQuery* query, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IAsyncOperation<IntPtr>** value);
+        HRESULT FindAllWithQueryAsync([NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::ICertificateQuery *")] ICertificateQuery* query, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<ICertificate>>>>** value);
 
         [VtblIndex(8)]
         HRESULT get_TrustedRootCertificationAuthorities([NativeTypeName("ABI::Windows::Security::Cryptography::Certificates::ICertificateStore **")] ICertificateStore** value);
@@ -151,10 +151,10 @@ public unsafe partial struct ICertificateStoresStatics : ICertificateStoresStati
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindAllAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<ICertificate>>>>**, int> FindAllAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Cryptography::Certificates::ICertificateQuery *, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ICertificateQuery*, IAsyncOperation<IntPtr>**, int> FindAllWithQueryAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICertificateQuery*, IAsyncOperation<Pointer<IVectorView<Pointer<ICertificate>>>>**, int> FindAllWithQueryAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Cryptography::Certificates::ICertificateStore **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ICertificateStore**, int> get_TrustedRootCertificationAuthorities;

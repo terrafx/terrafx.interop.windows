@@ -130,9 +130,9 @@ public unsafe partial struct IVariablePhotoSequenceController : IVariablePhotoSe
     /// <include file='IVariablePhotoSequenceController.xml' path='doc/member[@name="IVariablePhotoSequenceController.get_DesiredFrameControllers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_DesiredFrameControllers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CDevices__CCore__CFrameController_t **")] IVector<IntPtr>** items)
+    public HRESULT get_DesiredFrameControllers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CDevices__CCore__CFrameController_t **")] IVector<Pointer<IFrameController>>** items)
     {
-        return ((delegate* unmanaged[MemberFunction]<IVariablePhotoSequenceController*, IVector<IntPtr>**, int>)(lpVtbl[13]))((IVariablePhotoSequenceController*)Unsafe.AsPointer(ref this), items);
+        return ((delegate* unmanaged[MemberFunction]<IVariablePhotoSequenceController*, IVector<Pointer<IFrameController>>**, int>)(lpVtbl[13]))((IVariablePhotoSequenceController*)Unsafe.AsPointer(ref this), items);
     }
 
     public interface Interface : IInspectable.Interface
@@ -159,7 +159,7 @@ public unsafe partial struct IVariablePhotoSequenceController : IVariablePhotoSe
         HRESULT get_FrameCapabilities([NativeTypeName("ABI::Windows::Media::Devices::Core::IFrameControlCapabilities **")] IFrameControlCapabilities** value);
 
         [VtblIndex(13)]
-        HRESULT get_DesiredFrameControllers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CDevices__CCore__CFrameController_t **")] IVector<IntPtr>** items);
+        HRESULT get_DesiredFrameControllers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CDevices__CCore__CFrameController_t **")] IVector<Pointer<IFrameController>>** items);
     }
 
     public partial struct Vtbl<TSelf>
@@ -205,6 +205,6 @@ public unsafe partial struct IVariablePhotoSequenceController : IVariablePhotoSe
         public delegate* unmanaged[MemberFunction]<TSelf*, IFrameControlCapabilities**, int> get_FrameCapabilities;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CDevices__CCore__CFrameController_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_DesiredFrameControllers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IFrameController>>**, int> get_DesiredFrameControllers;
     }
 }

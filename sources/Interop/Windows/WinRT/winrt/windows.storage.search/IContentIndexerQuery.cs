@@ -82,33 +82,33 @@ public unsafe partial struct IContentIndexerQuery : IContentIndexerQuery.Interfa
     /// <include file='IContentIndexerQuery.xml' path='doc/member[@name="IContentIndexerQuery.GetPropertiesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IMapView<HSTRING, Pointer<IInspectable>>>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContentIndexerQuery*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IContentIndexerQuery*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IContentIndexerQuery*, IAsyncOperation<Pointer<IVectorView<Pointer<IMapView<HSTRING, Pointer<IInspectable>>>>>>**, int>)(lpVtbl[7]))((IContentIndexerQuery*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IContentIndexerQuery.xml' path='doc/member[@name="IContentIndexerQuery.GetPropertiesRangeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetPropertiesRangeAsync([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItems, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetPropertiesRangeAsync([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItems, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IMapView<HSTRING, Pointer<IInspectable>>>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContentIndexerQuery*, uint, uint, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IContentIndexerQuery*)Unsafe.AsPointer(ref this), startIndex, maxItems, operation);
+        return ((delegate* unmanaged[MemberFunction]<IContentIndexerQuery*, uint, uint, IAsyncOperation<Pointer<IVectorView<Pointer<IMapView<HSTRING, Pointer<IInspectable>>>>>>**, int>)(lpVtbl[8]))((IContentIndexerQuery*)Unsafe.AsPointer(ref this), startIndex, maxItems, operation);
     }
 
     /// <include file='IContentIndexerQuery.xml' path='doc/member[@name="IContentIndexerQuery.GetAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CSearch__CIIndexableContent_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CSearch__CIIndexableContent_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IIndexableContent>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContentIndexerQuery*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IContentIndexerQuery*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IContentIndexerQuery*, IAsyncOperation<Pointer<IVectorView<Pointer<IIndexableContent>>>>**, int>)(lpVtbl[9]))((IContentIndexerQuery*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IContentIndexerQuery.xml' path='doc/member[@name="IContentIndexerQuery.GetRangeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetRangeAsync([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItems, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CSearch__CIIndexableContent_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetRangeAsync([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItems, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CSearch__CIIndexableContent_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IIndexableContent>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContentIndexerQuery*, uint, uint, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IContentIndexerQuery*)Unsafe.AsPointer(ref this), startIndex, maxItems, operation);
+        return ((delegate* unmanaged[MemberFunction]<IContentIndexerQuery*, uint, uint, IAsyncOperation<Pointer<IVectorView<Pointer<IIndexableContent>>>>**, int>)(lpVtbl[10]))((IContentIndexerQuery*)Unsafe.AsPointer(ref this), startIndex, maxItems, operation);
     }
 
     /// <include file='IContentIndexerQuery.xml' path='doc/member[@name="IContentIndexerQuery.get_QueryFolder"]/*' />
@@ -125,16 +125,16 @@ public unsafe partial struct IContentIndexerQuery : IContentIndexerQuery.Interfa
         HRESULT GetCountAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_UINT32_t **")] IAsyncOperation<uint>** operation);
 
         [VtblIndex(7)]
-        HRESULT GetPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetPropertiesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IMapView<HSTRING, Pointer<IInspectable>>>>>>** operation);
 
         [VtblIndex(8)]
-        HRESULT GetPropertiesRangeAsync([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItems, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetPropertiesRangeAsync([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItems, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IMapView<HSTRING, Pointer<IInspectable>>>>>>** operation);
 
         [VtblIndex(9)]
-        HRESULT GetAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CSearch__CIIndexableContent_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CSearch__CIIndexableContent_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IIndexableContent>>>>** operation);
 
         [VtblIndex(10)]
-        HRESULT GetRangeAsync([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItems, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CSearch__CIIndexableContent_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetRangeAsync([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint maxItems, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CSearch__CIIndexableContent_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IIndexableContent>>>>** operation);
 
         [VtblIndex(11)]
         HRESULT get_QueryFolder([NativeTypeName("ABI::Windows::Storage::IStorageFolder **")] IStorageFolder** value);
@@ -165,16 +165,16 @@ public unsafe partial struct IContentIndexerQuery : IContentIndexerQuery.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<uint>**, int> GetCountAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetPropertiesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IMapView<HSTRING, Pointer<IInspectable>>>>>>**, int> GetPropertiesAsync;
 
         [NativeTypeName("HRESULT (UINT32, UINT32, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1___FIMapView_2_HSTRING_IInspectable_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IAsyncOperation<IntPtr>**, int> GetPropertiesRangeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IAsyncOperation<Pointer<IVectorView<Pointer<IMapView<HSTRING, Pointer<IInspectable>>>>>>**, int> GetPropertiesRangeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CSearch__CIIndexableContent_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IIndexableContent>>>>**, int> GetAsync;
 
         [NativeTypeName("HRESULT (UINT32, UINT32, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CStorage__CSearch__CIIndexableContent_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IAsyncOperation<IntPtr>**, int> GetRangeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IAsyncOperation<Pointer<IVectorView<Pointer<IIndexableContent>>>>**, int> GetRangeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFolder **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFolder**, int> get_QueryFolder;

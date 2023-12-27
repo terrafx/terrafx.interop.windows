@@ -1,0 +1,44 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::System::Diagnostics::DiagnosticActionResult *, ABI::Windows::System::Diagnostics::DiagnosticActionState>
+ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::System::Diagnostics::DiagnosticActionResult *, ABI::Windows::System::Diagnostics::DiagnosticActionState>
+ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::System::Diagnostics::DiagnosticActionResult *, ABI::Windows::System::Diagnostics::DiagnosticActionState>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IDiagnosticActionResult
+IID_IDiagnosticInvoker
+IID_IDiagnosticInvoker2
+IID_IDiagnosticInvokerStatics
+IID_IProcessCpuUsage
+IID_IProcessCpuUsageReport
+IID_IProcessDiagnosticInfo
+IID_IProcessDiagnosticInfo2
+IID_IProcessDiagnosticInfoStatics
+IID_IProcessDiagnosticInfoStatics2
+IID_IProcessDiskUsage
+IID_IProcessDiskUsageReport
+IID_IProcessMemoryUsage
+IID_IProcessMemoryUsageReport
+IID_ISystemCpuUsage
+IID_ISystemCpuUsageReport
+IID_ISystemDiagnosticInfo
+IID_ISystemDiagnosticInfoStatics
+IID_ISystemDiagnosticInfoStatics2
+IID_ISystemMemoryUsage
+IID_ISystemMemoryUsageReport
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION
+--file
+winrt-windows.system.diagnostics.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.system.diagnostics
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.system.diagnostics
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.system.diagnostics.h

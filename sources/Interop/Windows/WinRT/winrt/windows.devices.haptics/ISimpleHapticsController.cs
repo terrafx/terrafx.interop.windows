@@ -82,9 +82,9 @@ public unsafe partial struct ISimpleHapticsController : ISimpleHapticsController
     /// <include file='ISimpleHapticsController.xml' path='doc/member[@name="ISimpleHapticsController.get_SupportedFeedback"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_SupportedFeedback([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CHaptics__CSimpleHapticsControllerFeedback_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_SupportedFeedback([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CHaptics__CSimpleHapticsControllerFeedback_t **")] IVectorView<Pointer<ISimpleHapticsControllerFeedback>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISimpleHapticsController*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((ISimpleHapticsController*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISimpleHapticsController*, IVectorView<Pointer<ISimpleHapticsControllerFeedback>>**, int>)(lpVtbl[7]))((ISimpleHapticsController*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ISimpleHapticsController.xml' path='doc/member[@name="ISimpleHapticsController.get_IsIntensitySupported"]/*' />
@@ -165,7 +165,7 @@ public unsafe partial struct ISimpleHapticsController : ISimpleHapticsController
         HRESULT get_Id(HSTRING* value);
 
         [VtblIndex(7)]
-        HRESULT get_SupportedFeedback([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CHaptics__CSimpleHapticsControllerFeedback_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_SupportedFeedback([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CHaptics__CSimpleHapticsControllerFeedback_t **")] IVectorView<Pointer<ISimpleHapticsControllerFeedback>>** value);
 
         [VtblIndex(8)]
         HRESULT get_IsIntensitySupported([NativeTypeName("boolean *")] byte* value);
@@ -220,7 +220,7 @@ public unsafe partial struct ISimpleHapticsController : ISimpleHapticsController
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_Id;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CHaptics__CSimpleHapticsControllerFeedback_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_SupportedFeedback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ISimpleHapticsControllerFeedback>>**, int> get_SupportedFeedback;
 
         [NativeTypeName("HRESULT (boolean *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsIntensitySupported;

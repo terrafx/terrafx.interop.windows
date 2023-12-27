@@ -74,9 +74,9 @@ public unsafe partial struct ICoreApplication2 : ICoreApplication2.Interface, IN
     /// <include file='ICoreApplication2.xml' path='doc/member[@name="ICoreApplication2.add_BackgroundActivated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_BackgroundActivated([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_BackgroundActivated([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_t *")] IEventHandler<Pointer<IBackgroundActivatedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreApplication2*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreApplication2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreApplication2*, IEventHandler<Pointer<IBackgroundActivatedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreApplication2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreApplication2.xml' path='doc/member[@name="ICoreApplication2.remove_BackgroundActivated"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct ICoreApplication2 : ICoreApplication2.Interface, IN
     /// <include file='ICoreApplication2.xml' path='doc/member[@name="ICoreApplication2.add_LeavingBackground"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_LeavingBackground([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CLeavingBackgroundEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_LeavingBackground([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CLeavingBackgroundEventArgs_t *")] IEventHandler<Pointer<ILeavingBackgroundEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreApplication2*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICoreApplication2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreApplication2*, IEventHandler<Pointer<ILeavingBackgroundEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICoreApplication2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreApplication2.xml' path='doc/member[@name="ICoreApplication2.remove_LeavingBackground"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct ICoreApplication2 : ICoreApplication2.Interface, IN
     /// <include file='ICoreApplication2.xml' path='doc/member[@name="ICoreApplication2.add_EnteredBackground"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_EnteredBackground([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CEnteredBackgroundEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_EnteredBackground([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CEnteredBackgroundEventArgs_t *")] IEventHandler<Pointer<IEnteredBackgroundEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreApplication2*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((ICoreApplication2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreApplication2*, IEventHandler<Pointer<IEnteredBackgroundEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((ICoreApplication2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreApplication2.xml' path='doc/member[@name="ICoreApplication2.remove_EnteredBackground"]/*' />
@@ -130,19 +130,19 @@ public unsafe partial struct ICoreApplication2 : ICoreApplication2.Interface, IN
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_BackgroundActivated([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_BackgroundActivated([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_t *")] IEventHandler<Pointer<IBackgroundActivatedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_BackgroundActivated(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_LeavingBackground([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CLeavingBackgroundEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_LeavingBackground([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CLeavingBackgroundEventArgs_t *")] IEventHandler<Pointer<ILeavingBackgroundEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_LeavingBackground(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_EnteredBackground([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CEnteredBackgroundEventArgs_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_EnteredBackground([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CEnteredBackgroundEventArgs_t *")] IEventHandler<Pointer<IEnteredBackgroundEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_EnteredBackground(EventRegistrationToken token);
@@ -173,19 +173,19 @@ public unsafe partial struct ICoreApplication2 : ICoreApplication2.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CActivation__CBackgroundActivatedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_BackgroundActivated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IBackgroundActivatedEventArgs>>*, EventRegistrationToken*, int> add_BackgroundActivated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_BackgroundActivated;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CLeavingBackgroundEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_LeavingBackground;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<ILeavingBackgroundEventArgs>>*, EventRegistrationToken*, int> add_LeavingBackground;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_LeavingBackground;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_Windows__CApplicationModel__CEnteredBackgroundEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_EnteredBackground;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IEnteredBackgroundEventArgs>>*, EventRegistrationToken*, int> add_EnteredBackground;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_EnteredBackground;

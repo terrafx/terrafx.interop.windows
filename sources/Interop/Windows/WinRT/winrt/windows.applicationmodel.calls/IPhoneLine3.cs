@@ -82,9 +82,9 @@ public unsafe partial struct IPhoneLine3 : IPhoneLine3.Interface, INativeGuid
     /// <include file='IPhoneLine3.xml' path='doc/member[@name="IPhoneLine3.DialWithResultAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT DialWithResultAsync(HSTRING number, HSTRING displayName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLineDialResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT DialWithResultAsync(HSTRING number, HSTRING displayName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLineDialResult_t **")] IAsyncOperation<Pointer<IPhoneLineDialResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneLine3*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IPhoneLine3*)Unsafe.AsPointer(ref this), number, displayName, operation);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneLine3*, HSTRING, HSTRING, IAsyncOperation<Pointer<IPhoneLineDialResult>>**, int>)(lpVtbl[7]))((IPhoneLine3*)Unsafe.AsPointer(ref this), number, displayName, operation);
     }
 
     /// <include file='IPhoneLine3.xml' path='doc/member[@name="IPhoneLine3.GetAllActivePhoneCalls"]/*' />
@@ -98,9 +98,9 @@ public unsafe partial struct IPhoneLine3 : IPhoneLine3.Interface, INativeGuid
     /// <include file='IPhoneLine3.xml' path='doc/member[@name="IPhoneLine3.GetAllActivePhoneCallsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetAllActivePhoneCallsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallsResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetAllActivePhoneCallsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallsResult_t **")] IAsyncOperation<Pointer<IPhoneCallsResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneLine3*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IPhoneLine3*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneLine3*, IAsyncOperation<Pointer<IPhoneCallsResult>>**, int>)(lpVtbl[9]))((IPhoneLine3*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -109,13 +109,13 @@ public unsafe partial struct IPhoneLine3 : IPhoneLine3.Interface, INativeGuid
         HRESULT DialWithResult(HSTRING number, HSTRING displayName, [NativeTypeName("ABI::Windows::ApplicationModel::Calls::IPhoneLineDialResult **")] IPhoneLineDialResult** result);
 
         [VtblIndex(7)]
-        HRESULT DialWithResultAsync(HSTRING number, HSTRING displayName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLineDialResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT DialWithResultAsync(HSTRING number, HSTRING displayName, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLineDialResult_t **")] IAsyncOperation<Pointer<IPhoneLineDialResult>>** operation);
 
         [VtblIndex(8)]
         HRESULT GetAllActivePhoneCalls([NativeTypeName("ABI::Windows::ApplicationModel::Calls::IPhoneCallsResult **")] IPhoneCallsResult** result);
 
         [VtblIndex(9)]
-        HRESULT GetAllActivePhoneCallsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallsResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetAllActivePhoneCallsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallsResult_t **")] IAsyncOperation<Pointer<IPhoneCallsResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -143,12 +143,12 @@ public unsafe partial struct IPhoneLine3 : IPhoneLine3.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IPhoneLineDialResult**, int> DialWithResult;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneLineDialResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IAsyncOperation<IntPtr>**, int> DialWithResultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IAsyncOperation<Pointer<IPhoneLineDialResult>>**, int> DialWithResultAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::ApplicationModel::Calls::IPhoneCallsResult **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IPhoneCallsResult**, int> GetAllActivePhoneCalls;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallsResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetAllActivePhoneCallsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IPhoneCallsResult>>**, int> GetAllActivePhoneCallsAsync;
     }
 }

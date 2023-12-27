@@ -74,9 +74,9 @@ public unsafe partial struct ICoreFrameworkInputView : ICoreFrameworkInputView.I
     /// <include file='ICoreFrameworkInputView.xml' path='doc/member[@name="ICoreFrameworkInputView.add_PrimaryViewAnimationStarting"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_PrimaryViewAnimationStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputView_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputViewAnimationStartingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PrimaryViewAnimationStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputView_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputViewAnimationStartingEventArgs_t *")] ITypedEventHandler<Pointer<ICoreFrameworkInputView>, Pointer<ICoreFrameworkInputViewAnimationStartingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreFrameworkInputView*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreFrameworkInputView*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreFrameworkInputView*, ITypedEventHandler<Pointer<ICoreFrameworkInputView>, Pointer<ICoreFrameworkInputViewAnimationStartingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((ICoreFrameworkInputView*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreFrameworkInputView.xml' path='doc/member[@name="ICoreFrameworkInputView.remove_PrimaryViewAnimationStarting"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct ICoreFrameworkInputView : ICoreFrameworkInputView.I
     /// <include file='ICoreFrameworkInputView.xml' path='doc/member[@name="ICoreFrameworkInputView.add_OcclusionsChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_OcclusionsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputView_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputViewOcclusionsChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_OcclusionsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputView_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputViewOcclusionsChangedEventArgs_t *")] ITypedEventHandler<Pointer<ICoreFrameworkInputView>, Pointer<ICoreFrameworkInputViewOcclusionsChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreFrameworkInputView*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICoreFrameworkInputView*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICoreFrameworkInputView*, ITypedEventHandler<Pointer<ICoreFrameworkInputView>, Pointer<ICoreFrameworkInputViewOcclusionsChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICoreFrameworkInputView*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICoreFrameworkInputView.xml' path='doc/member[@name="ICoreFrameworkInputView.remove_OcclusionsChanged"]/*' />
@@ -106,13 +106,13 @@ public unsafe partial struct ICoreFrameworkInputView : ICoreFrameworkInputView.I
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_PrimaryViewAnimationStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputView_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputViewAnimationStartingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PrimaryViewAnimationStarting([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputView_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputViewAnimationStartingEventArgs_t *")] ITypedEventHandler<Pointer<ICoreFrameworkInputView>, Pointer<ICoreFrameworkInputViewAnimationStartingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_PrimaryViewAnimationStarting(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_OcclusionsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputView_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputViewOcclusionsChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_OcclusionsChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputView_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputViewOcclusionsChangedEventArgs_t *")] ITypedEventHandler<Pointer<ICoreFrameworkInputView>, Pointer<ICoreFrameworkInputViewOcclusionsChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_OcclusionsChanged(EventRegistrationToken token);
@@ -140,13 +140,13 @@ public unsafe partial struct ICoreFrameworkInputView : ICoreFrameworkInputView.I
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputView_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputViewAnimationStartingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PrimaryViewAnimationStarting;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreFrameworkInputView>, Pointer<ICoreFrameworkInputViewAnimationStartingEventArgs>>*, EventRegistrationToken*, int> add_PrimaryViewAnimationStarting;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PrimaryViewAnimationStarting;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputView_Windows__CUI__CViewManagement__CCore__CCoreFrameworkInputViewOcclusionsChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_OcclusionsChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreFrameworkInputView>, Pointer<ICoreFrameworkInputViewOcclusionsChangedEventArgs>>*, EventRegistrationToken*, int> add_OcclusionsChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_OcclusionsChanged;

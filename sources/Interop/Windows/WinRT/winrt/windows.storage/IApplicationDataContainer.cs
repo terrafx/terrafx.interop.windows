@@ -98,9 +98,9 @@ public unsafe partial struct IApplicationDataContainer : IApplicationDataContain
     /// <include file='IApplicationDataContainer.xml' path='doc/member[@name="IApplicationDataContainer.get_Containers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT get_Containers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CStorage__CApplicationDataContainer_t **")] IMapView<HSTRING, IntPtr>** value)
+    public HRESULT get_Containers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CStorage__CApplicationDataContainer_t **")] IMapView<HSTRING, Pointer<IApplicationDataContainer>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IApplicationDataContainer*, IMapView<HSTRING, IntPtr>**, int>)(lpVtbl[9]))((IApplicationDataContainer*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IApplicationDataContainer*, IMapView<HSTRING, Pointer<IApplicationDataContainer>>**, int>)(lpVtbl[9]))((IApplicationDataContainer*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IApplicationDataContainer.xml' path='doc/member[@name="IApplicationDataContainer.CreateContainer"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IApplicationDataContainer : IApplicationDataContain
         HRESULT get_Values([NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet **")] IPropertySet** value);
 
         [VtblIndex(9)]
-        HRESULT get_Containers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CStorage__CApplicationDataContainer_t **")] IMapView<HSTRING, IntPtr>** value);
+        HRESULT get_Containers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CStorage__CApplicationDataContainer_t **")] IMapView<HSTRING, Pointer<IApplicationDataContainer>>** value);
 
         [VtblIndex(10)]
         HRESULT CreateContainer(HSTRING name, [NativeTypeName("ABI::Windows::Storage::ApplicationDataCreateDisposition")] ApplicationDataCreateDisposition disposition, [NativeTypeName("ABI::Windows::Storage::IApplicationDataContainer **")] IApplicationDataContainer** container);
@@ -171,7 +171,7 @@ public unsafe partial struct IApplicationDataContainer : IApplicationDataContain
         public delegate* unmanaged[MemberFunction]<TSelf*, IPropertySet**, int> get_Values;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CStorage__CApplicationDataContainer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, IntPtr>**, int> get_Containers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, Pointer<IApplicationDataContainer>>**, int> get_Containers;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Storage::ApplicationDataCreateDisposition, ABI::Windows::Storage::IApplicationDataContainer **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, ApplicationDataCreateDisposition, IApplicationDataContainer**, int> CreateContainer;

@@ -178,9 +178,9 @@ public unsafe partial struct IMediaPlaybackCommandManager : IMediaPlaybackComman
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.add_PlayReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT add_PlayReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPlayReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PlayReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPlayReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerPlayReceivedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[19]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerPlayReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[19]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.remove_PlayReceived"]/*' />
@@ -194,9 +194,9 @@ public unsafe partial struct IMediaPlaybackCommandManager : IMediaPlaybackComman
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.add_PauseReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT add_PauseReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPauseReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PauseReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPauseReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerPauseReceivedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[21]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerPauseReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[21]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.remove_PauseReceived"]/*' />
@@ -210,9 +210,9 @@ public unsafe partial struct IMediaPlaybackCommandManager : IMediaPlaybackComman
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.add_NextReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT add_NextReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerNextReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_NextReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerNextReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerNextReceivedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[23]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerNextReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[23]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.remove_NextReceived"]/*' />
@@ -226,9 +226,9 @@ public unsafe partial struct IMediaPlaybackCommandManager : IMediaPlaybackComman
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.add_PreviousReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public HRESULT add_PreviousReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPreviousReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PreviousReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPreviousReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerPreviousReceivedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[25]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerPreviousReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[25]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.remove_PreviousReceived"]/*' />
@@ -242,9 +242,9 @@ public unsafe partial struct IMediaPlaybackCommandManager : IMediaPlaybackComman
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.add_FastForwardReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT add_FastForwardReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerFastForwardReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_FastForwardReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerFastForwardReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerFastForwardReceivedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[27]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerFastForwardReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[27]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.remove_FastForwardReceived"]/*' />
@@ -258,9 +258,9 @@ public unsafe partial struct IMediaPlaybackCommandManager : IMediaPlaybackComman
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.add_RewindReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public HRESULT add_RewindReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRewindReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_RewindReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRewindReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerRewindReceivedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[29]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerRewindReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[29]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.remove_RewindReceived"]/*' />
@@ -274,9 +274,9 @@ public unsafe partial struct IMediaPlaybackCommandManager : IMediaPlaybackComman
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.add_ShuffleReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
-    public HRESULT add_ShuffleReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerShuffleReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ShuffleReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerShuffleReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerShuffleReceivedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[31]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerShuffleReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[31]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.remove_ShuffleReceived"]/*' />
@@ -290,9 +290,9 @@ public unsafe partial struct IMediaPlaybackCommandManager : IMediaPlaybackComman
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.add_AutoRepeatModeReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
-    public HRESULT add_AutoRepeatModeReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AutoRepeatModeReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[33]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[33]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.remove_AutoRepeatModeReceived"]/*' />
@@ -306,9 +306,9 @@ public unsafe partial struct IMediaPlaybackCommandManager : IMediaPlaybackComman
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.add_PositionReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(35)]
-    public HRESULT add_PositionReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPositionReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PositionReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPositionReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerPositionReceivedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[35]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerPositionReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[35]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.remove_PositionReceived"]/*' />
@@ -322,9 +322,9 @@ public unsafe partial struct IMediaPlaybackCommandManager : IMediaPlaybackComman
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.add_RateReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
-    public HRESULT add_RateReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRateReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_RateReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRateReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerRateReceivedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[37]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaPlaybackCommandManager*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerRateReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[37]))((IMediaPlaybackCommandManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaPlaybackCommandManager.xml' path='doc/member[@name="IMediaPlaybackCommandManager.remove_RateReceived"]/*' />
@@ -377,61 +377,61 @@ public unsafe partial struct IMediaPlaybackCommandManager : IMediaPlaybackComman
         HRESULT get_RateBehavior([NativeTypeName("ABI::Windows::Media::Playback::IMediaPlaybackCommandManagerCommandBehavior **")] IMediaPlaybackCommandManagerCommandBehavior** value);
 
         [VtblIndex(19)]
-        HRESULT add_PlayReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPlayReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PlayReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPlayReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerPlayReceivedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(20)]
         HRESULT remove_PlayReceived(EventRegistrationToken token);
 
         [VtblIndex(21)]
-        HRESULT add_PauseReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPauseReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PauseReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPauseReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerPauseReceivedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(22)]
         HRESULT remove_PauseReceived(EventRegistrationToken token);
 
         [VtblIndex(23)]
-        HRESULT add_NextReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerNextReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_NextReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerNextReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerNextReceivedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(24)]
         HRESULT remove_NextReceived(EventRegistrationToken token);
 
         [VtblIndex(25)]
-        HRESULT add_PreviousReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPreviousReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PreviousReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPreviousReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerPreviousReceivedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(26)]
         HRESULT remove_PreviousReceived(EventRegistrationToken token);
 
         [VtblIndex(27)]
-        HRESULT add_FastForwardReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerFastForwardReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_FastForwardReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerFastForwardReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerFastForwardReceivedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(28)]
         HRESULT remove_FastForwardReceived(EventRegistrationToken token);
 
         [VtblIndex(29)]
-        HRESULT add_RewindReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRewindReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_RewindReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRewindReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerRewindReceivedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(30)]
         HRESULT remove_RewindReceived(EventRegistrationToken token);
 
         [VtblIndex(31)]
-        HRESULT add_ShuffleReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerShuffleReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ShuffleReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerShuffleReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerShuffleReceivedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(32)]
         HRESULT remove_ShuffleReceived(EventRegistrationToken token);
 
         [VtblIndex(33)]
-        HRESULT add_AutoRepeatModeReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AutoRepeatModeReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(34)]
         HRESULT remove_AutoRepeatModeReceived(EventRegistrationToken token);
 
         [VtblIndex(35)]
-        HRESULT add_PositionReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPositionReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PositionReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPositionReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerPositionReceivedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(36)]
         HRESULT remove_PositionReceived(EventRegistrationToken token);
 
         [VtblIndex(37)]
-        HRESULT add_RateReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRateReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_RateReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRateReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerRateReceivedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(38)]
         HRESULT remove_RateReceived(EventRegistrationToken token);
@@ -498,61 +498,61 @@ public unsafe partial struct IMediaPlaybackCommandManager : IMediaPlaybackComman
         public delegate* unmanaged[MemberFunction]<TSelf*, IMediaPlaybackCommandManagerCommandBehavior**, int> get_RateBehavior;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPlayReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PlayReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerPlayReceivedEventArgs>>*, EventRegistrationToken*, int> add_PlayReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PlayReceived;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPauseReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PauseReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerPauseReceivedEventArgs>>*, EventRegistrationToken*, int> add_PauseReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PauseReceived;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerNextReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_NextReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerNextReceivedEventArgs>>*, EventRegistrationToken*, int> add_NextReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_NextReceived;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPreviousReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PreviousReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerPreviousReceivedEventArgs>>*, EventRegistrationToken*, int> add_PreviousReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PreviousReceived;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerFastForwardReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_FastForwardReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerFastForwardReceivedEventArgs>>*, EventRegistrationToken*, int> add_FastForwardReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_FastForwardReceived;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRewindReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_RewindReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerRewindReceivedEventArgs>>*, EventRegistrationToken*, int> add_RewindReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RewindReceived;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerShuffleReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ShuffleReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerShuffleReceivedEventArgs>>*, EventRegistrationToken*, int> add_ShuffleReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ShuffleReceived;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AutoRepeatModeReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerAutoRepeatModeReceivedEventArgs>>*, EventRegistrationToken*, int> add_AutoRepeatModeReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AutoRepeatModeReceived;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerPositionReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PositionReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerPositionReceivedEventArgs>>*, EventRegistrationToken*, int> add_PositionReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PositionReceived;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaPlaybackCommandManager_Windows__CMedia__CPlayback__CMediaPlaybackCommandManagerRateReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_RateReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaPlaybackCommandManager>, Pointer<IMediaPlaybackCommandManagerRateReceivedEventArgs>>*, EventRegistrationToken*, int> add_RateReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RateReceived;

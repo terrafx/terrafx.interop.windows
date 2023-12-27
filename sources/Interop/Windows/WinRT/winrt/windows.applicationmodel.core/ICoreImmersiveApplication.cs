@@ -74,9 +74,9 @@ public unsafe partial struct ICoreImmersiveApplication : ICoreImmersiveApplicati
     /// <include file='ICoreImmersiveApplication.xml' path='doc/member[@name="ICoreImmersiveApplication.get_Views"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_Views([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CCore__CCoreApplicationView_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Views([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CCore__CCoreApplicationView_t **")] IVectorView<Pointer<ICoreApplicationView>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreImmersiveApplication*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((ICoreImmersiveApplication*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICoreImmersiveApplication*, IVectorView<Pointer<ICoreApplicationView>>**, int>)(lpVtbl[6]))((ICoreImmersiveApplication*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICoreImmersiveApplication.xml' path='doc/member[@name="ICoreImmersiveApplication.CreateNewView"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct ICoreImmersiveApplication : ICoreImmersiveApplicati
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_Views([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CCore__CCoreApplicationView_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Views([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CCore__CCoreApplicationView_t **")] IVectorView<Pointer<ICoreApplicationView>>** value);
 
         [VtblIndex(7)]
         HRESULT CreateNewView(HSTRING runtimeType, HSTRING entryPoint, [NativeTypeName("ABI::Windows::ApplicationModel::Core::ICoreApplicationView **")] ICoreApplicationView** view);
@@ -129,7 +129,7 @@ public unsafe partial struct ICoreImmersiveApplication : ICoreImmersiveApplicati
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CApplicationModel__CCore__CCoreApplicationView_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Views;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ICoreApplicationView>>**, int> get_Views;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, ABI::Windows::ApplicationModel::Core::ICoreApplicationView **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, ICoreApplicationView**, int> CreateNewView;

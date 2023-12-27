@@ -82,9 +82,9 @@ public unsafe partial struct ICoreTextServicesManager : ICoreTextServicesManager
     /// <include file='ICoreTextServicesManager.xml' path='doc/member[@name="ICoreTextServicesManager.add_InputLanguageChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_InputLanguageChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextServicesManager_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_InputLanguageChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextServicesManager_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreTextServicesManager>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICoreTextServicesManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ICoreTextServicesManager*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICoreTextServicesManager*, ITypedEventHandler<Pointer<ICoreTextServicesManager>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((ICoreTextServicesManager*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='ICoreTextServicesManager.xml' path='doc/member[@name="ICoreTextServicesManager.remove_InputLanguageChanged"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct ICoreTextServicesManager : ICoreTextServicesManager
         HRESULT get_InputLanguage([NativeTypeName("ABI::Windows::Globalization::ILanguage **")] ILanguage** value);
 
         [VtblIndex(7)]
-        HRESULT add_InputLanguageChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextServicesManager_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_InputLanguageChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextServicesManager_IInspectable_t *")] ITypedEventHandler<Pointer<ICoreTextServicesManager>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(8)]
         HRESULT remove_InputLanguageChanged(EventRegistrationToken cookie);
@@ -143,7 +143,7 @@ public unsafe partial struct ICoreTextServicesManager : ICoreTextServicesManager
         public delegate* unmanaged[MemberFunction]<TSelf*, ILanguage**, int> get_InputLanguage;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CText__CCore__CCoreTextServicesManager_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_InputLanguageChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<ICoreTextServicesManager>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_InputLanguageChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_InputLanguageChanged;

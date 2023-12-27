@@ -106,9 +106,9 @@ public unsafe partial struct IAppointmentCalendarSyncManager : IAppointmentCalen
     /// <include file='IAppointmentCalendarSyncManager.xml' path='doc/member[@name="IAppointmentCalendarSyncManager.add_SyncStatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_SyncStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentCalendarSyncManager_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_SyncStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentCalendarSyncManager_IInspectable_t *")] ITypedEventHandler<Pointer<IAppointmentCalendarSyncManager>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppointmentCalendarSyncManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IAppointmentCalendarSyncManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppointmentCalendarSyncManager*, ITypedEventHandler<Pointer<IAppointmentCalendarSyncManager>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IAppointmentCalendarSyncManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppointmentCalendarSyncManager.xml' path='doc/member[@name="IAppointmentCalendarSyncManager.remove_SyncStatusChanged"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IAppointmentCalendarSyncManager : IAppointmentCalen
         HRESULT SyncAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** result);
 
         [VtblIndex(10)]
-        HRESULT add_SyncStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentCalendarSyncManager_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_SyncStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentCalendarSyncManager_IInspectable_t *")] ITypedEventHandler<Pointer<IAppointmentCalendarSyncManager>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_SyncStatusChanged(EventRegistrationToken token);
@@ -174,7 +174,7 @@ public unsafe partial struct IAppointmentCalendarSyncManager : IAppointmentCalen
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<bool>**, int> SyncAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppointments__CAppointmentCalendarSyncManager_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_SyncStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppointmentCalendarSyncManager>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_SyncStatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_SyncStatusChanged;

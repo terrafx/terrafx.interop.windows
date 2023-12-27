@@ -106,9 +106,9 @@ public unsafe partial struct IPrint3DWorkflow : IPrint3DWorkflow.Interface, INat
     /// <include file='IPrint3DWorkflow.xml' path='doc/member[@name="IPrint3DWorkflow.add_PrintRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_PrintRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrintRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie)
+    public HRESULT add_PrintRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrintRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IPrint3DWorkflow>, Pointer<IPrint3DWorkflowPrintRequestedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPrint3DWorkflow*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IPrint3DWorkflow*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
+        return ((delegate* unmanaged[MemberFunction]<IPrint3DWorkflow*, ITypedEventHandler<Pointer<IPrint3DWorkflow>, Pointer<IPrint3DWorkflowPrintRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IPrint3DWorkflow*)Unsafe.AsPointer(ref this), eventHandler, eventCookie);
     }
 
     /// <include file='IPrint3DWorkflow.xml' path='doc/member[@name="IPrint3DWorkflow.remove_PrintRequested"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct IPrint3DWorkflow : IPrint3DWorkflow.Interface, INat
         HRESULT put_IsPrintReady([NativeTypeName("boolean")] byte value);
 
         [VtblIndex(10)]
-        HRESULT add_PrintRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrintRequestedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* eventCookie);
+        HRESULT add_PrintRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrintRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IPrint3DWorkflow>, Pointer<IPrint3DWorkflowPrintRequestedEventArgs>>* eventHandler, EventRegistrationToken* eventCookie);
 
         [VtblIndex(11)]
         HRESULT remove_PrintRequested(EventRegistrationToken eventCookie);
@@ -174,7 +174,7 @@ public unsafe partial struct IPrint3DWorkflow : IPrint3DWorkflow.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, byte, int> put_IsPrintReady;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflow_Windows__CDevices__CPrinters__CExtensions__CPrint3DWorkflowPrintRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_PrintRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPrint3DWorkflow>, Pointer<IPrint3DWorkflowPrintRequestedEventArgs>>*, EventRegistrationToken*, int> add_PrintRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PrintRequested;

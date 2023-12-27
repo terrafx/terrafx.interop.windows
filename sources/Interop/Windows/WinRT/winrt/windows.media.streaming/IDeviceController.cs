@@ -74,9 +74,9 @@ public unsafe partial struct IDeviceController : IDeviceController.Interface, IN
     /// <include file='IDeviceController.xml' path='doc/member[@name="IDeviceController.get_CachedDevices"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_CachedDevices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CStreaming__CIBasicDevice_t **")] IVector<IntPtr>** value)
+    public HRESULT get_CachedDevices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CStreaming__CIBasicDevice_t **")] IVector<Pointer<IBasicDevice>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceController*, IVector<IntPtr>**, int>)(lpVtbl[6]))((IDeviceController*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceController*, IVector<Pointer<IBasicDevice>>**, int>)(lpVtbl[6]))((IDeviceController*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDeviceController.xml' path='doc/member[@name="IDeviceController.AddDevice"]/*' />
@@ -130,7 +130,7 @@ public unsafe partial struct IDeviceController : IDeviceController.Interface, IN
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_CachedDevices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CStreaming__CIBasicDevice_t **")] IVector<IntPtr>** value);
+        HRESULT get_CachedDevices([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CStreaming__CIBasicDevice_t **")] IVector<Pointer<IBasicDevice>>** value);
 
         [VtblIndex(7)]
         HRESULT AddDevice(HSTRING uniqueDeviceName);
@@ -173,7 +173,7 @@ public unsafe partial struct IDeviceController : IDeviceController.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CStreaming__CIBasicDevice_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_CachedDevices;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IBasicDevice>>**, int> get_CachedDevices;
 
         [NativeTypeName("HRESULT (HSTRING) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, int> AddDevice;

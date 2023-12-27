@@ -138,9 +138,9 @@ public unsafe partial struct IBrightnessOverride : IBrightnessOverride.Interface
     /// <include file='IBrightnessOverride.xml' path='doc/member[@name="IBrightnessOverride.add_IsSupportedChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_IsSupportedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_IsSupportedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t *")] ITypedEventHandler<Pointer<IBrightnessOverride>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBrightnessOverride*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IBrightnessOverride*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBrightnessOverride*, ITypedEventHandler<Pointer<IBrightnessOverride>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IBrightnessOverride*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBrightnessOverride.xml' path='doc/member[@name="IBrightnessOverride.remove_IsSupportedChanged"]/*' />
@@ -154,9 +154,9 @@ public unsafe partial struct IBrightnessOverride : IBrightnessOverride.Interface
     /// <include file='IBrightnessOverride.xml' path='doc/member[@name="IBrightnessOverride.add_IsOverrideActiveChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT add_IsOverrideActiveChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_IsOverrideActiveChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t *")] ITypedEventHandler<Pointer<IBrightnessOverride>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBrightnessOverride*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IBrightnessOverride*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBrightnessOverride*, ITypedEventHandler<Pointer<IBrightnessOverride>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IBrightnessOverride*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBrightnessOverride.xml' path='doc/member[@name="IBrightnessOverride.remove_IsOverrideActiveChanged"]/*' />
@@ -170,9 +170,9 @@ public unsafe partial struct IBrightnessOverride : IBrightnessOverride.Interface
     /// <include file='IBrightnessOverride.xml' path='doc/member[@name="IBrightnessOverride.add_BrightnessLevelChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT add_BrightnessLevelChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_BrightnessLevelChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t *")] ITypedEventHandler<Pointer<IBrightnessOverride>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBrightnessOverride*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[18]))((IBrightnessOverride*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBrightnessOverride*, ITypedEventHandler<Pointer<IBrightnessOverride>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[18]))((IBrightnessOverride*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBrightnessOverride.xml' path='doc/member[@name="IBrightnessOverride.remove_BrightnessLevelChanged"]/*' />
@@ -210,19 +210,19 @@ public unsafe partial struct IBrightnessOverride : IBrightnessOverride.Interface
         HRESULT StopOverride();
 
         [VtblIndex(14)]
-        HRESULT add_IsSupportedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_IsSupportedChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t *")] ITypedEventHandler<Pointer<IBrightnessOverride>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(15)]
         HRESULT remove_IsSupportedChanged(EventRegistrationToken token);
 
         [VtblIndex(16)]
-        HRESULT add_IsOverrideActiveChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_IsOverrideActiveChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t *")] ITypedEventHandler<Pointer<IBrightnessOverride>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(17)]
         HRESULT remove_IsOverrideActiveChanged(EventRegistrationToken token);
 
         [VtblIndex(18)]
-        HRESULT add_BrightnessLevelChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_BrightnessLevelChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t *")] ITypedEventHandler<Pointer<IBrightnessOverride>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(19)]
         HRESULT remove_BrightnessLevelChanged(EventRegistrationToken token);
@@ -274,19 +274,19 @@ public unsafe partial struct IBrightnessOverride : IBrightnessOverride.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, int> StopOverride;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_IsSupportedChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IBrightnessOverride>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_IsSupportedChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_IsSupportedChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_IsOverrideActiveChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IBrightnessOverride>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_IsOverrideActiveChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_IsOverrideActiveChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CBrightnessOverride_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_BrightnessLevelChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IBrightnessOverride>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_BrightnessLevelChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_BrightnessLevelChanged;

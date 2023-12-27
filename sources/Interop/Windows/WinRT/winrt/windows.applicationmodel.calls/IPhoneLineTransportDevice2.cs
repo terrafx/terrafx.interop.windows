@@ -82,9 +82,9 @@ public unsafe partial struct IPhoneLineTransportDevice2 : IPhoneLineTransportDev
     /// <include file='IPhoneLineTransportDevice2.xml' path='doc/member[@name="IPhoneLineTransportDevice2.add_AudioRoutingStatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_AudioRoutingStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineTransportDevice_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AudioRoutingStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineTransportDevice_IInspectable_t *")] ITypedEventHandler<Pointer<IPhoneLineTransportDevice>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneLineTransportDevice2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IPhoneLineTransportDevice2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneLineTransportDevice2*, ITypedEventHandler<Pointer<IPhoneLineTransportDevice>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IPhoneLineTransportDevice2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPhoneLineTransportDevice2.xml' path='doc/member[@name="IPhoneLineTransportDevice2.remove_AudioRoutingStatusChanged"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IPhoneLineTransportDevice2 : IPhoneLineTransportDev
     /// <include file='IPhoneLineTransportDevice2.xml' path='doc/member[@name="IPhoneLineTransportDevice2.add_InBandRingingEnabledChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_InBandRingingEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineTransportDevice_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_InBandRingingEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineTransportDevice_IInspectable_t *")] ITypedEventHandler<Pointer<IPhoneLineTransportDevice>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneLineTransportDevice2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IPhoneLineTransportDevice2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneLineTransportDevice2*, ITypedEventHandler<Pointer<IPhoneLineTransportDevice>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IPhoneLineTransportDevice2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPhoneLineTransportDevice2.xml' path='doc/member[@name="IPhoneLineTransportDevice2.remove_InBandRingingEnabledChanged"]/*' />
@@ -125,7 +125,7 @@ public unsafe partial struct IPhoneLineTransportDevice2 : IPhoneLineTransportDev
         HRESULT get_AudioRoutingStatus([NativeTypeName("ABI::Windows::ApplicationModel::Calls::TransportDeviceAudioRoutingStatus *")] TransportDeviceAudioRoutingStatus* value);
 
         [VtblIndex(7)]
-        HRESULT add_AudioRoutingStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineTransportDevice_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AudioRoutingStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineTransportDevice_IInspectable_t *")] ITypedEventHandler<Pointer<IPhoneLineTransportDevice>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_AudioRoutingStatusChanged(EventRegistrationToken token);
@@ -134,7 +134,7 @@ public unsafe partial struct IPhoneLineTransportDevice2 : IPhoneLineTransportDev
         HRESULT get_InBandRingingEnabled([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(10)]
-        HRESULT add_InBandRingingEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineTransportDevice_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_InBandRingingEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineTransportDevice_IInspectable_t *")] ITypedEventHandler<Pointer<IPhoneLineTransportDevice>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_InBandRingingEnabledChanged(EventRegistrationToken token);
@@ -165,7 +165,7 @@ public unsafe partial struct IPhoneLineTransportDevice2 : IPhoneLineTransportDev
         public delegate* unmanaged[MemberFunction]<TSelf*, TransportDeviceAudioRoutingStatus*, int> get_AudioRoutingStatus;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineTransportDevice_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AudioRoutingStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPhoneLineTransportDevice>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_AudioRoutingStatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AudioRoutingStatusChanged;
@@ -174,7 +174,7 @@ public unsafe partial struct IPhoneLineTransportDevice2 : IPhoneLineTransportDev
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_InBandRingingEnabled;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CCalls__CPhoneLineTransportDevice_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_InBandRingingEnabledChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IPhoneLineTransportDevice>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_InBandRingingEnabledChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_InBandRingingEnabledChanged;

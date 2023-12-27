@@ -106,9 +106,9 @@ public unsafe partial struct ISpeechRecognitionResult : ISpeechRecognitionResult
     /// <include file='ISpeechRecognitionResult.xml' path='doc/member[@name="ISpeechRecognitionResult.GetAlternates"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetAlternates([NativeTypeName("UINT32")] uint maxAlternates, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionResult_t **")] IVectorView<IntPtr>** alternates)
+    public HRESULT GetAlternates([NativeTypeName("UINT32")] uint maxAlternates, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionResult_t **")] IVectorView<Pointer<ISpeechRecognitionResult>>** alternates)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognitionResult*, uint, IVectorView<IntPtr>**, int>)(lpVtbl[10]))((ISpeechRecognitionResult*)Unsafe.AsPointer(ref this), maxAlternates, alternates);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechRecognitionResult*, uint, IVectorView<Pointer<ISpeechRecognitionResult>>**, int>)(lpVtbl[10]))((ISpeechRecognitionResult*)Unsafe.AsPointer(ref this), maxAlternates, alternates);
     }
 
     /// <include file='ISpeechRecognitionResult.xml' path='doc/member[@name="ISpeechRecognitionResult.get_Constraint"]/*' />
@@ -150,7 +150,7 @@ public unsafe partial struct ISpeechRecognitionResult : ISpeechRecognitionResult
         HRESULT get_SemanticInterpretation([NativeTypeName("ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionSemanticInterpretation **")] ISpeechRecognitionSemanticInterpretation** value);
 
         [VtblIndex(10)]
-        HRESULT GetAlternates([NativeTypeName("UINT32")] uint maxAlternates, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionResult_t **")] IVectorView<IntPtr>** alternates);
+        HRESULT GetAlternates([NativeTypeName("UINT32")] uint maxAlternates, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionResult_t **")] IVectorView<Pointer<ISpeechRecognitionResult>>** alternates);
 
         [VtblIndex(11)]
         HRESULT get_Constraint([NativeTypeName("ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint **")] ISpeechRecognitionConstraint** value);
@@ -196,7 +196,7 @@ public unsafe partial struct ISpeechRecognitionResult : ISpeechRecognitionResult
         public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechRecognitionSemanticInterpretation**, int> get_SemanticInterpretation;
 
         [NativeTypeName("HRESULT (UINT32, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CSpeechRecognition__CSpeechRecognitionResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IVectorView<IntPtr>**, int> GetAlternates;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IVectorView<Pointer<ISpeechRecognitionResult>>**, int> GetAlternates;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::SpeechRecognition::ISpeechRecognitionConstraint **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ISpeechRecognitionConstraint**, int> get_Constraint;

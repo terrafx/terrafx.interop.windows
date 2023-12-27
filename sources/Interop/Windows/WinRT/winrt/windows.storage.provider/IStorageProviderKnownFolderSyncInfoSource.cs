@@ -82,9 +82,9 @@ public unsafe partial struct IStorageProviderKnownFolderSyncInfoSource : IStorag
     /// <include file='IStorageProviderKnownFolderSyncInfoSource.xml' path='doc/member[@name="IStorageProviderKnownFolderSyncInfoSource.add_KnownFolderSyncInfoChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_KnownFolderSyncInfoChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CIStorageProviderKnownFolderSyncInfoSource_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_KnownFolderSyncInfoChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CIStorageProviderKnownFolderSyncInfoSource_IInspectable_t *")] ITypedEventHandler<Pointer<IStorageProviderKnownFolderSyncInfoSource>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageProviderKnownFolderSyncInfoSource*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IStorageProviderKnownFolderSyncInfoSource*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderKnownFolderSyncInfoSource*, ITypedEventHandler<Pointer<IStorageProviderKnownFolderSyncInfoSource>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IStorageProviderKnownFolderSyncInfoSource*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IStorageProviderKnownFolderSyncInfoSource.xml' path='doc/member[@name="IStorageProviderKnownFolderSyncInfoSource.remove_KnownFolderSyncInfoChanged"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IStorageProviderKnownFolderSyncInfoSource : IStorag
         HRESULT GetKnownFolderSyncInfo([NativeTypeName("ABI::Windows::Storage::Provider::IStorageProviderKnownFolderSyncInfo **")] IStorageProviderKnownFolderSyncInfo** result);
 
         [VtblIndex(7)]
-        HRESULT add_KnownFolderSyncInfoChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CIStorageProviderKnownFolderSyncInfoSource_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_KnownFolderSyncInfoChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CIStorageProviderKnownFolderSyncInfoSource_IInspectable_t *")] ITypedEventHandler<Pointer<IStorageProviderKnownFolderSyncInfoSource>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_KnownFolderSyncInfoChanged(EventRegistrationToken token);
@@ -132,7 +132,7 @@ public unsafe partial struct IStorageProviderKnownFolderSyncInfoSource : IStorag
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageProviderKnownFolderSyncInfo**, int> GetKnownFolderSyncInfo;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CStorage__CProvider__CIStorageProviderKnownFolderSyncInfoSource_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_KnownFolderSyncInfoChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IStorageProviderKnownFolderSyncInfoSource>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_KnownFolderSyncInfoChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_KnownFolderSyncInfoChanged;

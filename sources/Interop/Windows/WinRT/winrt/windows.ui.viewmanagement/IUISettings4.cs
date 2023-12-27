@@ -82,9 +82,9 @@ public unsafe partial struct IUISettings4 : IUISettings4.Interface, INativeGuid
     /// <include file='IUISettings4.xml' path='doc/member[@name="IUISettings4.add_AdvancedEffectsEnabledChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_AdvancedEffectsEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_AdvancedEffectsEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_IInspectable_t *")] ITypedEventHandler<Pointer<IUISettings>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUISettings4*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IUISettings4*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IUISettings4*, ITypedEventHandler<Pointer<IUISettings>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IUISettings4*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IUISettings4.xml' path='doc/member[@name="IUISettings4.remove_AdvancedEffectsEnabledChanged"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IUISettings4 : IUISettings4.Interface, INativeGuid
         HRESULT get_AdvancedEffectsEnabled([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(7)]
-        HRESULT add_AdvancedEffectsEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_AdvancedEffectsEnabledChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_IInspectable_t *")] ITypedEventHandler<Pointer<IUISettings>, Pointer<IInspectable>>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(8)]
         HRESULT remove_AdvancedEffectsEnabledChanged(EventRegistrationToken cookie);
@@ -132,7 +132,7 @@ public unsafe partial struct IUISettings4 : IUISettings4.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_AdvancedEffectsEnabled;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CUISettings_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AdvancedEffectsEnabledChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IUISettings>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_AdvancedEffectsEnabledChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AdvancedEffectsEnabledChanged;

@@ -130,9 +130,9 @@ public unsafe partial struct IAppCaptureState : IAppCaptureState.Interface, INat
     /// <include file='IAppCaptureState.xml' path='doc/member[@name="IAppCaptureState.add_MicrophoneCaptureStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_MicrophoneCaptureStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureState_Windows__CMedia__CCapture__CAppCaptureMicrophoneCaptureStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_MicrophoneCaptureStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureState_Windows__CMedia__CCapture__CAppCaptureMicrophoneCaptureStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppCaptureState>, Pointer<IAppCaptureMicrophoneCaptureStateChangedEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppCaptureState*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IAppCaptureState*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppCaptureState*, ITypedEventHandler<Pointer<IAppCaptureState>, Pointer<IAppCaptureMicrophoneCaptureStateChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IAppCaptureState*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IAppCaptureState.xml' path='doc/member[@name="IAppCaptureState.remove_MicrophoneCaptureStateChanged"]/*' />
@@ -146,9 +146,9 @@ public unsafe partial struct IAppCaptureState : IAppCaptureState.Interface, INat
     /// <include file='IAppCaptureState.xml' path='doc/member[@name="IAppCaptureState.add_CaptureTargetClosed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT add_CaptureTargetClosed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureState_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_CaptureTargetClosed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureState_IInspectable_t *")] ITypedEventHandler<Pointer<IAppCaptureState>, Pointer<IInspectable>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppCaptureState*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IAppCaptureState*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppCaptureState*, ITypedEventHandler<Pointer<IAppCaptureState>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IAppCaptureState*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IAppCaptureState.xml' path='doc/member[@name="IAppCaptureState.remove_CaptureTargetClosed"]/*' />
@@ -183,13 +183,13 @@ public unsafe partial struct IAppCaptureState : IAppCaptureState.Interface, INat
         HRESULT get_MicrophoneCaptureError([NativeTypeName("UINT32 *")] uint* value);
 
         [VtblIndex(13)]
-        HRESULT add_MicrophoneCaptureStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureState_Windows__CMedia__CCapture__CAppCaptureMicrophoneCaptureStateChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_MicrophoneCaptureStateChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureState_Windows__CMedia__CCapture__CAppCaptureMicrophoneCaptureStateChangedEventArgs_t *")] ITypedEventHandler<Pointer<IAppCaptureState>, Pointer<IAppCaptureMicrophoneCaptureStateChangedEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_MicrophoneCaptureStateChanged(EventRegistrationToken token);
 
         [VtblIndex(15)]
-        HRESULT add_CaptureTargetClosed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureState_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_CaptureTargetClosed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureState_IInspectable_t *")] ITypedEventHandler<Pointer<IAppCaptureState>, Pointer<IInspectable>>* value, EventRegistrationToken* token);
 
         [VtblIndex(16)]
         HRESULT remove_CaptureTargetClosed(EventRegistrationToken token);
@@ -238,13 +238,13 @@ public unsafe partial struct IAppCaptureState : IAppCaptureState.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_MicrophoneCaptureError;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureState_Windows__CMedia__CCapture__CAppCaptureMicrophoneCaptureStateChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_MicrophoneCaptureStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppCaptureState>, Pointer<IAppCaptureMicrophoneCaptureStateChangedEventArgs>>*, EventRegistrationToken*, int> add_MicrophoneCaptureStateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_MicrophoneCaptureStateChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CAppCaptureState_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CaptureTargetClosed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppCaptureState>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_CaptureTargetClosed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CaptureTargetClosed;

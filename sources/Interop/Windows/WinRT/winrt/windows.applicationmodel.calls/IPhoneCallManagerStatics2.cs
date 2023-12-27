@@ -74,9 +74,9 @@ public unsafe partial struct IPhoneCallManagerStatics2 : IPhoneCallManagerStatic
     /// <include file='IPhoneCallManagerStatics2.xml' path='doc/member[@name="IPhoneCallManagerStatics2.add_CallStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_CallStateChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_CallStateChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneCallManagerStatics2*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IPhoneCallManagerStatics2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneCallManagerStatics2*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IPhoneCallManagerStatics2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IPhoneCallManagerStatics2.xml' path='doc/member[@name="IPhoneCallManagerStatics2.remove_CallStateChanged"]/*' />
@@ -114,15 +114,15 @@ public unsafe partial struct IPhoneCallManagerStatics2 : IPhoneCallManagerStatic
     /// <include file='IPhoneCallManagerStatics2.xml' path='doc/member[@name="IPhoneCallManagerStatics2.RequestStoreAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_t **")] IAsyncOperation<Pointer<IPhoneCallStore>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPhoneCallManagerStatics2*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IPhoneCallManagerStatics2*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IPhoneCallManagerStatics2*, IAsyncOperation<Pointer<IPhoneCallStore>>**, int>)(lpVtbl[11]))((IPhoneCallManagerStatics2*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_CallStateChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_CallStateChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_CallStateChanged(EventRegistrationToken token);
@@ -137,7 +137,7 @@ public unsafe partial struct IPhoneCallManagerStatics2 : IPhoneCallManagerStatic
         HRESULT ShowPhoneCallSettingsUI();
 
         [VtblIndex(11)]
-        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT RequestStoreAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_t **")] IAsyncOperation<Pointer<IPhoneCallStore>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -162,7 +162,7 @@ public unsafe partial struct IPhoneCallManagerStatics2 : IPhoneCallManagerStatic
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_CallStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_CallStateChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CallStateChanged;
@@ -177,6 +177,6 @@ public unsafe partial struct IPhoneCallManagerStatics2 : IPhoneCallManagerStatic
         public delegate* unmanaged[MemberFunction]<TSelf*, int> ShowPhoneCallSettingsUI;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CCalls__CPhoneCallStore_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> RequestStoreAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IPhoneCallStore>>**, int> RequestStoreAsync;
     }
 }

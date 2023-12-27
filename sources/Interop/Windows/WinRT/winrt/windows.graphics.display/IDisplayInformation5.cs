@@ -82,9 +82,9 @@ public unsafe partial struct IDisplayInformation5 : IDisplayInformation5.Interfa
     /// <include file='IDisplayInformation5.xml' path='doc/member[@name="IDisplayInformation5.add_AdvancedColorInfoChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_AdvancedColorInfoChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AdvancedColorInfoChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_t *")] ITypedEventHandler<Pointer<IDisplayInformation>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDisplayInformation5*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IDisplayInformation5*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayInformation5*, ITypedEventHandler<Pointer<IDisplayInformation>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IDisplayInformation5*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDisplayInformation5.xml' path='doc/member[@name="IDisplayInformation5.remove_AdvancedColorInfoChanged"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IDisplayInformation5 : IDisplayInformation5.Interfa
         HRESULT GetAdvancedColorInfo([NativeTypeName("ABI::Windows::Graphics::Display::IAdvancedColorInfo **")] IAdvancedColorInfo** value);
 
         [VtblIndex(7)]
-        HRESULT add_AdvancedColorInfoChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AdvancedColorInfoChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_t *")] ITypedEventHandler<Pointer<IDisplayInformation>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_AdvancedColorInfoChanged(EventRegistrationToken token);
@@ -132,7 +132,7 @@ public unsafe partial struct IDisplayInformation5 : IDisplayInformation5.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, IAdvancedColorInfo**, int> GetAdvancedColorInfo;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CGraphics__CDisplay__CDisplayInformation_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AdvancedColorInfoChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDisplayInformation>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_AdvancedColorInfoChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AdvancedColorInfoChanged;

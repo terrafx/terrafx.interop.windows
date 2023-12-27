@@ -1,0 +1,37 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Data::Json::IJsonValue *>
+ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Data::Json::IJsonValue *> *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Data::Json::IJsonValue *>
+ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Data::Json::IJsonValue *> *>
+ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, ABI::Windows::Data::Json::IJsonValue *>
+ABI::Windows::Foundation::Collections::IMap<HSTRING__ *, ABI::Windows::Data::Json::IJsonValue *>
+ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, ABI::Windows::Data::Json::IJsonValue *>
+ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Data::Json::IJsonValue *>
+ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Data::Json::IJsonValue *>
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IJsonArray
+IID_IJsonArrayStatics
+IID_IJsonErrorStatics2
+IID_IJsonObject
+IID_IJsonObjectStatics
+IID_IJsonObjectWithDefaultValues
+IID_IJsonValue
+IID_IJsonValueStatics
+IID_IJsonValueStatics2
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.data.json.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.data.json
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.data.json
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.data.json.h

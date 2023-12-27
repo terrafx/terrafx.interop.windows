@@ -74,15 +74,15 @@ public unsafe partial struct IMediaComposition2 : IMediaComposition2.Interface, 
     /// <include file='IMediaComposition2.xml' path='doc/member[@name="IMediaComposition2.get_OverlayLayers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_OverlayLayers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEditing__CMediaOverlayLayer_t **")] IVector<IntPtr>** value)
+    public HRESULT get_OverlayLayers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEditing__CMediaOverlayLayer_t **")] IVector<Pointer<IMediaOverlayLayer>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaComposition2*, IVector<IntPtr>**, int>)(lpVtbl[6]))((IMediaComposition2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaComposition2*, IVector<Pointer<IMediaOverlayLayer>>**, int>)(lpVtbl[6]))((IMediaComposition2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_OverlayLayers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEditing__CMediaOverlayLayer_t **")] IVector<IntPtr>** value);
+        HRESULT get_OverlayLayers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEditing__CMediaOverlayLayer_t **")] IVector<Pointer<IMediaOverlayLayer>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IMediaComposition2 : IMediaComposition2.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CMedia__CEditing__CMediaOverlayLayer_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_OverlayLayers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IMediaOverlayLayer>>**, int> get_OverlayLayers;
     }
 }

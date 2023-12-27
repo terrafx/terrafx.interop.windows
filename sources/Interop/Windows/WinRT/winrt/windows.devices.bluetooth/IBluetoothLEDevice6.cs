@@ -98,9 +98,9 @@ public unsafe partial struct IBluetoothLEDevice6 : IBluetoothLEDevice6.Interface
     /// <include file='IBluetoothLEDevice6.xml' path='doc/member[@name="IBluetoothLEDevice6.add_ConnectionParametersChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_ConnectionParametersChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ConnectionParametersChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable_t *")] ITypedEventHandler<Pointer<IBluetoothLEDevice>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEDevice6*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IBluetoothLEDevice6*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEDevice6*, ITypedEventHandler<Pointer<IBluetoothLEDevice>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IBluetoothLEDevice6*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBluetoothLEDevice6.xml' path='doc/member[@name="IBluetoothLEDevice6.remove_ConnectionParametersChanged"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct IBluetoothLEDevice6 : IBluetoothLEDevice6.Interface
     /// <include file='IBluetoothLEDevice6.xml' path='doc/member[@name="IBluetoothLEDevice6.add_ConnectionPhyChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_ConnectionPhyChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ConnectionPhyChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable_t *")] ITypedEventHandler<Pointer<IBluetoothLEDevice>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEDevice6*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IBluetoothLEDevice6*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IBluetoothLEDevice6*, ITypedEventHandler<Pointer<IBluetoothLEDevice>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IBluetoothLEDevice6*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IBluetoothLEDevice6.xml' path='doc/member[@name="IBluetoothLEDevice6.remove_ConnectionPhyChanged"]/*' />
@@ -139,13 +139,13 @@ public unsafe partial struct IBluetoothLEDevice6 : IBluetoothLEDevice6.Interface
         HRESULT RequestPreferredConnectionParameters([NativeTypeName("ABI::Windows::Devices::Bluetooth::IBluetoothLEPreferredConnectionParameters *")] IBluetoothLEPreferredConnectionParameters* preferredConnectionParameters, [NativeTypeName("ABI::Windows::Devices::Bluetooth::IBluetoothLEPreferredConnectionParametersRequest **")] IBluetoothLEPreferredConnectionParametersRequest** result);
 
         [VtblIndex(9)]
-        HRESULT add_ConnectionParametersChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ConnectionParametersChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable_t *")] ITypedEventHandler<Pointer<IBluetoothLEDevice>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_ConnectionParametersChanged(EventRegistrationToken token);
 
         [VtblIndex(11)]
-        HRESULT add_ConnectionPhyChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ConnectionPhyChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable_t *")] ITypedEventHandler<Pointer<IBluetoothLEDevice>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_ConnectionPhyChanged(EventRegistrationToken token);
@@ -182,13 +182,13 @@ public unsafe partial struct IBluetoothLEDevice6 : IBluetoothLEDevice6.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, IBluetoothLEPreferredConnectionParameters*, IBluetoothLEPreferredConnectionParametersRequest**, int> RequestPreferredConnectionParameters;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ConnectionParametersChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IBluetoothLEDevice>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ConnectionParametersChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ConnectionParametersChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CBluetooth__CBluetoothLEDevice_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ConnectionPhyChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IBluetoothLEDevice>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ConnectionPhyChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ConnectionPhyChanged;

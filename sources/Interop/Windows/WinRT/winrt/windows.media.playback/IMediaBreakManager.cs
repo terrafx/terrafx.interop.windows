@@ -74,9 +74,9 @@ public unsafe partial struct IMediaBreakManager : IMediaBreakManager.Interface, 
     /// <include file='IMediaBreakManager.xml' path='doc/member[@name="IMediaBreakManager.add_BreaksSeekedOver"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_BreaksSeekedOver([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSeekedOverEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_BreaksSeekedOver([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSeekedOverEventArgs_t *")] ITypedEventHandler<Pointer<IMediaBreakManager>, Pointer<IMediaBreakSeekedOverEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaBreakManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaBreakManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaBreakManager*, ITypedEventHandler<Pointer<IMediaBreakManager>, Pointer<IMediaBreakSeekedOverEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaBreakManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaBreakManager.xml' path='doc/member[@name="IMediaBreakManager.remove_BreaksSeekedOver"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IMediaBreakManager : IMediaBreakManager.Interface, 
     /// <include file='IMediaBreakManager.xml' path='doc/member[@name="IMediaBreakManager.add_BreakStarted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_BreakStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakStartedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_BreakStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakStartedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaBreakManager>, Pointer<IMediaBreakStartedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaBreakManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IMediaBreakManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaBreakManager*, ITypedEventHandler<Pointer<IMediaBreakManager>, Pointer<IMediaBreakStartedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IMediaBreakManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaBreakManager.xml' path='doc/member[@name="IMediaBreakManager.remove_BreakStarted"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IMediaBreakManager : IMediaBreakManager.Interface, 
     /// <include file='IMediaBreakManager.xml' path='doc/member[@name="IMediaBreakManager.add_BreakEnded"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_BreakEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakEndedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_BreakEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakEndedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaBreakManager>, Pointer<IMediaBreakEndedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaBreakManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMediaBreakManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaBreakManager*, ITypedEventHandler<Pointer<IMediaBreakManager>, Pointer<IMediaBreakEndedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMediaBreakManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaBreakManager.xml' path='doc/member[@name="IMediaBreakManager.remove_BreakEnded"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IMediaBreakManager : IMediaBreakManager.Interface, 
     /// <include file='IMediaBreakManager.xml' path='doc/member[@name="IMediaBreakManager.add_BreakSkipped"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_BreakSkipped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSkippedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_BreakSkipped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSkippedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaBreakManager>, Pointer<IMediaBreakSkippedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaBreakManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IMediaBreakManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaBreakManager*, ITypedEventHandler<Pointer<IMediaBreakManager>, Pointer<IMediaBreakSkippedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IMediaBreakManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaBreakManager.xml' path='doc/member[@name="IMediaBreakManager.remove_BreakSkipped"]/*' />
@@ -170,25 +170,25 @@ public unsafe partial struct IMediaBreakManager : IMediaBreakManager.Interface, 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_BreaksSeekedOver([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSeekedOverEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_BreaksSeekedOver([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSeekedOverEventArgs_t *")] ITypedEventHandler<Pointer<IMediaBreakManager>, Pointer<IMediaBreakSeekedOverEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_BreaksSeekedOver(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_BreakStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakStartedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_BreakStarted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakStartedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaBreakManager>, Pointer<IMediaBreakStartedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_BreakStarted(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_BreakEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakEndedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_BreakEnded([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakEndedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaBreakManager>, Pointer<IMediaBreakEndedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_BreakEnded(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT add_BreakSkipped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSkippedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_BreakSkipped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSkippedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaBreakManager>, Pointer<IMediaBreakSkippedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_BreakSkipped(EventRegistrationToken token);
@@ -228,25 +228,25 @@ public unsafe partial struct IMediaBreakManager : IMediaBreakManager.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSeekedOverEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_BreaksSeekedOver;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaBreakManager>, Pointer<IMediaBreakSeekedOverEventArgs>>*, EventRegistrationToken*, int> add_BreaksSeekedOver;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_BreaksSeekedOver;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakStartedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_BreakStarted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaBreakManager>, Pointer<IMediaBreakStartedEventArgs>>*, EventRegistrationToken*, int> add_BreakStarted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_BreakStarted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakEndedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_BreakEnded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaBreakManager>, Pointer<IMediaBreakEndedEventArgs>>*, EventRegistrationToken*, int> add_BreakEnded;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_BreakEnded;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakManager_Windows__CMedia__CPlayback__CMediaBreakSkippedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_BreakSkipped;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaBreakManager>, Pointer<IMediaBreakSkippedEventArgs>>*, EventRegistrationToken*, int> add_BreakSkipped;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_BreakSkipped;

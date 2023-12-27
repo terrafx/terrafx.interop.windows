@@ -130,9 +130,9 @@ public unsafe partial struct IGameBarServices : IGameBarServices.Interface, INat
     /// <include file='IGameBarServices.xml' path='doc/member[@name="IGameBarServices.add_CommandReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_CommandReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CGameBarServices_Windows__CMedia__CCapture__CGameBarServicesCommandEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token)
+    public HRESULT add_CommandReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CGameBarServices_Windows__CMedia__CCapture__CGameBarServicesCommandEventArgs_t *")] ITypedEventHandler<Pointer<IGameBarServices>, Pointer<IGameBarServicesCommandEventArgs>>* value, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGameBarServices*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IGameBarServices*)Unsafe.AsPointer(ref this), value, token);
+        return ((delegate* unmanaged[MemberFunction]<IGameBarServices*, ITypedEventHandler<Pointer<IGameBarServices>, Pointer<IGameBarServicesCommandEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IGameBarServices*)Unsafe.AsPointer(ref this), value, token);
     }
 
     /// <include file='IGameBarServices.xml' path='doc/member[@name="IGameBarServices.remove_CommandReceived"]/*' />
@@ -167,7 +167,7 @@ public unsafe partial struct IGameBarServices : IGameBarServices.Interface, INat
         HRESULT get_AppCaptureServices([NativeTypeName("ABI::Windows::Media::Capture::IAppCaptureServices **")] IAppCaptureServices** value);
 
         [VtblIndex(13)]
-        HRESULT add_CommandReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CGameBarServices_Windows__CMedia__CCapture__CGameBarServicesCommandEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* value, EventRegistrationToken* token);
+        HRESULT add_CommandReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CGameBarServices_Windows__CMedia__CCapture__CGameBarServicesCommandEventArgs_t *")] ITypedEventHandler<Pointer<IGameBarServices>, Pointer<IGameBarServicesCommandEventArgs>>* value, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_CommandReceived(EventRegistrationToken token);
@@ -216,7 +216,7 @@ public unsafe partial struct IGameBarServices : IGameBarServices.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, IAppCaptureServices**, int> get_AppCaptureServices;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CCapture__CGameBarServices_Windows__CMedia__CCapture__CGameBarServicesCommandEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_CommandReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IGameBarServices>, Pointer<IGameBarServicesCommandEventArgs>>*, EventRegistrationToken*, int> add_CommandReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_CommandReceived;

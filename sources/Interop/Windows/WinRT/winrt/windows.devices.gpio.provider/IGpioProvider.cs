@@ -74,15 +74,15 @@ public unsafe partial struct IGpioProvider : IGpioProvider.Interface, INativeGui
     /// <include file='IGpioProvider.xml' path='doc/member[@name="IGpioProvider.GetControllers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetControllers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CGpio__CProvider__CIGpioControllerProvider_t **")] IVectorView<IntPtr>** result)
+    public HRESULT GetControllers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CGpio__CProvider__CIGpioControllerProvider_t **")] IVectorView<Pointer<IGpioControllerProvider>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGpioProvider*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IGpioProvider*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IGpioProvider*, IVectorView<Pointer<IGpioControllerProvider>>**, int>)(lpVtbl[6]))((IGpioProvider*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetControllers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CGpio__CProvider__CIGpioControllerProvider_t **")] IVectorView<IntPtr>** result);
+        HRESULT GetControllers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CGpio__CProvider__CIGpioControllerProvider_t **")] IVectorView<Pointer<IGpioControllerProvider>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IGpioProvider : IGpioProvider.Interface, INativeGui
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CGpio__CProvider__CIGpioControllerProvider_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> GetControllers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IGpioControllerProvider>>**, int> GetControllers;
     }
 }

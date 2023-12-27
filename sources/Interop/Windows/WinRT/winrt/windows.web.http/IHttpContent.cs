@@ -90,17 +90,17 @@ public unsafe partial struct IHttpContent : IHttpContent.Interface, INativeGuid
     /// <include file='IHttpContent.xml' path='doc/member[@name="IHttpContent.ReadAsBufferAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT ReadAsBufferAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIBuffer_UINT64_t **")] IAsyncOperationWithProgress<IntPtr, ulong>** operation)
+    public HRESULT ReadAsBufferAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIBuffer_UINT64_t **")] IAsyncOperationWithProgress<Pointer<IBuffer>, ulong>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpContent*, IAsyncOperationWithProgress<IntPtr, ulong>**, int>)(lpVtbl[8]))((IHttpContent*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IHttpContent*, IAsyncOperationWithProgress<Pointer<IBuffer>, ulong>**, int>)(lpVtbl[8]))((IHttpContent*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IHttpContent.xml' path='doc/member[@name="IHttpContent.ReadAsInputStreamAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT ReadAsInputStreamAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIInputStream_UINT64_t **")] IAsyncOperationWithProgress<IntPtr, ulong>** operation)
+    public HRESULT ReadAsInputStreamAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIInputStream_UINT64_t **")] IAsyncOperationWithProgress<Pointer<IInputStream>, ulong>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpContent*, IAsyncOperationWithProgress<IntPtr, ulong>**, int>)(lpVtbl[9]))((IHttpContent*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IHttpContent*, IAsyncOperationWithProgress<Pointer<IInputStream>, ulong>**, int>)(lpVtbl[9]))((IHttpContent*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IHttpContent.xml' path='doc/member[@name="IHttpContent.ReadAsStringAsync"]/*' />
@@ -136,10 +136,10 @@ public unsafe partial struct IHttpContent : IHttpContent.Interface, INativeGuid
         HRESULT BufferAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_UINT64_UINT64_t **")] IAsyncOperationWithProgress<ulong, ulong>** operation);
 
         [VtblIndex(8)]
-        HRESULT ReadAsBufferAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIBuffer_UINT64_t **")] IAsyncOperationWithProgress<IntPtr, ulong>** operation);
+        HRESULT ReadAsBufferAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIBuffer_UINT64_t **")] IAsyncOperationWithProgress<Pointer<IBuffer>, ulong>** operation);
 
         [VtblIndex(9)]
-        HRESULT ReadAsInputStreamAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIInputStream_UINT64_t **")] IAsyncOperationWithProgress<IntPtr, ulong>** operation);
+        HRESULT ReadAsInputStreamAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIInputStream_UINT64_t **")] IAsyncOperationWithProgress<Pointer<IInputStream>, ulong>** operation);
 
         [VtblIndex(10)]
         HRESULT ReadAsStringAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_HSTRING_UINT64_t **")] IAsyncOperationWithProgress<HSTRING, ulong>** operation);
@@ -179,10 +179,10 @@ public unsafe partial struct IHttpContent : IHttpContent.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperationWithProgress<ulong, ulong>**, int> BufferAllAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIBuffer_UINT64_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperationWithProgress<IntPtr, ulong>**, int> ReadAsBufferAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperationWithProgress<Pointer<IBuffer>, ulong>**, int> ReadAsBufferAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIInputStream_UINT64_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperationWithProgress<IntPtr, ulong>**, int> ReadAsInputStreamAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperationWithProgress<Pointer<IInputStream>, ulong>**, int> ReadAsInputStreamAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_HSTRING_UINT64_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperationWithProgress<HSTRING, ulong>**, int> ReadAsStringAsync;

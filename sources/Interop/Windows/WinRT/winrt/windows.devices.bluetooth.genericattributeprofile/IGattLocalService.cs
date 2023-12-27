@@ -82,17 +82,17 @@ public unsafe partial struct IGattLocalService : IGattLocalService.Interface, IN
     /// <include file='IGattLocalService.xml' path='doc/member[@name="IGattLocalService.CreateCharacteristicAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT CreateCharacteristicAsync(Guid characteristicUuid, [NativeTypeName("ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristicParameters *")] IGattLocalCharacteristicParameters* parameters, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristicResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT CreateCharacteristicAsync(Guid characteristicUuid, [NativeTypeName("ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristicParameters *")] IGattLocalCharacteristicParameters* parameters, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristicResult_t **")] IAsyncOperation<Pointer<IGattLocalCharacteristicResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattLocalService*, Guid, IGattLocalCharacteristicParameters*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IGattLocalService*)Unsafe.AsPointer(ref this), characteristicUuid, parameters, operation);
+        return ((delegate* unmanaged[MemberFunction]<IGattLocalService*, Guid, IGattLocalCharacteristicParameters*, IAsyncOperation<Pointer<IGattLocalCharacteristicResult>>**, int>)(lpVtbl[7]))((IGattLocalService*)Unsafe.AsPointer(ref this), characteristicUuid, parameters, operation);
     }
 
     /// <include file='IGattLocalService.xml' path='doc/member[@name="IGattLocalService.get_Characteristics"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Characteristics([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristic_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_Characteristics([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristic_t **")] IVectorView<Pointer<IGattLocalCharacteristic>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattLocalService*, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((IGattLocalService*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IGattLocalService*, IVectorView<Pointer<IGattLocalCharacteristic>>**, int>)(lpVtbl[8]))((IGattLocalService*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -101,10 +101,10 @@ public unsafe partial struct IGattLocalService : IGattLocalService.Interface, IN
         HRESULT get_Uuid(Guid* value);
 
         [VtblIndex(7)]
-        HRESULT CreateCharacteristicAsync(Guid characteristicUuid, [NativeTypeName("ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristicParameters *")] IGattLocalCharacteristicParameters* parameters, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristicResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT CreateCharacteristicAsync(Guid characteristicUuid, [NativeTypeName("ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristicParameters *")] IGattLocalCharacteristicParameters* parameters, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristicResult_t **")] IAsyncOperation<Pointer<IGattLocalCharacteristicResult>>** operation);
 
         [VtblIndex(8)]
-        HRESULT get_Characteristics([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristic_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_Characteristics([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristic_t **")] IVectorView<Pointer<IGattLocalCharacteristic>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -132,9 +132,9 @@ public unsafe partial struct IGattLocalService : IGattLocalService.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> get_Uuid;
 
         [NativeTypeName("HRESULT (GUID, ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::IGattLocalCharacteristicParameters *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristicResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IGattLocalCharacteristicParameters*, IAsyncOperation<IntPtr>**, int> CreateCharacteristicAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IGattLocalCharacteristicParameters*, IAsyncOperation<Pointer<IGattLocalCharacteristicResult>>**, int> CreateCharacteristicAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattLocalCharacteristic_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_Characteristics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IGattLocalCharacteristic>>**, int> get_Characteristics;
     }
 }

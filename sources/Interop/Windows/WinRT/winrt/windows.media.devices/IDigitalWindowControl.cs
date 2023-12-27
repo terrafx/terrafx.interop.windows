@@ -122,9 +122,9 @@ public unsafe partial struct IDigitalWindowControl : IDigitalWindowControl.Inter
     /// <include file='IDigitalWindowControl.xml' path='doc/member[@name="IDigitalWindowControl.get_SupportedCapabilities"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT get_SupportedCapabilities([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CDigitalWindowCapability_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_SupportedCapabilities([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CDigitalWindowCapability_t **")] IVectorView<Pointer<IDigitalWindowCapability>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDigitalWindowControl*, IVectorView<IntPtr>**, int>)(lpVtbl[12]))((IDigitalWindowControl*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDigitalWindowControl*, IVectorView<Pointer<IDigitalWindowCapability>>**, int>)(lpVtbl[12]))((IDigitalWindowControl*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDigitalWindowControl.xml' path='doc/member[@name="IDigitalWindowControl.GetCapabilityForSize"]/*' />
@@ -156,7 +156,7 @@ public unsafe partial struct IDigitalWindowControl : IDigitalWindowControl.Inter
         HRESULT ConfigureWithBounds([NativeTypeName("ABI::Windows::Media::Devices::DigitalWindowMode")] DigitalWindowMode digitalWindowMode, [NativeTypeName("ABI::Windows::Media::Devices::IDigitalWindowBounds *")] IDigitalWindowBounds* digitalWindowBounds);
 
         [VtblIndex(12)]
-        HRESULT get_SupportedCapabilities([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CDigitalWindowCapability_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_SupportedCapabilities([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CDigitalWindowCapability_t **")] IVectorView<Pointer<IDigitalWindowCapability>>** value);
 
         [VtblIndex(13)]
         HRESULT GetCapabilityForSize([NativeTypeName("INT32")] int width, [NativeTypeName("INT32")] int height, [NativeTypeName("ABI::Windows::Media::Devices::IDigitalWindowCapability **")] IDigitalWindowCapability** result);
@@ -202,7 +202,7 @@ public unsafe partial struct IDigitalWindowControl : IDigitalWindowControl.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, DigitalWindowMode, IDigitalWindowBounds*, int> ConfigureWithBounds;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CDigitalWindowCapability_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_SupportedCapabilities;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IDigitalWindowCapability>>**, int> get_SupportedCapabilities;
 
         [NativeTypeName("HRESULT (INT32, INT32, ABI::Windows::Media::Devices::IDigitalWindowCapability **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, int, int, IDigitalWindowCapability**, int> GetCapabilityForSize;

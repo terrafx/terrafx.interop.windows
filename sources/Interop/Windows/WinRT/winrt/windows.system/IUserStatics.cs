@@ -82,27 +82,27 @@ public unsafe partial struct IUserStatics : IUserStatics.Interface, INativeGuid
     /// <include file='IUserStatics.xml' path='doc/member[@name="IUserStatics.FindAllAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IUser>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IUserStatics*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IUserStatics*, IAsyncOperation<Pointer<IVectorView<Pointer<IUser>>>>**, int>)(lpVtbl[7]))((IUserStatics*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IUserStatics.xml' path='doc/member[@name="IUserStatics.FindAllAsyncByType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     [Obsolete("FindAllAsyncByType is deprecated and might not function consistently on all platforms. Instead, use FindAllAsync or GetDefault.")]
-    public HRESULT FindAllAsyncByType([NativeTypeName("ABI::Windows::System::UserType")] UserType type, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FindAllAsyncByType([NativeTypeName("ABI::Windows::System::UserType")] UserType type, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IUser>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserStatics*, UserType, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IUserStatics*)Unsafe.AsPointer(ref this), type, operation);
+        return ((delegate* unmanaged[MemberFunction]<IUserStatics*, UserType, IAsyncOperation<Pointer<IVectorView<Pointer<IUser>>>>**, int>)(lpVtbl[8]))((IUserStatics*)Unsafe.AsPointer(ref this), type, operation);
     }
 
     /// <include file='IUserStatics.xml' path='doc/member[@name="IUserStatics.FindAllAsyncByTypeAndStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     [Obsolete("FindAllAsyncByTypeAndStatus is deprecated and might not function consistently on all platforms. Instead, use FindAllAsync or GetDefault.")]
-    public HRESULT FindAllAsyncByTypeAndStatus([NativeTypeName("ABI::Windows::System::UserType")] UserType type, [NativeTypeName("ABI::Windows::System::UserAuthenticationStatus")] UserAuthenticationStatus status, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FindAllAsyncByTypeAndStatus([NativeTypeName("ABI::Windows::System::UserType")] UserType type, [NativeTypeName("ABI::Windows::System::UserAuthenticationStatus")] UserAuthenticationStatus status, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IUser>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserStatics*, UserType, UserAuthenticationStatus, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IUserStatics*)Unsafe.AsPointer(ref this), type, status, operation);
+        return ((delegate* unmanaged[MemberFunction]<IUserStatics*, UserType, UserAuthenticationStatus, IAsyncOperation<Pointer<IVectorView<Pointer<IUser>>>>**, int>)(lpVtbl[9]))((IUserStatics*)Unsafe.AsPointer(ref this), type, status, operation);
     }
 
     /// <include file='IUserStatics.xml' path='doc/member[@name="IUserStatics.GetFromId"]/*' />
@@ -119,15 +119,15 @@ public unsafe partial struct IUserStatics : IUserStatics.Interface, INativeGuid
         HRESULT CreateWatcher([NativeTypeName("ABI::Windows::System::IUserWatcher **")] IUserWatcher** result);
 
         [VtblIndex(7)]
-        HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IUser>>>>** operation);
 
         [VtblIndex(8)]
         [Obsolete("FindAllAsyncByType is deprecated and might not function consistently on all platforms. Instead, use FindAllAsync or GetDefault.")]
-        HRESULT FindAllAsyncByType([NativeTypeName("ABI::Windows::System::UserType")] UserType type, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FindAllAsyncByType([NativeTypeName("ABI::Windows::System::UserType")] UserType type, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IUser>>>>** operation);
 
         [VtblIndex(9)]
         [Obsolete("FindAllAsyncByTypeAndStatus is deprecated and might not function consistently on all platforms. Instead, use FindAllAsync or GetDefault.")]
-        HRESULT FindAllAsyncByTypeAndStatus([NativeTypeName("ABI::Windows::System::UserType")] UserType type, [NativeTypeName("ABI::Windows::System::UserAuthenticationStatus")] UserAuthenticationStatus status, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FindAllAsyncByTypeAndStatus([NativeTypeName("ABI::Windows::System::UserType")] UserType type, [NativeTypeName("ABI::Windows::System::UserAuthenticationStatus")] UserAuthenticationStatus status, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IUser>>>>** operation);
 
         [VtblIndex(10)]
         HRESULT GetFromId(HSTRING nonRoamableId, [NativeTypeName("ABI::Windows::System::IUser **")] IUser** result);
@@ -158,15 +158,15 @@ public unsafe partial struct IUserStatics : IUserStatics.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IUserWatcher**, int> CreateWatcher;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindAllAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IVectorView<Pointer<IUser>>>>**, int> FindAllAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::UserType, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_t **) __attribute__((stdcall))")]
         [Obsolete("FindAllAsyncByType is deprecated and might not function consistently on all platforms. Instead, use FindAllAsync or GetDefault.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, UserType, IAsyncOperation<IntPtr>**, int> FindAllAsyncByType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, UserType, IAsyncOperation<Pointer<IVectorView<Pointer<IUser>>>>**, int> FindAllAsyncByType;
 
         [NativeTypeName("HRESULT (ABI::Windows::System::UserType, ABI::Windows::System::UserAuthenticationStatus, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CSystem__CUser_t **) __attribute__((stdcall))")]
         [Obsolete("FindAllAsyncByTypeAndStatus is deprecated and might not function consistently on all platforms. Instead, use FindAllAsync or GetDefault.")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, UserType, UserAuthenticationStatus, IAsyncOperation<IntPtr>**, int> FindAllAsyncByTypeAndStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, UserType, UserAuthenticationStatus, IAsyncOperation<Pointer<IVectorView<Pointer<IUser>>>>**, int> FindAllAsyncByTypeAndStatus;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::System::IUser **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IUser**, int> GetFromId;

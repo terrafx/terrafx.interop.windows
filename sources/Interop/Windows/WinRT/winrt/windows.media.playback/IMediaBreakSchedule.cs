@@ -74,9 +74,9 @@ public unsafe partial struct IMediaBreakSchedule : IMediaBreakSchedule.Interface
     /// <include file='IMediaBreakSchedule.xml' path='doc/member[@name="IMediaBreakSchedule.add_ScheduleChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_ScheduleChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakSchedule_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ScheduleChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakSchedule_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaBreakSchedule>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaBreakSchedule*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaBreakSchedule*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaBreakSchedule*, ITypedEventHandler<Pointer<IMediaBreakSchedule>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IMediaBreakSchedule*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IMediaBreakSchedule.xml' path='doc/member[@name="IMediaBreakSchedule.remove_ScheduleChanged"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IMediaBreakSchedule : IMediaBreakSchedule.Interface
     /// <include file='IMediaBreakSchedule.xml' path='doc/member[@name="IMediaBreakSchedule.get_MidrollBreaks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_MidrollBreaks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_MidrollBreaks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak_t **")] IVectorView<Pointer<IMediaBreak>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaBreakSchedule*, IVectorView<IntPtr>**, int>)(lpVtbl[10]))((IMediaBreakSchedule*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaBreakSchedule*, IVectorView<Pointer<IMediaBreak>>**, int>)(lpVtbl[10]))((IMediaBreakSchedule*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaBreakSchedule.xml' path='doc/member[@name="IMediaBreakSchedule.put_PrerollBreak"]/*' />
@@ -154,7 +154,7 @@ public unsafe partial struct IMediaBreakSchedule : IMediaBreakSchedule.Interface
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_ScheduleChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakSchedule_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ScheduleChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakSchedule_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaBreakSchedule>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_ScheduleChanged(EventRegistrationToken token);
@@ -166,7 +166,7 @@ public unsafe partial struct IMediaBreakSchedule : IMediaBreakSchedule.Interface
         HRESULT RemoveMidrollBreak([NativeTypeName("ABI::Windows::Media::Playback::IMediaBreak *")] IMediaBreak* mediaBreak);
 
         [VtblIndex(10)]
-        HRESULT get_MidrollBreaks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_MidrollBreaks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak_t **")] IVectorView<Pointer<IMediaBreak>>** value);
 
         [VtblIndex(11)]
         HRESULT put_PrerollBreak([NativeTypeName("ABI::Windows::Media::Playback::IMediaBreak *")] IMediaBreak* value);
@@ -206,7 +206,7 @@ public unsafe partial struct IMediaBreakSchedule : IMediaBreakSchedule.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CPlayback__CMediaBreakSchedule_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ScheduleChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaBreakSchedule>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_ScheduleChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ScheduleChanged;
@@ -218,7 +218,7 @@ public unsafe partial struct IMediaBreakSchedule : IMediaBreakSchedule.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, IMediaBreak*, int> RemoveMidrollBreak;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_MidrollBreaks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IMediaBreak>>**, int> get_MidrollBreaks;
 
         [NativeTypeName("HRESULT (ABI::Windows::Media::Playback::IMediaBreak *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IMediaBreak*, int> put_PrerollBreak;

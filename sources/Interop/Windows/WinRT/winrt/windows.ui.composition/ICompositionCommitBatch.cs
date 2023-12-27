@@ -90,9 +90,9 @@ public unsafe partial struct ICompositionCommitBatch : ICompositionCommitBatch.I
     /// <include file='ICompositionCommitBatch.xml' path='doc/member[@name="ICompositionCommitBatch.add_Completed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_Completed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Completed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<ICompositionBatchCompletedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICompositionCommitBatch*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICompositionCommitBatch*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<ICompositionCommitBatch*, ITypedEventHandler<Pointer<IInspectable>, Pointer<ICompositionBatchCompletedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((ICompositionCommitBatch*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='ICompositionCommitBatch.xml' path='doc/member[@name="ICompositionCommitBatch.remove_Completed"]/*' />
@@ -112,7 +112,7 @@ public unsafe partial struct ICompositionCommitBatch : ICompositionCommitBatch.I
         HRESULT get_IsEnded([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(8)]
-        HRESULT add_Completed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Completed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, Pointer<ICompositionBatchCompletedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_Completed(EventRegistrationToken token);
@@ -146,7 +146,7 @@ public unsafe partial struct ICompositionCommitBatch : ICompositionCommitBatch.I
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_IsEnded;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CUI__CComposition__CCompositionBatchCompletedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Completed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, Pointer<ICompositionBatchCompletedEventArgs>>*, EventRegistrationToken*, int> add_Completed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Completed;

@@ -74,25 +74,25 @@ public unsafe partial struct ISmartCardProvisioningStatics : ISmartCardProvision
     /// <include file='ISmartCardProvisioningStatics.xml' path='doc/member[@name="ISmartCardProvisioningStatics.FromSmartCardAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FromSmartCardAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCard *")] ISmartCard* card, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardProvisioning_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FromSmartCardAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCard *")] ISmartCard* card, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardProvisioning_t **")] IAsyncOperation<Pointer<ISmartCardProvisioning>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardProvisioningStatics*, ISmartCard*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ISmartCardProvisioningStatics*)Unsafe.AsPointer(ref this), card, result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardProvisioningStatics*, ISmartCard*, IAsyncOperation<Pointer<ISmartCardProvisioning>>**, int>)(lpVtbl[6]))((ISmartCardProvisioningStatics*)Unsafe.AsPointer(ref this), card, result);
     }
 
     /// <include file='ISmartCardProvisioningStatics.xml' path='doc/member[@name="ISmartCardProvisioningStatics.RequestVirtualSmartCardCreationAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT RequestVirtualSmartCardCreationAsync(HSTRING friendlyName, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* administrativeKey, [NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardPinPolicy *")] ISmartCardPinPolicy* pinPolicy, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardProvisioning_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT RequestVirtualSmartCardCreationAsync(HSTRING friendlyName, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* administrativeKey, [NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardPinPolicy *")] ISmartCardPinPolicy* pinPolicy, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardProvisioning_t **")] IAsyncOperation<Pointer<ISmartCardProvisioning>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardProvisioningStatics*, HSTRING, IBuffer*, ISmartCardPinPolicy*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((ISmartCardProvisioningStatics*)Unsafe.AsPointer(ref this), friendlyName, administrativeKey, pinPolicy, result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardProvisioningStatics*, HSTRING, IBuffer*, ISmartCardPinPolicy*, IAsyncOperation<Pointer<ISmartCardProvisioning>>**, int>)(lpVtbl[7]))((ISmartCardProvisioningStatics*)Unsafe.AsPointer(ref this), friendlyName, administrativeKey, pinPolicy, result);
     }
 
     /// <include file='ISmartCardProvisioningStatics.xml' path='doc/member[@name="ISmartCardProvisioningStatics.RequestVirtualSmartCardCreationAsyncWithCardId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT RequestVirtualSmartCardCreationAsyncWithCardId(HSTRING friendlyName, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* administrativeKey, [NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardPinPolicy *")] ISmartCardPinPolicy* pinPolicy, Guid cardId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardProvisioning_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT RequestVirtualSmartCardCreationAsyncWithCardId(HSTRING friendlyName, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* administrativeKey, [NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardPinPolicy *")] ISmartCardPinPolicy* pinPolicy, Guid cardId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardProvisioning_t **")] IAsyncOperation<Pointer<ISmartCardProvisioning>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardProvisioningStatics*, HSTRING, IBuffer*, ISmartCardPinPolicy*, Guid, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((ISmartCardProvisioningStatics*)Unsafe.AsPointer(ref this), friendlyName, administrativeKey, pinPolicy, cardId, result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardProvisioningStatics*, HSTRING, IBuffer*, ISmartCardPinPolicy*, Guid, IAsyncOperation<Pointer<ISmartCardProvisioning>>**, int>)(lpVtbl[8]))((ISmartCardProvisioningStatics*)Unsafe.AsPointer(ref this), friendlyName, administrativeKey, pinPolicy, cardId, result);
     }
 
     /// <include file='ISmartCardProvisioningStatics.xml' path='doc/member[@name="ISmartCardProvisioningStatics.RequestVirtualSmartCardDeletionAsync"]/*' />
@@ -106,13 +106,13 @@ public unsafe partial struct ISmartCardProvisioningStatics : ISmartCardProvision
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FromSmartCardAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCard *")] ISmartCard* card, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardProvisioning_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FromSmartCardAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCard *")] ISmartCard* card, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardProvisioning_t **")] IAsyncOperation<Pointer<ISmartCardProvisioning>>** result);
 
         [VtblIndex(7)]
-        HRESULT RequestVirtualSmartCardCreationAsync(HSTRING friendlyName, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* administrativeKey, [NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardPinPolicy *")] ISmartCardPinPolicy* pinPolicy, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardProvisioning_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT RequestVirtualSmartCardCreationAsync(HSTRING friendlyName, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* administrativeKey, [NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardPinPolicy *")] ISmartCardPinPolicy* pinPolicy, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardProvisioning_t **")] IAsyncOperation<Pointer<ISmartCardProvisioning>>** result);
 
         [VtblIndex(8)]
-        HRESULT RequestVirtualSmartCardCreationAsyncWithCardId(HSTRING friendlyName, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* administrativeKey, [NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardPinPolicy *")] ISmartCardPinPolicy* pinPolicy, Guid cardId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardProvisioning_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT RequestVirtualSmartCardCreationAsyncWithCardId(HSTRING friendlyName, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* administrativeKey, [NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCardPinPolicy *")] ISmartCardPinPolicy* pinPolicy, Guid cardId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardProvisioning_t **")] IAsyncOperation<Pointer<ISmartCardProvisioning>>** result);
 
         [VtblIndex(9)]
         HRESULT RequestVirtualSmartCardDeletionAsync([NativeTypeName("ABI::Windows::Devices::SmartCards::ISmartCard *")] ISmartCard* card, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **")] IAsyncOperation<bool>** result);
@@ -140,13 +140,13 @@ public unsafe partial struct ISmartCardProvisioningStatics : ISmartCardProvision
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::SmartCards::ISmartCard *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardProvisioning_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ISmartCard*, IAsyncOperation<IntPtr>**, int> FromSmartCardAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISmartCard*, IAsyncOperation<Pointer<ISmartCardProvisioning>>**, int> FromSmartCardAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Devices::SmartCards::ISmartCardPinPolicy *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardProvisioning_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IBuffer*, ISmartCardPinPolicy*, IAsyncOperation<IntPtr>**, int> RequestVirtualSmartCardCreationAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IBuffer*, ISmartCardPinPolicy*, IAsyncOperation<Pointer<ISmartCardProvisioning>>**, int> RequestVirtualSmartCardCreationAsync;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Devices::SmartCards::ISmartCardPinPolicy *, GUID, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardProvisioning_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IBuffer*, ISmartCardPinPolicy*, Guid, IAsyncOperation<IntPtr>**, int> RequestVirtualSmartCardCreationAsyncWithCardId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IBuffer*, ISmartCardPinPolicy*, Guid, IAsyncOperation<Pointer<ISmartCardProvisioning>>**, int> RequestVirtualSmartCardCreationAsyncWithCardId;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::SmartCards::ISmartCard *, ABI::Windows::Foundation::__FIAsyncOperation_1_boolean_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, ISmartCard*, IAsyncOperation<bool>**, int> RequestVirtualSmartCardDeletionAsync;

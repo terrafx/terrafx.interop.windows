@@ -114,9 +114,9 @@ public unsafe partial struct IMediaDeviceStatics : IMediaDeviceStatics.Interface
     /// <include file='IMediaDeviceStatics.xml' path='doc/member[@name="IMediaDeviceStatics.add_DefaultAudioCaptureDeviceChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_DefaultAudioCaptureDeviceChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioCaptureDeviceChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_DefaultAudioCaptureDeviceChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioCaptureDeviceChangedEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, IntPtr>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaDeviceStatics*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IMediaDeviceStatics*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMediaDeviceStatics*, ITypedEventHandler<Pointer<IInspectable>, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IMediaDeviceStatics*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMediaDeviceStatics.xml' path='doc/member[@name="IMediaDeviceStatics.remove_DefaultAudioCaptureDeviceChanged"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IMediaDeviceStatics : IMediaDeviceStatics.Interface
     /// <include file='IMediaDeviceStatics.xml' path='doc/member[@name="IMediaDeviceStatics.add_DefaultAudioRenderDeviceChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_DefaultAudioRenderDeviceChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioRenderDeviceChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie)
+    public HRESULT add_DefaultAudioRenderDeviceChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioRenderDeviceChangedEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, IntPtr>* handler, EventRegistrationToken* cookie)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaDeviceStatics*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IMediaDeviceStatics*)Unsafe.AsPointer(ref this), handler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<IMediaDeviceStatics*, ITypedEventHandler<Pointer<IInspectable>, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IMediaDeviceStatics*)Unsafe.AsPointer(ref this), handler, cookie);
     }
 
     /// <include file='IMediaDeviceStatics.xml' path='doc/member[@name="IMediaDeviceStatics.remove_DefaultAudioRenderDeviceChanged"]/*' />
@@ -161,13 +161,13 @@ public unsafe partial struct IMediaDeviceStatics : IMediaDeviceStatics.Interface
         HRESULT GetDefaultAudioRenderId([NativeTypeName("ABI::Windows::Media::Devices::AudioDeviceRole")] AudioDeviceRole role, HSTRING* deviceId);
 
         [VtblIndex(11)]
-        HRESULT add_DefaultAudioCaptureDeviceChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioCaptureDeviceChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_DefaultAudioCaptureDeviceChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioCaptureDeviceChangedEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, IntPtr>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(12)]
         HRESULT remove_DefaultAudioCaptureDeviceChanged(EventRegistrationToken cookie);
 
         [VtblIndex(13)]
-        HRESULT add_DefaultAudioRenderDeviceChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioRenderDeviceChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* cookie);
+        HRESULT add_DefaultAudioRenderDeviceChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioRenderDeviceChangedEventArgs_t *")] ITypedEventHandler<Pointer<IInspectable>, IntPtr>* handler, EventRegistrationToken* cookie);
 
         [VtblIndex(14)]
         HRESULT remove_DefaultAudioRenderDeviceChanged(EventRegistrationToken cookie);
@@ -210,13 +210,13 @@ public unsafe partial struct IMediaDeviceStatics : IMediaDeviceStatics.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, AudioDeviceRole, HSTRING*, int> GetDefaultAudioRenderId;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioCaptureDeviceChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DefaultAudioCaptureDeviceChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, IntPtr>*, EventRegistrationToken*, int> add_DefaultAudioCaptureDeviceChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DefaultAudioCaptureDeviceChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_IInspectable_Windows__CMedia__CDevices__CDefaultAudioRenderDeviceChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_DefaultAudioRenderDeviceChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IInspectable>, IntPtr>*, EventRegistrationToken*, int> add_DefaultAudioRenderDeviceChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_DefaultAudioRenderDeviceChanged;

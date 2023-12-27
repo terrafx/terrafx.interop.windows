@@ -106,9 +106,9 @@ public unsafe partial struct IUserPicker : IUserPicker.Interface, INativeGuid
     /// <include file='IUserPicker.xml' path='doc/member[@name="IUserPicker.PickSingleUserAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT PickSingleUserAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CUser_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT PickSingleUserAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CUser_t **")] IAsyncOperation<Pointer<IUser>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserPicker*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IUserPicker*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IUserPicker*, IAsyncOperation<Pointer<IUser>>**, int>)(lpVtbl[10]))((IUserPicker*)Unsafe.AsPointer(ref this), operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -126,7 +126,7 @@ public unsafe partial struct IUserPicker : IUserPicker.Interface, INativeGuid
         HRESULT put_SuggestedSelectedUser([NativeTypeName("ABI::Windows::System::IUser *")] IUser* value);
 
         [VtblIndex(10)]
-        HRESULT PickSingleUserAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CUser_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT PickSingleUserAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CUser_t **")] IAsyncOperation<Pointer<IUser>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -163,6 +163,6 @@ public unsafe partial struct IUserPicker : IUserPicker.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IUser*, int> put_SuggestedSelectedUser;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSystem__CUser_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> PickSingleUserAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IUser>>**, int> PickSingleUserAsync;
     }
 }

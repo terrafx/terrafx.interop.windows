@@ -186,17 +186,17 @@ public unsafe partial struct IStorageProviderStatusUI : IStorageProviderStatusUI
     /// <include file='IStorageProviderStatusUI.xml' path='doc/member[@name="IStorageProviderStatusUI.get_ProviderSecondaryCommands"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT get_ProviderSecondaryCommands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CIStorageProviderUICommand_t **")] IVector<IntPtr>** value)
+    public HRESULT get_ProviderSecondaryCommands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CIStorageProviderUICommand_t **")] IVector<Pointer<IStorageProviderUICommand>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageProviderStatusUI*, IVector<IntPtr>**, int>)(lpVtbl[20]))((IStorageProviderStatusUI*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderStatusUI*, IVector<Pointer<IStorageProviderUICommand>>**, int>)(lpVtbl[20]))((IStorageProviderStatusUI*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IStorageProviderStatusUI.xml' path='doc/member[@name="IStorageProviderStatusUI.put_ProviderSecondaryCommands"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT put_ProviderSecondaryCommands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CIStorageProviderUICommand_t *")] IVector<IntPtr>* value)
+    public HRESULT put_ProviderSecondaryCommands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CIStorageProviderUICommand_t *")] IVector<Pointer<IStorageProviderUICommand>>* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageProviderStatusUI*, IVector<IntPtr>*, int>)(lpVtbl[21]))((IStorageProviderStatusUI*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IStorageProviderStatusUI*, IVector<Pointer<IStorageProviderUICommand>>*, int>)(lpVtbl[21]))((IStorageProviderStatusUI*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -244,10 +244,10 @@ public unsafe partial struct IStorageProviderStatusUI : IStorageProviderStatusUI
         HRESULT put_ProviderPrimaryCommand([NativeTypeName("ABI::Windows::Storage::Provider::IStorageProviderUICommand *")] IStorageProviderUICommand* value);
 
         [VtblIndex(20)]
-        HRESULT get_ProviderSecondaryCommands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CIStorageProviderUICommand_t **")] IVector<IntPtr>** value);
+        HRESULT get_ProviderSecondaryCommands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CIStorageProviderUICommand_t **")] IVector<Pointer<IStorageProviderUICommand>>** value);
 
         [VtblIndex(21)]
-        HRESULT put_ProviderSecondaryCommands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CIStorageProviderUICommand_t *")] IVector<IntPtr>* value);
+        HRESULT put_ProviderSecondaryCommands([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CIStorageProviderUICommand_t *")] IVector<Pointer<IStorageProviderUICommand>>* value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -314,9 +314,9 @@ public unsafe partial struct IStorageProviderStatusUI : IStorageProviderStatusUI
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageProviderUICommand*, int> put_ProviderPrimaryCommand;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CIStorageProviderUICommand_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_ProviderSecondaryCommands;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IStorageProviderUICommand>>**, int> get_ProviderSecondaryCommands;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CStorage__CProvider__CIStorageProviderUICommand_t *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>*, int> put_ProviderSecondaryCommands;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IStorageProviderUICommand>>*, int> put_ProviderSecondaryCommands;
     }
 }

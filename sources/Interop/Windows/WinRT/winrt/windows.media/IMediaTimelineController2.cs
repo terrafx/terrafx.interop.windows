@@ -106,9 +106,9 @@ public unsafe partial struct IMediaTimelineController2 : IMediaTimelineControlle
     /// <include file='IMediaTimelineController2.xml' path='doc/member[@name="IMediaTimelineController2.add_Failed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_Failed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_Windows__CMedia__CMediaTimelineControllerFailedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* token)
+    public HRESULT add_Failed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_Windows__CMedia__CMediaTimelineControllerFailedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaTimelineController>, Pointer<IMediaTimelineControllerFailedEventArgs>>* eventHandler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaTimelineController2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMediaTimelineController2*)Unsafe.AsPointer(ref this), eventHandler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaTimelineController2*, ITypedEventHandler<Pointer<IMediaTimelineController>, Pointer<IMediaTimelineControllerFailedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IMediaTimelineController2*)Unsafe.AsPointer(ref this), eventHandler, token);
     }
 
     /// <include file='IMediaTimelineController2.xml' path='doc/member[@name="IMediaTimelineController2.remove_Failed"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IMediaTimelineController2 : IMediaTimelineControlle
     /// <include file='IMediaTimelineController2.xml' path='doc/member[@name="IMediaTimelineController2.add_Ended"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_Ended([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* token)
+    public HRESULT add_Ended([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaTimelineController>, Pointer<IInspectable>>* eventHandler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaTimelineController2*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IMediaTimelineController2*)Unsafe.AsPointer(ref this), eventHandler, token);
+        return ((delegate* unmanaged[MemberFunction]<IMediaTimelineController2*, ITypedEventHandler<Pointer<IMediaTimelineController>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IMediaTimelineController2*)Unsafe.AsPointer(ref this), eventHandler, token);
     }
 
     /// <include file='IMediaTimelineController2.xml' path='doc/member[@name="IMediaTimelineController2.remove_Ended"]/*' />
@@ -150,13 +150,13 @@ public unsafe partial struct IMediaTimelineController2 : IMediaTimelineControlle
         HRESULT put_IsLoopingEnabled([NativeTypeName("boolean")] byte value);
 
         [VtblIndex(10)]
-        HRESULT add_Failed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_Windows__CMedia__CMediaTimelineControllerFailedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* token);
+        HRESULT add_Failed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_Windows__CMedia__CMediaTimelineControllerFailedEventArgs_t *")] ITypedEventHandler<Pointer<IMediaTimelineController>, Pointer<IMediaTimelineControllerFailedEventArgs>>* eventHandler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_Failed(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT add_Ended([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* token);
+        HRESULT add_Ended([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_IInspectable_t *")] ITypedEventHandler<Pointer<IMediaTimelineController>, Pointer<IInspectable>>* eventHandler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_Ended(EventRegistrationToken token);
@@ -196,13 +196,13 @@ public unsafe partial struct IMediaTimelineController2 : IMediaTimelineControlle
         public delegate* unmanaged[MemberFunction]<TSelf*, byte, int> put_IsLoopingEnabled;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_Windows__CMedia__CMediaTimelineControllerFailedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Failed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaTimelineController>, Pointer<IMediaTimelineControllerFailedEventArgs>>*, EventRegistrationToken*, int> add_Failed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Failed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CMediaTimelineController_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Ended;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IMediaTimelineController>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Ended;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Ended;

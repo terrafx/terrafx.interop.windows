@@ -74,9 +74,9 @@ public unsafe partial struct IContentPrefetcher : IContentPrefetcher.Interface, 
     /// <include file='IContentPrefetcher.xml' path='doc/member[@name="IContentPrefetcher.get_ContentUris"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_ContentUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CUri_t **")] IVector<IntPtr>** value)
+    public HRESULT get_ContentUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CUri_t **")] IVector<Pointer<IUri>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IContentPrefetcher*, IVector<IntPtr>**, int>)(lpVtbl[6]))((IContentPrefetcher*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IContentPrefetcher*, IVector<Pointer<IUri>>**, int>)(lpVtbl[6]))((IContentPrefetcher*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IContentPrefetcher.xml' path='doc/member[@name="IContentPrefetcher.put_IndirectContentUri"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IContentPrefetcher : IContentPrefetcher.Interface, 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_ContentUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CUri_t **")] IVector<IntPtr>** value);
+        HRESULT get_ContentUris([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CUri_t **")] IVector<Pointer<IUri>>** value);
 
         [VtblIndex(7)]
         HRESULT put_IndirectContentUri([NativeTypeName("ABI::Windows::Foundation::IUriRuntimeClass *")] IUriRuntimeClass* value);
@@ -129,7 +129,7 @@ public unsafe partial struct IContentPrefetcher : IContentPrefetcher.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVector_1_Windows__CFoundation__CUri_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<IntPtr>**, int> get_ContentUris;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVector<Pointer<IUri>>**, int> get_ContentUris;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::IUriRuntimeClass *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IUriRuntimeClass*, int> put_IndirectContentUri;

@@ -74,9 +74,9 @@ public unsafe partial struct IAudioDeviceModulesManager : IAudioDeviceModulesMan
     /// <include file='IAudioDeviceModulesManager.xml' path='doc/member[@name="IAudioDeviceModulesManager.add_ModuleNotificationReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_ModuleNotificationReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ModuleNotificationReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_t *")] ITypedEventHandler<Pointer<IAudioDeviceModulesManager>, Pointer<IAudioDeviceModuleNotificationEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioDeviceModulesManager*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IAudioDeviceModulesManager*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAudioDeviceModulesManager*, ITypedEventHandler<Pointer<IAudioDeviceModulesManager>, Pointer<IAudioDeviceModuleNotificationEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IAudioDeviceModulesManager*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAudioDeviceModulesManager.xml' path='doc/member[@name="IAudioDeviceModulesManager.remove_ModuleNotificationReceived"]/*' />
@@ -90,32 +90,32 @@ public unsafe partial struct IAudioDeviceModulesManager : IAudioDeviceModulesMan
     /// <include file='IAudioDeviceModulesManager.xml' path='doc/member[@name="IAudioDeviceModulesManager.FindAllById"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT FindAllById(HSTRING moduleId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_t **")] IVectorView<IntPtr>** modules)
+    public HRESULT FindAllById(HSTRING moduleId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_t **")] IVectorView<Pointer<IAudioDeviceModule>>** modules)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioDeviceModulesManager*, HSTRING, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((IAudioDeviceModulesManager*)Unsafe.AsPointer(ref this), moduleId, modules);
+        return ((delegate* unmanaged[MemberFunction]<IAudioDeviceModulesManager*, HSTRING, IVectorView<Pointer<IAudioDeviceModule>>**, int>)(lpVtbl[8]))((IAudioDeviceModulesManager*)Unsafe.AsPointer(ref this), moduleId, modules);
     }
 
     /// <include file='IAudioDeviceModulesManager.xml' path='doc/member[@name="IAudioDeviceModulesManager.FindAll"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT FindAll([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_t **")] IVectorView<IntPtr>** modules)
+    public HRESULT FindAll([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_t **")] IVectorView<Pointer<IAudioDeviceModule>>** modules)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioDeviceModulesManager*, IVectorView<IntPtr>**, int>)(lpVtbl[9]))((IAudioDeviceModulesManager*)Unsafe.AsPointer(ref this), modules);
+        return ((delegate* unmanaged[MemberFunction]<IAudioDeviceModulesManager*, IVectorView<Pointer<IAudioDeviceModule>>**, int>)(lpVtbl[9]))((IAudioDeviceModulesManager*)Unsafe.AsPointer(ref this), modules);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_ModuleNotificationReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ModuleNotificationReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_t *")] ITypedEventHandler<Pointer<IAudioDeviceModulesManager>, Pointer<IAudioDeviceModuleNotificationEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_ModuleNotificationReceived(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT FindAllById(HSTRING moduleId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_t **")] IVectorView<IntPtr>** modules);
+        HRESULT FindAllById(HSTRING moduleId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_t **")] IVectorView<Pointer<IAudioDeviceModule>>** modules);
 
         [VtblIndex(9)]
-        HRESULT FindAll([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_t **")] IVectorView<IntPtr>** modules);
+        HRESULT FindAll([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_t **")] IVectorView<Pointer<IAudioDeviceModule>>** modules);
     }
 
     public partial struct Vtbl<TSelf>
@@ -140,15 +140,15 @@ public unsafe partial struct IAudioDeviceModulesManager : IAudioDeviceModulesMan
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CDevices__CAudioDeviceModulesManager_Windows__CMedia__CDevices__CAudioDeviceModuleNotificationEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ModuleNotificationReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAudioDeviceModulesManager>, Pointer<IAudioDeviceModuleNotificationEventArgs>>*, EventRegistrationToken*, int> add_ModuleNotificationReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ModuleNotificationReceived;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<IntPtr>**, int> FindAllById;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<Pointer<IAudioDeviceModule>>**, int> FindAllById;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CAudioDeviceModule_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> FindAll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IAudioDeviceModule>>**, int> FindAll;
     }
 }

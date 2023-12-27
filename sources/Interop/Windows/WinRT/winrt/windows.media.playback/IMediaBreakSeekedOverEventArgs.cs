@@ -74,9 +74,9 @@ public unsafe partial struct IMediaBreakSeekedOverEventArgs : IMediaBreakSeekedO
     /// <include file='IMediaBreakSeekedOverEventArgs.xml' path='doc/member[@name="IMediaBreakSeekedOverEventArgs.get_SeekedOverBreaks"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT get_SeekedOverBreaks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_SeekedOverBreaks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak_t **")] IVectorView<Pointer<IMediaBreak>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaBreakSeekedOverEventArgs*, IVectorView<IntPtr>**, int>)(lpVtbl[6]))((IMediaBreakSeekedOverEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaBreakSeekedOverEventArgs*, IVectorView<Pointer<IMediaBreak>>**, int>)(lpVtbl[6]))((IMediaBreakSeekedOverEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMediaBreakSeekedOverEventArgs.xml' path='doc/member[@name="IMediaBreakSeekedOverEventArgs.get_OldPosition"]/*' />
@@ -98,7 +98,7 @@ public unsafe partial struct IMediaBreakSeekedOverEventArgs : IMediaBreakSeekedO
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT get_SeekedOverBreaks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_SeekedOverBreaks([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak_t **")] IVectorView<Pointer<IMediaBreak>>** value);
 
         [VtblIndex(7)]
         HRESULT get_OldPosition([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value);
@@ -129,7 +129,7 @@ public unsafe partial struct IMediaBreakSeekedOverEventArgs : IMediaBreakSeekedO
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CPlayback__CMediaBreak_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_SeekedOverBreaks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IMediaBreak>>**, int> get_SeekedOverBreaks;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::TimeSpan *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> get_OldPosition;

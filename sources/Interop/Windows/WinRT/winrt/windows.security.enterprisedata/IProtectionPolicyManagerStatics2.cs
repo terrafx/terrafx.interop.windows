@@ -122,9 +122,9 @@ public unsafe partial struct IProtectionPolicyManagerStatics2 : IProtectionPolic
     /// <include file='IProtectionPolicyManagerStatics2.xml' path='doc/member[@name="IProtectionPolicyManagerStatics2.add_PolicyChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_PolicyChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_PolicyChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerStatics2*, IEventHandler<IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IProtectionPolicyManagerStatics2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerStatics2*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IProtectionPolicyManagerStatics2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IProtectionPolicyManagerStatics2.xml' path='doc/member[@name="IProtectionPolicyManagerStatics2.remove_PolicyChanged"]/*' />
@@ -164,7 +164,7 @@ public unsafe partial struct IProtectionPolicyManagerStatics2 : IProtectionPolic
         HRESULT IsProtectionUnderLockRequired(HSTRING identity, [NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(12)]
-        HRESULT add_PolicyChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_PolicyChanged([NativeTypeName("ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *")] IEventHandler<Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_PolicyChanged(EventRegistrationToken token);
@@ -213,7 +213,7 @@ public unsafe partial struct IProtectionPolicyManagerStatics2 : IProtectionPolic
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, byte*, int> IsProtectionUnderLockRequired;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIEventHandler_1_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<IntPtr>*, EventRegistrationToken*, int> add_PolicyChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventHandler<Pointer<IInspectable>>*, EventRegistrationToken*, int> add_PolicyChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PolicyChanged;

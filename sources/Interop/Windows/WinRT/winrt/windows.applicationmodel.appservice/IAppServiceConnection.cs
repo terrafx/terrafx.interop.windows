@@ -114,17 +114,17 @@ public unsafe partial struct IAppServiceConnection : IAppServiceConnection.Inter
     /// <include file='IAppServiceConnection.xml' path='doc/member[@name="IAppServiceConnection.SendMessageAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT SendMessageAsync([NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* message, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppService__CAppServiceResponse_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT SendMessageAsync([NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* message, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppService__CAppServiceResponse_t **")] IAsyncOperation<Pointer<IAppServiceResponse>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppServiceConnection*, IPropertySet*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IAppServiceConnection*)Unsafe.AsPointer(ref this), message, operation);
+        return ((delegate* unmanaged[MemberFunction]<IAppServiceConnection*, IPropertySet*, IAsyncOperation<Pointer<IAppServiceResponse>>**, int>)(lpVtbl[11]))((IAppServiceConnection*)Unsafe.AsPointer(ref this), message, operation);
     }
 
     /// <include file='IAppServiceConnection.xml' path='doc/member[@name="IAppServiceConnection.add_RequestReceived"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_RequestReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppService__CAppServiceConnection_Windows__CApplicationModel__CAppService__CAppServiceRequestReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_RequestReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppService__CAppServiceConnection_Windows__CApplicationModel__CAppService__CAppServiceRequestReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IAppServiceConnection>, Pointer<IAppServiceRequestReceivedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppServiceConnection*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IAppServiceConnection*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppServiceConnection*, ITypedEventHandler<Pointer<IAppServiceConnection>, Pointer<IAppServiceRequestReceivedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IAppServiceConnection*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppServiceConnection.xml' path='doc/member[@name="IAppServiceConnection.remove_RequestReceived"]/*' />
@@ -138,9 +138,9 @@ public unsafe partial struct IAppServiceConnection : IAppServiceConnection.Inter
     /// <include file='IAppServiceConnection.xml' path='doc/member[@name="IAppServiceConnection.add_ServiceClosed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_ServiceClosed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppService__CAppServiceConnection_Windows__CApplicationModel__CAppService__CAppServiceClosedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_ServiceClosed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppService__CAppServiceConnection_Windows__CApplicationModel__CAppService__CAppServiceClosedEventArgs_t *")] ITypedEventHandler<Pointer<IAppServiceConnection>, Pointer<IAppServiceClosedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAppServiceConnection*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IAppServiceConnection*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAppServiceConnection*, ITypedEventHandler<Pointer<IAppServiceConnection>, Pointer<IAppServiceClosedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IAppServiceConnection*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAppServiceConnection.xml' path='doc/member[@name="IAppServiceConnection.remove_ServiceClosed"]/*' />
@@ -169,16 +169,16 @@ public unsafe partial struct IAppServiceConnection : IAppServiceConnection.Inter
         HRESULT OpenAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppService__CAppServiceConnectionStatus_t **")] IAsyncOperation<AppServiceConnectionStatus>** operation);
 
         [VtblIndex(11)]
-        HRESULT SendMessageAsync([NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* message, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppService__CAppServiceResponse_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT SendMessageAsync([NativeTypeName("ABI::Windows::Foundation::Collections::IPropertySet *")] IPropertySet* message, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppService__CAppServiceResponse_t **")] IAsyncOperation<Pointer<IAppServiceResponse>>** operation);
 
         [VtblIndex(12)]
-        HRESULT add_RequestReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppService__CAppServiceConnection_Windows__CApplicationModel__CAppService__CAppServiceRequestReceivedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_RequestReceived([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppService__CAppServiceConnection_Windows__CApplicationModel__CAppService__CAppServiceRequestReceivedEventArgs_t *")] ITypedEventHandler<Pointer<IAppServiceConnection>, Pointer<IAppServiceRequestReceivedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_RequestReceived(EventRegistrationToken token);
 
         [VtblIndex(14)]
-        HRESULT add_ServiceClosed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppService__CAppServiceConnection_Windows__CApplicationModel__CAppService__CAppServiceClosedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_ServiceClosed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppService__CAppServiceConnection_Windows__CApplicationModel__CAppService__CAppServiceClosedEventArgs_t *")] ITypedEventHandler<Pointer<IAppServiceConnection>, Pointer<IAppServiceClosedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(15)]
         HRESULT remove_ServiceClosed(EventRegistrationToken token);
@@ -221,16 +221,16 @@ public unsafe partial struct IAppServiceConnection : IAppServiceConnection.Inter
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<AppServiceConnectionStatus>**, int> OpenAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::IPropertySet *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CAppService__CAppServiceResponse_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertySet*, IAsyncOperation<IntPtr>**, int> SendMessageAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertySet*, IAsyncOperation<Pointer<IAppServiceResponse>>**, int> SendMessageAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppService__CAppServiceConnection_Windows__CApplicationModel__CAppService__CAppServiceRequestReceivedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_RequestReceived;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppServiceConnection>, Pointer<IAppServiceRequestReceivedEventArgs>>*, EventRegistrationToken*, int> add_RequestReceived;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_RequestReceived;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CApplicationModel__CAppService__CAppServiceConnection_Windows__CApplicationModel__CAppService__CAppServiceClosedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_ServiceClosed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAppServiceConnection>, Pointer<IAppServiceClosedEventArgs>>*, EventRegistrationToken*, int> add_ServiceClosed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_ServiceClosed;

@@ -82,9 +82,9 @@ public unsafe partial struct IBatteryStatics : IBatteryStatics.Interface, INativ
     /// <include file='IBatteryStatics.xml' path='doc/member[@name="IBatteryStatics.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPower__CBattery_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPower__CBattery_t **")] IAsyncOperation<Pointer<IBattery>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBatteryStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IBatteryStatics*)Unsafe.AsPointer(ref this), deviceId, result);
+        return ((delegate* unmanaged[MemberFunction]<IBatteryStatics*, HSTRING, IAsyncOperation<Pointer<IBattery>>**, int>)(lpVtbl[7]))((IBatteryStatics*)Unsafe.AsPointer(ref this), deviceId, result);
     }
 
     /// <include file='IBatteryStatics.xml' path='doc/member[@name="IBatteryStatics.GetDeviceSelector"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IBatteryStatics : IBatteryStatics.Interface, INativ
         HRESULT get_AggregateBattery([NativeTypeName("ABI::Windows::Devices::Power::IBattery **")] IBattery** result);
 
         [VtblIndex(7)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPower__CBattery_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPower__CBattery_t **")] IAsyncOperation<Pointer<IBattery>>** result);
 
         [VtblIndex(8)]
         HRESULT GetDeviceSelector(HSTRING* result);
@@ -132,7 +132,7 @@ public unsafe partial struct IBatteryStatics : IBatteryStatics.Interface, INativ
         public delegate* unmanaged[MemberFunction]<TSelf*, IBattery**, int> get_AggregateBattery;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CPower__CBattery_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IBattery>>**, int> FromIdAsync;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetDeviceSelector;

@@ -82,25 +82,25 @@ public unsafe partial struct IMediaCaptureStatics : IMediaCaptureStatics.Interfa
     /// <include file='IMediaCaptureStatics.xml' path='doc/member[@name="IMediaCaptureStatics.FindAllVideoProfiles"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FindAllVideoProfiles(HSTRING videoDeviceId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **")] IVectorView<IntPtr>** value)
+    public HRESULT FindAllVideoProfiles(HSTRING videoDeviceId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **")] IVectorView<Pointer<IMediaCaptureVideoProfile>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureStatics*, HSTRING, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IMediaCaptureStatics*)Unsafe.AsPointer(ref this), videoDeviceId, value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureStatics*, HSTRING, IVectorView<Pointer<IMediaCaptureVideoProfile>>**, int>)(lpVtbl[7]))((IMediaCaptureStatics*)Unsafe.AsPointer(ref this), videoDeviceId, value);
     }
 
     /// <include file='IMediaCaptureStatics.xml' path='doc/member[@name="IMediaCaptureStatics.FindConcurrentProfiles"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT FindConcurrentProfiles(HSTRING videoDeviceId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **")] IVectorView<IntPtr>** value)
+    public HRESULT FindConcurrentProfiles(HSTRING videoDeviceId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **")] IVectorView<Pointer<IMediaCaptureVideoProfile>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureStatics*, HSTRING, IVectorView<IntPtr>**, int>)(lpVtbl[8]))((IMediaCaptureStatics*)Unsafe.AsPointer(ref this), videoDeviceId, value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureStatics*, HSTRING, IVectorView<Pointer<IMediaCaptureVideoProfile>>**, int>)(lpVtbl[8]))((IMediaCaptureStatics*)Unsafe.AsPointer(ref this), videoDeviceId, value);
     }
 
     /// <include file='IMediaCaptureStatics.xml' path='doc/member[@name="IMediaCaptureStatics.FindKnownVideoProfiles"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT FindKnownVideoProfiles(HSTRING videoDeviceId, [NativeTypeName("ABI::Windows::Media::Capture::KnownVideoProfile")] KnownVideoProfile name, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **")] IVectorView<IntPtr>** value)
+    public HRESULT FindKnownVideoProfiles(HSTRING videoDeviceId, [NativeTypeName("ABI::Windows::Media::Capture::KnownVideoProfile")] KnownVideoProfile name, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **")] IVectorView<Pointer<IMediaCaptureVideoProfile>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureStatics*, HSTRING, KnownVideoProfile, IVectorView<IntPtr>**, int>)(lpVtbl[9]))((IMediaCaptureStatics*)Unsafe.AsPointer(ref this), videoDeviceId, name, value);
+        return ((delegate* unmanaged[MemberFunction]<IMediaCaptureStatics*, HSTRING, KnownVideoProfile, IVectorView<Pointer<IMediaCaptureVideoProfile>>**, int>)(lpVtbl[9]))((IMediaCaptureStatics*)Unsafe.AsPointer(ref this), videoDeviceId, name, value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -109,13 +109,13 @@ public unsafe partial struct IMediaCaptureStatics : IMediaCaptureStatics.Interfa
         HRESULT IsVideoProfileSupported(HSTRING videoDeviceId, [NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(7)]
-        HRESULT FindAllVideoProfiles(HSTRING videoDeviceId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **")] IVectorView<IntPtr>** value);
+        HRESULT FindAllVideoProfiles(HSTRING videoDeviceId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **")] IVectorView<Pointer<IMediaCaptureVideoProfile>>** value);
 
         [VtblIndex(8)]
-        HRESULT FindConcurrentProfiles(HSTRING videoDeviceId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **")] IVectorView<IntPtr>** value);
+        HRESULT FindConcurrentProfiles(HSTRING videoDeviceId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **")] IVectorView<Pointer<IMediaCaptureVideoProfile>>** value);
 
         [VtblIndex(9)]
-        HRESULT FindKnownVideoProfiles(HSTRING videoDeviceId, [NativeTypeName("ABI::Windows::Media::Capture::KnownVideoProfile")] KnownVideoProfile name, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **")] IVectorView<IntPtr>** value);
+        HRESULT FindKnownVideoProfiles(HSTRING videoDeviceId, [NativeTypeName("ABI::Windows::Media::Capture::KnownVideoProfile")] KnownVideoProfile name, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **")] IVectorView<Pointer<IMediaCaptureVideoProfile>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -143,12 +143,12 @@ public unsafe partial struct IMediaCaptureStatics : IMediaCaptureStatics.Interfa
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, byte*, int> IsVideoProfileSupported;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<IntPtr>**, int> FindAllVideoProfiles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<Pointer<IMediaCaptureVideoProfile>>**, int> FindAllVideoProfiles;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<IntPtr>**, int> FindConcurrentProfiles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IVectorView<Pointer<IMediaCaptureVideoProfile>>**, int> FindConcurrentProfiles;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Media::Capture::KnownVideoProfile, ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CCapture__CMediaCaptureVideoProfile_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, KnownVideoProfile, IVectorView<IntPtr>**, int> FindKnownVideoProfiles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, KnownVideoProfile, IVectorView<Pointer<IMediaCaptureVideoProfile>>**, int> FindKnownVideoProfiles;
     }
 }

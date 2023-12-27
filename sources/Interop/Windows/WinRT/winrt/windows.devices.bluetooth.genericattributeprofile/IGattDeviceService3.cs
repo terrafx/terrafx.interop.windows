@@ -114,65 +114,65 @@ public unsafe partial struct IGattDeviceService3 : IGattDeviceService3.Interface
     /// <include file='IGattDeviceService3.xml' path='doc/member[@name="IGattDeviceService3.GetCharacteristicsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetCharacteristicsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetCharacteristicsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **")] IAsyncOperation<Pointer<IGattCharacteristicsResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService3*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IGattDeviceService3*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService3*, IAsyncOperation<Pointer<IGattCharacteristicsResult>>**, int>)(lpVtbl[11]))((IGattDeviceService3*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IGattDeviceService3.xml' path='doc/member[@name="IGattDeviceService3.GetCharacteristicsWithCacheModeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetCharacteristicsWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetCharacteristicsWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **")] IAsyncOperation<Pointer<IGattCharacteristicsResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService3*, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int>)(lpVtbl[12]))((IGattDeviceService3*)Unsafe.AsPointer(ref this), cacheMode, operation);
+        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService3*, BluetoothCacheMode, IAsyncOperation<Pointer<IGattCharacteristicsResult>>**, int>)(lpVtbl[12]))((IGattDeviceService3*)Unsafe.AsPointer(ref this), cacheMode, operation);
     }
 
     /// <include file='IGattDeviceService3.xml' path='doc/member[@name="IGattDeviceService3.GetCharacteristicsForUuidAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetCharacteristicsForUuidAsync(Guid characteristicUuid, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetCharacteristicsForUuidAsync(Guid characteristicUuid, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **")] IAsyncOperation<Pointer<IGattCharacteristicsResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService3*, Guid, IAsyncOperation<IntPtr>**, int>)(lpVtbl[13]))((IGattDeviceService3*)Unsafe.AsPointer(ref this), characteristicUuid, operation);
+        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService3*, Guid, IAsyncOperation<Pointer<IGattCharacteristicsResult>>**, int>)(lpVtbl[13]))((IGattDeviceService3*)Unsafe.AsPointer(ref this), characteristicUuid, operation);
     }
 
     /// <include file='IGattDeviceService3.xml' path='doc/member[@name="IGattDeviceService3.GetCharacteristicsForUuidWithCacheModeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetCharacteristicsForUuidWithCacheModeAsync(Guid characteristicUuid, [NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetCharacteristicsForUuidWithCacheModeAsync(Guid characteristicUuid, [NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **")] IAsyncOperation<Pointer<IGattCharacteristicsResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService3*, Guid, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int>)(lpVtbl[14]))((IGattDeviceService3*)Unsafe.AsPointer(ref this), characteristicUuid, cacheMode, operation);
+        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService3*, Guid, BluetoothCacheMode, IAsyncOperation<Pointer<IGattCharacteristicsResult>>**, int>)(lpVtbl[14]))((IGattDeviceService3*)Unsafe.AsPointer(ref this), characteristicUuid, cacheMode, operation);
     }
 
     /// <include file='IGattDeviceService3.xml' path='doc/member[@name="IGattDeviceService3.GetIncludedServicesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT GetIncludedServicesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetIncludedServicesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **")] IAsyncOperation<Pointer<IGattDeviceServicesResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService3*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[15]))((IGattDeviceService3*)Unsafe.AsPointer(ref this), operation);
+        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService3*, IAsyncOperation<Pointer<IGattDeviceServicesResult>>**, int>)(lpVtbl[15]))((IGattDeviceService3*)Unsafe.AsPointer(ref this), operation);
     }
 
     /// <include file='IGattDeviceService3.xml' path='doc/member[@name="IGattDeviceService3.GetIncludedServicesWithCacheModeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT GetIncludedServicesWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetIncludedServicesWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **")] IAsyncOperation<Pointer<IGattDeviceServicesResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService3*, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int>)(lpVtbl[16]))((IGattDeviceService3*)Unsafe.AsPointer(ref this), cacheMode, operation);
+        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService3*, BluetoothCacheMode, IAsyncOperation<Pointer<IGattDeviceServicesResult>>**, int>)(lpVtbl[16]))((IGattDeviceService3*)Unsafe.AsPointer(ref this), cacheMode, operation);
     }
 
     /// <include file='IGattDeviceService3.xml' path='doc/member[@name="IGattDeviceService3.GetIncludedServicesForUuidAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT GetIncludedServicesForUuidAsync(Guid serviceUuid, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetIncludedServicesForUuidAsync(Guid serviceUuid, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **")] IAsyncOperation<Pointer<IGattDeviceServicesResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService3*, Guid, IAsyncOperation<IntPtr>**, int>)(lpVtbl[17]))((IGattDeviceService3*)Unsafe.AsPointer(ref this), serviceUuid, operation);
+        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService3*, Guid, IAsyncOperation<Pointer<IGattDeviceServicesResult>>**, int>)(lpVtbl[17]))((IGattDeviceService3*)Unsafe.AsPointer(ref this), serviceUuid, operation);
     }
 
     /// <include file='IGattDeviceService3.xml' path='doc/member[@name="IGattDeviceService3.GetIncludedServicesForUuidWithCacheModeAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT GetIncludedServicesForUuidWithCacheModeAsync(Guid serviceUuid, [NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetIncludedServicesForUuidWithCacheModeAsync(Guid serviceUuid, [NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **")] IAsyncOperation<Pointer<IGattDeviceServicesResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService3*, Guid, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int>)(lpVtbl[18]))((IGattDeviceService3*)Unsafe.AsPointer(ref this), serviceUuid, cacheMode, operation);
+        return ((delegate* unmanaged[MemberFunction]<IGattDeviceService3*, Guid, BluetoothCacheMode, IAsyncOperation<Pointer<IGattDeviceServicesResult>>**, int>)(lpVtbl[18]))((IGattDeviceService3*)Unsafe.AsPointer(ref this), serviceUuid, cacheMode, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -193,28 +193,28 @@ public unsafe partial struct IGattDeviceService3 : IGattDeviceService3.Interface
         HRESULT OpenAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattSharingMode")] GattSharingMode sharingMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattOpenStatus_t **")] IAsyncOperation<GattOpenStatus>** operation);
 
         [VtblIndex(11)]
-        HRESULT GetCharacteristicsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetCharacteristicsAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **")] IAsyncOperation<Pointer<IGattCharacteristicsResult>>** operation);
 
         [VtblIndex(12)]
-        HRESULT GetCharacteristicsWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetCharacteristicsWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **")] IAsyncOperation<Pointer<IGattCharacteristicsResult>>** operation);
 
         [VtblIndex(13)]
-        HRESULT GetCharacteristicsForUuidAsync(Guid characteristicUuid, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetCharacteristicsForUuidAsync(Guid characteristicUuid, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **")] IAsyncOperation<Pointer<IGattCharacteristicsResult>>** operation);
 
         [VtblIndex(14)]
-        HRESULT GetCharacteristicsForUuidWithCacheModeAsync(Guid characteristicUuid, [NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetCharacteristicsForUuidWithCacheModeAsync(Guid characteristicUuid, [NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **")] IAsyncOperation<Pointer<IGattCharacteristicsResult>>** operation);
 
         [VtblIndex(15)]
-        HRESULT GetIncludedServicesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetIncludedServicesAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **")] IAsyncOperation<Pointer<IGattDeviceServicesResult>>** operation);
 
         [VtblIndex(16)]
-        HRESULT GetIncludedServicesWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetIncludedServicesWithCacheModeAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **")] IAsyncOperation<Pointer<IGattDeviceServicesResult>>** operation);
 
         [VtblIndex(17)]
-        HRESULT GetIncludedServicesForUuidAsync(Guid serviceUuid, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetIncludedServicesForUuidAsync(Guid serviceUuid, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **")] IAsyncOperation<Pointer<IGattDeviceServicesResult>>** operation);
 
         [VtblIndex(18)]
-        HRESULT GetIncludedServicesForUuidWithCacheModeAsync(Guid serviceUuid, [NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetIncludedServicesForUuidWithCacheModeAsync(Guid serviceUuid, [NativeTypeName("ABI::Windows::Devices::Bluetooth::BluetoothCacheMode")] BluetoothCacheMode cacheMode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **")] IAsyncOperation<Pointer<IGattDeviceServicesResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -254,27 +254,27 @@ public unsafe partial struct IGattDeviceService3 : IGattDeviceService3.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, GattSharingMode, IAsyncOperation<GattOpenStatus>**, int> OpenAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetCharacteristicsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IGattCharacteristicsResult>>**, int> GetCharacteristicsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Bluetooth::BluetoothCacheMode, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int> GetCharacteristicsWithCacheModeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothCacheMode, IAsyncOperation<Pointer<IGattCharacteristicsResult>>**, int> GetCharacteristicsWithCacheModeAsync;
 
         [NativeTypeName("HRESULT (GUID, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IAsyncOperation<IntPtr>**, int> GetCharacteristicsForUuidAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IAsyncOperation<Pointer<IGattCharacteristicsResult>>**, int> GetCharacteristicsForUuidAsync;
 
         [NativeTypeName("HRESULT (GUID, ABI::Windows::Devices::Bluetooth::BluetoothCacheMode, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattCharacteristicsResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int> GetCharacteristicsForUuidWithCacheModeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, BluetoothCacheMode, IAsyncOperation<Pointer<IGattCharacteristicsResult>>**, int> GetCharacteristicsForUuidWithCacheModeAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetIncludedServicesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IGattDeviceServicesResult>>**, int> GetIncludedServicesAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Bluetooth::BluetoothCacheMode, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int> GetIncludedServicesWithCacheModeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BluetoothCacheMode, IAsyncOperation<Pointer<IGattDeviceServicesResult>>**, int> GetIncludedServicesWithCacheModeAsync;
 
         [NativeTypeName("HRESULT (GUID, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IAsyncOperation<IntPtr>**, int> GetIncludedServicesForUuidAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, IAsyncOperation<Pointer<IGattDeviceServicesResult>>**, int> GetIncludedServicesForUuidAsync;
 
         [NativeTypeName("HRESULT (GUID, ABI::Windows::Devices::Bluetooth::BluetoothCacheMode, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattDeviceServicesResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, BluetoothCacheMode, IAsyncOperation<IntPtr>**, int> GetIncludedServicesForUuidWithCacheModeAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, BluetoothCacheMode, IAsyncOperation<Pointer<IGattDeviceServicesResult>>**, int> GetIncludedServicesForUuidWithCacheModeAsync;
     }
 }

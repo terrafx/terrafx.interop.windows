@@ -74,15 +74,15 @@ public unsafe partial struct IPackageCatalog3 : IPackageCatalog3.Interface, INat
     /// <include file='IPackageCatalog3.xml' path='doc/member[@name="IPackageCatalog3.RemoveOptionalPackagesAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT RemoveOptionalPackagesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* optionalPackageFamilyNames, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveOptionalPackagesResult_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT RemoveOptionalPackagesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* optionalPackageFamilyNames, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveOptionalPackagesResult_t **")] IAsyncOperation<Pointer<IPackageCatalogRemoveOptionalPackagesResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog3*, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IPackageCatalog3*)Unsafe.AsPointer(ref this), optionalPackageFamilyNames, operation);
+        return ((delegate* unmanaged[MemberFunction]<IPackageCatalog3*, IIterable<HSTRING>*, IAsyncOperation<Pointer<IPackageCatalogRemoveOptionalPackagesResult>>**, int>)(lpVtbl[6]))((IPackageCatalog3*)Unsafe.AsPointer(ref this), optionalPackageFamilyNames, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT RemoveOptionalPackagesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* optionalPackageFamilyNames, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveOptionalPackagesResult_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT RemoveOptionalPackagesAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* optionalPackageFamilyNames, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveOptionalPackagesResult_t **")] IAsyncOperation<Pointer<IPackageCatalogRemoveOptionalPackagesResult>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IPackageCatalog3 : IPackageCatalog3.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CApplicationModel__CPackageCatalogRemoveOptionalPackagesResult_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int> RemoveOptionalPackagesAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<HSTRING>*, IAsyncOperation<Pointer<IPackageCatalogRemoveOptionalPackagesResult>>**, int> RemoveOptionalPackagesAsync;
     }
 }

@@ -82,9 +82,9 @@ public unsafe partial struct IHighDynamicRangeOutput : IHighDynamicRangeOutput.I
     /// <include file='IHighDynamicRangeOutput.xml' path='doc/member[@name="IHighDynamicRangeOutput.get_FrameControllers"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_FrameControllers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CCore__CFrameController_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_FrameControllers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CCore__CFrameController_t **")] IVectorView<Pointer<IFrameController>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHighDynamicRangeOutput*, IVectorView<IntPtr>**, int>)(lpVtbl[7]))((IHighDynamicRangeOutput*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IHighDynamicRangeOutput*, IVectorView<Pointer<IFrameController>>**, int>)(lpVtbl[7]))((IHighDynamicRangeOutput*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IHighDynamicRangeOutput : IHighDynamicRangeOutput.I
         HRESULT get_Certainty(double* value);
 
         [VtblIndex(7)]
-        HRESULT get_FrameControllers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CCore__CFrameController_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_FrameControllers([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CCore__CFrameController_t **")] IVectorView<Pointer<IFrameController>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IHighDynamicRangeOutput : IHighDynamicRangeOutput.I
         public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_Certainty;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CMedia__CDevices__CCore__CFrameController_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_FrameControllers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IFrameController>>**, int> get_FrameControllers;
     }
 }

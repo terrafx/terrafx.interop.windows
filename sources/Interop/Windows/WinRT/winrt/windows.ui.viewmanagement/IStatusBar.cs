@@ -154,9 +154,9 @@ public unsafe partial struct IStatusBar : IStatusBar.Interface, INativeGuid
     /// <include file='IStatusBar.xml' path='doc/member[@name="IStatusBar.add_Showing"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT add_Showing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* token)
+    public HRESULT add_Showing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_t *")] ITypedEventHandler<Pointer<IStatusBar>, Pointer<IInspectable>>* eventHandler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStatusBar*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IStatusBar*)Unsafe.AsPointer(ref this), eventHandler, token);
+        return ((delegate* unmanaged[MemberFunction]<IStatusBar*, ITypedEventHandler<Pointer<IStatusBar>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[16]))((IStatusBar*)Unsafe.AsPointer(ref this), eventHandler, token);
     }
 
     /// <include file='IStatusBar.xml' path='doc/member[@name="IStatusBar.remove_Showing"]/*' />
@@ -170,9 +170,9 @@ public unsafe partial struct IStatusBar : IStatusBar.Interface, INativeGuid
     /// <include file='IStatusBar.xml' path='doc/member[@name="IStatusBar.add_Hiding"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT add_Hiding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* token)
+    public HRESULT add_Hiding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_t *")] ITypedEventHandler<Pointer<IStatusBar>, Pointer<IInspectable>>* eventHandler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStatusBar*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[18]))((IStatusBar*)Unsafe.AsPointer(ref this), eventHandler, token);
+        return ((delegate* unmanaged[MemberFunction]<IStatusBar*, ITypedEventHandler<Pointer<IStatusBar>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[18]))((IStatusBar*)Unsafe.AsPointer(ref this), eventHandler, token);
     }
 
     /// <include file='IStatusBar.xml' path='doc/member[@name="IStatusBar.remove_Hiding"]/*' />
@@ -216,13 +216,13 @@ public unsafe partial struct IStatusBar : IStatusBar.Interface, INativeGuid
         HRESULT get_OccludedRect([NativeTypeName("ABI::Windows::Foundation::Rect *")] Rect* value);
 
         [VtblIndex(16)]
-        HRESULT add_Showing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* token);
+        HRESULT add_Showing([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_t *")] ITypedEventHandler<Pointer<IStatusBar>, Pointer<IInspectable>>* eventHandler, EventRegistrationToken* token);
 
         [VtblIndex(17)]
         HRESULT remove_Showing(EventRegistrationToken token);
 
         [VtblIndex(18)]
-        HRESULT add_Hiding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* eventHandler, EventRegistrationToken* token);
+        HRESULT add_Hiding([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_t *")] ITypedEventHandler<Pointer<IStatusBar>, Pointer<IInspectable>>* eventHandler, EventRegistrationToken* token);
 
         [VtblIndex(19)]
         HRESULT remove_Hiding(EventRegistrationToken token);
@@ -280,13 +280,13 @@ public unsafe partial struct IStatusBar : IStatusBar.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, Rect*, int> get_OccludedRect;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Showing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IStatusBar>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Showing;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Showing;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CUI__CViewManagement__CStatusBar_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Hiding;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IStatusBar>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Hiding;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Hiding;

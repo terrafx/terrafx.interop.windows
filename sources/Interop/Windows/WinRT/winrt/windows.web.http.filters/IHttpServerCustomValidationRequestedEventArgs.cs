@@ -106,9 +106,9 @@ public unsafe partial struct IHttpServerCustomValidationRequestedEventArgs : IHt
     /// <include file='IHttpServerCustomValidationRequestedEventArgs.xml' path='doc/member[@name="IHttpServerCustomValidationRequestedEventArgs.get_ServerIntermediateCertificates"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT get_ServerIntermediateCertificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<IntPtr>** value)
+    public HRESULT get_ServerIntermediateCertificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<Pointer<ICertificate>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpServerCustomValidationRequestedEventArgs*, IVectorView<IntPtr>**, int>)(lpVtbl[10]))((IHttpServerCustomValidationRequestedEventArgs*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IHttpServerCustomValidationRequestedEventArgs*, IVectorView<Pointer<ICertificate>>**, int>)(lpVtbl[10]))((IHttpServerCustomValidationRequestedEventArgs*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IHttpServerCustomValidationRequestedEventArgs.xml' path='doc/member[@name="IHttpServerCustomValidationRequestedEventArgs.Reject"]/*' />
@@ -142,7 +142,7 @@ public unsafe partial struct IHttpServerCustomValidationRequestedEventArgs : IHt
         HRESULT get_ServerCertificateErrors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CChainValidationResult_t **")] IVectorView<ChainValidationResult>** value);
 
         [VtblIndex(10)]
-        HRESULT get_ServerIntermediateCertificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<IntPtr>** value);
+        HRESULT get_ServerIntermediateCertificates([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **")] IVectorView<Pointer<ICertificate>>** value);
 
         [VtblIndex(11)]
         HRESULT Reject();
@@ -185,7 +185,7 @@ public unsafe partial struct IHttpServerCustomValidationRequestedEventArgs : IHt
         public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<ChainValidationResult>**, int> get_ServerCertificateErrors;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CSecurity__CCryptography__CCertificates__CCertificate_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<IntPtr>**, int> get_ServerIntermediateCertificates;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<ICertificate>>**, int> get_ServerIntermediateCertificates;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, int> Reject;

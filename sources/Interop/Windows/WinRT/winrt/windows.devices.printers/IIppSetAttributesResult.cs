@@ -82,9 +82,9 @@ public unsafe partial struct IIppSetAttributesResult : IIppSetAttributesResult.I
     /// <include file='IIppSetAttributesResult.xml' path='doc/member[@name="IIppSetAttributesResult.get_AttributeErrors"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_AttributeErrors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeError_t **")] IMapView<HSTRING, IntPtr>** value)
+    public HRESULT get_AttributeErrors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeError_t **")] IMapView<HSTRING, Pointer<IIppAttributeError>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IIppSetAttributesResult*, IMapView<HSTRING, IntPtr>**, int>)(lpVtbl[7]))((IIppSetAttributesResult*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IIppSetAttributesResult*, IMapView<HSTRING, Pointer<IIppAttributeError>>**, int>)(lpVtbl[7]))((IIppSetAttributesResult*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IIppSetAttributesResult : IIppSetAttributesResult.I
         HRESULT get_Succeeded([NativeTypeName("boolean *")] byte* value);
 
         [VtblIndex(7)]
-        HRESULT get_AttributeErrors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeError_t **")] IMapView<HSTRING, IntPtr>** value);
+        HRESULT get_AttributeErrors([NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeError_t **")] IMapView<HSTRING, Pointer<IIppAttributeError>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IIppSetAttributesResult : IIppSetAttributesResult.I
         public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> get_Succeeded;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_Windows__CDevices__CPrinters__CIppAttributeError_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, IntPtr>**, int> get_AttributeErrors;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMapView<HSTRING, Pointer<IIppAttributeError>>**, int> get_AttributeErrors;
     }
 }

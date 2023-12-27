@@ -74,15 +74,15 @@ public unsafe partial struct IInputStream : IInputStream.Interface, INativeGuid
     /// <include file='IInputStream.xml' path='doc/member[@name="IInputStream.ReadAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT ReadAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* buffer, [NativeTypeName("UINT32")] uint count, [NativeTypeName("ABI::Windows::Storage::Streams::InputStreamOptions")] InputStreamOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIBuffer_UINT32_t **")] IAsyncOperationWithProgress<IntPtr, uint>** operation)
+    public HRESULT ReadAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* buffer, [NativeTypeName("UINT32")] uint count, [NativeTypeName("ABI::Windows::Storage::Streams::InputStreamOptions")] InputStreamOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIBuffer_UINT32_t **")] IAsyncOperationWithProgress<Pointer<IBuffer>, uint>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IInputStream*, IBuffer*, uint, InputStreamOptions, IAsyncOperationWithProgress<IntPtr, uint>**, int>)(lpVtbl[6]))((IInputStream*)Unsafe.AsPointer(ref this), buffer, count, options, operation);
+        return ((delegate* unmanaged[MemberFunction]<IInputStream*, IBuffer*, uint, InputStreamOptions, IAsyncOperationWithProgress<Pointer<IBuffer>, uint>**, int>)(lpVtbl[6]))((IInputStream*)Unsafe.AsPointer(ref this), buffer, count, options, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT ReadAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* buffer, [NativeTypeName("UINT32")] uint count, [NativeTypeName("ABI::Windows::Storage::Streams::InputStreamOptions")] InputStreamOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIBuffer_UINT32_t **")] IAsyncOperationWithProgress<IntPtr, uint>** operation);
+        HRESULT ReadAsync([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* buffer, [NativeTypeName("UINT32")] uint count, [NativeTypeName("ABI::Windows::Storage::Streams::InputStreamOptions")] InputStreamOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIBuffer_UINT32_t **")] IAsyncOperationWithProgress<Pointer<IBuffer>, uint>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IInputStream : IInputStream.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IBuffer *, UINT32, ABI::Windows::Storage::Streams::InputStreamOptions, ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CStorage__CStreams__CIBuffer_UINT32_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, uint, InputStreamOptions, IAsyncOperationWithProgress<IntPtr, uint>**, int> ReadAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, uint, InputStreamOptions, IAsyncOperationWithProgress<Pointer<IBuffer>, uint>**, int> ReadAsync;
     }
 }

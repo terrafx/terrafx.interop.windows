@@ -74,15 +74,15 @@ public unsafe partial struct ISmartCardEmulatorStatics : ISmartCardEmulatorStati
     /// <include file='ISmartCardEmulatorStatics.xml' path='doc/member[@name="ISmartCardEmulatorStatics.GetDefaultAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardEmulator_t **")] IAsyncOperation<IntPtr>** result)
+    public HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardEmulator_t **")] IAsyncOperation<Pointer<ISmartCardEmulator>>** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<ISmartCardEmulatorStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((ISmartCardEmulatorStatics*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<ISmartCardEmulatorStatics*, IAsyncOperation<Pointer<ISmartCardEmulator>>**, int>)(lpVtbl[6]))((ISmartCardEmulatorStatics*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardEmulator_t **")] IAsyncOperation<IntPtr>** result);
+        HRESULT GetDefaultAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardEmulator_t **")] IAsyncOperation<Pointer<ISmartCardEmulator>>** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct ISmartCardEmulatorStatics : ISmartCardEmulatorStati
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSmartCards__CSmartCardEmulator_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetDefaultAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<ISmartCardEmulator>>**, int> GetDefaultAsync;
     }
 }

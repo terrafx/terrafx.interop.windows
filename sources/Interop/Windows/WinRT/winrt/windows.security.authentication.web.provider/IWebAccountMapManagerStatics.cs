@@ -74,9 +74,9 @@ public unsafe partial struct IWebAccountMapManagerStatics : IWebAccountMapManage
     /// <include file='IWebAccountMapManagerStatics.xml' path='doc/member[@name="IWebAccountMapManagerStatics.AddWebAccountWithScopeAndMapAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT AddWebAccountWithScopeAndMapAsync(HSTRING webAccountId, HSTRING webAccountUserName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_HSTRING_t *")] IMapView<HSTRING, HSTRING>* props, [NativeTypeName("ABI::Windows::Security::Authentication::Web::Provider::WebAccountScope")] WebAccountScope scope, HSTRING perUserWebAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT AddWebAccountWithScopeAndMapAsync(HSTRING webAccountId, HSTRING webAccountUserName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_HSTRING_t *")] IMapView<HSTRING, HSTRING>* props, [NativeTypeName("ABI::Windows::Security::Authentication::Web::Provider::WebAccountScope")] WebAccountScope scope, HSTRING perUserWebAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<Pointer<IWebAccount>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAccountMapManagerStatics*, HSTRING, HSTRING, IMapView<HSTRING, HSTRING>*, WebAccountScope, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IWebAccountMapManagerStatics*)Unsafe.AsPointer(ref this), webAccountId, webAccountUserName, props, scope, perUserWebAccountId, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAccountMapManagerStatics*, HSTRING, HSTRING, IMapView<HSTRING, HSTRING>*, WebAccountScope, HSTRING, IAsyncOperation<Pointer<IWebAccount>>**, int>)(lpVtbl[6]))((IWebAccountMapManagerStatics*)Unsafe.AsPointer(ref this), webAccountId, webAccountUserName, props, scope, perUserWebAccountId, asyncInfo);
     }
 
     /// <include file='IWebAccountMapManagerStatics.xml' path='doc/member[@name="IWebAccountMapManagerStatics.SetPerAppToPerUserAccountAsync"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IWebAccountMapManagerStatics : IWebAccountMapManage
     /// <include file='IWebAccountMapManagerStatics.xml' path='doc/member[@name="IWebAccountMapManagerStatics.GetPerUserFromPerAppAccountAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetPerUserFromPerAppAccountAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* perAppAccount, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT GetPerUserFromPerAppAccountAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* perAppAccount, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<Pointer<IWebAccount>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IWebAccountMapManagerStatics*, IWebAccount*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IWebAccountMapManagerStatics*)Unsafe.AsPointer(ref this), perAppAccount, asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IWebAccountMapManagerStatics*, IWebAccount*, IAsyncOperation<Pointer<IWebAccount>>**, int>)(lpVtbl[8]))((IWebAccountMapManagerStatics*)Unsafe.AsPointer(ref this), perAppAccount, asyncInfo);
     }
 
     /// <include file='IWebAccountMapManagerStatics.xml' path='doc/member[@name="IWebAccountMapManagerStatics.ClearPerUserFromPerAppAccountAsync"]/*' />
@@ -106,13 +106,13 @@ public unsafe partial struct IWebAccountMapManagerStatics : IWebAccountMapManage
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT AddWebAccountWithScopeAndMapAsync(HSTRING webAccountId, HSTRING webAccountUserName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_HSTRING_t *")] IMapView<HSTRING, HSTRING>* props, [NativeTypeName("ABI::Windows::Security::Authentication::Web::Provider::WebAccountScope")] WebAccountScope scope, HSTRING perUserWebAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT AddWebAccountWithScopeAndMapAsync(HSTRING webAccountId, HSTRING webAccountUserName, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_HSTRING_t *")] IMapView<HSTRING, HSTRING>* props, [NativeTypeName("ABI::Windows::Security::Authentication::Web::Provider::WebAccountScope")] WebAccountScope scope, HSTRING perUserWebAccountId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<Pointer<IWebAccount>>** asyncInfo);
 
         [VtblIndex(7)]
         HRESULT SetPerAppToPerUserAccountAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* perAppAccount, HSTRING perUserWebAccountId, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
 
         [VtblIndex(8)]
-        HRESULT GetPerUserFromPerAppAccountAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* perAppAccount, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT GetPerUserFromPerAppAccountAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* perAppAccount, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **")] IAsyncOperation<Pointer<IWebAccount>>** asyncInfo);
 
         [VtblIndex(9)]
         HRESULT ClearPerUserFromPerAppAccountAsync([NativeTypeName("ABI::Windows::Security::Credentials::IWebAccount *")] IWebAccount* perAppAccount, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** asyncInfo);
@@ -140,13 +140,13 @@ public unsafe partial struct IWebAccountMapManagerStatics : IWebAccountMapManage
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HSTRING, HSTRING, ABI::Windows::Foundation::Collections::__FIMapView_2_HSTRING_HSTRING_t *, ABI::Windows::Security::Authentication::Web::Provider::WebAccountScope, HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IMapView<HSTRING, HSTRING>*, WebAccountScope, HSTRING, IAsyncOperation<IntPtr>**, int> AddWebAccountWithScopeAndMapAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, HSTRING, IMapView<HSTRING, HSTRING>*, WebAccountScope, HSTRING, IAsyncOperation<Pointer<IWebAccount>>**, int> AddWebAccountWithScopeAndMapAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Credentials::IWebAccount *, HSTRING, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IWebAccount*, HSTRING, IAsyncAction**, int> SetPerAppToPerUserAccountAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Credentials::IWebAccount *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CWebAccount_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IWebAccount*, IAsyncOperation<IntPtr>**, int> GetPerUserFromPerAppAccountAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWebAccount*, IAsyncOperation<Pointer<IWebAccount>>**, int> GetPerUserFromPerAppAccountAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Security::Credentials::IWebAccount *, ABI::Windows::Foundation::IAsyncAction **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IWebAccount*, IAsyncAction**, int> ClearPerUserFromPerAppAccountAsync;

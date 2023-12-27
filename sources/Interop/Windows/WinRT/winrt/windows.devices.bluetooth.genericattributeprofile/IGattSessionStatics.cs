@@ -74,15 +74,15 @@ public unsafe partial struct IGattSessionStatics : IGattSessionStatics.Interface
     /// <include file='IGattSessionStatics.xml' path='doc/member[@name="IGattSessionStatics.FromDeviceIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FromDeviceIdAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::IBluetoothDeviceId *")] IBluetoothDeviceId* deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromDeviceIdAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::IBluetoothDeviceId *")] IBluetoothDeviceId* deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_t **")] IAsyncOperation<Pointer<IGattSession>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IGattSessionStatics*, IBluetoothDeviceId*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IGattSessionStatics*)Unsafe.AsPointer(ref this), deviceId, operation);
+        return ((delegate* unmanaged[MemberFunction]<IGattSessionStatics*, IBluetoothDeviceId*, IAsyncOperation<Pointer<IGattSession>>**, int>)(lpVtbl[6]))((IGattSessionStatics*)Unsafe.AsPointer(ref this), deviceId, operation);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT FromDeviceIdAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::IBluetoothDeviceId *")] IBluetoothDeviceId* deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromDeviceIdAsync([NativeTypeName("ABI::Windows::Devices::Bluetooth::IBluetoothDeviceId *")] IBluetoothDeviceId* deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_t **")] IAsyncOperation<Pointer<IGattSession>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -107,6 +107,6 @@ public unsafe partial struct IGattSessionStatics : IGattSessionStatics.Interface
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Bluetooth::IBluetoothDeviceId *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CBluetooth__CGenericAttributeProfile__CGattSession_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IBluetoothDeviceId*, IAsyncOperation<IntPtr>**, int> FromDeviceIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBluetoothDeviceId*, IAsyncOperation<Pointer<IGattSession>>**, int> FromDeviceIdAsync;
     }
 }

@@ -74,9 +74,9 @@ public unsafe partial struct IDeviceWatcher : IDeviceWatcher.Interface, INativeG
     /// <include file='IDeviceWatcher.xml' path='doc/member[@name="IDeviceWatcher.add_Added"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT add_Added([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Added([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation_t *")] ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IDeviceInformation>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IDeviceWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceWatcher*, ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IDeviceInformation>>*, EventRegistrationToken*, int>)(lpVtbl[6]))((IDeviceWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDeviceWatcher.xml' path='doc/member[@name="IDeviceWatcher.remove_Added"]/*' />
@@ -90,9 +90,9 @@ public unsafe partial struct IDeviceWatcher : IDeviceWatcher.Interface, INativeG
     /// <include file='IDeviceWatcher.xml' path='doc/member[@name="IDeviceWatcher.add_Updated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_t *")] ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IDeviceInformationUpdate>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IDeviceWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceWatcher*, ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IDeviceInformationUpdate>>*, EventRegistrationToken*, int>)(lpVtbl[8]))((IDeviceWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDeviceWatcher.xml' path='doc/member[@name="IDeviceWatcher.remove_Updated"]/*' />
@@ -106,9 +106,9 @@ public unsafe partial struct IDeviceWatcher : IDeviceWatcher.Interface, INativeG
     /// <include file='IDeviceWatcher.xml' path='doc/member[@name="IDeviceWatcher.add_Removed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_t *")] ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IDeviceInformationUpdate>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IDeviceWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceWatcher*, ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IDeviceInformationUpdate>>*, EventRegistrationToken*, int>)(lpVtbl[10]))((IDeviceWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDeviceWatcher.xml' path='doc/member[@name="IDeviceWatcher.remove_Removed"]/*' />
@@ -122,9 +122,9 @@ public unsafe partial struct IDeviceWatcher : IDeviceWatcher.Interface, INativeG
     /// <include file='IDeviceWatcher.xml' path='doc/member[@name="IDeviceWatcher.add_EnumerationCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IDeviceWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceWatcher*, ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[12]))((IDeviceWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDeviceWatcher.xml' path='doc/member[@name="IDeviceWatcher.remove_EnumerationCompleted"]/*' />
@@ -138,9 +138,9 @@ public unsafe partial struct IDeviceWatcher : IDeviceWatcher.Interface, INativeG
     /// <include file='IDeviceWatcher.xml' path='doc/member[@name="IDeviceWatcher.add_Stopped"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IDeviceWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceWatcher*, ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[14]))((IDeviceWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDeviceWatcher.xml' path='doc/member[@name="IDeviceWatcher.remove_Stopped"]/*' />
@@ -178,31 +178,31 @@ public unsafe partial struct IDeviceWatcher : IDeviceWatcher.Interface, INativeG
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT add_Added([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Added([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation_t *")] ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IDeviceInformation>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(7)]
         HRESULT remove_Added(EventRegistrationToken token);
 
         [VtblIndex(8)]
-        HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_t *")] ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IDeviceInformationUpdate>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(9)]
         HRESULT remove_Updated(EventRegistrationToken token);
 
         [VtblIndex(10)]
-        HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_t *")] ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IDeviceInformationUpdate>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(11)]
         HRESULT remove_Removed(EventRegistrationToken token);
 
         [VtblIndex(12)]
-        HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(13)]
         HRESULT remove_EnumerationCompleted(EventRegistrationToken token);
 
         [VtblIndex(14)]
-        HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(15)]
         HRESULT remove_Stopped(EventRegistrationToken token);
@@ -239,31 +239,31 @@ public unsafe partial struct IDeviceWatcher : IDeviceWatcher.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformation_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Added;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IDeviceInformation>>*, EventRegistrationToken*, int> add_Added;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Added;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Updated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IDeviceInformationUpdate>>*, EventRegistrationToken*, int> add_Updated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Updated;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_Windows__CDevices__CEnumeration__CDeviceInformationUpdate_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Removed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IDeviceInformationUpdate>>*, EventRegistrationToken*, int> add_Removed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Removed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_EnumerationCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_EnumerationCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_EnumerationCompleted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceWatcher_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Stopped;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDeviceWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Stopped;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Stopped;

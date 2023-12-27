@@ -98,9 +98,9 @@ public unsafe partial struct IUserWatcher : IUserWatcher.Interface, INativeGuid
     /// <include file='IUserWatcher.xml' path='doc/member[@name="IUserWatcher.add_Added"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_Added([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Added([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *")] ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IUserWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IUserWatcher*, ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IUserWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IUserWatcher.xml' path='doc/member[@name="IUserWatcher.remove_Added"]/*' />
@@ -114,9 +114,9 @@ public unsafe partial struct IUserWatcher : IUserWatcher.Interface, INativeGuid
     /// <include file='IUserWatcher.xml' path='doc/member[@name="IUserWatcher.add_Removed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *")] ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IUserWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IUserWatcher*, ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[11]))((IUserWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IUserWatcher.xml' path='doc/member[@name="IUserWatcher.remove_Removed"]/*' />
@@ -130,9 +130,9 @@ public unsafe partial struct IUserWatcher : IUserWatcher.Interface, INativeGuid
     /// <include file='IUserWatcher.xml' path='doc/member[@name="IUserWatcher.add_Updated"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *")] ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IUserWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IUserWatcher*, ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[13]))((IUserWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IUserWatcher.xml' path='doc/member[@name="IUserWatcher.remove_Updated"]/*' />
@@ -146,9 +146,9 @@ public unsafe partial struct IUserWatcher : IUserWatcher.Interface, INativeGuid
     /// <include file='IUserWatcher.xml' path='doc/member[@name="IUserWatcher.add_AuthenticationStatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT add_AuthenticationStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AuthenticationStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *")] ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserChangedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IUserWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IUserWatcher*, ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserChangedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[15]))((IUserWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IUserWatcher.xml' path='doc/member[@name="IUserWatcher.remove_AuthenticationStatusChanged"]/*' />
@@ -162,9 +162,9 @@ public unsafe partial struct IUserWatcher : IUserWatcher.Interface, INativeGuid
     /// <include file='IUserWatcher.xml' path='doc/member[@name="IUserWatcher.add_AuthenticationStatusChanging"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT add_AuthenticationStatusChanging([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_AuthenticationStatusChanging([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs_t *")] ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserAuthenticationStatusChangingEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IUserWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IUserWatcher*, ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserAuthenticationStatusChangingEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[17]))((IUserWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IUserWatcher.xml' path='doc/member[@name="IUserWatcher.remove_AuthenticationStatusChanging"]/*' />
@@ -178,9 +178,9 @@ public unsafe partial struct IUserWatcher : IUserWatcher.Interface, INativeGuid
     /// <include file='IUserWatcher.xml' path='doc/member[@name="IUserWatcher.add_EnumerationCompleted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[19]))((IUserWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IUserWatcher*, ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[19]))((IUserWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IUserWatcher.xml' path='doc/member[@name="IUserWatcher.remove_EnumerationCompleted"]/*' />
@@ -194,9 +194,9 @@ public unsafe partial struct IUserWatcher : IUserWatcher.Interface, INativeGuid
     /// <include file='IUserWatcher.xml' path='doc/member[@name="IUserWatcher.add_Stopped"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token)
+    public HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUserWatcher*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int>)(lpVtbl[21]))((IUserWatcher*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IUserWatcher*, ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[21]))((IUserWatcher*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IUserWatcher.xml' path='doc/member[@name="IUserWatcher.remove_Stopped"]/*' />
@@ -219,43 +219,43 @@ public unsafe partial struct IUserWatcher : IUserWatcher.Interface, INativeGuid
         HRESULT Stop();
 
         [VtblIndex(9)]
-        HRESULT add_Added([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Added([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *")] ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_Added(EventRegistrationToken token);
 
         [VtblIndex(11)]
-        HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Removed([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *")] ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(12)]
         HRESULT remove_Removed(EventRegistrationToken token);
 
         [VtblIndex(13)]
-        HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Updated([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *")] ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(14)]
         HRESULT remove_Updated(EventRegistrationToken token);
 
         [VtblIndex(15)]
-        HRESULT add_AuthenticationStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AuthenticationStatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *")] ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserChangedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(16)]
         HRESULT remove_AuthenticationStatusChanged(EventRegistrationToken token);
 
         [VtblIndex(17)]
-        HRESULT add_AuthenticationStatusChanging([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_AuthenticationStatusChanging([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs_t *")] ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserAuthenticationStatusChangingEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(18)]
         HRESULT remove_AuthenticationStatusChanging(EventRegistrationToken token);
 
         [VtblIndex(19)]
-        HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_EnumerationCompleted([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(20)]
         HRESULT remove_EnumerationCompleted(EventRegistrationToken token);
 
         [VtblIndex(21)]
-        HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable_t *")] ITypedEventHandler<IntPtr, IntPtr>* handler, EventRegistrationToken* token);
+        HRESULT add_Stopped([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable_t *")] ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(22)]
         HRESULT remove_Stopped(EventRegistrationToken token);
@@ -292,43 +292,43 @@ public unsafe partial struct IUserWatcher : IUserWatcher.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Added;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserChangedEventArgs>>*, EventRegistrationToken*, int> add_Added;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Added;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Removed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserChangedEventArgs>>*, EventRegistrationToken*, int> add_Removed;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Removed;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Updated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserChangedEventArgs>>*, EventRegistrationToken*, int> add_Updated;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Updated;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserChangedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AuthenticationStatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserChangedEventArgs>>*, EventRegistrationToken*, int> add_AuthenticationStatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AuthenticationStatusChanged;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_Windows__CSystem__CUserAuthenticationStatusChangingEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_AuthenticationStatusChanging;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IUserAuthenticationStatusChangingEventArgs>>*, EventRegistrationToken*, int> add_AuthenticationStatusChanging;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_AuthenticationStatusChanging;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_EnumerationCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_EnumerationCompleted;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_EnumerationCompleted;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CSystem__CUserWatcher_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<IntPtr, IntPtr>*, EventRegistrationToken*, int> add_Stopped;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IUserWatcher>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_Stopped;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_Stopped;

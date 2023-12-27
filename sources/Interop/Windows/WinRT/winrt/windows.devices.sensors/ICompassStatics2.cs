@@ -82,9 +82,9 @@ public unsafe partial struct ICompassStatics2 : ICompassStatics2.Interface, INat
     /// <include file='ICompassStatics2.xml' path='doc/member[@name="ICompassStatics2.FromIdAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CCompass_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CCompass_t **")] IAsyncOperation<Pointer<ICompass>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<ICompassStatics2*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((ICompassStatics2*)Unsafe.AsPointer(ref this), deviceId, operation);
+        return ((delegate* unmanaged[MemberFunction]<ICompassStatics2*, HSTRING, IAsyncOperation<Pointer<ICompass>>**, int>)(lpVtbl[7]))((ICompassStatics2*)Unsafe.AsPointer(ref this), deviceId, operation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct ICompassStatics2 : ICompassStatics2.Interface, INat
         HRESULT GetDeviceSelector(HSTRING* result);
 
         [VtblIndex(7)]
-        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CCompass_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT FromIdAsync(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CCompass_t **")] IAsyncOperation<Pointer<ICompass>>** operation);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct ICompassStatics2 : ICompassStatics2.Interface, INat
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetDeviceSelector;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CSensors__CCompass_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FromIdAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<ICompass>>**, int> FromIdAsync;
     }
 }
