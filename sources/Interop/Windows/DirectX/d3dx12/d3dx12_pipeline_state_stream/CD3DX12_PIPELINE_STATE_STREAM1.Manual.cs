@@ -146,7 +146,7 @@ public unsafe struct CD3DX12_PIPELINE_STATE_STREAM1
 
         fixed (DXGI_FORMAT* pFormat = &RTVFormats.pssInner.RTFormats[0])
         {
-            NativeMemory.Copy(&D.RTVFormats[0], pFormat, 8 * sizeof(DXGI_FORMAT));
+            NativeMemory.Copy(pFormat, &D.RTVFormats[0], 8 * sizeof(DXGI_FORMAT));
         }
 
         return D;

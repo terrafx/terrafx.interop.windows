@@ -49,7 +49,7 @@ public static unsafe partial class Windows
             goto Cleanup;
         }
 
-        NativeMemory.Copy((DeviceDsmParameterBlock(Input)), (Parameters), (Input->ParameterBlockLength));
+        NativeMemory.Copy((Parameters), (DeviceDsmParameterBlock(Input)), (Input->ParameterBlockLength));
         Cleanup:
         return;
     }

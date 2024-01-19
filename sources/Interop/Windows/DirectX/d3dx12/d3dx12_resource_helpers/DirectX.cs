@@ -20,7 +20,7 @@ public static unsafe partial class DirectX
 
             for (uint y = 0; y < NumRows; ++y)
             {
-                NativeMemory.Copy(pDestSlice + pDest->RowPitch * y, unchecked(pSrcSlice + pSrc->RowPitch * (nint)(y)), RowSizeInBytes);
+                NativeMemory.Copy(unchecked(pSrcSlice + pSrc->RowPitch * (nint)(y)), pDestSlice + pDest->RowPitch * y, RowSizeInBytes);
             }
         }
     }
@@ -35,7 +35,7 @@ public static unsafe partial class DirectX
 
             for (uint y = 0; y < NumRows; ++y)
             {
-                NativeMemory.Copy(pDestSlice + pDest->RowPitch * y, pSrcSlice + pSrc->RowPitch * (nuint)(y), RowSizeInBytes);
+                NativeMemory.Copy(pSrcSlice + pSrc->RowPitch * (nuint)(y), pDestSlice + pDest->RowPitch * y, RowSizeInBytes);
             }
         }
     }
