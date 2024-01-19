@@ -142,7 +142,7 @@ public static unsafe partial class DirectX
                                         break;
                                     }
 
-                                    NativeMemory.Copy(pStaticSamplers + n, desc_1_2->pStaticSamplers + n, (uint)(sizeof(D3D12_STATIC_SAMPLER_DESC)));
+                                    NativeMemory.Copy(desc_1_2->pStaticSamplers + n, pStaticSamplers + n, (uint)(sizeof(D3D12_STATIC_SAMPLER_DESC)));
                                 }
                             }
                         }
@@ -216,7 +216,7 @@ public static unsafe partial class DirectX
                                         break;
                                     }
 
-                                    NativeMemory.Copy(pStaticSamplers + n, desc_1_2->pStaticSamplers + n, (uint)(sizeof(D3D12_STATIC_SAMPLER_DESC)));
+                                    NativeMemory.Copy(desc_1_2->pStaticSamplers + n, pStaticSamplers + n, (uint)(sizeof(D3D12_STATIC_SAMPLER_DESC)));
                                 }
                             }
                         }
