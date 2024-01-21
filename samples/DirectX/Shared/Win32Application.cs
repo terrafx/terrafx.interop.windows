@@ -176,11 +176,8 @@ public static unsafe class Win32Application
                 pSample?.OnKeyUp((byte)wParam);
                 return 0;
             }
-
-            default:
-            {
-                return DefWindowProcW(hWnd, message, wParam, lParam);
-            }
         }
+
+        return DefWindowProcW(hWnd, message, wParam, lParam);
     }
 }
