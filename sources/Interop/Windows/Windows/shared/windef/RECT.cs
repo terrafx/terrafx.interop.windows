@@ -5,6 +5,8 @@
 
 namespace TerraFX.Interop.Windows;
 
+using System.Drawing;
+
 /// <include file='RECT.xml' path='doc/member[@name="RECT"]/*' />
 public partial struct RECT
 {
@@ -23,4 +25,19 @@ public partial struct RECT
     /// <include file='RECT.xml' path='doc/member[@name="RECT.bottom"]/*' />
     [NativeTypeName("LONG")]
     public int bottom;
+
+    // type 'Rectangle' is from System.Drawing.Primitives which is from the base shared framework.
+    // as such these operators *should* be safe to include here.
+    public static implicit operator Rectangle(RECT rectangle)
+        => Rectangle.FromLTRB(rectangle.left, rectangle.top, rectangle.right, rectangle.bottom);
+
+    public static explicit operator RECT(Rectangle rectangle)
+        => new
+        {
+            // Obtained from inspecting 'Rectangle.FromLTRB(int, int, int, int)'.
+            left = rectangle.X,
+            top = rectangle.Y,
+            right = rectangle.Width + rectangle.X,
+            bottom = rectangle.Height + rectangle.Y,
+        };
 }
