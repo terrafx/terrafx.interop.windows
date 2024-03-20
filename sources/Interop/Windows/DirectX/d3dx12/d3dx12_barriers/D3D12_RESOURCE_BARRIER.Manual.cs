@@ -36,6 +36,7 @@ public unsafe partial struct D3D12_RESOURCE_BARRIER
         Unsafe.SkipInit(out D3D12_RESOURCE_BARRIER result);
 
         result.Type = D3D12_RESOURCE_BARRIER_TYPE_ALIASING;
+        result.Flags = D3D12_RESOURCE_BARRIER_FLAG_NONE;
         result.Aliasing.pResourceBefore = pResourceBefore;
         result.Aliasing.pResourceAfter = pResourceAfter;
 
@@ -48,6 +49,7 @@ public unsafe partial struct D3D12_RESOURCE_BARRIER
         Unsafe.SkipInit(out D3D12_RESOURCE_BARRIER result);
 
         result.Type = D3D12_RESOURCE_BARRIER_TYPE_UAV;
+        result.Flags = D3D12_RESOURCE_BARRIER_FLAG_NONE;
         result.Anonymous.UAV.pResource = pResource;
 
         return result;
