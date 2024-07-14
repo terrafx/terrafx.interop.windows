@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -21,7 +21,7 @@ public partial struct RETRIEVAL_POINTERS_BUFFER
     public LARGE_INTEGER StartingVcn;
 
     /// <include file='RETRIEVAL_POINTERS_BUFFER.xml' path='doc/member[@name="RETRIEVAL_POINTERS_BUFFER.Extents"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:11163:5)[1]")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/winioctl.h:11163:5)[1]")]
     public _Extents_e__FixedBuffer Extents;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

@@ -120,4 +120,4 @@ IID_IUserNotification=@IID_WinRT_IUserNotification
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/windows.ui.notifications
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.ui.notifications.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt/windows.ui.notifications.h

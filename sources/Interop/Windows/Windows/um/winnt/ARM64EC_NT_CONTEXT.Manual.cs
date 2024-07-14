@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -12,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct ARM64EC_NT_CONTEXT
 {
-    [NativeTypeName("_ARM64EC_NT_CONTEXT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:7016:5)")]
+    [NativeTypeName("_ARM64EC_NT_CONTEXT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/winnt.h:7016:5)")]
     public _Anonymous_e__Union Anonymous;
 
     [UnscopedRef]
@@ -939,7 +939,7 @@ public unsafe partial struct ARM64EC_NT_CONTEXT
     public unsafe partial struct _Anonymous_e__Union
     {
         [FieldOffset(0)]
-        [NativeTypeName("_ARM64EC_NT_CONTEXT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:7017:9)")]
+        [NativeTypeName("_ARM64EC_NT_CONTEXT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/winnt.h:7017:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         public unsafe partial struct _Anonymous_e__Struct
@@ -1058,7 +1058,7 @@ public unsafe partial struct ARM64EC_NT_CONTEXT
             [NativeTypeName("DWORD64")]
             public ulong Pc;
 
-            [NativeTypeName("_ARM64EC_NT_CONTEXT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:7098:13)")]
+            [NativeTypeName("_ARM64EC_NT_CONTEXT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/winnt.h:7098:13)")]
             public _Anonymous1_e__Struct Anonymous;
 
             [NativeTypeName("ARM64_NT_NEON128[26]")]

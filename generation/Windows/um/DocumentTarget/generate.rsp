@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/DocumentTarget
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/DocumentTarget.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/DocumentTarget.h
 --with-attribute
 IPrintDocumentPackageStatusEvent=SupportedOSPlatform("windows6.2")
 IPrintDocumentPackageTarget=SupportedOSPlatform("windows6.2")

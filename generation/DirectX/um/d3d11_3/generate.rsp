@@ -19,7 +19,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/d3d11_3
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d3d11_3.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/d3d11_3.h
 --with-attribute
 D3D11_FENCE_FLAG=Flags
 ID3D11Device3=SupportedOSPlatform("windows10.0")

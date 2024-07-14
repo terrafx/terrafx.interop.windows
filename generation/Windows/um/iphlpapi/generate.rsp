@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/iphlpapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/iphlpapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/iphlpapi.h
 --with-attribute
 CaptureInterfaceHardwareCrossTimestamp=SupportedOSPlatform("windows10.0.22000.0")
 GetInterfaceActiveTimestampCapabilities=SupportedOSPlatform("windows10.0.19043.0")

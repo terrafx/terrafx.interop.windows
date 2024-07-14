@@ -15,7 +15,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/PathCch
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/PathCch.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/PathCch.h
 --with-attribute
 PathAllocCanonicalize=SupportedOSPlatform("windows6.2")
 PathAllocCombine=SupportedOSPlatform("windows6.2")

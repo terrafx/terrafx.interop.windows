@@ -20,7 +20,7 @@ TerraFX.Interop.WinRT
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/roerrorapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/roerrorapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt/roerrorapi.h
 --with-attribute
 GetErrorReportingFlags=SupportedOSPlatform("windows6.2")
 GetRestrictedErrorInfo=SupportedOSPlatform("windows6.2")

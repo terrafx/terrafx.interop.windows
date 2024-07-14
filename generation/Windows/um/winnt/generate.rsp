@@ -52,6 +52,12 @@ DECLSPEC_ALIGN
 DECLSPEC_UUID
 DECREF
 DEFINE_ENUM_FLAG_OPERATORS
+DEPRECATED_STDAPI
+DEPRECATED_STDAPIV
+DEPRECATED_STDAPIV_
+DEPRECATED_STDAPI_
+DEPRECATED_NO_MESSAGE_STDAPIV_
+DEPRECATED_NO_MESSAGE_STDAPI_
 EXCEPTION_ROUTINE
 EXT_IMM64
 FIELD_OFFSET
@@ -566,7 +572,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/winnt
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/winnt.h
 --with-attribute
 ACCESS_REASON_TYPE=Flags
 CLAIM_SECURITY_ATTRIBUTES_INFORMATION=SupportedOSPlatform("windows6.2")

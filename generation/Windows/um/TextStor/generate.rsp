@@ -11,6 +11,6 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/TextStor
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/TextStor.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/TextStor.h
 --with-attribute
 ITextStoreACP2=SupportedOSPlatform("windows6.2")

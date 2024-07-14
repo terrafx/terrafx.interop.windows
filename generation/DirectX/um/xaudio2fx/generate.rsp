@@ -16,7 +16,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/xaudio2fx
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/xaudio2fx.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/xaudio2fx.h
 --with-librarypath
 CreateAudioReverb=xaudio2_9
 CreateAudioVolumeMeter=xaudio2_9

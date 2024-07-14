@@ -22,7 +22,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/winreg
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winreg.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/winreg.h
 --with-librarypath
 AbortSystemShutdown=advapi32
 AbortSystemShutdownA=advapi32

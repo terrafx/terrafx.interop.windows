@@ -14,7 +14,7 @@ TerraFX.Interop.WinRT
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/roparameterizediid
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/roparameterizediid.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt/roparameterizediid.h
 --with-librarypath
 RoFreeParameterizedTypeExtra=combase
 RoParameterizedTypeExtraGetTypeSignature=combase

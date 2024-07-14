@@ -44,7 +44,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/d2d1helper
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d2d1helper.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/d2d1helper.h
 --with-librarypath
 ArcSegment=d2d1
 BezierSegment=d2d1

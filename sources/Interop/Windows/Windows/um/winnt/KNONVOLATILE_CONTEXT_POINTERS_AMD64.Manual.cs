@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -11,10 +11,10 @@ namespace TerraFX.Interop.Windows;
 
 public unsafe partial struct KNONVOLATILE_CONTEXT_POINTERS_AMD64
 {
-    [NativeTypeName("_KNONVOLATILE_CONTEXT_POINTERS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:4397:5)")]
+    [NativeTypeName("_KNONVOLATILE_CONTEXT_POINTERS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/winnt.h:4397:5)")]
     public _Anonymous1_e__Union Anonymous1;
 
-    [NativeTypeName("_KNONVOLATILE_CONTEXT_POINTERS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:4419:5)")]
+    [NativeTypeName("_KNONVOLATILE_CONTEXT_POINTERS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/winnt.h:4419:5)")]
     public _Anonymous2_e__Union Anonymous2;
 
     [UnscopedRef]
@@ -345,7 +345,7 @@ public unsafe partial struct KNONVOLATILE_CONTEXT_POINTERS_AMD64
         public _FloatingContext_e__FixedBuffer FloatingContext;
 
         [FieldOffset(0)]
-        [NativeTypeName("_KNONVOLATILE_CONTEXT_POINTERS::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:4399:9)")]
+        [NativeTypeName("_KNONVOLATILE_CONTEXT_POINTERS::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/winnt.h:4399:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         public unsafe partial struct _Anonymous_e__Struct
@@ -440,7 +440,7 @@ public unsafe partial struct KNONVOLATILE_CONTEXT_POINTERS_AMD64
         public _IntegerContext_e__FixedBuffer IntegerContext;
 
         [FieldOffset(0)]
-        [NativeTypeName("_KNONVOLATILE_CONTEXT_POINTERS::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/winnt.h:4421:9)")]
+        [NativeTypeName("_KNONVOLATILE_CONTEXT_POINTERS::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/winnt.h:4421:9)")]
         public _Anonymous_e__Struct Anonymous;
 
         public unsafe partial struct _Anonymous_e__Struct
