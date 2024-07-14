@@ -50,8 +50,16 @@ public partial struct SCRUB_DATA_OUTPUT
     [NativeTypeName("WORD")]
     public ushort ParityExtentDataOffset;
 
+    /// <include file='SCRUB_DATA_OUTPUT.xml' path='doc/member[@name="SCRUB_DATA_OUTPUT.NextStartingByteOffset"]/*' />
+    [NativeTypeName("ULONGLONG")]
+    public ulong NextStartingByteOffset;
+
+    /// <include file='SCRUB_DATA_OUTPUT.xml' path='doc/member[@name="SCRUB_DATA_OUTPUT.ValidDataLength"]/*' />
+    [NativeTypeName("ULONGLONG")]
+    public ulong ValidDataLength;
+
     /// <include file='SCRUB_DATA_OUTPUT.xml' path='doc/member[@name="SCRUB_DATA_OUTPUT.Reserved"]/*' />
-    [NativeTypeName("DWORD[9]")]
+    [NativeTypeName("DWORD[4]")]
     public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='SCRUB_DATA_OUTPUT.xml' path='doc/member[@name="SCRUB_DATA_OUTPUT.NumberOfMetadataBytesProcessed"]/*' />
@@ -107,7 +115,7 @@ public partial struct SCRUB_DATA_OUTPUT
     public _ResumeContext_e__FixedBuffer ResumeContext;
 
     /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
-    [InlineArray(9)]
+    [InlineArray(4)]
     public partial struct _Reserved_e__FixedBuffer
     {
         public uint e0;

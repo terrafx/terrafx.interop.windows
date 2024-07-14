@@ -49,7 +49,7 @@ public partial struct NOTIFYICONDATAW
     public _szInfo_e__FixedBuffer szInfo;
 
     /// <include file='NOTIFYICONDATAW.xml' path='doc/member[@name="NOTIFYICONDATAW.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_shellapi_L1057_C5")]
+    [NativeTypeName("__AnonymousRecord_shellapi_L1058_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='NOTIFYICONDATAW.xml' path='doc/member[@name="NOTIFYICONDATAW.szInfoTitle"]/*' />

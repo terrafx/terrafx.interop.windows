@@ -87,6 +87,9 @@ public static unsafe partial class Windows
     [NativeTypeName("#define MSSIP_ADDINFO_BLOB 3")]
     public const int MSSIP_ADDINFO_BLOB = 3;
 
+    [NativeTypeName("#define MSSIP_ADDINFO_DETACHEDSIG 4")]
+    public const int MSSIP_ADDINFO_DETACHEDSIG = 4;
+
     [NativeTypeName("#define MSSIP_ADDINFO_NONMSSIP 500")]
     public const int MSSIP_ADDINFO_NONMSSIP = 500;
 

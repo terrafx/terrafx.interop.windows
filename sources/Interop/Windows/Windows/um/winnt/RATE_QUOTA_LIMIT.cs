@@ -19,7 +19,7 @@ public partial struct RATE_QUOTA_LIMIT
 
     /// <include file='RATE_QUOTA_LIMIT.xml' path='doc/member[@name="RATE_QUOTA_LIMIT.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L12475_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L12947_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RatePercent"]/*' />

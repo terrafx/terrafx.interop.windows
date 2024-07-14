@@ -150,6 +150,29 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IMFDXGICrossAdapterBuffer
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xFB, 0x03, 0x5D, 0xB2,
+                0x48, 0xD1,
+                0xEF, 0x45,
+                0xBF,
+                0xED,
+                0xF7,
+                0x78,
+                0xB7,
+                0x56,
+                0x6C,
+                0x07
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IMFMediaType
     {
         get

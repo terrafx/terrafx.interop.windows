@@ -9,13 +9,16 @@ namespace TerraFX.Interop.Gdiplus;
 public enum GdiplusStartupParams
 {
     /// <include file='GdiplusStartupParams.xml' path='doc/member[@name="GdiplusStartupParams.GdiplusStartupDefault"]/*' />
-    GdiplusStartupDefault = 0,
+    GdiplusStartupDefault = 0x00000000,
 
     /// <include file='GdiplusStartupParams.xml' path='doc/member[@name="GdiplusStartupParams.GdiplusStartupNoSetRound"]/*' />
-    GdiplusStartupNoSetRound = 1,
+    GdiplusStartupNoSetRound = 0x00000001,
 
     /// <include file='GdiplusStartupParams.xml' path='doc/member[@name="GdiplusStartupParams.GdiplusStartupSetPSValue"]/*' />
-    GdiplusStartupSetPSValue = 2,
+    GdiplusStartupSetPSValue = 0x00000002,
+
+    /// <include file='GdiplusStartupParams.xml' path='doc/member[@name="GdiplusStartupParams.GdiplusStartupReserved0"]/*' />
+    GdiplusStartupReserved0 = 0x00000004,
 
     /// <include file='GdiplusStartupParams.xml' path='doc/member[@name="GdiplusStartupParams.GdiplusStartupTransparencyMask"]/*' />
     GdiplusStartupTransparencyMask = unchecked((int)(0xFF000000)),

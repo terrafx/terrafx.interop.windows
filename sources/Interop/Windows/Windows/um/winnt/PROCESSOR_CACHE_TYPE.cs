@@ -19,4 +19,7 @@ public enum PROCESSOR_CACHE_TYPE
 
     /// <include file='PROCESSOR_CACHE_TYPE.xml' path='doc/member[@name="PROCESSOR_CACHE_TYPE.CacheTrace"]/*' />
     CacheTrace,
+
+    /// <include file='PROCESSOR_CACHE_TYPE.xml' path='doc/member[@name="PROCESSOR_CACHE_TYPE.CacheUnknown"]/*' />
+    CacheUnknown,
 }

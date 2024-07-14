@@ -156,4 +156,49 @@ public static partial class PF
 
     [NativeTypeName("#define PF_ARM_V83_LRCPC_INSTRUCTIONS_AVAILABLE 45")]
     public const int PF_ARM_V83_LRCPC_INSTRUCTIONS_AVAILABLE = 45;
+
+    [NativeTypeName("#define PF_ARM_SVE_INSTRUCTIONS_AVAILABLE 46")]
+    public const int PF_ARM_SVE_INSTRUCTIONS_AVAILABLE = 46;
+
+    [NativeTypeName("#define PF_ARM_SVE2_INSTRUCTIONS_AVAILABLE 47")]
+    public const int PF_ARM_SVE2_INSTRUCTIONS_AVAILABLE = 47;
+
+    [NativeTypeName("#define PF_ARM_SVE2_1_INSTRUCTIONS_AVAILABLE 48")]
+    public const int PF_ARM_SVE2_1_INSTRUCTIONS_AVAILABLE = 48;
+
+    [NativeTypeName("#define PF_ARM_SVE_AES_INSTRUCTIONS_AVAILABLE 49")]
+    public const int PF_ARM_SVE_AES_INSTRUCTIONS_AVAILABLE = 49;
+
+    [NativeTypeName("#define PF_ARM_SVE_PMULL128_INSTRUCTIONS_AVAILABLE 50")]
+    public const int PF_ARM_SVE_PMULL128_INSTRUCTIONS_AVAILABLE = 50;
+
+    [NativeTypeName("#define PF_ARM_SVE_BITPERM_INSTRUCTIONS_AVAILABLE 51")]
+    public const int PF_ARM_SVE_BITPERM_INSTRUCTIONS_AVAILABLE = 51;
+
+    [NativeTypeName("#define PF_ARM_SVE_BF16_INSTRUCTIONS_AVAILABLE 52")]
+    public const int PF_ARM_SVE_BF16_INSTRUCTIONS_AVAILABLE = 52;
+
+    [NativeTypeName("#define PF_ARM_SVE_EBF16_INSTRUCTIONS_AVAILABLE 53")]
+    public const int PF_ARM_SVE_EBF16_INSTRUCTIONS_AVAILABLE = 53;
+
+    [NativeTypeName("#define PF_ARM_SVE_B16B16_INSTRUCTIONS_AVAILABLE 54")]
+    public const int PF_ARM_SVE_B16B16_INSTRUCTIONS_AVAILABLE = 54;
+
+    [NativeTypeName("#define PF_ARM_SVE_SHA3_INSTRUCTIONS_AVAILABLE 55")]
+    public const int PF_ARM_SVE_SHA3_INSTRUCTIONS_AVAILABLE = 55;
+
+    [NativeTypeName("#define PF_ARM_SVE_SM4_INSTRUCTIONS_AVAILABLE 56")]
+    public const int PF_ARM_SVE_SM4_INSTRUCTIONS_AVAILABLE = 56;
+
+    [NativeTypeName("#define PF_ARM_SVE_I8MM_INSTRUCTIONS_AVAILABLE 57")]
+    public const int PF_ARM_SVE_I8MM_INSTRUCTIONS_AVAILABLE = 57;
+
+    [NativeTypeName("#define PF_ARM_SVE_F32MM_INSTRUCTIONS_AVAILABLE 58")]
+    public const int PF_ARM_SVE_F32MM_INSTRUCTIONS_AVAILABLE = 58;
+
+    [NativeTypeName("#define PF_ARM_SVE_F64MM_INSTRUCTIONS_AVAILABLE 59")]
+    public const int PF_ARM_SVE_F64MM_INSTRUCTIONS_AVAILABLE = 59;
+
+    [NativeTypeName("#define PF_BMI2_INSTRUCTIONS_AVAILABLE 60")]
+    public const int PF_BMI2_INSTRUCTIONS_AVAILABLE = 60;
 }

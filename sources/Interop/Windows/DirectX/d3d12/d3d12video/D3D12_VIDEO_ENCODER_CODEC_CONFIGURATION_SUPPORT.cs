@@ -16,7 +16,7 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT
     public uint DataSize;
 
     /// <include file='D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12video_L7312_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12video_L7378_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pH264Support"]/*' />
@@ -38,6 +38,17 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT
         get
         {
             return ref Anonymous.pHEVCSupport;
+        }
+    }
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pHEVCSupport1"]/*' />
+    [UnscopedRef]
+    public ref D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC1* pHEVCSupport1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.pHEVCSupport1;
         }
     }
 
@@ -63,6 +74,10 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pHEVCSupport"]/*' />
         [FieldOffset(0)]
         public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC* pHEVCSupport;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pHEVCSupport1"]/*' />
+        [FieldOffset(0)]
+        public D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC1* pHEVCSupport1;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pAV1Support"]/*' />
         [FieldOffset(0)]

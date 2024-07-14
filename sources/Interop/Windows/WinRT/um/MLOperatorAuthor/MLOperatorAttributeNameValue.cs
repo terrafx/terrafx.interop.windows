@@ -24,7 +24,7 @@ public unsafe partial struct MLOperatorAttributeNameValue
     public uint valueCount;
 
     /// <include file='MLOperatorAttributeNameValue.xml' path='doc/member[@name="MLOperatorAttributeNameValue.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_MLOperatorAuthor_L600_C5")]
+    [NativeTypeName("__AnonymousRecord_MLOperatorAuthor_L603_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.reserved"]/*' />

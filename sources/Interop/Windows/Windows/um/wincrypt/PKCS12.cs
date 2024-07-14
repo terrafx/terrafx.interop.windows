@@ -36,6 +36,9 @@ public static partial class PKCS12
     [NativeTypeName("#define PKCS12_IMPORT_RESERVED_MASK 0xffff0000")]
     public const uint PKCS12_IMPORT_RESERVED_MASK = 0xffff0000;
 
+    [NativeTypeName("#define PKCS12_NAMED_NO_PERSIST_KEY 0x00020000")]
+    public const int PKCS12_NAMED_NO_PERSIST_KEY = 0x00020000;
+
     [NativeTypeName("#define PKCS12_OBJECT_LOCATOR_ALL_IMPORT_FLAGS ( PKCS12_ALWAYS_CNG_KSP               |   \\\r\n                PKCS12_NO_PERSIST_KEY               |   \\\r\n                PKCS12_IMPORT_SILENT                |   \\\r\n                PKCS12_INCLUDE_EXTENDED_PROPERTIES  )")]
     public const int PKCS12_OBJECT_LOCATOR_ALL_IMPORT_FLAGS = (0x00000200 | 0x00008000 | 0x00000040 | 0x0010);
 

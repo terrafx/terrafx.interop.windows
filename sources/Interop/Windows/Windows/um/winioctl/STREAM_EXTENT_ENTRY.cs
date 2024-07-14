@@ -15,7 +15,7 @@ public partial struct STREAM_EXTENT_ENTRY
     public uint Flags;
 
     /// <include file='STREAM_EXTENT_ENTRY.xml' path='doc/member[@name="STREAM_EXTENT_ENTRY.ExtentInformation"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L15380_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L15686_C5")]
     public _ExtentInformation_e__Union ExtentInformation;
 
     /// <include file='_ExtentInformation_e__Union.xml' path='doc/member[@name="_ExtentInformation_e__Union"]/*' />

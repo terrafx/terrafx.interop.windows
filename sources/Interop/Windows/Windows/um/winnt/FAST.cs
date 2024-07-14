@@ -211,6 +211,24 @@ public static partial class FAST
     [NativeTypeName("#define FAST_FAIL_INVALID_FLS_DATA 70")]
     public const int FAST_FAIL_INVALID_FLS_DATA = 70;
 
+    [NativeTypeName("#define FAST_FAIL_ASAN_ERROR 71")]
+    public const int FAST_FAIL_ASAN_ERROR = 71;
+
+    [NativeTypeName("#define FAST_FAIL_CLR_EXCEPTION_AOT 72")]
+    public const int FAST_FAIL_CLR_EXCEPTION_AOT = 72;
+
+    [NativeTypeName("#define FAST_FAIL_POINTER_AUTH_INVALID_RETURN_ADDRESS 73")]
+    public const int FAST_FAIL_POINTER_AUTH_INVALID_RETURN_ADDRESS = 73;
+
+    [NativeTypeName("#define FAST_FAIL_INVALID_THREAD_STATE 74")]
+    public const int FAST_FAIL_INVALID_THREAD_STATE = 74;
+
+    [NativeTypeName("#define FAST_FAIL_CORRUPT_WOW64_STATE 75")]
+    public const int FAST_FAIL_CORRUPT_WOW64_STATE = 75;
+
+    [NativeTypeName("#define FAST_FAIL_INVALID_EXTENDED_STATE 76")]
+    public const int FAST_FAIL_INVALID_EXTENDED_STATE = 76;
+
     [NativeTypeName("#define FAST_FAIL_INVALID_FAST_FAIL_CODE 0xFFFFFFFF")]
     public const uint FAST_FAIL_INVALID_FAST_FAIL_CODE = 0xFFFFFFFF;
 }

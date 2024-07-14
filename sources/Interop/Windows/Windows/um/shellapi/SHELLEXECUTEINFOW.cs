@@ -60,7 +60,7 @@ public unsafe partial struct SHELLEXECUTEINFOW
     public uint dwHotKey;
 
     /// <include file='SHELLEXECUTEINFOW.xml' path='doc/member[@name="SHELLEXECUTEINFOW.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_shellapi_L484_C5")]
+    [NativeTypeName("__AnonymousRecord_shellapi_L485_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='SHELLEXECUTEINFOW.xml' path='doc/member[@name="SHELLEXECUTEINFOW.hProcess"]/*' />

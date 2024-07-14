@@ -340,6 +340,9 @@ public static partial class Windows
     [NativeTypeName("#define SHARINGSTATUS_PRIVATE 2ul")]
     public const uint SHARINGSTATUS_PRIVATE = 2U;
 
+    [NativeTypeName("#define STORAGEPROVIDERCUSTOM_ICON_PHONE 0ul")]
+    public const uint STORAGEPROVIDERCUSTOM_ICON_PHONE = 0U;
+
     [NativeTypeName("#define BLUETOOTH_ADDRESS_TYPE_PUBLIC 0")]
     public const int BLUETOOTH_ADDRESS_TYPE_PUBLIC = 0;
 
@@ -687,6 +690,9 @@ public static partial class Windows
 
     [NativeTypeName("#define HOMEGROUPING_RECOMMENDATIONS 4ul")]
     public const uint HOMEGROUPING_RECOMMENDATIONS = 4U;
+
+    [NativeTypeName("#define HOMEGROUPING_SHARED 5ul")]
+    public const uint HOMEGROUPING_SHARED = 5U;
 
     [NativeTypeName("#define SFGAOSTR_FILESYS L\"filesys\"")]
     public const string SFGAOSTR_FILESYS = "filesys";

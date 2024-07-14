@@ -28,6 +28,12 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[42]")]
     public const string InterfaceName_Windows_Devices_Printers_IIppPrintDevice2 = "Windows.Devices.Printers.IIppPrintDevice2";
 
+    [NativeTypeName("const WCHAR[42]")]
+    public const string InterfaceName_Windows_Devices_Printers_IIppPrintDevice3 = "Windows.Devices.Printers.IIppPrintDevice3";
+
+    [NativeTypeName("const WCHAR[42]")]
+    public const string InterfaceName_Windows_Devices_Printers_IIppPrintDevice4 = "Windows.Devices.Printers.IIppPrintDevice4";
+
     [NativeTypeName("const WCHAR[48]")]
     public const string InterfaceName_Windows_Devices_Printers_IIppPrintDeviceStatics = "Windows.Devices.Printers.IIppPrintDeviceStatics";
 

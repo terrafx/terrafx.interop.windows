@@ -493,8 +493,35 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_OPTION_USE_SESSION_SCH_CRED 196")]
     public const int WINHTTP_OPTION_USE_SESSION_SCH_CRED = 196;
 
-    [NativeTypeName("#define WINHTTP_LAST_OPTION WINHTTP_OPTION_USE_SESSION_SCH_CRED")]
-    public const int WINHTTP_LAST_OPTION = 196;
+    [NativeTypeName("#define WINHTTP_OPTION_QUIC_STATS_V2 200")]
+    public const int WINHTTP_OPTION_QUIC_STATS_V2 = 200;
+
+    [NativeTypeName("#define WINHTTP_OPTION_QUIC_STREAM_STATS 202")]
+    public const int WINHTTP_OPTION_QUIC_STREAM_STATS = 202;
+
+    [NativeTypeName("#define WINHTTP_OPTION_USE_LOOKASIDE 203")]
+    public const int WINHTTP_OPTION_USE_LOOKASIDE = 203;
+
+    [NativeTypeName("#define WINHTTP_OPTION_ERROR_LOG_GUID 204")]
+    public const int WINHTTP_OPTION_ERROR_LOG_GUID = 204;
+
+    [NativeTypeName("#define WINHTTP_OPTION_ENABLE_FAST_FORWARDING 205")]
+    public const int WINHTTP_OPTION_ENABLE_FAST_FORWARDING = 205;
+
+    [NativeTypeName("#define WINHTTP_OPTION_FAST_FORWARDING_RESPONSE_DATA 206")]
+    public const int WINHTTP_OPTION_FAST_FORWARDING_RESPONSE_DATA = 206;
+
+    [NativeTypeName("#define WINHTTP_OPTION_UPGRADE_TO_PROTOCOL 207")]
+    public const int WINHTTP_OPTION_UPGRADE_TO_PROTOCOL = 207;
+
+    [NativeTypeName("#define WINHTTP_OPTION_CONNECTION_STATS_V2 208")]
+    public const int WINHTTP_OPTION_CONNECTION_STATS_V2 = 208;
+
+    [NativeTypeName("#define WINHTTP_OPTION_FAST_FORWARDING_RESPONSE_STATUS 209")]
+    public const int WINHTTP_OPTION_FAST_FORWARDING_RESPONSE_STATUS = 209;
+
+    [NativeTypeName("#define WINHTTP_LAST_OPTION WINHTTP_OPTION_FAST_FORWARDING_RESPONSE_STATUS")]
+    public const int WINHTTP_LAST_OPTION = 209;
 
     [NativeTypeName("#define WINHTTP_OPTION_USERNAME 0x1000")]
     public const int WINHTTP_OPTION_USERNAME = 0x1000;
@@ -648,6 +675,9 @@ public static partial class WINHTTP
 
     [NativeTypeName("#define WINHTTP_HANDLE_TYPE_WEBSOCKET 5")]
     public const int WINHTTP_HANDLE_TYPE_WEBSOCKET = 5;
+
+    [NativeTypeName("#define WINHTTP_HANDLE_TYPE_PROTOCOL 6")]
+    public const int WINHTTP_HANDLE_TYPE_PROTOCOL = 6;
 
     [NativeTypeName("#define WINHTTP_AUTH_SCHEME_BASIC 0x00000001")]
     public const int WINHTTP_AUTH_SCHEME_BASIC = 0x00000001;
@@ -1189,8 +1219,8 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_ERROR_BASE 12000")]
     public const int WINHTTP_ERROR_BASE = 12000;
 
-    [NativeTypeName("#define WINHTTP_ERROR_LAST ERROR_WINHTTP_FEATURE_DISABLED")]
-    public const int WINHTTP_ERROR_LAST = (12000 + 192);
+    [NativeTypeName("#define WINHTTP_ERROR_LAST ERROR_WINHTTP_FAST_FORWARDING_NOT_SUPPORTED")]
+    public const int WINHTTP_ERROR_LAST = (12000 + 193);
 
     [NativeTypeName("#define WINHTTP_RESET_STATE 0x00000001")]
     public const int WINHTTP_RESET_STATE = 0x00000001;
@@ -1413,4 +1443,37 @@ public static partial class WINHTTP
 
     [NativeTypeName("#define WINHTTP_FEATURE_REVERT_IMPERSONATION_SERVER_CERT 75")]
     public const int WINHTTP_FEATURE_REVERT_IMPERSONATION_SERVER_CERT = 75;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_DISABLE_GLOBAL_POOLING 76")]
+    public const int WINHTTP_FEATURE_DISABLE_GLOBAL_POOLING = 76;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_GET_PROXY_SETTINGS_EX 77")]
+    public const int WINHTTP_FEATURE_GET_PROXY_SETTINGS_EX = 77;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_SESSION_SCH_CRED 78")]
+    public const int WINHTTP_FEATURE_SESSION_SCH_CRED = 78;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_QUIC_STATS_V2 79")]
+    public const int WINHTTP_FEATURE_QUIC_STATS_V2 = 79;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_URL_INCLUDE_DEFAULT_PORT 80")]
+    public const int WINHTTP_FEATURE_URL_INCLUDE_DEFAULT_PORT = 80;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_QUIC_STREAM_STATS 81")]
+    public const int WINHTTP_FEATURE_QUIC_STREAM_STATS = 81;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_USE_LOOKASIDE 82")]
+    public const int WINHTTP_FEATURE_USE_LOOKASIDE = 82;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_ERROR_LOG_GUID 83")]
+    public const int WINHTTP_FEATURE_ERROR_LOG_GUID = 83;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_UPGRADE_TO_PROTOCOL 88")]
+    public const int WINHTTP_FEATURE_UPGRADE_TO_PROTOCOL = 88;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_CONNECTION_STATS_V2 89")]
+    public const int WINHTTP_FEATURE_CONNECTION_STATS_V2 = 89;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_FAST_FORWARD_RESPONSE 90")]
+    public const int WINHTTP_FEATURE_FAST_FORWARD_RESPONSE = 90;
 }

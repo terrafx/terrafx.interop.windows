@@ -13,6 +13,56 @@ namespace TerraFX.Interop.Windows;
 public static partial class MF
 {
     [NativeTypeName("const IID")]
+    public static ref readonly Guid MF_ACOUSTIC_ECHO_CANCELLATION_CONTROL_SERVICE
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x29, 0x3B, 0x6C, 0x7F,
+                0x12, 0x2D,
+                0x6F, 0x4F,
+                0xAC,
+                0x05,
+                0xC1,
+                0xA8,
+                0x9B,
+                0x8D,
+                0x52,
+                0x88
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MF_AUDIO_EFFECTS_MANAGER_SERVICE
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x43, 0x19, 0x54, 0x1F,
+                0xDF, 0xD5,
+                0x5E, 0x45,
+                0xA2,
+                0xE5,
+                0x7D,
+                0x64,
+                0xD3,
+                0xBB,
+                0xBD,
+                0xB5
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const IID")]
     public static ref readonly Guid MF_WVC1_PROG_SINGLE_SLICE_CONTENT
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -4955,6 +5005,56 @@ public static partial class MF
                 0xE7,
                 0xE4,
                 0x13
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MF_CAMERASOURCE_PROVIDE_SELECTED_PROFILE_ON_START
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x58, 0x60, 0xB4, 0xA9,
+                0xF2, 0x82,
+                0x5C, 0x4E,
+                0xBF,
+                0x6E,
+                0x25,
+                0xB4,
+                0xB0,
+                0x9F,
+                0x22,
+                0xED
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MF_DEVSOURCE_ATTRIBUTE_FRAMESERVER_SHARE_MODE
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xBC, 0xA9, 0xD1, 0x44,
+                0x99, 0x29,
+                0x38, 0x42,
+                0xAE,
+                0x43,
+                0x07,
+                0x30,
+                0xCE,
+                0xB2,
+                0xAB,
+                0x1B
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

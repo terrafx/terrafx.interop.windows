@@ -18,4 +18,7 @@ public static partial class CONTEXT
 
     [NativeTypeName("#define CONTEXT_EXCEPTION_REPORTING 0x80000000L")]
     public const uint CONTEXT_EXCEPTION_REPORTING = 0x80000000;
+
+    [NativeTypeName("#define CONTEXT_ARM64_XSTATE (CONTEXT_ARM64 | 0x20L)")]
+    public const int CONTEXT_ARM64_XSTATE = (0x00400000 | 0x20);
 }

@@ -89,6 +89,13 @@ public static partial class MFTests
         Assert.That(MF_SOURCE_READER_D3D11_BIND_FLAGS, Is.EqualTo(new Guid(0x33f3197b, 0xf73a, 0x4e14, 0x8d, 0x85, 0xe, 0x4c, 0x43, 0x68, 0x78, 0x8d)));
     }
 
+    /// <summary>Validates that the value of the <see cref="MF_SOURCE_READER_PASSTHROUGH_MODE" /> property is correct.</summary>
+    [Test]
+    public static void MF_SOURCE_READER_PASSTHROUGH_MODETest()
+    {
+        Assert.That(MF_SOURCE_READER_PASSTHROUGH_MODE, Is.EqualTo(new Guid(0x43ff126, 0xfe2c, 0x4708, 0xa0, 0x9b, 0xda, 0x2a, 0xb4, 0x35, 0xce, 0xd9)));
+    }
+
     /// <summary>Validates that the value of the <see cref="MF_SINK_WRITER_ASYNC_CALLBACK" /> property is correct.</summary>
     [Test]
     public static void MF_SINK_WRITER_ASYNC_CALLBACKTest()

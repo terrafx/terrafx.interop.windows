@@ -47,8 +47,11 @@ public enum MFVideoPrimaries
     /// <include file='MFVideoPrimaries.xml' path='doc/member[@name="MFVideoPrimaries.MFVideoPrimaries_ACES"]/*' />
     MFVideoPrimaries_ACES = 12,
 
+    /// <include file='MFVideoPrimaries.xml' path='doc/member[@name="MFVideoPrimaries.MFVideoPrimaries_Display_P3"]/*' />
+    MFVideoPrimaries_Display_P3 = 13,
+
     /// <include file='MFVideoPrimaries.xml' path='doc/member[@name="MFVideoPrimaries.MFVideoPrimaries_Last"]/*' />
-    MFVideoPrimaries_Last = (MFVideoPrimaries_ACES + 1),
+    MFVideoPrimaries_Last = (MFVideoPrimaries_Display_P3 + 1),
 
     /// <include file='MFVideoPrimaries.xml' path='doc/member[@name="MFVideoPrimaries.MFVideoPrimaries_ForceDWORD"]/*' />
     MFVideoPrimaries_ForceDWORD = 0x7fffffff,

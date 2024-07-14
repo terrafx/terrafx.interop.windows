@@ -16,27 +16,27 @@ public partial struct IMAGE_AUX_SYMBOL_EX
 {
     /// <include file='IMAGE_AUX_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_EX.Sym"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L18987_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L19903_C5")]
     public _Sym_e__Struct Sym;
 
     /// <include file='IMAGE_AUX_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_EX.File"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L18992_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L19908_C5")]
     public _File_e__Struct File;
 
     /// <include file='IMAGE_AUX_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_EX.Section"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L18995_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L19911_C5")]
     public _Section_e__Struct Section;
 
     /// <include file='IMAGE_AUX_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_EX.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L19006_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L19922_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='IMAGE_AUX_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL_EX.CRC"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L19010_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L19926_C5")]
     public _CRC_e__Struct CRC;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.TokenDef"]/*' />

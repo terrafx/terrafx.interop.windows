@@ -496,6 +496,12 @@ public static partial class Windows
     [NativeTypeName("#define MSDTC_E_DUPLICATE_RESOURCE _HRESULT_TYPEDEF_(0x80110701L)")]
     public const int MSDTC_E_DUPLICATE_RESOURCE = unchecked((int)(0x80110701));
 
+    [NativeTypeName("#define DRTM_E_ENVIRONMENT_UNSAFE _HRESULT_TYPEDEF_(0x80290501L)")]
+    public const int DRTM_E_ENVIRONMENT_UNSAFE = unchecked((int)(0x80290501));
+
+    [NativeTypeName("#define DRTM_E_NO_DIRECT_AUTH_FOR_CURRENT_MLE _HRESULT_TYPEDEF_(0x80290502L)")]
+    public const int DRTM_E_NO_DIRECT_AUTH_FOR_CURRENT_MLE = unchecked((int)(0x80290502));
+
     [NativeTypeName("#define GCN_E_MODULE_NOT_FOUND _HRESULT_TYPEDEF_(0x803B0021L)")]
     public const int GCN_E_MODULE_NOT_FOUND = unchecked((int)(0x803B0021));
 
@@ -723,4 +729,40 @@ public static partial class Windows
 
     [NativeTypeName("#define IORING_E_COMPLETION_QUEUE_TOO_FULL _HRESULT_TYPEDEF_(0x80460008L)")]
     public const int IORING_E_COMPLETION_QUEUE_TOO_FULL = unchecked((int)(0x80460008));
+
+    [NativeTypeName("#define UNIONFS_E_CANNOT_CROSS_UNION _HRESULT_TYPEDEF_(0x89250001L)")]
+    public const int UNIONFS_E_CANNOT_CROSS_UNION = unchecked((int)(0x89250001));
+
+    [NativeTypeName("#define UNIONFS_E_CANNOT_EXIT_UNION _HRESULT_TYPEDEF_(0x89250002L)")]
+    public const int UNIONFS_E_CANNOT_EXIT_UNION = unchecked((int)(0x89250002));
+
+    [NativeTypeName("#define UNIONFS_E_CANNOT_PRESERVE_LINK _HRESULT_TYPEDEF_(0x89250003L)")]
+    public const int UNIONFS_E_CANNOT_PRESERVE_LINK = unchecked((int)(0x89250003));
+
+    [NativeTypeName("#define UNIONFS_E_INVALID_TOMBSTONE_STATE _HRESULT_TYPEDEF_(0x89250004L)")]
+    public const int UNIONFS_E_INVALID_TOMBSTONE_STATE = unchecked((int)(0x89250004));
+
+    [NativeTypeName("#define UNIONFS_E_LAYERS_PRESENT _HRESULT_TYPEDEF_(0x89250005L)")]
+    public const int UNIONFS_E_LAYERS_PRESENT = unchecked((int)(0x89250005));
+
+    [NativeTypeName("#define UNIONFS_E_NESTED_LAYER _HRESULT_TYPEDEF_(0x89250006L)")]
+    public const int UNIONFS_E_NESTED_LAYER = unchecked((int)(0x89250006));
+
+    [NativeTypeName("#define UNIONFS_E_UNION_DUPLICATE_ID _HRESULT_TYPEDEF_(0x89250007L)")]
+    public const int UNIONFS_E_UNION_DUPLICATE_ID = unchecked((int)(0x89250007));
+
+    [NativeTypeName("#define UNIONFS_E_INACTIVE_UNION _HRESULT_TYPEDEF_(0x89250008L)")]
+    public const int UNIONFS_E_INACTIVE_UNION = unchecked((int)(0x89250008));
+
+    [NativeTypeName("#define UNIONFS_E_TOO_MANY_LAYERS _HRESULT_TYPEDEF_(0x89250009L)")]
+    public const int UNIONFS_E_TOO_MANY_LAYERS = unchecked((int)(0x89250009));
+
+    [NativeTypeName("#define UNIONFS_E_TOO_LATE _HRESULT_TYPEDEF_(0x8925000AL)")]
+    public const int UNIONFS_E_TOO_LATE = unchecked((int)(0x8925000A));
+
+    [NativeTypeName("#define UNIONFS_E_NESTED_UNION _HRESULT_TYPEDEF_(0x8925000BL)")]
+    public const int UNIONFS_E_NESTED_UNION = unchecked((int)(0x8925000B));
+
+    [NativeTypeName("#define UNIONFS_E_NESTED_UNION_NOT_ALLOWED _HRESULT_TYPEDEF_(0x8925000CL)")]
+    public const int UNIONFS_E_NESTED_UNION_NOT_ALLOWED = unchecked((int)(0x8925000C));
 }

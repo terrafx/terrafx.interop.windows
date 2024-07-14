@@ -678,4 +678,70 @@ public static partial class FVE
 
     [NativeTypeName("#define FVE_E_METADATA_FULL _HRESULT_TYPEDEF_(0x803100ECL)")]
     public const int FVE_E_METADATA_FULL = unchecked((int)(0x803100EC));
+
+    [NativeTypeName("#define FVE_E_DISCOVERY_VOLUME_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x803100EDL)")]
+    public const int FVE_E_DISCOVERY_VOLUME_NOT_SUPPORTED = unchecked((int)(0x803100ED));
+
+    [NativeTypeName("#define FVE_E_EXCEED_LIMIT_RP _HRESULT_TYPEDEF_(0x803100EEL)")]
+    public const int FVE_E_EXCEED_LIMIT_RP = unchecked((int)(0x803100EE));
+
+    [NativeTypeName("#define FVE_E_NO_BACKUP_ACCOUNT _HRESULT_TYPEDEF_(0x803100EFL)")]
+    public const int FVE_E_NO_BACKUP_ACCOUNT = unchecked((int)(0x803100EF));
+
+    [NativeTypeName("#define FVE_E_SUSPEND_PROTECTION_NOT_ALLOWED _HRESULT_TYPEDEF_(0x803100F0L)")]
+    public const int FVE_E_SUSPEND_PROTECTION_NOT_ALLOWED = unchecked((int)(0x803100F0));
+
+    [NativeTypeName("#define FVE_E_CANNOT_PREDICT_PCR7 _HRESULT_TYPEDEF_(0x803100F1L)")]
+    public const int FVE_E_CANNOT_PREDICT_PCR7 = unchecked((int)(0x803100F1));
+
+    [NativeTypeName("#define FVE_E_ENTRY_ALREADY_EXISTS _HRESULT_TYPEDEF_(0x803100F2L)")]
+    public const int FVE_E_ENTRY_ALREADY_EXISTS = unchecked((int)(0x803100F2));
+
+    [NativeTypeName("#define FVE_E_ENTRY_NOT_FOUND _HRESULT_TYPEDEF_(0x803100F3L)")]
+    public const int FVE_E_ENTRY_NOT_FOUND = unchecked((int)(0x803100F3));
+
+    [NativeTypeName("#define FVE_E_DATUM_PARTIALLY_INVALID _HRESULT_TYPEDEF_(0x803100F4L)")]
+    public const int FVE_E_DATUM_PARTIALLY_INVALID = unchecked((int)(0x803100F4));
+
+    [NativeTypeName("#define FVE_E_DATASET_TPM_DATUMS_INCONSISTENT _HRESULT_TYPEDEF_(0x803100F5L)")]
+    public const int FVE_E_DATASET_TPM_DATUMS_INCONSISTENT = unchecked((int)(0x803100F5));
+
+    [NativeTypeName("#define FVE_E_SECURE_BOOT_BINDINGS_OUT_OF_SYNC _HRESULT_TYPEDEF_(0x803100F6L)")]
+    public const int FVE_E_SECURE_BOOT_BINDINGS_OUT_OF_SYNC = unchecked((int)(0x803100F6));
+
+    [NativeTypeName("#define FVE_E_SECURE_BOOT_BINDING_DATA_OUT_OF_SYNC _HRESULT_TYPEDEF_(0x803100F7L)")]
+    public const int FVE_E_SECURE_BOOT_BINDING_DATA_OUT_OF_SYNC = unchecked((int)(0x803100F7));
+
+    [NativeTypeName("#define FVE_E_ORPHANED_TPM_BINDING_DATUM _HRESULT_TYPEDEF_(0x803100F8L)")]
+    public const int FVE_E_ORPHANED_TPM_BINDING_DATUM = unchecked((int)(0x803100F8));
+
+    [NativeTypeName("#define FVE_E_BAD_TPM_DATUM_ASSOCIATION _HRESULT_TYPEDEF_(0x803100F9L)")]
+    public const int FVE_E_BAD_TPM_DATUM_ASSOCIATION = unchecked((int)(0x803100F9));
+
+    [NativeTypeName("#define FVE_E_FINAL_TPM_PCR_VALUES_MATCH _HRESULT_TYPEDEF_(0x803100FAL)")]
+    public const int FVE_E_FINAL_TPM_PCR_VALUES_MATCH = unchecked((int)(0x803100FA));
+
+    [NativeTypeName("#define FVE_E_MATCHING_PCRS_TPM_FAILURE _HRESULT_TYPEDEF_(0x803100FBL)")]
+    public const int FVE_E_MATCHING_PCRS_TPM_FAILURE = unchecked((int)(0x803100FB));
+
+    [NativeTypeName("#define FVE_E_BACKUP_CACHE_NOT_ALLOCATED _HRESULT_TYPEDEF_(0x803100FCL)")]
+    public const int FVE_E_BACKUP_CACHE_NOT_ALLOCATED = unchecked((int)(0x803100FC));
+
+    [NativeTypeName("#define FVE_E_MSA_BACKUP_CACHE_NOT_ALLOCATED _HRESULT_TYPEDEF_(0x803100FDL)")]
+    public const int FVE_E_MSA_BACKUP_CACHE_NOT_ALLOCATED = unchecked((int)(0x803100FD));
+
+    [NativeTypeName("#define FVE_E_AD_BACKUP_CACHE_NOT_ALLOCATED _HRESULT_TYPEDEF_(0x803100FEL)")]
+    public const int FVE_E_AD_BACKUP_CACHE_NOT_ALLOCATED = unchecked((int)(0x803100FE));
+
+    [NativeTypeName("#define FVE_E_GENERAL_TPM_FAILURE _HRESULT_TYPEDEF_(0x803100FFL)")]
+    public const int FVE_E_GENERAL_TPM_FAILURE = unchecked((int)(0x803100FF));
+
+    [NativeTypeName("#define FVE_E_TPM_NONEXISTENT _HRESULT_TYPEDEF_(0x80310100L)")]
+    public const int FVE_E_TPM_NONEXISTENT = unchecked((int)(0x80310100));
+
+    [NativeTypeName("#define FVE_E_NO_PCR_BOOT_LOCK_BOUNDARY _HRESULT_TYPEDEF_(0xC0310101L)")]
+    public const int FVE_E_NO_PCR_BOOT_LOCK_BOUNDARY = unchecked((int)(0xC0310101));
+
+    [NativeTypeName("#define FVE_E_PCR_BOOT_LOCK_BOUNDARY _HRESULT_TYPEDEF_(0xC0310102L)")]
+    public const int FVE_E_PCR_BOOT_LOCK_BOUNDARY = unchecked((int)(0xC0310102));
 }

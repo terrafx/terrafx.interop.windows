@@ -17,6 +17,6 @@ public static unsafe partial class IDxcBlobUtf16Tests
     [Test]
     public static void GuidOfTest()
     {
-        Assert.That(typeof(IDxcBlobUtf16).GUID, Is.EqualTo(IID_IDxcBlobUtf16));
+        Assert.That(typeof(IDxcBlobUtf16).GUID, Is.EqualTo(IID_IDxcBlobWide));
     }
 }

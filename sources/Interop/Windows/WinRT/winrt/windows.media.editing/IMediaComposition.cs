@@ -122,17 +122,17 @@ public unsafe partial struct IMediaComposition : IMediaComposition.Interface, IN
     /// <include file='IMediaComposition.xml' path='doc/member[@name="IMediaComposition.GetThumbnailAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan timeFromStart, [NativeTypeName("INT32")] int scaledWidth, [NativeTypeName("INT32")] int scaledHeight, [NativeTypeName("ABI::Windows::Media::Editing::VideoFramePrecision")] VideoFramePrecision framePrecision, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan timeFromStart, [NativeTypeName("INT32")] int scaledWidth, [NativeTypeName("INT32")] int scaledHeight, [NativeTypeName("ABI::Windows::Media::Editing::VideoFramePrecision")] VideoFramePrecision framePrecision, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<Pointer<IntPtr>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaComposition*, TimeSpan, int, int, VideoFramePrecision, IAsyncOperation<IntPtr>**, int>)(lpVtbl[12]))((IMediaComposition*)Unsafe.AsPointer(ref this), timeFromStart, scaledWidth, scaledHeight, framePrecision, operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaComposition*, TimeSpan, int, int, VideoFramePrecision, IAsyncOperation<Pointer<IntPtr>>**, int>)(lpVtbl[12]))((IMediaComposition*)Unsafe.AsPointer(ref this), timeFromStart, scaledWidth, scaledHeight, framePrecision, operation);
     }
 
     /// <include file='IMediaComposition.xml' path='doc/member[@name="IMediaComposition.GetThumbnailsAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetThumbnailsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CTimeSpan_t *")] IIterable<TimeSpan>* timesFromStart, [NativeTypeName("INT32")] int scaledWidth, [NativeTypeName("INT32")] int scaledHeight, [NativeTypeName("ABI::Windows::Media::Editing::VideoFramePrecision")] VideoFramePrecision framePrecision, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<Pointer<IVectorView<IntPtr>>>** operation)
+    public HRESULT GetThumbnailsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CTimeSpan_t *")] IIterable<TimeSpan>* timesFromStart, [NativeTypeName("INT32")] int scaledWidth, [NativeTypeName("INT32")] int scaledHeight, [NativeTypeName("ABI::Windows::Media::Editing::VideoFramePrecision")] VideoFramePrecision framePrecision, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IntPtr>>>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMediaComposition*, IIterable<TimeSpan>*, int, int, VideoFramePrecision, IAsyncOperation<Pointer<IVectorView<IntPtr>>>**, int>)(lpVtbl[13]))((IMediaComposition*)Unsafe.AsPointer(ref this), timesFromStart, scaledWidth, scaledHeight, framePrecision, operation);
+        return ((delegate* unmanaged[MemberFunction]<IMediaComposition*, IIterable<TimeSpan>*, int, int, VideoFramePrecision, IAsyncOperation<Pointer<IVectorView<Pointer<IntPtr>>>>**, int>)(lpVtbl[13]))((IMediaComposition*)Unsafe.AsPointer(ref this), timesFromStart, scaledWidth, scaledHeight, framePrecision, operation);
     }
 
     /// <include file='IMediaComposition.xml' path='doc/member[@name="IMediaComposition.RenderToFileAsync"]/*' />
@@ -212,10 +212,10 @@ public unsafe partial struct IMediaComposition : IMediaComposition.Interface, IN
         HRESULT SaveAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* file, [NativeTypeName("ABI::Windows::Foundation::IAsyncAction **")] IAsyncAction** operation);
 
         [VtblIndex(12)]
-        HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan timeFromStart, [NativeTypeName("INT32")] int scaledWidth, [NativeTypeName("INT32")] int scaledHeight, [NativeTypeName("ABI::Windows::Media::Editing::VideoFramePrecision")] VideoFramePrecision framePrecision, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan timeFromStart, [NativeTypeName("INT32")] int scaledWidth, [NativeTypeName("INT32")] int scaledHeight, [NativeTypeName("ABI::Windows::Media::Editing::VideoFramePrecision")] VideoFramePrecision framePrecision, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<Pointer<IntPtr>>** operation);
 
         [VtblIndex(13)]
-        HRESULT GetThumbnailsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CTimeSpan_t *")] IIterable<TimeSpan>* timesFromStart, [NativeTypeName("INT32")] int scaledWidth, [NativeTypeName("INT32")] int scaledHeight, [NativeTypeName("ABI::Windows::Media::Editing::VideoFramePrecision")] VideoFramePrecision framePrecision, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<Pointer<IVectorView<IntPtr>>>** operation);
+        HRESULT GetThumbnailsAsync([NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CTimeSpan_t *")] IIterable<TimeSpan>* timesFromStart, [NativeTypeName("INT32")] int scaledWidth, [NativeTypeName("INT32")] int scaledHeight, [NativeTypeName("ABI::Windows::Media::Editing::VideoFramePrecision")] VideoFramePrecision framePrecision, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IntPtr>>>>** operation);
 
         [VtblIndex(14)]
         HRESULT RenderToFileAsync([NativeTypeName("ABI::Windows::Storage::IStorageFile *")] IStorageFile* destination, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CMedia__CTranscoding__CTranscodeFailureReason_double_t **")] IAsyncOperationWithProgress<TranscodeFailureReason, double>** operation);
@@ -279,10 +279,10 @@ public unsafe partial struct IMediaComposition : IMediaComposition.Interface, IN
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncAction**, int> SaveAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::TimeSpan, INT32, INT32, ABI::Windows::Media::Editing::VideoFramePrecision, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan, int, int, VideoFramePrecision, IAsyncOperation<IntPtr>**, int> GetThumbnailAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan, int, int, VideoFramePrecision, IAsyncOperation<Pointer<IntPtr>>**, int> GetThumbnailAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIIterable_1_Windows__CFoundation__CTimeSpan_t *, INT32, INT32, ABI::Windows::Media::Editing::VideoFramePrecision, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CGraphics__CImaging__CImageStream_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<TimeSpan>*, int, int, VideoFramePrecision, IAsyncOperation<Pointer<IVectorView<IntPtr>>>**, int> GetThumbnailsAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IIterable<TimeSpan>*, int, int, VideoFramePrecision, IAsyncOperation<Pointer<IVectorView<Pointer<IntPtr>>>>**, int> GetThumbnailsAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::IStorageFile *, ABI::Windows::Foundation::__FIAsyncOperationWithProgress_2_Windows__CMedia__CTranscoding__CTranscodeFailureReason_double_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IStorageFile*, IAsyncOperationWithProgress<TranscodeFailureReason, double>**, int> RenderToFileAsync;

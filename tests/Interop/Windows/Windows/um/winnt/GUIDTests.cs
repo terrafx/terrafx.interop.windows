@@ -47,6 +47,34 @@ public static partial class GUIDTests
         Assert.That(GUID_ACTIVE_POWERSCHEME, Is.EqualTo(new Guid(0x31F9F286, 0x5084, 0x42FE, 0xB7, 0x20, 0x2B, 0x02, 0x64, 0x99, 0x37, 0x63)));
     }
 
+    /// <summary>Validates that the value of the <see cref="GUID_POWER_MODE_BEST_EFFICIENCY" /> property is correct.</summary>
+    [Test]
+    public static void GUID_POWER_MODE_BEST_EFFICIENCYTest()
+    {
+        Assert.That(GUID_POWER_MODE_BEST_EFFICIENCY, Is.EqualTo(new Guid(0x961cc777, 0x2547, 0x4f9d, 0x81, 0x74, 0x7d, 0x86, 0x18, 0x1b, 0x8a, 0x7a)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_POWER_MODE_NONE" /> property is correct.</summary>
+    [Test]
+    public static void GUID_POWER_MODE_NONETest()
+    {
+        Assert.That(GUID_POWER_MODE_NONE, Is.EqualTo(new Guid(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_POWER_MODE_PERFORMANCE" /> property is correct.</summary>
+    [Test]
+    public static void GUID_POWER_MODE_PERFORMANCETest()
+    {
+        Assert.That(GUID_POWER_MODE_PERFORMANCE, Is.EqualTo(new Guid(0x3af9b8d9, 0x7c97, 0x431d, 0xad, 0x78, 0x34, 0xa8, 0xbf, 0xea, 0x43, 0x9f)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_POWER_MODE_BEST_PERFORMANCE" /> property is correct.</summary>
+    [Test]
+    public static void GUID_POWER_MODE_BEST_PERFORMANCETest()
+    {
+        Assert.That(GUID_POWER_MODE_BEST_PERFORMANCE, Is.EqualTo(new Guid(0xded574b5, 0x45a0, 0x4f42, 0x87, 0x37, 0x46, 0x34, 0x5c, 0x9, 0xc2, 0x38)));
+    }
+
     /// <summary>Validates that the value of the <see cref="GUID_IDLE_RESILIENCY_SUBGROUP" /> property is correct.</summary>
     [Test]
     public static void GUID_IDLE_RESILIENCY_SUBGROUPTest()
@@ -348,6 +376,20 @@ public static partial class GUIDTests
         Assert.That(GUID_STANDBY_BUDGET_PERCENT, Is.EqualTo(new Guid(0x9fe527be, 0x1b70, 0x48da, 0x93, 0x0d, 0x7b, 0xcf, 0x17, 0xb4, 0x49, 0x90)));
     }
 
+    /// <summary>Validates that the value of the <see cref="GUID_STANDBY_BUDGET_REFRESH_COUNT" /> property is correct.</summary>
+    [Test]
+    public static void GUID_STANDBY_BUDGET_REFRESH_COUNTTest()
+    {
+        Assert.That(GUID_STANDBY_BUDGET_REFRESH_COUNT, Is.EqualTo(new Guid(0xACA8648E, 0xC4B1, 0x4BAA, 0x8C, 0xCE, 0x93, 0x90, 0xAD, 0x64, 0x7F, 0x8C)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_STANDBY_BUDGET_REFRESH_INTERVAL" /> property is correct.</summary>
+    [Test]
+    public static void GUID_STANDBY_BUDGET_REFRESH_INTERVALTest()
+    {
+        Assert.That(GUID_STANDBY_BUDGET_REFRESH_INTERVAL, Is.EqualTo(new Guid(0x61F45DFE, 0x1919, 0x4180, 0xBB, 0x46, 0x8C, 0xC7, 0x0E, 0x0B, 0x38, 0xF1)));
+    }
+
     /// <summary>Validates that the value of the <see cref="GUID_STANDBY_RESERVE_GRACE_PERIOD" /> property is correct.</summary>
     [Test]
     public static void GUID_STANDBY_RESERVE_GRACE_PERIODTest()
@@ -430,6 +472,13 @@ public static partial class GUIDTests
     public static void GUID_POWER_SAVING_STATUSTest()
     {
         Assert.That(GUID_POWER_SAVING_STATUS, Is.EqualTo(new Guid(0xe00958c0, 0xc213, 0x4ace, 0xac, 0x77, 0xfe, 0xcc, 0xed, 0x2e, 0xee, 0xa5)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_ENERGY_SAVER_STATUS" /> property is correct.</summary>
+    [Test]
+    public static void GUID_ENERGY_SAVER_STATUSTest()
+    {
+        Assert.That(GUID_ENERGY_SAVER_STATUS, Is.EqualTo(new Guid(0x550e8400, 0xe29b, 0x41d4, 0xa7, 0x16, 0x44, 0x66, 0x55, 0x44, 0x00, 0x00)));
     }
 
     /// <summary>Validates that the value of the <see cref="GUID_ENERGY_SAVER_SUBGROUP" /> property is correct.</summary>
@@ -1076,6 +1125,20 @@ public static partial class GUIDTests
         Assert.That(GUID_PROCESSOR_PERF_LATENCY_HINT_PERF_1, Is.EqualTo(new Guid(0x619b7505, 0x3b, 0x4e82, 0xb7, 0xa6, 0x4d, 0xd2, 0x9c, 0x30, 0x9, 0x72)));
     }
 
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_PERF_LATENCY_HINT_EPP" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_PERF_LATENCY_HINT_EPPTest()
+    {
+        Assert.That(GUID_PROCESSOR_PERF_LATENCY_HINT_EPP, Is.EqualTo(new Guid(0x4b70f900, 0xcdd9, 0x4e66, 0xaa, 0x26, 0xae, 0x84, 0x17, 0xf9, 0x81, 0x73)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_PERF_LATENCY_HINT_EPP_1" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_PERF_LATENCY_HINT_EPP_1Test()
+    {
+        Assert.That(GUID_PROCESSOR_PERF_LATENCY_HINT_EPP_1, Is.EqualTo(new Guid(0x4b70f900, 0xcdd9, 0x4e66, 0xaa, 0x26, 0xae, 0x84, 0x17, 0xf9, 0x81, 0x74)));
+    }
+
     /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_LATENCY_HINT_MIN_UNPARK" /> property is correct.</summary>
     [Test]
     public static void GUID_PROCESSOR_LATENCY_HINT_MIN_UNPARKTest()
@@ -1111,11 +1174,32 @@ public static partial class GUIDTests
         Assert.That(GUID_PROCESSOR_SMT_UNPARKING_POLICY, Is.EqualTo(new Guid(0xb28a6829, 0xc5f7, 0x444e, 0x8f, 0x61, 0x10, 0xe2, 0x4e, 0x85, 0xc5, 0x32)));
     }
 
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_RESTRICTION_COUNT" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_RESTRICTION_COUNTTest()
+    {
+        Assert.That(GUID_PROCESSOR_RESTRICTION_COUNT, Is.EqualTo(new Guid(0x1a98ad09, 0xaf22, 0x42ca, 0x8e, 0x61, 0xf0, 0xa5, 0x80, 0x2c, 0x27, 0x0a)));
+    }
+
     /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_DISTRIBUTE_UTILITY" /> property is correct.</summary>
     [Test]
     public static void GUID_PROCESSOR_DISTRIBUTE_UTILITYTest()
     {
         Assert.That(GUID_PROCESSOR_DISTRIBUTE_UTILITY, Is.EqualTo(new Guid(0xe0007330, 0xf589, 0x42ed, 0xa4, 0x01, 0x5d, 0xdb, 0x10, 0xe7, 0x85, 0xd3)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_RESOURCE_PRIORITY" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_RESOURCE_PRIORITYTest()
+    {
+        Assert.That(GUID_PROCESSOR_RESOURCE_PRIORITY, Is.EqualTo(new Guid(0x603fe9ce, 0x8d01, 0x4b48, 0xa9, 0x68, 0x1d, 0x70, 0x6c, 0x28, 0xfd, 0x5c)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_RESOURCE_PRIORITY_1" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_RESOURCE_PRIORITY_1Test()
+    {
+        Assert.That(GUID_PROCESSOR_RESOURCE_PRIORITY_1, Is.EqualTo(new Guid(0x603fe9ce, 0x8d01, 0x4b48, 0xa9, 0x68, 0x1d, 0x70, 0x6c, 0x28, 0xfd, 0x5d)));
     }
 
     /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_HETEROGENEOUS_POLICY" /> property is correct.</summary>
@@ -1137,6 +1221,41 @@ public static partial class GUIDTests
     public static void GUID_PROCESSOR_HETERO_INCREASE_TIMETest()
     {
         Assert.That(GUID_PROCESSOR_HETERO_INCREASE_TIME, Is.EqualTo(new Guid(0x4009efa7, 0xe72d, 0x4cba, 0x9e, 0xdf, 0x91, 0x08, 0x4e, 0xa8, 0xcb, 0xc3)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_HETERO_CONTAINMENT_DECREASE_TIME" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_HETERO_CONTAINMENT_DECREASE_TIMETest()
+    {
+        Assert.That(GUID_PROCESSOR_HETERO_CONTAINMENT_DECREASE_TIME, Is.EqualTo(new Guid(0x6FF13AEB, 0x7897, 0x4356, 0x99, 0x99, 0xDD, 0x99, 0x30, 0xAF, 0x06, 0x5F)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_HETERO_CONTAINMENT_INCREASE_TIME" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_HETERO_CONTAINMENT_INCREASE_TIMETest()
+    {
+        Assert.That(GUID_PROCESSOR_HETERO_CONTAINMENT_INCREASE_TIME, Is.EqualTo(new Guid(0x64FCEE6B, 0x5B1F, 0x45A4, 0xA7, 0x6A, 0x19, 0xB2, 0xC3, 0x6E, 0xE2, 0x90)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_HETERO_CONTAINMENT_EFFICIENCY_THRESHOLD" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_HETERO_CONTAINMENT_EFFICIENCY_THRESHOLDTest()
+    {
+        Assert.That(GUID_PROCESSOR_HETERO_CONTAINMENT_EFFICIENCY_THRESHOLD, Is.EqualTo(new Guid(0x69439b22, 0x221b, 0x4830, 0xbd, 0x34, 0xf7, 0xbc, 0xec, 0xe2, 0x45, 0x83)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_HETERO_CONTAINMENT_HYBRID_THRESHOLD" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_HETERO_CONTAINMENT_HYBRID_THRESHOLDTest()
+    {
+        Assert.That(GUID_PROCESSOR_HETERO_CONTAINMENT_HYBRID_THRESHOLD, Is.EqualTo(new Guid(0x6788488b, 0x1b90, 0x4d11, 0x8f, 0xa7, 0x97, 0x3e, 0x47, 0xd, 0xff, 0x47)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_HETERO_CONTAINMENT_POLICY" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_HETERO_CONTAINMENT_POLICYTest()
+    {
+        Assert.That(GUID_PROCESSOR_HETERO_CONTAINMENT_POLICY, Is.EqualTo(new Guid(0x60fbe21b, 0xefd9, 0x49f2, 0xb0, 0x66, 0x86, 0x74, 0xd8, 0xe9, 0xf4, 0x23)));
     }
 
     /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_HETERO_DECREASE_THRESHOLD" /> property is correct.</summary>

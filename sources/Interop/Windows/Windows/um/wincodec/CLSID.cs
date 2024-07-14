@@ -613,6 +613,56 @@ public static partial class CLSID
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_WICJpegXLDecoder
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xCE, 0xEE, 0x6C, 0xFC,
+                0xF5, 0xAE,
+                0x23, 0x4A,
+                0x96,
+                0xEC,
+                0x59,
+                0x84,
+                0xFF,
+                0xB4,
+                0x86,
+                0xD9
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_WICJpegXLEncoder
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x3B, 0xCD, 0x4E, 0x0E,
+                0xA6, 0x1B,
+                0x36, 0x46,
+                0x81,
+                0x98,
+                0x56,
+                0xC7,
+                0x30,
+                0x40,
+                0x96,
+                0x4A
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICImagingCategories
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

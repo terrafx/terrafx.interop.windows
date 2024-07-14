@@ -53,12 +53,16 @@ public partial struct STORAGE_PROTOCOL_SPECIFIC_DATA_EXT
     [NativeTypeName("DWORD")]
     public uint ProtocolDataSubValue5;
 
+    /// <include file='STORAGE_PROTOCOL_SPECIFIC_DATA_EXT.xml' path='doc/member[@name="STORAGE_PROTOCOL_SPECIFIC_DATA_EXT.ProtocolDataSubValue6"]/*' />
+    [NativeTypeName("DWORD")]
+    public uint ProtocolDataSubValue6;
+
     /// <include file='STORAGE_PROTOCOL_SPECIFIC_DATA_EXT.xml' path='doc/member[@name="STORAGE_PROTOCOL_SPECIFIC_DATA_EXT.Reserved"]/*' />
-    [NativeTypeName("DWORD[5]")]
+    [NativeTypeName("DWORD[4]")]
     public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
-    [InlineArray(5)]
+    [InlineArray(4)]
     public partial struct _Reserved_e__FixedBuffer
     {
         public uint e0;

@@ -2513,6 +2513,56 @@ public static partial class MF
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid MF_MT_SPATIAL_AUDIO_IS_PREVIRTUALIZED
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x51, 0xAB, 0xAC, 0x4E,
+                0xE5, 0xFF,
+                0x1A, 0x42,
+                0xA2,
+                0xA7,
+                0x8B,
+                0x74,
+                0x09,
+                0xA1,
+                0xCA,
+                0xC4
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MF_MT_MPEGH_AUDIO_PROFILE_LEVEL_INDICATION
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x39, 0x7A, 0x26, 0x51,
+                0x0C, 0xDD,
+                0xB9, 0x4B,
+                0xA7,
+                0xBD,
+                0x91,
+                0x73,
+                0xAD,
+                0x4B,
+                0x13,
+                0x1C
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_FRAME_SIZE
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

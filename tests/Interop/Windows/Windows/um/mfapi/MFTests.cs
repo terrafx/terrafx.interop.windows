@@ -712,6 +712,20 @@ public static partial class MFTests
         Assert.That(MF_MT_SPATIAL_AUDIO_DATA_PRESENT, Is.EqualTo(new Guid(0x6842f6e7, 0xd43e, 0x4ebb, 0x9c, 0x9c, 0xc9, 0x6f, 0x41, 0x78, 0x48, 0x63)));
     }
 
+    /// <summary>Validates that the value of the <see cref="MF_MT_SPATIAL_AUDIO_IS_PREVIRTUALIZED" /> property is correct.</summary>
+    [Test]
+    public static void MF_MT_SPATIAL_AUDIO_IS_PREVIRTUALIZEDTest()
+    {
+        Assert.That(MF_MT_SPATIAL_AUDIO_IS_PREVIRTUALIZED, Is.EqualTo(new Guid(0x4eacab51, 0xffe5, 0x421a, 0xa2, 0xa7, 0x8b, 0x74, 0x09, 0xa1, 0xca, 0xc4)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MF_MT_MPEGH_AUDIO_PROFILE_LEVEL_INDICATION" /> property is correct.</summary>
+    [Test]
+    public static void MF_MT_MPEGH_AUDIO_PROFILE_LEVEL_INDICATIONTest()
+    {
+        Assert.That(MF_MT_MPEGH_AUDIO_PROFILE_LEVEL_INDICATION, Is.EqualTo(new Guid(0x51267a39, 0xdd0c, 0x4bb9, 0xa7, 0xbd, 0x91, 0x73, 0xad, 0x4b, 0x13, 0x1c)));
+    }
+
     /// <summary>Validates that the value of the <see cref="MF_MT_FRAME_SIZE" /> property is correct.</summary>
     [Test]
     public static void MF_MT_FRAME_SIZETest()

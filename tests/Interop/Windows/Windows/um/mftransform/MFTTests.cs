@@ -33,6 +33,20 @@ public static partial class MFTTests
         Assert.That(MFT_AUDIO_DECODER_SPATIAL_METADATA_CLIENT, Is.EqualTo(new Guid(0x5987df4, 0x1270, 0x4999, 0x92, 0x5f, 0x8e, 0x93, 0x9a, 0x7c, 0xa, 0xf7)));
     }
 
+    /// <summary>Validates that the value of the <see cref="MFT_AUDIO_DECODER_AUDIO_ENDPOINT_FORMFACTOR" /> property is correct.</summary>
+    [Test]
+    public static void MFT_AUDIO_DECODER_AUDIO_ENDPOINT_FORMFACTORTest()
+    {
+        Assert.That(MFT_AUDIO_DECODER_AUDIO_ENDPOINT_FORMFACTOR, Is.EqualTo(new Guid(0x8d574310, 0x909a, 0x433a, 0xac, 0xe7, 0xee, 0xe7, 0x47, 0x19, 0xf9, 0x01)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MFT_AUDIO_DECODER_AUDIO_ENDPOINT_IS_DIGITAL_STEREO_ONLY" /> property is correct.</summary>
+    [Test]
+    public static void MFT_AUDIO_DECODER_AUDIO_ENDPOINT_IS_DIGITAL_STEREO_ONLYTest()
+    {
+        Assert.That(MFT_AUDIO_DECODER_AUDIO_ENDPOINT_IS_DIGITAL_STEREO_ONLY, Is.EqualTo(new Guid(0x26e5a90d, 0x4ad1, 0x4f8c, 0xb8, 0xaf, 0xad, 0xf1, 0x4d, 0x21, 0x78, 0xf1)));
+    }
+
     /// <summary>Validates that the value of the <see cref="MFT_SUPPORT_3DVIDEO" /> property is correct.</summary>
     [Test]
     public static void MFT_SUPPORT_3DVIDEOTest()
@@ -59,6 +73,20 @@ public static partial class MFTTests
     public static void MFT_DECODER_QUALITY_MANAGEMENT_RECOVERY_WITHOUT_ARTIFACTSTest()
     {
         Assert.That(MFT_DECODER_QUALITY_MANAGEMENT_RECOVERY_WITHOUT_ARTIFACTS, Is.EqualTo(new Guid(0xd8980deb, 0xa48, 0x425f, 0x86, 0x23, 0x61, 0x1d, 0xb4, 0x1d, 0x38, 0x10)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MFT_DECODER_OPERATING_POINT" /> property is correct.</summary>
+    [Test]
+    public static void MFT_DECODER_OPERATING_POINTTest()
+    {
+        Assert.That(MFT_DECODER_OPERATING_POINT, Is.EqualTo(new Guid(0xa1230334, 0x55d4, 0x4d97, 0x82, 0xa7, 0x26, 0xd3, 0xe6, 0x45, 0x67, 0x25)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MFT_DECODER_AUTOMATIC_SOFTWARE_FALLBACK" /> property is correct.</summary>
+    [Test]
+    public static void MFT_DECODER_AUTOMATIC_SOFTWARE_FALLBACKTest()
+    {
+        Assert.That(MFT_DECODER_AUTOMATIC_SOFTWARE_FALLBACK, Is.EqualTo(new Guid(0x41f34f53, 0x1bf6, 0x49ed, 0xb9, 0x5d, 0x2, 0xd2, 0xa1, 0xd7, 0x11, 0x5a)));
     }
 
     /// <summary>Validates that the value of the <see cref="MFT_REMUX_MARK_I_PICTURE_AS_CLEAN_POINT" /> property is correct.</summary>

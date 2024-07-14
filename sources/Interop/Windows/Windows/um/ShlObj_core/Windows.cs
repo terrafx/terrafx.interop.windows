@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.ISHCUTCMDID;
 using static TerraFX.Interop.Windows.SHARD;
 
 namespace TerraFX.Interop.Windows;
@@ -222,11 +223,6 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHLoadInProc"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     public static extern HRESULT SHLoadInProc([NativeTypeName("const IID &")] Guid* rclsid);
-
-    public const int ISHCUTCMDID_DOWNLOADICON = 0;
-    public const int ISHCUTCMDID_INTSHORTCUTCREATE = 1;
-    public const int ISHCUTCMDID_COMMITHISTORY = 2;
-    public const int ISHCUTCMDID_SETUSERAWURL = 3;
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetDesktopFolder"]/*' />
     [DllImport("shell32", ExactSpelling = true)]

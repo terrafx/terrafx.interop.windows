@@ -1051,6 +1051,12 @@ public static partial class MF
     [NativeTypeName("#define MF_E_MEDIA_EXTENSION_PACKAGE_LICENSE_INVALID _HRESULT_TYPEDEF_(0xC00DB3B3L)")]
     public const int MF_E_MEDIA_EXTENSION_PACKAGE_LICENSE_INVALID = unchecked((int)(0xC00DB3B3));
 
+    [NativeTypeName("#define MF_E_MEDIA_EXTENSION_PACKAGE_BAD_STATUS _HRESULT_TYPEDEF_(0xC00DB3B4L)")]
+    public const int MF_E_MEDIA_EXTENSION_PACKAGE_BAD_STATUS = unchecked((int)(0xC00DB3B4));
+
+    [NativeTypeName("#define MF_E_CAMERA_PRIVACY_NOT_ALLOWED _HRESULT_TYPEDEF_(0xC00DB798L)")]
+    public const int MF_E_CAMERA_PRIVACY_NOT_ALLOWED = unchecked((int)(0xC00DB798));
+
     [NativeTypeName("#define MF_INDEX_SIZE_ERR 0x80700001")]
     public const uint MF_INDEX_SIZE_ERR = 0x80700001;
 

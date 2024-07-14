@@ -38,11 +38,11 @@ public partial struct FILE_REMOTE_PROTOCOL_INFO
     public uint Flags;
 
     /// <include file='FILE_REMOTE_PROTOCOL_INFO.xml' path='doc/member[@name="FILE_REMOTE_PROTOCOL_INFO.GenericReserved"]/*' />
-    [NativeTypeName("__AnonymousRecord_winbase_L9213_C5")]
+    [NativeTypeName("__AnonymousRecord_winbase_L9340_C5")]
     public _GenericReserved_e__Struct GenericReserved;
 
     /// <include file='FILE_REMOTE_PROTOCOL_INFO.xml' path='doc/member[@name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific"]/*' />
-    [NativeTypeName("__AnonymousRecord_winbase_L9226_C5")]
+    [NativeTypeName("__AnonymousRecord_winbase_L9353_C5")]
     public _ProtocolSpecific_e__Union ProtocolSpecific;
 
     /// <include file='_GenericReserved_e__Struct.xml' path='doc/member[@name="_GenericReserved_e__Struct"]/*' />
@@ -66,7 +66,7 @@ public partial struct FILE_REMOTE_PROTOCOL_INFO
     {
         /// <include file='_ProtocolSpecific_e__Union.xml' path='doc/member[@name="_ProtocolSpecific_e__Union.Smb2"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winbase_L9228_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L9355_C9")]
         public _Smb2_e__Struct Smb2;
 
         /// <include file='_ProtocolSpecific_e__Union.xml' path='doc/member[@name="_ProtocolSpecific_e__Union.Reserved"]/*' />
@@ -78,11 +78,11 @@ public partial struct FILE_REMOTE_PROTOCOL_INFO
         public partial struct _Smb2_e__Struct
         {
             /// <include file='_Smb2_e__Struct.xml' path='doc/member[@name="_Smb2_e__Struct.Server"]/*' />
-            [NativeTypeName("__AnonymousRecord_winbase_L9230_C13")]
+            [NativeTypeName("__AnonymousRecord_winbase_L9357_C13")]
             public _Server_e__Struct Server;
 
             /// <include file='_Smb2_e__Struct.xml' path='doc/member[@name="_Smb2_e__Struct.Share"]/*' />
-            [NativeTypeName("__AnonymousRecord_winbase_L9234_C13")]
+            [NativeTypeName("__AnonymousRecord_winbase_L9361_C13")]
             public _Share_e__Struct Share;
 
             /// <include file='_Server_e__Struct.xml' path='doc/member[@name="_Server_e__Struct"]/*' />

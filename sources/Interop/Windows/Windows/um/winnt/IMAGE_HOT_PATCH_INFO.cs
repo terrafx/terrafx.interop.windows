@@ -35,4 +35,12 @@ public partial struct IMAGE_HOT_PATCH_INFO
     /// <include file='IMAGE_HOT_PATCH_INFO.xml' path='doc/member[@name="IMAGE_HOT_PATCH_INFO.ExtraPatchSize"]/*' />
     [NativeTypeName("DWORD")]
     public uint ExtraPatchSize;
+
+    /// <include file='IMAGE_HOT_PATCH_INFO.xml' path='doc/member[@name="IMAGE_HOT_PATCH_INFO.MinSequenceNumber"]/*' />
+    [NativeTypeName("DWORD")]
+    public uint MinSequenceNumber;
+
+    /// <include file='IMAGE_HOT_PATCH_INFO.xml' path='doc/member[@name="IMAGE_HOT_PATCH_INFO.Flags"]/*' />
+    [NativeTypeName("DWORD")]
+    public uint Flags;
 }

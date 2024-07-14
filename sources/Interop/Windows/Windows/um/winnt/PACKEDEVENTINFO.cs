@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PACKEDEVENTINFO.xml' path='doc/member[@name="PACKEDEVENTINFO"]/*' />
+[Obsolete("struct PACKEDEVENTINFO is deprecated and might not work on all platforms. For more info, see MSDN.")]
 public partial struct PACKEDEVENTINFO
 {
     /// <include file='PACKEDEVENTINFO.xml' path='doc/member[@name="PACKEDEVENTINFO.ulSize"]/*' />

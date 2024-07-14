@@ -10,17 +10,17 @@ public static unsafe partial class OCSP
     [NativeTypeName("#define OCSP_SIGNED_REQUEST ((LPCSTR) 65)")]
     public static sbyte* OCSP_SIGNED_REQUEST => ((sbyte*)(65));
 
-    [NativeTypeName("#define OCSP_REQUEST ((LPCSTR) 66)")]
-    public static sbyte* OCSP_REQUEST => ((sbyte*)(66));
-
-    [NativeTypeName("#define OCSP_RESPONSE ((LPCSTR) 67)")]
-    public static sbyte* OCSP_RESPONSE => ((sbyte*)(67));
-
     [NativeTypeName("#define OCSP_BASIC_SIGNED_RESPONSE ((LPCSTR) 68)")]
     public static sbyte* OCSP_BASIC_SIGNED_RESPONSE => ((sbyte*)(68));
 
     [NativeTypeName("#define OCSP_BASIC_RESPONSE ((LPCSTR) 69)")]
     public static sbyte* OCSP_BASIC_RESPONSE => ((sbyte*)(69));
+
+    [NativeTypeName("#define OCSP_REQUEST ((LPCSTR) 66)")]
+    public static sbyte* OCSP_REQUEST => ((sbyte*)(66));
+
+    [NativeTypeName("#define OCSP_RESPONSE ((LPCSTR) 67)")]
+    public static sbyte* OCSP_RESPONSE => ((sbyte*)(67));
 
     [NativeTypeName("#define OCSP_REQUEST_V1 0")]
     public const int OCSP_REQUEST_V1 = 0;

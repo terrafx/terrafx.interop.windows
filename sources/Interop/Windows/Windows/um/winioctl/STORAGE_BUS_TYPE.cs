@@ -68,6 +68,9 @@ public enum STORAGE_BUS_TYPE
     /// <include file='STORAGE_BUS_TYPE.xml' path='doc/member[@name="STORAGE_BUS_TYPE.BusTypeUfs"]/*' />
     BusTypeUfs,
 
+    /// <include file='STORAGE_BUS_TYPE.xml' path='doc/member[@name="STORAGE_BUS_TYPE.BusTypeNvmeof"]/*' />
+    BusTypeNvmeof,
+
     /// <include file='STORAGE_BUS_TYPE.xml' path='doc/member[@name="STORAGE_BUS_TYPE.BusTypeMax"]/*' />
     BusTypeMax,
 

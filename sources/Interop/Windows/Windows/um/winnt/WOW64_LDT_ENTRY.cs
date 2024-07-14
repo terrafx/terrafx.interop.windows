@@ -20,7 +20,7 @@ public partial struct WOW64_LDT_ENTRY
     public ushort BaseLow;
 
     /// <include file='WOW64_LDT_ENTRY.xml' path='doc/member[@name="WOW64_LDT_ENTRY.HighWord"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L9600_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L10036_C5")]
     public _HighWord_e__Union HighWord;
 
     /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union"]/*' />
@@ -29,12 +29,12 @@ public partial struct WOW64_LDT_ENTRY
     {
         /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union.Bytes"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L9601_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L10037_C9")]
         public _Bytes_e__Struct Bytes;
 
         /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union.Bits"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L9607_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L10043_C9")]
         public _Bits_e__Struct Bits;
 
         /// <include file='_Bytes_e__Struct.xml' path='doc/member[@name="_Bytes_e__Struct"]/*' />

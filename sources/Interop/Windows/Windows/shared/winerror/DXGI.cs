@@ -138,6 +138,9 @@ public static partial class DXGI
     [NativeTypeName("#define DXGI_ERROR_MPO_UNPINNED _HRESULT_TYPEDEF_(0x887A0064L)")]
     public const int DXGI_ERROR_MPO_UNPINNED = unchecked((int)(0x887A0064));
 
+    [NativeTypeName("#define DXGI_ERROR_SETDISPLAYMODE_REQUIRED _HRESULT_TYPEDEF_(0x887A0065L)")]
+    public const int DXGI_ERROR_SETDISPLAYMODE_REQUIRED = unchecked((int)(0x887A0065));
+
     [NativeTypeName("#define DXGI_DDI_ERR_WASSTILLDRAWING _HRESULT_TYPEDEF_(0x887B0001L)")]
     public const int DXGI_DDI_ERR_WASSTILLDRAWING = unchecked((int)(0x887B0001));
 

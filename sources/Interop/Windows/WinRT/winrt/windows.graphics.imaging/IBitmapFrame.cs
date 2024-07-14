@@ -74,9 +74,9 @@ public unsafe partial struct IBitmapFrame : IBitmapFrame.Interface, INativeGuid
     /// <include file='IBitmapFrame.xml' path='doc/member[@name="IBitmapFrame.GetThumbnailAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<Pointer<IntPtr>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBitmapFrame*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IBitmapFrame*)Unsafe.AsPointer(ref this), asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IBitmapFrame*, IAsyncOperation<Pointer<IntPtr>>**, int>)(lpVtbl[6]))((IBitmapFrame*)Unsafe.AsPointer(ref this), asyncInfo);
     }
 
     /// <include file='IBitmapFrame.xml' path='doc/member[@name="IBitmapFrame.get_BitmapProperties"]/*' />
@@ -170,7 +170,7 @@ public unsafe partial struct IBitmapFrame : IBitmapFrame.Interface, INativeGuid
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<Pointer<IntPtr>>** asyncInfo);
 
         [VtblIndex(7)]
         HRESULT get_BitmapProperties([NativeTypeName("ABI::Windows::Graphics::Imaging::IBitmapPropertiesView **")] IBitmapPropertiesView** value);
@@ -228,7 +228,7 @@ public unsafe partial struct IBitmapFrame : IBitmapFrame.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetThumbnailAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IntPtr>>**, int> GetThumbnailAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Graphics::Imaging::IBitmapPropertiesView **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IBitmapPropertiesView**, int> get_BitmapProperties;

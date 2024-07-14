@@ -23,7 +23,7 @@ public partial struct DEBUG_EVENT
     public uint dwThreadId;
 
     /// <include file='DEBUG_EVENT.xml' path='doc/member[@name="DEBUG_EVENT.u"]/*' />
-    [NativeTypeName("__AnonymousRecord_minwinbase_L370_C5")]
+    [NativeTypeName("__AnonymousRecord_minwinbase_L373_C5")]
     public _u_e__Union u;
 
     /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union"]/*' />

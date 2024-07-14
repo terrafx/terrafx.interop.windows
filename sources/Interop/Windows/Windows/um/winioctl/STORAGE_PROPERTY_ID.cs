@@ -115,4 +115,13 @@ public enum STORAGE_PROPERTY_ID
 
     /// <include file='STORAGE_PROPERTY_ID.xml' path='doc/member[@name="STORAGE_PROPERTY_ID.StorageFruIdProperty"]/*' />
     StorageFruIdProperty,
+
+    /// <include file='STORAGE_PROPERTY_ID.xml' path='doc/member[@name="STORAGE_PROPERTY_ID.StorageStackProperty"]/*' />
+    StorageStackProperty,
+
+    /// <include file='STORAGE_PROPERTY_ID.xml' path='doc/member[@name="STORAGE_PROPERTY_ID.StorageAdapterProtocolSpecificPropertyEx"]/*' />
+    StorageAdapterProtocolSpecificPropertyEx,
+
+    /// <include file='STORAGE_PROPERTY_ID.xml' path='doc/member[@name="STORAGE_PROPERTY_ID.StorageDeviceProtocolSpecificPropertyEx"]/*' />
+    StorageDeviceProtocolSpecificPropertyEx,
 }

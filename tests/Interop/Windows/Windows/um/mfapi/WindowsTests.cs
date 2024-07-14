@@ -376,6 +376,20 @@ public static unsafe partial class WindowsTests
         Assert.That(MFSampleExtension_ChromaOnly, Is.EqualTo(new Guid(0x1eb9179c, 0xa01f, 0x4845, 0x8c, 0x04, 0x0e, 0x65, 0xa2, 0x6e, 0xb0, 0x4f)));
     }
 
+    /// <summary>Validates that the value of the <see cref="MFSampleExtension_SpatialLayerId" /> property is correct.</summary>
+    [Test]
+    public static void MFSampleExtension_SpatialLayerIdTest()
+    {
+        Assert.That(MFSampleExtension_SpatialLayerId, Is.EqualTo(new Guid(0xb7aabc7b, 0x2396, 0x457a, 0x87, 0x9e, 0x62, 0x3b, 0xfa, 0xb6, 0xe0, 0xac)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MFSampleExtension_TemporalLayerId" /> property is correct.</summary>
+    [Test]
+    public static void MFSampleExtension_TemporalLayerIdTest()
+    {
+        Assert.That(MFSampleExtension_TemporalLayerId, Is.EqualTo(new Guid(0xb3c1fcd2, 0xb331, 0x4376, 0xb9, 0x74, 0xad, 0x64, 0x77, 0x69, 0xb2, 0xb0)));
+    }
+
     /// <summary>Validates that the value of the <see cref="MFSampleExtension_PhotoThumbnail" /> property is correct.</summary>
     [Test]
     public static void MFSampleExtension_PhotoThumbnailTest()

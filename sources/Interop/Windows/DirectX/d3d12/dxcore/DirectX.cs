@@ -3,6 +3,7 @@
 // Ported from dxcore.h in microsoft/DirectX-Headers tag v1.614.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
+
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;

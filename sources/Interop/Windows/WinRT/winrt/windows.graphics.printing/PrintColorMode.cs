@@ -25,4 +25,7 @@ public enum PrintColorMode
 
     /// <include file='PrintColorMode.xml' path='doc/member[@name="PrintColorMode.PrintColorMode_Monochrome"]/*' />
     PrintColorMode_Monochrome = 5,
+
+    /// <include file='PrintColorMode.xml' path='doc/member[@name="PrintColorMode.PrintColorMode_AutoSelect"]/*' />
+    PrintColorMode_AutoSelect = 6,
 }

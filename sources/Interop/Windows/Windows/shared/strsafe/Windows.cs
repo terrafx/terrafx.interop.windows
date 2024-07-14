@@ -1872,6 +1872,9 @@ public static unsafe partial class Windows
     [NativeTypeName("#define __WARNING_INVALID_PARAM_VALUE_1 6387")]
     public const int __WARNING_INVALID_PARAM_VALUE_1 = 6387;
 
+    [NativeTypeName("#define __WARNING_UNSAFE_STRING_FUNCTION 25025")]
+    public const int __WARNING_UNSAFE_STRING_FUNCTION = 25025;
+
     [NativeTypeName("#define __WARNING_INCORRECT_ANNOTATION 26007")]
     public const int __WARNING_INCORRECT_ANNOTATION = 26007;
 

@@ -448,6 +448,12 @@ public static partial class SPI
     [NativeTypeName("#define SPI_SETMENURECT 0x00A3")]
     public const int SPI_SETMENURECT = 0x00A3;
 
+    [NativeTypeName("#define SPI_GETTOUCHPADPARAMETERS 0x00AE")]
+    public const int SPI_GETTOUCHPADPARAMETERS = 0x00AE;
+
+    [NativeTypeName("#define SPI_SETTOUCHPADPARAMETERS 0x00AF")]
+    public const int SPI_SETTOUCHPADPARAMETERS = 0x00AF;
+
     [NativeTypeName("#define SPI_GETACTIVEWINDOWTRACKING 0x1000")]
     public const int SPI_GETACTIVEWINDOWTRACKING = 0x1000;
 

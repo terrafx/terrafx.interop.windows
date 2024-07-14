@@ -37,7 +37,7 @@ public unsafe partial struct WINTRUST_DATA
     public uint dwUnionChoice;
 
     /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_WinTrust_L116_C5")]
+    [NativeTypeName("__AnonymousRecord_WinTrust_L117_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.dwStateAction"]/*' />
@@ -118,6 +118,17 @@ public unsafe partial struct WINTRUST_DATA
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pDetachedSig"]/*' />
+    [UnscopedRef]
+    public ref WINTRUST_DETACHED_SIG_INFO* pDetachedSig
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.pDetachedSig;
+        }
+    }
+
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
@@ -146,5 +157,10 @@ public unsafe partial struct WINTRUST_DATA
         [FieldOffset(0)]
         [NativeTypeName("struct WINTRUST_CERT_INFO_ *")]
         public WINTRUST_CERT_INFO* pCert;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pDetachedSig"]/*' />
+        [FieldOffset(0)]
+        [NativeTypeName("struct WINTRUST_DETACHED_SIG_INFO_ *")]
+        public WINTRUST_DETACHED_SIG_INFO* pDetachedSig;
     }
 }

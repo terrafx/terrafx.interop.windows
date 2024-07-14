@@ -229,6 +229,9 @@ public static partial class JOB
     [NativeTypeName("#define JOB_OBJECT_CPU_RATE_CONTROL_MIN_MAX_RATE 0x10")]
     public const int JOB_OBJECT_CPU_RATE_CONTROL_MIN_MAX_RATE = 0x10;
 
-    [NativeTypeName("#define JOB_OBJECT_CPU_RATE_CONTROL_VALID_FLAGS 0x1f")]
-    public const int JOB_OBJECT_CPU_RATE_CONTROL_VALID_FLAGS = 0x1f;
+    [NativeTypeName("#define JOB_OBJECT_CPU_RATE_CONTROL_PER_PROCESSOR_CAPS 0x20")]
+    public const int JOB_OBJECT_CPU_RATE_CONTROL_PER_PROCESSOR_CAPS = 0x20;
+
+    [NativeTypeName("#define JOB_OBJECT_CPU_RATE_CONTROL_VALID_FLAGS 0x3f")]
+    public const int JOB_OBJECT_CPU_RATE_CONTROL_VALID_FLAGS = 0x3f;
 }

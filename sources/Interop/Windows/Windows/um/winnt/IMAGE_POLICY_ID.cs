@@ -44,6 +44,12 @@ public enum IMAGE_POLICY_ID
     /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdScenarioId"]/*' />
     ImagePolicyIdScenarioId,
 
+    /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdCapabilityOverridable"]/*' />
+    ImagePolicyIdCapabilityOverridable,
+
+    /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdTrustletIdOverridable"]/*' />
+    ImagePolicyIdTrustletIdOverridable,
+
     /// <include file='IMAGE_POLICY_ID.xml' path='doc/member[@name="IMAGE_POLICY_ID.ImagePolicyIdMaximum"]/*' />
     ImagePolicyIdMaximum,
 }

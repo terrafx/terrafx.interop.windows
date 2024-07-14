@@ -151,6 +151,9 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[41]")]
     public const string InterfaceName_Windows_Devices_Sensors_ICompassStatics2 = "Windows.Devices.Sensors.ICompassStatics2";
 
+    [NativeTypeName("const WCHAR[40]")]
+    public const string InterfaceName_Windows_Devices_Sensors_IDetectedPerson = "Windows.Devices.Sensors.IDetectedPerson";
+
     [NativeTypeName("const WCHAR[35]")]
     public const string InterfaceName_Windows_Devices_Sensors_IGyrometer = "Windows.Devices.Sensors.IGyrometer";
 
@@ -184,6 +187,12 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[43]")]
     public const string InterfaceName_Windows_Devices_Sensors_IGyrometerStatics2 = "Windows.Devices.Sensors.IGyrometerStatics2";
 
+    [NativeTypeName("const WCHAR[41]")]
+    public const string InterfaceName_Windows_Devices_Sensors_IHeadOrientation = "Windows.Devices.Sensors.IHeadOrientation";
+
+    [NativeTypeName("const WCHAR[38]")]
+    public const string InterfaceName_Windows_Devices_Sensors_IHeadPosition = "Windows.Devices.Sensors.IHeadPosition";
+
     [NativeTypeName("const WCHAR[43]")]
     public const string InterfaceName_Windows_Devices_Sensors_IHingeAngleReading = "Windows.Devices.Sensors.IHingeAngleReading";
 
@@ -208,6 +217,9 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[46]")]
     public const string InterfaceName_Windows_Devices_Sensors_IHumanPresenceSensor2 = "Windows.Devices.Sensors.IHumanPresenceSensor2";
 
+    [NativeTypeName("const WCHAR[46]")]
+    public const string InterfaceName_Windows_Devices_Sensors_IHumanPresenceSensor3 = "Windows.Devices.Sensors.IHumanPresenceSensor3";
+
     [NativeTypeName("const WCHAR[54]")]
     public const string InterfaceName_Windows_Devices_Sensors_IHumanPresenceSensorExtension = "Windows.Devices.Sensors.IHumanPresenceSensorExtension";
 
@@ -216,6 +228,9 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[53]")]
     public const string InterfaceName_Windows_Devices_Sensors_IHumanPresenceSensorReading2 = "Windows.Devices.Sensors.IHumanPresenceSensorReading2";
+
+    [NativeTypeName("const WCHAR[53]")]
+    public const string InterfaceName_Windows_Devices_Sensors_IHumanPresenceSensorReading3 = "Windows.Devices.Sensors.IHumanPresenceSensorReading3";
 
     [NativeTypeName("const WCHAR[68]")]
     public const string InterfaceName_Windows_Devices_Sensors_IHumanPresenceSensorReadingChangedEventArgs = "Windows.Devices.Sensors.IHumanPresenceSensorReadingChangedEventArgs";
@@ -520,6 +535,9 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[55]")]
     public const string RuntimeClass_Windows_Devices_Sensors_CompassReadingChangedEventArgs = "Windows.Devices.Sensors.CompassReadingChangedEventArgs";
 
+    [NativeTypeName("const WCHAR[39]")]
+    public const string RuntimeClass_Windows_Devices_Sensors_DetectedPerson = "Windows.Devices.Sensors.DetectedPerson";
+
     [NativeTypeName("const WCHAR[34]")]
     public const string RuntimeClass_Windows_Devices_Sensors_Gyrometer = "Windows.Devices.Sensors.Gyrometer";
 
@@ -531,6 +549,12 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[57]")]
     public const string RuntimeClass_Windows_Devices_Sensors_GyrometerReadingChangedEventArgs = "Windows.Devices.Sensors.GyrometerReadingChangedEventArgs";
+
+    [NativeTypeName("const WCHAR[40]")]
+    public const string RuntimeClass_Windows_Devices_Sensors_HeadOrientation = "Windows.Devices.Sensors.HeadOrientation";
+
+    [NativeTypeName("const WCHAR[37]")]
+    public const string RuntimeClass_Windows_Devices_Sensors_HeadPosition = "Windows.Devices.Sensors.HeadPosition";
 
     [NativeTypeName("const WCHAR[42]")]
     public const string RuntimeClass_Windows_Devices_Sensors_HingeAngleReading = "Windows.Devices.Sensors.HingeAngleReading";

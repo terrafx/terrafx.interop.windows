@@ -222,6 +222,76 @@ public static partial class D3D11Tests
         Assert.That(D3D11_DECODER_PROFILE_HEVC_VLD_MAIN10, Is.EqualTo(new Guid(0x107af0e0, 0xef1a, 0x4d19, 0xab, 0xa8, 0x67, 0xa1, 0x63, 0x07, 0x3d, 0x13)));
     }
 
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_HEVC_VLD_MONOCHROME" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_HEVC_VLD_MONOCHROMETest()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_HEVC_VLD_MONOCHROME, Is.EqualTo(new Guid(0x0685b993, 0x3d8c, 0x43a0, 0x8b, 0x28, 0xd7, 0x4c, 0x2d, 0x68, 0x99, 0xa4)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_HEVC_VLD_MONOCHROME10" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_HEVC_VLD_MONOCHROME10Test()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_HEVC_VLD_MONOCHROME10, Is.EqualTo(new Guid(0x142a1d0f, 0x69dd, 0x4ec9, 0x85, 0x91, 0xb1, 0x2f, 0xfc, 0xb9, 0x1a, 0x29)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_HEVC_VLD_MAIN12" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_HEVC_VLD_MAIN12Test()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_HEVC_VLD_MAIN12, Is.EqualTo(new Guid(0x1a72925f, 0x0c2c, 0x4f15, 0x96, 0xfb, 0xb1, 0x7d, 0x14, 0x73, 0x60, 0x3f)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_HEVC_VLD_MAIN10_422" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_HEVC_VLD_MAIN10_422Test()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_HEVC_VLD_MAIN10_422, Is.EqualTo(new Guid(0x0bac4fe5, 0x1532, 0x4429, 0xa8, 0x54, 0xf8, 0x4d, 0xe0, 0x49, 0x53, 0xdb)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_HEVC_VLD_MAIN12_422" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_HEVC_VLD_MAIN12_422Test()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_HEVC_VLD_MAIN12_422, Is.EqualTo(new Guid(0x55bcac81, 0xf311, 0x4093, 0xa7, 0xd0, 0x1c, 0xbc, 0x0b, 0x84, 0x9b, 0xee)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_HEVC_VLD_MAIN_444" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_HEVC_VLD_MAIN_444Test()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_HEVC_VLD_MAIN_444, Is.EqualTo(new Guid(0x4008018f, 0xf537, 0x4b36, 0x98, 0xcf, 0x61, 0xaf, 0x8a, 0x2c, 0x1a, 0x33)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_HEVC_VLD_MAIN10_EXT" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_HEVC_VLD_MAIN10_EXTTest()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_HEVC_VLD_MAIN10_EXT, Is.EqualTo(new Guid(0x9cc55490, 0xe37c, 0x4932, 0x86, 0x84, 0x49, 0x20, 0xf9, 0xf6, 0x40, 0x9c)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_HEVC_VLD_MAIN10_444" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_HEVC_VLD_MAIN10_444Test()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_HEVC_VLD_MAIN10_444, Is.EqualTo(new Guid(0x0dabeffa, 0x4458, 0x4602, 0xbc, 0x03, 0x07, 0x95, 0x65, 0x9d, 0x61, 0x7c)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_HEVC_VLD_MAIN12_444" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_HEVC_VLD_MAIN12_444Test()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_HEVC_VLD_MAIN12_444, Is.EqualTo(new Guid(0x9798634d, 0xfe9d, 0x48e5, 0xb4, 0xda, 0xdb, 0xec, 0x45, 0xb3, 0xdf, 0x01)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_HEVC_VLD_MAIN16" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_HEVC_VLD_MAIN16Test()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_HEVC_VLD_MAIN16, Is.EqualTo(new Guid(0xa4fbdbb0, 0xa113, 0x482b, 0xa2, 0x32, 0x63, 0x5c, 0xc0, 0x69, 0x7f, 0x6d)));
+    }
+
     /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_VP9_VLD_PROFILE0" /> property is correct.</summary>
     [Test]
     public static void D3D11_DECODER_PROFILE_VP9_VLD_PROFILE0Test()
@@ -276,6 +346,55 @@ public static partial class D3D11Tests
     public static void D3D11_DECODER_PROFILE_AV1_VLD_12BIT_PROFILE2_420Test()
     {
         Assert.That(D3D11_DECODER_PROFILE_AV1_VLD_12BIT_PROFILE2_420, Is.EqualTo(new Guid(0x2d80bed6, 0x9cac, 0x4835, 0x9e, 0x91, 0x32, 0x7b, 0xbc, 0x4f, 0x9e, 0xe8)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_MJPEG_VLD_420" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_MJPEG_VLD_420Test()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_MJPEG_VLD_420, Is.EqualTo(new Guid(0x725cb506, 0x0c29, 0x43c4, 0x94, 0x40, 0x8e, 0x93, 0x97, 0x90, 0x3a, 0x04)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_MJPEG_VLD_422" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_MJPEG_VLD_422Test()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_MJPEG_VLD_422, Is.EqualTo(new Guid(0x5b77b9cd, 0x1a35, 0x4c30, 0x9f, 0xd8, 0xef, 0x4b, 0x60, 0xc0, 0x35, 0xdd)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_MJPEG_VLD_444" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_MJPEG_VLD_444Test()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_MJPEG_VLD_444, Is.EqualTo(new Guid(0xd95161f9, 0x0d44, 0x47e6, 0xbc, 0xf5, 0x1b, 0xfb, 0xfb, 0x26, 0x8f, 0x97)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_MJPEG_VLD_4444" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_MJPEG_VLD_4444Test()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_MJPEG_VLD_4444, Is.EqualTo(new Guid(0xc91748d5, 0xfd18, 0x4aca, 0x9d, 0xb3, 0x3a, 0x66, 0x34, 0xab, 0x54, 0x7d)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_JPEG_VLD_420" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_JPEG_VLD_420Test()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_JPEG_VLD_420, Is.EqualTo(new Guid(0xcf782c83, 0xbef5, 0x4a2c, 0x87, 0xcb, 0x60, 0x19, 0xe7, 0xb1, 0x75, 0xac)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_JPEG_VLD_422" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_JPEG_VLD_422Test()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_JPEG_VLD_422, Is.EqualTo(new Guid(0xf04df417, 0xeee2, 0x4067, 0xa7, 0x78, 0xf3, 0x5c, 0x15, 0xab, 0x97, 0x21)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D11_DECODER_PROFILE_JPEG_VLD_444" /> property is correct.</summary>
+    [Test]
+    public static void D3D11_DECODER_PROFILE_JPEG_VLD_444Test()
+    {
+        Assert.That(D3D11_DECODER_PROFILE_JPEG_VLD_444, Is.EqualTo(new Guid(0x4cd00e17, 0x89ba, 0x48ef, 0xb9, 0xf9, 0xed, 0xcb, 0x82, 0x71, 0x3f, 0x65)));
     }
 
     /// <summary>Validates that the value of the <see cref="D3D11_CRYPTO_TYPE_AES128_CTR" /> property is correct.</summary>

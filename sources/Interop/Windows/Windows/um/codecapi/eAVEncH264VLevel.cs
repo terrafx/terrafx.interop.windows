@@ -58,4 +58,13 @@ public enum eAVEncH264VLevel
 
     /// <include file='eAVEncH264VLevel.xml' path='doc/member[@name="eAVEncH264VLevel.eAVEncH264VLevel5_2"]/*' />
     eAVEncH264VLevel5_2 = 52,
+
+    /// <include file='eAVEncH264VLevel.xml' path='doc/member[@name="eAVEncH264VLevel.eAVEncH264VLevel6"]/*' />
+    eAVEncH264VLevel6 = 60,
+
+    /// <include file='eAVEncH264VLevel.xml' path='doc/member[@name="eAVEncH264VLevel.eAVEncH264VLevel6_1"]/*' />
+    eAVEncH264VLevel6_1 = 61,
+
+    /// <include file='eAVEncH264VLevel.xml' path='doc/member[@name="eAVEncH264VLevel.eAVEncH264VLevel6_2"]/*' />
+    eAVEncH264VLevel6_2 = 62,
 }

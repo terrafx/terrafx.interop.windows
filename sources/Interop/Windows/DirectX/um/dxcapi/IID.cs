@@ -58,7 +58,7 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_IDxcBlobUtf16
+    public static ref readonly Guid IID_IDxcBlobWide
     {
         get
         {
@@ -603,6 +603,29 @@ public static partial class IID
                 0x6C,
                 0x34,
                 0x3D
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IDxcPdbUtils2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x38, 0xD9, 0x15, 0x43,
+                0x69, 0xF3,
+                0x93, 0x4F,
+                0x95,
+                0xA2,
+                0x25,
+                0x20,
+                0x17,
+                0xCC,
+                0x38,
+                0x07
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

@@ -139,6 +139,31 @@ public static partial class IID
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_VulkanOn12CreatorID
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x01, 0x6E, 0x80, 0xBC,
+                0x52, 0x30,
+                0x6C, 0x40,
+                0xA3,
+                0xE8,
+                0x9F,
+                0xC0,
+                0x7F,
+                0x04,
+                0x8F,
+                0x98
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_DirectMLTensorFlowCreatorID
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

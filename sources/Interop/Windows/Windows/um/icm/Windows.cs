@@ -3,6 +3,7 @@
 // Ported from um/icm.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -192,11 +193,13 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetColorDirectoryA"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
+    [Obsolete("GetColorDirectoryW is deprecated and might not work on all platforms. For more info, see MSDN.")]
     public static extern BOOL GetColorDirectoryA([NativeTypeName("PCSTR")] sbyte* pMachineName, [NativeTypeName("PSTR")] sbyte* pBuffer, [NativeTypeName("PDWORD")] uint* pdwSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetColorDirectoryW"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
+    [Obsolete("GetColorDirectoryA is deprecated and might not work on all platforms. For more info, see MSDN.")]
     public static extern BOOL GetColorDirectoryW([NativeTypeName("PCWSTR")] char* pMachineName, [NativeTypeName("PWSTR")] char* pBuffer, [NativeTypeName("PDWORD")] uint* pdwSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InstallColorProfileA"]/*' />

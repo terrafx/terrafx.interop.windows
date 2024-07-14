@@ -41,6 +41,21 @@ public enum DXC_OUT_KIND
     /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_EXTRA_OUTPUTS"]/*' />
     DXC_OUT_EXTRA_OUTPUTS = 10,
 
+    /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_REMARKS"]/*' />
+    DXC_OUT_REMARKS = 11,
+
+    /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_TIME_REPORT"]/*' />
+    DXC_OUT_TIME_REPORT = 12,
+
+    /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_TIME_TRACE"]/*' />
+    DXC_OUT_TIME_TRACE = 13,
+
+    /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_LAST"]/*' />
+    DXC_OUT_LAST = DXC_OUT_TIME_TRACE,
+
+    /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_NUM_ENUMS"]/*' />
+    DXC_OUT_NUM_ENUMS,
+
     /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_FORCE_DWORD"]/*' />
     DXC_OUT_FORCE_DWORD = unchecked((int)(0xFFFFFFFF)),
 }

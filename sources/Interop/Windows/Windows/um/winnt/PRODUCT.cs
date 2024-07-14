@@ -502,6 +502,27 @@ public static partial class PRODUCT
     [NativeTypeName("#define PRODUCT_CLOUDEDITION 0x000000CB")]
     public const int PRODUCT_CLOUDEDITION = 0x000000CB;
 
+    [NativeTypeName("#define PRODUCT_VALIDATION 0x000000CC")]
+    public const int PRODUCT_VALIDATION = 0x000000CC;
+
+    [NativeTypeName("#define PRODUCT_IOTENTERPRISESK 0x000000CD")]
+    public const int PRODUCT_IOTENTERPRISESK = 0x000000CD;
+
+    [NativeTypeName("#define PRODUCT_IOTENTERPRISEK 0x000000CE")]
+    public const int PRODUCT_IOTENTERPRISEK = 0x000000CE;
+
+    [NativeTypeName("#define PRODUCT_IOTENTERPRISESEVAL 0x000000CF")]
+    public const int PRODUCT_IOTENTERPRISESEVAL = 0x000000CF;
+
+    [NativeTypeName("#define PRODUCT_AZURE_SERVER_AGENTBRIDGE 0x000000D0")]
+    public const int PRODUCT_AZURE_SERVER_AGENTBRIDGE = 0x000000D0;
+
+    [NativeTypeName("#define PRODUCT_AZURE_SERVER_NANOHOST 0x000000D1")]
+    public const int PRODUCT_AZURE_SERVER_NANOHOST = 0x000000D1;
+
+    [NativeTypeName("#define PRODUCT_WNC 0x000000D2")]
+    public const int PRODUCT_WNC = 0x000000D2;
+
     [NativeTypeName("#define PRODUCT_AZURESTACKHCI_SERVER_CORE 0x00000196")]
     public const int PRODUCT_AZURESTACKHCI_SERVER_CORE = 0x00000196;
 

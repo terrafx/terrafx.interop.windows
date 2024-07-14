@@ -19,7 +19,7 @@ public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
     public uint DeviceNumber;
 
     /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.Flags"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L7273_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L7547_C5")]
     public _Flags_e__Struct Flags;
 
     /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.DeviceSize"]/*' />

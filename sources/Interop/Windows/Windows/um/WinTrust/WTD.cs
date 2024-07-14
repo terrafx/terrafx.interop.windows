@@ -40,6 +40,9 @@ public static partial class WTD
     [NativeTypeName("#define WTD_CHOICE_CERT 5")]
     public const int WTD_CHOICE_CERT = 5;
 
+    [NativeTypeName("#define WTD_CHOICE_DETACHED_SIG 6")]
+    public const int WTD_CHOICE_DETACHED_SIG = 6;
+
     [NativeTypeName("#define WTD_STATEACTION_IGNORE 0x00000000")]
     public const int WTD_STATEACTION_IGNORE = 0x00000000;
 
@@ -66,6 +69,9 @@ public static partial class WTD
 
     [NativeTypeName("#define WTD_NO_POLICY_USAGE_FLAG 0x00000004")]
     public const int WTD_NO_POLICY_USAGE_FLAG = 0x00000004;
+
+    [NativeTypeName("#define WTD_USE_LOCAL_MACHINE_CERTS 0x00000008")]
+    public const int WTD_USE_LOCAL_MACHINE_CERTS = 0x00000008;
 
     [NativeTypeName("#define WTD_REVOCATION_CHECK_NONE 0x00000010")]
     public const int WTD_REVOCATION_CHECK_NONE = 0x00000010;

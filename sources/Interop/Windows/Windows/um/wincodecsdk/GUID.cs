@@ -1061,4 +1061,54 @@ public static partial class GUID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_MetadataFormatJpegXLAnim
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x24, 0x2E, 0x1C, 0x50,
+                0x7D, 0x7A,
+                0xB2, 0x42,
+                0x93,
+                0xC7,
+                0xB4,
+                0xF4,
+                0x5B,
+                0xCC,
+                0x92,
+                0xF7
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_MetadataFormatJpegXLAnimFrame
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x2C, 0xCC, 0x8E, 0x95,
+                0xCB, 0x36,
+                0xF9, 0x4A,
+                0x9E,
+                0xA8,
+                0x0B,
+                0x74,
+                0xBA,
+                0xCC,
+                0xFD,
+                0x3E
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

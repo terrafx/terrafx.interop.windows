@@ -370,4 +370,7 @@ public enum DirectXPixelFormat
 
     /// <include file='DirectXPixelFormat.xml' path='doc/member[@name="DirectXPixelFormat.DirectXPixelFormat_SamplerFeedbackMipRegionUsedOpaque"]/*' />
     DirectXPixelFormat_SamplerFeedbackMipRegionUsedOpaque = 190,
+
+    /// <include file='DirectXPixelFormat.xml' path='doc/member[@name="DirectXPixelFormat.DirectXPixelFormat_A4B4G4R4"]/*' />
+    DirectXPixelFormat_A4B4G4R4 = 191,
 }

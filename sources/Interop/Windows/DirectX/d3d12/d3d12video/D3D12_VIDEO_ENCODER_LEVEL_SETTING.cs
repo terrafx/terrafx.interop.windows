@@ -16,7 +16,7 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_LEVEL_SETTING
     public uint DataSize;
 
     /// <include file='D3D12_VIDEO_ENCODER_LEVEL_SETTING.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_LEVEL_SETTING.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12video_L7034_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12video_L7048_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pH264LevelSetting"]/*' />

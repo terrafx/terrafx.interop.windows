@@ -88,9 +88,6 @@ public static partial class MEM
     [NativeTypeName("#define MEM_EXTENDED_PARAMETER_EC_CODE 0x00000040")]
     public const int MEM_EXTENDED_PARAMETER_EC_CODE = 0x00000040;
 
-    [NativeTypeName("#define MEM_EXTENDED_PARAMETER_IMAGE_NO_HPAT 0x00000080")]
-    public const int MEM_EXTENDED_PARAMETER_IMAGE_NO_HPAT = 0x00000080;
-
     [NativeTypeName("#define MEM_EXTENDED_PARAMETER_NUMA_NODE_MANDATORY MINLONG64")]
     public const long MEM_EXTENDED_PARAMETER_NUMA_NODE_MANDATORY = unchecked((long)(~((long)(((ulong)(~((ulong)(0)))) >> 1))));
 

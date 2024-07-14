@@ -14,7 +14,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
 {
     /// <include file='STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.xml' path='doc/member[@name="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winioctl_L2183_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L2359_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.xml' path='doc/member[@name="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.AsUlong"]/*' />
@@ -51,6 +51,38 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
         set
         {
             Anonymous.LogSpecificField = value;
+        }
+    }
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved0"]/*' />
+    public uint Reserved0
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        readonly get
+        {
+            return Anonymous.Reserved0;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Reserved0 = value;
+        }
+    }
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.UUIDIndex"]/*' />
+    public uint UUIDIndex
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        readonly get
+        {
+            return Anonymous.UUIDIndex;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.UUIDIndex = value;
         }
     }
 
@@ -109,20 +141,54 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
             }
         }
 
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
-        [NativeTypeName("DWORD : 27")]
-        public uint Reserved
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved0"]/*' />
+        [NativeTypeName("DWORD : 3")]
+        public uint Reserved0
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             readonly get
             {
-                return (_bitfield >> 5) & 0x7FFFFFFu;
+                return (_bitfield >> 5) & 0x7u;
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                _bitfield = (_bitfield & ~(0x7FFFFFFu << 5)) | ((value & 0x7FFFFFFu) << 5);
+                _bitfield = (_bitfield & ~(0x7u << 5)) | ((value & 0x7u) << 5);
+            }
+        }
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.UUIDIndex"]/*' />
+        [NativeTypeName("DWORD : 7")]
+        public uint UUIDIndex
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            readonly get
+            {
+                return (_bitfield >> 8) & 0x7Fu;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _bitfield = (_bitfield & ~(0x7Fu << 8)) | ((value & 0x7Fu) << 8);
+            }
+        }
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
+        [NativeTypeName("DWORD : 17")]
+        public uint Reserved
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            readonly get
+            {
+                return (_bitfield >> 15) & 0x1FFFFu;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                _bitfield = (_bitfield & ~(0x1FFFFu << 15)) | ((value & 0x1FFFFu) << 15);
             }
         }
     }

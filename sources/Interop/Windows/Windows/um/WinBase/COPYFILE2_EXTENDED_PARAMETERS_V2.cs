@@ -41,8 +41,16 @@ public unsafe partial struct COPYFILE2_EXTENDED_PARAMETERS_V2
     [NativeTypeName("ULONG")]
     public uint ioDesiredRate;
 
+    /// <include file='COPYFILE2_EXTENDED_PARAMETERS_V2.xml' path='doc/member[@name="COPYFILE2_EXTENDED_PARAMETERS_V2.pProgressRoutineOld"]/*' />
+    [NativeTypeName("LPPROGRESS_ROUTINE")]
+    public delegate* unmanaged<LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, LARGE_INTEGER, uint, uint, HANDLE, HANDLE, void*, uint> pProgressRoutineOld;
+
+    /// <include file='COPYFILE2_EXTENDED_PARAMETERS_V2.xml' path='doc/member[@name="COPYFILE2_EXTENDED_PARAMETERS_V2.SourceOplockKeys"]/*' />
+    [NativeTypeName("PCOPYFILE2_CREATE_OPLOCK_KEYS")]
+    public COPYFILE2_CREATE_OPLOCK_KEYS* SourceOplockKeys;
+
     /// <include file='COPYFILE2_EXTENDED_PARAMETERS_V2.xml' path='doc/member[@name="COPYFILE2_EXTENDED_PARAMETERS_V2.reserved"]/*' />
-    [NativeTypeName("PVOID[8]")]
+    [NativeTypeName("PVOID[6]")]
     public _reserved_e__FixedBuffer reserved;
 
     /// <include file='_reserved_e__FixedBuffer.xml' path='doc/member[@name="_reserved_e__FixedBuffer"]/*' />
@@ -54,8 +62,6 @@ public unsafe partial struct COPYFILE2_EXTENDED_PARAMETERS_V2
         public void* e3;
         public void* e4;
         public void* e5;
-        public void* e6;
-        public void* e7;
 
         public ref void* this[int index]
         {

@@ -30,6 +30,9 @@ public static partial class Windows
     [NativeTypeName("#define STATIC_CODECAPI_AVEncTileColumns 0xB4B31205")]
     public const uint STATIC_CODECAPI_AVEncTileColumns = 0xB4B31205;
 
+    [NativeTypeName("#define STATIC_CODECAPI_FeatureMapFlagsUsed 0x8bfda3b8")]
+    public const uint STATIC_CODECAPI_FeatureMapFlagsUsed = 0x8bfda3b8;
+
     [NativeTypeName("#define eAVEncH264VProfile_ConstrainedHigh eAVEncH264VProfile_UCConstrainedHigh")]
     public const eAVEncH264VProfile eAVEncH264VProfile_ConstrainedHigh = eAVEncH264VProfile_UCConstrainedHigh;
 

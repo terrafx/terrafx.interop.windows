@@ -16,7 +16,7 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
     /// <include file='DISPLAYCONFIG_SET_TARGET_PERSISTENCE.xml' path='doc/member[@name="DISPLAYCONFIG_SET_TARGET_PERSISTENCE.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wingdi_L3127_C5")]
+    [NativeTypeName("__AnonymousRecord_wingdi_L3132_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.bootPersistenceOn"]/*' />
@@ -68,7 +68,7 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_wingdi_L3129_C9")]
+        [NativeTypeName("__AnonymousRecord_wingdi_L3134_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*' />

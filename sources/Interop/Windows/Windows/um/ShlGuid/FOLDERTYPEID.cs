@@ -911,4 +911,29 @@ public static partial class FOLDERTYPEID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid FOLDERTYPEID_VersionControl
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x6B, 0xE2, 0xF1, 0x69,
+                0x64, 0xEC,
+                0x80, 0x42,
+                0xBC,
+                0x83,
+                0xF1,
+                0xEB,
+                0x88,
+                0x7E,
+                0xC3,
+                0x5A
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

@@ -37,6 +37,6 @@ public static unsafe partial class DirectX
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern HRESULT DMLCreateDevice1(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, DML_FEATURE_LEVEL minimumFeatureLevel, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
-    [NativeTypeName("#define DML_TARGET_VERSION 0x4000")]
-    public const int DML_TARGET_VERSION = 0x4000;
+    [NativeTypeName("#define DML_TARGET_VERSION 0x5000")]
+    public const int DML_TARGET_VERSION = 0x5000;
 }

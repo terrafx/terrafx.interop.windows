@@ -460,6 +460,15 @@ public static partial class FACILITY
     [NativeTypeName("#define FACILITY_GAME 2340")]
     public const int FACILITY_GAME = 2340;
 
+    [NativeTypeName("#define FACILITY_USERMODE_UNIONFS 2341")]
+    public const int FACILITY_USERMODE_UNIONFS = 2341;
+
+    [NativeTypeName("#define FACILITY_USERMODE_PRM 2342")]
+    public const int FACILITY_USERMODE_PRM = 2342;
+
+    [NativeTypeName("#define FACILITY_USERMODE_WIN_ACCEL 2343")]
+    public const int FACILITY_USERMODE_WIN_ACCEL = 2343;
+
     [NativeTypeName("#define FACILITY_PIX 2748")]
     public const int FACILITY_PIX = 2748;
 

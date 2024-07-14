@@ -288,6 +288,31 @@ public static partial class MF
     }
 
     [NativeTypeName("const IID")]
+    public static ref readonly Guid MF_SOURCE_READER_PASSTHROUGH_MODE
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x26, 0xF1, 0x3F, 0x04,
+                0x2C, 0xFE,
+                0x08, 0x47,
+                0xA0,
+                0x9B,
+                0xDA,
+                0x2A,
+                0xB4,
+                0x35,
+                0xCE,
+                0xD9
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const IID")]
     public static ref readonly Guid MF_SINK_WRITER_ASYNC_CALLBACK
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

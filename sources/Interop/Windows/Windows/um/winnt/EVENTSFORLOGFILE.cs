@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE"]/*' />
+[Obsolete("struct EVENTSFORLOGFILE is deprecated and might not work on all platforms. For more info, see MSDN.")]
 public partial struct EVENTSFORLOGFILE
 {
     /// <include file='EVENTSFORLOGFILE.xml' path='doc/member[@name="EVENTSFORLOGFILE.ulSize"]/*' />

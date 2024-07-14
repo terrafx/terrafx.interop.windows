@@ -16,9 +16,27 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[38]")]
     public const string InterfaceName_Windows_Devices_Power_IBatteryStatics = "Windows.Devices.Power.IBatteryStatics";
 
+    [NativeTypeName("const WCHAR[37]")]
+    public const string InterfaceName_Windows_Devices_Power_IPowerGridData = "Windows.Devices.Power.IPowerGridData";
+
+    [NativeTypeName("const WCHAR[41]")]
+    public const string InterfaceName_Windows_Devices_Power_IPowerGridForecast = "Windows.Devices.Power.IPowerGridForecast";
+
+    [NativeTypeName("const WCHAR[48]")]
+    public const string InterfaceName_Windows_Devices_Power_IPowerGridForecastStatics = "Windows.Devices.Power.IPowerGridForecastStatics";
+
     [NativeTypeName("const WCHAR[30]")]
     public const string RuntimeClass_Windows_Devices_Power_Battery = "Windows.Devices.Power.Battery";
 
     [NativeTypeName("const WCHAR[36]")]
     public const string RuntimeClass_Windows_Devices_Power_BatteryReport = "Windows.Devices.Power.BatteryReport";
+
+    [NativeTypeName("const WCHAR[36]")]
+    public const string RuntimeClass_Windows_Devices_Power_PowerGridData = "Windows.Devices.Power.PowerGridData";
+
+    [NativeTypeName("const WCHAR[40]")]
+    public const string RuntimeClass_Windows_Devices_Power_PowerGridForecast = "Windows.Devices.Power.PowerGridForecast";
+
+    [NativeTypeName("#define WINDOWS_DEVICES_POWER_POWERGRIDAPICONTRACT_VERSION 0x10000")]
+    public const int WINDOWS_DEVICES_POWER_POWERGRIDAPICONTRACT_VERSION = 0x10000;
 }

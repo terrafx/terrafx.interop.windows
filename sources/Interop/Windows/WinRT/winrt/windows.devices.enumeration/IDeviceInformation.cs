@@ -130,17 +130,17 @@ public unsafe partial struct IDeviceInformation : IDeviceInformation.Interface, 
     /// <include file='IDeviceInformation.xml' path='doc/member[@name="IDeviceInformation.GetThumbnailAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceThumbnail_t **")] IAsyncOperation<IntPtr>** asyncOp)
+    public HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceThumbnail_t **")] IAsyncOperation<Pointer<IntPtr>>** asyncOp)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceInformation*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[13]))((IDeviceInformation*)Unsafe.AsPointer(ref this), asyncOp);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceInformation*, IAsyncOperation<Pointer<IntPtr>>**, int>)(lpVtbl[13]))((IDeviceInformation*)Unsafe.AsPointer(ref this), asyncOp);
     }
 
     /// <include file='IDeviceInformation.xml' path='doc/member[@name="IDeviceInformation.GetGlyphThumbnailAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetGlyphThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceThumbnail_t **")] IAsyncOperation<IntPtr>** asyncOp)
+    public HRESULT GetGlyphThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceThumbnail_t **")] IAsyncOperation<Pointer<IntPtr>>** asyncOp)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceInformation*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[14]))((IDeviceInformation*)Unsafe.AsPointer(ref this), asyncOp);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceInformation*, IAsyncOperation<Pointer<IntPtr>>**, int>)(lpVtbl[14]))((IDeviceInformation*)Unsafe.AsPointer(ref this), asyncOp);
     }
 
     public interface Interface : IInspectable.Interface
@@ -167,10 +167,10 @@ public unsafe partial struct IDeviceInformation : IDeviceInformation.Interface, 
         HRESULT Update([NativeTypeName("ABI::Windows::Devices::Enumeration::IDeviceInformationUpdate *")] IDeviceInformationUpdate* updateInfo);
 
         [VtblIndex(13)]
-        HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceThumbnail_t **")] IAsyncOperation<IntPtr>** asyncOp);
+        HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceThumbnail_t **")] IAsyncOperation<Pointer<IntPtr>>** asyncOp);
 
         [VtblIndex(14)]
-        HRESULT GetGlyphThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceThumbnail_t **")] IAsyncOperation<IntPtr>** asyncOp);
+        HRESULT GetGlyphThumbnailAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceThumbnail_t **")] IAsyncOperation<Pointer<IntPtr>>** asyncOp);
     }
 
     public partial struct Vtbl<TSelf>
@@ -216,9 +216,9 @@ public unsafe partial struct IDeviceInformation : IDeviceInformation.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, IDeviceInformationUpdate*, int> Update;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceThumbnail_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetThumbnailAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IntPtr>>**, int> GetThumbnailAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceThumbnail_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetGlyphThumbnailAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IntPtr>>**, int> GetGlyphThumbnailAsync;
     }
 }

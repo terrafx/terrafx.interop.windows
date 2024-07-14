@@ -24,7 +24,7 @@ public partial struct SIP_CAP_SET_V3
     public BOOL isMultiSign;
 
     /// <include file='SIP_CAP_SET_V3.xml' path='doc/member[@name="SIP_CAP_SET_V3.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_mssip_L193_C5")]
+    [NativeTypeName("__AnonymousRecord_mssip_L210_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwFlags"]/*' />

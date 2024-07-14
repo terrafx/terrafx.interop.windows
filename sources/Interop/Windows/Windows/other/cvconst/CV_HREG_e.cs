@@ -3887,6 +3887,150 @@ public enum CV_HREG_e
     /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Q31H"]/*' />
     CV_ARM64_Q31H = 381,
 
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z0"]/*' />
+    CV_ARM64_Z0 = 382,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z1"]/*' />
+    CV_ARM64_Z1 = 383,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z2"]/*' />
+    CV_ARM64_Z2 = 384,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z3"]/*' />
+    CV_ARM64_Z3 = 385,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z4"]/*' />
+    CV_ARM64_Z4 = 386,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z5"]/*' />
+    CV_ARM64_Z5 = 387,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z6"]/*' />
+    CV_ARM64_Z6 = 388,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z7"]/*' />
+    CV_ARM64_Z7 = 389,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z8"]/*' />
+    CV_ARM64_Z8 = 390,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z9"]/*' />
+    CV_ARM64_Z9 = 391,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z10"]/*' />
+    CV_ARM64_Z10 = 392,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z11"]/*' />
+    CV_ARM64_Z11 = 393,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z12"]/*' />
+    CV_ARM64_Z12 = 394,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z13"]/*' />
+    CV_ARM64_Z13 = 395,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z14"]/*' />
+    CV_ARM64_Z14 = 396,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z15"]/*' />
+    CV_ARM64_Z15 = 397,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z16"]/*' />
+    CV_ARM64_Z16 = 398,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z17"]/*' />
+    CV_ARM64_Z17 = 399,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z18"]/*' />
+    CV_ARM64_Z18 = 400,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z19"]/*' />
+    CV_ARM64_Z19 = 401,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z20"]/*' />
+    CV_ARM64_Z20 = 402,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z21"]/*' />
+    CV_ARM64_Z21 = 403,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z22"]/*' />
+    CV_ARM64_Z22 = 404,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z23"]/*' />
+    CV_ARM64_Z23 = 405,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z24"]/*' />
+    CV_ARM64_Z24 = 406,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z25"]/*' />
+    CV_ARM64_Z25 = 407,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z26"]/*' />
+    CV_ARM64_Z26 = 408,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z27"]/*' />
+    CV_ARM64_Z27 = 409,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z28"]/*' />
+    CV_ARM64_Z28 = 410,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z29"]/*' />
+    CV_ARM64_Z29 = 411,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z30"]/*' />
+    CV_ARM64_Z30 = 412,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_Z31"]/*' />
+    CV_ARM64_Z31 = 413,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P0"]/*' />
+    CV_ARM64_P0 = 414,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P1"]/*' />
+    CV_ARM64_P1 = 415,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P2"]/*' />
+    CV_ARM64_P2 = 416,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P3"]/*' />
+    CV_ARM64_P3 = 417,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P4"]/*' />
+    CV_ARM64_P4 = 418,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P5"]/*' />
+    CV_ARM64_P5 = 419,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P6"]/*' />
+    CV_ARM64_P6 = 420,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P7"]/*' />
+    CV_ARM64_P7 = 421,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P8"]/*' />
+    CV_ARM64_P8 = 422,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P9"]/*' />
+    CV_ARM64_P9 = 423,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P10"]/*' />
+    CV_ARM64_P10 = 424,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P11"]/*' />
+    CV_ARM64_P11 = 425,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P12"]/*' />
+    CV_ARM64_P12 = 426,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P13"]/*' />
+    CV_ARM64_P13 = 427,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P14"]/*' />
+    CV_ARM64_P14 = 428,
+
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P15"]/*' />
+    CV_ARM64_P15 = 429,
+
     /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_IA64_NOREG"]/*' />
     CV_IA64_NOREG = CV_REG_NONE,
 

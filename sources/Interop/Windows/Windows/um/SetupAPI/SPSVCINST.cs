@@ -60,4 +60,7 @@ public static partial class SPSVCINST
 
     [NativeTypeName("#define SPSVCINST_NOCLOBBER_FAILUREACTIONS (0x00020000)")]
     public const int SPSVCINST_NOCLOBBER_FAILUREACTIONS = (0x00020000);
+
+    [NativeTypeName("#define SPSVCINST_NOCLOBBER_BOOTFLAGS (0x00040000)")]
+    public const int SPSVCINST_NOCLOBBER_BOOTFLAGS = (0x00040000);
 }

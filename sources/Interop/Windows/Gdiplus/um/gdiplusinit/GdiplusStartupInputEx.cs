@@ -26,4 +26,24 @@ public unsafe partial struct GdiplusStartupInputEx
         Base.SuppressExternalCodecs = suppressExternalCodecs;
         StartupParameters = startupParameters;
     }
+
+    public GdiplusStartupInputEx([NativeTypeName("Gdiplus::GdiplusStartupInputEx::Version")] Version gdiplusVersion, [Optional] int startupParameters, [NativeTypeName("Gdiplus::DebugEventProc")] [Optional] delegate* unmanaged<DebugEventLevel, sbyte*, void> debugEventCallback, [Optional] BOOL suppressBackgroundThread, [Optional] BOOL suppressExternalCodecs)
+    {
+        Base.GdiplusVersion = (uint)(gdiplusVersion);
+        Base.DebugEventCallback = debugEventCallback;
+        Base.SuppressBackgroundThread = suppressBackgroundThread;
+        Base.SuppressExternalCodecs = suppressExternalCodecs;
+        StartupParameters = startupParameters;
+    }
+
+    /// <include file='Version.xml' path='doc/member[@name="Version"]/*' />
+    [NativeTypeName("UINT32")]
+    public enum Version : uint
+    {
+        /// <include file='Version.xml' path='doc/member[@name="Version.V2"]/*' />
+        V2 = 2,
+
+        /// <include file='Version.xml' path='doc/member[@name="Version.V3"]/*' />
+        V3 = 3,
+    }
 }

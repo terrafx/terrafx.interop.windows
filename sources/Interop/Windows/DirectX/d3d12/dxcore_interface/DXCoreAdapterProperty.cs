@@ -56,4 +56,13 @@ public enum DXCoreAdapterProperty : uint
 
     /// <include file='DXCoreAdapterProperty.xml' path='doc/member[@name="DXCoreAdapterProperty.HardwareIDParts"]/*' />
     HardwareIDParts = 14,
+
+    /// <include file='DXCoreAdapterProperty.xml' path='doc/member[@name="DXCoreAdapterProperty.PhysicalAdapterCount"]/*' />
+    PhysicalAdapterCount = 15,
+
+    /// <include file='DXCoreAdapterProperty.xml' path='doc/member[@name="DXCoreAdapterProperty.AdapterEngineCount"]/*' />
+    AdapterEngineCount = 16,
+
+    /// <include file='DXCoreAdapterProperty.xml' path='doc/member[@name="DXCoreAdapterProperty.AdapterEngineName"]/*' />
+    AdapterEngineName = 17,
 }

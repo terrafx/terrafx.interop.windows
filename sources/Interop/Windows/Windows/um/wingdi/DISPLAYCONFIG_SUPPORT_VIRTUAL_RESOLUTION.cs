@@ -18,7 +18,7 @@ public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
     /// <include file='DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION.xml' path='doc/member[@name="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wingdi_L3141_C5")]
+    [NativeTypeName("__AnonymousRecord_wingdi_L3146_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.disableMonitorVirtualResolution"]/*' />
@@ -70,7 +70,7 @@ public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_wingdi_L3143_C9")]
+        [NativeTypeName("__AnonymousRecord_wingdi_L3148_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*' />

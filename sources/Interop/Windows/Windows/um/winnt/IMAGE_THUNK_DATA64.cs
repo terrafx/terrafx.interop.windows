@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_THUNK_DATA64
 {
     /// <include file='IMAGE_THUNK_DATA64.xml' path='doc/member[@name="IMAGE_THUNK_DATA64.u1"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L19572_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L20488_C5")]
     public _u1_e__Union u1;
 
     /// <include file='_u1_e__Union.xml' path='doc/member[@name="_u1_e__Union"]/*' />

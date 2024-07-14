@@ -242,7 +242,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawFrameControl"]/*' />
     [DllImport("user32", ExactSpelling = true)]
-    public static extern BOOL DrawFrameControl(HDC param0, [NativeTypeName("LPRECT")] RECT* param1, uint param2, uint param3);
+    public static extern BOOL DrawFrameControl(HDC hdc, [NativeTypeName("LPRECT")] RECT* lprc, uint uType, uint uState);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DrawCaption"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -3380,6 +3380,11 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.22621.0")]
     public static extern BOOL RegisterForTooltipDismissNotification(HWND hWnd, TOOLTIP_DISMISS_FLAGS tdFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsWindowArranged"]/*' />
+    [DllImport("", ExactSpelling = true)]
+    [SupportedOSPlatform("windowsWindows 10, version 1903")]
+    public static extern BOOL IsWindowArranged(HWND hwnd);
+
     [NativeTypeName("#define DIFFERENCE 11")]
     public const int DIFFERENCE = 11;
 
@@ -4391,6 +4396,54 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define TranslateAccelerator TranslateAcceleratorW")]
     public static delegate*<HWND, HACCEL, MSG*, int> TranslateAccelerator => &TranslateAcceleratorW;
+
+    [NativeTypeName("#define MENU_GET_ITEM_INFO (0x0001)")]
+    public const int MENU_GET_ITEM_INFO = (0x0001);
+
+    [NativeTypeName("#define MENU_GET_ITEM_DATA (0x0002)")]
+    public const int MENU_GET_ITEM_DATA = (0x0002);
+
+    [NativeTypeName("#define MENU_GET_SUBMENU (0x0004)")]
+    public const int MENU_GET_SUBMENU = (0x0004);
+
+    [NativeTypeName("#define MENU_INSERT_MENU (0x0008)")]
+    public const int MENU_INSERT_MENU = (0x0008);
+
+    [NativeTypeName("#define MENU_INSERT_ITEM (0x0010)")]
+    public const int MENU_INSERT_ITEM = (0x0010);
+
+    [NativeTypeName("#define MENU_DELETE_MENU (0x0020)")]
+    public const int MENU_DELETE_MENU = (0x0020);
+
+    [NativeTypeName("#define MENU_SET_ITEM_INFO (0x0040)")]
+    public const int MENU_SET_ITEM_INFO = (0x0040);
+
+    [NativeTypeName("#define MENU_ENABLE_ITEM (0x0080)")]
+    public const int MENU_ENABLE_ITEM = (0x0080);
+
+    [NativeTypeName("#define MENU_CHECK_ITEM (0x0100)")]
+    public const int MENU_CHECK_ITEM = (0x0100);
+
+    [NativeTypeName("#define MENU_SET_DEFAULT_ITEM (0x0200)")]
+    public const int MENU_SET_DEFAULT_ITEM = (0x0200);
+
+    [NativeTypeName("#define MENU_SET_ITEM_DATA (0x0400)")]
+    public const int MENU_SET_ITEM_DATA = (0x0400);
+
+    [NativeTypeName("#define MENU_SET_SUBMENU (0x0800)")]
+    public const int MENU_SET_SUBMENU = (0x0800);
+
+    [NativeTypeName("#define MENU_READ_ACCESS (STANDARD_RIGHTS_READ   |\\\r\n                                MENU_GET_ITEM_INFO     |\\\r\n                                MENU_GET_ITEM_DATA     |\\\r\n                                MENU_GET_SUBMENU)")]
+    public const int MENU_READ_ACCESS = (((0x00020000)) | (0x0001) | (0x0002) | (0x0004));
+
+    [NativeTypeName("#define MENU_WRITE_ACCESS (STANDARD_RIGHTS_WRITE  |\\\r\n                                MENU_INSERT_MENU            |\\\r\n                                MENU_INSERT_ITEM       |\\\r\n                                MENU_DELETE_MENU            |\\\r\n                                MENU_SET_ITEM_INFO     |\\\r\n                                MENU_ENABLE_ITEM |\\\r\n                                MENU_CHECK_ITEM |\\\r\n                                MENU_SET_DEFAULT_ITEM  |\\\r\n                                MENU_SET_ITEM_DATA     |\\\r\n                                MENU_SET_SUBMENU)")]
+    public const int MENU_WRITE_ACCESS = (((0x00020000)) | (0x0008) | (0x0010) | (0x0020) | (0x0040) | (0x0080) | (0x0100) | (0x0200) | (0x0400) | (0x0800));
+
+    [NativeTypeName("#define MENU_EXECUTE_ACCESS (STANDARD_RIGHTS_EXECUTE)")]
+    public const int MENU_EXECUTE_ACCESS = (((0x00020000)));
+
+    [NativeTypeName("#define MENU_ALL_ACCESS (STANDARD_RIGHTS_ALL | MENU_READ_ACCESS | MENU_WRITE_ACCESS | MENU_EXECUTE_ACCESS)")]
+    public const int MENU_ALL_ACCESS = ((0x001F0000) | (((0x00020000)) | (0x0001) | (0x0002) | (0x0004)) | (((0x00020000)) | (0x0008) | (0x0010) | (0x0020) | (0x0040) | (0x0080) | (0x0100) | (0x0200) | (0x0400) | (0x0800)) | (((0x00020000))));
 
     [NativeTypeName("#define LoadMenu LoadMenuW")]
     public static delegate*<HINSTANCE, char*, HMENU> LoadMenu => &LoadMenuW;
@@ -5489,6 +5542,12 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define GIDC_REMOVAL 2")]
     public const int GIDC_REMOVAL = 2;
+
+    [NativeTypeName("#define TOUCHPAD_PARAMETERS_LATEST_VERSION 1")]
+    public const int TOUCHPAD_PARAMETERS_LATEST_VERSION = 1;
+
+    [NativeTypeName("#define TOUCHPAD_PARAMETERS_VERSION_1 1")]
+    public const int TOUCHPAD_PARAMETERS_VERSION_1 = 1;
 
     [NativeTypeName("#define MSGFLT_ADD 1")]
     public const int MSGFLT_ADD = 1;

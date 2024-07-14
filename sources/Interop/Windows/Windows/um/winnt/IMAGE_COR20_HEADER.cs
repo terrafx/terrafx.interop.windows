@@ -32,7 +32,7 @@ public partial struct IMAGE_COR20_HEADER
     public uint Flags;
 
     /// <include file='IMAGE_COR20_HEADER.xml' path='doc/member[@name="IMAGE_COR20_HEADER.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L20700_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L21696_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='IMAGE_COR20_HEADER.xml' path='doc/member[@name="IMAGE_COR20_HEADER.Resources"]/*' />

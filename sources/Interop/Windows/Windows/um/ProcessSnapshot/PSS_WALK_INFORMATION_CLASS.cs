@@ -22,4 +22,7 @@ public enum PSS_WALK_INFORMATION_CLASS
 
     /// <include file='PSS_WALK_INFORMATION_CLASS.xml' path='doc/member[@name="PSS_WALK_INFORMATION_CLASS.PSS_WALK_THREADS"]/*' />
     PSS_WALK_THREADS = 3,
+
+    /// <include file='PSS_WALK_INFORMATION_CLASS.xml' path='doc/member[@name="PSS_WALK_INFORMATION_CLASS.PSS_WALK_THREAD_NAME"]/*' />
+    PSS_WALK_THREAD_NAME = 4,
 }

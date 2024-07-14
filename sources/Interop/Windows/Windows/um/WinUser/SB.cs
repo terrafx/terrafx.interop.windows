@@ -7,6 +7,9 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SB
 {
+    [NativeTypeName("#define SB_MIN 0")]
+    public const int SB_MIN = 0;
+
     [NativeTypeName("#define SB_HORZ 0")]
     public const int SB_HORZ = 0;
 

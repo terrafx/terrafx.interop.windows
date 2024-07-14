@@ -96,4 +96,7 @@ public static partial class DeviceDsmAction
 
     [NativeTypeName("#define DeviceDsmAction_VdtSet (0x0000001Du)")]
     public const uint DeviceDsmAction_VdtSet = (0x0000001DU);
+
+    [NativeTypeName("#define DeviceDsmAction_QueryPreferLocalRepair (0x0000001Eu | DeviceDsmActionFlag_NonDestructive)")]
+    public const uint DeviceDsmAction_QueryPreferLocalRepair = (0x0000001EU | (0x80000000));
 }

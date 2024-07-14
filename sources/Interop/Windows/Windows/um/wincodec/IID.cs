@@ -518,6 +518,29 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IWICBitmapSourceTransform2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xDF, 0x3F, 0x37, 0xC3,
+                0x39, 0x6D,
+                0x5F, 0x4E,
+                0x8E,
+                0x79,
+                0xBF,
+                0x40,
+                0xC0,
+                0xB7,
+                0xED,
+                0x77
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IWICPlanarBitmapSourceTransform
     {
         get
@@ -580,6 +603,29 @@ public static partial class IID
                 0x76,
                 0xF8,
                 0x91
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IWICDisplayAdaptationControl
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xD2, 0x91, 0x9D, 0xDE,
+                0xB4, 0x70,
+                0x41, 0x4F,
+                0x83,
+                0x6C,
+                0x25,
+                0xFC,
+                0xD3,
+                0x96,
+                0x26,
+                0xD3
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

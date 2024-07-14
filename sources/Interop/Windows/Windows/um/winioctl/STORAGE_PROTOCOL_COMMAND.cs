@@ -82,8 +82,12 @@ public partial struct STORAGE_PROTOCOL_COMMAND
     [NativeTypeName("DWORD")]
     public uint FixedProtocolReturnData;
 
+    /// <include file='STORAGE_PROTOCOL_COMMAND.xml' path='doc/member[@name="STORAGE_PROTOCOL_COMMAND.FixedProtocolReturnData2"]/*' />
+    [NativeTypeName("DWORD")]
+    public uint FixedProtocolReturnData2;
+
     /// <include file='STORAGE_PROTOCOL_COMMAND.xml' path='doc/member[@name="STORAGE_PROTOCOL_COMMAND.Reserved1"]/*' />
-    [NativeTypeName("DWORD[3]")]
+    [NativeTypeName("DWORD[2]")]
     public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='STORAGE_PROTOCOL_COMMAND.xml' path='doc/member[@name="STORAGE_PROTOCOL_COMMAND.Command"]/*' />
@@ -91,7 +95,7 @@ public partial struct STORAGE_PROTOCOL_COMMAND
     public _Command_e__FixedBuffer Command;
 
     /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />
-    [InlineArray(3)]
+    [InlineArray(2)]
     public partial struct _Reserved1_e__FixedBuffer
     {
         public uint e0;

@@ -7,6 +7,9 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SWP
 {
+    [NativeTypeName("#define SWP_NONE 0x0000")]
+    public const int SWP_NONE = 0x0000;
+
     [NativeTypeName("#define SWP_NOSIZE 0x0001")]
     public const int SWP_NOSIZE = 0x0001;
 

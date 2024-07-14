@@ -17,7 +17,7 @@ public unsafe partial struct SPC_LINK
     public uint dwLinkChoice;
 
     /// <include file='SPC_LINK.xml' path='doc/member[@name="SPC_LINK.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_WinTrust_L1275_C5")]
+    [NativeTypeName("__AnonymousRecord_WinTrust_L1335_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszUrl"]/*' />

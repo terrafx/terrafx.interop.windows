@@ -17,7 +17,7 @@ public partial struct CRL_DIST_POINT_NAME
     public uint dwDistPointNameChoice;
 
     /// <include file='CRL_DIST_POINT_NAME.xml' path='doc/member[@name="CRL_DIST_POINT_NAME.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wincrypt_L4444_C5")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L4472_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FullName"]/*' />

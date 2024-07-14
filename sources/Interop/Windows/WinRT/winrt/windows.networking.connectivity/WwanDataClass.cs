@@ -30,6 +30,12 @@ public enum WwanDataClass : uint
     /// <include file='WwanDataClass.xml' path='doc/member[@name="WwanDataClass.WwanDataClass_LteAdvanced"]/*' />
     WwanDataClass_LteAdvanced = 0x20,
 
+    /// <include file='WwanDataClass.xml' path='doc/member[@name="WwanDataClass.WwanDataClass_NewRadioNonStandalone"]/*' />
+    WwanDataClass_NewRadioNonStandalone = 0x40,
+
+    /// <include file='WwanDataClass.xml' path='doc/member[@name="WwanDataClass.WwanDataClass_NewRadioStandalone"]/*' />
+    WwanDataClass_NewRadioStandalone = 0x80,
+
     /// <include file='WwanDataClass.xml' path='doc/member[@name="WwanDataClass.WwanDataClass_Cdma1xRtt"]/*' />
     WwanDataClass_Cdma1xRtt = 0x10000,
 

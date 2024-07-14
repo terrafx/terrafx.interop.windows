@@ -1108,8 +1108,8 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_CANT_ATTACH_TO_DEV_VOLUME 478L")]
     public const int ERROR_CANT_ATTACH_TO_DEV_VOLUME = 478;
 
-    [NativeTypeName("#define ERROR_INVALID_CONFIG_VALUE 479L")]
-    public const int ERROR_INVALID_CONFIG_VALUE = 479;
+    [NativeTypeName("#define ERROR_MEMORY_DECOMPRESSION_FAILURE 479L")]
+    public const int ERROR_MEMORY_DECOMPRESSION_FAILURE = 479;
 
     [NativeTypeName("#define ERROR_PNP_QUERY_REMOVE_DEVICE_TIMEOUT 480L")]
     public const int ERROR_PNP_QUERY_REMOVE_DEVICE_TIMEOUT = 480;
@@ -1218,6 +1218,15 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_VOLUME_UPGRADE_DISABLED_TILL_OS_DOWNGRADE_EXPIRED 518L")]
     public const int ERROR_VOLUME_UPGRADE_DISABLED_TILL_OS_DOWNGRADE_EXPIRED = 518;
+
+    [NativeTypeName("#define ERROR_INVALID_CONFIG_VALUE 519L")]
+    public const int ERROR_INVALID_CONFIG_VALUE = 519;
+
+    [NativeTypeName("#define ERROR_MEMORY_DECOMPRESSION_HW_ERROR 520L")]
+    public const int ERROR_MEMORY_DECOMPRESSION_HW_ERROR = 520;
+
+    [NativeTypeName("#define ERROR_VOLUME_ROLLBACK_DETECTED 521L")]
+    public const int ERROR_VOLUME_ROLLBACK_DETECTED = 521;
 
     [NativeTypeName("#define ERROR_ARITHMETIC_OVERFLOW 534L")]
     public const int ERROR_ARITHMETIC_OVERFLOW = 534;
@@ -3763,6 +3772,9 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_NETWORK_AUTHENTICATION_PROMPT_CANCELED 3024L")]
     public const int ERROR_NETWORK_AUTHENTICATION_PROMPT_CANCELED = 3024;
 
+    [NativeTypeName("#define ERROR_REMOTE_MAILSLOTS_DEPRECATED 3025L")]
+    public const int ERROR_REMOTE_MAILSLOTS_DEPRECATED = 3025;
+
     [NativeTypeName("#define ERROR_REQUEST_PAUSED 3050L")]
     public const int ERROR_REQUEST_PAUSED = 3050;
 
@@ -3828,6 +3840,18 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_VRF_VOLATILE_SETTINGS_CONFLICT 3087L")]
     public const int ERROR_VRF_VOLATILE_SETTINGS_CONFLICT = 3087;
+
+    [NativeTypeName("#define ERROR_CAR_LKD_IN_PROGRESS 3088L")]
+    public const int ERROR_CAR_LKD_IN_PROGRESS = 3088;
+
+    [NativeTypeName("#define ERROR_DIF_ZERO_SIZE_INFORMATION 3187L")]
+    public const int ERROR_DIF_ZERO_SIZE_INFORMATION = 3187;
+
+    [NativeTypeName("#define ERROR_DIF_DRIVER_PLUGIN_MISMATCH 3188L")]
+    public const int ERROR_DIF_DRIVER_PLUGIN_MISMATCH = 3188;
+
+    [NativeTypeName("#define ERROR_DIF_DRIVER_THUNKS_NOT_ALLOWED 3189L")]
+    public const int ERROR_DIF_DRIVER_THUNKS_NOT_ALLOWED = 3189;
 
     [NativeTypeName("#define ERROR_DIF_IOCALLBACK_NOT_REPLACED 3190L")]
     public const int ERROR_DIF_IOCALLBACK_NOT_REPLACED = 3190;
@@ -4257,6 +4281,9 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_SYSTEM_INTEGRITY_REPUTATION_EXPLICIT_DENY_FILE 4582L")]
     public const int ERROR_SYSTEM_INTEGRITY_REPUTATION_EXPLICIT_DENY_FILE = 4582;
+
+    [NativeTypeName("#define ERROR_SYSTEM_INTEGRITY_WHQL_NOT_SATISFIED 4583L")]
+    public const int ERROR_SYSTEM_INTEGRITY_WHQL_NOT_SATISFIED = 4583;
 
     [NativeTypeName("#define ERROR_DEPENDENT_RESOURCE_EXISTS 5001L")]
     public const int ERROR_DEPENDENT_RESOURCE_EXISTS = 5001;
@@ -4927,11 +4954,38 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_WIP_ENCRYPTION_FAILED 6023L")]
     public const int ERROR_WIP_ENCRYPTION_FAILED = 6023;
 
+    [NativeTypeName("#define ERROR_PDE_ENCRYPTION_UNAVAILABLE_FAILURE 6024L")]
+    public const int ERROR_PDE_ENCRYPTION_UNAVAILABLE_FAILURE = 6024;
+
+    [NativeTypeName("#define ERROR_PDE_DECRYPTION_UNAVAILABLE_FAILURE 6025L")]
+    public const int ERROR_PDE_DECRYPTION_UNAVAILABLE_FAILURE = 6025;
+
+    [NativeTypeName("#define ERROR_PDE_DECRYPTION_UNAVAILABLE 6026L")]
+    public const int ERROR_PDE_DECRYPTION_UNAVAILABLE = 6026;
+
     [NativeTypeName("#define ERROR_NO_BROWSER_SERVERS_FOUND 6118L")]
     public const int ERROR_NO_BROWSER_SERVERS_FOUND = 6118;
 
     [NativeTypeName("#define ERROR_CLUSTER_OBJECT_IS_CLUSTER_SET_VM 6250L")]
     public const int ERROR_CLUSTER_OBJECT_IS_CLUSTER_SET_VM = 6250;
+
+    [NativeTypeName("#define ERROR_CNU_TEMPLATE_ALREADY_EXISTS 6251L")]
+    public const int ERROR_CNU_TEMPLATE_ALREADY_EXISTS = 6251;
+
+    [NativeTypeName("#define ERROR_CNU_TEMPLATE_NAME_NOT_FOUND 6252L")]
+    public const int ERROR_CNU_TEMPLATE_NAME_NOT_FOUND = 6252;
+
+    [NativeTypeName("#define ERROR_CNU_RUN_NAME_NOT_FOUND 6253L")]
+    public const int ERROR_CNU_RUN_NAME_NOT_FOUND = 6253;
+
+    [NativeTypeName("#define ERROR_CNU_RUN_ALREADY_IN_PROGRESS 6254L")]
+    public const int ERROR_CNU_RUN_ALREADY_IN_PROGRESS = 6254;
+
+    [NativeTypeName("#define ERROR_CNU_RUN_NOT_IN_PROGRESS 6255L")]
+    public const int ERROR_CNU_RUN_NOT_IN_PROGRESS = 6255;
+
+    [NativeTypeName("#define ERROR_CNU_NOT_READY 6256L")]
+    public const int ERROR_CNU_NOT_READY = 6256;
 
     [NativeTypeName("#define ERROR_LOG_SECTOR_INVALID 6600L")]
     public const int ERROR_LOG_SECTOR_INVALID = 6600;
@@ -6748,6 +6802,15 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_LAPS_ENCRYPTION_REQUIRES_2016_DFL 8657L")]
     public const int ERROR_LAPS_ENCRYPTION_REQUIRES_2016_DFL = 8657;
 
+    [NativeTypeName("#define ERROR_LAPS_PROCESS_TERMINATED 8658L")]
+    public const int ERROR_LAPS_PROCESS_TERMINATED = 8658;
+
+    [NativeTypeName("#define ERROR_DS_JET_RECORD_TOO_BIG 8659L")]
+    public const int ERROR_DS_JET_RECORD_TOO_BIG = 8659;
+
+    [NativeTypeName("#define ERROR_DS_REPLICA_PAGE_SIZE_MISMATCH 8660L")]
+    public const int ERROR_DS_REPLICA_PAGE_SIZE_MISMATCH = 8660;
+
     [NativeTypeName("#define ERROR_IPSEC_QM_POLICY_EXISTS 13000L")]
     public const int ERROR_IPSEC_QM_POLICY_EXISTS = 13000;
 
@@ -8119,6 +8182,12 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_APPINSTALLER_IS_MANAGED_BY_SYSTEM 15672L")]
     public const int ERROR_APPINSTALLER_IS_MANAGED_BY_SYSTEM = 15672;
 
+    [NativeTypeName("#define ERROR_SERVICE_BLOCKED_BY_SYSPREP_IN_PROGRESS 15673L")]
+    public const int ERROR_SERVICE_BLOCKED_BY_SYSPREP_IN_PROGRESS = 15673;
+
+    [NativeTypeName("#define ERROR_UNSUPPORTED_ARM32_PACKAGE_REQUIRES_REMEDIAITON 15674L")]
+    public const int ERROR_UNSUPPORTED_ARM32_PACKAGE_REQUIRES_REMEDIAITON = 15674;
+
     [NativeTypeName("#define ERROR_STATE_LOAD_STORE_FAILED 15800L")]
     public const int ERROR_STATE_LOAD_STORE_FAILED = 15800;
 
@@ -8394,6 +8463,9 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_GRAPHICS_MPO_ALLOCATION_UNPINNED _HRESULT_TYPEDEF_(0xC0262018L)")]
     public const int ERROR_GRAPHICS_MPO_ALLOCATION_UNPINNED = unchecked((int)(0xC0262018));
+
+    [NativeTypeName("#define ERROR_GRAPHICS_SETDISPLAYMODE_REQUIRED _HRESULT_TYPEDEF_(0xC0262019L)")]
+    public const int ERROR_GRAPHICS_SETDISPLAYMODE_REQUIRED = unchecked((int)(0xC0262019));
 
     [NativeTypeName("#define ERROR_GRAPHICS_NO_VIDEO_MEMORY _HRESULT_TYPEDEF_(0xC0262100L)")]
     public const int ERROR_GRAPHICS_NO_VIDEO_MEMORY = unchecked((int)(0xC0262100));
@@ -8938,6 +9010,12 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_GRAPHICS_SESSION_TYPE_CHANGE_IN_PROGRESS _HRESULT_TYPEDEF_(0xC02605E8L)")]
     public const int ERROR_GRAPHICS_SESSION_TYPE_CHANGE_IN_PROGRESS = unchecked((int)(0xC02605E8));
 
+    [NativeTypeName("#define ERROR_GRAPHICS_UNKNOWN_BIOS_FRAME_BUFFER_NOT_FOUND _HRESULT_TYPEDEF_(0xC0262600L)")]
+    public const int ERROR_GRAPHICS_UNKNOWN_BIOS_FRAME_BUFFER_NOT_FOUND = unchecked((int)(0xC0262600));
+
+    [NativeTypeName("#define ERROR_GRAPHICS_UEFI_FRAME_BUFFER_NOT_FOUND _HRESULT_TYPEDEF_(0xC0262601L)")]
+    public const int ERROR_GRAPHICS_UEFI_FRAME_BUFFER_NOT_FOUND = unchecked((int)(0xC0262601));
+
     [NativeTypeName("#define ERROR_NDIS_INTERFACE_CLOSING _NDIS_ERROR_TYPEDEF_(0x80340002L)")]
     public const uint ERROR_NDIS_INTERFACE_CLOSING = (uint)(0x80340002);
 
@@ -9072,6 +9150,9 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_NDIS_DOT11_AP_BAND_NOT_ALLOWED _NDIS_ERROR_TYPEDEF_(0x80342008L)")]
     public const uint ERROR_NDIS_DOT11_AP_BAND_NOT_ALLOWED = (uint)(0x80342008);
+
+    [NativeTypeName("#define ERROR_NDIS_DOT11_AP_RADIO_RESTRICTION _NDIS_ERROR_TYPEDEF_(0x80342009L)")]
+    public const uint ERROR_NDIS_DOT11_AP_RADIO_RESTRICTION = (uint)(0x80342009);
 
     [NativeTypeName("#define ERROR_NDIS_INDICATION_REQUIRED _NDIS_ERROR_TYPEDEF_(0x00340001L)")]
     public const uint ERROR_NDIS_INDICATION_REQUIRED = (uint)(0x00340001);
@@ -9252,6 +9333,12 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_HV_INSUFFICIENT_CONTIGUOUS_ROOT_MEMORY_MIRRORING _NDIS_ERROR_TYPEDEF_(0xC0350085L)")]
     public const uint ERROR_HV_INSUFFICIENT_CONTIGUOUS_ROOT_MEMORY_MIRRORING = (uint)(0xC0350085);
+
+    [NativeTypeName("#define ERROR_HV_VTL_ALREADY_ENABLED _NDIS_ERROR_TYPEDEF_(0xC0350086L)")]
+    public const uint ERROR_HV_VTL_ALREADY_ENABLED = (uint)(0xC0350086);
+
+    [NativeTypeName("#define ERROR_HV_SPDM_REQUEST _NDIS_ERROR_TYPEDEF_(0xC0350088L)")]
+    public const uint ERROR_HV_SPDM_REQUEST = (uint)(0xC0350088);
 
     [NativeTypeName("#define ERROR_HV_NOT_PRESENT _NDIS_ERROR_TYPEDEF_(0xC0351000L)")]
     public const uint ERROR_HV_NOT_PRESENT = (uint)(0xC0351000);
@@ -10144,6 +10231,21 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_SMB_NO_SIGNING_ALGORITHM_OVERLAP _HRESULT_TYPEDEF_(0xC05D0002L)")]
     public const int ERROR_SMB_NO_SIGNING_ALGORITHM_OVERLAP = unchecked((int)(0xC05D0002));
 
+    [NativeTypeName("#define ERROR_SMB_GUEST_LOGON_BLOCKED_SIGNING_REQUIRED _HRESULT_TYPEDEF_(0xC05D0003L)")]
+    public const int ERROR_SMB_GUEST_LOGON_BLOCKED_SIGNING_REQUIRED = unchecked((int)(0xC05D0003));
+
+    [NativeTypeName("#define ERROR_SMB_GUEST_ENCRYPTION_NOT_SUPPORTED _HRESULT_TYPEDEF_(0xC05D0004L)")]
+    public const int ERROR_SMB_GUEST_ENCRYPTION_NOT_SUPPORTED = unchecked((int)(0xC05D0004));
+
+    [NativeTypeName("#define ERROR_SMB_ENCRYPTION_NOT_SUPPORTED_BY_PEER _HRESULT_TYPEDEF_(0xC05D0005L)")]
+    public const int ERROR_SMB_ENCRYPTION_NOT_SUPPORTED_BY_PEER = unchecked((int)(0xC05D0005));
+
+    [NativeTypeName("#define ERROR_SMB_CERT_NO_PRIVATE_KEY _HRESULT_TYPEDEF_(0xC05D0006L)")]
+    public const int ERROR_SMB_CERT_NO_PRIVATE_KEY = unchecked((int)(0xC05D0006));
+
+    [NativeTypeName("#define ERROR_SMB_TLS_ACCESS_DENIED _HRESULT_TYPEDEF_(0xC05D0007L)")]
+    public const int ERROR_SMB_TLS_ACCESS_DENIED = unchecked((int)(0xC05D0007));
+
     [NativeTypeName("#define ERROR_QUIC_HANDSHAKE_FAILURE _HRESULT_TYPEDEF_(0x80410000L)")]
     public const int ERROR_QUIC_HANDSHAKE_FAILURE = unchecked((int)(0x80410000));
 
@@ -10167,4 +10269,91 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_QUIC_ALPN_NEG_FAILURE _HRESULT_TYPEDEF_(0x80410007L)")]
     public const int ERROR_QUIC_ALPN_NEG_FAILURE = unchecked((int)(0x80410007));
+
+    [NativeTypeName("#define ERROR_QUIC_STREAM_LIMIT_REACHED _HRESULT_TYPEDEF_(0x80410008L)")]
+    public const int ERROR_QUIC_STREAM_LIMIT_REACHED = unchecked((int)(0x80410008));
+
+    [NativeTypeName("#define ERROR_QUIC_ALPN_IN_USE _HRESULT_TYPEDEF_(0x80410009L)")]
+    public const int ERROR_QUIC_ALPN_IN_USE = unchecked((int)(0x80410009));
+
+    [NativeTypeName("#define ERROR_QUIC_TLS_UNEXPECTED_MESSAGE _HRESULT_TYPEDEF_(0x8041010AL)")]
+    public const int ERROR_QUIC_TLS_UNEXPECTED_MESSAGE = unchecked((int)(0x8041010A));
+
+    [NativeTypeName("#define ERROR_QUIC_TLS_BAD_CERTIFICATE _HRESULT_TYPEDEF_(0x8041012AL)")]
+    public const int ERROR_QUIC_TLS_BAD_CERTIFICATE = unchecked((int)(0x8041012A));
+
+    [NativeTypeName("#define ERROR_QUIC_TLS_UNSUPPORTED_CERTIFICATE _HRESULT_TYPEDEF_(0x8041012BL)")]
+    public const int ERROR_QUIC_TLS_UNSUPPORTED_CERTIFICATE = unchecked((int)(0x8041012B));
+
+    [NativeTypeName("#define ERROR_QUIC_TLS_CERTIFICATE_REVOKED _HRESULT_TYPEDEF_(0x8041012CL)")]
+    public const int ERROR_QUIC_TLS_CERTIFICATE_REVOKED = unchecked((int)(0x8041012C));
+
+    [NativeTypeName("#define ERROR_QUIC_TLS_CERTIFICATE_EXPIRED _HRESULT_TYPEDEF_(0x8041012DL)")]
+    public const int ERROR_QUIC_TLS_CERTIFICATE_EXPIRED = unchecked((int)(0x8041012D));
+
+    [NativeTypeName("#define ERROR_QUIC_TLS_CERTIFICATE_UNKNOWN _HRESULT_TYPEDEF_(0x8041012EL)")]
+    public const int ERROR_QUIC_TLS_CERTIFICATE_UNKNOWN = unchecked((int)(0x8041012E));
+
+    [NativeTypeName("#define ERROR_QUIC_TLS_ILLEGAL_PARAMETER _HRESULT_TYPEDEF_(0x8041012FL)")]
+    public const int ERROR_QUIC_TLS_ILLEGAL_PARAMETER = unchecked((int)(0x8041012F));
+
+    [NativeTypeName("#define ERROR_QUIC_TLS_UNKNOWN_CA _HRESULT_TYPEDEF_(0x80410130L)")]
+    public const int ERROR_QUIC_TLS_UNKNOWN_CA = unchecked((int)(0x80410130));
+
+    [NativeTypeName("#define ERROR_QUIC_TLS_ACCESS_DENIED _HRESULT_TYPEDEF_(0x80410131L)")]
+    public const int ERROR_QUIC_TLS_ACCESS_DENIED = unchecked((int)(0x80410131));
+
+    [NativeTypeName("#define ERROR_QUIC_TLS_INSUFFICIENT_SECURITY _HRESULT_TYPEDEF_(0x80410147L)")]
+    public const int ERROR_QUIC_TLS_INSUFFICIENT_SECURITY = unchecked((int)(0x80410147));
+
+    [NativeTypeName("#define ERROR_QUIC_TLS_INTERNAL_ERROR _HRESULT_TYPEDEF_(0x80410150L)")]
+    public const int ERROR_QUIC_TLS_INTERNAL_ERROR = unchecked((int)(0x80410150));
+
+    [NativeTypeName("#define ERROR_QUIC_TLS_USER_CANCELED _HRESULT_TYPEDEF_(0x8041015AL)")]
+    public const int ERROR_QUIC_TLS_USER_CANCELED = unchecked((int)(0x8041015A));
+
+    [NativeTypeName("#define ERROR_QUIC_TLS_CERTIFICATE_REQUIRED _HRESULT_TYPEDEF_(0x80410174L)")]
+    public const int ERROR_QUIC_TLS_CERTIFICATE_REQUIRED = unchecked((int)(0x80410174));
+
+    [NativeTypeName("#define ERROR_PRM_HANDLER_NOT_FOUND _HRESULT_TYPEDEF_(0xC9260200L)")]
+    public const int ERROR_PRM_HANDLER_NOT_FOUND = unchecked((int)(0xC9260200));
+
+    [NativeTypeName("#define ERROR_PRM_CONCURRENT_OPERATION _HRESULT_TYPEDEF_(0xC9260202L)")]
+    public const int ERROR_PRM_CONCURRENT_OPERATION = unchecked((int)(0xC9260202));
+
+    [NativeTypeName("#define ERROR_PRM_MODULE_UPDATE_PENDING _HRESULT_TYPEDEF_(0xC9260203L)")]
+    public const int ERROR_PRM_MODULE_UPDATE_PENDING = unchecked((int)(0xC9260203));
+
+    [NativeTypeName("#define ERROR_PRM_MODULE_LOCKED _HRESULT_TYPEDEF_(0xC9260204L)")]
+    public const int ERROR_PRM_MODULE_LOCKED = unchecked((int)(0xC9260204));
+
+    [NativeTypeName("#define ERROR_PRM_UPDATE_INCOMPATIBLE_VERSION _HRESULT_TYPEDEF_(0xC9260205L)")]
+    public const int ERROR_PRM_UPDATE_INCOMPATIBLE_VERSION = unchecked((int)(0xC9260205));
+
+    [NativeTypeName("#define ERROR_PRM_UPDATE_MODULE_MISMATCH _HRESULT_TYPEDEF_(0xC9260206L)")]
+    public const int ERROR_PRM_UPDATE_MODULE_MISMATCH = unchecked((int)(0xC9260206));
+
+    [NativeTypeName("#define ERROR_PRM_UPDATE_MODULE_NOT_FOUND _HRESULT_TYPEDEF_(0xC9260207L)")]
+    public const int ERROR_PRM_UPDATE_MODULE_NOT_FOUND = unchecked((int)(0xC9260207));
+
+    [NativeTypeName("#define ERROR_PRM_UPDATE_MISSING_EXPORT _HRESULT_TYPEDEF_(0xC9260208L)")]
+    public const int ERROR_PRM_UPDATE_MISSING_EXPORT = unchecked((int)(0xC9260208));
+
+    [NativeTypeName("#define ERROR_PRM_UPDATE_MODULE_LOCKED _HRESULT_TYPEDEF_(0xC9260209L)")]
+    public const int ERROR_PRM_UPDATE_MODULE_LOCKED = unchecked((int)(0xC9260209));
+
+    [NativeTypeName("#define ERROR_PRM_UPDATE_BAD_SIGNATURE _HRESULT_TYPEDEF_(0xC926020AL)")]
+    public const int ERROR_PRM_UPDATE_BAD_SIGNATURE = unchecked((int)(0xC926020A));
+
+    [NativeTypeName("#define ERROR_PRM_UPDATE_VERSION_MISMATCH _HRESULT_TYPEDEF_(0xC926020BL)")]
+    public const int ERROR_PRM_UPDATE_VERSION_MISMATCH = unchecked((int)(0xC926020B));
+
+    [NativeTypeName("#define ERROR_PRM_MODULE_UNLOCKED _HRESULT_TYPEDEF_(0xC926020CL)")]
+    public const int ERROR_PRM_MODULE_UNLOCKED = unchecked((int)(0xC926020C));
+
+    [NativeTypeName("#define ERROR_PRM_INTERFACE_INACCESSIBLE _HRESULT_TYPEDEF_(0xC926020DL)")]
+    public const int ERROR_PRM_INTERFACE_INACCESSIBLE = unchecked((int)(0xC926020D));
+
+    [NativeTypeName("#define ERROR_ACCELERATOR_SUBMISSION_QUEUE_FULL _HRESULT_TYPEDEF_(0xC9270000L)")]
+    public const int ERROR_ACCELERATOR_SUBMISSION_QUEUE_FULL = unchecked((int)(0xC9270000));
 }

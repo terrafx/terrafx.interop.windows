@@ -337,6 +337,14 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern HANDLE CreateFileMapping2(HANDLE File, SECURITY_ATTRIBUTES* SecurityAttributes, [NativeTypeName("ULONG")] uint DesiredAccess, [NativeTypeName("ULONG")] uint PageProtection, [NativeTypeName("ULONG")] uint AllocationAttributes, [NativeTypeName("ULONG64")] ulong MaximumSize, [NativeTypeName("PCWSTR")] char* Name, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMemoryNumaClosestInitiatorNode"]/*' />
+    [DllImport("", ExactSpelling = true)]
+    public static extern BOOL GetMemoryNumaClosestInitiatorNode([NativeTypeName("ULONG")] uint TargetNodeNumber, [NativeTypeName("ULONG *")] uint* InitiatorNodeNumber);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMemoryNumaPerformanceInformation"]/*' />
+    [DllImport("", ExactSpelling = true)]
+    public static extern BOOL GetMemoryNumaPerformanceInformation([NativeTypeName("ULONG")] uint NodeNumber, [NativeTypeName("UCHAR")] byte DataType, WIN32_MEMORY_NUMA_PERFORMANCE_INFORMATION_OUTPUT** PerfInfo);
+
     [NativeTypeName("#define CreateFileMapping CreateFileMappingW")]
     public static delegate*<HANDLE, SECURITY_ATTRIBUTES*, uint, uint, uint, char*, HANDLE> CreateFileMapping => &CreateFileMappingW;
 
@@ -348,4 +356,19 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define MEHC_PATROL_SCRUBBER_PRESENT 0x1")]
     public const int MEHC_PATROL_SCRUBBER_PRESENT = 0x1;
+
+    [NativeTypeName("#define WIN32_MEMORY_NUMA_PERFORMANCE_ALL_TARGET_NODE 0xffffffff")]
+    public const uint WIN32_MEMORY_NUMA_PERFORMANCE_ALL_TARGET_NODE = 0xffffffff;
+
+    [NativeTypeName("#define WIN32_MEMORY_NUMA_PERFORMANCE_READ_LATENCY 0x1")]
+    public const int WIN32_MEMORY_NUMA_PERFORMANCE_READ_LATENCY = 0x1;
+
+    [NativeTypeName("#define WIN32_MEMORY_NUMA_PERFORMANCE_READ_BANDWIDTH 0x2")]
+    public const int WIN32_MEMORY_NUMA_PERFORMANCE_READ_BANDWIDTH = 0x2;
+
+    [NativeTypeName("#define WIN32_MEMORY_NUMA_PERFORMANCE_WRITE_LATENCY 0x4")]
+    public const int WIN32_MEMORY_NUMA_PERFORMANCE_WRITE_LATENCY = 0x4;
+
+    [NativeTypeName("#define WIN32_MEMORY_NUMA_PERFORMANCE_WRITE_BANDWIDTH 0x8")]
+    public const int WIN32_MEMORY_NUMA_PERFORMANCE_WRITE_BANDWIDTH = 0x8;
 }

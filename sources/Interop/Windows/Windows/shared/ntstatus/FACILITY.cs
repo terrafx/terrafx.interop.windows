@@ -169,6 +169,15 @@ public static partial class FACILITY
     [NativeTypeName("#define FACILITY_APP_EXEC 0xEC")]
     public const int FACILITY_APP_EXEC = 0xEC;
 
-    [NativeTypeName("#define FACILITY_MAXIMUM_VALUE 0xED")]
-    public const int FACILITY_MAXIMUM_VALUE = 0xED;
+    [NativeTypeName("#define FACILITY_UNIONFS 0xED")]
+    public const int FACILITY_UNIONFS = 0xED;
+
+    [NativeTypeName("#define FACILITY_PLATFORM_RUNTIME_MECHANISM 0xEE")]
+    public const int FACILITY_PLATFORM_RUNTIME_MECHANISM = 0xEE;
+
+    [NativeTypeName("#define FACILITY_WIN_ACCEL 0xEF")]
+    public const int FACILITY_WIN_ACCEL = 0xEF;
+
+    [NativeTypeName("#define FACILITY_MAXIMUM_VALUE 0xF0")]
+    public const int FACILITY_MAXIMUM_VALUE = 0xF0;
 }

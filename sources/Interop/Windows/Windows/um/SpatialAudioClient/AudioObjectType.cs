@@ -67,4 +67,10 @@ public enum AudioObjectType
 
     /// <include file='AudioObjectType.xml' path='doc/member[@name="AudioObjectType.AudioObjectType_BackCenter"]/*' />
     AudioObjectType_BackCenter = (1 << 17),
+
+    /// <include file='AudioObjectType.xml' path='doc/member[@name="AudioObjectType.AudioObjectType_StereoLeft"]/*' />
+    AudioObjectType_StereoLeft = (1 << 18),
+
+    /// <include file='AudioObjectType.xml' path='doc/member[@name="AudioObjectType.AudioObjectType_StereoRight"]/*' />
+    AudioObjectType_StereoRight = (1 << 19),
 }

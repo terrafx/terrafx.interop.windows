@@ -79,6 +79,12 @@ public static partial class DOMAIN
     [NativeTypeName("#define DOMAIN_GROUP_RID_ENTERPRISE_KEY_ADMINS (0x0000020FL)")]
     public const int DOMAIN_GROUP_RID_ENTERPRISE_KEY_ADMINS = (0x0000020F);
 
+    [NativeTypeName("#define DOMAIN_GROUP_RID_FOREST_TRUSTS (0x00000210L)")]
+    public const int DOMAIN_GROUP_RID_FOREST_TRUSTS = (0x00000210);
+
+    [NativeTypeName("#define DOMAIN_GROUP_RID_EXTERNAL_TRUSTS (0x00000211L)")]
+    public const int DOMAIN_GROUP_RID_EXTERNAL_TRUSTS = (0x00000211);
+
     [NativeTypeName("#define DOMAIN_ALIAS_RID_ADMINS (0x00000220L)")]
     public const int DOMAIN_ALIAS_RID_ADMINS = (0x00000220);
 
@@ -180,4 +186,10 @@ public static partial class DOMAIN
 
     [NativeTypeName("#define DOMAIN_ALIAS_RID_DEVICE_OWNERS (0x00000247L)")]
     public const int DOMAIN_ALIAS_RID_DEVICE_OWNERS = (0x00000247);
+
+    [NativeTypeName("#define DOMAIN_ALIAS_RID_USER_MODE_HARDWARE_OPERATORS (0x00000248L)")]
+    public const int DOMAIN_ALIAS_RID_USER_MODE_HARDWARE_OPERATORS = (0x00000248);
+
+    [NativeTypeName("#define DOMAIN_ALIAS_RID_OPENSSH_USERS (0x00000249L)")]
+    public const int DOMAIN_ALIAS_RID_OPENSSH_USERS = (0x00000249);
 }

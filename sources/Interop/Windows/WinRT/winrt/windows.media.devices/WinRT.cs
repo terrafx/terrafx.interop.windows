@@ -49,6 +49,9 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[45]")]
     public const string InterfaceName_Windows_Media_Devices_IAudioDeviceController = "Windows.Media.Devices.IAudioDeviceController";
 
+    [NativeTypeName("const WCHAR[46]")]
+    public const string InterfaceName_Windows_Media_Devices_IAudioDeviceController2 = "Windows.Media.Devices.IAudioDeviceController2";
+
     [NativeTypeName("const WCHAR[41]")]
     public const string InterfaceName_Windows_Media_Devices_IAudioDeviceModule = "Windows.Media.Devices.IAudioDeviceModule";
 

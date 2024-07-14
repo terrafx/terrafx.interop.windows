@@ -22,4 +22,10 @@ public enum STORAGE_PROTOCOL_NVME_DATA_TYPE
 
     /// <include file='STORAGE_PROTOCOL_NVME_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_NVME_DATA_TYPE.NVMeDataTypeFeature"]/*' />
     NVMeDataTypeFeature,
+
+    /// <include file='STORAGE_PROTOCOL_NVME_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_NVME_DATA_TYPE.NVMeDataTypeLogPageEx"]/*' />
+    NVMeDataTypeLogPageEx,
+
+    /// <include file='STORAGE_PROTOCOL_NVME_DATA_TYPE.xml' path='doc/member[@name="STORAGE_PROTOCOL_NVME_DATA_TYPE.NVMeDataTypeFeatureEx"]/*' />
+    NVMeDataTypeFeatureEx,
 }

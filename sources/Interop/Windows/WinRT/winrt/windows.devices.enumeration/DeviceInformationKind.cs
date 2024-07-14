@@ -34,4 +34,7 @@ public enum DeviceInformationKind
 
     /// <include file='DeviceInformationKind.xml' path='doc/member[@name="DeviceInformationKind.DeviceInformationKind_DevicePanel"]/*' />
     DeviceInformationKind_DevicePanel = 8,
+
+    /// <include file='DeviceInformationKind.xml' path='doc/member[@name="DeviceInformationKind.DeviceInformationKind_AssociationEndpointProtocol"]/*' />
+    DeviceInformationKind_AssociationEndpointProtocol = 9,
 }

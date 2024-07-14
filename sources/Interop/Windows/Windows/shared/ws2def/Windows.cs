@@ -123,4 +123,7 @@ public static partial class Windows
 
     [NativeTypeName("#define ADDRINFOEX_VERSION_6 6")]
     public const int ADDRINFOEX_VERSION_6 = 6;
+
+    [NativeTypeName("#define ADDRINFOEX_VERSION_7 7")]
+    public const int ADDRINFOEX_VERSION_7 = 7;
 }

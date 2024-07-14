@@ -16,7 +16,7 @@ public partial struct MLOperatorEdgeDescription
     public MLOperatorEdgeType edgeType;
 
     /// <include file='MLOperatorEdgeDescription.xml' path='doc/member[@name="MLOperatorEdgeDescription.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_MLOperatorAuthor_L117_C5")]
+    [NativeTypeName("__AnonymousRecord_MLOperatorAuthor_L119_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.reserved"]/*' />

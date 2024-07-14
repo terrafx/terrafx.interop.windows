@@ -136,4 +136,7 @@ public enum D3D12_FEATURE
 
     /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_HARDWARE_COPY"]/*' />
     D3D12_FEATURE_HARDWARE_COPY = 52,
+
+    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS21"]/*' />
+    D3D12_FEATURE_D3D12_OPTIONS21 = 53,
 }

@@ -171,4 +171,7 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_WINHTTP_FEATURE_DISABLED (WINHTTP_ERROR_BASE + 192)")]
     public const int ERROR_WINHTTP_FEATURE_DISABLED = (12000 + 192);
+
+    [NativeTypeName("#define ERROR_WINHTTP_FAST_FORWARDING_NOT_SUPPORTED (WINHTTP_ERROR_BASE + 193)")]
+    public const int ERROR_WINHTTP_FAST_FORWARDING_NOT_SUPPORTED = (12000 + 193);
 }

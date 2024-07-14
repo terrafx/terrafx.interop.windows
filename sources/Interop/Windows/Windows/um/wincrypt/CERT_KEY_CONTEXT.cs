@@ -17,7 +17,7 @@ public partial struct CERT_KEY_CONTEXT
     public uint cbSize;
 
     /// <include file='CERT_KEY_CONTEXT.xml' path='doc/member[@name="CERT_KEY_CONTEXT.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wincrypt_L9377_C5")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L9413_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CERT_KEY_CONTEXT.xml' path='doc/member[@name="CERT_KEY_CONTEXT.dwKeySpec"]/*' />

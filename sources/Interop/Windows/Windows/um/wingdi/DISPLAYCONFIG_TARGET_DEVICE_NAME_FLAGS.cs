@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
 {
     /// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wingdi_L3079_C5")]
+    [NativeTypeName("__AnonymousRecord_wingdi_L3084_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.friendlyNameFromEdid"]/*' />
@@ -97,7 +97,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_wingdi_L3081_C9")]
+        [NativeTypeName("__AnonymousRecord_wingdi_L3086_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*' />

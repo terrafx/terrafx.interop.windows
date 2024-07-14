@@ -34,7 +34,7 @@ public partial struct PARTITION_INFORMATION_EX
     public byte IsServicePartition;
 
     /// <include file='PARTITION_INFORMATION_EX.xml' path='doc/member[@name="PARTITION_INFORMATION_EX.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L9037_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L9311_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Mbr"]/*' />

@@ -17,7 +17,7 @@ public unsafe partial struct CERT_BIOMETRIC_DATA
     public uint dwTypeOfBiometricDataChoice;
 
     /// <include file='CERT_BIOMETRIC_DATA.xml' path='doc/member[@name="CERT_BIOMETRIC_DATA.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wincrypt_L5568_C5")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L5596_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CERT_BIOMETRIC_DATA.xml' path='doc/member[@name="CERT_BIOMETRIC_DATA.HashedUrl"]/*' />

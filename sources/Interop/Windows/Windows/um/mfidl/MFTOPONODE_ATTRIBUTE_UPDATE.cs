@@ -24,7 +24,7 @@ public partial struct MFTOPONODE_ATTRIBUTE_UPDATE
     public MF_ATTRIBUTE_TYPE attrType;
 
     /// <include file='MFTOPONODE_ATTRIBUTE_UPDATE.xml' path='doc/member[@name="MFTOPONODE_ATTRIBUTE_UPDATE.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_mfidl_L11490_C36")]
+    [NativeTypeName("__AnonymousRecord_mfidl_L11508_C36")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.u32"]/*' />

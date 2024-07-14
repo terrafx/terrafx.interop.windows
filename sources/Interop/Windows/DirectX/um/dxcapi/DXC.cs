@@ -13,8 +13,14 @@ public static partial class DXC
     [NativeTypeName("#define DXC_CP_UTF16 1200")]
     public const int DXC_CP_UTF16 = 1200;
 
+    [NativeTypeName("#define DXC_CP_UTF32 12000")]
+    public const int DXC_CP_UTF32 = 12000;
+
     [NativeTypeName("#define DXC_CP_ACP 0")]
     public const int DXC_CP_ACP = 0;
+
+    [NativeTypeName("#define DXC_CP_WIDE DXC_CP_UTF16")]
+    public const int DXC_CP_WIDE = 1200;
 
     [NativeTypeName("#define DXC_HASHFLAG_INCLUDES_SOURCE 1")]
     public const int DXC_HASHFLAG_INCLUDES_SOURCE = 1;

@@ -286,6 +286,9 @@ public static partial class SEC
     [NativeTypeName("#define SEC_E_INSUFFICIENT_BUFFERS _HRESULT_TYPEDEF_(0x8009036BL)")]
     public const int SEC_E_INSUFFICIENT_BUFFERS = unchecked((int)(0x8009036B));
 
+    [NativeTypeName("#define SEC_I_INVALID_SESSION_STATE _HRESULT_TYPEDEF_(0x8009036CL)")]
+    public const int SEC_I_INVALID_SESSION_STATE = unchecked((int)(0x8009036C));
+
     [NativeTypeName("#define SEC_E_NO_SPM SEC_E_INTERNAL_ERROR")]
     public const int SEC_E_NO_SPM = unchecked((int)(0x80090304));
 

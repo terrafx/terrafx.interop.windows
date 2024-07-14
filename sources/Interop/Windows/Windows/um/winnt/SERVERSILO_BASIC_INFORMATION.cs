@@ -19,9 +19,9 @@ public unsafe partial struct SERVERSILO_BASIC_INFORMATION
     [NativeTypeName("DWORD")]
     public uint ExitStatus;
 
-    /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.IsDownlevelContainer"]/*' />
+    /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.Reserved"]/*' />
     [NativeTypeName("BOOLEAN")]
-    public byte IsDownlevelContainer;
+    public byte Reserved;
 
     /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.ApiSetSchema"]/*' />
     [NativeTypeName("PVOID")]
@@ -30,4 +30,12 @@ public unsafe partial struct SERVERSILO_BASIC_INFORMATION
     /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.HostApiSetSchema"]/*' />
     [NativeTypeName("PVOID")]
     public void* HostApiSetSchema;
+
+    /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.ContainerBuildNumber"]/*' />
+    [NativeTypeName("DWORD")]
+    public uint ContainerBuildNumber;
+
+    /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.HostBuildNumber"]/*' />
+    [NativeTypeName("DWORD")]
+    public uint HostBuildNumber;
 }

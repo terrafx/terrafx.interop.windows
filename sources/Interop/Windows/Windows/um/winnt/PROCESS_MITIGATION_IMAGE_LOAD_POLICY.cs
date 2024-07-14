@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
 {
     /// <include file='PROCESS_MITIGATION_IMAGE_LOAD_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L12676_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L13147_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
@@ -136,7 +136,7 @@ public partial struct PROCESS_MITIGATION_IMAGE_LOAD_POLICY
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L12678_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L13149_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

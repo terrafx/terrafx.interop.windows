@@ -26,4 +26,7 @@ public enum DevicePairingKinds : uint
 
     /// <include file='DevicePairingKinds.xml' path='doc/member[@name="DevicePairingKinds.DevicePairingKinds_ProvidePasswordCredential"]/*' />
     DevicePairingKinds_ProvidePasswordCredential = 0x10,
+
+    /// <include file='DevicePairingKinds.xml' path='doc/member[@name="DevicePairingKinds.DevicePairingKinds_ProvideAddress"]/*' />
+    DevicePairingKinds_ProvideAddress = 0x20,
 }

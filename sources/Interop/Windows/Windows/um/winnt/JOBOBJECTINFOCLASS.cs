@@ -155,6 +155,12 @@ public enum JOBOBJECTINFOCLASS
     /// <include file='JOBOBJECTINFOCLASS.xml' path='doc/member[@name="JOBOBJECTINFOCLASS.JobObjectReserved27Information"]/*' />
     JobObjectReserved27Information = 49,
 
+    /// <include file='JOBOBJECTINFOCLASS.xml' path='doc/member[@name="JOBOBJECTINFOCLASS.JobObjectReserved28Information"]/*' />
+    JobObjectReserved28Information = 50,
+
+    /// <include file='JOBOBJECTINFOCLASS.xml' path='doc/member[@name="JOBOBJECTINFOCLASS.JobObjectNetworkAccountingInformation"]/*' />
+    JobObjectNetworkAccountingInformation,
+
     /// <include file='JOBOBJECTINFOCLASS.xml' path='doc/member[@name="JOBOBJECTINFOCLASS.MaxJobObjectInfoClass"]/*' />
     MaxJobObjectInfoClass,
 }

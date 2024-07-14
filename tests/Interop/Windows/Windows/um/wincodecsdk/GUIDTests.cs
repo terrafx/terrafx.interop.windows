@@ -305,4 +305,18 @@ public static partial class GUIDTests
     {
         Assert.That(GUID_MetadataFormatWebpANMF, Is.EqualTo(new Guid(0x43c105ee, 0xb93b, 0x4abb, 0xb0, 0x3, 0xa0, 0x8c, 0xd, 0x87, 0x4, 0x71)));
     }
+
+    /// <summary>Validates that the value of the <see cref="GUID_MetadataFormatJpegXLAnim" /> property is correct.</summary>
+    [Test]
+    public static void GUID_MetadataFormatJpegXLAnimTest()
+    {
+        Assert.That(GUID_MetadataFormatJpegXLAnim, Is.EqualTo(new Guid(0x501c2e24, 0x7a7d, 0x42b2, 0x93, 0xc7, 0xb4, 0xf4, 0x5b, 0xcc, 0x92, 0xf7)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_MetadataFormatJpegXLAnimFrame" /> property is correct.</summary>
+    [Test]
+    public static void GUID_MetadataFormatJpegXLAnimFrameTest()
+    {
+        Assert.That(GUID_MetadataFormatJpegXLAnimFrame, Is.EqualTo(new Guid(0x958ecc2c, 0x36cb, 0x4af9, 0x9e, 0xa8, 0x0b, 0x74, 0xba, 0xcc, 0xfd, 0x3e)));
+    }
 }

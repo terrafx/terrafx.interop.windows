@@ -175,6 +175,12 @@ public static partial class NTE
     [NativeTypeName("#define NTE_NOT_ACTIVE_CONSOLE _HRESULT_TYPEDEF_(0x80090038L)")]
     public const int NTE_NOT_ACTIVE_CONSOLE = unchecked((int)(0x80090038));
 
+    [NativeTypeName("#define NTE_VBS_UNAVAILABLE _HRESULT_TYPEDEF_(0x80090039L)")]
+    public const int NTE_VBS_UNAVAILABLE = unchecked((int)(0x80090039));
+
+    [NativeTypeName("#define NTE_VBS_CANNOT_DECRYPT_KEY _HRESULT_TYPEDEF_(0x8009003AL)")]
+    public const int NTE_VBS_CANNOT_DECRYPT_KEY = unchecked((int)(0x8009003A));
+
     [NativeTypeName("#define NTE_OP_OK 0")]
     public const int NTE_OP_OK = 0;
 }

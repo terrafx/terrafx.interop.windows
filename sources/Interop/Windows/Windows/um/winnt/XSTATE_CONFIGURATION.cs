@@ -25,7 +25,7 @@ public partial struct XSTATE_CONFIGURATION
     public uint Size;
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L13874_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L14430_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Features"]/*' />
@@ -60,9 +60,13 @@ public partial struct XSTATE_CONFIGURATION
     [NativeTypeName("DWORD")]
     public uint AllNonLargeFeatureSize;
 
-    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Spare"]/*' />
-    [NativeTypeName("DWORD")]
-    public uint Spare;
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.MaxSveVectorLength"]/*' />
+    [NativeTypeName("WORD")]
+    public ushort MaxSveVectorLength;
+
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Spare1"]/*' />
+    [NativeTypeName("WORD")]
+    public ushort Spare1;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ControlFlags"]/*' />
     [UnscopedRef]
@@ -134,7 +138,7 @@ public partial struct XSTATE_CONFIGURATION
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L13876_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L14432_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

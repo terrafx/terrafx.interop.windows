@@ -21,7 +21,7 @@ public partial struct FILE_ID_DESCRIPTOR
     public FILE_ID_TYPE Type;
 
     /// <include file='FILE_ID_DESCRIPTOR.xml' path='doc/member[@name="FILE_ID_DESCRIPTOR.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winbase_L9279_C5")]
+    [NativeTypeName("__AnonymousRecord_winbase_L9419_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FileId"]/*' />

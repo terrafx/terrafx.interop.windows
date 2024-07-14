@@ -367,4 +367,10 @@ public enum WELL_KNOWN_SID_TYPE
 
     /// <include file='WELL_KNOWN_SID_TYPE.xml' path='doc/member[@name="WELL_KNOWN_SID_TYPE.WinBuiltinDeviceOwnersSid"]/*' />
     WinBuiltinDeviceOwnersSid = 119,
+
+    /// <include file='WELL_KNOWN_SID_TYPE.xml' path='doc/member[@name="WELL_KNOWN_SID_TYPE.WinBuiltinUserModeHardwareOperatorsSid"]/*' />
+    WinBuiltinUserModeHardwareOperatorsSid = 120,
+
+    /// <include file='WELL_KNOWN_SID_TYPE.xml' path='doc/member[@name="WELL_KNOWN_SID_TYPE.WinBuiltinOpenSSHUsersSid"]/*' />
+    WinBuiltinOpenSSHUsersSid = 121,
 }

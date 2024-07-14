@@ -223,6 +223,10 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreateDXGISurfaceBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, uint uSubresourceIndex, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateDXGICrossAdapterBuffer"]/*' />
+    [DllImport("", ExactSpelling = true)]
+    public static extern HRESULT MFCreateDXGICrossAdapterBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkDevice, IMFMediaType* pMediaType, uint uSubresource, IMFMediaBuffer** ppBuffer);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateVideoSampleAllocatorEx"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
@@ -232,6 +236,10 @@ public static unsafe partial class Windows
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreateDXGIDeviceManager(uint* resetToken, IMFDXGIDeviceManager** ppDeviceManager);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetDXGIDeviceManageMode"]/*' />
+    [DllImport("", ExactSpelling = true)]
+    public static extern HRESULT MFGetDXGIDeviceManageMode(IUnknown* pDeviceManager, MF_DXGI_DEVICE_MANAGER_MODE* mode);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateAlignedMemoryBuffer"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
@@ -1542,6 +1550,56 @@ public static unsafe partial class Windows
                 0x6E,
                 0xB0,
                 0x4F
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFSampleExtension_SpatialLayerId
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x7B, 0xBC, 0xAA, 0xB7,
+                0x96, 0x23,
+                0x7A, 0x45,
+                0x87,
+                0x9E,
+                0x62,
+                0x3B,
+                0xFA,
+                0xB6,
+                0xE0,
+                0xAC
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFSampleExtension_TemporalLayerId
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xD2, 0xFC, 0xC1, 0xB3,
+                0x31, 0xB3,
+                0x76, 0x43,
+                0xB9,
+                0x74,
+                0xAD,
+                0x64,
+                0x77,
+                0x69,
+                0xB2,
+                0xB0
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -2872,13 +2930,13 @@ public static unsafe partial class Windows
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFAverageTimePerFrameToFrameRate([NativeTypeName("UINT64")] ulong unAverageTimePerFrame, [NativeTypeName("UINT32 *")] uint* punNumerator, [NativeTypeName("UINT32 *")] uint* punDenominator);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFInitMediaTypeFromMFVideoFormat"]/*' />
-    [DllImport("mfplat", ExactSpelling = true)]
-    public static extern HRESULT MFInitMediaTypeFromMFVideoFormat(IMFMediaType* pMFType, [NativeTypeName("const MFVIDEOFORMAT *")] MFVIDEOFORMAT* pMFVF, [NativeTypeName("UINT32")] uint cbBufSize);
-
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFInitMediaTypeFromWaveFormatEx"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFInitMediaTypeFromWaveFormatEx(IMFMediaType* pMFType, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* pWaveFormat, [NativeTypeName("UINT32")] uint cbBufSize);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFInitMediaTypeFromMFVideoFormat"]/*' />
+    [DllImport("mfplat", ExactSpelling = true)]
+    public static extern HRESULT MFInitMediaTypeFromMFVideoFormat(IMFMediaType* pMFType, [NativeTypeName("const MFVIDEOFORMAT *")] MFVIDEOFORMAT* pMFVF, [NativeTypeName("UINT32")] uint cbBufSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFInitMediaTypeFromAMMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
@@ -2904,6 +2962,10 @@ public static unsafe partial class Windows
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFUnwrapMediaType(IMFMediaType* pWrap, IMFMediaType** ppOrig);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetStrideForBitmapInfoHeader"]/*' />
+    [DllImport("mfplat", ExactSpelling = true)]
+    public static extern HRESULT MFGetStrideForBitmapInfoHeader([NativeTypeName("DWORD")] uint format, [NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("LONG *")] int* pStride);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateVideoMediaType"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateVideoMediaType([NativeTypeName("const MFVIDEOFORMAT *")] MFVIDEOFORMAT* pVideoFormat, IMFVideoMediaType** ppIVideoMediaType);
@@ -2919,10 +2981,6 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateVideoMediaTypeFromBitMapInfoHeader"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateVideoMediaTypeFromBitMapInfoHeader([NativeTypeName("const BITMAPINFOHEADER *")] BITMAPINFOHEADER* pbmihBitMapInfoHeader, [NativeTypeName("DWORD")] uint dwPixelAspectRatioX, [NativeTypeName("DWORD")] uint dwPixelAspectRatioY, MFVideoInterlaceMode InterlaceMode, [NativeTypeName("QWORD")] ulong VideoFlags, [NativeTypeName("QWORD")] ulong qwFramesPerSecondNumerator, [NativeTypeName("QWORD")] ulong qwFramesPerSecondDenominator, [NativeTypeName("DWORD")] uint dwMaxBitRate, IMFVideoMediaType** ppIVideoMediaType);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetStrideForBitmapInfoHeader"]/*' />
-    [DllImport("mfplat", ExactSpelling = true)]
-    public static extern HRESULT MFGetStrideForBitmapInfoHeader([NativeTypeName("DWORD")] uint format, [NativeTypeName("DWORD")] uint dwWidth, [NativeTypeName("LONG *")] int* pStride);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetPlaneSize"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]

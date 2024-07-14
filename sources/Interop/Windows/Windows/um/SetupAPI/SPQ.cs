@@ -40,6 +40,9 @@ public static partial class SPQ
     [NativeTypeName("#define SPQ_SCAN_ACTIVATE_DRP 0x00000400")]
     public const int SPQ_SCAN_ACTIVATE_DRP = 0x00000400;
 
+    [NativeTypeName("#define SPQ_SCAN_USE_OEM_CATALOGS 0x00000800")]
+    public const int SPQ_SCAN_USE_OEM_CATALOGS = 0x00000800;
+
     [NativeTypeName("#define SPQ_DELAYED_COPY 0x00000001")]
     public const int SPQ_DELAYED_COPY = 0x00000001;
 

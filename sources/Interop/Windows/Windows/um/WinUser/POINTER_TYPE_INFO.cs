@@ -19,7 +19,7 @@ public partial struct POINTER_TYPE_INFO
     public uint type;
 
     /// <include file='POINTER_TYPE_INFO.xml' path='doc/member[@name="POINTER_TYPE_INFO.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winuser_L6493_C5")]
+    [NativeTypeName("__AnonymousRecord_winuser_L6496_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.touchInfo"]/*' />

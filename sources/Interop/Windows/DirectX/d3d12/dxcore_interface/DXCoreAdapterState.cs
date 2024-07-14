@@ -17,4 +17,31 @@ public enum DXCoreAdapterState : uint
 
     /// <include file='DXCoreAdapterState.xml' path='doc/member[@name="DXCoreAdapterState.AdapterMemoryBudget"]/*' />
     AdapterMemoryBudget = 1,
+
+    /// <include file='DXCoreAdapterState.xml' path='doc/member[@name="DXCoreAdapterState.AdapterMemoryUsageBytes"]/*' />
+    AdapterMemoryUsageBytes = 2,
+
+    /// <include file='DXCoreAdapterState.xml' path='doc/member[@name="DXCoreAdapterState.AdapterMemoryUsageByProcessBytes"]/*' />
+    AdapterMemoryUsageByProcessBytes = 3,
+
+    /// <include file='DXCoreAdapterState.xml' path='doc/member[@name="DXCoreAdapterState.AdapterEngineRunningTimeMicroseconds"]/*' />
+    AdapterEngineRunningTimeMicroseconds = 4,
+
+    /// <include file='DXCoreAdapterState.xml' path='doc/member[@name="DXCoreAdapterState.AdapterEngineRunningTimeByProcessMicroseconds"]/*' />
+    AdapterEngineRunningTimeByProcessMicroseconds = 5,
+
+    /// <include file='DXCoreAdapterState.xml' path='doc/member[@name="DXCoreAdapterState.AdapterTemperatureCelsius"]/*' />
+    AdapterTemperatureCelsius = 6,
+
+    /// <include file='DXCoreAdapterState.xml' path='doc/member[@name="DXCoreAdapterState.AdapterInUseProcessCount"]/*' />
+    AdapterInUseProcessCount = 7,
+
+    /// <include file='DXCoreAdapterState.xml' path='doc/member[@name="DXCoreAdapterState.AdapterInUseProcessSet"]/*' />
+    AdapterInUseProcessSet = 8,
+
+    /// <include file='DXCoreAdapterState.xml' path='doc/member[@name="DXCoreAdapterState.AdapterEngineFrequencyHertz"]/*' />
+    AdapterEngineFrequencyHertz = 9,
+
+    /// <include file='DXCoreAdapterState.xml' path='doc/member[@name="DXCoreAdapterState.AdapterMemoryFrequencyHertz"]/*' />
+    AdapterMemoryFrequencyHertz = 10,
 }

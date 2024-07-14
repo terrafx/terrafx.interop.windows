@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
 // Ported from DirectML.h in microsoft/DirectX-Headers tag v1.614.0
-// Original source is Copyright © Microsoft. All rights reserved.
+// Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
 using System;

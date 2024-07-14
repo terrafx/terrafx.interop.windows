@@ -8,6 +8,9 @@ namespace TerraFX.Interop.DirectX;
 /// <include file='D3D_SHADER_MODEL.xml' path='doc/member[@name="D3D_SHADER_MODEL"]/*' />
 public enum D3D_SHADER_MODEL
 {
+    /// <include file='D3D_SHADER_MODEL.xml' path='doc/member[@name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_NONE"]/*' />
+    D3D_SHADER_MODEL_NONE = 0,
+
     /// <include file='D3D_SHADER_MODEL.xml' path='doc/member[@name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_5_1"]/*' />
     D3D_SHADER_MODEL_5_1 = 0x51,
 
@@ -38,6 +41,9 @@ public enum D3D_SHADER_MODEL
     /// <include file='D3D_SHADER_MODEL.xml' path='doc/member[@name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_6_8"]/*' />
     D3D_SHADER_MODEL_6_8 = 0x68,
 
+    /// <include file='D3D_SHADER_MODEL.xml' path='doc/member[@name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_6_9"]/*' />
+    D3D_SHADER_MODEL_6_9 = 0x69,
+
     /// <include file='D3D_SHADER_MODEL.xml' path='doc/member[@name="D3D_SHADER_MODEL.D3D_HIGHEST_SHADER_MODEL"]/*' />
-    D3D_HIGHEST_SHADER_MODEL = D3D_SHADER_MODEL_6_8,
+    D3D_HIGHEST_SHADER_MODEL = D3D_SHADER_MODEL_6_9,
 }

@@ -7,6 +7,9 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    [NativeTypeName("#define _ARM64_MULT_INTRINS_SUPPORTED 0")]
+    public const int _ARM64_MULT_INTRINS_SUPPORTED = 0;
+
     [NativeTypeName("#define INTSAFE_E_ARITHMETIC_OVERFLOW ((HRESULT)0x80070216L)")]
     public const int INTSAFE_E_ARITHMETIC_OVERFLOW = unchecked((int)(0x80070216));
 

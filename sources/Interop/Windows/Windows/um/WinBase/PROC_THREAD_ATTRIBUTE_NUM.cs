@@ -70,4 +70,7 @@ public enum PROC_THREAD_ATTRIBUTE_NUM
 
     /// <include file='PROC_THREAD_ATTRIBUTE_NUM.xml' path='doc/member[@name="PROC_THREAD_ATTRIBUTE_NUM.ProcThreadAttributeTrustedApp"]/*' />
     ProcThreadAttributeTrustedApp = 29,
+
+    /// <include file='PROC_THREAD_ATTRIBUTE_NUM.xml' path='doc/member[@name="PROC_THREAD_ATTRIBUTE_NUM.ProcThreadAttributeSveVectorLength"]/*' />
+    ProcThreadAttributeSveVectorLength = 30,
 }

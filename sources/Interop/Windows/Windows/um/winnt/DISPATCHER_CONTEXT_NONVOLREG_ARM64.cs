@@ -21,7 +21,7 @@ public partial struct DISPATCHER_CONTEXT_NONVOLREG_ARM64
 
     /// <include file='DISPATCHER_CONTEXT_NONVOLREG_ARM64.xml' path='doc/member[@name="DISPATCHER_CONTEXT_NONVOLREG_ARM64.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L6856_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L7106_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.GpNvRegs"]/*' />

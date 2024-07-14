@@ -29,7 +29,7 @@ public partial struct NT_TIB64
     public ulong SubSystemTib;
 
     /// <include file='NT_TIB64.xml' path='doc/member[@name="NT_TIB64.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L12329_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L12801_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='NT_TIB64.xml' path='doc/member[@name="NT_TIB64.ArbitraryUserPointer"]/*' />

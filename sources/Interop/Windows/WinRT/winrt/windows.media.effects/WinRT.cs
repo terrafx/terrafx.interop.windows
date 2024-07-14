@@ -7,11 +7,17 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    [NativeTypeName("const WCHAR[61]")]
+    public const string InterfaceName_Windows_Media_Effects_IAcousticEchoCancellationConfiguration = "Windows.Media.Effects.IAcousticEchoCancellationConfiguration";
+
     [NativeTypeName("const WCHAR[50]")]
     public const string InterfaceName_Windows_Media_Effects_IAudioCaptureEffectsManager = "Windows.Media.Effects.IAudioCaptureEffectsManager";
 
     [NativeTypeName("const WCHAR[35]")]
     public const string InterfaceName_Windows_Media_Effects_IAudioEffect = "Windows.Media.Effects.IAudioEffect";
+
+    [NativeTypeName("const WCHAR[36]")]
+    public const string InterfaceName_Windows_Media_Effects_IAudioEffect2 = "Windows.Media.Effects.IAudioEffect2";
 
     [NativeTypeName("const WCHAR[45]")]
     public const string InterfaceName_Windows_Media_Effects_IAudioEffectDefinition = "Windows.Media.Effects.IAudioEffectDefinition";
@@ -66,6 +72,9 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[57]")]
     public const string InterfaceName_Windows_Media_Effects_IVideoTransformSphericalProjection = "Windows.Media.Effects.IVideoTransformSphericalProjection";
+
+    [NativeTypeName("const WCHAR[60]")]
+    public const string RuntimeClass_Windows_Media_Effects_AcousticEchoCancellationConfiguration = "Windows.Media.Effects.AcousticEchoCancellationConfiguration";
 
     [NativeTypeName("const WCHAR[49]")]
     public const string RuntimeClass_Windows_Media_Effects_AudioCaptureEffectsManager = "Windows.Media.Effects.AudioCaptureEffectsManager";

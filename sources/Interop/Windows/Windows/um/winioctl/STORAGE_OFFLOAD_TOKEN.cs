@@ -28,7 +28,7 @@ public partial struct STORAGE_OFFLOAD_TOKEN
     public _TokenIdLength_e__FixedBuffer TokenIdLength;
 
     /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L3359_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L3588_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.StorageOffloadZeroDataToken"]/*' />
@@ -59,7 +59,7 @@ public partial struct STORAGE_OFFLOAD_TOKEN
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.StorageOffloadZeroDataToken"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L3360_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L3589_C9")]
         public _StorageOffloadZeroDataToken_e__Struct StorageOffloadZeroDataToken;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Token"]/*' />

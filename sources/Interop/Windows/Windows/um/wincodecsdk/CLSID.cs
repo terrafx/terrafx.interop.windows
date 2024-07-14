@@ -1988,6 +1988,31 @@ public static partial class CLSID
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_WICHeifHDRMetadataWriter
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xA2, 0x35, 0x31, 0xB8,
+                0x7E, 0x8E,
+                0x5E, 0x48,
+                0xA5,
+                0x33,
+                0xF9,
+                0x36,
+                0x21,
+                0xDD,
+                0x93,
+                0xC8
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WICWebpAnimMetadataReader
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2030,6 +2055,106 @@ public static partial class CLSID
                 0x67,
                 0x80,
                 0x7C
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_WICJpegXLAnimMetadataReader
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xB0, 0x6E, 0x8B, 0xBF,
+                0xE2, 0x37,
+                0xD8, 0x4E,
+                0x82,
+                0x89,
+                0xBE,
+                0x9A,
+                0xE3,
+                0x1D,
+                0x9F,
+                0x03
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_WICJpegXLAnimMetadataWriter
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x45, 0x13, 0xD0, 0x39,
+                0x2B, 0x43,
+                0xE6, 0x44,
+                0xAF,
+                0xD6,
+                0xF6,
+                0x06,
+                0xD2,
+                0x0A,
+                0x55,
+                0x71
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_WICJpegXLAnimFrameMetadataReader
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xA8, 0x50, 0xDF, 0x9C,
+                0x70, 0x87,
+                0xE6, 0x4F,
+                0xAE,
+                0xF2,
+                0xD0,
+                0x6E,
+                0x2C,
+                0x01,
+                0x74,
+                0x4F
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_WICJpegXLAnimFrameMetadataWriter
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xA8, 0x58, 0xCE, 0xD1,
+                0xE0, 0x06,
+                0x6F, 0x4B,
+                0x8F,
+                0xC1,
+                0x57,
+                0x75,
+                0x60,
+                0xBD,
+                0x5A,
+                0xD9
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

@@ -29,7 +29,7 @@ public unsafe partial struct ADDRINFO_DNS_SERVER
     public SOCKADDR* ai_addr;
 
     /// <include file='ADDRINFO_DNS_SERVER.xml' path='doc/member[@name="ADDRINFO_DNS_SERVER.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_ws2def_L1101_C5")]
+    [NativeTypeName("__AnonymousRecord_ws2def_L1103_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ai_template"]/*' />
@@ -43,6 +43,17 @@ public unsafe partial struct ADDRINFO_DNS_SERVER
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ai_hostname"]/*' />
+    [UnscopedRef]
+    public ref char* ai_hostname
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.ai_hostname;
+        }
+    }
+
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
@@ -51,5 +62,10 @@ public unsafe partial struct ADDRINFO_DNS_SERVER
         [FieldOffset(0)]
         [NativeTypeName("PWSTR")]
         public char* ai_template;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ai_hostname"]/*' />
+        [FieldOffset(0)]
+        [NativeTypeName("PWSTR")]
+        public char* ai_hostname;
     }
 }

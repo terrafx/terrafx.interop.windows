@@ -39,6 +39,31 @@ public static partial class IID
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_IDXCoreAdapterFactory1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x19, 0x2E, 0x68, 0xD5,
+                0x21, 0x6D,
+                0x1C, 0x40,
+                0x82,
+                0x7A,
+                0x9A,
+                0x51,
+                0xA4,
+                0xEA,
+                0x35,
+                0xD7
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXCoreAdapterList
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -81,6 +106,31 @@ public static partial class IID
                 0x6F,
                 0xC8,
                 0x3E
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_IDXCoreAdapter1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x66, 0x33, 0x78, 0xA0,
+                0xA3, 0xCF,
+                0xBE, 0x43,
+                0x9D,
+                0x79,
+                0x55,
+                0xB2,
+                0xDA,
+                0x97,
+                0xC6,
+                0x3C
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

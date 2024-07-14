@@ -10,8 +10,74 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
-public static partial class Windows
+public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AddRaw"]/*' />
+    [return: NativeTypeName("LONG")]
+    public static int AddRaw([NativeTypeName("LONG *")] int* Destination, [NativeTypeName("LONG")] int Value)
+    {
+        int NewValue;
+
+        NewValue = ReadRaw(Destination);
+        NewValue += Value;
+        WriteRaw(Destination, NewValue);
+        return NewValue;
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AddULongRaw"]/*' />
+    [return: NativeTypeName("DWORD")]
+    public static uint AddULongRaw([NativeTypeName("DWORD *")] uint* Destination, [NativeTypeName("DWORD")] uint Value)
+    {
+        return (uint)(AddRaw(unchecked((int*)(Destination)), (int)(Value)));
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IncrementRaw"]/*' />
+    [return: NativeTypeName("LONG")]
+    public static int IncrementRaw([NativeTypeName("LONG *")] int* Destination)
+    {
+        return AddRaw(Destination, 1);
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IncrementULongRaw"]/*' />
+    [return: NativeTypeName("DWORD")]
+    public static uint IncrementULongRaw([NativeTypeName("DWORD *")] uint* Destination)
+    {
+        return (uint)(IncrementRaw(unchecked((int*)(Destination))));
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AddRaw64"]/*' />
+    [return: NativeTypeName("LONG64")]
+    public static long AddRaw64([NativeTypeName("LONG64 *")] long* Destination, [NativeTypeName("LONG64")] long Value)
+    {
+        long NewValue;
+
+        NewValue = ReadRaw64(Destination);
+        NewValue += Value;
+        WriteRaw64(Destination, NewValue);
+        return NewValue;
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AddULong64Raw"]/*' />
+    [return: NativeTypeName("DWORD64")]
+    public static ulong AddULong64Raw([NativeTypeName("DWORD64 *")] ulong* Destination, [NativeTypeName("DWORD64")] ulong Value)
+    {
+        return (ulong)(AddRaw64(unchecked((long*)(Destination)), (long)(Value)));
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IncrementRaw64"]/*' />
+    [return: NativeTypeName("LONG64")]
+    public static long IncrementRaw64([NativeTypeName("LONG64 *")] long* Destination)
+    {
+        return AddRaw64(Destination, 1);
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IncrementULong64Raw"]/*' />
+    [return: NativeTypeName("DWORD64")]
+    public static ulong IncrementULong64Raw([NativeTypeName("DWORD64 *")] ulong* Destination)
+    {
+        return (ulong)(IncrementRaw64(unchecked((long*)(Destination))));
+    }
+
     [NativeTypeName("const GUID")]
     public static ref readonly Guid NO_SUBGROUP_GUID
     {
@@ -60,6 +126,102 @@ public static partial class Windows
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RtlCopyDeviceMemory"]/*' />
+    [DllImport("", ExactSpelling = true)]
+    [return: NativeTypeName("volatile void *")]
+    public static extern void* RtlCopyDeviceMemory([NativeTypeName("volatile void *")] void* Destination, [NativeTypeName("const volatile void *")] void* Source, [NativeTypeName("size_t")] nuint Length);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RtlCopyVolatileMemory"]/*' />
+    [DllImport("", ExactSpelling = true)]
+    [return: NativeTypeName("volatile void *")]
+    public static extern void* RtlCopyVolatileMemory([NativeTypeName("volatile void *")] void* Destination, [NativeTypeName("const volatile void *")] void* Source, [NativeTypeName("size_t")] nuint Length);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RtlMoveVolatileMemory"]/*' />
+    [DllImport("", ExactSpelling = true)]
+    [return: NativeTypeName("volatile void *")]
+    public static extern void* RtlMoveVolatileMemory([NativeTypeName("volatile void *")] void* Destination, [NativeTypeName("const volatile void *")] void* Source, [NativeTypeName("size_t")] nuint Length);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RtlSetVolatileMemory"]/*' />
+    [DllImport("", ExactSpelling = true)]
+    [return: NativeTypeName("volatile void *")]
+    public static extern void* RtlSetVolatileMemory([NativeTypeName("volatile void *")] void* Destination, int Fill, [NativeTypeName("size_t")] nuint Length);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RtlFillVolatileMemory"]/*' />
+    [return: NativeTypeName("volatile void *")]
+    public static void* RtlFillVolatileMemory([NativeTypeName("volatile void *")] void* Destination, [NativeTypeName("size_t")] nuint Length, int Fill)
+    {
+        return RtlSetVolatileMemory(Destination, Fill, Length);
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RtlZeroVolatileMemory"]/*' />
+    [return: NativeTypeName("volatile void *")]
+    public static void* RtlZeroVolatileMemory([NativeTypeName("volatile void *")] void* Destination, [NativeTypeName("size_t")] nuint Length)
+    {
+        return RtlFillVolatileMemory(Destination, Length, 0);
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RtlSecureZeroMemory2"]/*' />
+    [return: NativeTypeName("volatile void *")]
+    public static void* RtlSecureZeroMemory2([NativeTypeName("volatile void *")] void* Destination, [NativeTypeName("size_t")] nuint Length)
+    {
+        return RtlZeroVolatileMemory(Destination, Length);
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RtlFillDeviceMemory"]/*' />
+    [return: NativeTypeName("volatile void *")]
+    public static void* RtlFillDeviceMemory([NativeTypeName("volatile void *")] void* Destination, [NativeTypeName("size_t")] nuint Length, int Fill)
+    {
+        return RtlSetVolatileMemory(Destination, Fill, Length);
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RtlZeroDeviceMemory"]/*' />
+    [return: NativeTypeName("volatile void *")]
+    public static void* RtlZeroDeviceMemory([NativeTypeName("volatile void *")] void* Destination, [NativeTypeName("size_t")] nuint Length)
+    {
+        return RtlFillDeviceMemory(Destination, Length, 0);
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NtReadCurrentTebByte"]/*' />
+    [return: NativeTypeName("unsigned char")]
+    public static byte NtReadCurrentTebByte([NativeTypeName("unsigned int")] uint Offset)
+    {
+        return __readgsbyte(Offset);
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NtReadCurrentTebUshort"]/*' />
+    [return: NativeTypeName("unsigned short")]
+    public static ushort NtReadCurrentTebUshort([NativeTypeName("unsigned int")] uint Offset)
+    {
+        return __readgsword(Offset);
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NtReadCurrentTebUlong"]/*' />
+    [return: NativeTypeName("unsigned int")]
+    public static uint NtReadCurrentTebUlong([NativeTypeName("unsigned int")] uint Offset)
+    {
+        return __readgsdword(Offset);
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NtReadCurrentTebUlongPtr"]/*' />
+    [return: NativeTypeName("unsigned long long")]
+    public static ulong NtReadCurrentTebUlongPtr([NativeTypeName("unsigned int")] uint Offset)
+    {
+        return __readgsqword(Offset);
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NtReadCurrentTebPVOID"]/*' />
+    public static void* NtReadCurrentTebPVOID([NativeTypeName("unsigned int")] uint Offset)
+    {
+        return (void*)(__readgsqword(Offset));
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NtReadCurrentTebUlonglong"]/*' />
+    [return: NativeTypeName("unsigned long long")]
+    public static ulong NtReadCurrentTebUlonglong([NativeTypeName("unsigned int")] uint Offset)
+    {
+        return __readgsqword(Offset);
     }
 
     [NativeTypeName("#define ANYSIZE_ARRAY 1")]
@@ -461,6 +623,21 @@ public static partial class Windows
     [NativeTypeName("#define MAILSLOT_WAIT_FOREVER ((DWORD)-1)")]
     public const uint MAILSLOT_WAIT_FOREVER = unchecked((uint)(-1));
 
+    [NativeTypeName("#define LX_FILE_METADATA_HAS_UID 0x1")]
+    public const int LX_FILE_METADATA_HAS_UID = 0x1;
+
+    [NativeTypeName("#define LX_FILE_METADATA_HAS_GID 0x2")]
+    public const int LX_FILE_METADATA_HAS_GID = 0x2;
+
+    [NativeTypeName("#define LX_FILE_METADATA_HAS_MODE 0x4")]
+    public const int LX_FILE_METADATA_HAS_MODE = 0x4;
+
+    [NativeTypeName("#define LX_FILE_METADATA_HAS_DEVICE_ID 0x8")]
+    public const int LX_FILE_METADATA_HAS_DEVICE_ID = 0x8;
+
+    [NativeTypeName("#define LX_FILE_CASE_SENSITIVE_DIR 0x10")]
+    public const int LX_FILE_CASE_SENSITIVE_DIR = 0x10;
+
     [NativeTypeName("#define FLUSH_FLAGS_FILE_DATA_ONLY 0x00000001")]
     public const int FLUSH_FLAGS_FILE_DATA_ONLY = 0x00000001;
 
@@ -469,6 +646,9 @@ public static partial class Windows
 
     [NativeTypeName("#define FLUSH_FLAGS_FILE_DATA_SYNC_ONLY 0x00000004")]
     public const int FLUSH_FLAGS_FILE_DATA_SYNC_ONLY = 0x00000004;
+
+    [NativeTypeName("#define FLUSH_FLAGS_FLUSH_AND_PURGE 0x00000008")]
+    public const int FLUSH_FLAGS_FLUSH_AND_PURGE = 0x00000008;
 
     [NativeTypeName("#define SHUFFLE_FILE_FLAG_SKIP_INITIALIZING_NEW_CLUSTERS (0x00000001)")]
     public const int SHUFFLE_FILE_FLAG_SKIP_INITIALIZING_NEW_CLUSTERS = (0x00000001);
@@ -686,6 +866,15 @@ public static partial class Windows
     [NativeTypeName("#define COMPRESSION_FORMAT_XP10 (0x0005)")]
     public const int COMPRESSION_FORMAT_XP10 = (0x0005);
 
+    [NativeTypeName("#define COMPRESSION_FORMAT_LZ4 (0x0006)")]
+    public const int COMPRESSION_FORMAT_LZ4 = (0x0006);
+
+    [NativeTypeName("#define COMPRESSION_FORMAT_DEFLATE (0x0007)")]
+    public const int COMPRESSION_FORMAT_DEFLATE = (0x0007);
+
+    [NativeTypeName("#define COMPRESSION_FORMAT_ZLIB (0x0008)")]
+    public const int COMPRESSION_FORMAT_ZLIB = (0x0008);
+
     [NativeTypeName("#define COMPRESSION_ENGINE_STANDARD (0x0000)")]
     public const int COMPRESSION_ENGINE_STANDARD = (0x0000);
 
@@ -694,6 +883,9 @@ public static partial class Windows
 
     [NativeTypeName("#define COMPRESSION_ENGINE_HIBER (0x0200)")]
     public const int COMPRESSION_ENGINE_HIBER = (0x0200);
+
+    [NativeTypeName("#define RtlCompareDeviceMemory RtlCompareMemory")]
+    public static delegate*<void*, void*, nuint, nuint> RtlCompareDeviceMemory => &RtlCompareMemory;
 
     [NativeTypeName("#define MESSAGE_RESOURCE_UNICODE 0x0001")]
     public const int MESSAGE_RESOURCE_UNICODE = 0x0001;

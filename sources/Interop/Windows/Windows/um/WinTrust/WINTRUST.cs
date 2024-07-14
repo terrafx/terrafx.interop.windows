@@ -21,4 +21,10 @@ public static partial class WINTRUST
 
     [NativeTypeName("#define WINTRUST_MAX_HASH_BYTES_TO_MAP_DEFAULT 0x00100000")]
     public const int WINTRUST_MAX_HASH_BYTES_TO_MAP_DEFAULT = 0x00100000;
+
+    [NativeTypeName("#define WINTRUST_DETACHED_SIG_CHOICE_HANDLE 1")]
+    public const int WINTRUST_DETACHED_SIG_CHOICE_HANDLE = 1;
+
+    [NativeTypeName("#define WINTRUST_DETACHED_SIG_CHOICE_BLOB 2")]
+    public const int WINTRUST_DETACHED_SIG_CHOICE_BLOB = 2;
 }

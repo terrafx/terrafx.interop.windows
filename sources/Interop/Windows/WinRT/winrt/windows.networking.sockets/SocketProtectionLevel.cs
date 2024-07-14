@@ -41,4 +41,7 @@ public enum SocketProtectionLevel
 
     /// <include file='SocketProtectionLevel.xml' path='doc/member[@name="SocketProtectionLevel.SocketProtectionLevel_Unspecified"]/*' />
     SocketProtectionLevel_Unspecified = 9,
+
+    /// <include file='SocketProtectionLevel.xml' path='doc/member[@name="SocketProtectionLevel.SocketProtectionLevel_Tls13"]/*' />
+    SocketProtectionLevel_Tls13 = 10,
 }

@@ -3025,6 +3025,29 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IObjectWithPackageFullName
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x15, 0xA5, 0x2A, 0xED,
+                0x2F, 0x60,
+                0x9C, 0x46,
+                0xA1,
+                0x30,
+                0xCE,
+                0x69,
+                0xFD,
+                0x0F,
+                0xA8,
+                0x78
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IObjectWithProgID
     {
         get

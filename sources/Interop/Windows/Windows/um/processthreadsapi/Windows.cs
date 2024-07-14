@@ -490,6 +490,11 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.14393.0")]
     public static extern HRESULT GetThreadDescription(HANDLE hThread, [NativeTypeName("PWSTR *")] char** ppszThreadDescription);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TlsGetValue2"]/*' />
+    [DllImport("", ExactSpelling = true)]
+    [return: NativeTypeName("LPVOID")]
+    public static extern void* TlsGetValue2([NativeTypeName("DWORD")] uint dwTlsIndex);
+
     [NativeTypeName("#define TLS_OUT_OF_INDEXES ((DWORD)0xFFFFFFFF)")]
     public const uint TLS_OUT_OF_INDEXES = ((uint)(0xFFFFFFFF));
 

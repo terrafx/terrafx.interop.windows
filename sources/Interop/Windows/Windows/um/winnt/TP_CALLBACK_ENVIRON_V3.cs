@@ -38,7 +38,7 @@ public unsafe partial struct TP_CALLBACK_ENVIRON_V3
     public delegate* unmanaged<PTP_CALLBACK_INSTANCE, void*, void> FinalizationCallback;
 
     /// <include file='TP_CALLBACK_ENVIRON_V3.xml' path='doc/member[@name="TP_CALLBACK_ENVIRON_V3.u"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L24257_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L25410_C5")]
     public _u_e__Union u;
 
     /// <include file='TP_CALLBACK_ENVIRON_V3.xml' path='doc/member[@name="TP_CALLBACK_ENVIRON_V3.CallbackPriority"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct TP_CALLBACK_ENVIRON_V3
 
         /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union.s"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L24259_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L25412_C9")]
         public _s_e__Struct s;
 
         /// <include file='_s_e__Struct.xml' path='doc/member[@name="_s_e__Struct"]/*' />

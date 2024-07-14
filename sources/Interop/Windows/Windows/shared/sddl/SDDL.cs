@@ -403,6 +403,12 @@ public static partial class SDDL
     [NativeTypeName("#define SDDL_ENTERPRISE_KEY_ADMINS TEXT(\"EK\")")]
     public const string SDDL_ENTERPRISE_KEY_ADMINS = "EK";
 
+    [NativeTypeName("#define SDDL_USER_MODE_HARDWARE_OPERATORS TEXT(\"HO\")")]
+    public const string SDDL_USER_MODE_HARDWARE_OPERATORS = "HO";
+
+    [NativeTypeName("#define SDDL_OPENSSH_USERS TEXT(\"SH\")")]
+    public const string SDDL_OPENSSH_USERS = "SH";
+
     [NativeTypeName("#define SDDL_ML_LOW TEXT(\"LW\")")]
     public const string SDDL_ML_LOW = "LW";
 

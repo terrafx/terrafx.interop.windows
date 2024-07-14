@@ -91,7 +91,7 @@ public unsafe partial struct CRYPT_PROVIDER_DATA
     public uint dwSubjectChoice;
 
     /// <include file='CRYPT_PROVIDER_DATA.xml' path='doc/member[@name="CRYPT_PROVIDER_DATA.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_WinTrust_L681_C5")]
+    [NativeTypeName("__AnonymousRecord_WinTrust_L729_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CRYPT_PROVIDER_DATA.xml' path='doc/member[@name="CRYPT_PROVIDER_DATA.pszUsageOID"]/*' />

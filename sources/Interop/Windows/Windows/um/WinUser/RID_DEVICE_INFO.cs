@@ -21,7 +21,7 @@ public partial struct RID_DEVICE_INFO
     public uint dwType;
 
     /// <include file='RID_DEVICE_INFO.xml' path='doc/member[@name="RID_DEVICE_INFO.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winuser_L15192_C5")]
+    [NativeTypeName("__AnonymousRecord_winuser_L15240_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.mouse"]/*' />

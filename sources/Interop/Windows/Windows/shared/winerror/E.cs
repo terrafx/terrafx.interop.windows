@@ -241,6 +241,15 @@ public static partial class E
     [NativeTypeName("#define E_HDAUDIO_NULL_LINKED_LIST_ENTRY _HRESULT_TYPEDEF_(0x80660005L)")]
     public const int E_HDAUDIO_NULL_LINKED_LIST_ENTRY = unchecked((int)(0x80660005));
 
+    [NativeTypeName("#define E_SOUNDWIRE_COMMAND_ABORTED _HRESULT_TYPEDEF_(0x80660006L)")]
+    public const int E_SOUNDWIRE_COMMAND_ABORTED = unchecked((int)(0x80660006));
+
+    [NativeTypeName("#define E_SOUNDWIRE_COMMAND_IGNORED _HRESULT_TYPEDEF_(0x80660007L)")]
+    public const int E_SOUNDWIRE_COMMAND_IGNORED = unchecked((int)(0x80660007));
+
+    [NativeTypeName("#define E_SOUNDWIRE_COMMAND_FAILED _HRESULT_TYPEDEF_(0x80660008L)")]
+    public const int E_SOUNDWIRE_COMMAND_FAILED = unchecked((int)(0x80660008));
+
     [NativeTypeName("#define E_MONITOR_RESOLUTION_TOO_LOW _HRESULT_TYPEDEF_(0x80270250L)")]
     public const int E_MONITOR_RESOLUTION_TOO_LOW = unchecked((int)(0x80270250));
 

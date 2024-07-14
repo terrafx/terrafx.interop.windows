@@ -59,7 +59,7 @@ public unsafe partial struct IDxcExtraOutputs : IDxcExtraOutputs.Interface, INat
     /// <include file='IDxcExtraOutputs.xml' path='doc/member[@name="IDxcExtraOutputs.GetOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetOutput([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("const IID &")] Guid* iid, void** ppvObject, IDxcBlobUtf16** ppOutputType, IDxcBlobUtf16** ppOutputName)
+    public HRESULT GetOutput([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("const IID &")] Guid* iid, void** ppvObject, [NativeTypeName("IDxcBlobWide **")] IDxcBlobUtf16** ppOutputType, [NativeTypeName("IDxcBlobWide **")] IDxcBlobUtf16** ppOutputName)
     {
         return ((delegate* unmanaged[MemberFunction]<IDxcExtraOutputs*, uint, Guid*, void**, IDxcBlobUtf16**, IDxcBlobUtf16**, int>)(lpVtbl[4]))((IDxcExtraOutputs*)Unsafe.AsPointer(ref this), uIndex, iid, ppvObject, ppOutputType, ppOutputName);
     }
@@ -71,7 +71,7 @@ public unsafe partial struct IDxcExtraOutputs : IDxcExtraOutputs.Interface, INat
         uint GetOutputCount();
 
         [VtblIndex(4)]
-        HRESULT GetOutput([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("const IID &")] Guid* iid, void** ppvObject, IDxcBlobUtf16** ppOutputType, IDxcBlobUtf16** ppOutputName);
+        HRESULT GetOutput([NativeTypeName("UINT32")] uint uIndex, [NativeTypeName("const IID &")] Guid* iid, void** ppvObject, [NativeTypeName("IDxcBlobWide **")] IDxcBlobUtf16** ppOutputType, [NativeTypeName("IDxcBlobWide **")] IDxcBlobUtf16** ppOutputName);
     }
 
     public partial struct Vtbl<TSelf>
@@ -89,7 +89,7 @@ public unsafe partial struct IDxcExtraOutputs : IDxcExtraOutputs.Interface, INat
         [NativeTypeName("UINT32 () __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetOutputCount;
 
-        [NativeTypeName("HRESULT (UINT32, const IID &, void **, IDxcBlobUtf16 **, IDxcBlobUtf16 **) __attribute__((stdcall))")]
+        [NativeTypeName("HRESULT (UINT32, const IID &, void **, IDxcBlobWide **, IDxcBlobWide **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, void**, IDxcBlobUtf16**, IDxcBlobUtf16**, int> GetOutput;
     }
 }

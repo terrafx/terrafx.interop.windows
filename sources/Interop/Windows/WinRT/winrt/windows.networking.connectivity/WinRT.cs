@@ -199,6 +199,6 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[61]")]
     public const string RuntimeClass_Windows_Networking_Connectivity_WwanConnectionProfileDetails = "Windows.Networking.Connectivity.WwanConnectionProfileDetails";
 
-    [NativeTypeName("#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x20000")]
-    public const int WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION = 0x20000;
+    [NativeTypeName("#define WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION 0x30000")]
+    public const int WINDOWS_NETWORKING_CONNECTIVITY_WWANCONTRACT_VERSION = 0x30000;
 }

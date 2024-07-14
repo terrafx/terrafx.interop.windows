@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct QUERY_FILE_LAYOUT_INPUT
 {
     /// <include file='QUERY_FILE_LAYOUT_INPUT.xml' path='doc/member[@name="QUERY_FILE_LAYOUT_INPUT.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L15007_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L15312_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='QUERY_FILE_LAYOUT_INPUT.xml' path='doc/member[@name="QUERY_FILE_LAYOUT_INPUT.Flags"]/*' />
@@ -29,7 +29,7 @@ public partial struct QUERY_FILE_LAYOUT_INPUT
     public uint Reserved;
 
     /// <include file='QUERY_FILE_LAYOUT_INPUT.xml' path='doc/member[@name="QUERY_FILE_LAYOUT_INPUT.Filter"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L15034_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L15339_C5")]
     public _Filter_e__Union Filter;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FilterEntryCount"]/*' />

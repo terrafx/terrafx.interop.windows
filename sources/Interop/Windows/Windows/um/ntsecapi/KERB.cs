@@ -25,6 +25,12 @@ public static partial class KERB
     [NativeTypeName("#define KERB_ETYPE_AES256_CTS_HMAC_SHA1_96 18")]
     public const int KERB_ETYPE_AES256_CTS_HMAC_SHA1_96 = 18;
 
+    [NativeTypeName("#define KERB_ETYPE_AES128_CTS_HMAC_SHA256 19")]
+    public const int KERB_ETYPE_AES128_CTS_HMAC_SHA256 = 19;
+
+    [NativeTypeName("#define KERB_ETYPE_AES256_CTS_HMAC_SHA384 20")]
+    public const int KERB_ETYPE_AES256_CTS_HMAC_SHA384 = 20;
+
     [NativeTypeName("#define KERB_ETYPE_RC4_MD4 -128")]
     public const int KERB_ETYPE_RC4_MD4 = -128;
 

@@ -14,4 +14,10 @@ public enum MLOperatorEdgeType : uint
 
     /// <include file='MLOperatorEdgeType.xml' path='doc/member[@name="MLOperatorEdgeType.Tensor"]/*' />
     Tensor = 1,
+
+    /// <include file='MLOperatorEdgeType.xml' path='doc/member[@name="MLOperatorEdgeType.SequenceTensor"]/*' />
+    SequenceTensor = 2,
+
+    /// <include file='MLOperatorEdgeType.xml' path='doc/member[@name="MLOperatorEdgeType.Primitive"]/*' />
+    Primitive = 3,
 }

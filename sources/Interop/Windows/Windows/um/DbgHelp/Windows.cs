@@ -213,6 +213,10 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern BOOL SymSetParentWindow(HWND hwnd);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetParentWindow"]/*' />
+    [DllImport("", ExactSpelling = true)]
+    public static extern BOOL SymGetParentWindow(HWND* pHwnd);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSetHomeDirectory"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
@@ -1285,6 +1289,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define SYMFLAG_GLOBAL 0x02000000")]
     public const int SYMFLAG_GLOBAL = 0x02000000;
+
+    [NativeTypeName("#define SYMFLAG_COMPLEX 0x04000000")]
+    public const int SYMFLAG_COMPLEX = 0x04000000;
 
     [NativeTypeName("#define SYMFLAG_RESET 0x80000000")]
     public const uint SYMFLAG_RESET = 0x80000000;

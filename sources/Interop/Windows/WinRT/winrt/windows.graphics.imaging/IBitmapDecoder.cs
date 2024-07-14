@@ -98,9 +98,9 @@ public unsafe partial struct IBitmapDecoder : IBitmapDecoder.Interface, INativeG
     /// <include file='IBitmapDecoder.xml' path='doc/member[@name="IBitmapDecoder.GetPreviewAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetPreviewAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<IntPtr>** asyncInfo)
+    public HRESULT GetPreviewAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<Pointer<IntPtr>>** asyncInfo)
     {
-        return ((delegate* unmanaged[MemberFunction]<IBitmapDecoder*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IBitmapDecoder*)Unsafe.AsPointer(ref this), asyncInfo);
+        return ((delegate* unmanaged[MemberFunction]<IBitmapDecoder*, IAsyncOperation<Pointer<IntPtr>>**, int>)(lpVtbl[9]))((IBitmapDecoder*)Unsafe.AsPointer(ref this), asyncInfo);
     }
 
     /// <include file='IBitmapDecoder.xml' path='doc/member[@name="IBitmapDecoder.GetFrameAsync"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IBitmapDecoder : IBitmapDecoder.Interface, INativeG
         HRESULT get_FrameCount([NativeTypeName("UINT32 *")] uint* value);
 
         [VtblIndex(9)]
-        HRESULT GetPreviewAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<IntPtr>** asyncInfo);
+        HRESULT GetPreviewAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream_t **")] IAsyncOperation<Pointer<IntPtr>>** asyncInfo);
 
         [VtblIndex(10)]
         HRESULT GetFrameAsync([NativeTypeName("UINT32")] uint frameIndex, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapFrame_t **")] IAsyncOperation<Pointer<IBitmapFrame>>** asyncInfo);
@@ -160,7 +160,7 @@ public unsafe partial struct IBitmapDecoder : IBitmapDecoder.Interface, INativeG
         public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_FrameCount;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CImageStream_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> GetPreviewAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IntPtr>>**, int> GetPreviewAsync;
 
         [NativeTypeName("HRESULT (UINT32, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CGraphics__CImaging__CBitmapFrame_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, uint, IAsyncOperation<Pointer<IBitmapFrame>>**, int> GetFrameAsync;

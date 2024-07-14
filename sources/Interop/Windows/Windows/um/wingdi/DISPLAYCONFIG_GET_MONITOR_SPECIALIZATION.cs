@@ -16,7 +16,7 @@ public partial struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
     /// <include file='DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION.xml' path='doc/member[@name="DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wingdi_L3212_C5")]
+    [NativeTypeName("__AnonymousRecord_wingdi_L3290_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.isSpecializationEnabled"]/*' />
@@ -100,7 +100,7 @@ public partial struct DISPLAYCONFIG_GET_MONITOR_SPECIALIZATION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_wingdi_L3214_C9")]
+        [NativeTypeName("__AnonymousRecord_wingdi_L3292_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*' />

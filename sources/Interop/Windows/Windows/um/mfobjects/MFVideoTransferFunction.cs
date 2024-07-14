@@ -62,8 +62,14 @@ public enum MFVideoTransferFunction
     /// <include file='MFVideoTransferFunction.xml' path='doc/member[@name="MFVideoTransferFunction.MFVideoTransFunc_10_rel"]/*' />
     MFVideoTransFunc_10_rel = 17,
 
+    /// <include file='MFVideoTransferFunction.xml' path='doc/member[@name="MFVideoTransferFunction.MFVideoTransFunc_BT1361_ECG"]/*' />
+    MFVideoTransFunc_BT1361_ECG = 18,
+
+    /// <include file='MFVideoTransferFunction.xml' path='doc/member[@name="MFVideoTransferFunction.MFVideoTransFunc_SMPTE428"]/*' />
+    MFVideoTransFunc_SMPTE428 = 19,
+
     /// <include file='MFVideoTransferFunction.xml' path='doc/member[@name="MFVideoTransferFunction.MFVideoTransFunc_Last"]/*' />
-    MFVideoTransFunc_Last = (MFVideoTransFunc_10_rel + 1),
+    MFVideoTransFunc_Last = (MFVideoTransFunc_SMPTE428 + 1),
 
     /// <include file='MFVideoTransferFunction.xml' path='doc/member[@name="MFVideoTransferFunction.MFVideoTransFunc_ForceDWORD"]/*' />
     MFVideoTransFunc_ForceDWORD = 0x7fffffff,
