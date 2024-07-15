@@ -223,10 +223,6 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreateDXGISurfaceBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkSurface, uint uSubresourceIndex, BOOL fBottomUpWhenLinear, IMFMediaBuffer** ppBuffer);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateDXGICrossAdapterBuffer"]/*' />
-    [DllImport("", ExactSpelling = true)]
-    public static extern HRESULT MFCreateDXGICrossAdapterBuffer([NativeTypeName("const IID &")] Guid* riid, IUnknown* punkDevice, IMFMediaType* pMediaType, uint uSubresource, IMFMediaBuffer** ppBuffer);
-
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateVideoSampleAllocatorEx"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
@@ -236,10 +232,6 @@ public static unsafe partial class Windows
     [DllImport("mfplat", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreateDXGIDeviceManager(uint* resetToken, IMFDXGIDeviceManager** ppDeviceManager);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFGetDXGIDeviceManageMode"]/*' />
-    [DllImport("", ExactSpelling = true)]
-    public static extern HRESULT MFGetDXGIDeviceManageMode(IUnknown* pDeviceManager, MF_DXGI_DEVICE_MANAGER_MODE* mode);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateAlignedMemoryBuffer"]/*' />
     [DllImport("mfplat", ExactSpelling = true)]

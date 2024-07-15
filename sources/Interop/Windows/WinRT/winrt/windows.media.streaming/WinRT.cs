@@ -61,9 +61,6 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[39]")]
     public const string RuntimeClass_Windows_Media_Streaming_StreamSelector = "Windows.Media.Streaming.StreamSelector";
 
-    [NativeTypeName("#define WINDOWS_DEVICES_POWER_POWERGRIDAPICONTRACT_VERSION 0x10000")]
-    public const int WINDOWS_DEVICES_POWER_POWERGRIDAPICONTRACT_VERSION = 0x10000;
-
     [NativeTypeName("#define WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION 0x20000")]
     public const int WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION = 0x20000;
 

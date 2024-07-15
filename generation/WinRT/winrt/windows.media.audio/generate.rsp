@@ -38,6 +38,8 @@ CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
 IID_IAudioDeviceInputNode
 IID_IAudioDeviceOutputNode
+IID_IAudioEffectsPackConfiguration
+IID_IAudioEffectsPackConfigurationStatics
 IID_IAudioFileInputNode
 IID_IAudioFileOutputNode
 IID_IAudioFrameCompletedEventArgs

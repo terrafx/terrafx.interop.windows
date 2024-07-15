@@ -13,12 +13,6 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class IID
 {
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IIppPrintDevice3 = typeof(IIppPrintDevice3).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IIppPrintDevice4 = typeof(IIppPrintDevice4).GUID;
-
     public static ref readonly Guid IID_IIppPrintDevice3
     {
         get

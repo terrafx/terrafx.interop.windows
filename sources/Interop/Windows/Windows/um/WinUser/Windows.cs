@@ -3381,8 +3381,8 @@ public static unsafe partial class Windows
     public static extern BOOL RegisterForTooltipDismissNotification(HWND hWnd, TOOLTIP_DISMISS_FLAGS tdFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsWindowArranged"]/*' />
-    [DllImport("", ExactSpelling = true)]
-    [SupportedOSPlatform("windowsWindows 10, version 1903")]
+    [DllImport("user32", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.18362.0")]
     public static extern BOOL IsWindowArranged(HWND hwnd);
 
     [NativeTypeName("#define DIFFERENCE 11")]

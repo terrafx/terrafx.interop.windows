@@ -4,6 +4,7 @@
 GetCurrentProcessToken():HANDLE
 GetCurrentThreadEffectiveToken():HANDLE
 GetCurrentThreadToken():HANDLE
+TlsGetValue2
 --file
 um-processthreadsapi.h
 --methodClassName

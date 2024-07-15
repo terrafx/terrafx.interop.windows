@@ -82,9 +82,9 @@ public unsafe partial struct IDeviceInformationCustomPairing2 : IDeviceInformati
     /// <include file='IDeviceInformationCustomPairing2.xml' path='doc/member[@name="IDeviceInformationCustomPairing2.add_PairingSetMembersRequested"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT add_PairingSetMembersRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceInformationCustomPairing_Windows__CDevices__CEnumeration__CDevicePairingSetMembersRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IDeviceInformationCustomPairing>, Pointer<DevicePairingSetMembersRequestedEventArgs>>* handler, EventRegistrationToken* token)
+    public HRESULT add_PairingSetMembersRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceInformationCustomPairing_Windows__CDevices__CEnumeration__CDevicePairingSetMembersRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IDeviceInformationCustomPairing>, Pointer<IDevicePairingSetMembersRequestedEventArgs>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationCustomPairing2*, ITypedEventHandler<Pointer<IDeviceInformationCustomPairing>, Pointer<DevicePairingSetMembersRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IDeviceInformationCustomPairing2*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationCustomPairing2*, ITypedEventHandler<Pointer<IDeviceInformationCustomPairing>, Pointer<IDevicePairingSetMembersRequestedEventArgs>>*, EventRegistrationToken*, int>)(lpVtbl[7]))((IDeviceInformationCustomPairing2*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IDeviceInformationCustomPairing2.xml' path='doc/member[@name="IDeviceInformationCustomPairing2.remove_PairingSetMembersRequested"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IDeviceInformationCustomPairing2 : IDeviceInformati
         HRESULT AddPairingSetMember([NativeTypeName("ABI::Windows::Devices::Enumeration::IDeviceInformation *")] IDeviceInformation* device);
 
         [VtblIndex(7)]
-        HRESULT add_PairingSetMembersRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceInformationCustomPairing_Windows__CDevices__CEnumeration__CDevicePairingSetMembersRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IDeviceInformationCustomPairing>, Pointer<DevicePairingSetMembersRequestedEventArgs>>* handler, EventRegistrationToken* token);
+        HRESULT add_PairingSetMembersRequested([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceInformationCustomPairing_Windows__CDevices__CEnumeration__CDevicePairingSetMembersRequestedEventArgs_t *")] ITypedEventHandler<Pointer<IDeviceInformationCustomPairing>, Pointer<IDevicePairingSetMembersRequestedEventArgs>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(8)]
         HRESULT remove_PairingSetMembersRequested(EventRegistrationToken token);
@@ -132,7 +132,7 @@ public unsafe partial struct IDeviceInformationCustomPairing2 : IDeviceInformati
         public delegate* unmanaged[MemberFunction]<TSelf*, IDeviceInformation*, int> AddPairingSetMember;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CDevices__CEnumeration__CDeviceInformationCustomPairing_Windows__CDevices__CEnumeration__CDevicePairingSetMembersRequestedEventArgs_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDeviceInformationCustomPairing>, Pointer<DevicePairingSetMembersRequestedEventArgs>>*, EventRegistrationToken*, int> add_PairingSetMembersRequested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IDeviceInformationCustomPairing>, Pointer<IDevicePairingSetMembersRequestedEventArgs>>*, EventRegistrationToken*, int> add_PairingSetMembersRequested;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_PairingSetMembersRequested;

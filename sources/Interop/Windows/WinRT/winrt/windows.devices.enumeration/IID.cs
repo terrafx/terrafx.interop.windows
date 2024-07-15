@@ -13,27 +13,6 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class IID
 {
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IDeviceAccessChangedEventArgs3 = typeof(IDeviceAccessChangedEventArgs3).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IDeviceAccessInformation2 = typeof(IDeviceAccessInformation2).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IDeviceEnumerationSettings = typeof(IDeviceEnumerationSettings).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IDeviceInformationCustomPairing2 = typeof(IDeviceInformationCustomPairing2).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IDeviceInformationStatics3 = typeof(IDeviceInformationStatics3).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IDevicePairingRequestedEventArgs3 = typeof(IDevicePairingRequestedEventArgs3).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IDevicePairingSetMembersRequestedEventArgs = typeof(IDevicePairingSetMembersRequestedEventArgs).GUID;
-
     public static ref readonly Guid IID_IDeviceAccessChangedEventArgs3
     {
         get

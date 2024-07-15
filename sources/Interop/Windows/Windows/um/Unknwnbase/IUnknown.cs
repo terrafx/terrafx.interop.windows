@@ -44,7 +44,7 @@ public unsafe partial struct IUnknown : IUnknown.Interface, INativeGuid
         return ((delegate* unmanaged[MemberFunction]<IUnknown*, uint>)(lpVtbl[2]))((IUnknown*)Unsafe.AsPointer(ref this));
     }
 
-    public interface Interface
+    public interface Interface : INativeGuid
     {
         [VtblIndex(0)]
         HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject);

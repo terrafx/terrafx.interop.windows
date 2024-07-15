@@ -13,21 +13,6 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class IID
 {
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IDetectedPerson = typeof(IDetectedPerson).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IHeadOrientation = typeof(IHeadOrientation).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IHeadPosition = typeof(IHeadPosition).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IHumanPresenceSensor3 = typeof(IHumanPresenceSensor3).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IHumanPresenceSensorReading3 = typeof(IHumanPresenceSensorReading3).GUID;
-
     public static ref readonly Guid IID_IDetectedPerson
     {
         get

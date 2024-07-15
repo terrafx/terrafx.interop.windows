@@ -13,12 +13,6 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class IID
 {
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IAudioEffectsPackConfiguration = typeof(IAudioEffectsPackConfiguration).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IAudioEffectsPackConfigurationStatics = typeof(IAudioEffectsPackConfigurationStatics).GUID;
-
     public static ref readonly Guid IID_IAudioEffectsPackConfiguration
     {
         get

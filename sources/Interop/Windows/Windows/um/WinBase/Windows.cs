@@ -2235,7 +2235,7 @@ public static unsafe partial class Windows
     public static extern BOOL GetFileInformationByHandleEx(HANDLE hFile, FILE_INFO_BY_HANDLE_CLASS FileInformationClass, [NativeTypeName("LPVOID")] void* lpFileInformation, [NativeTypeName("DWORD")] uint dwBufferSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetFileInformationByName"]/*' />
-    [DllImport("", ExactSpelling = true)]
+    [DllImport("kernel32", ExactSpelling = true)]
     public static extern BOOL GetFileInformationByName([NativeTypeName("PCWSTR")] char* FileName, FILE_INFO_BY_NAME_CLASS FileInformationClass, [NativeTypeName("PVOID")] void* FileInfoBuffer, [NativeTypeName("ULONG")] uint FileInfoBufferSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenFileById"]/*' />
@@ -2355,30 +2355,6 @@ public static unsafe partial class Windows
     [DllImport("kernelbase", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint RaiseCustomSystemEventTrigger([NativeTypeName("PCUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG")] CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG* CustomSystemEventTriggerConfig);
-
-    [NativeTypeName("#define CopyVolatileMemory RtlCopyVolatileMemory")]
-    public static delegate*<void*, void*, nuint, void*> CopyVolatileMemory => &RtlCopyVolatileMemory;
-
-    [NativeTypeName("#define MoveVolatileMemory RtlMoveVolatileMemory")]
-    public static delegate*<void*, void*, nuint, void*> MoveVolatileMemory => &RtlMoveVolatileMemory;
-
-    [NativeTypeName("#define FillVolatileMemory RtlFillVolatileMemory")]
-    public static delegate*<void*, nuint, int, void*> FillVolatileMemory => &RtlFillVolatileMemory;
-
-    [NativeTypeName("#define SecureZeroMemory2 RtlSecureZeroMemory2")]
-    public static delegate*<void*, nuint, void*> SecureZeroMemory2 => &RtlSecureZeroMemory2;
-
-    [NativeTypeName("#define ZeroVolatileMemory RtlZeroVolatileMemory")]
-    public static delegate*<void*, nuint, void*> ZeroVolatileMemory => &RtlZeroVolatileMemory;
-
-    [NativeTypeName("#define CopyDeviceMemory RtlCopyDeviceMemory")]
-    public static delegate*<void*, void*, nuint, void*> CopyDeviceMemory => &RtlCopyDeviceMemory;
-
-    [NativeTypeName("#define FillDeviceMemory RtlFillDeviceMemory")]
-    public static delegate*<void*, nuint, int, void*> FillDeviceMemory => &RtlFillDeviceMemory;
-
-    [NativeTypeName("#define ZeroDeviceMemory RtlZeroDeviceMemory")]
-    public static delegate*<void*, nuint, void*> ZeroDeviceMemory => &RtlZeroDeviceMemory;
 
     [NativeTypeName("#define PROGRESS_CONTINUE 0")]
     public const int PROGRESS_CONTINUE = 0;

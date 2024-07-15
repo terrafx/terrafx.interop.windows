@@ -124,6 +124,7 @@ IID_ICompassReadingChangedEventArgs
 IID_ICompassReadingHeadingAccuracy
 IID_ICompassStatics
 IID_ICompassStatics2
+IID_IDetectedPerson
 IID_IGyrometer
 IID_IGyrometer2
 IID_IGyrometer3
@@ -135,6 +136,8 @@ IID_IGyrometerReading2
 IID_IGyrometerReadingChangedEventArgs
 IID_IGyrometerStatics
 IID_IGyrometerStatics2
+IID_IHeadOrientation
+IID_IHeadPosition
 IID_IHingeAngleReading
 IID_IHingeAngleSensor
 IID_IHingeAngleSensorReadingChangedEventArgs
@@ -143,9 +146,11 @@ IID_IHumanPresenceFeatures
 IID_IHumanPresenceFeatures2
 IID_IHumanPresenceSensor
 IID_IHumanPresenceSensor2
+IID_IHumanPresenceSensor3
 IID_IHumanPresenceSensorExtension
 IID_IHumanPresenceSensorReading
 IID_IHumanPresenceSensorReading2
+IID_IHumanPresenceSensorReading3
 IID_IHumanPresenceSensorReadingChangedEventArgs
 IID_IHumanPresenceSensorReadingUpdate
 IID_IHumanPresenceSensorStatics

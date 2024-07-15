@@ -4,8 +4,12 @@
 MICROSOFT_WINDOWS_WINBASE_H_DEFINE_INTERLOCKED_CPLUSPLUS_OVERLOADS=1
 --exclude
 CaptureStackBackTrace
+CopyDeviceMemory
+CopyVolatileMemory
 DefineHandleTable
 DestroyThreadpoolEnvironment(PTP_CALLBACK_ENVIRON):void
+FillDeviceMemory
+FillVolatileMemory
 FreeModule
 FreeProcInstance
 GetCurrentTime
@@ -25,9 +29,11 @@ LookupAccountNameLocalA(LPCSTR, PSID, LPDWORD, LPSTR, LPDWORD, PSID_NAME_USE):BO
 LookupAccountNameLocalW(LPCWSTR, PSID, LPDWORD, LPWSTR, LPDWORD, PSID_NAME_USE):BOOL
 MAKEINTATOM
 MakeProcInstance
+MoveVolatileMemory
 ProcThreadAttributeValue
 SCS_THIS_PLATFORM_BINARY
 SecureZeroMemory
+SecureZeroMemory2
 SetSwapAreaSize
 SetThreadpoolCallbackCleanupGroup(PTP_CALLBACK_ENVIRON, PTP_CLEANUP_GROUP, PTP_CLEANUP_GROUP_CANCEL_CALLBACK):void
 SetThreadpoolCallbackLibrary(PTP_CALLBACK_ENVIRON, PVOID):void
@@ -41,6 +47,8 @@ UnlockSegment
 WinMain(HINSTANCE, HINSTANCE, LPSTR, int):int
 wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int):int
 Yield
+ZeroDeviceMemory
+ZeroVolatileMemory
 _hread
 _hwrite
 _InterlockedAnd
@@ -438,6 +446,7 @@ GetFileAttributesTransactedA=kernel32
 GetFileAttributesTransactedW=kernel32
 GetFileBandwidthReservation=kernel32
 GetFileInformationByHandleEx=kernel32
+GetFileInformationByName=kernel32
 GetFirmwareEnvironmentVariable=kernel32
 GetFirmwareEnvironmentVariableA=kernel32
 GetFirmwareEnvironmentVariableEx=kernel32

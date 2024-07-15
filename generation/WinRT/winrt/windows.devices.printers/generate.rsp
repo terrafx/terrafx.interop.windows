@@ -50,6 +50,8 @@ IID_IIppIntegerRange
 IID_IIppIntegerRangeFactory
 IID_IIppPrintDevice
 IID_IIppPrintDevice2
+IID_IIppPrintDevice3
+IID_IIppPrintDevice4
 IID_IIppPrintDeviceStatics
 IID_IIppResolution
 IID_IIppResolutionFactory

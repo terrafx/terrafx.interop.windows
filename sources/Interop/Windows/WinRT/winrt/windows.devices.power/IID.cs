@@ -13,15 +13,6 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class IID
 {
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IPowerGridData = typeof(IPowerGridData).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IPowerGridForecast = typeof(IPowerGridForecast).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IPowerGridForecastStatics = typeof(IPowerGridForecastStatics).GUID;
-
     public static ref readonly Guid IID_IPowerGridData
     {
         get

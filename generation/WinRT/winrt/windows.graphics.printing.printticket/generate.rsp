@@ -1,0 +1,27 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+CHECK_NS_PREFIX_STATE
+DEPRECATEDENUMERATOR
+IID_IPrintTicketCapabilities
+IID_IPrintTicketFeature
+IID_IPrintTicketOption
+IID_IPrintTicketParameterDefinition
+IID_IPrintTicketParameterInitializer
+IID_IPrintTicketValue
+IID_IWorkflowPrintTicket
+IID_IWorkflowPrintTicketValidationResult
+WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
+--file
+winrt-windows.graphics.printing.printticket.h
+--methodClassName
+WinRT
+--namespace
+TerraFX.Interop.WinRT
+--output
+../../../../sources/Interop/Windows/WinRT/winrt/windows.graphics.printing.printticket
+--test-output
+../../../../tests/Interop/Windows/WinRT/winrt/windows.graphics.printing.printticket
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt/windows.graphics.printing.printticket.h

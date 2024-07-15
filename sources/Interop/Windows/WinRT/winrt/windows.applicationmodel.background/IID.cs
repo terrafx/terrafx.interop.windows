@@ -13,18 +13,6 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class IID
 {
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IBackgroundTaskBuilder6 = typeof(IBackgroundTaskBuilder6).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IBackgroundTaskBuilderStatics = typeof(IBackgroundTaskBuilderStatics).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IBackgroundTaskRegistration4 = typeof(IBackgroundTaskRegistration4).GUID;
-
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IBackgroundWorkCostStatics2 = typeof(IBackgroundWorkCostStatics2).GUID;
-
     public static ref readonly Guid IID_IBackgroundTaskBuilder6
     {
         get

@@ -1,15 +1,21 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+AddPackageDependency2
 CheckIsMSIXPackage(PCWSTR, BOOL *):HRESULT
+FindPackageDependency
 GetCurrentPackageInfo2(const UINT32, PackagePathType, UINT32 *, BYTE *, UINT32 *):LONG
 GetCurrentPackagePath2(PackagePathType, UINT32 *, PWSTR):LONG
+GetPackageDependencyInformation
 GetPackageInfo2(PACKAGE_INFO_REFERENCE, const UINT32, PackagePathType, UINT32 *, BYTE *, UINT32 *):LONG
 GetPackagePathByFullName2(PCWSTR, PackagePathType, UINT32 *, PWSTR):LONG
+GetProcessesUsingPackageDependency
+GetResolvedPackageFullNameForPackageDependency2
 GetStagedPackagePathByFullName2(PCWSTR, PackagePathType, UINT32 *, PWSTR):LONG
 OpenPackageInfoByFullNameForUser(PSID, PCWSTR, const UINT32, PACKAGE_INFO_REFERENCE *):LONG
 PACKAGE_ID
 PACKAGE_INFO
+TryCreatePackageDependency2
 VerifyApplicationUserModelId(PCWSTR):LONG
 VerifyPackageFamilyName(PCWSTR):LONG
 VerifyPackageFullName(PCWSTR):LONG

@@ -807,6 +807,7 @@ public static unsafe partial class Windows
     public static delegate*<char*, uint, BOOL> UnregisterCMM => &UnregisterCMMW;
 
     [NativeTypeName("#define GetColorDirectory GetColorDirectoryW")]
+    [Obsolete("GetColorDirectory is deprecated and might not work on all platforms. For more info, see MSDN.")]
     public static delegate*<char*, char*, uint*, BOOL> GetColorDirectory => &GetColorDirectoryW;
 
     [NativeTypeName("#define UninstallColorProfile UninstallColorProfileW")]

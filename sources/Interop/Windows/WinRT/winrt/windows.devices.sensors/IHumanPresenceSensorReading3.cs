@@ -82,9 +82,9 @@ public unsafe partial struct IHumanPresenceSensorReading3 : IHumanPresenceSensor
     /// <include file='IHumanPresenceSensorReading3.xml' path='doc/member[@name="IHumanPresenceSensorReading3.get_DetectedPersons"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_DetectedPersons([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CDetectedPerson_t **")] IVectorView<Pointer<DetectedPerson>>** value)
+    public HRESULT get_DetectedPersons([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CDetectedPerson_t **")] IVectorView<Pointer<IDetectedPerson>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorReading3*, IVectorView<Pointer<DetectedPerson>>**, int>)(lpVtbl[7]))((IHumanPresenceSensorReading3*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IHumanPresenceSensorReading3*, IVectorView<Pointer<IDetectedPerson>>**, int>)(lpVtbl[7]))((IHumanPresenceSensorReading3*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -93,7 +93,7 @@ public unsafe partial struct IHumanPresenceSensorReading3 : IHumanPresenceSensor
         HRESULT get_OnlookerPresence([NativeTypeName("ABI::Windows::Devices::Sensors::HumanPresence *")] HumanPresence* value);
 
         [VtblIndex(7)]
-        HRESULT get_DetectedPersons([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CDetectedPerson_t **")] IVectorView<Pointer<DetectedPerson>>** value);
+        HRESULT get_DetectedPersons([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CDetectedPerson_t **")] IVectorView<Pointer<IDetectedPerson>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -121,6 +121,6 @@ public unsafe partial struct IHumanPresenceSensorReading3 : IHumanPresenceSensor
         public delegate* unmanaged[MemberFunction]<TSelf*, HumanPresence*, int> get_OnlookerPresence;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CSensors__CDetectedPerson_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<DetectedPerson>>**, int> get_DetectedPersons;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IDetectedPerson>>**, int> get_DetectedPersons;
     }
 }

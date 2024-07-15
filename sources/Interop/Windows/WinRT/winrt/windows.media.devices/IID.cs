@@ -13,9 +13,6 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class IID
 {
-    [NativeTypeName("const IID &")]
-    public static Guid* IID_IAudioDeviceController2 = typeof(IAudioDeviceController2).GUID;
-
     public static ref readonly Guid IID_IAudioDeviceController2
     {
         get

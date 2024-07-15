@@ -1,6 +1,10 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+AddRaw
+AddRaw64
+AddULong64Raw
+AddULongRaw
 ARM64_MAX_BREAKPOINTS
 ARM64_MAX_WATCHPOINTS
 ARRAYSIZE
@@ -92,6 +96,10 @@ IMAGE_SNAP_BY_ORDINAL
 IMAGE_SNAP_BY_ORDINAL32
 IMAGE_SNAP_BY_ORDINAL64
 INCREF
+IncrementRaw
+IncrementRaw64
+IncrementULong64Raw
+IncrementULongRaw
 INITIAL_MXCSR
 INITIAL_FPCSR
 INS_IMM64
@@ -176,6 +184,12 @@ NONVOL_INT_SIZE_ARM64
 NOP_FUNCTION
 NUMA_NODE_RELATIONSHIP.GroupMasks
 NtCurrentTeb
+NtReadCurrentTebByte
+NtReadCurrentTebPVOID
+NtReadCurrentTebUlong
+NtReadCurrentTebUlonglong
+NtReadCurrentTebUlongPtr
+NtReadCurrentTebUshort
 OUT_OF_PROCESS_FUNCTION_TABLE_CALLBACK_EXPORT_NAME
 PcTeb
 PEXCEPTION_ROUTINE
@@ -238,10 +252,13 @@ RtlAddGrowableFunctionTable
 RtlCaptureContext
 RtlCaptureContext2
 RtlCaptureStackBackTrace
+RtlCompareDeviceMemory
 RtlCompareMemory
 RtlConstantTimeEqualMemory
 RtlConvertDeviceFamilyInfoToString
+RtlCopyDeviceMemory
 RtlCopyMemory
+RtlCopyVolatileMemory
 RtlCrc32
 RtlCrc64
 RtlDeleteFunctionTable
@@ -249,8 +266,10 @@ RtlDeleteGrowableFunctionTable
 RtlDrainNonVolatileFlush
 RtlEqualMemory
 RtlExtendCorrelationVector
+RtlFillDeviceMemory
 RtlFillMemory
 RtlFillNonVolatileMemory
+RtlFillVolatileMemory
 RtlFirstEntrySList
 RtlFlushNonVolatileMemory
 RtlFlushNonVolatileMemoryRanges
@@ -273,6 +292,7 @@ RtlIsEcCode
 RtlIsZeroMemory
 RtlLookupFunctionEntry
 RtlMoveMemory
+RtlMoveVolatileMemory
 RtlNormalizeSecurityDescriptor
 RtlOsDeploymentState
 RtlPcToFileHeader
@@ -282,7 +302,9 @@ RtlRaiseCustomSystemEventTrigger
 RtlRaiseException
 RtlRestoreContext
 RtlSecureZeroMemory
+RtlSecureZeroMemory2
 RtlSetSystemGlobalData
+RtlSetVolatileMemory
 RtlSwitchedVVI
 RtlUnwind
 RtlUnwind2
@@ -290,7 +312,9 @@ RtlUnwindEx
 RtlValidateCorrelationVector
 RtlVirtualUnwind
 RtlWriteNonVolatileMemory
+RtlZeroDeviceMemory
 RtlZeroMemory
+RtlZeroVolatileMemory
 RTL_BITS_OF
 RTL_BITS_OF_FIELD
 RTL_CONDITION_VARIABLE_LOCKMODE_SHARED

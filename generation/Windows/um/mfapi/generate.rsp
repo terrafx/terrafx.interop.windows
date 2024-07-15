@@ -4,6 +4,8 @@
 DEFINE_MEDIATYPE_GUID
 DEFINE_BINARY_MEDIATYPE_GUID
 FCC
+MFCreateDXGICrossAdapterBuffer
+MFGetDXGIDeviceManageMode
 --file
 um-mfapi.h
 --methodClassName

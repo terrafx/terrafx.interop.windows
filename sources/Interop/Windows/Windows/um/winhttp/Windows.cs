@@ -278,20 +278,6 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.2")]
     public static extern uint WinHttpWebSocketQueryCloseStatus(HINTERNET hWebSocket, ushort* pusStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength, [NativeTypeName("DWORD *")] uint* pdwReasonLengthConsumed);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpProtocolCompleteUpgrade"]/*' />
-    [DllImport("", ExactSpelling = true)]
-    public static extern HINTERNET WinHttpProtocolCompleteUpgrade(HINTERNET hRequest, [NativeTypeName("DWORD_PTR")] nuint dwContext);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpProtocolSend"]/*' />
-    [DllImport("", ExactSpelling = true)]
-    [return: NativeTypeName("DWORD")]
-    public static extern uint WinHttpProtocolSend(HINTERNET ProtocolHandle, [NativeTypeName("ULONGLONG")] ulong Flags, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint dwBufferLength);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpProtocolReceive"]/*' />
-    [DllImport("", ExactSpelling = true)]
-    [return: NativeTypeName("DWORD")]
-    public static extern uint WinHttpProtocolReceive(HINTERNET ProtocolHandle, [NativeTypeName("ULONGLONG")] ulong Flags, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint dwBufferLength, [NativeTypeName("DWORD *")] uint* pdwBytesRead);
-
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpRegisterProxyChangeNotification"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]

@@ -213,10 +213,6 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern BOOL SymSetParentWindow(HWND hwnd);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.SymGetParentWindow"]/*' />
-    [DllImport("", ExactSpelling = true)]
-    public static extern BOOL SymGetParentWindow(HWND* pHwnd);
-
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SymSetHomeDirectory"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]

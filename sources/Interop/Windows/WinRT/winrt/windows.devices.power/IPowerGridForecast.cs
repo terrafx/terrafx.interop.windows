@@ -90,9 +90,9 @@ public unsafe partial struct IPowerGridForecast : IPowerGridForecast.Interface, 
     /// <include file='IPowerGridForecast.xml' path='doc/member[@name="IPowerGridForecast.get_Forecast"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT get_Forecast([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CPower__CPowerGridData_t **")] IVectorView<Pointer<PowerGridData>>** value)
+    public HRESULT get_Forecast([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CPower__CPowerGridData_t **")] IVectorView<Pointer<IPowerGridData>>** value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IPowerGridForecast*, IVectorView<Pointer<PowerGridData>>**, int>)(lpVtbl[8]))((IPowerGridForecast*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IPowerGridForecast*, IVectorView<Pointer<IPowerGridData>>**, int>)(lpVtbl[8]))((IPowerGridForecast*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -104,7 +104,7 @@ public unsafe partial struct IPowerGridForecast : IPowerGridForecast.Interface, 
         HRESULT get_BlockDuration([NativeTypeName("ABI::Windows::Foundation::TimeSpan *")] TimeSpan* value);
 
         [VtblIndex(8)]
-        HRESULT get_Forecast([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CPower__CPowerGridData_t **")] IVectorView<Pointer<PowerGridData>>** value);
+        HRESULT get_Forecast([NativeTypeName("ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CPower__CPowerGridData_t **")] IVectorView<Pointer<IPowerGridData>>** value);
     }
 
     public partial struct Vtbl<TSelf>
@@ -135,6 +135,6 @@ public unsafe partial struct IPowerGridForecast : IPowerGridForecast.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, TimeSpan*, int> get_BlockDuration;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::Collections::__FIVectorView_1_Windows__CDevices__CPower__CPowerGridData_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<PowerGridData>>**, int> get_Forecast;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVectorView<Pointer<IPowerGridData>>**, int> get_Forecast;
     }
 }

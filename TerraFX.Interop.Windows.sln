@@ -4104,6 +4104,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.data.json", "window
 		generation\WinRT\winrt\windows.data.json\winrt-windows.data.json.h = generation\WinRT\winrt\windows.data.json\winrt-windows.data.json.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics.printing.workflow", "windows.graphics.printing.workflow", "{C8332D6C-E90D-4F2B-8969-6C8A9D831FC8}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.graphics.printing.workflow\generate.rsp = generation\WinRT\winrt\windows.graphics.printing.workflow\generate.rsp
+		generation\WinRT\winrt\windows.graphics.printing.workflow\header.txt = generation\WinRT\winrt\windows.graphics.printing.workflow\header.txt
+		generation\WinRT\winrt\windows.graphics.printing.workflow\winrt-windows.graphics.printing.workflow.h = generation\WinRT\winrt\windows.graphics.printing.workflow\winrt-windows.graphics.printing.workflow.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics.printing.printticket", "windows.graphics.printing.printticket", "{BC333162-E344-47AD-AA7D-A2F57670D006}"
+	ProjectSection(SolutionItems) = preProject
+		generation\WinRT\winrt\windows.graphics.printing.printticket\generate.rsp = generation\WinRT\winrt\windows.graphics.printing.printticket\generate.rsp
+		generation\WinRT\winrt\windows.graphics.printing.printticket\header.txt = generation\WinRT\winrt\windows.graphics.printing.printticket\header.txt
+		generation\WinRT\winrt\windows.graphics.printing.printticket\winrt-windows.graphics.printing.printticket.h = generation\WinRT\winrt\windows.graphics.printing.printticket\winrt-windows.graphics.printing.printticket.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -4725,6 +4739,8 @@ Global
 		{414B6787-C737-499E-AB8A-864726F4BDAA} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{C3AF52AB-C489-465E-8632-796261DBC1EC} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{2AC8D3B6-AFE3-4B28-A258-3D35044DCFA4} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{C8332D6C-E90D-4F2B-8969-6C8A9D831FC8} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{BC333162-E344-47AD-AA7D-A2F57670D006} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

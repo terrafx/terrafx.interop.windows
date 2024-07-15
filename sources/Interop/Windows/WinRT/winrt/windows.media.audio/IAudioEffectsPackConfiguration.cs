@@ -98,9 +98,9 @@ public unsafe partial struct IAudioEffectsPackConfiguration : IAudioEffectsPackC
     /// <include file='IAudioEffectsPackConfiguration.xml' path='doc/member[@name="IAudioEffectsPackConfiguration.add_StatusChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT add_StatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioEffectsPackConfiguration_IInspectable_t *")] ITypedEventHandler<Pointer<AudioEffectsPackConfiguration>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
+    public HRESULT add_StatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioEffectsPackConfiguration_IInspectable_t *")] ITypedEventHandler<Pointer<IAudioEffectsPackConfiguration>, Pointer<IInspectable>>* handler, EventRegistrationToken* token)
     {
-        return ((delegate* unmanaged[MemberFunction]<IAudioEffectsPackConfiguration*, ITypedEventHandler<Pointer<AudioEffectsPackConfiguration>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IAudioEffectsPackConfiguration*)Unsafe.AsPointer(ref this), handler, token);
+        return ((delegate* unmanaged[MemberFunction]<IAudioEffectsPackConfiguration*, ITypedEventHandler<Pointer<IAudioEffectsPackConfiguration>, Pointer<IInspectable>>*, EventRegistrationToken*, int>)(lpVtbl[9]))((IAudioEffectsPackConfiguration*)Unsafe.AsPointer(ref this), handler, token);
     }
 
     /// <include file='IAudioEffectsPackConfiguration.xml' path='doc/member[@name="IAudioEffectsPackConfiguration.remove_StatusChanged"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IAudioEffectsPackConfiguration : IAudioEffectsPackC
         HRESULT get_Status([NativeTypeName("ABI::Windows::Media::Audio::AudioEffectsPackStatus *")] AudioEffectsPackStatus* value);
 
         [VtblIndex(9)]
-        HRESULT add_StatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioEffectsPackConfiguration_IInspectable_t *")] ITypedEventHandler<Pointer<AudioEffectsPackConfiguration>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
+        HRESULT add_StatusChanged([NativeTypeName("ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioEffectsPackConfiguration_IInspectable_t *")] ITypedEventHandler<Pointer<IAudioEffectsPackConfiguration>, Pointer<IInspectable>>* handler, EventRegistrationToken* token);
 
         [VtblIndex(10)]
         HRESULT remove_StatusChanged(EventRegistrationToken token);
@@ -160,7 +160,7 @@ public unsafe partial struct IAudioEffectsPackConfiguration : IAudioEffectsPackC
         public delegate* unmanaged[MemberFunction]<TSelf*, AudioEffectsPackStatus*, int> get_Status;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FITypedEventHandler_2_Windows__CMedia__CAudio__CAudioEffectsPackConfiguration_IInspectable_t *, EventRegistrationToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<AudioEffectsPackConfiguration>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_StatusChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITypedEventHandler<Pointer<IAudioEffectsPackConfiguration>, Pointer<IInspectable>>*, EventRegistrationToken*, int> add_StatusChanged;
 
         [NativeTypeName("HRESULT (EventRegistrationToken) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, EventRegistrationToken, int> remove_StatusChanged;

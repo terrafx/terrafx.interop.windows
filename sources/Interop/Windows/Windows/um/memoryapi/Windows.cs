@@ -337,14 +337,6 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern HANDLE CreateFileMapping2(HANDLE File, SECURITY_ATTRIBUTES* SecurityAttributes, [NativeTypeName("ULONG")] uint DesiredAccess, [NativeTypeName("ULONG")] uint PageProtection, [NativeTypeName("ULONG")] uint AllocationAttributes, [NativeTypeName("ULONG64")] ulong MaximumSize, [NativeTypeName("PCWSTR")] char* Name, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMemoryNumaClosestInitiatorNode"]/*' />
-    [DllImport("", ExactSpelling = true)]
-    public static extern BOOL GetMemoryNumaClosestInitiatorNode([NativeTypeName("ULONG")] uint TargetNodeNumber, [NativeTypeName("ULONG *")] uint* InitiatorNodeNumber);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMemoryNumaPerformanceInformation"]/*' />
-    [DllImport("", ExactSpelling = true)]
-    public static extern BOOL GetMemoryNumaPerformanceInformation([NativeTypeName("ULONG")] uint NodeNumber, [NativeTypeName("UCHAR")] byte DataType, WIN32_MEMORY_NUMA_PERFORMANCE_INFORMATION_OUTPUT** PerfInfo);
-
     [NativeTypeName("#define CreateFileMapping CreateFileMappingW")]
     public static delegate*<HANDLE, SECURITY_ATTRIBUTES*, uint, uint, uint, char*, HANDLE> CreateFileMapping => &CreateFileMappingW;
 

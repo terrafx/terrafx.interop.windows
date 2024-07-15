@@ -3,6 +3,9 @@
 --exclude
 WinHttpIsHostInProxyBypassList(const WINHTTP_PROXY_INFO *, PCWSTR, INTERNET_SCHEME, INTERNET_PORT, BOOL *):DWORD
 WinHttpQueryAuthParams(HINTERNET, DWORD, LPVOID *):BOOL
+WinHttpProtocolCompleteUpgrade
+WinHttpProtocolReceive
+WinHttpProtocolSend
 WINHTTP_INVALID_STATUS_CALLBACK
 --file
 um-winhttp.h
