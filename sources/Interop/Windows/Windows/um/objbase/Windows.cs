@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/objbase.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/objbase.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -10,6 +10,11 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CoBuildVersion"]/*' />
+    [DllImport("ole32", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint CoBuildVersion();
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoInitialize"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
     public static extern HRESULT CoInitialize([NativeTypeName("LPVOID")] void* pvReserved);
@@ -57,6 +62,10 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoAllowSetForegroundWindow"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
     public static extern HRESULT CoAllowSetForegroundWindow(IUnknown* pUnk, [NativeTypeName("LPVOID")] void* lpvReserved);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DcomChannelSetHResult"]/*' />
+    [DllImport("ole32", ExactSpelling = true)]
+    public static extern HRESULT DcomChannelSetHResult([NativeTypeName("LPVOID")] void* pvReserved, [NativeTypeName("ULONG *")] uint* pulReserved, HRESULT appsHR);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CoIsOle1Class"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
@@ -165,6 +174,10 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetRunningObjectTable"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
     public static extern HRESULT GetRunningObjectTable([NativeTypeName("DWORD")] uint reserved, [NativeTypeName("LPRUNNINGOBJECTTABLE *")] IRunningObjectTable** pprot);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateStdProgressIndicator"]/*' />
+    [DllImport("ole32", ExactSpelling = true)]
+    public static extern HRESULT CreateStdProgressIndicator(HWND hwndParent, [NativeTypeName("LPCOLESTR")] char* pszTitle, IBindStatusCallback* pIbscCaller, IBindStatusCallback** ppIbsc);
 
     [NativeTypeName("#define MARSHALINTERFACE_MIN 500")]
     public const int MARSHALINTERFACE_MIN = 500;

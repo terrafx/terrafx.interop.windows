@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PACKEDEVENTINFO.xml' path='doc/member[@name="PACKEDEVENTINFO"]/*' />
+[Obsolete("struct PACKEDEVENTINFO is deprecated and might not work on all platforms. For more info, see MSDN.")]
 public partial struct PACKEDEVENTINFO
 {
     /// <include file='PACKEDEVENTINFO.xml' path='doc/member[@name="PACKEDEVENTINFO.ulSize"]/*' />

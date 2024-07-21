@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfobjects.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/mfobjects.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -62,8 +62,14 @@ public enum MFVideoTransferFunction
     /// <include file='MFVideoTransferFunction.xml' path='doc/member[@name="MFVideoTransferFunction.MFVideoTransFunc_10_rel"]/*' />
     MFVideoTransFunc_10_rel = 17,
 
+    /// <include file='MFVideoTransferFunction.xml' path='doc/member[@name="MFVideoTransferFunction.MFVideoTransFunc_BT1361_ECG"]/*' />
+    MFVideoTransFunc_BT1361_ECG = 18,
+
+    /// <include file='MFVideoTransferFunction.xml' path='doc/member[@name="MFVideoTransferFunction.MFVideoTransFunc_SMPTE428"]/*' />
+    MFVideoTransFunc_SMPTE428 = 19,
+
     /// <include file='MFVideoTransferFunction.xml' path='doc/member[@name="MFVideoTransferFunction.MFVideoTransFunc_Last"]/*' />
-    MFVideoTransFunc_Last = (MFVideoTransFunc_10_rel + 1),
+    MFVideoTransFunc_Last = (MFVideoTransFunc_SMPTE428 + 1),
 
     /// <include file='MFVideoTransferFunction.xml' path='doc/member[@name="MFVideoTransferFunction.MFVideoTransFunc_ForceDWORD"]/*' />
     MFVideoTransFunc_ForceDWORD = 0x7fffffff,

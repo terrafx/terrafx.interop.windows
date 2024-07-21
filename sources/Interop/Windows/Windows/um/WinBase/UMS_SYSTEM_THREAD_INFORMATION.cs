@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -17,7 +17,7 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
     public uint UmsVersion;
 
     /// <include file='UMS_SYSTEM_THREAD_INFORMATION.xml' path='doc/member[@name="UMS_SYSTEM_THREAD_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winbase_L1614_C5")]
+    [NativeTypeName("__AnonymousRecord_winbase_L1637_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsUmsSchedulerThread"]/*' />
@@ -69,7 +69,7 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winbase_L1615_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L1638_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ThreadUmsFlags"]/*' />

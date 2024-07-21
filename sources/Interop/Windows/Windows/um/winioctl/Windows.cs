@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -559,8 +559,14 @@ public static unsafe partial class Windows
     [NativeTypeName("#define ENCRYPTION_FORMAT_DEFAULT (0x01)")]
     public const int ENCRYPTION_FORMAT_DEFAULT = (0x01);
 
-    [NativeTypeName("#define ENCRYPTED_DATA_INFO_SPARSE_FILE 1")]
-    public const int ENCRYPTED_DATA_INFO_SPARSE_FILE = 1;
+    [NativeTypeName("#define ENCRYPTED_DATA_INFO_SPARSE_FILE 0x00000001")]
+    public const int ENCRYPTED_DATA_INFO_SPARSE_FILE = 0x00000001;
+
+    [NativeTypeName("#define ENCRYPTED_DATA_INFO_SPARSE_DATA 0x00000002")]
+    public const int ENCRYPTED_DATA_INFO_SPARSE_DATA = 0x00000002;
+
+    [NativeTypeName("#define ENCRYPTED_DATA_INFO_4K_SPARSE_UNIT 0x00000004")]
+    public const int ENCRYPTED_DATA_INFO_4K_SPARSE_UNIT = 0x00000004;
 
     [NativeTypeName("#define COPYFILE_SIS_LINK 0x0001")]
     public const int COPYFILE_SIS_LINK = 0x0001;
@@ -673,8 +679,11 @@ public static unsafe partial class Windows
     [NativeTypeName("#define CHECKSUM_TYPE_SHA256 (4)")]
     public const int CHECKSUM_TYPE_SHA256 = (4);
 
-    [NativeTypeName("#define CHECKSUM_TYPE_FIRST_UNUSED_TYPE (5)")]
-    public const int CHECKSUM_TYPE_FIRST_UNUSED_TYPE = (5);
+    [NativeTypeName("#define CHECKSUM_TYPE_XXH64 (5)")]
+    public const int CHECKSUM_TYPE_XXH64 = (5);
+
+    [NativeTypeName("#define CHECKSUM_TYPE_FIRST_UNUSED_TYPE (6)")]
+    public const int CHECKSUM_TYPE_FIRST_UNUSED_TYPE = (6);
 
     [NativeTypeName("#define OFFLOAD_READ_FLAG_ALL_ZERO_BEYOND_CURRENT_RANGE (1)")]
     public const int OFFLOAD_READ_FLAG_ALL_ZERO_BEYOND_CURRENT_RANGE = (1);

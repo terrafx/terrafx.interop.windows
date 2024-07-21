@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ShlObj.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/ShlObj.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -50,6 +50,14 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PerUserInit"]/*' />
     [DllImport("mydocs", ExactSpelling = true)]
     public static extern void PerUserInit();
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImportPrivacySettings"]/*' />
+    [DllImport("shdocvw", ExactSpelling = true)]
+    public static extern BOOL ImportPrivacySettings([NativeTypeName("PCWSTR")] char* pszFilename, BOOL* pfParsePrivacyPreferences, BOOL* pfParsePerSiteRules);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DoPrivacyDlg"]/*' />
+    [DllImport("shdocvw", ExactSpelling = true)]
+    public static extern HRESULT DoPrivacyDlg(HWND hwndOwner, [NativeTypeName("PCWSTR")] char* pszUrl, IEnumPrivacyRecords* pPrivacyEnum, BOOL fReportAllSites);
 
     [NativeTypeName("#define PANE_NONE ((DWORD)-1)")]
     public const uint PANE_NONE = unchecked((uint)(-1));

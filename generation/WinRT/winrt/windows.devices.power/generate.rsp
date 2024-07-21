@@ -10,6 +10,9 @@ DEPRECATEDENUMERATOR
 IID_IBattery
 IID_IBatteryReport
 IID_IBatteryStatics
+IID_IPowerGridData
+IID_IPowerGridForecast
+IID_IPowerGridForecastStatics
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file
@@ -23,4 +26,4 @@ TerraFX.Interop.WinRT
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/windows.devices.power
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.devices.power.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt/windows.devices.power.h

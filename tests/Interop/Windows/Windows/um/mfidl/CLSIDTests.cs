@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfidl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/mfidl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -157,5 +157,19 @@ public static partial class CLSIDTests
     public static void CLSID_CameraConfigurationManagerTest()
     {
         Assert.That(CLSID_CameraConfigurationManager, Is.EqualTo(new Guid(0x6C92B540, 0x5854, 0x4A17, 0x92, 0xB6, 0xAC, 0x89, 0xC9, 0x6E, 0x96, 0x83)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_FaceDetectionMFT" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_FaceDetectionMFTTest()
+    {
+        Assert.That(CLSID_FaceDetectionMFT, Is.EqualTo(new Guid(0xc1e565e2, 0xf2de, 0x4537, 0x96, 0x12, 0x2f, 0x30, 0xa1, 0x60, 0xeb, 0x5c)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_FrameServerClassFactory" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_FrameServerClassFactoryTest()
+    {
+        Assert.That(CLSID_FrameServerClassFactory, Is.EqualTo(new Guid(0x9A93092C, 0x9CDC, 0x49B8, 0x83, 0x49, 0xCB, 0xCF, 0x31, 0x45, 0xFE, 0x0A)));
     }
 }

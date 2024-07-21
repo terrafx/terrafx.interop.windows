@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/shellapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/shellapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -60,7 +60,7 @@ public unsafe partial struct SHELLEXECUTEINFOW
     public uint dwHotKey;
 
     /// <include file='SHELLEXECUTEINFOW.xml' path='doc/member[@name="SHELLEXECUTEINFOW.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_shellapi_L484_C5")]
+    [NativeTypeName("__AnonymousRecord_shellapi_L485_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='SHELLEXECUTEINFOW.xml' path='doc/member[@name="SHELLEXECUTEINFOW.hProcess"]/*' />

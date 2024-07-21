@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wincodecsdk.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/wincodecsdk.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -565,6 +565,13 @@ public static partial class CLSIDTests
         Assert.That(CLSID_WICHeifHDRMetadataReader, Is.EqualTo(new Guid(0x2438de3d, 0x94d9, 0x4be8, 0x84, 0xa8, 0x4d, 0xe9, 0x5a, 0x57, 0x5e, 0x75)));
     }
 
+    /// <summary>Validates that the value of the <see cref="CLSID_WICHeifHDRMetadataWriter" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_WICHeifHDRMetadataWriterTest()
+    {
+        Assert.That(CLSID_WICHeifHDRMetadataWriter, Is.EqualTo(new Guid(0xb83135a2, 0x8e7e, 0x485e, 0xa5, 0x33, 0xf9, 0x36, 0x21, 0xdd, 0x93, 0xc8)));
+    }
+
     /// <summary>Validates that the value of the <see cref="CLSID_WICWebpAnimMetadataReader" /> property is correct.</summary>
     [Test]
     public static void CLSID_WICWebpAnimMetadataReaderTest()
@@ -577,5 +584,33 @@ public static partial class CLSIDTests
     public static void CLSID_WICWebpAnmfMetadataReaderTest()
     {
         Assert.That(CLSID_WICWebpAnmfMetadataReader, Is.EqualTo(new Guid(0x85a10b03, 0xc9f6, 0x439f, 0xbe, 0x5e, 0xc0, 0xfb, 0xef, 0x67, 0x80, 0x7c)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_WICJpegXLAnimMetadataReader" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_WICJpegXLAnimMetadataReaderTest()
+    {
+        Assert.That(CLSID_WICJpegXLAnimMetadataReader, Is.EqualTo(new Guid(0xbf8b6eb0, 0x37e2, 0x4ed8, 0x82, 0x89, 0xbe, 0x9a, 0xe3, 0x1d, 0x9f, 0x03)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_WICJpegXLAnimMetadataWriter" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_WICJpegXLAnimMetadataWriterTest()
+    {
+        Assert.That(CLSID_WICJpegXLAnimMetadataWriter, Is.EqualTo(new Guid(0x39d01345, 0x432b, 0x44e6, 0xaf, 0xd6, 0xf6, 0x06, 0xd2, 0x0a, 0x55, 0x71)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_WICJpegXLAnimFrameMetadataReader" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_WICJpegXLAnimFrameMetadataReaderTest()
+    {
+        Assert.That(CLSID_WICJpegXLAnimFrameMetadataReader, Is.EqualTo(new Guid(0x9cdf50a8, 0x8770, 0x4fe6, 0xae, 0xf2, 0xd0, 0x6e, 0x2c, 0x01, 0x74, 0x4f)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_WICJpegXLAnimFrameMetadataWriter" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_WICJpegXLAnimFrameMetadataWriterTest()
+    {
+        Assert.That(CLSID_WICJpegXLAnimFrameMetadataWriter, Is.EqualTo(new Guid(0xd1ce58a8, 0x06e0, 0x4b6f, 0x8f, 0xc1, 0x57, 0x75, 0x60, 0xbd, 0x5a, 0xd9)));
     }
 }

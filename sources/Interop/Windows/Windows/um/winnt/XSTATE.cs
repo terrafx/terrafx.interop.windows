@@ -1,12 +1,15 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
 
 public static partial class XSTATE
 {
+    [NativeTypeName("#define XSTATE_CONTEXT_FLAG_LOOKASIDE 0x1")]
+    public const int XSTATE_CONTEXT_FLAG_LOOKASIDE = 0x1;
+
     [NativeTypeName("#define XSTATE_LEGACY_FLOATING_POINT (0)")]
     public const int XSTATE_LEGACY_FLOATING_POINT = (0);
 
@@ -61,9 +64,6 @@ public static partial class XSTATE
     [NativeTypeName("#define XSTATE_MASK_LEGACY_SSE (1ui64 << (XSTATE_LEGACY_SSE))")]
     public const ulong XSTATE_MASK_LEGACY_SSE = (1UL << ((1)));
 
-    [NativeTypeName("#define XSTATE_MASK_LEGACY (XSTATE_MASK_LEGACY_FLOATING_POINT | \\\r\n                                             XSTATE_MASK_LEGACY_SSE)")]
-    public const ulong XSTATE_MASK_LEGACY = ((1UL << ((0))) | (1UL << ((1))));
-
     [NativeTypeName("#define XSTATE_MASK_GSSE (1ui64 << (XSTATE_GSSE))")]
     public const ulong XSTATE_MASK_GSSE = (1UL << ((2)));
 
@@ -97,6 +97,15 @@ public static partial class XSTATE
     [NativeTypeName("#define XSTATE_MASK_LWP (1ui64 << (XSTATE_LWP))")]
     public const ulong XSTATE_MASK_LWP = (1UL << ((62)));
 
+    [NativeTypeName("#define XSTATE_ARM64_SVE (2)")]
+    public const int XSTATE_ARM64_SVE = (2);
+
+    [NativeTypeName("#define XSTATE_MASK_ARM64_SVE (1ui64 << (XSTATE_ARM64_SVE))")]
+    public const ulong XSTATE_MASK_ARM64_SVE = (1UL << ((2)));
+
+    [NativeTypeName("#define XSTATE_MASK_LEGACY (XSTATE_MASK_LEGACY_FLOATING_POINT | \\\r\n                                             XSTATE_MASK_LEGACY_SSE)")]
+    public const ulong XSTATE_MASK_LEGACY = ((1UL << ((0))) | (1UL << ((1))));
+
     [NativeTypeName("#define XSTATE_MASK_PERSISTENT ((1ui64 << (XSTATE_MPX_BNDCSR)) | \\\r\n                                             XSTATE_MASK_LWP)")]
     public const ulong XSTATE_MASK_PERSISTENT = ((1UL << ((4))) | (1UL << ((62))));
 
@@ -105,6 +114,12 @@ public static partial class XSTATE
 
     [NativeTypeName("#define XSTATE_MASK_LARGE_FEATURES (XSTATE_MASK_AMX_TILE_DATA)")]
     public const ulong XSTATE_MASK_LARGE_FEATURES = ((1UL << ((18))));
+
+    [NativeTypeName("#define XSTATE_FIRST_NON_LEGACY_FEATURE XSTATE_AVX")]
+    public const int XSTATE_FIRST_NON_LEGACY_FEATURE = ((2));
+
+    [NativeTypeName("#define XSTATE_MASK_AMD64_LEGACY (XSTATE_MASK_LEGACY_FLOATING_POINT | \\\r\n                                             XSTATE_MASK_LEGACY_SSE)")]
+    public const ulong XSTATE_MASK_AMD64_LEGACY = ((1UL << ((0))) | (1UL << ((1))));
 
     [NativeTypeName("#define XSTATE_COMPACTION_ENABLE (63)")]
     public const int XSTATE_COMPACTION_ENABLE = (63);

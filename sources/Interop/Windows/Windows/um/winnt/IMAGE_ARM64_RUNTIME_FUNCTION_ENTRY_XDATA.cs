@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -19,7 +19,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA
 
     /// <include file='IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA.xml' path='doc/member[@name="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L20260_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L21237_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.FunctionLength"]/*' />

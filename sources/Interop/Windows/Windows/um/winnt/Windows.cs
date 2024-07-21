@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
-public static partial class Windows
+public static unsafe partial class Windows
 {
     [NativeTypeName("const GUID")]
     public static ref readonly Guid NO_SUBGROUP_GUID
@@ -461,6 +461,21 @@ public static partial class Windows
     [NativeTypeName("#define MAILSLOT_WAIT_FOREVER ((DWORD)-1)")]
     public const uint MAILSLOT_WAIT_FOREVER = unchecked((uint)(-1));
 
+    [NativeTypeName("#define LX_FILE_METADATA_HAS_UID 0x1")]
+    public const int LX_FILE_METADATA_HAS_UID = 0x1;
+
+    [NativeTypeName("#define LX_FILE_METADATA_HAS_GID 0x2")]
+    public const int LX_FILE_METADATA_HAS_GID = 0x2;
+
+    [NativeTypeName("#define LX_FILE_METADATA_HAS_MODE 0x4")]
+    public const int LX_FILE_METADATA_HAS_MODE = 0x4;
+
+    [NativeTypeName("#define LX_FILE_METADATA_HAS_DEVICE_ID 0x8")]
+    public const int LX_FILE_METADATA_HAS_DEVICE_ID = 0x8;
+
+    [NativeTypeName("#define LX_FILE_CASE_SENSITIVE_DIR 0x10")]
+    public const int LX_FILE_CASE_SENSITIVE_DIR = 0x10;
+
     [NativeTypeName("#define FLUSH_FLAGS_FILE_DATA_ONLY 0x00000001")]
     public const int FLUSH_FLAGS_FILE_DATA_ONLY = 0x00000001;
 
@@ -469,6 +484,9 @@ public static partial class Windows
 
     [NativeTypeName("#define FLUSH_FLAGS_FILE_DATA_SYNC_ONLY 0x00000004")]
     public const int FLUSH_FLAGS_FILE_DATA_SYNC_ONLY = 0x00000004;
+
+    [NativeTypeName("#define FLUSH_FLAGS_FLUSH_AND_PURGE 0x00000008")]
+    public const int FLUSH_FLAGS_FLUSH_AND_PURGE = 0x00000008;
 
     [NativeTypeName("#define SHUFFLE_FILE_FLAG_SKIP_INITIALIZING_NEW_CLUSTERS (0x00000001)")]
     public const int SHUFFLE_FILE_FLAG_SKIP_INITIALIZING_NEW_CLUSTERS = (0x00000001);
@@ -685,6 +703,15 @@ public static partial class Windows
 
     [NativeTypeName("#define COMPRESSION_FORMAT_XP10 (0x0005)")]
     public const int COMPRESSION_FORMAT_XP10 = (0x0005);
+
+    [NativeTypeName("#define COMPRESSION_FORMAT_LZ4 (0x0006)")]
+    public const int COMPRESSION_FORMAT_LZ4 = (0x0006);
+
+    [NativeTypeName("#define COMPRESSION_FORMAT_DEFLATE (0x0007)")]
+    public const int COMPRESSION_FORMAT_DEFLATE = (0x0007);
+
+    [NativeTypeName("#define COMPRESSION_FORMAT_ZLIB (0x0008)")]
+    public const int COMPRESSION_FORMAT_ZLIB = (0x0008);
 
     [NativeTypeName("#define COMPRESSION_ENGINE_STANDARD (0x0000)")]
     public const int COMPRESSION_ENGINE_STANDARD = (0x0000);

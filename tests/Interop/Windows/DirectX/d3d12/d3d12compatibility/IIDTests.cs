@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12compatibility.h in microsoft/DirectX-Headers tag v1.611.2
+// Ported from d3d12compatibility.h in microsoft/DirectX-Headers tag v1.614.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
@@ -45,6 +45,13 @@ public static partial class IIDTests
     public static void IID_OpenCLOn12CreatorIDTest()
     {
         Assert.That(IID_OpenCLOn12CreatorID, Is.EqualTo(new Guid(0x3f76bb74, 0x91b5, 0x4a88, 0xb1, 0x26, 0x20, 0xca, 0x03, 0x31, 0xcd, 0x60)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_VulkanOn12CreatorID" /> property is correct.</summary>
+    [Test]
+    public static void IID_VulkanOn12CreatorIDTest()
+    {
+        Assert.That(IID_VulkanOn12CreatorID, Is.EqualTo(new Guid(0xbc806e01, 0x3052, 0x406c, 0xa3, 0xe8, 0x9f, 0xc0, 0x7f, 0x04, 0x8f, 0x98)));
     }
 
     /// <summary>Validates that the value of the <see cref="IID_DirectMLTensorFlowCreatorID" /> property is correct.</summary>

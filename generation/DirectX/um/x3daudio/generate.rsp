@@ -37,7 +37,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/x3daudio
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/x3daudio.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/x3daudio.h
 --with-librarypath
 *=X3DAudio1_7
 --with-using

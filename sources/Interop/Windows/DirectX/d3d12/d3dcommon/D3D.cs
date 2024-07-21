@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3dcommon.h in microsoft/DirectX-Headers tag v1.611.2
+// Ported from d3dcommon.h in microsoft/DirectX-Headers tag v1.614.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -199,6 +199,18 @@ public static partial class D3D
 
     [NativeTypeName("#define D3D_SHADER_FEATURE_WRITEABLE_MSAA_TEXTURES 0x40000000")]
     public const int D3D_SHADER_FEATURE_WRITEABLE_MSAA_TEXTURES = 0x40000000;
+
+    [NativeTypeName("#define D3D_SHADER_FEATURE_SAMPLE_CMP_GRADIENT_OR_BIAS 0x80000000")]
+    public const uint D3D_SHADER_FEATURE_SAMPLE_CMP_GRADIENT_OR_BIAS = 0x80000000;
+
+    [NativeTypeName("#define D3D_SHADER_FEATURE_EXTENDED_COMMAND_INFO 0x100000000ull")]
+    public const ulong D3D_SHADER_FEATURE_EXTENDED_COMMAND_INFO = 0x100000000UL;
+
+    [NativeTypeName("#define D3D_OPT_SHADER_FEATURE_USES_DERIVATIVES 0x0000010000000000ull")]
+    public const ulong D3D_OPT_SHADER_FEATURE_USES_DERIVATIVES = 0x0000010000000000UL;
+
+    [NativeTypeName("#define D3D_OPT_SHADER_FEATURE_REQUIRES_GROUP 0x0000020000000000ull")]
+    public const ulong D3D_OPT_SHADER_FEATURE_REQUIRES_GROUP = 0x0000020000000000UL;
 
     [NativeTypeName("#define D3D_COMPONENT_MASK_X 1")]
     public const int D3D_COMPONENT_MASK_X = 1;

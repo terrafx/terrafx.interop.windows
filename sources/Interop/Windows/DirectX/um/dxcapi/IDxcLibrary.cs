@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the University of Illinois Open Source License.
 
 using System;
@@ -20,6 +20,11 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDxcLibrary));
 
     public void** lpVtbl;
+
+    public HRESULT GetBlobAsUtf16(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding)
+    {
+        return this.GetBlobAsWide(pBlob, pBlobEncoding);
+    }
 
     /// <inheritdoc cref="IUnknown.QueryInterface" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -119,10 +124,10 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
         return ((delegate* unmanaged[MemberFunction]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)(lpVtbl[11]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pBlob, pBlobEncoding);
     }
 
-    /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.GetBlobAsUtf16"]/*' />
+    /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.GetBlobAsWide"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetBlobAsUtf16(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding)
+    public HRESULT GetBlobAsWide(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding)
     {
         return ((delegate* unmanaged[MemberFunction]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)(lpVtbl[12]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pBlob, pBlobEncoding);
     }
@@ -157,7 +162,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
         HRESULT GetBlobAsUtf8(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding);
 
         [VtblIndex(12)]
-        HRESULT GetBlobAsUtf16(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding);
+        HRESULT GetBlobAsWide(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding);
     }
 
     public partial struct Vtbl<TSelf>
@@ -200,6 +205,6 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
         public delegate* unmanaged[MemberFunction]<TSelf*, IDxcBlob*, IDxcBlobEncoding**, int> GetBlobAsUtf8;
 
         [NativeTypeName("HRESULT (IDxcBlob *, IDxcBlobEncoding **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IDxcBlob*, IDxcBlobEncoding**, int> GetBlobAsUtf16;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDxcBlob*, IDxcBlobEncoding**, int> GetBlobAsWide;
     }
 }

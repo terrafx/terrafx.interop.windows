@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -39,7 +39,7 @@ public partial struct STORAGE_MINIPORT_DESCRIPTOR
     public byte ExtraIoInfoSupported;
 
     /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR.Flags"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L1474_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L1483_C5")]
     public _Flags_e__Union Flags;
 
     /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR.Reserved0"]/*' />
@@ -56,7 +56,7 @@ public partial struct STORAGE_MINIPORT_DESCRIPTOR
     {
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L1475_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L1484_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.AsBYTE"]/*' />
@@ -76,6 +76,22 @@ public partial struct STORAGE_MINIPORT_DESCRIPTOR
             set
             {
                 Anonymous.LogicalPoFxForDisk = value;
+            }
+        }
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ForwardIo"]/*' />
+        public byte ForwardIo
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            readonly get
+            {
+                return Anonymous.ForwardIo;
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set
+            {
+                Anonymous.ForwardIo = value;
             }
         }
 
@@ -117,20 +133,37 @@ public partial struct STORAGE_MINIPORT_DESCRIPTOR
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
-            [NativeTypeName("byte : 7")]
-            public byte Reserved
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ForwardIo"]/*' />
+            [NativeTypeName("byte : 1")]
+            public byte ForwardIo
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 readonly get
                 {
-                    return (byte)((_bitfield >> 1) & 0x7Fu);
+                    return (byte)((_bitfield >> 1) & 0x1u);
                 }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 set
                 {
-                    _bitfield = (byte)((_bitfield & ~(0x7Fu << 1)) | ((value & 0x7Fu) << 1));
+                    _bitfield = (byte)((_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1));
+                }
+            }
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
+            [NativeTypeName("byte : 6")]
+            public byte Reserved
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                readonly get
+                {
+                    return (byte)((_bitfield >> 2) & 0x3Fu);
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (byte)((_bitfield & ~(0x3Fu << 2)) | ((value & 0x3Fu) << 2));
                 }
             }
         }

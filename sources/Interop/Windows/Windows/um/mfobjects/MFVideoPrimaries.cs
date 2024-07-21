@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfobjects.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/mfobjects.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -47,8 +47,11 @@ public enum MFVideoPrimaries
     /// <include file='MFVideoPrimaries.xml' path='doc/member[@name="MFVideoPrimaries.MFVideoPrimaries_ACES"]/*' />
     MFVideoPrimaries_ACES = 12,
 
+    /// <include file='MFVideoPrimaries.xml' path='doc/member[@name="MFVideoPrimaries.MFVideoPrimaries_Display_P3"]/*' />
+    MFVideoPrimaries_Display_P3 = 13,
+
     /// <include file='MFVideoPrimaries.xml' path='doc/member[@name="MFVideoPrimaries.MFVideoPrimaries_Last"]/*' />
-    MFVideoPrimaries_Last = (MFVideoPrimaries_ACES + 1),
+    MFVideoPrimaries_Last = (MFVideoPrimaries_Display_P3 + 1),
 
     /// <include file='MFVideoPrimaries.xml' path='doc/member[@name="MFVideoPrimaries.MFVideoPrimaries_ForceDWORD"]/*' />
     MFVideoPrimaries_ForceDWORD = 0x7fffffff,

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -16,7 +16,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
     /// <include file='DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wingdi_L3165_C5")]
+    [NativeTypeName("__AnonymousRecord_wingdi_L3170_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO.colorEncoding"]/*' />
@@ -123,7 +123,7 @@ public partial struct DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_wingdi_L3167_C9")]
+        [NativeTypeName("__AnonymousRecord_wingdi_L3172_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*' />

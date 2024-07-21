@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.611.2
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.614.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Diagnostics.CodeAnalysis;
@@ -16,7 +16,7 @@ public partial struct D3D12_INDIRECT_ARGUMENT_DESC
     public D3D12_INDIRECT_ARGUMENT_TYPE Type;
 
     /// <include file='D3D12_INDIRECT_ARGUMENT_DESC.xml' path='doc/member[@name="D3D12_INDIRECT_ARGUMENT_DESC.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12_L4464_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L4543_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.VertexBuffer"]/*' />
@@ -74,34 +74,50 @@ public partial struct D3D12_INDIRECT_ARGUMENT_DESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.IncrementingConstant"]/*' />
+    [UnscopedRef]
+    public ref _Anonymous_e__Union._IncrementingConstant_e__Struct IncrementingConstant
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.IncrementingConstant;
+        }
+    }
+
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.VertexBuffer"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_d3d12_L4466_C9")]
+        [NativeTypeName("__AnonymousRecord_d3d12_L4545_C9")]
         public _VertexBuffer_e__Struct VertexBuffer;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Constant"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_d3d12_L4470_C9")]
+        [NativeTypeName("__AnonymousRecord_d3d12_L4549_C9")]
         public _Constant_e__Struct Constant;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ConstantBufferView"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_d3d12_L4476_C9")]
+        [NativeTypeName("__AnonymousRecord_d3d12_L4555_C9")]
         public _ConstantBufferView_e__Struct ConstantBufferView;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ShaderResourceView"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_d3d12_L4480_C9")]
+        [NativeTypeName("__AnonymousRecord_d3d12_L4559_C9")]
         public _ShaderResourceView_e__Struct ShaderResourceView;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.UnorderedAccessView"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_d3d12_L4484_C9")]
+        [NativeTypeName("__AnonymousRecord_d3d12_L4563_C9")]
         public _UnorderedAccessView_e__Struct UnorderedAccessView;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.IncrementingConstant"]/*' />
+        [FieldOffset(0)]
+        [NativeTypeName("__AnonymousRecord_d3d12_L4567_C9")]
+        public _IncrementingConstant_e__Struct IncrementingConstant;
 
         /// <include file='_VertexBuffer_e__Struct.xml' path='doc/member[@name="_VertexBuffer_e__Struct"]/*' />
         public partial struct _VertexBuffer_e__Struct
@@ -142,6 +158,16 @@ public partial struct D3D12_INDIRECT_ARGUMENT_DESC
         {
             /// <include file='_UnorderedAccessView_e__Struct.xml' path='doc/member[@name="_UnorderedAccessView_e__Struct.RootParameterIndex"]/*' />
             public uint RootParameterIndex;
+        }
+
+        /// <include file='_IncrementingConstant_e__Struct.xml' path='doc/member[@name="_IncrementingConstant_e__Struct"]/*' />
+        public partial struct _IncrementingConstant_e__Struct
+        {
+            /// <include file='_IncrementingConstant_e__Struct.xml' path='doc/member[@name="_IncrementingConstant_e__Struct.RootParameterIndex"]/*' />
+            public uint RootParameterIndex;
+
+            /// <include file='_IncrementingConstant_e__Struct.xml' path='doc/member[@name="_IncrementingConstant_e__Struct.DestOffsetIn32BitValues"]/*' />
+            public uint DestOffsetIn32BitValues;
         }
     }
 }

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.611.2
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.614.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Diagnostics.CodeAnalysis;
@@ -16,7 +16,7 @@ public partial struct D3D12_VERSIONED_ROOT_SIGNATURE_DESC
     public D3D_ROOT_SIGNATURE_VERSION Version;
 
     /// <include file='D3D12_VERSIONED_ROOT_SIGNATURE_DESC.xml' path='doc/member[@name="D3D12_VERSIONED_ROOT_SIGNATURE_DESC.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12_L4063_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L4141_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Desc_1_0"]/*' />

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/ws2def.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from shared/ws2def.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -82,6 +82,9 @@ public static partial class AI
     [NativeTypeName("#define AI_DNS_SERVER_TYPE_DOH 0x2")]
     public const int AI_DNS_SERVER_TYPE_DOH = 0x2;
 
+    [NativeTypeName("#define AI_DNS_SERVER_TYPE_DOT 0x3")]
+    public const int AI_DNS_SERVER_TYPE_DOT = 0x3;
+
     [NativeTypeName("#define AI_DNS_SERVER_UDP_FALLBACK 0x1")]
     public const int AI_DNS_SERVER_UDP_FALLBACK = 0x1;
 
@@ -90,4 +93,7 @@ public static partial class AI
 
     [NativeTypeName("#define AI_DNS_RESPONSE_HOSTFILE 0x2")]
     public const int AI_DNS_RESPONSE_HOSTFILE = 0x2;
+
+    [NativeTypeName("#define AI_EXTRA_DNSSEC_REQUIRED 0x0000000000000001")]
+    public const int AI_EXTRA_DNSSEC_REQUIRED = 0x0000000000000001;
 }

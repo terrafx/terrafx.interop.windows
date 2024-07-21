@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfidl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/mfidl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -12,6 +12,20 @@ namespace TerraFX.Interop.Windows.UnitTests;
 /// <summary>Provides validation of the <see cref="MF" /> class.</summary>
 public static partial class MFTests
 {
+    /// <summary>Validates that the value of the <see cref="MF_ACOUSTIC_ECHO_CANCELLATION_CONTROL_SERVICE" /> property is correct.</summary>
+    [Test]
+    public static void MF_ACOUSTIC_ECHO_CANCELLATION_CONTROL_SERVICETest()
+    {
+        Assert.That(MF_ACOUSTIC_ECHO_CANCELLATION_CONTROL_SERVICE, Is.EqualTo(new Guid(0x7f6c3b29, 0x2d12, 0x4f6f, 0xac, 0x5, 0xc1, 0xa8, 0x9b, 0x8d, 0x52, 0x88)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MF_AUDIO_EFFECTS_MANAGER_SERVICE" /> property is correct.</summary>
+    [Test]
+    public static void MF_AUDIO_EFFECTS_MANAGER_SERVICETest()
+    {
+        Assert.That(MF_AUDIO_EFFECTS_MANAGER_SERVICE, Is.EqualTo(new Guid(0x1f541943, 0xd5df, 0x455e, 0xa2, 0xe5, 0x7d, 0x64, 0xd3, 0xbb, 0xbd, 0xb5)));
+    }
+
     /// <summary>Validates that the value of the <see cref="MF_WVC1_PROG_SINGLE_SLICE_CONTENT" /> property is correct.</summary>
     [Test]
     public static void MF_WVC1_PROG_SINGLE_SLICE_CONTENTTest()
@@ -1396,5 +1410,19 @@ public static partial class MFTests
     public static void MF_DEVICESTREAM_SENSORSTREAM_IDTest()
     {
         Assert.That(MF_DEVICESTREAM_SENSORSTREAM_ID, Is.EqualTo(new Guid(0xE35B9FE4, 0x0659, 0x4CAD, 0xBB, 0x51, 0x33, 0x16, 0x0B, 0xE7, 0xE4, 0x13)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MF_CAMERASOURCE_PROVIDE_SELECTED_PROFILE_ON_START" /> property is correct.</summary>
+    [Test]
+    public static void MF_CAMERASOURCE_PROVIDE_SELECTED_PROFILE_ON_STARTTest()
+    {
+        Assert.That(MF_CAMERASOURCE_PROVIDE_SELECTED_PROFILE_ON_START, Is.EqualTo(new Guid(0xA9B46058, 0x82F2, 0x4E5C, 0xBF, 0x6E, 0x25, 0xB4, 0xB0, 0x9F, 0x22, 0xED)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MF_DEVSOURCE_ATTRIBUTE_FRAMESERVER_SHARE_MODE" /> property is correct.</summary>
+    [Test]
+    public static void MF_DEVSOURCE_ATTRIBUTE_FRAMESERVER_SHARE_MODETest()
+    {
+        Assert.That(MF_DEVSOURCE_ATTRIBUTE_FRAMESERVER_SHARE_MODE, Is.EqualTo(new Guid(0x44d1a9bc, 0x2999, 0x4238, 0xae, 0x43, 0x07, 0x30, 0xce, 0xb2, 0xab, 0x1b)));
     }
 }

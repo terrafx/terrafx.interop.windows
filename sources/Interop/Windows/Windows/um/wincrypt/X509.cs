@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -25,17 +25,17 @@ public static unsafe partial class X509
     [NativeTypeName("#define X509_CERT_REQUEST_TO_BE_SIGNED ((LPCSTR) 4)")]
     public static sbyte* X509_CERT_REQUEST_TO_BE_SIGNED => ((sbyte*)(4));
 
-    [NativeTypeName("#define X509_EXTENSIONS ((LPCSTR) 5)")]
-    public static sbyte* X509_EXTENSIONS => ((sbyte*)(5));
-
     [NativeTypeName("#define X509_NAME_VALUE ((LPCSTR) 6)")]
     public static sbyte* X509_NAME_VALUE => ((sbyte*)(6));
 
-    [NativeTypeName("#define X509_NAME ((LPCSTR) 7)")]
-    public static sbyte* X509_NAME => ((sbyte*)(7));
-
     [NativeTypeName("#define X509_PUBLIC_KEY_INFO ((LPCSTR) 8)")]
     public static sbyte* X509_PUBLIC_KEY_INFO => ((sbyte*)(8));
+
+    [NativeTypeName("#define X509_EXTENSIONS ((LPCSTR) 5)")]
+    public static sbyte* X509_EXTENSIONS => ((sbyte*)(5));
+
+    [NativeTypeName("#define X509_NAME ((LPCSTR) 7)")]
+    public static sbyte* X509_NAME => ((sbyte*)(7));
 
     [NativeTypeName("#define X509_AUTHORITY_KEY_ID ((LPCSTR) 9)")]
     public static sbyte* X509_AUTHORITY_KEY_ID => ((sbyte*)(9));

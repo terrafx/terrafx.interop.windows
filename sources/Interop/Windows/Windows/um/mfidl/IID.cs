@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfidl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/mfidl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -3202,6 +3202,52 @@ public static partial class IID
                 0x09,
                 0x39,
                 0x85
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IMFFaceDetectionTransformCallback
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xDE, 0x1A, 0xFD, 0x0B,
+                0x21, 0x04,
+                0x09, 0x49,
+                0xAC,
+                0xB7,
+                0x7A,
+                0x71,
+                0x25,
+                0x41,
+                0x68,
+                0x81
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IMFFaceDetectionTransform
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x78, 0x95, 0xD5, 0xDD,
+                0xE7, 0xD0,
+                0xE2, 0x46,
+                0xBE,
+                0x8C,
+                0x1C,
+                0xE7,
+                0x6A,
+                0xD1,
+                0x47,
+                0xC0
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

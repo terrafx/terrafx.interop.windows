@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfreadwrite.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/mfreadwrite.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -280,6 +280,31 @@ public static partial class MF
                 0x68,
                 0x78,
                 0x8D
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MF_SOURCE_READER_PASSTHROUGH_MODE
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x26, 0xF1, 0x3F, 0x04,
+                0x2C, 0xFE,
+                0x08, 0x47,
+                0xA0,
+                0x9B,
+                0xDA,
+                0x2A,
+                0xB4,
+                0x35,
+                0xCE,
+                0xD9
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

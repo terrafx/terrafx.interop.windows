@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/roerrorapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from winrt/roerrorapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -151,6 +151,10 @@ public static unsafe partial class WinRT
     [DllImport("combase", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.3")]
     public static extern HRESULT RoInspectCapturedStackBackTrace([NativeTypeName("UINT_PTR")] nuint targetErrorInfoAddress, ushort machine, [NativeTypeName("PINSPECT_MEMORY_CALLBACK")] delegate* unmanaged<void*, nuint, uint, byte*, HRESULT> readMemoryCallback, [NativeTypeName("PVOID")] void* context, [NativeTypeName("UINT32 *")] uint* frameCount, [NativeTypeName("UINT_PTR *")] nuint* targetBackTraceAddress);
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RoGetMatchingRestrictedErrorInfo"]/*' />
+    [DllImport("combase", ExactSpelling = true)]
+    public static extern HRESULT RoGetMatchingRestrictedErrorInfo(HRESULT hrIn, IRestrictedErrorInfo** ppRestrictedErrorInfo);
 
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RoReportFailedDelegate"]/*' />
     [DllImport("combase", ExactSpelling = true)]

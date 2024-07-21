@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfreadwrite.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/mfreadwrite.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -87,6 +87,13 @@ public static partial class MFTests
     public static void MF_SOURCE_READER_D3D11_BIND_FLAGSTest()
     {
         Assert.That(MF_SOURCE_READER_D3D11_BIND_FLAGS, Is.EqualTo(new Guid(0x33f3197b, 0xf73a, 0x4e14, 0x8d, 0x85, 0xe, 0x4c, 0x43, 0x68, 0x78, 0x8d)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MF_SOURCE_READER_PASSTHROUGH_MODE" /> property is correct.</summary>
+    [Test]
+    public static void MF_SOURCE_READER_PASSTHROUGH_MODETest()
+    {
+        Assert.That(MF_SOURCE_READER_PASSTHROUGH_MODE, Is.EqualTo(new Guid(0x43ff126, 0xfe2c, 0x4708, 0xa0, 0x9b, 0xda, 0x2a, 0xb4, 0x35, 0xce, 0xd9)));
     }
 
     /// <summary>Validates that the value of the <see cref="MF_SINK_WRITER_ASYNC_CALLBACK" /> property is correct.</summary>

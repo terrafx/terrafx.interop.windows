@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -22,7 +22,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
     public uint NumberEntries;
 
     /// <include file='STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE.xml' path='doc/member[@name="STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L14032_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L14337_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Lev1Depends"]/*' />

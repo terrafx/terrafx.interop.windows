@@ -1,8 +1,9 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/icm.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/icm.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
@@ -192,11 +193,13 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetColorDirectoryA"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
+    [Obsolete("GetColorDirectoryW is deprecated and might not work on all platforms. For more info, see MSDN.")]
     public static extern BOOL GetColorDirectoryA([NativeTypeName("PCSTR")] sbyte* pMachineName, [NativeTypeName("PSTR")] sbyte* pBuffer, [NativeTypeName("PDWORD")] uint* pdwSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetColorDirectoryW"]/*' />
     [DllImport("mscms", ExactSpelling = true)]
     [SetsLastSystemError]
+    [Obsolete("GetColorDirectoryA is deprecated and might not work on all platforms. For more info, see MSDN.")]
     public static extern BOOL GetColorDirectoryW([NativeTypeName("PCWSTR")] char* pMachineName, [NativeTypeName("PWSTR")] char* pBuffer, [NativeTypeName("PDWORD")] uint* pdwSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InstallColorProfileA"]/*' />
@@ -487,6 +490,10 @@ public static unsafe partial class Windows
     [DllImport("mscms", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern HRESULT ColorProfileGetDisplayUserScope(LUID targetAdapterID, [NativeTypeName("UINT32")] uint sourceID, WCS_PROFILE_MANAGEMENT_SCOPE* scope);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ColorProfileGetDeviceCapabilities"]/*' />
+    [DllImport("mscms", ExactSpelling = true)]
+    public static extern HRESULT ColorProfileGetDeviceCapabilities(WCS_PROFILE_MANAGEMENT_SCOPE scope, LUID targetAdapterID, [NativeTypeName("UINT32")] uint sourceID, WCS_DEVICE_CAPABILITIES_TYPE capsType, [NativeTypeName("PVOID")] void* outputCapabilities);
 
     [NativeTypeName("#define INTENT_PERCEPTUAL 0")]
     public const int INTENT_PERCEPTUAL = 0;
@@ -804,6 +811,7 @@ public static unsafe partial class Windows
     public static delegate*<char*, uint, BOOL> UnregisterCMM => &UnregisterCMMW;
 
     [NativeTypeName("#define GetColorDirectory GetColorDirectoryW")]
+    [Obsolete("GetColorDirectory is deprecated and might not work on all platforms. For more info, see MSDN.")]
     public static delegate*<char*, char*, uint*, BOOL> GetColorDirectory => &GetColorDirectoryW;
 
     [NativeTypeName("#define UninstallColorProfile UninstallColorProfileW")]

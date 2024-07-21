@@ -14,7 +14,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/Msi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/Msi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/Msi.h
 --with-librarypath
 MsiAdvertiseProduct=msi
 MsiAdvertiseProductA=msi

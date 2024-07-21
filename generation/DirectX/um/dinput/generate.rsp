@@ -245,7 +245,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/dinput
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/dinput.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/dinput.h
 --with-guid
 IDirectInput2A=5944E662-AA8A-11CF-BFC7-444553540000
 IDirectInput2W=5944E663-AA8A-11CF-BFC7-444553540000

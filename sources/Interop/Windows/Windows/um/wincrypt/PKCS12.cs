@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -35,6 +35,9 @@ public static partial class PKCS12
 
     [NativeTypeName("#define PKCS12_IMPORT_RESERVED_MASK 0xffff0000")]
     public const uint PKCS12_IMPORT_RESERVED_MASK = 0xffff0000;
+
+    [NativeTypeName("#define PKCS12_NAMED_NO_PERSIST_KEY 0x00020000")]
+    public const int PKCS12_NAMED_NO_PERSIST_KEY = 0x00020000;
 
     [NativeTypeName("#define PKCS12_OBJECT_LOCATOR_ALL_IMPORT_FLAGS ( PKCS12_ALWAYS_CNG_KSP               |   \\\r\n                PKCS12_NO_PERSIST_KEY               |   \\\r\n                PKCS12_IMPORT_SILENT                |   \\\r\n                PKCS12_INCLUDE_EXTENDED_PROPERTIES  )")]
     public const int PKCS12_OBJECT_LOCATOR_ALL_IMPORT_FLAGS = (0x00000200 | 0x00008000 | 0x00000040 | 0x0010);

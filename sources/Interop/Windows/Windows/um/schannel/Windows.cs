@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/schannel.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/schannel.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -19,6 +19,10 @@ public static unsafe partial class Windows
     [DllImport("schannel", ExactSpelling = true)]
     public static extern BOOL SslEmptyCacheW([NativeTypeName("LPWSTR")] char* pszTargetName, [NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SslGenerateRandomBits"]/*' />
+    [DllImport("schannel", ExactSpelling = true)]
+    public static extern void SslGenerateRandomBits([NativeTypeName("PUCHAR")] byte* pRandomData, [NativeTypeName("LONG")] int cRandomData);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SslCrackCertificate"]/*' />
     [DllImport("schannel", ExactSpelling = true)]
     public static extern BOOL SslCrackCertificate([NativeTypeName("PUCHAR")] byte* pbCertificate, [NativeTypeName("DWORD")] uint cbCertificate, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PX509Certificate *")] X509Certificate** ppCertificate);
@@ -27,11 +31,21 @@ public static unsafe partial class Windows
     [DllImport("schannel", ExactSpelling = true)]
     public static extern void SslFreeCertificate([NativeTypeName("PX509Certificate")] X509Certificate* pCertificate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SslGetMaximumKeySize"]/*' />
+    [DllImport("schannel", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint SslGetMaximumKeySize([NativeTypeName("DWORD")] uint Reserved);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SslGetServerIdentity"]/*' />
     [DllImport("schannel", ExactSpelling = true)]
     [return: NativeTypeName("SECURITY_STATUS")]
     [SupportedOSPlatform("windows6.2")]
     public static extern int SslGetServerIdentity([NativeTypeName("PBYTE")] byte* ClientHello, [NativeTypeName("DWORD")] uint ClientHelloSize, [NativeTypeName("PBYTE *")] byte** ServerIdentity, [NativeTypeName("PDWORD")] uint* ServerIdentitySize, [NativeTypeName("DWORD")] uint Flags);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SslGetExtensions"]/*' />
+    [DllImport("schannel", ExactSpelling = true)]
+    [return: NativeTypeName("SECURITY_STATUS")]
+    public static extern int SslGetExtensions([NativeTypeName("const BYTE *")] byte* clientHello, [NativeTypeName("DWORD")] uint clientHelloByteSize, SCH_EXTENSION_DATA* genericExtensions, byte genericExtensionsCount, [NativeTypeName("DWORD *")] uint* bytesToRead, SchGetExtensionsOptions flags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SslDeserializeCertificateStore"]/*' />
     [DllImport("schannel", ExactSpelling = true)]

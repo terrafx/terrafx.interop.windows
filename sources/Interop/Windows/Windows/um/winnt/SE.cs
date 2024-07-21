@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -249,6 +249,12 @@ public static partial class SE
 
     [NativeTypeName("#define SE_APP_SILO_USER_PROFILE_MINIMAL_CAPABILITY L\"isolatedWin32-userProfileMinimal\"")]
     public const string SE_APP_SILO_USER_PROFILE_MINIMAL_CAPABILITY = "isolatedWin32-userProfileMinimal";
+
+    [NativeTypeName("#define SE_APP_SILO_PROMPT_FOR_ACCESS_CAPABILITY L\"isolatedWin32-promptForAccess\"")]
+    public const string SE_APP_SILO_PROMPT_FOR_ACCESS_CAPABILITY = "isolatedWin32-promptForAccess";
+
+    [NativeTypeName("#define SE_APP_SILO_ACCESS_TO_PUBLISHER_DIRECTORY_CAPABILITY L\"isolatedWin32-accessToPublisherDirectory\"")]
+    public const string SE_APP_SILO_ACCESS_TO_PUBLISHER_DIRECTORY_CAPABILITY = "isolatedWin32-accessToPublisherDirectory";
 
     [NativeTypeName("#define SE_APP_SILO_PRINT_CAPABILITY L\"isolatedWin32-print\"")]
     public const string SE_APP_SILO_PRINT_CAPABILITY = "isolatedWin32-print";

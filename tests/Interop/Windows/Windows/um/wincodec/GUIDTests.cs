@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wincodec.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/wincodec.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -110,6 +110,13 @@ public static partial class GUIDTests
         Assert.That(GUID_ContainerFormatRaw, Is.EqualTo(new Guid(0xfe99ce60, 0xf19c, 0x433c, 0xa3, 0xae, 0x00, 0xac, 0xef, 0xa9, 0xca, 0x21)));
     }
 
+    /// <summary>Validates that the value of the <see cref="GUID_ContainerFormatJpegXL" /> property is correct.</summary>
+    [Test]
+    public static void GUID_ContainerFormatJpegXLTest()
+    {
+        Assert.That(GUID_ContainerFormatJpegXL, Is.EqualTo(new Guid(0xfec14e3f, 0x427a, 0x4736, 0xaa, 0xe6, 0x27, 0xed, 0x84, 0xf6, 0x93, 0x22)));
+    }
+
     /// <summary>Validates that the value of the <see cref="GUID_WICPixelFormatDontCare" /> property is correct.</summary>
     [Test]
     public static void GUID_WICPixelFormatDontCareTest()
@@ -178,6 +185,20 @@ public static partial class GUIDTests
     public static void GUID_WICPixelFormat8bppAlphaTest()
     {
         Assert.That(GUID_WICPixelFormat8bppAlpha, Is.EqualTo(new Guid(0xe6cd0116, 0xeeba, 0x4161, 0xaa, 0x85, 0x27, 0xdd, 0x9f, 0xb3, 0xa8, 0x95)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_WICPixelFormat8bppDepth" /> property is correct.</summary>
+    [Test]
+    public static void GUID_WICPixelFormat8bppDepthTest()
+    {
+        Assert.That(GUID_WICPixelFormat8bppDepth, Is.EqualTo(new Guid(0x4c9c9f45, 0x1d89, 0x4e31, 0x9b, 0xc7, 0x69, 0x34, 0x3a, 0x0d, 0xca, 0x69)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_WICPixelFormat8bppGain" /> property is correct.</summary>
+    [Test]
+    public static void GUID_WICPixelFormat8bppGainTest()
+    {
+        Assert.That(GUID_WICPixelFormat8bppGain, Is.EqualTo(new Guid(0xa884022a, 0xaf13, 0x4c16, 0xb7, 0x46, 0x61, 0x9b, 0xf6, 0x18, 0xb8, 0x78)));
     }
 
     /// <summary>Validates that the value of the <see cref="GUID_WICPixelFormat16bppBGR555" /> property is correct.</summary>

@@ -19,4 +19,4 @@ TerraFX.Interop.Gdiplus
 --test-output
 ../../../../tests/Interop/Windows/Gdiplus/um/gdiplusstringformat
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/gdiplusstringformat.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/gdiplusstringformat.h

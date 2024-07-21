@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mssip.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/mssip.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -74,7 +74,7 @@ public unsafe partial struct SIP_SUBJECTINFO
     public uint dwUnionChoice;
 
     /// <include file='SIP_SUBJECTINFO.xml' path='doc/member[@name="SIP_SUBJECTINFO.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_mssip_L114_C5")]
+    [NativeTypeName("__AnonymousRecord_mssip_L115_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='SIP_SUBJECTINFO.xml' path='doc/member[@name="SIP_SUBJECTINFO.pClientData"]/*' />
@@ -114,6 +114,17 @@ public unsafe partial struct SIP_SUBJECTINFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.psDetachedSig"]/*' />
+    [UnscopedRef]
+    public ref MS_ADDINFO_DETACHEDSIG* psDetachedSig
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.psDetachedSig;
+        }
+    }
+
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
@@ -132,5 +143,10 @@ public unsafe partial struct SIP_SUBJECTINFO
         [FieldOffset(0)]
         [NativeTypeName("struct MS_ADDINFO_BLOB_ *")]
         public MS_ADDINFO_BLOB* psBlob;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.psDetachedSig"]/*' />
+        [FieldOffset(0)]
+        [NativeTypeName("struct MS_ADDINFO_DETACHEDSIG_ *")]
+        public MS_ADDINFO_DETACHEDSIG* psDetachedSig;
     }
 }

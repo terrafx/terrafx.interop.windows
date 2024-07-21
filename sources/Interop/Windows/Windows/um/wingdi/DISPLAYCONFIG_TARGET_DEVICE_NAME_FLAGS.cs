@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
 {
     /// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wingdi_L3079_C5")]
+    [NativeTypeName("__AnonymousRecord_wingdi_L3084_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.friendlyNameFromEdid"]/*' />
@@ -97,7 +97,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_wingdi_L3081_C9")]
+        [NativeTypeName("__AnonymousRecord_wingdi_L3086_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*' />

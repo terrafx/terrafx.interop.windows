@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -15,12 +15,12 @@ public partial struct ULARGE_INTEGER
 {
     /// <include file='ULARGE_INTEGER.xml' path='doc/member[@name="ULARGE_INTEGER.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L895_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L942_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='ULARGE_INTEGER.xml' path='doc/member[@name="ULARGE_INTEGER.u"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L899_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L946_C5")]
     public _u_e__Struct u;
 
     /// <include file='ULARGE_INTEGER.xml' path='doc/member[@name="ULARGE_INTEGER.QuadPart"]/*' />

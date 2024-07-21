@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -19,7 +19,7 @@ public partial struct RATE_QUOTA_LIMIT
 
     /// <include file='RATE_QUOTA_LIMIT.xml' path='doc/member[@name="RATE_QUOTA_LIMIT.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L12475_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L12947_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RatePercent"]/*' />

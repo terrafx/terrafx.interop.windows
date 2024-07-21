@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -46,7 +46,7 @@ public unsafe partial struct CMSG_CONTENT_ENCRYPT_INFO
     public uint dwEncryptFlags;
 
     /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wincrypt_L8457_C5")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L8485_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CMSG_CONTENT_ENCRYPT_INFO.xml' path='doc/member[@name="CMSG_CONTENT_ENCRYPT_INFO.dwFlags"]/*' />

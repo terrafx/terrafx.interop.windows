@@ -116,8 +116,8 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/WinUser
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/WinUser.h
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/WinUser.inl
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/WinUser.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/WinUser.inl
 --with-attribute
 AdjustWindowRectExForDpi=SupportedOSPlatform("windows10.0.14393.0")
 AreDpiAwarenessContextsEqual=SupportedOSPlatform("windows10.0.14393.0")
@@ -188,7 +188,7 @@ IsCharLowerW=SupportedOSPlatform("windows10.0.19043.0")
 IsImmersiveProcess=SupportedOSPlatform("windows6.2")
 IsMouseInPointerEnabled=SupportedOSPlatform("windows6.2")
 IsValidDpiAwarenessContext=SupportedOSPlatform("windows10.0.14393.0")
-IsWindowArranged=SupportedOSPlatform("windowsWindows 10, version 1903")
+IsWindowArranged=SupportedOSPlatform("windows10.0.18362.0")
 IS_POINTER_CANCELED_WPARAM=SupportedOSPlatform("windows6.2")
 IS_POINTER_FIRSTBUTTON_WPARAM=SupportedOSPlatform("windows6.2")
 IS_POINTER_FLAG_SET_WPARAM=SupportedOSPlatform("windows6.2")
@@ -760,6 +760,7 @@ IsRectEmpty=user32
 IsTouchWindow=user32
 IsValidDpiAwarenessContext=user32
 IsWindow=user32
+IsWindowArranged=user32
 IsWindowEnabled=user32
 IsWindowUnicode=user32
 IsWindowVisible=user32

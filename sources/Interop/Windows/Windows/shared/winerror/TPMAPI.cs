@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -147,4 +147,19 @@ public static partial class TPMAPI
 
     [NativeTypeName("#define TPMAPI_E_INVALID_POLICYAUTH_BLOB_TYPE _HRESULT_TYPEDEF_(0x8029012EL)")]
     public const int TPMAPI_E_INVALID_POLICYAUTH_BLOB_TYPE = unchecked((int)(0x8029012E));
+
+    [NativeTypeName("#define TPMAPI_E_INVALID_TAG _HRESULT_TYPEDEF_(0x80290130L)")]
+    public const int TPMAPI_E_INVALID_TAG = unchecked((int)(0x80290130));
+
+    [NativeTypeName("#define TPMAPI_E_INVALID_STRUCT_SIZE _HRESULT_TYPEDEF_(0x80290131L)")]
+    public const int TPMAPI_E_INVALID_STRUCT_SIZE = unchecked((int)(0x80290131));
+
+    [NativeTypeName("#define TPMAPI_E_AUTH_CHAIN_ERROR _HRESULT_TYPEDEF_(0x80290132L)")]
+    public const int TPMAPI_E_AUTH_CHAIN_ERROR = unchecked((int)(0x80290132));
+
+    [NativeTypeName("#define TPMAPI_E_COUNTER_CORRUPTED _HRESULT_TYPEDEF_(0x80290133L)")]
+    public const int TPMAPI_E_COUNTER_CORRUPTED = unchecked((int)(0x80290133));
+
+    [NativeTypeName("#define TPMAPI_E_INVALID_ALGORITHM _HRESULT_TYPEDEF_(0x80290134L)")]
+    public const int TPMAPI_E_INVALID_ALGORITHM = unchecked((int)(0x80290134));
 }

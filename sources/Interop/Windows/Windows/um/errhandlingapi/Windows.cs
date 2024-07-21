@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/errhandlingapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/errhandlingapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -84,6 +84,10 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     [SuppressGCTransition]
     public static extern BOOL SetThreadErrorMode([NativeTypeName("DWORD")] uint dwNewMode, [NativeTypeName("LPDWORD")] uint* lpOldMode);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TerminateProcessOnMemoryExhaustion"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    public static extern void TerminateProcessOnMemoryExhaustion([NativeTypeName("SIZE_T")] nuint FailedAllocationSize);
 
     [NativeTypeName("#define FatalAppExit FatalAppExitW")]
     public static delegate*<uint, char*, void> FatalAppExit => &FatalAppExitW;

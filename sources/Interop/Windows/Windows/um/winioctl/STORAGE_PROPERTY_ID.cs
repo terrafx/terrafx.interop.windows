@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -115,4 +115,13 @@ public enum STORAGE_PROPERTY_ID
 
     /// <include file='STORAGE_PROPERTY_ID.xml' path='doc/member[@name="STORAGE_PROPERTY_ID.StorageFruIdProperty"]/*' />
     StorageFruIdProperty,
+
+    /// <include file='STORAGE_PROPERTY_ID.xml' path='doc/member[@name="STORAGE_PROPERTY_ID.StorageStackProperty"]/*' />
+    StorageStackProperty,
+
+    /// <include file='STORAGE_PROPERTY_ID.xml' path='doc/member[@name="STORAGE_PROPERTY_ID.StorageAdapterProtocolSpecificPropertyEx"]/*' />
+    StorageAdapterProtocolSpecificPropertyEx,
+
+    /// <include file='STORAGE_PROPERTY_ID.xml' path='doc/member[@name="STORAGE_PROPERTY_ID.StorageDeviceProtocolSpecificPropertyEx"]/*' />
+    StorageDeviceProtocolSpecificPropertyEx,
 }

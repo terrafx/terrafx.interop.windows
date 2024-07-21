@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/codecapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/codecapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -7089,6 +7089,29 @@ public static partial class IID
                 0xB4,
                 0x54,
                 0xB0
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_CODECAPI_FeatureMapFlagsUsed
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xB8, 0xA3, 0xFD, 0x8B,
+                0x87, 0x73,
+                0x07, 0x4C,
+                0x92,
+                0x4F,
+                0xFE,
+                0x63,
+                0x00,
+                0x6C,
+                0xF2,
+                0x2B
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

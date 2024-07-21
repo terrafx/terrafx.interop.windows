@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/securitybaseapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/securitybaseapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -151,6 +151,11 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     [SupportedOSPlatform("windows6.2")]
     public static extern BOOL CheckTokenCapability(HANDLE TokenHandle, [NativeTypeName("PSID")] void* CapabilitySidToCheck, [NativeTypeName("PBOOL")] BOOL* HasCapability);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAppContainerAce"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    public static extern BOOL GetAppContainerAce([NativeTypeName("PACL")] ACL* Acl, [NativeTypeName("DWORD")] uint StartingAceIndex, [NativeTypeName("PVOID *")] void** AppContainerAce, [NativeTypeName("DWORD *")] uint* AppContainerAceIndex);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CheckTokenMembershipEx"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -506,6 +511,18 @@ public static unsafe partial class Windows
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL SetTokenInformation(HANDLE TokenHandle, TOKEN_INFORMATION_CLASS TokenInformationClass, [NativeTypeName("LPVOID")] void* TokenInformation, [NativeTypeName("DWORD")] uint TokenInformationLength);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetCachedSigningLevel"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows6.2")]
+    public static extern BOOL SetCachedSigningLevel([NativeTypeName("PHANDLE")] HANDLE* SourceFiles, [NativeTypeName("ULONG")] uint SourceFileCount, [NativeTypeName("ULONG")] uint Flags, HANDLE TargetFile);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCachedSigningLevel"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows6.2")]
+    public static extern BOOL GetCachedSigningLevel(HANDLE File, [NativeTypeName("PULONG")] uint* Flags, [NativeTypeName("PULONG")] uint* SigningLevel, [NativeTypeName("PUCHAR")] byte* Thumbprint, [NativeTypeName("PULONG")] uint* ThumbprintSize, [NativeTypeName("PULONG")] uint* ThumbprintAlgorithm);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CveEventWrite"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]

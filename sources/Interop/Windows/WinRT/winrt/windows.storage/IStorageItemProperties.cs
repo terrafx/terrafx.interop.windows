@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.storage.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from winrt/windows.storage.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -74,25 +74,25 @@ public unsafe partial struct IStorageItemProperties : IStorageItemProperties.Int
     /// <include file='IStorageItemProperties.xml' path='doc/member[@name="IStorageItemProperties.GetThumbnailAsyncOverloadDefaultSizeDefaultOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetThumbnailAsyncOverloadDefaultSizeDefaultOptions([NativeTypeName("ABI::Windows::Storage::FileProperties::ThumbnailMode")] ThumbnailMode mode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetThumbnailAsyncOverloadDefaultSizeDefaultOptions([NativeTypeName("ABI::Windows::Storage::FileProperties::ThumbnailMode")] ThumbnailMode mode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail_t **")] IAsyncOperation<Pointer<IntPtr>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageItemProperties*, ThumbnailMode, IAsyncOperation<IntPtr>**, int>)(lpVtbl[6]))((IStorageItemProperties*)Unsafe.AsPointer(ref this), mode, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageItemProperties*, ThumbnailMode, IAsyncOperation<Pointer<IntPtr>>**, int>)(lpVtbl[6]))((IStorageItemProperties*)Unsafe.AsPointer(ref this), mode, operation);
     }
 
     /// <include file='IStorageItemProperties.xml' path='doc/member[@name="IStorageItemProperties.GetThumbnailAsyncOverloadDefaultOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetThumbnailAsyncOverloadDefaultOptions([NativeTypeName("ABI::Windows::Storage::FileProperties::ThumbnailMode")] ThumbnailMode mode, [NativeTypeName("UINT32")] uint requestedSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetThumbnailAsyncOverloadDefaultOptions([NativeTypeName("ABI::Windows::Storage::FileProperties::ThumbnailMode")] ThumbnailMode mode, [NativeTypeName("UINT32")] uint requestedSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail_t **")] IAsyncOperation<Pointer<IntPtr>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageItemProperties*, ThumbnailMode, uint, IAsyncOperation<IntPtr>**, int>)(lpVtbl[7]))((IStorageItemProperties*)Unsafe.AsPointer(ref this), mode, requestedSize, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageItemProperties*, ThumbnailMode, uint, IAsyncOperation<Pointer<IntPtr>>**, int>)(lpVtbl[7]))((IStorageItemProperties*)Unsafe.AsPointer(ref this), mode, requestedSize, operation);
     }
 
     /// <include file='IStorageItemProperties.xml' path='doc/member[@name="IStorageItemProperties.GetThumbnailAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Storage::FileProperties::ThumbnailMode")] ThumbnailMode mode, [NativeTypeName("UINT32")] uint requestedSize, [NativeTypeName("ABI::Windows::Storage::FileProperties::ThumbnailOptions")] ThumbnailOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail_t **")] IAsyncOperation<IntPtr>** operation)
+    public HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Storage::FileProperties::ThumbnailMode")] ThumbnailMode mode, [NativeTypeName("UINT32")] uint requestedSize, [NativeTypeName("ABI::Windows::Storage::FileProperties::ThumbnailOptions")] ThumbnailOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail_t **")] IAsyncOperation<Pointer<IntPtr>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IStorageItemProperties*, ThumbnailMode, uint, ThumbnailOptions, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IStorageItemProperties*)Unsafe.AsPointer(ref this), mode, requestedSize, options, operation);
+        return ((delegate* unmanaged[MemberFunction]<IStorageItemProperties*, ThumbnailMode, uint, ThumbnailOptions, IAsyncOperation<Pointer<IntPtr>>**, int>)(lpVtbl[8]))((IStorageItemProperties*)Unsafe.AsPointer(ref this), mode, requestedSize, options, operation);
     }
 
     /// <include file='IStorageItemProperties.xml' path='doc/member[@name="IStorageItemProperties.get_DisplayName"]/*' />
@@ -130,13 +130,13 @@ public unsafe partial struct IStorageItemProperties : IStorageItemProperties.Int
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetThumbnailAsyncOverloadDefaultSizeDefaultOptions([NativeTypeName("ABI::Windows::Storage::FileProperties::ThumbnailMode")] ThumbnailMode mode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetThumbnailAsyncOverloadDefaultSizeDefaultOptions([NativeTypeName("ABI::Windows::Storage::FileProperties::ThumbnailMode")] ThumbnailMode mode, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail_t **")] IAsyncOperation<Pointer<IntPtr>>** operation);
 
         [VtblIndex(7)]
-        HRESULT GetThumbnailAsyncOverloadDefaultOptions([NativeTypeName("ABI::Windows::Storage::FileProperties::ThumbnailMode")] ThumbnailMode mode, [NativeTypeName("UINT32")] uint requestedSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetThumbnailAsyncOverloadDefaultOptions([NativeTypeName("ABI::Windows::Storage::FileProperties::ThumbnailMode")] ThumbnailMode mode, [NativeTypeName("UINT32")] uint requestedSize, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail_t **")] IAsyncOperation<Pointer<IntPtr>>** operation);
 
         [VtblIndex(8)]
-        HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Storage::FileProperties::ThumbnailMode")] ThumbnailMode mode, [NativeTypeName("UINT32")] uint requestedSize, [NativeTypeName("ABI::Windows::Storage::FileProperties::ThumbnailOptions")] ThumbnailOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail_t **")] IAsyncOperation<IntPtr>** operation);
+        HRESULT GetThumbnailAsync([NativeTypeName("ABI::Windows::Storage::FileProperties::ThumbnailMode")] ThumbnailMode mode, [NativeTypeName("UINT32")] uint requestedSize, [NativeTypeName("ABI::Windows::Storage::FileProperties::ThumbnailOptions")] ThumbnailOptions options, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail_t **")] IAsyncOperation<Pointer<IntPtr>>** operation);
 
         [VtblIndex(9)]
         HRESULT get_DisplayName(HSTRING* value);
@@ -173,13 +173,13 @@ public unsafe partial struct IStorageItemProperties : IStorageItemProperties.Int
         public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::FileProperties::ThumbnailMode, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ThumbnailMode, IAsyncOperation<IntPtr>**, int> GetThumbnailAsyncOverloadDefaultSizeDefaultOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ThumbnailMode, IAsyncOperation<Pointer<IntPtr>>**, int> GetThumbnailAsyncOverloadDefaultSizeDefaultOptions;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::FileProperties::ThumbnailMode, UINT32, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ThumbnailMode, uint, IAsyncOperation<IntPtr>**, int> GetThumbnailAsyncOverloadDefaultOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ThumbnailMode, uint, IAsyncOperation<Pointer<IntPtr>>**, int> GetThumbnailAsyncOverloadDefaultOptions;
 
         [NativeTypeName("HRESULT (ABI::Windows::Storage::FileProperties::ThumbnailMode, UINT32, ABI::Windows::Storage::FileProperties::ThumbnailOptions, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CStorage__CFileProperties__CStorageItemThumbnail_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, ThumbnailMode, uint, ThumbnailOptions, IAsyncOperation<IntPtr>**, int> GetThumbnailAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ThumbnailMode, uint, ThumbnailOptions, IAsyncOperation<Pointer<IntPtr>>**, int> GetThumbnailAsync;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> get_DisplayName;

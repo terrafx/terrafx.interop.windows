@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -53,12 +53,16 @@ public partial struct STORAGE_PROTOCOL_SPECIFIC_DATA_EXT
     [NativeTypeName("DWORD")]
     public uint ProtocolDataSubValue5;
 
+    /// <include file='STORAGE_PROTOCOL_SPECIFIC_DATA_EXT.xml' path='doc/member[@name="STORAGE_PROTOCOL_SPECIFIC_DATA_EXT.ProtocolDataSubValue6"]/*' />
+    [NativeTypeName("DWORD")]
+    public uint ProtocolDataSubValue6;
+
     /// <include file='STORAGE_PROTOCOL_SPECIFIC_DATA_EXT.xml' path='doc/member[@name="STORAGE_PROTOCOL_SPECIFIC_DATA_EXT.Reserved"]/*' />
-    [NativeTypeName("DWORD[5]")]
+    [NativeTypeName("DWORD[4]")]
     public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
-    [InlineArray(5)]
+    [InlineArray(4)]
     public partial struct _Reserved_e__FixedBuffer
     {
         public uint e0;

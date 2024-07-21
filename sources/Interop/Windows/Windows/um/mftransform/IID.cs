@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mftransform.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/mftransform.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -51,6 +51,29 @@ public static partial class IID
                 0xF9,
                 0xBF,
                 0x32
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IMFDeviceTransform2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xED, 0x0F, 0x98, 0xF5,
+                0x21, 0xB5,
+                0x8F, 0x48,
+                0x90,
+                0x9F,
+                0x1A,
+                0x5F,
+                0xCE,
+                0xCE,
+                0xDB,
+                0x14
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

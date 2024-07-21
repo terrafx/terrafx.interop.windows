@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ProcessSnapshot.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/ProcessSnapshot.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -68,7 +68,7 @@ public unsafe partial struct PSS_HANDLE_ENTRY
     public char* ObjectName;
 
     /// <include file='PSS_HANDLE_ENTRY.xml' path='doc/member[@name="PSS_HANDLE_ENTRY.TypeSpecificInformation"]/*' />
-    [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L258_C5")]
+    [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L259_C5")]
     public _TypeSpecificInformation_e__Union TypeSpecificInformation;
 
     /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union"]/*' />
@@ -77,32 +77,32 @@ public unsafe partial struct PSS_HANDLE_ENTRY
     {
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Process"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L261_C9")]
+        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L262_C9")]
         public _Process_e__Struct Process;
 
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Thread"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L272_C9")]
+        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L273_C9")]
         public _Thread_e__Struct Thread;
 
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Mutant"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L284_C9")]
+        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L285_C9")]
         public _Mutant_e__Struct Mutant;
 
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Event"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L292_C9")]
+        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L293_C9")]
         public _Event_e__Struct Event;
 
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Section"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L298_C9")]
+        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L299_C9")]
         public _Section_e__Struct Section;
 
         /// <include file='_TypeSpecificInformation_e__Union.xml' path='doc/member[@name="_TypeSpecificInformation_e__Union.Semaphore"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L306_C9")]
+        [NativeTypeName("__AnonymousRecord_ProcessSnapshot_L307_C9")]
         public _Semaphore_e__Struct Semaphore;
 
         /// <include file='_Process_e__Struct.xml' path='doc/member[@name="_Process_e__Struct"]/*' />

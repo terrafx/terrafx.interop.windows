@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/AppxPackaging.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/AppxPackaging.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -196,6 +196,29 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IAppxFile2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x3C, 0x0B, 0x83, 0x0C,
+                0xE9, 0x40,
+                0xEE, 0x11,
+                0xBE,
+                0x56,
+                0x02,
+                0x42,
+                0xAC,
+                0x12,
+                0x00,
+                0x02
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IAppxFilesEnumerator
     {
         get
@@ -258,6 +281,29 @@ public static partial class IID
                 0x00,
                 0xEB,
                 0x59
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IAppxBlockMapFile2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x78, 0x5F, 0x78, 0x54,
+                0xE9, 0x40,
+                0xEE, 0x11,
+                0xBE,
+                0x56,
+                0x02,
+                0x42,
+                0xAC,
+                0x12,
+                0x00,
+                0x02
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -2052,6 +2098,29 @@ public static partial class IID
                 0x9C,
                 0xED,
                 0x5D
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_AppxPackagingServiceProvider
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x39, 0x38, 0x1B, 0xFB,
+                0xDA, 0x09,
+                0x4F, 0x40,
+                0xB0,
+                0x02,
+                0x9C,
+                0xBB,
+                0x8D,
+                0xA5,
+                0xCA,
+                0x4F
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

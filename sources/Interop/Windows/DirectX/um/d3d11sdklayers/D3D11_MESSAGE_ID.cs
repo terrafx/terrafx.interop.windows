@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3d11sdklayers.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/d3d11sdklayers.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.DirectX;
@@ -4016,6 +4016,9 @@ public enum D3D11_MESSAGE_ID
     /// <include file='D3D11_MESSAGE_ID.xml' path='doc/member[@name="D3D11_MESSAGE_ID.D3D11_MESSAGE_ID_TRACKED_WORKLOAD_DISJOINT_FAILURE"]/*' />
     D3D11_MESSAGE_ID_TRACKED_WORKLOAD_DISJOINT_FAILURE = (D3D11_MESSAGE_ID_END_TRACKED_WORKLOAD_INVALID_ARG + 1),
 
+    /// <include file='D3D11_MESSAGE_ID.xml' path='doc/member[@name="D3D11_MESSAGE_ID.D3D11_MESSAGE_ID_DEVICE_DRAW_RESOURCE_FORMAT_AND_WRITE_MASK_MISMATCH"]/*' />
+    D3D11_MESSAGE_ID_DEVICE_DRAW_RESOURCE_FORMAT_AND_WRITE_MASK_MISMATCH = (D3D11_MESSAGE_ID_TRACKED_WORKLOAD_DISJOINT_FAILURE + 1),
+
     /// <include file='D3D11_MESSAGE_ID.xml' path='doc/member[@name="D3D11_MESSAGE_ID.D3D11_MESSAGE_ID_D3D11_5_MESSAGES_END"]/*' />
-    D3D11_MESSAGE_ID_D3D11_5_MESSAGES_END = (D3D11_MESSAGE_ID_TRACKED_WORKLOAD_DISJOINT_FAILURE + 1),
+    D3D11_MESSAGE_ID_D3D11_5_MESSAGES_END = (D3D11_MESSAGE_ID_DEVICE_DRAW_RESOURCE_FORMAT_AND_WRITE_MASK_MISMATCH + 1),
 }

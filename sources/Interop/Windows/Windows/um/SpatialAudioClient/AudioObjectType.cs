@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/SpatialAudioClient.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/SpatialAudioClient.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -67,4 +67,10 @@ public enum AudioObjectType
 
     /// <include file='AudioObjectType.xml' path='doc/member[@name="AudioObjectType.AudioObjectType_BackCenter"]/*' />
     AudioObjectType_BackCenter = (1 << 17),
+
+    /// <include file='AudioObjectType.xml' path='doc/member[@name="AudioObjectType.AudioObjectType_StereoLeft"]/*' />
+    AudioObjectType_StereoLeft = (1 << 18),
+
+    /// <include file='AudioObjectType.xml' path='doc/member[@name="AudioObjectType.AudioObjectType_StereoRight"]/*' />
+    AudioObjectType_StereoRight = (1 << 19),
 }

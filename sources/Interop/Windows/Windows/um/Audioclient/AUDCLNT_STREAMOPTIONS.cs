@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/Audioclient.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/Audioclient.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -24,4 +24,7 @@ public enum AUDCLNT_STREAMOPTIONS
 
     /// <include file='AUDCLNT_STREAMOPTIONS.xml' path='doc/member[@name="AUDCLNT_STREAMOPTIONS.AUDCLNT_STREAMOPTIONS_AMBISONICS"]/*' />
     AUDCLNT_STREAMOPTIONS_AMBISONICS = 0x4,
+
+    /// <include file='AUDCLNT_STREAMOPTIONS.xml' path='doc/member[@name="AUDCLNT_STREAMOPTIONS.AUDCLNT_STREAMOPTIONS_POST_VOLUME_LOOPBACK"]/*' />
+    AUDCLNT_STREAMOPTIONS_POST_VOLUME_LOOPBACK = 0x8,
 }

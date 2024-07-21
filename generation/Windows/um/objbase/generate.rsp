@@ -2,11 +2,8 @@
 @../../../remap.rsp
 --exclude
 CLSIDFromProgIDEx
-CoBuildVersion
 CoCreateStandardMalloc
 CoFileTimeNow
-CreateStdProgressIndicator
-DcomChannelSetHResult
 StgOpenLayoutDocfile
 --file
 um-objbase.h
@@ -19,10 +16,11 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/objbase
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/objbase.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/objbase.h
 --with-librarypath
 BindMoniker=ole32
 CoAllowSetForegroundWindow=ole32
+CoBuildVersion=ole32
 CoDosDateTimeToFileTime=ole32
 CoFileTimeToDosDateTime=ole32
 CoFreeAllLibraries=ole32
@@ -52,6 +50,8 @@ CreateGenericComposite=ole32
 CreateItemMoniker=ole32
 CreateObjrefMoniker=ole32
 CreatePointerMoniker=ole32
+CreateStdProgressIndicator=ole32
+DcomChannelSetHResult=ole32
 GetClassFile=ole32
 GetRunningObjectTable=ole32
 IsEqualGUID=ole32

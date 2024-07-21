@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_IMPORT_DESCRIPTOR
 {
     /// <include file='IMAGE_IMPORT_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_IMPORT_DESCRIPTOR.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L19669_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L20585_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='IMAGE_IMPORT_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_IMPORT_DESCRIPTOR.TimeDateStamp"]/*' />

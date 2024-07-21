@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -240,6 +240,15 @@ public static partial class E
 
     [NativeTypeName("#define E_HDAUDIO_NULL_LINKED_LIST_ENTRY _HRESULT_TYPEDEF_(0x80660005L)")]
     public const int E_HDAUDIO_NULL_LINKED_LIST_ENTRY = unchecked((int)(0x80660005));
+
+    [NativeTypeName("#define E_SOUNDWIRE_COMMAND_ABORTED _HRESULT_TYPEDEF_(0x80660006L)")]
+    public const int E_SOUNDWIRE_COMMAND_ABORTED = unchecked((int)(0x80660006));
+
+    [NativeTypeName("#define E_SOUNDWIRE_COMMAND_IGNORED _HRESULT_TYPEDEF_(0x80660007L)")]
+    public const int E_SOUNDWIRE_COMMAND_IGNORED = unchecked((int)(0x80660007));
+
+    [NativeTypeName("#define E_SOUNDWIRE_COMMAND_FAILED _HRESULT_TYPEDEF_(0x80660008L)")]
+    public const int E_SOUNDWIRE_COMMAND_FAILED = unchecked((int)(0x80660008));
 
     [NativeTypeName("#define E_MONITOR_RESOLUTION_TOO_LOW _HRESULT_TYPEDEF_(0x80270250L)")]
     public const int E_MONITOR_RESOLUTION_TOO_LOW = unchecked((int)(0x80270250));

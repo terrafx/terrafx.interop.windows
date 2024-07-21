@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -31,7 +31,7 @@ public unsafe partial struct PROCESS_HEAP_ENTRY
     public ushort wFlags;
 
     /// <include file='PROCESS_HEAP_ENTRY.xml' path='doc/member[@name="PROCESS_HEAP_ENTRY.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_minwinbase_L249_C5")]
+    [NativeTypeName("__AnonymousRecord_minwinbase_L252_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Block"]/*' />
@@ -62,12 +62,12 @@ public unsafe partial struct PROCESS_HEAP_ENTRY
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Block"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_minwinbase_L250_C9")]
+        [NativeTypeName("__AnonymousRecord_minwinbase_L253_C9")]
         public _Block_e__Struct Block;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Region"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_minwinbase_L254_C9")]
+        [NativeTypeName("__AnonymousRecord_minwinbase_L257_C9")]
         public _Region_e__Struct Region;
 
         /// <include file='_Block_e__Struct.xml' path='doc/member[@name="_Block_e__Struct"]/*' />

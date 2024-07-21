@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -26,15 +26,15 @@ public partial struct JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2
     public LARGE_INTEGER PerJobUserTimeLimit;
 
     /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.Anonymous1"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L12950_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L13425_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.Anonymous2"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L12955_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L13430_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.Anonymous3"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L12960_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L13435_C5")]
     public _Anonymous3_e__Union Anonymous3;
 
     /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.LimitFlags"]/*' />

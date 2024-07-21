@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -36,7 +36,7 @@ public partial struct CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1
     public uint ValueCount;
 
     /// <include file='CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1.xml' path='doc/member[@name="CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1.Values"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L12035_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L12507_C5")]
     public _Values_e__Union Values;
 
     /// <include file='_Values_e__Union.xml' path='doc/member[@name="_Values_e__Union"]/*' />

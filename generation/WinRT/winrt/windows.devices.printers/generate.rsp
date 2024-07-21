@@ -50,6 +50,8 @@ IID_IIppIntegerRange
 IID_IIppIntegerRangeFactory
 IID_IIppPrintDevice
 IID_IIppPrintDevice2
+IID_IIppPrintDevice3
+IID_IIppPrintDevice4
 IID_IIppPrintDeviceStatics
 IID_IIppResolution
 IID_IIppResolutionFactory
@@ -75,4 +77,4 @@ TerraFX.Interop.WinRT
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/windows.devices.printers
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.devices.printers.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt/windows.devices.printers.h

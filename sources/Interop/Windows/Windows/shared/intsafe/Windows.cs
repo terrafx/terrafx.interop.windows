@@ -1,12 +1,15 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/intsafe.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from shared/intsafe.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    [NativeTypeName("#define _ARM64_MULT_INTRINS_SUPPORTED 0")]
+    public const int _ARM64_MULT_INTRINS_SUPPORTED = 0;
+
     [NativeTypeName("#define INTSAFE_E_ARITHMETIC_OVERFLOW ((HRESULT)0x80070216L)")]
     public const int INTSAFE_E_ARITHMETIC_OVERFLOW = unchecked((int)(0x80070216));
 

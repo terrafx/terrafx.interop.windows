@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the University of Illinois Open Source License.
 
 using System;
@@ -82,7 +82,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface, INativeGuid
     /// <include file='IDxcResult.xml' path='doc/member[@name="IDxcResult.GetOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetOutput(DXC_OUT_KIND dxcOutKind, [NativeTypeName("const IID &")] Guid* iid, void** ppvObject, IDxcBlobUtf16** ppOutputName)
+    public HRESULT GetOutput(DXC_OUT_KIND dxcOutKind, [NativeTypeName("const IID &")] Guid* iid, void** ppvObject, [NativeTypeName("IDxcBlobWide **")] IDxcBlobUtf16** ppOutputName)
     {
         return ((delegate* unmanaged[MemberFunction]<IDxcResult*, DXC_OUT_KIND, Guid*, void**, IDxcBlobUtf16**, int>)(lpVtbl[7]))((IDxcResult*)Unsafe.AsPointer(ref this), dxcOutKind, iid, ppvObject, ppOutputName);
     }
@@ -118,7 +118,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface, INativeGuid
         BOOL HasOutput(DXC_OUT_KIND dxcOutKind);
 
         [VtblIndex(7)]
-        HRESULT GetOutput(DXC_OUT_KIND dxcOutKind, [NativeTypeName("const IID &")] Guid* iid, void** ppvObject, IDxcBlobUtf16** ppOutputName);
+        HRESULT GetOutput(DXC_OUT_KIND dxcOutKind, [NativeTypeName("const IID &")] Guid* iid, void** ppvObject, [NativeTypeName("IDxcBlobWide **")] IDxcBlobUtf16** ppOutputName);
 
         [VtblIndex(8)]
         [return: NativeTypeName("UINT32")]
@@ -155,7 +155,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface, INativeGuid
         [NativeTypeName("BOOL (DXC_OUT_KIND) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, DXC_OUT_KIND, int> HasOutput;
 
-        [NativeTypeName("HRESULT (DXC_OUT_KIND, const IID &, void **, IDxcBlobUtf16 **) __attribute__((stdcall))")]
+        [NativeTypeName("HRESULT (DXC_OUT_KIND, const IID &, void **, IDxcBlobWide **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, DXC_OUT_KIND, Guid*, void**, IDxcBlobUtf16**, int> GetOutput;
 
         [NativeTypeName("UINT32 ()")]

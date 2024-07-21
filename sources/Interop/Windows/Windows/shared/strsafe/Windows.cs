@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/strsafe.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from shared/strsafe.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -1871,6 +1871,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define __WARNING_INVALID_PARAM_VALUE_1 6387")]
     public const int __WARNING_INVALID_PARAM_VALUE_1 = 6387;
+
+    [NativeTypeName("#define __WARNING_UNSAFE_STRING_FUNCTION 25025")]
+    public const int __WARNING_UNSAFE_STRING_FUNCTION = 25025;
 
     [NativeTypeName("#define __WARNING_INCORRECT_ANNOTATION 26007")]
     public const int __WARNING_INCORRECT_ANNOTATION = 26007;

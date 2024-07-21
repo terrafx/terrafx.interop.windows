@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/shellapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/shellapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -49,7 +49,7 @@ public partial struct NOTIFYICONDATAA
     public _szInfo_e__FixedBuffer szInfo;
 
     /// <include file='NOTIFYICONDATAA.xml' path='doc/member[@name="NOTIFYICONDATAA.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_shellapi_L1026_C5")]
+    [NativeTypeName("__AnonymousRecord_shellapi_L1027_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='NOTIFYICONDATAA.xml' path='doc/member[@name="NOTIFYICONDATAA.szInfoTitle"]/*' />

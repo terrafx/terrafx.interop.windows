@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct FILE_LAYOUT_INFO_ENTRY
 {
     /// <include file='FILE_LAYOUT_INFO_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_INFO_ENTRY.BasicInformation"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L15236_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L15542_C5")]
     public _BasicInformation_e__Struct BasicInformation;
 
     /// <include file='FILE_LAYOUT_INFO_ENTRY.xml' path='doc/member[@name="FILE_LAYOUT_INFO_ENTRY.OwnerId"]/*' />

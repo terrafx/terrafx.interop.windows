@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/consoleapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/consoleapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -13,6 +13,10 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL AllocConsole();
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AllocConsoleWithOptions"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    public static extern HRESULT AllocConsoleWithOptions([NativeTypeName("PALLOC_CONSOLE_OPTIONS")] ALLOC_CONSOLE_OPTIONS* options, [NativeTypeName("PALLOC_CONSOLE_RESULT")] ALLOC_CONSOLE_RESULT* result);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FreeConsole"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -105,6 +109,10 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ClosePseudoConsole"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     public static extern void ClosePseudoConsole(HPCON hPC);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReleasePseudoConsole"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    public static extern HRESULT ReleasePseudoConsole(HPCON hPC);
 
     [NativeTypeName("#define ATTACH_PARENT_PROCESS ((DWORD)-1)")]
     public const uint ATTACH_PARENT_PROCESS = unchecked((uint)(-1));

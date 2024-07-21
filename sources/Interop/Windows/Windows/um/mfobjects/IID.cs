@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfobjects.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/mfobjects.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -143,6 +143,29 @@ public static partial class IID
                 0xBF,
                 0xC2,
                 0x58
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IMFDXGICrossAdapterBuffer
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xFB, 0x03, 0x5D, 0xB2,
+                0x48, 0xD1,
+                0xEF, 0x45,
+                0xBF,
+                0xED,
+                0xF7,
+                0x78,
+                0xB7,
+                0x56,
+                0x6C,
+                0x07
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

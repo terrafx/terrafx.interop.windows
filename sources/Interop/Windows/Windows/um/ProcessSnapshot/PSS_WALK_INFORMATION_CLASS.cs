@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ProcessSnapshot.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/ProcessSnapshot.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.Versioning;
@@ -22,4 +22,7 @@ public enum PSS_WALK_INFORMATION_CLASS
 
     /// <include file='PSS_WALK_INFORMATION_CLASS.xml' path='doc/member[@name="PSS_WALK_INFORMATION_CLASS.PSS_WALK_THREADS"]/*' />
     PSS_WALK_THREADS = 3,
+
+    /// <include file='PSS_WALK_INFORMATION_CLASS.xml' path='doc/member[@name="PSS_WALK_INFORMATION_CLASS.PSS_WALK_THREAD_NAME"]/*' />
+    PSS_WALK_THREAD_NAME = 4,
 }

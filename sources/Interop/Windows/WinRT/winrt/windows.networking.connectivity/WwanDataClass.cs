@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.networking.connectivity.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from winrt/windows.networking.connectivity.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.WinRT;
@@ -29,6 +29,12 @@ public enum WwanDataClass : uint
 
     /// <include file='WwanDataClass.xml' path='doc/member[@name="WwanDataClass.WwanDataClass_LteAdvanced"]/*' />
     WwanDataClass_LteAdvanced = 0x20,
+
+    /// <include file='WwanDataClass.xml' path='doc/member[@name="WwanDataClass.WwanDataClass_NewRadioNonStandalone"]/*' />
+    WwanDataClass_NewRadioNonStandalone = 0x40,
+
+    /// <include file='WwanDataClass.xml' path='doc/member[@name="WwanDataClass.WwanDataClass_NewRadioStandalone"]/*' />
+    WwanDataClass_NewRadioStandalone = 0x80,
 
     /// <include file='WwanDataClass.xml' path='doc/member[@name="WwanDataClass.WwanDataClass_Cdma1xRtt"]/*' />
     WwanDataClass_Cdma1xRtt = 0x10000,

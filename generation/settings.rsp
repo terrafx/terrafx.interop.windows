@@ -46,8 +46,8 @@ header.txt
 ../../../include/d3d12on7
 ../../../include/d3dx12
 ../../../include/dxtk12
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt
 --with-callconv
 *=Winapi

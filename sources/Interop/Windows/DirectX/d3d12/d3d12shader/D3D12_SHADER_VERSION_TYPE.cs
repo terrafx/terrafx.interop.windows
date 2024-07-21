@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12shader.h in microsoft/DirectX-Headers tag v1.611.2
+// Ported from d3d12shader.h in microsoft/DirectX-Headers tag v1.614.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -52,6 +52,9 @@ public enum D3D12_SHADER_VERSION_TYPE
 
     /// <include file='D3D12_SHADER_VERSION_TYPE.xml' path='doc/member[@name="D3D12_SHADER_VERSION_TYPE.D3D12_SHVER_AMPLIFICATION_SHADER"]/*' />
     D3D12_SHVER_AMPLIFICATION_SHADER = 14,
+
+    /// <include file='D3D12_SHADER_VERSION_TYPE.xml' path='doc/member[@name="D3D12_SHADER_VERSION_TYPE.D3D12_SHVER_NODE_SHADER"]/*' />
+    D3D12_SHVER_NODE_SHADER = 15,
 
     /// <include file='D3D12_SHADER_VERSION_TYPE.xml' path='doc/member[@name="D3D12_SHADER_VERSION_TYPE.D3D12_SHVER_RESERVED0"]/*' />
     D3D12_SHVER_RESERVED0 = 0xFFF0,

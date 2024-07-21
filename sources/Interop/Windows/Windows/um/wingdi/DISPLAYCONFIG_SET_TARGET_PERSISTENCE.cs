@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -16,7 +16,7 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
     /// <include file='DISPLAYCONFIG_SET_TARGET_PERSISTENCE.xml' path='doc/member[@name="DISPLAYCONFIG_SET_TARGET_PERSISTENCE.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wingdi_L3127_C5")]
+    [NativeTypeName("__AnonymousRecord_wingdi_L3132_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.bootPersistenceOn"]/*' />
@@ -68,7 +68,7 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_wingdi_L3129_C9")]
+        [NativeTypeName("__AnonymousRecord_wingdi_L3134_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*' />

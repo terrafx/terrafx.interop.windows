@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -39,7 +39,7 @@ public partial struct DISK_CACHE_INFORMATION
     public byte PrefetchScalar;
 
     /// <include file='DISK_CACHE_INFORMATION.xml' path='doc/member[@name="DISK_CACHE_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L9315_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L9589_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ScalarPrefetch"]/*' />
@@ -70,12 +70,12 @@ public partial struct DISK_CACHE_INFORMATION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ScalarPrefetch"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L9316_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L9590_C9")]
         public _ScalarPrefetch_e__Struct ScalarPrefetch;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BlockPrefetch"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L9328_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L9602_C9")]
         public _BlockPrefetch_e__Struct BlockPrefetch;
 
         /// <include file='_ScalarPrefetch_e__Struct.xml' path='doc/member[@name="_ScalarPrefetch_e__Struct"]/*' />

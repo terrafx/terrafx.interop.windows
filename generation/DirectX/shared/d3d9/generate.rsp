@@ -538,7 +538,7 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/shared/d3d9
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/d3d9.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared/d3d9.h
 --with-librarypath
 D3DPERF_BeginEvent=d3d9
 D3DPERF_EndEvent=d3d9

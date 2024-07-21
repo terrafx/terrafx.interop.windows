@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.devices.enumeration.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from winrt/windows.devices.enumeration.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.WinRT;
@@ -13,8 +13,14 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[59]")]
     public const string InterfaceName_Windows_Devices_Enumeration_IDeviceAccessChangedEventArgs2 = "Windows.Devices.Enumeration.IDeviceAccessChangedEventArgs2";
 
+    [NativeTypeName("const WCHAR[59]")]
+    public const string InterfaceName_Windows_Devices_Enumeration_IDeviceAccessChangedEventArgs3 = "Windows.Devices.Enumeration.IDeviceAccessChangedEventArgs3";
+
     [NativeTypeName("const WCHAR[53]")]
     public const string InterfaceName_Windows_Devices_Enumeration_IDeviceAccessInformation = "Windows.Devices.Enumeration.IDeviceAccessInformation";
+
+    [NativeTypeName("const WCHAR[54]")]
+    public const string InterfaceName_Windows_Devices_Enumeration_IDeviceAccessInformation2 = "Windows.Devices.Enumeration.IDeviceAccessInformation2";
 
     [NativeTypeName("const WCHAR[60]")]
     public const string InterfaceName_Windows_Devices_Enumeration_IDeviceAccessInformationStatics = "Windows.Devices.Enumeration.IDeviceAccessInformationStatics";
@@ -25,6 +31,9 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[68]")]
     public const string InterfaceName_Windows_Devices_Enumeration_IDeviceDisconnectButtonClickedEventArgs = "Windows.Devices.Enumeration.IDeviceDisconnectButtonClickedEventArgs";
 
+    [NativeTypeName("const WCHAR[55]")]
+    public const string InterfaceName_Windows_Devices_Enumeration_IDeviceEnumerationSettings = "Windows.Devices.Enumeration.IDeviceEnumerationSettings";
+
     [NativeTypeName("const WCHAR[47]")]
     public const string InterfaceName_Windows_Devices_Enumeration_IDeviceInformation = "Windows.Devices.Enumeration.IDeviceInformation";
 
@@ -33,6 +42,9 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[60]")]
     public const string InterfaceName_Windows_Devices_Enumeration_IDeviceInformationCustomPairing = "Windows.Devices.Enumeration.IDeviceInformationCustomPairing";
+
+    [NativeTypeName("const WCHAR[61]")]
+    public const string InterfaceName_Windows_Devices_Enumeration_IDeviceInformationCustomPairing2 = "Windows.Devices.Enumeration.IDeviceInformationCustomPairing2";
 
     [NativeTypeName("const WCHAR[54]")]
     public const string InterfaceName_Windows_Devices_Enumeration_IDeviceInformationPairing = "Windows.Devices.Enumeration.IDeviceInformationPairing";
@@ -52,6 +64,9 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[55]")]
     public const string InterfaceName_Windows_Devices_Enumeration_IDeviceInformationStatics2 = "Windows.Devices.Enumeration.IDeviceInformationStatics2";
 
+    [NativeTypeName("const WCHAR[55]")]
+    public const string InterfaceName_Windows_Devices_Enumeration_IDeviceInformationStatics3 = "Windows.Devices.Enumeration.IDeviceInformationStatics3";
+
     [NativeTypeName("const WCHAR[53]")]
     public const string InterfaceName_Windows_Devices_Enumeration_IDeviceInformationUpdate = "Windows.Devices.Enumeration.IDeviceInformationUpdate";
 
@@ -64,8 +79,14 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[62]")]
     public const string InterfaceName_Windows_Devices_Enumeration_IDevicePairingRequestedEventArgs2 = "Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs2";
 
+    [NativeTypeName("const WCHAR[62]")]
+    public const string InterfaceName_Windows_Devices_Enumeration_IDevicePairingRequestedEventArgs3 = "Windows.Devices.Enumeration.IDevicePairingRequestedEventArgs3";
+
     [NativeTypeName("const WCHAR[49]")]
     public const string InterfaceName_Windows_Devices_Enumeration_IDevicePairingResult = "Windows.Devices.Enumeration.IDevicePairingResult";
+
+    [NativeTypeName("const WCHAR[71]")]
+    public const string InterfaceName_Windows_Devices_Enumeration_IDevicePairingSetMembersRequestedEventArgs = "Windows.Devices.Enumeration.IDevicePairingSetMembersRequestedEventArgs";
 
     [NativeTypeName("const WCHAR[51]")]
     public const string InterfaceName_Windows_Devices_Enumeration_IDevicePairingSettings = "Windows.Devices.Enumeration.IDevicePairingSettings";
@@ -135,6 +156,9 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[48]")]
     public const string RuntimeClass_Windows_Devices_Enumeration_DevicePairingResult = "Windows.Devices.Enumeration.DevicePairingResult";
+
+    [NativeTypeName("const WCHAR[70]")]
+    public const string RuntimeClass_Windows_Devices_Enumeration_DevicePairingSetMembersRequestedEventArgs = "Windows.Devices.Enumeration.DevicePairingSetMembersRequestedEventArgs";
 
     [NativeTypeName("const WCHAR[41]")]
     public const string RuntimeClass_Windows_Devices_Enumeration_DevicePicker = "Windows.Devices.Enumeration.DevicePicker";

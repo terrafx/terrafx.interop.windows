@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -78,6 +78,12 @@ public static partial class DOMAIN
 
     [NativeTypeName("#define DOMAIN_GROUP_RID_ENTERPRISE_KEY_ADMINS (0x0000020FL)")]
     public const int DOMAIN_GROUP_RID_ENTERPRISE_KEY_ADMINS = (0x0000020F);
+
+    [NativeTypeName("#define DOMAIN_GROUP_RID_FOREST_TRUSTS (0x00000210L)")]
+    public const int DOMAIN_GROUP_RID_FOREST_TRUSTS = (0x00000210);
+
+    [NativeTypeName("#define DOMAIN_GROUP_RID_EXTERNAL_TRUSTS (0x00000211L)")]
+    public const int DOMAIN_GROUP_RID_EXTERNAL_TRUSTS = (0x00000211);
 
     [NativeTypeName("#define DOMAIN_ALIAS_RID_ADMINS (0x00000220L)")]
     public const int DOMAIN_ALIAS_RID_ADMINS = (0x00000220);
@@ -180,4 +186,10 @@ public static partial class DOMAIN
 
     [NativeTypeName("#define DOMAIN_ALIAS_RID_DEVICE_OWNERS (0x00000247L)")]
     public const int DOMAIN_ALIAS_RID_DEVICE_OWNERS = (0x00000247);
+
+    [NativeTypeName("#define DOMAIN_ALIAS_RID_USER_MODE_HARDWARE_OPERATORS (0x00000248L)")]
+    public const int DOMAIN_ALIAS_RID_USER_MODE_HARDWARE_OPERATORS = (0x00000248);
+
+    [NativeTypeName("#define DOMAIN_ALIAS_RID_OPENSSH_USERS (0x00000249L)")]
+    public const int DOMAIN_ALIAS_RID_OPENSSH_USERS = (0x00000249);
 }

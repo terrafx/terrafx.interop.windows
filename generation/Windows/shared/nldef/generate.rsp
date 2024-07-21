@@ -14,7 +14,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/shared/nldef
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared/nldef.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared/nldef.h
 --with-attribute
 NL_BANDWIDTH_INFORMATION=SupportedOSPlatform("windows6.2")
 NL_NETWORK_CONNECTIVITY_COST_HINT=SupportedOSPlatform("windows10.0.19041.0")

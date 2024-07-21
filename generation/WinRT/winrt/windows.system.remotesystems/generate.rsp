@@ -115,4 +115,4 @@ TerraFX.Interop.WinRT
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/windows.system.remotesystems
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.system.remotesystems.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt/windows.system.remotesystems.h

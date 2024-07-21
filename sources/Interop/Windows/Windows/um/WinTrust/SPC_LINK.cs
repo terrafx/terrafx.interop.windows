@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/WinTrust.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -17,7 +17,7 @@ public unsafe partial struct SPC_LINK
     public uint dwLinkChoice;
 
     /// <include file='SPC_LINK.xml' path='doc/member[@name="SPC_LINK.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_WinTrust_L1275_C5")]
+    [NativeTypeName("__AnonymousRecord_WinTrust_L1335_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszUrl"]/*' />

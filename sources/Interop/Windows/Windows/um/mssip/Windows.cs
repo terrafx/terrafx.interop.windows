@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mssip.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/mssip.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -66,6 +66,10 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.2")]
     public static extern BOOL CryptSIPGetCaps(SIP_SUBJECTINFO* pSubjInfo, [NativeTypeName("SIP_CAP_SET *")] SIP_CAP_SET_V3* pCaps);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSIPGetSealedDigest"]/*' />
+    [DllImport("crypt32", ExactSpelling = true)]
+    public static extern BOOL CryptSIPGetSealedDigest(SIP_SUBJECTINFO* pSubjectInfo, [NativeTypeName("const BYTE *")] byte* pSig, [NativeTypeName("DWORD")] uint dwSig, byte* pbDigest, [NativeTypeName("DWORD *")] uint* pcbDigest);
+
     [NativeTypeName("#define MSSIP_FLAGS_PROHIBIT_RESIZE_ON_CREATE 0x00010000")]
     public const int MSSIP_FLAGS_PROHIBIT_RESIZE_ON_CREATE = 0x00010000;
 
@@ -86,6 +90,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define MSSIP_ADDINFO_BLOB 3")]
     public const int MSSIP_ADDINFO_BLOB = 3;
+
+    [NativeTypeName("#define MSSIP_ADDINFO_DETACHEDSIG 4")]
+    public const int MSSIP_ADDINFO_DETACHEDSIG = 4;
 
     [NativeTypeName("#define MSSIP_ADDINFO_NONMSSIP 500")]
     public const int MSSIP_ADDINFO_NONMSSIP = 500;

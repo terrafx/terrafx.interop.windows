@@ -1,9 +1,5 @@
 @../../../settings.rsp
 @../../../remap.rsp
---exclude
-LoadString
-LoadStringA(HINSTANCE, UINT, LPSTR, int):int
-LoadStringW(HINSTANCE, UINT, LPWSTR, int):int
 --file
 um-libloaderapi.h
 --methodClassName
@@ -15,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/libloaderapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/libloaderapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/libloaderapi.h
 --with-librarypath
 AddDllDirectory=kernel32
 DisableThreadLibraryCalls=kernel32
@@ -60,6 +56,9 @@ LockResource=kernel32
 RemoveDllDirectory=kernel32
 SetDefaultDllDirectories=kernel32
 SizeofResource=kernel32
+--with-librarypath
+LoadStringA=kernelbase
+LoadStringW=kernelbase
 --with-setlasterror
 AddDllDirectory
 DisableThreadLibraryCalls

@@ -38,6 +38,8 @@ CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
 IID_IAudioDeviceInputNode
 IID_IAudioDeviceOutputNode
+IID_IAudioEffectsPackConfiguration
+IID_IAudioEffectsPackConfigurationStatics
 IID_IAudioFileInputNode
 IID_IAudioFileOutputNode
 IID_IAudioFrameCompletedEventArgs
@@ -121,4 +123,4 @@ TerraFX.Interop.WinRT
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/windows.media.audio
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.audio.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt/windows.media.audio.h

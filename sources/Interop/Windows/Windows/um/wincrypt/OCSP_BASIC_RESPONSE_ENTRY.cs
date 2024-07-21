@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -20,7 +20,7 @@ public unsafe partial struct OCSP_BASIC_RESPONSE_ENTRY
     public uint dwCertStatus;
 
     /// <include file='OCSP_BASIC_RESPONSE_ENTRY.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_ENTRY.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wincrypt_L5697_C5")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L5725_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='OCSP_BASIC_RESPONSE_ENTRY.xml' path='doc/member[@name="OCSP_BASIC_RESPONSE_ENTRY.ThisUpdate"]/*' />

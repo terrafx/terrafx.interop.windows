@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the University of Illinois Open Source License.
 
 using System;
@@ -58,7 +58,7 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_IDxcBlobUtf16
+    public static ref readonly Guid IID_IDxcBlobWide
     {
         get
         {
@@ -603,6 +603,29 @@ public static partial class IID
                 0x6C,
                 0x34,
                 0x3D
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IDxcPdbUtils2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x38, 0xD9, 0x15, 0x43,
+                0x69, 0xF3,
+                0x93, 0x4F,
+                0x95,
+                0xA2,
+                0x25,
+                0x20,
+                0x17,
+                0xCC,
+                0x38,
+                0x07
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/Audioclient.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/Audioclient.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -120,6 +120,9 @@ public static partial class AUDCLNT
 
     [NativeTypeName("#define AUDCLNT_E_EFFECT_STATE_READ_ONLY AUDCLNT_ERR(0x042)")]
     public const int AUDCLNT_E_EFFECT_STATE_READ_ONLY = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x042))));
+
+    [NativeTypeName("#define AUDCLNT_E_POST_VOLUME_LOOPBACK_UNSUPPORTED AUDCLNT_ERR(0x043)")]
+    public const int AUDCLNT_E_POST_VOLUME_LOOPBACK_UNSUPPORTED = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x043))));
 
     [NativeTypeName("#define AUDCLNT_S_BUFFER_EMPTY AUDCLNT_SUCCESS(0x001)")]
     public const int AUDCLNT_S_BUFFER_EMPTY = unchecked((int)(((uint)(0) << 31) | ((uint)(2185) << 16) | ((uint)(0x001))));

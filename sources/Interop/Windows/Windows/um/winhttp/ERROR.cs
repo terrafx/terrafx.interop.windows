@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winhttp.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winhttp.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -171,4 +171,7 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_WINHTTP_FEATURE_DISABLED (WINHTTP_ERROR_BASE + 192)")]
     public const int ERROR_WINHTTP_FEATURE_DISABLED = (12000 + 192);
+
+    [NativeTypeName("#define ERROR_WINHTTP_FAST_FORWARDING_NOT_SUPPORTED (WINHTTP_ERROR_BASE + 193)")]
+    public const int ERROR_WINHTTP_FAST_FORWARDING_NOT_SUPPORTED = (12000 + 193);
 }

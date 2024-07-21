@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -142,6 +142,10 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern BOOL CredProtectW(BOOL fAsSelf, [NativeTypeName("LPWSTR")] char* pszCredentials, [NativeTypeName("DWORD")] uint cchCredentials, [NativeTypeName("LPWSTR")] char* pszProtectedCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredProtectEx"]/*' />
+    [DllImport("sechost", ExactSpelling = true)]
+    public static extern BOOL CredProtectEx([NativeTypeName("ULONG")] uint Flags, [NativeTypeName("LPWSTR")] char* pszCredentials, [NativeTypeName("DWORD")] uint cchCredentials, [NativeTypeName("LPWSTR")] char* pszProtectedCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars, CRED_PROTECTION_TYPE* ProtectionType);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CredProtectA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
@@ -151,6 +155,10 @@ public static unsafe partial class Windows
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL CredUnprotectW(BOOL fAsSelf, [NativeTypeName("LPWSTR")] char* pszProtectedCredentials, [NativeTypeName("DWORD")] uint cchProtectedCredentials, [NativeTypeName("LPWSTR")] char* pszCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CredUnprotectEx"]/*' />
+    [DllImport("sechost", ExactSpelling = true)]
+    public static extern BOOL CredUnprotectEx([NativeTypeName("ULONG")] uint Flags, [NativeTypeName("LPWSTR")] char* pszProtectedCredentials, [NativeTypeName("DWORD")] uint cchProtectedCredentials, [NativeTypeName("LPWSTR")] char* pszCredentials, [NativeTypeName("DWORD *")] uint* pcchMaxChars);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CredUnprotectA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.media.audio.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from winrt/windows.media.audio.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.WinRT;
@@ -12,6 +12,12 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[43]")]
     public const string InterfaceName_Windows_Media_Audio_IAudioDeviceOutputNode = "Windows.Media.Audio.IAudioDeviceOutputNode";
+
+    [NativeTypeName("const WCHAR[51]")]
+    public const string InterfaceName_Windows_Media_Audio_IAudioEffectsPackConfiguration = "Windows.Media.Audio.IAudioEffectsPackConfiguration";
+
+    [NativeTypeName("const WCHAR[58]")]
+    public const string InterfaceName_Windows_Media_Audio_IAudioEffectsPackConfigurationStatics = "Windows.Media.Audio.IAudioEffectsPackConfigurationStatics";
 
     [NativeTypeName("const WCHAR[40]")]
     public const string InterfaceName_Windows_Media_Audio_IAudioFileInputNode = "Windows.Media.Audio.IAudioFileInputNode";
@@ -207,6 +213,9 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[42]")]
     public const string RuntimeClass_Windows_Media_Audio_AudioDeviceOutputNode = "Windows.Media.Audio.AudioDeviceOutputNode";
+
+    [NativeTypeName("const WCHAR[50]")]
+    public const string RuntimeClass_Windows_Media_Audio_AudioEffectsPackConfiguration = "Windows.Media.Audio.AudioEffectsPackConfiguration";
 
     [NativeTypeName("const WCHAR[39]")]
     public const string RuntimeClass_Windows_Media_Audio_AudioFileInputNode = "Windows.Media.Audio.AudioFileInputNode";

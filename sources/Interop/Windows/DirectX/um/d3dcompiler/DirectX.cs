@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/d3dcompiler.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/d3dcompiler.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -106,4 +106,8 @@ public static unsafe partial class DirectX
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DDecompressShaders"]/*' />
     [DllImport("d3dcompiler_47", ExactSpelling = true)]
     public static extern HRESULT D3DDecompressShaders([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, uint uNumShaders, uint uStartIndex, uint* pIndices, uint uFlags, ID3DBlob** ppShaders, uint* pTotalShaders);
+
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DDisassemble10Effect"]/*' />
+    [DllImport("d3dcompiler_47", ExactSpelling = true)]
+    public static extern HRESULT D3DDisassemble10Effect([NativeTypeName("struct ID3D10Effect *")] ID3D10Effect* pEffect, uint Flags, ID3DBlob** ppDisassembly);
 }

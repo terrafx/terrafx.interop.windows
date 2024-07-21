@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/mfapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -206,6 +206,20 @@ public static partial class MFAudioFormatTests
     public static void MFAudioFormat_Dolby_AC4_V2_ESTest()
     {
         Assert.That(MFAudioFormat_Dolby_AC4_V2_ES, Is.EqualTo(new Guid(0x7e58c9f9, 0xb070, 0x45f4, 0x8c, 0xcd, 0xa9, 0x9a, 0x04, 0x17, 0xc1, 0xac)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MFAudioFormat_MPEGH" /> property is correct.</summary>
+    [Test]
+    public static void MFAudioFormat_MPEGHTest()
+    {
+        Assert.That(MFAudioFormat_MPEGH, Is.EqualTo(new Guid(0x7c13c441, 0xebf8, 0x4931, 0xb6, 0x78, 0x80, 0x0b, 0x19, 0x24, 0x22, 0x36)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MFAudioFormat_MPEGH_ES" /> property is correct.</summary>
+    [Test]
+    public static void MFAudioFormat_MPEGH_ESTest()
+    {
+        Assert.That(MFAudioFormat_MPEGH_ES, Is.EqualTo(new Guid(0x19ee97fe, 0x1be0, 0x4255, 0xa8, 0x76, 0xe9, 0x9f, 0x53, 0xa4, 0x2a, 0xe3)));
     }
 
     /// <summary>Validates that the value of the <see cref="MFAudioFormat_Vorbis" /> property is correct.</summary>

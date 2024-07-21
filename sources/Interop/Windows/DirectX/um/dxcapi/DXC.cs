@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the University of Illinois Open Source License.
 
 namespace TerraFX.Interop.DirectX;
@@ -13,8 +13,14 @@ public static partial class DXC
     [NativeTypeName("#define DXC_CP_UTF16 1200")]
     public const int DXC_CP_UTF16 = 1200;
 
+    [NativeTypeName("#define DXC_CP_UTF32 12000")]
+    public const int DXC_CP_UTF32 = 12000;
+
     [NativeTypeName("#define DXC_CP_ACP 0")]
     public const int DXC_CP_ACP = 0;
+
+    [NativeTypeName("#define DXC_CP_WIDE DXC_CP_UTF16")]
+    public const int DXC_CP_WIDE = 1200;
 
     [NativeTypeName("#define DXC_HASHFLAG_INCLUDES_SOURCE 1")]
     public const int DXC_HASHFLAG_INCLUDES_SOURCE = 1;

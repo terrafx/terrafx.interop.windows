@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.devices.enumeration.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from winrt/windows.devices.enumeration.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -90,33 +90,33 @@ public unsafe partial struct IDeviceInformationStatics : IDeviceInformationStati
     /// <include file='IDeviceInformationStatics.xml' path='doc/member[@name="IDeviceInformationStatics.FindAllAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<IntPtr>** asyncOp)
+    public HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<Pointer<IntPtr>>** asyncOp)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationStatics*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[8]))((IDeviceInformationStatics*)Unsafe.AsPointer(ref this), asyncOp);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationStatics*, IAsyncOperation<Pointer<IntPtr>>**, int>)(lpVtbl[8]))((IDeviceInformationStatics*)Unsafe.AsPointer(ref this), asyncOp);
     }
 
     /// <include file='IDeviceInformationStatics.xml' path='doc/member[@name="IDeviceInformationStatics.FindAllAsyncDeviceClass"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT FindAllAsyncDeviceClass([NativeTypeName("ABI::Windows::Devices::Enumeration::DeviceClass")] DeviceClass deviceClass, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<IntPtr>** asyncOp)
+    public HRESULT FindAllAsyncDeviceClass([NativeTypeName("ABI::Windows::Devices::Enumeration::DeviceClass")] DeviceClass deviceClass, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<Pointer<IntPtr>>** asyncOp)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationStatics*, DeviceClass, IAsyncOperation<IntPtr>**, int>)(lpVtbl[9]))((IDeviceInformationStatics*)Unsafe.AsPointer(ref this), deviceClass, asyncOp);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationStatics*, DeviceClass, IAsyncOperation<Pointer<IntPtr>>**, int>)(lpVtbl[9]))((IDeviceInformationStatics*)Unsafe.AsPointer(ref this), deviceClass, asyncOp);
     }
 
     /// <include file='IDeviceInformationStatics.xml' path='doc/member[@name="IDeviceInformationStatics.FindAllAsyncAqsFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT FindAllAsyncAqsFilter(HSTRING aqsFilter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<IntPtr>** asyncOp)
+    public HRESULT FindAllAsyncAqsFilter(HSTRING aqsFilter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<Pointer<IntPtr>>** asyncOp)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationStatics*, HSTRING, IAsyncOperation<IntPtr>**, int>)(lpVtbl[10]))((IDeviceInformationStatics*)Unsafe.AsPointer(ref this), aqsFilter, asyncOp);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationStatics*, HSTRING, IAsyncOperation<Pointer<IntPtr>>**, int>)(lpVtbl[10]))((IDeviceInformationStatics*)Unsafe.AsPointer(ref this), aqsFilter, asyncOp);
     }
 
     /// <include file='IDeviceInformationStatics.xml' path='doc/member[@name="IDeviceInformationStatics.FindAllAsyncAqsFilterAndAdditionalProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT FindAllAsyncAqsFilterAndAdditionalProperties(HSTRING aqsFilter, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* additionalProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<IntPtr>** asyncOp)
+    public HRESULT FindAllAsyncAqsFilterAndAdditionalProperties(HSTRING aqsFilter, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* additionalProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<Pointer<IntPtr>>** asyncOp)
     {
-        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationStatics*, HSTRING, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int>)(lpVtbl[11]))((IDeviceInformationStatics*)Unsafe.AsPointer(ref this), aqsFilter, additionalProperties, asyncOp);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceInformationStatics*, HSTRING, IIterable<HSTRING>*, IAsyncOperation<Pointer<IntPtr>>**, int>)(lpVtbl[11]))((IDeviceInformationStatics*)Unsafe.AsPointer(ref this), aqsFilter, additionalProperties, asyncOp);
     }
 
     /// <include file='IDeviceInformationStatics.xml' path='doc/member[@name="IDeviceInformationStatics.CreateWatcher"]/*' />
@@ -160,16 +160,16 @@ public unsafe partial struct IDeviceInformationStatics : IDeviceInformationStati
         HRESULT CreateFromIdAsyncAdditionalProperties(HSTRING deviceId, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* additionalProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformation_t **")] IAsyncOperation<Pointer<IDeviceInformation>>** asyncOp);
 
         [VtblIndex(8)]
-        HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<IntPtr>** asyncOp);
+        HRESULT FindAllAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<Pointer<IntPtr>>** asyncOp);
 
         [VtblIndex(9)]
-        HRESULT FindAllAsyncDeviceClass([NativeTypeName("ABI::Windows::Devices::Enumeration::DeviceClass")] DeviceClass deviceClass, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<IntPtr>** asyncOp);
+        HRESULT FindAllAsyncDeviceClass([NativeTypeName("ABI::Windows::Devices::Enumeration::DeviceClass")] DeviceClass deviceClass, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<Pointer<IntPtr>>** asyncOp);
 
         [VtblIndex(10)]
-        HRESULT FindAllAsyncAqsFilter(HSTRING aqsFilter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<IntPtr>** asyncOp);
+        HRESULT FindAllAsyncAqsFilter(HSTRING aqsFilter, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<Pointer<IntPtr>>** asyncOp);
 
         [VtblIndex(11)]
-        HRESULT FindAllAsyncAqsFilterAndAdditionalProperties(HSTRING aqsFilter, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* additionalProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<IntPtr>** asyncOp);
+        HRESULT FindAllAsyncAqsFilterAndAdditionalProperties(HSTRING aqsFilter, [NativeTypeName("ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *")] IIterable<HSTRING>* additionalProperties, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **")] IAsyncOperation<Pointer<IntPtr>>** asyncOp);
 
         [VtblIndex(12)]
         HRESULT CreateWatcher([NativeTypeName("ABI::Windows::Devices::Enumeration::IDeviceWatcher **")] IDeviceWatcher** watcher);
@@ -212,16 +212,16 @@ public unsafe partial struct IDeviceInformationStatics : IDeviceInformationStati
         public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IIterable<HSTRING>*, IAsyncOperation<Pointer<IDeviceInformation>>**, int> CreateFromIdAsyncAdditionalProperties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<IntPtr>**, int> FindAllAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<Pointer<IntPtr>>**, int> FindAllAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Enumeration::DeviceClass, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, DeviceClass, IAsyncOperation<IntPtr>**, int> FindAllAsyncDeviceClass;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DeviceClass, IAsyncOperation<Pointer<IntPtr>>**, int> FindAllAsyncDeviceClass;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<IntPtr>**, int> FindAllAsyncAqsFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IAsyncOperation<Pointer<IntPtr>>**, int> FindAllAsyncAqsFilter;
 
         [NativeTypeName("HRESULT (HSTRING, ABI::Windows::Foundation::Collections::__FIIterable_1_HSTRING_t *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CEnumeration__CDeviceInformationCollection_t **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IIterable<HSTRING>*, IAsyncOperation<IntPtr>**, int> FindAllAsyncAqsFilterAndAdditionalProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING, IIterable<HSTRING>*, IAsyncOperation<Pointer<IntPtr>>**, int> FindAllAsyncAqsFilterAndAdditionalProperties;
 
         [NativeTypeName("HRESULT (ABI::Windows::Devices::Enumeration::IDeviceWatcher **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IDeviceWatcher**, int> CreateWatcher;

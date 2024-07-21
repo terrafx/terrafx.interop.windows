@@ -35,24 +35,31 @@ CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
 IID_IDeviceAccessChangedEventArgs
 IID_IDeviceAccessChangedEventArgs2
+IID_IDeviceAccessChangedEventArgs3
 IID_IDeviceAccessInformation
+IID_IDeviceAccessInformation2
 IID_IDeviceAccessInformationStatics
 IID_IDeviceConnectionChangeTriggerDetails
 IID_IDeviceDisconnectButtonClickedEventArgs
+IID_IDeviceEnumerationSettings
 IID_IDeviceInformation
 IID_IDeviceInformation2
 IID_IDeviceInformationCustomPairing
+IID_IDeviceInformationCustomPairing2
 IID_IDeviceInformationPairing
 IID_IDeviceInformationPairing2
 IID_IDeviceInformationPairingStatics
 IID_IDeviceInformationPairingStatics2
 IID_IDeviceInformationStatics
 IID_IDeviceInformationStatics2
+IID_IDeviceInformationStatics3
 IID_IDeviceInformationUpdate
 IID_IDeviceInformationUpdate2
 IID_IDevicePairingRequestedEventArgs
 IID_IDevicePairingRequestedEventArgs2
+IID_IDevicePairingRequestedEventArgs3
 IID_IDevicePairingResult
+IID_IDevicePairingSetMembersRequestedEventArgs
 IID_IDevicePairingSettings
 IID_IDevicePicker
 IID_IDevicePickerAppearance
@@ -79,4 +86,4 @@ TerraFX.Interop.WinRT
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/windows.devices.enumeration
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.devices.enumeration.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt/windows.devices.enumeration.h

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -31,8 +31,14 @@ public static partial class STORAGE
     [NativeTypeName("#define STORAGE_CRYPTO_CAPABILITY_VERSION_1 1")]
     public const int STORAGE_CRYPTO_CAPABILITY_VERSION_1 = 1;
 
+    [NativeTypeName("#define STORAGE_CRYPTO_CAPABILITY_VERSION_2 2")]
+    public const int STORAGE_CRYPTO_CAPABILITY_VERSION_2 = 2;
+
     [NativeTypeName("#define STORAGE_CRYPTO_DESCRIPTOR_VERSION_1 1")]
     public const int STORAGE_CRYPTO_DESCRIPTOR_VERSION_1 = 1;
+
+    [NativeTypeName("#define STORAGE_CRYPTO_DESCRIPTOR_VERSION_2 2")]
+    public const int STORAGE_CRYPTO_DESCRIPTOR_VERSION_2 = 2;
 
     [NativeTypeName("#define STORAGE_TIER_NAME_LENGTH (256)")]
     public const int STORAGE_TIER_NAME_LENGTH = (256);
@@ -54,6 +60,9 @@ public static partial class STORAGE
 
     [NativeTypeName("#define STORAGE_TIER_FLAG_SMR (0x01000000)")]
     public const int STORAGE_TIER_FLAG_SMR = (0x01000000);
+
+    [NativeTypeName("#define STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT_VERSION 1")]
+    public const int STORAGE_PROTOCOL_DATA_DESCRIPTOR_EXT_VERSION = 1;
 
     [NativeTypeName("#define STORAGE_TEMPERATURE_VALUE_NOT_REPORTED 0x8000")]
     public const int STORAGE_TEMPERATURE_VALUE_NOT_REPORTED = 0x8000;
@@ -165,6 +174,12 @@ public static partial class STORAGE
 
     [NativeTypeName("#define STORAGE_HW_FIRMWARE_REQUEST_FLAG_FIRST_SEGMENT 0x00000004")]
     public const int STORAGE_HW_FIRMWARE_REQUEST_FLAG_FIRST_SEGMENT = 0x00000004;
+
+    [NativeTypeName("#define STORAGE_HW_FIRMWARE_REQUEST_FLAG_SWITCH_TO_FIRMWARE_WITHOUT_RESET 0x10000000")]
+    public const int STORAGE_HW_FIRMWARE_REQUEST_FLAG_SWITCH_TO_FIRMWARE_WITHOUT_RESET = 0x10000000;
+
+    [NativeTypeName("#define STORAGE_HW_FIRMWARE_REQUEST_FLAG_REPLACE_AND_SWITCH_UPON_RESET 0x20000000")]
+    public const int STORAGE_HW_FIRMWARE_REQUEST_FLAG_REPLACE_AND_SWITCH_UPON_RESET = 0x20000000;
 
     [NativeTypeName("#define STORAGE_HW_FIRMWARE_REQUEST_FLAG_REPLACE_EXISTING_IMAGE 0x40000000")]
     public const int STORAGE_HW_FIRMWARE_REQUEST_FLAG_REPLACE_EXISTING_IMAGE = 0x40000000;

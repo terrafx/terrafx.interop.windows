@@ -1,20 +1,8 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
-CheckIsMSIXPackage(PCWSTR, BOOL *):HRESULT
-GetCurrentPackageInfo2(const UINT32, PackagePathType, UINT32 *, BYTE *, UINT32 *):LONG
-GetCurrentPackagePath2(PackagePathType, UINT32 *, PWSTR):LONG
-GetPackageInfo2(PACKAGE_INFO_REFERENCE, const UINT32, PackagePathType, UINT32 *, BYTE *, UINT32 *):LONG
-GetPackagePathByFullName2(PCWSTR, PackagePathType, UINT32 *, PWSTR):LONG
-GetStagedPackagePathByFullName2(PCWSTR, PackagePathType, UINT32 *, PWSTR):LONG
-OpenPackageInfoByFullNameForUser(PSID, PCWSTR, const UINT32, PACKAGE_INFO_REFERENCE *):LONG
 PACKAGE_ID
 PACKAGE_INFO
-VerifyApplicationUserModelId(PCWSTR):LONG
-VerifyPackageFamilyName(PCWSTR):LONG
-VerifyPackageFullName(PCWSTR):LONG
-VerifyPackageId(const PACKAGE_ID *):LONG
-VerifyPackageRelativeApplicationId(PCWSTR):LONG
 _PACKAGE_INFO_REFERENCE
 --file
 um-appmodel.h
@@ -27,7 +15,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/appmodel
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/appmodel.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/appmodel.h
 --with-attribute
 AddPackageDependency=SupportedOSPlatform("windows10.0.22000.0")
 AddPackageDependencyOptions=SupportedOSPlatform("windows10.0.22621.0")
@@ -114,14 +102,32 @@ PackageIdFromFullName=kernel32
 PackageNameAndPublisherIdFromFamilyName=kernel32
 ParseApplicationUserModelId=kernel32
 --with-librarypath
+AddPackageDependency2=kernelbase
 AddPackageDependency=kernelbase
+CheckIsMSIXPackage=kernelbase
 DeletePackageDependency=kernelbase
+FindPackageDependency=kernelbase
 GetApplicationUserModelIdFromToken=kernelbase
+GetCurrentPackageInfo2=kernelbase
+GetCurrentPackagePath2=kernelbase
 GetIdForPackageDependencyContext=kernelbase
+GetPackageDependencyInformation=kernelbase
 GetPackageFamilyNameFromToken=kernelbase
 GetPackageFullNameFromToken=kernelbase
 GetPackageGraphRevisionId=kernelbase
+GetPackageInfo2=kernelbase
+GetPackagePathByFullName2=kernelbase
+GetProcessesUsingPackageDependency=kernelbase
+GetResolvedPackageFullNameForPackageDependency2=kernelbase
 GetResolvedPackageFullNameForPackageDependency=kernelbase
 GetStagedPackageOrigin=kernelbase
+GetStagedPackagePathByFullName2=kernelbase
+OpenPackageInfoByFullNameForUser=kernelbase
 RemovePackageDependency=kernelbase
+TryCreatePackageDependency2=kernelbase
 TryCreatePackageDependency=kernelbase
+VerifyApplicationUserModelId=kernelbase
+VerifyPackageFamilyName=kernelbase
+VerifyPackageFullName=kernelbase
+VerifyPackageId=kernelbase
+VerifyPackageRelativeApplicationId=kernelbase

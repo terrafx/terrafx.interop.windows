@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/Shlwapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/Shlwapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -1271,6 +1271,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AssocCreate"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     public static extern HRESULT AssocCreate([NativeTypeName("CLSID")] Guid clsid, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetAssocKeys"]/*' />
+    [DllImport("windows.storage", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows6.2")]
+    public static extern uint SHGetAssocKeys(IQueryAssociations* pqa, HKEY* rgKeys, [NativeTypeName("DWORD")] uint cKeys);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AssocQueryStringA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]

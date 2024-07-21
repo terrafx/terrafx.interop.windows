@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -72,8 +72,16 @@ public partial struct REFS_VOLUME_DATA_BUFFER
     [NativeTypeName("BYTE[6]")]
     public _Reserved0_e__FixedBuffer Reserved0;
 
+    /// <include file='REFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="REFS_VOLUME_DATA_BUFFER.DriverMajorVersion"]/*' />
+    [NativeTypeName("DWORD")]
+    public uint DriverMajorVersion;
+
+    /// <include file='REFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="REFS_VOLUME_DATA_BUFFER.DriverMinorVersion"]/*' />
+    [NativeTypeName("DWORD")]
+    public uint DriverMinorVersion;
+
     /// <include file='REFS_VOLUME_DATA_BUFFER.xml' path='doc/member[@name="REFS_VOLUME_DATA_BUFFER.Reserved"]/*' />
-    [NativeTypeName("LARGE_INTEGER[8]")]
+    [NativeTypeName("LARGE_INTEGER[7]")]
     public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='_Reserved0_e__FixedBuffer.xml' path='doc/member[@name="_Reserved0_e__FixedBuffer"]/*' />
@@ -84,7 +92,7 @@ public partial struct REFS_VOLUME_DATA_BUFFER
     }
 
     /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
-    [InlineArray(8)]
+    [InlineArray(7)]
     public partial struct _Reserved_e__FixedBuffer
     {
         public LARGE_INTEGER e0;

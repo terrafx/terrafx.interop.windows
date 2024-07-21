@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.media.streaming.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from winrt/windows.media.streaming.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.WinRT;
@@ -61,8 +61,8 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[39]")]
     public const string RuntimeClass_Windows_Media_Streaming_StreamSelector = "Windows.Media.Streaming.StreamSelector";
 
-    [NativeTypeName("#define WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION 0x10000")]
-    public const int WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION = 0x10000;
+    [NativeTypeName("#define WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION 0x20000")]
+    public const int WINDOWS_GAMING_INPUT_GAMINGINPUTPREVIEWCONTRACT_VERSION = 0x20000;
 
     [NativeTypeName("#define WINDOWS_MEDIA_STREAMING_STREAMINGCONTRACT_VERSION 0x10000")]
     public const int WINDOWS_MEDIA_STREAMING_STREAMINGCONTRACT_VERSION = 0x10000;

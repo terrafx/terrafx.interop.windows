@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.devices.printers.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from winrt/windows.devices.printers.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.WinRT;
@@ -27,6 +27,12 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[42]")]
     public const string InterfaceName_Windows_Devices_Printers_IIppPrintDevice2 = "Windows.Devices.Printers.IIppPrintDevice2";
+
+    [NativeTypeName("const WCHAR[42]")]
+    public const string InterfaceName_Windows_Devices_Printers_IIppPrintDevice3 = "Windows.Devices.Printers.IIppPrintDevice3";
+
+    [NativeTypeName("const WCHAR[42]")]
+    public const string InterfaceName_Windows_Devices_Printers_IIppPrintDevice4 = "Windows.Devices.Printers.IIppPrintDevice4";
 
     [NativeTypeName("const WCHAR[48]")]
     public const string InterfaceName_Windows_Devices_Printers_IIppPrintDeviceStatics = "Windows.Devices.Printers.IIppPrintDeviceStatics";

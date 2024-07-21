@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -19,9 +19,9 @@ public unsafe partial struct SERVERSILO_BASIC_INFORMATION
     [NativeTypeName("DWORD")]
     public uint ExitStatus;
 
-    /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.IsDownlevelContainer"]/*' />
+    /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.Reserved"]/*' />
     [NativeTypeName("BOOLEAN")]
-    public byte IsDownlevelContainer;
+    public byte Reserved;
 
     /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.ApiSetSchema"]/*' />
     [NativeTypeName("PVOID")]
@@ -30,4 +30,12 @@ public unsafe partial struct SERVERSILO_BASIC_INFORMATION
     /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.HostApiSetSchema"]/*' />
     [NativeTypeName("PVOID")]
     public void* HostApiSetSchema;
+
+    /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.ContainerBuildNumber"]/*' />
+    [NativeTypeName("DWORD")]
+    public uint ContainerBuildNumber;
+
+    /// <include file='SERVERSILO_BASIC_INFORMATION.xml' path='doc/member[@name="SERVERSILO_BASIC_INFORMATION.HostBuildNumber"]/*' />
+    [NativeTypeName("DWORD")]
+    public uint HostBuildNumber;
 }

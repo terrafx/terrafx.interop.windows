@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.Versioning;
@@ -677,6 +677,18 @@ public static partial class FSCTL
 
     [NativeTypeName("#define FSCTL_REFS_QUERY_VOLUME_IO_METRICS_INFO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 291, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
     public const int FSCTL_REFS_QUERY_VOLUME_IO_METRICS_INFO = (((0x00000009) << 16) | ((0) << 14) | ((291) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_REFS_SET_ROLLBACK_PROTECTION_INFO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 292, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_REFS_SET_ROLLBACK_PROTECTION_INFO = (((0x00000009) << 16) | ((0) << 14) | ((292) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_REFS_QUERY_ROLLBACK_PROTECTION_INFO CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 293, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_REFS_QUERY_ROLLBACK_PROTECTION_INFO = (((0x00000009) << 16) | ((0) << 14) | ((293) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_FILE_SOV_CHECK_RANGE CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 294, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_FILE_SOV_CHECK_RANGE = (((0x00000009) << 16) | ((0) << 14) | ((294) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_CASCADES_REFS_SET_FILE_REMOTE CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 295, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_CASCADES_REFS_SET_FILE_REMOTE = (((0x00000009) << 16) | ((0) << 14) | ((295) << 2) | (0));
 
     [NativeTypeName("#define FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OFF (1)")]
     public const int FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OFF = (1);

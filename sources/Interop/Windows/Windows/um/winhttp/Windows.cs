@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winhttp.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winhttp.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -278,6 +278,20 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.2")]
     public static extern uint WinHttpWebSocketQueryCloseStatus(HINTERNET hWebSocket, ushort* pusStatus, [NativeTypeName("PVOID")] void* pvReason, [NativeTypeName("DWORD")] uint dwReasonLength, [NativeTypeName("DWORD *")] uint* pdwReasonLengthConsumed);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpProtocolCompleteUpgrade"]/*' />
+    [DllImport("winhttp", ExactSpelling = true)]
+    public static extern HINTERNET WinHttpProtocolCompleteUpgrade(HINTERNET hRequest, [NativeTypeName("DWORD_PTR")] nuint dwContext);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpProtocolSend"]/*' />
+    [DllImport("winhttp", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint WinHttpProtocolSend(HINTERNET ProtocolHandle, [NativeTypeName("ULONGLONG")] ulong Flags, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint dwBufferLength);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpProtocolReceive"]/*' />
+    [DllImport("winhttp", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint WinHttpProtocolReceive(HINTERNET ProtocolHandle, [NativeTypeName("ULONGLONG")] ulong Flags, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint dwBufferLength, [NativeTypeName("DWORD *")] uint* pdwBytesRead);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpRegisterProxyChangeNotification"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
@@ -353,9 +367,12 @@ public static unsafe partial class Windows
     [NativeTypeName("#define ICU_ESCAPE 0x80000000")]
     public const uint ICU_ESCAPE = 0x80000000;
 
-    [NativeTypeName("#define ICU_ESCAPE_AUTHORITY 0x00002000")]
-    public const int ICU_ESCAPE_AUTHORITY = 0x00002000;
+    [NativeTypeName("#define ICU_INCLUDE_DEFAULT_PORT 0x00008000")]
+    public const int ICU_INCLUDE_DEFAULT_PORT = 0x00008000;
 
     [NativeTypeName("#define ICU_REJECT_USERPWD 0x00004000")]
     public const int ICU_REJECT_USERPWD = 0x00004000;
+
+    [NativeTypeName("#define ICU_ESCAPE_AUTHORITY 0x00002000")]
+    public const int ICU_ESCAPE_AUTHORITY = 0x00002000;
 }

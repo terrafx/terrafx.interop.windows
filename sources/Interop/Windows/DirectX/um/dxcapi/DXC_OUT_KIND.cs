@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the University of Illinois Open Source License.
 
 namespace TerraFX.Interop.DirectX;
@@ -40,6 +40,21 @@ public enum DXC_OUT_KIND
 
     /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_EXTRA_OUTPUTS"]/*' />
     DXC_OUT_EXTRA_OUTPUTS = 10,
+
+    /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_REMARKS"]/*' />
+    DXC_OUT_REMARKS = 11,
+
+    /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_TIME_REPORT"]/*' />
+    DXC_OUT_TIME_REPORT = 12,
+
+    /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_TIME_TRACE"]/*' />
+    DXC_OUT_TIME_TRACE = 13,
+
+    /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_LAST"]/*' />
+    DXC_OUT_LAST = DXC_OUT_TIME_TRACE,
+
+    /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_NUM_ENUMS"]/*' />
+    DXC_OUT_NUM_ENUMS,
 
     /// <include file='DXC_OUT_KIND.xml' path='doc/member[@name="DXC_OUT_KIND.DXC_OUT_FORCE_DWORD"]/*' />
     DXC_OUT_FORCE_DWORD = unchecked((int)(0xFFFFFFFF)),

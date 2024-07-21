@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -21,7 +21,7 @@ public partial struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION
     public LOGICAL_PROCESSOR_RELATIONSHIP Relationship;
 
     /// <include file='SYSTEM_LOGICAL_PROCESSOR_INFORMATION.xml' path='doc/member[@name="SYSTEM_LOGICAL_PROCESSOR_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L13487_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L13980_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ProcessorCore"]/*' />
@@ -74,12 +74,12 @@ public partial struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ProcessorCore"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L13488_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L13981_C9")]
         public _ProcessorCore_e__Struct ProcessorCore;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NumaNode"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L13491_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L13984_C9")]
         public _NumaNode_e__Struct NumaNode;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Cache"]/*' />

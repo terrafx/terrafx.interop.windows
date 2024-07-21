@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_SYMBOL_EX
 {
     /// <include file='IMAGE_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_SYMBOL_EX.N"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L18791_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L19707_C5")]
     public _N_e__Union N;
 
     /// <include file='IMAGE_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_SYMBOL_EX.Value"]/*' />
@@ -45,7 +45,7 @@ public partial struct IMAGE_SYMBOL_EX
 
         /// <include file='_N_e__Union.xml' path='doc/member[@name="_N_e__Union.Name"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L18793_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L19709_C9")]
         public _Name_e__Struct Name;
 
         /// <include file='_N_e__Union.xml' path='doc/member[@name="_N_e__Union.LongName"]/*' />

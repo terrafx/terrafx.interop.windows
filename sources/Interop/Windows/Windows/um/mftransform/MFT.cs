@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mftransform.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/mftransform.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -80,6 +80,56 @@ public static partial class MFT
                 0x7C,
                 0x0A,
                 0xF7
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFT_AUDIO_DECODER_AUDIO_ENDPOINT_FORMFACTOR
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x10, 0x43, 0x57, 0x8D,
+                0x9A, 0x90,
+                0x3A, 0x43,
+                0xAC,
+                0xE7,
+                0xEE,
+                0xE7,
+                0x47,
+                0x19,
+                0xF9,
+                0x01
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFT_AUDIO_DECODER_AUDIO_ENDPOINT_IS_DIGITAL_STEREO_ONLY
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x0D, 0xA9, 0xE5, 0x26,
+                0xD1, 0x4A,
+                0x8C, 0x4F,
+                0xB8,
+                0xAF,
+                0xAD,
+                0xF1,
+                0x4D,
+                0x21,
+                0x78,
+                0xF1
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -180,6 +230,56 @@ public static partial class MFT
                 0x1D,
                 0x38,
                 0x10
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFT_DECODER_OPERATING_POINT
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x34, 0x03, 0x23, 0xA1,
+                0xD4, 0x55,
+                0x97, 0x4D,
+                0x82,
+                0xA7,
+                0x26,
+                0xD3,
+                0xE6,
+                0x45,
+                0x67,
+                0x25
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFT_DECODER_AUTOMATIC_SOFTWARE_FALLBACK
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x53, 0x4F, 0xF3, 0x41,
+                0xF6, 0x1B,
+                0xED, 0x49,
+                0xB9,
+                0x5D,
+                0x02,
+                0xD2,
+                0xA1,
+                0xD7,
+                0x11,
+                0x5A
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

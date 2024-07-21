@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -46,7 +46,7 @@ public partial struct FILE_NOTIFY_EXTENDED_INFORMATION
     public uint FileAttributes;
 
     /// <include file='FILE_NOTIFY_EXTENDED_INFORMATION.xml' path='doc/member[@name="FILE_NOTIFY_EXTENDED_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L14461_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L15012_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='FILE_NOTIFY_EXTENDED_INFORMATION.xml' path='doc/member[@name="FILE_NOTIFY_EXTENDED_INFORMATION.FileId"]/*' />

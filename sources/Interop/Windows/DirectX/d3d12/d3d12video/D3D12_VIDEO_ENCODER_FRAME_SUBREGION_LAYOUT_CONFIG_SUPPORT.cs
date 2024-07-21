@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.611.2
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.614.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Diagnostics.CodeAnalysis;
@@ -16,7 +16,7 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG_S
     public uint DataSize;
 
     /// <include file='D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG_SUPPORT.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_CONFIG_SUPPORT.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12video_L7174_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12video_L7188_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pAV1Support"]/*' />

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -26,8 +26,16 @@ public partial struct SCRUB_DATA_INPUT
     [NativeTypeName("DWORD[4]")]
     public _ObjectId_e__FixedBuffer ObjectId;
 
+    /// <include file='SCRUB_DATA_INPUT.xml' path='doc/member[@name="SCRUB_DATA_INPUT.StartingByteOffset"]/*' />
+    [NativeTypeName("ULONGLONG")]
+    public ulong StartingByteOffset;
+
+    /// <include file='SCRUB_DATA_INPUT.xml' path='doc/member[@name="SCRUB_DATA_INPUT.ByteCount"]/*' />
+    [NativeTypeName("ULONGLONG")]
+    public ulong ByteCount;
+
     /// <include file='SCRUB_DATA_INPUT.xml' path='doc/member[@name="SCRUB_DATA_INPUT.Reserved"]/*' />
-    [NativeTypeName("DWORD[41]")]
+    [NativeTypeName("DWORD[36]")]
     public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='SCRUB_DATA_INPUT.xml' path='doc/member[@name="SCRUB_DATA_INPUT.ResumeContext"]/*' />
@@ -42,7 +50,7 @@ public partial struct SCRUB_DATA_INPUT
     }
 
     /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
-    [InlineArray(41)]
+    [InlineArray(36)]
     public partial struct _Reserved_e__FixedBuffer
     {
         public uint e0;

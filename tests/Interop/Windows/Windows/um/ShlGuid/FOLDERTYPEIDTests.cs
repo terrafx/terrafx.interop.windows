@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ShlGuid.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/ShlGuid.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -262,5 +262,12 @@ public static partial class FOLDERTYPEIDTests
     public static void FOLDERTYPEID_StorageProviderVideosTest()
     {
         Assert.That(FOLDERTYPEID_StorageProviderVideos, Is.EqualTo(new Guid(0x51294DA1, 0xD7B1, 0x485b, 0x9E, 0x9A, 0x17, 0xCF, 0xFE, 0x33, 0xE1, 0x87)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="FOLDERTYPEID_VersionControl" /> property is correct.</summary>
+    [Test]
+    public static void FOLDERTYPEID_VersionControlTest()
+    {
+        Assert.That(FOLDERTYPEID_VersionControl, Is.EqualTo(new Guid(0x69f1e26b, 0xec64, 0x4280, 0xbc, 0x83, 0xf1, 0xeb, 0x88, 0x7e, 0xc3, 0x5a)));
     }
 }

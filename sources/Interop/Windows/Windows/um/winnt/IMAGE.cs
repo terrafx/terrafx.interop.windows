@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -1458,6 +1458,12 @@ public static partial class IMAGE
     [NativeTypeName("#define IMAGE_DYNAMIC_RELOCATION_FUNCTION_OVERRIDE 0x00000007")]
     public const int IMAGE_DYNAMIC_RELOCATION_FUNCTION_OVERRIDE = 0x00000007;
 
+    [NativeTypeName("#define IMAGE_DYNAMIC_RELOCATION_ARM64_KERNEL_IMPORT_CALL_TRANSFER 0x00000008")]
+    public const int IMAGE_DYNAMIC_RELOCATION_ARM64_KERNEL_IMPORT_CALL_TRANSFER = 0x00000008;
+
+    [NativeTypeName("#define IMAGE_DYNAMIC_RELOCATION_IMPORT_CONTROL_TRANSFER IMAGE_DYNAMIC_RELOCATION_GUARD_IMPORT_CONTROL_TRANSFER")]
+    public const int IMAGE_DYNAMIC_RELOCATION_IMPORT_CONTROL_TRANSFER = 0x00000003;
+
     [NativeTypeName("#define IMAGE_FUNCTION_OVERRIDE_INVALID 0")]
     public const int IMAGE_FUNCTION_OVERRIDE_INVALID = 0;
 
@@ -1470,11 +1476,26 @@ public static partial class IMAGE
     [NativeTypeName("#define IMAGE_FUNCTION_OVERRIDE_ARM64_THUNK 3")]
     public const int IMAGE_FUNCTION_OVERRIDE_ARM64_THUNK = 3;
 
+    [NativeTypeName("#define IMAGE_HOT_PATCH_INFO_FLAG_PATCHORDERCRITICAL 0x00000001")]
+    public const int IMAGE_HOT_PATCH_INFO_FLAG_PATCHORDERCRITICAL = 0x00000001;
+
+    [NativeTypeName("#define IMAGE_HOT_PATCH_INFO_FLAG_HOTSWAP 0x00000002")]
+    public const int IMAGE_HOT_PATCH_INFO_FLAG_HOTSWAP = 0x00000002;
+
     [NativeTypeName("#define IMAGE_HOT_PATCH_BASE_OBLIGATORY 0x00000001")]
     public const int IMAGE_HOT_PATCH_BASE_OBLIGATORY = 0x00000001;
 
     [NativeTypeName("#define IMAGE_HOT_PATCH_BASE_CAN_ROLL_BACK 0x00000002")]
     public const int IMAGE_HOT_PATCH_BASE_CAN_ROLL_BACK = 0x00000002;
+
+    [NativeTypeName("#define IMAGE_HOT_PATCH_BASE_MACHINE_I386 0x00000004")]
+    public const int IMAGE_HOT_PATCH_BASE_MACHINE_I386 = 0x00000004;
+
+    [NativeTypeName("#define IMAGE_HOT_PATCH_BASE_MACHINE_ARM64 0x00000008")]
+    public const int IMAGE_HOT_PATCH_BASE_MACHINE_ARM64 = 0x00000008;
+
+    [NativeTypeName("#define IMAGE_HOT_PATCH_BASE_MACHINE_AMD64 0x00000010")]
+    public const int IMAGE_HOT_PATCH_BASE_MACHINE_AMD64 = 0x00000010;
 
     [NativeTypeName("#define IMAGE_HOT_PATCH_CHUNK_INVERSE 0x80000000")]
     public const uint IMAGE_HOT_PATCH_CHUNK_INVERSE = 0x80000000;
@@ -1694,6 +1715,12 @@ public static partial class IMAGE
 
     [NativeTypeName("#define IMAGE_DLLCHARACTERISTICS_EX_CET_RESERVED_2 0x20")]
     public const int IMAGE_DLLCHARACTERISTICS_EX_CET_RESERVED_2 = 0x20;
+
+    [NativeTypeName("#define IMAGE_DLLCHARACTERISTICS_EX_FORWARD_CFI_COMPAT 0x40")]
+    public const int IMAGE_DLLCHARACTERISTICS_EX_FORWARD_CFI_COMPAT = 0x40;
+
+    [NativeTypeName("#define IMAGE_DLLCHARACTERISTICS_EX_HOTPATCH_COMPATIBLE 0x80")]
+    public const int IMAGE_DLLCHARACTERISTICS_EX_HOTPATCH_COMPATIBLE = 0x80;
 
     [NativeTypeName("#define IMAGE_DEBUG_MISC_EXENAME 1")]
     public const int IMAGE_DEBUG_MISC_EXENAME = 1;

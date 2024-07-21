@@ -71,6 +71,7 @@ IID_IAdvancedVideoCaptureDeviceController9
 IID_IAdvancedVideoCaptureDeviceController10
 IID_IAdvancedVideoCaptureDeviceController11
 IID_IAudioDeviceController
+IID_IAudioDeviceController2
 IID_IAudioDeviceModule
 IID_IAudioDeviceModuleNotificationEventArgs
 IID_IAudioDeviceModulesManager
@@ -144,4 +145,4 @@ TerraFX.Interop.WinRT
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/windows.media.devices
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.media.devices.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt/windows.media.devices.h

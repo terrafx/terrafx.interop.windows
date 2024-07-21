@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12shader.h in microsoft/DirectX-Headers tag v1.611.2
+// Ported from d3d12shader.h in microsoft/DirectX-Headers tag v1.614.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -66,4 +66,16 @@ public static partial class D3D
 
     [NativeTypeName("#define D3D_SHADER_REQUIRES_ATOMIC_INT64_ON_DESCRIPTOR_HEAP_RESOURCE 0x10000000")]
     public const int D3D_SHADER_REQUIRES_ATOMIC_INT64_ON_DESCRIPTOR_HEAP_RESOURCE = 0x10000000;
+
+    [NativeTypeName("#define D3D_SHADER_REQUIRES_ADVANCED_TEXTURE_OPS 0x20000000")]
+    public const int D3D_SHADER_REQUIRES_ADVANCED_TEXTURE_OPS = 0x20000000;
+
+    [NativeTypeName("#define D3D_SHADER_REQUIRES_WRITEABLE_MSAA_TEXTURES 0x40000000")]
+    public const int D3D_SHADER_REQUIRES_WRITEABLE_MSAA_TEXTURES = 0x40000000;
+
+    [NativeTypeName("#define D3D_SHADER_REQUIRES_SAMPLE_CMP_GRADIENT_OR_BIAS 0x80000000")]
+    public const uint D3D_SHADER_REQUIRES_SAMPLE_CMP_GRADIENT_OR_BIAS = 0x80000000;
+
+    [NativeTypeName("#define D3D_SHADER_REQUIRES_EXTENDED_COMMAND_INFO 0x100000000ull")]
+    public const ulong D3D_SHADER_REQUIRES_EXTENDED_COMMAND_INFO = 0x100000000UL;
 }

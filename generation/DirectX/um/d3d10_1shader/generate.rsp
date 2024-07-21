@@ -11,6 +11,6 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/d3d10_1shader
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d3d10_1shader.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/d3d10_1shader.h
 --with-guid
 ID3D10ShaderReflection1=C3457783-A846-47CE-9520-CEA6F66E7447

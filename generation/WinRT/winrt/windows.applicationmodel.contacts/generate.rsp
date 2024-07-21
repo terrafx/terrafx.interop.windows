@@ -187,4 +187,4 @@ IID_IContact=@IID_WinRT_IContact
 --test-output
 ../../../../tests/Interop/Windows/WinRT/winrt/windows.applicationmodel.contacts
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt/windows.applicationmodel.contacts.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt/windows.applicationmodel.contacts.h

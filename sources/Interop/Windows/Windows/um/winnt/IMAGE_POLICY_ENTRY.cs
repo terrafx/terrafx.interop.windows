@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -17,7 +17,7 @@ public partial struct IMAGE_POLICY_ENTRY
     public IMAGE_POLICY_ID PolicyId;
 
     /// <include file='IMAGE_POLICY_ENTRY.xml' path='doc/member[@name="IMAGE_POLICY_ENTRY.u"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L22525_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L23672_C5")]
     public _u_e__Union u;
 
     /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union"]/*' />

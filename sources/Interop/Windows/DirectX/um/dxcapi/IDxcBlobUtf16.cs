@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/dxcapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the University of Illinois Open Source License.
 
 using System;
@@ -13,11 +13,11 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='IDxcBlobUtf16.xml' path='doc/member[@name="IDxcBlobUtf16"]/*' />
 [Guid("A3F84EAB-0FAA-497E-A39C-EE6ED60B2D84")]
-[NativeTypeName("struct IDxcBlobUtf16 : IDxcBlobEncoding")]
+[NativeTypeName("struct IDxcBlobWide : IDxcBlobEncoding")]
 [NativeInheritance("IDxcBlobEncoding")]
 public unsafe partial struct IDxcBlobUtf16 : IDxcBlobUtf16.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDxcBlobUtf16));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDxcBlobWide));
 
     public void** lpVtbl;
 

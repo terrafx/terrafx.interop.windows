@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/memoryapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/memoryapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -256,6 +256,10 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0")]
     public static extern BOOL SetProcessValidCallTargets(HANDLE hProcess, [NativeTypeName("PVOID")] void* VirtualAddress, [NativeTypeName("SIZE_T")] nuint RegionSize, [NativeTypeName("ULONG")] uint NumberOfOffsets, [NativeTypeName("PCFG_CALL_TARGET_INFO")] CFG_CALL_TARGET_INFO* OffsetInformation);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetProcessValidCallTargetsForMappedView"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    public static extern BOOL SetProcessValidCallTargetsForMappedView(HANDLE Process, [NativeTypeName("PVOID")] void* VirtualAddress, [NativeTypeName("SIZE_T")] nuint RegionSize, [NativeTypeName("ULONG")] uint NumberOfOffsets, [NativeTypeName("PCFG_CALL_TARGET_INFO")] CFG_CALL_TARGET_INFO* OffsetInformation, HANDLE Section, [NativeTypeName("ULONG64")] ulong ExpectedFileOffset);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VirtualAllocFromApp"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SetsLastSystemError]
@@ -303,6 +307,10 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.15063.0")]
     public static extern BOOL UnmapViewOfFile2(HANDLE Process, [NativeTypeName("PVOID")] void* BaseAddress, [NativeTypeName("ULONG")] uint UnmapFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VirtualUnlockEx"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    public static extern BOOL VirtualUnlockEx(HANDLE Process, [NativeTypeName("LPVOID")] void* Address, [NativeTypeName("SIZE_T")] nuint Size);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.VirtualAlloc2"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SetsLastSystemError]
@@ -337,6 +345,26 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern HANDLE CreateFileMapping2(HANDLE File, SECURITY_ATTRIBUTES* SecurityAttributes, [NativeTypeName("ULONG")] uint DesiredAccess, [NativeTypeName("ULONG")] uint PageProtection, [NativeTypeName("ULONG")] uint AllocationAttributes, [NativeTypeName("ULONG64")] ulong MaximumSize, [NativeTypeName("PCWSTR")] char* Name, MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ParameterCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AllocateUserPhysicalPages2"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    public static extern BOOL AllocateUserPhysicalPages2(HANDLE ObjectHandle, [NativeTypeName("PULONG_PTR")] nuint* NumberOfPages, [NativeTypeName("PULONG_PTR")] nuint* PageArray, [NativeTypeName("PMEM_EXTENDED_PARAMETER")] MEM_EXTENDED_PARAMETER* ExtendedParameters, [NativeTypeName("ULONG")] uint ExtendedParameterCount);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenDedicatedMemoryPartition"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    public static extern HANDLE OpenDedicatedMemoryPartition(HANDLE Partition, [NativeTypeName("ULONG64")] ulong DedicatedMemoryTypeId, [NativeTypeName("ACCESS_MASK")] uint DesiredAccess, BOOL InheritHandle);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QueryPartitionInformation"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    public static extern BOOL QueryPartitionInformation(HANDLE Partition, WIN32_MEMORY_PARTITION_INFORMATION_CLASS PartitionInformationClass, [NativeTypeName("PVOID")] void* PartitionInformation, [NativeTypeName("ULONG")] uint PartitionInformationLength);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMemoryNumaClosestInitiatorNode"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    public static extern BOOL GetMemoryNumaClosestInitiatorNode([NativeTypeName("ULONG")] uint TargetNodeNumber, [NativeTypeName("ULONG *")] uint* InitiatorNodeNumber);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMemoryNumaPerformanceInformation"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    public static extern BOOL GetMemoryNumaPerformanceInformation([NativeTypeName("ULONG")] uint NodeNumber, [NativeTypeName("UCHAR")] byte DataType, WIN32_MEMORY_NUMA_PERFORMANCE_INFORMATION_OUTPUT** PerfInfo);
+
     [NativeTypeName("#define CreateFileMapping CreateFileMappingW")]
     public static delegate*<HANDLE, SECURITY_ATTRIBUTES*, uint, uint, uint, char*, HANDLE> CreateFileMapping => &CreateFileMappingW;
 
@@ -348,4 +376,19 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define MEHC_PATROL_SCRUBBER_PRESENT 0x1")]
     public const int MEHC_PATROL_SCRUBBER_PRESENT = 0x1;
+
+    [NativeTypeName("#define WIN32_MEMORY_NUMA_PERFORMANCE_ALL_TARGET_NODE 0xffffffff")]
+    public const uint WIN32_MEMORY_NUMA_PERFORMANCE_ALL_TARGET_NODE = 0xffffffff;
+
+    [NativeTypeName("#define WIN32_MEMORY_NUMA_PERFORMANCE_READ_LATENCY 0x1")]
+    public const int WIN32_MEMORY_NUMA_PERFORMANCE_READ_LATENCY = 0x1;
+
+    [NativeTypeName("#define WIN32_MEMORY_NUMA_PERFORMANCE_READ_BANDWIDTH 0x2")]
+    public const int WIN32_MEMORY_NUMA_PERFORMANCE_READ_BANDWIDTH = 0x2;
+
+    [NativeTypeName("#define WIN32_MEMORY_NUMA_PERFORMANCE_WRITE_LATENCY 0x4")]
+    public const int WIN32_MEMORY_NUMA_PERFORMANCE_WRITE_LATENCY = 0x4;
+
+    [NativeTypeName("#define WIN32_MEMORY_NUMA_PERFORMANCE_WRITE_BANDWIDTH 0x8")]
+    public const int WIN32_MEMORY_NUMA_PERFORMANCE_WRITE_BANDWIDTH = 0x8;
 }

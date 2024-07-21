@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/mfapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -374,6 +374,20 @@ public static unsafe partial class WindowsTests
     public static void MFSampleExtension_ChromaOnlyTest()
     {
         Assert.That(MFSampleExtension_ChromaOnly, Is.EqualTo(new Guid(0x1eb9179c, 0xa01f, 0x4845, 0x8c, 0x04, 0x0e, 0x65, 0xa2, 0x6e, 0xb0, 0x4f)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MFSampleExtension_SpatialLayerId" /> property is correct.</summary>
+    [Test]
+    public static void MFSampleExtension_SpatialLayerIdTest()
+    {
+        Assert.That(MFSampleExtension_SpatialLayerId, Is.EqualTo(new Guid(0xb7aabc7b, 0x2396, 0x457a, 0x87, 0x9e, 0x62, 0x3b, 0xfa, 0xb6, 0xe0, 0xac)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MFSampleExtension_TemporalLayerId" /> property is correct.</summary>
+    [Test]
+    public static void MFSampleExtension_TemporalLayerIdTest()
+    {
+        Assert.That(MFSampleExtension_TemporalLayerId, Is.EqualTo(new Guid(0xb3c1fcd2, 0xb331, 0x4376, 0xb9, 0x74, 0xad, 0x64, 0x77, 0x69, 0xb2, 0xb0)));
     }
 
     /// <summary>Validates that the value of the <see cref="MFSampleExtension_PhotoThumbnail" /> property is correct.</summary>

@@ -14,7 +14,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/mmdeviceapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/mmdeviceapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/mmdeviceapi.h
 --with-attribute
 ActivateAudioInterfaceAsync=SupportedOSPlatform("windows6.2")
 AudioExtensionParams=SupportedOSPlatform("windows6.2")

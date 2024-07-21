@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/wingdi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -46,6 +46,18 @@ public enum DISPLAYCONFIG_DEVICE_INFO_TYPE
 
     /// <include file='DISPLAYCONFIG_DEVICE_INFO_TYPE.xml' path='doc/member[@name="DISPLAYCONFIG_DEVICE_INFO_TYPE.DISPLAYCONFIG_DEVICE_INFO_SET_MONITOR_SPECIALIZATION"]/*' />
     DISPLAYCONFIG_DEVICE_INFO_SET_MONITOR_SPECIALIZATION = 13,
+
+    /// <include file='DISPLAYCONFIG_DEVICE_INFO_TYPE.xml' path='doc/member[@name="DISPLAYCONFIG_DEVICE_INFO_TYPE.DISPLAYCONFIG_DEVICE_INFO_SET_RESERVED1"]/*' />
+    DISPLAYCONFIG_DEVICE_INFO_SET_RESERVED1 = 14,
+
+    /// <include file='DISPLAYCONFIG_DEVICE_INFO_TYPE.xml' path='doc/member[@name="DISPLAYCONFIG_DEVICE_INFO_TYPE.DISPLAYCONFIG_DEVICE_INFO_GET_ADVANCED_COLOR_INFO_2"]/*' />
+    DISPLAYCONFIG_DEVICE_INFO_GET_ADVANCED_COLOR_INFO_2 = 15,
+
+    /// <include file='DISPLAYCONFIG_DEVICE_INFO_TYPE.xml' path='doc/member[@name="DISPLAYCONFIG_DEVICE_INFO_TYPE.DISPLAYCONFIG_DEVICE_INFO_SET_HDR_STATE"]/*' />
+    DISPLAYCONFIG_DEVICE_INFO_SET_HDR_STATE = 16,
+
+    /// <include file='DISPLAYCONFIG_DEVICE_INFO_TYPE.xml' path='doc/member[@name="DISPLAYCONFIG_DEVICE_INFO_TYPE.DISPLAYCONFIG_DEVICE_INFO_SET_WCG_STATE"]/*' />
+    DISPLAYCONFIG_DEVICE_INFO_SET_WCG_STATE = 17,
 
     /// <include file='DISPLAYCONFIG_DEVICE_INFO_TYPE.xml' path='doc/member[@name="DISPLAYCONFIG_DEVICE_INFO_TYPE.DISPLAYCONFIG_DEVICE_INFO_FORCE_UINT32"]/*' />
     DISPLAYCONFIG_DEVICE_INFO_FORCE_UINT32 = unchecked((int)(0xFFFFFFFF)),

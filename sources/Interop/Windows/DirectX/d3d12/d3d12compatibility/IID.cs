@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12compatibility.h in microsoft/DirectX-Headers tag v1.611.2
+// Ported from d3d12compatibility.h in microsoft/DirectX-Headers tag v1.614.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -131,6 +131,31 @@ public static partial class IID
                 0x31,
                 0xCD,
                 0x60
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_VulkanOn12CreatorID
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x01, 0x6E, 0x80, 0xBC,
+                0x52, 0x30,
+                0x6C, 0x40,
+                0xA3,
+                0xE8,
+                0x9F,
+                0xC0,
+                0x7F,
+                0x04,
+                0x8F,
+                0x98
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

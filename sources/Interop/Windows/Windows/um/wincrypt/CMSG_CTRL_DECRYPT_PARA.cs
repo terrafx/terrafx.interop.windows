@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -17,7 +17,7 @@ public partial struct CMSG_CTRL_DECRYPT_PARA
     public uint cbSize;
 
     /// <include file='CMSG_CTRL_DECRYPT_PARA.xml' path='doc/member[@name="CMSG_CTRL_DECRYPT_PARA.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_wincrypt_L8020_C5")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L8048_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='CMSG_CTRL_DECRYPT_PARA.xml' path='doc/member[@name="CMSG_CTRL_DECRYPT_PARA.dwKeySpec"]/*' />

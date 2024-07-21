@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wincodec.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/wincodec.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -178,6 +178,20 @@ public static partial class CLSIDTests
     public static void CLSID_WICRAWDecoderTest()
     {
         Assert.That(CLSID_WICRAWDecoder, Is.EqualTo(new Guid(0x41945702, 0x8302, 0x44A6, 0x94, 0x45, 0xAC, 0x98, 0xE8, 0xAF, 0xA0, 0x86)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_WICJpegXLDecoder" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_WICJpegXLDecoderTest()
+    {
+        Assert.That(CLSID_WICJpegXLDecoder, Is.EqualTo(new Guid(0xfc6ceece, 0xaef5, 0x4a23, 0x96, 0xec, 0x59, 0x84, 0xff, 0xb4, 0x86, 0xd9)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_WICJpegXLEncoder" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_WICJpegXLEncoderTest()
+    {
+        Assert.That(CLSID_WICJpegXLEncoder, Is.EqualTo(new Guid(0x0e4ecd3b, 0x1ba6, 0x4636, 0x81, 0x98, 0x56, 0xc7, 0x30, 0x40, 0x96, 0x4a)));
     }
 
     /// <summary>Validates that the value of the <see cref="CLSID_WICImagingCategories" /> property is correct.</summary>

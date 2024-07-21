@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -26,7 +26,7 @@ public partial struct SCM_BUS_RUNTIME_FW_ACTIVATION_INFO
     public SCM_BUS_FIRMWARE_ACTIVATION_STATE FirmwareActivationState;
 
     /// <include file='SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.xml' path='doc/member[@name="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.FirmwareActivationCapability"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L7213_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L7487_C5")]
     public _FirmwareActivationCapability_e__Struct FirmwareActivationCapability;
 
     /// <include file='SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.xml' path='doc/member[@name="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.EstimatedFirmwareActivationTimeInUSecs"]/*' />

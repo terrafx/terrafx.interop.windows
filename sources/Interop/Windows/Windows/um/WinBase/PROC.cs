@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using static TerraFX.Interop.Windows.PROC_THREAD_ATTRIBUTE_NUM;
@@ -56,6 +56,9 @@ public static partial class PROC
 
     [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_ENABLE_OPTIONAL_XSTATE_FEATURES ProcThreadAttributeValue (ProcThreadAttributeEnableOptionalXStateFeatures, TRUE, TRUE, FALSE)")]
     public const int PROC_THREAD_ATTRIBUTE_ENABLE_OPTIONAL_XSTATE_FEATURES = (((int)(ProcThreadAttributeEnableOptionalXStateFeatures) & 0x0000FFFF) | ((1 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
+
+    [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_SVE_VECTOR_LENGTH ProcThreadAttributeValue (ProcThreadAttributeSveVectorLength, FALSE, TRUE, FALSE)")]
+    public const int PROC_THREAD_ATTRIBUTE_SVE_VECTOR_LENGTH = (((int)(ProcThreadAttributeSveVectorLength) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
 
     [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_JOB_LIST ProcThreadAttributeValue (ProcThreadAttributeJobList, FALSE, TRUE, FALSE)")]
     public const int PROC_THREAD_ATTRIBUTE_JOB_LIST = (((int)(ProcThreadAttributeJobList) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));

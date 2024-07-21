@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfidl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/mfidl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -530,6 +530,56 @@ public static partial class CLSID
                 0x6E,
                 0x96,
                 0x83
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid CLSID_FaceDetectionMFT
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xE2, 0x65, 0xE5, 0xC1,
+                0xDE, 0xF2,
+                0x37, 0x45,
+                0x96,
+                0x12,
+                0x2F,
+                0x30,
+                0xA1,
+                0x60,
+                0xEB,
+                0x5C
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid CLSID_FrameServerClassFactory
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x2C, 0x09, 0x93, 0x9A,
+                0xDC, 0x9C,
+                0xB8, 0x49,
+                0x83,
+                0x49,
+                0xCB,
+                0xCF,
+                0x31,
+                0x45,
+                0xFE,
+                0x0A
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

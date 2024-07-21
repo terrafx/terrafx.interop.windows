@@ -17,4 +17,4 @@ TerraFX.Interop.DirectX
 --test-output
 ../../../../tests/Interop/Windows/DirectX/um/d2d1svg
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/d2d1svg.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/d2d1svg.h

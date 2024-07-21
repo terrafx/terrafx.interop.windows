@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -16,7 +16,7 @@ public partial struct IMAGE_SECTION_HEADER
     public _Name_e__FixedBuffer Name;
 
     /// <include file='IMAGE_SECTION_HEADER.xml' path='doc/member[@name="IMAGE_SECTION_HEADER.Misc"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L18686_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L19602_C5")]
     public _Misc_e__Union Misc;
 
     /// <include file='IMAGE_SECTION_HEADER.xml' path='doc/member[@name="IMAGE_SECTION_HEADER.VirtualAddress"]/*' />

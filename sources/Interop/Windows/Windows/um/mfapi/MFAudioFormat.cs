@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/mfapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -705,6 +705,56 @@ public static partial class MFAudioFormat
                 0x17,
                 0xC1,
                 0xAC
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFAudioFormat_MPEGH
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x41, 0xC4, 0x13, 0x7C,
+                0xF8, 0xEB,
+                0x31, 0x49,
+                0xB6,
+                0x78,
+                0x80,
+                0x0B,
+                0x19,
+                0x24,
+                0x22,
+                0x36
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFAudioFormat_MPEGH_ES
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xFE, 0x97, 0xEE, 0x19,
+                0xE0, 0x1B,
+                0x55, 0x42,
+                0xA8,
+                0x76,
+                0xE9,
+                0x9F,
+                0x53,
+                0xA4,
+                0x2A,
+                0xE3
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

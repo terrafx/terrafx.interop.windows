@@ -127,6 +127,29 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IDiaDataSourceEx
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x69, 0xEB, 0x21, 0x1A,
+                0x2A, 0x96,
+                0xC4, 0x4B,
+                0x8B,
+                0xD3,
+                0x68,
+                0x17,
+                0x97,
+                0xD3,
+                0x8B,
+                0x23
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IDiaEnumSymbols
     {
         get
@@ -442,6 +465,29 @@ public static partial class IID
                 0xDC,
                 0xD2,
                 0x11
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IDiaSessionEx
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xD5, 0xEE, 0x24, 0xCD,
+                0xEA, 0x5F,
+                0x42, 0x47,
+                0xA3,
+                0x20,
+                0x62,
+                0x54,
+                0xC9,
+                0x20,
+                0xE7,
+                0x8B
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -948,6 +994,52 @@ public static partial class IID
                 0xDE,
                 0xE8,
                 0x1E
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IDiaEnumSourceLink
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xB3, 0x1E, 0xCD, 0x45,
+                0x6C, 0x5C,
+                0xE3, 0x43,
+                0xB2,
+                0x0A,
+                0xA4,
+                0xD8,
+                0x03,
+                0x5D,
+                0xE4,
+                0xE2
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IDiaEnumSourceLink2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x51, 0x81, 0x6D, 0x13,
+                0xE7, 0xAD,
+                0x04, 0x47,
+                0xAF,
+                0x13,
+                0x32,
+                0x40,
+                0x80,
+                0x76,
+                0x2E,
+                0x8F
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

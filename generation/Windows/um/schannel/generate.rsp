@@ -2,10 +2,7 @@
 @../../../remap.rsp
 --exclude
 SslGenerateKeyPair(PSSL_CREDENTIAL_CERTIFICATE, PSTR, PSTR, DWORD):BOOL
-SslGenerateRandomBits(PUCHAR, LONG):void
 SslGetDefaultIssuers(PBYTE, DWORD *):BOOL
-SslGetExtensions(const BYTE *, DWORD, SCH_EXTENSION_DATA *, BYTE, DWORD *, SchGetExtensionsOptions):SECURITY_STATUS
-SslGetMaximumKeySize(DWORD):DWORD
 --file
 um-schannel.h
 --methodClassName
@@ -17,7 +14,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/schannel
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/schannel.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/schannel.h
 --with-attribute
 CRYPTO_SETTINGS=SupportedOSPlatform("windows10.0.17763.0")
 eTlsAlgorithmUsage=SupportedOSPlatform("windows10.0.17763.0")
@@ -43,4 +40,7 @@ SslEmptyCache=schannel
 SslEmptyCacheA=schannel
 SslEmptyCacheW=schannel
 SslFreeCertificate=schannel
+SslGenerateRandomBits=schannel
+SslGetExtensions=schannel
+SslGetMaximumKeySize=schannel
 SslGetServerIdentity=schannel

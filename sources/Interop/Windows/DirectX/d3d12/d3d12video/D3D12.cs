@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.611.2
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.614.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -755,6 +755,181 @@ public static partial class D3D12
                 0x4F,
                 0x9E,
                 0xE8
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_MJPEG_VLD_420
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x06, 0xB5, 0x5C, 0x72,
+                0x29, 0x0C,
+                0xC4, 0x43,
+                0x94,
+                0x40,
+                0x8E,
+                0x93,
+                0x97,
+                0x90,
+                0x3A,
+                0x04
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_MJPEG_VLD_422
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xCD, 0xB9, 0x77, 0x5B,
+                0x35, 0x1A,
+                0x30, 0x4C,
+                0x9F,
+                0xD8,
+                0xEF,
+                0x4B,
+                0x60,
+                0xC0,
+                0x35,
+                0xDD
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_MJPEG_VLD_444
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xF9, 0x61, 0x51, 0xD9,
+                0x44, 0x0D,
+                0xE6, 0x47,
+                0xBC,
+                0xF5,
+                0x1B,
+                0xFB,
+                0xFB,
+                0x26,
+                0x8F,
+                0x97
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_MJPEG_VLD_4444
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xD5, 0x48, 0x17, 0xC9,
+                0x18, 0xFD,
+                0xCA, 0x4A,
+                0x9D,
+                0xB3,
+                0x3A,
+                0x66,
+                0x34,
+                0xAB,
+                0x54,
+                0x7D
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_JPEG_VLD_420
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x83, 0x2C, 0x78, 0xCF,
+                0xF5, 0xBE,
+                0x2C, 0x4A,
+                0x87,
+                0xCB,
+                0x60,
+                0x19,
+                0xE7,
+                0xB1,
+                0x75,
+                0xAC
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_JPEG_VLD_422
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x17, 0xF4, 0x4D, 0xF0,
+                0xE2, 0xEE,
+                0x67, 0x40,
+                0xA7,
+                0x78,
+                0xF3,
+                0x5C,
+                0x15,
+                0xAB,
+                0x97,
+                0x21
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_JPEG_VLD_444
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x17, 0x0E, 0xD0, 0x4C,
+                0xBA, 0x89,
+                0xEF, 0x48,
+                0xB9,
+                0xF9,
+                0xED,
+                0xCB,
+                0x82,
+                0x71,
+                0x3F,
+                0x65
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

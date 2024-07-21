@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -70,4 +70,7 @@ public enum PROC_THREAD_ATTRIBUTE_NUM
 
     /// <include file='PROC_THREAD_ATTRIBUTE_NUM.xml' path='doc/member[@name="PROC_THREAD_ATTRIBUTE_NUM.ProcThreadAttributeTrustedApp"]/*' />
     ProcThreadAttributeTrustedApp = 29,
+
+    /// <include file='PROC_THREAD_ATTRIBUTE_NUM.xml' path='doc/member[@name="PROC_THREAD_ATTRIBUTE_NUM.ProcThreadAttributeSveVectorLength"]/*' />
+    ProcThreadAttributeSveVectorLength = 30,
 }

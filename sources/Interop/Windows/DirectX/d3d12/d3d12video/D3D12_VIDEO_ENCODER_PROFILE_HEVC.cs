@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.611.2
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.614.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -13,4 +13,25 @@ public enum D3D12_VIDEO_ENCODER_PROFILE_HEVC
 
     /// <include file='D3D12_VIDEO_ENCODER_PROFILE_HEVC.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_PROFILE_HEVC.D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN10"]/*' />
     D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN10 = 1,
+
+    /// <include file='D3D12_VIDEO_ENCODER_PROFILE_HEVC.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_PROFILE_HEVC.D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN12"]/*' />
+    D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN12 = 2,
+
+    /// <include file='D3D12_VIDEO_ENCODER_PROFILE_HEVC.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_PROFILE_HEVC.D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN10_422"]/*' />
+    D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN10_422 = 3,
+
+    /// <include file='D3D12_VIDEO_ENCODER_PROFILE_HEVC.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_PROFILE_HEVC.D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN12_422"]/*' />
+    D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN12_422 = 4,
+
+    /// <include file='D3D12_VIDEO_ENCODER_PROFILE_HEVC.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_PROFILE_HEVC.D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN_444"]/*' />
+    D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN_444 = 5,
+
+    /// <include file='D3D12_VIDEO_ENCODER_PROFILE_HEVC.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_PROFILE_HEVC.D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN10_444"]/*' />
+    D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN10_444 = 6,
+
+    /// <include file='D3D12_VIDEO_ENCODER_PROFILE_HEVC.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_PROFILE_HEVC.D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN12_444"]/*' />
+    D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN12_444 = 7,
+
+    /// <include file='D3D12_VIDEO_ENCODER_PROFILE_HEVC.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_PROFILE_HEVC.D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN16_444"]/*' />
+    D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN16_444 = 8,
 }

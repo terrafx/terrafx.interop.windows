@@ -2,7 +2,6 @@
 @../../../remap.rsp
 --exclude
 BROWSEUIAPI_
-DoPrivacyDlg(HWND, PCWSTR, IEnumPrivacyRecords *, BOOL):HRESULT
 DriveType(int):int
 GetFileNameFromBrowse(HWND, PWSTR, UINT, PCWSTR, PCWSTR, PCWSTR, PCWSTR):BOOL
 IID_IActiveDesktopP
@@ -18,7 +17,6 @@ IID_INewShortcutHookA
 IID_INewShortcutHookW
 IID_IShellFolderBand
 IID_IThumbnailCapture
-ImportPrivacySettings(PCWSTR, BOOL *, BOOL *):BOOL
 ShellFolderView_AddObject
 ShellFolderView_GetSelectedObjects
 ShellFolderView_ReArrange
@@ -42,7 +40,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/ShlObj
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/ShlObj.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/ShlObj.h
 --with-librarypath
 DriveType=shell32
 GetFileNameFromBrowse=shell32
@@ -61,4 +59,6 @@ SHOpenPropSheetW=shell32
 --with-librarypath
 PerUserInit=mydocs
 --with-librarypath
+DoPrivacyDlg=shdocvw
+ImportPrivacySettings=shdocvw
 SoftwareUpdateMessageBox=shdocvw

@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/davclnt
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/davclnt.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/davclnt.h
 --with-librarypath
 DavAddConnection=netapi32
 DavDeleteConnection=netapi32

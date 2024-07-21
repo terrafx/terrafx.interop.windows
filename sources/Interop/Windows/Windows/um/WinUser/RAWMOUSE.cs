@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -16,7 +16,7 @@ public partial struct RAWMOUSE
     public ushort usFlags;
 
     /// <include file='RAWMOUSE.xml' path='doc/member[@name="RAWMOUSE.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winuser_L14952_C5")]
+    [NativeTypeName("__AnonymousRecord_winuser_L14999_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='RAWMOUSE.xml' path='doc/member[@name="RAWMOUSE.ulRawButtons"]/*' />
@@ -79,7 +79,7 @@ public partial struct RAWMOUSE
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winuser_L14954_C9")]
+        [NativeTypeName("__AnonymousRecord_winuser_L15001_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

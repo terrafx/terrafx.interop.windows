@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -112,6 +112,18 @@ public enum IMAGEHLP_SYMBOL_TYPE_INFO
 
     /// <include file='IMAGEHLP_SYMBOL_TYPE_INFO.xml' path='doc/member[@name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_OBJECTPOINTERTYPE"]/*' />
     TI_GET_OBJECTPOINTERTYPE,
+
+    /// <include file='IMAGEHLP_SYMBOL_TYPE_INFO.xml' path='doc/member[@name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_DISCRIMINATEDUNION_TAG_TYPEID"]/*' />
+    TI_GET_DISCRIMINATEDUNION_TAG_TYPEID,
+
+    /// <include file='IMAGEHLP_SYMBOL_TYPE_INFO.xml' path='doc/member[@name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_DISCRIMINATEDUNION_TAG_OFFSET"]/*' />
+    TI_GET_DISCRIMINATEDUNION_TAG_OFFSET,
+
+    /// <include file='IMAGEHLP_SYMBOL_TYPE_INFO.xml' path='doc/member[@name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_DISCRIMINATEDUNION_TAG_RANGESCOUNT"]/*' />
+    TI_GET_DISCRIMINATEDUNION_TAG_RANGESCOUNT,
+
+    /// <include file='IMAGEHLP_SYMBOL_TYPE_INFO.xml' path='doc/member[@name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_DISCRIMINATEDUNION_TAG_RANGES"]/*' />
+    TI_GET_DISCRIMINATEDUNION_TAG_RANGES,
 
     /// <include file='IMAGEHLP_SYMBOL_TYPE_INFO.xml' path='doc/member[@name="IMAGEHLP_SYMBOL_TYPE_INFO.IMAGEHLP_SYMBOL_TYPE_INFO_MAX"]/*' />
     IMAGEHLP_SYMBOL_TYPE_INFO_MAX,

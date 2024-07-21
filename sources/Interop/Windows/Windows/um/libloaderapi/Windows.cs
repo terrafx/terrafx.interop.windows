@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/libloaderapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/libloaderapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -90,6 +90,14 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern HGLOBAL LoadResource(HMODULE hModule, HRSRC hResInfo);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadStringA"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    public static extern int LoadStringA(HINSTANCE hInstance, uint uID, [NativeTypeName("LPSTR")] sbyte* lpBuffer, int cchBufferMax);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadStringW"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    public static extern int LoadStringW(HINSTANCE hInstance, uint uID, [NativeTypeName("LPWSTR")] char* lpBuffer, int cchBufferMax);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LockResource"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -206,6 +214,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define DONT_RESOLVE_DLL_REFERENCES 0x00000001")]
     public const int DONT_RESOLVE_DLL_REFERENCES = 0x00000001;
+
+    [NativeTypeName("#define LoadString LoadStringW")]
+    public static delegate*<HINSTANCE, uint, char*, int, int> LoadString => &LoadStringW;
 
     [NativeTypeName("#define EnumResourceLanguagesEx EnumResourceLanguagesExW")]
     public static delegate*<HMODULE, char*, char*, delegate* unmanaged<HMODULE, char*, char*, ushort, nint, BOOL>, nint, uint, ushort, BOOL> EnumResourceLanguagesEx => &EnumResourceLanguagesExW;

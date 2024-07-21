@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.graphics.directx.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from winrt/windows.graphics.directx.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.WinRT;
@@ -370,4 +370,7 @@ public enum DirectXPixelFormat
 
     /// <include file='DirectXPixelFormat.xml' path='doc/member[@name="DirectXPixelFormat.DirectXPixelFormat_SamplerFeedbackMipRegionUsedOpaque"]/*' />
     DirectXPixelFormat_SamplerFeedbackMipRegionUsedOpaque = 190,
+
+    /// <include file='DirectXPixelFormat.xml' path='doc/member[@name="DirectXPixelFormat.DirectXPixelFormat_A4B4G4R4"]/*' />
+    DirectXPixelFormat_A4B4G4R4 = 191,
 }

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -64,9 +64,15 @@ public static partial class COPY
     [NativeTypeName("#define COPY_FILE_ENABLE_SPARSE_COPY 0x20000000")]
     public const int COPY_FILE_ENABLE_SPARSE_COPY = 0x20000000;
 
+    [NativeTypeName("#define COPY_FILE_DISABLE_SPARSE_COPY 0x80000000")]
+    public const uint COPY_FILE_DISABLE_SPARSE_COPY = 0x80000000;
+
     [NativeTypeName("#define COPY_FILE2_V2_DONT_COPY_JUNCTIONS 0x00000001")]
     public const int COPY_FILE2_V2_DONT_COPY_JUNCTIONS = 0x00000001;
 
-    [NativeTypeName("#define COPY_FILE2_V2_VALID_FLAGS (COPY_FILE2_V2_DONT_COPY_JUNCTIONS)")]
-    public const int COPY_FILE2_V2_VALID_FLAGS = (0x00000001);
+    [NativeTypeName("#define COPY_FILE2_V2_DISABLE_BLOCK_CLONING 0x00000002")]
+    public const int COPY_FILE2_V2_DISABLE_BLOCK_CLONING = 0x00000002;
+
+    [NativeTypeName("#define COPY_FILE2_V2_VALID_FLAGS (COPY_FILE2_V2_DONT_COPY_JUNCTIONS)         \\\r\n |  (COPY_FILE2_V2_DISABLE_BLOCK_CLONING)")]
+    public const int COPY_FILE2_V2_VALID_FLAGS = (0x00000001) | (0x00000002);
 }

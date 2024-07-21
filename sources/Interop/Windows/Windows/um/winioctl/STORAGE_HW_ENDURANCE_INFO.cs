@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -19,7 +19,7 @@ public partial struct STORAGE_HW_ENDURANCE_INFO
     public uint GroupId;
 
     /// <include file='STORAGE_HW_ENDURANCE_INFO.xml' path='doc/member[@name="STORAGE_HW_ENDURANCE_INFO.Flags"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L2959_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L3154_C5")]
     public _Flags_e__Struct Flags;
 
     /// <include file='STORAGE_HW_ENDURANCE_INFO.xml' path='doc/member[@name="STORAGE_HW_ENDURANCE_INFO.LifePercentage"]/*' />

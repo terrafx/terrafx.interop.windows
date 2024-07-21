@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ntsecapi.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/ntsecapi.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -24,6 +24,12 @@ public static partial class KERB
 
     [NativeTypeName("#define KERB_ETYPE_AES256_CTS_HMAC_SHA1_96 18")]
     public const int KERB_ETYPE_AES256_CTS_HMAC_SHA1_96 = 18;
+
+    [NativeTypeName("#define KERB_ETYPE_AES128_CTS_HMAC_SHA256 19")]
+    public const int KERB_ETYPE_AES128_CTS_HMAC_SHA256 = 19;
+
+    [NativeTypeName("#define KERB_ETYPE_AES256_CTS_HMAC_SHA384 20")]
+    public const int KERB_ETYPE_AES256_CTS_HMAC_SHA384 = 20;
 
     [NativeTypeName("#define KERB_ETYPE_RC4_MD4 -128")]
     public const int KERB_ETYPE_RC4_MD4 = -128;

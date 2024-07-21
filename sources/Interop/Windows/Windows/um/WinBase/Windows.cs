@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -2233,6 +2233,10 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     public static extern BOOL GetFileInformationByHandleEx(HANDLE hFile, FILE_INFO_BY_HANDLE_CLASS FileInformationClass, [NativeTypeName("LPVOID")] void* lpFileInformation, [NativeTypeName("DWORD")] uint dwBufferSize);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetFileInformationByName"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    public static extern BOOL GetFileInformationByName([NativeTypeName("PCWSTR")] char* FileName, FILE_INFO_BY_NAME_CLASS FileInformationClass, [NativeTypeName("PVOID")] void* FileInfoBuffer, [NativeTypeName("ULONG")] uint FileInfoBufferSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenFileById"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]

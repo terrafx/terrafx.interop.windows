@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct DEVICE_MEDIA_INFO
 {
     /// <include file='DEVICE_MEDIA_INFO.xml' path='doc/member[@name="DEVICE_MEDIA_INFO.DeviceSpecific"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L934_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L940_C5")]
     public _DeviceSpecific_e__Union DeviceSpecific;
 
     /// <include file='_DeviceSpecific_e__Union.xml' path='doc/member[@name="_DeviceSpecific_e__Union"]/*' />
@@ -20,17 +20,17 @@ public partial struct DEVICE_MEDIA_INFO
     {
         /// <include file='_DeviceSpecific_e__Union.xml' path='doc/member[@name="_DeviceSpecific_e__Union.DiskInfo"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L935_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L941_C9")]
         public _DiskInfo_e__Struct DiskInfo;
 
         /// <include file='_DeviceSpecific_e__Union.xml' path='doc/member[@name="_DeviceSpecific_e__Union.RemovableDiskInfo"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L945_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L951_C9")]
         public _RemovableDiskInfo_e__Struct RemovableDiskInfo;
 
         /// <include file='_DeviceSpecific_e__Union.xml' path='doc/member[@name="_DeviceSpecific_e__Union.TapeInfo"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L955_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L961_C9")]
         public _TapeInfo_e__Struct TapeInfo;
 
         /// <include file='_DiskInfo_e__Struct.xml' path='doc/member[@name="_DiskInfo_e__Struct"]/*' />
@@ -111,7 +111,7 @@ public partial struct DEVICE_MEDIA_INFO
             public STORAGE_BUS_TYPE BusType;
 
             /// <include file='_TapeInfo_e__Struct.xml' path='doc/member[@name="_TapeInfo_e__Struct.BusSpecificData"]/*' />
-            [NativeTypeName("__AnonymousRecord_winioctl_L965_C13")]
+            [NativeTypeName("__AnonymousRecord_winioctl_L971_C13")]
             public _BusSpecificData_e__Union BusSpecificData;
 
             /// <include file='_BusSpecificData_e__Union.xml' path='doc/member[@name="_BusSpecificData_e__Union"]/*' />
@@ -120,7 +120,7 @@ public partial struct DEVICE_MEDIA_INFO
             {
                 /// <include file='_BusSpecificData_e__Union.xml' path='doc/member[@name="_BusSpecificData_e__Union.ScsiInformation"]/*' />
                 [FieldOffset(0)]
-                [NativeTypeName("__AnonymousRecord_winioctl_L966_C17")]
+                [NativeTypeName("__AnonymousRecord_winioctl_L972_C17")]
                 public _ScsiInformation_e__Struct ScsiInformation;
 
                 /// <include file='_ScsiInformation_e__Struct.xml' path='doc/member[@name="_ScsiInformation_e__Struct"]/*' />

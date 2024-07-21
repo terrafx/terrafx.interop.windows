@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/wincodec.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/wincodec.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -363,6 +363,31 @@ public static partial class GUID
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_ContainerFormatJpegXL
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x3F, 0x4E, 0xC1, 0xFE,
+                0x7A, 0x42,
+                0x36, 0x47,
+                0xAA,
+                0xE6,
+                0x27,
+                0xED,
+                0x84,
+                0xF6,
+                0x93,
+                0x22
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormatDontCare
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -605,6 +630,56 @@ public static partial class GUID
                 0xB3,
                 0xA8,
                 0x95
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_WICPixelFormat8bppDepth
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x45, 0x9F, 0x9C, 0x4C,
+                0x89, 0x1D,
+                0x31, 0x4E,
+                0x9B,
+                0xC7,
+                0x69,
+                0x34,
+                0x3A,
+                0x0D,
+                0xCA,
+                0x69
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_WICPixelFormat8bppGain
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x2A, 0x02, 0x84, 0xA8,
+                0x13, 0xAF,
+                0x16, 0x4C,
+                0xB7,
+                0x46,
+                0x61,
+                0x9B,
+                0xF6,
+                0x18,
+                0xB8,
+                0x78
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

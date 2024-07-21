@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -14,7 +14,7 @@ public partial struct RAWINPUT
     public RAWINPUTHEADER header;
 
     /// <include file='RAWINPUT.xml' path='doc/member[@name="RAWINPUT.data"]/*' />
-    [NativeTypeName("__AnonymousRecord_winuser_L15110_C5")]
+    [NativeTypeName("__AnonymousRecord_winuser_L15158_C5")]
     public _data_e__Union data;
 
     /// <include file='_data_e__Union.xml' path='doc/member[@name="_data_e__Union"]/*' />

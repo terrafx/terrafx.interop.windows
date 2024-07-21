@@ -11,6 +11,6 @@ TerraFX.Interop.WinRT
 --test-output
 ../../../../tests/Interop/Windows/WinRT/um/Windows.Graphics.Capture.Interop
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/Windows.Graphics.Capture.Interop.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/Windows.Graphics.Capture.Interop.h
 --with-attribute
 IGraphicsCaptureItemInterop=SupportedOSPlatform("windows10.0.19043.0")

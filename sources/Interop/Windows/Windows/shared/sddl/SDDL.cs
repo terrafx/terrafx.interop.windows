@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/sddl.h in the Windows SDK for Windows 10.0.22621.0
+// Ported from shared/sddl.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -402,6 +402,12 @@ public static partial class SDDL
 
     [NativeTypeName("#define SDDL_ENTERPRISE_KEY_ADMINS TEXT(\"EK\")")]
     public const string SDDL_ENTERPRISE_KEY_ADMINS = "EK";
+
+    [NativeTypeName("#define SDDL_USER_MODE_HARDWARE_OPERATORS TEXT(\"HO\")")]
+    public const string SDDL_USER_MODE_HARDWARE_OPERATORS = "HO";
+
+    [NativeTypeName("#define SDDL_OPENSSH_USERS TEXT(\"SH\")")]
+    public const string SDDL_OPENSSH_USERS = "SH";
 
     [NativeTypeName("#define SDDL_ML_LOW TEXT(\"LW\")")]
     public const string SDDL_ML_LOW = "LW";
