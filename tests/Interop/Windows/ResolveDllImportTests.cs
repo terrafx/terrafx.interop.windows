@@ -158,6 +158,40 @@ public static unsafe partial class ResolveDllImportTests
                     break;
                 }
 
+                case "AddPackageDependency2":
+                case "AllocConsoleWithOptions":
+                case "ColorProfileGetDeviceCapabilities":
+                case "FindPackageDependency":
+                case "GetFileInformationByName":
+                case "GetMemoryNumaClosestInitiatorNode":
+                case "GetMemoryNumaPerformanceInformation":
+                case "GetPackageDependencyInformation":
+                case "GetProcessesUsingPackageDependency":
+                case "GetResolvedPackageFullNameForPackageDependency2":
+                case "MFCreateDXGICrossAdapterBuffer":
+                case "MFGetDXGIDeviceManageMode":
+                case "ReleasePseudoConsole":
+                case "SHGetAssocKeys":
+                case "SymGetParentWindow":
+                case "TlsGetValue2":
+                case "TryCreatePackageDependency2":
+                case "WinHttpProtocolCompleteUpgrade":
+                case "WinHttpProtocolReceive":
+                case "WinHttpProtocolSend":
+                {
+                    if (!OperatingSystem.IsWindowsVersionAtLeast(10, 0, 26100, 0))
+                    {
+                        // This isn't good practice, but current CI runs Windows Server and these APIs aren't available
+                        // due to only being in a newer version of Windows.
+                        Assert.Warn($"Warn: {exception.Message}");
+                    }
+                    else
+                    {
+                        goto default;
+                    }
+                    break;
+                }
+
                 case "DrawShadowText":
                 case "GetWindowSubclass":
                 case "HIMAGELIST_QueryInterface":
