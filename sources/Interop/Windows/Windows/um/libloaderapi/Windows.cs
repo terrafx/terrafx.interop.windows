@@ -91,6 +91,14 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern HGLOBAL LoadResource(HMODULE hModule, HRSRC hResInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadStringA"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    public static extern int LoadStringA(HINSTANCE hInstance, uint uID, [NativeTypeName("LPSTR")] sbyte* lpBuffer, int cchBufferMax);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadStringW"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    public static extern int LoadStringW(HINSTANCE hInstance, uint uID, [NativeTypeName("LPWSTR")] char* lpBuffer, int cchBufferMax);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LockResource"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("LPVOID")]
@@ -206,6 +214,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define DONT_RESOLVE_DLL_REFERENCES 0x00000001")]
     public const int DONT_RESOLVE_DLL_REFERENCES = 0x00000001;
+
+    [NativeTypeName("#define LoadString LoadStringW")]
+    public static delegate*<HINSTANCE, uint, char*, int, int> LoadString => &LoadStringW;
 
     [NativeTypeName("#define EnumResourceLanguagesEx EnumResourceLanguagesExW")]
     public static delegate*<HMODULE, char*, char*, delegate* unmanaged<HMODULE, char*, char*, ushort, nint, BOOL>, nint, uint, ushort, BOOL> EnumResourceLanguagesEx => &EnumResourceLanguagesExW;

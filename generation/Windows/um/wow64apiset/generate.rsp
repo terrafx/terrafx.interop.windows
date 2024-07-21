@@ -1,7 +1,5 @@
 @../../../settings.rsp
 @../../../remap.rsp
---exclude
-Wow64SetThreadDefaultGuestMachine(USHORT):USHORT
 --file
 um-wow64apiset.h
 --methodClassName
@@ -24,6 +22,8 @@ IsWow64Process2=SupportedOSPlatform("windows10.0.16299.0")
 Wow64GetThreadContext=SupportedOSPlatform("windows10.0.18362.0")
 Wow64SetThreadContext=SupportedOSPlatform("windows10.0.18362.0")
 Wow64SetThreadDefaultGuestMachine=SupportedOSPlatform("windows10.0.22000.0")
+--with-librarypath
+Wow64SetThreadDefaultGuestMachine=api-ms-win-core-wow64-l1-1-1
 --with-librarypath
 GetSystemWow64Directory2=kernelbase
 GetSystemWow64Directory2A=kernelbase

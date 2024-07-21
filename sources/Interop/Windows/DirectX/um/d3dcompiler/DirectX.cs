@@ -106,4 +106,8 @@ public static unsafe partial class DirectX
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DDecompressShaders"]/*' />
     [DllImport("d3dcompiler_47", ExactSpelling = true)]
     public static extern HRESULT D3DDecompressShaders([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSize, uint uNumShaders, uint uStartIndex, uint* pIndices, uint uFlags, ID3DBlob** ppShaders, uint* pTotalShaders);
+
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DDisassemble10Effect"]/*' />
+    [DllImport("d3dcompiler_47", ExactSpelling = true)]
+    public static extern HRESULT D3DDisassemble10Effect([NativeTypeName("struct ID3D10Effect *")] ID3D10Effect* pEffect, uint Flags, ID3DBlob** ppDisassembly);
 }

@@ -2,10 +2,7 @@
 @../../../remap.rsp
 --exclude
 SslGenerateKeyPair(PSSL_CREDENTIAL_CERTIFICATE, PSTR, PSTR, DWORD):BOOL
-SslGenerateRandomBits(PUCHAR, LONG):void
 SslGetDefaultIssuers(PBYTE, DWORD *):BOOL
-SslGetExtensions(const BYTE *, DWORD, SCH_EXTENSION_DATA *, BYTE, DWORD *, SchGetExtensionsOptions):SECURITY_STATUS
-SslGetMaximumKeySize(DWORD):DWORD
 --file
 um-schannel.h
 --methodClassName
@@ -43,4 +40,7 @@ SslEmptyCache=schannel
 SslEmptyCacheA=schannel
 SslEmptyCacheW=schannel
 SslFreeCertificate=schannel
+SslGenerateRandomBits=schannel
+SslGetExtensions=schannel
+SslGetMaximumKeySize=schannel
 SslGetServerIdentity=schannel

@@ -4,8 +4,6 @@
 DEFINE_MEDIATYPE_GUID
 DEFINE_BINARY_MEDIATYPE_GUID
 FCC
-MFCreateDXGICrossAdapterBuffer
-MFGetDXGIDeviceManageMode
 --file
 um-mfapi.h
 --methodClassName
@@ -99,6 +97,7 @@ MFCreateAsyncResult=mfplat
 MFCreateAttributes=mfplat
 MFCreateAudioMediaType=mfplat
 MFCreateCollection=mfplat
+MFCreateDXGICrossAdapterBuffer=mfplat
 MFCreateDXGIDeviceManager=mfplat
 MFCreateDXGISurfaceBuffer=mfplat
 MFCreateEventQueue=mfplat
@@ -134,6 +133,7 @@ MFFrameRateToAverageTimePerFrame=mfplat
 MFGetAttributesAsBlob=mfplat
 MFGetAttributesAsBlobSize=mfplat
 MFGetContentProtectionSystemCLSID=mfplat
+MFGetDXGIDeviceManageMode=mfplat
 MFGetMFTMerit=mfplat
 MFGetPlaneSize=mfplat
 MFGetPluginControl=mfplat

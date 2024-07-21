@@ -782,6 +782,11 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.14393.0")]
     public static extern HRESULT MFCreateSensorGroup([NativeTypeName("LPCWSTR")] char* SensorGroupSymbolicLink, IMFSensorGroup** ppSensorGroup);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSensorStream"]/*' />
+    [DllImport("mfsensorgroup", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.15063.0")]
+    public static extern HRESULT MFCreateSensorStream([NativeTypeName("DWORD")] uint StreamId, IMFAttributes* pAttributes, IMFCollection* pMediaTypeCollection, IMFSensorStream** ppStream);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateSensorProfile"]/*' />
     [DllImport("mfsensorgroup", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.17134.0")]
@@ -845,6 +850,14 @@ public static unsafe partial class Windows
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateExtendedCameraIntrinsics"]/*' />
+    [DllImport("mfcore", ExactSpelling = true)]
+    public static extern HRESULT MFCreateExtendedCameraIntrinsics(IMFExtendedCameraIntrinsics** ppExtendedCameraIntrinsics);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateExtendedCameraIntrinsicModel"]/*' />
+    [DllImport("mfcore", ExactSpelling = true)]
+    public static extern HRESULT MFCreateExtendedCameraIntrinsicModel([NativeTypeName("const MFCameraIntrinsic_DistortionModelType")] MFCameraIntrinsic_DistortionModelType distortionModelType, IMFExtendedCameraIntrinsicModel** ppExtendedCameraIntrinsicModel);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCreateRelativePanelWatcher"]/*' />
     [DllImport("mfsensorgroup", ExactSpelling = true)]

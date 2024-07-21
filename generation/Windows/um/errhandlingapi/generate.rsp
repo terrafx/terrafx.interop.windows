@@ -1,7 +1,5 @@
 @../../../settings.rsp
 @../../../remap.rsp
---exclude
-TerminateProcessOnMemoryExhaustion
 --file
 um-errhandlingapi.h
 --methodClassName
@@ -32,6 +30,8 @@ SetLastError=kernel32
 SetThreadErrorMode=kernel32
 SetUnhandledExceptionFilter=kernel32
 UnhandledExceptionFilter=kernel32
+--with-librarypath
+TerminateProcessOnMemoryExhaustion=kernelbase
 --with-suppressgctransition
 GetLastError
 SetLastError

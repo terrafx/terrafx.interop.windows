@@ -51,6 +51,14 @@ public static unsafe partial class Windows
     [DllImport("mydocs", ExactSpelling = true)]
     public static extern void PerUserInit();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImportPrivacySettings"]/*' />
+    [DllImport("shdocvw", ExactSpelling = true)]
+    public static extern BOOL ImportPrivacySettings([NativeTypeName("PCWSTR")] char* pszFilename, BOOL* pfParsePrivacyPreferences, BOOL* pfParsePerSiteRules);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DoPrivacyDlg"]/*' />
+    [DllImport("shdocvw", ExactSpelling = true)]
+    public static extern HRESULT DoPrivacyDlg(HWND hwndOwner, [NativeTypeName("PCWSTR")] char* pszUrl, IEnumPrivacyRecords* pPrivacyEnum, BOOL fReportAllSites);
+
     [NativeTypeName("#define PANE_NONE ((DWORD)-1)")]
     public const uint PANE_NONE = unchecked((uint)(-1));
 

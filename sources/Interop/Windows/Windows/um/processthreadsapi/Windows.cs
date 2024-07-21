@@ -178,6 +178,27 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern BOOL CreateProcessAsUserW(HANDLE hToken, [NativeTypeName("LPCWSTR")] char* lpApplicationName, [NativeTypeName("LPWSTR")] char* lpCommandLine, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpProcessAttributes, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, BOOL bInheritHandles, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCWSTR")] char* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOW")] STARTUPINFOW* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCurrentProcessToken"]/*' />
+    [SupportedOSPlatform("windows6.2")]
+    public static HANDLE GetCurrentProcessToken()
+    {
+        return (HANDLE)((nint)(-4));
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCurrentThreadToken"]/*' />
+    [SupportedOSPlatform("windows6.2")]
+    public static HANDLE GetCurrentThreadToken()
+    {
+        return (HANDLE)((nint)(-5));
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCurrentThreadEffectiveToken"]/*' />
+    [SupportedOSPlatform("windows6.2")]
+    public static HANDLE GetCurrentThreadEffectiveToken()
+    {
+        return (HANDLE)((nint)(-6));
+    }
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetThreadToken"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
@@ -489,6 +510,11 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.14393.0")]
     public static extern HRESULT GetThreadDescription(HANDLE hThread, [NativeTypeName("PWSTR *")] char** ppszThreadDescription);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TlsGetValue2"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    [return: NativeTypeName("LPVOID")]
+    public static extern void* TlsGetValue2([NativeTypeName("DWORD")] uint dwTlsIndex);
 
     [NativeTypeName("#define TLS_OUT_OF_INDEXES ((DWORD)0xFFFFFFFF)")]
     public const uint TLS_OUT_OF_INDEXES = ((uint)(0xFFFFFFFF));

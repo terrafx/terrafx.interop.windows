@@ -1,9 +1,5 @@
 @../../../settings.rsp
 @../../../remap.rsp
---exclude
-LoadString
-LoadStringA(HINSTANCE, UINT, LPSTR, int):int
-LoadStringW(HINSTANCE, UINT, LPWSTR, int):int
 --file
 um-libloaderapi.h
 --methodClassName
@@ -60,6 +56,9 @@ LockResource=kernel32
 RemoveDllDirectory=kernel32
 SetDefaultDllDirectories=kernel32
 SizeofResource=kernel32
+--with-librarypath
+LoadStringA=kernelbase
+LoadStringW=kernelbase
 --with-setlasterror
 AddDllDirectory
 DisableThreadLibraryCalls

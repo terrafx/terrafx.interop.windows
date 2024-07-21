@@ -1272,6 +1272,12 @@ public static unsafe partial class Windows
     [DllImport("shlwapi", ExactSpelling = true)]
     public static extern HRESULT AssocCreate([NativeTypeName("CLSID")] Guid clsid, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetAssocKeys"]/*' />
+    [DllImport("windows.storage", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    [SupportedOSPlatform("windows6.2")]
+    public static extern uint SHGetAssocKeys(IQueryAssociations* pqa, HKEY* rgKeys, [NativeTypeName("DWORD")] uint cKeys);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AssocQueryStringA"]/*' />
     [DllImport("shlwapi", ExactSpelling = true)]
     public static extern HRESULT AssocQueryStringA([NativeTypeName("ASSOCF")] uint flags, ASSOCSTR str, [NativeTypeName("LPCSTR")] sbyte* pszAssoc, [NativeTypeName("LPCSTR")] sbyte* pszExtra, [NativeTypeName("LPSTR")] sbyte* pszOut, [NativeTypeName("DWORD *")] uint* pcchOut);

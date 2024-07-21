@@ -17,6 +17,7 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/oobenotification.
 --with-librarypath
 isOOBEComplete=kernel32
 RegisterWaitUntilOOBECompleted=kernel32
+OOBEComplete=kernel32
 UnregisterWaitUntilOOBECompleted=kernel32
 --with-setlasterror
 isOOBEComplete

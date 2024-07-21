@@ -4,7 +4,6 @@
 CMGetPS2ColorRenderingDictionary(HPROFILE, DWORD, LPBYTE, LPDWORD, LPBOOL):BOOL
 CMGetPS2ColorRenderingIntent(HPROFILE, DWORD, LPBYTE, LPDWORD):BOOL
 CMGetPS2ColorSpaceArray(HPROFILE, DWORD, DWORD, LPBYTE, LPDWORD, LPBOOL):BOOL
-ColorProfileGetDeviceCapabilities(WCS_PROFILE_MANAGEMENT_SCOPE, LUID, UINT32, WCS_DEVICE_CAPABILITIES_TYPE, PVOID):HRESULT
 --file
 um-icm.h
 --methodClassName
@@ -31,6 +30,7 @@ ColorProfileGetDisplayList=SupportedOSPlatform("windows10.0.19043.0")
 ColorProfileGetDisplayUserScope=SupportedOSPlatform("windows10.0.19043.0")
 ColorProfileRemoveDisplayAssociation=SupportedOSPlatform("windows10.0.19043.0")
 ColorProfileSetDisplayDefaultAssociation=SupportedOSPlatform("windows10.0.19043.0")
+GetColorDirectory=Obsolete("GetColorDirectory is deprecated and might not work on all platforms. For more info, see MSDN.")
 --with-librarypath
 AssociateColorProfileWithDevice=mscms
 AssociateColorProfileWithDeviceA=mscms
@@ -59,7 +59,9 @@ CMTranslateColors=icm32
 CMTranslateRGB=icm32
 CMTranslateRGBs=icm32
 CMTranslateRGBsExt=icm32
+--with-librarypath
 ColorProfileAddDisplayAssociation=mscms
+ColorProfileGetDeviceCapabilities=mscms
 ColorProfileGetDisplayDefault=mscms
 ColorProfileGetDisplayList=mscms
 ColorProfileGetDisplayUserScope=mscms

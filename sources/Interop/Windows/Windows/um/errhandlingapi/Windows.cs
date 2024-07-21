@@ -85,6 +85,10 @@ public static unsafe partial class Windows
     [SuppressGCTransition]
     public static extern BOOL SetThreadErrorMode([NativeTypeName("DWORD")] uint dwNewMode, [NativeTypeName("LPDWORD")] uint* lpOldMode);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TerminateProcessOnMemoryExhaustion"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    public static extern void TerminateProcessOnMemoryExhaustion([NativeTypeName("SIZE_T")] nuint FailedAllocationSize);
+
     [NativeTypeName("#define FatalAppExit FatalAppExitW")]
     public static delegate*<uint, char*, void> FatalAppExit => &FatalAppExitW;
 }

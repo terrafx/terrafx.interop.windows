@@ -40,6 +40,11 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern uint GetSystemWow64DirectoryW([NativeTypeName("LPWSTR")] char* lpBuffer, uint uSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Wow64SetThreadDefaultGuestMachine"]/*' />
+    [DllImport("api-ms-win-core-wow64-l1-1-1", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22000.0")]
+    public static extern ushort Wow64SetThreadDefaultGuestMachine(ushort Machine);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsWow64Process2"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]

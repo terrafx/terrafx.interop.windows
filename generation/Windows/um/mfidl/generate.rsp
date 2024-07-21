@@ -14,9 +14,6 @@ MAKE_MFPROTECTIONDATA_CONSTRICTAUDIO
 MAKE_MFPROTECTIONDATA_DISABLE
 MAKE_MFPROTECTIONDATA_TRUSTEDAUDIODRIVERS
 MAKE_MFPROTECTIONDATA_TRUSTEDAUDIODRIVERS2
-MFCreateExtendedCameraIntrinsics(IMFExtendedCameraIntrinsics **):HRESULT
-MFCreateExtendedCameraIntrinsicModel(const MFCameraIntrinsic_DistortionModelType, IMFExtendedCameraIntrinsicModel **):HRESULT
-MFCreateSensorStream(DWORD, IMFAttributes *, IMFCollection *, IMFSensorStream **):HRESULT
 __MIDL___MIDL_itf_mfidl_0000_0001_0001
 __MIDL___MIDL_itf_mfidl_0000_0029_0001
 __MIDL___MIDL_itf_mfidl_0000_0029_0002
@@ -176,6 +173,9 @@ MFRequireProtectedEnvironment=mf
 MFShutdownObject=mf
 MFTranscodeGetAudioOutputAvailableTypes=mf
 --with-librarypath
+MFCreateExtendedCameraIntrinsics=mfcore
+MFCreateExtendedCameraIntrinsicModel=mfcore
+--with-librarypath
 CreatePropertyStore=mfplat
 MFCreateContentDecryptorContext=mfplat
 MFCreateContentProtectionDevice=mfplat
@@ -204,3 +204,4 @@ MFCreateSensorActivityMonitor=mfsensorgroup
 MFCreateSensorGroup=mfsensorgroup
 MFCreateSensorProfile=mfsensorgroup
 MFCreateSensorProfileCollection=mfsensorgroup
+MFCreateSensorStream=mfsensorgroup

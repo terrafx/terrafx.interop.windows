@@ -1,7 +1,5 @@
 @../../../settings.rsp
 @../../../remap.rsp
---exclude
-CryptSIPGetSealedDigest(SIP_SUBJECTINFO *, const BYTE *, DWORD, BYTE *, DWORD *):BOOL
 --file
 um-mssip.h
 --methodClassName
@@ -22,6 +20,7 @@ SIP_CAP_SET=SupportedOSPlatform("windows6.2")
 CryptSIPAddProvider=crypt32
 CryptSIPCreateIndirectData=crypt32
 CryptSIPGetCaps=crypt32
+CryptSIPGetSealedDigest=crypt32
 CryptSIPGetSignedDataMsg=crypt32
 CryptSIPLoad=crypt32
 CryptSIPPutSignedDataMsg=crypt32

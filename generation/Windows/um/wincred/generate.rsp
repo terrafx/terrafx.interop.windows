@@ -3,9 +3,7 @@
 --exclude
 CredAppendLogonTypeToFlags
 CredGetLogonTypeFromFlags
-CredProtectEx(ULONG, LPWSTR, DWORD, LPWSTR, DWORD *, CRED_PROTECTION_TYPE *):BOOL
 CredRemoveLogonTypeFromFlags
-CredUnprotectEx(ULONG, LPWSTR, DWORD, LPWSTR, DWORD *):BOOL
 CREDUI_IS_AUTHENTICATION_ERROR
 CREDUI_NO_PROMPT_AUTHENTICATION_ERROR
 CREDUIP_IS_DOWNGRADE_ERROR
@@ -111,6 +109,9 @@ CredUIStoreSSOCredW=credui
 CredUnPackAuthenticationBuffer=credui
 CredUnPackAuthenticationBufferA=credui
 CredUnPackAuthenticationBufferW=credui
+--with-librarypath
+CredProtectEx=sechost
+CredUnprotectEx=sechost
 --with-setlasterror
 CredDelete
 CredDeleteA

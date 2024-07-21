@@ -120,8 +120,6 @@ USN_RECORD_EXTENT=SupportedOSPlatform("windows6.3")
 USN_RECORD_V3=SupportedOSPlatform("windows6.2")
 USN_RECORD_V4=SupportedOSPlatform("windows6.3")
 USN_TRACK_MODIFIED_RANGES=SupportedOSPlatform("windows6.3")
---with-length
-TXFS_READ_BACKUP_INFORMATION_OUT.Buffer=(int)(BufferLength)
 --with-type
 ASYNC_DUPLICATE_EXTENTS_STATUS_V1=uint
 CSV_NAMESPACE_INFO_V1=uint
@@ -138,6 +136,7 @@ STORAGE_ADAPTER_SERIAL_NUMBER_V1_SIZE=uint
 STORAGE_ADAPTER_SERIAL_NUMBER_V1_VERSION=uint
 STORAGE_COUNTERS_VERSION_V1=uint
 --with-length
+TXFS_READ_BACKUP_INFORMATION_OUT.Buffer=(int)(BufferLength)
 _STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE.Lev1Depends=(int)(NumberEntries)
 _STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE.Lev2Depends=(int)(NumberEntries)
 _TXFS_READ_BACKUP_INFORMATION_OUT.Buffer=(int)(BufferLength)

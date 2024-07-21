@@ -1,10 +1,5 @@
 @../../../settings.rsp
 @../../../remap.rsp
---exclude
-GetCurrentProcessToken():HANDLE
-GetCurrentThreadEffectiveToken():HANDLE
-GetCurrentThreadToken():HANDLE
-TlsGetValue2
 --file
 um-processthreadsapi.h
 --methodClassName
@@ -152,6 +147,7 @@ SetThreadToken=advapi32
 TlsAlloc=kernelbase
 TlsFree=kernelbase
 TlsGetValue=kernelbase
+TlsGetValue2=kernelbase
 TlsSetValue=kernelbase
 --with-setlasterror
 CreateProcess

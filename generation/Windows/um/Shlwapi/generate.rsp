@@ -17,7 +17,6 @@ QITABENT
 QITABENTMULTI
 QITABENTMULTI2
 SHAnsiToTChar
-SHGetAssocKeys
 SHGlobalCounterDecrement
 SHGlobalCounterGetValue
 SHGlobalCounterIncrement
@@ -574,6 +573,8 @@ wvnsprintfW=shlwapi
 --with-librarypath
 GetProcessReference=api-ms-win-shcore-thread-l1-1-0
 SetProcessReference=api-ms-win-shcore-thread-l1-1-0
+--with-librarypath
+SHGetAssocKeys=windows.storage
 --with-setlasterror
 PathCanonicalize
 PathCanonicalizeA

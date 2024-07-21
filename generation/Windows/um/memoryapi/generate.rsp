@@ -1,13 +1,5 @@
 @../../../settings.rsp
 @../../../remap.rsp
---exclude
-AllocateUserPhysicalPages2(HANDLE, PULONG_PTR, PULONG_PTR, PMEM_EXTENDED_PARAMETER, ULONG):BOOL
-GetMemoryNumaClosestInitiatorNode
-GetMemoryNumaPerformanceInformation
-OpenDedicatedMemoryPartition(HANDLE, ULONG64, ACCESS_MASK, BOOL):HANDLE
-QueryPartitionInformation(HANDLE, WIN32_MEMORY_PARTITION_INFORMATION_CLASS, PVOID, ULONG):BOOL
-SetProcessValidCallTargetsForMappedView(HANDLE, PVOID, SIZE_T, ULONG, PCFG_CALL_TARGET_INFO, HANDLE, ULONG64):BOOL
-VirtualUnlockEx(HANDLE, LPVOID, SIZE_T):BOOL
 --file
 um-memoryapi.h
 --methodClassName
@@ -104,16 +96,23 @@ MapViewOfFileNuma2=api-ms-win-core-memory-l1-1-5
 --with-librarypath
 QueryVirtualMemoryInformation=api-ms-win-core-memory-l1-1-4
 --with-librarypath
+AllocateUserPhysicalPages2=kernelbase
 CreateFileMapping2=kernelbase
+GetMemoryNumaClosestInitiatorNode=kernelbase
+GetMemoryNumaPerformanceInformation=kernelbase
 MapViewOfFile3=kernelbase
 MapViewOfFile3FromApp=kernelbase
+OpenDedicatedMemoryPartition=kernelbase
 OpenFileMappingFromApp=kernelbase
+QueryPartitionInformation=kernelbase
 SetProcessValidCallTargets=kernelbase
+SetProcessValidCallTargetsForMappedView=kernelbase
 UnmapViewOfFile2=kernelbase
 VirtualAlloc2=kernelbase
 VirtualAlloc2FromApp=kernelbase
 VirtualAllocFromApp=kernelbase
 VirtualProtectFromApp=kernelbase
+VirtualUnlockEx=kernelbase
 --with-setlasterror
 AllocateUserPhysicalPages
 AllocateUserPhysicalPagesNuma

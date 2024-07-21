@@ -152,6 +152,10 @@ public static unsafe partial class WinRT
     [SupportedOSPlatform("windows6.3")]
     public static extern HRESULT RoInspectCapturedStackBackTrace([NativeTypeName("UINT_PTR")] nuint targetErrorInfoAddress, ushort machine, [NativeTypeName("PINSPECT_MEMORY_CALLBACK")] delegate* unmanaged<void*, nuint, uint, byte*, HRESULT> readMemoryCallback, [NativeTypeName("PVOID")] void* context, [NativeTypeName("UINT32 *")] uint* frameCount, [NativeTypeName("UINT_PTR *")] nuint* targetBackTraceAddress);
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RoGetMatchingRestrictedErrorInfo"]/*' />
+    [DllImport("combase", ExactSpelling = true)]
+    public static extern HRESULT RoGetMatchingRestrictedErrorInfo(HRESULT hrIn, IRestrictedErrorInfo** ppRestrictedErrorInfo);
+
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RoReportFailedDelegate"]/*' />
     [DllImport("combase", ExactSpelling = true)]
     public static extern HRESULT RoReportFailedDelegate(IUnknown* punkDelegate, IRestrictedErrorInfo* pRestrictedErrorInfo);
