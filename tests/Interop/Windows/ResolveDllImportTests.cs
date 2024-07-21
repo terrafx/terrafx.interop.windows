@@ -2,6 +2,7 @@
 
 using NUnit.Framework;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -27,13 +28,18 @@ public static unsafe partial class ResolveDllImportTests
 
     private static void ProcessAssembly(Assembly assembly)
     {
+        var unresolved = new List<string>();
+
         foreach (var type in assembly.GetTypes())
         {
-            ProcessType(type);
+            ProcessType(type, unresolved);
         }
+
+        Assert.That(unresolved, Is.Empty);
     }
 
-    private static void ProcessMethod(MethodInfo method)
+#pragma warning disable CA1031 // Do not catch general exception types
+    private static void ProcessMethod(MethodInfo method, List<string> unresolved)
     {
         if (!method.Attributes.HasFlag(MethodAttributes.PinvokeImpl))
         {
@@ -172,22 +178,24 @@ public static unsafe partial class ResolveDllImportTests
 
                 default:
                 {
-                    throw;
+                    unresolved.Add(method.Name);
+                    break;
                 }
             }
         }
     }
+#pragma warning restore CA1031 // Do not catch general exception types
 
-    private static void ProcessType([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.NonPublicMethods | DynamicallyAccessedMemberTypes.PublicNestedTypes | DynamicallyAccessedMemberTypes.NonPublicNestedTypes)] Type type)
+    private static void ProcessType([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.NonPublicMethods | DynamicallyAccessedMemberTypes.PublicNestedTypes | DynamicallyAccessedMemberTypes.NonPublicNestedTypes)] Type type, List<string> unresolved)
     {
         foreach (var method in type.GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static))
         {
-            ProcessMethod(method);
+            ProcessMethod(method, unresolved);
         }
 
         foreach (var nestedType in type.GetNestedTypes(BindingFlags.Public | BindingFlags.NonPublic))
         {
-            ProcessType(nestedType);
+            ProcessType(nestedType, unresolved);
         }
     }
 }
