@@ -28,11 +28,11 @@ public partial struct RECT
 
     // type 'Rectangle' is from System.Drawing.Primitives which is from the base shared framework.
     // as such these operators *should* be safe to include here.
-    public static implicit operator Rectangle(RECT rectangle)
+    public static explicit operator Rectangle(RECT rectangle)
         => Rectangle.FromLTRB(rectangle.left, rectangle.top, rectangle.right, rectangle.bottom);
 
     public static explicit operator RECT(Rectangle rectangle)
-        => new
+        => new RECT()
         {
             // Obtained from inspecting 'Rectangle.FromLTRB(int, int, int, int)'.
             left = rectangle.X,
