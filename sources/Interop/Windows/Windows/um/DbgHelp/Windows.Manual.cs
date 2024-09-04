@@ -43,6 +43,10 @@ public static unsafe partial class Windows
         return ImageRvaToVa(NtHeaders, Base, Rva, LastRvaSection);
     }
 
+    [DllImport("DbgHelp", ExactSpelling = true)]
+    [SetsLastSystemError]
+    public static extern BOOL MiniDumpWriteDump(HANDLE hProcess, [NativeTypeName("DWORD")] uint ProcessId, HANDLE hFile, MINIDUMP_TYPE DumpType, [NativeTypeName("PMINIDUMP_EXCEPTION_INFORMATION")] void* ExceptionParam, [NativeTypeName("PMINIDUMP_USER_STREAM_INFORMATION")] void* UserStreamParam, [NativeTypeName("PMINIDUMP_CALLBACK_INFORMATION")] void* CallbackParam);
+
     [NativeTypeName("#define NONGAMESPARTITIONS WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_PKG_WER")]
     public const int NONGAMESPARTITIONS = 1;
 
