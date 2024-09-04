@@ -248,6 +248,7 @@ SymUnloadModule=DbgHelp
 UnDecorateSymbolName=DbgHelp
 UnDecorateSymbolNameW=DbgHelp
 UnmapDebugInformation=DbgHelp
+MiniDumpWriteDump=DbgHelp
 --with-setlasterror
 EnumDirTree
 EnumDirTreeW
@@ -430,6 +431,7 @@ SymUnloadModule64
 UnDecorateSymbolName
 UnDecorateSymbolNameW
 UnmapDebugInformation
+MiniDumpWriteDump
 --with-attribute
 SymAddSourceStream=SupportedOSPlatform("windows10.0.19043.0")
 SymAddSourceStreamA=SupportedOSPlatform("windows10.0.19043.0")
