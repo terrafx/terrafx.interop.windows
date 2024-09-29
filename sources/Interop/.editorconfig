@@ -40,3 +40,6 @@ csharp_style_prefer_pattern_matching = true:none
 csharp_style_var_elsewhere = true:none
 csharp_style_var_for_built_in_types = true:none
 csharp_style_var_when_type_is_apparent = true:none
+
+# CS8500: This takes the address of, gets the size of, or declares a pointer to a managed type
+dotnet_diagnostic.CS8500.severity = none
