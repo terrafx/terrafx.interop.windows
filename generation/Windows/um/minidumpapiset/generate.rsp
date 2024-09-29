@@ -1,0 +1,24 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--define-macro
+_IMAGEHLP_SOURCE_
+--exclude
+MiniDumpReadDumpStream
+--remap
+CONTEXT=void*
+--file
+um-minidumpapiset.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/minidumpapiset
+--test-output
+../../../../tests/Interop/Windows/Windows/um/minidumpapiset
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/minidumpapiset.h
+--with-librarypath
+MiniDumpWriteDump=DbgHelp
+--with-setlasterror
+MiniDumpWriteDump
