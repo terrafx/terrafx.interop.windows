@@ -17,6 +17,7 @@ using static TerraFX.Interop.DirectX.D3D12_FEATURE;
 using static TerraFX.Interop.DirectX.D3D12_HEAP_FLAGS;
 using static TerraFX.Interop.DirectX.D3D12_HEAP_TYPE;
 using static TerraFX.Interop.DirectX.D3D12_INPUT_CLASSIFICATION;
+using static TerraFX.Interop.DirectX.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE;
 using static TerraFX.Interop.DirectX.D3D12_PRIMITIVE_TOPOLOGY_TYPE;
 using static TerraFX.Interop.DirectX.D3D12_RESOURCE_STATES;
 using static TerraFX.Interop.DirectX.D3D12_ROOT_SIGNATURE_FLAGS;
@@ -158,7 +159,7 @@ public unsafe class HelloConstBuffer12 : HelloTriangle12
         };
 
         // Describe and create the graphics pipeline state object (PSO).
-        var psoDesc = new D3D12_GRAPHICS_PIPELINE_STATE_DESC {
+        var gpsoDesc = new D3D12_GRAPHICS_PIPELINE_STATE_DESC {
             InputLayout = new D3D12_INPUT_LAYOUT_DESC {
                 pInputElementDescs = inputElementDescs,
                 NumElements = InputElementDescsCount,
@@ -174,11 +175,18 @@ public unsafe class HelloConstBuffer12 : HelloTriangle12
             NumRenderTargets = 1,
             SampleDesc = new DXGI_SAMPLE_DESC(count: 1, quality: 0),
         };
-        psoDesc.DepthStencilState.DepthEnable = FALSE;
-        psoDesc.RTVFormats[0] = DXGI_FORMAT_R8G8B8A8_UNORM;
+        gpsoDesc.DepthStencilState.DepthEnable = FALSE;
+        gpsoDesc.RTVFormats[0] = DXGI_FORMAT_R8G8B8A8_UNORM;
+
+        var pssDesc = new CD3DX12_PIPELINE_STATE_STREAM(gpsoDesc);
+
+        var psoDesc = new D3D12_PIPELINE_STATE_STREAM_DESC {
+            SizeInBytes = (uint)sizeof(CD3DX12_PIPELINE_STATE_STREAM),
+            pPipelineStateSubobjectStream = &pssDesc
+        };
 
         ID3D12PipelineState* pipelineState;
-        ThrowIfFailed(D3DDevice->CreateGraphicsPipelineState(&psoDesc, __uuidof<ID3D12PipelineState>(), (void**)&pipelineState));
+        ThrowIfFailed(D3DDevice->CreatePipelineState(&psoDesc, __uuidof<ID3D12PipelineState>(), (void**)&pipelineState));
 
         return pipelineState;
     }

@@ -347,7 +347,7 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
 
             // Special procedure to initialize local protected resource session types structs
             // Must wait until session type count initialized
-            QueryProtectedResourceSessionTypes(NodeIndex, m_dProtectedResourceSessionTypeCount[NodeIndex].Count);
+            _ = QueryProtectedResourceSessionTypes(NodeIndex, m_dProtectedResourceSessionTypeCount[NodeIndex].Count);
         }
 
         // Initialize features that requires highest version check
