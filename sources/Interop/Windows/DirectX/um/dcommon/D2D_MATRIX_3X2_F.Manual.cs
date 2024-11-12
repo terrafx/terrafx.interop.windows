@@ -171,9 +171,9 @@ public unsafe partial struct D2D_MATRIX_3X2_F : IEquatable<D2D_MATRIX_3X2_F>
     public static bool operator !=(D2D_MATRIX_3X2_F l, D2D_MATRIX_3X2_F r)
         => !(l == r);
 
-    public bool Equals(D2D_MATRIX_3X2_F other) => this == other;
+    public readonly bool Equals(D2D_MATRIX_3X2_F other) => this == other;
 
-    public override bool Equals(object? obj) => (obj is D2D_MATRIX_3X2_F other) && this == other;
+    public override readonly bool Equals(object? obj) => (obj is D2D_MATRIX_3X2_F other) && this == other;
 
     public override int GetHashCode() => HashCode.Combine(m11, m12, m21, m22, dx, dy);
 }

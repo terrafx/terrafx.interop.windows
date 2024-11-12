@@ -79,7 +79,7 @@ public readonly unsafe partial struct HPSXA : IComparable, IComparable<HPSXA>, I
 
     public int CompareTo(object? obj)
     {
-            if (obj is HPSXA other)
+        if (obj is HPSXA other)
         {
             return CompareTo(other);
         }

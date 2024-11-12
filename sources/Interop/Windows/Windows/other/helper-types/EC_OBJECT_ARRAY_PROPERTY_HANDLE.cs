@@ -79,7 +79,7 @@ public readonly unsafe partial struct EC_OBJECT_ARRAY_PROPERTY_HANDLE : ICompara
 
     public int CompareTo(object? obj)
     {
-            if (obj is EC_OBJECT_ARRAY_PROPERTY_HANDLE other)
+        if (obj is EC_OBJECT_ARRAY_PROPERTY_HANDLE other)
         {
             return CompareTo(other);
         }

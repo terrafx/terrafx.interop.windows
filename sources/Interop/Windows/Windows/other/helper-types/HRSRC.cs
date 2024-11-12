@@ -79,7 +79,7 @@ public readonly unsafe partial struct HRSRC : IComparable, IComparable<HRSRC>, I
 
     public int CompareTo(object? obj)
     {
-            if (obj is HRSRC other)
+        if (obj is HRSRC other)
         {
             return CompareTo(other);
         }

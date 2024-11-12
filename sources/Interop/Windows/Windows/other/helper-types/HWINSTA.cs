@@ -79,7 +79,7 @@ public readonly unsafe partial struct HWINSTA : IComparable, IComparable<HWINSTA
 
     public int CompareTo(object? obj)
     {
-            if (obj is HWINSTA other)
+        if (obj is HWINSTA other)
         {
             return CompareTo(other);
         }

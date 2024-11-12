@@ -73,7 +73,7 @@ public readonly unsafe partial struct RO_REGISTRATION_COOKIE : IComparable, ICom
 
     public int CompareTo(object? obj)
     {
-            if (obj is RO_REGISTRATION_COOKIE other)
+        if (obj is RO_REGISTRATION_COOKIE other)
         {
             return CompareTo(other);
         }

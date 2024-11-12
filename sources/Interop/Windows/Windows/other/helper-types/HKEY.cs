@@ -79,7 +79,7 @@ public readonly unsafe partial struct HKEY : IComparable, IComparable<HKEY>, IEq
 
     public int CompareTo(object? obj)
     {
-            if (obj is HKEY other)
+        if (obj is HKEY other)
         {
             return CompareTo(other);
         }

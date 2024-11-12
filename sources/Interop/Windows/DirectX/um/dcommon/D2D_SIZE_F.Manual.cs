@@ -24,9 +24,9 @@ public partial struct D2D_SIZE_F : IEquatable<D2D_SIZE_F>
     public static bool operator !=([NativeTypeName("const D2D1_SIZE_F &")] in D2D_SIZE_F l, [NativeTypeName("const D2D1_SIZE_F &")] in D2D_SIZE_F r)
         => !(l == r);
 
-    public bool Equals(D2D_SIZE_F other) => this == other;
+    public readonly bool Equals(D2D_SIZE_F other) => this == other;
 
-    public override bool Equals(object? obj) => (obj is D2D_SIZE_F other) && this == other;
+    public override readonly bool Equals(object? obj) => (obj is D2D_SIZE_F other) && this == other;
 
-    public override int GetHashCode() => HashCode.Combine(width, height);
+    public override readonly int GetHashCode() => HashCode.Combine(width, height);
 }

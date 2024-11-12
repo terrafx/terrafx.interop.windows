@@ -34,48 +34,48 @@ public partial struct Color
         Argb = argb;
     }
 
-    public byte GetAlpha()
+    public readonly byte GetAlpha()
     {
         return (byte)(Argb >> (int)(AlphaShift));
     }
 
-    public byte GetA()
+    public readonly byte GetA()
     {
         return GetAlpha();
     }
 
-    public byte GetRed()
+    public readonly byte GetRed()
     {
         return (byte)(Argb >> (int)(RedShift));
     }
 
-    public byte GetR()
+    public readonly byte GetR()
     {
         return GetRed();
     }
 
-    public byte GetGreen()
+    public readonly byte GetGreen()
     {
         return (byte)(Argb >> (int)(GreenShift));
     }
 
-    public byte GetG()
+    public readonly byte GetG()
     {
         return GetGreen();
     }
 
-    public byte GetBlue()
+    public readonly byte GetBlue()
     {
         return (byte)(Argb >> (int)(BlueShift));
     }
 
-    public byte GetB()
+    public readonly byte GetB()
     {
         return GetBlue();
     }
 
     [return: NativeTypeName("Gdiplus::ARGB")]
-    public uint GetValue()
+    public readonly uint GetValue()
     {
         return Argb;
     }

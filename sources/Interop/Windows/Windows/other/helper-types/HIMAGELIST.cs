@@ -79,7 +79,7 @@ public readonly unsafe partial struct HIMAGELIST : IComparable, IComparable<HIMA
 
     public int CompareTo(object? obj)
     {
-            if (obj is HIMAGELIST other)
+        if (obj is HIMAGELIST other)
         {
             return CompareTo(other);
         }

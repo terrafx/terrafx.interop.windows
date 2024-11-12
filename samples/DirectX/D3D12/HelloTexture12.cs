@@ -32,12 +32,11 @@ using static TerraFX.Interop.DirectX.D3D_ROOT_SIGNATURE_VERSION;
 using static TerraFX.Interop.DirectX.DirectX;
 using static TerraFX.Interop.DirectX.DXGI_FORMAT;
 using static TerraFX.Interop.Windows.Windows;
-using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12;
 
 [SupportedOSPlatform("windows10.0")]
-public unsafe class HelloTexture12 : HelloTriangle12
+public unsafe class HelloTexture12(string name) : HelloTriangle12(name)
 {
     private const uint TextureWidth = 256;
     private const uint TextureHeight = 256;
@@ -45,10 +44,6 @@ public unsafe class HelloTexture12 : HelloTriangle12
 
     private ID3D12DescriptorHeap* _srvHeap;
     private ID3D12Resource* _texture;
-
-    public HelloTexture12(string name) : base(name)
-    {
-    }
 
     protected override void CreateAssets()
     {
@@ -112,7 +107,7 @@ public unsafe class HelloTexture12 : HelloTriangle12
             fixed (byte* pTextureData = &textureData[0])
             {
                 textureSubresourceData = new D3D12_SUBRESOURCE_DATA {
-                    pData = (void*)pTextureData,
+                    pData = pTextureData,
                     RowPitch = (nint)rowPitch,
                     SlicePitch = (nint)slicePitch,
                 };
@@ -200,8 +195,8 @@ public unsafe class HelloTexture12 : HelloTriangle12
         var compileFlags = 0u;
 
 #if DEBUG
-            // Enable better shader debugging with the graphics debugging tools.
-            compileFlags |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
+        // Enable better shader debugging with the graphics debugging tools.
+        compileFlags |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
 #endif
         fixed (char* fileName = GetAssetFullPath(@"D3D12\Assets\Shaders\HelloTexture.hlsl"))
         {
@@ -279,7 +274,7 @@ public unsafe class HelloTexture12 : HelloTriangle12
             HighestVersion = D3D_ROOT_SIGNATURE_VERSION_1_1
         };
 
-        if (D3DDevice->CheckFeatureSupport(D3D12_FEATURE_ROOT_SIGNATURE, &featureData, (uint)sizeof(D3D12_FEATURE)).FAILED)
+        if (D3DDevice->CheckFeatureSupport(D3D12_FEATURE_ROOT_SIGNATURE, &featureData, sizeof(D3D12_FEATURE)).FAILED)
         {
             featureData.HighestVersion = D3D_ROOT_SIGNATURE_VERSION_1_0;
         }

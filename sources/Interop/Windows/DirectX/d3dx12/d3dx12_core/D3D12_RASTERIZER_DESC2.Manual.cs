@@ -57,7 +57,7 @@ public unsafe partial struct D3D12_RASTERIZER_DESC2
         }
 
         ForcedSampleCount = o->ForcedSampleCount;
-        ConservativeRaster = o->ConservativeRaster;        
+        ConservativeRaster = o->ConservativeRaster;
     }
 
     public D3D12_RASTERIZER_DESC2([NativeTypeName("const D3D12_RASTERIZER_DESC &")] in D3D12_RASTERIZER_DESC o)

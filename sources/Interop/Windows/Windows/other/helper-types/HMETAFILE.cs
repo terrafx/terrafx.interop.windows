@@ -79,7 +79,7 @@ public readonly unsafe partial struct HMETAFILE : IComparable, IComparable<HMETA
 
     public int CompareTo(object? obj)
     {
-            if (obj is HMETAFILE other)
+        if (obj is HMETAFILE other)
         {
             return CompareTo(other);
         }

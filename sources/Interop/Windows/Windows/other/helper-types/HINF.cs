@@ -79,7 +79,7 @@ public readonly unsafe partial struct HINF : IComparable, IComparable<HINF>, IEq
 
     public int CompareTo(object? obj)
     {
-            if (obj is HINF other)
+        if (obj is HINF other)
         {
             return CompareTo(other);
         }

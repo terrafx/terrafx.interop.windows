@@ -79,7 +79,7 @@ public readonly unsafe partial struct HWND : IComparable, IComparable<HWND>, IEq
 
     public int CompareTo(object? obj)
     {
-            if (obj is HWND other)
+        if (obj is HWND other)
         {
             return CompareTo(other);
         }

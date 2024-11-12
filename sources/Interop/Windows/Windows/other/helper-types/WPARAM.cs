@@ -67,7 +67,7 @@ public readonly unsafe partial struct WPARAM : IComparable, IComparable<WPARAM>,
 
     public int CompareTo(object? obj)
     {
-            if (obj is WPARAM other)
+        if (obj is WPARAM other)
         {
             return CompareTo(other);
         }

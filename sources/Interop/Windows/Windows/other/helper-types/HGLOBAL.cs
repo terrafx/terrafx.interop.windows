@@ -79,7 +79,7 @@ public readonly unsafe partial struct HGLOBAL : IComparable, IComparable<HGLOBAL
 
     public int CompareTo(object? obj)
     {
-            if (obj is HGLOBAL other)
+        if (obj is HGLOBAL other)
         {
             return CompareTo(other);
         }

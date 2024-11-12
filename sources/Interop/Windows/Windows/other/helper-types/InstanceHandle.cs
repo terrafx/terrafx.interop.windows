@@ -67,7 +67,7 @@ public readonly unsafe partial struct InstanceHandle : IComparable, IComparable<
 
     public int CompareTo(object? obj)
     {
-            if (obj is InstanceHandle other)
+        if (obj is InstanceHandle other)
         {
             return CompareTo(other);
         }

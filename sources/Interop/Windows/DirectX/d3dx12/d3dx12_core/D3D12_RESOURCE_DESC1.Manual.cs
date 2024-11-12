@@ -35,11 +35,11 @@ public unsafe partial struct D3D12_RESOURCE_DESC1 : IEquatable<D3D12_RESOURCE_DE
     public static bool operator !=([NativeTypeName("const D3D12_RESOURCE_DESC1 &")] in D3D12_RESOURCE_DESC1 l, [NativeTypeName("const D3D12_RESOURCE_DESC1 &")] in D3D12_RESOURCE_DESC1 r)
         => !(l == r);
 
-    public override bool Equals([NotNullWhen(true)] object? obj) => (obj is D3D12_RESOURCE_DESC1 other) && Equals(other);
+    public override readonly bool Equals([NotNullWhen(true)] object? obj) => (obj is D3D12_RESOURCE_DESC1 other) && Equals(other);
 
-    public bool Equals(D3D12_RESOURCE_DESC1 other) => (this == other);
+    public readonly bool Equals(D3D12_RESOURCE_DESC1 other) => (this == other);
 
-    public override int GetHashCode()
+    public override readonly int GetHashCode()
     {
         var hashCode = new HashCode();
 
@@ -73,8 +73,7 @@ public unsafe partial struct D3D12_RESOURCE_DESC1 : IEquatable<D3D12_RESOURCE_DE
         SampleDesc = o.SampleDesc;
         Layout = o.Layout;
         Flags = o.Flags;
-        SamplerFeedbackMipRegion = new D3D12_MIP_REGION
-        {
+        SamplerFeedbackMipRegion = new D3D12_MIP_REGION {
         };
     }
 
@@ -85,13 +84,13 @@ public unsafe partial struct D3D12_RESOURCE_DESC1 : IEquatable<D3D12_RESOURCE_DE
     }
 
     [return: NativeTypeName("UINT16")]
-    public ushort Depth()
+    public readonly ushort Depth()
     {
         return (Dimension == D3D12_RESOURCE_DIMENSION_TEXTURE3D ? DepthOrArraySize : (ushort)(1));
     }
 
     [return: NativeTypeName("UINT16")]
-    public ushort ArraySize()
+    public readonly ushort ArraySize()
     {
         return (Dimension != D3D12_RESOURCE_DIMENSION_TEXTURE3D ? DepthOrArraySize : (ushort)(1));
     }

@@ -370,7 +370,7 @@ public unsafe struct CD3DX12FeatureSupport : IDisposable
         return m_hStatus;
     }
 
-    // Retreives the status of the object. If an error occurred in the initialization process, the function returns the error code.
+    // Retrieves the status of the object. If an error occurred in the initialization process, the function returns the error code.
     public readonly HRESULT GetStatus() => m_hStatus;
 
     // Getter functions for each feature class

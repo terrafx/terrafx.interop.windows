@@ -5,7 +5,6 @@
 
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.AF;
 
 namespace TerraFX.Interop.Windows;
@@ -55,21 +54,21 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6_IS_ADDR_MULTICAST([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR*a)
+    public static byte IN6_IS_ADDR_MULTICAST([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         return (byte)((a->s6_bytes[0] == 0xFF) ? 1 : 0);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6_IS_ADDR_EUI64([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR*a)
+    public static byte IN6_IS_ADDR_EUI64([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         return (byte)((((a->s6_bytes[0] & 0xE0) != 0) && !(IN6_IS_ADDR_MULTICAST(a) != 0)) ? 1 : 0);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6_IS_ADDR_SUBNET_ROUTER_ANYCAST([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR*a)
+    public static byte IN6_IS_ADDR_SUBNET_ROUTER_ANYCAST([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         return (byte)(((IN6_IS_ADDR_EUI64(a) != 0) &&
                       (a->s6_words[4] == 0) &&
@@ -80,7 +79,7 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6_IS_ADDR_SUBNET_RESERVED_ANYCAST([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR*a)
+    public static byte IN6_IS_ADDR_SUBNET_RESERVED_ANYCAST([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         return (byte)(((IN6_IS_ADDR_EUI64(a) != 0) &&
                       (a->s6_words[4] == 0xFFFD) &&
@@ -91,7 +90,7 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6_IS_ADDR_ANYCAST([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR*a)
+    public static byte IN6_IS_ADDR_ANYCAST([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         return (byte)(((IN6_IS_ADDR_SUBNET_RESERVED_ANYCAST(a) != 0) |
                        (IN6_IS_ADDR_SUBNET_ROUTER_ANYCAST(a) != 0)) ? 1 : 0);
@@ -99,7 +98,7 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6_IS_ADDR_LINKLOCAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR*a)
+    public static byte IN6_IS_ADDR_LINKLOCAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         return (byte)(((a->s6_bytes[0] == 0xFE) &&
                       ((a->s6_bytes[1] & 0xC0) == 0x80)) ? 1 : 0);
@@ -107,7 +106,7 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6_IS_ADDR_SITELOCAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR*a)
+    public static byte IN6_IS_ADDR_SITELOCAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         return (byte)(((a->s6_bytes[0] == 0xFE) &&
                       ((a->s6_bytes[1] & 0xC0) == 0xC0)) ? 1 : 0);
@@ -115,7 +114,7 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6_IS_ADDR_GLOBAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR*a)
+    public static byte IN6_IS_ADDR_GLOBAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         uint High = (a->s6_bytes[0] & 0xF0u);
         return (byte)(((High != 0) && (High != 0xF0)) ? 1 : 0);
@@ -123,7 +122,7 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6_IS_ADDR_V4MAPPED([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR*a)
+    public static byte IN6_IS_ADDR_V4MAPPED([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         return (byte)(((a->s6_words[0] == 0) &&
                        (a->s6_words[1] == 0) &&
@@ -135,7 +134,7 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6_IS_ADDR_V4COMPAT([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR*a)
+    public static byte IN6_IS_ADDR_V4COMPAT([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         return (byte)(((a->s6_words[0] == 0) &&
                        (a->s6_words[1] == 0) &&
@@ -150,7 +149,7 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6_IS_ADDR_V4TRANSLATED([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR*a)
+    public static byte IN6_IS_ADDR_V4TRANSLATED([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         return (byte)(((a->s6_words[0] == 0) &&
                        (a->s6_words[1] == 0) &&
@@ -162,42 +161,42 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6_IS_ADDR_MC_NODELOCAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR*a)
+    public static byte IN6_IS_ADDR_MC_NODELOCAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         return (byte)(((IN6_IS_ADDR_MULTICAST(a) != 0) && ((a->s6_bytes[1] & 0xF) == 1)) ? 1 : 0);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6_IS_ADDR_MC_LINKLOCAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR*a)
+    public static byte IN6_IS_ADDR_MC_LINKLOCAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         return (byte)(((IN6_IS_ADDR_MULTICAST(a) != 0) && ((a->s6_bytes[1] & 0xF) == 2)) ? 1 : 0);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6_IS_ADDR_MC_SITELOCAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR*a)
+    public static byte IN6_IS_ADDR_MC_SITELOCAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         return (byte)(((IN6_IS_ADDR_MULTICAST(a) != 0) && ((a->s6_bytes[1] & 0xF) == 5)) ? 1 : 0);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6_IS_ADDR_MC_ORGLOCAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR*a)
+    public static byte IN6_IS_ADDR_MC_ORGLOCAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         return (byte)(((IN6_IS_ADDR_MULTICAST(a) != 0) && ((a->s6_bytes[1] & 0xF) == 8)) ? 1 : 0);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6_IS_ADDR_MC_GLOBAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR*a)
+    public static byte IN6_IS_ADDR_MC_GLOBAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         return (byte)(((IN6_IS_ADDR_MULTICAST(a) != 0) && ((a->s6_bytes[1] & 0xF) == 0xE)) ? 1 : 0);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6ADDR_ISANY([NativeTypeName("CONST SOCKADDR_IN6 *")] SOCKADDR_IN6*a)
+    public static byte IN6ADDR_ISANY([NativeTypeName("CONST SOCKADDR_IN6 *")] SOCKADDR_IN6* a)
     {
         Debug.Assert(a->sin6_family == AF_INET6);
         return IN6_IS_ADDR_UNSPECIFIED(&a->sin6_addr);
@@ -205,7 +204,7 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6ADDR_ISLOOPBACK([NativeTypeName("CONST SOCKADDR_IN6 *")] SOCKADDR_IN6*a)
+    public static byte IN6ADDR_ISLOOPBACK([NativeTypeName("CONST SOCKADDR_IN6 *")] SOCKADDR_IN6* a)
     {
         Debug.Assert(a->sin6_family == AF_INET6);
         return IN6_IS_ADDR_LOOPBACK(&a->sin6_addr);
@@ -213,7 +212,7 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6ADDR_ISEQUAL([NativeTypeName("CONST SOCKADDR_IN6 *")] SOCKADDR_IN6*a, [NativeTypeName("CONST SOCKADDR_IN6 *")] SOCKADDR_IN6*b)
+    public static byte IN6ADDR_ISEQUAL([NativeTypeName("CONST SOCKADDR_IN6 *")] SOCKADDR_IN6* a, [NativeTypeName("CONST SOCKADDR_IN6 *")] SOCKADDR_IN6* b)
     {
         Debug.Assert(a->sin6_family == AF_INET6);
         return (byte)(((a->sin6_scope_id == b->sin6_scope_id) && (IN6_ADDR_EQUAL(&a->sin6_addr, &b->sin6_addr) != 0)) ? 1 : 0);
@@ -221,7 +220,7 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
-    public static byte IN6ADDR_ISUNSPECIFIED([NativeTypeName("CONST SOCKADDR_IN6 *")] SOCKADDR_IN6*a)
+    public static byte IN6ADDR_ISUNSPECIFIED([NativeTypeName("CONST SOCKADDR_IN6 *")] SOCKADDR_IN6* a)
     {
         Debug.Assert(a->sin6_family == AF_INET6);
         return (byte)(((a->sin6_scope_id == 0) && (IN6_IS_ADDR_UNSPECIFIED(&a->sin6_addr) != 0)) ? 1 : 0);

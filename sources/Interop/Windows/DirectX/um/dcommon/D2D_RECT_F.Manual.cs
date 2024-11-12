@@ -46,9 +46,9 @@ public partial struct D2D_RECT_F : IEquatable<D2D_RECT_F>
     public static bool operator !=([NativeTypeName("const D2D1_RECT_F &")] in D2D_RECT_F l, [NativeTypeName("const D2D1_RECT_F &")] in D2D_RECT_F r)
         => !(l == r);
 
-    public bool Equals(D2D_RECT_F other) => this == other;
+    public readonly bool Equals(D2D_RECT_F other) => this == other;
 
-    public override bool Equals(object? obj) => (obj is D2D_RECT_F other) && this == other;
+    public override readonly bool Equals(object? obj) => (obj is D2D_RECT_F other) && this == other;
 
-    public override int GetHashCode() => HashCode.Combine(left, top, right, bottom);
+    public override readonly int GetHashCode() => HashCode.Combine(left, top, right, bottom);
 }

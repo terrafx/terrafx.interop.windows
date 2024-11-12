@@ -269,9 +269,9 @@ public unsafe partial struct D2D_MATRIX_4X4_F : IEquatable<D2D_MATRIX_4X4_F>
         return result;
     }
 
-    public bool Equals(D2D_MATRIX_4X4_F other) => this == other;
+    public readonly bool Equals(D2D_MATRIX_4X4_F other) => this == other;
 
-    public override bool Equals(object? obj) => (obj is D2D_MATRIX_4X4_F other) && this == other;
+    public override readonly bool Equals(object? obj) => (obj is D2D_MATRIX_4X4_F other) && this == other;
 
     public override int GetHashCode()
     {

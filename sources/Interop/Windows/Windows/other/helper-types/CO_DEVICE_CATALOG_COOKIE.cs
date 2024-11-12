@@ -79,7 +79,7 @@ public readonly unsafe partial struct CO_DEVICE_CATALOG_COOKIE : IComparable, IC
 
     public int CompareTo(object? obj)
     {
-            if (obj is CO_DEVICE_CATALOG_COOKIE other)
+        if (obj is CO_DEVICE_CATALOG_COOKIE other)
         {
             return CompareTo(other);
         }

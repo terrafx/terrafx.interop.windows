@@ -73,7 +73,7 @@ public readonly unsafe partial struct PAPPCONSTRAIN_REGISTRATION : IComparable, 
 
     public int CompareTo(object? obj)
     {
-            if (obj is PAPPCONSTRAIN_REGISTRATION other)
+        if (obj is PAPPCONSTRAIN_REGISTRATION other)
         {
             return CompareTo(other);
         }

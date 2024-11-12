@@ -73,7 +73,7 @@ public readonly unsafe partial struct PTP_CLEANUP_GROUP : IComparable, IComparab
 
     public int CompareTo(object? obj)
     {
-            if (obj is PTP_CLEANUP_GROUP other)
+        if (obj is PTP_CLEANUP_GROUP other)
         {
             return CompareTo(other);
         }

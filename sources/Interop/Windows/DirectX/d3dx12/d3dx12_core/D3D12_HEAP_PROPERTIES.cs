@@ -32,7 +32,7 @@ public partial struct D3D12_HEAP_PROPERTIES
         VisibleNodeMask = nodeMask;
     }
 
-    public bool IsCPUAccessible()
+    public readonly bool IsCPUAccessible()
     {
         return Type == D3D12_HEAP_TYPE_UPLOAD || Type == D3D12_HEAP_TYPE_READBACK || Type == D3D12_HEAP_TYPE_GPU_UPLOAD || (Type == D3D12_HEAP_TYPE_CUSTOM && (CPUPageProperty == D3D12_CPU_PAGE_PROPERTY_WRITE_COMBINE || CPUPageProperty == D3D12_CPU_PAGE_PROPERTY_WRITE_BACK));
     }

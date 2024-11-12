@@ -79,7 +79,7 @@ public readonly unsafe partial struct HINSTANCE : IComparable, IComparable<HINST
 
     public int CompareTo(object? obj)
     {
-            if (obj is HINSTANCE other)
+        if (obj is HINSTANCE other)
         {
             return CompareTo(other);
         }

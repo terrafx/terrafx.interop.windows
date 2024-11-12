@@ -144,7 +144,7 @@ public static unsafe partial class DirectX
                     SizeOfSubobject = (uint)(sizeof(CD3DX12_PIPELINE_STATE_STREAM_RASTERIZER1));
                     break;
                 }
-                
+
                 case D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_RASTERIZER2:
                 {
                     pCallbacks->RasterizerState2Cb(&((CD3DX12_PIPELINE_STATE_STREAM_RASTERIZER2*)(pStream))->Anonymous.pssInner);
@@ -172,7 +172,7 @@ public static unsafe partial class DirectX
                     SizeOfSubobject = (uint)(sizeof(CD3DX12_PIPELINE_STATE_STREAM_DEPTH_STENCIL2));
                     break;
                 }
-                
+
                 case D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_INPUT_LAYOUT:
                 {
                     pCallbacks->InputLayoutCb(&((CD3DX12_PIPELINE_STATE_STREAM_INPUT_LAYOUT*)(pStream))->Anonymous.pssInner);

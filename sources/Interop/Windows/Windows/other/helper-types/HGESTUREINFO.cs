@@ -79,7 +79,7 @@ public readonly unsafe partial struct HGESTUREINFO : IComparable, IComparable<HG
 
     public int CompareTo(object? obj)
     {
-            if (obj is HGESTUREINFO other)
+        if (obj is HGESTUREINFO other)
         {
             return CompareTo(other);
         }

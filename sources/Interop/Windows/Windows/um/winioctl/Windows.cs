@@ -50,7 +50,7 @@ public static unsafe partial class Windows
         }
 
         NativeMemory.Copy((Parameters), (DeviceDsmParameterBlock(Input)), (Input->ParameterBlockLength));
-        Cleanup:
+    Cleanup:
         return;
     }
 
@@ -124,7 +124,7 @@ public static unsafe partial class Windows
         }
 
         Valid = 1;
-        Cleanup:
+    Cleanup:
         return Valid;
     }
 
@@ -160,7 +160,7 @@ public static unsafe partial class Windows
 
         Bytes = (((Bytes) + ((Definition->OutputBlockAlignment) - 1)) / (Definition->OutputBlockAlignment) * (Definition->OutputBlockAlignment));
         Bytes += OutputBlockLength;
-        Cleanup:
+    Cleanup:
         return Bytes;
     }
 
@@ -187,7 +187,7 @@ public static unsafe partial class Windows
         Bytes = unchecked((uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES_OUTPUT)));
         Bytes = (((Bytes) + ((Definition->OutputBlockAlignment) - 1)) / (Definition->OutputBlockAlignment) * (Definition->OutputBlockAlignment));
         Bytes = OutputLength - Bytes;
-        Cleanup:
+    Cleanup:
         return Bytes;
     }
 
@@ -255,7 +255,7 @@ public static unsafe partial class Windows
         }
 
         Valid = 1;
-        Cleanup:
+    Cleanup:
         return Valid;
     }
 

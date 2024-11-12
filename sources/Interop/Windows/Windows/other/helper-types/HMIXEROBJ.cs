@@ -79,7 +79,7 @@ public readonly unsafe partial struct HMIXEROBJ : IComparable, IComparable<HMIXE
 
     public int CompareTo(object? obj)
     {
-            if (obj is HMIXEROBJ other)
+        if (obj is HMIXEROBJ other)
         {
             return CompareTo(other);
         }

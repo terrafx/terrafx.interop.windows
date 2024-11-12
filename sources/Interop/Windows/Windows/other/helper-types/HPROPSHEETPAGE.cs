@@ -79,7 +79,7 @@ public readonly unsafe partial struct HPROPSHEETPAGE : IComparable, IComparable<
 
     public int CompareTo(object? obj)
     {
-            if (obj is HPROPSHEETPAGE other)
+        if (obj is HPROPSHEETPAGE other)
         {
             return CompareTo(other);
         }

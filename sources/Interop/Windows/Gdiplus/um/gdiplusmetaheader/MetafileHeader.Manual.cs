@@ -10,12 +10,12 @@ namespace TerraFX.Interop.Gdiplus;
 
 public partial struct MetafileHeader
 {
-    public BOOL IsEmfOrEmfPlus()
+    public readonly BOOL IsEmfOrEmfPlus()
     {
         return Type >= MetafileTypeEmf;
     }
 
-    public BOOL IsEmfPlus()
+    public readonly BOOL IsEmfPlus()
     {
         return Type >= MetafileTypeEmfPlusOnly;
     }

@@ -32,9 +32,9 @@ public partial struct D3D11_BOX : IEquatable<D3D11_BOX>
     public static bool operator !=(D3D11_BOX l, D3D11_BOX r)
         => !(l == r);
 
-    public override bool Equals(object? obj) => (obj is D3D11_BOX other) && Equals(other);
+    public override readonly bool Equals(object? obj) => (obj is D3D11_BOX other) && Equals(other);
 
-    public bool Equals(D3D11_BOX other) => this == other;
+    public readonly bool Equals(D3D11_BOX other) => this == other;
 
-    public override int GetHashCode() => HashCode.Combine(left, top, front, right, bottom, back);
+    public override readonly int GetHashCode() => HashCode.Combine(left, top, front, right, bottom, back);
 }

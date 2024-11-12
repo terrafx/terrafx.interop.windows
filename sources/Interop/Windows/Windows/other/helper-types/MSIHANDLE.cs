@@ -67,7 +67,7 @@ public readonly unsafe partial struct MSIHANDLE : IComparable, IComparable<MSIHA
 
     public int CompareTo(object? obj)
     {
-            if (obj is MSIHANDLE other)
+        if (obj is MSIHANDLE other)
         {
             return CompareTo(other);
         }

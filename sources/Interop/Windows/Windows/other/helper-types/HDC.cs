@@ -79,7 +79,7 @@ public readonly unsafe partial struct HDC : IComparable, IComparable<HDC>, IEqua
 
     public int CompareTo(object? obj)
     {
-            if (obj is HDC other)
+        if (obj is HDC other)
         {
             return CompareTo(other);
         }

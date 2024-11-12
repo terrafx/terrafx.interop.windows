@@ -7,7 +7,7 @@ namespace TerraFX.Interop.Gdiplus;
 
 public partial struct Size
 {
-    public static Size operator+(in Size self, in Size sz)
+    public static Size operator +(in Size self, in Size sz)
     {
         return new Size(
             self.Width + sz.Width,

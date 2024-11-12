@@ -73,7 +73,7 @@ public readonly unsafe partial struct PTP_POOL : IComparable, IComparable<PTP_PO
 
     public int CompareTo(object? obj)
     {
-            if (obj is PTP_POOL other)
+        if (obj is PTP_POOL other)
         {
             return CompareTo(other);
         }

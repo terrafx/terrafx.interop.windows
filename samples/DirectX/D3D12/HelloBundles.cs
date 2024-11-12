@@ -7,21 +7,16 @@ using System.Runtime.Versioning;
 using TerraFX.Interop.DirectX;
 using static TerraFX.Interop.DirectX.D3D_PRIMITIVE_TOPOLOGY;
 using static TerraFX.Interop.DirectX.D3D12_COMMAND_LIST_TYPE;
-using static TerraFX.Samples.DirectX.DXSampleHelper;
 using static TerraFX.Interop.Windows.Windows;
 
 namespace TerraFX.Samples.DirectX.D3D12;
 
 [SupportedOSPlatform("windows10.0")]
-public unsafe class HelloBundles12 : HelloTriangle12
+public unsafe class HelloBundles12(string name) : HelloTriangle12(name)
 {
     // Pipeline objects
     private ID3D12CommandAllocator* _bundleAllocator;
     private ID3D12GraphicsCommandList* _bundle;
-
-    public HelloBundles12(string name) : base(name)
-    {
-    }
 
     protected override void CreateAssets()
     {

@@ -79,7 +79,7 @@ public readonly unsafe partial struct HDWP : IComparable, IComparable<HDWP>, IEq
 
     public int CompareTo(object? obj)
     {
-            if (obj is HDWP other)
+        if (obj is HDWP other)
         {
             return CompareTo(other);
         }

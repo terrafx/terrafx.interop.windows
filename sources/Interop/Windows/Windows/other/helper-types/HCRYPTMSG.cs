@@ -79,7 +79,7 @@ public readonly unsafe partial struct HCRYPTMSG : IComparable, IComparable<HCRYP
 
     public int CompareTo(object? obj)
     {
-            if (obj is HCRYPTMSG other)
+        if (obj is HCRYPTMSG other)
         {
             return CompareTo(other);
         }

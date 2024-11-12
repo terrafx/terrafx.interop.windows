@@ -79,7 +79,7 @@ public readonly unsafe partial struct HTRANSFORM : IComparable, IComparable<HTRA
 
     public int CompareTo(object? obj)
     {
-            if (obj is HTRANSFORM other)
+        if (obj is HTRANSFORM other)
         {
             return CompareTo(other);
         }

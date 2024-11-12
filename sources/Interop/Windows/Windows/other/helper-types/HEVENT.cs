@@ -79,7 +79,7 @@ public readonly unsafe partial struct HEVENT : IComparable, IComparable<HEVENT>,
 
     public int CompareTo(object? obj)
     {
-            if (obj is HEVENT other)
+        if (obj is HEVENT other)
         {
             return CompareTo(other);
         }

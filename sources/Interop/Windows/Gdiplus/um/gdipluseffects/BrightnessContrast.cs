@@ -14,12 +14,12 @@ public unsafe partial struct BrightnessContrast
 {
     public Effect Base;
 
-    public int GetAuxDataSize()
+    public readonly int GetAuxDataSize()
     {
         return Base.GetAuxDataSize();
     }
 
-    public void* GetAuxData()
+    public readonly void* GetAuxData()
     {
         return Base.GetAuxData();
     }
@@ -30,25 +30,25 @@ public unsafe partial struct BrightnessContrast
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus GetParameterSize(uint* size)
+    public readonly GpStatus GetParameterSize(uint* size)
     {
         return Base.GetParameterSize(size);
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus SetParameters([NativeTypeName("const void *")] void* @params, [NativeTypeName("const UINT")] uint size)
+    public readonly GpStatus SetParameters([NativeTypeName("const void *")] void* @params, [NativeTypeName("const UINT")] uint size)
     {
         return Base.SetParameters(@params, size);
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus GetParameters(uint* size, void* @params)
+    public readonly GpStatus GetParameters(uint* size, void* @params)
     {
         return Base.GetParameters(size, @params);
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus SetParameters([NativeTypeName("const BrightnessContrastParams *")] BrightnessContrastParams* parameters)
+    public readonly GpStatus SetParameters([NativeTypeName("const BrightnessContrastParams *")] BrightnessContrastParams* parameters)
     {
         uint size = 8;
 
@@ -56,7 +56,7 @@ public unsafe partial struct BrightnessContrast
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus GetParameters(uint* size, [NativeTypeName("Gdiplus::BrightnessContrastParams *")] BrightnessContrastParams* parameters)
+    public readonly GpStatus GetParameters(uint* size, [NativeTypeName("Gdiplus::BrightnessContrastParams *")] BrightnessContrastParams* parameters)
     {
         return Base.GetParameters(size, unchecked((void*)(parameters)));
     }

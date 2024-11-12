@@ -79,7 +79,7 @@ public readonly unsafe partial struct HRAWINPUT : IComparable, IComparable<HRAWI
 
     public int CompareTo(object? obj)
     {
-            if (obj is HRAWINPUT other)
+        if (obj is HRAWINPUT other)
         {
             return CompareTo(other);
         }

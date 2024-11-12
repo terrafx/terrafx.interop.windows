@@ -25,7 +25,7 @@ public unsafe partial struct GdiplusStartupInput
     /// <include file='GdiplusStartupInput.xml' path='doc/member[@name="GdiplusStartupInput.SuppressExternalCodecs"]/*' />
     public BOOL SuppressExternalCodecs;
 
-    public GdiplusStartupInput([NativeTypeName("Gdiplus::DebugEventProc")] [Optional] delegate* unmanaged<DebugEventLevel, sbyte*, void> debugEventCallback, [Optional] BOOL suppressBackgroundThread, [Optional] BOOL suppressExternalCodecs)
+    public GdiplusStartupInput([NativeTypeName("Gdiplus::DebugEventProc")][Optional] delegate* unmanaged<DebugEventLevel, sbyte*, void> debugEventCallback, [Optional] BOOL suppressBackgroundThread, [Optional] BOOL suppressExternalCodecs)
     {
         GdiplusVersion = 1;
         DebugEventCallback = debugEventCallback;

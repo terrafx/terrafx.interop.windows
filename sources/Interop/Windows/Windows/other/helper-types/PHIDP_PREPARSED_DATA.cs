@@ -73,7 +73,7 @@ public readonly unsafe partial struct PHIDP_PREPARSED_DATA : IComparable, ICompa
 
     public int CompareTo(object? obj)
     {
-            if (obj is PHIDP_PREPARSED_DATA other)
+        if (obj is PHIDP_PREPARSED_DATA other)
         {
             return CompareTo(other);
         }

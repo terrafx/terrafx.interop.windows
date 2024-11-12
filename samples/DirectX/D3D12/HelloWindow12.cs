@@ -9,12 +9,8 @@ using System.Runtime.Versioning;
 namespace TerraFX.Samples.DirectX.D3D12;
 
 [SupportedOSPlatform("windows10.0")]
-public unsafe class HelloWindow12 : DX12Sample
+public unsafe class HelloWindow12(string name) : DX12Sample(name)
 {
-    public HelloWindow12(string name) : base(name)
-    {
-    }
-
     protected override void Draw()
     {
     }

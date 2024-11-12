@@ -79,7 +79,7 @@ public readonly unsafe partial struct HICON : IComparable, IComparable<HICON>, I
 
     public int CompareTo(object? obj)
     {
-            if (obj is HICON other)
+        if (obj is HICON other)
         {
             return CompareTo(other);
         }

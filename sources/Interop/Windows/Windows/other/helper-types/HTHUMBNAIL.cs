@@ -79,7 +79,7 @@ public readonly unsafe partial struct HTHUMBNAIL : IComparable, IComparable<HTHU
 
     public int CompareTo(object? obj)
     {
-            if (obj is HTHUMBNAIL other)
+        if (obj is HTHUMBNAIL other)
         {
             return CompareTo(other);
         }

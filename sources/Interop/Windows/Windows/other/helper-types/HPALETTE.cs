@@ -79,7 +79,7 @@ public readonly unsafe partial struct HPALETTE : IComparable, IComparable<HPALET
 
     public int CompareTo(object? obj)
     {
-            if (obj is HPALETTE other)
+        if (obj is HPALETTE other)
         {
             return CompareTo(other);
         }

@@ -79,7 +79,7 @@ public readonly unsafe partial struct PRJ_DIR_ENTRY_BUFFER_HANDLE : IComparable,
 
     public int CompareTo(object? obj)
     {
-            if (obj is PRJ_DIR_ENTRY_BUFFER_HANDLE other)
+        if (obj is PRJ_DIR_ENTRY_BUFFER_HANDLE other)
         {
             return CompareTo(other);
         }

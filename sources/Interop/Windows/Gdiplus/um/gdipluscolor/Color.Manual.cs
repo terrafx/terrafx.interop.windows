@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Gdiplus;
 
 public partial struct Color
 {
-    public COLORREF ToCOLORREF()
+    public readonly COLORREF ToCOLORREF()
     {
         return (COLORREF)(GetRed() | (GetGreen() << 8) | (GetBlue() << 16));
     }

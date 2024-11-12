@@ -79,7 +79,7 @@ public readonly unsafe partial struct HGDIOBJ : IComparable, IComparable<HGDIOBJ
 
     public int CompareTo(object? obj)
     {
-            if (obj is HGDIOBJ other)
+        if (obj is HGDIOBJ other)
         {
             return CompareTo(other);
         }

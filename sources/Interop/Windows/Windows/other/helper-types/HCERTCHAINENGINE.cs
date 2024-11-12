@@ -79,7 +79,7 @@ public readonly unsafe partial struct HCERTCHAINENGINE : IComparable, IComparabl
 
     public int CompareTo(object? obj)
     {
-            if (obj is HCERTCHAINENGINE other)
+        if (obj is HCERTCHAINENGINE other)
         {
             return CompareTo(other);
         }

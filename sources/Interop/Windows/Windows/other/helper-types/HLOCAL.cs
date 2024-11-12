@@ -79,7 +79,7 @@ public readonly unsafe partial struct HLOCAL : IComparable, IComparable<HLOCAL>,
 
     public int CompareTo(object? obj)
     {
-            if (obj is HLOCAL other)
+        if (obj is HLOCAL other)
         {
             return CompareTo(other);
         }

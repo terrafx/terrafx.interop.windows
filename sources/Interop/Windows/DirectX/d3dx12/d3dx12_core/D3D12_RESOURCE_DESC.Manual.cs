@@ -32,11 +32,11 @@ public unsafe partial struct D3D12_RESOURCE_DESC : IEquatable<D3D12_RESOURCE_DES
     public static bool operator !=([NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC l, [NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC r)
         => !(l == r);
 
-    public override bool Equals([NotNullWhen(true)] object? obj) => (obj is D3D12_RESOURCE_DESC other) && Equals(other);
+    public override readonly bool Equals([NotNullWhen(true)] object? obj) => (obj is D3D12_RESOURCE_DESC other) && Equals(other);
 
-    public bool Equals(D3D12_RESOURCE_DESC other) => (this == other);
+    public readonly bool Equals(D3D12_RESOURCE_DESC other) => (this == other);
 
-    public override int GetHashCode()
+    public override readonly int GetHashCode()
     {
         var hashCode = new HashCode();
 
@@ -62,13 +62,13 @@ public unsafe partial struct D3D12_RESOURCE_DESC : IEquatable<D3D12_RESOURCE_DES
     }
 
     [return: NativeTypeName("UINT16")]
-    public ushort Depth()
+    public readonly ushort Depth()
     {
         return (Dimension == D3D12_RESOURCE_DIMENSION_TEXTURE3D ? DepthOrArraySize : (ushort)(1));
     }
 
     [return: NativeTypeName("UINT16")]
-    public ushort ArraySize()
+    public readonly ushort ArraySize()
     {
         return (Dimension != D3D12_RESOURCE_DIMENSION_TEXTURE3D ? DepthOrArraySize : (ushort)(1));
     }

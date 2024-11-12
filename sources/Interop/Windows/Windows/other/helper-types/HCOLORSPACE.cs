@@ -79,7 +79,7 @@ public readonly unsafe partial struct HCOLORSPACE : IComparable, IComparable<HCO
 
     public int CompareTo(object? obj)
     {
-            if (obj is HCOLORSPACE other)
+        if (obj is HCOLORSPACE other)
         {
             return CompareTo(other);
         }

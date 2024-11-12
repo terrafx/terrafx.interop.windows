@@ -79,7 +79,7 @@ public readonly unsafe partial struct HMENU : IComparable, IComparable<HMENU>, I
 
     public int CompareTo(object? obj)
     {
-            if (obj is HMENU other)
+        if (obj is HMENU other)
         {
             return CompareTo(other);
         }

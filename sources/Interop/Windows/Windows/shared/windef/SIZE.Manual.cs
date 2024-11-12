@@ -24,9 +24,9 @@ public partial struct SIZE : IEquatable<SIZE>
     public static bool operator !=([NativeTypeName("const SIZE &")] in SIZE l, [NativeTypeName("const SIZE &")] in SIZE r)
         => !(l == r);
 
-    public override bool Equals(object? obj) => (obj is SIZE other) && Equals(other);
+    public override readonly bool Equals(object? obj) => (obj is SIZE other) && Equals(other);
 
-    public bool Equals(SIZE other) => this == other;
+    public readonly bool Equals(SIZE other) => this == other;
 
-    public override int GetHashCode() => HashCode.Combine(cx, cy);
+    public override readonly int GetHashCode() => HashCode.Combine(cx, cy);
 }

@@ -79,7 +79,7 @@ public readonly unsafe partial struct HIFTIMESTAMPCHANGE : IComparable, ICompara
 
     public int CompareTo(object? obj)
     {
-            if (obj is HIFTIMESTAMPCHANGE other)
+        if (obj is HIFTIMESTAMPCHANGE other)
         {
             return CompareTo(other);
         }

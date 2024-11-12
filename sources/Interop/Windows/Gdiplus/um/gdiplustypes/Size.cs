@@ -33,12 +33,12 @@ public unsafe partial struct Size
         Height = height;
     }
 
-    public BOOL Equals([NativeTypeName("const Size &")] Size* sz)
+    public readonly BOOL Equals([NativeTypeName("const Size &")] Size* sz)
     {
         return ((Width == sz->Width) && (Height == sz->Height)) ? 1 : 0;
     }
 
-    public BOOL Empty()
+    public readonly BOOL Empty()
     {
         return (Width == 0 && Height == 0) ? 1 : 0;
     }

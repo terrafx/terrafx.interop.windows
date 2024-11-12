@@ -5,7 +5,6 @@
 
 // VarI4FromUI8 and VarI4FromI8 show up twice in OleAuto.h.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;

@@ -20,20 +20,19 @@ using static TerraFX.Interop.DirectX.DirectX;
 using static TerraFX.Interop.DirectX.DXGI;
 using static TerraFX.Interop.DirectX.DXGI_SWAP_EFFECT;
 using static TerraFX.Interop.Windows.Windows;
-using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12;
 
 [SupportedOSPlatform("windows10.0")]
-public abstract unsafe class DX12Sample : DXSample
+public abstract unsafe class DX12Sample(string name) : DXSample(name)
 {
-    private readonly ID3D12CommandAllocator*[] _commandAllocators;
+    private readonly ID3D12CommandAllocator*[] _commandAllocators = new ID3D12CommandAllocator*[2];
 
     private ID3D12Device2* _d3dDevice;
     private IDXGIAdapter1* _dxgiAdapter;
     private IDXGIFactory4* _dxgiFactory;
     private IDXGISwapChain3* _swapChain;
-    private ID3D12Resource*[] _renderTargets;
+    private ID3D12Resource*[] _renderTargets = new ID3D12Resource*[2];
     private ID3D12Resource* _depthStencil;
     private ID3D12DescriptorHeap* _rtvHeap;
     private ID3D12DescriptorHeap* _dsvHeap;
@@ -43,20 +42,12 @@ public abstract unsafe class DX12Sample : DXSample
     private uint _rtvDescriptorSize;
 
     private ID3D12Fence* _fence;
-    private ulong[] _fenceValues;
+    private ulong[] _fenceValues = new ulong[2];
     private HANDLE _fenceEvent;
 
-    private ID3D12GraphicsCommandList*[] _graphicsCommandLists;
+    private ID3D12GraphicsCommandList*[] _graphicsCommandLists = new ID3D12GraphicsCommandList*[2];
     private ID3D12RootSignature* _rootSignature;
     private ID3D12PipelineState* _pipelineState;
-
-    protected DX12Sample(string name) : base(name)
-    {
-        _renderTargets = new ID3D12Resource*[2];
-        _commandAllocators = new ID3D12CommandAllocator*[2];
-        _fenceValues = new ulong[2];
-        _graphicsCommandLists = new ID3D12GraphicsCommandList*[2];
-    }
 
     public ID3D12CommandAllocator* CommandAllocator => _commandAllocators[FrameIndex];
 
@@ -321,16 +312,16 @@ public abstract unsafe class DX12Sample : DXSample
         bool TryEnableDebugLayer()
         {
 #if DEBUG
-                // Enable the debug layer (requires the Graphics Tools "optional feature").
-                // NOTE: Enabling the debug layer after device creation will invalidate the active device.
+            // Enable the debug layer (requires the Graphics Tools "optional feature").
+            // NOTE: Enabling the debug layer after device creation will invalidate the active device.
 
-                using ComPtr<ID3D12Debug> debugController = null;
+            using ComPtr<ID3D12Debug> debugController = null;
 
-                if (D3D12GetDebugInterface(__uuidof<ID3D12Debug>(), (void**)&debugController).SUCCEEDED)
-                {
-                    debugController.Get()->EnableDebugLayer();
-                    return true;
-                }
+            if (D3D12GetDebugInterface(__uuidof<ID3D12Debug>(), (void**)&debugController).SUCCEEDED)
+            {
+                debugController.Get()->EnableDebugLayer();
+                return true;
+            }
 #endif
 
             return false;

@@ -79,7 +79,7 @@ public readonly unsafe partial struct HMIDIIN : IComparable, IComparable<HMIDIIN
 
     public int CompareTo(object? obj)
     {
-            if (obj is HMIDIIN other)
+        if (obj is HMIDIIN other)
         {
             return CompareTo(other);
         }

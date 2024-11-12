@@ -79,7 +79,7 @@ public readonly unsafe partial struct HDSKSPC : IComparable, IComparable<HDSKSPC
 
     public int CompareTo(object? obj)
     {
-            if (obj is HDSKSPC other)
+        if (obj is HDSKSPC other)
         {
             return CompareTo(other);
         }

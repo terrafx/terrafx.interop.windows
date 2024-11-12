@@ -79,7 +79,7 @@ public readonly unsafe partial struct HCRYPTKEY : IComparable, IComparable<HCRYP
 
     public int CompareTo(object? obj)
     {
-            if (obj is HCRYPTKEY other)
+        if (obj is HCRYPTKEY other)
         {
             return CompareTo(other);
         }

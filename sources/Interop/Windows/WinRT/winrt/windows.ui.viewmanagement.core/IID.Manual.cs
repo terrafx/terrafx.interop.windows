@@ -7,7 +7,6 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.WinRT;
 
 namespace TerraFX.Interop.Windows;
 

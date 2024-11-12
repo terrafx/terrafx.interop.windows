@@ -79,7 +79,7 @@ public readonly unsafe partial struct HCOMDB : IComparable, IComparable<HCOMDB>,
 
     public int CompareTo(object? obj)
     {
-            if (obj is HCOMDB other)
+        if (obj is HCOMDB other)
         {
             return CompareTo(other);
         }

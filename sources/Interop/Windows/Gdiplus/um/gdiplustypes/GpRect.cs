@@ -43,19 +43,19 @@ public unsafe partial struct GpRect
         Height = size->Height;
     }
 
-    public void GetLocation([NativeTypeName("Gdiplus::Point *")] GpPoint* point)
+    public readonly void GetLocation([NativeTypeName("Gdiplus::Point *")] GpPoint* point)
     {
         point->X = X;
         point->Y = Y;
     }
 
-    public void GetSize([NativeTypeName("Gdiplus::Size *")] Size* size)
+    public readonly void GetSize([NativeTypeName("Gdiplus::Size *")] Size* size)
     {
         size->Width = Width;
         size->Height = Height;
     }
 
-    public void GetBounds([NativeTypeName("Gdiplus::Rect *")] GpRect* rect)
+    public readonly void GetBounds([NativeTypeName("Gdiplus::Rect *")] GpRect* rect)
     {
         rect->X = X;
         rect->Y = Y;
@@ -63,47 +63,47 @@ public unsafe partial struct GpRect
         rect->Height = Height;
     }
 
-    public int GetLeft()
+    public readonly int GetLeft()
     {
         return X;
     }
 
-    public int GetTop()
+    public readonly int GetTop()
     {
         return Y;
     }
 
-    public int GetRight()
+    public readonly int GetRight()
     {
         return X + Width;
     }
 
-    public int GetBottom()
+    public readonly int GetBottom()
     {
         return Y + Height;
     }
 
-    public BOOL IsEmptyArea()
+    public readonly BOOL IsEmptyArea()
     {
         return ((Width <= 0) || (Height <= 0)) ? 1 : 0;
     }
 
-    public BOOL Equals([NativeTypeName("const Rect &")] GpRect* rect)
+    public readonly BOOL Equals([NativeTypeName("const Rect &")] GpRect* rect)
     {
         return (X == rect->X && Y == rect->Y && Width == rect->Width && Height == rect->Height) ? 1 : 0;
     }
 
-    public BOOL Contains(int x, int y)
+    public readonly BOOL Contains(int x, int y)
     {
         return (x >= X && x < X + Width && y >= Y && y < Y + Height) ? 1 : 0;
     }
 
-    public BOOL Contains([NativeTypeName("const Point &")] GpPoint* pt)
+    public readonly BOOL Contains([NativeTypeName("const Point &")] GpPoint* pt)
     {
         return Contains(pt->X, pt->Y);
     }
 
-    public BOOL Contains([NativeTypeName("Gdiplus::Rect &")] GpRect* rect)
+    public readonly BOOL Contains([NativeTypeName("Gdiplus::Rect &")] GpRect* rect)
     {
         return ((X <= rect->X) && (rect->GetRight() <= GetRight()) && (Y <= rect->Y) && (rect->GetBottom() <= GetBottom())) ? 1 : 0;
     }
@@ -135,7 +135,7 @@ public unsafe partial struct GpRect
         return (c->IsEmptyArea() == 0) ? 1 : 0;
     }
 
-    public BOOL IntersectsWith([NativeTypeName("const Rect &")] GpRect* rect)
+    public readonly BOOL IntersectsWith([NativeTypeName("const Rect &")] GpRect* rect)
     {
         return (GetLeft() < rect->GetRight() && GetTop() < rect->GetBottom() && GetRight() > rect->GetLeft() && GetBottom() > rect->GetTop()) ? 1 : 0;
     }

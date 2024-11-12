@@ -6,11 +6,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using TerraFX.Interop.DirectX;
-using TerraFX.Interop.Windows;
 
 namespace TerraFX.Samples.DirectX;
 

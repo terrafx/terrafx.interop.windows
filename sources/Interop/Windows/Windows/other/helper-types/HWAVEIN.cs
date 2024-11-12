@@ -79,7 +79,7 @@ public readonly unsafe partial struct HWAVEIN : IComparable, IComparable<HWAVEIN
 
     public int CompareTo(object? obj)
     {
-            if (obj is HWAVEIN other)
+        if (obj is HWAVEIN other)
         {
             return CompareTo(other);
         }

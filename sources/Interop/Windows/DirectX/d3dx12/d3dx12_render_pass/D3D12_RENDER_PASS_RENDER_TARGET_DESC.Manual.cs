@@ -33,10 +33,10 @@ public partial struct D3D12_RENDER_PASS_RENDER_TARGET_DESC : IEquatable<D3D12_RE
     public static bool operator !=([NativeTypeName("const D3D12_RENDER_PASS_RENDER_TARGET_DESC &")] in D3D12_RENDER_PASS_RENDER_TARGET_DESC a, [NativeTypeName("const D3D12_RENDER_PASS_RENDER_TARGET_DESC &")] in D3D12_RENDER_PASS_RENDER_TARGET_DESC b)
         => !(a == b);
 
-    public override bool Equals([NotNullWhen(true)] object? obj)
+    public override readonly bool Equals([NotNullWhen(true)] object? obj)
         => (obj is D3D12_RENDER_PASS_RENDER_TARGET_DESC other) && Equals(other);
 
-    public bool Equals(D3D12_RENDER_PASS_RENDER_TARGET_DESC other) => this == other;
+    public readonly bool Equals(D3D12_RENDER_PASS_RENDER_TARGET_DESC other) => this == other;
 
-    public override int GetHashCode() => HashCode.Combine(cpuDescriptor.ptr, BeginningAccess, EndingAccess);
+    public override readonly int GetHashCode() => HashCode.Combine(cpuDescriptor.ptr, BeginningAccess, EndingAccess);
 }

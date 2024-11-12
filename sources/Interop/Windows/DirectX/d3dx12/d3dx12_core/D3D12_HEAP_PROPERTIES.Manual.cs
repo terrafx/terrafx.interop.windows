@@ -22,9 +22,9 @@ public partial struct D3D12_HEAP_PROPERTIES : IEquatable<D3D12_HEAP_PROPERTIES>
     public static bool operator !=([NativeTypeName("const D3D12_HEAP_PROPERTIES &")] in D3D12_HEAP_PROPERTIES l, [NativeTypeName("const D3D12_HEAP_PROPERTIES &")] in D3D12_HEAP_PROPERTIES r)
         => !(l == r);
 
-    public override bool Equals([NotNullWhen(true)] object? obj) => (obj is D3D12_HEAP_PROPERTIES other) && Equals(other);
+    public override readonly bool Equals([NotNullWhen(true)] object? obj) => (obj is D3D12_HEAP_PROPERTIES other) && Equals(other);
 
-    public bool Equals(D3D12_HEAP_PROPERTIES other) => (this == other);
+    public readonly bool Equals(D3D12_HEAP_PROPERTIES other) => (this == other);
 
-    public override int GetHashCode() => HashCode.Combine(Type, CPUPageProperty, MemoryPoolPreference, CreationNodeMask, VisibleNodeMask);
+    public override readonly int GetHashCode() => HashCode.Combine(Type, CPUPageProperty, MemoryPoolPreference, CreationNodeMask, VisibleNodeMask);
 }

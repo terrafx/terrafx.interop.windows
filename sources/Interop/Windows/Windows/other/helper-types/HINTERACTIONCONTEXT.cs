@@ -79,7 +79,7 @@ public readonly unsafe partial struct HINTERACTIONCONTEXT : IComparable, ICompar
 
     public int CompareTo(object? obj)
     {
-            if (obj is HINTERACTIONCONTEXT other)
+        if (obj is HINTERACTIONCONTEXT other)
         {
             return CompareTo(other);
         }

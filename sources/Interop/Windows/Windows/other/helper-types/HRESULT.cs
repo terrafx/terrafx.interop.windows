@@ -67,7 +67,7 @@ public readonly unsafe partial struct HRESULT : IComparable, IComparable<HRESULT
 
     public int CompareTo(object? obj)
     {
-            if (obj is HRESULT other)
+        if (obj is HRESULT other)
         {
             return CompareTo(other);
         }

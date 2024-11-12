@@ -79,7 +79,7 @@ public readonly unsafe partial struct HCRYPTDEFAULTCONTEXT : IComparable, ICompa
 
     public int CompareTo(object? obj)
     {
-            if (obj is HCRYPTDEFAULTCONTEXT other)
+        if (obj is HCRYPTDEFAULTCONTEXT other)
         {
             return CompareTo(other);
         }

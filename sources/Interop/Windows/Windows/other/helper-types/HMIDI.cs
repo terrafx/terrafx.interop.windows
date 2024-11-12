@@ -79,7 +79,7 @@ public readonly unsafe partial struct HMIDI : IComparable, IComparable<HMIDI>, I
 
     public int CompareTo(object? obj)
     {
-            if (obj is HMIDI other)
+        if (obj is HMIDI other)
         {
             return CompareTo(other);
         }

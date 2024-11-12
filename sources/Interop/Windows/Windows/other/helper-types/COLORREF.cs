@@ -67,7 +67,7 @@ public readonly unsafe partial struct COLORREF : IComparable, IComparable<COLORR
 
     public int CompareTo(object? obj)
     {
-            if (obj is COLORREF other)
+        if (obj is COLORREF other)
         {
             return CompareTo(other);
         }

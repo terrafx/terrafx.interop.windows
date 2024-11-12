@@ -47,19 +47,19 @@ public unsafe partial struct GpRectF
         Height = size->Height;
     }
 
-    public void GetLocation([NativeTypeName("Gdiplus::PointF *")] GpPointF* point)
+    public readonly void GetLocation([NativeTypeName("Gdiplus::PointF *")] GpPointF* point)
     {
         point->X = X;
         point->Y = Y;
     }
 
-    public void GetSize([NativeTypeName("Gdiplus::SizeF *")] GpSizeF* size)
+    public readonly void GetSize([NativeTypeName("Gdiplus::SizeF *")] GpSizeF* size)
     {
         size->Width = Width;
         size->Height = Height;
     }
 
-    public void GetBounds([NativeTypeName("Gdiplus::RectF *")] GpRectF* rect)
+    public readonly void GetBounds([NativeTypeName("Gdiplus::RectF *")] GpRectF* rect)
     {
         rect->X = X;
         rect->Y = Y;
@@ -68,50 +68,50 @@ public unsafe partial struct GpRectF
     }
 
     [return: NativeTypeName("Gdiplus::REAL")]
-    public float GetLeft()
+    public readonly float GetLeft()
     {
         return X;
     }
 
     [return: NativeTypeName("Gdiplus::REAL")]
-    public float GetTop()
+    public readonly float GetTop()
     {
         return Y;
     }
 
     [return: NativeTypeName("Gdiplus::REAL")]
-    public float GetRight()
+    public readonly float GetRight()
     {
         return X + Width;
     }
 
     [return: NativeTypeName("Gdiplus::REAL")]
-    public float GetBottom()
+    public readonly float GetBottom()
     {
         return Y + Height;
     }
 
-    public BOOL IsEmptyArea()
+    public readonly BOOL IsEmptyArea()
     {
         return ((Width <= 1.192092896e-07F) || (Height <= 1.192092896e-07F)) ? 1 : 0;
     }
 
-    public BOOL Equals([NativeTypeName("const RectF &")] GpRectF* rect)
+    public readonly BOOL Equals([NativeTypeName("const RectF &")] GpRectF* rect)
     {
         return (X == rect->X && Y == rect->Y && Width == rect->Width && Height == rect->Height) ? 1 : 0;
     }
 
-    public BOOL Contains([NativeTypeName("Gdiplus::REAL")] float x, [NativeTypeName("Gdiplus::REAL")] float y)
+    public readonly BOOL Contains([NativeTypeName("Gdiplus::REAL")] float x, [NativeTypeName("Gdiplus::REAL")] float y)
     {
         return (x >= X && x < X + Width && y >= Y && y < Y + Height) ? 1 : 0;
     }
 
-    public BOOL Contains([NativeTypeName("const PointF &")] GpPointF* pt)
+    public readonly BOOL Contains([NativeTypeName("const PointF &")] GpPointF* pt)
     {
         return Contains(pt->X, pt->Y);
     }
 
-    public BOOL Contains([NativeTypeName("const RectF &")] GpRectF* rect)
+    public readonly BOOL Contains([NativeTypeName("const RectF &")] GpRectF* rect)
     {
         return ((X <= rect->X) && (rect->GetRight() <= GetRight()) && (Y <= rect->Y) && (rect->GetBottom() <= GetBottom())) ? 1 : 0;
     }
@@ -143,7 +143,7 @@ public unsafe partial struct GpRectF
         return (c->IsEmptyArea() == 0) ? 1 : 0;
     }
 
-    public BOOL IntersectsWith([NativeTypeName("const RectF &")] GpRectF* rect)
+    public readonly BOOL IntersectsWith([NativeTypeName("const RectF &")] GpRectF* rect)
     {
         return (GetLeft() < rect->GetRight() && GetTop() < rect->GetBottom() && GetRight() > rect->GetLeft() && GetBottom() > rect->GetTop()) ? 1 : 0;
     }

@@ -79,7 +79,7 @@ public readonly unsafe partial struct HTOUCHINPUT : IComparable, IComparable<HTO
 
     public int CompareTo(object? obj)
     {
-            if (obj is HTOUCHINPUT other)
+        if (obj is HTOUCHINPUT other)
         {
             return CompareTo(other);
         }

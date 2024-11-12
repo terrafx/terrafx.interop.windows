@@ -79,7 +79,7 @@ public readonly unsafe partial struct SPSTATEHANDLE : IComparable, IComparable<S
 
     public int CompareTo(object? obj)
     {
-            if (obj is SPSTATEHANDLE other)
+        if (obj is SPSTATEHANDLE other)
         {
             return CompareTo(other);
         }

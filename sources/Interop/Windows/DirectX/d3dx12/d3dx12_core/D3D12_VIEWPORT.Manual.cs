@@ -29,7 +29,7 @@ public unsafe partial struct D3D12_VIEWPORT : IEquatable<D3D12_VIEWPORT>
                 break;
             }
 
-            
+
             case D3D12_RESOURCE_DIMENSION_TEXTURE1D:
             {
                 TopLeftX = topLeftX;
@@ -49,6 +49,7 @@ public unsafe partial struct D3D12_VIEWPORT : IEquatable<D3D12_VIEWPORT>
                 break;
             }
 
+            case D3D12_RESOURCE_DIMENSION_UNKNOWN:
             default:
             {
                 break;
@@ -72,9 +73,9 @@ public unsafe partial struct D3D12_VIEWPORT : IEquatable<D3D12_VIEWPORT>
     public static bool operator !=([NativeTypeName("const D3D12_VIEWPORT &")] in D3D12_VIEWPORT l, [NativeTypeName("const D3D12_VIEWPORT &")] in D3D12_VIEWPORT r)
         => !(l == r);
 
-    public override bool Equals([NotNullWhen(true)] object? obj) => (obj is D3D12_VIEWPORT other) && Equals(other);
+    public override readonly bool Equals([NotNullWhen(true)] object? obj) => (obj is D3D12_VIEWPORT other) && Equals(other);
 
-    public bool Equals(D3D12_VIEWPORT other) => (this == other);
+    public readonly bool Equals(D3D12_VIEWPORT other) => (this == other);
 
-    public override int GetHashCode() => HashCode.Combine(TopLeftX, TopLeftY, Width, Height, MinDepth, MaxDepth);
+    public override readonly int GetHashCode() => HashCode.Combine(TopLeftX, TopLeftY, Width, Height, MinDepth, MaxDepth);
 }

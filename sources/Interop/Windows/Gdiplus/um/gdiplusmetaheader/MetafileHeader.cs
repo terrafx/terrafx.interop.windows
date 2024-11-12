@@ -83,39 +83,39 @@ public unsafe partial struct MetafileHeader
     }
 
     [return: NativeTypeName("Gdiplus::MetafileType")]
-    public new MetafileType GetType()
+    public new readonly MetafileType GetType()
     {
         return Type;
     }
 
-    public uint GetMetafileSize()
+    public readonly uint GetMetafileSize()
     {
         return Size;
     }
 
-    public uint GetVersion()
+    public readonly uint GetVersion()
     {
         return Version;
     }
 
-    public uint GetEmfPlusFlags()
+    public readonly uint GetEmfPlusFlags()
     {
         return EmfPlusFlags;
     }
 
     [return: NativeTypeName("Gdiplus::REAL")]
-    public float GetDpiX()
+    public readonly float GetDpiX()
     {
         return DpiX;
     }
 
     [return: NativeTypeName("Gdiplus::REAL")]
-    public float GetDpiY()
+    public readonly float GetDpiY()
     {
         return DpiY;
     }
 
-    public void GetBounds([NativeTypeName("Gdiplus::Rect *")] GpRect* rect)
+    public readonly void GetBounds([NativeTypeName("Gdiplus::Rect *")] GpRect* rect)
     {
         rect->X = X;
         rect->Y = Y;
@@ -123,32 +123,32 @@ public unsafe partial struct MetafileHeader
         rect->Height = Height;
     }
 
-    public BOOL IsWmf()
+    public readonly BOOL IsWmf()
     {
         return ((Type == MetafileTypeWmf) || (Type == MetafileTypeWmfPlaceable)) ? 1 : 0;
     }
 
-    public BOOL IsWmfPlaceable()
+    public readonly BOOL IsWmfPlaceable()
     {
         return (Type == MetafileTypeWmfPlaceable) ? 1 : 0;
     }
 
-    public BOOL IsEmf()
+    public readonly BOOL IsEmf()
     {
         return (Type == MetafileTypeEmf) ? 1 : 0;
     }
 
-    public BOOL IsEmfPlusDual()
+    public readonly BOOL IsEmfPlusDual()
     {
         return (Type == MetafileTypeEmfPlusDual) ? 1 : 0;
     }
 
-    public BOOL IsEmfPlusOnly()
+    public readonly BOOL IsEmfPlusOnly()
     {
         return (Type == MetafileTypeEmfPlusOnly) ? 1 : 0;
     }
 
-    public BOOL IsDisplay()
+    public readonly BOOL IsDisplay()
     {
         return ((IsEmfPlus()) != 0 && ((EmfPlusFlags & 0x00000001) != 0)) ? 1 : 0;
     }

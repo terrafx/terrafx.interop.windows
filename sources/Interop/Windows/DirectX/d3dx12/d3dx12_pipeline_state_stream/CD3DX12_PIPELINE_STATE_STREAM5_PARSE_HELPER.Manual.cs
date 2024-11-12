@@ -230,7 +230,7 @@ public unsafe struct CD3DX12_PIPELINE_STATE_STREAM5_PARSE_HELPER : ID3DX12Pipeli
     [UnmanagedCallersOnly(CallConvs = [typeof(CallConvMemberFunction)])]
     public static void RasterizerState1Cb(CD3DX12_PIPELINE_STATE_STREAM5_PARSE_HELPER* pThis, [NativeTypeName("const D3D12_RASTERIZER_DESC1 &")] D3D12_RASTERIZER_DESC1* RasterizerState)
     {
-        pThis->PipelineStream.RasterizerState = new D3D12_RASTERIZER_DESC2(RasterizerState);   
+        pThis->PipelineStream.RasterizerState = new D3D12_RASTERIZER_DESC2(RasterizerState);
     }
 
     [VtblIndex(22)]

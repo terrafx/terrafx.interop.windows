@@ -79,7 +79,7 @@ public readonly unsafe partial struct HDEVINFO : IComparable, IComparable<HDEVIN
 
     public int CompareTo(object? obj)
     {
-            if (obj is HDEVINFO other)
+        if (obj is HDEVINFO other)
         {
             return CompareTo(other);
         }

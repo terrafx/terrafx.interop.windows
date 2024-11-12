@@ -79,7 +79,7 @@ public readonly partial struct BOOL : IComparable, IComparable<BOOL>, IEquatable
 
     public int CompareTo(object? obj)
     {
-            if (obj is BOOL other)
+        if (obj is BOOL other)
         {
             return CompareTo(other);
         }

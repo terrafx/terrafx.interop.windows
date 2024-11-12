@@ -26,7 +26,7 @@ public partial struct D3D12_RENDER_PASS_BEGINNING_ACCESS_PRESERVE_LOCAL_PARAMETE
     public static bool operator !=([NativeTypeName("const D3D12_RENDER_PASS_BEGINNING_ACCESS_PRESERVE_LOCAL_PARAMETERS &")] in D3D12_RENDER_PASS_BEGINNING_ACCESS_PRESERVE_LOCAL_PARAMETERS a, [NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS_PRESERVE_LOCAL_PARAMETERS &")] in D3D12_RENDER_PASS_ENDING_ACCESS_PRESERVE_LOCAL_PARAMETERS b)
         => !(a == b);
 
-    public override bool Equals([NotNullWhen(true)] object? obj)
+    public override readonly bool Equals([NotNullWhen(true)] object? obj)
     {
         if (obj is D3D12_RENDER_PASS_BEGINNING_ACCESS_PRESERVE_LOCAL_PARAMETERS other1)
         {
@@ -42,9 +42,9 @@ public partial struct D3D12_RENDER_PASS_BEGINNING_ACCESS_PRESERVE_LOCAL_PARAMETE
         }
     }
 
-    public bool Equals(D3D12_RENDER_PASS_BEGINNING_ACCESS_PRESERVE_LOCAL_PARAMETERS other) => this == other;
+    public readonly bool Equals(D3D12_RENDER_PASS_BEGINNING_ACCESS_PRESERVE_LOCAL_PARAMETERS other) => this == other;
 
-    public bool Equals(D3D12_RENDER_PASS_ENDING_ACCESS_PRESERVE_LOCAL_PARAMETERS other) => this == other;
+    public readonly bool Equals(D3D12_RENDER_PASS_ENDING_ACCESS_PRESERVE_LOCAL_PARAMETERS other) => this == other;
 
-    public override int GetHashCode() => HashCode.Combine(AdditionalWidth, AdditionalHeight);
+    public override readonly int GetHashCode() => HashCode.Combine(AdditionalWidth, AdditionalHeight);
 }

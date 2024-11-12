@@ -79,7 +79,7 @@ public readonly unsafe partial struct HSPFILEQ : IComparable, IComparable<HSPFIL
 
     public int CompareTo(object? obj)
     {
-            if (obj is HSPFILEQ other)
+        if (obj is HSPFILEQ other)
         {
             return CompareTo(other);
         }

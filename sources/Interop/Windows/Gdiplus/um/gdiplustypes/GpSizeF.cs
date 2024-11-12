@@ -35,12 +35,12 @@ public unsafe partial struct GpSizeF
         Height = height;
     }
 
-    public BOOL Equals([NativeTypeName("const SizeF &")] GpSizeF* sz)
+    public readonly BOOL Equals([NativeTypeName("const SizeF &")] GpSizeF* sz)
     {
         return ((Width == sz->Width) && (Height == sz->Height)) ? 1 : 0;
     }
 
-    public BOOL Empty()
+    public readonly BOOL Empty()
     {
         return (Width == 0.0f && Height == 0.0f) ? 1 : 0;
     }

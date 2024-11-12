@@ -79,7 +79,7 @@ public readonly unsafe partial struct HCURSOR : IComparable, IComparable<HCURSOR
 
     public int CompareTo(object? obj)
     {
-            if (obj is HCURSOR other)
+        if (obj is HCURSOR other)
         {
             return CompareTo(other);
         }

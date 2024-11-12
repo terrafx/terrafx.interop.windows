@@ -73,7 +73,7 @@ public readonly unsafe partial struct PAPPSTATE_REGISTRATION : IComparable, ICom
 
     public int CompareTo(object? obj)
     {
-            if (obj is PAPPSTATE_REGISTRATION other)
+        if (obj is PAPPSTATE_REGISTRATION other)
         {
             return CompareTo(other);
         }

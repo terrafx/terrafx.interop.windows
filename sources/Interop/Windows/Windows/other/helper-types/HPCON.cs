@@ -79,7 +79,7 @@ public readonly unsafe partial struct HPCON : IComparable, IComparable<HPCON>, I
 
     public int CompareTo(object? obj)
     {
-            if (obj is HPCON other)
+        if (obj is HPCON other)
         {
             return CompareTo(other);
         }

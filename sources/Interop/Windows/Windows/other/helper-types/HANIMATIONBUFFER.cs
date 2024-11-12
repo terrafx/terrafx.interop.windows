@@ -79,7 +79,7 @@ public readonly unsafe partial struct HANIMATIONBUFFER : IComparable, IComparabl
 
     public int CompareTo(object? obj)
     {
-            if (obj is HANIMATIONBUFFER other)
+        if (obj is HANIMATIONBUFFER other)
         {
             return CompareTo(other);
         }

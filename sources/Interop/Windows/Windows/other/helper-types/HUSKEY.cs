@@ -79,7 +79,7 @@ public readonly unsafe partial struct HUSKEY : IComparable, IComparable<HUSKEY>,
 
     public int CompareTo(object? obj)
     {
-            if (obj is HUSKEY other)
+        if (obj is HUSKEY other)
         {
             return CompareTo(other);
         }

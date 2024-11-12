@@ -79,7 +79,7 @@ public readonly unsafe partial struct HKL : IComparable, IComparable<HKL>, IEqua
 
     public int CompareTo(object? obj)
     {
-            if (obj is HKL other)
+        if (obj is HKL other)
         {
             return CompareTo(other);
         }

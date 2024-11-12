@@ -79,7 +79,7 @@ public readonly unsafe partial struct HHANDLE : IComparable, IComparable<HHANDLE
 
     public int CompareTo(object? obj)
     {
-            if (obj is HHANDLE other)
+        if (obj is HHANDLE other)
         {
             return CompareTo(other);
         }
