@@ -1,6 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
 using System;
+using System.ComponentModel;
 using System.Numerics;
 using System.Windows.Forms;
 using TerraFX.Interop.Windows;
@@ -19,6 +20,7 @@ public partial class DXPanel : Panel
         InitializeComponent();
     }
 
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
     public DXSample? DXSample
     {
         get
@@ -46,6 +48,7 @@ public partial class DXPanel : Panel
         }
     }
 
+    [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
     public bool UseWarpDevice
     {
         get
