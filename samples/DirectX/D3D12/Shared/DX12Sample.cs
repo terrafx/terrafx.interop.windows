@@ -29,7 +29,7 @@ public abstract unsafe class DX12Sample : DXSample
 {
     private readonly ID3D12CommandAllocator*[] _commandAllocators;
 
-    private ID3D12Device* _d3dDevice;
+    private ID3D12Device2* _d3dDevice;
     private IDXGIAdapter1* _dxgiAdapter;
     private IDXGIFactory4* _dxgiFactory;
     private IDXGISwapChain3* _swapChain;
@@ -62,7 +62,7 @@ public abstract unsafe class DX12Sample : DXSample
 
     public ID3D12CommandQueue* CommandQueue => _commandQueue;
 
-    public ID3D12Device* D3DDevice => _d3dDevice;
+    public ID3D12Device2* D3DDevice => _d3dDevice;
 
     public ID3D12Resource* DepthStencil => _depthStencil;
 
@@ -243,10 +243,10 @@ public abstract unsafe class DX12Sample : DXSample
             return commandQueue;
         }
 
-        ID3D12Device* CreateD3DDevice()
+        ID3D12Device2* CreateD3DDevice()
         {
-            ID3D12Device* d3dDevice;
-            ThrowIfFailed(D3D12CreateDevice((IUnknown*)_dxgiAdapter, D3D_FEATURE_LEVEL_11_0, __uuidof<ID3D12Device>(), (void**)&d3dDevice));
+            ID3D12Device2* d3dDevice;
+            ThrowIfFailed(D3D12CreateDevice((IUnknown*)_dxgiAdapter, D3D_FEATURE_LEVEL_11_0, __uuidof<ID3D12Device2>(), (void**)&d3dDevice));
             return d3dDevice;
         }
 

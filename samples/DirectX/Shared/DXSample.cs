@@ -107,18 +107,18 @@ public abstract unsafe class DXSample : IDisposable
     private static DXSample[] GetSamples()
     {
         var samples = new List<DXSample>(8) {
-                new HelloWindow11("D3D11.HelloWindow")
-            };
+            // new HelloWindow11("D3D11.HelloWindow")
+        };
 
         if (OperatingSystem.IsWindowsVersionAtLeast(10))
         {
-            samples.Add(new HelloTriangle11("D3D11.HelloTriangle"));
-            samples.Add(new HelloWindow12("D3D12.HelloWindow"));
-            samples.Add(new HelloTriangle12("D3D12.HelloTriangle"));
+            // samples.Add(new HelloTriangle11("D3D11.HelloTriangle"));
+            // samples.Add(new HelloWindow12("D3D12.HelloWindow"));
+            // samples.Add(new HelloTriangle12("D3D12.HelloTriangle"));
             samples.Add(new HelloConstBuffer12("D3D12.HelloConstBuffer"));
-            samples.Add(new HelloTexture12("D3D12.HelloTexture"));
-            samples.Add(new HelloBundles12("D3D12.HelloBundles"));
-            samples.Add(new HelloMultiSampling12("D3D12.HelloMultiSampling"));
+            // samples.Add(new HelloTexture12("D3D12.HelloTexture"));
+            // samples.Add(new HelloBundles12("D3D12.HelloBundles"));
+            // samples.Add(new HelloMultiSampling12("D3D12.HelloMultiSampling"));
         }
 
         return samples.ToArray();
