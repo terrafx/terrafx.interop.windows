@@ -10,20 +10,15 @@ using static TerraFX.Interop.DirectX.D3D11_USAGE;
 using static TerraFX.Interop.DirectX.DirectX;
 using static TerraFX.Interop.DirectX.DXGI_FORMAT;
 using static TerraFX.Interop.Windows.Windows;
-using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D11;
 
-public unsafe class HelloTriangle11 : HelloWindow11
+public unsafe class HelloTriangle11(string name) : HelloWindow11(name)
 {
     private ID3D11VertexShader* _vertexShader;
     private ID3D11InputLayout* _inputLayout;
     private ID3D11PixelShader* _pixelShader;
     private ID3D11Buffer* _vertexBuffer;
-
-    public HelloTriangle11(string name) : base(name)
-    {
-    }
 
     protected override void CreateAssets()
     {

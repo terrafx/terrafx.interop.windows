@@ -80,7 +80,7 @@ public readonly unsafe partial struct HSTRING_BUFFER : IComparable, IComparable<
 
     public int CompareTo(object? obj)
     {
-            if (obj is HSTRING_BUFFER other)
+        if (obj is HSTRING_BUFFER other)
         {
             return CompareTo(other);
         }

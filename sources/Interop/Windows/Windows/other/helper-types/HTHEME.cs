@@ -79,7 +79,7 @@ public readonly unsafe partial struct HTHEME : IComparable, IComparable<HTHEME>,
 
     public int CompareTo(object? obj)
     {
-            if (obj is HTHEME other)
+        if (obj is HTHEME other)
         {
             return CompareTo(other);
         }

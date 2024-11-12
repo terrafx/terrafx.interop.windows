@@ -3,7 +3,6 @@
 // Ported from um/dinput.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System.Runtime.InteropServices;
 using static TerraFX.Interop.DirectX.DIMOFS;
 
 namespace TerraFX.Interop.DirectX;

@@ -27,12 +27,12 @@ public unsafe partial struct Effect : Effect.Interface
     /// <include file='Effect.xml' path='doc/member[@name="Effect.useAuxData"]/*' />
     public BOOL useAuxData;
 
-    public int GetAuxDataSize()
+    public readonly int GetAuxDataSize()
     {
         return auxDataSize;
     }
 
-    public void* GetAuxData()
+    public readonly void* GetAuxData()
     {
         return auxData;
     }
@@ -43,19 +43,19 @@ public unsafe partial struct Effect : Effect.Interface
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus GetParameterSize(uint* size)
+    public readonly GpStatus GetParameterSize(uint* size)
     {
         return GdipGetEffectParameterSize(nativeEffect, size);
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus SetParameters([NativeTypeName("const void *")] void* @params, [NativeTypeName("const UINT")] uint size)
+    public readonly GpStatus SetParameters([NativeTypeName("const void *")] void* @params, [NativeTypeName("const UINT")] uint size)
     {
         return GdipSetEffectParameters(nativeEffect, @params, size);
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus GetParameters(uint* size, void* @params)
+    public readonly GpStatus GetParameters(uint* size, void* @params)
     {
         return GdipGetEffectParameters(nativeEffect, size, @params);
     }

@@ -11,11 +11,10 @@ using static TerraFX.Interop.DirectX.DirectX;
 using static TerraFX.Interop.DirectX.DXGI;
 using static TerraFX.Interop.DirectX.DXGI_SWAP_EFFECT;
 using static TerraFX.Interop.Windows.Windows;
-using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D11;
 
-public abstract unsafe class DX11Sample : DXSample
+public abstract unsafe class DX11Sample(string name) : DXSample(name)
 {
     private ID3D11Device* _d3dDevice;
     private IDXGIAdapter1* _dxgiAdapter;
@@ -25,10 +24,6 @@ public abstract unsafe class DX11Sample : DXSample
     private ID3D11RenderTargetView* _renderTargetView;
     private D3D11_VIEWPORT _viewport;
     private RECT _scissorRect;
-
-    protected DX11Sample(string name) : base(name)
-    {
-    }
 
     public ID3D11Device* D3DDevice => _d3dDevice;
 

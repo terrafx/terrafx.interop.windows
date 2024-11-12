@@ -4,12 +4,8 @@ using System;
 
 namespace TerraFX.Samples.DirectX.D3D11;
 
-public unsafe class HelloWindow11 : DX11Sample
+public unsafe class HelloWindow11(string name) : DX11Sample(name)
 {
-    public HelloWindow11(string name) : base(name)
-    {
-    }
-
     public override void OnUpdate(TimeSpan delta)
     {
     }

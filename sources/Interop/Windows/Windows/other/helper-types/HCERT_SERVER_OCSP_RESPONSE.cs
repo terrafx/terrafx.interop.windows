@@ -79,7 +79,7 @@ public readonly unsafe partial struct HCERT_SERVER_OCSP_RESPONSE : IComparable, 
 
     public int CompareTo(object? obj)
     {
-            if (obj is HCERT_SERVER_OCSP_RESPONSE other)
+        if (obj is HCERT_SERVER_OCSP_RESPONSE other)
         {
             return CompareTo(other);
         }

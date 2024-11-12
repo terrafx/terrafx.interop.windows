@@ -26,9 +26,9 @@ public partial struct D2D_VECTOR_3F : IEquatable<D2D_VECTOR_3F>
     public static bool operator !=([NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_3F l, [NativeTypeName("const D2D_VECTOR_2F &")] in D2D_VECTOR_3F r)
         => !(l == r);
 
-    public bool Equals(D2D_VECTOR_3F other) => this == other;
+    public readonly bool Equals(D2D_VECTOR_3F other) => this == other;
 
-    public override bool Equals(object? obj) => (obj is D2D_VECTOR_3F other) && this == other;
+    public override readonly bool Equals(object? obj) => (obj is D2D_VECTOR_3F other) && this == other;
 
-    public override int GetHashCode() => HashCode.Combine(x, y, z);
+    public override readonly int GetHashCode() => HashCode.Combine(x, y, z);
 }

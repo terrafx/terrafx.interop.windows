@@ -79,7 +79,7 @@ public readonly unsafe partial struct HMIDIOUT : IComparable, IComparable<HMIDIO
 
     public int CompareTo(object? obj)
     {
-            if (obj is HMIDIOUT other)
+        if (obj is HMIDIOUT other)
         {
             return CompareTo(other);
         }

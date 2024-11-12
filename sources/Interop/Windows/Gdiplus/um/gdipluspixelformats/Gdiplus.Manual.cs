@@ -3,8 +3,6 @@
 // Ported from um/gdipluspixelformats.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using TerraFX.Interop.Windows;
-
 namespace TerraFX.Interop.Gdiplus;
 
 public static partial class Gdiplus

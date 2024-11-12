@@ -73,7 +73,7 @@ public readonly unsafe partial struct PCUSERIALIZEDPROPSTORAGE : IComparable, IC
 
     public int CompareTo(object? obj)
     {
-            if (obj is PCUSERIALIZEDPROPSTORAGE other)
+        if (obj is PCUSERIALIZEDPROPSTORAGE other)
         {
             return CompareTo(other);
         }

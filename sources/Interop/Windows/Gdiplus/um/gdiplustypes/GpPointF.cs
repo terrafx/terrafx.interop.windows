@@ -41,7 +41,7 @@ public unsafe partial struct GpPointF
         Y = y;
     }
 
-    public BOOL Equals([NativeTypeName("const PointF &")] GpPointF* point)
+    public readonly BOOL Equals([NativeTypeName("const PointF &")] GpPointF* point)
     {
         return ((X == point->X) && (Y == point->Y)) ? 1 : 0;
     }

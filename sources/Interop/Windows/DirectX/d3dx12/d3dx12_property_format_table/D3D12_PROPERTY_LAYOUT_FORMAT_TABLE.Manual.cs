@@ -78,7 +78,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private static HRESULT DivideAndRoundUp(uint dividend, uint divisor, [NativeTypeName("UINT &")] out uint result)
     {
-        HRESULT hr = Safe_UIntAdd(dividend, (divisor -1), out uint adjustedDividend);
+        HRESULT hr = Safe_UIntAdd(dividend, (divisor - 1), out uint adjustedDividend);
         result = SUCCEEDED(hr) ? (adjustedDividend / divisor) : 0;
         return hr;
     }
@@ -86,7 +86,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private static bool IsPow2(uint Val)
     {
-        return 0 == (Val & (Val -1));
+        return 0 == (Val & (Val - 1));
     }
 
     public partial struct FORMAT_DETAIL
@@ -809,7 +809,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
         DXGI_FORMAT_V408,
         DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
     ];
-     
+
     private static ReadOnlySpan<DXGI_FORMAT> D3DFCS_A4B4G4R4 => [
         DXGI_FORMAT_A4B4G4R4_UNORM,
         DXGI_FORMAT_UNKNOWN // not part of cast set, just the "null terminator"
@@ -2093,7 +2093,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             // compressed formats currently have non-pow2 alignment requriements.
             Debug.Assert(IsPow2(WidthAlignment));
 
-            uint Mask = WidthAlignment -1;
+            uint Mask = WidthAlignment - 1;
 
             if (FAILED(Safe_UIntAdd(Width, Mask, out NumUnits)))
             {
@@ -2155,7 +2155,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
 
     public static void GetYCbCrChromaSubsampling(DXGI_FORMAT Format, [NativeTypeName("UINT &")] out uint HorizontalSubsampling, [NativeTypeName("UINT &")] out uint VerticalSubsampling)
     {
-        switch( Format)
+        switch (Format)
         {
             // YCbCr 4:2:0 
             case DXGI_FORMAT_NV12:
@@ -2307,15 +2307,15 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
                 dst.pData = (void*)(totalByteSize);
                 Debug.Assert((s != 0) || (dst.pData == null));
 
-                dst.RowPitch = rowPitch; 
+                dst.RowPitch = rowPitch;
                 dst.SlicePitch = depthPitch;
             }
 
             // Align the subresource size.
-            Debug.Assert((MAP_ALIGN_REQUIREMENT & (MAP_ALIGN_REQUIREMENT -1)) == 0, "This code expects MAP_ALIGN_REQUIREMENT to be a power of 2.");
-        
-            nuint subresourceByteSizeAligned = subresourceByteSize + MAP_ALIGN_REQUIREMENT -1;
-            subresourceByteSizeAligned &= ~(MAP_ALIGN_REQUIREMENT -1u);
+            Debug.Assert((MAP_ALIGN_REQUIREMENT & (MAP_ALIGN_REQUIREMENT - 1)) == 0, "This code expects MAP_ALIGN_REQUIREMENT to be a power of 2.");
+
+            nuint subresourceByteSizeAligned = subresourceByteSize + MAP_ALIGN_REQUIREMENT - 1;
+            subresourceByteSizeAligned &= ~(MAP_ALIGN_REQUIREMENT - 1u);
             totalByteSize += subresourceByteSizeAligned;
 
             // Iterate over mip levels and array elements

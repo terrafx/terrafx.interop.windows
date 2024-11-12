@@ -73,7 +73,7 @@ public readonly unsafe partial struct PTP_CALLBACK_INSTANCE : IComparable, IComp
 
     public int CompareTo(object? obj)
     {
-            if (obj is PTP_CALLBACK_INSTANCE other)
+        if (obj is PTP_CALLBACK_INSTANCE other)
         {
             return CompareTo(other);
         }

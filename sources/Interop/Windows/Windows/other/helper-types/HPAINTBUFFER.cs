@@ -79,7 +79,7 @@ public readonly unsafe partial struct HPAINTBUFFER : IComparable, IComparable<HP
 
     public int CompareTo(object? obj)
     {
-            if (obj is HPAINTBUFFER other)
+        if (obj is HPAINTBUFFER other)
         {
             return CompareTo(other);
         }

@@ -73,7 +73,7 @@ public readonly unsafe partial struct LPPROC_THREAD_ATTRIBUTE_LIST : IComparable
 
     public int CompareTo(object? obj)
     {
-            if (obj is LPPROC_THREAD_ATTRIBUTE_LIST other)
+        if (obj is LPPROC_THREAD_ATTRIBUTE_LIST other)
         {
             return CompareTo(other);
         }

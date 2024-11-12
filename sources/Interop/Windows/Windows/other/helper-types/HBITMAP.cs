@@ -79,7 +79,7 @@ public readonly unsafe partial struct HBITMAP : IComparable, IComparable<HBITMAP
 
     public int CompareTo(object? obj)
     {
-            if (obj is HBITMAP other)
+        if (obj is HBITMAP other)
         {
             return CompareTo(other);
         }

@@ -79,7 +79,7 @@ public readonly unsafe partial struct HSEMAPHORE : IComparable, IComparable<HSEM
 
     public int CompareTo(object? obj)
     {
-            if (obj is HSEMAPHORE other)
+        if (obj is HSEMAPHORE other)
         {
             return CompareTo(other);
         }

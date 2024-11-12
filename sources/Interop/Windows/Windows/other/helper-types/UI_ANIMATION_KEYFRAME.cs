@@ -73,7 +73,7 @@ public readonly unsafe partial struct UI_ANIMATION_KEYFRAME : IComparable, IComp
 
     public int CompareTo(object? obj)
     {
-            if (obj is UI_ANIMATION_KEYFRAME other)
+        if (obj is UI_ANIMATION_KEYFRAME other)
         {
             return CompareTo(other);
         }

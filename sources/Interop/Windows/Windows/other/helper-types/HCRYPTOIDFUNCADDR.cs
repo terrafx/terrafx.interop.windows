@@ -79,7 +79,7 @@ public readonly unsafe partial struct HCRYPTOIDFUNCADDR : IComparable, IComparab
 
     public int CompareTo(object? obj)
     {
-            if (obj is HCRYPTOIDFUNCADDR other)
+        if (obj is HCRYPTOIDFUNCADDR other)
         {
             return CompareTo(other);
         }

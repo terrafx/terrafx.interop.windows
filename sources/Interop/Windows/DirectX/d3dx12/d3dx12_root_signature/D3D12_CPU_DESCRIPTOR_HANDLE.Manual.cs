@@ -28,11 +28,11 @@ public unsafe partial struct D3D12_CPU_DESCRIPTOR_HANDLE : IEquatable<D3D12_CPU_
     public static bool operator !=(D3D12_CPU_DESCRIPTOR_HANDLE left, D3D12_CPU_DESCRIPTOR_HANDLE right)
         => left.ptr != right.ptr;
 
-    public override bool Equals([NotNullWhen(true)] object? obj) => (obj is D3D12_CPU_DESCRIPTOR_HANDLE other) && Equals(other);
+    public override readonly bool Equals([NotNullWhen(true)] object? obj) => (obj is D3D12_CPU_DESCRIPTOR_HANDLE other) && Equals(other);
 
-    public bool Equals(D3D12_CPU_DESCRIPTOR_HANDLE other) => this == other;
+    public readonly bool Equals(D3D12_CPU_DESCRIPTOR_HANDLE other) => this == other;
 
-    public override int GetHashCode() => ptr.GetHashCode();
+    public override readonly int GetHashCode() => ptr.GetHashCode();
 
     public void InitOffsetted([NativeTypeName("const D3D12_CPU_DESCRIPTOR_HANDLE &")] in D3D12_CPU_DESCRIPTOR_HANDLE @base, int offsetScaledByIncrementSize)
     {

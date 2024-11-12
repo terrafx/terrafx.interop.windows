@@ -20,8 +20,7 @@ public static unsafe partial class DirectX
     [return: NativeTypeName("UINT8")]
     public static byte D3D12GetFormatPlaneCount(ID3D12Device* pDevice, DXGI_FORMAT Format)
     {
-        D3D12_FEATURE_DATA_FORMAT_INFO formatInfo = new D3D12_FEATURE_DATA_FORMAT_INFO
-        {
+        D3D12_FEATURE_DATA_FORMAT_INFO formatInfo = new D3D12_FEATURE_DATA_FORMAT_INFO {
             Format = Format,
             PlaneCount = 0,
         };

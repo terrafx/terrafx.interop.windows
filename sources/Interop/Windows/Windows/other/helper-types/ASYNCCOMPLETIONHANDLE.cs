@@ -73,7 +73,7 @@ public readonly unsafe partial struct ASYNCCOMPLETIONHANDLE : IComparable, IComp
 
     public int CompareTo(object? obj)
     {
-            if (obj is ASYNCCOMPLETIONHANDLE other)
+        if (obj is ASYNCCOMPLETIONHANDLE other)
         {
             return CompareTo(other);
         }

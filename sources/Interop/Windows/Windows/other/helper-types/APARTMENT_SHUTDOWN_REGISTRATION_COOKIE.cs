@@ -79,7 +79,7 @@ public readonly unsafe partial struct APARTMENT_SHUTDOWN_REGISTRATION_COOKIE : I
 
     public int CompareTo(object? obj)
     {
-            if (obj is APARTMENT_SHUTDOWN_REGISTRATION_COOKIE other)
+        if (obj is APARTMENT_SHUTDOWN_REGISTRATION_COOKIE other)
         {
             return CompareTo(other);
         }

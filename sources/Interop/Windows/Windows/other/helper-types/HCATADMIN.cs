@@ -79,7 +79,7 @@ public readonly unsafe partial struct HCATADMIN : IComparable, IComparable<HCATA
 
     public int CompareTo(object? obj)
     {
-            if (obj is HCATADMIN other)
+        if (obj is HCATADMIN other)
         {
             return CompareTo(other);
         }

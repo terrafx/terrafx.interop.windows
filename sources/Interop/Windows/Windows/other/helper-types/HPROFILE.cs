@@ -79,7 +79,7 @@ public readonly unsafe partial struct HPROFILE : IComparable, IComparable<HPROFI
 
     public int CompareTo(object? obj)
     {
-            if (obj is HPROFILE other)
+        if (obj is HPROFILE other)
         {
             return CompareTo(other);
         }

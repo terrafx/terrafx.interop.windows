@@ -55,7 +55,7 @@ public unsafe struct CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER : ID3DX12Pipelin
         lpVtbl[28] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, uint, void>)(&ErrorBadInputParameter);
         lpVtbl[29] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, D3D12_PIPELINE_STATE_SUBOBJECT_TYPE, void>)(&ErrorDuplicateSubobject);
         lpVtbl[30] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, uint, void>)(&ErrorUnknownSubobject);
-        lpVtbl[31] = (delegate* unmanaged[MemberFunction]< CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER *, void>)(&Dispose);
+        lpVtbl[31] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, void>)(&Dispose);
 
         return lpVtbl;
     }

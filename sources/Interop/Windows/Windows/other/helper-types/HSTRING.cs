@@ -80,7 +80,7 @@ public readonly unsafe partial struct HSTRING : IComparable, IComparable<HSTRING
 
     public int CompareTo(object? obj)
     {
-            if (obj is HSTRING other)
+        if (obj is HSTRING other)
         {
             return CompareTo(other);
         }

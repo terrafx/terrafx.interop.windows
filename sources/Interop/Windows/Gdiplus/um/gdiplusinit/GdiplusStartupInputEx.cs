@@ -18,7 +18,7 @@ public unsafe partial struct GdiplusStartupInputEx
     /// <include file='GdiplusStartupInputEx.xml' path='doc/member[@name="GdiplusStartupInputEx.StartupParameters"]/*' />
     public int StartupParameters;
 
-    public GdiplusStartupInputEx([Optional] int startupParameters, [NativeTypeName("Gdiplus::DebugEventProc")] [Optional] delegate* unmanaged<DebugEventLevel, sbyte*, void> debugEventCallback, [Optional] BOOL suppressBackgroundThread, [Optional] BOOL suppressExternalCodecs)
+    public GdiplusStartupInputEx([Optional] int startupParameters, [NativeTypeName("Gdiplus::DebugEventProc")][Optional] delegate* unmanaged<DebugEventLevel, sbyte*, void> debugEventCallback, [Optional] BOOL suppressBackgroundThread, [Optional] BOOL suppressExternalCodecs)
     {
         Base.GdiplusVersion = 2;
         Base.DebugEventCallback = debugEventCallback;
@@ -27,7 +27,7 @@ public unsafe partial struct GdiplusStartupInputEx
         StartupParameters = startupParameters;
     }
 
-    public GdiplusStartupInputEx([NativeTypeName("Gdiplus::GdiplusStartupInputEx::Version")] Version gdiplusVersion, [Optional] int startupParameters, [NativeTypeName("Gdiplus::DebugEventProc")] [Optional] delegate* unmanaged<DebugEventLevel, sbyte*, void> debugEventCallback, [Optional] BOOL suppressBackgroundThread, [Optional] BOOL suppressExternalCodecs)
+    public GdiplusStartupInputEx([NativeTypeName("Gdiplus::GdiplusStartupInputEx::Version")] Version gdiplusVersion, [Optional] int startupParameters, [NativeTypeName("Gdiplus::DebugEventProc")][Optional] delegate* unmanaged<DebugEventLevel, sbyte*, void> debugEventCallback, [Optional] BOOL suppressBackgroundThread, [Optional] BOOL suppressExternalCodecs)
     {
         Base.GdiplusVersion = (uint)(gdiplusVersion);
         Base.DebugEventCallback = debugEventCallback;

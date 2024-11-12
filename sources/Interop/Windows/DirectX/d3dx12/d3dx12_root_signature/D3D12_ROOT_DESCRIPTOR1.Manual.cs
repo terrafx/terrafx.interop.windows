@@ -3,7 +3,6 @@
 // Ported from d3dx12_root_signature.h in microsoft/DirectX-Headers tag v1.614.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
-using System.Runtime.CompilerServices;
 using static TerraFX.Interop.DirectX.D3D12_ROOT_DESCRIPTOR_FLAGS;
 
 namespace TerraFX.Interop.DirectX;

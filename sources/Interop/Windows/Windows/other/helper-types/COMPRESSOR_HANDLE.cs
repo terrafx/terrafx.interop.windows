@@ -79,7 +79,7 @@ public readonly unsafe partial struct COMPRESSOR_HANDLE : IComparable, IComparab
 
     public int CompareTo(object? obj)
     {
-            if (obj is COMPRESSOR_HANDLE other)
+        if (obj is COMPRESSOR_HANDLE other)
         {
             return CompareTo(other);
         }

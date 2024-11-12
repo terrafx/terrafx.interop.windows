@@ -79,7 +79,7 @@ public readonly unsafe partial struct HCMTRANSFORM : IComparable, IComparable<HC
 
     public int CompareTo(object? obj)
     {
-            if (obj is HCMTRANSFORM other)
+        if (obj is HCMTRANSFORM other)
         {
             return CompareTo(other);
         }

@@ -117,10 +117,10 @@ public unsafe struct CD3DX12_PIPELINE_STATE_STREAM4
     public CD3DX12_PIPELINE_STATE_STREAM4([NativeTypeName("const D3D12_COMPUTE_PIPELINE_STATE_DESC &")] in D3D12_COMPUTE_PIPELINE_STATE_DESC Desc)
     {
         Flags = Desc.Flags;
-        NodeMask  = Desc.NodeMask;
-        pRootSignature  = Desc.pRootSignature;
-        CS  = Desc.CS;
-        CachedPSO  = Desc.CachedPSO;
+        NodeMask = Desc.NodeMask;
+        pRootSignature = Desc.pRootSignature;
+        CS = Desc.CS;
+        CachedPSO = Desc.CachedPSO;
         DepthStencilState.pssInner.DepthEnable = false;
     }
 

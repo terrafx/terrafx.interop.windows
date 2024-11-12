@@ -79,7 +79,7 @@ public readonly unsafe partial struct CO_MTA_USAGE_COOKIE : IComparable, ICompar
 
     public int CompareTo(object? obj)
     {
-            if (obj is CO_MTA_USAGE_COOKIE other)
+        if (obj is CO_MTA_USAGE_COOKIE other)
         {
             return CompareTo(other);
         }

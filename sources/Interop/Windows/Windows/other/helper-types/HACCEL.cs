@@ -79,7 +79,7 @@ public readonly unsafe partial struct HACCEL : IComparable, IComparable<HACCEL>,
 
     public int CompareTo(object? obj)
     {
-            if (obj is HACCEL other)
+        if (obj is HACCEL other)
         {
             return CompareTo(other);
         }

@@ -28,9 +28,9 @@ public partial struct RECT : IEquatable<RECT>
     public static bool operator !=([NativeTypeName("const RECT &")] in RECT l, [NativeTypeName("const RECT &")] in RECT r)
         => !(l == r);
 
-    public override bool Equals(object? obj) => (obj is RECT other) && Equals(other);
+    public override readonly bool Equals(object? obj) => (obj is RECT other) && Equals(other);
 
-    public bool Equals(RECT other) => this == other;
+    public readonly bool Equals(RECT other) => this == other;
 
-    public override int GetHashCode() => HashCode.Combine(left, top, right, bottom);
+    public override readonly int GetHashCode() => HashCode.Combine(left, top, right, bottom);
 }

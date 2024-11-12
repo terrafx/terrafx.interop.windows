@@ -79,7 +79,7 @@ public readonly unsafe partial struct HPEN : IComparable, IComparable<HPEN>, IEq
 
     public int CompareTo(object? obj)
     {
-            if (obj is HPEN other)
+        if (obj is HPEN other)
         {
             return CompareTo(other);
         }

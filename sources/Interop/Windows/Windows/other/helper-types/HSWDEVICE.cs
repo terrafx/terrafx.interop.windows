@@ -79,7 +79,7 @@ public readonly unsafe partial struct HSWDEVICE : IComparable, IComparable<HSWDE
 
     public int CompareTo(object? obj)
     {
-            if (obj is HSWDEVICE other)
+        if (obj is HSWDEVICE other)
         {
             return CompareTo(other);
         }

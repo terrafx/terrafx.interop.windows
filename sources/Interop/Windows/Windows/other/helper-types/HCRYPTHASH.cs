@@ -79,7 +79,7 @@ public readonly unsafe partial struct HCRYPTHASH : IComparable, IComparable<HCRY
 
     public int CompareTo(object? obj)
     {
-            if (obj is HCRYPTHASH other)
+        if (obj is HCRYPTHASH other)
         {
             return CompareTo(other);
         }

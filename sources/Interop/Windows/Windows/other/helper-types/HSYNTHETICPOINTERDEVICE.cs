@@ -79,7 +79,7 @@ public readonly unsafe partial struct HSYNTHETICPOINTERDEVICE : IComparable, ICo
 
     public int CompareTo(object? obj)
     {
-            if (obj is HSYNTHETICPOINTERDEVICE other)
+        if (obj is HSYNTHETICPOINTERDEVICE other)
         {
             return CompareTo(other);
         }

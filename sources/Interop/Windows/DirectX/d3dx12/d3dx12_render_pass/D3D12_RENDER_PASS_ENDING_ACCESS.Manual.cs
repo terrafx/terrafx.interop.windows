@@ -47,12 +47,12 @@ public partial struct D3D12_RENDER_PASS_ENDING_ACCESS : IEquatable<D3D12_RENDER_
     public static bool operator !=([NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS &")] in D3D12_RENDER_PASS_ENDING_ACCESS a, [NativeTypeName("const D3D12_RENDER_PASS_ENDING_ACCESS &")] in D3D12_RENDER_PASS_ENDING_ACCESS b)
         => !(a == b);
 
-    public override bool Equals([NotNullWhen(true)] object? obj)
+    public override readonly bool Equals([NotNullWhen(true)] object? obj)
         => (obj is D3D12_RENDER_PASS_ENDING_ACCESS other) && Equals(other);
 
-    public bool Equals(D3D12_RENDER_PASS_ENDING_ACCESS other) => this == other;
+    public readonly bool Equals(D3D12_RENDER_PASS_ENDING_ACCESS other) => this == other;
 
-    public override int GetHashCode()
+    public override readonly int GetHashCode()
     {
         var hashCode = new HashCode();
         hashCode.Add(Type);

@@ -79,7 +79,7 @@ public readonly unsafe partial struct HMONITOR : IComparable, IComparable<HMONIT
 
     public int CompareTo(object? obj)
     {
-            if (obj is HMONITOR other)
+        if (obj is HMONITOR other)
         {
             return CompareTo(other);
         }

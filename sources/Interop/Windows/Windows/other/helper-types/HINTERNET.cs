@@ -79,7 +79,7 @@ public readonly unsafe partial struct HINTERNET : IComparable, IComparable<HINTE
 
     public int CompareTo(object? obj)
     {
-            if (obj is HINTERNET other)
+        if (obj is HINTERNET other)
         {
             return CompareTo(other);
         }

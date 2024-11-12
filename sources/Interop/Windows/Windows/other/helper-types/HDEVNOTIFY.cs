@@ -79,7 +79,7 @@ public readonly unsafe partial struct HDEVNOTIFY : IComparable, IComparable<HDEV
 
     public int CompareTo(object? obj)
     {
-            if (obj is HDEVNOTIFY other)
+        if (obj is HDEVNOTIFY other)
         {
             return CompareTo(other);
         }

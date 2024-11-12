@@ -185,9 +185,9 @@ public unsafe partial struct D3D11_VIEWPORT : IEquatable<D3D11_VIEWPORT>
     public static bool operator !=(in D3D11_VIEWPORT l, in D3D11_VIEWPORT r)
         => !(l == r);
 
-    public override bool Equals(object? obj) => (obj is D3D11_VIEWPORT other) && Equals(other);
+    public override readonly bool Equals(object? obj) => (obj is D3D11_VIEWPORT other) && Equals(other);
 
-    public bool Equals(D3D11_VIEWPORT other) => this == other;
+    public readonly bool Equals(D3D11_VIEWPORT other) => this == other;
 
-    public override int GetHashCode() => HashCode.Combine(TopLeftX, TopLeftY, Width, Height, MinDepth, MaxDepth);
+    public override readonly int GetHashCode() => HashCode.Combine(TopLeftX, TopLeftY, Width, Height, MinDepth, MaxDepth);
 }

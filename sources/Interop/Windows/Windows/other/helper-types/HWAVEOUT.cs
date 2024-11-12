@@ -79,7 +79,7 @@ public readonly unsafe partial struct HWAVEOUT : IComparable, IComparable<HWAVEO
 
     public int CompareTo(object? obj)
     {
-            if (obj is HWAVEOUT other)
+        if (obj is HWAVEOUT other)
         {
             return CompareTo(other);
         }

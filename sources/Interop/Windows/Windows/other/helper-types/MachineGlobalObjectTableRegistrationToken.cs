@@ -73,7 +73,7 @@ public readonly unsafe partial struct MachineGlobalObjectTableRegistrationToken 
 
     public int CompareTo(object? obj)
     {
-            if (obj is MachineGlobalObjectTableRegistrationToken other)
+        if (obj is MachineGlobalObjectTableRegistrationToken other)
         {
             return CompareTo(other);
         }

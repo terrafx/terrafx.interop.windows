@@ -73,7 +73,7 @@ public readonly unsafe partial struct OAHWND : IComparable, IComparable<OAHWND>,
 
     public int CompareTo(object? obj)
     {
-            if (obj is OAHWND other)
+        if (obj is OAHWND other)
         {
             return CompareTo(other);
         }

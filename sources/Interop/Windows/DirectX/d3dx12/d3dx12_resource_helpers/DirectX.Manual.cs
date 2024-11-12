@@ -23,7 +23,7 @@ public static unsafe partial class DirectX
     {
         MipSlice = T.CreateTruncating(Subresource % MipLevels);
         ArraySlice = U.CreateTruncating((Subresource / MipLevels) % ArraySize);
-        PlaneSlice = V.CreateTruncating(Subresource / (MipLevels* ArraySize));
+        PlaneSlice = V.CreateTruncating(Subresource / (MipLevels * ArraySize));
     }
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.GetRequiredIntermediateSize"]/*' />
@@ -67,8 +67,7 @@ public static unsafe partial class DirectX
                 return 0;
             }
 
-            D3D12_MEMCPY_DEST DestData = new D3D12_MEMCPY_DEST
-            {
+            D3D12_MEMCPY_DEST DestData = new D3D12_MEMCPY_DEST {
                 pData = pData + pLayouts[i].Offset,
                 RowPitch = pLayouts[i].Footprint.RowPitch,
                 SlicePitch = unchecked((nuint)(pLayouts[i].Footprint.RowPitch) * (nuint)(pNumRows[i])),
@@ -123,8 +122,7 @@ public static unsafe partial class DirectX
                 return 0;
             }
 
-            D3D12_MEMCPY_DEST DestData = new D3D12_MEMCPY_DEST
-            {
+            D3D12_MEMCPY_DEST DestData = new D3D12_MEMCPY_DEST {
                 pData = pData + pLayouts[i].Offset,
                 RowPitch = pLayouts[i].Footprint.RowPitch,
                 SlicePitch = unchecked((nuint)(pLayouts[i].Footprint.RowPitch) * (nuint)(pNumRows[i])),
@@ -280,7 +278,7 @@ public static unsafe partial class DirectX
             D3D12DecomposeSubresource(Subresource, resourceDesc.MipLevels, resourceDesc.ArraySize(), out uint MipLevel, out uint ArraySlice, out uint PlaneSlice);
 
             ulong Width = D3DX12AlignAtLeast<ulong>(resourceDesc.Width >> (int)(MipLevel), WidthAlignment);
-            uint Height =  D3DX12AlignAtLeast(resourceDesc.Height >> (int)(MipLevel), HeightAlignment);
+            uint Height = D3DX12AlignAtLeast(resourceDesc.Height >> (int)(MipLevel), HeightAlignment);
             ushort Depth = D3DX12AlignAtLeast<ushort>((ushort)(resourceDesc.Depth() >> (int)(MipLevel)), DepthAlignment);
 
             D3D12_PROPERTY_LAYOUT_FORMAT_TABLE.GetPlaneSubsampledSizeAndFormatForCopyableLayout(PlaneSlice, Format, (uint)(Width), Height, out DXGI_FORMAT PlaneFormat, out uint MinPlanePitchWidth, out uint PlaneWidth, out uint PlaneHeight);
@@ -332,11 +330,11 @@ public static unsafe partial class DirectX
             ulong SubresourceSize = (NumRows * NumSlices - 1) * Placement->RowPitch + MinPlaneRowPitch;
 
             TotalBytes += SubresourceSize;
-            if(TotalBytes < SubresourceSize)
+            if (TotalBytes < SubresourceSize)
             {
                 TotalBytes = uint64_max;
             }
-            bResourceOverflow  = bResourceOverflow  || bOverflow;
+            bResourceOverflow = bResourceOverflow || bOverflow;
         }
 
         // Overflow error
@@ -362,7 +360,7 @@ public static unsafe partial class DirectX
         {
             *pTotalBytes = TotalBytes;
         }
-        if(TotalBytes == uint64_max)
+        if (TotalBytes == uint64_max)
         {
             return false;
         }

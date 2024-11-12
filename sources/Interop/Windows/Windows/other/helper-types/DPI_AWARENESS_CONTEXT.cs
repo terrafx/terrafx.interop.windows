@@ -79,7 +79,7 @@ public readonly unsafe partial struct DPI_AWARENESS_CONTEXT : IComparable, IComp
 
     public int CompareTo(object? obj)
     {
-            if (obj is DPI_AWARENESS_CONTEXT other)
+        if (obj is DPI_AWARENESS_CONTEXT other)
         {
             return CompareTo(other);
         }

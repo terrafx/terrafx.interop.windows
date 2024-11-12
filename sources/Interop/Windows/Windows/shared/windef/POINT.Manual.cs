@@ -24,9 +24,9 @@ public partial struct POINT : IEquatable<POINT>
     public static bool operator !=([NativeTypeName("const POINT &")] in POINT l, [NativeTypeName("const POINT &")] in POINT r)
         => !(l == r);
 
-    public override bool Equals(object? obj) => (obj is POINT other) && Equals(other);
+    public override readonly bool Equals(object? obj) => (obj is POINT other) && Equals(other);
 
-    public bool Equals(POINT other) => this == other;
+    public readonly bool Equals(POINT other) => this == other;
 
-    public override int GetHashCode() => HashCode.Combine(x, y);
+    public override readonly int GetHashCode() => HashCode.Combine(x, y);
 }

@@ -57,7 +57,7 @@ public partial struct SLIST_HEADER_X86
         public ulong Depth
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield1 & 0xFFFFUL;
             }
@@ -73,7 +73,7 @@ public partial struct SLIST_HEADER_X86
         public ulong Sequence
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield1 >> 16) & 0xFFFFUL;
             }
@@ -91,7 +91,7 @@ public partial struct SLIST_HEADER_X86
         public ulong Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield2 & 0xFUL;
             }
@@ -107,7 +107,7 @@ public partial struct SLIST_HEADER_X86
         public ulong NextEntry
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield2 >> 4) & 0xFFFFFFFUL;
             }

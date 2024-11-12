@@ -72,7 +72,7 @@ public static unsafe class Program
             }
         }
 
-        if (ranAnySamples == false)
+        if (!ranAnySamples)
         {
             PrintHelp();
         }

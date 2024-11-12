@@ -67,7 +67,7 @@ public readonly partial struct LRESULT : IComparable, IComparable<LRESULT>, IEqu
 
     public int CompareTo(object? obj)
     {
-            if (obj is LRESULT other)
+        if (obj is LRESULT other)
         {
             return CompareTo(other);
         }

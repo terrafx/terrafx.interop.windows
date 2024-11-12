@@ -79,7 +79,7 @@ public readonly unsafe partial struct EC_HANDLE : IComparable, IComparable<EC_HA
 
     public int CompareTo(object? obj)
     {
-            if (obj is EC_HANDLE other)
+        if (obj is EC_HANDLE other)
         {
             return CompareTo(other);
         }

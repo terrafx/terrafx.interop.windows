@@ -31,7 +31,7 @@ public unsafe partial struct HIDP_LINK_COLLECTION_NODE
     public uint CollectionType
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield & 0xFFu;
         }
@@ -47,7 +47,7 @@ public unsafe partial struct HIDP_LINK_COLLECTION_NODE
     public uint IsAlias
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 8) & 0x1u;
         }
@@ -63,7 +63,7 @@ public unsafe partial struct HIDP_LINK_COLLECTION_NODE
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 9) & 0x7FFFFFu;
         }

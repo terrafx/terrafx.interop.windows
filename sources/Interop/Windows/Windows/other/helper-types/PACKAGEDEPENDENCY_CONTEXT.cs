@@ -73,7 +73,7 @@ public readonly unsafe partial struct PACKAGEDEPENDENCY_CONTEXT : IComparable, I
 
     public int CompareTo(object? obj)
     {
-            if (obj is PACKAGEDEPENDENCY_CONTEXT other)
+        if (obj is PACKAGEDEPENDENCY_CONTEXT other)
         {
             return CompareTo(other);
         }

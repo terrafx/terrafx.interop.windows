@@ -28,7 +28,7 @@ dotnet_naming_rule.type_parameters_should_be_pascal_case_prefixed_with_t.severit
 # Set dotnet style options to:
 #    disable certain parent style options since they are not applicable to interop
 ###############################################################################
-csharp_style_expression_bodied_methods = when_on_single_line:none
+dotnet_style_namespace_match_folder = true:none
 dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity:none
 dotnet_style_parentheses_in_other_binary_operators = always_for_clarity:none
 dotnet_style_parentheses_in_other_operators = never_if_unnecessary:none
@@ -36,7 +36,22 @@ dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity:non
 dotnet_style_prefer_compound_assignment = true:none
 dotnet_style_prefer_conditional_expression_over_assignment = true:none
 dotnet_style_prefer_conditional_expression_over_return = true:none
+
+###############################################################################
+# Set csharp style options to:
+#    disable certain parent style options since they are not applicable to interop
+###############################################################################
+csharp_style_expression_bodied_methods = when_on_single_line:none
 csharp_style_prefer_pattern_matching = true:none
+csharp_style_prefer_primary_constructors = true:none
 csharp_style_var_elsewhere = true:none
 csharp_style_var_for_built_in_types = true:none
 csharp_style_var_when_type_is_apparent = true:none
+
+###############################################################################
+# Set dotnet diagnostic options to ignore:
+#    IDE0004 - Remove unnecessary cast
+#    IDE0005 - Remove unnecessary using directives
+###############################################################################
+dotnet_diagnostic.IDE0004.severity = none
+dotnet_diagnostic.IDE0005.severity = none

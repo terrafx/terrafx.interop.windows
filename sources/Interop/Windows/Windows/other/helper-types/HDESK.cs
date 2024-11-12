@@ -79,7 +79,7 @@ public readonly unsafe partial struct HDESK : IComparable, IComparable<HDESK>, I
 
     public int CompareTo(object? obj)
     {
-            if (obj is HDESK other)
+        if (obj is HDESK other)
         {
             return CompareTo(other);
         }

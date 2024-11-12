@@ -79,7 +79,7 @@ public readonly unsafe partial struct HTASK : IComparable, IComparable<HTASK>, I
 
     public int CompareTo(object? obj)
     {
-            if (obj is HTASK other)
+        if (obj is HTASK other)
         {
             return CompareTo(other);
         }

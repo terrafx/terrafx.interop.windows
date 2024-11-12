@@ -79,7 +79,7 @@ public readonly unsafe partial struct HRGN : IComparable, IComparable<HRGN>, IEq
 
     public int CompareTo(object? obj)
     {
-            if (obj is HRGN other)
+        if (obj is HRGN other)
         {
             return CompareTo(other);
         }

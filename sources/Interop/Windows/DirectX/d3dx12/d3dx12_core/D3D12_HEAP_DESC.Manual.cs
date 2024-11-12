@@ -21,13 +21,13 @@ public unsafe partial struct D3D12_HEAP_DESC : IEquatable<D3D12_HEAP_DESC>
     public static bool operator !=([NativeTypeName("const D3D12_HEAP_DESC &")] in D3D12_HEAP_DESC l, [NativeTypeName("const D3D12_HEAP_DESC &")] in D3D12_HEAP_DESC r)
         => !(l == r);
 
-    public override bool Equals([NotNullWhen(true)] object? obj) => (obj is D3D12_HEAP_DESC other) && Equals(other);
+    public override readonly bool Equals([NotNullWhen(true)] object? obj) => (obj is D3D12_HEAP_DESC other) && Equals(other);
 
-    public bool Equals(D3D12_HEAP_DESC other) => (this == other);
+    public readonly bool Equals(D3D12_HEAP_DESC other) => (this == other);
 
-    public override int GetHashCode() => HashCode.Combine(SizeInBytes, Properties, Alignment, Flags);
+    public override readonly int GetHashCode() => HashCode.Combine(SizeInBytes, Properties, Alignment, Flags);
 
-    public bool IsCPUAccessible()
+    public readonly bool IsCPUAccessible()
     {
         return Properties.IsCPUAccessible();
     }

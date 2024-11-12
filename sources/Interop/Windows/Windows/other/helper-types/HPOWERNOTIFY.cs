@@ -79,7 +79,7 @@ public readonly unsafe partial struct HPOWERNOTIFY : IComparable, IComparable<HP
 
     public int CompareTo(object? obj)
     {
-            if (obj is HPOWERNOTIFY other)
+        if (obj is HPOWERNOTIFY other)
         {
             return CompareTo(other);
         }

@@ -73,7 +73,7 @@ public readonly unsafe partial struct PACKAGE_INFO_REFERENCE : IComparable, ICom
 
     public int CompareTo(object? obj)
     {
-            if (obj is PACKAGE_INFO_REFERENCE other)
+        if (obj is PACKAGE_INFO_REFERENCE other)
         {
             return CompareTo(other);
         }

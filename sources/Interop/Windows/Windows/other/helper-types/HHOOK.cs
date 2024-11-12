@@ -79,7 +79,7 @@ public readonly unsafe partial struct HHOOK : IComparable, IComparable<HHOOK>, I
 
     public int CompareTo(object? obj)
     {
-            if (obj is HHOOK other)
+        if (obj is HHOOK other)
         {
             return CompareTo(other);
         }

@@ -79,7 +79,7 @@ public readonly unsafe partial struct HCRYPTPROV_LEGACY : IComparable, IComparab
 
     public int CompareTo(object? obj)
     {
-            if (obj is HCRYPTPROV_LEGACY other)
+        if (obj is HCRYPTPROV_LEGACY other)
         {
             return CompareTo(other);
         }

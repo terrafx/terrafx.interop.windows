@@ -79,7 +79,7 @@ public readonly unsafe partial struct ROPARAMIIDHANDLE : IComparable, IComparabl
 
     public int CompareTo(object? obj)
     {
-            if (obj is ROPARAMIIDHANDLE other)
+        if (obj is ROPARAMIIDHANDLE other)
         {
             return CompareTo(other);
         }

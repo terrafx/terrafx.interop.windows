@@ -79,7 +79,7 @@ public readonly unsafe partial struct HDROP : IComparable, IComparable<HDROP>, I
 
     public int CompareTo(object? obj)
     {
-            if (obj is HDROP other)
+        if (obj is HDROP other)
         {
             return CompareTo(other);
         }

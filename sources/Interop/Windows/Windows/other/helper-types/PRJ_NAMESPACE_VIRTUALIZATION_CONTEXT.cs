@@ -79,7 +79,7 @@ public readonly unsafe partial struct PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT : ICo
 
     public int CompareTo(object? obj)
     {
-            if (obj is PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT other)
+        if (obj is PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT other)
         {
             return CompareTo(other);
         }

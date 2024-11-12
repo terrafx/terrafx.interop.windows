@@ -43,9 +43,9 @@ public partial struct D2D_RECT_U : IEquatable<D2D_RECT_U>
         }
     }
 
-    public bool Equals(D2D_RECT_U other) => this == other;
+    public readonly bool Equals(D2D_RECT_U other) => this == other;
 
-    public override bool Equals(object? obj) => (obj is D2D_RECT_U other) && this == other;
+    public override readonly bool Equals(object? obj) => (obj is D2D_RECT_U other) && this == other;
 
-    public override int GetHashCode() => HashCode.Combine(left, top, right, bottom);
+    public override readonly int GetHashCode() => HashCode.Combine(left, top, right, bottom);
 }

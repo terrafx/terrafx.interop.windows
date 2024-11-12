@@ -79,7 +79,7 @@ public readonly unsafe partial struct HFONT : IComparable, IComparable<HFONT>, I
 
     public int CompareTo(object? obj)
     {
-            if (obj is HFONT other)
+        if (obj is HFONT other)
         {
             return CompareTo(other);
         }

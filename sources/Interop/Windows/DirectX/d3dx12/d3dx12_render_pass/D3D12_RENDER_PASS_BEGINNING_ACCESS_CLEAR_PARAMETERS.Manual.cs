@@ -16,10 +16,10 @@ public partial struct D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS : IEqu
     public static bool operator !=([NativeTypeName("const D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS &")] in D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS a, [NativeTypeName("const D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS &")] in D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS b)
         => !(a == b);
 
-    public override bool Equals([NotNullWhen(true)] object? obj)
+    public override readonly bool Equals([NotNullWhen(true)] object? obj)
         => (obj is D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS other) && Equals(other);
 
-    public bool Equals(D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS other) => this == other;
+    public readonly bool Equals(D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS other) => this == other;
 
-    public override int GetHashCode() => ClearValue.GetHashCode();
+    public override readonly int GetHashCode() => ClearValue.GetHashCode();
 }

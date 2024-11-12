@@ -27,21 +27,16 @@ using static TerraFX.Interop.DirectX.D3D_ROOT_SIGNATURE_VERSION;
 using static TerraFX.Interop.DirectX.DirectX;
 using static TerraFX.Interop.DirectX.DXGI_FORMAT;
 using static TerraFX.Interop.Windows.Windows;
-using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12;
 
 [SupportedOSPlatform("windows10.0")]
-public unsafe class HelloConstBuffer12 : HelloTriangle12
+public unsafe class HelloConstBuffer12(string name) : HelloTriangle12(name)
 {
     private ID3D12DescriptorHeap* _cbvHeap;
     private ID3D12Resource* _constantBuffer;
     private byte* _constantBufferDataBegin;
     private SceneConstantBuffer _constantBufferData;
-
-    public HelloConstBuffer12(string name) : base(name)
-    {
-    }
 
     public override void OnUpdate(TimeSpan delta)
     {
@@ -118,8 +113,8 @@ public unsafe class HelloConstBuffer12 : HelloTriangle12
         var compileFlags = 0u;
 
 #if DEBUG
-            // Enable better shader debugging with the graphics debugging tools.
-            compileFlags |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
+        // Enable better shader debugging with the graphics debugging tools.
+        compileFlags |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
 #endif
         fixed (char* fileName = GetAssetFullPath(@"D3D12\Assets\Shaders\HelloConstBuffer.hlsl"))
         {
@@ -179,6 +174,7 @@ public unsafe class HelloConstBuffer12 : HelloTriangle12
         gpsoDesc.RTVFormats[0] = DXGI_FORMAT_R8G8B8A8_UNORM;
 
         var pssDesc = new CD3DX12_PIPELINE_STATE_STREAM(gpsoDesc);
+        pssDesc.CS.pssType = D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_CS;
 
         var psoDesc = new D3D12_PIPELINE_STATE_STREAM_DESC {
             SizeInBytes = (uint)sizeof(CD3DX12_PIPELINE_STATE_STREAM),

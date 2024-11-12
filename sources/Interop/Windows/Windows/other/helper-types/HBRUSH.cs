@@ -79,7 +79,7 @@ public readonly unsafe partial struct HBRUSH : IComparable, IComparable<HBRUSH>,
 
     public int CompareTo(object? obj)
     {
-            if (obj is HBRUSH other)
+        if (obj is HBRUSH other)
         {
             return CompareTo(other);
         }

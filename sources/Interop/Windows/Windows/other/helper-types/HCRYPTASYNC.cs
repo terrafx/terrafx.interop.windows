@@ -79,7 +79,7 @@ public readonly unsafe partial struct HCRYPTASYNC : IComparable, IComparable<HCR
 
     public int CompareTo(object? obj)
     {
-            if (obj is HCRYPTASYNC other)
+        if (obj is HCRYPTASYNC other)
         {
             return CompareTo(other);
         }

@@ -67,7 +67,7 @@ public readonly unsafe partial struct LPARAM : IComparable, IComparable<LPARAM>,
 
     public int CompareTo(object? obj)
     {
-            if (obj is LPARAM other)
+        if (obj is LPARAM other)
         {
             return CompareTo(other);
         }

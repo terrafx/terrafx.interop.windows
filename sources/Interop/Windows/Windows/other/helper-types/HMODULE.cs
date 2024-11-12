@@ -79,7 +79,7 @@ public readonly unsafe partial struct HMODULE : IComparable, IComparable<HMODULE
 
     public int CompareTo(object? obj)
     {
-            if (obj is HMODULE other)
+        if (obj is HMODULE other)
         {
             return CompareTo(other);
         }

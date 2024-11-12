@@ -62,17 +62,17 @@ public unsafe partial struct D3D12_RESOURCE_DESC
     }
 
     [return: NativeTypeName("UINT8")]
-    public byte PlaneCount(ID3D12Device* pDevice)
+    public readonly byte PlaneCount(ID3D12Device* pDevice)
     {
         return D3D12GetFormatPlaneCount(pDevice, Format);
     }
 
-    public uint Subresources(ID3D12Device* pDevice)
+    public readonly uint Subresources(ID3D12Device* pDevice)
     {
         return (uint)(MipLevels) * ArraySize() * PlaneCount(pDevice);
     }
 
-    public uint CalcSubresource(uint MipSlice, uint ArraySlice, uint PlaneSlice)
+    public readonly uint CalcSubresource(uint MipSlice, uint ArraySlice, uint PlaneSlice)
     {
         return D3D12CalcSubresource(MipSlice, ArraySlice, PlaneSlice, MipLevels, ArraySize());
     }

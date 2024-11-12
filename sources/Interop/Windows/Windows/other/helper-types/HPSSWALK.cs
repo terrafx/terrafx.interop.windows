@@ -79,7 +79,7 @@ public readonly unsafe partial struct HPSSWALK : IComparable, IComparable<HPSSWA
 
     public int CompareTo(object? obj)
     {
-            if (obj is HPSSWALK other)
+        if (obj is HPSSWALK other)
         {
             return CompareTo(other);
         }

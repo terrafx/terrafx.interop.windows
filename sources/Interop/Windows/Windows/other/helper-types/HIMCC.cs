@@ -79,7 +79,7 @@ public readonly unsafe partial struct HIMCC : IComparable, IComparable<HIMCC>, I
 
     public int CompareTo(object? obj)
     {
-            if (obj is HIMCC other)
+        if (obj is HIMCC other)
         {
             return CompareTo(other);
         }

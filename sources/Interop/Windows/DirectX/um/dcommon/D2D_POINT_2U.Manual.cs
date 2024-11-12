@@ -24,9 +24,9 @@ public partial struct D2D_POINT_2U : IEquatable<D2D_POINT_2U>
     public static bool operator !=([NativeTypeName("const D2D1_POINT_2U &")] in D2D_POINT_2U l, [NativeTypeName("const D2D1_POINT_2U &")] in D2D_POINT_2U r)
         => !(l == r);
 
-    public bool Equals(D2D_POINT_2U other) => this == other;
+    public readonly bool Equals(D2D_POINT_2U other) => this == other;
 
-    public override bool Equals(object? obj) => (obj is D2D_POINT_2U other) && this == other;
+    public override readonly bool Equals(object? obj) => (obj is D2D_POINT_2U other) && this == other;
 
-    public override int GetHashCode() => HashCode.Combine(x, y);
+    public override readonly int GetHashCode() => HashCode.Combine(x, y);
 }

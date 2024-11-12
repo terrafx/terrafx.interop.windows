@@ -20,19 +20,14 @@ using static TerraFX.Interop.DirectX.D3D_ROOT_SIGNATURE_VERSION;
 using static TerraFX.Interop.DirectX.DirectX;
 using static TerraFX.Interop.DirectX.DXGI_FORMAT;
 using static TerraFX.Interop.Windows.Windows;
-using static TerraFX.Samples.DirectX.DXSampleHelper;
 
 namespace TerraFX.Samples.DirectX.D3D12;
 
 [SupportedOSPlatform("windows10.0")]
-public unsafe class HelloTriangle12 : HelloWindow12
+public unsafe class HelloTriangle12(string name) : HelloWindow12(name)
 {
     private ID3D12Resource* _vertexBuffer;
     private D3D12_VERTEX_BUFFER_VIEW _vertexBufferView;
-
-    public HelloTriangle12(string name) : base(name)
-    {
-    }
 
     public ref D3D12_VERTEX_BUFFER_VIEW VertexBufferView => ref _vertexBufferView;
 
@@ -56,8 +51,8 @@ public unsafe class HelloTriangle12 : HelloWindow12
         var compileFlags = 0u;
 
 #if DEBUG
-            // Enable better shader debugging with the graphics debugging tools.
-            compileFlags |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
+        // Enable better shader debugging with the graphics debugging tools.
+        compileFlags |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
 #endif
         fixed (char* fileName = GetAssetFullPath(@"D3D12\Assets\Shaders\HelloTriangle.hlsl"))
         {

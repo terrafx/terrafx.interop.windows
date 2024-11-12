@@ -14,22 +14,15 @@ using static TerraFX.Interop.DirectX.D3D12_RESOURCE_DIMENSION;
 using static TerraFX.Interop.DirectX.D3D12_RESOURCE_FLAGS;
 using static TerraFX.Interop.DirectX.D3D12_RESOURCE_STATES;
 using static TerraFX.Interop.DirectX.DXGI;
-using static TerraFX.Samples.DirectX.DXSampleHelper;
 using static TerraFX.Interop.Windows.Windows;
 
 namespace TerraFX.Samples.DirectX.D3D12;
 
 [SupportedOSPlatform("windows10.0")]
-public unsafe class HelloMultiSampling12 : HelloTriangle12
+public unsafe class HelloMultiSampling12(string name) : HelloTriangle12(name)
 {
-    private ID3D12Resource*[] _msaaRenderTargets;
-    private DXGI_SAMPLE_DESC _msaaDesc;
-
-    public HelloMultiSampling12(string name) : base(name)
-    {
-        _msaaRenderTargets = new ID3D12Resource*[2];
-        _msaaDesc = new DXGI_SAMPLE_DESC(2, DXGI_STANDARD_MULTISAMPLE_QUALITY_PATTERN);
-    }
+    private ID3D12Resource*[] _msaaRenderTargets = new ID3D12Resource*[2];
+    private DXGI_SAMPLE_DESC _msaaDesc = new DXGI_SAMPLE_DESC(2, DXGI_STANDARD_MULTISAMPLE_QUALITY_PATTERN);
 
     public ID3D12Resource* MSAARenderTarget => _msaaRenderTargets[FrameIndex];
 
