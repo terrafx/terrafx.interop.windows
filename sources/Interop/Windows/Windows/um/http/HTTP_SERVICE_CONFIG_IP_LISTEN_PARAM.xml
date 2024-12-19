@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_CONFIG_IP_LISTEN_PARAM">
+    <summary>The<b>HTTP_SERVICE_CONFIG_IP_LISTEN_PARAM</b> structure is used to specify an IP address to be added to or deleted from the list of IP addresses to which the HTTP service binds.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_IP_LISTEN_PARAM.AddrLength">
+    <summary>The size, in bytes, of the address pointed to by <b>pAddress</b>.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_IP_LISTEN_PARAM.pAddress">
+    <summary>
+      <para>A pointer to an Internet Protocol (IP) address to be added to or deleted from the listen list.</para>
+      <para>To specify an IPv6 address, use a <a href="https://docs.microsoft.com//previous-versions/aa915715(v=msdn.10)">SOCKADDR_IN6</a> structure, declared in the Ws2tcpip.h header file, and cast its address to a PSOCKADDR when you use it to set the <b>pAddress</b> member. The <b>sin_family</b> member of the SOCKADDR_IN6 should be set to AF_INET6.</para>
+      <para>If the <b>sin_addr</b> field in <a href="https://docs.microsoft.com//previous-versions/aa915715(v=msdn.10)">SOCKADDR_IN6</a> structure is set to 0.0.0.0, it means to bind to all IPv4 addresses. If the <b>sin6_addr</b> field in <a href="https://docs.microsoft.com//previous-versions/aa915715(v=msdn.10)">SOCKADDR_IN6</a> is set to [.], it means to bind to all IPv6 addresses.</para>
+    </summary>
+  </member>
+</doc>

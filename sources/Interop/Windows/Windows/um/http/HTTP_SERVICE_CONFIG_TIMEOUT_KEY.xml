@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_CONFIG_TIMEOUT_KEY">
+    <summary>The <b>HTTP_SERVICE_CONFIG_TIMEOUT_KEY</b> enumeration defines the type of timer that is queried or configured through the <see cref="HTTP_SERVICE_CONFIG_TIMEOUT_SET" /> structure.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_TIMEOUT_KEY.IdleConnectionTimeout">
+    <summary>The maximum time allowed for a connection to remain idle, after which, the connection is timed out and reset.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_TIMEOUT_KEY.HeaderWaitTimeout">
+    <summary>The maximum time allowed to parse all the request headers, including the request line, after which, the connection is timed out and reset.</summary>
+  </member>
+</doc>

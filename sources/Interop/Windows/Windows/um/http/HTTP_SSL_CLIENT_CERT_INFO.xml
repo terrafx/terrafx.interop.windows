@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SSL_CLIENT_CERT_INFO">
+    <summary>The<b>HTTP_SSL_CLIENT_CERT_INFO</b> structure contains data about a Secure Sockets Layer (SSL) client certificate that can be used to determine whether the certificate is valid.</summary>
+  </member>
+  <member name="HTTP_SSL_CLIENT_CERT_INFO.CertFlags">
+    <summary>
+      <para>Flags that indicate whether the certificate is valid. The possible values for this member are a <a href="https://docs.microsoft.com//windows/desktop/SecAuthN/sspi-status-codes">SSPI Status Code</a> returned from SSPI or one of the following flags from the <b>dwError</b> member of the <see cref="CERT_CHAIN_POLICY_STATUS" /> structure:</para>
+      <h4>CERT_E_EXPIRED</h4>
+      <h4>CERT_E_UNTRUSTEDCA</h4>
+      <h4>CERT_E_WRONG_USAGE</h4>
+      <h4>CERT_E_UNTRUSTEDROOT</h4>
+      <h4>CERT_E_REVOKED</h4>
+      <h4>CERT_E_CN_NO_MATCH</h4>
+    </summary>
+  </member>
+  <member name="HTTP_SSL_CLIENT_CERT_INFO.CertEncodedSize">
+    <summary>The size, in bytes, of the certificate.</summary>
+  </member>
+  <member name="HTTP_SSL_CLIENT_CERT_INFO.pCertEncoded">
+    <summary>A pointer to the actual certificate.</summary>
+  </member>
+  <member name="HTTP_SSL_CLIENT_CERT_INFO.Token">
+    <summary>A handle to an access token. If the HTTP_SERVICE_CONFIG_SSL_FLAG_USE_DS_MAPPER flag is set using the<see cref="HttpSetServiceConfiguration" /> function, and the client certificate was successfully mapped to an operating-system user account, then this member contains the handle to a valid<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/access-tokens">access token</a>. When the<b>HTTP_SSL_CLIENT_CERT_INFO</b> structure is no longer required, release this token explicitly by closing the handle.</summary>
+  </member>
+  <member name="HTTP_SSL_CLIENT_CERT_INFO.CertDeniedByMapper">
+    <summary>Reserved.</summary>
+  </member>
+</doc>

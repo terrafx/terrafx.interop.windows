@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_REQUEST_PROPERTY_STREAM_ERROR">
+    <summary>The <b>HTTP_REQUEST_PROPERTY_STREAM_ERROR</b> structure represents an HTTP/2 or HTTP/3 stream error code.</summary>
+  </member>
+  <member name="HTTP_REQUEST_PROPERTY_STREAM_ERROR.ErrorCode">
+    <summary>The protocol stream error code.</summary>
+  </member>
+</doc>

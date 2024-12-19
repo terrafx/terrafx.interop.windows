@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_CONFIG_ID">
+    <summary>The<b>HTTP_SERVICE_CONFIG_ID</b> enumeration type defines service configuration options.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_ID.HttpServiceConfigIPListenList">
+    <summary>Specifies the IP Listen List used to register IP addresses on which to listen for SSL connections.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_ID.HttpServiceConfigSSLCertInfo">
+    <summary>
+      <para>Specifies the SSL certificate store.</para>
+      <div>
+        <b>Note</b>  If SSL is enabled in the HTTP Server API, TLS 1.0 may be used in place of SSL when the client application specifies TLS.</div>
+    </summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_ID.HttpServiceConfigUrlAclInfo">
+    <summary>Specifies the URL reservation store.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_ID.HttpServiceConfigTimeout">
+    <summary>
+      <para>Configures the HTTP Server API wide connection timeouts.</para>
+      <div>
+        <b>Note</b>  Windows Vista and later versions of Windows</div>
+    </summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_ID.HttpServiceConfigCache">
+    <summary>
+      <para>Used in the <see cref="HttpQueryServiceConfiguration" /> and <see cref="HttpSetServiceConfiguration" /> functions.</para>
+      <div>
+        <b>Note</b>  Windows Server 2008 R2 and Windows 7 and later versions of Windows.</div>
+    </summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_ID.HttpServiceConfigSslSniCertInfo">
+    <summary>
+      <para>Specifies the SSL endpoint configuration with <i>Hostname:Port</i> as key. Used in the <see cref="HttpDeleteServiceConfiguration" />, <see cref="HttpQueryServiceConfiguration" />, <see cref="HttpSetServiceConfiguration" />, and <see cref="HttpUpdateServiceConfiguration" /> functions</para>
+      <div>
+        <b>Note</b>  Windows 8 and later versions of Windows.</div>
+    </summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_ID.HttpServiceConfigSslCcsCertInfo">
+    <summary>
+      <para>Specifies that an operation should be performed for the SSL certificate record that specifies that Http.sys should consult the Centralized Certificate Store (CCS) store to find certificates if the port receives a Transport Layer Security (TLS) handshake. Used in the <see cref="HttpDeleteServiceConfiguration" />, <see cref="HttpQueryServiceConfiguration" />, <see cref="HttpSetServiceConfiguration" />, and <see cref="HttpUpdateServiceConfiguration" /> functions</para>
+      <div>
+        <b>Note</b>  Windows 8 and later versions of Windows.</div>
+    </summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_ID.HttpServiceConfigSetting"></member>
+  <member name="HTTP_SERVICE_CONFIG_ID.HttpServiceConfigMax">
+    <summary>Terminates the enumeration; is not used to define a service configuration option.</summary>
+  </member>
+</doc>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_REQUEST_PROPERTY">
+    <summary>The <b>HTTP_REQUEST_PROPERTY</b> enumeration defines the properties that are configured by the HTTP Server API on a request.</summary>
+  </member>
+  <member name="HTTP_REQUEST_PROPERTY.HttpRequestPropertyStreamError">
+    <summary>
+      <para>The HTTP/2 or HTTP/3 stream error on the request.</para>
+      <para>The <see cref="HTTP_REQUEST_PROPERTY_STREAM_ERROR" /> structure contains the configuration data for this property.</para>
+    </summary>
+  </member>
+</doc>

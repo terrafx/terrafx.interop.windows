@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_CONFIG_QUERY_TYPE">
+    <summary>The<b>HTTP_SERVICE_CONFIG_QUERY_TYPE</b> enumeration type defines various types of queries to make. It is used in the<see cref="HTTP_SERVICE_CONFIG_SSL_QUERY" />, <see cref="HTTP_SERVICE_CONFIG_SSL_CCS_QUERY" />, and<see cref="HTTP_SERVICE_CONFIG_URLACL_QUERY" /> structures.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_QUERY_TYPE.HttpServiceConfigQueryExact">
+    <summary>The query returns a single record that matches the specified key value.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_QUERY_TYPE.HttpServiceConfigQueryNext">
+    <summary>The query iterates through the store and returns all records in sequence, using an index value that the calling process increments between query calls.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_QUERY_TYPE.HttpServiceConfigQueryMax">
+    <summary>Terminates the enumeration; is not used to define a query type.</summary>
+  </member>
+</doc>

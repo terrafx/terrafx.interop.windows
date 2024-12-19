@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_ENABLED_STATE">
+    <summary>
+      <para>The <b>HTTP_ENABLED_STATE</b> enumeration defines the state of a request queue, server session, or URL Group.</para>
+      <para>This enumeration is used in the <see cref="HTTP_STATE_INFO" /> struct</para>
+    </summary>
+  </member>
+  <member name="HTTP_ENABLED_STATE.HttpEnabledStateActive">
+    <summary>The HTTP Server API object is enabled.</summary>
+  </member>
+  <member name="HTTP_ENABLED_STATE.HttpEnabledStateInactive">
+    <summary>The HTTP Server API object is disabled.</summary>
+  </member>
+</doc>

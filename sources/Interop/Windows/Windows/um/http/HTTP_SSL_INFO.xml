@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SSL_INFO">
+    <summary>The<b>HTTP_SSL_INFO</b> structure contains data for a connection that uses Secure Sockets Layer (SSL), obtained through the SSL handshake.</summary>
+  </member>
+  <member name="HTTP_SSL_INFO.ServerCertKeySize">
+    <summary>The size, in bytes, of the public key used to sign the server certificate.</summary>
+  </member>
+  <member name="HTTP_SSL_INFO.ConnectionKeySize">
+    <summary>The size, in bytes, of the cipher key used to encrypt the current session.</summary>
+  </member>
+  <member name="HTTP_SSL_INFO.ServerCertIssuerSize">
+    <summary>The size, in bytes, of the string pointed to by the <b>pServerCertIssuer</b> member not including the terminating null character.</summary>
+  </member>
+  <member name="HTTP_SSL_INFO.ServerCertSubjectSize">
+    <summary>The size, in bytes, of the string pointed to by the <b>pServerCertSubject</b> member not including the terminating null character.</summary>
+  </member>
+  <member name="HTTP_SSL_INFO.pServerCertIssuer">
+    <summary>A pointer to a null-terminated string of octets that specifies the name of the entity that issued the certificate.</summary>
+  </member>
+  <member name="HTTP_SSL_INFO.pServerCertSubject">
+    <summary>A pointer to a null-terminated string of octets that specifies the name of the entity to which the certificate belongs.</summary>
+  </member>
+  <member name="HTTP_SSL_INFO.pClientCertInfo">
+    <summary>A pointer to an<see cref="HTTP_SSL_CLIENT_CERT_INFO" /> structure that specifies the client certificate.</summary>
+  </member>
+  <member name="HTTP_SSL_INFO.SslClientCertNegotiated">
+    <summary>If non-zero, indicates that the client certificate is already present locally.</summary>
+  </member>
+</doc>

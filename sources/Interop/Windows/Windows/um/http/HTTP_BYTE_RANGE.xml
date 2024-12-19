@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_BYTE_RANGE">
+    <summary>The<b>HTTP_BYTE_RANGE</b> structure is used to specify a byte range within a cached response fragment, file, or other data block.</summary>
+  </member>
+  <member name="HTTP_BYTE_RANGE.StartingOffset">
+    <summary>Starting offset of the byte range.</summary>
+  </member>
+  <member name="HTTP_BYTE_RANGE.Length">
+    <summary>Size, in bytes, of the range. If this member is HTTP_BYTE_RANGE_TO_EOF, the range extends from the starting offset to the end of the file or data block.</summary>
+  </member>
+</doc>

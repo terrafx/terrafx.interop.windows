@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_STATE_INFO">
+    <summary>
+      <para>The <b>HTTP_STATE_INFO</b> structure is used to enable or disable a Server Session or URL Group.</para>
+      <para>This structure must be used when setting or querying the <see cref="HttpServerStateProperty" /> on a URL Group or Server Session.</para>
+    </summary>
+  </member>
+  <member name="HTTP_STATE_INFO.Flags">
+    <summary>The <see cref="HTTP_PROPERTY_FLAGS" /> structure specifying whether the property is present.</summary>
+  </member>
+  <member name="HTTP_STATE_INFO.State">
+    <summary>
+      <para>A member of the <see cref="HTTP_ENABLED_STATE" /> enumeration specifying the whether the configuration object is enabled or disabled.</para>
+      <para>This can be used to disable a URL Group or Server Session.</para>
+    </summary>
+  </member>
+</doc>

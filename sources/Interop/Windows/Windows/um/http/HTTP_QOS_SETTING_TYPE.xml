@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_QOS_SETTING_TYPE">
+    <summary>The <b>HTTP_QOS_SETTING_TYPE</b> enumeration identifies the type of a QOS setting contained in a <see cref="HTTP_QOS_SETTING_INFO" /> structure.</summary>
+  </member>
+  <member name="HTTP_QOS_SETTING_TYPE.HttpQosSettingTypeBandwidth">
+    <summary>The setting is a bandwidth limit represented by a <see cref="HTTP_BANDWIDTH_LIMIT_INFO" /> structure.</summary>
+  </member>
+  <member name="HTTP_QOS_SETTING_TYPE.HttpQosSettingTypeConnectionLimit">
+    <summary>The setting is a connection limit represented by a <see cref="HTTP_CONNECTION_LIMIT_INFO" /> structure.</summary>
+  </member>
+  <member name="HTTP_QOS_SETTING_TYPE.HttpQosSettingTypeFlowRate">
+    <summary>
+      <para>A flow rate represented by <see cref="HTTP_FLOWRATE_INFO" />.</para>
+      <div>
+        <b>Note</b>  Windows Server 2008 R2 and Windows 7 only.</div>
+    </summary>
+  </member>
+</doc>

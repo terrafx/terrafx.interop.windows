@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_DELEGATE_REQUEST_PROPERTY_INFO">
+    <summary>Describes additional property information when delegating a request.</summary>
+  </member>
+  <member name="HTTP_DELEGATE_REQUEST_PROPERTY_INFO.PropertyId">
+    <summary>The type of property info pointed to by this struct.</summary>
+  </member>
+  <member name="HTTP_DELEGATE_REQUEST_PROPERTY_INFO.PropertyInfoLength">
+    <summary>The length in bytes of the value of the <i>PropertyInfo</i> parameter.</summary>
+  </member>
+  <member name="HTTP_DELEGATE_REQUEST_PROPERTY_INFO.PropertyInfo">
+    <summary>A pointer to the property information.</summary>
+  </member>
+</doc>

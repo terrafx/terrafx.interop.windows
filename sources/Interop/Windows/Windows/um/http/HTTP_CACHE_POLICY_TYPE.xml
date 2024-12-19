@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_CACHE_POLICY_TYPE">
+    <summary>The<b>HTTP_CACHE_POLICY_TYPE</b> enumeration type defines available cache policies. It is used to restrict the values of the <b>Policy</b> member of the<see cref="HTTP_CACHE_POLICY" /> structure, which in turn is used in the <i>pCachePolicy</i> parameter of the<see cref="HttpAddFragmentToCache" /> function to specify how a response fragment is cached.</summary>
+  </member>
+  <member name="HTTP_CACHE_POLICY_TYPE.HttpCachePolicyNocache">
+    <summary>Do not cache this value at all.</summary>
+  </member>
+  <member name="HTTP_CACHE_POLICY_TYPE.HttpCachePolicyUserInvalidates">
+    <summary>Cache this value until the user provides a different one.</summary>
+  </member>
+  <member name="HTTP_CACHE_POLICY_TYPE.HttpCachePolicyTimeToLive">
+    <summary>Cache this value for a specified time and then remove it from the cache.</summary>
+  </member>
+  <member name="HTTP_CACHE_POLICY_TYPE.HttpCachePolicyMaximum">
+    <summary>Terminates the enumeration; not used to determine policy.</summary>
+  </member>
+</doc>

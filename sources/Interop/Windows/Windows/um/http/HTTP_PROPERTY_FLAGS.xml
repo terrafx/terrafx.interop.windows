@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_PROPERTY_FLAGS">
+    <summary>
+      <para>The <b>HTTP_PROPERTY_FLAGS</b> structure is used by the property configuration structures to enable or disable a property on a configuration object when setting property configurations.</para>
+      <para>When the configuration structure is used to query property configurations, this structure specifies whether the property is present on the configuration object.</para>
+    </summary>
+  </member>
+  <member name="HTTP_PROPERTY_FLAGS.Present">
+    <summary>
+      <para>The <b>Present</b> flag enables or disables a property, or determines whether the property is present on the configuration object.</para>
+      <para>A value of zero indicates the property is not present; a positive value indicates the property is present.</para>
+    </summary>
+  </member>
+</doc>

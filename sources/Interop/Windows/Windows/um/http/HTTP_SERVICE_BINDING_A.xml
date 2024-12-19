@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_BINDING_A">
+    <summary>The <b>HTTP_SERVICE_BINDING_A</b> structure provides Service Principle Name (SPN) in ASCII.</summary>
+  </member>
+  <member name="HTTP_SERVICE_BINDING_A.Base">
+    <summary>An <see cref="HTTP_SERVICE_BINDING_BASE" /> value, the <b>Type</b> member of which must be set to <b>HttpServiceBindingTypeA</b>.</summary>
+  </member>
+  <member name="HTTP_SERVICE_BINDING_A.Buffer">
+    <summary>A pointer to a buffer that represents the SPN.</summary>
+  </member>
+  <member name="HTTP_SERVICE_BINDING_A.BufferSize">
+    <summary>The length, in bytes, of the string in <b>Buffer</b>.</summary>
+  </member>
+</doc>

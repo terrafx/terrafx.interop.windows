@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_CACHE_POLICY">
+    <summary>The<b>HTTP_CACHE_POLICY</b> structure is used to define a cache policy associated with a cached response fragment.</summary>
+  </member>
+  <member name="HTTP_CACHE_POLICY.Policy">
+    <summary>
+      <para>This parameter is one of the following values from the <see cref="HTTP_CACHE_POLICY_TYPE" /> to control how an associated response or response fragment is cached.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpCachePolicyNocache</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Do not cache the data at all.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpCachePolicyUserInvalidates</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Cache the data until the application explicitly releases it.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpCachePolicyTimeToLive</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Cache the data for a number of seconds specified by the <b>SecondsToLive</b> member.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="HTTP_CACHE_POLICY.SecondsToLive">
+    <summary>When the <b>Policy</b> member is equal to HttpCachePolicyTimeToLive, data is cached for <b>SecondsToLive</b> seconds before it is released. For other values of <b>Policy</b>, <b>SecondsToLive</b> is ignored.</summary>
+  </member>
+</doc>

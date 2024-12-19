@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_CONFIG_SSL_CCS_QUERY">
+    <summary>Specifies a Secure Sockets Layer (SSL) configuration to query for an SSL Centralized Certificate Store (CCS) record on the port when you call the <see cref="HttpQueryServiceConfiguration" /> function. The SSL certificate record specifies that Http.sys should consult the CCS store to find certificates if the port receives a Transport Layer Security (TLS) handshake.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_CCS_QUERY.QueryDesc">
+    <summary>
+      <para>One of the following values from the <see cref="HTTP_SERVICE_CONFIG_QUERY_TYPE" /> enumeration that indicates whether the call to <see cref="HttpQueryServiceConfiguration" /> is a call to retrieve a single record or part of a sequence of calls to retrieve a sequence of records.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigQueryExact</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The call to <see cref="HttpQueryServiceConfiguration" /> is call to retrieve a single SSL CCS certificate record, which the <b>KeyDesc</b> member specifies.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigQueryNext</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The call to <see cref="HttpQueryServiceConfiguration" /> is part of a sequence of calls to retrieve a sequence of SSL CCS certificate records. The value of the <b>dwToken</b> member controls which record in the sequence that this call to <b>HttpQueryServiceConfiguration</b> retrieves.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_CCS_QUERY.KeyDesc">
+    <summary>An <see cref="HTTP_SERVICE_CONFIG_SSL_CCS_KEY" /> structure that identifies the SSL CCS certificate record queried, if the <b>QueryDesc</b> member is equal to <b>HttpServiceConfigQueryExact</b>. Ignored if <b>QueryDesc</b> is equal to <b>HTTPServiceConfigQueryNext</b>.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_CCS_QUERY.dwToken">
+    <summary>The position of the record in the sequence of records that this call to <see cref="HttpQueryServiceConfiguration" /> should retrieve if the <b>QueryDesc</b> method equals <b>HTTPServiceConfigQueryNext</b>, starting from zero. In other words, <b>dwToken</b> must be equal to zero on the first call to the <b>HttpQueryServiceConfiguration</b> function, one on the second call, two on the third call, and so forth. When the sequence of calls has returned all SSL certificate records, <b>HttpQueryServiceConfiguration</b> returns <b>ERROR_NO_MORE_ITEMS</b>. Ignored if the <b>QueryDesc</b> is equal to <b>HttpServiceConfigQueryExact</b>.</summary>
+  </member>
+</doc>

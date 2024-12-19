@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_CONFIG_URLACL_SET">
+    <summary>The<b>HTTP_SERVICE_CONFIG_URLACL_SET</b> structure is used to add a new record to the URL reservation store or retrieve an existing record from it. An instance of the structure is used to pass data in through the <i>pConfigInformation</i> parameter of the<see cref="HTTPSetServiceConfiguration" /> function, or to retrieve data through the <i>pOutputConfigInformation</i> parameter of the<see cref="HTTPQueryServiceConfiguration" /> function when the <i>ConfigId</i> parameter of either function is equal to <b>HTTPServiceConfigUrlAclInfo</b>.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_URLACL_SET.KeyDesc">
+    <summary>An<see cref="HTTP_SERVICE_CONFIG_URLACL_KEY" /> structure that identifies the URL reservation record.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_URLACL_SET.ParamDesc">
+    <summary>An<see cref="HTTP_SERVICE_CONFIG_URLACL_PARAM" /> structure that holds the contents of the specified URL reservation record.</summary>
+  </member>
+</doc>

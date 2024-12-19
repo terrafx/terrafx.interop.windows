@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_BINDING_INFO">
+    <summary>
+      <para>The <b>HTTP_BINDING_INFO</b> structure is used to associate a URL Group with a request queue.</para>
+      <para>This structure must be used when setting or querying the <see cref="HttpServerBindingProperty" /> on a URL Group.</para>
+    </summary>
+  </member>
+  <member name="HTTP_BINDING_INFO.Flags">
+    <summary>The <see cref="HTTP_PROPERTY_FLAGS" /> structure specifying whether the property is present.</summary>
+  </member>
+  <member name="HTTP_BINDING_INFO.RequestQueueHandle">
+    <summary>The request queue that is associated with the URL group. The structure can be used to remove an existing binding by setting this parameter to <b>NULL</b>.</summary>
+  </member>
+</doc>

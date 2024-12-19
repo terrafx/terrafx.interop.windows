@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_CONFIG_TIMEOUT_SET">
+    <summary>The <b>HTTP_SERVICE_CONFIG_TIMEOUT_SET</b> structure is used to set the HTTP Server API wide timeout value.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_TIMEOUT_SET.KeyDesc">
+    <summary>A member of the <see cref="HTTP_SERVICE_CONFIG_TIMEOUT_KEY" /> enumeration identifying the timer that is set.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_TIMEOUT_SET.ParamDesc">
+    <summary>The value, in seconds, for the timer. The value must be greater than zero.</summary>
+  </member>
+</doc>

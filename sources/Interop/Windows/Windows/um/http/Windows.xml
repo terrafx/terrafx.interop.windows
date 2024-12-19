@@ -1,0 +1,2944 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.HttpAddFragmentToCache">
+    <summary>The<b>HttpAddFragmentToCache</b> function caches a data fragment with a specified name by which it can be retrieved, or updates data cached under a specified name. Such cached data fragments can be used repeatedly to construct dynamic responses without the expense of disk reads. For example, a response composed of text and three images could be assembled dynamically from four or more cached fragments at the time a request is processed.</summary>
+    <param name="RequestQueueHandle">
+      <para>Handle to the request queue with which this cache is associated. A request queue is created and its handle returned by a call to the<see cref="HttpCreateRequestQueue" /> function.</para>
+      <para>
+        <b>Windows Server 2003 with SP1 and Windows XP with SP2:  </b>The handle to the request queue is created by the <see cref="HttpCreateHttpHandle" /> function.</para>
+    </param>
+    <param name="UrlPrefix">
+      <para>Pointer to a <a href="https://docs.microsoft.com//windows/desktop/Http/urlprefix-strings">UrlPrefix string</a> that the application uses in subsequent calls to<see cref="HttpSendHttpResponse" /> to identify this cache entry. The application must have called <b>HttpAddUrl</b> previously with the same handle as in the <i>ReqQueueHandle</i> parameter, and with either this identical UrlPrefix string or a valid prefix of it.</para>
+      <para>Like any UrlPrefix, this string must take the form "scheme://host:port/relativeURI"; for example, <code>http://www.mysite.com:80/image1.gif</code>.</para>
+    </param>
+    <param name="DataChunk">Pointer to an<see cref="HTTP_DATA_CHUNK" /> structure that specifies an entity body data block to cache under the name pointed to by <i>pUrlPrefix</i>.</param>
+    <param name="CachePolicy">Pointer to an<see cref="HTTP_CACHE_POLICY" /> structure that specifies how this data fragment should be cached.</param>
+    <param name="Overlapped">
+      <para>For asynchronous calls, set <i>pOverlapped</i> to point to an<see cref="OVERLAPPED" /> structure, or for synchronous calls, set it to <b>NULL</b>.</para>
+      <para>A synchronous call blocks the calling thread until the cache operation is complete, whereas an asynchronous call immediately returns ERROR_IO_PENDING and the calling application then uses<see cref="GetOverlappedResult" /> or I/O completion ports to determine when the operation is completed. For more information about using<see cref="OVERLAPPED" /> structures for synchronization, see <a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-and-overlapped-input-and-output">Synchronization and Overlapped Input and Output</a>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is NO_ERROR.</para>
+      <para>If the function is used asynchronously, a return value of ERROR_IO_PENDING indicates that the cache request is queued and will complete later through normal overlapped I/O completion mechanisms.</para>
+      <para>If the function fails, the return value is one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more of the supplied parameters is in an unusable form.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpAddUrl">
+    <summary>
+      <para>The<b>HttpAddUrl</b> function registers a given URL so that requests that match it are routed to a specified HTTP Server API request queue. An application can register multiple URLs to a single request queue using repeated calls to<b>HttpAddUrl</b>. For more information about how HTTP Server API matches request URLs to registered URLs, see<a href="https://docs.microsoft.com//windows/desktop/Http/urlprefix-strings">UrlPrefix Strings</a>.</para>
+      <para>Starting with HTTP Server API Version 2.0, applications should call <see cref="HttpAddUrlToUrlGroup" /> to register a URL; <b>HttpAddUrl</b> should not be used.</para>
+    </summary>
+    <param name="RequestQueueHandle">
+      <para>The handle to the request queue to which requests for the specified URL are to be routed. A request queue is created and its handle returned by a call to the<see cref="HttpCreateRequestQueue" /> function.</para>
+      <para>
+        <b>Windows Server 2003 with SP1 and Windows XP with SP2:  </b>The handle to the request queue is created by the <see cref="HttpCreateHttpHandle" /> function.</para>
+    </param>
+    <param name="FullyQualifiedUrl">A pointer to a Unicode string that contains a properly formed<a href="https://docs.microsoft.com//windows/desktop/Http/urlprefix-strings">UrlPrefix string</a> that identifies the URL to be registered.</param>
+    <param name="Reserved">Reserved; must be <b>NULL</b>.</param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>NO_ERROR</b>.</para>
+      <para>If the function fails, the return value is one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_ACCESS_DENIED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The calling application does not have permission to register the URL.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_DLL_INIT_FAILED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The calling application did not call <see cref="HttpInitialize" /> before calling this function.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One of the parameters are invalid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_ALREADY_EXISTS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The specified UrlPrefix conflicts with an existing registration.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_ENOUGH_MEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient resources to complete the operation.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpAddUrlToUrlGroup">
+    <summary>
+      <para>The <b>HttpAddUrlToUrlGroup</b> function adds the specified URL to the URL Group identified by the URL Group ID.</para>
+      <para>This function replaces the HTTP version 1.0 <see cref="HttpAddUrl" /> function.</para>
+    </summary>
+    <param name="UrlGroupId">The group ID for the URL group to which requests for the specified URL are routed. The URL group is created by the <see cref="HttpCreateUrlGroup" /> function.</param>
+    <param name="pFullyQualifiedUrl">A pointer to a Unicode string that contains a properly formed <a href="https://docs.microsoft.com//windows/desktop/Http/urlprefix-strings">UrlPrefix String</a> that identifies the URL to be registered. If you are not running as an administrator, specify a port number greater than 1024, otherwise you may get an ERROR_ACCESS_DENIED error.</param>
+    <param name="UrlContext">The context that is associated with the URL registered in this call. The URL context is returned in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa364545(v=vs.85)">HTTP_REQUEST</a> structure with every request received on the URL specified in the <i>pFullyQualifiedUrl</i> parameter.</param>
+    <param name="Reserved">Reserved. Must be zero.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>NO_ERROR</b></para>
+      <para>If the function fails, it returns one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>UrlGroupId</i> does not exist.<para>The <i>Reserved</i> parameter is not zero.</para><para>The application does not have permission to add URLs to the Group. Only the application that created the URL Group can add URLs.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_ACCESS_DENIED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The calling process does not have permission to register the URL.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_ALREADY_EXISTS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The specified URL conflicts with an existing registration.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HTTP_EQUAL_VERSION">
+    <summary>The <b>HTTPAPI_EQUAL_VERSION</b> returns a non-zero value if an<see cref="HTTPAPI_VERSION" /> structure is exactly equal to a specified major/minor version combination, or zero otherwise.</summary>
+    <param name="version">The<see cref="HTTPAPI_VERSION" /> structure to be examined.</param>
+    <param name="major">The major portion of the version to be compared.</param>
+    <param name="minor">The minor portion of the version to be compared.</param>
+  </member>
+  <member name="Windows.HTTP_GREATER_VERSION">
+    <summary>The <b>HTTPAPI_GREATER_VERSION</b> returns a non-zero value if an<see cref="HTTPAPI_VERSION" /> structure is greater than a specified major/minor version combination, or zero otherwise.</summary>
+    <param name="version">The<see cref="HTTPAPI_VERSION" /> structure to be examined.</param>
+    <param name="major">The major portion of the version to be compared.</param>
+    <param name="minor">The minor portion of the version to be compared.</param>
+  </member>
+  <member name="Windows.HTTP_LESS_VERSION">
+    <summary>The <b>HTTPAPI_LESS_VERSION</b> returns a non-zero value if an<see cref="HTTPAPI_VERSION" /> structure is less than a specified major/minor version combination, or zero otherwise.</summary>
+    <param name="version">The<see cref="HTTPAPI_VERSION" /> structure to be examined.</param>
+    <param name="major">The major portion of the version to be compared.</param>
+    <param name="minor">The minor portion of the version to be compared.</param>
+  </member>
+  <member name="Windows.HTTP_GREATER_EQUAL_VERSION">
+    <summary>The <b>HTTPAPI_VERSION_GREATER_OR_EQUAL</b> returns a non-zero value if an<see cref="HTTPAPI_VERSION" /> structure is greater than or equal to a specified major/minor version combination, or zero otherwise.</summary>
+    <param name="version">The<see cref="HTTPAPI_VERSION" /> structure to be examined.</param>
+    <param name="major">The major portion of the version to be compared.</param>
+    <param name="minor">The minor portion of the version to be compared.</param>
+  </member>
+  <member name="Windows.HttpCancelHttpRequest">
+    <summary>The <b>HttpCancelHttpRequest</b> function cancels a specified request.</summary>
+    <param name="RequestQueueHandle">A handle to the request queue from which the request came.</param>
+    <param name="RequestId">The ID of the request to be canceled.</param>
+    <param name="Overlapped">For asynchronous calls, set <i>pOverlapped</i> to point to an <see cref="OVERLAPPED" /> structure; for synchronous calls, set it to <b>NULL</b>.</param>
+    <returns>If the function succeeds, it returns <b>NO_ERROR</b>.</returns>
+  </member>
+  <member name="Windows.HttpCloseRequestQueue">
+    <summary>
+      <para>The <b>HttpCloseRequestQueue</b> function closes the handle to the specified request queue created by <see cref="HttpCreateRequestQueue" />.</para>
+      <para>The application must close the request queue when it is no longer required.</para>
+    </summary>
+    <param name="RequestQueueHandle">The handle to the request queue that is closed. A request queue is created and its handle returned by a call to the<see cref="HttpCreateRequestQueue" /> function.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>NO_ERROR</b>.</para>
+      <para>If the function fails, it returns one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The application does not have permission to close the request queue. Only the application that created the request queue can close it.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpCloseServerSession">
+    <summary>The <b>HttpCloseServerSession</b> function deletes the server session identified by the server session ID. All remaining URL Groups associated with the server session will also be closed.</summary>
+    <param name="ServerSessionId">The ID of the server session that is closed.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>NO_ERROR</b></para>
+      <para>If the function fails, it can return one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The Server Session does not exist.<para>The application does not have permission to close the server session. Only the application that created the server session can close the session.</para></description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpCloseUrlGroup">
+    <summary>The <b>HttpCloseUrlGroup</b> function closes the URL Group identified by the URL Group ID. This call also removes all of the URLs that are associated with the URL Group.</summary>
+    <param name="UrlGroupId">The ID of the URL Group that is deleted.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>NO_ERROR</b>.</para>
+      <para>If the function fails, it returns one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The ID of the URL Group does not exist.<para>The application does not have permission to close the URL Group. Only the application that created the URL Group can close the group.</para></description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpCreateHttpHandle">
+    <summary>
+      <para>The<b>HttpCreateHttpHandle</b> function creates an HTTP request queue for the calling application and returns a handle to it.</para>
+      <para>Starting with HTTP Server API Version 2.0, applications should call <see cref="HttpCreateRequestQueue" /> to create the request queue; <b>HttpCreateHttpHandle</b> should not be used.</para>
+    </summary>
+    <param name="RequestQueueHandle">A pointer to a variable that receives a handle to the request queue.</param>
+    <param name="Reserved">Reserved. This parameter must be zero.</param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>NO_ERROR</b>.</para>
+      <para>If the function fails, the return value is one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_DLL_INIT_FAILED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The calling application did not call <see cref="HttpInitialize" /> before calling this function.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpCreateRequestQueue">
+    <summary>
+      <para>The <b>HttpCreateRequestQueue</b> function creates a new request queue or opens an existing request queue.</para>
+      <para>This function replaces the HTTP version 1.0 <see cref="HttpCreateHttpHandle" /> function.</para>
+    </summary>
+    <param name="Version">
+      <para>An HTTPAPI_VERSION structure indicating the request queue version. For version 2.0, declare an instance of the structure and set it to the predefined value HTTPAPI_VERSION_2 before passing it to <b>HttpCreateRequestQueue</b>.</para>
+      <para>The version must be 2.0; <b>HttpCreateRequestQueue</b> does not support version 1.0 request queues.</para>
+    </param>
+    <param name="Name">
+      <para>The name of the request queue. The length, in bytes, cannot exceed MAX_PATH.</para>
+      <para>The optional name parameter allows other processes to access the request queue by name.</para>
+    </param>
+    <param name="SecurityAttributes">
+      <para>A pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a> structure that contains the access permissions for the request queue.</para>
+      <para>This parameter must be <b>NULL</b> when opening an existing request queue.</para>
+    </param>
+    <param name="Flags">
+      <para>The flags parameter defines the scope of the request queue. This parameter can be one or more of the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_CREATE_REQUEST_QUEUE_FLAG_CONTROLLER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The handle to the request queue created using this flag cannot be used to perform I/O operations. This flag can be set only when the request queue handle is created.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_CREATE_REQUEST_QUEUE_FLAG_OPEN_EXISTING</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description> The <b>HTTP_CREATE_REQUEST_QUEUE_FLAG_OPEN_EXISTING</b> flag allows applications to open an existing request queue by name and retrieve the request 	queue handle. The <i>pName</i> parameter must contain a valid request queue name; it cannot be <b>NULL</b>.</description>
+        </listheader>
+      </list>
+    </param>
+    <param name="RequestQueueHandle">A pointer to a variable that receives a handle to the request queue. This parameter must contain a valid pointer; it cannot be <b>NULL</b>.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>NO_ERROR</b></para>
+      <para>If the function fails, it returns one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_REVISION_MISMATCH</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>Version</i> parameter contains an invalid version.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The length, in bytes, of the request queue name cannot exceed MAX_PATH.<para>The <i>pSecurityAttributes</i> parameter must be <b>NULL</b> when opening an existing request queue.</para><para>The <b>HTTP_CREATE_REQUEST_QUEUE_FLAG_CONTROLLER</b> can only be set when the request queue is created.</para><para>The <b>HTTP_CREATE_REQUEST_QUEUE_FLAG_OPEN_EXISTING</b> can only be set when the application has permission to open an existing request queue. In this case, the <i>pReqQueueHandle</i> parameter must be a valid pointer, and the <i>pName</i> parameter must contain a valid request queue name; it cannot be <b>NULL</b>.</para><para>The <i>pReqQueueHandle</i> parameter returned by <see cref="HttpCreateRequestQueue" /> is <b>NULL</b>.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_ALREADY_EXISTS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>pName</i> parameter conflicts with an existing request queue that contains an identical name.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_ACCESS_DENIED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The calling process does not have a permission to open the request queue.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_DLL_INIT_FAILED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The application has not called <see cref="HttpInitialize" /> prior to calling <see cref="HttpCreateRequestQueue" />.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpCreateServerSession">
+    <summary>The <b>HttpCreateServerSession</b> function creates a server session for the specified version.</summary>
+    <param name="Version">
+      <para>An HTTPAPI_VERSION structure that indicates the version of the server session. For version 2.0, declare an instance of the structure and set it to the predefined value <b>HTTPAPI_VERSION_2</b> before passing it to <b>HttpCreateServerSession</b>.</para>
+      <para>The version must be 2.0; <b>HttpCreateServerSession</b> does not support version 1.0 request queues.</para>
+    </param>
+    <param name="ServerSessionId">A pointer to the variable that receives the ID of the server session.</param>
+    <param name="Reserved">Reserved. Must be zero.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>NO_ERROR</b>.</para>
+      <para>If the function fails, it returns one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_REVISION_MISMATCH</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The version passed is invalid or unsupported.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>pServerSessionId</i> parameter is null or the <i>Reserved</i> is non zero.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpDeclarePush">
+    <summary>Declares a resource-to-subresource relationship to use for an HTTP server push. HTTP.sys then performs an HTTP 2.0 server push for the given resource, if the underlying protocol, connection, client, and policies allow the push operation.</summary>
+    <param name="RequestQueueHandle">The handle to an HTTP.sys request queue that the <see cref="HttpCreateRequestQueue" /> function returned.</param>
+    <param name="RequestId">The opaque identifier of the request that is declaring the push operation. The request must be from the specified queue handle.</param>
+    <param name="Verb">The HTTP verb to use for the push operation. The HTTP.sys push operation only supports <b>HttpVerbGET</b> and <b>HttpVerbHEAD</b>.</param>
+    <param name="Path">The path portion of the URL for the resource being pushed.</param>
+    <param name="Query">The query portion of the URL for the resource being pushed. This string should not include the leading question mark (?).</param>
+    <param name="Headers">
+      <para>The request headers for the push operation.</para>
+      <para>You should not provide a Host header, because HTTP.sys automatically generates the correct Host information. HTTP.sys does not support cross-origin push operations, so HTTP.sys enforces and generates Host information that matches the original client-initiated request.</para>
+      <para>The push request is not allowed to have an entity body, so you cannot include a non-zero Content-Length header or any Transfer-Encoding header.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns <b>NO_ERROR</b>.</para>
+      <para>If the function fails, it returns a <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.HttpDelegateRequestEx">
+    <summary>Delegates a request from the source request queue to the target request queue.</summary>
+    <param name="RequestQueueHandle">A handle to the source request queue.</param>
+    <param name="DelegateQueueHandle">A handle to the target request queue.</param>
+    <param name="RequestId">A unique request ID received with <see cref="HttpReceiveHttpRequest" />.</param>
+    <param name="DelegateUrlGroupId">The url group id of the target url group.</param>
+    <param name="PropertyInfoSetSize">The number of entries in the <i>PropertyInfoSet</i> array.</param>
+    <param name="PropertyInfoSet">An array of properties to be set on request when delegating.</param>
+    <returns>A <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">ULONG</a></b> containing an <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-erref/87fba13e-bf06-450e-83b1-9241dc81e781">NTSTATUS</a> completion status.</returns>
+  </member>
+  <member name="Windows.HttpDeleteServiceConfiguration">
+    <summary>The<b>HttpDeleteServiceConfiguration</b> function deletes specified data, such as IP addresses or SSL Certificates, from the HTTP Server API configuration store, one record at a time.</summary>
+    <param name="ServiceHandle">This parameter is reserved and must be zero.</param>
+    <param name="ConfigId">
+      <para>Type of configuration. This parameter is one of the values in the <see cref="HTTP_SERVICE_CONFIG_ID" /> enumeration.</para>
+      <list type="table">
+        <listheader>
+          <description>
+            <i>ConfigId</i> value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigIPListenList</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Deletes a specified IP address from the IP Listen List.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSSLCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Deletes a specified SSL certificate record.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigUrlAclInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Deletes a specified URL reservation record.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigTimeout</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Deletes a specified connection timeout.<para><b>Windows Vista and later:  </b>This enumeration is supported.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSslSniCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Deletes a specified SSL Server Name Indication (SNI) certificate record.<para><b>Windows 8 and later:  </b>This enumeration value is supported.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSslCcsCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Deletes the SSL certificate record that specifies that Http.sys should consult the Centralized Certificate Store (CCS) store to find certificates if the port receives a Transport Layer Security (TLS) handshake. The port is specified by the <b>KeyDesc</b> member of the <see cref="HTTP_SERVICE_CONFIG_SSL_CCS_SET" /> structure that you pass to the <i>pConfigInformation</i> parameter.<para><b>Windows 8 and later:  </b>This enumeration value is supported.</para></description>
+        </listheader>
+      </list>
+    </param>
+    <param name="pConfigInformation">
+      <para>Pointer to a buffer that contains data required for the type of configuration specified in the <i>ConfigId</i> parameter.</para>
+      <list type="table">
+        <listheader>
+          <description>
+            <i>ConfigId</i> value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigIPListenList</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="HTTP_SERVICE_CONFIG_IP_LISTEN_PARAM" /> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSSLCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="HTTP_SERVICE_CONFIG_SSL_SET" /> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigUrlAclInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="HTTP_SERVICE_CONFIG_URLACL_SET" /> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigTimeouts</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <para>
+              <see cref="HTTP_SERVICE_CONFIG_TIMEOUT_KEY" /> structure.</para>
+            <para>
+              <b>Windows Vista and later:  </b>This structure is supported.</para>
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSslSniCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <para>
+              <see cref="HTTP_SERVICE_CONFIG_SSL_SNI_SET" /> structure. The hostname will be "*" when the SSL central certificate store is queried and wildcard bindings are used, and a host name for regular SNI.</para>
+            <para>
+              <b>Windows 8 and later:  </b>This structure is supported.</para>
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>HttpServiceConfigSslCcsCertInfo</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <para>
+              <see cref="HTTP_SERVICE_CONFIG_SSL_CCS_SET" /> structure.</para>
+            <para>
+              <b>Windows 8 and later:  </b>This structure is supported.</para>
+          </description>
+        </listheader>
+      </list>
+    </param>
+    <param name="ConfigInformationLength">Size, in bytes, of the <i>pConfigInformation</i> buffer.</param>
+    <param name="pOverlapped">Reserved for future asynchronous operation. This parameter must be set to <b>NULL</b>.</param>
+    <returns>
+      <para>If the function succeeds, the function returns NO_ERROR.</para>
+      <para>If the function fails, it returns one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One of the parameters are invalid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpFindUrlGroupId">
+    <summary>Retrieves a URL group ID for a URL and a request queue.</summary>
+    <param name="FullyQualifiedUrl">The URL whose URL group to query.</param>
+    <param name="RequestQueueHandle">The request queue associated with the URL group.</param>
+    <param name="UrlGroupId">The matching URL group ID.</param>
+    <returns>A <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">ULONG</a></b> containing an <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-erref/87fba13e-bf06-450e-83b1-9241dc81e781">NTSTATUS</a> completion status.</returns>
+  </member>
+  <member name="Windows.HttpFlushResponseCache">
+    <summary>The<b>HttpFlushResponseCache</b> function removes from the HTTP Server API cache associated with a given request queue all response fragments that have a name whose site portion matches a specified UrlPrefix. The application must previously have called <see cref="HttpAddUrl" />, or <see cref="HttpAddUrlToUrlGroup" /> to add this UrlPrefix or a valid prefix of it to the request queue in question, and then called <see cref="HttpAddFragmentToCache" /> to cache the associated response fragment or fragments.</summary>
+    <param name="RequestQueueHandle">
+      <para>Handle to the request queue with which this cache is associated. A request queue is created and its handle returned by a call to the<see cref="HttpCreateRequestQueue" /> function.</para>
+      <para>
+        <b>Windows Server 2003 with SP1 and Windows XP with SP2:  </b>The handle to the request queue is created by the <see cref="HttpCreateHttpHandle" /> function.</para>
+    </param>
+    <param name="UrlPrefix">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/Http/urlprefix-strings">UrlPrefix string</a> to match against the site portion of fragment names. The application must previously have called <see cref="HttpAddUrl" /> to add this UrlPrefix or a valid prefix of it to the request queue in question, and then called <see cref="HttpAddFragmentToCache" /> to cache the associated response fragment.</param>
+    <param name="Flags">
+      <para>This parameter can contain the following flag:</para>
+      <h4>HTTP_FLUSH_RESPONSE_FLAG_RECURSIVE</h4>
+      <para>Causes response fragments that have names in which the site portion is a hierarchical descendant of the specified UrlPrefix to be removed from the fragment cache, in addition to those fragments having site portions that directly match.</para>
+    </param>
+    <param name="Overlapped">
+      <para>For asynchronous calls, set <i>pOverlapped</i> to point to an<see cref="OVERLAPPED" /> structure, or for synchronous calls, set it to <b>NULL</b>.</para>
+      <para>A synchronous call blocks until the cache operation is complete, whereas an asynchronous call immediately returns ERROR_IO_PENDING and the calling application then uses<see cref="GetOverlappedResult" /> or I/O completion ports to determine when the operation is completed. For more information about using<see cref="OVERLAPPED" /> structures for synchronization, see <a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-and-overlapped-input-and-output">Synchronization and Overlapped Input and Output</a>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is NO_ERROR.</para>
+      <para>If the function is used asynchronously, a return value of ERROR_IO_PENDING indicates that the cache request is queued and completes later through normal overlapped I/O completion mechanisms.</para>
+      <para>If the function fails, the return value is one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One of the parameters are invalid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpInitialize">
+    <summary>The <b>HttpInitialize</b> function initializes the HTTP Server API driver, starts it, if it has not already been started, and allocates data structures for the calling application to support response-queue creation and other operations. Call this function before calling any other functions in the HTTP Server API.</summary>
+    <param name="Version">HTTP version. This parameter is an<see cref="HTTPAPI_VERSION" /> structure. For the current version, declare an instance of the structure and set it to the pre-defined value <b>HTTPAPI_VERSION_1</b> before passing it to<b>HttpInitialize</b>.</param>
+    <param name="Flags">
+      <para>Initialization options, which can include one or both of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_INITIALIZE_CONFIG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Perform initialization for applications that use the HTTP configuration functions, <see cref="HttpSetServiceConfiguration" />, <see cref="HttpQueryServiceConfiguration" />, <see cref="HttpDeleteServiceConfiguration" />, and <see cref="HttpIsFeatureSupported" />.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_INITIALIZE_SERVER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Perform initialization for applications that use the HTTP Server API.</description>
+        </listheader>
+      </list>
+    </param>
+    <param name="pReserved">This parameter is reserved, and must be <b>NULL</b>.</param>
+    <returns>
+      <para>If the function succeeds, then the return value is <b>NO_ERROR</b>.</para>
+      <para>If the function fails, then the return value is one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>Flags</i> parameter contains an unsupported value.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/win32/debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpIsFeatureSupported">
+    <summary>Checks whether a particular feature is supported.</summary>
+    <param name="FeatureId">The identifier of the feature.</param>
+    <returns>
+      <code>TRUE</code> if the feature is supported, otherwise <code>FALSE</code>.</returns>
+  </member>
+  <member name="Windows.HttpPrepareUrl">
+    <summary>The <b>HttpPrepareUrl</b> function parses, analyzes, and normalizes a non-normalized Unicode or punycode URL so it is safe and valid to use in other HTTP functions.</summary>
+    <param name="Reserved">Reserved. Must be <b>NULL</b>.</param>
+    <param name="Flags">Reserved. Must be zero.</param>
+    <param name="Url">A pointer to a string that represents the non-normalized Unicode or punycode URL to prepare.</param>
+    <param name="PreparedUrl">
+      <para>On successful output, a pointer to a string that represents the normalized URL.</para>
+      <div>
+        <b>Note</b>  Free <i>PreparedUrl</i> using <see cref="HeapFree" />.</div>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns <b>ERROR_SUCCESS</b>.</para>
+      <para>If the function fails, it returns one of the following or a <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</para>
+    </returns>
+  </member>
+  <member name="Windows.HttpQueryServiceConfiguration">
+    <summary>The<b>HttpQueryServiceConfiguration</b> function retrieves one or more HTTP Server API configuration records.</summary>
+    <param name="ServiceHandle">Reserved. Must be zero.</param>
+    <param name="ConfigId">
+      <para>The configuration record query type. This parameter is one of the following values from the<br /><see cref="HTTP_SERVICE_CONFIG_ID" /> enumeration.</para>
+      <list type="table">
+        <listheader>
+          <description>
+            <i>ConfigId</i> value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigIPListenList</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Queries the IP Listen List.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSSLCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Queries the SSL store for a specific certificate record.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigUrlAclInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Queries URL reservation information.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigTimeout</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Queries HTTP Server API wide connection timeouts.<para><b>Windows Vista and later:  </b>This enumeration is supported.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSslSniCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Queries the SSL Server Name Indication (SNI) store for a specific certificate record.<para><b>Windows 8 and later:  </b>This enumeration value is supported.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSslCcsCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Queries the SSL configuration for an SSL Centralized Certificate Store (CCS) record on the port. The port is specified by the <b>KeyDesc</b> member of the <see cref="HTTP_SERVICE_CONFIG_SSL_CCS_QUERY" /> structure that you pass to the <i>pInputConfigInfo</i> parameter.<para><b>Windows 8 and later:  </b>This enumeration value is supported.</para></description>
+        </listheader>
+      </list>
+    </param>
+    <param name="pInput">
+      <para>A pointer to a structure whose contents further define the query and of the type that correlates with <i>ConfigId</i> in the following table.</para>
+      <list type="table">
+        <listheader>
+          <description>
+            <i>ConfigId</i> value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigIPListenList</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>No input data; set to <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSSLCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="HTTP_SERVICE_CONFIG_SSL_QUERY" /> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigUrlAclInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="HTTP_SERVICE_CONFIG_URLACL_QUERY" /> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigTimeout</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <para>
+              <see cref="HTTP_SERVICE_CONFIG_TIMEOUT_KEY" /> structure.</para>
+            <para>
+              <b>Windows Vista and later:  </b>This structure is supported.</para>
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSslSniCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <para>
+              <see cref="HTTP_SERVICE_CONFIG_SSL_SNI_QUERY" /> structure.</para>
+            <para>
+              <b>Windows 8 and later:  </b>This structure is supported.</para>
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSslCcsCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <para>
+              <see cref="HTTP_SERVICE_CONFIG_SSL_CCS_QUERY" /> structure.</para>
+            <para>
+              <b>Windows 8 and later:  </b>This structure is supported.</para>
+          </description>
+        </listheader>
+      </list> <para>For more information, see the appropriate query structures.</para></param>
+    <param name="InputLength">Size, in bytes, of the <i>pInputConfigInfo</i> buffer.</param>
+    <param name="pOutput">
+      <para>A pointer to a buffer in which the query results are returned. The type of this buffer correlates with <i>ConfigId</i>.</para>
+      <list type="table">
+        <listheader>
+          <description>
+            <i>ConfigId</i> value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigIPListenList</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="HTTP_SERVICE_CONFIG_IP_LISTEN_QUERY" /> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSSLCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="HTTP_SERVICE_CONFIG_SSL_SET" /> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigUrlAclInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="HTTP_SERVICE_CONFIG_URLACL_SET" /> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigTimeout</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <para>
+              <a href="https://docs.microsoft.com//windows/desktop/Http/http-server-api-version-2-0-data-types">HTTP_SERVICE_CONFIG_TIMEOUT_PARAM</a> data type.</para>
+            <para>
+              <b>Windows Vista and later:  </b>This structure is supported.</para>
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSslSniCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <para>
+              <see cref="HTTP_SERVICE_CONFIG_SSL_SNI_SET" /> structure.</para>
+            <para>
+              <b>Windows 8 and later:  </b>This structure is supported.</para>
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSslCcsCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <para>
+              <see cref="HTTP_SERVICE_CONFIG_SSL_CCS_SET" /> structure.</para>
+            <para>
+              <b>Windows 8 and later:  </b>This structure is supported.</para>
+          </description>
+        </listheader>
+      </list>
+    </param>
+    <param name="OutputLength">Size, in bytes, of the <i>pOutputConfigInfo</i> buffer.</param>
+    <param name="pReturnLength">A pointer to a variable that receives the number of bytes to be written in the output buffer. If the output buffer is too small, the call fails with a return value of <b>ERROR_INSUFFICIENT_BUFFER</b>. The value pointed to by <i>pReturnLength</i> can be used to determine the minimum length the buffer requires for the call to succeed.</param>
+    <param name="pOverlapped">Reserved for asynchronous operation and must be set to <b>NULL</b>.</param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>NO_ERROR</b>.</para>
+      <para>If the function fails, the return value is one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One of the parameters are invalid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The buffer pointed to by <i>pOutputConfigInfo</i> is too small to receive the output data. Call the function again with a buffer at least as large as the size pointed to by <i>pReturnLength</i> on exit.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_MORE_DATA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>This error code is only returned when <i>ConfigId</i> is set to <b>HttpServiceConfigTimeout</b>. The buffer pointed to by <i>pOutputConfigInfo</i> is too small to receive the output data. Call the function again with a buffer at least as large as the size pointed to by <i>pReturnLength</i> on exit.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NO_MORE_ITEMS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>There are no more items to return that meet the specified criteria.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpReadFragmentFromCache">
+    <summary>The<b>HttpReadFragmentFromCache</b> function retrieves a response fragment having a specified name from the HTTP Server API cache.</summary>
+    <param name="RequestQueueHandle">
+      <para>Handle to the request queue with which the specified response fragment is associated. A request queue is created and its handle returned by a call to the<see cref="HttpCreateRequestQueue" /> function.</para>
+      <para>
+        <b>Windows Server 2003 with SP1 and Windows XP with SP2:  </b>The handle to the request queue is created by the <see cref="HttpCreateHttpHandle" /> function.</para>
+    </param>
+    <param name="UrlPrefix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/Http/urlprefix-strings">UrlPrefix string</a> that contains the name of the fragment to be retrieved. This must match a UrlPrefix string used in a previous successful call to <see cref="HttpAddFragmentToCache" />.</param>
+    <param name="ByteRange">Optional pointer to an<see cref="HTTP_BYTE_RANGE" /> structure that indicates a starting offset in the specified fragment and byte-count to be returned. <b>NULL</b> if not used, in which case the entire fragment is returned.</param>
+    <param name="Buffer">Pointer to a buffer into which the function copies the requested fragment.</param>
+    <param name="BufferLength">Size, in bytes, of the <i>pBuffer</i> buffer.</param>
+    <param name="BytesRead">
+      <para>Optional pointer to a variable that receives the number of bytes to be written into the output buffer. If <i>BufferLength</i> is less than this number, the call fails with a return of ERROR_INSUFFICIENT_BUFFER, and the value pointed to by <i>pBytesRead</i> can be used to determine the minimum length of buffer required for the call to succeed.</para>
+      <para>When making an asynchronous call using <i>pOverlapped</i>, set <i>pBytesRead</i> to <b>NULL</b>. Otherwise, when <i>pOverlapped</i> is set to <b>NULL</b>, <i>pBytesRead</i> must contain a valid memory address, and not be set to <b>NULL</b>.</para>
+    </param>
+    <param name="Overlapped">
+      <para>For asynchronous calls, set <i>pOverlapped</i> to point to an<see cref="OVERLAPPED" /> structure, or for synchronous calls, set it to <b>NULL</b>.</para>
+      <para>A synchronous call blocks until the cache operation is complete, whereas an asynchronous call immediately returns ERROR_IO_PENDING and the calling application then uses<see cref="GetOverlappedResult" /> or I/O completion ports to determine when the operation is completed. For more information about using<see cref="OVERLAPPED" /> structures for synchronization, see <a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-and-overlapped-input-and-output">Synchronization and Overlapped Input and Output</a>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is NO_ERROR.</para>
+      <para>If the function is used asynchronously, a return value of ERROR_IO_PENDING indicates that the cache request is queued and completes later through normal overlapped I/O completion mechanisms.</para>
+      <para>If the function fails, the return value is one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more of the supplied parameters is in an unusable form.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_MORE_DATA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The buffer pointed to by <i>pBuffer</i> is too small to receive all the requested data; the size of buffer required is pointed to by <i>pBytesRead</i> unless it was <b>NULL</b> or the call was asynchronous. In the case of an asynchronous call, the value pointed to by the <i>lpNumberOfBytesTransferred</i> parameter of the <see cref="GetOverLappedResult" /> function is set to the buffer size required.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpReceiveClientCertificate">
+    <summary>The<b>HttpReceiveClientCertificate</b> function is used by a server application to retrieve a client SSL certificate or channel binding token (CBT).</summary>
+    <param name="RequestQueueHandle">
+      <para>A handle to the request queue with which the specified SSL client or CBT is associated. A request queue is created and its handle returned by a call to the<see cref="HttpCreateRequestQueue" /> function.</para>
+      <para>
+        <b>Windows Server 2003 with SP1 and Windows XP with SP2:  </b>The handle to the request queue is created by the <see cref="HttpCreateHttpHandle" /> function.</para>
+    </param>
+    <param name="ConnectionId">A value that identifies the connection to the client. This value is obtained from the <b>ConnectionId</b> element of an<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa364545(v=vs.85)">HTTP_REQUEST</a> structure filled in by the<see cref="HttpReceiveHttpRequest" /> function.</param>
+    <param name="Flags">
+      <para>A value that modifies the behavior of the <b>HttpReceiveClientCertificate</b> function</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_RECEIVE_SECURE_CHANNEL_TOKEN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>pSslClientCertInfo</i> parameter will be populated with CBT data.<para>This value is supported on Windows 7, Windows Server 2008 R2, and later.</para></description>
+        </listheader>
+      </list>
+    </param>
+    <param name="SslClientCertInfo">
+      <para>If the <i>Flags</i> parameter is 0, then this parameter points to an<see cref="HTTP_SSL_CLIENT_CERT_INFO" /> structure into which the function writes the requested client certificate information. The buffer pointed to by the <i>pSslClientCertInfo</i> should be sufficiently large enough to hold the <b>HTTP_SSL_CLIENT_CERT_INFO</b> structure plus the value of the <b>CertEncodedSize</b> member of this structure.</para>
+      <para>If the <i>Flags</i> parameter is <b>HTTP_RECEIVE_SECURE_CHANNEL_TOKEN</b>, then this parameter points to an<see cref="HTTP_REQUEST_CHANNEL_BIND_STATUS" /> structure into which the function writes the requested CBT information. The buffer pointed to by the <i>pSslClientCertInfo</i> should be sufficiently large enough to hold the <b>HTTP_REQUEST_CHANNEL_BIND_STATUS</b> structure plus the value of the <b>ChannelTokenSize</b> member of this structure.</para>
+    </param>
+    <param name="SslClientCertInfoSize">The size, in bytes, of the buffer pointed to by the <i>pSslClientCertInfo</i> parameter.</param>
+    <param name="BytesReceived">
+      <para>An optional pointer to a variable that receives the number of bytes to be written to the structure pointed to by <i>pSslClientCertInfo</i>. If not used, set it to <b>NULL</b>.</para>
+      <para>When making an asynchronous call using <i>pOverlapped</i>, set <i>pBytesReceived</i> to <b>NULL</b>. Otherwise, when <i>pOverlapped</i> is set to <b>NULL</b>, <i>pBytesReceived</i> must contain a valid memory address, and not be set to <b>NULL</b>.</para>
+    </param>
+    <param name="Overlapped">
+      <para>For asynchronous calls, set <i>pOverlapped</i> to point to an<see cref="OVERLAPPED" /> structure, or for synchronous calls, set it to <b>NULL</b>.</para>
+      <para>A synchronous call blocks until the client certificate is retrieved, whereas an asynchronous call immediately returns <b>ERROR_IO_PENDING</b> and the calling application then uses<see cref="GetOverlappedResult" /> or I/O completion ports to determine when the operation is completed. For more information about using<see cref="OVERLAPPED" /> structures for synchronization, see the section<a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-and-overlapped-input-and-output">Synchronization and Overlapped Input and Output</a>.</para>
+    </param>
+    <returns>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>NO_ERROR</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The function succeeded. <para>All the data has been written into the buffer pointed to by the <i>pSslClientCertInfo</i> parameter. The <i>NumberOfBytesTransferred</i> indicates how many bytes were written into the buffer.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_IO_PENDING</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The function is being used asynchronously. The operation has been initiated and will complete later through normal overlapped I/O completion mechanisms.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more of the supplied parameters is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The buffer pointed to by the <i>pSslClientCertInfo</i> parameter is too small to receive the data and no data was written.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_MORE_DATA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The buffer pointed to by the <i>pSslClientCertInfo</i> parameter is not large enough to receive all the data. Only the basic structure has been written and only partially populated.<para>When the <i>Flags</i> parameter is 0, the <see cref="HTTP_SSL_CLIENT_CERT_INFO" /> structure has been written with the <b>CertEncodedSize</b> member populated. The caller should call the function again with a buffer that is at least the size, in bytes, of the <b>HTTP_SSL_CLIENT_CERT_INFO</b> structure plus the value of the <b>CertEncodedSize</b> member.</para><para>When the <i>Flags</i> parameter is <b>HTTP_RECEIVE_SECURE_CHANNEL_TOKEN</b>, the <see cref="HTTP_REQUEST_CHANNEL_BIND_STATUS" /> structure has been written with the <b>ChannelTokenSize</b> member populated. The caller should call the function again with a buffer that is at least the size, in bytes, of the <b>HTTP_REQUEST_CHANNEL_BIND_STATUS</b> plus the value of the <b>ChannelTokenSize</b> member.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The function cannot find the client certificate or CBT.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in the <i>WinError.h</i> header file.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpReceiveHttpRequest">
+    <summary>The<b>HttpReceiveHttpRequest</b> function retrieves the next available HTTP request from the specified request queue either synchronously or asynchronously.</summary>
+    <param name="RequestQueueHandle">
+      <para>A handle to the request queue from which to retrieve the next available request. A request queue is created and its handle returned by a call to the<see cref="HttpCreateRequestQueue" /> function.</para>
+      <para>
+        <b>Windows Server 2003 with SP1 and Windows XP with SP2:  </b>The handle to the request queue is created by the <see cref="HttpCreateHttpHandle" /> function.</para>
+    </param>
+    <param name="RequestId">On the first call to retrieve a request, this parameter should be <b>HTTP_NULL_ID</b>. Then, if more than one call is required to retrieve the entire request,<b>HttpReceiveHttpRequest</b> or<see cref="HttpReceiveRequestEntityBody" /> can be called with <i>RequestID</i> set to the value returned in the <b>RequestId</b> member of the<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa364545(v=vs.85)">HTTP_REQUEST</a> structure pointed to by <i>pRequestBuffer</i>.</param>
+    <param name="Flags">
+      <para>A parameter that can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>0 (zero)</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Only the request headers are retrieved; the entity body is not copied.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_RECEIVE_REQUEST_FLAG_COPY_BODY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The available entity body is copied along with the request headers. The <b>pEntityChunks</b> member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa364545(v=vs.85)">HTTP_REQUEST</a> structure points to the entity body.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_RECEIVE_REQUEST_FLAG_FLUSH_BODY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>All of the entity bodies are copied along with the request headers. The <b>pEntityChunks</b> member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa364545(v=vs.85)">HTTP_REQUEST</a> structure points to the entity body.</description>
+        </listheader>
+      </list>
+    </param>
+    <param name="RequestBuffer">A pointer to a buffer into which the function copies an<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa364545(v=vs.85)">HTTP_REQUEST</a> structure and entity body for the HTTP request. <b>HTTP_REQUEST.RequestId</b> contains the identifier for this HTTP request, which the application can use in subsequent calls <see cref="HttpReceiveRequestEntityBody" />,<see cref="HttpSendHttpResponse" />, or<see cref="HttpSendResponseEntityBody" />.</param>
+    <param name="RequestBufferLength">Size, in bytes, of the <i>pRequestBuffer</i> buffer.</param>
+    <param name="BytesReturned">
+      <para>Optional. A pointer to a variable that receives the size, in bytes, of the entity body, or of the remaining part of the entity body.</para>
+      <para>When making an asynchronous call using <i>pOverlapped</i>, set <i>pBytesReceived</i> to <b>NULL</b>. Otherwise, when <i>pOverlapped</i> is set to <b>NULL</b>, <i>pBytesReceived</i> must contain a valid memory address, and not be set to <b>NULL</b>.</para>
+    </param>
+    <param name="Overlapped">
+      <para>For asynchronous calls, set <i>pOverlapped</i> to point to an<see cref="OVERLAPPED" /> structure; for synchronous calls, set it to <b>NULL</b>.</para>
+      <para>A synchronous call blocks until a request has arrived in the specified queue and some or all of it has been retrieved, whereas an asynchronous call immediately returns <b>ERROR_IO_PENDING</b> and the calling application then uses<see cref="GetOverlappedResult" /> or I/O completion ports to determine when the operation is completed. For more information about using<see cref="OVERLAPPED" /> structures for synchronization, see<br /><a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-and-overlapped-input-and-output">Synchronization and Overlapped Input and Output</a>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>NO_ERROR</b>.</para>
+      <para>If the function is being used asynchronously, a return value of <b>ERROR_IO_PENDING</b> indicates that the next request is not yet ready and will be retrieved later through normal overlapped I/O completion mechanisms.</para>
+      <para>If the function fails, the return value is one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more of the supplied parameters is in an unusable form.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOACCESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more of the supplied parameters points to an invalid or unaligned memory buffer. The <i>pRequestBuffer</i> parameter must point to a valid memory buffer with a memory alignment equal or greater to the memory alignment requirement for an <b>HTTP_REQUEST</b> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_MORE_DATA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The value of <i>RequestBufferLength</i> is greater than or equal to the size of the request header received, but is not as large as the combined size of the request structure and entity body. The buffer size required to read the remaining part of the entity body is returned in the <i>pBytesReceived</i> parameter if this is non-<b>NULL</b> and if the call is synchronous. Call the function again with a large enough buffer to retrieve all data.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_HANDLE_EOF</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The specified request has already been completely retrieved; in this case, the value pointed to by <i>pBytesReceived</i> is not meaningful, and <i>pRequestBuffer</i> should not be examined.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpReceiveRequestEntityBody">
+    <summary>The<b>HttpReceiveRequestEntityBody</b> function receives additional entity body data for a specified HTTP request.</summary>
+    <param name="RequestQueueHandle">
+      <para>The handle to the request queue from which to retrieve the specified entity body data. A request queue is created and its handle returned by a call to the<see cref="HttpCreateRequestQueue" /> function.</para>
+      <para>
+        <b>Windows Server 2003 with SP1 and Windows XP with SP2:  </b>The handle to the request queue is created by the <see cref="HttpCreateHttpHandle" /> function.</para>
+    </param>
+    <param name="RequestId">The identifier of the HTTP request that contains the retrieved entity body. This value is returned in the <b>RequestId</b> member of the<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa364545(v=vs.85)">HTTP_REQUEST</a> structure by a call to the<see cref="HttpReceiveHttpRequest" /> function. This value cannot be <b>HTTP_NULL_ID</b>.</param>
+    <param name="Flags">
+      <para>This parameter can be the following flag value.</para>
+      <para>
+        <b>Windows Server 2003 with SP1 and Windows XP with SP2:  </b>This parameter is reserved and must be zero.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_RECEIVE_REQUEST_ENTITY_BODY_FLAG_FILL_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Specifies that the buffer will be filled with one or more entity bodies, unless there are no remaining entity bodies to copy.</description>
+        </listheader>
+      </list>
+    </param>
+    <param name="EntityBuffer">A pointer to a buffer that receives entity-body data.</param>
+    <param name="EntityBufferLength">The size, in bytes, of the buffer pointed to by the <i>pBuffer</i> parameter.</param>
+    <param name="BytesReturned">
+      <para>Optional. A pointer to a variables that receives the size, in bytes, of the entity body data returned in the <i>pBuffer</i> buffer.</para>
+      <para>When making an asynchronous call using <i>pOverlapped</i>, set <i>pBytesReceived</i> to <b>NULL</b>. Otherwise, when <i>pOverlapped</i> is set to <b>NULL</b>, <i>pBytesReceived</i> must contain a valid memory address, and not be set to <b>NULL</b>.</para>
+    </param>
+    <param name="Overlapped">
+      <para>For asynchronous calls, set <i>pOverlapped</i> to point to an<see cref="OVERLAPPED" /> structure; for synchronous calls, set it to <b>NULL</b>.</para>
+      <para>A synchronous call blocks until the entity-body data has been retrieved, whereas an asynchronous call immediately returns <b>ERROR_IO_PENDING</b> and the calling application then uses<see cref="GetOverlappedResult" /> or I/O completion ports to determine when the operation is completed. For more information about using<see cref="OVERLAPPED" /> structures for synchronization, see <a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-and-overlapped-input-and-output">Synchronization and Overlapped Input and Output</a>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>NO_ERROR</b>.</para>
+      <para>If the function is used asynchronously, a return value of <b>ERROR_IO_PENDING</b> indicates that the next request is not yet ready and is retrieved later through normal overlapped I/O completion mechanisms.</para>
+      <para>If the function fails, the return value is one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more of the supplied parameters are in an unusable form.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_HANDLE_EOF</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The specified entity body has already been completely retrieved; in this case, the value pointed to by <i>pBytesReceived</i> is not meaningful, and <i>pBuffer</i> should not be examined.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_DLL_INIT_FAILED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The calling application did not call <see cref="HttpInitialize" /> before calling this function.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpRemoveUrl">
+    <summary>
+      <para>The<b>HttpRemoveUrl</b> function causes the system to stop routing requests that match a specified<a href="https://docs.microsoft.com//windows/desktop/Http/urlprefix-strings">UrlPrefix string</a> to a specified request queue.</para>
+      <para>Starting with HTTP Server API Version 2.0, applications should call <see cref="HttpRemoveUrlFromUrlGroup" /> to register a URL; <b>HttpRemoveUrl</b> should not be used.</para>
+    </summary>
+    <param name="RequestQueueHandle">
+      <para>The handle to the request queue from which the URL registration is to be removed. A request queue is created and its handle returned by a call to the<see cref="HttpCreateRequestQueue" /> function.</para>
+      <para>
+        <b>Windows Server 2003 with SP1 and Windows XP with SP2:  </b>The handle to the request queue is created by the <see cref="HttpCreateHttpHandle" /> function.</para>
+    </param>
+    <param name="FullyQualifiedUrl">A pointer to a<a href="https://docs.microsoft.com//windows/desktop/Http/urlprefix-strings">UrlPrefix string</a> registered to the specified request queue. This string must be identical to the one passed to<see cref="HttpAddUrl" /> to register the UrlPrefix; even a nomenclature change in an IPv6 address is not accepted.</param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>NO_ERROR</b>.</para>
+      <para>If the function fails, the return value is one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_ACCESS_DENIED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The calling application does not have permission to remove the URL.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more of the supplied parameters is in an unusable form.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_ENOUGH_MEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient resources to complete the operation.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_FILE_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The specified UrlPrefix could not be found in the registration database.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpRemoveUrlFromUrlGroup">
+    <summary>
+      <para>The <b>HttpRemoveUrlFromUrlGroup</b> function removes the specified URL from the group identified by the URL Group ID. This function removes one, or all, of the URLs from the group.</para>
+      <para>This function replaces the HTTP version 1.0 <see cref="HttpRemoveUrl" /> function.</para>
+    </summary>
+    <param name="UrlGroupId">The ID of the URL group from which the URL specified in <i>pFullyQualifiedUrl</i> is removed.</param>
+    <param name="pFullyQualifiedUrl">
+      <para>A pointer to a Unicode string that contains a properly formed <a href="https://docs.microsoft.com//windows/desktop/Http/urlprefix-strings">UrlPrefix String</a> that identifies the URL to be removed.</para>
+      <para>When <b>HTTP_URL_FLAG_REMOVE_ALL</b> is passed in the <i>Flags</i> parameter, all of the existing URL registrations for the URL Group identified in <i>UrlGroupId</i> are removed from the group. In this case, <i>pFullyQualifiedUrl</i> must be <b>NULL</b>.</para>
+    </param>
+    <param name="Flags">
+      <para>The URL flags qualifying the URL that is removed. This can be one of the following flags:</para>
+      <list type="table">
+        <listheader>
+          <description>URL Flag</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_URL_FLAG_REMOVE_ALL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Removes all of the URLs currently registered with the URL Group.</description>
+        </listheader>
+      </list>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns NO_ERROR.</para>
+      <para>If the function fails, it returns one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The URL Group does not exist.<para>The Flags parameter contains an invalid combination of flags.</para><para>The HTTP_URL_FLAG_REMOVE_ALL flag was set and the <i>pFullyQualifiedUrl</i> parameter was not set to <b>NULL</b>.</para><para>The application does not have permission to remove URLs from the Group. Only the application that created the URL Group can remove URLs.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_ACCESS_DENIED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The calling process does not have permission to deregister the URL.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_FILE_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The specified URL is not registered with the URL Group.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpSendHttpResponse">
+    <summary>The<b>HttpSendHttpResponse</b> function sends an HTTP response to the specified HTTP request.</summary>
+    <param name="RequestQueueHandle">
+      <para>A handle to the request queue from which the specified request was retrieved. A request queue is created and its handle returned by a call to the<see cref="HttpCreateRequestQueue" /> function.</para>
+      <para>
+        <b>Windows Server 2003 with SP1 and Windows XP with SP2:  </b>The handle to the request queue is created by the <see cref="HttpCreateHttpHandle" /> function.</para>
+    </param>
+    <param name="RequestId">An identifier of the HTTP request to which this response corresponds. This value is returned in the <b>RequestId</b> member of the<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa364545(v=vs.85)">HTTP_REQUEST</a> structure by a call to the<see cref="HttpReceiveHttpRequest" /> function. This value cannot be <b>HTTP_NULL_ID</b>.</param>
+    <param name="Flags">
+      <para>This parameter can be a combination of some of the following flag values. Those that are mutually exclusive are marked accordingly.</para>
+      <list type="table">
+        <listheader>
+          <description>Flags</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_SEND_RESPONSE_FLAG_DISCONNECT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The network connection should be disconnected after sending this response, overriding any persistent connection features associated with the version of HTTP in use.<div><b>Caution</b>  Combining <b>HTTP_SEND_RESPONSE_FLAG_DISCONNECT</b> and <b>HTTP_SEND_RESPONSE_FLAG_MORE_DATA</b> in a single call to the <b>HttpSendHttpResponse</b> function produces undefined results.</div></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_SEND_RESPONSE_FLAG_MORE_DATA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Additional entity body data for this response is sent by the application through one or more subsequent calls to <see cref="HttpSendResponseEntityBody" />. The last call sending entity-body data then sets this flag to zero.<div><b>Caution</b>  Combining <b>HTTP_SEND_RESPONSE_FLAG_DISCONNECT</b> and <b>HTTP_SEND_RESPONSE_FLAG_MORE_DATA</b> in a single call to the <b>HttpSendHttpResponse</b> function produces undefined results.</div></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_SEND_RESPONSE_FLAG_BUFFER_DATA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>This flag enables buffering of data in the kernel on a per-response basis.<para>It should be used by an application doing synchronous I/O or by an application doing asynchronous I/O with no more than one outstanding send at a time.</para><para>Applications that use asynchronous I/O and that may have more than one send outstanding at a time should not use this flag.</para><para>When this flag is set, it should also be used consistently in calls to the <see cref="HttpSendResponseEntityBody" /> function.</para><para><b>Windows Server 2003:  </b>This flag is not supported. This flag is new for Windows Server 2003 with SP1.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_SEND_RESPONSE_FLAG_ENABLE_NAGLING</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Enables the TCP nagling algorithm for this send only.<para><b>Windows Server 2003 with SP1 and Windows XP with SP2:  </b>This flag is not supported.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_SEND_RESPONSE_FLAG_PROCESS_RANGES</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Specifies that for a range request, the full response content is passed and the caller wants the HTTP API to process ranges appropriately.<div><b>Note</b>  This flag is only supported for responses to HTTP <i>GET</i> requests and offers a limited subset of functionality. Applications that require full range processing should perform it in user mode and not rely on HTTP.sys. Its usage is discouraged.</div>Windows Server 2008 R2 and Windows 7 or later.<para><b>Note</b>  This flag is supported.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_SEND_RESPONSE_FLAG_OPAQUE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Specifies that the request/response is not HTTP compliant and all subsequent bytes should be treated as entity-body. Applications specify this flag when it is accepting a Web Socket upgrade request and informing HTTP.sys to treat the connection data as opaque data.<para>This flag is only allowed when the <b>StatusCode</b> member of <i>pHttpResponse</i> is <b>101</b>, switching protocols. <b>HttpSendHttpResponse</b> returns <b>ERROR_INVALID_PARAMETER</b> for all other HTTP response types if this flag is used.</para><para><b>Windows 8 and later:  </b>This flag is supported.</para></description>
+        </listheader>
+      </list>
+    </param>
+    <param name="HttpResponse">A pointer to an<a href="https://docs.microsoft.com//windows/desktop/Http/http-response">HTTP_RESPONSE</a> structure that defines the HTTP response.</param>
+    <param name="CachePolicy">
+      <para>A pointer to the <see cref="HTTP_CACHE_POLICY" /> structure used to cache the response.</para>
+      <para>
+        <b>Windows Server 2003 with SP1 and Windows XP with SP2:  </b>This parameter is reserved and must be <b>NULL</b>.</para>
+    </param>
+    <param name="BytesSent">
+      <para>Optional. A pointer to a variable that receives the number, in bytes, sent if the function operates synchronously.</para>
+      <para>When making an asynchronous call using <i>pOverlapped</i>, set <i>pBytesSent</i> to <b>NULL</b>. Otherwise, when <i>pOverlapped</i> is set to <b>NULL</b>, <i>pBytesSent</i> must contain a valid memory address and not be set to <b>NULL</b>.</para>
+    </param>
+    <param name="Reserved1">This parameter is reserved and must be <b>NULL</b>.</param>
+    <param name="Reserved2">This parameter is reserved and must be zero.</param>
+    <param name="Overlapped">
+      <para>For asynchronous calls, set <i>pOverlapped</i> to point to an<see cref="OVERLAPPED" /> structure; for synchronous calls, set to <b>NULL</b>.</para>
+      <para>A synchronous call blocks until all response data specified in the <i>pHttpResponse</i> parameter is sent, whereas an asynchronous call immediately returns <b>ERROR_IO_PENDING</b> and the calling application then uses<see cref="GetOverlappedResult" /> or I/O completion ports to determine when the operation is completed. For more information about using<see cref="OVERLAPPED" /> structures for synchronization, see <a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-and-overlapped-input-and-output">Synchronization and Overlapped Input and Output</a>.</para>
+    </param>
+    <param name="LogData">
+      <para>A pointer to the <see cref="HTTP_LOG_DATA" /> structure used to log the response. Pass a pointer to the <see cref="HTTP_LOG_FIELDS_DATA" /> structure and cast it to <b>PHTTP_LOG_DATA</b>.</para>
+      <para>Be aware that even when logging is enabled on a URL Group, or server session, the response will not be logged unless the application supplies the log fields data structure.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP with SP2:  </b>This parameter is reserved and must be <b>NULL</b>.</para>
+      <para>
+        <b>Windows Vista and Windows Server 2008:  </b>This parameter is new for Windows Vista, and Windows Server 2008</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the function returns <b>NO_ERROR</b>.</para>
+      <para>If the function is used asynchronously, a return value of <b>ERROR_IO_PENDING</b> indicates that the next request is not yet ready and is retrieved later through normal overlapped I/O completion mechanisms.</para>
+      <para>If the function fails, it returns one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more of the supplied parameters is in an unusable form.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpSendResponseEntityBody">
+    <summary>The<b>HttpSendResponseEntityBody</b> function sends entity-body data associated with an HTTP response.</summary>
+    <param name="RequestQueueHandle">
+      <para>A handle to the request queue from which the specified request was retrieved. A request queue is created and its handle returned by a call to the<see cref="HttpCreateRequestQueue" /> function.</para>
+      <para>
+        <b>Windows Server 2003 with SP1 and Windows XP with SP2:  </b>The handle to the request queue is created by the <see cref="HttpCreateHttpHandle" /> function.</para>
+    </param>
+    <param name="RequestId">An identifier of the HTTP request to which this response corresponds. This value is returned in the <b>RequestId</b> member of the<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa364545(v=vs.85)">HTTP_REQUEST</a> structure by a call to the<see cref="HttpReceiveHttpRequest" /> function. It cannot be <b>HTTP_NULL_ID</b>.</param>
+    <param name="Flags">
+      <para>A parameter that can include one of the following mutually exclusive flag values.</para>
+      <list type="table">
+        <listheader>
+          <description>Flags</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_SEND_RESPONSE_FLAG_DISCONNECT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The network connection should be disconnected after sending this response, overriding any persistent connection features associated with the version of HTTP in use. Applications should use this flag to indicate the end of the entity in cases where neither content length nor chunked encoding is used.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_SEND_RESPONSE_FLAG_MORE_DATA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Additional entity body data for this response is sent by the application through one or more subsequent calls to <b>HttpSendResponseEntityBody</b>. The last call then sets this flag to zero.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_SEND_RESPONSE_FLAG_BUFFER_DATA</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>This flag enables buffering of data in the kernel on a per-response basis.<para>It should be used by an application doing synchronous I/O, or by a an application doing asynchronous I/O with no more than one send outstanding at a time.</para><para>Applications using asynchronous I/O which may have more than one send outstanding at a time should not use this flag.</para><para>When this flag is set, it should be used consistently in calls to the <see cref="HttpSendHttpResponse" /> function as well.</para><para><b>Windows Server 2003:  </b>This flag is not supported. This flag is new for Windows Server 2003 with SP1.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_SEND_RESPONSE_FLAG_ENABLE_NAGLING</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Enables the TCP nagling algorithm for this send only.<para><b>Windows Vista and later:  </b>This flag is not supported.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_SEND_RESPONSE_FLAG_PROCESS_RANGES</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Specifies that for a range request, the full response content is passed and the caller wants the HTTP API to process ranges appropriately.<div><b>Note</b>  This flag is only supported for responses to HTTP <i>GET</i> requests and offers a limited subset of functionality. Applications that require full range processing should perform it in user mode and not rely on HTTP.sys. It's usage is discouraged.</div>Windows Server 2008 R2 and Windows 7 or later.<para><b>Note</b>  This flag is supported.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_SEND_RESPONSE_FLAG_OPAQUE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Specifies that the request/response is not HTTP compliant and all subsequent bytes should be treated as entity-body. Applications specify this flag when it is accepting a Web Socket upgrade request and informing HTTP.sys to treat the connection data as opaque data.<para>This flag is only allowed when the <b>StatusCode</b> member of <i>pHttpResponse</i> is <b>101</b>, switching protocols. <b>HttpSendResponseEntityBody</b> returns <b>ERROR_INVALID_PARAMETER</b> for all other HTTP response types if this flag is used.</para><para><b>Windows 8 and later:  </b>This flag is supported.</para></description>
+        </listheader>
+      </list> <div><b>Caution</b>  Combining both flags in a single call to the <see cref="HttpSendHttpResponse" /> function produces undefined results.</div></param>
+    <param name="EntityChunkCount">A number of structures in the array pointed to by <i>pEntityChunks</i>. This count cannot exceed 9999.</param>
+    <param name="EntityChunks">A pointer to an array of<see cref="HTTP_DATA_CHUNK" /> structures to be sent as entity-body data.</param>
+    <param name="BytesSent">
+      <para>Optional. A pointer to a variable that receives the number, in bytes, sent if the function operates synchronously.</para>
+      <para>When making an asynchronous call using <i>pOverlapped</i>, set <i>pBytesSent</i> to <b>NULL</b>. Otherwise, when <i>pOverlapped</i> is set to <b>NULL</b>, <i>pBytesSent</i> must contain a valid memory address, and not be set to <b>NULL</b>.</para>
+    </param>
+    <param name="Reserved1">This parameter is reserved and must be <b>NULL</b>.</param>
+    <param name="Reserved2">This parameter is reserved and must be zero.</param>
+    <param name="Overlapped">
+      <para>For asynchronous calls, set <i>pOverlapped</i> to point to an<see cref="OVERLAPPED" /> structure; for synchronous calls, set it to <b>NULL</b>.</para>
+      <para>A synchronous call blocks until all response data specified in the <i>pEntityChunks</i> parameter is sent, whereas an asynchronous call immediately returns <b>ERROR_IO_PENDING</b> and the calling application then uses<see cref="GetOverlappedResult" /> or I/O completion ports to determine when the operation is completed. For more information about using<see cref="OVERLAPPED" /> structures for synchronization, see <a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-and-overlapped-input-and-output">Synchronization and Overlapped Input and Output</a>.</para>
+    </param>
+    <param name="LogData">
+      <para>A pointer to the <see cref="HTTP_LOG_DATA" /> structure used to log the response. Pass a pointer to the <see cref="HTTP_LOG_FIELDS_DATA" /> structure and cast it to <b>PHTTP_LOG_DATA</b>.</para>
+      <para>Be aware that even when logging is enabled on a URL Group, or server session, the response will not be logged unless the application supplies the log fields data structure.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP with SP2:  </b>This parameter is reserved and must be <b>NULL</b>.</para>
+      <para>
+        <b>Windows Vista and Windows Server 2008:  </b>This parameter is new for Windows Vista, and Windows Server 2008</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>NO_ERROR</b>.</para>
+      <para>If the function is used asynchronously, a return value of <b>ERROR_IO_PENDING</b> indicates that the next request is not yet ready and is retrieved later through normal overlapped I/O completion mechanisms.</para>
+      <para>If the function fails, the return value is one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more of the supplied parameters is in an unusable form.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_BAD_COMMAND</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>There is a call pending to <see cref="HttpSendHttpResponse" /> or <see cref="HttpSendResponseEntityBody" /> having the same <b>RequestId</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpSetRequestProperty">
+    <summary>The <b>HttpSetRequestProperty</b> function sets a new property or modifies an existing property on the specified request.</summary>
+    <param name="RequestQueueHandle">The handle to the request queue on which the request was received. A request queue is created and its handle returned by a call to the <see cref="HttpCreateRequestQueue" /> function.</param>
+    <param name="Id">The opaque ID of the request. This ID is located in the <i>RequestId</i> member of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa364545(v=vs.85)">HTTP_REQUEST</a> structure returned by <see cref="HttpReceiveHttpRequest" />.</param>
+    <param name="PropertyId">
+      <para>A member of the <see cref="HTTP_REQUEST_PROPERTY" /> enumeration describing the property type that is set. This must be one of the following:</para>
+      <para>| <b>Property</b> | <b>Meaning</b> | | HttpRequestPropertyStreamError | Sets a stream error on the request. |</para>
+    </param>
+    <param name="Input">
+      <para>A pointer to the buffer that contains the property information.</para>
+      <para>It must point to one of the following property information types based on the property that is set.</para>
+      <para>| <b>Property</b> | <b>Configuration Type</b> | | HttpRequestPropertyStreamError | <see cref="HTTP_REQUEST_PROPERTY_STREAM_ERROR" /> structure |</para>
+    </param>
+    <param name="InputPropertySize">The length, in bytes, of the buffer pointed to by the <i>Input</i> parameter.</param>
+    <param name="Overlapped">
+      <para>For asynchronous calls, set <i>pOverlapped</i> to point to an <see cref="OVERLAPPED" /> structure; for synchronous calls, set it to <b>NULL</b>.</para>
+      <para>A synchronous call blocks until the operation is complete, whereas an asynchronous call immediately returns <b>ERROR_IO_PENDING</b> and the calling application then uses <see cref="GetOverlappedResult" /> or I/O completion ports to determine when the operation is completed. For more information about using <see cref="OVERLAPPED" /> structures for synchronization, see <a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-and-overlapped-input-and-output">Synchronization and Overlapped Input and Output</a>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns <b>ERROR_SUCCESS</b>.</para>
+      <para>If the function fails, it returns a <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a>.</para>
+    </returns>
+  </member>
+  <member name="Windows.HttpSetServiceConfiguration">
+    <summary>The<b>HttpSetServiceConfiguration</b> function creates and sets a configuration record for the HTTP Server API configuration store. The call fails if the specified record already exists. To change a given configuration record, delete it and then recreate it with a different value.</summary>
+    <param name="ServiceHandle">Reserved. Must be zero.</param>
+    <param name="ConfigId">
+      <para>Type of configuration record to be set. This parameter can be one of the following values from the <see cref="HTTP_SERVICE_CONFIG_ID" /> enumeration.</para>
+      <list type="table">
+        <listheader>
+          <description>
+            <i>ConfigId</i> value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigIPListenList</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Sets a record in the IP Listen List.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSSLCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Sets a specified SSL certificate record.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigUrlAclInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Sets a URL reservation record.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigTimeout</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Sets a specified HTTP Server API wide connection time-out.<para><b>Windows Vista and later:  </b>This enumeration value is supported.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSslSniCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Sets a specified SSL Server Name Indication (SNI) certificate record.<para><b>Windows 8 and later:  </b>This enumeration value is supported.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>HttpServiceConfigSslCcsCertInfo</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Sets the SSL certificate record that specifies that Http.sys should consult the Centralized Certificate Store (CCS) store to find certificates if the port receives a Transport Layer Security (TLS) handshake. The port is specified by the <b>KeyDesc</b> member of the <see cref="HTTP_SERVICE_CONFIG_SSL_CCS_SET" /> structure that you pass to the <i>pConfigInformation</i> parameter.<para><b>Windows 8 and later:  </b>This enumeration value is supported.</para></description>
+        </listheader>
+      </list>
+    </param>
+    <param name="pConfigInformation">
+      <para>A pointer to a buffer that contains the appropriate data to specify the type of record to be set.</para>
+      <list type="table">
+        <listheader>
+          <description>
+            <i>ConfigId</i> value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigIPListenList</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="HTTP_SERVICE_CONFIG_IP_LISTEN_PARAM" /> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSSLCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="HTTP_SERVICE_CONFIG_SSL_SET" /> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigUrlAclInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="HTTP_SERVICE_CONFIG_URLACL_SET" /> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigTimeout</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <para>
+              <see cref="HTTP_SERVICE_CONFIG_TIMEOUT_SET" /> structure.</para>
+            <para>
+              <b>Windows Vista and later:  </b>This structure is supported.</para>
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSslSniCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <para>
+              <see cref="HTTP_SERVICE_CONFIG_SSL_SNI_SET" /> structure. The hostname will be "*" when the SSL central certificate store is queried and wildcard bindings are used, and a host name for regular SNI.</para>
+            <para>
+              <b>Windows 8 and later:  </b>This structure is supported.</para>
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>HttpServiceConfigSslCcsCertInfo</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <para>
+              <see cref="HTTP_SERVICE_CONFIG_SSL_CCS_SET" /> structure.</para>
+            <para>
+              <b>Windows 8 and later:  </b>This structure is supported.</para>
+          </description>
+        </listheader>
+      </list>
+    </param>
+    <param name="ConfigInformationLength">Size, in bytes, of the <i>pConfigInformation</i> buffer.</param>
+    <param name="pOverlapped">This parameter is reserved and must be <b>NULL</b>.</param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>NO_ERROR</b>.</para>
+      <para>If the function fails, the return value is one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_ALREADY_EXISTS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The specified record already exists, and must be deleted in order for its value to be re-set.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The buffer size specified in the <i>ConfigInformationLength</i> parameter is insufficient.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_HANDLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>ServiceHandle</i> parameter is invalid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more of the supplied parameters is in an unusable form.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NO_SUCH_LOGON_SESSION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The SSL Certificate used is invalid. This can occur only if the <i>HttpServiceConfigSSLCertInfo</i> parameter is used.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpShutdownRequestQueue">
+    <summary>The <b>HttpShutdownRequestQueue</b> function stops queuing requests for the specified request queue process. Outstanding calls to <see cref="HttpReceiveHttpRequest" /> are canceled.</summary>
+    <param name="RequestQueueHandle">The handle to the request queue that is shut down. A request queue is created and its handle returned by a call to the<see cref="HttpCreateRequestQueue" /> function.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>NO_ERROR</b></para>
+      <para>If the function fails, it returns one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>ReqQueueHandle</i> parameter does not contain a valid request queue.<para>The application does not have permission to shut down the request queue.</para></description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpTerminate">
+    <summary>The<b>HttpTerminate</b> function cleans up resources used by the HTTP Server API to process calls by an application. An application should call<b>HttpTerminate</b> once for every time it called<see cref="HttpInitialize" />, with matching flag settings.</summary>
+    <param name="Flags">
+      <para>Termination options. This parameter can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_INITIALIZE_CONFIG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Release all resources used by applications that modify the HTTP configuration.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_INITIALIZE_SERVER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Release all resources used by server applications.</description>
+        </listheader>
+      </list>
+    </param>
+    <param name="pReserved">This parameter is reserved and must be <b>NULL</b>.</param>
+    <returns>
+      <para>If the function succeeds, the return value is NO_ERROR.</para>
+      <para>If the function fails, the return value is one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more of the supplied parameters is in an unusable form.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpUpdateServiceConfiguration">
+    <summary>Updates atomically a service configuration parameter that specifies a Transport Layer Security (TLS) certificate in a configuration record within the HTTP Server API configuration store.</summary>
+    <param name="Handle">Reserved and must be <b>NULL</b>.</param>
+    <param name="ConfigId">
+      <para>The type of configuration record to update. This parameter can be one of the following values from the <see cref="HTTP_SERVICE_CONFIG_ID" /> enumeration.</para>
+      <list type="table">
+        <listheader>
+          <description>
+            <i>ConfigId</i> value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSSLCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Updates a specified SSL certificate record.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSslSniCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Updates a specified SSL Server Name Indication (SNI) certificate record.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSslCcsCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Updates the SSL certificate record that specifies that Http.sys should consult the Centralized Certificate Store (CCS) store to find certificates if the port receives a TLS handshake. The port is specified by the <b>KeyDesc</b> member of the <see cref="HTTP_SERVICE_CONFIG_SSL_CCS_SET" /> structure that you pass to the <i>pConfigInfo</i> parameter.</description>
+        </listheader>
+      </list>
+    </param>
+    <param name="ConfigInfo">
+      <para>A pointer to a buffer that contains the appropriate data to specify the type of record to update. The following table shows the type of data the buffer contains for the different possible values of the <i>ConfigId</i> parameter.</para>
+      <list type="table">
+        <listheader>
+          <description>
+            <i>ConfigId</i> value</description>
+          <description>Type of data in the <i>pConfigInfo</i> buffer</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSSLCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="HTTP_SERVICE_CONFIG_SSL_SET" /> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigSslSniCertInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="HTTP_SERVICE_CONFIG_SSL_SNI_SET" /> structure. The hostname will be "*" when the SSL central certificate store is queried and wildcard bindings are used, and a host name for regular SNI.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>HttpServiceConfigSslCcsCertInfo</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="HTTP_SERVICE_CONFIG_SSL_CCS_SET" /> structure. This structure is used to add the CCS store on the specified port, as well as to delete, retrieve, or update an existing SSL CCS record.</description>
+        </listheader>
+      </list>
+    </param>
+    <param name="ConfigInfoLength">The size, in bytes, of the <i>ConfigInfo</i> buffer.</param>
+    <param name="Overlapped">Reserved and must be <b>NULL</b>.</param>
+    <returns>
+      <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>.</para>
+      <para>If the function fails, the return value is one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_FILE_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The specified record does not exist.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The buffer size specified in the <i>ConfigInfoLength</i> parameter is insufficient.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_HANDLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>ServiceHandle</i> parameter is invalid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more of the supplied parameters is in an unusable form.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NO_SUCH_LOGON_SESSION</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The SSL Certificate used is invalid. This can occur only if the <i>HttpServiceConfigSSLCertInfo</i> parameter is used.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpWaitForDemandStart">
+    <summary>The <b>HttpWaitForDemandStart</b> function waits for the arrival of a new request that can be served by a new request queue process.</summary>
+    <param name="RequestQueueHandle">A handle to the request queue on which demand start is registered. A request queue is created and its handle returned by a call to the<see cref="HttpCreateRequestQueue" /> function.</param>
+    <param name="Overlapped">
+      <para>For asynchronous calls, set <i>pOverlapped</i> to point to an<see cref="OVERLAPPED" /> structure; for synchronous calls, set it to <b>NULL</b>.</para>
+      <para>A synchronous call blocks until a request has arrived in the specified queue, whereas an asynchronous call immediately returns <b>ERROR_IO_PENDING</b> and the calling application then uses<see cref="GetOverlappedResult" /> or I/O completion ports to determine when the operation is completed. For more information about using<see cref="OVERLAPPED" /> structures for synchronization, see<br /><a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-and-overlapped-input-and-output">Synchronization and Overlapped Input and Output</a>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns <b>NO_ERROR</b>.</para>
+      <para>If the function fails, it returns one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <i>ReqQueueHandle</i> parameter does not contain a valid request queue.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_ID_AUTHORITY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The calling process is not the controller process for this request queue.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_HANDLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The calling process has already initiated a shutdown on the request queue or has closed the request queue handle.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_ALREADY_EXISTS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A demand start registration already exists for the request queue.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpWaitForDisconnect">
+    <summary>The<b>HttpWaitForDisconnect</b> function notifies the application when the connection to an HTTP client is broken for any reason.</summary>
+    <param name="RequestQueueHandle">
+      <para>A handle to the request queue that handles requests from the specified connection. A request queue is created and its handle returned by a call to the<see cref="HttpCreateRequestQueue" /> function.</para>
+      <para>
+        <b>Windows Server 2003 with SP1 and Windows XP with SP2:  </b>The handle to the request queue is created by the <see cref="HttpCreateHttpHandle" /> function.</para>
+    </param>
+    <param name="ConnectionId">Identifier for the connection to the client computer. This value is returned in the <b>ConnectionID</b> member of the<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa364545(v=vs.85)">HTTP_REQUEST</a> structure by a call to the<see cref="HttpReceiveHttpRequest" /> function.</param>
+    <param name="Overlapped">
+      <para>For asynchronous calls, set <i>pOverlapped</i> to point to an<see cref="OVERLAPPED" /> structure; for synchronous calls, set it to <b>NULL</b>.</para>
+      <para>A synchronous call blocks until the connection is broken, whereas an asynchronous call immediately returns ERROR_IO_PENDING and the calling application then uses<see cref="GetOverlappedResult" /> or I/O completion ports to determine when the operation is completed. For information about using<see cref="OVERLAPPED" /> structures for synchronization, see <a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-and-overlapped-input-and-output">Synchronization and Overlapped Input and Output</a>.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value is NO_ERROR.</para>
+      <para>If the function is used asynchronously, a return value of ERROR_IO_PENDING indicates that the next request is not yet ready and is retrieved later through normal overlapped I/O completion mechanisms.</para>
+      <para>If the function fails, the return value is one of the following error codes.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more of the supplied parameters is in an unusable form.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a> defined in WinError.h.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.HttpWaitForDisconnectEx">
+    <summary>
+      <para>This function is an extension to <see cref="HttpWaitForDisconnect" />.<div><b>Note</b>  Calling this API directly in your code is not recommended. Call <see cref="HttpWaitForDisconnect" /> instead.</div></para>
+    </summary>
+  </member>
+  <member name="Windows.HTTP_EQUAL_VERSION">
+    <summary>The<b>HTTP_EQUAL_VERSION</b> macro returns a non-zero value if an<see cref="HTTP_VERSION" /> structure is equal to a specified major/minor version combination, or zero otherwise.</summary>
+    <param name="version">The<see cref="HTTP_VERSION" /> structure to be examined.</param>
+    <param name="major">A major portion of the version to be compared.</param>
+    <param name="minor">A minor portion of the version to be compared.</param>
+  </member>
+  <member name="Windows.HTTP_GREATER_EQUAL_VERSION">
+    <summary>The<b>HTTP_GREATER_EQUAL_VERSION</b> macro returns a non-zero value if an<see cref="HTTP_VERSION" /> structure is greater than or equal to a specified major/minor version combination, or zero otherwise.</summary>
+    <param name="version">The<see cref="HTTP_VERSION" /> structure to be examined.</param>
+    <param name="major">The major portion of the version to be compared.</param>
+    <param name="minor">The minor portion of the version to be compared.</param>
+  </member>
+  <member name="Windows.HTTP_GREATER_VERSION">
+    <summary>The<b>HTTP_GREATER_VERSION</b> macro returns a non-zero value if an<see cref="HTTP_VERSION" /> structure is greater than a specified major/minor version combination, or zero otherwise.</summary>
+    <param name="version">The<see cref="HTTP_VERSION" /> structure to be examined.</param>
+    <param name="major">The major portion of the version to be compared.</param>
+    <param name="minor">The minor portion of the version to be compared.</param>
+  </member>
+  <member name="Windows.HTTP_IS_NULL_ID">
+    <summary>The <b>HTTP_IS_NULL_ID</b> macro determines if the <a href="https://docs.microsoft.com//windows/desktop/Http/http-server-api-version-2-0-data-types">HTTP_OPAQUE_ID</a> is <b>NULL</b>.</summary>
+    <param name="pid">The parameter determined to be <b>NULL</b>.</param>
+  </member>
+  <member name="Windows.HTTP_LESS_EQUAL_VERSION">
+    <summary>The<b>HTTP_LESS_EQUAL_VERSION</b> macro returns a non-zero value if an<see cref="HTTP_VERSION" /> structure is less than or equal to a specified major/minor version combination, or zero otherwise.</summary>
+    <param name="version">The<see cref="HTTP_VERSION" /> structure to be examined.</param>
+    <param name="major">The major portion of the version to be compared.</param>
+    <param name="minor">The minor portion of the version to be compared.</param>
+  </member>
+  <member name="Windows.HTTP_LESS_VERSION">
+    <summary>The<b>HTTP_LESS_VERSION</b> macro returns a non-zero value if an<see cref="HTTP_VERSION" /> structure is less than a specified major/minor version combination, or zero otherwise.</summary>
+    <param name="version">The<see cref="HTTP_VERSION" /> structure to be examined.</param>
+    <param name="major">The major portion of the version to be compared.</param>
+    <param name="minor">The minor portion of the version to be compared.</param>
+  </member>
+  <member name="Windows.HTTP_NOT_EQUAL_VERSION">
+    <summary>The<b>HTTP_NOT_EQUAL_VERSION</b> macro returns a non-zero value if an<see cref="HTTP_VERSION" /> structure is greater or less than a specified major/minor version combination, or zero if it is equal.</summary>
+    <param name="version">The<see cref="HTTP_VERSION" /> structure to be examined.</param>
+    <param name="major">The major portion of the version to be compared.</param>
+    <param name="minor">The minor portion of the version to be compared.</param>
+  </member>
+  <member name="Windows.HTTP_SET_NULL_ID">
+    <summary>The <b>HTTP_SET_NULL_ID</b> macro sets the <a href="https://docs.microsoft.com//windows/desktop/Http/http-server-api-version-2-0-data-types">HTTP_OPAQUE_ID</a> to <b>NULL</b>.</summary>
+    <param name="pid">The identifier that is set to <b>NULL</b>.</param>
+  </member>
+  <member name="Windows.HTTP_SET_VERSION">
+    <summary>The<b>HTTP_SET_VERSION</b> macro sets a specified<see cref="HTTP_VERSION" /> structure to a specified major/minor version combination.</summary>
+    <param name="version">The<see cref="HTTP_VERSION" /> structure to be set.</param>
+    <param name="major">The major portion of the version to be used in the <see cref="HTTP_VERSION" /> structure.</param>
+    <param name="minor">The minor portion of the version to be used in the <see cref="HTTP_VERSION" /> structure.</param>
+  </member>
+</doc>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTPAPI_VERSION">
+    <summary>The<b>HTTPAPI_VERSION</b> structure defines the version of the HTTP Server API. This is not to be confused with the version of the HTTP protocol used, which is stored in an<b>HTTP_VERSION</b> structure.</summary>
+  </member>
+  <member name="HTTPAPI_VERSION.HttpApiMajorVersion">
+    <summary>Major version of the HTTP Server API.</summary>
+  </member>
+  <member name="HTTPAPI_VERSION.HttpApiMinorVersion">
+    <summary>Minor version of the HTTP Server API.</summary>
+  </member>
+</doc>

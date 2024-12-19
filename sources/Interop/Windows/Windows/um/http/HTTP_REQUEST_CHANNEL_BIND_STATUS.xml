@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_REQUEST_CHANNEL_BIND_STATUS">
+    <summary>The <b>HTTP_REQUEST_CHANNEL_BIND_STATUS</b> structure contains secure channel endpoint binding information.</summary>
+  </member>
+  <member name="HTTP_REQUEST_CHANNEL_BIND_STATUS.ServiceName">
+    <summary>A pointer to an <see cref="HTTP_SERVICE_BINDING_W" /> structure cast to a pointer to an <see cref="HTTP_SERVICE_BINDING_BASE" /> structure containing the service name from the client. This is populated if the request's Channel Binding Token (CBT) is not configured to retrieve service names.</summary>
+  </member>
+  <member name="HTTP_REQUEST_CHANNEL_BIND_STATUS.ChannelToken">
+    <summary>A pointer to a buffer that contains the secure channel endpoint binding.</summary>
+  </member>
+  <member name="HTTP_REQUEST_CHANNEL_BIND_STATUS.ChannelTokenSize">
+    <summary>The length of the <b>ChannelToken</b> buffer in bytes.</summary>
+  </member>
+  <member name="HTTP_REQUEST_CHANNEL_BIND_STATUS.Flags">
+    <summary>Reserved</summary>
+  </member>
+</doc>

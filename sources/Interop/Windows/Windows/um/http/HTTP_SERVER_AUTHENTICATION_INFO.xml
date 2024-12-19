@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVER_AUTHENTICATION_INFO">
+    <summary>
+      <para>The <b>HTTP_SERVER_AUTHENTICATION_INFO</b> structure is used to enable server-side authentication on a URL group or server session. This structure is also used to query the existing authentication schemes enabled for a URL group or server session.</para>
+      <para>This structure must be used when setting or querying the <see cref="HttpServerAuthenticationProperty" /> on a URL group, or server session.</para>
+    </summary>
+  </member>
+  <member name="HTTP_SERVER_AUTHENTICATION_INFO.Flags">
+    <summary>The <see cref="HTTP_PROPERTY_FLAGS" /> structure that specifies if the property is present.</summary>
+  </member>
+  <member name="HTTP_SERVER_AUTHENTICATION_INFO.AuthSchemes">
+    <summary>
+      <para>The supported authentication schemes. This can be one or more of the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Authentication Scheme</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_AUTH_ENABLE_BASIC</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Basic authentication is enabled.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_AUTH_ENABLE_DIGEST</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Digest authentication is enabled.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_AUTH_ENABLE_NTLM</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>NTLM authentication is enabled.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b> HTTP_AUTH_ENABLE_NEGOTIATE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Negotiate authentication is enabled.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_AUTH_ENABLE_KERBEROS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Kerberos authentication is enabled.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b> HTTP_AUTH_ENABLE_ALL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>All types of authentication are enabled.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="HTTP_SERVER_AUTHENTICATION_INFO.ReceiveMutualAuth">
+    <summary>
+      <para>A Boolean value that indicates, if <b>True</b>, that the client application receives the server credentials for mutual authentication with the authenticated request. If <b>False</b>, the client application does not receive the credentials.</para>
+      <para>Be aware that this option is set for all requests served by the associated request queue.</para>
+    </summary>
+  </member>
+  <member name="HTTP_SERVER_AUTHENTICATION_INFO.ReceiveContextHandle">
+    <summary>A Boolean value that indicates, if <b>True</b>, that the finalized client context is serialized and passed to the application with the request. If <b>False</b>, the application does not receive the context. This handle can be used to query context attributes.</summary>
+  </member>
+  <member name="HTTP_SERVER_AUTHENTICATION_INFO.DisableNTLMCredentialCaching">
+    <summary>
+      <para>A Boolean value that indicates, if <b>True</b>, that the NTLM credentials are not cached. If <b>False</b>, the default behavior is preserved.</para>
+      <para>By default, HTTP caches the client context for Keep Alive (KA) connections for the NTLM scheme if the request did not originate from a proxy.</para>
+    </summary>
+  </member>
+  <member name="HTTP_SERVER_AUTHENTICATION_INFO.ExFlags">
+    <summary>
+      <para>Optional authentication flags. Can be one or more of the following possible values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_AUTH_EX_FLAG_ENABLE_KERBEROS_CREDENTIAL_CACHING</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>If set, the Kerberos authentication credentials are cached. Kerberos or Negotiate authentication must be enabled by <b>AuthSchemes</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_AUTH_EX_FLAG_CAPTURE_CREDENTIAL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description> If set, the HTTP Server API captures the caller's credentials and uses them for Kerberos or Negotiate authentication. Kerberos or Negotiate authentication must be enabled by <b>AuthSchemes</b>.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="HTTP_SERVER_AUTHENTICATION_INFO.DigestParams">
+    <summary>The <see cref="HTTP_SERVER_AUTHENTICATION_DIGEST_PARAMS" /> structure that provides the domain and realm for the digest challenge.</summary>
+  </member>
+  <member name="HTTP_SERVER_AUTHENTICATION_INFO.BasicParams">
+    <summary>The <see cref="HTTP_SERVER_AUTHENTICATION_BASIC_PARAMS" /> structure that provides the realm for the basic challenge.</summary>
+  </member>
+</doc>

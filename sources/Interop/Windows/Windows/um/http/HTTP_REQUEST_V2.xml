@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_REQUEST_V2">
+    <summary>
+      <para>The <b>HTTP_REQUEST_V2</b> structure extends the <see cref="HTTP_REQUEST_V1" /> request structure with more information about the request.</para>
+      <para>Do not use <b>HTTP_REQUEST_V2</b> directly in your code; use <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa364545(v=vs.85)">HTTP_REQUEST</a> instead to ensure that the proper version, based on the operating system the code is compiled under, is used.</para>
+    </summary>
+  </member>
+  <member name="HTTP_REQUEST_V2.RequestInfoCount">
+    <summary>The number of <see cref="HTTP_REQUEST_INFO" /> structures in the array pointed to by <b>pRequestInfo</b>.</summary>
+  </member>
+  <member name="HTTP_REQUEST_V2.pRequestInfo">
+    <summary>A pointer to an array of <see cref="HTTP_REQUEST_INFO" /> structures that contains additional information about the request.</summary>
+  </member>
+  <member name="HTTP_REQUEST_V2._HTTP_REQUEST_V1"></member>
+</doc>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_UNKNOWN_HEADER">
+    <summary>The<b>HTTP_UNKNOWN_HEADER</b> structure contains the name and value for a header in an HTTP request or response whose name does not appear in the enumeration.</summary>
+  </member>
+  <member name="HTTP_UNKNOWN_HEADER.NameLength">
+    <summary>The size, in bytes, of the data pointed to by the <b>pName</b> member not counting a terminating null.</summary>
+  </member>
+  <member name="HTTP_UNKNOWN_HEADER.RawValueLength">
+    <summary>The size, in bytes, of the data pointed to by the <b>pRawValue</b> member, in bytes.</summary>
+  </member>
+  <member name="HTTP_UNKNOWN_HEADER.pName">
+    <summary>A pointer to a string of octets that specifies the header name. Use <b>NameLength</b> to determine the end of the string, rather than relying on a terminating <b>null</b>.</summary>
+  </member>
+  <member name="HTTP_UNKNOWN_HEADER.pRawValue">
+    <summary>A pointer to a string of octets that specifies the values for this header. Use <b>RawValueLength</b> to determine the end of the string, rather than relying on a terminating <b>null</b>.</summary>
+  </member>
+</doc>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_CONFIG_SSL_SNI_KEY">
+    <summary>The<b>HTTP_SERVICE_CONFIG_SSL_SNI_KEY</b> structure serves as the key by which a given Secure Sockets Layer (SSL) Server Name Indication (SNI) certificate record is identified in the SSL SNI store. It appears in the<see cref="HTTP_SERVICE_CONFIG_SSL_SNI_SET" /> and the<see cref="HTTP_SERVICE_CONFIG_SSL_SNI_QUERY" /> structures, and is passed as the <i>pConfigInformation</i> parameter to<see cref="HttpDeleteServiceConfiguration" />,<see cref="HttpQueryServiceConfiguration" />, and<see cref="HttpSetServiceConfiguration" /> when the <i>ConfigId</i> parameter is set to <b>HttpServiceConfigSslSniCertInfo</b>.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_SNI_KEY.IpPort">
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms740504(v=vs.85)">SOCKADDR_STORAGE</a> structure that contains the Internet Protocol version 4 (IPv4) address with which this SSL SNI certificate is associated. It must be set to the IPv4 wildcard address of type <b>SOCKADDR_IN</b> with <b>ss_family</b> set to <b>AF_INET</b> and <b>sin_addr</b> filled with zeros. <b>Port</b> can be any valid port.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_SNI_KEY.Host">
+    <summary>A pointer to a null-terminated Unicode UTF-16 string that represents the hostname.</summary>
+  </member>
+</doc>

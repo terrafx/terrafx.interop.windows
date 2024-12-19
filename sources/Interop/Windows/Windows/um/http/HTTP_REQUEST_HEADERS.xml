@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_REQUEST_HEADERS">
+    <summary>The<b>HTTP_REQUEST_HEADERS</b> structure contains headers sent with an HTTP request.</summary>
+  </member>
+  <member name="HTTP_REQUEST_HEADERS.UnknownHeaderCount">
+    <summary>A number of unknown headers sent with the HTTP request. This number is the size of the array pointed to by the <b>pUnknownHeaders</b> member.</summary>
+  </member>
+  <member name="HTTP_REQUEST_HEADERS.pUnknownHeaders">
+    <summary>A pointer to an array of<see cref="HTTP_UNKNOWN_HEADER" /> structures. This array contains one structure for each of the unknown headers sent in the HTTP request.</summary>
+  </member>
+  <member name="HTTP_REQUEST_HEADERS.TrailerCount">
+    <summary>This member is reserved and must be zero.</summary>
+  </member>
+  <member name="HTTP_REQUEST_HEADERS.pTrailers">
+    <summary>This member is reserved and must be <b>NULL</b>.</summary>
+  </member>
+  <member name="HTTP_REQUEST_HEADERS.KnownHeaders">
+    <summary>Fixed-size array of<see cref="HTTP_KNOWN_HEADER" /> structures. The<see cref="HTTP_HEADER_ID" /> enumeration provides a mapping from header types to array indexes. If a known header of a given type is included in the HTTP request, the array element at the index that corresponds to that type specifies the header value. Those elements of the array for which no corresponding headers are present contain a zero-valued <b>RawValueLength</b> member. Use <b>RawValueLength</b> to determine the end of the header string pointed to by <b>pRawValue</b>, rather than relying on the string to have a terminating null.</summary>
+  </member>
+</doc>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_AUTHENTICATION_HARDENING_LEVELS">
+    <summary>Server Hardening level.</summary>
+  </member>
+  <member name="HTTP_AUTHENTICATION_HARDENING_LEVELS.HttpAuthenticationHardeningLegacy">
+    <summary>Server is not hardened and operates without Channel Binding Token (CBT) support.</summary>
+  </member>
+  <member name="HTTP_AUTHENTICATION_HARDENING_LEVELS.HttpAuthenticationHardeningMedium">
+    <summary>Server is partially hardened. Clients that support CBT are serviced appropriately. Legacy clients are also serviced.</summary>
+  </member>
+  <member name="HTTP_AUTHENTICATION_HARDENING_LEVELS.HttpAuthenticationHardeningStrict">
+    <summary>Server is hardened. Only clients that supported CBT are serviced.</summary>
+  </member>
+</doc>

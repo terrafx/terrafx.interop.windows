@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_RESPONSE_INFO_TYPE">
+    <summary>
+      <para>The <b>HTTP_RESPONSE_INFO_TYPE</b> enumeration defines the type of information contained in the <see cref="HTTP_RESPONSE_INFO" /> structure.</para>
+      <para>This enumeration is used in the <see cref="HTTP_RESPONSE_INFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="HTTP_RESPONSE_INFO_TYPE.HttpResponseInfoTypeMultipleKnownHeaders">
+    <summary>
+      <para>The response information type is authentication.</para>
+      <para>The <b>pInfo</b> member of the <see cref="HTTP_RESPONSE_INFO" /> structure points to a <see cref="HTTP_MULTIPLE_KNOWN_HEADERS" /> structure.</para>
+    </summary>
+  </member>
+  <member name="HTTP_RESPONSE_INFO_TYPE.HttpResponseInfoTypeAuthenticationProperty">
+    <summary>Reserved for future use.</summary>
+  </member>
+  <member name="HTTP_RESPONSE_INFO_TYPE.HttpResponseInfoTypeQoSProperty">
+    <summary>Pointer to an <see cref="HTTP_QOS_SETTING_INFO" /> structure that contains information about a QOS setting.</summary>
+  </member>
+  <member name="HTTP_RESPONSE_INFO_TYPE.HttpResponseInfoTypeChannelBind">
+    <summary>Pointer to an <see cref="HTTP_CHANNEL_BIND_INFO" /> structure that contains information on the channel binding token.</summary>
+  </member>
+</doc>

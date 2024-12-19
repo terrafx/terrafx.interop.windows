@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_MULTIPLE_KNOWN_HEADERS">
+    <summary>The <b>HTTP_MULTIPLE_KNOWN_HEADERS</b> structure specifies the headers that are included in an HTTP response when more than one header is required.</summary>
+  </member>
+  <member name="HTTP_MULTIPLE_KNOWN_HEADERS.HeaderId">
+    <summary>A member of the <see cref="HTTP_HEADER_ID" /> enumeration specifying the response header ID.</summary>
+  </member>
+  <member name="HTTP_MULTIPLE_KNOWN_HEADERS.Flags">
+    <summary>
+      <para>The flags corresponding to the response header in the <b>HeaderId</b> member. This member is used only when the WWW-Authenticate header is present. This can be zero or the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Flag</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_RESPONSE_INFO_FLAGS_PRESERVE_ORDER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The specified order of authentication schemes is preserved on the challenge response.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="HTTP_MULTIPLE_KNOWN_HEADERS.KnownHeaderCount">
+    <summary>The number of elements in the array specified in the <b>KnownHeaders</b> member.</summary>
+  </member>
+  <member name="HTTP_MULTIPLE_KNOWN_HEADERS.KnownHeaders">
+    <summary>A pointer to the first element in the array of <see cref="HTTP_KNOWN_HEADER" /> structures.</summary>
+  </member>
+</doc>

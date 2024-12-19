@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_LOG_FIELDS_DATA">
+    <summary>The <b>HTTP_LOG_FIELDS_DATA</b> structure is used to pass the fields that are logged for an HTTP response when WC3 logging is enabled.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.Base">
+    <summary>Initialize this member to the <b>HttpLogDataTypeFields</b> value of the <see cref="HTTP_LOG_DATA_TYPE" /> enumeration.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.UserNameLength">
+    <summary>The size, in bytes, of the user name member.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.UriStemLength">
+    <summary>The size, in bytes, of the URI stem member.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.ClientIpLength">
+    <summary>The size, in bytes, of the client IP address member.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.ServerNameLength">
+    <summary>The size, in bytes, of the server name member.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.ServiceNameLength"></member>
+  <member name="HTTP_LOG_FIELDS_DATA.ServerIpLength">
+    <summary>The size, in bytes, of the server IP address member.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.MethodLength">
+    <summary>The size, in bytes, of the HTTP method member.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.UriQueryLength">
+    <summary>The size, in bytes, of the URI query member.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.HostLength">
+    <summary>The size, in bytes, of the host name member.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.UserAgentLength">
+    <summary>The size, in bytes, of the user agent member.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.CookieLength">
+    <summary>The size, in bytes, of the cookie member.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.ReferrerLength">
+    <summary>The size, in bytes, of the referrer member.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.UserName">
+    <summary>The name of the user.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.UriStem">
+    <summary>The URI stem.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.ClientIp">
+    <summary>The IP address of the client.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.ServerName">
+    <summary>The name of the server.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.ServiceName">
+    <summary>The name of the service.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.ServerIp">
+    <summary>The IP address of the server.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.Method">
+    <summary>The HTTP method.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.UriQuery">
+    <summary>The URI query.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.Host">
+    <summary>The host information from the request.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.UserAgent">
+    <summary>The user agent name.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.Cookie">
+    <summary>The cookie provided by the application.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.Referrer">
+    <summary>The referrer.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.ServerPort">
+    <summary>The port for the server.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.ProtocolStatus">
+    <summary>The protocol status.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.Win32Status">
+    <summary>The win32 status.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.MethodNum">
+    <summary>The method number.</summary>
+  </member>
+  <member name="HTTP_LOG_FIELDS_DATA.SubStatus">
+    <summary>The sub status.</summary>
+  </member>
+</doc>
