@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_CONFIG_SSL_SNI_QUERY">
+    <summary>The<b>HTTP_SERVICE_CONFIG_SSL_SNI_QUERY</b> structure is used to specify a particular Secure Sockets Layer (SSL) Server Name Indication (SNI) certificate record to query in the SSL SNI store. It is passed to the<see cref="HttpQueryServiceConfiguration" /> function using the <i>pInputConfigInfo</i> parameter when the <i>ConfigId</i> parameter is set to <b>HttpServiceConfigSslSniCertInfo</b>.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_SNI_QUERY.QueryDesc">
+    <summary>
+      <para>One of the following values from the <see cref="HTTP_SERVICE_CONFIG_QUERY_TYPE" /> enumeration.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigQueryExact</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns a single SSL SNI certificate record.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HttpServiceConfigQueryNext</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns a sequence of SSL SNI certificate records in a sequence of calls, as controlled by <i>dwToken</i>.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_SNI_QUERY.KeyDesc">
+    <summary>If the <i>QueryDesc</i> parameter is equal to <b>HttpServiceConfigQueryExact</b>, then <i>KeyDesc</i> should contain an<see cref="HTTP_SERVICE_CONFIG_SSL_SNI_KEY" /> structure that identifies the SSL SNI certificate record queried. If the <i>QueryDesc</i> parameter is equal to <b>HTTPServiceConfigQueryNext</b>, then <i>KeyDesc</i> is ignored.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_SNI_QUERY.dwToken">
+    <summary>
+      <para>If the <i>QueryDesc</i> parameter is equal to <b>HTTPServiceConfigQueryNext</b>, then <i>dwToken</i> must be equal to zero on the first call to the<see cref="HttpQueryServiceConfiguration" /> function, one on the second call, two on the third call, and so forth until all SSL certificate records are returned, at which point<b>HttpQueryServiceConfiguration</b> returns ERROR_NO_MORE_ITEMS.</para>
+      <para>If the <i>QueryDesc</i> parameter is equal to <b>HttpServiceConfigQueryExact</b>, then <i>dwToken</i> is ignored.</para>
+    </summary>
+  </member>
+</doc>

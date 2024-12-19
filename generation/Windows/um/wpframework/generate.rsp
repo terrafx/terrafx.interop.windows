@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-wpframework.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/wpframework
+--test-output
+../../../../tests/Interop/Windows/Windows/um/wpframework
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/wpframework.h
+--with-librarypath
+LoadManagedRuntime=webengine4

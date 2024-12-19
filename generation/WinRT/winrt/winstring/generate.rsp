@@ -34,6 +34,10 @@ WindowsSubstringWithSpecifiedLength=combase
 WindowsTrimStringEnd=combase
 WindowsTrimStringStart=combase
 --with-attribute
+HSTRING_UserFree=SupportedOSPlatform("windows6.2")
+HSTRING_UserMarshal=SupportedOSPlatform("windows6.2")
+HSTRING_UserSize=SupportedOSPlatform("windows6.2")
+HSTRING_UserUnmarshal=SupportedOSPlatform("windows6.2")
 WindowsCompareStringOrdinal=SupportedOSPlatform("windows6.2")
 WindowsConcatString=SupportedOSPlatform("windows6.2")
 WindowsCreateString=SupportedOSPlatform("windows6.2")

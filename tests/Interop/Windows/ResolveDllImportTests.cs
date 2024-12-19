@@ -61,6 +61,26 @@ public static unsafe partial class ResolveDllImportTests
                 case "DavUnregisterAuthCallback":
                 case "DxcCreateInstance":
                 case "DxcCreateInstance2":
+                case "LoadManagedRuntime":
+                case "PrjAllocateAlignedBuffer":
+                case "PrjClearNegativePathCache":
+                case "PrjCompleteCommand":
+                case "PrjDeleteFile":
+                case "PrjDoesNameContainWildCards":
+                case "PrjFileNameCompare":
+                case "PrjFileNameMatch":
+                case "PrjFillDirEntryBuffer":
+                case "PrjFillDirEntryBuffer2":
+                case "PrjFreeAlignedBuffer":
+                case "PrjGetOnDiskFileState":
+                case "PrjGetVirtualizationInstanceInfo":
+                case "PrjMarkDirectoryAsPlaceholder":
+                case "PrjStartVirtualizing":
+                case "PrjStopVirtualizing":
+                case "PrjUpdateFileIfNeeded":
+                case "PrjWriteFileData":
+                case "PrjWritePlaceholderInfo":
+                case "PrjWritePlaceholderInfo2":
                 case "SRRemoveRestorePoint":
                 case "SRSetRestorePoint":
                 case "SRSetRestorePointA":
@@ -69,16 +89,10 @@ public static unsafe partial class ResolveDllImportTests
                 case "X3DAudioInitialize":
                 case "X3DAudioCalculate":
                 {
-                    if (Environment.GetEnvironmentVariable("GITHUB_RUN_ID") is not null)
-                    {
-                        // This isn't good practice, but current CI runs Windows Server and these APIs aren't available
-                        // due to being in a library that isn't present on the Windows Server machines
-                        Assert.Warn($"Warn: {exception.Message}");
-                    }
-                    else
-                    {
-                        goto default;
-                    }
+                    // This isn't good practice, but current CI runs Windows Server and these APIs aren't available
+                    // due to being in a library that isn't present on the Windows Server machines or requiring an
+                    // optional Windows feature to be installed
+                    Assert.Warn($"Warn: {exception.Message}");
                     break;
                 }
 

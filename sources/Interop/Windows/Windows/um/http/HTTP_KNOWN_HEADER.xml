@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_KNOWN_HEADER">
+    <summary>The<b>HTTP_KNOWN_HEADER</b> structure contains the header values for a known header from an HTTP request or HTTP response.</summary>
+  </member>
+  <member name="HTTP_KNOWN_HEADER.RawValueLength">
+    <summary>Size, in bytes, of the 8-bit string pointed to by the <b>pRawValue</b> member, not counting a terminating null character, if present. If <b>RawValueLength</b> is zero, then the value of the <b>pRawValue</b> element is meaningless.</summary>
+  </member>
+  <member name="HTTP_KNOWN_HEADER.pRawValue">
+    <summary>Pointer to the text of this HTTP header. Use <b>RawValueLength</b> to determine where this text ends rather than relying on the string to have a terminating null. The format of the header text is specified in<a href="https://www.ietf.org/rfc/rfc2616.txt">RFC 2616</a>.</summary>
+  </member>
+</doc>

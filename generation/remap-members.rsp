@@ -1,4 +1,5 @@
 --remap
+CHttpModule.~CHttpModule():void=@Destructor
 GetEnvironmentStrings():LPCH=@GetEnvironmentStringsA
 ID2D1DeviceContext4.DrawTextW=@DrawText
 ID2D1RenderTarget.DrawTextW=@DrawText
@@ -7,6 +8,8 @@ ID3D12InfoQueue.GetMessageW=@GetMessage
 IDWriteFontFace.GetGlyphIndicesW=@GetGlyphIndices
 IDxDiagContainer.GetPropW=@GetProp
 IDXGIInfoQueue.GetMessageW=@GetMessage
+IHttpRequest.GetRawHttpRequest():const HTTP_REQUEST *=@GetRawHttpRequestConst
+IHttpResponse.GetRawHttpResponse():const HTTP_RESPONSE *=@GetRawHttpRequestConst
 IMediaSeeking.GetTimeFormatW=@GetTimeFormat
 IMFAsyncResult.GetObjectW=@GetObject
 IMFPMediaItem.GetObjectW=@GetObject

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_LOG_DATA">
+    <summary>The <b>HTTP_LOG_DATA</b> structure contains a value that specifies the type of the log data.</summary>
+  </member>
+  <member name="HTTP_LOG_DATA.Type">
+    <summary>An <see cref="HTTP_LOG_DATA_TYPE" /> enumeration value that specifies the type.</summary>
+  </member>
+</doc>

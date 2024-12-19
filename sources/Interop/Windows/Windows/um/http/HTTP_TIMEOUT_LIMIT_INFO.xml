@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_TIMEOUT_LIMIT_INFO">
+    <summary>
+      <para>The <b>HTTP_TIMEOUT_LIMIT_INFO</b> structure defines the application-specific connection timeout limits.</para>
+      <para>This structure must be used when setting or querying the <see cref="HttpServerTimeoutsProperty" /> on a URL Group, server session, or request queue.</para>
+    </summary>
+  </member>
+  <member name="HTTP_TIMEOUT_LIMIT_INFO.Flags">
+    <summary>The <see cref="HTTP_PROPERTY_FLAGS" /> structure that specifies whether the property is present.</summary>
+  </member>
+  <member name="HTTP_TIMEOUT_LIMIT_INFO.EntityBody">
+    <summary>
+      <para>The time, in seconds, allowed for the request entity body to arrive.</para>
+      <para>The HTTP Server API turns on this timer when the request has an entity body. The timer expiration is initially set to the configured value. When the HTTP Server API receives additional data indications on the request, it resets the timer to give the connection another interval.</para>
+    </summary>
+  </member>
+  <member name="HTTP_TIMEOUT_LIMIT_INFO.DrainEntityBody">
+    <summary>
+      <para>The time, in seconds, allowed for the HTTP Server API to drain the entity body on a Keep-Alive connection.</para>
+      <para>On a Keep-Alive connection, after the application has sent a response for a request and before the request entity body has completely arrived, the HTTP Server API starts draining the remainder of the entity body to reach another potentially pipelined request from the client. If the time to drain the remaining entity body exceeds the allowed period the connection is timed out.</para>
+    </summary>
+  </member>
+  <member name="HTTP_TIMEOUT_LIMIT_INFO.RequestQueue">
+    <summary>The time, in seconds, allowed for the request to remain in the request queue before the application picks it up.</summary>
+  </member>
+  <member name="HTTP_TIMEOUT_LIMIT_INFO.IdleConnection">
+    <summary>
+      <para>The time, in seconds, allowed for an idle connection.</para>
+      <para>This timeout is only enforced after the first request on the connection is routed to the application. For more information, see the Remarks section.</para>
+    </summary>
+  </member>
+  <member name="HTTP_TIMEOUT_LIMIT_INFO.HeaderWait">
+    <summary>
+      <para>The time, in seconds, allowed for the HTTP Server API to parse the request header.</para>
+      <para>This timeout is only enforced after the first request on the connection is routed to the application. For more information, see the Remarks section.</para>
+    </summary>
+  </member>
+  <member name="HTTP_TIMEOUT_LIMIT_INFO.MinSendRate">
+    <summary>
+      <para>The minimum send rate, in bytes-per-second, for the response. The default response send rate is 150 bytes-per-second.</para>
+      <para>To disable this timer, set <b>MinSendRate</b> to <b>MAXULONG</b>.</para>
+    </summary>
+  </member>
+</doc>

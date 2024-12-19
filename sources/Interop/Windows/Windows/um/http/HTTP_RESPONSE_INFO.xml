@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_RESPONSE_INFO">
+    <summary>The <b>HTTP_RESPONSE_INFO</b> structure extends the <a href="https://docs.microsoft.com//windows/desktop/Http/http-response">HTTP_RESPONSE</a> structure with additional information for the response.</summary>
+  </member>
+  <member name="HTTP_RESPONSE_INFO.Type">
+    <summary>A member of the <see cref="HTTP_RESPONSE_INFO_TYPE" /> enumeration specifying the type of information contained in this structure.</summary>
+  </member>
+  <member name="HTTP_RESPONSE_INFO.Length">
+    <summary>The length, in bytes, of the <b>pInfo</b> member.</summary>
+  </member>
+  <member name="HTTP_RESPONSE_INFO.pInfo">
+    <summary>A pointer to the <see cref="HTTP_MULTIPLE_KNOWN_HEADERS" /> structure when the <b>InfoType</b> member is <b>HttpResponseInfoTypeMultipleKnownHeaders</b>; otherwise <b>NULL</b>.</summary>
+  </member>
+</doc>

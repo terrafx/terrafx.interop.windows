@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVER_AUTHENTICATION_DIGEST_PARAMS">
+    <summary>
+      <para>The <b>HTTP_SERVER_AUTHENTICATION_DIGEST_PARAMS</b> structure contains the information for digest authentication on a URL Group.</para>
+      <para>This structure is contained in the <see cref="HTTP_SERVER_AUTHENTICATION_INFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="HTTP_SERVER_AUTHENTICATION_DIGEST_PARAMS.DomainNameLength">
+    <summary>The length, in bytes, of the <b>DomainName</b> member.</summary>
+  </member>
+  <member name="HTTP_SERVER_AUTHENTICATION_DIGEST_PARAMS.DomainName">
+    <summary>
+      <para>The domain name used for Digest authentication.</para>
+      <para>If <b>NULL</b>, the client assumes the protection space consists of all the URIs under the responding server.</para>
+    </summary>
+  </member>
+  <member name="HTTP_SERVER_AUTHENTICATION_DIGEST_PARAMS.RealmLength">
+    <summary>The length, in bytes, of the <b>Realm</b> member.</summary>
+  </member>
+  <member name="HTTP_SERVER_AUTHENTICATION_DIGEST_PARAMS.Realm">
+    <summary>
+      <para>The realm used for Digest authentication.</para>
+      <para>The realm allows the server to be partitioned into a set of protection spaces, each with its own set of authentication schemes from the authentication database.</para>
+    </summary>
+  </member>
+</doc>

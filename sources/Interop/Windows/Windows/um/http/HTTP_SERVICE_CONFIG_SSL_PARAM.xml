@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_CONFIG_SSL_PARAM">
+    <summary>The<b>HTTP_SERVICE_CONFIG_SSL_PARAM</b> structure defines a record in the SSL configuration store.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_PARAM.SslHashLength">
+    <summary>The size, in bytes, of the SSL hash.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_PARAM.pSslHash">
+    <summary>A pointer to the SSL certificate hash.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_PARAM.AppId">
+    <summary>A unique identifier of the application setting this record.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_PARAM.pSslCertStoreName">
+    <summary>A pointer to a wide-character string that contains the name of the store from which the server certificate is to be read. If set to <b>NULL</b>, "MY" is assumed as the default name. The specified certificate store name must be present in the Local System store location.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_PARAM.DefaultCertCheckMode">
+    <summary>
+      <para>Determines how client certificates are checked. This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>0</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Enables the client certificate revocation check.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>1</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Client certificate is not to be verified for revocation.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>2</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Only cached certificate revocation is to be used.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>4</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>DefaultRevocationFreshnessTime</b> setting is enabled.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>0x10000</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>No usage check is to be performed.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_PARAM.DefaultRevocationFreshnessTime">
+    <summary>The number of seconds after which to check for an updated certificate revocation list (CRL). If this value is zero, the new CRL is updated only when the previous one expires.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_PARAM.DefaultRevocationUrlRetrievalTimeout">
+    <summary>The timeout interval, in milliseconds, for an attempt to retrieve a certificate revocation list from the remote URL.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_PARAM.pDefaultSslCtlIdentifier">
+    <summary>A pointer to an SSL control identifier, which enables an application to restrict the group of certificate issuers to be trusted. This group must be a subset of the certificate issuers trusted by the machine on which the application is running.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_PARAM.pDefaultSslCtlStoreName">
+    <summary>The name of the store where the control identifier pointed to by <b>pDefaultSslCtlIdentifier</b> is stored.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_PARAM.DefaultFlags">
+    <summary>
+      <para>A combination of zero or more of the following flag values can be combined with OR as appropriate.</para>
+      <list type="table">
+        <listheader>
+          <description>Flags</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_SERVICE_CONFIG_SSL_FLAG_NEGOTIATE_CLIENT_CERT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Enables a client certificate to be cached locally for subsequent use.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_SERVICE_CONFIG_SSL_FLAG_NO_RAW_FILTER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Prevents SSL requests from being passed to low-level ISAPI filters.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_SERVICE_CONFIG_SSL_FLAG_USE_DS_MAPPER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Client certificates are mapped where possible to corresponding operating-system user accounts based on the certificate mapping rules stored in Active Directory. <para>If this flag is set and the mapping is successful, the <b>Token</b> member of the<see cref="HTTP_SSL_CLIENT_CERT_INFO" /> structure is a handle to an<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/access-tokens">access token</a>. Release this token explicitly by closing the handle when the<b>HTTP_SSL_CLIENT_CERT_INFO</b> structure is no longer required.</para></description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+</doc>

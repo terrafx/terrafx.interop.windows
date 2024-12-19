@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_QOS_SETTING_INFO">
+    <summary>The <b>HTTP_QOS_SETTING_INFO</b> structurecontains information about a QOS setting.</summary>
+  </member>
+  <member name="HTTP_QOS_SETTING_INFO.QosType">
+    <summary>An <see cref="HTTP_QOS_SETTING_TYPE" /> enumeration value that specifies the type of the QOS setting.</summary>
+  </member>
+  <member name="HTTP_QOS_SETTING_INFO.QosSetting">
+    <summary>A pointer to a structure that contains the setting.</summary>
+  </member>
+</doc>

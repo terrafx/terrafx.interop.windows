@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_BINDING_TYPE">
+    <summary>The <b>HTTP_SERVICE_BINDING_TYPE</b> enumerated type specifies the string type for service names.</summary>
+  </member>
+  <member name="HTTP_SERVICE_BINDING_TYPE.HttpServiceBindingTypeNone">
+    <summary>No type.</summary>
+  </member>
+  <member name="HTTP_SERVICE_BINDING_TYPE.HttpServiceBindingTypeW">
+    <summary>Unicode.</summary>
+  </member>
+  <member name="HTTP_SERVICE_BINDING_TYPE.HttpServiceBindingTypeA">
+    <summary>ASCII</summary>
+  </member>
+</doc>

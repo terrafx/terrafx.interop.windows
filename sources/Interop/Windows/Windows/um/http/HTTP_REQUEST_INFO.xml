@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_REQUEST_INFO">
+    <summary>The <b>HTTP_REQUEST_INFO</b> structure extends the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa364545(v=vs.85)">HTTP_REQUEST</a> structure with additional information about the request.</summary>
+  </member>
+  <member name="HTTP_REQUEST_INFO.InfoType">
+    <summary>A member of the <see cref="HTTP_REQUEST_INFO_TYPE" /> enumeration specifying the type of information contained in this structure.</summary>
+  </member>
+  <member name="HTTP_REQUEST_INFO.InfoLength">
+    <summary>The length, in bytes, of the <b>pInfo</b> member.</summary>
+  </member>
+  <member name="HTTP_REQUEST_INFO.pInfo">
+    <summary>A pointer to the <see cref="HTTP_REQUEST_AUTH_INFO" /> structure when the <b>InfoType</b> member is <b>HttpRequestInfoTypeAuth</b>; otherwise <b>NULL</b>.</summary>
+  </member>
+</doc>

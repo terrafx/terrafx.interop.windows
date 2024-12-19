@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_REQUEST_AUTH_INFO">
+    <summary>
+      <para>The <b>HTTP_REQUEST_AUTH_INFO</b> structure contains the authentication status of the request with a handle to the client token that the receiving process can use to impersonate the authenticated client.</para>
+      <para>This structure is contained in the <see cref="HTTP_REQUEST_INFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_INFO.AuthStatus">
+    <summary>
+      <para>A member of the <see cref="HTTP_AUTH_STATUS" /> enumeration that indicates the final authentication status of the request.</para>
+      <para>If the authentication status is not <b>HttpAuthStatusSuccess</b>, applications should disregard members of this structure except <b>AuthStatus</b>, <b>SecStatus</b>, and <b>AuthType</b>.</para>
+    </summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_INFO.SecStatus">
+    <summary>A <see cref="SECURITY_STATUS" /> value that indicates the security failure status when the <b>AuthStatus</b> member is <b>HttpAuthStatusFailure</b>.</summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_INFO.Flags">
+    <summary>
+      <para>The authentication flags that indicate the following authentication attributes:</para>
+      <list type="table">
+        <listheader>
+          <description>Attribute</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HTTP_REQUEST_AUTH_FLAG_TOKEN_FOR_CACHED_CRED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The provided token is for NTLM and is based on a cached credential of a Keep Alive (KA) connection.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_INFO.AuthType">
+    <summary>A member of the <see cref="HTTP_REQUEST_AUTH_TYPE" /> enumeration that indicates the authentication scheme attempted or established for the request.</summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_INFO.AccessToken">
+    <summary>
+      <para>A handle to the client token that the receiving process can use to impersonate the authenticated client.</para>
+      <para>The handle to the token should be closed by calling <see cref="CloseHandle" /> when it is no longer required. This token is valid only for the lifetime of the request. Applications can regenerate the initial 401 challenge to reauthenticate when the token expires.</para>
+    </summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_INFO.ContextAttributes">
+    <summary>The client context attributes for the access token.</summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_INFO.PackedContextLength">
+    <summary>The length, in bytes, of the <b>PackedContext</b>.</summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_INFO.PackedContextType">
+    <summary>The type of context in the <b>PackedContext</b> member.</summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_INFO.PackedContext">
+    <summary>
+      <para>The security context for the authentication type.</para>
+      <para>Applications can query the attributes of the packed context by calling the SSPI <see cref="QueryContextAttributes" /> API. However, applications must acquire a credential handle for the security package for the indicated AuthType.</para>
+      <para>Application should call the SSPI <see cref="FreeContextBuffer" /> API to free the serialized context when it is no longer required.</para>
+    </summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_INFO.MutualAuthDataLength">
+    <summary>The length, in bytes, of the <b>pMutualAuthData</b> member.</summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_INFO.pMutualAuthData">
+    <summary>The Base64 encoded mutual authentication data used in the WWW-Authenticate header.</summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_INFO.PackageNameLength"></member>
+  <member name="HTTP_REQUEST_AUTH_INFO.pPackageName"></member>
+</doc>

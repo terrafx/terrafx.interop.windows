@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_COOKED_URL">
+    <summary>The<b>HTTP_COOKED_URL</b> structure contains a validated, canonical, UTF-16 Unicode-encoded URL request string together with pointers into it and element lengths. This is the string that the HTTP Server API matches against registered<a href="https://docs.microsoft.com//windows/desktop/Http/urlprefix-strings">UrlPrefix strings</a> in order to route the request appropriately.</summary>
+  </member>
+  <member name="HTTP_COOKED_URL.FullUrlLength">
+    <summary>Size, in bytes, of the data pointed to by the <b>pFullUrl</b> member, not including a terminating null character.</summary>
+  </member>
+  <member name="HTTP_COOKED_URL.HostLength">
+    <summary>Size, in bytes, of the data pointed to by the <b>pHost</b> member.</summary>
+  </member>
+  <member name="HTTP_COOKED_URL.AbsPathLength">
+    <summary>Size, in bytes, of the data pointed to by the <b>pAbsPath</b> member.</summary>
+  </member>
+  <member name="HTTP_COOKED_URL.QueryStringLength">
+    <summary>Size, in bytes, of the data pointed to by the <b>pQueryString</b> member.</summary>
+  </member>
+  <member name="HTTP_COOKED_URL.pFullUrl">
+    <summary>Pointer to the scheme element at the beginning of the URL (must be either "http://..." or "https://...").</summary>
+  </member>
+  <member name="HTTP_COOKED_URL.pHost">
+    <summary>Pointer to the first character in the host element, immediately following the double slashes at the end of the scheme element.</summary>
+  </member>
+  <member name="HTTP_COOKED_URL.pAbsPath">
+    <summary>Pointer to the third forward slash ("/") in the string. In a UrlPrefix string, this is the slash immediately preceding the relativeUri element.</summary>
+  </member>
+  <member name="HTTP_COOKED_URL.pQueryString">
+    <summary>Pointer to the first question mark (?) in the string, or <b>NULL</b> if there is none.</summary>
+  </member>
+</doc>

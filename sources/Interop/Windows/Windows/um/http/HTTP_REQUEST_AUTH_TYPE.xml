@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_REQUEST_AUTH_TYPE">
+    <summary>
+      <para>The <b>HTTP_REQUEST_AUTH_TYPE</b> enumeration defines the authentication types supported by the HTTP Server API.</para>
+      <para>This enumeration is used in the <see cref="HTTP_REQUEST_AUTH_INFO" /> structure.</para>
+    </summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_TYPE.HttpRequestAuthTypeNone">
+    <summary>No authentication is attempted for the request.</summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_TYPE.HttpRequestAuthTypeBasic">
+    <summary>Basic authentication is attempted for the request.</summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_TYPE.HttpRequestAuthTypeDigest">
+    <summary>Digest authentication is attempted for the request.</summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_TYPE.HttpRequestAuthTypeNTLM">
+    <summary>NTLM authentication is attempted for the request.</summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_TYPE.HttpRequestAuthTypeNegotiate">
+    <summary>Negotiate authentication is attempted for the request.</summary>
+  </member>
+  <member name="HTTP_REQUEST_AUTH_TYPE.HttpRequestAuthTypeKerberos">
+    <summary>Kerberos authentication is attempted for the request.</summary>
+  </member>
+</doc>

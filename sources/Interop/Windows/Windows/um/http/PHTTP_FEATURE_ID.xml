@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PHTTP_FEATURE_ID">
+    <summary>Defines constants that specify an identifier for an HTTP feature.</summary>
+  </member>
+  <member name="PHTTP_FEATURE_ID.HttpFeatureUnknown">
+    <summary>Specifies an unknown feature.</summary>
+  </member>
+  <member name="PHTTP_FEATURE_ID.HttpFeatureResponseTrailers">
+    <summary>Specifies HTTP response trailers.</summary>
+  </member>
+  <member name="PHTTP_FEATURE_ID.HttpFeatureApiTimings">
+    <summary>Specifies HTTP API timings.</summary>
+  </member>
+  <member name="PHTTP_FEATURE_ID.HttpFeatureDelegateEx">
+    <summary>Specifies a request for delegation.</summary>
+  </member>
+  <member name="PHTTP_FEATURE_ID.HttpFeaturemax">
+    <summary>Specifies the maximum number of supported features.</summary>
+  </member>
+</doc>

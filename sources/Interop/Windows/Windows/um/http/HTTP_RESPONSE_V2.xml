@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_RESPONSE_V2">
+    <summary>
+      <para>The <b>HTTP_RESPONSE_V2</b> structure extends the HTTP version 1.0 response structure with more information for the response.</para>
+      <para>Do not use <b>HTTP_RESPONSE_V2</b> directly in your code; use <a href="https://docs.microsoft.com//windows/desktop/Http/http-response">HTTP_RESPONSE</a> instead to ensure that the proper version, based on the operating system the code is compiled under, is used.</para>
+    </summary>
+  </member>
+  <member name="HTTP_RESPONSE_V2.ResponseInfoCount">
+    <summary>
+      <para>The number of <see cref="HTTP_RESPONSE_INFO" /> structures in the array pointed to by <b>pResponseInfo</b>.</para>
+      <para>The count of the HTTP_RESPONSE_INFO elements in the array pointed to by <b>pResponseInfo</b>.</para>
+    </summary>
+  </member>
+  <member name="HTTP_RESPONSE_V2.pResponseInfo">
+    <summary>A pointer to an array of <see cref="HTTP_RESPONSE_INFO" /> structures containing more information about the request.</summary>
+  </member>
+  <member name="HTTP_RESPONSE_V2._HTTP_RESPONSE_V1"></member>
+</doc>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_CONFIG_CACHE_KEY">
+    <summary>Used in the <see cref="HttpSetServiceConfiguration" /> and <see cref="HttpQueryServiceConfiguration" /> functions.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_CACHE_KEY.MaxCacheResponseSize">
+    <summary>The maximum cache size for the response.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_CACHE_KEY.CacheRangeChunkSize">
+    <summary>The chunk size.</summary>
+  </member>
+</doc>

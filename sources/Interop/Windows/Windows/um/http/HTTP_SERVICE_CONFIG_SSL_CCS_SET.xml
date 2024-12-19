@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_CONFIG_SSL_CCS_SET">
+    <summary>Represents the SSL certificate record that specifies that Http.sys should consult the Centralized Certificate Store (CCS) store to find certificates if the port receives a Transport Layer Security (TLS) handshake. Use this structure to add, delete, retrieve, or update that SSL certificate.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_CCS_SET.KeyDesc">
+    <summary>An <see cref="HTTP_SERVICE_CONFIG_SSL_CCS_KEY" /> structure that identifies the SSL CCS certificate record.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_CCS_SET.ParamDesc">
+    <summary>An <see cref="HTTP_SERVICE_CONFIG_SSL_PARAM" /> structure that holds the contents of the specified SSL CCS certificate record.</summary>
+  </member>
+</doc>

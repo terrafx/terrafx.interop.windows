@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-httptrace.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/httptrace
+--test-output
+../../../../tests/Interop/Windows/Windows/um/httptrace
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/httptrace.h

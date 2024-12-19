@@ -25,5 +25,13 @@ HSTRING_UserSize64=combase
 HSTRING_UserUnmarshal=combase
 HSTRING_UserUnmarshal64=combase
 --with-attribute
+HSTRING_UserFree64=SupportedOSPlatform("windows6.2")
+HSTRING_UserFree=SupportedOSPlatform("windows6.2")
+HSTRING_UserMarshal64=SupportedOSPlatform("windows6.2")
+HSTRING_UserMarshal=SupportedOSPlatform("windows6.2")
+HSTRING_UserSize64=SupportedOSPlatform("windows6.2")
+HSTRING_UserSize=SupportedOSPlatform("windows6.2")
+HSTRING_UserUnmarshal64=SupportedOSPlatform("windows6.2")
+HSTRING_UserUnmarshal=SupportedOSPlatform("windows6.2")
 IInputPaneInterop=SupportedOSPlatform("windows6.2")
 IInspectable=SupportedOSPlatform("windows6.2")

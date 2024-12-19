@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_DATA_CHUNK_TYPE">
+    <summary>Defines the data source for a data chunk.</summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK_TYPE.HttpDataChunkFromMemory">
+    <summary>The data source is a memory data block. The union should be interpreted as a <b>FromMemory</b> structure.</summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK_TYPE.HttpDataChunkFromFileHandle">
+    <summary>The data source is a file handle data block. The union should be interpreted as a <b>FromFileHandle</b> structure.</summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK_TYPE.HttpDataChunkFromFragmentCache">
+    <summary>The data source is a fragment cache data block. The union should be interpreted as a <b>FromFragmentCache</b> structure.</summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK_TYPE.HttpDataChunkFromFragmentCacheEx">
+    <summary>
+      <para>The data source is a fragment cache data block. The union should be interpreted as a <b>FromFragmentCacheEx</b> structure.</para>
+      <para>
+        <b>Windows Server 2003 with SP1 and Windows XP with SP2:  </b>This flag is not supported.</para>
+    </summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK_TYPE.HttpDataChunkTrailers">
+    <summary>
+      <para>The data source is a trailers data block. The union should be interpreted as a <b>Trailers</b> structure.</para>
+      <para>
+        <b>Windows 10, version 2004 and prior:  </b>This flag is not supported.</para>
+    </summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK_TYPE.HttpDataChunkMaximum"></member>
+</doc>

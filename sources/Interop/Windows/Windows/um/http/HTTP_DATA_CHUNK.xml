@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_DATA_CHUNK">
+    <summary>The <b>HTTP_DATA_CHUNK</b> structure represents an individual block of data either in memory, in a file, or in the HTTP Server API response-fragment cache.</summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK.DataChunkType">
+    <summary>Type of data store. This member can be one of the values from the <b>HTTP_DATA_CHUNK_TYPE</b> enumeration.</summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK.FromMemory"></member>
+  <member name="HTTP_DATA_CHUNK.FromMemory.pBuffer">
+    <summary>Pointer to the starting memory address of the data block.</summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK.FromMemory.BufferLength">
+    <summary>Length, in bytes, of the data block.</summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK.FromFileHandle"></member>
+  <member name="HTTP_DATA_CHUNK.FromFileHandle.ByteRange">
+    <summary>An<see cref="HTTP_BYTE_RANGE" /> structure that specifies all or part of the file. To specify the entire file, set the <b>StartingOffset</b> member to zero and the <b>Length</b> member to <b>HTTP_BYTE_RANGE_TO_EOF</b>.</summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK.FromFileHandle.FileHandle">
+    <summary>Open handle to the file in question.</summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK.FromFragmentCache"></member>
+  <member name="HTTP_DATA_CHUNK.FromFragmentCache.FragmentNameLength">
+    <summary>Length, in bytes, of the fragment name not including the terminating null character.</summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK.FromFragmentCache.pFragmentName">
+    <summary>Pointer to a string that contains the fragment name assigned when the fragment was added to the response-fragment cache using the <see cref="HttpAddFragmentToCache" /> function.</summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK.FromFragmentCacheEx"></member>
+  <member name="HTTP_DATA_CHUNK.FromFragmentCacheEx.ByteRange">
+    <summary>An <see cref="HTTP_BYTE_RANGE" /> structure specifying the byte range in the cached fragment.</summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK.FromFragmentCacheEx.pFragmentName">
+    <summary>
+      <para>Pointer to a string that contains the fragment name assigned when the fragment was added to the response-fragment cache using the <see cref="HttpAddFragmentToCache" /> function. The length of the string cannot exceed 65532 bytes.</para>
+      <div>
+        <b>Note</b>  This string must be NULL terminated.</div>
+    </summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK.Trailers"></member>
+  <member name="HTTP_DATA_CHUNK.Trailers.TrailerCount">
+    <summary>Count of the number of <see cref="HTTP_UNKNOWN_HEADER" /> structures in the array pointed to by <b>pTrailers</b>.</summary>
+  </member>
+  <member name="HTTP_DATA_CHUNK.Trailers.pTrailers">
+    <summary>Pointer to an array of <see cref="HTTP_UNKNOWN_HEADER" /> structures containing the trailers.</summary>
+  </member>
+</doc>

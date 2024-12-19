@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_CONFIG_URLACL_KEY">
+    <summary>The<b>HTTP_SERVICE_CONFIG_URLACL_KEY</b> structure is used to specify a particular reservation record in the URL namespace reservation store. It is a member of the<see cref="HTTP_SERVICE_CONFIG_URLACL_SET" /> and<see cref="HTTP_SERVICE_CONFIG_URLACL_QUERY" /> structures.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_URLACL_KEY.pUrlPrefix">
+    <summary>A pointer to the<a href="https://docs.microsoft.com//windows/desktop/Http/urlprefix-strings">UrlPrefix string</a> that defines the portion of the URL namespace to which this reservation pertains.</summary>
+  </member>
+</doc>

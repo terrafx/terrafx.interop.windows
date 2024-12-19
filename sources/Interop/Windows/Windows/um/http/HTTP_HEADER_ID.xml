@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_HEADER_ID">
+    <summary>The<b>HTTP_HEADER_ID</b> enumeration type lists <i>known headers</i> for HTTP requests and responses, and associates an array index with each such header. It is used to size and access the <b>KnownHeaders</b> array members of the<see cref="HTTP_REQUEST_HEADERS" /> and<see cref="HTTP_RESPONSE_HEADERS" /> structures.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderCacheControl">
+    <summary>Used to specify caching behavior along the request or response chain, overriding the default caching algorithm.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderConnection">
+    <summary>Allows the sender to specify options that are desired for that particular connection. These are used for a single connection only and must not be communicated by proxies over further connections.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderDate">
+    <summary>The Date is a general header field that indicates the time that the request or response was sent.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderKeepAlive">
+    <summary>Based on the keepalive XML element (see <a href="https://www.ietf.org/rfc/rfc2518.txt">RFC 2518</a>, section 12.12.1, page 66); a list of URIs included in the KeepAlive header must be "live" after they are copied (moved) to the destination.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderPragma">
+    <summary>Used to include optional, implementation-specific directives that might apply to any recipient along the request/response chain.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderTrailer">
+    <summary>Indicates that specified header fields are present in the trailer of a message encoded with chunked transfer-coding.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderTransferEncoding">
+    <summary>Indicates what, if any, transformations have been applied to the message body in transit.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderUpgrade">
+    <summary>Allows the client to specify one or more other communication protocols it would prefer to use if the server can comply.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderVia">
+    <summary>The Via header field indicates the path taken by the request.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderWarning">
+    <summary>This is a response header that contains the 3-digit warn code along with the reason phrase.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderAllow">
+    <summary>Lists the set of methods supported by the resource identified by the Request-URI.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderContentLength">
+    <summary>The size of the message body in decimal bytes.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderContentType">
+    <summary>The media type of the message body.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderContentEncoding">
+    <summary>The encoding scheme for the message body.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderContentLanguage">
+    <summary>Provides the natural language of the intended audience.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderContentLocation">
+    <summary>Location of the resource for the entity enclosed in the message when that entity is accessible from a location separate from the requested resource's URI.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderContentMd5">
+    <summary>An MD5 digest of the entity-body used to provide end-to-end message integrity check (MIC) of the entity-body.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderContentRange">
+    <summary>The content range header is sent with a partial entity body to specify where in the full entity body the partial body should be applied.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderExpires">
+    <summary>The date and time after which the message content expires.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderLastModified">
+    <summary>Indicates the date and time at which the origin server believes the variant was last modified.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderAccept">
+    <summary>Used with the INVITE, OPTIONS, and REGISTER methods to indicate what media types are acceptable in the response.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderAcceptCharset">
+    <summary>Indicates the character sets that are acceptable for the response.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderAcceptEncoding">
+    <summary>The content encodings that are acceptable in the response.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderAcceptLanguage">
+    <summary>Used by the client to indicate to the server which language it would prefer to receive reason phrases, session descriptions, or status responses.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderAuthorization">
+    <summary>The user-agent can authenticate itself with a server by sending the Authorization request header field with the request. The field contains the credentials for the domain that the user is requesting.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderCookie">
+    <summary>The cookie request header contains data used to maintain client state with the server. Cookie data is obtained from a response sent with <b>HttpHeaderSetCookie</b>.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderExpect">
+    <summary>Indicates the specific server behaviors that are required by the client.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderFrom">
+    <summary>The From header field specifies the initiator of the SIP request or response message.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderHost">
+    <summary>Specifies the Internet host and port number of the requested resource. This is obtained from the original URI given by the user or referring resource.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderIfMatch">
+    <summary>The If-Match request header field is used with a method to make it conditional. A client that has one or more entities previously obtained from the resource can verify that one of those entities is current by including a list of their associated entity tags in the If-Match header field.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderIfModifiedSince">
+    <summary>The If-Modified-Since request header field is used with a method to make it conditional. If the requested variant has not been modified since the time specified in this field, an entity is not returned from the server; instead, a 304 (not modified) response is returned without any message-body.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderIfNoneMatch">
+    <summary>The If-None-Match request-header field is used with a method to make it conditional. When a client has obtained one or more entities from a resource, it can verify that none of those entities is current by including a list of their associated entity tags in the If-None-Match header field. The purpose of this feature is to allow efficient updates of cached information with a minimum amount of transaction overhead, and to prevent a method such as PUT from inadvertently modifying an existing resource when the client believes that the resource does not exist.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderIfRange">
+    <summary>If a client has a partial copy of an entity in its cache, and wishes to obtain an up-to-date copy of the entire entity, it can use the If-Range header. Informally, its meaning is, "if the entity is unchanged, send me the part(s) I am missing; otherwise, send me the entire new entity."</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderIfUnmodifiedSince">
+    <summary>
+      <para>The If-Unmodified-Since request-header field is used with a method to make it conditional. If the requested resource has not been modified since the time specified in this field, the server performs the requested operation as if the If-Unmodified-Since header were not present, but</para>
+      <para>if the requested resource has been modified, the server returns a 412 error (Precondition Failed).</para>
+    </summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderMaxForwards">
+    <summary>The maximum number of proxies or gateways that can forward the request.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderProxyAuthorization">
+    <summary>This header field is used by the client to identify itself with a proxy.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderReferer">
+    <summary>Allows the client to specify, for the server's benefit, the address (URI) of the resource from which the Request-URI was obtained.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderRange">
+    <summary>Allows a client to request a part of an entity instead of the whole.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderTe">
+    <summary>This header field contains the recipient of the SIP request or response message.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderTranslate">
+    <summary>Allows the client to specify whether it wants the source representation or programmatic interpretation of the requested content.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderUserAgent">
+    <summary>Indicates what extension transfer-codings the client accepts in the response and whether or not the client accepts trailer fields in a chunked transfer-coding.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderRequestMaximum">
+    <summary>Not a value that actually designates a header; instead, it is used to count the enumerated Request headers.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderAcceptRanges">
+    <summary>Allows the server to indicate its acceptance of range requests for a resource.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderAge">
+    <summary>Conveys the sender's estimate of the amount of time since the response (or its revalidation) was generated at the origin server.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderEtag">
+    <summary>Provides the current value of the entity tag for the requested variant.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderLocation">
+    <summary>Used to redirect the recipient to a location other than the Request-URI for completion of the request or identification of a new resource.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderProxyAuthenticate">
+    <summary>The response field that must be included as a part of the 407 response. The field includes the authentication scheme and parameters that apply to the proxy for this Request-URI.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderRetryAfter">
+    <summary>The length of time that the service is expected to be unavailable to the requesting client.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderServer">
+    <summary>This is a response header field that contains information about the server that is handling the request.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderSetCookie">
+    <summary>The <b>set-cookie</b> response header contains data used to maintain client state in future requests sent with <b>HttpHeaderCookie</b>.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderVary">
+    <summary>Indicates the set of request header fields that fully determines, while the response is fresh, whether a cache is permitted to use the response to reply to a subsequent request without revalidation.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderWwwAuthenticate">
+    <summary>The WWW_Authenticate header field contains the authentication schemes and parameters applicable to the Request-URI.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderResponseMaximum">
+    <summary>Not a value that actually designates a header; instead, it is used to count the enumerated Response headers.</summary>
+  </member>
+  <member name="HTTP_HEADER_ID.HttpHeaderMaximum">
+    <summary>Not a value that actually designates a header; instead, it is used to count all the enumerated headers.</summary>
+  </member>
+</doc>

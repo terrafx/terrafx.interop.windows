@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_CONFIG_SSL_SNI_SET">
+    <summary>The<b>HTTP_SERVICE_CONFIG_SSL_SNI_SET</b> structure is used to add a new Secure Sockets Layer (SSL) Server Name Indication (SNI) certificate record to the SSL SNI store or retrieve an existing record from it. It is passed to the<see cref="HttpSetServiceConfiguration" /> function through the <i>pConfigInformation</i> parameter or to retrieve data from the<see cref="HttpQueryServiceConfiguration" /> function through the <i>pOutputConfigInformation</i> parameter when the <i>ConfigId</i> parameter of either function is set to <b>HttpServiceConfigSslSniCertInfo</b>.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_SNI_SET.KeyDesc">
+    <summary>An <see cref="HTTP_SERVICE_CONFIG_SSL_SNI_KEY" /> structure that identifies the SSL SNI certificate record.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_SSL_SNI_SET.ParamDesc">
+    <summary>An <see cref="HTTP_SERVICE_CONFIG_SSL_PARAM" /> structure that holds the contents of the specified SSL SNI certificate record.</summary>
+  </member>
+</doc>

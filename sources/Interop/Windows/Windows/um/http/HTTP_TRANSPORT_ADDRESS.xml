@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_TRANSPORT_ADDRESS">
+    <summary>The<b>HTTP_TRANSPORT_ADDRESS</b> structure specifies the addresses (local and remote) used for a particular HTTP connection.</summary>
+  </member>
+  <member name="HTTP_TRANSPORT_ADDRESS.pRemoteAddress">
+    <summary>A pointer to the remote IP address associated with this connection. For more information about how to access this address, see the Remarks section.</summary>
+  </member>
+  <member name="HTTP_TRANSPORT_ADDRESS.pLocalAddress">
+    <summary>A pointer to the local IP address associated with this connection. For more information about how to access this address, see the Remarks section.</summary>
+  </member>
+</doc>

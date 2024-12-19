@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_503_RESPONSE_VERBOSITY">
+    <summary>
+      <para>The <b>HTTP_503_RESPONSE_VERBOSITY</b> enumeration defines the verbosity levels for a 503, service unavailable, error responses.</para>
+      <para>This structure must be used when setting or querying the <see cref="HttpServer503ResponseProperty" /> on a request queue.</para>
+    </summary>
+  </member>
+  <member name="HTTP_503_RESPONSE_VERBOSITY.Http503ResponseVerbosityBasic">
+    <summary>A 503 response is not sent; the connection is reset. This is the default HTTP Server API behavior.</summary>
+  </member>
+  <member name="HTTP_503_RESPONSE_VERBOSITY.Http503ResponseVerbosityLimited">
+    <summary>The HTTP Server API sends a 503 response with a "Service Unavailable" reason phrase. The HTTP Server closes the TCP connection after sending the response, so the client has to re-connect.</summary>
+  </member>
+  <member name="HTTP_503_RESPONSE_VERBOSITY.Http503ResponseVerbosityFull">
+    <summary>The HTTP Server API sends a 503 response with a detailed reason phrase. The HTTP Server closes the TCP connection after sending the response, so the client has to re-connect.</summary>
+  </member>
+</doc>

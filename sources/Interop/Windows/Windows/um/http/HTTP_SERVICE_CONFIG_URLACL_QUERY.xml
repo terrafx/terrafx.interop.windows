@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_SERVICE_CONFIG_URLACL_QUERY">
+    <summary>The<b>HTTP_SERVICE_CONFIG_URLACL_QUERY</b> structure is used to specify a particular reservation record to query in the URL namespace reservation store. It is passed to the<see cref="HttpQueryServiceConfiguration" /> function using the <i>pInputConfigInfo</i> parameter when the <i>ConfigId</i> parameter is equal to <b>HttpServiceConfigUrlAclInfo</b>.</summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_URLACL_QUERY.QueryDesc">
+    <summary>
+      <para>One of the following values from the <see cref="HTTP_SERVICE_CONFIG_QUERY_TYPE" /> enumeration.</para>
+      <h4>HttpServiceConfigQueryExact</h4>
+      <para>Returns a single record.</para>
+      <h4>HttpServiceConfigQueryNext</h4>
+      <para>Returns a sequence of records in a sequence of calls, controlled by the <i>dwToken</i> parameter.</para>
+    </summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_URLACL_QUERY.KeyDesc">
+    <summary>
+      <para>If the <i>QueryDesc</i> parameter is equal to <b>HttpServiceConfigQueryExact</b>, then <i>KeyDesc</i> should contain an<see cref="HTTP_SERVICE_CONFIG_URLACL_KEY" /> structure that identifies the reservation record queried.</para>
+      <para>If the <i>QueryDesc</i> parameter is equal to <b>HttpServiceConfigQueryNext</b>, <i>KeyDesc</i> is ignored.</para>
+    </summary>
+  </member>
+  <member name="HTTP_SERVICE_CONFIG_URLACL_QUERY.dwToken">
+    <summary>
+      <para>If the <i>QueryDesc</i> parameter is equal to <b>HttpServiceConfigQueryNext</b>, then <i>dwToken</i> must be equal to zero on the first call to the<see cref="HttpQueryServiceConfiguration" /> function, one on the second call, two on the third call, and so forth until all reservation records are returned, at which point<b>HttpQueryServiceConfiguration</b> returns ERROR_NO_MORE_ITEMS.</para>
+      <para>If the <i>QueryDesc</i> parameter is equal to <b>HttpServiceConfigQueryExact</b>, then <i>dwToken</i> is ignored.</para>
+    </summary>
+  </member>
+</doc>

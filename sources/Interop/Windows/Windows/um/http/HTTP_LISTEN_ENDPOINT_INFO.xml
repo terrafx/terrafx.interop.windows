@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HTTP_LISTEN_ENDPOINT_INFO">
+    <summary>Controls whether IP-based URLs should listen on the specific IP address or on a wildcard.</summary>
+  </member>
+  <member name="HTTP_LISTEN_ENDPOINT_INFO.Flags">
+    <summary>The <see cref="HTTP_PROPERTY_FLAGS" /> structure that specifies if the property is present.</summary>
+  </member>
+  <member name="HTTP_LISTEN_ENDPOINT_INFO.EnableSharing">
+    <summary>A Boolean value that specifies whether sharing is enabled.</summary>
+  </member>
+</doc>
