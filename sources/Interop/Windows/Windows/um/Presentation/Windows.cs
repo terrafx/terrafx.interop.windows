@@ -11,6 +11,6 @@ namespace TerraFX.Interop.Windows;
 public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePresentationFactory"]/*' />
-    [DllImport("", ExactSpelling = true)]
+    [DllImport("dcomp", ExactSpelling = true)]
     public static extern HRESULT CreatePresentationFactory(IUnknown* d3dDevice, [NativeTypeName("const IID &")] Guid* riid, void** presentationFactory);
 }
