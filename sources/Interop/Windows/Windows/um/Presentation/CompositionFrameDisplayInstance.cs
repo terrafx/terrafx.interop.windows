@@ -3,6 +3,8 @@
 // Ported from um/UIAnimation.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using TerraFX.Interop.DirectX;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CompositionFrameDisplayInstance.xml' path='doc/member[@name="CompositionFrameDisplayInstance"]/*' />
