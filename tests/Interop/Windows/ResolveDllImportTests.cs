@@ -96,6 +96,7 @@ public static unsafe partial class ResolveDllImportTests
                     break;
                 }
 
+                case "CreatePresentationFactory":
                 case "DCompositionBoostCompositorClock":
                 case "DCompositionGetFrameId":
                 case "DCompositionGetStatistics":

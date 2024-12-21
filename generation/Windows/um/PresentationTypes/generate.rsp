@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-PresentationTypes.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/PresentationTypes
+--test-output
+../../../../tests/Interop/Windows/Windows/um/PresentationTypes
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/PresentationTypes.h
