@@ -14,3 +14,5 @@ TerraFX.Interop.Windows
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/Presentation.h
 --with-librarypath
 CreatePresentationFactory=dcomp
+--with-attribute
+CreatePresentationFactory=SupportedOSPlatform("windows10.0.22000.0")

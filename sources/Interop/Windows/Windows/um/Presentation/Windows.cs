@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
@@ -12,5 +13,6 @@ public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePresentationFactory"]/*' />
     [DllImport("dcomp", ExactSpelling = true)]
+    [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern HRESULT CreatePresentationFactory(IUnknown* d3dDevice, [NativeTypeName("const IID &")] Guid* riid, void** presentationFactory);
 }
