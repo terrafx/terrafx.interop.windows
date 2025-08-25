@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGeopath : IGeopath.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IGeopath));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGeopath);
 
     public void** lpVtbl;
 

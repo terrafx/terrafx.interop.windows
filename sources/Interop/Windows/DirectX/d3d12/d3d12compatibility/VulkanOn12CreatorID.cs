@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct VulkanOn12CreatorID : VulkanOn12CreatorID.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_VulkanOn12CreatorID));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_VulkanOn12CreatorID);
 
     public void** lpVtbl;
 

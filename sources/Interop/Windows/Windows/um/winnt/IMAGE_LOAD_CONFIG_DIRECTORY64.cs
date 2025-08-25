@@ -205,4 +205,8 @@ public partial struct IMAGE_LOAD_CONFIG_DIRECTORY64
     /// <include file='IMAGE_LOAD_CONFIG_DIRECTORY64.xml' path='doc/member[@name="IMAGE_LOAD_CONFIG_DIRECTORY64.GuardMemcpyFunctionPointer"]/*' />
     [NativeTypeName("ULONGLONG")]
     public ulong GuardMemcpyFunctionPointer;
+
+    /// <include file='IMAGE_LOAD_CONFIG_DIRECTORY64.xml' path='doc/member[@name="IMAGE_LOAD_CONFIG_DIRECTORY64.UmaFunctionPointers"]/*' />
+    [NativeTypeName("ULONGLONG")]
+    public ulong UmaFunctionPointers;
 }

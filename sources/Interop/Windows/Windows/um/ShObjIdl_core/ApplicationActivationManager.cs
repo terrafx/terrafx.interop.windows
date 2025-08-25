@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("45BA127D-10A8-46EA-8AB7-56EA9078943C")]
 public unsafe partial struct ApplicationActivationManager : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ApplicationActivationManager));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ApplicationActivationManager);
 }

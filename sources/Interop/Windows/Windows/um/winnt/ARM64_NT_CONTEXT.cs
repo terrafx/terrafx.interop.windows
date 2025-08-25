@@ -22,7 +22,7 @@ public partial struct ARM64_NT_CONTEXT
     public uint Cpsr;
 
     /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L6812_C18")]
+    [NativeTypeName("__AnonymousRecord_winnt_L6809_C18")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='ARM64_NT_CONTEXT.xml' path='doc/member[@name="ARM64_NT_CONTEXT.Sp"]/*' />
@@ -419,7 +419,7 @@ public partial struct ARM64_NT_CONTEXT
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L6813_C21")]
+        [NativeTypeName("__AnonymousRecord_winnt_L6810_C21")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.X"]/*' />

@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IAdviseSink")]
 public unsafe partial struct IAdviseSinkEx : IAdviseSinkEx.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAdviseSinkEx));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAdviseSinkEx);
 
     public void** lpVtbl;
 

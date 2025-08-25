@@ -18,7 +18,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Properties")]
 public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1Effect));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1Effect);
 
     public void** lpVtbl;
 
@@ -32,12 +32,12 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface, INativeGuid
         return SetValue(index, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
     }
 
-    public HRESULT GetValueByName([NativeTypeName("PCWSTR")] char* name, byte* data, [NativeTypeName("UINT32")] uint dataSize)
+    public readonly HRESULT GetValueByName([NativeTypeName("PCWSTR")] char* name, byte* data, [NativeTypeName("UINT32")] uint dataSize)
     {
         return GetValueByName(name, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
     }
 
-    public HRESULT GetValue([NativeTypeName("UINT32")] uint index, byte* data, [NativeTypeName("UINT32")] uint dataSize)
+    public readonly HRESULT GetValue([NativeTypeName("UINT32")] uint index, byte* data, [NativeTypeName("UINT32")] uint dataSize)
     {
         return GetValue(index, D2D1_PROPERTY_TYPE_UNKNOWN, data, dataSize);
     }
@@ -90,43 +90,43 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("UINT32")]
-    public uint GetPropertyCount()
+    public readonly uint GetPropertyCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint>)(lpVtbl[3]))((ID2D1Effect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint>)(lpVtbl[3]))((ID2D1Effect*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="ID2D1Properties.GetPropertyName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetPropertyName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount)
+    public readonly HRESULT GetPropertyName([NativeTypeName("UINT32")] uint index, [NativeTypeName("PWSTR")] char* name, [NativeTypeName("UINT32")] uint nameCount)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint, char*, uint, int>)(lpVtbl[4]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index, name, nameCount);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint, char*, uint, int>)(lpVtbl[4]))((ID2D1Effect*)Unsafe.AsPointer(in this), index, name, nameCount);
     }
 
     /// <inheritdoc cref="ID2D1Properties.GetPropertyNameLength" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     [return: NativeTypeName("UINT32")]
-    public uint GetPropertyNameLength([NativeTypeName("UINT32")] uint index)
+    public readonly uint GetPropertyNameLength([NativeTypeName("UINT32")] uint index)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint, uint>)(lpVtbl[5]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint, uint>)(lpVtbl[5]))((ID2D1Effect*)Unsafe.AsPointer(in this), index);
     }
 
     /// <inheritdoc cref="ID2D1Properties.GetType" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public D2D1_PROPERTY_TYPE GetType([NativeTypeName("UINT32")] uint index)
+    public readonly D2D1_PROPERTY_TYPE GetType([NativeTypeName("UINT32")] uint index)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint, D2D1_PROPERTY_TYPE>)(lpVtbl[6]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint, D2D1_PROPERTY_TYPE>)(lpVtbl[6]))((ID2D1Effect*)Unsafe.AsPointer(in this), index);
     }
 
     /// <inheritdoc cref="ID2D1Properties.GetPropertyIndex" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [return: NativeTypeName("UINT32")]
-    public uint GetPropertyIndex([NativeTypeName("PCWSTR")] char* name)
+    public readonly uint GetPropertyIndex([NativeTypeName("PCWSTR")] char* name)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, char*, uint>)(lpVtbl[7]))((ID2D1Effect*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, char*, uint>)(lpVtbl[7]))((ID2D1Effect*)Unsafe.AsPointer(in this), name);
     }
 
     /// <inheritdoc cref="ID2D1Properties.SetValueByName" />
@@ -148,34 +148,34 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface, INativeGuid
     /// <inheritdoc cref="ID2D1Properties.GetValueByName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetValueByName([NativeTypeName("PCWSTR")] char* name, D2D1_PROPERTY_TYPE type, byte* data, [NativeTypeName("UINT32")] uint dataSize)
+    public readonly HRESULT GetValueByName([NativeTypeName("PCWSTR")] char* name, D2D1_PROPERTY_TYPE type, byte* data, [NativeTypeName("UINT32")] uint dataSize)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, char*, D2D1_PROPERTY_TYPE, byte*, uint, int>)(lpVtbl[10]))((ID2D1Effect*)Unsafe.AsPointer(ref this), name, type, data, dataSize);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, char*, D2D1_PROPERTY_TYPE, byte*, uint, int>)(lpVtbl[10]))((ID2D1Effect*)Unsafe.AsPointer(in this), name, type, data, dataSize);
     }
 
     /// <inheritdoc cref="ID2D1Properties.GetValue" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetValue([NativeTypeName("UINT32")] uint index, D2D1_PROPERTY_TYPE type, byte* data, [NativeTypeName("UINT32")] uint dataSize)
+    public readonly HRESULT GetValue([NativeTypeName("UINT32")] uint index, D2D1_PROPERTY_TYPE type, byte* data, [NativeTypeName("UINT32")] uint dataSize)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint, D2D1_PROPERTY_TYPE, byte*, uint, int>)(lpVtbl[11]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index, type, data, dataSize);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint, D2D1_PROPERTY_TYPE, byte*, uint, int>)(lpVtbl[11]))((ID2D1Effect*)Unsafe.AsPointer(in this), index, type, data, dataSize);
     }
 
     /// <inheritdoc cref="ID2D1Properties.GetValueSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     [return: NativeTypeName("UINT32")]
-    public uint GetValueSize([NativeTypeName("UINT32")] uint index)
+    public readonly uint GetValueSize([NativeTypeName("UINT32")] uint index)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint, uint>)(lpVtbl[12]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint, uint>)(lpVtbl[12]))((ID2D1Effect*)Unsafe.AsPointer(in this), index);
     }
 
     /// <inheritdoc cref="ID2D1Properties.GetSubProperties" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetSubProperties([NativeTypeName("UINT32")] uint index, ID2D1Properties** subProperties)
+    public readonly HRESULT GetSubProperties([NativeTypeName("UINT32")] uint index, ID2D1Properties** subProperties)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint, ID2D1Properties**, int>)(lpVtbl[13]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index, subProperties);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint, ID2D1Properties**, int>)(lpVtbl[13]))((ID2D1Effect*)Unsafe.AsPointer(in this), index, subProperties);
     }
 
     /// <include file='ID2D1Effect.xml' path='doc/member[@name="ID2D1Effect.SetInput"]/*' />
@@ -197,26 +197,26 @@ public unsafe partial struct ID2D1Effect : ID2D1Effect.Interface, INativeGuid
     /// <include file='ID2D1Effect.xml' path='doc/member[@name="ID2D1Effect.GetInput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public void GetInput([NativeTypeName("UINT32")] uint index, ID2D1Image** input)
+    public readonly void GetInput([NativeTypeName("UINT32")] uint index, ID2D1Image** input)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint, ID2D1Image**, void>)(lpVtbl[16]))((ID2D1Effect*)Unsafe.AsPointer(ref this), index, input);
+        ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint, ID2D1Image**, void>)(lpVtbl[16]))((ID2D1Effect*)Unsafe.AsPointer(in this), index, input);
     }
 
     /// <include file='ID2D1Effect.xml' path='doc/member[@name="ID2D1Effect.GetInputCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
     [return: NativeTypeName("UINT32")]
-    public uint GetInputCount()
+    public readonly uint GetInputCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint>)(lpVtbl[17]))((ID2D1Effect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, uint>)(lpVtbl[17]))((ID2D1Effect*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1Effect.xml' path='doc/member[@name="ID2D1Effect.GetOutput"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public void GetOutput(ID2D1Image** outputImage)
+    public readonly void GetOutput(ID2D1Image** outputImage)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, ID2D1Image**, void>)(lpVtbl[18]))((ID2D1Effect*)Unsafe.AsPointer(ref this), outputImage);
+        ((delegate* unmanaged[MemberFunction]<ID2D1Effect*, ID2D1Image**, void>)(lpVtbl[18]))((ID2D1Effect*)Unsafe.AsPointer(in this), outputImage);
     }
 
     public interface Interface : ID2D1Properties.Interface

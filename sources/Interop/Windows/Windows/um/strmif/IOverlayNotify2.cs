@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IOverlayNotify")]
 public unsafe partial struct IOverlayNotify2 : IOverlayNotify2.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IOverlayNotify2));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IOverlayNotify2);
 
     public void** lpVtbl;
 

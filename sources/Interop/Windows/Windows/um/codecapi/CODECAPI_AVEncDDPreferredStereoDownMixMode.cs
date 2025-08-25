@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("7F4E6B31-9185-403D-B0A2-763743E6F063")]
 public unsafe partial struct CODECAPI_AVEncDDPreferredStereoDownMixMode : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncDDPreferredStereoDownMixMode));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncDDPreferredStereoDownMixMode);
 }

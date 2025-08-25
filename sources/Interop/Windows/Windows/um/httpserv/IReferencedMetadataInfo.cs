@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMetadataInfo")]
 public unsafe partial struct IReferencedMetadataInfo : IReferencedMetadataInfo.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IReferencedMetadataInfo));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IReferencedMetadataInfo);
 
     public void** lpVtbl;
 
@@ -24,18 +24,18 @@ public unsafe partial struct IReferencedMetadataInfo : IReferencedMetadataInfo.I
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetMetaPath()
+    public readonly char* GetMetaPath()
     {
-        return ((delegate* unmanaged[MemberFunction]<IReferencedMetadataInfo*, char*>)(lpVtbl[0]))((IReferencedMetadataInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IReferencedMetadataInfo*, char*>)(lpVtbl[0]))((IReferencedMetadataInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IMetadataInfo.GetVrPath" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetVrPath()
+    public readonly char* GetVrPath()
     {
-        return ((delegate* unmanaged[MemberFunction]<IReferencedMetadataInfo*, char*>)(lpVtbl[1]))((IReferencedMetadataInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IReferencedMetadataInfo*, char*>)(lpVtbl[1]))((IReferencedMetadataInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IMetadataInfo.GetVrToken" />

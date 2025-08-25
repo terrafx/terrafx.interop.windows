@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("0AF35522-D984-45AE-BBB8-53933E0AB1B5")]
 public unsafe partial struct CODECAPI_AVEncVideoConsecutiveFramesForLayer : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncVideoConsecutiveFramesForLayer));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncVideoConsecutiveFramesForLayer);
 }

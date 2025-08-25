@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMFMediaKeySessionNotify")]
 public unsafe partial struct IMFMediaKeySessionNotify2 : IMFMediaKeySessionNotify2.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFMediaKeySessionNotify2));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFMediaKeySessionNotify2);
 
     public void** lpVtbl;
 

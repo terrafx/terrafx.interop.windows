@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGpioPinProviderValueChangedEventArgsFactory : IGpioPinProviderValueChangedEventArgsFactory.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IGpioPinProviderValueChangedEventArgsFactory));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGpioPinProviderValueChangedEventArgsFactory);
 
     public void** lpVtbl;
 

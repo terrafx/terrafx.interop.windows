@@ -16,25 +16,25 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpServer2")]
 public unsafe partial struct IHttpServer3 : IHttpServer3.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpServer3));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpServer3);
 
     public void** lpVtbl;
 
     /// <inheritdoc cref="IHttpServer.IsCommandLineLaunch" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
-    public BOOL IsCommandLineLaunch()
+    public readonly BOOL IsCommandLineLaunch()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpServer3*, int>)(lpVtbl[0]))((IHttpServer3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpServer3*, int>)(lpVtbl[0]))((IHttpServer3*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpServer.GetAppPoolName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetAppPoolName()
+    public readonly char* GetAppPoolName()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpServer3*, char*>)(lpVtbl[1]))((IHttpServer3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpServer3*, char*>)(lpVtbl[1]))((IHttpServer3*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpServer.AssociateWithThreadPool" />
@@ -80,9 +80,9 @@ public unsafe partial struct IHttpServer3 : IHttpServer3.Interface, INativeGuid
     /// <inheritdoc cref="IHttpServer.GetAdminManager" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public IAppHostAdminManager* GetAdminManager()
+    public readonly IAppHostAdminManager* GetAdminManager()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpServer3*, IAppHostAdminManager*>)(lpVtbl[7]))((IHttpServer3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpServer3*, IAppHostAdminManager*>)(lpVtbl[7]))((IHttpServer3*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpServer.GetFileInfo" />
@@ -200,17 +200,17 @@ public unsafe partial struct IHttpServer3 : IHttpServer3.Interface, INativeGuid
     /// <inheritdoc cref="IHttpServer.SatisfiesPrecondition" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public BOOL SatisfiesPrecondition([NativeTypeName("PCWSTR")] char* pszPrecondition, BOOL* pfUnknownPrecondition = null)
+    public readonly BOOL SatisfiesPrecondition([NativeTypeName("PCWSTR")] char* pszPrecondition, BOOL* pfUnknownPrecondition = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpServer3*, char*, BOOL*, int>)(lpVtbl[22]))((IHttpServer3*)Unsafe.AsPointer(ref this), pszPrecondition, pfUnknownPrecondition);
+        return ((delegate* unmanaged[MemberFunction]<IHttpServer3*, char*, BOOL*, int>)(lpVtbl[22]))((IHttpServer3*)Unsafe.AsPointer(in this), pszPrecondition, pfUnknownPrecondition);
     }
 
     /// <inheritdoc cref="IHttpServer.GetTraceContext" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public IHttpTraceContext* GetTraceContext()
+    public readonly IHttpTraceContext* GetTraceContext()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpServer3*, IHttpTraceContext*>)(lpVtbl[23]))((IHttpServer3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpServer3*, IHttpTraceContext*>)(lpVtbl[23]))((IHttpServer3*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpServer.RegisterFileChangeMonitor" />
@@ -241,9 +241,9 @@ public unsafe partial struct IHttpServer3 : IHttpServer3.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetAppPoolConfigFile([NativeTypeName("DWORD *")] uint* pcchConfigFilePath = null)
+    public readonly char* GetAppPoolConfigFile([NativeTypeName("DWORD *")] uint* pcchConfigFilePath = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpServer3*, uint*, char*>)(lpVtbl[27]))((IHttpServer3*)Unsafe.AsPointer(ref this), pcchConfigFilePath);
+        return ((delegate* unmanaged[MemberFunction]<IHttpServer3*, uint*, char*>)(lpVtbl[27]))((IHttpServer3*)Unsafe.AsPointer(in this), pcchConfigFilePath);
     }
 
     /// <inheritdoc cref="IHttpServer2.GetExtendedInterface" />

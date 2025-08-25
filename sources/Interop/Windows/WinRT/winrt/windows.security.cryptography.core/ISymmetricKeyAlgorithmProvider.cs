@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISymmetricKeyAlgorithmProvider : ISymmetricKeyAlgorithmProvider.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISymmetricKeyAlgorithmProvider));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISymmetricKeyAlgorithmProvider);
 
     public void** lpVtbl;
 

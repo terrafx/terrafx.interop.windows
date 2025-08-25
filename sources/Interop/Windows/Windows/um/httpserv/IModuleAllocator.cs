@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("85C1679C-0B21-491C-AFB5-C7B5C86464C4")]
 public unsafe partial struct IModuleAllocator : IModuleAllocator.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IModuleAllocator));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IModuleAllocator);
 
     public void** lpVtbl;
 

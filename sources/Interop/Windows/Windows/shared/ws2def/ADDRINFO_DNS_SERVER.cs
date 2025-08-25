@@ -29,7 +29,7 @@ public unsafe partial struct ADDRINFO_DNS_SERVER
     public SOCKADDR* ai_addr;
 
     /// <include file='ADDRINFO_DNS_SERVER.xml' path='doc/member[@name="ADDRINFO_DNS_SERVER.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_ws2def_L1103_C5")]
+    [NativeTypeName("__AnonymousRecord_ws2def_L1109_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ai_template"]/*' />

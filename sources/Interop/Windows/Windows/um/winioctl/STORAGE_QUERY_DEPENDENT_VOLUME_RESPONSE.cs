@@ -22,7 +22,7 @@ public partial struct STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE
     public uint NumberEntries;
 
     /// <include file='STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE.xml' path='doc/member[@name="STORAGE_QUERY_DEPENDENT_VOLUME_RESPONSE.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L14337_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L14639_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Lev1Depends"]/*' />

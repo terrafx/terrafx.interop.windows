@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("460B5576-842E-49AB-A62D-B36F7312C9DB")]
 public unsafe partial struct CODECAPI_AVEncVideoOutputScanType : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncVideoOutputScanType));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncVideoOutputScanType);
 }

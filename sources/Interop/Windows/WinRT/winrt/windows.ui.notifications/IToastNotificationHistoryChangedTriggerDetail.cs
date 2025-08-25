@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IToastNotificationHistoryChangedTriggerDetail : IToastNotificationHistoryChangedTriggerDetail.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IToastNotificationHistoryChangedTriggerDetail));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IToastNotificationHistoryChangedTriggerDetail);
 
     public void** lpVtbl;
 

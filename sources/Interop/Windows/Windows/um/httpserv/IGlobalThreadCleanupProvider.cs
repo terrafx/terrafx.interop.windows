@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IGlobalThreadCleanupProvider : IGlobalThreadCleanupProvider.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IGlobalThreadCleanupProvider));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGlobalThreadCleanupProvider);
 
     public void** lpVtbl;
 

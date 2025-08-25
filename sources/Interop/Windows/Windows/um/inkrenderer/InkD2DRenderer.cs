@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("4044E60C-7B01-4671-A97C-04E0210A07A5")]
 public unsafe partial struct InkD2DRenderer : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_InkD2DRenderer));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_InkD2DRenderer);
 }

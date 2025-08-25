@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("4842669E-9947-46EA-8BA2-D8CCE432C2CA")]
 public unsafe partial struct PrintDocumentPackageTarget : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_PrintDocumentPackageTarget));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_PrintDocumentPackageTarget);
 }

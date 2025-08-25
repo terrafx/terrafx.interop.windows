@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDiscFormat2")]
 public unsafe partial struct IDiscFormat2RawCD : IDiscFormat2RawCD.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDiscFormat2RawCD));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDiscFormat2RawCD);
 
     public void** lpVtbl;
 

@@ -1608,6 +1608,81 @@ public static unsafe partial class Windows
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFSampleExtension_FramePsnrYuv
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x3D, 0x3A, 0x63, 0x1C,
+                0x6F, 0x56,
+                0x52, 0x47,
+                0x83,
+                0x3B,
+                0x29,
+                0x07,
+                0xDF,
+                0x54,
+                0x15,
+                0xE1
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFSampleExtension_VideoEncodeQPMap
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x31, 0xA3, 0x68, 0x2C,
+                0x12, 0xB7,
+                0xCA, 0x49,
+                0x86,
+                0x0A,
+                0x3A,
+                0x1D,
+                0x58,
+                0x23,
+                0x7D,
+                0x88
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFSampleExtension_VideoEncodeBitsUsedMap
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x3D, 0x26, 0x94, 0x68,
+                0xE2, 0xE6,
+                0xCC, 0x4B,
+                0x84,
+                0x9D,
+                0x85,
+                0x70,
+                0x36,
+                0x5F,
+                0x51,
+                0x14
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_PhotoThumbnail
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

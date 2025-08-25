@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IGlobalStopListeningProvider : IGlobalStopListeningProvider.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IGlobalStopListeningProvider));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGlobalStopListeningProvider);
 
     public void** lpVtbl;
 
@@ -31,9 +31,9 @@ public unsafe partial struct IGlobalStopListeningProvider : IGlobalStopListening
     /// <include file='IGlobalStopListeningProvider.xml' path='doc/member[@name="IGlobalStopListeningProvider.DrainRequestsGracefully"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
-    public BOOL DrainRequestsGracefully()
+    public readonly BOOL DrainRequestsGracefully()
     {
-        return ((delegate* unmanaged[MemberFunction]<IGlobalStopListeningProvider*, int>)(lpVtbl[1]))((IGlobalStopListeningProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGlobalStopListeningProvider*, int>)(lpVtbl[1]))((IGlobalStopListeningProvider*)Unsafe.AsPointer(in this));
     }
 
     public interface Interface : IHttpEventProvider.Interface

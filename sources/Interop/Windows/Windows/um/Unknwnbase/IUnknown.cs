@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("00000000-0000-0000-C000-000000000046")]
 public unsafe partial struct IUnknown : IUnknown.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUnknown));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUnknown);
 
     public void** lpVtbl;
 

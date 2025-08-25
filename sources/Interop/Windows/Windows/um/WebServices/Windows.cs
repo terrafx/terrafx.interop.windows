@@ -12,6 +12,10 @@ public static unsafe partial class Windows
     public const int WS_MUST_UNDERSTAND_HEADER_ATTRIBUTE = 0x1;
     public const int WS_RELAY_HEADER_ATTRIBUTE = 0x2;
 
+    public const int WS_URL_FLAGS_ALLOW_HOST_WILDCARDS = 0x1;
+    public const int WS_URL_FLAGS_NO_PATH_COLLAPSE = 0x2;
+    public const int WS_URL_FLAGS_ZERO_TERMINATE = 0x4;
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WsStartReaderCanonicalization"]/*' />
     [DllImport("webservices", ExactSpelling = true)]
     public static extern HRESULT WsStartReaderCanonicalization([NativeTypeName("WS_XML_READER*")] void* reader, [NativeTypeName("WS_WRITE_CALLBACK")] delegate* unmanaged<void*, WS_BYTES*, uint, WS_ASYNC_CONTEXT*, void*, HRESULT> writeCallback, void* writeCallbackState, [NativeTypeName("const WS_XML_CANONICALIZATION_PROPERTY *")] WS_XML_CANONICALIZATION_PROPERTY* properties, [NativeTypeName("ULONG")] uint propertyCount, [NativeTypeName("WS_ERROR*")] void* error);

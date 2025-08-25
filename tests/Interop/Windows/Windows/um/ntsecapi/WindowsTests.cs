@@ -425,6 +425,13 @@ public static unsafe partial class WindowsTests
         Assert.That(Audit_DetailedTracking_TokenRightAdjusted, Is.EqualTo(new Guid(0x0cce924a, 0x69ae, 0x11d9, 0xbe, 0xd3, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30)));
     }
 
+    /// <summary>Validates that the value of the <see cref="Audit_Logon_AccessRights" /> property is correct.</summary>
+    [Test]
+    public static void Audit_Logon_AccessRightsTest()
+    {
+        Assert.That(Audit_Logon_AccessRights, Is.EqualTo(new Guid(0x0cce924b, 0x69ae, 0x11d9, 0xbe, 0xd3, 0x50, 0x50, 0x54, 0x50, 0x30, 0x30)));
+    }
+
     /// <summary>Validates that the value of the <see cref="Audit_System" /> property is correct.</summary>
     [Test]
     public static void Audit_SystemTest()

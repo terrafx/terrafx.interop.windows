@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Bitmap")]
 public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1Bitmap1));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1Bitmap1);
 
     public void** lpVtbl;
 
@@ -50,43 +50,43 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Bitmap1*)Unsafe.AsPointer(in this), factory);
     }
 
     /// <inheritdoc cref="ID2D1Bitmap.GetSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("D2D1_SIZE_F")]
-    public D2D_SIZE_F GetSize()
+    public readonly D2D_SIZE_F GetSize()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, D2D_SIZE_F>)(lpVtbl[4]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, D2D_SIZE_F>)(lpVtbl[4]))((ID2D1Bitmap1*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="ID2D1Bitmap.GetPixelSize" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     [return: NativeTypeName("D2D1_SIZE_U")]
-    public D2D_SIZE_U GetPixelSize()
+    public readonly D2D_SIZE_U GetPixelSize()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, D2D_SIZE_U>)(lpVtbl[5]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, D2D_SIZE_U>)(lpVtbl[5]))((ID2D1Bitmap1*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="ID2D1Bitmap.GetPixelFormat" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public D2D1_PIXEL_FORMAT GetPixelFormat()
+    public readonly D2D1_PIXEL_FORMAT GetPixelFormat()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, D2D1_PIXEL_FORMAT>)(lpVtbl[6]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, D2D1_PIXEL_FORMAT>)(lpVtbl[6]))((ID2D1Bitmap1*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="ID2D1Bitmap.GetDpi" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public void GetDpi(float* dpiX, float* dpiY)
+    public readonly void GetDpi(float* dpiX, float* dpiY)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, float*, float*, void>)(lpVtbl[7]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), dpiX, dpiY);
+        ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, float*, float*, void>)(lpVtbl[7]))((ID2D1Bitmap1*)Unsafe.AsPointer(in this), dpiX, dpiY);
     }
 
     /// <inheritdoc cref="ID2D1Bitmap.CopyFromBitmap" />
@@ -116,25 +116,25 @@ public unsafe partial struct ID2D1Bitmap1 : ID2D1Bitmap1.Interface, INativeGuid
     /// <include file='ID2D1Bitmap1.xml' path='doc/member[@name="ID2D1Bitmap1.GetColorContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public void GetColorContext(ID2D1ColorContext** colorContext)
+    public readonly void GetColorContext(ID2D1ColorContext** colorContext)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, ID2D1ColorContext**, void>)(lpVtbl[11]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), colorContext);
+        ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, ID2D1ColorContext**, void>)(lpVtbl[11]))((ID2D1Bitmap1*)Unsafe.AsPointer(in this), colorContext);
     }
 
     /// <include file='ID2D1Bitmap1.xml' path='doc/member[@name="ID2D1Bitmap1.GetOptions"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public D2D1_BITMAP_OPTIONS GetOptions()
+    public readonly D2D1_BITMAP_OPTIONS GetOptions()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, D2D1_BITMAP_OPTIONS>)(lpVtbl[12]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, D2D1_BITMAP_OPTIONS>)(lpVtbl[12]))((ID2D1Bitmap1*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1Bitmap1.xml' path='doc/member[@name="ID2D1Bitmap1.GetSurface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetSurface(IDXGISurface** dxgiSurface)
+    public readonly HRESULT GetSurface(IDXGISurface** dxgiSurface)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, IDXGISurface**, int>)(lpVtbl[13]))((ID2D1Bitmap1*)Unsafe.AsPointer(ref this), dxgiSurface);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Bitmap1*, IDXGISurface**, int>)(lpVtbl[13]))((ID2D1Bitmap1*)Unsafe.AsPointer(in this), dxgiSurface);
     }
 
     /// <include file='ID2D1Bitmap1.xml' path='doc/member[@name="ID2D1Bitmap1.Map"]/*' />

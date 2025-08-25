@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("4052DBEC-52F5-42F5-9B00-D134B1341B9D")]
 public unsafe partial struct CODECAPI_AVEncDDHeadphoneMode : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncDDHeadphoneMode));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncDDHeadphoneMode);
 }

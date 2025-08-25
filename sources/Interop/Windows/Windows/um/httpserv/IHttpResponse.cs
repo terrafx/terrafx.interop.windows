@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("7E1C6B38-628F-4E6C-95DC-41237EB7F95E")]
 public unsafe partial struct IHttpResponse : IHttpResponse.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpResponse));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpResponse);
 
     public void** lpVtbl;
 
@@ -22,9 +22,9 @@ public unsafe partial struct IHttpResponse : IHttpResponse.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     [return: NativeTypeName("const HTTP_RESPONSE *")]
-    public HTTP_RESPONSE_V2* GetRawHttpRequestConst()
+    public readonly HTTP_RESPONSE_V2* GetRawHttpRequestConst()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpResponse*, HTTP_RESPONSE_V2*>)(lpVtbl[0]))((IHttpResponse*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpResponse*, HTTP_RESPONSE_V2*>)(lpVtbl[0]))((IHttpResponse*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpResponse.xml' path='doc/member[@name="IHttpResponse.GetRawHttpResponse"]/*' />
@@ -88,18 +88,18 @@ public unsafe partial struct IHttpResponse : IHttpResponse.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     [return: NativeTypeName("PCSTR")]
-    public sbyte* GetHeader(HTTP_HEADER_ID ulHeaderIndex, ushort* pcchHeaderValue = null)
+    public readonly sbyte* GetHeader(HTTP_HEADER_ID ulHeaderIndex, ushort* pcchHeaderValue = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpResponse*, HTTP_HEADER_ID, ushort*, sbyte*>)(lpVtbl[8]))((IHttpResponse*)Unsafe.AsPointer(ref this), ulHeaderIndex, pcchHeaderValue);
+        return ((delegate* unmanaged[MemberFunction]<IHttpResponse*, HTTP_HEADER_ID, ushort*, sbyte*>)(lpVtbl[8]))((IHttpResponse*)Unsafe.AsPointer(in this), ulHeaderIndex, pcchHeaderValue);
     }
 
     /// <include file='IHttpResponse.xml' path='doc/member[@name="IHttpResponse.GetHeader"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     [return: NativeTypeName("PCSTR")]
-    public sbyte* GetHeader([NativeTypeName("PCSTR")] sbyte* pszHeaderName, ushort* pcchHeaderValue = null)
+    public readonly sbyte* GetHeader([NativeTypeName("PCSTR")] sbyte* pszHeaderName, ushort* pcchHeaderValue = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpResponse*, sbyte*, ushort*, sbyte*>)(lpVtbl[9]))((IHttpResponse*)Unsafe.AsPointer(ref this), pszHeaderName, pcchHeaderValue);
+        return ((delegate* unmanaged[MemberFunction]<IHttpResponse*, sbyte*, ushort*, sbyte*>)(lpVtbl[9]))((IHttpResponse*)Unsafe.AsPointer(in this), pszHeaderName, pcchHeaderValue);
     }
 
     /// <include file='IHttpResponse.xml' path='doc/member[@name="IHttpResponse.Clear"]/*' />
@@ -145,9 +145,9 @@ public unsafe partial struct IHttpResponse : IHttpResponse.Interface, INativeGui
     /// <include file='IHttpResponse.xml' path='doc/member[@name="IHttpResponse.GetKernelCacheEnabled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public BOOL GetKernelCacheEnabled()
+    public readonly BOOL GetKernelCacheEnabled()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpResponse*, int>)(lpVtbl[15]))((IHttpResponse*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpResponse*, int>)(lpVtbl[15]))((IHttpResponse*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpResponse.xml' path='doc/member[@name="IHttpResponse.SuppressHeaders"]/*' />
@@ -161,9 +161,9 @@ public unsafe partial struct IHttpResponse : IHttpResponse.Interface, INativeGui
     /// <include file='IHttpResponse.xml' path='doc/member[@name="IHttpResponse.GetHeadersSuppressed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public BOOL GetHeadersSuppressed()
+    public readonly BOOL GetHeadersSuppressed()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpResponse*, int>)(lpVtbl[17]))((IHttpResponse*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpResponse*, int>)(lpVtbl[17]))((IHttpResponse*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpResponse.xml' path='doc/member[@name="IHttpResponse.Flush"]/*' />

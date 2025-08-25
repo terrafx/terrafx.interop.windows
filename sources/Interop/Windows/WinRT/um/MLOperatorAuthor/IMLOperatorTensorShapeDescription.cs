@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMLOperatorTensorShapeDescription : IMLOperatorTensorShapeDescription.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMLOperatorTensorShapeDescription));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMLOperatorTensorShapeDescription);
 
     public void** lpVtbl;
 
@@ -50,41 +50,41 @@ public unsafe partial struct IMLOperatorTensorShapeDescription : IMLOperatorTens
     /// <include file='IMLOperatorTensorShapeDescription.xml' path='doc/member[@name="IMLOperatorTensorShapeDescription.GetInputTensorDimensionCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetInputTensorDimensionCount([NativeTypeName("uint32_t")] uint inputIndex, [NativeTypeName("uint32_t *")] uint* dimensionCount)
+    public readonly HRESULT GetInputTensorDimensionCount([NativeTypeName("uint32_t")] uint inputIndex, [NativeTypeName("uint32_t *")] uint* dimensionCount)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensorShapeDescription*, uint, uint*, int>)(lpVtbl[3]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(ref this), inputIndex, dimensionCount);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensorShapeDescription*, uint, uint*, int>)(lpVtbl[3]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(in this), inputIndex, dimensionCount);
     }
 
     /// <include file='IMLOperatorTensorShapeDescription.xml' path='doc/member[@name="IMLOperatorTensorShapeDescription.GetInputTensorShape"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetInputTensorShape([NativeTypeName("uint32_t")] uint inputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions)
+    public readonly HRESULT GetInputTensorShape([NativeTypeName("uint32_t")] uint inputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensorShapeDescription*, uint, uint, uint*, int>)(lpVtbl[4]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(ref this), inputIndex, dimensionCount, dimensions);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensorShapeDescription*, uint, uint, uint*, int>)(lpVtbl[4]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(in this), inputIndex, dimensionCount, dimensions);
     }
 
     /// <include file='IMLOperatorTensorShapeDescription.xml' path='doc/member[@name="IMLOperatorTensorShapeDescription.HasOutputShapeDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public bool HasOutputShapeDescription()
+    public readonly bool HasOutputShapeDescription()
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensorShapeDescription*, bool>)(lpVtbl[5]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensorShapeDescription*, bool>)(lpVtbl[5]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IMLOperatorTensorShapeDescription.xml' path='doc/member[@name="IMLOperatorTensorShapeDescription.GetOutputTensorDimensionCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetOutputTensorDimensionCount([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t *")] uint* dimensionCount)
+    public readonly HRESULT GetOutputTensorDimensionCount([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t *")] uint* dimensionCount)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensorShapeDescription*, uint, uint*, int>)(lpVtbl[6]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(ref this), outputIndex, dimensionCount);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensorShapeDescription*, uint, uint*, int>)(lpVtbl[6]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(in this), outputIndex, dimensionCount);
     }
 
     /// <include file='IMLOperatorTensorShapeDescription.xml' path='doc/member[@name="IMLOperatorTensorShapeDescription.GetOutputTensorShape"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetOutputTensorShape([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions)
+    public readonly HRESULT GetOutputTensorShape([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensorShapeDescription*, uint, uint, uint*, int>)(lpVtbl[7]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(ref this), outputIndex, dimensionCount, dimensions);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensorShapeDescription*, uint, uint, uint*, int>)(lpVtbl[7]))((IMLOperatorTensorShapeDescription*)Unsafe.AsPointer(in this), outputIndex, dimensionCount, dimensions);
     }
 
     public interface Interface : IUnknown.Interface

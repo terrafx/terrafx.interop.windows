@@ -1441,6 +1441,9 @@ public static partial class HID
     [NativeTypeName("#define HID_USAGE_CONSUMER_GRAPHIC_EQUALIZER ((USAGE) 0x0006)")]
     public const ushort HID_USAGE_CONSUMER_GRAPHIC_EQUALIZER = ((ushort)(0x0006));
 
+    [NativeTypeName("#define HID_USAGE_CONSUMER_KEYBOARD_BACKLIGHT ((USAGE) 0x0007)")]
+    public const ushort HID_USAGE_CONSUMER_KEYBOARD_BACKLIGHT = ((ushort)(0x0007));
+
     [NativeTypeName("#define HID_USAGE_CONSUMER_10 ((USAGE) 0x0020)")]
     public const ushort HID_USAGE_CONSUMER_10 = ((ushort)(0x0020));
 
@@ -2773,6 +2776,15 @@ public static partial class HID
     [NativeTypeName("#define HID_USAGE_CONSUMER_CONTACT_MISC ((USAGE) 0x0514)")]
     public const ushort HID_USAGE_CONSUMER_CONTACT_MISC = ((ushort)(0x0514));
 
+    [NativeTypeName("#define HID_USAGE_CONSUMER_KEYBOARD_BRIGHTNESS_NEXT ((USAGE) 0x0515)")]
+    public const ushort HID_USAGE_CONSUMER_KEYBOARD_BRIGHTNESS_NEXT = ((ushort)(0x0515));
+
+    [NativeTypeName("#define HID_USAGE_CONSUMER_KEYBOARD_BRIGHTNESS_PREVIOUS ((USAGE) 0x0516)")]
+    public const ushort HID_USAGE_CONSUMER_KEYBOARD_BRIGHTNESS_PREVIOUS = ((ushort)(0x0516));
+
+    [NativeTypeName("#define HID_USAGE_CONSUMER_KEYBOARD_BACKLIGHT_LEVEL_SUGGESTION ((USAGE) 0x0517)")]
+    public const ushort HID_USAGE_CONSUMER_KEYBOARD_BACKLIGHT_LEVEL_SUGGESTION = ((ushort)(0x0517));
+
     [NativeTypeName("#define HID_VALUE_CONSUMER_KEYBOARD_FORM_FACTOR_UNKNOWN ((USAGE_VALUE) 0x0000)")]
     public const int HID_VALUE_CONSUMER_KEYBOARD_FORM_FACTOR_UNKNOWN = ((int)(0x0000));
 
@@ -3588,6 +3600,9 @@ public static partial class HID
 
     [NativeTypeName("#define HID_USAGE_GENERIC_SYSCTL_MICROPHONE_MUTE ((USAGE) 0x00A9)")]
     public const ushort HID_USAGE_GENERIC_SYSCTL_MICROPHONE_MUTE = ((ushort)(0x00A9));
+
+    [NativeTypeName("#define HID_USAGE_GENERIC_SYSCTL_ACCESSIBILITY_BINDING ((USAGE) 0x00AA)")]
+    public const ushort HID_USAGE_GENERIC_SYSCTL_ACCESSIBILITY_BINDING = ((ushort)(0x00AA));
 
     [NativeTypeName("#define HID_USAGE_GENERIC_SYSCTL_DISP_INVERT ((USAGE) 0x00B0)")]
     public const ushort HID_USAGE_GENERIC_SYSCTL_DISP_INVERT = ((ushort)(0x00B0));

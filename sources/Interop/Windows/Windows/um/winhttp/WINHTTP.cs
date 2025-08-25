@@ -385,6 +385,9 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_OPTION_SERVER_CERT_CHAIN_CONTEXT 147")]
     public const int WINHTTP_OPTION_SERVER_CERT_CHAIN_CONTEXT = 147;
 
+    [NativeTypeName("#define WINHTTP_OPTION_SERVER_CERT_CHAIN_BUILD_FLAGS 148")]
+    public const int WINHTTP_OPTION_SERVER_CERT_CHAIN_BUILD_FLAGS = 148;
+
     [NativeTypeName("#define WINHTTP_OPTION_CONNECTION_STATS_V1 150")]
     public const int WINHTTP_OPTION_CONNECTION_STATS_V1 = 150;
 
@@ -493,6 +496,9 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_OPTION_USE_SESSION_SCH_CRED 196")]
     public const int WINHTTP_OPTION_USE_SESSION_SCH_CRED = 196;
 
+    [NativeTypeName("#define WINHTTP_OPTION_SERVER_CERT_CHAIN_BUILD_CACHE_ONLY 199")]
+    public const int WINHTTP_OPTION_SERVER_CERT_CHAIN_BUILD_CACHE_ONLY = 199;
+
     [NativeTypeName("#define WINHTTP_OPTION_QUIC_STATS_V2 200")]
     public const int WINHTTP_OPTION_QUIC_STATS_V2 = 200;
 
@@ -520,8 +526,14 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_OPTION_FAST_FORWARDING_RESPONSE_STATUS 209")]
     public const int WINHTTP_OPTION_FAST_FORWARDING_RESPONSE_STATUS = 209;
 
-    [NativeTypeName("#define WINHTTP_LAST_OPTION WINHTTP_OPTION_FAST_FORWARDING_RESPONSE_STATUS")]
-    public const int WINHTTP_LAST_OPTION = 209;
+    [NativeTypeName("#define WINHTTP_OPTION_DSCP_TAG 210")]
+    public const int WINHTTP_OPTION_DSCP_TAG = 210;
+
+    [NativeTypeName("#define WINHTTP_OPTION_HTTP11_DOWNGRADE_TTL 211")]
+    public const int WINHTTP_OPTION_HTTP11_DOWNGRADE_TTL = 211;
+
+    [NativeTypeName("#define WINHTTP_LAST_OPTION WINHTTP_OPTION_HTTP11_DOWNGRADE_TTL")]
+    public const int WINHTTP_LAST_OPTION = 211;
 
     [NativeTypeName("#define WINHTTP_OPTION_USERNAME 0x1000")]
     public const int WINHTTP_OPTION_USERNAME = 0x1000;
@@ -633,6 +645,15 @@ public static partial class WINHTTP
 
     [NativeTypeName("#define WINHTTP_PROXY_DISABLE_AUTH_LOCAL_SERVICE 0x00000100")]
     public const int WINHTTP_PROXY_DISABLE_AUTH_LOCAL_SERVICE = 0x00000100;
+
+    [NativeTypeName("#define WINHTTP_SERVER_CERT_CHAIN_CACHE_ONLY_URL_RETRIEVAL 0x00000004")]
+    public const int WINHTTP_SERVER_CERT_CHAIN_CACHE_ONLY_URL_RETRIEVAL = 0x00000004;
+
+    [NativeTypeName("#define WINHTTP_SERVER_CERT_CHAIN_DISABLE_AIA 0x00002000")]
+    public const int WINHTTP_SERVER_CERT_CHAIN_DISABLE_AIA = 0x00002000;
+
+    [NativeTypeName("#define WINHTTP_SERVER_CERT_CHAIN_REVOCATION_CHECK_CACHE_ONLY 0x80000000")]
+    public const uint WINHTTP_SERVER_CERT_CHAIN_REVOCATION_CHECK_CACHE_ONLY = 0x80000000;
 
     [NativeTypeName("#define WINHTTP_DISABLE_COOKIES 0x00000001")]
     public const int WINHTTP_DISABLE_COOKIES = 0x00000001;
@@ -1476,4 +1497,13 @@ public static partial class WINHTTP
 
     [NativeTypeName("#define WINHTTP_FEATURE_FAST_FORWARD_RESPONSE 90")]
     public const int WINHTTP_FEATURE_FAST_FORWARD_RESPONSE = 90;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_DISABLE_AIA_FLAG 91")]
+    public const int WINHTTP_FEATURE_DISABLE_AIA_FLAG = 91;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_DSCP_TAG 92")]
+    public const int WINHTTP_FEATURE_DSCP_TAG = 92;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_HTTP11_DOWNGRADE_TTL 93")]
+    public const int WINHTTP_FEATURE_HTTP11_DOWNGRADE_TTL = 93;
 }

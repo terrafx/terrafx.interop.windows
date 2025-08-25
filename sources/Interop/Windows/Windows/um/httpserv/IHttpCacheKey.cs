@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("CDEF2AAD-20B3-4512-B1B1-094B3844AEB2")]
 public unsafe partial struct IHttpCacheKey : IHttpCacheKey.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpCacheKey));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpCacheKey);
 
     public void** lpVtbl;
 
@@ -22,34 +22,34 @@ public unsafe partial struct IHttpCacheKey : IHttpCacheKey.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     [return: NativeTypeName("DWORD")]
-    public uint GetHash()
+    public readonly uint GetHash()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCacheKey*, uint>)(lpVtbl[0]))((IHttpCacheKey*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpCacheKey*, uint>)(lpVtbl[0]))((IHttpCacheKey*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpCacheKey.xml' path='doc/member[@name="IHttpCacheKey.GetCacheName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetCacheName()
+    public readonly char* GetCacheName()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCacheKey*, char*>)(lpVtbl[1]))((IHttpCacheKey*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpCacheKey*, char*>)(lpVtbl[1]))((IHttpCacheKey*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpCacheKey.xml' path='doc/member[@name="IHttpCacheKey.GetIsEqual"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
-    public bool GetIsEqual(IHttpCacheKey* pCacheCompareKey)
+    public readonly bool GetIsEqual(IHttpCacheKey* pCacheCompareKey)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCacheKey*, IHttpCacheKey*, bool>)(lpVtbl[2]))((IHttpCacheKey*)Unsafe.AsPointer(ref this), pCacheCompareKey);
+        return ((delegate* unmanaged[MemberFunction]<IHttpCacheKey*, IHttpCacheKey*, bool>)(lpVtbl[2]))((IHttpCacheKey*)Unsafe.AsPointer(in this), pCacheCompareKey);
     }
 
     /// <include file='IHttpCacheKey.xml' path='doc/member[@name="IHttpCacheKey.GetIsPrefix"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public bool GetIsPrefix(IHttpCacheKey* pCacheCompareKey)
+    public readonly bool GetIsPrefix(IHttpCacheKey* pCacheCompareKey)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCacheKey*, IHttpCacheKey*, bool>)(lpVtbl[3]))((IHttpCacheKey*)Unsafe.AsPointer(ref this), pCacheCompareKey);
+        return ((delegate* unmanaged[MemberFunction]<IHttpCacheKey*, IHttpCacheKey*, bool>)(lpVtbl[3]))((IHttpCacheKey*)Unsafe.AsPointer(in this), pCacheCompareKey);
     }
 
     /// <include file='IHttpCacheKey.xml' path='doc/member[@name="IHttpCacheKey.Enum"]/*' />

@@ -640,8 +640,8 @@ public static partial class FVE
     [NativeTypeName("#define FVE_E_KEY_ROTATION_NOT_ENABLED _HRESULT_TYPEDEF_(0x803100DFL)")]
     public const int FVE_E_KEY_ROTATION_NOT_ENABLED = unchecked((int)(0x803100DF));
 
-    [NativeTypeName("#define FVE_E_DEVICE_NOT_JOINED _HRESULT_TYPEDEF_(0x803100E0L)")]
-    public const int FVE_E_DEVICE_NOT_JOINED = unchecked((int)(0x803100E0));
+    [NativeTypeName("#define FVE_E_DEVICE_NOT_JOINED_AAD _HRESULT_TYPEDEF_(0x803100E0L)")]
+    public const int FVE_E_DEVICE_NOT_JOINED_AAD = unchecked((int)(0x803100E0));
 
     [NativeTypeName("#define FVE_E_AAD_ENDPOINT_BUSY _HRESULT_TYPEDEF_(0x803100E1L)")]
     public const int FVE_E_AAD_ENDPOINT_BUSY = unchecked((int)(0x803100E1));
@@ -667,11 +667,11 @@ public static partial class FVE
     [NativeTypeName("#define FVE_E_UPDATE_INVALID_CONFIG _HRESULT_TYPEDEF_(0x803100E8L)")]
     public const int FVE_E_UPDATE_INVALID_CONFIG = unchecked((int)(0x803100E8));
 
-    [NativeTypeName("#define FVE_E_AAD_SERVER_FAIL_RETRY_AFTER _HRESULT_TYPEDEF_(0x803100E9L)")]
-    public const int FVE_E_AAD_SERVER_FAIL_RETRY_AFTER = unchecked((int)(0x803100E9));
+    [NativeTypeName("#define FVE_E_AAD_SERVER_FAIL_RETRY_AFTER_AAD _HRESULT_TYPEDEF_(0x803100E9L)")]
+    public const int FVE_E_AAD_SERVER_FAIL_RETRY_AFTER_AAD = unchecked((int)(0x803100E9));
 
-    [NativeTypeName("#define FVE_E_AAD_SERVER_FAIL_BACKOFF _HRESULT_TYPEDEF_(0x803100EAL)")]
-    public const int FVE_E_AAD_SERVER_FAIL_BACKOFF = unchecked((int)(0x803100EA));
+    [NativeTypeName("#define FVE_E_AAD_SERVER_FAIL_BACKOFF_AAD _HRESULT_TYPEDEF_(0x803100EAL)")]
+    public const int FVE_E_AAD_SERVER_FAIL_BACKOFF_AAD = unchecked((int)(0x803100EA));
 
     [NativeTypeName("#define FVE_E_DATASET_FULL _HRESULT_TYPEDEF_(0x803100EBL)")]
     public const int FVE_E_DATASET_FULL = unchecked((int)(0x803100EB));
@@ -744,4 +744,28 @@ public static partial class FVE
 
     [NativeTypeName("#define FVE_E_PCR_BOOT_LOCK_BOUNDARY _HRESULT_TYPEDEF_(0xC0310102L)")]
     public const int FVE_E_PCR_BOOT_LOCK_BOUNDARY = unchecked((int)(0xC0310102));
+
+    [NativeTypeName("#define FVE_E_EXCEED_MAX_LIMIT_RP_IN_MEID _HRESULT_TYPEDEF_(0xC0310104L)")]
+    public const int FVE_E_EXCEED_MAX_LIMIT_RP_IN_MEID = unchecked((int)(0xC0310104));
+
+    [NativeTypeName("#define FVE_E_HW_ACCELERATED_ENCRYPTION_NOT_ALLOWED _HRESULT_TYPEDEF_(0xC0310109L)")]
+    public const int FVE_E_HW_ACCELERATED_ENCRYPTION_NOT_ALLOWED = unchecked((int)(0xC0310109));
+
+    [NativeTypeName("#define FVE_E_DEVICE_NOT_JOINED _HRESULT_TYPEDEF_(0x80310110L)")]
+    public const int FVE_E_DEVICE_NOT_JOINED = unchecked((int)(0x80310110));
+
+    [NativeTypeName("#define FVE_E_AAD_SERVER_FAIL_RETRY_AFTER _HRESULT_TYPEDEF_(0x80310111L)")]
+    public const int FVE_E_AAD_SERVER_FAIL_RETRY_AFTER = unchecked((int)(0x80310111));
+
+    [NativeTypeName("#define FVE_E_AAD_SERVER_FAIL_BACKOFF _HRESULT_TYPEDEF_(0x80310112L)")]
+    public const int FVE_E_AAD_SERVER_FAIL_BACKOFF = unchecked((int)(0x80310112));
+
+    [NativeTypeName("#define FVE_E_FAILED_TO_UNWRAP_HW_WRAPPED_KEY _HRESULT_TYPEDEF_(0xC0310113L)")]
+    public const int FVE_E_FAILED_TO_UNWRAP_HW_WRAPPED_KEY = unchecked((int)(0xC0310113));
+
+    [NativeTypeName("#define FVE_E_HARDWARE_CRYPTO_ACCELERATOR_NOT_FIPS_COMPLIANT _HRESULT_TYPEDEF_(0xC0310114L)")]
+    public const int FVE_E_HARDWARE_CRYPTO_ACCELERATOR_NOT_FIPS_COMPLIANT = unchecked((int)(0xC0310114));
+
+    [NativeTypeName("#define FVE_E_HARDWARE_CRYPTO_KEY_MANAGER_NOT_FIPS_COMPLIANT _HRESULT_TYPEDEF_(0xC0310115L)")]
+    public const int FVE_E_HARDWARE_CRYPTO_KEY_MANAGER_NOT_FIPS_COMPLIANT = unchecked((int)(0xC0310115));
 }

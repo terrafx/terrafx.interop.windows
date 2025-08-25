@@ -14,7 +14,9 @@
 
   <!-- Settings that append the existing setting value -->
   <PropertyGroup>
-    <NoWarn>$(NoWarn);CS0618</NoWarn>
+    <!-- CA1515: Consider making public types internal -->
+    <!-- CS0618: Member is obsolete -->
+    <NoWarn>$(NoWarn);CA1515;CS0618</NoWarn>
   </PropertyGroup>
 
 </Project>

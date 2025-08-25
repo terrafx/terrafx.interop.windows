@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID2D1EffectContext : ID2D1EffectContext.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1EffectContext));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1EffectContext);
 
     public void** lpVtbl;
 
@@ -50,9 +50,9 @@ public unsafe partial struct ID2D1EffectContext : ID2D1EffectContext.Interface, 
     /// <include file='ID2D1EffectContext.xml' path='doc/member[@name="ID2D1EffectContext.GetDpi"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetDpi(float* dpiX, float* dpiY)
+    public readonly void GetDpi(float* dpiX, float* dpiY)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1EffectContext*, float*, float*, void>)(lpVtbl[3]))((ID2D1EffectContext*)Unsafe.AsPointer(ref this), dpiX, dpiY);
+        ((delegate* unmanaged[MemberFunction]<ID2D1EffectContext*, float*, float*, void>)(lpVtbl[3]))((ID2D1EffectContext*)Unsafe.AsPointer(in this), dpiX, dpiY);
     }
 
     /// <include file='ID2D1EffectContext.xml' path='doc/member[@name="ID2D1EffectContext.CreateEffect"]/*' />
@@ -66,9 +66,9 @@ public unsafe partial struct ID2D1EffectContext : ID2D1EffectContext.Interface, 
     /// <include file='ID2D1EffectContext.xml' path='doc/member[@name="ID2D1EffectContext.GetMaximumSupportedFeatureLevel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetMaximumSupportedFeatureLevel([NativeTypeName("const D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* featureLevels, [NativeTypeName("UINT32")] uint featureLevelsCount, D3D_FEATURE_LEVEL* maximumSupportedFeatureLevel)
+    public readonly HRESULT GetMaximumSupportedFeatureLevel([NativeTypeName("const D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* featureLevels, [NativeTypeName("UINT32")] uint featureLevelsCount, D3D_FEATURE_LEVEL* maximumSupportedFeatureLevel)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1EffectContext*, D3D_FEATURE_LEVEL*, uint, D3D_FEATURE_LEVEL*, int>)(lpVtbl[5]))((ID2D1EffectContext*)Unsafe.AsPointer(ref this), featureLevels, featureLevelsCount, maximumSupportedFeatureLevel);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1EffectContext*, D3D_FEATURE_LEVEL*, uint, D3D_FEATURE_LEVEL*, int>)(lpVtbl[5]))((ID2D1EffectContext*)Unsafe.AsPointer(in this), featureLevels, featureLevelsCount, maximumSupportedFeatureLevel);
     }
 
     /// <include file='ID2D1EffectContext.xml' path='doc/member[@name="ID2D1EffectContext.CreateTransformNodeFromEffect"]/*' />
@@ -202,17 +202,17 @@ public unsafe partial struct ID2D1EffectContext : ID2D1EffectContext.Interface, 
     /// <include file='ID2D1EffectContext.xml' path='doc/member[@name="ID2D1EffectContext.CheckFeatureSupport"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT CheckFeatureSupport(D2D1_FEATURE feature, void* featureSupportData, [NativeTypeName("UINT32")] uint featureSupportDataSize)
+    public readonly HRESULT CheckFeatureSupport(D2D1_FEATURE feature, void* featureSupportData, [NativeTypeName("UINT32")] uint featureSupportDataSize)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1EffectContext*, D2D1_FEATURE, void*, uint, int>)(lpVtbl[22]))((ID2D1EffectContext*)Unsafe.AsPointer(ref this), feature, featureSupportData, featureSupportDataSize);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1EffectContext*, D2D1_FEATURE, void*, uint, int>)(lpVtbl[22]))((ID2D1EffectContext*)Unsafe.AsPointer(in this), feature, featureSupportData, featureSupportDataSize);
     }
 
     /// <include file='ID2D1EffectContext.xml' path='doc/member[@name="ID2D1EffectContext.IsBufferPrecisionSupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public BOOL IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision)
+    public readonly BOOL IsBufferPrecisionSupported(D2D1_BUFFER_PRECISION bufferPrecision)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1EffectContext*, D2D1_BUFFER_PRECISION, int>)(lpVtbl[23]))((ID2D1EffectContext*)Unsafe.AsPointer(ref this), bufferPrecision);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1EffectContext*, D2D1_BUFFER_PRECISION, int>)(lpVtbl[23]))((ID2D1EffectContext*)Unsafe.AsPointer(in this), bufferPrecision);
     }
 
     public interface Interface : IUnknown.Interface

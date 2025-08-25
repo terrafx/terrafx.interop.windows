@@ -28,4 +28,7 @@ public enum CoreInputViewKind
 
     /// <include file='CoreInputViewKind.xml' path='doc/member[@name="CoreInputViewKind.CoreInputViewKind_Dictation"]/*' />
     CoreInputViewKind_Dictation = 6,
+
+    /// <include file='CoreInputViewKind.xml' path='doc/member[@name="CoreInputViewKind.CoreInputViewKind_Gamepad"]/*' />
+    CoreInputViewKind_Gamepad = 7,
 }

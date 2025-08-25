@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUIAnimationStoryboard2));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUIAnimationStoryboard2);
 
     public void** lpVtbl;
 
@@ -89,7 +89,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
     /// <include file='IUIAnimationStoryboard2.xml' path='doc/member[@name="IUIAnimationStoryboard2.RepeatBetweenKeyframes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT RepeatBetweenKeyframes(UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe, double cRepetition, UI_ANIMATION_REPEAT_MODE repeatMode, [Optional] IUIAnimationLoopIterationChangeHandler2* pIterationChangeHandler, [NativeTypeName("UINT_PTR")][Optional] nuint id, [Optional] BOOL fRegisterForNextAnimationEvent)
+    public HRESULT RepeatBetweenKeyframes(UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe, double cRepetition, UI_ANIMATION_REPEAT_MODE repeatMode, [Optional] IUIAnimationLoopIterationChangeHandler2* pIterationChangeHandler, [NativeTypeName("UINT_PTR")] [Optional] nuint id, [Optional] BOOL fRegisterForNextAnimationEvent)
     {
         return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard2*, UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME, double, UI_ANIMATION_REPEAT_MODE, IUIAnimationLoopIterationChangeHandler2*, nuint, BOOL, int>)(lpVtbl[8]))((IUIAnimationStoryboard2*)Unsafe.AsPointer(ref this), startKeyframe, endKeyframe, cRepetition, repeatMode, pIterationChangeHandler, id, fRegisterForNextAnimationEvent);
     }
@@ -208,7 +208,7 @@ public unsafe partial struct IUIAnimationStoryboard2 : IUIAnimationStoryboard2.I
         HRESULT AddTransitionBetweenKeyframes(IUIAnimationVariable2* variable, IUIAnimationTransition2* transition, UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe);
 
         [VtblIndex(8)]
-        HRESULT RepeatBetweenKeyframes(UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe, double cRepetition, UI_ANIMATION_REPEAT_MODE repeatMode, [Optional] IUIAnimationLoopIterationChangeHandler2* pIterationChangeHandler, [NativeTypeName("UINT_PTR")][Optional] nuint id, [Optional] BOOL fRegisterForNextAnimationEvent);
+        HRESULT RepeatBetweenKeyframes(UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe, double cRepetition, UI_ANIMATION_REPEAT_MODE repeatMode, [Optional] IUIAnimationLoopIterationChangeHandler2* pIterationChangeHandler, [NativeTypeName("UINT_PTR")] [Optional] nuint id, [Optional] BOOL fRegisterForNextAnimationEvent);
 
         [VtblIndex(9)]
         HRESULT HoldVariable(IUIAnimationVariable2* variable);

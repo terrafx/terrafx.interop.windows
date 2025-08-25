@@ -1489,6 +1489,31 @@ public static unsafe partial class Windows
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid Audit_Logon_AccessRights
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x4B, 0x92, 0xCE, 0x0C,
+                0xAE, 0x69,
+                0xD9, 0x11,
+                0xBE,
+                0xD3,
+                0x50,
+                0x50,
+                0x54,
+                0x50,
+                0x30,
+                0x30
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid Audit_System
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -175,20 +175,44 @@ public static partial class SQLITE
     [NativeTypeName("#define SQLITE_E_IOERR_CONVPATH _HRESULT_TYPEDEF_(0x87AF1A0AL)")]
     public const int SQLITE_E_IOERR_CONVPATH = unchecked((int)(0x87AF1A0A));
 
-    [NativeTypeName("#define SQLITE_E_IOERR_VNODE _HRESULT_TYPEDEF_(0x87AF1A02L)")]
-    public const int SQLITE_E_IOERR_VNODE = unchecked((int)(0x87AF1A02));
+    [NativeTypeName("#define SQLITE_E_IOERR_VNODE _HRESULT_TYPEDEF_(0x87AF1B0AL)")]
+    public const int SQLITE_E_IOERR_VNODE = unchecked((int)(0x87AF1B0A));
 
-    [NativeTypeName("#define SQLITE_E_IOERR_AUTH _HRESULT_TYPEDEF_(0x87AF1A03L)")]
-    public const int SQLITE_E_IOERR_AUTH = unchecked((int)(0x87AF1A03));
+    [NativeTypeName("#define SQLITE_E_IOERR_AUTH _HRESULT_TYPEDEF_(0x87AF1C0AL)")]
+    public const int SQLITE_E_IOERR_AUTH = unchecked((int)(0x87AF1C0A));
+
+    [NativeTypeName("#define SQLITE_E_IOERR_BEGIN_ATOMIC _HRESULT_TYPEDEF_(0x87AF1D0AL)")]
+    public const int SQLITE_E_IOERR_BEGIN_ATOMIC = unchecked((int)(0x87AF1D0A));
+
+    [NativeTypeName("#define SQLITE_E_IOERR_COMMIT_ATOMIC _HRESULT_TYPEDEF_(0x87AF1E0AL)")]
+    public const int SQLITE_E_IOERR_COMMIT_ATOMIC = unchecked((int)(0x87AF1E0A));
+
+    [NativeTypeName("#define SQLITE_E_IOERR_ROLLBACK_ATOMIC _HRESULT_TYPEDEF_(0x87AF1F0AL)")]
+    public const int SQLITE_E_IOERR_ROLLBACK_ATOMIC = unchecked((int)(0x87AF1F0A));
+
+    [NativeTypeName("#define SQLITE_E_IOERR_DATA _HRESULT_TYPEDEF_(0x87AF200AL)")]
+    public const int SQLITE_E_IOERR_DATA = unchecked((int)(0x87AF200A));
+
+    [NativeTypeName("#define SQLITE_E_IOERR_CORRUPTFS _HRESULT_TYPEDEF_(0x87AF210AL)")]
+    public const int SQLITE_E_IOERR_CORRUPTFS = unchecked((int)(0x87AF210A));
+
+    [NativeTypeName("#define SQLITE_E_IOERR_IN_PAGE _HRESULT_TYPEDEF_(0x87AF220AL)")]
+    public const int SQLITE_E_IOERR_IN_PAGE = unchecked((int)(0x87AF220A));
 
     [NativeTypeName("#define SQLITE_E_LOCKED_SHAREDCACHE _HRESULT_TYPEDEF_(0x87AF0106L)")]
     public const int SQLITE_E_LOCKED_SHAREDCACHE = unchecked((int)(0x87AF0106));
+
+    [NativeTypeName("#define SQLITE_E_LOCKED_VTAB _HRESULT_TYPEDEF_(0x87AF0206L)")]
+    public const int SQLITE_E_LOCKED_VTAB = unchecked((int)(0x87AF0206));
 
     [NativeTypeName("#define SQLITE_E_BUSY_RECOVERY _HRESULT_TYPEDEF_(0x87AF0105L)")]
     public const int SQLITE_E_BUSY_RECOVERY = unchecked((int)(0x87AF0105));
 
     [NativeTypeName("#define SQLITE_E_BUSY_SNAPSHOT _HRESULT_TYPEDEF_(0x87AF0205L)")]
     public const int SQLITE_E_BUSY_SNAPSHOT = unchecked((int)(0x87AF0205));
+
+    [NativeTypeName("#define SQLITE_E_BUSY_TIMEOUT _HRESULT_TYPEDEF_(0x87AF0305L)")]
+    public const int SQLITE_E_BUSY_TIMEOUT = unchecked((int)(0x87AF0305));
 
     [NativeTypeName("#define SQLITE_E_CANTOPEN_NOTEMPDIR _HRESULT_TYPEDEF_(0x87AF010EL)")]
     public const int SQLITE_E_CANTOPEN_NOTEMPDIR = unchecked((int)(0x87AF010E));
@@ -202,8 +226,20 @@ public static partial class SQLITE
     [NativeTypeName("#define SQLITE_E_CANTOPEN_CONVPATH _HRESULT_TYPEDEF_(0x87AF040EL)")]
     public const int SQLITE_E_CANTOPEN_CONVPATH = unchecked((int)(0x87AF040E));
 
+    [NativeTypeName("#define SQLITE_E_CANTOPEN_DIRTYWAL _HRESULT_TYPEDEF_(0x87AF050EL)")]
+    public const int SQLITE_E_CANTOPEN_DIRTYWAL = unchecked((int)(0x87AF050E));
+
+    [NativeTypeName("#define SQLITE_E_CANTOPEN_SYMLINK _HRESULT_TYPEDEF_(0x87AF060EL)")]
+    public const int SQLITE_E_CANTOPEN_SYMLINK = unchecked((int)(0x87AF060E));
+
     [NativeTypeName("#define SQLITE_E_CORRUPT_VTAB _HRESULT_TYPEDEF_(0x87AF010BL)")]
     public const int SQLITE_E_CORRUPT_VTAB = unchecked((int)(0x87AF010B));
+
+    [NativeTypeName("#define SQLITE_E_CORRUPT_SEQUENCE _HRESULT_TYPEDEF_(0x87AF020BL)")]
+    public const int SQLITE_E_CORRUPT_SEQUENCE = unchecked((int)(0x87AF020B));
+
+    [NativeTypeName("#define SQLITE_E_CORRUPT_INDEX _HRESULT_TYPEDEF_(0x87AF030BL)")]
+    public const int SQLITE_E_CORRUPT_INDEX = unchecked((int)(0x87AF030B));
 
     [NativeTypeName("#define SQLITE_E_READONLY_RECOVERY _HRESULT_TYPEDEF_(0x87AF0108L)")]
     public const int SQLITE_E_READONLY_RECOVERY = unchecked((int)(0x87AF0108));
@@ -216,6 +252,12 @@ public static partial class SQLITE
 
     [NativeTypeName("#define SQLITE_E_READONLY_DBMOVED _HRESULT_TYPEDEF_(0x87AF0408L)")]
     public const int SQLITE_E_READONLY_DBMOVED = unchecked((int)(0x87AF0408));
+
+    [NativeTypeName("#define SQLITE_E_READONLY_CANTINIT _HRESULT_TYPEDEF_(0x87AF0508L)")]
+    public const int SQLITE_E_READONLY_CANTINIT = unchecked((int)(0x87AF0508));
+
+    [NativeTypeName("#define SQLITE_E_READONLY_DIRECTORY _HRESULT_TYPEDEF_(0x87AF0608L)")]
+    public const int SQLITE_E_READONLY_DIRECTORY = unchecked((int)(0x87AF0608));
 
     [NativeTypeName("#define SQLITE_E_ABORT_ROLLBACK _HRESULT_TYPEDEF_(0x87AF0204L)")]
     public const int SQLITE_E_ABORT_ROLLBACK = unchecked((int)(0x87AF0204));
@@ -250,12 +292,24 @@ public static partial class SQLITE
     [NativeTypeName("#define SQLITE_E_CONSTRAINT_ROWID _HRESULT_TYPEDEF_(0x87AF0A13L)")]
     public const int SQLITE_E_CONSTRAINT_ROWID = unchecked((int)(0x87AF0A13));
 
+    [NativeTypeName("#define SQLITE_E_CONSTRAINT_PINNED _HRESULT_TYPEDEF_(0x87AF0B13L)")]
+    public const int SQLITE_E_CONSTRAINT_PINNED = unchecked((int)(0x87AF0B13));
+
+    [NativeTypeName("#define SQLITE_E_CONSTRAINT_DATATYPE _HRESULT_TYPEDEF_(0x87AF0C13L)")]
+    public const int SQLITE_E_CONSTRAINT_DATATYPE = unchecked((int)(0x87AF0C13));
+
     [NativeTypeName("#define SQLITE_E_NOTICE_RECOVER_WAL _HRESULT_TYPEDEF_(0x87AF011BL)")]
     public const int SQLITE_E_NOTICE_RECOVER_WAL = unchecked((int)(0x87AF011B));
 
     [NativeTypeName("#define SQLITE_E_NOTICE_RECOVER_ROLLBACK _HRESULT_TYPEDEF_(0x87AF021BL)")]
     public const int SQLITE_E_NOTICE_RECOVER_ROLLBACK = unchecked((int)(0x87AF021B));
 
+    [NativeTypeName("#define SQLITE_E_NOTICE_RECOVER_RBU _HRESULT_TYPEDEF_(0x87AF031BL)")]
+    public const int SQLITE_E_NOTICE_RECOVER_RBU = unchecked((int)(0x87AF031B));
+
     [NativeTypeName("#define SQLITE_E_WARNING_AUTOINDEX _HRESULT_TYPEDEF_(0x87AF011CL)")]
     public const int SQLITE_E_WARNING_AUTOINDEX = unchecked((int)(0x87AF011C));
+
+    [NativeTypeName("#define SQLITE_E_AUTH_USER _HRESULT_TYPEDEF_(0x87AF0117L)")]
+    public const int SQLITE_E_AUTH_USER = unchecked((int)(0x87AF0117));
 }

@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("C63382BE-7933-48D0-9AC8-85FB46BE2FDD")]
 public unsafe partial struct DefFolderMenu : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_DefFolderMenu));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DefFolderMenu);
 }

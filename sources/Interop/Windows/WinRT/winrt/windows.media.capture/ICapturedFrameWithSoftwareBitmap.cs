@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICapturedFrameWithSoftwareBitmap : ICapturedFrameWithSoftwareBitmap.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICapturedFrameWithSoftwareBitmap));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICapturedFrameWithSoftwareBitmap);
 
     public void** lpVtbl;
 

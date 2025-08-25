@@ -16,8 +16,10 @@ public unsafe partial struct D3D12_TEXTURE_COPY_LOCATION
     {
         pResource = pRes;
         Type = D3D12_TEXTURE_COPY_TYPE_SUBRESOURCE_INDEX;
-        Anonymous.PlacedFootprint = new D3D12_PLACED_SUBRESOURCE_FOOTPRINT {
-            Footprint = new D3D12_SUBRESOURCE_FOOTPRINT {
+        Anonymous.PlacedFootprint = new D3D12_PLACED_SUBRESOURCE_FOOTPRINT
+        {
+            Footprint = new D3D12_SUBRESOURCE_FOOTPRINT
+            {
             },
         };
     }
@@ -33,8 +35,10 @@ public unsafe partial struct D3D12_TEXTURE_COPY_LOCATION
     {
         pResource = pRes;
         Type = D3D12_TEXTURE_COPY_TYPE_SUBRESOURCE_INDEX;
-        Anonymous.PlacedFootprint = new D3D12_PLACED_SUBRESOURCE_FOOTPRINT {
-            Footprint = new D3D12_SUBRESOURCE_FOOTPRINT {
+        Anonymous.PlacedFootprint = new D3D12_PLACED_SUBRESOURCE_FOOTPRINT
+        {
+            Footprint = new D3D12_SUBRESOURCE_FOOTPRINT
+            {
             },
         };
         Anonymous.SubresourceIndex = Sub;

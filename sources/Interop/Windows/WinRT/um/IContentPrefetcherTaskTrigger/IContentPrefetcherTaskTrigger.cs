@@ -19,7 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IContentPrefetcherTaskTrigger : IContentPrefetcherTaskTrigger.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IContentPrefetcherTaskTrigger));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IContentPrefetcherTaskTrigger);
 
     public void** lpVtbl;
 

@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("6B529F7D-D3B1-49C6-A999-9EC6911BEDBF")]
 public unsafe partial struct CODECAPI_AVDecVideoFastDecodeMode : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVDecVideoFastDecodeMode));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVDecVideoFastDecodeMode);
 }

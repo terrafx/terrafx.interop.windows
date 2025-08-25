@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct ICacheProvider : ICacheProvider.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICacheProvider));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICacheProvider);
 
     public void** lpVtbl;
 
@@ -31,25 +31,25 @@ public unsafe partial struct ICacheProvider : ICacheProvider.Interface, INativeG
     /// <include file='ICacheProvider.xml' path='doc/member[@name="ICacheProvider.GetCacheOperation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
-    public CACHE_OPERATION GetCacheOperation()
+    public readonly CACHE_OPERATION GetCacheOperation()
     {
-        return ((delegate* unmanaged[MemberFunction]<ICacheProvider*, CACHE_OPERATION>)(lpVtbl[1]))((ICacheProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICacheProvider*, CACHE_OPERATION>)(lpVtbl[1]))((ICacheProvider*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ICacheProvider.xml' path='doc/member[@name="ICacheProvider.GetCacheKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
-    public IHttpCacheKey* GetCacheKey()
+    public readonly IHttpCacheKey* GetCacheKey()
     {
-        return ((delegate* unmanaged[MemberFunction]<ICacheProvider*, IHttpCacheKey*>)(lpVtbl[2]))((ICacheProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICacheProvider*, IHttpCacheKey*>)(lpVtbl[2]))((ICacheProvider*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ICacheProvider.xml' path='doc/member[@name="ICacheProvider.GetCacheRecord"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public IHttpCacheSpecificData* GetCacheRecord()
+    public readonly IHttpCacheSpecificData* GetCacheRecord()
     {
-        return ((delegate* unmanaged[MemberFunction]<ICacheProvider*, IHttpCacheSpecificData*>)(lpVtbl[3]))((ICacheProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICacheProvider*, IHttpCacheSpecificData*>)(lpVtbl[3]))((ICacheProvider*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ICacheProvider.xml' path='doc/member[@name="ICacheProvider.SetCacheRecord"]/*' />
@@ -63,9 +63,9 @@ public unsafe partial struct ICacheProvider : ICacheProvider.Interface, INativeG
     /// <include file='ICacheProvider.xml' path='doc/member[@name="ICacheProvider.GetTraceContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public IHttpTraceContext* GetTraceContext()
+    public readonly IHttpTraceContext* GetTraceContext()
     {
-        return ((delegate* unmanaged[MemberFunction]<ICacheProvider*, IHttpTraceContext*>)(lpVtbl[5]))((ICacheProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICacheProvider*, IHttpTraceContext*>)(lpVtbl[5]))((ICacheProvider*)Unsafe.AsPointer(in this));
     }
 
     public interface Interface : IHttpEventProvider.Interface

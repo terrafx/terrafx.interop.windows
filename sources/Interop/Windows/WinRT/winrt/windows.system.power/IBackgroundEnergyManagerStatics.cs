@@ -18,7 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("Background Energy Manager has been deprecated. For more info, see MSDN.")]
 public unsafe partial struct IBackgroundEnergyManagerStatics : IBackgroundEnergyManagerStatics.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IBackgroundEnergyManagerStatics));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBackgroundEnergyManagerStatics);
 
     public void** lpVtbl;
 

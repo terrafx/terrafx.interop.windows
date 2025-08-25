@@ -17,7 +17,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
     public uint BeginAddress;
 
     /// <include file='IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L21221_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L21353_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.UnwindData"]/*' />
@@ -154,7 +154,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L21223_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L21355_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

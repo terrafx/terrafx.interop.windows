@@ -133,6 +133,9 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[71]")]
     public const string InterfaceName_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProvider = "Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider";
 
+    [NativeTypeName("const WCHAR[72]")]
+    public const string InterfaceName_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProvider2 = "Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProvider2";
+
     [NativeTypeName("const WCHAR[106]")]
     public const string InterfaceName_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProviderAdvertisementStatusChangedEventArgs = "Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisementStatusChangedEventArgs";
 
@@ -141,6 +144,9 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[93]")]
     public const string InterfaceName_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProviderAdvertisingParameters2 = "Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters2";
+
+    [NativeTypeName("const WCHAR[93]")]
+    public const string InterfaceName_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProviderAdvertisingParameters3 = "Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderAdvertisingParameters3";
 
     [NativeTypeName("const WCHAR[77]")]
     public const string InterfaceName_Windows_Devices_Bluetooth_GenericAttributeProfile_IGattServiceProviderResult = "Windows.Devices.Bluetooth.GenericAttributeProfile.IGattServiceProviderResult";

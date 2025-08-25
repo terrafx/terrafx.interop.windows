@@ -19,7 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct ISurfaceImageSourceManagerNative : ISurfaceImageSourceManagerNative.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISurfaceImageSourceManagerNative));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISurfaceImageSourceManagerNative);
 
     public void** lpVtbl;
 

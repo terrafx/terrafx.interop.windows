@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("2C941FCE-975B-59BE-A960-9A2A262853A5")]
 public unsafe partial struct BootOptions : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_BootOptions));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_BootOptions);
 }

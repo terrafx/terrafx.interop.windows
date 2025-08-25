@@ -29,7 +29,7 @@ public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
     public uint ZoneCount;
 
     /// <include file='STORAGE_ZONED_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_DESCRIPTOR.ZoneAttributes"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L3016_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L3318_C5")]
     public _ZoneAttributes_e__Union ZoneAttributes;
 
     /// <include file='STORAGE_ZONED_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_DESCRIPTOR.ZoneGroupCount"]/*' />
@@ -46,12 +46,12 @@ public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
     {
         /// <include file='_ZoneAttributes_e__Union.xml' path='doc/member[@name="_ZoneAttributes_e__Union.SequentialRequiredZone"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L3017_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L3319_C9")]
         public _SequentialRequiredZone_e__Struct SequentialRequiredZone;
 
         /// <include file='_ZoneAttributes_e__Union.xml' path='doc/member[@name="_ZoneAttributes_e__Union.SequentialPreferredZone"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L3027_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L3329_C9")]
         public _SequentialPreferredZone_e__Struct SequentialPreferredZone;
 
         /// <include file='_SequentialRequiredZone_e__Struct.xml' path='doc/member[@name="_SequentialRequiredZone_e__Struct"]/*' />

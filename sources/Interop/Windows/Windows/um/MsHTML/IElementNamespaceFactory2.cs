@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IElementNamespaceFactory")]
 public unsafe partial struct IElementNamespaceFactory2 : IElementNamespaceFactory2.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IElementNamespaceFactory2));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IElementNamespaceFactory2);
 
     public void** lpVtbl;
 

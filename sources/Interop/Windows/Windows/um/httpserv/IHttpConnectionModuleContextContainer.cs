@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpModuleContextContainer")]
 public unsafe partial struct IHttpConnectionModuleContextContainer : IHttpConnectionModuleContextContainer.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpConnectionModuleContextContainer));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpConnectionModuleContextContainer);
 
     public void** lpVtbl;
 

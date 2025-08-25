@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpApplication")]
 public unsafe partial struct IHttpApplication2 : IHttpApplication2.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpApplication2));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpApplication2);
 
     public void** lpVtbl;
 
@@ -24,27 +24,27 @@ public unsafe partial struct IHttpApplication2 : IHttpApplication2.Interface, IN
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetApplicationPhysicalPath()
+    public readonly char* GetApplicationPhysicalPath()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpApplication2*, char*>)(lpVtbl[0]))((IHttpApplication2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpApplication2*, char*>)(lpVtbl[0]))((IHttpApplication2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpApplication.GetApplicationId" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetApplicationId()
+    public readonly char* GetApplicationId()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpApplication2*, char*>)(lpVtbl[1]))((IHttpApplication2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpApplication2*, char*>)(lpVtbl[1]))((IHttpApplication2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpApplication.GetAppConfigPath" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetAppConfigPath()
+    public readonly char* GetAppConfigPath()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpApplication2*, char*>)(lpVtbl[2]))((IHttpApplication2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpApplication2*, char*>)(lpVtbl[2]))((IHttpApplication2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpApplication.GetModuleContextContainer" />

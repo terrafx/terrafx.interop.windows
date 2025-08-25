@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Image")]
 public unsafe partial struct ID2D1TransformedImageSource : ID2D1TransformedImageSource.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1TransformedImageSource));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1TransformedImageSource);
 
     public void** lpVtbl;
 
@@ -50,25 +50,25 @@ public unsafe partial struct ID2D1TransformedImageSource : ID2D1TransformedImage
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1TransformedImageSource*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1TransformedImageSource*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(in this), factory);
     }
 
     /// <include file='ID2D1TransformedImageSource.xml' path='doc/member[@name="ID2D1TransformedImageSource.GetSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public void GetSource(ID2D1ImageSource** imageSource)
+    public readonly void GetSource(ID2D1ImageSource** imageSource)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1TransformedImageSource*, ID2D1ImageSource**, void>)(lpVtbl[4]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), imageSource);
+        ((delegate* unmanaged[MemberFunction]<ID2D1TransformedImageSource*, ID2D1ImageSource**, void>)(lpVtbl[4]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(in this), imageSource);
     }
 
     /// <include file='ID2D1TransformedImageSource.xml' path='doc/member[@name="ID2D1TransformedImageSource.GetProperties"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public void GetProperties(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES* properties)
+    public readonly void GetProperties(D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES* properties)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1TransformedImageSource*, D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES*, void>)(lpVtbl[5]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(ref this), properties);
+        ((delegate* unmanaged[MemberFunction]<ID2D1TransformedImageSource*, D2D1_TRANSFORMED_IMAGE_SOURCE_PROPERTIES*, void>)(lpVtbl[5]))((ID2D1TransformedImageSource*)Unsafe.AsPointer(in this), properties);
     }
 
     public interface Interface : ID2D1Image.Interface

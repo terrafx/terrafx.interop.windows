@@ -16,16 +16,16 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpCacheSpecificData")]
 public unsafe partial struct IHttpFileInfo : IHttpFileInfo.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpFileInfo));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpFileInfo);
 
     public void** lpVtbl;
 
     /// <inheritdoc cref="IHttpCacheSpecificData.GetCacheKey" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
-    public IHttpCacheKey* GetCacheKey()
+    public readonly IHttpCacheKey* GetCacheKey()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, IHttpCacheKey*>)(lpVtbl[0]))((IHttpFileInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, IHttpCacheKey*>)(lpVtbl[0]))((IHttpFileInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpCacheSpecificData.ReferenceCacheData" />
@@ -71,86 +71,86 @@ public unsafe partial struct IHttpFileInfo : IHttpFileInfo.Interface, INativeGui
     /// <inheritdoc cref="IHttpCacheSpecificData.GetFlushed" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public BOOL GetFlushed()
+    public readonly BOOL GetFlushed()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, int>)(lpVtbl[6]))((IHttpFileInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, int>)(lpVtbl[6]))((IHttpFileInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpFileInfo.xml' path='doc/member[@name="IHttpFileInfo.GetAttributes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [return: NativeTypeName("DWORD")]
-    public uint GetAttributes()
+    public readonly uint GetAttributes()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, uint>)(lpVtbl[7]))((IHttpFileInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, uint>)(lpVtbl[7]))((IHttpFileInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpFileInfo.xml' path='doc/member[@name="IHttpFileInfo.GetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public void GetSize(ULARGE_INTEGER* pliSize)
+    public readonly void GetSize(ULARGE_INTEGER* pliSize)
     {
-        ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, ULARGE_INTEGER*, void>)(lpVtbl[8]))((IHttpFileInfo*)Unsafe.AsPointer(ref this), pliSize);
+        ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, ULARGE_INTEGER*, void>)(lpVtbl[8]))((IHttpFileInfo*)Unsafe.AsPointer(in this), pliSize);
     }
 
     /// <include file='IHttpFileInfo.xml' path='doc/member[@name="IHttpFileInfo.GetFileBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     [return: NativeTypeName("const BYTE *")]
-    public byte* GetFileBuffer()
+    public readonly byte* GetFileBuffer()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, byte*>)(lpVtbl[9]))((IHttpFileInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, byte*>)(lpVtbl[9]))((IHttpFileInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpFileInfo.xml' path='doc/member[@name="IHttpFileInfo.GetFileHandle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HANDLE GetFileHandle()
+    public readonly HANDLE GetFileHandle()
     {
-        return ((HANDLE)(((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, void*>)(lpVtbl[10]))((IHttpFileInfo*)Unsafe.AsPointer(ref this))));
+        return ((HANDLE)(((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, void*>)(lpVtbl[10]))((IHttpFileInfo*)Unsafe.AsPointer(in this))));
     }
 
     /// <include file='IHttpFileInfo.xml' path='doc/member[@name="IHttpFileInfo.GetFilePath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetFilePath()
+    public readonly char* GetFilePath()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, char*>)(lpVtbl[11]))((IHttpFileInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, char*>)(lpVtbl[11]))((IHttpFileInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpFileInfo.xml' path='doc/member[@name="IHttpFileInfo.GetETag"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     [return: NativeTypeName("PCSTR")]
-    public sbyte* GetETag(ushort* pcchETag = null)
+    public readonly sbyte* GetETag(ushort* pcchETag = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, ushort*, sbyte*>)(lpVtbl[12]))((IHttpFileInfo*)Unsafe.AsPointer(ref this), pcchETag);
+        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, ushort*, sbyte*>)(lpVtbl[12]))((IHttpFileInfo*)Unsafe.AsPointer(in this), pcchETag);
     }
 
     /// <include file='IHttpFileInfo.xml' path='doc/member[@name="IHttpFileInfo.GetLastModifiedTime"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public void GetLastModifiedTime(FILETIME* pFileTime)
+    public readonly void GetLastModifiedTime(FILETIME* pFileTime)
     {
-        ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, FILETIME*, void>)(lpVtbl[13]))((IHttpFileInfo*)Unsafe.AsPointer(ref this), pFileTime);
+        ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, FILETIME*, void>)(lpVtbl[13]))((IHttpFileInfo*)Unsafe.AsPointer(in this), pFileTime);
     }
 
     /// <include file='IHttpFileInfo.xml' path='doc/member[@name="IHttpFileInfo.GetLastModifiedString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     [return: NativeTypeName("PCSTR")]
-    public sbyte* GetLastModifiedString()
+    public readonly sbyte* GetLastModifiedString()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, sbyte*>)(lpVtbl[14]))((IHttpFileInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, sbyte*>)(lpVtbl[14]))((IHttpFileInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpFileInfo.xml' path='doc/member[@name="IHttpFileInfo.GetHttpCacheAllowed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public BOOL GetHttpCacheAllowed([NativeTypeName("DWORD *")] uint* pSecondsToLive)
+    public readonly BOOL GetHttpCacheAllowed([NativeTypeName("DWORD *")] uint* pSecondsToLive)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, uint*, int>)(lpVtbl[15]))((IHttpFileInfo*)Unsafe.AsPointer(ref this), pSecondsToLive);
+        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, uint*, int>)(lpVtbl[15]))((IHttpFileInfo*)Unsafe.AsPointer(in this), pSecondsToLive);
     }
 
     /// <include file='IHttpFileInfo.xml' path='doc/member[@name="IHttpFileInfo.AccessCheck"]/*' />
@@ -164,18 +164,18 @@ public unsafe partial struct IHttpFileInfo : IHttpFileInfo.Interface, INativeGui
     /// <include file='IHttpFileInfo.xml' path='doc/member[@name="IHttpFileInfo.GetVrToken"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HANDLE GetVrToken()
+    public readonly HANDLE GetVrToken()
     {
-        return ((HANDLE)(((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, void*>)(lpVtbl[17]))((IHttpFileInfo*)Unsafe.AsPointer(ref this))));
+        return ((HANDLE)(((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, void*>)(lpVtbl[17]))((IHttpFileInfo*)Unsafe.AsPointer(in this))));
     }
 
     /// <include file='IHttpFileInfo.xml' path='doc/member[@name="IHttpFileInfo.GetVrPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetVrPath()
+    public readonly char* GetVrPath()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, char*>)(lpVtbl[18]))((IHttpFileInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpFileInfo*, char*>)(lpVtbl[18]))((IHttpFileInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpFileInfo.xml' path='doc/member[@name="IHttpFileInfo.GetModuleContextContainer"]/*' />

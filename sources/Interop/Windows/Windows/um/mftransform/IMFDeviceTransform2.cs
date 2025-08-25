@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMFDeviceTransform")]
 public unsafe partial struct IMFDeviceTransform2 : IMFDeviceTransform2.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFDeviceTransform2));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFDeviceTransform2);
 
     public void** lpVtbl;
 

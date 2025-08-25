@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IUIViewSettingsStatics : IUIViewSettingsStatics.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUIViewSettingsStatics));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUIViewSettingsStatics);
 
     public void** lpVtbl;
 
@@ -74,15 +74,15 @@ public unsafe partial struct IUIViewSettingsStatics : IUIViewSettingsStatics.Int
     /// <include file='IUIViewSettingsStatics.xml' path='doc/member[@name="IUIViewSettingsStatics.GetForCurrentView"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetForCurrentView([NativeTypeName("ABI::Windows::UI::ViewManagement::IUIViewSettings **")] IUIViewSettings** current)
+    public HRESULT GetForCurrentView([NativeTypeName("ABI::Windows::UI::ViewManagement::IUIViewSettings **")] IUIViewSettings** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IUIViewSettingsStatics*, IUIViewSettings**, int>)(lpVtbl[6]))((IUIViewSettingsStatics*)Unsafe.AsPointer(ref this), current);
+        return ((delegate* unmanaged[MemberFunction]<IUIViewSettingsStatics*, IUIViewSettings**, int>)(lpVtbl[6]))((IUIViewSettingsStatics*)Unsafe.AsPointer(ref this), result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT GetForCurrentView([NativeTypeName("ABI::Windows::UI::ViewManagement::IUIViewSettings **")] IUIViewSettings** current);
+        HRESULT GetForCurrentView([NativeTypeName("ABI::Windows::UI::ViewManagement::IUIViewSettings **")] IUIViewSettings** result);
     }
 
     public partial struct Vtbl<TSelf>

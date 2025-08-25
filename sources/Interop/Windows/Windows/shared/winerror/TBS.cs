@@ -72,4 +72,10 @@ public static partial class TBS
 
     [NativeTypeName("#define TBS_E_PROVISIONING_INCOMPLETE _HRESULT_TYPEDEF_(0x80284016L)")]
     public const int TBS_E_PROVISIONING_INCOMPLETE = unchecked((int)(0x80284016));
+
+    [NativeTypeName("#define TBS_E_TPM_IN_EXCLUSIVE_MODE _HRESULT_TYPEDEF_(0x80284017L)")]
+    public const int TBS_E_TPM_IN_EXCLUSIVE_MODE = unchecked((int)(0x80284017));
+
+    [NativeTypeName("#define TBS_E_TPM_REBOOT_REQUIRED _HRESULT_TYPEDEF_(0x80284018L)")]
+    public const int TBS_E_TPM_REBOOT_REQUIRED = unchecked((int)(0x80284018));
 }

@@ -120,8 +120,10 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/WinUser.h
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/WinUser.inl
 --with-attribute
 AdjustWindowRectExForDpi=SupportedOSPlatform("windows10.0.14393.0")
+ApplyWindowAction=SupportedOSPlatform("windows10.0.22000.0")
 AreDpiAwarenessContextsEqual=SupportedOSPlatform("windows10.0.14393.0")
 AR_STATE=Flags
+ConvertToInterceptWindow=SupportedOSPlatform("windows10.0.22000.0")
 CreateSyntheticPointerDevice=SupportedOSPlatform("windows10.0.17763.0")
 DestroySyntheticPointerDevice=SupportedOSPlatform("windows10.0.17763.0")
 DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS=Flags
@@ -130,6 +132,7 @@ DIALOG_DPI_CHANGE_BEHAVIORS=SupportedOSPlatform("windows10.0.15063.0")
 DIALOG_SCALING_BEHAVIOR=SupportedOSPlatform("windows10.0.15063.0")
 EnableMouseInPointer=SupportedOSPlatform("windows6.2")
 EnableNonClientDpiScaling=SupportedOSPlatform("windows10.0.14393.0")
+EnterMoveSizeLoop=SupportedOSPlatform("windows10.0.22000.0")
 EvaluateProximityToPolygon=SupportedOSPlatform("windows6.2")
 EvaluateProximityToRect=SupportedOSPlatform("windows6.2")
 FEEDBACK_TYPE=SupportedOSPlatform("windows6.2")
@@ -137,6 +140,7 @@ GetAwarenessFromDpiAwarenessContext=SupportedOSPlatform("windows10.0.14393.0")
 GetCIMSSM=SupportedOSPlatform("windows6.2")
 GetClipboardMetadata=SupportedOSPlatform("windows10.0.22621.0")
 GetCurrentInputMessageSource=SupportedOSPlatform("windows6.2")
+GetCurrentMonitorTopologyId=SupportedOSPlatform("windows10.0.22000.0")
 GetDialogControlDpiChangeBehavior=SupportedOSPlatform("windows10.0.15063.0")
 GetDialogDpiChangeBehavior=SupportedOSPlatform("windows10.0.15063.0")
 GetDisplayAutoRotationPreferences=SupportedOSPlatform("windows6.2")
@@ -186,6 +190,7 @@ INPUT_MESSAGE_SOURCE=SupportedOSPlatform("windows6.2")
 IsCharLower=SupportedOSPlatform("windows10.0.19043.0")
 IsCharLowerW=SupportedOSPlatform("windows10.0.19043.0")
 IsImmersiveProcess=SupportedOSPlatform("windows6.2")
+IsInterceptWindow=SupportedOSPlatform("windows10.0.22000.0")
 IsMouseInPointerEnabled=SupportedOSPlatform("windows6.2")
 IsValidDpiAwarenessContext=SupportedOSPlatform("windows10.0.14393.0")
 IsWindowArranged=SupportedOSPlatform("windows10.0.18362.0")
@@ -212,6 +217,7 @@ POINTER_INPUT_TYPE=SupportedOSPlatform("windows6.2")
 POINTER_PEN_INFO=SupportedOSPlatform("windows6.2")
 POINTER_TOUCH_INFO=SupportedOSPlatform("windows6.2")
 POINTER_TYPE_INFO=SupportedOSPlatform("windows10.0.17763.0")
+RegisterCloakedNotification=SupportedOSPlatform("windows10.0.22000.0")
 RegisterForTooltipDismissNotification=SupportedOSPlatform("windows10.0.22621.0")
 RegisterPointerDeviceNotifications=SupportedOSPlatform("windows6.2")
 RegisterPointerInputTarget=SupportedOSPlatform("windows6.2")
@@ -249,6 +255,7 @@ AnyPopup=user32
 AppendMenu=user32
 AppendMenuA=user32
 AppendMenuW=user32
+ApplyWindowAction=user32
 AreDpiAwarenessContextsEqual=user32
 ArrangeIconicWindows=user32
 AttachThreadInput=user32
@@ -323,6 +330,7 @@ CloseGestureInfoHandle=user32
 CloseTouchInputHandle=user32
 CloseWindow=user32
 CloseWindowStation=user32
+ConvertToInterceptWindow=user32
 CopyAcceleratorTable=user32
 CopyAcceleratorTableA=user32
 CopyAcceleratorTableW=user32
@@ -452,6 +460,7 @@ EndDialog=user32
 EndMenu=user32
 EndPaint=user32
 EndTask=user32
+EnterMoveSizeLoop=user32
 EnumChildWindows=user32
 EnumClipboardFormats=user32
 EnumDesktops=user32
@@ -753,6 +762,7 @@ IsGUIThread=user32
 IsHungAppWindow=user32
 IsIconic=user32
 IsImmersiveProcess=user32
+IsInterceptWindow=user32
 IsMenu=user32
 IsMouseInPointerEnabled=user32
 IsProcessDPIAware=user32
@@ -945,6 +955,8 @@ SetClassLongPtrW=user32
 SetClassLongW=user32
 SetClassWord=user32
 SetClipboardData=user32
+GetCurrentMonitorTopologyId=user32
+RegisterCloakedNotification=user32
 SetClipboardViewer=user32
 SetCoalescableTimer=user32
 SetCursor=user32
@@ -1110,6 +1122,7 @@ AllowSetForegroundWindow
 AppendMenu
 AppendMenuA
 AppendMenuW
+ApplyWindowAction
 ArrangeIconicWindows
 AttachThreadInput
 BeginDeferWindowPos
@@ -1147,6 +1160,7 @@ CloseGestureInfoHandle
 CloseTouchInputHandle
 CloseWindow
 CloseWindowStation
+ConvertToInterceptWindow
 CopyIcon
 CopyImage
 CountClipboardFormats
@@ -1216,6 +1230,7 @@ EndDeferWindowPos
 EndDialog
 EndMenu
 EndTask
+EnterMoveSizeLoop
 EnumClipboardFormats
 EnumDesktops
 EnumDesktopsA
@@ -1266,6 +1281,7 @@ GetClipboardViewer
 GetClipCursor
 GetComboBoxInfo
 GetCurrentInputMessageSource
+GetCurrentMonitorTopologyId
 GetCursorInfo
 GetCursorPos
 GetDialogControlDpiChangeBehavior
@@ -1398,6 +1414,7 @@ IsCharUpperA
 IsCharUpperW
 IsClipboardFormatAvailable
 IsImmersiveProcess
+IsInterceptWindow
 KillTimer
 LoadAccelerators
 LoadAcceleratorsA
@@ -1476,6 +1493,7 @@ RegisterClassW
 RegisterClipboardFormat
 RegisterClipboardFormatA
 RegisterClipboardFormatW
+RegisterCloakedNotification
 RegisterDeviceNotification
 RegisterDeviceNotificationA
 RegisterDeviceNotificationW

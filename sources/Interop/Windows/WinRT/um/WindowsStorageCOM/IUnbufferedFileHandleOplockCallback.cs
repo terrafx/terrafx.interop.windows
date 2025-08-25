@@ -19,7 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IUnbufferedFileHandleOplockCallback : IUnbufferedFileHandleOplockCallback.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IUnbufferedFileHandleOplockCallback));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUnbufferedFileHandleOplockCallback);
 
     public void** lpVtbl;
 

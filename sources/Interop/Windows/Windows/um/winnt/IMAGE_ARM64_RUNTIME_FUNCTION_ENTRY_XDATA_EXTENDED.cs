@@ -19,7 +19,7 @@ public partial struct IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA_EXTENDED
 
     /// <include file='IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA_EXTENDED.xml' path='doc/member[@name="IMAGE_ARM64_RUNTIME_FUNCTION_ENTRY_XDATA_EXTENDED.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L21249_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L21381_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ExtendedEpilogCount"]/*' />

@@ -16,4 +16,7 @@ public enum PointerDeviceType
 
     /// <include file='PointerDeviceType.xml' path='doc/member[@name="PointerDeviceType.PointerDeviceType_Mouse"]/*' />
     PointerDeviceType_Mouse = 2,
+
+    /// <include file='PointerDeviceType.xml' path='doc/member[@name="PointerDeviceType.PointerDeviceType_Touchpad"]/*' />
+    PointerDeviceType_Touchpad = 3,
 }

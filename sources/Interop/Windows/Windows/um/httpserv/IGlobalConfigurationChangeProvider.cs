@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IGlobalConfigurationChangeProvider : IGlobalConfigurationChangeProvider.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IGlobalConfigurationChangeProvider));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGlobalConfigurationChangeProvider);
 
     public void** lpVtbl;
 
@@ -32,9 +32,9 @@ public unsafe partial struct IGlobalConfigurationChangeProvider : IGlobalConfigu
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetChangePath()
+    public readonly char* GetChangePath()
     {
-        return ((delegate* unmanaged[MemberFunction]<IGlobalConfigurationChangeProvider*, char*>)(lpVtbl[1]))((IGlobalConfigurationChangeProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGlobalConfigurationChangeProvider*, char*>)(lpVtbl[1]))((IGlobalConfigurationChangeProvider*)Unsafe.AsPointer(in this));
     }
 
     public interface Interface : IHttpEventProvider.Interface

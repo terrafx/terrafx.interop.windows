@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("5569055E-E268-4771-B83E-9555EA28AED3")]
 public unsafe partial struct CODECAPI_AVEncWMVKeyFrameDistance : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncWMVKeyFrameDistance));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncWMVKeyFrameDistance);
 }

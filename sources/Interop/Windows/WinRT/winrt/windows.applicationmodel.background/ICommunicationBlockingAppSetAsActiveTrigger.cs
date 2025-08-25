@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICommunicationBlockingAppSetAsActiveTrigger : ICommunicationBlockingAppSetAsActiveTrigger.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ICommunicationBlockingAppSetAsActiveTrigger));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICommunicationBlockingAppSetAsActiveTrigger);
 
     public void** lpVtbl;
 

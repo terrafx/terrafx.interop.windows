@@ -14,25 +14,25 @@ namespace TerraFX.Interop.Windows;
 [Guid("EDA2A40F-FB92-4D6D-B52B-C8C207380B4E")]
 public unsafe partial struct IHttpServer : IHttpServer.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpServer));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpServer);
 
     public void** lpVtbl;
 
     /// <include file='IHttpServer.xml' path='doc/member[@name="IHttpServer.IsCommandLineLaunch"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
-    public BOOL IsCommandLineLaunch()
+    public readonly BOOL IsCommandLineLaunch()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpServer*, int>)(lpVtbl[0]))((IHttpServer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpServer*, int>)(lpVtbl[0]))((IHttpServer*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpServer.xml' path='doc/member[@name="IHttpServer.GetAppPoolName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetAppPoolName()
+    public readonly char* GetAppPoolName()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpServer*, char*>)(lpVtbl[1]))((IHttpServer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpServer*, char*>)(lpVtbl[1]))((IHttpServer*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpServer.xml' path='doc/member[@name="IHttpServer.AssociateWithThreadPool"]/*' />
@@ -78,9 +78,9 @@ public unsafe partial struct IHttpServer : IHttpServer.Interface, INativeGuid
     /// <include file='IHttpServer.xml' path='doc/member[@name="IHttpServer.GetAdminManager"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public IAppHostAdminManager* GetAdminManager()
+    public readonly IAppHostAdminManager* GetAdminManager()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpServer*, IAppHostAdminManager*>)(lpVtbl[7]))((IHttpServer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpServer*, IAppHostAdminManager*>)(lpVtbl[7]))((IHttpServer*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpServer.xml' path='doc/member[@name="IHttpServer.GetFileInfo"]/*' />
@@ -198,17 +198,17 @@ public unsafe partial struct IHttpServer : IHttpServer.Interface, INativeGuid
     /// <include file='IHttpServer.xml' path='doc/member[@name="IHttpServer.SatisfiesPrecondition"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public BOOL SatisfiesPrecondition([NativeTypeName("PCWSTR")] char* pszPrecondition, BOOL* pfUnknownPrecondition = null)
+    public readonly BOOL SatisfiesPrecondition([NativeTypeName("PCWSTR")] char* pszPrecondition, BOOL* pfUnknownPrecondition = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpServer*, char*, BOOL*, int>)(lpVtbl[22]))((IHttpServer*)Unsafe.AsPointer(ref this), pszPrecondition, pfUnknownPrecondition);
+        return ((delegate* unmanaged[MemberFunction]<IHttpServer*, char*, BOOL*, int>)(lpVtbl[22]))((IHttpServer*)Unsafe.AsPointer(in this), pszPrecondition, pfUnknownPrecondition);
     }
 
     /// <include file='IHttpServer.xml' path='doc/member[@name="IHttpServer.GetTraceContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public IHttpTraceContext* GetTraceContext()
+    public readonly IHttpTraceContext* GetTraceContext()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpServer*, IHttpTraceContext*>)(lpVtbl[23]))((IHttpServer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpServer*, IHttpTraceContext*>)(lpVtbl[23]))((IHttpServer*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpServer.xml' path='doc/member[@name="IHttpServer.RegisterFileChangeMonitor"]/*' />

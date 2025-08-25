@@ -16,6 +16,9 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[45]")]
     public const string InterfaceName_Windows_Devices_Bluetooth_IBluetoothAdapter3 = "Windows.Devices.Bluetooth.IBluetoothAdapter3";
 
+    [NativeTypeName("const WCHAR[45]")]
+    public const string InterfaceName_Windows_Devices_Bluetooth_IBluetoothAdapter4 = "Windows.Devices.Bluetooth.IBluetoothAdapter4";
+
     [NativeTypeName("const WCHAR[51]")]
     public const string InterfaceName_Windows_Devices_Bluetooth_IBluetoothAdapterStatics = "Windows.Devices.Bluetooth.IBluetoothAdapterStatics";
 

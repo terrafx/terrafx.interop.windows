@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("BFCD4A0C-06B6-4384-B768-0DAA792C380E")]
 public unsafe partial struct UIAnimationTimer : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_UIAnimationTimer));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_UIAnimationTimer);
 }

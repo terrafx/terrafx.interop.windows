@@ -201,6 +201,20 @@ public static partial class GUIDTests
         Assert.That(GUID_WICPixelFormat8bppGain, Is.EqualTo(new Guid(0xa884022a, 0xaf13, 0x4c16, 0xb7, 0x46, 0x61, 0x9b, 0xf6, 0x18, 0xb8, 0x78)));
     }
 
+    /// <summary>Validates that the value of the <see cref="GUID_WICPixelFormat24bppRGBGain" /> property is correct.</summary>
+    [Test]
+    public static void GUID_WICPixelFormat24bppRGBGainTest()
+    {
+        Assert.That(GUID_WICPixelFormat24bppRGBGain, Is.EqualTo(new Guid(0xa5022b24, 0x7109, 0x443b, 0x99, 0x48, 0x25, 0xb6, 0xed, 0x8f, 0x39, 0xfd)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_WICPixelFormat32bppBGRGain" /> property is correct.</summary>
+    [Test]
+    public static void GUID_WICPixelFormat32bppBGRGainTest()
+    {
+        Assert.That(GUID_WICPixelFormat32bppBGRGain, Is.EqualTo(new Guid(0x837d6738, 0x208a, 0x43e0, 0x89, 0x95, 0x79, 0xab, 0x74, 0x40, 0x74, 0x02)));
+    }
+
     /// <summary>Validates that the value of the <see cref="GUID_WICPixelFormat16bppBGR555" /> property is correct.</summary>
     [Test]
     public static void GUID_WICPixelFormat16bppBGR555Test()

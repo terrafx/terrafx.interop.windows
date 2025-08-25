@@ -18,7 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.22000.0")]
 public unsafe partial struct IAudioSystemEffectsPropertyStore : IAudioSystemEffectsPropertyStore.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAudioSystemEffectsPropertyStore));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioSystemEffectsPropertyStore);
 
     public void** lpVtbl;
 

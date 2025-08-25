@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("C71566F2-561E-11D1-AD87-00C04FD8FDFF")]
 public unsafe partial struct WbemRefresher : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_WbemRefresher));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_WbemRefresher);
 }

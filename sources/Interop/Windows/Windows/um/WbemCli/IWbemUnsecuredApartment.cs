@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnsecuredApartment")]
 public unsafe partial struct IWbemUnsecuredApartment : IWbemUnsecuredApartment.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWbemUnsecuredApartment));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWbemUnsecuredApartment);
 
     public void** lpVtbl;
 

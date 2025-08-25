@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("9C27891A-ED7A-40E1-88E8-B22727A024EE")]
 public unsafe partial struct CODECAPI_AVLowLatencyMode : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVLowLatencyMode));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVLowLatencyMode);
 }

@@ -13,6 +13,23 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetStorageHwCryptoCapability"]/*' />
+    [return: NativeTypeName("const STORAGE_HW_CRYPTO_CAPABILITY *")]
+    public static STORAGE_HW_CRYPTO_CAPABILITY* GetStorageHwCryptoCapability([NativeTypeName("const STORAGE_HW_CRYPTO_DESCRIPTOR *")] STORAGE_HW_CRYPTO_DESCRIPTOR* CryptoDescriptor, [NativeTypeName("DWORD")] uint Index)
+    {
+        nuint Offset = CryptoDescriptor->OffsetToCryptoCapabilities + Index * CryptoDescriptor->SizeOfCryptoCapability;
+
+        return (STORAGE_HW_CRYPTO_CAPABILITY*)((sbyte*)(CryptoDescriptor) + Offset);
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetStorageHwCryptoCapabilityMut"]/*' />
+    public static STORAGE_HW_CRYPTO_CAPABILITY* GetStorageHwCryptoCapabilityMut(STORAGE_HW_CRYPTO_DESCRIPTOR* CryptoDescriptor, [NativeTypeName("DWORD")] uint Index)
+    {
+        nuint Offset = CryptoDescriptor->OffsetToCryptoCapabilities + Index * CryptoDescriptor->SizeOfCryptoCapability;
+
+        return (STORAGE_HW_CRYPTO_CAPABILITY*)((sbyte*)(CryptoDescriptor) + Offset);
+    }
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DeviceDsmParameterBlock"]/*' />
     [return: NativeTypeName("PVOID")]
     public static void* DeviceDsmParameterBlock([NativeTypeName("PDEVICE_DSM_INPUT")] DEVICE_MANAGE_DATA_SET_ATTRIBUTES* Input)

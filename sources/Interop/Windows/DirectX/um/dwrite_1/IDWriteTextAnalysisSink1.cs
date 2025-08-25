@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDWriteTextAnalysisSink")]
 public unsafe partial struct IDWriteTextAnalysisSink1 : IDWriteTextAnalysisSink1.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteTextAnalysisSink1));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDWriteTextAnalysisSink1);
 
     public void** lpVtbl;
 

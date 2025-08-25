@@ -17,7 +17,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IPresentationContent")]
 public unsafe partial struct IPresentationSurface : IPresentationSurface.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPresentationSurface));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPresentationSurface);
 
     public void** lpVtbl;
 

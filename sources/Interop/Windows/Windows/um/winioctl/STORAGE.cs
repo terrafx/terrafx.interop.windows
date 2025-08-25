@@ -7,6 +7,9 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class STORAGE
 {
+    [NativeTypeName("#define STORAGE_FEATURE_SUPPORT_V1 0x1")]
+    public const int STORAGE_FEATURE_SUPPORT_V1 = 0x1;
+
     [NativeTypeName("#define STORAGE_DEVICE_FLAGS_RANDOM_DEVICEGUID_REASON_CONFLICT 0x1")]
     public const int STORAGE_DEVICE_FLAGS_RANDOM_DEVICEGUID_REASON_CONFLICT = 0x1;
 
@@ -39,6 +42,12 @@ public static partial class STORAGE
 
     [NativeTypeName("#define STORAGE_CRYPTO_DESCRIPTOR_VERSION_2 2")]
     public const int STORAGE_CRYPTO_DESCRIPTOR_VERSION_2 = 2;
+
+    [NativeTypeName("#define STORAGE_HW_CRYPTO_CAPABILITY_VERSION_1 1")]
+    public const int STORAGE_HW_CRYPTO_CAPABILITY_VERSION_1 = 1;
+
+    [NativeTypeName("#define STORAGE_HW_CRYPTO_DESCRIPTOR_VERSION_1 1")]
+    public const int STORAGE_HW_CRYPTO_DESCRIPTOR_VERSION_1 = 1;
 
     [NativeTypeName("#define STORAGE_TIER_NAME_LENGTH (256)")]
     public const int STORAGE_TIER_NAME_LENGTH = (256);

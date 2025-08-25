@@ -1620,6 +1620,9 @@ public static partial class IMAGE
     [NativeTypeName("#define IMAGE_ENCLAVE_POLICY_DEBUGGABLE 0x00000001")]
     public const int IMAGE_ENCLAVE_POLICY_DEBUGGABLE = 0x00000001;
 
+    [NativeTypeName("#define IMAGE_ENCLAVE_POLICY_STRICT_MEMORY 0x00000002")]
+    public const int IMAGE_ENCLAVE_POLICY_STRICT_MEMORY = 0x00000002;
+
     [NativeTypeName("#define IMAGE_ENCLAVE_FLAG_PRIMARY_IMAGE 0x00000001")]
     public const int IMAGE_ENCLAVE_FLAG_PRIMARY_IMAGE = 0x00000001;
 

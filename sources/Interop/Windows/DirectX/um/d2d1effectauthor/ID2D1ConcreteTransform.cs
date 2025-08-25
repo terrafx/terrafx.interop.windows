@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1TransformNode")]
 public unsafe partial struct ID2D1ConcreteTransform : ID2D1ConcreteTransform.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1ConcreteTransform));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1ConcreteTransform);
 
     public void** lpVtbl;
 
@@ -51,9 +51,9 @@ public unsafe partial struct ID2D1ConcreteTransform : ID2D1ConcreteTransform.Int
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("UINT32")]
-    public uint GetInputCount()
+    public readonly uint GetInputCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1ConcreteTransform*, uint>)(lpVtbl[3]))((ID2D1ConcreteTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1ConcreteTransform*, uint>)(lpVtbl[3]))((ID2D1ConcreteTransform*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1ConcreteTransform.xml' path='doc/member[@name="ID2D1ConcreteTransform.SetOutputBuffer"]/*' />

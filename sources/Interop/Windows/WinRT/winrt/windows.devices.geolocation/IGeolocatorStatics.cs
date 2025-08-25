@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGeolocatorStatics : IGeolocatorStatics.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IGeolocatorStatics));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGeolocatorStatics);
 
     public void** lpVtbl;
 
@@ -82,6 +82,7 @@ public unsafe partial struct IGeolocatorStatics : IGeolocatorStatics.Interface, 
     /// <include file='IGeolocatorStatics.xml' path='doc/member[@name="IGeolocatorStatics.GetGeopositionHistoryAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
+    [Obsolete("GetGeopositionHistoryAsync is deprecated and might not work on all platforms. For more info, see MSDN.")]
     public HRESULT GetGeopositionHistoryAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IGeoposition>>>>** result)
     {
         return ((delegate* unmanaged[MemberFunction]<IGeolocatorStatics*, WinRTDateTime, IAsyncOperation<Pointer<IVectorView<Pointer<IGeoposition>>>>**, int>)(lpVtbl[7]))((IGeolocatorStatics*)Unsafe.AsPointer(ref this), startTime, result);
@@ -90,6 +91,7 @@ public unsafe partial struct IGeolocatorStatics : IGeolocatorStatics.Interface, 
     /// <include file='IGeolocatorStatics.xml' path='doc/member[@name="IGeolocatorStatics.GetGeopositionHistoryWithDurationAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
+    [Obsolete("GetGeopositionHistoryWithDurationAsync is deprecated and might not work on all platforms. For more info, see MSDN.")]
     public HRESULT GetGeopositionHistoryWithDurationAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IGeoposition>>>>** result)
     {
         return ((delegate* unmanaged[MemberFunction]<IGeolocatorStatics*, WinRTDateTime, TimeSpan, IAsyncOperation<Pointer<IVectorView<Pointer<IGeoposition>>>>**, int>)(lpVtbl[8]))((IGeolocatorStatics*)Unsafe.AsPointer(ref this), startTime, duration, result);
@@ -101,9 +103,11 @@ public unsafe partial struct IGeolocatorStatics : IGeolocatorStatics.Interface, 
         HRESULT RequestAccessAsync([NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CDevices__CGeolocation__CGeolocationAccessStatus_t **")] IAsyncOperation<GeolocationAccessStatus>** result);
 
         [VtblIndex(7)]
+        [Obsolete("GetGeopositionHistoryAsync is deprecated and might not work on all platforms. For more info, see MSDN.")]
         HRESULT GetGeopositionHistoryAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IGeoposition>>>>** result);
 
         [VtblIndex(8)]
+        [Obsolete("GetGeopositionHistoryWithDurationAsync is deprecated and might not work on all platforms. For more info, see MSDN.")]
         HRESULT GetGeopositionHistoryWithDurationAsync([NativeTypeName("ABI::Windows::Foundation::DateTime")] WinRTDateTime startTime, [NativeTypeName("ABI::Windows::Foundation::TimeSpan")] TimeSpan duration, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition_t **")] IAsyncOperation<Pointer<IVectorView<Pointer<IGeoposition>>>>** result);
     }
 
@@ -132,9 +136,11 @@ public unsafe partial struct IGeolocatorStatics : IGeolocatorStatics.Interface, 
         public delegate* unmanaged[MemberFunction]<TSelf*, IAsyncOperation<GeolocationAccessStatus>**, int> RequestAccessAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition_t **) __attribute__((stdcall))")]
+        [Obsolete("GetGeopositionHistoryAsync is deprecated and might not work on all platforms. For more info, see MSDN.")]
         public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, IAsyncOperation<Pointer<IVectorView<Pointer<IGeoposition>>>>**, int> GetGeopositionHistoryAsync;
 
         [NativeTypeName("HRESULT (ABI::Windows::Foundation::DateTime, ABI::Windows::Foundation::TimeSpan, ABI::Windows::Foundation::__FIAsyncOperation_1___FIVectorView_1_Windows__CDevices__CGeolocation__CGeoposition_t **) __attribute__((stdcall))")]
+        [Obsolete("GetGeopositionHistoryWithDurationAsync is deprecated and might not work on all platforms. For more info, see MSDN.")]
         public delegate* unmanaged[MemberFunction]<TSelf*, WinRTDateTime, TimeSpan, IAsyncOperation<Pointer<IVectorView<Pointer<IGeoposition>>>>**, int> GetGeopositionHistoryWithDurationAsync;
     }
 }

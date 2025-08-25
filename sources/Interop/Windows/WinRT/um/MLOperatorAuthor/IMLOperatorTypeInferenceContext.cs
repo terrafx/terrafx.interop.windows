@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IMLOperatorAttributes")]
 public unsafe partial struct IMLOperatorTypeInferenceContext : IMLOperatorTypeInferenceContext.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMLOperatorTypeInferenceContext));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMLOperatorTypeInferenceContext);
 
     public void** lpVtbl;
 
@@ -50,83 +50,83 @@ public unsafe partial struct IMLOperatorTypeInferenceContext : IMLOperatorTypeIn
     /// <inheritdoc cref="IMLOperatorAttributes.GetAttributeElementCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetAttributeElementCount([NativeTypeName("const char *")] sbyte* name, MLOperatorAttributeType type, [NativeTypeName("uint32_t *")] uint* elementCount)
+    public readonly HRESULT GetAttributeElementCount([NativeTypeName("const char *")] sbyte* name, MLOperatorAttributeType type, [NativeTypeName("uint32_t *")] uint* elementCount)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, sbyte*, MLOperatorAttributeType, uint*, int>)(lpVtbl[3]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(ref this), name, type, elementCount);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, sbyte*, MLOperatorAttributeType, uint*, int>)(lpVtbl[3]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(in this), name, type, elementCount);
     }
 
     /// <inheritdoc cref="IMLOperatorAttributes.GetAttribute" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetAttribute([NativeTypeName("const char *")] sbyte* name, MLOperatorAttributeType type, [NativeTypeName("uint32_t")] uint elementCount, [NativeTypeName("size_t")] nuint elementByteSize, void* value)
+    public readonly HRESULT GetAttribute([NativeTypeName("const char *")] sbyte* name, MLOperatorAttributeType type, [NativeTypeName("uint32_t")] uint elementCount, [NativeTypeName("size_t")] nuint elementByteSize, void* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, sbyte*, MLOperatorAttributeType, uint, nuint, void*, int>)(lpVtbl[4]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(ref this), name, type, elementCount, elementByteSize, value);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, sbyte*, MLOperatorAttributeType, uint, nuint, void*, int>)(lpVtbl[4]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(in this), name, type, elementCount, elementByteSize, value);
     }
 
     /// <inheritdoc cref="IMLOperatorAttributes.GetStringAttributeElementLength" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetStringAttributeElementLength([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t *")] uint* attributeElementByteSize)
+    public readonly HRESULT GetStringAttributeElementLength([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t *")] uint* attributeElementByteSize)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, sbyte*, uint, uint*, int>)(lpVtbl[5]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(ref this), name, elementIndex, attributeElementByteSize);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, sbyte*, uint, uint*, int>)(lpVtbl[5]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(in this), name, elementIndex, attributeElementByteSize);
     }
 
     /// <inheritdoc cref="IMLOperatorAttributes.GetStringAttributeElement" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetStringAttributeElement([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t")] uint attributeElementByteSize, [NativeTypeName("char *")] sbyte* attributeElement)
+    public readonly HRESULT GetStringAttributeElement([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t")] uint attributeElementByteSize, [NativeTypeName("char *")] sbyte* attributeElement)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, sbyte*, uint, uint, sbyte*, int>)(lpVtbl[6]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(ref this), name, elementIndex, attributeElementByteSize, attributeElement);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, sbyte*, uint, uint, sbyte*, int>)(lpVtbl[6]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(in this), name, elementIndex, attributeElementByteSize, attributeElement);
     }
 
     /// <include file='IMLOperatorTypeInferenceContext.xml' path='doc/member[@name="IMLOperatorTypeInferenceContext.GetInputCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [return: NativeTypeName("uint32_t")]
-    public uint GetInputCount()
+    public readonly uint GetInputCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, uint>)(lpVtbl[7]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, uint>)(lpVtbl[7]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IMLOperatorTypeInferenceContext.xml' path='doc/member[@name="IMLOperatorTypeInferenceContext.GetOutputCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     [return: NativeTypeName("uint32_t")]
-    public uint GetOutputCount()
+    public readonly uint GetOutputCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, uint>)(lpVtbl[8]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, uint>)(lpVtbl[8]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IMLOperatorTypeInferenceContext.xml' path='doc/member[@name="IMLOperatorTypeInferenceContext.IsInputValid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public bool IsInputValid([NativeTypeName("uint32_t")] uint inputIndex)
+    public readonly bool IsInputValid([NativeTypeName("uint32_t")] uint inputIndex)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, uint, bool>)(lpVtbl[9]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(ref this), inputIndex);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, uint, bool>)(lpVtbl[9]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(in this), inputIndex);
     }
 
     /// <include file='IMLOperatorTypeInferenceContext.xml' path='doc/member[@name="IMLOperatorTypeInferenceContext.IsOutputValid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public bool IsOutputValid([NativeTypeName("uint32_t")] uint outputIndex)
+    public readonly bool IsOutputValid([NativeTypeName("uint32_t")] uint outputIndex)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, uint, bool>)(lpVtbl[10]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(ref this), outputIndex);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, uint, bool>)(lpVtbl[10]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(in this), outputIndex);
     }
 
     /// <include file='IMLOperatorTypeInferenceContext.xml' path='doc/member[@name="IMLOperatorTypeInferenceContext.GetInputEdgeDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetInputEdgeDescription([NativeTypeName("uint32_t")] uint inputIndex, MLOperatorEdgeDescription* edgeDescription)
+    public readonly HRESULT GetInputEdgeDescription([NativeTypeName("uint32_t")] uint inputIndex, MLOperatorEdgeDescription* edgeDescription)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, uint, MLOperatorEdgeDescription*, int>)(lpVtbl[11]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(ref this), inputIndex, edgeDescription);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, uint, MLOperatorEdgeDescription*, int>)(lpVtbl[11]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(in this), inputIndex, edgeDescription);
     }
 
     /// <include file='IMLOperatorTypeInferenceContext.xml' path='doc/member[@name="IMLOperatorTypeInferenceContext.SetOutputEdgeDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT SetOutputEdgeDescription([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("const MLOperatorEdgeDescription *")] MLOperatorEdgeDescription* edgeDescription)
+    public readonly HRESULT SetOutputEdgeDescription([NativeTypeName("uint32_t")] uint outputIndex, [NativeTypeName("const MLOperatorEdgeDescription *")] MLOperatorEdgeDescription* edgeDescription)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, uint, MLOperatorEdgeDescription*, int>)(lpVtbl[12]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(ref this), outputIndex, edgeDescription);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTypeInferenceContext*, uint, MLOperatorEdgeDescription*, int>)(lpVtbl[12]))((IMLOperatorTypeInferenceContext*)Unsafe.AsPointer(in this), outputIndex, edgeDescription);
     }
 
     public interface Interface : IMLOperatorAttributes.Interface

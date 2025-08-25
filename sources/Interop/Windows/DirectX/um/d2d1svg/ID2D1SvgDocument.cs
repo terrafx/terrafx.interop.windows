@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Resource")]
 public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1SvgDocument));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1SvgDocument);
 
     public void** lpVtbl;
 
@@ -50,9 +50,9 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SvgDocument*)Unsafe.AsPointer(in this), factory);
     }
 
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.SetViewportSize"]/*' />
@@ -67,9 +67,9 @@ public unsafe partial struct ID2D1SvgDocument : ID2D1SvgDocument.Interface, INat
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     [return: NativeTypeName("D2D1_SIZE_F")]
-    public D2D_SIZE_F GetViewportSize()
+    public readonly D2D_SIZE_F GetViewportSize()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, D2D_SIZE_F>)(lpVtbl[5]))((ID2D1SvgDocument*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgDocument*, D2D_SIZE_F>)(lpVtbl[5]))((ID2D1SvgDocument*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1SvgDocument.xml' path='doc/member[@name="ID2D1SvgDocument.SetRoot"]/*' />

@@ -18,7 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("SmsReceivedEventDetails may be altered or unavailable for releases after Windows 10. Instead, use SmsMessageReceivedTriggerDetails.")]
 public unsafe partial struct ISmsReceivedEventDetails2 : ISmsReceivedEventDetails2.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISmsReceivedEventDetails2));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISmsReceivedEventDetails2);
 
     public void** lpVtbl;
 

@@ -1069,4 +1069,50 @@ public static partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    public static ref readonly Guid IID_IDCompositionDynamicTexture
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x3F, 0x1D, 0xDE, 0xA1,
+                0x05, 0x64,
+                0x7F, 0x44,
+                0x8E,
+                0x95,
+                0x13,
+                0x83,
+                0xA3,
+                0x4B,
+                0x02,
+                0x77
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IDCompositionDevice5
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xFE, 0xEB, 0x6B, 0x2C,
+                0x03, 0xA6,
+                0x2F, 0x47,
+                0xAF,
+                0x34,
+                0xD2,
+                0x44,
+                0x33,
+                0x56,
+                0xE6,
+                0x1B
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

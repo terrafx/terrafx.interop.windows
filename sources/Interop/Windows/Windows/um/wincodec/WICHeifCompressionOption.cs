@@ -20,6 +20,15 @@ public enum WICHeifCompressionOption
     /// <include file='WICHeifCompressionOption.xml' path='doc/member[@name="WICHeifCompressionOption.WICHeifCompressionAV1"]/*' />
     WICHeifCompressionAV1 = 0x3,
 
+    /// <include file='WICHeifCompressionOption.xml' path='doc/member[@name="WICHeifCompressionOption.WICHeifCompressionJpegXL"]/*' />
+    WICHeifCompressionJpegXL = 0x4,
+
+    /// <include file='WICHeifCompressionOption.xml' path='doc/member[@name="WICHeifCompressionOption.WICHeifCompressionBrotli"]/*' />
+    WICHeifCompressionBrotli = 0x5,
+
+    /// <include file='WICHeifCompressionOption.xml' path='doc/member[@name="WICHeifCompressionOption.WICHeifCompressionDeflate"]/*' />
+    WICHeifCompressionDeflate = 0x6,
+
     /// <include file='WICHeifCompressionOption.xml' path='doc/member[@name="WICHeifCompressionOption.WICHEIFCOMPRESSIONOPTION_FORCE_DWORD"]/*' />
     WICHEIFCOMPRESSIONOPTION_FORCE_DWORD = 0x7fffffff,
 }

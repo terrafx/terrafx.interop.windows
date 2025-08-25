@@ -25,6 +25,9 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[68]")]
     public const string InterfaceName_Windows_Devices_Bluetooth_Background_IGattServiceProviderConnection = "Windows.Devices.Bluetooth.Background.IGattServiceProviderConnection";
 
+    [NativeTypeName("const WCHAR[69]")]
+    public const string InterfaceName_Windows_Devices_Bluetooth_Background_IGattServiceProviderConnection2 = "Windows.Devices.Bluetooth.Background.IGattServiceProviderConnection2";
+
     [NativeTypeName("const WCHAR[75]")]
     public const string InterfaceName_Windows_Devices_Bluetooth_Background_IGattServiceProviderConnectionStatics = "Windows.Devices.Bluetooth.Background.IGattServiceProviderConnectionStatics";
 

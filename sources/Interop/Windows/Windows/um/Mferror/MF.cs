@@ -1057,6 +1057,9 @@ public static partial class MF
     [NativeTypeName("#define MF_E_CAMERA_PRIVACY_NOT_ALLOWED _HRESULT_TYPEDEF_(0xC00DB798L)")]
     public const int MF_E_CAMERA_PRIVACY_NOT_ALLOWED = unchecked((int)(0xC00DB798));
 
+    [NativeTypeName("#define MF_E_CAMERA_FSPROFILE_INVALID _HRESULT_TYPEDEF_(0xC00DB79AL)")]
+    public const int MF_E_CAMERA_FSPROFILE_INVALID = unchecked((int)(0xC00DB79A));
+
     [NativeTypeName("#define MF_INDEX_SIZE_ERR 0x80700001")]
     public const uint MF_INDEX_SIZE_ERR = 0x80700001;
 

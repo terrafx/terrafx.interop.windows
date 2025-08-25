@@ -17,7 +17,7 @@ public partial struct STORAGE_SPEC_VERSION
 {
     /// <include file='STORAGE_SPEC_VERSION.xml' path='doc/member[@name="STORAGE_SPEC_VERSION.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winioctl_L2620_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L2922_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='STORAGE_SPEC_VERSION.xml' path='doc/member[@name="STORAGE_SPEC_VERSION.AsUlong"]/*' />
@@ -51,7 +51,7 @@ public partial struct STORAGE_SPEC_VERSION
     public partial struct _Anonymous_e__Struct
     {
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MinorVersion"]/*' />
-        [NativeTypeName("__AnonymousRecord_winioctl_L2621_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L2923_C9")]
         public _MinorVersion_e__Union MinorVersion;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.MajorVersion"]/*' />
@@ -64,7 +64,7 @@ public partial struct STORAGE_SPEC_VERSION
         {
             /// <include file='_MinorVersion_e__Union.xml' path='doc/member[@name="_MinorVersion_e__Union.Anonymous"]/*' />
             [FieldOffset(0)]
-            [NativeTypeName("__AnonymousRecord_winioctl_L2622_C13")]
+            [NativeTypeName("__AnonymousRecord_winioctl_L2924_C13")]
             public _Anonymous_e__Struct Anonymous;
 
             /// <include file='_MinorVersion_e__Union.xml' path='doc/member[@name="_MinorVersion_e__Union.AsUshort"]/*' />

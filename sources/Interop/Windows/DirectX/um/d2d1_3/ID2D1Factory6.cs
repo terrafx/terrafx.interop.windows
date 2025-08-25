@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Factory5")]
 public unsafe partial struct ID2D1Factory6 : ID2D1Factory6.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1Factory6));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1Factory6);
 
     public void** lpVtbl;
 
@@ -247,17 +247,17 @@ public unsafe partial struct ID2D1Factory6 : ID2D1Factory6.Interface, INativeGui
     /// <inheritdoc cref="ID2D1Factory1.GetRegisteredEffects" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(25)]
-    public HRESULT GetRegisteredEffects([NativeTypeName("CLSID *")] Guid* effects, [NativeTypeName("UINT32")] uint effectsCount, [NativeTypeName("UINT32 *")] uint* effectsReturned, [NativeTypeName("UINT32 *")] uint* effectsRegistered)
+    public readonly HRESULT GetRegisteredEffects([NativeTypeName("CLSID *")] Guid* effects, [NativeTypeName("UINT32")] uint effectsCount, [NativeTypeName("UINT32 *")] uint* effectsReturned, [NativeTypeName("UINT32 *")] uint* effectsRegistered)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Factory6*, Guid*, uint, uint*, uint*, int>)(lpVtbl[25]))((ID2D1Factory6*)Unsafe.AsPointer(ref this), effects, effectsCount, effectsReturned, effectsRegistered);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Factory6*, Guid*, uint, uint*, uint*, int>)(lpVtbl[25]))((ID2D1Factory6*)Unsafe.AsPointer(in this), effects, effectsCount, effectsReturned, effectsRegistered);
     }
 
     /// <inheritdoc cref="ID2D1Factory1.GetEffectProperties" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
-    public HRESULT GetEffectProperties([NativeTypeName("const IID &")] Guid* effectId, ID2D1Properties** properties)
+    public readonly HRESULT GetEffectProperties([NativeTypeName("const IID &")] Guid* effectId, ID2D1Properties** properties)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Factory6*, Guid*, ID2D1Properties**, int>)(lpVtbl[26]))((ID2D1Factory6*)Unsafe.AsPointer(ref this), effectId, properties);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Factory6*, Guid*, ID2D1Properties**, int>)(lpVtbl[26]))((ID2D1Factory6*)Unsafe.AsPointer(in this), effectId, properties);
     }
 
     /// <inheritdoc cref="ID2D1Factory2.CreateDevice" />

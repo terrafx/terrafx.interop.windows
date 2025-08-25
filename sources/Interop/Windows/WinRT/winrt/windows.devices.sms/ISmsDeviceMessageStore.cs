@@ -18,7 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("SmsDeviceMessageStore may be altered or unavailable for releases after Windows 10.")]
 public unsafe partial struct ISmsDeviceMessageStore : ISmsDeviceMessageStore.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISmsDeviceMessageStore));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISmsDeviceMessageStore);
 
     public void** lpVtbl;
 

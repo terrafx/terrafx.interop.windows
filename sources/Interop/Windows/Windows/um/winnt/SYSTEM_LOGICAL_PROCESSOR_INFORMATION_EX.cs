@@ -20,7 +20,7 @@ public partial struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX
     public uint Size;
 
     /// <include file='SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX.xml' path='doc/member[@name="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L14043_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L14041_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Processor"]/*' />

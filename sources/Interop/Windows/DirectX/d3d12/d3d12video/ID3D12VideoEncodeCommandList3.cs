@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID3D12VideoEncodeCommandList2")]
 public unsafe partial struct ID3D12VideoEncodeCommandList3 : ID3D12VideoEncodeCommandList3.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12VideoEncodeCommandList3));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D12VideoEncodeCommandList3);
 
     public void** lpVtbl;
 

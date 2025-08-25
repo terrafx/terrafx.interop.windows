@@ -14,7 +14,7 @@ public partial struct STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE
 {
     /// <include file='STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.xml' path='doc/member[@name="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winioctl_L2359_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L2661_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.xml' path='doc/member[@name="STORAGE_PROTOCOL_DATA_SUBVALUE_GET_LOG_PAGE.AsUlong"]/*' />

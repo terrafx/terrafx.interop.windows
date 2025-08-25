@@ -42,11 +42,11 @@ public partial struct MIXERCONTROLW
     public _szName_e__FixedBuffer szName;
 
     /// <include file='MIXERCONTROLW.xml' path='doc/member[@name="MIXERCONTROLW.Bounds"]/*' />
-    [NativeTypeName("__AnonymousRecord_mmeapi_L2081_C5")]
+    [NativeTypeName("__AnonymousRecord_mmeapi_L2088_C5")]
     public _Bounds_e__Union Bounds;
 
     /// <include file='MIXERCONTROLW.xml' path='doc/member[@name="MIXERCONTROLW.Metrics"]/*' />
-    [NativeTypeName("__AnonymousRecord_mmeapi_L2092_C5")]
+    [NativeTypeName("__AnonymousRecord_mmeapi_L2099_C5")]
     public _Metrics_e__Union Metrics;
 
     /// <include file='_Bounds_e__Union.xml' path='doc/member[@name="_Bounds_e__Union"]/*' />
@@ -55,12 +55,12 @@ public partial struct MIXERCONTROLW
     {
         /// <include file='_Bounds_e__Union.xml' path='doc/member[@name="_Bounds_e__Union.Anonymous1"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_mmeapi_L2082_C9")]
+        [NativeTypeName("__AnonymousRecord_mmeapi_L2089_C9")]
         public _Anonymous1_e__Struct Anonymous1;
 
         /// <include file='_Bounds_e__Union.xml' path='doc/member[@name="_Bounds_e__Union.Anonymous2"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_mmeapi_L2086_C9")]
+        [NativeTypeName("__AnonymousRecord_mmeapi_L2093_C9")]
         public _Anonymous2_e__Struct Anonymous2;
 
         /// <include file='_Bounds_e__Union.xml' path='doc/member[@name="_Bounds_e__Union.dwReserved"]/*' />

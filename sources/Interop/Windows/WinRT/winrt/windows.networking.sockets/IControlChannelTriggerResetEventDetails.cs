@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IControlChannelTriggerResetEventDetails : IControlChannelTriggerResetEventDetails.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IControlChannelTriggerResetEventDetails));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IControlChannelTriggerResetEventDetails);
 
     public void** lpVtbl;
 

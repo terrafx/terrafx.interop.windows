@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("DC664FDD-D868-46EE-8780-8D196CB739F7")]
 public unsafe partial struct AppxEncryptionFactory : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_AppxEncryptionFactory));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_AppxEncryptionFactory);
 }

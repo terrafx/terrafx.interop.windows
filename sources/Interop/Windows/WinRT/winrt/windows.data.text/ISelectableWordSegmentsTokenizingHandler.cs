@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISelectableWordSegmentsTokenizingHandler : ISelectableWordSegmentsTokenizingHandler.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISelectableWordSegmentsTokenizingHandler));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISelectableWordSegmentsTokenizingHandler);
 
     public void** lpVtbl;
 

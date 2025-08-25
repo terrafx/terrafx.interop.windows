@@ -688,6 +688,56 @@ public static partial class GUID
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_WICPixelFormat24bppRGBGain
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x24, 0x2B, 0x02, 0xA5,
+                0x09, 0x71,
+                0x3B, 0x44,
+                0x99,
+                0x48,
+                0x25,
+                0xB6,
+                0xED,
+                0x8F,
+                0x39,
+                0xFD
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_WICPixelFormat32bppBGRGain
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x38, 0x67, 0x7D, 0x83,
+                0x8A, 0x20,
+                0xE0, 0x43,
+                0x89,
+                0x95,
+                0x79,
+                0xAB,
+                0x74,
+                0x40,
+                0x74,
+                0x02
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat16bppBGR555
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

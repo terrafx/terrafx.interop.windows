@@ -37,7 +37,7 @@ public partial struct IMPORT_OBJECT_HEADER
     public uint SizeOfData;
 
     /// <include file='IMPORT_OBJECT_HEADER.xml' path='doc/member[@name="IMPORT_OBJECT_HEADER.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L21608_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L21741_C5")]
     public _Anonymous_e__Union Anonymous;
 
     public ushort _bitfield;

@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("9EF96870-E160-4792-820D-48CF0649E4EC")]
 public unsafe partial struct SpAudioFormat : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_SpAudioFormat));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SpAudioFormat);
 }

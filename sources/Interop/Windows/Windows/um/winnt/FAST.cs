@@ -229,6 +229,9 @@ public static partial class FAST
     [NativeTypeName("#define FAST_FAIL_INVALID_EXTENDED_STATE 76")]
     public const int FAST_FAIL_INVALID_EXTENDED_STATE = 76;
 
+    [NativeTypeName("#define FAST_FAIL_KERNEL_POINTER_EXPECTED 77")]
+    public const int FAST_FAIL_KERNEL_POINTER_EXPECTED = 77;
+
     [NativeTypeName("#define FAST_FAIL_INVALID_FAST_FAIL_CODE 0xFFFFFFFF")]
     public const uint FAST_FAIL_INVALID_FAST_FAIL_CODE = 0xFFFFFFFF;
 }

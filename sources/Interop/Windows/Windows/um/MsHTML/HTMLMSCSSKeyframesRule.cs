@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("3051080F-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct HTMLMSCSSKeyframesRule : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_HTMLMSCSSKeyframesRule));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_HTMLMSCSSKeyframesRule);
 }

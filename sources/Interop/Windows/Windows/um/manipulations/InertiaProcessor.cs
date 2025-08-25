@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("ABB27087-4CE0-4E58-A0CB-E24DF96814BE")]
 public unsafe partial struct InertiaProcessor : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_InertiaProcessor));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_InertiaProcessor);
 }

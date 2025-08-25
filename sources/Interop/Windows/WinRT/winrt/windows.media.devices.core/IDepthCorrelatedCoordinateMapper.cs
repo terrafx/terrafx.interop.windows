@@ -18,7 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IDepthCorrelatedCoordinateMapper : IDepthCorrelatedCoordinateMapper.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDepthCorrelatedCoordinateMapper));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDepthCorrelatedCoordinateMapper);
 
     public void** lpVtbl;
 

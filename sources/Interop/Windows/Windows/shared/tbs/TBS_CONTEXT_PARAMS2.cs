@@ -19,7 +19,7 @@ public partial struct TBS_CONTEXT_PARAMS2
     public uint version;
 
     /// <include file='TBS_CONTEXT_PARAMS2.xml' path='doc/member[@name="TBS_CONTEXT_PARAMS2.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_tbs_L156_C5")]
+    [NativeTypeName("__AnonymousRecord_tbs_L161_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.requestRaw"]/*' />
@@ -87,7 +87,7 @@ public partial struct TBS_CONTEXT_PARAMS2
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_tbs_L158_C9")]
+        [NativeTypeName("__AnonymousRecord_tbs_L163_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.asUINT32"]/*' />

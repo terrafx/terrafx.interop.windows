@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct SCOPE_ID
 {
     /// <include file='SCOPE_ID.xml' path='doc/member[@name="SCOPE_ID.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_ws2def_L623_C5")]
+    [NativeTypeName("__AnonymousRecord_ws2def_L629_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Zone"]/*' />
@@ -65,7 +65,7 @@ public partial struct SCOPE_ID
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_ws2def_L624_C9")]
+        [NativeTypeName("__AnonymousRecord_ws2def_L630_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Value"]/*' />

@@ -18,7 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("Use MediaPlayer instead of BackgroundMediaPlayer.  For more info, see MSDN.")]
 public unsafe partial struct IBackgroundMediaPlayerStatics : IBackgroundMediaPlayerStatics.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IBackgroundMediaPlayerStatics));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBackgroundMediaPlayerStatics);
 
     public void** lpVtbl;
 

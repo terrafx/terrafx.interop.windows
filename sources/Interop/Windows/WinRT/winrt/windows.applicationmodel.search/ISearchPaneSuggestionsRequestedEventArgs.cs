@@ -18,7 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("ISearchPaneSuggestionsRequestedEventArgs may be altered or unavailable for releases after Windows 10.")]
 public unsafe partial struct ISearchPaneSuggestionsRequestedEventArgs : ISearchPaneSuggestionsRequestedEventArgs.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISearchPaneSuggestionsRequestedEventArgs));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISearchPaneSuggestionsRequestedEventArgs);
 
     public void** lpVtbl;
 

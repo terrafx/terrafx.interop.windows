@@ -16,16 +16,16 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpCacheSpecificData")]
 public unsafe partial struct IHttpTokenEntry : IHttpTokenEntry.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpTokenEntry));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpTokenEntry);
 
     public void** lpVtbl;
 
     /// <inheritdoc cref="IHttpCacheSpecificData.GetCacheKey" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
-    public IHttpCacheKey* GetCacheKey()
+    public readonly IHttpCacheKey* GetCacheKey()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpTokenEntry*, IHttpCacheKey*>)(lpVtbl[0]))((IHttpTokenEntry*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpTokenEntry*, IHttpCacheKey*>)(lpVtbl[0]))((IHttpTokenEntry*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpCacheSpecificData.ReferenceCacheData" />
@@ -71,9 +71,9 @@ public unsafe partial struct IHttpTokenEntry : IHttpTokenEntry.Interface, INativ
     /// <inheritdoc cref="IHttpCacheSpecificData.GetFlushed" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public BOOL GetFlushed()
+    public readonly BOOL GetFlushed()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpTokenEntry*, int>)(lpVtbl[6]))((IHttpTokenEntry*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpTokenEntry*, int>)(lpVtbl[6]))((IHttpTokenEntry*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpTokenEntry.xml' path='doc/member[@name="IHttpTokenEntry.GetImpersonationToken"]/*' />

@@ -132,4 +132,7 @@ public static partial class MENROLL
 
     [NativeTypeName("#define MENROLL_E_CUSTOMSERVERERROR _HRESULT_TYPEDEF_(0x80180032L)")]
     public const int MENROLL_E_CUSTOMSERVERERROR = unchecked((int)(0x80180032));
+
+    [NativeTypeName("#define MENROLL_E_SERVER429 _HRESULT_TYPEDEF_(0x80180033L)")]
+    public const int MENROLL_E_SERVER429 = unchecked((int)(0x80180033));
 }

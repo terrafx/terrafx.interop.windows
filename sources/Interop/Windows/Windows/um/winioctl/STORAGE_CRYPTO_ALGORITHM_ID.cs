@@ -25,4 +25,19 @@ public enum STORAGE_CRYPTO_ALGORITHM_ID
 
     /// <include file='STORAGE_CRYPTO_ALGORITHM_ID.xml' path='doc/member[@name="STORAGE_CRYPTO_ALGORITHM_ID.StorageCryptoAlgorithmMax"]/*' />
     StorageCryptoAlgorithmMax,
+
+    /// <include file='STORAGE_CRYPTO_ALGORITHM_ID.xml' path='doc/member[@name="STORAGE_CRYPTO_ALGORITHM_ID.StorCryptoAlgorithmUnknown"]/*' />
+    StorCryptoAlgorithmUnknown = StorageCryptoAlgorithmUnknown,
+
+    /// <include file='STORAGE_CRYPTO_ALGORITHM_ID.xml' path='doc/member[@name="STORAGE_CRYPTO_ALGORITHM_ID.StorCryptoAlgorithmXTSAES"]/*' />
+    StorCryptoAlgorithmXTSAES = StorageCryptoAlgorithmXTSAES,
+
+    /// <include file='STORAGE_CRYPTO_ALGORITHM_ID.xml' path='doc/member[@name="STORAGE_CRYPTO_ALGORITHM_ID.StorCryptoAlgorithmBitlockerAESCBC"]/*' />
+    StorCryptoAlgorithmBitlockerAESCBC = StorageCryptoAlgorithmBitlockerAESCBC,
+
+    /// <include file='STORAGE_CRYPTO_ALGORITHM_ID.xml' path='doc/member[@name="STORAGE_CRYPTO_ALGORITHM_ID.StorCryptoAlgorithmAESECB"]/*' />
+    StorCryptoAlgorithmAESECB = StorageCryptoAlgorithmAESECB,
+
+    /// <include file='STORAGE_CRYPTO_ALGORITHM_ID.xml' path='doc/member[@name="STORAGE_CRYPTO_ALGORITHM_ID.StorCryptoAlgorithmESSIVAESCBC"]/*' />
+    StorCryptoAlgorithmESSIVAESCBC = StorageCryptoAlgorithmESSIVAESCBC,
 }

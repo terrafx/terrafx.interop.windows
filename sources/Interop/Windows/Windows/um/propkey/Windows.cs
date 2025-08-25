@@ -676,6 +676,12 @@ public static partial class Windows
     [NativeTypeName("#define PHOTO_WHITEBALANCE_MANUAL 1ul")]
     public const uint PHOTO_WHITEBALANCE_MANUAL = 1U;
 
+    [NativeTypeName("#define MATCH_KIND_LEXICAL 1l")]
+    public const int MATCH_KIND_LEXICAL = 1;
+
+    [NativeTypeName("#define MATCH_KIND_SEMANTIC 2l")]
+    public const int MATCH_KIND_SEMANTIC = 2;
+
     [NativeTypeName("#define HOMEGROUPING_UNSPECIFIED 0ul")]
     public const uint HOMEGROUPING_UNSPECIFIED = 0U;
 

@@ -50,6 +50,12 @@ public static unsafe partial class Windows
     [return: NativeTypeName("ULONG")]
     public static extern uint HttpSetRequestProperty(HANDLE RequestQueueHandle, [NativeTypeName("HTTP_OPAQUE_ID")] ulong Id, HTTP_REQUEST_PROPERTY PropertyId, [NativeTypeName("PVOID")] void* Input, [NativeTypeName("ULONG")] uint InputPropertySize, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* Overlapped);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HttpQueryRequestProperty"]/*' />
+    [DllImport("httpapi", ExactSpelling = true)]
+    [return: NativeTypeName("ULONG")]
+    [SupportedOSPlatform("windows10.0.16299.0")]
+    public static extern uint HttpQueryRequestProperty(HANDLE RequestQueueHandle, [NativeTypeName("HTTP_OPAQUE_ID")] ulong Id, HTTP_REQUEST_PROPERTY PropertyId, [NativeTypeName("const void *")] void* Qualifier, [NativeTypeName("ULONG")] uint QualifierSize, [NativeTypeName("PVOID")] void* Output, [NativeTypeName("ULONG")] uint OutputBufferSize, [NativeTypeName("PULONG")] uint* BytesReturned, [NativeTypeName("LPOVERLAPPED")] OVERLAPPED* Overlapped);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.HttpShutdownRequestQueue"]/*' />
     [DllImport("httpapi", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]

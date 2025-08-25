@@ -19,7 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct IAccountsSettingsPaneInterop : IAccountsSettingsPaneInterop.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAccountsSettingsPaneInterop));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAccountsSettingsPaneInterop);
 
     public void** lpVtbl;
 

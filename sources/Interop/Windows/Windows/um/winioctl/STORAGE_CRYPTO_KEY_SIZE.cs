@@ -22,4 +22,22 @@ public enum STORAGE_CRYPTO_KEY_SIZE
 
     /// <include file='STORAGE_CRYPTO_KEY_SIZE.xml' path='doc/member[@name="STORAGE_CRYPTO_KEY_SIZE.StorageCryptoKeySize512Bits"]/*' />
     StorageCryptoKeySize512Bits,
+
+    /// <include file='STORAGE_CRYPTO_KEY_SIZE.xml' path='doc/member[@name="STORAGE_CRYPTO_KEY_SIZE.StorageCryptoKeySizeMax"]/*' />
+    StorageCryptoKeySizeMax,
+
+    /// <include file='STORAGE_CRYPTO_KEY_SIZE.xml' path='doc/member[@name="STORAGE_CRYPTO_KEY_SIZE.StorCryptoKeySizeUnknown"]/*' />
+    StorCryptoKeySizeUnknown = StorageCryptoKeySizeUnknown,
+
+    /// <include file='STORAGE_CRYPTO_KEY_SIZE.xml' path='doc/member[@name="STORAGE_CRYPTO_KEY_SIZE.StorCryptoKeySize128Bits"]/*' />
+    StorCryptoKeySize128Bits = StorageCryptoKeySize128Bits,
+
+    /// <include file='STORAGE_CRYPTO_KEY_SIZE.xml' path='doc/member[@name="STORAGE_CRYPTO_KEY_SIZE.StorCryptoKeySize192Bits"]/*' />
+    StorCryptoKeySize192Bits = StorageCryptoKeySize192Bits,
+
+    /// <include file='STORAGE_CRYPTO_KEY_SIZE.xml' path='doc/member[@name="STORAGE_CRYPTO_KEY_SIZE.StorCryptoKeySize256Bits"]/*' />
+    StorCryptoKeySize256Bits = StorageCryptoKeySize256Bits,
+
+    /// <include file='STORAGE_CRYPTO_KEY_SIZE.xml' path='doc/member[@name="STORAGE_CRYPTO_KEY_SIZE.StorCryptoKeySize512Bits"]/*' />
+    StorCryptoKeySize512Bits = StorageCryptoKeySize512Bits,
 }

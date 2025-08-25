@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IPropertyStoreFactory")]
 public unsafe partial struct IDelayedPropertyStoreFactory : IDelayedPropertyStoreFactory.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDelayedPropertyStoreFactory));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDelayedPropertyStoreFactory);
 
     public void** lpVtbl;
 

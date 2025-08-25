@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMLOperatorAttributes : IMLOperatorAttributes.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMLOperatorAttributes));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMLOperatorAttributes);
 
     public void** lpVtbl;
 
@@ -50,33 +50,33 @@ public unsafe partial struct IMLOperatorAttributes : IMLOperatorAttributes.Inter
     /// <include file='IMLOperatorAttributes.xml' path='doc/member[@name="IMLOperatorAttributes.GetAttributeElementCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetAttributeElementCount([NativeTypeName("const char *")] sbyte* name, MLOperatorAttributeType type, [NativeTypeName("uint32_t *")] uint* elementCount)
+    public readonly HRESULT GetAttributeElementCount([NativeTypeName("const char *")] sbyte* name, MLOperatorAttributeType type, [NativeTypeName("uint32_t *")] uint* elementCount)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorAttributes*, sbyte*, MLOperatorAttributeType, uint*, int>)(lpVtbl[3]))((IMLOperatorAttributes*)Unsafe.AsPointer(ref this), name, type, elementCount);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorAttributes*, sbyte*, MLOperatorAttributeType, uint*, int>)(lpVtbl[3]))((IMLOperatorAttributes*)Unsafe.AsPointer(in this), name, type, elementCount);
     }
 
     /// <include file='IMLOperatorAttributes.xml' path='doc/member[@name="IMLOperatorAttributes.GetAttribute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetAttribute([NativeTypeName("const char *")] sbyte* name, MLOperatorAttributeType type, [NativeTypeName("uint32_t")] uint elementCount, [NativeTypeName("size_t")] nuint elementByteSize, void* value)
+    public readonly HRESULT GetAttribute([NativeTypeName("const char *")] sbyte* name, MLOperatorAttributeType type, [NativeTypeName("uint32_t")] uint elementCount, [NativeTypeName("size_t")] nuint elementByteSize, void* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorAttributes*, sbyte*, MLOperatorAttributeType, uint, nuint, void*, int>)(lpVtbl[4]))((IMLOperatorAttributes*)Unsafe.AsPointer(ref this), name, type, elementCount, elementByteSize, value);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorAttributes*, sbyte*, MLOperatorAttributeType, uint, nuint, void*, int>)(lpVtbl[4]))((IMLOperatorAttributes*)Unsafe.AsPointer(in this), name, type, elementCount, elementByteSize, value);
     }
 
     /// <include file='IMLOperatorAttributes.xml' path='doc/member[@name="IMLOperatorAttributes.GetStringAttributeElementLength"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetStringAttributeElementLength([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t *")] uint* attributeElementByteSize)
+    public readonly HRESULT GetStringAttributeElementLength([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t *")] uint* attributeElementByteSize)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorAttributes*, sbyte*, uint, uint*, int>)(lpVtbl[5]))((IMLOperatorAttributes*)Unsafe.AsPointer(ref this), name, elementIndex, attributeElementByteSize);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorAttributes*, sbyte*, uint, uint*, int>)(lpVtbl[5]))((IMLOperatorAttributes*)Unsafe.AsPointer(in this), name, elementIndex, attributeElementByteSize);
     }
 
     /// <include file='IMLOperatorAttributes.xml' path='doc/member[@name="IMLOperatorAttributes.GetStringAttributeElement"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetStringAttributeElement([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t")] uint attributeElementByteSize, [NativeTypeName("char *")] sbyte* attributeElement)
+    public readonly HRESULT GetStringAttributeElement([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t")] uint attributeElementByteSize, [NativeTypeName("char *")] sbyte* attributeElement)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorAttributes*, sbyte*, uint, uint, sbyte*, int>)(lpVtbl[6]))((IMLOperatorAttributes*)Unsafe.AsPointer(ref this), name, elementIndex, attributeElementByteSize, attributeElement);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorAttributes*, sbyte*, uint, uint, sbyte*, int>)(lpVtbl[6]))((IMLOperatorAttributes*)Unsafe.AsPointer(in this), name, elementIndex, attributeElementByteSize, attributeElement);
     }
 
     public interface Interface : IUnknown.Interface

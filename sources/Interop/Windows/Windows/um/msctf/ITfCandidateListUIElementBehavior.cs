@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ITfCandidateListUIElement")]
 public unsafe partial struct ITfCandidateListUIElementBehavior : ITfCandidateListUIElementBehavior.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ITfCandidateListUIElementBehavior));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfCandidateListUIElementBehavior);
 
     public void** lpVtbl;
 

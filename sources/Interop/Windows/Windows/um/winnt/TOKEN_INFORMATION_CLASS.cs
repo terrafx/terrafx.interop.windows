@@ -155,6 +155,9 @@ public enum TOKEN_INFORMATION_CLASS
     /// <include file='TOKEN_INFORMATION_CLASS.xml' path='doc/member[@name="TOKEN_INFORMATION_CLASS.TokenLoggingInformation"]/*' />
     TokenLoggingInformation,
 
+    /// <include file='TOKEN_INFORMATION_CLASS.xml' path='doc/member[@name="TOKEN_INFORMATION_CLASS.TokenLearningMode"]/*' />
+    TokenLearningMode,
+
     /// <include file='TOKEN_INFORMATION_CLASS.xml' path='doc/member[@name="TOKEN_INFORMATION_CLASS.MaxTokenInfoClass"]/*' />
     MaxTokenInfoClass,
 }

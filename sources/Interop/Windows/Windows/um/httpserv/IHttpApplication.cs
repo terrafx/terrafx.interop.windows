@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("3F75D9E6-1075-422C-AD89-93A85F2D7BDC")]
 public unsafe partial struct IHttpApplication : IHttpApplication.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpApplication));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpApplication);
 
     public void** lpVtbl;
 
@@ -22,27 +22,27 @@ public unsafe partial struct IHttpApplication : IHttpApplication.Interface, INat
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetApplicationPhysicalPath()
+    public readonly char* GetApplicationPhysicalPath()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpApplication*, char*>)(lpVtbl[0]))((IHttpApplication*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpApplication*, char*>)(lpVtbl[0]))((IHttpApplication*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpApplication.xml' path='doc/member[@name="IHttpApplication.GetApplicationId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetApplicationId()
+    public readonly char* GetApplicationId()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpApplication*, char*>)(lpVtbl[1]))((IHttpApplication*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpApplication*, char*>)(lpVtbl[1]))((IHttpApplication*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpApplication.xml' path='doc/member[@name="IHttpApplication.GetAppConfigPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetAppConfigPath()
+    public readonly char* GetAppConfigPath()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpApplication*, char*>)(lpVtbl[2]))((IHttpApplication*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpApplication*, char*>)(lpVtbl[2]))((IHttpApplication*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpApplication.xml' path='doc/member[@name="IHttpApplication.GetModuleContextContainer"]/*' />

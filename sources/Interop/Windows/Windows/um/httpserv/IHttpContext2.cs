@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpContext")]
 public unsafe partial struct IHttpContext2 : IHttpContext2.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpContext2));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpContext2);
 
     public void** lpVtbl;
 
@@ -63,17 +63,17 @@ public unsafe partial struct IHttpContext2 : IHttpContext2.Interface, INativeGui
     /// <inheritdoc cref="IHttpContext.GetResponseHeadersSent" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public BOOL GetResponseHeadersSent()
+    public readonly BOOL GetResponseHeadersSent()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, int>)(lpVtbl[5]))((IHttpContext2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, int>)(lpVtbl[5]))((IHttpContext2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpContext.GetUser" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public IHttpUser* GetUser()
+    public readonly IHttpUser* GetUser()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, IHttpUser*>)(lpVtbl[6]))((IHttpContext2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, IHttpUser*>)(lpVtbl[6]))((IHttpContext2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpContext.GetModuleContextContainer" />
@@ -136,9 +136,9 @@ public unsafe partial struct IHttpContext2 : IHttpContext2.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     [return: NativeTypeName("DWORD")]
-    public uint GetExecuteFlags()
+    public readonly uint GetExecuteFlags()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, uint>)(lpVtbl[14]))((IHttpContext2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, uint>)(lpVtbl[14]))((IHttpContext2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpContext.GetServerVariable" />
@@ -202,9 +202,9 @@ public unsafe partial struct IHttpContext2 : IHttpContext2.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetScriptName([NativeTypeName("DWORD *")] uint* pcchScriptName = null)
+    public readonly char* GetScriptName([NativeTypeName("DWORD *")] uint* pcchScriptName = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, uint*, char*>)(lpVtbl[22]))((IHttpContext2*)Unsafe.AsPointer(ref this), pcchScriptName);
+        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, uint*, char*>)(lpVtbl[22]))((IHttpContext2*)Unsafe.AsPointer(in this), pcchScriptName);
     }
 
     /// <inheritdoc cref="IHttpContext.GetScriptTranslated" />
@@ -219,9 +219,9 @@ public unsafe partial struct IHttpContext2 : IHttpContext2.Interface, INativeGui
     /// <inheritdoc cref="IHttpContext.GetScriptMap" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(24)]
-    public IScriptMapInfo* GetScriptMap()
+    public readonly IScriptMapInfo* GetScriptMap()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, IScriptMapInfo*>)(lpVtbl[24]))((IHttpContext2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, IScriptMapInfo*>)(lpVtbl[24]))((IHttpContext2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpContext.SetRequestHandled" />
@@ -235,9 +235,9 @@ public unsafe partial struct IHttpContext2 : IHttpContext2.Interface, INativeGui
     /// <inheritdoc cref="IHttpContext.GetFileInfo" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(26)]
-    public IHttpFileInfo* GetFileInfo()
+    public readonly IHttpFileInfo* GetFileInfo()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, IHttpFileInfo*>)(lpVtbl[26]))((IHttpContext2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, IHttpFileInfo*>)(lpVtbl[26]))((IHttpContext2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpContext.MapPath" />
@@ -259,17 +259,17 @@ public unsafe partial struct IHttpContext2 : IHttpContext2.Interface, INativeGui
     /// <inheritdoc cref="IHttpContext.GetParentContext" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    public IHttpContext* GetParentContext()
+    public readonly IHttpContext* GetParentContext()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, IHttpContext*>)(lpVtbl[29]))((IHttpContext2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, IHttpContext*>)(lpVtbl[29]))((IHttpContext2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpContext.GetRootContext" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
-    public IHttpContext* GetRootContext()
+    public readonly IHttpContext* GetRootContext()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, IHttpContext*>)(lpVtbl[30]))((IHttpContext2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, IHttpContext*>)(lpVtbl[30]))((IHttpContext2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpContext.CloneContext" />
@@ -291,17 +291,17 @@ public unsafe partial struct IHttpContext2 : IHttpContext2.Interface, INativeGui
     /// <inheritdoc cref="IHttpContext.GetCurrentExecutionStats" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(33)]
-    public HRESULT GetCurrentExecutionStats([NativeTypeName("DWORD *")] uint* pdwNotification, [NativeTypeName("DWORD *")] uint* pdwNotificationStartTickCount = null, [NativeTypeName("PCWSTR *")] char** ppszModule = null, [NativeTypeName("DWORD *")] uint* pdwModuleStartTickCount = null, [NativeTypeName("DWORD *")] uint* pdwAsyncNotification = null, [NativeTypeName("DWORD *")] uint* pdwAsyncNotificationStartTickCount = null)
+    public readonly HRESULT GetCurrentExecutionStats([NativeTypeName("DWORD *")] uint* pdwNotification, [NativeTypeName("DWORD *")] uint* pdwNotificationStartTickCount = null, [NativeTypeName("PCWSTR *")] char** ppszModule = null, [NativeTypeName("DWORD *")] uint* pdwModuleStartTickCount = null, [NativeTypeName("DWORD *")] uint* pdwAsyncNotification = null, [NativeTypeName("DWORD *")] uint* pdwAsyncNotificationStartTickCount = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, uint*, uint*, char**, uint*, uint*, uint*, int>)(lpVtbl[33]))((IHttpContext2*)Unsafe.AsPointer(ref this), pdwNotification, pdwNotificationStartTickCount, ppszModule, pdwModuleStartTickCount, pdwAsyncNotification, pdwAsyncNotificationStartTickCount);
+        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, uint*, uint*, char**, uint*, uint*, uint*, int>)(lpVtbl[33]))((IHttpContext2*)Unsafe.AsPointer(in this), pdwNotification, pdwNotificationStartTickCount, ppszModule, pdwModuleStartTickCount, pdwAsyncNotification, pdwAsyncNotificationStartTickCount);
     }
 
     /// <inheritdoc cref="IHttpContext.GetTraceContext" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(34)]
-    public IHttpTraceContext* GetTraceContext()
+    public readonly IHttpTraceContext* GetTraceContext()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, IHttpTraceContext*>)(lpVtbl[34]))((IHttpContext2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, IHttpTraceContext*>)(lpVtbl[34]))((IHttpContext2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpContext.GetServerVarChanges" />
@@ -340,9 +340,9 @@ public unsafe partial struct IHttpContext2 : IHttpContext2.Interface, INativeGui
     /// <include file='IHttpContext2.xml' path='doc/member[@name="IHttpContext2.GetOriginalUser"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(39)]
-    public IHttpUser* GetOriginalUser()
+    public readonly IHttpUser* GetOriginalUser()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, IHttpUser*>)(lpVtbl[39]))((IHttpContext2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpContext2*, IHttpUser*>)(lpVtbl[39]))((IHttpContext2*)Unsafe.AsPointer(in this));
     }
 
     public interface Interface : IHttpContext.Interface

@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct ISendResponseProvider : ISendResponseProvider.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISendResponseProvider));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISendResponseProvider);
 
     public void** lpVtbl;
 
@@ -31,18 +31,18 @@ public unsafe partial struct ISendResponseProvider : ISendResponseProvider.Inter
     /// <include file='ISendResponseProvider.xml' path='doc/member[@name="ISendResponseProvider.GetHeadersBeingSent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
-    public BOOL GetHeadersBeingSent()
+    public readonly BOOL GetHeadersBeingSent()
     {
-        return ((delegate* unmanaged[MemberFunction]<ISendResponseProvider*, int>)(lpVtbl[1]))((ISendResponseProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISendResponseProvider*, int>)(lpVtbl[1]))((ISendResponseProvider*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ISendResponseProvider.xml' path='doc/member[@name="ISendResponseProvider.GetFlags"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("DWORD")]
-    public uint GetFlags()
+    public readonly uint GetFlags()
     {
-        return ((delegate* unmanaged[MemberFunction]<ISendResponseProvider*, uint>)(lpVtbl[2]))((ISendResponseProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISendResponseProvider*, uint>)(lpVtbl[2]))((ISendResponseProvider*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ISendResponseProvider.xml' path='doc/member[@name="ISendResponseProvider.SetFlags"]/*' />
@@ -56,9 +56,9 @@ public unsafe partial struct ISendResponseProvider : ISendResponseProvider.Inter
     /// <include file='ISendResponseProvider.xml' path='doc/member[@name="ISendResponseProvider.GetLogData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HTTP_LOG_DATA* GetLogData()
+    public readonly HTTP_LOG_DATA* GetLogData()
     {
-        return ((delegate* unmanaged[MemberFunction]<ISendResponseProvider*, HTTP_LOG_DATA*>)(lpVtbl[4]))((ISendResponseProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISendResponseProvider*, HTTP_LOG_DATA*>)(lpVtbl[4]))((ISendResponseProvider*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ISendResponseProvider.xml' path='doc/member[@name="ISendResponseProvider.SetLogData"]/*' />
@@ -72,9 +72,9 @@ public unsafe partial struct ISendResponseProvider : ISendResponseProvider.Inter
     /// <include file='ISendResponseProvider.xml' path='doc/member[@name="ISendResponseProvider.GetReadyToLogData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public BOOL GetReadyToLogData()
+    public readonly BOOL GetReadyToLogData()
     {
-        return ((delegate* unmanaged[MemberFunction]<ISendResponseProvider*, int>)(lpVtbl[6]))((ISendResponseProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISendResponseProvider*, int>)(lpVtbl[6]))((ISendResponseProvider*)Unsafe.AsPointer(in this));
     }
 
     public interface Interface : IHttpEventProvider.Interface

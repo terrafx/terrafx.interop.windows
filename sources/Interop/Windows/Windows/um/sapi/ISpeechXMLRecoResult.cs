@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ISpeechRecoResult")]
 public unsafe partial struct ISpeechXMLRecoResult : ISpeechXMLRecoResult.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISpeechXMLRecoResult));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpeechXMLRecoResult);
 
     public void** lpVtbl;
 

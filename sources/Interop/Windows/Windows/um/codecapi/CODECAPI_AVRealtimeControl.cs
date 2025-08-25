@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("6F440632-C4AD-4BF7-9E52-456942B454B0")]
 public unsafe partial struct CODECAPI_AVRealtimeControl : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVRealtimeControl));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVRealtimeControl);
 }

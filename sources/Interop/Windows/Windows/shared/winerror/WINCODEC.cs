@@ -129,4 +129,7 @@ public static partial class WINCODEC
 
     [NativeTypeName("#define WINCODEC_ERR_INVALIDJPEGSCANINDEX _HRESULT_TYPEDEF_(0x88982F96L)")]
     public const int WINCODEC_ERR_INVALIDJPEGSCANINDEX = unchecked((int)(0x88982F96));
+
+    [NativeTypeName("#define WINCODEC_ERR_UNSUPPORTEDTONEMAPPING _HRESULT_TYPEDEF_(0x88982F97L)")]
+    public const int WINCODEC_ERR_UNSUPPORTEDTONEMAPPING = unchecked((int)(0x88982F97));
 }

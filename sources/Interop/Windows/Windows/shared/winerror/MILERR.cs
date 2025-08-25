@@ -126,4 +126,55 @@ public static partial class MILERR
 
     [NativeTypeName("#define MILERR_DISPLAYID_ACCESS_DENIED _HRESULT_TYPEDEF_(0x889800A1L)")]
     public const int MILERR_DISPLAYID_ACCESS_DENIED = unchecked((int)(0x889800A1));
+
+    [NativeTypeName("#define MILERR_DEVICE_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800B0L)")]
+    public const int MILERR_DEVICE_CREATION_FAILURE = unchecked((int)(0x889800B0));
+
+    [NativeTypeName("#define MILERR_INTEL_DEVICE_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800B1L)")]
+    public const int MILERR_INTEL_DEVICE_CREATION_FAILURE = unchecked((int)(0x889800B1));
+
+    [NativeTypeName("#define MILERR_AMD_DEVICE_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800B2L)")]
+    public const int MILERR_AMD_DEVICE_CREATION_FAILURE = unchecked((int)(0x889800B2));
+
+    [NativeTypeName("#define MILERR_NVIDIA_DEVICE_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800B3L)")]
+    public const int MILERR_NVIDIA_DEVICE_CREATION_FAILURE = unchecked((int)(0x889800B3));
+
+    [NativeTypeName("#define MILERR_QC_DEVICE_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800B4L)")]
+    public const int MILERR_QC_DEVICE_CREATION_FAILURE = unchecked((int)(0x889800B4));
+
+    [NativeTypeName("#define MILERR_SWAPCHAIN_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800C0L)")]
+    public const int MILERR_SWAPCHAIN_CREATION_FAILURE = unchecked((int)(0x889800C0));
+
+    [NativeTypeName("#define MILERR_INTEL_SWAPCHAIN_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800C1L)")]
+    public const int MILERR_INTEL_SWAPCHAIN_CREATION_FAILURE = unchecked((int)(0x889800C1));
+
+    [NativeTypeName("#define MILERR_AMD_SWAPCHAIN_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800C2L)")]
+    public const int MILERR_AMD_SWAPCHAIN_CREATION_FAILURE = unchecked((int)(0x889800C2));
+
+    [NativeTypeName("#define MILERR_NVIDIA_SWAPCHAIN_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800C3L)")]
+    public const int MILERR_NVIDIA_SWAPCHAIN_CREATION_FAILURE = unchecked((int)(0x889800C3));
+
+    [NativeTypeName("#define MILERR_QC_SWAPCHAIN_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800C4L)")]
+    public const int MILERR_QC_SWAPCHAIN_CREATION_FAILURE = unchecked((int)(0x889800C4));
+
+    [NativeTypeName("#define MILERR_IDD_SWAPCHAIN_CREATION_FAILURE _HRESULT_TYPEDEF_(0x889800C5L)")]
+    public const int MILERR_IDD_SWAPCHAIN_CREATION_FAILURE = unchecked((int)(0x889800C5));
+
+    [NativeTypeName("#define MILERR_PRESENT_FAILURE _HRESULT_TYPEDEF_(0x889800D0L)")]
+    public const int MILERR_PRESENT_FAILURE = unchecked((int)(0x889800D0));
+
+    [NativeTypeName("#define MILERR_INTEL_PRESENT_FAILURE _HRESULT_TYPEDEF_(0x889800D1L)")]
+    public const int MILERR_INTEL_PRESENT_FAILURE = unchecked((int)(0x889800D1));
+
+    [NativeTypeName("#define MILERR_AMD_PRESENT_FAILURE _HRESULT_TYPEDEF_(0x889800D2L)")]
+    public const int MILERR_AMD_PRESENT_FAILURE = unchecked((int)(0x889800D2));
+
+    [NativeTypeName("#define MILERR_NVIDIA_PRESENT_FAILURE _HRESULT_TYPEDEF_(0x889800D3L)")]
+    public const int MILERR_NVIDIA_PRESENT_FAILURE = unchecked((int)(0x889800D3));
+
+    [NativeTypeName("#define MILERR_QC_PRESENT_FAILURE _HRESULT_TYPEDEF_(0x889800D4L)")]
+    public const int MILERR_QC_PRESENT_FAILURE = unchecked((int)(0x889800D4));
+
+    [NativeTypeName("#define MILERR_IDD_PRESENT_FAILURE _HRESULT_TYPEDEF_(0x889800D5L)")]
+    public const int MILERR_IDD_PRESENT_FAILURE = unchecked((int)(0x889800D5));
 }

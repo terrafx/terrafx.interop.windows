@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("CC6EEFFB-43F6-46C5-9619-51D571967F7D")]
 public unsafe partial struct PublishDropTarget : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_PublishDropTarget));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_PublishDropTarget);
 }

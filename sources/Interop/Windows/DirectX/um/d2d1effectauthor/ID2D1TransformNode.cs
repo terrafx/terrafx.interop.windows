@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID2D1TransformNode : ID2D1TransformNode.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1TransformNode));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1TransformNode);
 
     public void** lpVtbl;
 
@@ -51,9 +51,9 @@ public unsafe partial struct ID2D1TransformNode : ID2D1TransformNode.Interface, 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("UINT32")]
-    public uint GetInputCount()
+    public readonly uint GetInputCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1TransformNode*, uint>)(lpVtbl[3]))((ID2D1TransformNode*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TransformNode*, uint>)(lpVtbl[3]))((ID2D1TransformNode*)Unsafe.AsPointer(in this));
     }
 
     public interface Interface : IUnknown.Interface

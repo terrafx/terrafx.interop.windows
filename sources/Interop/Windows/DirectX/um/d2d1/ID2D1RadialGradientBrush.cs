@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Brush")]
 public unsafe partial struct ID2D1RadialGradientBrush : ID2D1RadialGradientBrush.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1RadialGradientBrush));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1RadialGradientBrush);
 
     public void** lpVtbl;
 
@@ -50,9 +50,9 @@ public unsafe partial struct ID2D1RadialGradientBrush : ID2D1RadialGradientBrush
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1RadialGradientBrush*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1RadialGradientBrush*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(in this), factory);
     }
 
     /// <inheritdoc cref="ID2D1Brush.SetOpacity" />
@@ -74,17 +74,17 @@ public unsafe partial struct ID2D1RadialGradientBrush : ID2D1RadialGradientBrush
     /// <inheritdoc cref="ID2D1Brush.GetOpacity" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public float GetOpacity()
+    public readonly float GetOpacity()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1RadialGradientBrush*, float>)(lpVtbl[6]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1RadialGradientBrush*, float>)(lpVtbl[6]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="ID2D1Brush.GetTransform" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
+    public readonly void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1RadialGradientBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), transform);
+        ((delegate* unmanaged[MemberFunction]<ID2D1RadialGradientBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(in this), transform);
     }
 
     /// <include file='ID2D1RadialGradientBrush.xml' path='doc/member[@name="ID2D1RadialGradientBrush.SetCenter"]/*' />
@@ -123,42 +123,42 @@ public unsafe partial struct ID2D1RadialGradientBrush : ID2D1RadialGradientBrush
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
     [return: NativeTypeName("D2D1_POINT_2F")]
-    public D2D_POINT_2F GetCenter()
+    public readonly D2D_POINT_2F GetCenter()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1RadialGradientBrush*, D2D_POINT_2F>)(lpVtbl[12]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1RadialGradientBrush*, D2D_POINT_2F>)(lpVtbl[12]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1RadialGradientBrush.xml' path='doc/member[@name="ID2D1RadialGradientBrush.GetGradientOriginOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     [return: NativeTypeName("D2D1_POINT_2F")]
-    public D2D_POINT_2F GetGradientOriginOffset()
+    public readonly D2D_POINT_2F GetGradientOriginOffset()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1RadialGradientBrush*, D2D_POINT_2F>)(lpVtbl[13]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1RadialGradientBrush*, D2D_POINT_2F>)(lpVtbl[13]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1RadialGradientBrush.xml' path='doc/member[@name="ID2D1RadialGradientBrush.GetRadiusX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public float GetRadiusX()
+    public readonly float GetRadiusX()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1RadialGradientBrush*, float>)(lpVtbl[14]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1RadialGradientBrush*, float>)(lpVtbl[14]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1RadialGradientBrush.xml' path='doc/member[@name="ID2D1RadialGradientBrush.GetRadiusY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public float GetRadiusY()
+    public readonly float GetRadiusY()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1RadialGradientBrush*, float>)(lpVtbl[15]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1RadialGradientBrush*, float>)(lpVtbl[15]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1RadialGradientBrush.xml' path='doc/member[@name="ID2D1RadialGradientBrush.GetGradientStopCollection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public void GetGradientStopCollection(ID2D1GradientStopCollection** gradientStopCollection)
+    public readonly void GetGradientStopCollection(ID2D1GradientStopCollection** gradientStopCollection)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1RadialGradientBrush*, ID2D1GradientStopCollection**, void>)(lpVtbl[16]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(ref this), gradientStopCollection);
+        ((delegate* unmanaged[MemberFunction]<ID2D1RadialGradientBrush*, ID2D1GradientStopCollection**, void>)(lpVtbl[16]))((ID2D1RadialGradientBrush*)Unsafe.AsPointer(in this), gradientStopCollection);
     }
 
     public interface Interface : ID2D1Brush.Interface

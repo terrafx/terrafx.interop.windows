@@ -11,11 +11,11 @@ namespace TerraFX.Interop.Windows;
 public partial struct TOKEN_AUDIT_POLICY
 {
     /// <include file='TOKEN_AUDIT_POLICY.xml' path='doc/member[@name="TOKEN_AUDIT_POLICY.PerUserPolicy"]/*' />
-    [NativeTypeName("BYTE[30]")]
+    [NativeTypeName("BYTE[31]")]
     public _PerUserPolicy_e__FixedBuffer PerUserPolicy;
 
     /// <include file='_PerUserPolicy_e__FixedBuffer.xml' path='doc/member[@name="_PerUserPolicy_e__FixedBuffer"]/*' />
-    [InlineArray(30)]
+    [InlineArray(31)]
     public partial struct _PerUserPolicy_e__FixedBuffer
     {
         public byte e0;

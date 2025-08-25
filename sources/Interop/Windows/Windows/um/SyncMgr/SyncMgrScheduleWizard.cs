@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("8D8B8E30-C451-421B-8553-D2976AFA648C")]
 public unsafe partial struct SyncMgrScheduleWizard : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SyncMgrScheduleWizard));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_SyncMgrScheduleWizard);
 }

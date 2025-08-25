@@ -70,6 +70,9 @@ public static partial class FACILITY
     [NativeTypeName("#define FACILITY_GRAPHICS_KERNEL 0x1E")]
     public const int FACILITY_GRAPHICS_KERNEL = 0x1E;
 
+    [NativeTypeName("#define FACILITY_CAMERA 0x1F")]
+    public const int FACILITY_CAMERA = 0x1F;
+
     [NativeTypeName("#define FACILITY_DRIVER_FRAMEWORK 0x20")]
     public const int FACILITY_DRIVER_FRAMEWORK = 0x20;
 

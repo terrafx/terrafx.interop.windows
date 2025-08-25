@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDWriteBitmapRenderTarget1")]
 public unsafe partial struct IDWriteBitmapRenderTarget2 : IDWriteBitmapRenderTarget2.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteBitmapRenderTarget2));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDWriteBitmapRenderTarget2);
 
     public void** lpVtbl;
 

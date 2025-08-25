@@ -7,6 +7,6 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class POLICY
 {
-    [NativeTypeName("#define POLICY_AUDIT_SUBCATEGORY_COUNT (59)")]
-    public const int POLICY_AUDIT_SUBCATEGORY_COUNT = (59);
+    [NativeTypeName("#define POLICY_AUDIT_SUBCATEGORY_COUNT (60)")]
+    public const int POLICY_AUDIT_SUBCATEGORY_COUNT = (60);
 }

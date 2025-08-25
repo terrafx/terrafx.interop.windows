@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("B507CA24-2204-11DD-966A-001AA01BBC58")]
 public unsafe partial struct MsftMultisessionRandomWrite : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_MsftMultisessionRandomWrite));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_MsftMultisessionRandomWrite);
 }

@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("F7222374-2144-4815-B550-A37F8E12EE52")]
 public unsafe partial struct CODECAPI_AVEncCommonMeanBitRate : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncCommonMeanBitRate));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncCommonMeanBitRate);
 }

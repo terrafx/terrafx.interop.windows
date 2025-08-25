@@ -14,6 +14,12 @@ public enum WICHeifProperties
     /// <include file='WICHeifProperties.xml' path='doc/member[@name="WICHeifProperties.WICHeifOrientation"]/*' />
     WICHeifOrientation = 0x1,
 
+    /// <include file='WICHeifProperties.xml' path='doc/member[@name="WICHeifProperties.WICHeifLayeredImageCanvasColor"]/*' />
+    WICHeifLayeredImageCanvasColor = 0x2,
+
+    /// <include file='WICHeifProperties.xml' path='doc/member[@name="WICHeifProperties.WICHeifLayeredImageLayerPositions"]/*' />
+    WICHeifLayeredImageLayerPositions = 0x3,
+
     /// <include file='WICHeifProperties.xml' path='doc/member[@name="WICHeifProperties.WICHeifProperties_FORCE_DWORD"]/*' />
     WICHeifProperties_FORCE_DWORD = 0x7fffffff,
 }

@@ -35,3 +35,4 @@ Tbsi_Get_TCG_Log_Ex=tbs
 Tbsi_Is_Tpm_Present=tbs
 Tbsi_Physical_Presence_Command=tbs
 Tbsi_Revoke_Attestation=tbs
+Tbsi_Tpm_Vendor_Maintenance_Mode=tbs

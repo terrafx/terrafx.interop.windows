@@ -19,7 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.15063.0")]
 public unsafe partial struct ILanguageExceptionErrorInfo2 : ILanguageExceptionErrorInfo2.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ILanguageExceptionErrorInfo2));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILanguageExceptionErrorInfo2);
 
     public void** lpVtbl;
 

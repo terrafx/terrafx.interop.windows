@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct DirectMLTensorFlowCreatorID : DirectMLTensorFlowCreatorID.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_DirectMLTensorFlowCreatorID));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DirectMLTensorFlowCreatorID);
 
     public void** lpVtbl;
 

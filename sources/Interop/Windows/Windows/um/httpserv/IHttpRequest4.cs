@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpRequest3")]
 public unsafe partial struct IHttpRequest4 : IHttpRequest4.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpRequest4));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpRequest4);
 
     public void** lpVtbl;
 
@@ -24,9 +24,9 @@ public unsafe partial struct IHttpRequest4 : IHttpRequest4.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     [return: NativeTypeName("const HTTP_REQUEST *")]
-    public HTTP_REQUEST_V2* GetRawHttpRequestConst()
+    public readonly HTTP_REQUEST_V2* GetRawHttpRequestConst()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, HTTP_REQUEST_V2*>)(lpVtbl[0]))((IHttpRequest4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, HTTP_REQUEST_V2*>)(lpVtbl[0]))((IHttpRequest4*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpRequest.GetRawHttpRequest" />
@@ -42,18 +42,18 @@ public unsafe partial struct IHttpRequest4 : IHttpRequest4.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("PCSTR")]
-    public sbyte* GetHeader(HTTP_HEADER_ID ulHeaderIndex, ushort* pcchHeaderValue = null)
+    public readonly sbyte* GetHeader(HTTP_HEADER_ID ulHeaderIndex, ushort* pcchHeaderValue = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, HTTP_HEADER_ID, ushort*, sbyte*>)(lpVtbl[2]))((IHttpRequest4*)Unsafe.AsPointer(ref this), ulHeaderIndex, pcchHeaderValue);
+        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, HTTP_HEADER_ID, ushort*, sbyte*>)(lpVtbl[2]))((IHttpRequest4*)Unsafe.AsPointer(in this), ulHeaderIndex, pcchHeaderValue);
     }
 
     /// <inheritdoc cref="IHttpRequest.GetHeader" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("PCSTR")]
-    public sbyte* GetHeader([NativeTypeName("PCSTR")] sbyte* pszHeaderName, ushort* pcchHeaderValue = null)
+    public readonly sbyte* GetHeader([NativeTypeName("PCSTR")] sbyte* pszHeaderName, ushort* pcchHeaderValue = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, sbyte*, ushort*, sbyte*>)(lpVtbl[3]))((IHttpRequest4*)Unsafe.AsPointer(ref this), pszHeaderName, pcchHeaderValue);
+        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, sbyte*, ushort*, sbyte*>)(lpVtbl[3]))((IHttpRequest4*)Unsafe.AsPointer(in this), pszHeaderName, pcchHeaderValue);
     }
 
     /// <inheritdoc cref="IHttpRequest.SetHeader" />
@@ -92,9 +92,9 @@ public unsafe partial struct IHttpRequest4 : IHttpRequest4.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     [return: NativeTypeName("PCSTR")]
-    public sbyte* GetHttpMethod()
+    public readonly sbyte* GetHttpMethod()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, sbyte*>)(lpVtbl[8]))((IHttpRequest4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, sbyte*>)(lpVtbl[8]))((IHttpRequest4*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpRequest.SetHttpMethod" />
@@ -124,36 +124,36 @@ public unsafe partial struct IHttpRequest4 : IHttpRequest4.Interface, INativeGui
     /// <inheritdoc cref="IHttpRequest.GetUrlChanged" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public BOOL GetUrlChanged()
+    public readonly BOOL GetUrlChanged()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, int>)(lpVtbl[12]))((IHttpRequest4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, int>)(lpVtbl[12]))((IHttpRequest4*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpRequest.GetForwardedUrl" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetForwardedUrl()
+    public readonly char* GetForwardedUrl()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, char*>)(lpVtbl[13]))((IHttpRequest4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, char*>)(lpVtbl[13]))((IHttpRequest4*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpRequest.GetLocalAddress" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
     [return: NativeTypeName("PSOCKADDR")]
-    public SOCKADDR* GetLocalAddress()
+    public readonly SOCKADDR* GetLocalAddress()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, SOCKADDR*>)(lpVtbl[14]))((IHttpRequest4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, SOCKADDR*>)(lpVtbl[14]))((IHttpRequest4*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpRequest.GetRemoteAddress" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
     [return: NativeTypeName("PSOCKADDR")]
-    public SOCKADDR* GetRemoteAddress()
+    public readonly SOCKADDR* GetRemoteAddress()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, SOCKADDR*>)(lpVtbl[15]))((IHttpRequest4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, SOCKADDR*>)(lpVtbl[15]))((IHttpRequest4*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpRequest.ReadEntityBody" />
@@ -184,9 +184,9 @@ public unsafe partial struct IHttpRequest4 : IHttpRequest4.Interface, INativeGui
     /// <inheritdoc cref="IHttpRequest.GetHttpVersion" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public void GetHttpVersion(ushort* pMajorVersion, ushort* pMinorVersion)
+    public readonly void GetHttpVersion(ushort* pMajorVersion, ushort* pMinorVersion)
     {
-        ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, ushort*, ushort*, void>)(lpVtbl[19]))((IHttpRequest4*)Unsafe.AsPointer(ref this), pMajorVersion, pMinorVersion);
+        ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, ushort*, ushort*, void>)(lpVtbl[19]))((IHttpRequest4*)Unsafe.AsPointer(in this), pMajorVersion, pMinorVersion);
     }
 
     /// <inheritdoc cref="IHttpRequest.GetClientCertificate" />
@@ -209,9 +209,9 @@ public unsafe partial struct IHttpRequest4 : IHttpRequest4.Interface, INativeGui
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
     [return: NativeTypeName("DWORD")]
-    public uint GetSiteId()
+    public readonly uint GetSiteId()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, uint>)(lpVtbl[22]))((IHttpRequest4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpRequest4*, uint>)(lpVtbl[22]))((IHttpRequest4*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpRequest.GetHeaderChanges" />

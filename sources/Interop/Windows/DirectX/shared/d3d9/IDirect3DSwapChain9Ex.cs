@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDirect3DSwapChain9")]
 public unsafe partial struct IDirect3DSwapChain9Ex : IDirect3DSwapChain9Ex.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDirect3DSwapChain9Ex));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDirect3DSwapChain9Ex);
 
     public void** lpVtbl;
 

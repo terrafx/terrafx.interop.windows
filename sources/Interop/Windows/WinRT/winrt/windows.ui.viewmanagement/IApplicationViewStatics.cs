@@ -18,7 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("ApplicationView static methods may be altered or unavailable for releases after Windows 8.1. Instead, use ApplicationView.GetForCurrentView to get an instance of ApplicationView.")]
 public unsafe partial struct IApplicationViewStatics : IApplicationViewStatics.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IApplicationViewStatics));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IApplicationViewStatics);
 
     public void** lpVtbl;
 

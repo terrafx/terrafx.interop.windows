@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1ConcreteTransform")]
 public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1BorderTransform));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1BorderTransform);
 
     public void** lpVtbl;
 
@@ -51,9 +51,9 @@ public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interfa
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("UINT32")]
-    public uint GetInputCount()
+    public readonly uint GetInputCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1BorderTransform*, uint>)(lpVtbl[3]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1BorderTransform*, uint>)(lpVtbl[3]))((ID2D1BorderTransform*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="ID2D1ConcreteTransform.SetOutputBuffer" />
@@ -91,17 +91,17 @@ public unsafe partial struct ID2D1BorderTransform : ID2D1BorderTransform.Interfa
     /// <include file='ID2D1BorderTransform.xml' path='doc/member[@name="ID2D1BorderTransform.GetExtendModeX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public D2D1_EXTEND_MODE GetExtendModeX()
+    public readonly D2D1_EXTEND_MODE GetExtendModeX()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1BorderTransform*, D2D1_EXTEND_MODE>)(lpVtbl[8]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1BorderTransform*, D2D1_EXTEND_MODE>)(lpVtbl[8]))((ID2D1BorderTransform*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1BorderTransform.xml' path='doc/member[@name="ID2D1BorderTransform.GetExtendModeY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public D2D1_EXTEND_MODE GetExtendModeY()
+    public readonly D2D1_EXTEND_MODE GetExtendModeY()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1BorderTransform*, D2D1_EXTEND_MODE>)(lpVtbl[9]))((ID2D1BorderTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1BorderTransform*, D2D1_EXTEND_MODE>)(lpVtbl[9]))((ID2D1BorderTransform*)Unsafe.AsPointer(in this));
     }
 
     public interface Interface : ID2D1ConcreteTransform.Interface

@@ -12,9 +12,14 @@
 
   <PropertyGroup>
     <IsPackable>false</IsPackable>
-    <NoWarn>$(NoWarn);CS1591</NoWarn>
     <OutputType>Exe</OutputType>
     <TerraFXProjectCategory>samples</TerraFXProjectCategory>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- CA1515: Consider making public types internal -->
+    <!-- CS1591: Missing XML comment for publicly visible type or member -->
+    <NoWarn>$(NoWarn);CA1515;CS1591</NoWarn>
   </PropertyGroup>
 
   <Import Project="$(MSBuildThisFileDirectory)..\Directory.Build.props" />

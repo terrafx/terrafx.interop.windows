@@ -78,3 +78,6 @@ TerraFX.Interop.DirectX
 ../../../../tests/Interop/Windows/DirectX/d3dx12/d3dx12_core
 --traverse
 ../../../include/d3dx12/d3dx12_core.h
+--with-readonly
+CD3DX12_RESOURCE_DESC::CalcSubresource
+CD3DX12_RESOURCE_DESC1::CalcSubresource

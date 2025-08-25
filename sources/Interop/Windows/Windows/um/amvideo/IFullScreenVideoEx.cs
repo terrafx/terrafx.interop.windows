@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IFullScreenVideo")]
 public unsafe partial struct IFullScreenVideoEx : IFullScreenVideoEx.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IFullScreenVideoEx));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFullScreenVideoEx);
 
     public void** lpVtbl;
 

@@ -14,5 +14,5 @@ namespace TerraFX.Interop.DirectX;
 [Guid("4FC3B166-972A-40CF-BC37-7DB03DB2FBA3")]
 public unsafe partial struct AudioVolumeMeter : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_AudioVolumeMeter));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_AudioVolumeMeter);
 }

@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("715D9C59-4442-11D2-9605-00C04F8EE628")]
 public unsafe partial struct SpStream : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_SpStream));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SpStream);
 }

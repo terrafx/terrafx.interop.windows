@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("CBE0FED3-4B91-4E90-8354-8A8C84EC6872")]
 public unsafe partial struct ThumbnailStreamCache : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ThumbnailStreamCache));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ThumbnailStreamCache);
 }

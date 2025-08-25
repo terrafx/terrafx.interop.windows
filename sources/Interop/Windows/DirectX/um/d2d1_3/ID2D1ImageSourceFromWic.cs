@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1ImageSource")]
 public unsafe partial struct ID2D1ImageSourceFromWic : ID2D1ImageSourceFromWic.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1ImageSourceFromWic));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1ImageSourceFromWic);
 
     public void** lpVtbl;
 
@@ -50,9 +50,9 @@ public unsafe partial struct ID2D1ImageSourceFromWic : ID2D1ImageSourceFromWic.I
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1ImageSourceFromWic*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1ImageSourceFromWic*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(in this), factory);
     }
 
     /// <inheritdoc cref="ID2D1ImageSource.OfferResources" />
@@ -90,9 +90,9 @@ public unsafe partial struct ID2D1ImageSourceFromWic : ID2D1ImageSourceFromWic.I
     /// <include file='ID2D1ImageSourceFromWic.xml' path='doc/member[@name="ID2D1ImageSourceFromWic.GetSource"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public void GetSource(IWICBitmapSource** wicBitmapSource)
+    public readonly void GetSource(IWICBitmapSource** wicBitmapSource)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1ImageSourceFromWic*, IWICBitmapSource**, void>)(lpVtbl[8]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(ref this), wicBitmapSource);
+        ((delegate* unmanaged[MemberFunction]<ID2D1ImageSourceFromWic*, IWICBitmapSource**, void>)(lpVtbl[8]))((ID2D1ImageSourceFromWic*)Unsafe.AsPointer(in this), wicBitmapSource);
     }
 
     public interface Interface : ID2D1ImageSource.Interface

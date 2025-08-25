@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Resource")]
 public unsafe partial struct ID2D1GradientStopCollection : ID2D1GradientStopCollection.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1GradientStopCollection));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1GradientStopCollection);
 
     public void** lpVtbl;
 
@@ -50,42 +50,42 @@ public unsafe partial struct ID2D1GradientStopCollection : ID2D1GradientStopColl
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1GradientStopCollection*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1GradientStopCollection*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1GradientStopCollection*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1GradientStopCollection*)Unsafe.AsPointer(in this), factory);
     }
 
     /// <include file='ID2D1GradientStopCollection.xml' path='doc/member[@name="ID2D1GradientStopCollection.GetGradientStopCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("UINT32")]
-    public uint GetGradientStopCount()
+    public readonly uint GetGradientStopCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1GradientStopCollection*, uint>)(lpVtbl[4]))((ID2D1GradientStopCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1GradientStopCollection*, uint>)(lpVtbl[4]))((ID2D1GradientStopCollection*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1GradientStopCollection.xml' path='doc/member[@name="ID2D1GradientStopCollection.GetGradientStops"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public void GetGradientStops(D2D1_GRADIENT_STOP* gradientStops, [NativeTypeName("UINT32")] uint gradientStopsCount)
+    public readonly void GetGradientStops(D2D1_GRADIENT_STOP* gradientStops, [NativeTypeName("UINT32")] uint gradientStopsCount)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1GradientStopCollection*, D2D1_GRADIENT_STOP*, uint, void>)(lpVtbl[5]))((ID2D1GradientStopCollection*)Unsafe.AsPointer(ref this), gradientStops, gradientStopsCount);
+        ((delegate* unmanaged[MemberFunction]<ID2D1GradientStopCollection*, D2D1_GRADIENT_STOP*, uint, void>)(lpVtbl[5]))((ID2D1GradientStopCollection*)Unsafe.AsPointer(in this), gradientStops, gradientStopsCount);
     }
 
     /// <include file='ID2D1GradientStopCollection.xml' path='doc/member[@name="ID2D1GradientStopCollection.GetColorInterpolationGamma"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public D2D1_GAMMA GetColorInterpolationGamma()
+    public readonly D2D1_GAMMA GetColorInterpolationGamma()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1GradientStopCollection*, D2D1_GAMMA>)(lpVtbl[6]))((ID2D1GradientStopCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1GradientStopCollection*, D2D1_GAMMA>)(lpVtbl[6]))((ID2D1GradientStopCollection*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1GradientStopCollection.xml' path='doc/member[@name="ID2D1GradientStopCollection.GetExtendMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public D2D1_EXTEND_MODE GetExtendMode()
+    public readonly D2D1_EXTEND_MODE GetExtendMode()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1GradientStopCollection*, D2D1_EXTEND_MODE>)(lpVtbl[7]))((ID2D1GradientStopCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1GradientStopCollection*, D2D1_EXTEND_MODE>)(lpVtbl[7]))((ID2D1GradientStopCollection*)Unsafe.AsPointer(in this));
     }
 
     public interface Interface : ID2D1Resource.Interface

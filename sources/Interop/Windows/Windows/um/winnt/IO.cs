@@ -145,6 +145,9 @@ public static partial class IO
     [NativeTypeName("#define IO_REPARSE_TAG_AF_UNIX (0x80000023L)")]
     public const uint IO_REPARSE_TAG_AF_UNIX = (0x80000023);
 
+    [NativeTypeName("#define IO_REPARSE_TAG_STORAGE_SYNC_FOLDER (0x90000027L)")]
+    public const uint IO_REPARSE_TAG_STORAGE_SYNC_FOLDER = (0x90000027);
+
     [NativeTypeName("#define IO_REPARSE_TAG_WCI_LINK (0xA0000027L)")]
     public const uint IO_REPARSE_TAG_WCI_LINK = (0xA0000027);
 

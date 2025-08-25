@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("BC812430-E75E-4FD1-9641-1F9F1E2D9A1F")]
 public unsafe partial struct IsolatedAppLauncher : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_IsolatedAppLauncher));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_IsolatedAppLauncher);
 }

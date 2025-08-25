@@ -17,7 +17,7 @@ public partial struct IMAGE_POLICY_ENTRY
     public IMAGE_POLICY_ID PolicyId;
 
     /// <include file='IMAGE_POLICY_ENTRY.xml' path='doc/member[@name="IMAGE_POLICY_ENTRY.u"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L23672_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L23806_C5")]
     public _u_e__Union u;
 
     /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union"]/*' />

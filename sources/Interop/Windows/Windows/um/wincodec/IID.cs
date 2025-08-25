@@ -587,6 +587,52 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IWICBitmapFrameChainReader
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x95, 0x94, 0x59, 0x0C,
+                0x20, 0xA1,
+                0x22, 0x42,
+                0x91,
+                0x30,
+                0xA8,
+                0xC2,
+                0x94,
+                0x10,
+                0xBD,
+                0x0B
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IWICBitmapFrameChainWriter
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x28, 0xEA, 0xD9, 0x40,
+                0x68, 0x47,
+                0xB3, 0x47,
+                0x8C,
+                0x12,
+                0x55,
+                0x8A,
+                0x48,
+                0xE9,
+                0x8E,
+                0x38
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IWICProgressiveLevelControl
     {
         get
@@ -626,6 +672,29 @@ public static partial class IID
                 0x96,
                 0x26,
                 0xD3
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IWICDisplayAdaptationControl2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x29, 0x8D, 0x50, 0xD7,
+                0xB7, 0x3A,
+                0x7E, 0x44,
+                0xA6,
+                0x76,
+                0x4D,
+                0x80,
+                0xD7,
+                0xDE,
+                0x72,
+                0x6B
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

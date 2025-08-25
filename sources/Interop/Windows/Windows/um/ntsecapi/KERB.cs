@@ -352,6 +352,9 @@ public static partial class KERB
     [NativeTypeName("#define KERB_REQUEST_REMOVE_CREDENTIAL 4")]
     public const int KERB_REQUEST_REMOVE_CREDENTIAL = 4;
 
+    [NativeTypeName("#define KERB_REQUEST_CRED_LOCAL_ACCOUNT 8")]
+    public const int KERB_REQUEST_CRED_LOCAL_ACCOUNT = 8;
+
     [NativeTypeName("#define KERB_TRANSFER_CRED_WITH_TICKETS 0x1")]
     public const int KERB_TRANSFER_CRED_WITH_TICKETS = 0x1;
 

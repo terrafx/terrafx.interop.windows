@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID2D1Resource : ID2D1Resource.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1Resource));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1Resource);
 
     public void** lpVtbl;
 
@@ -50,9 +50,9 @@ public unsafe partial struct ID2D1Resource : ID2D1Resource.Interface, INativeGui
     /// <include file='ID2D1Resource.xml' path='doc/member[@name="ID2D1Resource.GetFactory"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1Resource*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Resource*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1Resource*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Resource*)Unsafe.AsPointer(in this), factory);
     }
 
     public interface Interface : IUnknown.Interface

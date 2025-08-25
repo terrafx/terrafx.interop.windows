@@ -39,7 +39,7 @@ public partial struct STORAGE_MINIPORT_DESCRIPTOR
     public byte ExtraIoInfoSupported;
 
     /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR.Flags"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L1483_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L1540_C5")]
     public _Flags_e__Union Flags;
 
     /// <include file='STORAGE_MINIPORT_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_MINIPORT_DESCRIPTOR.Reserved0"]/*' />
@@ -56,7 +56,7 @@ public partial struct STORAGE_MINIPORT_DESCRIPTOR
     {
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L1484_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L1541_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.AsBYTE"]/*' />

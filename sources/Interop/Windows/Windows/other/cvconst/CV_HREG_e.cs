@@ -4031,6 +4031,9 @@ public enum CV_HREG_e
     /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_P15"]/*' />
     CV_ARM64_P15 = 429,
 
+    /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_ARM64_FFR"]/*' />
+    CV_ARM64_FFR = 430,
+
     /// <include file='CV_HREG_e.xml' path='doc/member[@name="CV_HREG_e.CV_IA64_NOREG"]/*' />
     CV_IA64_NOREG = CV_REG_NONE,
 

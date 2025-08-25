@@ -19,7 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct ID2D1GradientMesh : ID2D1GradientMesh.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1GradientMesh));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1GradientMesh);
 
     public void** lpVtbl;
 
@@ -52,26 +52,26 @@ public unsafe partial struct ID2D1GradientMesh : ID2D1GradientMesh.Interface, IN
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1GradientMesh*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1GradientMesh*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1GradientMesh*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1GradientMesh*)Unsafe.AsPointer(in this), factory);
     }
 
     /// <include file='ID2D1GradientMesh.xml' path='doc/member[@name="ID2D1GradientMesh.GetPatchCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("UINT32")]
-    public uint GetPatchCount()
+    public readonly uint GetPatchCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1GradientMesh*, uint>)(lpVtbl[4]))((ID2D1GradientMesh*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1GradientMesh*, uint>)(lpVtbl[4]))((ID2D1GradientMesh*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1GradientMesh.xml' path='doc/member[@name="ID2D1GradientMesh.GetPatches"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetPatches([NativeTypeName("UINT32")] uint startIndex, D2D1_GRADIENT_MESH_PATCH* patches, [NativeTypeName("UINT32")] uint patchesCount)
+    public readonly HRESULT GetPatches([NativeTypeName("UINT32")] uint startIndex, D2D1_GRADIENT_MESH_PATCH* patches, [NativeTypeName("UINT32")] uint patchesCount)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1GradientMesh*, uint, D2D1_GRADIENT_MESH_PATCH*, uint, int>)(lpVtbl[5]))((ID2D1GradientMesh*)Unsafe.AsPointer(ref this), startIndex, patches, patchesCount);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1GradientMesh*, uint, D2D1_GRADIENT_MESH_PATCH*, uint, int>)(lpVtbl[5]))((ID2D1GradientMesh*)Unsafe.AsPointer(in this), startIndex, patches, patchesCount);
     }
 
     public interface Interface : ID2D1Resource.Interface

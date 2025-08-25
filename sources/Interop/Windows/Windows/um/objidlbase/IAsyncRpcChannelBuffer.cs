@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IRpcChannelBuffer2")]
 public unsafe partial struct IAsyncRpcChannelBuffer : IAsyncRpcChannelBuffer.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IAsyncRpcChannelBuffer));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAsyncRpcChannelBuffer);
 
     public void** lpVtbl;
 

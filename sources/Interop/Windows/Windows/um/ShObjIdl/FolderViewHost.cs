@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("20B1CB23-6968-4EB9-B7D4-A66D00D07CEE")]
 public unsafe partial struct FolderViewHost : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_FolderViewHost));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_FolderViewHost);
 }

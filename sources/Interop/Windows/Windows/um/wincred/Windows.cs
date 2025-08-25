@@ -254,6 +254,9 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint CredUIReadSSOCredW([NativeTypeName("PCWSTR")] char* pszRealm, [NativeTypeName("PWSTR *")] char** ppszUsername);
 
+    [NativeTypeName("#define BACK_BUTTON_IDENTIFY_AUTH_PACKAGE 0xCAD00001")]
+    public const uint BACK_BUTTON_IDENTIFY_AUTH_PACKAGE = 0xCAD00001;
+
     [NativeTypeName("#define CredWrite CredWriteW")]
     public static delegate*<CREDENTIALW*, uint, BOOL> CredWrite => &CredWriteW;
 

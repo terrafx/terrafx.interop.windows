@@ -19,7 +19,7 @@ public partial struct STORAGE_HW_ENDURANCE_INFO
     public uint GroupId;
 
     /// <include file='STORAGE_HW_ENDURANCE_INFO.xml' path='doc/member[@name="STORAGE_HW_ENDURANCE_INFO.Flags"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L3154_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L3456_C5")]
     public _Flags_e__Struct Flags;
 
     /// <include file='STORAGE_HW_ENDURANCE_INFO.xml' path='doc/member[@name="STORAGE_HW_ENDURANCE_INFO.LifePercentage"]/*' />

@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("B1AEC16F-2383-4852-B0E9-8F0B1DC66B4D")]
 public unsafe partial struct PackageDebugSettings : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_PackageDebugSettings));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_PackageDebugSettings);
 }

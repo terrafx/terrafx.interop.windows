@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("273EB5E7-88B0-4843-BFEF-E2C81D43AAE5")]
 public unsafe partial struct AppStartupLink : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_AppStartupLink));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_AppStartupLink);
 }

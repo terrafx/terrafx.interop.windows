@@ -28,7 +28,8 @@ public unsafe partial struct D3D12_RESOURCE_DESC1
         SampleDesc = o->SampleDesc;
         Layout = o->Layout;
         Flags = o->Flags;
-        SamplerFeedbackMipRegion = new D3D12_MIP_REGION {
+        SamplerFeedbackMipRegion = new D3D12_MIP_REGION
+        {
         };
     }
 

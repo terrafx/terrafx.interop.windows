@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("2933BF90-7B36-11D2-B20E-00C04F983E60")]
 public unsafe partial struct DOMDocument : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_DOMDocument));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_DOMDocument);
 }

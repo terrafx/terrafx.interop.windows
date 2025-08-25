@@ -613,4 +613,18 @@ public static partial class CLSIDTests
     {
         Assert.That(CLSID_WICJpegXLAnimFrameMetadataWriter, Is.EqualTo(new Guid(0xd1ce58a8, 0x06e0, 0x4b6f, 0x8f, 0xc1, 0x57, 0x75, 0x60, 0xbd, 0x5a, 0xd9)));
     }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_WICGainMapMetadataReader" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_WICGainMapMetadataReaderTest()
+    {
+        Assert.That(CLSID_WICGainMapMetadataReader, Is.EqualTo(new Guid(0x3ac32daf, 0x27b9, 0x4af5, 0xb0, 0xab, 0xd1, 0x18, 0x9d, 0xcf, 0x34, 0xb3)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_WICGainMapMetadataWriter" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_WICGainMapMetadataWriterTest()
+    {
+        Assert.That(CLSID_WICGainMapMetadataWriter, Is.EqualTo(new Guid(0x6f845268, 0xa92e, 0x4a02, 0xb0, 0x02, 0xa6, 0x7c, 0x36, 0x28, 0x00, 0xb2)));
+    }
 }

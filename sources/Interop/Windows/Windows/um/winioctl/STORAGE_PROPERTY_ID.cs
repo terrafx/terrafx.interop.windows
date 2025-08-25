@@ -124,4 +124,7 @@ public enum STORAGE_PROPERTY_ID
 
     /// <include file='STORAGE_PROPERTY_ID.xml' path='doc/member[@name="STORAGE_PROPERTY_ID.StorageDeviceProtocolSpecificPropertyEx"]/*' />
     StorageDeviceProtocolSpecificPropertyEx,
+
+    /// <include file='STORAGE_PROPERTY_ID.xml' path='doc/member[@name="STORAGE_PROPERTY_ID.StorageHwCryptoProperty"]/*' />
+    StorageHwCryptoProperty,
 }

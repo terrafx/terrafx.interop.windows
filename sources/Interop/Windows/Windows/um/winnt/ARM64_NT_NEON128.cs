@@ -15,7 +15,7 @@ public partial struct ARM64_NT_NEON128
 {
     /// <include file='ARM64_NT_NEON128.xml' path='doc/member[@name="ARM64_NT_NEON128.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winnt_L6771_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L6768_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='ARM64_NT_NEON128.xml' path='doc/member[@name="ARM64_NT_NEON128.D"]/*' />

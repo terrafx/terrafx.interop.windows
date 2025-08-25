@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDWriteColorGlyphRunEnumerator")]
 public unsafe partial struct IDWriteColorGlyphRunEnumerator1 : IDWriteColorGlyphRunEnumerator1.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteColorGlyphRunEnumerator1));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDWriteColorGlyphRunEnumerator1);
 
     public void** lpVtbl;
 

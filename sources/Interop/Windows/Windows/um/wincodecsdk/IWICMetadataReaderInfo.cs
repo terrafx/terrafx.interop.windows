@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IWICMetadataHandlerInfo")]
 public unsafe partial struct IWICMetadataReaderInfo : IWICMetadataReaderInfo.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWICMetadataReaderInfo));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICMetadataReaderInfo);
 
     public void** lpVtbl;
 

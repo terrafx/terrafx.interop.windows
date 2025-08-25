@@ -516,6 +516,48 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern uint GetTempPath2A([NativeTypeName("DWORD")] uint BufferLength, [NativeTypeName("LPSTR")] sbyte* Buffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFile3"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.26100.0")]
+    public static extern HANDLE CreateFile3([NativeTypeName("LPCWSTR")] char* lpFileName, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("DWORD")] uint dwShareMode, [NativeTypeName("DWORD")] uint dwCreationDisposition, [NativeTypeName("LPCREATEFILE3_EXTENDED_PARAMETERS")] CREATEFILE3_EXTENDED_PARAMETERS* pCreateExParams);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDirectory2A"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.26100.0")]
+    public static extern HANDLE CreateDirectory2A([NativeTypeName("LPCSTR")] sbyte* lpPathName, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("DWORD")] uint dwShareMode, DIRECTORY_FLAGS DirectoryFlags, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDirectory2W"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.26100.0")]
+    public static extern HANDLE CreateDirectory2W([NativeTypeName("LPCWSTR")] char* lpPathName, [NativeTypeName("DWORD")] uint dwDesiredAccess, [NativeTypeName("DWORD")] uint dwShareMode, DIRECTORY_FLAGS DirectoryFlags, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpSecurityAttributes);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveDirectory2A"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.26100.0")]
+    public static extern BOOL RemoveDirectory2A([NativeTypeName("LPCSTR")] sbyte* lpPathName, DIRECTORY_FLAGS DirectoryFlags);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveDirectory2W"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.26100.0")]
+    public static extern BOOL RemoveDirectory2W([NativeTypeName("LPCWSTR")] char* lpPathName, DIRECTORY_FLAGS DirectoryFlags);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteFile2A"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.26100.0")]
+    public static extern BOOL DeleteFile2A([NativeTypeName("LPCSTR")] sbyte* lpFileName, [NativeTypeName("DWORD")] uint Flags);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteFile2W"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.26100.0")]
+    public static extern BOOL DeleteFile2W([NativeTypeName("LPCWSTR")] char* lpFileName, [NativeTypeName("DWORD")] uint Flags);
+
     [NativeTypeName("#define TRUNCATE_EXISTING 5")]
     public const int TRUNCATE_EXISTING = 5;
 
@@ -628,4 +670,16 @@ public static unsafe partial class Windows
     [NativeTypeName("#define GetTempPath2 GetTempPath2W")]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static delegate*<uint, char*, uint> GetTempPath2 => &GetTempPath2W;
+
+    [NativeTypeName("#define CreateDirectory2 CreateDirectory2W")]
+    [SupportedOSPlatform("windows10.0.26100.0")]
+    public static delegate*<char*, uint, uint, DIRECTORY_FLAGS, SECURITY_ATTRIBUTES*, HANDLE> CreateDirectory2 => &CreateDirectory2W;
+
+    [NativeTypeName("#define RemoveDirectory2 RemoveDirectory2W")]
+    [SupportedOSPlatform("windows10.0.26100.0")]
+    public static delegate*<char*, DIRECTORY_FLAGS, BOOL> RemoveDirectory2 => &RemoveDirectory2W;
+
+    [NativeTypeName("#define DeleteFile2 DeleteFile2W")]
+    [SupportedOSPlatform("windows10.0.26100.0")]
+    public static delegate*<char*, uint, BOOL> DeleteFile2 => &DeleteFile2W;
 }

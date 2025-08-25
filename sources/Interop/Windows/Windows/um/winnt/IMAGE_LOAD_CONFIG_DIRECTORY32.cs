@@ -202,4 +202,8 @@ public partial struct IMAGE_LOAD_CONFIG_DIRECTORY32
     /// <include file='IMAGE_LOAD_CONFIG_DIRECTORY32.xml' path='doc/member[@name="IMAGE_LOAD_CONFIG_DIRECTORY32.GuardMemcpyFunctionPointer"]/*' />
     [NativeTypeName("DWORD")]
     public uint GuardMemcpyFunctionPointer;
+
+    /// <include file='IMAGE_LOAD_CONFIG_DIRECTORY32.xml' path='doc/member[@name="IMAGE_LOAD_CONFIG_DIRECTORY32.UmaFunctionPointers"]/*' />
+    [NativeTypeName("DWORD")]
+    public uint UmaFunctionPointers;
 }

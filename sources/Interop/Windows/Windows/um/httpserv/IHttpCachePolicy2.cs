@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpCachePolicy")]
 public unsafe partial struct IHttpCachePolicy2 : IHttpCachePolicy2.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpCachePolicy2));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpCachePolicy2);
 
     public void** lpVtbl;
 
@@ -56,9 +56,9 @@ public unsafe partial struct IHttpCachePolicy2 : IHttpCachePolicy2.Interface, IN
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("PCSTR")]
-    public sbyte* GetVaryByHeaders()
+    public readonly sbyte* GetVaryByHeaders()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCachePolicy2*, sbyte*>)(lpVtbl[4]))((IHttpCachePolicy2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpCachePolicy2*, sbyte*>)(lpVtbl[4]))((IHttpCachePolicy2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpCachePolicy.AppendVaryByQueryString" />
@@ -73,9 +73,9 @@ public unsafe partial struct IHttpCachePolicy2 : IHttpCachePolicy2.Interface, IN
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [return: NativeTypeName("PCSTR")]
-    public sbyte* GetVaryByQueryStrings()
+    public readonly sbyte* GetVaryByQueryStrings()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCachePolicy2*, sbyte*>)(lpVtbl[6]))((IHttpCachePolicy2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpCachePolicy2*, sbyte*>)(lpVtbl[6]))((IHttpCachePolicy2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpCachePolicy.SetVaryByValue" />
@@ -90,17 +90,17 @@ public unsafe partial struct IHttpCachePolicy2 : IHttpCachePolicy2.Interface, IN
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     [return: NativeTypeName("PCSTR")]
-    public sbyte* GetVaryByValue()
+    public readonly sbyte* GetVaryByValue()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCachePolicy2*, sbyte*>)(lpVtbl[8]))((IHttpCachePolicy2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpCachePolicy2*, sbyte*>)(lpVtbl[8]))((IHttpCachePolicy2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpCachePolicy.IsUserCacheEnabled" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public BOOL IsUserCacheEnabled()
+    public readonly BOOL IsUserCacheEnabled()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCachePolicy2*, int>)(lpVtbl[9]))((IHttpCachePolicy2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpCachePolicy2*, int>)(lpVtbl[9]))((IHttpCachePolicy2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpCachePolicy.DisableUserCache" />
@@ -114,9 +114,9 @@ public unsafe partial struct IHttpCachePolicy2 : IHttpCachePolicy2.Interface, IN
     /// <inheritdoc cref="IHttpCachePolicy.IsCached" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public BOOL IsCached()
+    public readonly BOOL IsCached()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCachePolicy2*, int>)(lpVtbl[11]))((IHttpCachePolicy2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpCachePolicy2*, int>)(lpVtbl[11]))((IHttpCachePolicy2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpCachePolicy.SetIsCached" />
@@ -130,17 +130,17 @@ public unsafe partial struct IHttpCachePolicy2 : IHttpCachePolicy2.Interface, IN
     /// <inheritdoc cref="IHttpCachePolicy.GetKernelCacheInvalidatorSet" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public BOOL GetKernelCacheInvalidatorSet()
+    public readonly BOOL GetKernelCacheInvalidatorSet()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCachePolicy2*, int>)(lpVtbl[13]))((IHttpCachePolicy2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpCachePolicy2*, int>)(lpVtbl[13]))((IHttpCachePolicy2*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpCachePolicy2.xml' path='doc/member[@name="IHttpCachePolicy2.IsForceUpdateSet"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public BOOL IsForceUpdateSet()
+    public readonly BOOL IsForceUpdateSet()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCachePolicy2*, int>)(lpVtbl[14]))((IHttpCachePolicy2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpCachePolicy2*, int>)(lpVtbl[14]))((IHttpCachePolicy2*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpCachePolicy2.xml' path='doc/member[@name="IHttpCachePolicy2.SetForceUpdate"]/*' />

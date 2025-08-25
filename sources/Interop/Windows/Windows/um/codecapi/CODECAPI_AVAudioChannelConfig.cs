@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("17F89CB3-C38D-4368-9EDE-63B94D177F9F")]
 public unsafe partial struct CODECAPI_AVAudioChannelConfig : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVAudioChannelConfig));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVAudioChannelConfig);
 }
