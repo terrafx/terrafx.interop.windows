@@ -19,7 +19,7 @@ public partial struct D3D12_RAYTRACING_GEOMETRY_DESC
     public D3D12_RAYTRACING_GEOMETRY_FLAGS Flags;
 
     /// <include file='D3D12_RAYTRACING_GEOMETRY_DESC.xml' path='doc/member[@name="D3D12_RAYTRACING_GEOMETRY_DESC.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12_L14690_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L14849_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Triangles"]/*' />
@@ -44,6 +44,17 @@ public partial struct D3D12_RAYTRACING_GEOMETRY_DESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.OmmTriangles"]/*' />
+    [UnscopedRef]
+    public ref D3D12_RAYTRACING_GEOMETRY_OMM_TRIANGLES_DESC OmmTriangles
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.OmmTriangles;
+        }
+    }
+
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
@@ -55,5 +66,9 @@ public partial struct D3D12_RAYTRACING_GEOMETRY_DESC
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AABBs"]/*' />
         [FieldOffset(0)]
         public D3D12_RAYTRACING_GEOMETRY_AABBS_DESC AABBs;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.OmmTriangles"]/*' />
+        [FieldOffset(0)]
+        public D3D12_RAYTRACING_GEOMETRY_OMM_TRIANGLES_DESC OmmTriangles;
     }
 }

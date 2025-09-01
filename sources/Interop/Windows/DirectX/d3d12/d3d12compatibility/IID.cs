@@ -212,4 +212,29 @@ public static partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_DirectMLWebNNCreatorID
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x76, 0x1A, 0xF0, 0xFD,
+                0x11, 0x1E,
+                0x0F, 0x45,
+                0x90,
+                0x2B,
+                0x74,
+                0xF0,
+                0x4E,
+                0xA0,
+                0x80,
+                0x94
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

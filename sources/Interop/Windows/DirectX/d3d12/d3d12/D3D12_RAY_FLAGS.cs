@@ -43,4 +43,7 @@ public enum D3D12_RAY_FLAGS
 
     /// <include file='D3D12_RAY_FLAGS.xml' path='doc/member[@name="D3D12_RAY_FLAGS.D3D12_RAY_FLAG_SKIP_PROCEDURAL_PRIMITIVES"]/*' />
     D3D12_RAY_FLAG_SKIP_PROCEDURAL_PRIMITIVES = 0x200,
+
+    /// <include file='D3D12_RAY_FLAGS.xml' path='doc/member[@name="D3D12_RAY_FLAGS.D3D12_RAY_FLAG_FORCE_OMM_2_STATE"]/*' />
+    D3D12_RAY_FLAG_FORCE_OMM_2_STATE = 0x400,
 }

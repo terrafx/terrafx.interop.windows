@@ -16,4 +16,7 @@ public enum D3D12_RAYTRACING_TIER
 
     /// <include file='D3D12_RAYTRACING_TIER.xml' path='doc/member[@name="D3D12_RAYTRACING_TIER.D3D12_RAYTRACING_TIER_1_1"]/*' />
     D3D12_RAYTRACING_TIER_1_1 = 11,
+
+    /// <include file='D3D12_RAYTRACING_TIER.xml' path='doc/member[@name="D3D12_RAYTRACING_TIER.D3D12_RAYTRACING_TIER_1_2"]/*' />
+    D3D12_RAYTRACING_TIER_1_2 = 12,
 }

@@ -46,4 +46,11 @@ public static partial class CLSIDTests
     {
         Assert.That(CLSID_D3D12DeviceFactory, Is.EqualTo(new Guid(0x114863bf, 0xc386, 0x4aee, 0xb3, 0x9d, 0x8f, 0x0b, 0xbb, 0x06, 0x29, 0x55)));
     }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_D3D12DSRDeviceFactory" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_D3D12DSRDeviceFactoryTest()
+    {
+        Assert.That(CLSID_D3D12DSRDeviceFactory, Is.EqualTo(new Guid(0xbb6dd27e, 0x94a9, 0x41a6, 0x9f, 0x1b, 0x13, 0x37, 0x72, 0x17, 0x24, 0x28)));
+    }
 }

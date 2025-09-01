@@ -16,7 +16,7 @@ public partial struct D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA
     public D3D12_DRED_VERSION Version;
 
     /// <include file='D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA.xml' path='doc/member[@name="D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12_L15832_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L16033_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Dred_1_0"]/*' />

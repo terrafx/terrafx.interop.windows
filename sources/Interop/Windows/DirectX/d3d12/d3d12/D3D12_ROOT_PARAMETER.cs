@@ -16,7 +16,7 @@ public partial struct D3D12_ROOT_PARAMETER
     public D3D12_ROOT_PARAMETER_TYPE ParameterType;
 
     /// <include file='D3D12_ROOT_PARAMETER.xml' path='doc/member[@name="D3D12_ROOT_PARAMETER.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12_L3981_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L4053_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='D3D12_ROOT_PARAMETER.xml' path='doc/member[@name="D3D12_ROOT_PARAMETER.ShaderVisibility"]/*' />

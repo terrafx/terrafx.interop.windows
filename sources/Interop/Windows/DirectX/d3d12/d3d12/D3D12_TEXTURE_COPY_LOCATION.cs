@@ -19,7 +19,7 @@ public unsafe partial struct D3D12_TEXTURE_COPY_LOCATION
     public D3D12_TEXTURE_COPY_TYPE Type;
 
     /// <include file='D3D12_TEXTURE_COPY_LOCATION.xml' path='doc/member[@name="D3D12_TEXTURE_COPY_LOCATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12_L3265_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L3337_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.PlacedFootprint"]/*' />

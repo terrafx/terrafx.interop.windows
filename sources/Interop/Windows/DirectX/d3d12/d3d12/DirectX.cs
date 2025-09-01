@@ -30,6 +30,10 @@ public static unsafe partial class DirectX
     [DllImport("d3d12", ExactSpelling = true)]
     public static extern HRESULT D3D12CreateVersionedRootSignatureDeserializer([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSizeInBytes, [NativeTypeName("const IID &")] Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary"]/*' />
+    [DllImport("d3d12", ExactSpelling = true)]
+    public static extern HRESULT D3D12CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSizeInBytes, [NativeTypeName("LPCWSTR")] char* RootSignatureSubobjectName, [NativeTypeName("const IID &")] Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
+
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12CreateDevice"]/*' />
     [DllImport("d3d12", ExactSpelling = true)]
     public static extern HRESULT D3D12CreateDevice(IUnknown* pAdapter, D3D_FEATURE_LEVEL MinimumFeatureLevel, [NativeTypeName("const IID &")] Guid* riid, void** ppDevice);
@@ -85,6 +89,31 @@ public static unsafe partial class DirectX
                 0xD6,
                 0x94,
                 0xFB
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const UUID")]
+    public static ref readonly Guid D3D12GPUUploadHeapsOnUnsupportedOS
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xF3, 0x51, 0xDC, 0x45,
+                0x7F, 0x76,
+                0x88, 0x45,
+                0xB2,
+                0x06,
+                0x0B,
+                0xAA,
+                0x2B,
+                0x16,
+                0xFB,
+                0xAE
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
