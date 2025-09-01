@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMonitorGraphicsCaptureItemInterop : IMonitorGraphicsCaptureItemInterop.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMonitorGraphicsCaptureItemInterop));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMonitorGraphicsCaptureItemInterop);
 
     public void** lpVtbl;
 

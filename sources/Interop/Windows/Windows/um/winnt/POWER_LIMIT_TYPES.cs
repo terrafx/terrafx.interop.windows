@@ -11,14 +11,26 @@ public enum POWER_LIMIT_TYPES
     /// <include file='POWER_LIMIT_TYPES.xml' path='doc/member[@name="POWER_LIMIT_TYPES.PowerLimitContinuous"]/*' />
     PowerLimitContinuous = 0,
 
+    /// <include file='POWER_LIMIT_TYPES.xml' path='doc/member[@name="POWER_LIMIT_TYPES.PowerLimitType1"]/*' />
+    PowerLimitType1 = PowerLimitContinuous,
+
     /// <include file='POWER_LIMIT_TYPES.xml' path='doc/member[@name="POWER_LIMIT_TYPES.PowerLimitBurst"]/*' />
     PowerLimitBurst,
+
+    /// <include file='POWER_LIMIT_TYPES.xml' path='doc/member[@name="POWER_LIMIT_TYPES.PowerLimitType2"]/*' />
+    PowerLimitType2 = PowerLimitBurst,
 
     /// <include file='POWER_LIMIT_TYPES.xml' path='doc/member[@name="POWER_LIMIT_TYPES.PowerLimitRapid"]/*' />
     PowerLimitRapid,
 
+    /// <include file='POWER_LIMIT_TYPES.xml' path='doc/member[@name="POWER_LIMIT_TYPES.PowerLimitType3"]/*' />
+    PowerLimitType3 = PowerLimitRapid,
+
     /// <include file='POWER_LIMIT_TYPES.xml' path='doc/member[@name="POWER_LIMIT_TYPES.PowerLimitPreemptive"]/*' />
     PowerLimitPreemptive,
+
+    /// <include file='POWER_LIMIT_TYPES.xml' path='doc/member[@name="POWER_LIMIT_TYPES.PowerLimitType4"]/*' />
+    PowerLimitType4 = PowerLimitPreemptive,
 
     /// <include file='POWER_LIMIT_TYPES.xml' path='doc/member[@name="POWER_LIMIT_TYPES.PowerLimitPreemptiveOffset"]/*' />
     PowerLimitPreemptiveOffset,

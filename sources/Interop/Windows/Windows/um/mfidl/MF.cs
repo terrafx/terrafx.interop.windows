@@ -2462,6 +2462,31 @@ public static partial class MF
         }
     }
 
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MF_SD_SUPPORTS_PROTECTED_CODEC_SWITCH
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x17, 0xB1, 0xB6, 0x8F,
+                0x2E, 0x86,
+                0x31, 0x4B,
+                0x8D,
+                0xAB,
+                0x5E,
+                0x0A,
+                0x43,
+                0x4C,
+                0xAE,
+                0xF0
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_ACTIVATE_CUSTOM_VIDEO_MIXER_CLSID
     {

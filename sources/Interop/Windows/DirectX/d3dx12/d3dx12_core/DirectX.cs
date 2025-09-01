@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3dx12_core.h in microsoft/DirectX-Headers tag v1.614.0
+// Ported from d3dx12_core.h in microsoft/DirectX-Headers tag v1.616.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using TerraFX.Interop.Windows;
@@ -20,7 +20,8 @@ public static unsafe partial class DirectX
     [return: NativeTypeName("UINT8")]
     public static byte D3D12GetFormatPlaneCount(ID3D12Device* pDevice, DXGI_FORMAT Format)
     {
-        D3D12_FEATURE_DATA_FORMAT_INFO formatInfo = new D3D12_FEATURE_DATA_FORMAT_INFO {
+        D3D12_FEATURE_DATA_FORMAT_INFO formatInfo = new D3D12_FEATURE_DATA_FORMAT_INFO
+        {
             Format = Format,
             PlaneCount = 0,
         };

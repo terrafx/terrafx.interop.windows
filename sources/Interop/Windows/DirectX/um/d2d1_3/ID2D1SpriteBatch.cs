@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Resource")]
 public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1SpriteBatch));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1SpriteBatch);
 
     public void** lpVtbl;
 
@@ -50,9 +50,9 @@ public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface, INat
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1SpriteBatch*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1SpriteBatch*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SpriteBatch*)Unsafe.AsPointer(in this), factory);
     }
 
     /// <include file='ID2D1SpriteBatch.xml' path='doc/member[@name="ID2D1SpriteBatch.AddSprites"]/*' />
@@ -74,18 +74,18 @@ public unsafe partial struct ID2D1SpriteBatch : ID2D1SpriteBatch.Interface, INat
     /// <include file='ID2D1SpriteBatch.xml' path='doc/member[@name="ID2D1SpriteBatch.GetSprites"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetSprites([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles = null, [NativeTypeName("D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles = null, [NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* colors = null, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms = null)
+    public readonly HRESULT GetSprites([NativeTypeName("UINT32")] uint startIndex, [NativeTypeName("UINT32")] uint spriteCount, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* destinationRectangles = null, [NativeTypeName("D2D1_RECT_U *")] D2D_RECT_U* sourceRectangles = null, [NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* colors = null, [NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transforms = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1SpriteBatch*, uint, uint, D2D_RECT_F*, D2D_RECT_U*, DXGI_RGBA*, D2D_MATRIX_3X2_F*, int>)(lpVtbl[6]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this), startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SpriteBatch*, uint, uint, D2D_RECT_F*, D2D_RECT_U*, DXGI_RGBA*, D2D_MATRIX_3X2_F*, int>)(lpVtbl[6]))((ID2D1SpriteBatch*)Unsafe.AsPointer(in this), startIndex, spriteCount, destinationRectangles, sourceRectangles, colors, transforms);
     }
 
     /// <include file='ID2D1SpriteBatch.xml' path='doc/member[@name="ID2D1SpriteBatch.GetSpriteCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [return: NativeTypeName("UINT32")]
-    public uint GetSpriteCount()
+    public readonly uint GetSpriteCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1SpriteBatch*, uint>)(lpVtbl[7]))((ID2D1SpriteBatch*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SpriteBatch*, uint>)(lpVtbl[7]))((ID2D1SpriteBatch*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1SpriteBatch.xml' path='doc/member[@name="ID2D1SpriteBatch.Clear"]/*' />

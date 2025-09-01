@@ -43,4 +43,10 @@ public enum HTTP_REQUEST_INFO_TYPE
 
     /// <include file='HTTP_REQUEST_INFO_TYPE.xml' path='doc/member[@name="HTTP_REQUEST_INFO_TYPE.HttpRequestInfoTypeTcpInfoV2"]/*' />
     HttpRequestInfoTypeTcpInfoV2,
+
+    /// <include file='HTTP_REQUEST_INFO_TYPE.xml' path='doc/member[@name="HTTP_REQUEST_INFO_TYPE.HttpRequestInfoTypeTransportIdleConnectionTimeout"]/*' />
+    HttpRequestInfoTypeTransportIdleConnectionTimeout,
+
+    /// <include file='HTTP_REQUEST_INFO_TYPE.xml' path='doc/member[@name="HTTP_REQUEST_INFO_TYPE.HttpRequestInfoTypeDscpTag"]/*' />
+    HttpRequestInfoTypeDscpTag,
 }

@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpResponse3")]
 public unsafe partial struct IHttpResponse4 : IHttpResponse4.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpResponse4));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpResponse4);
 
     public void** lpVtbl;
 
@@ -24,9 +24,9 @@ public unsafe partial struct IHttpResponse4 : IHttpResponse4.Interface, INativeG
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     [return: NativeTypeName("const HTTP_RESPONSE *")]
-    public HTTP_RESPONSE_V2* GetRawHttpRequestConst()
+    public readonly HTTP_RESPONSE_V2* GetRawHttpRequestConst()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpResponse4*, HTTP_RESPONSE_V2*>)(lpVtbl[0]))((IHttpResponse4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpResponse4*, HTTP_RESPONSE_V2*>)(lpVtbl[0]))((IHttpResponse4*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpResponse.GetRawHttpResponse" />
@@ -90,18 +90,18 @@ public unsafe partial struct IHttpResponse4 : IHttpResponse4.Interface, INativeG
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     [return: NativeTypeName("PCSTR")]
-    public sbyte* GetHeader(HTTP_HEADER_ID ulHeaderIndex, ushort* pcchHeaderValue = null)
+    public readonly sbyte* GetHeader(HTTP_HEADER_ID ulHeaderIndex, ushort* pcchHeaderValue = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpResponse4*, HTTP_HEADER_ID, ushort*, sbyte*>)(lpVtbl[8]))((IHttpResponse4*)Unsafe.AsPointer(ref this), ulHeaderIndex, pcchHeaderValue);
+        return ((delegate* unmanaged[MemberFunction]<IHttpResponse4*, HTTP_HEADER_ID, ushort*, sbyte*>)(lpVtbl[8]))((IHttpResponse4*)Unsafe.AsPointer(in this), ulHeaderIndex, pcchHeaderValue);
     }
 
     /// <inheritdoc cref="IHttpResponse.GetHeader" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     [return: NativeTypeName("PCSTR")]
-    public sbyte* GetHeader([NativeTypeName("PCSTR")] sbyte* pszHeaderName, ushort* pcchHeaderValue = null)
+    public readonly sbyte* GetHeader([NativeTypeName("PCSTR")] sbyte* pszHeaderName, ushort* pcchHeaderValue = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpResponse4*, sbyte*, ushort*, sbyte*>)(lpVtbl[9]))((IHttpResponse4*)Unsafe.AsPointer(ref this), pszHeaderName, pcchHeaderValue);
+        return ((delegate* unmanaged[MemberFunction]<IHttpResponse4*, sbyte*, ushort*, sbyte*>)(lpVtbl[9]))((IHttpResponse4*)Unsafe.AsPointer(in this), pszHeaderName, pcchHeaderValue);
     }
 
     /// <inheritdoc cref="IHttpResponse.Clear" />
@@ -147,9 +147,9 @@ public unsafe partial struct IHttpResponse4 : IHttpResponse4.Interface, INativeG
     /// <inheritdoc cref="IHttpResponse.GetKernelCacheEnabled" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public BOOL GetKernelCacheEnabled()
+    public readonly BOOL GetKernelCacheEnabled()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpResponse4*, int>)(lpVtbl[15]))((IHttpResponse4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpResponse4*, int>)(lpVtbl[15]))((IHttpResponse4*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpResponse.SuppressHeaders" />
@@ -163,9 +163,9 @@ public unsafe partial struct IHttpResponse4 : IHttpResponse4.Interface, INativeG
     /// <inheritdoc cref="IHttpResponse.GetHeadersSuppressed" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public BOOL GetHeadersSuppressed()
+    public readonly BOOL GetHeadersSuppressed()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpResponse4*, int>)(lpVtbl[17]))((IHttpResponse4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpResponse4*, int>)(lpVtbl[17]))((IHttpResponse4*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpResponse.Flush" />
@@ -285,9 +285,9 @@ public unsafe partial struct IHttpResponse4 : IHttpResponse4.Interface, INativeG
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(32)]
     [return: NativeTypeName("PCSTR")]
-    public sbyte* GetTrailer([NativeTypeName("PCSTR")] sbyte* pszHeaderName, ushort* pcchHeaderValue = null)
+    public readonly sbyte* GetTrailer([NativeTypeName("PCSTR")] sbyte* pszHeaderName, ushort* pcchHeaderValue = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpResponse4*, sbyte*, ushort*, sbyte*>)(lpVtbl[32]))((IHttpResponse4*)Unsafe.AsPointer(ref this), pszHeaderName, pcchHeaderValue);
+        return ((delegate* unmanaged[MemberFunction]<IHttpResponse4*, sbyte*, ushort*, sbyte*>)(lpVtbl[32]))((IHttpResponse4*)Unsafe.AsPointer(in this), pszHeaderName, pcchHeaderValue);
     }
 
     /// <include file='IHttpResponse4.xml' path='doc/member[@name="IHttpResponse4.ResetStream"]/*' />

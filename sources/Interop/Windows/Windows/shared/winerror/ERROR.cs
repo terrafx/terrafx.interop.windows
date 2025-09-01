@@ -1228,6 +1228,9 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_VOLUME_ROLLBACK_DETECTED 521L")]
     public const int ERROR_VOLUME_ROLLBACK_DETECTED = 521;
 
+    [NativeTypeName("#define ERROR_CLOUD_FILE_HYDRATION_NOT_AVAILABLE 523L")]
+    public const int ERROR_CLOUD_FILE_HYDRATION_NOT_AVAILABLE = 523;
+
     [NativeTypeName("#define ERROR_ARITHMETIC_OVERFLOW 534L")]
     public const int ERROR_ARITHMETIC_OVERFLOW = 534;
 
@@ -4252,6 +4255,9 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_VSM_DMA_PROTECTION_NOT_IN_USE 4561L")]
     public const int ERROR_VSM_DMA_PROTECTION_NOT_IN_USE = 4561;
 
+    [NativeTypeName("#define ERROR_VSM_KEY_CI_POLICY_ROLLBACK_DETECTED 4562L")]
+    public const int ERROR_VSM_KEY_CI_POLICY_ROLLBACK_DETECTED = 4562;
+
     [NativeTypeName("#define ERROR_PLATFORM_MANIFEST_NOT_AUTHORIZED 4570L")]
     public const int ERROR_PLATFORM_MANIFEST_NOT_AUTHORIZED = 4570;
 
@@ -4987,6 +4993,12 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_CNU_NOT_READY 6256L")]
     public const int ERROR_CNU_NOT_READY = 6256;
 
+    [NativeTypeName("#define ERROR_CAMERA_INVALID_CONFIGURATION 6350L")]
+    public const int ERROR_CAMERA_INVALID_CONFIGURATION = 6350;
+
+    [NativeTypeName("#define ERROR_CAMERA_INSUFFICIENT_BANDWIDTH 6351L")]
+    public const int ERROR_CAMERA_INSUFFICIENT_BANDWIDTH = 6351;
+
     [NativeTypeName("#define ERROR_LOG_SECTOR_INVALID 6600L")]
     public const int ERROR_LOG_SECTOR_INVALID = 6600;
 
@@ -5391,6 +5403,9 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_TRANSACTION_NOT_ENLISTED 6855L")]
     public const int ERROR_TRANSACTION_NOT_ENLISTED = 6855;
+
+    [NativeTypeName("#define ERROR_ENLISTMENT_NOT_INITIALIZED 6856L")]
+    public const int ERROR_ENLISTMENT_NOT_INITIALIZED = 6856;
 
     [NativeTypeName("#define ERROR_CTX_WINSTATION_NAME_INVALID 7001L")]
     public const int ERROR_CTX_WINSTATION_NAME_INVALID = 7001;
@@ -7942,6 +7957,9 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_GPIO_INTERRUPT_ALREADY_UNMASKED 15327L")]
     public const int ERROR_GPIO_INTERRUPT_ALREADY_UNMASKED = 15327;
 
+    [NativeTypeName("#define ERROR_CANNOT_COMPOSE_APISET_EXTENSION 15380L")]
+    public const int ERROR_CANNOT_COMPOSE_APISET_EXTENSION = 15380;
+
     [NativeTypeName("#define ERROR_CANNOT_SWITCH_RUNLEVEL 15400L")]
     public const int ERROR_CANNOT_SWITCH_RUNLEVEL = 15400;
 
@@ -8187,6 +8205,18 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_UNSUPPORTED_ARM32_PACKAGE_REQUIRES_REMEDIAITON 15674L")]
     public const int ERROR_UNSUPPORTED_ARM32_PACKAGE_REQUIRES_REMEDIAITON = 15674;
+
+    [NativeTypeName("#define ERROR_UUP_PRODUCT_NOT_APPLICABLE 15675L")]
+    public const int ERROR_UUP_PRODUCT_NOT_APPLICABLE = 15675;
+
+    [NativeTypeName("#define ERROR_BLOCKED_BY_PENDING_PACKAGE_REMOVAL 15676L")]
+    public const int ERROR_BLOCKED_BY_PENDING_PACKAGE_REMOVAL = 15676;
+
+    [NativeTypeName("#define ERROR_PACKAGE_REPOSITORY_ROOT_CORRUPTED 15677L")]
+    public const int ERROR_PACKAGE_REPOSITORY_ROOT_CORRUPTED = 15677;
+
+    [NativeTypeName("#define ERROR_PACKAGE_MANIFEST_NOT_FOUND 15678L")]
+    public const int ERROR_PACKAGE_MANIFEST_NOT_FOUND = 15678;
 
     [NativeTypeName("#define ERROR_STATE_LOAD_STORE_FAILED 15800L")]
     public const int ERROR_STATE_LOAD_STORE_FAILED = 15800;

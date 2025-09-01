@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IMLOperatorAttributes")]
 public unsafe partial struct IMLOperatorKernelCreationContext : IMLOperatorKernelCreationContext.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMLOperatorKernelCreationContext));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMLOperatorKernelCreationContext);
 
     public void** lpVtbl;
 
@@ -50,107 +50,107 @@ public unsafe partial struct IMLOperatorKernelCreationContext : IMLOperatorKerne
     /// <inheritdoc cref="IMLOperatorAttributes.GetAttributeElementCount" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetAttributeElementCount([NativeTypeName("const char *")] sbyte* name, MLOperatorAttributeType type, [NativeTypeName("uint32_t *")] uint* elementCount)
+    public readonly HRESULT GetAttributeElementCount([NativeTypeName("const char *")] sbyte* name, MLOperatorAttributeType type, [NativeTypeName("uint32_t *")] uint* elementCount)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, sbyte*, MLOperatorAttributeType, uint*, int>)(lpVtbl[3]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), name, type, elementCount);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, sbyte*, MLOperatorAttributeType, uint*, int>)(lpVtbl[3]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(in this), name, type, elementCount);
     }
 
     /// <inheritdoc cref="IMLOperatorAttributes.GetAttribute" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetAttribute([NativeTypeName("const char *")] sbyte* name, MLOperatorAttributeType type, [NativeTypeName("uint32_t")] uint elementCount, [NativeTypeName("size_t")] nuint elementByteSize, void* value)
+    public readonly HRESULT GetAttribute([NativeTypeName("const char *")] sbyte* name, MLOperatorAttributeType type, [NativeTypeName("uint32_t")] uint elementCount, [NativeTypeName("size_t")] nuint elementByteSize, void* value)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, sbyte*, MLOperatorAttributeType, uint, nuint, void*, int>)(lpVtbl[4]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), name, type, elementCount, elementByteSize, value);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, sbyte*, MLOperatorAttributeType, uint, nuint, void*, int>)(lpVtbl[4]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(in this), name, type, elementCount, elementByteSize, value);
     }
 
     /// <inheritdoc cref="IMLOperatorAttributes.GetStringAttributeElementLength" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetStringAttributeElementLength([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t *")] uint* attributeElementByteSize)
+    public readonly HRESULT GetStringAttributeElementLength([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t *")] uint* attributeElementByteSize)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, sbyte*, uint, uint*, int>)(lpVtbl[5]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), name, elementIndex, attributeElementByteSize);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, sbyte*, uint, uint*, int>)(lpVtbl[5]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(in this), name, elementIndex, attributeElementByteSize);
     }
 
     /// <inheritdoc cref="IMLOperatorAttributes.GetStringAttributeElement" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetStringAttributeElement([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t")] uint attributeElementByteSize, [NativeTypeName("char *")] sbyte* attributeElement)
+    public readonly HRESULT GetStringAttributeElement([NativeTypeName("const char *")] sbyte* name, [NativeTypeName("uint32_t")] uint elementIndex, [NativeTypeName("uint32_t")] uint attributeElementByteSize, [NativeTypeName("char *")] sbyte* attributeElement)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, sbyte*, uint, uint, sbyte*, int>)(lpVtbl[6]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), name, elementIndex, attributeElementByteSize, attributeElement);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, sbyte*, uint, uint, sbyte*, int>)(lpVtbl[6]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(in this), name, elementIndex, attributeElementByteSize, attributeElement);
     }
 
     /// <include file='IMLOperatorKernelCreationContext.xml' path='doc/member[@name="IMLOperatorKernelCreationContext.GetInputCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [return: NativeTypeName("uint32_t")]
-    public uint GetInputCount()
+    public readonly uint GetInputCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, uint>)(lpVtbl[7]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, uint>)(lpVtbl[7]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IMLOperatorKernelCreationContext.xml' path='doc/member[@name="IMLOperatorKernelCreationContext.GetOutputCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
     [return: NativeTypeName("uint32_t")]
-    public uint GetOutputCount()
+    public readonly uint GetOutputCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, uint>)(lpVtbl[8]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, uint>)(lpVtbl[8]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IMLOperatorKernelCreationContext.xml' path='doc/member[@name="IMLOperatorKernelCreationContext.IsInputValid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public bool IsInputValid([NativeTypeName("uint32_t")] uint inputIndex)
+    public readonly bool IsInputValid([NativeTypeName("uint32_t")] uint inputIndex)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, uint, bool>)(lpVtbl[9]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), inputIndex);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, uint, bool>)(lpVtbl[9]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(in this), inputIndex);
     }
 
     /// <include file='IMLOperatorKernelCreationContext.xml' path='doc/member[@name="IMLOperatorKernelCreationContext.IsOutputValid"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public bool IsOutputValid([NativeTypeName("uint32_t")] uint outputIndex)
+    public readonly bool IsOutputValid([NativeTypeName("uint32_t")] uint outputIndex)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, uint, bool>)(lpVtbl[10]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), outputIndex);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, uint, bool>)(lpVtbl[10]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(in this), outputIndex);
     }
 
     /// <include file='IMLOperatorKernelCreationContext.xml' path='doc/member[@name="IMLOperatorKernelCreationContext.GetInputEdgeDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetInputEdgeDescription([NativeTypeName("uint32_t")] uint inputIndex, MLOperatorEdgeDescription* edgeDescription)
+    public readonly HRESULT GetInputEdgeDescription([NativeTypeName("uint32_t")] uint inputIndex, MLOperatorEdgeDescription* edgeDescription)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, uint, MLOperatorEdgeDescription*, int>)(lpVtbl[11]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), inputIndex, edgeDescription);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, uint, MLOperatorEdgeDescription*, int>)(lpVtbl[11]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(in this), inputIndex, edgeDescription);
     }
 
     /// <include file='IMLOperatorKernelCreationContext.xml' path='doc/member[@name="IMLOperatorKernelCreationContext.GetOutputEdgeDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetOutputEdgeDescription([NativeTypeName("uint32_t")] uint outputIndex, MLOperatorEdgeDescription* edgeDescription)
+    public readonly HRESULT GetOutputEdgeDescription([NativeTypeName("uint32_t")] uint outputIndex, MLOperatorEdgeDescription* edgeDescription)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, uint, MLOperatorEdgeDescription*, int>)(lpVtbl[12]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), outputIndex, edgeDescription);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, uint, MLOperatorEdgeDescription*, int>)(lpVtbl[12]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(in this), outputIndex, edgeDescription);
     }
 
     /// <include file='IMLOperatorKernelCreationContext.xml' path='doc/member[@name="IMLOperatorKernelCreationContext.HasTensorShapeDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public bool HasTensorShapeDescription()
+    public readonly bool HasTensorShapeDescription()
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, bool>)(lpVtbl[13]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, bool>)(lpVtbl[13]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IMLOperatorKernelCreationContext.xml' path='doc/member[@name="IMLOperatorKernelCreationContext.GetTensorShapeDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT GetTensorShapeDescription(IMLOperatorTensorShapeDescription** shapeDescription)
+    public readonly HRESULT GetTensorShapeDescription(IMLOperatorTensorShapeDescription** shapeDescription)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, IMLOperatorTensorShapeDescription**, int>)(lpVtbl[14]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), shapeDescription);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, IMLOperatorTensorShapeDescription**, int>)(lpVtbl[14]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(in this), shapeDescription);
     }
 
     /// <include file='IMLOperatorKernelCreationContext.xml' path='doc/member[@name="IMLOperatorKernelCreationContext.GetExecutionInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public void GetExecutionInterface(IUnknown** executionObject)
+    public readonly void GetExecutionInterface(IUnknown** executionObject)
     {
-        ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, IUnknown**, void>)(lpVtbl[15]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(ref this), executionObject);
+        ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelCreationContext*, IUnknown**, void>)(lpVtbl[15]))((IMLOperatorKernelCreationContext*)Unsafe.AsPointer(in this), executionObject);
     }
 
     public interface Interface : IMLOperatorAttributes.Interface

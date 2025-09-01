@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMLOperatorKernelContext));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMLOperatorKernelContext);
 
     public void** lpVtbl;
 
@@ -50,9 +50,9 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
     /// <include file='IMLOperatorKernelContext.xml' path='doc/member[@name="IMLOperatorKernelContext.GetInputTensor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetInputTensor([NativeTypeName("uint32_t")] uint inputIndex, IMLOperatorTensor** tensor)
+    public readonly HRESULT GetInputTensor([NativeTypeName("uint32_t")] uint inputIndex, IMLOperatorTensor** tensor)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelContext*, uint, IMLOperatorTensor**, int>)(lpVtbl[3]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), inputIndex, tensor);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelContext*, uint, IMLOperatorTensor**, int>)(lpVtbl[3]))((IMLOperatorKernelContext*)Unsafe.AsPointer(in this), inputIndex, tensor);
     }
 
     /// <include file='IMLOperatorKernelContext.xml' path='doc/member[@name="IMLOperatorKernelContext.GetOutputTensor"]/*' />
@@ -74,17 +74,17 @@ public unsafe partial struct IMLOperatorKernelContext : IMLOperatorKernelContext
     /// <include file='IMLOperatorKernelContext.xml' path='doc/member[@name="IMLOperatorKernelContext.AllocateTemporaryData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT AllocateTemporaryData([NativeTypeName("size_t")] nuint size, IUnknown** data)
+    public readonly HRESULT AllocateTemporaryData([NativeTypeName("size_t")] nuint size, IUnknown** data)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelContext*, nuint, IUnknown**, int>)(lpVtbl[6]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), size, data);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelContext*, nuint, IUnknown**, int>)(lpVtbl[6]))((IMLOperatorKernelContext*)Unsafe.AsPointer(in this), size, data);
     }
 
     /// <include file='IMLOperatorKernelContext.xml' path='doc/member[@name="IMLOperatorKernelContext.GetExecutionInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public void GetExecutionInterface(IUnknown** executionObject)
+    public readonly void GetExecutionInterface(IUnknown** executionObject)
     {
-        ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelContext*, IUnknown**, void>)(lpVtbl[7]))((IMLOperatorKernelContext*)Unsafe.AsPointer(ref this), executionObject);
+        ((delegate* unmanaged[MemberFunction]<IMLOperatorKernelContext*, IUnknown**, void>)(lpVtbl[7]))((IMLOperatorKernelContext*)Unsafe.AsPointer(in this), executionObject);
     }
 
     public interface Interface : IUnknown.Interface

@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IGlobalApplicationPreloadProvider")]
 public unsafe partial struct IGlobalApplicationPreloadProvider2 : IGlobalApplicationPreloadProvider2.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IGlobalApplicationPreloadProvider2));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGlobalApplicationPreloadProvider2);
 
     public void** lpVtbl;
 
@@ -47,9 +47,9 @@ public unsafe partial struct IGlobalApplicationPreloadProvider2 : IGlobalApplica
     /// <include file='IGlobalApplicationPreloadProvider2.xml' path='doc/member[@name="IGlobalApplicationPreloadProvider2.IsProcessRecycled"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public BOOL IsProcessRecycled()
+    public readonly BOOL IsProcessRecycled()
     {
-        return ((delegate* unmanaged[MemberFunction]<IGlobalApplicationPreloadProvider2*, int>)(lpVtbl[3]))((IGlobalApplicationPreloadProvider2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGlobalApplicationPreloadProvider2*, int>)(lpVtbl[3]))((IGlobalApplicationPreloadProvider2*)Unsafe.AsPointer(in this));
     }
 
     public interface Interface : IGlobalApplicationPreloadProvider.Interface

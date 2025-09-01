@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("B0A8F3CF-4333-4BAB-8873-1CCB1CADA48B")]
 public unsafe partial struct DriveTypeCategorizer : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_DriveTypeCategorizer));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DriveTypeCategorizer);
 }

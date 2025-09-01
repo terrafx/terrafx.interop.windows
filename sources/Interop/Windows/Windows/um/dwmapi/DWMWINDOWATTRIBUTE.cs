@@ -83,6 +83,9 @@ public enum DWMWINDOWATTRIBUTE
     /// <include file='DWMWINDOWATTRIBUTE.xml' path='doc/member[@name="DWMWINDOWATTRIBUTE.DWMWA_REDIRECTIONBITMAP_ALPHA"]/*' />
     DWMWA_REDIRECTIONBITMAP_ALPHA,
 
+    /// <include file='DWMWINDOWATTRIBUTE.xml' path='doc/member[@name="DWMWINDOWATTRIBUTE.DWMWA_BORDER_MARGINS"]/*' />
+    DWMWA_BORDER_MARGINS,
+
     /// <include file='DWMWINDOWATTRIBUTE.xml' path='doc/member[@name="DWMWINDOWATTRIBUTE.DWMWA_LAST"]/*' />
     DWMWA_LAST,
 }

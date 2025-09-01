@@ -2226,23 +2226,23 @@ public static unsafe partial class Windows
     [NativeTypeName("#define BALTIC_CHARSET 186")]
     public const int BALTIC_CHARSET = 186;
 
-    [NativeTypeName("#define FF_DONTCARE (0<<4)")]
-    public const int FF_DONTCARE = (0 << 4);
+    [NativeTypeName("#define FF_DONTCARE 0x00")]
+    public const int FF_DONTCARE = 0x00;
 
-    [NativeTypeName("#define FF_ROMAN (1<<4)")]
-    public const int FF_ROMAN = (1 << 4);
+    [NativeTypeName("#define FF_ROMAN 0x10")]
+    public const int FF_ROMAN = 0x10;
 
-    [NativeTypeName("#define FF_SWISS (2<<4)")]
-    public const int FF_SWISS = (2 << 4);
+    [NativeTypeName("#define FF_SWISS 0x20")]
+    public const int FF_SWISS = 0x20;
 
-    [NativeTypeName("#define FF_MODERN (3<<4)")]
-    public const int FF_MODERN = (3 << 4);
+    [NativeTypeName("#define FF_MODERN 0x30")]
+    public const int FF_MODERN = 0x30;
 
-    [NativeTypeName("#define FF_SCRIPT (4<<4)")]
-    public const int FF_SCRIPT = (4 << 4);
+    [NativeTypeName("#define FF_SCRIPT 0x40")]
+    public const int FF_SCRIPT = 0x40;
 
-    [NativeTypeName("#define FF_DECORATIVE (5<<4)")]
-    public const int FF_DECORATIVE = (5 << 4);
+    [NativeTypeName("#define FF_DECORATIVE 0x50")]
+    public const int FF_DECORATIVE = 0x50;
 
     [NativeTypeName("#define PANOSE_COUNT 10")]
     public const int PANOSE_COUNT = 10;

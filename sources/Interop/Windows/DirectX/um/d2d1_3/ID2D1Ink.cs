@@ -17,11 +17,11 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Resource")]
 public unsafe partial struct ID2D1Ink : ID2D1Ink.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1Ink));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1Ink);
 
     public void** lpVtbl;
 
-    public HRESULT StreamAsGeometry(ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, ID2D1SimplifiedGeometrySink* geometrySink)
+    public readonly HRESULT StreamAsGeometry(ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, ID2D1SimplifiedGeometrySink* geometrySink)
     {
         return StreamAsGeometry(inkStyle, worldTransform, (0.25f), geometrySink);
     }
@@ -55,9 +55,9 @@ public unsafe partial struct ID2D1Ink : ID2D1Ink.Interface, INativeGuid
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1Ink*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Ink*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1Ink*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Ink*)Unsafe.AsPointer(in this), factory);
     }
 
     /// <include file='ID2D1Ink.xml' path='doc/member[@name="ID2D1Ink.SetStartPoint"]/*' />
@@ -71,9 +71,9 @@ public unsafe partial struct ID2D1Ink : ID2D1Ink.Interface, INativeGuid
     /// <include file='ID2D1Ink.xml' path='doc/member[@name="ID2D1Ink.GetStartPoint"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public D2D1_INK_POINT GetStartPoint()
+    public readonly D2D1_INK_POINT GetStartPoint()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Ink*, D2D1_INK_POINT>)(lpVtbl[5]))((ID2D1Ink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Ink*, D2D1_INK_POINT>)(lpVtbl[5]))((ID2D1Ink*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1Ink.xml' path='doc/member[@name="ID2D1Ink.AddSegments"]/*' />
@@ -112,33 +112,33 @@ public unsafe partial struct ID2D1Ink : ID2D1Ink.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     [return: NativeTypeName("UINT32")]
-    public uint GetSegmentCount()
+    public readonly uint GetSegmentCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Ink*, uint>)(lpVtbl[10]))((ID2D1Ink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Ink*, uint>)(lpVtbl[10]))((ID2D1Ink*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1Ink.xml' path='doc/member[@name="ID2D1Ink.GetSegments"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetSegments([NativeTypeName("UINT32")] uint startSegment, D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount)
+    public readonly HRESULT GetSegments([NativeTypeName("UINT32")] uint startSegment, D2D1_INK_BEZIER_SEGMENT* segments, [NativeTypeName("UINT32")] uint segmentsCount)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Ink*, uint, D2D1_INK_BEZIER_SEGMENT*, uint, int>)(lpVtbl[11]))((ID2D1Ink*)Unsafe.AsPointer(ref this), startSegment, segments, segmentsCount);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Ink*, uint, D2D1_INK_BEZIER_SEGMENT*, uint, int>)(lpVtbl[11]))((ID2D1Ink*)Unsafe.AsPointer(in this), startSegment, segments, segmentsCount);
     }
 
     /// <include file='ID2D1Ink.xml' path='doc/member[@name="ID2D1Ink.StreamAsGeometry"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT StreamAsGeometry(ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
+    public readonly HRESULT StreamAsGeometry(ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, float flatteningTolerance, ID2D1SimplifiedGeometrySink* geometrySink)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Ink*, ID2D1InkStyle*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int>)(lpVtbl[12]))((ID2D1Ink*)Unsafe.AsPointer(ref this), inkStyle, worldTransform, flatteningTolerance, geometrySink);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Ink*, ID2D1InkStyle*, D2D_MATRIX_3X2_F*, float, ID2D1SimplifiedGeometrySink*, int>)(lpVtbl[12]))((ID2D1Ink*)Unsafe.AsPointer(in this), inkStyle, worldTransform, flatteningTolerance, geometrySink);
     }
 
     /// <include file='ID2D1Ink.xml' path='doc/member[@name="ID2D1Ink.GetBounds"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT GetBounds(ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* bounds)
+    public readonly HRESULT GetBounds(ID2D1InkStyle* inkStyle, [NativeTypeName("const D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* worldTransform, [NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* bounds)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Ink*, ID2D1InkStyle*, D2D_MATRIX_3X2_F*, D2D_RECT_F*, int>)(lpVtbl[13]))((ID2D1Ink*)Unsafe.AsPointer(ref this), inkStyle, worldTransform, bounds);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Ink*, ID2D1InkStyle*, D2D_MATRIX_3X2_F*, D2D_RECT_F*, int>)(lpVtbl[13]))((ID2D1Ink*)Unsafe.AsPointer(in this), inkStyle, worldTransform, bounds);
     }
 
     public interface Interface : ID2D1Resource.Interface

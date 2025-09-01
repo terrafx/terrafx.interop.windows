@@ -390,6 +390,27 @@ public static unsafe partial class WindowsTests
         Assert.That(MFSampleExtension_TemporalLayerId, Is.EqualTo(new Guid(0xb3c1fcd2, 0xb331, 0x4376, 0xb9, 0x74, 0xad, 0x64, 0x77, 0x69, 0xb2, 0xb0)));
     }
 
+    /// <summary>Validates that the value of the <see cref="MFSampleExtension_FramePsnrYuv" /> property is correct.</summary>
+    [Test]
+    public static void MFSampleExtension_FramePsnrYuvTest()
+    {
+        Assert.That(MFSampleExtension_FramePsnrYuv, Is.EqualTo(new Guid(0x1c633a3d, 0x566f, 0x4752, 0x83, 0x3b, 0x29, 0x07, 0xdf, 0x54, 0x15, 0xe1)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MFSampleExtension_VideoEncodeQPMap" /> property is correct.</summary>
+    [Test]
+    public static void MFSampleExtension_VideoEncodeQPMapTest()
+    {
+        Assert.That(MFSampleExtension_VideoEncodeQPMap, Is.EqualTo(new Guid(0x2c68a331, 0xb712, 0x49ca, 0x86, 0x0a, 0x3a, 0x1d, 0x58, 0x23, 0x7d, 0x88)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MFSampleExtension_VideoEncodeBitsUsedMap" /> property is correct.</summary>
+    [Test]
+    public static void MFSampleExtension_VideoEncodeBitsUsedMapTest()
+    {
+        Assert.That(MFSampleExtension_VideoEncodeBitsUsedMap, Is.EqualTo(new Guid(0x6894263d, 0xe6e2, 0x4bcc, 0x84, 0x9d, 0x85, 0x70, 0x36, 0x5f, 0x51, 0x14)));
+    }
+
     /// <summary>Validates that the value of the <see cref="MFSampleExtension_PhotoThumbnail" /> property is correct.</summary>
     [Test]
     public static void MFSampleExtension_PhotoThumbnailTest()

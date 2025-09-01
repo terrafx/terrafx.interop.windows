@@ -43,4 +43,13 @@ public enum HTTP_REQUEST_PROPERTY
 
     /// <include file='HTTP_REQUEST_PROPERTY.xml' path='doc/member[@name="HTTP_REQUEST_PROPERTY.HttpRequestPropertyTlsClientHello"]/*' />
     HttpRequestPropertyTlsClientHello,
+
+    /// <include file='HTTP_REQUEST_PROPERTY.xml' path='doc/member[@name="HTTP_REQUEST_PROPERTY.HttpRequestPropertyTransportIdleConnectionTimeout"]/*' />
+    HttpRequestPropertyTransportIdleConnectionTimeout,
+
+    /// <include file='HTTP_REQUEST_PROPERTY.xml' path='doc/member[@name="HTTP_REQUEST_PROPERTY.HttpRequestPropertyDscpTag"]/*' />
+    HttpRequestPropertyDscpTag,
+
+    /// <include file='HTTP_REQUEST_PROPERTY.xml' path='doc/member[@name="HTTP_REQUEST_PROPERTY.HttpRequestPropertyTlsCipherInfo"]/*' />
+    HttpRequestPropertyTlsCipherInfo,
 }

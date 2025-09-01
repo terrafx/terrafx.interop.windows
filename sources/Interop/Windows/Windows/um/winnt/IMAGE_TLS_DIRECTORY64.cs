@@ -34,7 +34,7 @@ public partial struct IMAGE_TLS_DIRECTORY64
     public uint SizeOfZeroFill;
 
     /// <include file='IMAGE_TLS_DIRECTORY64.xml' path='doc/member[@name="IMAGE_TLS_DIRECTORY64.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L20534_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L20664_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Characteristics"]/*' />
@@ -107,7 +107,7 @@ public partial struct IMAGE_TLS_DIRECTORY64
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L20536_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L20666_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

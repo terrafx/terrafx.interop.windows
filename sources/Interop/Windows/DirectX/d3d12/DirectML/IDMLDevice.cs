@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from DirectML.h in microsoft/DirectX-Headers tag v1.614.0
+// Ported from DirectML.h in microsoft/DirectX-Headers tag v1.616.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDMLObject")]
 public unsafe partial struct IDMLDevice : IDMLDevice.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDMLDevice));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDMLDevice);
 
     public void** lpVtbl;
 

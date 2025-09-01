@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("7E0E6167-0094-49A1-8287-ECF6DC6E73A6")]
 public unsafe partial struct IHttpUrlInfo : IHttpUrlInfo.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpUrlInfo));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpUrlInfo);
 
     public void** lpVtbl;
 
@@ -29,9 +29,9 @@ public unsafe partial struct IHttpUrlInfo : IHttpUrlInfo.Interface, INativeGuid
     /// <include file='IHttpUrlInfo.xml' path='doc/member[@name="IHttpUrlInfo.IsFrequentlyHit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
-    public BOOL IsFrequentlyHit()
+    public readonly BOOL IsFrequentlyHit()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpUrlInfo*, int>)(lpVtbl[1]))((IHttpUrlInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpUrlInfo*, int>)(lpVtbl[1]))((IHttpUrlInfo*)Unsafe.AsPointer(in this));
     }
 
     public interface Interface

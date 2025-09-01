@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.614.0
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.616.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -29,6 +29,10 @@ public static unsafe partial class DirectX
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12CreateVersionedRootSignatureDeserializer"]/*' />
     [DllImport("d3d12", ExactSpelling = true)]
     public static extern HRESULT D3D12CreateVersionedRootSignatureDeserializer([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSizeInBytes, [NativeTypeName("const IID &")] Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
+
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary"]/*' />
+    [DllImport("d3d12", ExactSpelling = true)]
+    public static extern HRESULT D3D12CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary([NativeTypeName("LPCVOID")] void* pSrcData, [NativeTypeName("SIZE_T")] nuint SrcDataSizeInBytes, [NativeTypeName("LPCWSTR")] char* RootSignatureSubobjectName, [NativeTypeName("const IID &")] Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12CreateDevice"]/*' />
     [DllImport("d3d12", ExactSpelling = true)]
@@ -85,6 +89,31 @@ public static unsafe partial class DirectX
                 0xD6,
                 0x94,
                 0xFB
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const UUID")]
+    public static ref readonly Guid D3D12GPUUploadHeapsOnUnsupportedOS
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xF3, 0x51, 0xDC, 0x45,
+                0x7F, 0x76,
+                0x88, 0x45,
+                0xB2,
+                0x06,
+                0x0B,
+                0xAA,
+                0x2B,
+                0x16,
+                0xFB,
+                0xAE
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

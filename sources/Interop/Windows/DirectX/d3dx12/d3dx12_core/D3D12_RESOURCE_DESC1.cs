@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3dx12_core.h in microsoft/DirectX-Headers tag v1.614.0
+// Ported from d3dx12_core.h in microsoft/DirectX-Headers tag v1.616.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using static TerraFX.Interop.DirectX.D3D12_RESOURCE_DIMENSION;
@@ -28,7 +28,8 @@ public unsafe partial struct D3D12_RESOURCE_DESC1
         SampleDesc = o->SampleDesc;
         Layout = o->Layout;
         Flags = o->Flags;
-        SamplerFeedbackMipRegion = new D3D12_MIP_REGION {
+        SamplerFeedbackMipRegion = new D3D12_MIP_REGION
+        {
         };
     }
 

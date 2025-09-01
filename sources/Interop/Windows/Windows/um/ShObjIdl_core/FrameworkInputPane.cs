@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("D5120AA3-46BA-44C5-822D-CA8092C1FC72")]
 public unsafe partial struct FrameworkInputPane : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_FrameworkInputPane));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_FrameworkInputPane);
 }

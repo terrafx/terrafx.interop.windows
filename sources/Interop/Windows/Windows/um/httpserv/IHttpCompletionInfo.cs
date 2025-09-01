@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("49DD20E3-D9C0-463C-8821-F3413B55CC00")]
 public unsafe partial struct IHttpCompletionInfo : IHttpCompletionInfo.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpCompletionInfo));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpCompletionInfo);
 
     public void** lpVtbl;
 
@@ -22,17 +22,17 @@ public unsafe partial struct IHttpCompletionInfo : IHttpCompletionInfo.Interface
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     [return: NativeTypeName("DWORD")]
-    public uint GetCompletionBytes()
+    public readonly uint GetCompletionBytes()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCompletionInfo*, uint>)(lpVtbl[0]))((IHttpCompletionInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpCompletionInfo*, uint>)(lpVtbl[0]))((IHttpCompletionInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpCompletionInfo.xml' path='doc/member[@name="IHttpCompletionInfo.GetCompletionStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
-    public HRESULT GetCompletionStatus()
+    public readonly HRESULT GetCompletionStatus()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCompletionInfo*, int>)(lpVtbl[1]))((IHttpCompletionInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpCompletionInfo*, int>)(lpVtbl[1]))((IHttpCompletionInfo*)Unsafe.AsPointer(in this));
     }
 
     public interface Interface

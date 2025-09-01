@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpCompletionInfo")]
 public unsafe partial struct IHttpCompletionInfo2 : IHttpCompletionInfo2.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpCompletionInfo2));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpCompletionInfo2);
 
     public void** lpVtbl;
 
@@ -24,26 +24,26 @@ public unsafe partial struct IHttpCompletionInfo2 : IHttpCompletionInfo2.Interfa
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     [return: NativeTypeName("DWORD")]
-    public uint GetCompletionBytes()
+    public readonly uint GetCompletionBytes()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCompletionInfo2*, uint>)(lpVtbl[0]))((IHttpCompletionInfo2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpCompletionInfo2*, uint>)(lpVtbl[0]))((IHttpCompletionInfo2*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="IHttpCompletionInfo.GetCompletionStatus" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
-    public HRESULT GetCompletionStatus()
+    public readonly HRESULT GetCompletionStatus()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCompletionInfo2*, int>)(lpVtbl[1]))((IHttpCompletionInfo2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpCompletionInfo2*, int>)(lpVtbl[1]))((IHttpCompletionInfo2*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpCompletionInfo2.xml' path='doc/member[@name="IHttpCompletionInfo2.GetCompletedOperation"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("DWORD")]
-    public uint GetCompletedOperation()
+    public readonly uint GetCompletedOperation()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCompletionInfo2*, uint>)(lpVtbl[2]))((IHttpCompletionInfo2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpCompletionInfo2*, uint>)(lpVtbl[2]))((IHttpCompletionInfo2*)Unsafe.AsPointer(in this));
     }
 
     public interface Interface : IHttpCompletionInfo.Interface

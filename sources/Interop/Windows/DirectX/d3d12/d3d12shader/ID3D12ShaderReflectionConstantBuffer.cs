@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12shader.h in microsoft/DirectX-Headers tag v1.614.0
+// Ported from d3d12shader.h in microsoft/DirectX-Headers tag v1.616.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -15,7 +15,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("C59598B4-48B3-4869-B9B1-B1618B14A8B7")]
 public unsafe partial struct ID3D12ShaderReflectionConstantBuffer : ID3D12ShaderReflectionConstantBuffer.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D12ShaderReflectionConstantBuffer));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D12ShaderReflectionConstantBuffer);
 
     public void** lpVtbl;
 

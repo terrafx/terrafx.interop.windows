@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("1EE7337F-85AC-45E2-A23C-37C753209769")]
 public unsafe partial struct SmartcardWinRTProvider : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SmartcardWinRTProvider));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_SmartcardWinRTProvider);
 }

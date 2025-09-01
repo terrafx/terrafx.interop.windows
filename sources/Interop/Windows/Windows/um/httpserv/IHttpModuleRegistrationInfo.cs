@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("07E5BEB3-B798-459D-A98A-E6C485B2B3BC")]
 public unsafe partial struct IHttpModuleRegistrationInfo : IHttpModuleRegistrationInfo.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpModuleRegistrationInfo));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpModuleRegistrationInfo);
 
     public void** lpVtbl;
 
@@ -22,18 +22,18 @@ public unsafe partial struct IHttpModuleRegistrationInfo : IHttpModuleRegistrati
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetName()
+    public readonly char* GetName()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpModuleRegistrationInfo*, char*>)(lpVtbl[0]))((IHttpModuleRegistrationInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpModuleRegistrationInfo*, char*>)(lpVtbl[0]))((IHttpModuleRegistrationInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpModuleRegistrationInfo.xml' path='doc/member[@name="IHttpModuleRegistrationInfo.GetId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("HTTP_MODULE_ID")]
-    public void* GetId()
+    public readonly void* GetId()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpModuleRegistrationInfo*, void*>)(lpVtbl[1]))((IHttpModuleRegistrationInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpModuleRegistrationInfo*, void*>)(lpVtbl[1]))((IHttpModuleRegistrationInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpModuleRegistrationInfo.xml' path='doc/member[@name="IHttpModuleRegistrationInfo.SetRequestNotifications"]/*' />

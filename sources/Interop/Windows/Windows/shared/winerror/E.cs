@@ -7,6 +7,12 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class E
 {
+    [NativeTypeName("#define E_CAMERA_ERROR_MIN HRESULT_FROM_WIN32(6350)")]
+    public const int E_CAMERA_ERROR_MIN = -2147018546;
+
+    [NativeTypeName("#define E_CAMERA_ERROR_MAX HRESULT_FROM_WIN32(6399)")]
+    public const int E_CAMERA_ERROR_MAX = -2147018497;
+
     [NativeTypeName("#define E_NOT_SET HRESULT_FROM_WIN32(ERROR_NOT_FOUND)")]
     public const int E_NOT_SET = -2147023728;
 

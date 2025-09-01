@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("27354123-7F64-5B0F-8F00-5D77AFBE261E")]
 public unsafe partial struct MsftWriteSpeedDescriptor : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_MsftWriteSpeedDescriptor));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_MsftWriteSpeedDescriptor);
 }

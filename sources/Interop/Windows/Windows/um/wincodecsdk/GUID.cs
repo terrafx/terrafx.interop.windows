@@ -1111,4 +1111,29 @@ public static partial class GUID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_MetadataFormatGainMap
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x38, 0x31, 0x8D, 0x56,
+                0x46, 0xC4,
+                0xC2, 0x4E,
+                0xA7,
+                0xA8,
+                0x59,
+                0xAB,
+                0xB1,
+                0x6D,
+                0x21,
+                0xE3
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

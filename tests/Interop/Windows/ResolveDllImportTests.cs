@@ -54,6 +54,20 @@ public static unsafe partial class ResolveDllImportTests
         {
             switch (method.Name)
             {
+                case "DXGIGetDebugInterface":
+                {
+                    if (RuntimeInformation.ProcessArchitecture == Architecture.Arm64)
+                    {
+                        // This API isn't available on Arm64
+                        Assert.Warn($"Warn: {exception.Message}");
+                    }
+                    else
+                    {
+                        goto default;
+                    }
+                    break;
+                }
+
                 case "DavCancelConnectionsToServer":
                 case "DavGetTheLockOwnerOfTheFile":
                 case "DavInvalidateCache":
@@ -175,19 +189,33 @@ public static unsafe partial class ResolveDllImportTests
 
                 case "AddPackageDependency2":
                 case "AllocConsoleWithOptions":
+                case "ApplyWindowAction":
                 case "ColorProfileGetDeviceCapabilities":
+                case "ConvertToInterceptWindow":
+                case "CreateDirectory2A":
+                case "CreateDirectory2W":
+                case "CreateFile3":
+                case "DeleteFile2A":
+                case "DeleteFile2W":
+                case "EnterMoveSizeLoop":
                 case "FindPackageDependency":
+                case "GetCurrentMonitorTopologyId":
                 case "GetFileInformationByName":
                 case "GetMemoryNumaClosestInitiatorNode":
                 case "GetMemoryNumaPerformanceInformation":
                 case "GetPackageDependencyInformation":
                 case "GetProcessesUsingPackageDependency":
                 case "GetResolvedPackageFullNameForPackageDependency2":
+                case "IsInterceptWindow":
                 case "MFCreateDXGICrossAdapterBuffer":
                 case "MFGetDXGIDeviceManageMode":
+                case "RegisterCloakedNotification":
                 case "ReleasePseudoConsole":
+                case "RemoveDirectory2A":
+                case "RemoveDirectory2W":
                 case "SHGetAssocKeys":
                 case "SymGetParentWindow":
+                case "Tbsi_Tpm_Vendor_Maintenance_Mode":
                 case "TlsGetValue2":
                 case "TryCreatePackageDependency2":
                 case "WinHttpProtocolCompleteUpgrade":
@@ -204,6 +232,15 @@ public static unsafe partial class ResolveDllImportTests
                     {
                         goto default;
                     }
+                    break;
+                }
+
+                case "D3D12CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary":
+                {
+                    // These methods come from DirectX Agility SDK and may not be present
+                    // if all the latest updates aren't installed on the machine
+
+                    Assert.Warn($"Warn: {exception.Message}");
                     break;
                 }
 

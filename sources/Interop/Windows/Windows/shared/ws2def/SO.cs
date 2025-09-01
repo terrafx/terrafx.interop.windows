@@ -99,4 +99,10 @@ public static partial class SO
 
     [NativeTypeName("#define SO_ORIGINAL_DST 0x300F")]
     public const int SO_ORIGINAL_DST = 0x300F;
+
+    [NativeTypeName("#define SO_RECEIVED_HOPLIMIT 0x3010")]
+    public const int SO_RECEIVED_HOPLIMIT = 0x3010;
+
+    [NativeTypeName("#define SO_RECEIVED_PROCESSOR 0x3011")]
+    public const int SO_RECEIVED_PROCESSOR = 0x3011;
 }

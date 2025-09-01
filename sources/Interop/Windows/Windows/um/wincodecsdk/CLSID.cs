@@ -2161,4 +2161,54 @@ public static partial class CLSID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_WICGainMapMetadataReader
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xAF, 0x2D, 0xC3, 0x3A,
+                0xB9, 0x27,
+                0xF5, 0x4A,
+                0xB0,
+                0xAB,
+                0xD1,
+                0x18,
+                0x9D,
+                0xCF,
+                0x34,
+                0xB3
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_WICGainMapMetadataWriter
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x68, 0x52, 0x84, 0x6F,
+                0x2E, 0xA9,
+                0x02, 0x4A,
+                0xB0,
+                0x02,
+                0xA6,
+                0x7C,
+                0x36,
+                0x28,
+                0x00,
+                0xB2
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

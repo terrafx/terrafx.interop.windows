@@ -127,4 +127,96 @@ public static unsafe partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    public static ref readonly Guid IID_IHumanPresenceSensorReadingUpdate2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x33, 0xA0, 0x95, 0xBB,
+                0x88, 0xC6,
+                0x6A, 0x54,
+                0x8E,
+                0x2D,
+                0xB1,
+                0x26,
+                0x42,
+                0xE7,
+                0xEF,
+                0xEB
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ILightSensor4
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x97, 0xBE, 0x67, 0x61,
+                0x90, 0x63,
+                0x4C, 0x40,
+                0x9C,
+                0x19,
+                0x44,
+                0x53,
+                0x11,
+                0xC6,
+                0xA1,
+                0xD3
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ILightSensorDataThreshold2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xBD, 0x0F, 0x04, 0x6F,
+                0x8B, 0xE0,
+                0x97, 0x5B,
+                0x8F,
+                0x61,
+                0xDD,
+                0x4E,
+                0xE6,
+                0x6B,
+                0x17,
+                0x33
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ILightSensorReading3
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x06, 0xEE, 0x38, 0xF3,
+                0xAF, 0x96,
+                0x29, 0x40,
+                0xB5,
+                0x30,
+                0x61,
+                0xAC,
+                0xC0,
+                0x5B,
+                0x7C,
+                0xFE
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

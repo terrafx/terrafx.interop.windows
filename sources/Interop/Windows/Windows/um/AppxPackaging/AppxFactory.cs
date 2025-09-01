@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("5842A140-FF9F-4166-8F5C-62F5B7B0C781")]
 public unsafe partial struct AppxFactory : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_AppxFactory));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_AppxFactory);
 }

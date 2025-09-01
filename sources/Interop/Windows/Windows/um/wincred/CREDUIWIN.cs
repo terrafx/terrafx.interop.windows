@@ -34,6 +34,9 @@ public static partial class CREDUIWIN
     [NativeTypeName("#define CREDUIWIN_PACK_32_WOW 0x10000000")]
     public const int CREDUIWIN_PACK_32_WOW = 0x10000000;
 
+    [NativeTypeName("#define CREDUIWIN_USE_V2 0x00000040")]
+    public const int CREDUIWIN_USE_V2 = 0x00000040;
+
     [NativeTypeName("#define CREDUIWIN_IGNORE_CLOUDAUTHORITY_NAME 0x00040000")]
     public const int CREDUIWIN_IGNORE_CLOUDAUTHORITY_NAME = 0x00040000;
 

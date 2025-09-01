@@ -238,6 +238,9 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[58]")]
     public const string InterfaceName_Windows_Devices_Sensors_IHumanPresenceSensorReadingUpdate = "Windows.Devices.Sensors.IHumanPresenceSensorReadingUpdate";
 
+    [NativeTypeName("const WCHAR[59]")]
+    public const string InterfaceName_Windows_Devices_Sensors_IHumanPresenceSensorReadingUpdate2 = "Windows.Devices.Sensors.IHumanPresenceSensorReadingUpdate2";
+
     [NativeTypeName("const WCHAR[52]")]
     public const string InterfaceName_Windows_Devices_Sensors_IHumanPresenceSensorStatics = "Windows.Devices.Sensors.IHumanPresenceSensorStatics";
 
@@ -304,8 +307,14 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[38]")]
     public const string InterfaceName_Windows_Devices_Sensors_ILightSensor3 = "Windows.Devices.Sensors.ILightSensor3";
 
+    [NativeTypeName("const WCHAR[38]")]
+    public const string InterfaceName_Windows_Devices_Sensors_ILightSensor4 = "Windows.Devices.Sensors.ILightSensor4";
+
     [NativeTypeName("const WCHAR[50]")]
     public const string InterfaceName_Windows_Devices_Sensors_ILightSensorDataThreshold = "Windows.Devices.Sensors.ILightSensorDataThreshold";
+
+    [NativeTypeName("const WCHAR[51]")]
+    public const string InterfaceName_Windows_Devices_Sensors_ILightSensorDataThreshold2 = "Windows.Devices.Sensors.ILightSensorDataThreshold2";
 
     [NativeTypeName("const WCHAR[45]")]
     public const string InterfaceName_Windows_Devices_Sensors_ILightSensorDeviceId = "Windows.Devices.Sensors.ILightSensorDeviceId";
@@ -315,6 +324,9 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[45]")]
     public const string InterfaceName_Windows_Devices_Sensors_ILightSensorReading2 = "Windows.Devices.Sensors.ILightSensorReading2";
+
+    [NativeTypeName("const WCHAR[45]")]
+    public const string InterfaceName_Windows_Devices_Sensors_ILightSensorReading3 = "Windows.Devices.Sensors.ILightSensorReading3";
 
     [NativeTypeName("const WCHAR[60]")]
     public const string InterfaceName_Windows_Devices_Sensors_ILightSensorReadingChangedEventArgs = "Windows.Devices.Sensors.ILightSensorReadingChangedEventArgs";

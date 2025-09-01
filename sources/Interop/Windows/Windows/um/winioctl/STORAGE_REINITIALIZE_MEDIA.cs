@@ -23,7 +23,7 @@ public partial struct STORAGE_REINITIALIZE_MEDIA
     public uint TimeoutInSeconds;
 
     /// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA.SanitizeOption"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L5763_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L6065_C5")]
     public _SanitizeOption_e__Struct SanitizeOption;
 
     /// <include file='_SanitizeOption_e__Struct.xml' path='doc/member[@name="_SanitizeOption_e__Struct"]/*' />

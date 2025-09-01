@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IPrintManagerTemplatePrinter")]
 public unsafe partial struct IPrintManagerTemplatePrinter2 : IPrintManagerTemplatePrinter2.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPrintManagerTemplatePrinter2));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPrintManagerTemplatePrinter2);
 
     public void** lpVtbl;
 

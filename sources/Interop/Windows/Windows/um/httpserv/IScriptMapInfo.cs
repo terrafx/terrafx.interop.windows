@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("D7FE3D77-68BC-4D4A-851F-EEC9FB68017C")]
 public unsafe partial struct IScriptMapInfo : IScriptMapInfo.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IScriptMapInfo));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IScriptMapInfo);
 
     public void** lpVtbl;
 
@@ -22,97 +22,97 @@ public unsafe partial struct IScriptMapInfo : IScriptMapInfo.Interface, INativeG
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetPath()
+    public readonly char* GetPath()
     {
-        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, char*>)(lpVtbl[0]))((IScriptMapInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, char*>)(lpVtbl[0]))((IScriptMapInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IScriptMapInfo.xml' path='doc/member[@name="IScriptMapInfo.GetAllowedVerbs"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("PCSTR")]
-    public sbyte* GetAllowedVerbs()
+    public readonly sbyte* GetAllowedVerbs()
     {
-        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, sbyte*>)(lpVtbl[1]))((IScriptMapInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, sbyte*>)(lpVtbl[1]))((IScriptMapInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IScriptMapInfo.xml' path='doc/member[@name="IScriptMapInfo.GetModules"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetModules([NativeTypeName("DWORD *")] uint* pcchModules = null)
+    public readonly char* GetModules([NativeTypeName("DWORD *")] uint* pcchModules = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, uint*, char*>)(lpVtbl[2]))((IScriptMapInfo*)Unsafe.AsPointer(ref this), pcchModules);
+        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, uint*, char*>)(lpVtbl[2]))((IScriptMapInfo*)Unsafe.AsPointer(in this), pcchModules);
     }
 
     /// <include file='IScriptMapInfo.xml' path='doc/member[@name="IScriptMapInfo.GetScriptProcessor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetScriptProcessor([NativeTypeName("DWORD *")] uint* pcchScriptProcessor = null)
+    public readonly char* GetScriptProcessor([NativeTypeName("DWORD *")] uint* pcchScriptProcessor = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, uint*, char*>)(lpVtbl[3]))((IScriptMapInfo*)Unsafe.AsPointer(ref this), pcchScriptProcessor);
+        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, uint*, char*>)(lpVtbl[3]))((IScriptMapInfo*)Unsafe.AsPointer(in this), pcchScriptProcessor);
     }
 
     /// <include file='IScriptMapInfo.xml' path='doc/member[@name="IScriptMapInfo.GetManagedType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetManagedType([NativeTypeName("DWORD *")] uint* pcchManagedType = null)
+    public readonly char* GetManagedType([NativeTypeName("DWORD *")] uint* pcchManagedType = null)
     {
-        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, uint*, char*>)(lpVtbl[4]))((IScriptMapInfo*)Unsafe.AsPointer(ref this), pcchManagedType);
+        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, uint*, char*>)(lpVtbl[4]))((IScriptMapInfo*)Unsafe.AsPointer(in this), pcchManagedType);
     }
 
     /// <include file='IScriptMapInfo.xml' path='doc/member[@name="IScriptMapInfo.GetAllowPathInfoForScriptMappings"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public BOOL GetAllowPathInfoForScriptMappings()
+    public readonly BOOL GetAllowPathInfoForScriptMappings()
     {
-        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, int>)(lpVtbl[5]))((IScriptMapInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, int>)(lpVtbl[5]))((IScriptMapInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IScriptMapInfo.xml' path='doc/member[@name="IScriptMapInfo.GetRequiredAccess"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
     [return: NativeTypeName("DWORD")]
-    public uint GetRequiredAccess()
+    public readonly uint GetRequiredAccess()
     {
-        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, uint>)(lpVtbl[6]))((IScriptMapInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, uint>)(lpVtbl[6]))((IScriptMapInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IScriptMapInfo.xml' path='doc/member[@name="IScriptMapInfo.GetResourceType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [return: NativeTypeName("DWORD")]
-    public uint GetResourceType()
+    public readonly uint GetResourceType()
     {
-        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, uint>)(lpVtbl[7]))((IScriptMapInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, uint>)(lpVtbl[7]))((IScriptMapInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IScriptMapInfo.xml' path='doc/member[@name="IScriptMapInfo.GetIsStarScriptMap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public BOOL GetIsStarScriptMap()
+    public readonly BOOL GetIsStarScriptMap()
     {
-        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, int>)(lpVtbl[8]))((IScriptMapInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, int>)(lpVtbl[8]))((IScriptMapInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IScriptMapInfo.xml' path='doc/member[@name="IScriptMapInfo.GetResponseBufferLimit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
     [return: NativeTypeName("DWORD")]
-    public uint GetResponseBufferLimit()
+    public readonly uint GetResponseBufferLimit()
     {
-        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, uint>)(lpVtbl[9]))((IScriptMapInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, uint>)(lpVtbl[9]))((IScriptMapInfo*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IScriptMapInfo.xml' path='doc/member[@name="IScriptMapInfo.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetName()
+    public readonly char* GetName()
     {
-        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, char*>)(lpVtbl[10]))((IScriptMapInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IScriptMapInfo*, char*>)(lpVtbl[10]))((IScriptMapInfo*)Unsafe.AsPointer(in this));
     }
 
     public interface Interface

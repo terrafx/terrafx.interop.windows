@@ -17,7 +17,7 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
     public uint UmsVersion;
 
     /// <include file='UMS_SYSTEM_THREAD_INFORMATION.xml' path='doc/member[@name="UMS_SYSTEM_THREAD_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winbase_L1637_C5")]
+    [NativeTypeName("__AnonymousRecord_winbase_L1639_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsUmsSchedulerThread"]/*' />
@@ -69,7 +69,7 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winbase_L1638_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L1640_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ThreadUmsFlags"]/*' />

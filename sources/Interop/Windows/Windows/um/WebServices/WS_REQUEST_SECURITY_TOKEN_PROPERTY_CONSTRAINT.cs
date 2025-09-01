@@ -19,7 +19,7 @@ public unsafe partial struct WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT
     public uint allowedValuesSize;
 
     /// <include file='WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT.xml' path='doc/member[@name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_CONSTRAINT.@out"]/*' />
-    [NativeTypeName("__AnonymousRecord_WebServices_L6243_C5")]
+    [NativeTypeName("__AnonymousRecord_WebServices_L6244_C5")]
     public _out_e__Struct @out;
 
     /// <include file='_out_e__Struct.xml' path='doc/member[@name="_out_e__Struct"]/*' />

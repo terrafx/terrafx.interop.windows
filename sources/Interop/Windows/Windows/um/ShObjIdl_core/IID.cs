@@ -12,6 +12,29 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    public static ref readonly Guid IID_IStaticVerbProvider
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xA6, 0x0D, 0x77, 0x4B,
+                0x11, 0xD1,
+                0x15, 0x40,
+                0x96,
+                0xFD,
+                0x8C,
+                0x1C,
+                0x56,
+                0xF0,
+                0x6C,
+                0x55
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IExecuteCommand
     {
         get
@@ -2121,6 +2144,29 @@ public static partial class IID
                 0x0F,
                 0x8C,
                 0x57
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IAttachmentExecute2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x1F, 0x78, 0x2B, 0x4F,
+                0x08, 0xA6,
+                0x43, 0x45,
+                0xAB,
+                0xF0,
+                0x49,
+                0xC2,
+                0x46,
+                0xEB,
+                0xBB,
+                0xA9
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

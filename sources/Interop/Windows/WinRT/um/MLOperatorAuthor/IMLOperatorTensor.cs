@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMLOperatorTensor));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMLOperatorTensor);
 
     public void** lpVtbl;
 
@@ -51,41 +51,41 @@ public unsafe partial struct IMLOperatorTensor : IMLOperatorTensor.Interface, IN
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("uint32_t")]
-    public uint GetDimensionCount()
+    public readonly uint GetDimensionCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, uint>)(lpVtbl[3]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, uint>)(lpVtbl[3]))((IMLOperatorTensor*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.GetShape"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetShape([NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions)
+    public readonly HRESULT GetShape([NativeTypeName("uint32_t")] uint dimensionCount, [NativeTypeName("uint32_t *")] uint* dimensions)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, uint, uint*, int>)(lpVtbl[4]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this), dimensionCount, dimensions);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, uint, uint*, int>)(lpVtbl[4]))((IMLOperatorTensor*)Unsafe.AsPointer(in this), dimensionCount, dimensions);
     }
 
     /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.GetTensorDataType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public MLOperatorTensorDataType GetTensorDataType()
+    public readonly MLOperatorTensorDataType GetTensorDataType()
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, MLOperatorTensorDataType>)(lpVtbl[5]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, MLOperatorTensorDataType>)(lpVtbl[5]))((IMLOperatorTensor*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.IsCpuData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public bool IsCpuData()
+    public readonly bool IsCpuData()
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, bool>)(lpVtbl[6]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, bool>)(lpVtbl[6]))((IMLOperatorTensor*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.IsDataInterface"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public bool IsDataInterface()
+    public readonly bool IsDataInterface()
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, bool>)(lpVtbl[7]))((IMLOperatorTensor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorTensor*, bool>)(lpVtbl[7]))((IMLOperatorTensor*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IMLOperatorTensor.xml' path='doc/member[@name="IMLOperatorTensor.GetData"]/*' />

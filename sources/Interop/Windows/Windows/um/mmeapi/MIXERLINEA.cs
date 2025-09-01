@@ -61,7 +61,7 @@ public partial struct MIXERLINEA
     public _szName_e__FixedBuffer szName;
 
     /// <include file='MIXERLINEA.xml' path='doc/member[@name="MIXERLINEA.Target"]/*' />
-    [NativeTypeName("__AnonymousRecord_mmeapi_L1879_C5")]
+    [NativeTypeName("__AnonymousRecord_mmeapi_L1885_C5")]
     public _Target_e__Struct Target;
 
     /// <include file='_Target_e__Struct.xml' path='doc/member[@name="_Target_e__Struct"]/*' />

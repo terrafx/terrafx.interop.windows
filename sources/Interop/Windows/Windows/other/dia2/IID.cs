@@ -150,6 +150,29 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IDiaDataSourceEx2
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xDD, 0xC8, 0x40, 0xD2,
+                0x0F, 0x1A,
+                0x6E, 0x45,
+                0x80,
+                0xA6,
+                0x4F,
+                0x1D,
+                0x06,
+                0xBF,
+                0x5D,
+                0xF4
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IDiaEnumSymbols
     {
         get
@@ -1201,6 +1224,29 @@ public static partial class IID
                 0x9B,
                 0x1F,
                 0x3A
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IDiaEnumNamedStreams
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xE0, 0xF5, 0x01, 0x2B,
+                0xDB, 0x98,
+                0x24, 0x48,
+                0xA9,
+                0xA0,
+                0x51,
+                0x92,
+                0x83,
+                0x3B,
+                0xEF,
+                0x47
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

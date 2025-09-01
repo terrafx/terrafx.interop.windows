@@ -3368,6 +3368,24 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.2")]
     public static extern BOOL SetProcessRestrictionExemption(BOOL fEnableExemption);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ConvertToInterceptWindow"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22000.0")]
+    public static extern BOOL ConvertToInterceptWindow(HWND topLevelWindow);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsInterceptWindow"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22000.0")]
+    public static extern BOOL IsInterceptWindow(HWND topLevelWindow, BOOL* isIntercept);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ApplyWindowAction"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22000.0")]
+    public static extern BOOL ApplyWindowAction(HWND hwnd, WINDOW_ACTION* pAction);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetAdditionalForegroundBoostProcesses"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
@@ -3384,6 +3402,24 @@ public static unsafe partial class Windows
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.18362.0")]
     public static extern BOOL IsWindowArranged(HWND hwnd);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCurrentMonitorTopologyId"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22000.0")]
+    public static extern uint GetCurrentMonitorTopologyId();
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterCloakedNotification"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22000.0")]
+    public static extern BOOL RegisterCloakedNotification(HWND hwnd, BOOL fRegister);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnterMoveSizeLoop"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    [SetsLastSystemError]
+    [SupportedOSPlatform("windows10.0.22000.0")]
+    public static extern BOOL EnterMoveSizeLoop(HWND hwnd, POINT ptCursor, MOVESIZE_OPERATION moveSizeCode);
 
     [NativeTypeName("#define DIFFERENCE 11")]
     public const int DIFFERENCE = 11;
@@ -5471,6 +5507,9 @@ public static unsafe partial class Windows
     [NativeTypeName("#define CCHILDREN_SCROLLBAR 5")]
     public const int CCHILDREN_SCROLLBAR = 5;
 
+    [NativeTypeName("#define CURSOR_INVISIBLE 0x00000000")]
+    public const int CURSOR_INVISIBLE = 0x00000000;
+
     [NativeTypeName("#define CURSOR_SHOWING 0x00000001")]
     public const int CURSOR_SHOWING = 0x00000001;
 
@@ -5641,4 +5680,7 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define NID_READY 0x00000080")]
     public const int NID_READY = 0x00000080;
+
+    [NativeTypeName("#define INVALID_MONITOR_TOPOLOGY_ID 0")]
+    public const int INVALID_MONITOR_TOPOLOGY_ID = 0;
 }

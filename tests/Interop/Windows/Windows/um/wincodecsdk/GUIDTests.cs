@@ -319,4 +319,11 @@ public static partial class GUIDTests
     {
         Assert.That(GUID_MetadataFormatJpegXLAnimFrame, Is.EqualTo(new Guid(0x958ecc2c, 0x36cb, 0x4af9, 0x9e, 0xa8, 0x0b, 0x74, 0xba, 0xcc, 0xfd, 0x3e)));
     }
+
+    /// <summary>Validates that the value of the <see cref="GUID_MetadataFormatGainMap" /> property is correct.</summary>
+    [Test]
+    public static void GUID_MetadataFormatGainMapTest()
+    {
+        Assert.That(GUID_MetadataFormatGainMap, Is.EqualTo(new Guid(0x568d3138, 0xc446, 0x4ec2, 0xa7, 0xa8, 0x59, 0xab, 0xb1, 0x6d, 0x21, 0xe3)));
+    }
 }

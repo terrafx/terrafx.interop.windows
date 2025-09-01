@@ -16,9 +16,9 @@ public unsafe partial struct IRoMetaDataLocator : IRoMetaDataLocator.Interface
     /// <include file='IRoMetaDataLocator.xml' path='doc/member[@name="IRoMetaDataLocator.Locate"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
-    public HRESULT Locate([NativeTypeName("PCWSTR")] char* nameElement, [NativeTypeName("IRoSimpleMetaDataBuilder &")] IRoSimpleMetaDataBuilder* metaDataDestination)
+    public readonly HRESULT Locate([NativeTypeName("PCWSTR")] char* nameElement, [NativeTypeName("IRoSimpleMetaDataBuilder &")] IRoSimpleMetaDataBuilder* metaDataDestination)
     {
-        return ((delegate* unmanaged[MemberFunction]<IRoMetaDataLocator*, char*, IRoSimpleMetaDataBuilder*, int>)(lpVtbl[0]))((IRoMetaDataLocator*)Unsafe.AsPointer(ref this), nameElement, metaDataDestination);
+        return ((delegate* unmanaged[MemberFunction]<IRoMetaDataLocator*, char*, IRoSimpleMetaDataBuilder*, int>)(lpVtbl[0]))((IRoMetaDataLocator*)Unsafe.AsPointer(in this), nameElement, metaDataDestination);
     }
 
     public interface Interface

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3dx12_core.h in microsoft/DirectX-Headers tag v1.614.0
+// Ported from d3dx12_core.h in microsoft/DirectX-Headers tag v1.616.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using static TerraFX.Interop.DirectX.D3D12_TEXTURE_COPY_TYPE;
@@ -16,8 +16,10 @@ public unsafe partial struct D3D12_TEXTURE_COPY_LOCATION
     {
         pResource = pRes;
         Type = D3D12_TEXTURE_COPY_TYPE_SUBRESOURCE_INDEX;
-        Anonymous.PlacedFootprint = new D3D12_PLACED_SUBRESOURCE_FOOTPRINT {
-            Footprint = new D3D12_SUBRESOURCE_FOOTPRINT {
+        Anonymous.PlacedFootprint = new D3D12_PLACED_SUBRESOURCE_FOOTPRINT
+        {
+            Footprint = new D3D12_SUBRESOURCE_FOOTPRINT
+            {
             },
         };
     }
@@ -33,8 +35,10 @@ public unsafe partial struct D3D12_TEXTURE_COPY_LOCATION
     {
         pResource = pRes;
         Type = D3D12_TEXTURE_COPY_TYPE_SUBRESOURCE_INDEX;
-        Anonymous.PlacedFootprint = new D3D12_PLACED_SUBRESOURCE_FOOTPRINT {
-            Footprint = new D3D12_SUBRESOURCE_FOOTPRINT {
+        Anonymous.PlacedFootprint = new D3D12_PLACED_SUBRESOURCE_FOOTPRINT
+        {
+            Footprint = new D3D12_SUBRESOURCE_FOOTPRINT
+            {
             },
         };
         Anonymous.SubresourceIndex = Sub;

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from DirectML.h in microsoft/DirectX-Headers tag v1.614.0
+// Ported from DirectML.h in microsoft/DirectX-Headers tag v1.616.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -46,4 +46,10 @@ public enum DML_FEATURE_LEVEL
 
     /// <include file='DML_FEATURE_LEVEL.xml' path='doc/member[@name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_6_2"]/*' />
     DML_FEATURE_LEVEL_6_2 = 0x6200,
+
+    /// <include file='DML_FEATURE_LEVEL.xml' path='doc/member[@name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_6_3"]/*' />
+    DML_FEATURE_LEVEL_6_3 = 0x6300,
+
+    /// <include file='DML_FEATURE_LEVEL.xml' path='doc/member[@name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_6_4"]/*' />
+    DML_FEATURE_LEVEL_6_4 = 0x6400,
 }

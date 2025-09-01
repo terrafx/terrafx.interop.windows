@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IPresentStatistics")]
 public unsafe partial struct IIndependentFlipFramePresentStatistics : IIndependentFlipFramePresentStatistics.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IIndependentFlipFramePresentStatistics));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IIndependentFlipFramePresentStatistics);
 
     public void** lpVtbl;
 

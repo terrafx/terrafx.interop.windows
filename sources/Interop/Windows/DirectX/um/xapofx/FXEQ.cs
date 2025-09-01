@@ -13,7 +13,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("F5E01117-D6C4-485A-A3F5-695196F3DBFA")]
 public unsafe partial struct FXEQ : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_FXEQ));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_FXEQ);
 
     [NativeTypeName("#define FXEQ_MIN_FRAMERATE 22000")]
     public const int FXEQ_MIN_FRAMERATE = 22000;

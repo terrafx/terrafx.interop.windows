@@ -104,4 +104,50 @@ public static unsafe partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    public static ref readonly Guid IID_IBluetoothLEAdvertisementPublisherTrigger3
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x03, 0x9D, 0x41, 0x64,
+                0x04, 0xD6,
+                0xDC, 0x5B,
+                0xB7,
+                0xD2,
+                0xA7,
+                0xFE,
+                0x25,
+                0xC5,
+                0x54,
+                0x60
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IBluetoothLEAdvertisementWatcherTrigger3
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x1A, 0x01, 0x50, 0xDA,
+                0x61, 0x82,
+                0xA0, 0x56,
+                0xAC,
+                0x7B,
+                0xA8,
+                0xDE,
+                0x16,
+                0x24,
+                0x08,
+                0x8B
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IInternetSecurityManagerEx")]
 public unsafe partial struct IInternetSecurityManagerEx2 : IInternetSecurityManagerEx2.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IInternetSecurityManagerEx2));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInternetSecurityManagerEx2);
 
     public void** lpVtbl;
 

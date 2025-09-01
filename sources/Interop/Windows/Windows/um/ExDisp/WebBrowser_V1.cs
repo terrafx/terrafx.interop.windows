@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("EAB22AC3-30C1-11CF-A7EB-0000C05BAE0B")]
 public unsafe partial struct WebBrowser_V1 : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_WebBrowser_V1));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_WebBrowser_V1);
 }

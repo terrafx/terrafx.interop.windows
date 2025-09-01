@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("6097B4C9-7C1D-4E64-BFCC-9E9765318AE7")]
 public unsafe partial struct CODECAPI_AVEncVideoOutputChromaResolution : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncVideoOutputChromaResolution));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncVideoOutputChromaResolution);
 }

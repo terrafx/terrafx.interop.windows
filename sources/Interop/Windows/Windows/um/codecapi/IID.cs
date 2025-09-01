@@ -7325,4 +7325,96 @@ public static partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    public static ref readonly Guid IID_CODECAPI_AVEncVideoEnableFramePsnrYuv
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x1D, 0xDD, 0xBC, 0x2B,
+                0x47, 0xBC,
+                0x0E, 0x43,
+                0xB2,
+                0xE8,
+                0x64,
+                0x80,
+                0x1B,
+                0x47,
+                0xF5,
+                0xF0
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_CODECAPI_AVEncVideoEnableSpatialAdaptiveQuantization
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x43, 0xB9, 0x9C, 0x65,
+                0xCA, 0x15,
+                0x8D, 0x44,
+                0xB9,
+                0x9A,
+                0x87,
+                0x56,
+                0x19,
+                0xDB,
+                0x4D,
+                0xE4
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputQPMapBlockSize
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x43, 0x87, 0x03, 0x97,
+                0xE3, 0x4A,
+                0xC3, 0x44,
+                0xA0,
+                0xF2,
+                0x5B,
+                0xD5,
+                0x8A,
+                0x46,
+                0x34,
+                0xEF
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputBitsUsedMapBlockSize
+    {
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x1A, 0xD1, 0x2C, 0x6C,
+                0x3B, 0xCA,
+                0xBD, 0x44,
+                0x9A,
+                0x9E,
+                0x93,
+                0xB0,
+                0x36,
+                0x34,
+                0xC3,
+                0x6E
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

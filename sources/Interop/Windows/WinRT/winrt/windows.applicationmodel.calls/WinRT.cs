@@ -7,14 +7,35 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    [NativeTypeName("const WCHAR[61]")]
+    public const string InterfaceName_Windows_ApplicationModel_Calls_IAcceptedVoipPhoneCallOptions = "Windows.ApplicationModel.Calls.IAcceptedVoipPhoneCallOptions";
+
+    [NativeTypeName("const WCHAR[68]")]
+    public const string InterfaceName_Windows_ApplicationModel_Calls_IAcceptedVoipPhoneCallOptionsFactory = "Windows.ApplicationModel.Calls.IAcceptedVoipPhoneCallOptionsFactory";
+
+    [NativeTypeName("const WCHAR[65]")]
+    public const string InterfaceName_Windows_ApplicationModel_Calls_IAppInitiatedVoipPhoneCallOptions = "Windows.ApplicationModel.Calls.IAppInitiatedVoipPhoneCallOptions";
+
+    [NativeTypeName("const WCHAR[72]")]
+    public const string InterfaceName_Windows_ApplicationModel_Calls_IAppInitiatedVoipPhoneCallOptionsFactory = "Windows.ApplicationModel.Calls.IAppInitiatedVoipPhoneCallOptionsFactory";
+
     [NativeTypeName("const WCHAR[52]")]
     public const string InterfaceName_Windows_ApplicationModel_Calls_ICallAnswerEventArgs = "Windows.ApplicationModel.Calls.ICallAnswerEventArgs";
+
+    [NativeTypeName("const WCHAR[53]")]
+    public const string InterfaceName_Windows_ApplicationModel_Calls_ICallAnswerEventArgs2 = "Windows.ApplicationModel.Calls.ICallAnswerEventArgs2";
 
     [NativeTypeName("const WCHAR[52]")]
     public const string InterfaceName_Windows_ApplicationModel_Calls_ICallRejectEventArgs = "Windows.ApplicationModel.Calls.ICallRejectEventArgs";
 
     [NativeTypeName("const WCHAR[57]")]
     public const string InterfaceName_Windows_ApplicationModel_Calls_ICallStateChangeEventArgs = "Windows.ApplicationModel.Calls.ICallStateChangeEventArgs";
+
+    [NativeTypeName("const WCHAR[61]")]
+    public const string InterfaceName_Windows_ApplicationModel_Calls_IIncomingVoipPhoneCallOptions = "Windows.ApplicationModel.Calls.IIncomingVoipPhoneCallOptions";
+
+    [NativeTypeName("const WCHAR[68]")]
+    public const string InterfaceName_Windows_ApplicationModel_Calls_IIncomingVoipPhoneCallOptionsFactory = "Windows.ApplicationModel.Calls.IIncomingVoipPhoneCallOptionsFactory";
 
     [NativeTypeName("const WCHAR[62]")]
     public const string InterfaceName_Windows_ApplicationModel_Calls_ILockScreenCallEndCallDeferral = "Windows.ApplicationModel.Calls.ILockScreenCallEndCallDeferral";
@@ -27,6 +48,12 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[52]")]
     public const string InterfaceName_Windows_ApplicationModel_Calls_IMuteChangeEventArgs = "Windows.ApplicationModel.Calls.IMuteChangeEventArgs";
+
+    [NativeTypeName("const WCHAR[61]")]
+    public const string InterfaceName_Windows_ApplicationModel_Calls_IOutgoingVoipPhoneCallOptions = "Windows.ApplicationModel.Calls.IOutgoingVoipPhoneCallOptions";
+
+    [NativeTypeName("const WCHAR[68]")]
+    public const string InterfaceName_Windows_ApplicationModel_Calls_IOutgoingVoipPhoneCallOptionsFactory = "Windows.ApplicationModel.Calls.IOutgoingVoipPhoneCallOptionsFactory";
 
     [NativeTypeName("const WCHAR[42]")]
     public const string InterfaceName_Windows_ApplicationModel_Calls_IPhoneCall = "Windows.ApplicationModel.Calls.IPhoneCall";
@@ -139,8 +166,14 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[53]")]
     public const string InterfaceName_Windows_ApplicationModel_Calls_IVoipCallCoordinator4 = "Windows.ApplicationModel.Calls.IVoipCallCoordinator4";
 
+    [NativeTypeName("const WCHAR[53]")]
+    public const string InterfaceName_Windows_ApplicationModel_Calls_IVoipCallCoordinator5 = "Windows.ApplicationModel.Calls.IVoipCallCoordinator5";
+
     [NativeTypeName("const WCHAR[59]")]
     public const string InterfaceName_Windows_ApplicationModel_Calls_IVoipCallCoordinatorStatics = "Windows.ApplicationModel.Calls.IVoipCallCoordinatorStatics";
+
+    [NativeTypeName("const WCHAR[60]")]
+    public const string InterfaceName_Windows_ApplicationModel_Calls_IVoipCallCoordinatorStatics2 = "Windows.ApplicationModel.Calls.IVoipCallCoordinatorStatics2";
 
     [NativeTypeName("const WCHAR[46]")]
     public const string InterfaceName_Windows_ApplicationModel_Calls_IVoipPhoneCall = "Windows.ApplicationModel.Calls.IVoipPhoneCall";
@@ -151,6 +184,15 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[47]")]
     public const string InterfaceName_Windows_ApplicationModel_Calls_IVoipPhoneCall3 = "Windows.ApplicationModel.Calls.IVoipPhoneCall3";
 
+    [NativeTypeName("const WCHAR[47]")]
+    public const string InterfaceName_Windows_ApplicationModel_Calls_IVoipPhoneCall4 = "Windows.ApplicationModel.Calls.IVoipPhoneCall4";
+
+    [NativeTypeName("const WCHAR[60]")]
+    public const string RuntimeClass_Windows_ApplicationModel_Calls_AcceptedVoipPhoneCallOptions = "Windows.ApplicationModel.Calls.AcceptedVoipPhoneCallOptions";
+
+    [NativeTypeName("const WCHAR[64]")]
+    public const string RuntimeClass_Windows_ApplicationModel_Calls_AppInitiatedVoipPhoneCallOptions = "Windows.ApplicationModel.Calls.AppInitiatedVoipPhoneCallOptions";
+
     [NativeTypeName("const WCHAR[51]")]
     public const string RuntimeClass_Windows_ApplicationModel_Calls_CallAnswerEventArgs = "Windows.ApplicationModel.Calls.CallAnswerEventArgs";
 
@@ -159,6 +201,9 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[56]")]
     public const string RuntimeClass_Windows_ApplicationModel_Calls_CallStateChangeEventArgs = "Windows.ApplicationModel.Calls.CallStateChangeEventArgs";
+
+    [NativeTypeName("const WCHAR[60]")]
+    public const string RuntimeClass_Windows_ApplicationModel_Calls_IncomingVoipPhoneCallOptions = "Windows.ApplicationModel.Calls.IncomingVoipPhoneCallOptions";
 
     [NativeTypeName("const WCHAR[61]")]
     public const string RuntimeClass_Windows_ApplicationModel_Calls_LockScreenCallEndCallDeferral = "Windows.ApplicationModel.Calls.LockScreenCallEndCallDeferral";
@@ -171,6 +216,9 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[51]")]
     public const string RuntimeClass_Windows_ApplicationModel_Calls_MuteChangeEventArgs = "Windows.ApplicationModel.Calls.MuteChangeEventArgs";
+
+    [NativeTypeName("const WCHAR[60]")]
+    public const string RuntimeClass_Windows_ApplicationModel_Calls_OutgoingVoipPhoneCallOptions = "Windows.ApplicationModel.Calls.OutgoingVoipPhoneCallOptions";
 
     [NativeTypeName("const WCHAR[41]")]
     public const string RuntimeClass_Windows_ApplicationModel_Calls_PhoneCall = "Windows.ApplicationModel.Calls.PhoneCall";

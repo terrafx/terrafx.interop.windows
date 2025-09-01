@@ -44,8 +44,20 @@ public enum HTTP_FEATURE_ID
     /// <include file='HTTP_FEATURE_ID.xml' path='doc/member[@name="HTTP_FEATURE_ID.HttpFeatureCacheTlsClientHello"]/*' />
     HttpFeatureCacheTlsClientHello = 11,
 
+    /// <include file='HTTP_FEATURE_ID.xml' path='doc/member[@name="HTTP_FEATURE_ID.HttpFeatureIdleConnectionTimeoutRequestProperty"]/*' />
+    HttpFeatureIdleConnectionTimeoutRequestProperty = 12,
+
+    /// <include file='HTTP_FEATURE_ID.xml' path='doc/member[@name="HTTP_FEATURE_ID.HttpFeatureDisableAiaFlag"]/*' />
+    HttpFeatureDisableAiaFlag = 13,
+
+    /// <include file='HTTP_FEATURE_ID.xml' path='doc/member[@name="HTTP_FEATURE_ID.HttpFeatureDscp"]/*' />
+    HttpFeatureDscp = 14,
+
+    /// <include file='HTTP_FEATURE_ID.xml' path='doc/member[@name="HTTP_FEATURE_ID.HttpFeatureQueryCipherInfo"]/*' />
+    HttpFeatureQueryCipherInfo = 15,
+
     /// <include file='HTTP_FEATURE_ID.xml' path='doc/member[@name="HTTP_FEATURE_ID.HttpFeatureLast"]/*' />
-    HttpFeatureLast = 12,
+    HttpFeatureLast = 16,
 
     /// <include file='HTTP_FEATURE_ID.xml' path='doc/member[@name="HTTP_FEATURE_ID.HttpFeaturemax"]/*' />
     HttpFeaturemax = unchecked((int)(0xFFFFFFFF)),

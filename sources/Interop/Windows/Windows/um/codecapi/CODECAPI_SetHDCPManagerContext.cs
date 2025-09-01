@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("6D2D1FC8-3DC9-47EB-A1A2-471C80CD60D0")]
 public unsafe partial struct CODECAPI_SetHDCPManagerContext : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_SetHDCPManagerContext));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_SetHDCPManagerContext);
 }

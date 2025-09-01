@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("FBC650FC-41AB-4F9B-84B5-065BE9CD99EE")]
 public unsafe partial struct CODECAPI_AVEncTileRows : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncTileRows));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncTileRows);
 }

@@ -14,16 +14,16 @@ namespace TerraFX.Interop.Windows;
 [Guid("D9A5DE00-3346-4599-9826-FE88565E1226")]
 public unsafe partial struct IHttpConnection : IHttpConnection.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpConnection));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpConnection);
 
     public void** lpVtbl;
 
     /// <include file='IHttpConnection.xml' path='doc/member[@name="IHttpConnection.IsConnected"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
-    public BOOL IsConnected()
+    public readonly BOOL IsConnected()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpConnection*, int>)(lpVtbl[0]))((IHttpConnection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpConnection*, int>)(lpVtbl[0]))((IHttpConnection*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpConnection.xml' path='doc/member[@name="IHttpConnection.AllocateMemory"]/*' />

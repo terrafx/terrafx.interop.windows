@@ -61,6 +61,7 @@ IID_IManipulationUpdatedEventArgs
 IID_IManipulationUpdatedEventArgs2
 IID_IMouseWheelParameters
 IID_IPointerPoint
+IID_IPointerPointPhysicalPosition
 IID_IPointerPointProperties
 IID_IPointerPointProperties2
 IID_IPointerPointStatics

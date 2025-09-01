@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IGlobalFileChangeProvider : IGlobalFileChangeProvider.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IGlobalFileChangeProvider));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGlobalFileChangeProvider);
 
     public void** lpVtbl;
 
@@ -32,9 +32,9 @@ public unsafe partial struct IGlobalFileChangeProvider : IGlobalFileChangeProvid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetFileName()
+    public readonly char* GetFileName()
     {
-        return ((delegate* unmanaged[MemberFunction]<IGlobalFileChangeProvider*, char*>)(lpVtbl[1]))((IGlobalFileChangeProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGlobalFileChangeProvider*, char*>)(lpVtbl[1]))((IGlobalFileChangeProvider*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IGlobalFileChangeProvider.xml' path='doc/member[@name="IGlobalFileChangeProvider.GetFileMonitor"]/*' />

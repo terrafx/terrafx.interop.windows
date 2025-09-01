@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("9EB9ECD4-018D-4FFD-8F2D-39E49F07B17A")]
 public unsafe partial struct CODECAPI_AVEncMPVQuantMatrixChromaIntra : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncMPVQuantMatrixChromaIntra));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncMPVQuantMatrixChromaIntra);
 }

@@ -4,7 +4,7 @@
 
   <PropertyGroup>
     <RootNamespace>TerraFX.Interop.UnitTests</RootNamespace>
-    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+    <TargetFrameworks>net10.0</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup>

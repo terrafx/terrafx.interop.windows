@@ -19,7 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct ID2D1ImageSource : ID2D1ImageSource.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1ImageSource));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1ImageSource);
 
     public void** lpVtbl;
 
@@ -52,9 +52,9 @@ public unsafe partial struct ID2D1ImageSource : ID2D1ImageSource.Interface, INat
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1ImageSource*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1ImageSource*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1ImageSource*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1ImageSource*)Unsafe.AsPointer(in this), factory);
     }
 
     /// <include file='ID2D1ImageSource.xml' path='doc/member[@name="ID2D1ImageSource.OfferResources"]/*' />

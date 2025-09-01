@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("B98E1B31-19FA-4D4F-9931-D6A5B8AAB93C")]
 public unsafe partial struct CODECAPI_AVEncMaxFrameRate : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncMaxFrameRate));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncMaxFrameRate);
 }

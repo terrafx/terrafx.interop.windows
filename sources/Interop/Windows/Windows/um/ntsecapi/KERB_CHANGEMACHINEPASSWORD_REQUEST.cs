@@ -11,7 +11,7 @@ public partial struct KERB_CHANGEMACHINEPASSWORD_REQUEST
     /// <include file='KERB_CHANGEMACHINEPASSWORD_REQUEST.xml' path='doc/member[@name="KERB_CHANGEMACHINEPASSWORD_REQUEST.MessageType"]/*' />
     public KERB_PROTOCOL_MESSAGE_TYPE MessageType;
 
-    /// <include file='KERB_CHANGEMACHINEPASSWORD_REQUEST.xml' path='doc/member[@name="KERB_CHANGEMACHINEPASSWORD_REQUEST.Impersonating"]/*' />
+    /// <include file='KERB_CHANGEMACHINEPASSWORD_REQUEST.xml' path='doc/member[@name="KERB_CHANGEMACHINEPASSWORD_REQUEST.ForcePasswordChange"]/*' />
     [NativeTypeName("BOOLEAN")]
-    public byte Impersonating;
+    public byte ForcePasswordChange;
 }

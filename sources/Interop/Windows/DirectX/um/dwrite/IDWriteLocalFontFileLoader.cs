@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDWriteFontFileLoader")]
 public unsafe partial struct IDWriteLocalFontFileLoader : IDWriteLocalFontFileLoader.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IDWriteLocalFontFileLoader));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDWriteLocalFontFileLoader);
 
     public void** lpVtbl;
 

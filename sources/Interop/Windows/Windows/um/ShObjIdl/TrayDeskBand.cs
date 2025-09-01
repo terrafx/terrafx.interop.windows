@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("E6442437-6C68-4F52-94DD-2CFED267EFB9")]
 public unsafe partial struct TrayDeskBand : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_TrayDeskBand));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_TrayDeskBand);
 }

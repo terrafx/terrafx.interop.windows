@@ -34,6 +34,9 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[76]")]
     public const string InterfaceName_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisementPublisher2 = "Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisher2";
 
+    [NativeTypeName("const WCHAR[76]")]
+    public const string InterfaceName_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisementPublisher3 = "Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisher3";
+
     [NativeTypeName("const WCHAR[82]")]
     public const string InterfaceName_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisementPublisherFactory = "Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementPublisherFactory";
 
@@ -49,11 +52,23 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[84]")]
     public const string InterfaceName_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisementReceivedEventArgs2 = "Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementReceivedEventArgs2";
 
+    [NativeTypeName("const WCHAR[84]")]
+    public const string InterfaceName_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisementReceivedEventArgs3 = "Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementReceivedEventArgs3";
+
+    [NativeTypeName("const WCHAR[80]")]
+    public const string InterfaceName_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisementScanParameters = "Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementScanParameters";
+
+    [NativeTypeName("const WCHAR[87]")]
+    public const string InterfaceName_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisementScanParametersStatics = "Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementScanParametersStatics";
+
     [NativeTypeName("const WCHAR[73]")]
     public const string InterfaceName_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisementWatcher = "Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher";
 
     [NativeTypeName("const WCHAR[74]")]
     public const string InterfaceName_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisementWatcher2 = "Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher2";
+
+    [NativeTypeName("const WCHAR[74]")]
+    public const string InterfaceName_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisementWatcher3 = "Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcher3";
 
     [NativeTypeName("const WCHAR[80]")]
     public const string InterfaceName_Windows_Devices_Bluetooth_Advertisement_IBluetoothLEAdvertisementWatcherFactory = "Windows.Devices.Bluetooth.Advertisement.IBluetoothLEAdvertisementWatcherFactory";
@@ -90,6 +105,9 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[82]")]
     public const string RuntimeClass_Windows_Devices_Bluetooth_Advertisement_BluetoothLEAdvertisementReceivedEventArgs = "Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementReceivedEventArgs";
+
+    [NativeTypeName("const WCHAR[79]")]
+    public const string RuntimeClass_Windows_Devices_Bluetooth_Advertisement_BluetoothLEAdvertisementScanParameters = "Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementScanParameters";
 
     [NativeTypeName("const WCHAR[72]")]
     public const string RuntimeClass_Windows_Devices_Bluetooth_Advertisement_BluetoothLEAdvertisementWatcher = "Windows.Devices.Bluetooth.Advertisement.BluetoothLEAdvertisementWatcher";

@@ -15,13 +15,13 @@ public partial struct BOOT_AREA_INFO
     public uint BootSectorCount;
 
     /// <include file='BOOT_AREA_INFO.xml' path='doc/member[@name="BOOT_AREA_INFO.BootSectors"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.26100.0/um/winioctl.h:14008:5)[2]")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.26100.0/um/winioctl.h:14310:5)[2]")]
     public _BootSectors_e__FixedBuffer BootSectors;
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
-    public partial struct _Anonymous_e__Struct
+    /// <include file='_BootSectors_e__Struct.xml' path='doc/member[@name="_BootSectors_e__Struct"]/*' />
+    public partial struct _BootSectors_e__Struct
     {
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Offset"]/*' />
+        /// <include file='_BootSectors_e__Struct.xml' path='doc/member[@name="_BootSectors_e__Struct.Offset"]/*' />
         public LARGE_INTEGER Offset;
     }
 
@@ -29,6 +29,6 @@ public partial struct BOOT_AREA_INFO
     [InlineArray(2)]
     public partial struct _BootSectors_e__FixedBuffer
     {
-        public _Anonymous_e__Struct e0;
+        public _BootSectors_e__Struct e0;
     }
 }

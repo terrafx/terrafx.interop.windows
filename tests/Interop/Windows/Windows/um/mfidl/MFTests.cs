@@ -698,6 +698,13 @@ public static partial class MFTests
         Assert.That(MF_SD_MUTUALLY_EXCLUSIVE, Is.EqualTo(new Guid(0x23ef79c, 0x388d, 0x487f, 0xac, 0x17, 0x69, 0x6c, 0xd6, 0xe3, 0xc6, 0xf5)));
     }
 
+    /// <summary>Validates that the value of the <see cref="MF_SD_SUPPORTS_PROTECTED_CODEC_SWITCH" /> property is correct.</summary>
+    [Test]
+    public static void MF_SD_SUPPORTS_PROTECTED_CODEC_SWITCHTest()
+    {
+        Assert.That(MF_SD_SUPPORTS_PROTECTED_CODEC_SWITCH, Is.EqualTo(new Guid(0x8fb6b117, 0x862e, 0x4b31, 0x8d, 0xab, 0x5e, 0x0a, 0x43, 0x4c, 0xae, 0xf0)));
+    }
+
     /// <summary>Validates that the value of the <see cref="MF_ACTIVATE_CUSTOM_VIDEO_MIXER_CLSID" /> property is correct.</summary>
     [Test]
     public static void MF_ACTIVATE_CUSTOM_VIDEO_MIXER_CLSIDTest()

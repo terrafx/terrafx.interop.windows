@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("7A0F6AB7-ED84-46B6-B47E-02AA159A152B")]
 public unsafe partial struct SimpleConflictPresenter : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SimpleConflictPresenter));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_SimpleConflictPresenter);
 }

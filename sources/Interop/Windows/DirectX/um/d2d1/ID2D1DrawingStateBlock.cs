@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Resource")]
 public unsafe partial struct ID2D1DrawingStateBlock : ID2D1DrawingStateBlock.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1DrawingStateBlock));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1DrawingStateBlock);
 
     public void** lpVtbl;
 
@@ -50,17 +50,17 @@ public unsafe partial struct ID2D1DrawingStateBlock : ID2D1DrawingStateBlock.Int
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1DrawingStateBlock*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1DrawingStateBlock*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1DrawingStateBlock*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1DrawingStateBlock*)Unsafe.AsPointer(in this), factory);
     }
 
     /// <include file='ID2D1DrawingStateBlock.xml' path='doc/member[@name="ID2D1DrawingStateBlock.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public void GetDescription(D2D1_DRAWING_STATE_DESCRIPTION* stateDescription)
+    public readonly void GetDescription(D2D1_DRAWING_STATE_DESCRIPTION* stateDescription)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1DrawingStateBlock*, D2D1_DRAWING_STATE_DESCRIPTION*, void>)(lpVtbl[4]))((ID2D1DrawingStateBlock*)Unsafe.AsPointer(ref this), stateDescription);
+        ((delegate* unmanaged[MemberFunction]<ID2D1DrawingStateBlock*, D2D1_DRAWING_STATE_DESCRIPTION*, void>)(lpVtbl[4]))((ID2D1DrawingStateBlock*)Unsafe.AsPointer(in this), stateDescription);
     }
 
     /// <include file='ID2D1DrawingStateBlock.xml' path='doc/member[@name="ID2D1DrawingStateBlock.SetDescription"]/*' />
@@ -82,9 +82,9 @@ public unsafe partial struct ID2D1DrawingStateBlock : ID2D1DrawingStateBlock.Int
     /// <include file='ID2D1DrawingStateBlock.xml' path='doc/member[@name="ID2D1DrawingStateBlock.GetTextRenderingParams"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public void GetTextRenderingParams(IDWriteRenderingParams** textRenderingParams)
+    public readonly void GetTextRenderingParams(IDWriteRenderingParams** textRenderingParams)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1DrawingStateBlock*, IDWriteRenderingParams**, void>)(lpVtbl[7]))((ID2D1DrawingStateBlock*)Unsafe.AsPointer(ref this), textRenderingParams);
+        ((delegate* unmanaged[MemberFunction]<ID2D1DrawingStateBlock*, IDWriteRenderingParams**, void>)(lpVtbl[7]))((ID2D1DrawingStateBlock*)Unsafe.AsPointer(in this), textRenderingParams);
     }
 
     public interface Interface : ID2D1Resource.Interface

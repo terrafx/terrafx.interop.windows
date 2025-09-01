@@ -18,25 +18,25 @@ public partial struct SCOPE_TABLE_AMD64
     public uint Count;
 
     /// <include file='SCOPE_TABLE_AMD64.xml' path='doc/member[@name="SCOPE_TABLE_AMD64.ScopeRecord"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.26100.0/um/winnt.h:2814:5)[1]")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.26100.0/um/winnt.h:2822:5)[1]")]
     public _ScopeRecord_e__FixedBuffer ScopeRecord;
 
-    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
-    public partial struct _Anonymous_e__Struct
+    /// <include file='_ScopeRecord_e__Struct.xml' path='doc/member[@name="_ScopeRecord_e__Struct"]/*' />
+    public partial struct _ScopeRecord_e__Struct
     {
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BeginAddress"]/*' />
+        /// <include file='_ScopeRecord_e__Struct.xml' path='doc/member[@name="_ScopeRecord_e__Struct.BeginAddress"]/*' />
         [NativeTypeName("DWORD")]
         public uint BeginAddress;
 
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.EndAddress"]/*' />
+        /// <include file='_ScopeRecord_e__Struct.xml' path='doc/member[@name="_ScopeRecord_e__Struct.EndAddress"]/*' />
         [NativeTypeName("DWORD")]
         public uint EndAddress;
 
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.HandlerAddress"]/*' />
+        /// <include file='_ScopeRecord_e__Struct.xml' path='doc/member[@name="_ScopeRecord_e__Struct.HandlerAddress"]/*' />
         [NativeTypeName("DWORD")]
         public uint HandlerAddress;
 
-        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.JumpTarget"]/*' />
+        /// <include file='_ScopeRecord_e__Struct.xml' path='doc/member[@name="_ScopeRecord_e__Struct.JumpTarget"]/*' />
         [NativeTypeName("DWORD")]
         public uint JumpTarget;
     }
@@ -44,10 +44,10 @@ public partial struct SCOPE_TABLE_AMD64
     /// <include file='_ScopeRecord_e__FixedBuffer.xml' path='doc/member[@name="_ScopeRecord_e__FixedBuffer"]/*' />
     public partial struct _ScopeRecord_e__FixedBuffer
     {
-        public _Anonymous_e__Struct e0;
+        public _ScopeRecord_e__Struct e0;
 
         [UnscopedRef]
-        public ref _Anonymous_e__Struct this[int index]
+        public ref _ScopeRecord_e__Struct this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
@@ -58,6 +58,6 @@ public partial struct SCOPE_TABLE_AMD64
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [UnscopedRef]
-        public Span<_Anonymous_e__Struct> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+        public Span<_ScopeRecord_e__Struct> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

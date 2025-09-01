@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("C2CF3110-460E-4FC1-B9D0-8A1C0C9CC4BD")]
 public unsafe partial struct DesktopWallpaper : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_DesktopWallpaper));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DesktopWallpaper);
 }

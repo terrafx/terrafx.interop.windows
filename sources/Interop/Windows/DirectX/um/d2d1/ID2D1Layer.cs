@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Resource")]
 public unsafe partial struct ID2D1Layer : ID2D1Layer.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1Layer));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1Layer);
 
     public void** lpVtbl;
 
@@ -50,18 +50,18 @@ public unsafe partial struct ID2D1Layer : ID2D1Layer.Interface, INativeGuid
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1Layer*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Layer*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1Layer*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Layer*)Unsafe.AsPointer(in this), factory);
     }
 
     /// <include file='ID2D1Layer.xml' path='doc/member[@name="ID2D1Layer.GetSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
     [return: NativeTypeName("D2D1_SIZE_F")]
-    public D2D_SIZE_F GetSize()
+    public readonly D2D_SIZE_F GetSize()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Layer*, D2D_SIZE_F>)(lpVtbl[4]))((ID2D1Layer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Layer*, D2D_SIZE_F>)(lpVtbl[4]))((ID2D1Layer*)Unsafe.AsPointer(in this));
     }
 
     public interface Interface : ID2D1Resource.Interface

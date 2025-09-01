@@ -29,7 +29,7 @@ public partial struct DEVICE_LOCATION
     public uint Port;
 
     /// <include file='DEVICE_LOCATION.xml' path='doc/member[@name="DEVICE_LOCATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L3065_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L3367_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.Channel"]/*' />
@@ -82,12 +82,12 @@ public partial struct DEVICE_LOCATION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous1"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L3067_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L3369_C9")]
         public _Anonymous1_e__Struct Anonymous1;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous2"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L3075_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L3377_C9")]
         public _Anonymous2_e__Struct Anonymous2;
 
         /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct"]/*' />

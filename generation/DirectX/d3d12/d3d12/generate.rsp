@@ -102,6 +102,7 @@ ID3D12VirtualizationGuestDevice=SupportedOSPlatform("windows10.0.22621.0")
 D3D12CreateDevice=d3d12
 D3D12CreateRootSignatureDeserializer=d3d12
 D3D12CreateVersionedRootSignatureDeserializer=d3d12
+D3D12CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary=d3d12
 D3D12EnableExperimentalFeatures=d3d12
 D3D12GetDebugInterface=d3d12
 D3D12GetInterface=d3d12

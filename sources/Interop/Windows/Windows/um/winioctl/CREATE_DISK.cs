@@ -16,7 +16,7 @@ public partial struct CREATE_DISK
     public PARTITION_STYLE PartitionStyle;
 
     /// <include file='CREATE_DISK.xml' path='doc/member[@name="CREATE_DISK.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L9272_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L9574_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Mbr"]/*' />

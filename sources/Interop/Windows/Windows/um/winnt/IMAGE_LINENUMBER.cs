@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_LINENUMBER
 {
     /// <include file='IMAGE_LINENUMBER.xml' path='doc/member[@name="IMAGE_LINENUMBER.Type"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L20373_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L20503_C5")]
     public _Type_e__Union Type;
 
     /// <include file='IMAGE_LINENUMBER.xml' path='doc/member[@name="IMAGE_LINENUMBER.Linenumber"]/*' />

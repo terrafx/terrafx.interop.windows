@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.614.0
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.616.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -43,4 +43,7 @@ public enum D3D12_RAY_FLAGS
 
     /// <include file='D3D12_RAY_FLAGS.xml' path='doc/member[@name="D3D12_RAY_FLAGS.D3D12_RAY_FLAG_SKIP_PROCEDURAL_PRIMITIVES"]/*' />
     D3D12_RAY_FLAG_SKIP_PROCEDURAL_PRIMITIVES = 0x200,
+
+    /// <include file='D3D12_RAY_FLAGS.xml' path='doc/member[@name="D3D12_RAY_FLAGS.D3D12_RAY_FLAG_FORCE_OMM_2_STATE"]/*' />
+    D3D12_RAY_FLAG_FORCE_OMM_2_STATE = 0x400,
 }

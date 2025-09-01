@@ -201,4 +201,88 @@ public static partial class PF
 
     [NativeTypeName("#define PF_BMI2_INSTRUCTIONS_AVAILABLE 60")]
     public const int PF_BMI2_INSTRUCTIONS_AVAILABLE = 60;
+
+    [NativeTypeName("#define PF_MOVDIR64B_INSTRUCTION_AVAILABLE 61")]
+    public const int PF_MOVDIR64B_INSTRUCTION_AVAILABLE = 61;
+
+    [NativeTypeName("#define PF_ARM_LSE2_AVAILABLE 62")]
+    public const int PF_ARM_LSE2_AVAILABLE = 62;
+
+    [NativeTypeName("#define PF_RESERVED_FEATURE 63")]
+    public const int PF_RESERVED_FEATURE = 63;
+
+    [NativeTypeName("#define PF_ARM_SHA3_INSTRUCTIONS_AVAILABLE 64")]
+    public const int PF_ARM_SHA3_INSTRUCTIONS_AVAILABLE = 64;
+
+    [NativeTypeName("#define PF_ARM_SHA512_INSTRUCTIONS_AVAILABLE 65")]
+    public const int PF_ARM_SHA512_INSTRUCTIONS_AVAILABLE = 65;
+
+    [NativeTypeName("#define PF_ARM_V82_I8MM_INSTRUCTIONS_AVAILABLE 66")]
+    public const int PF_ARM_V82_I8MM_INSTRUCTIONS_AVAILABLE = 66;
+
+    [NativeTypeName("#define PF_ARM_V82_FP16_INSTRUCTIONS_AVAILABLE 67")]
+    public const int PF_ARM_V82_FP16_INSTRUCTIONS_AVAILABLE = 67;
+
+    [NativeTypeName("#define PF_ARM_V86_BF16_INSTRUCTIONS_AVAILABLE 68")]
+    public const int PF_ARM_V86_BF16_INSTRUCTIONS_AVAILABLE = 68;
+
+    [NativeTypeName("#define PF_ARM_V86_EBF16_INSTRUCTIONS_AVAILABLE 69")]
+    public const int PF_ARM_V86_EBF16_INSTRUCTIONS_AVAILABLE = 69;
+
+    [NativeTypeName("#define PF_ARM_SME_INSTRUCTIONS_AVAILABLE 70")]
+    public const int PF_ARM_SME_INSTRUCTIONS_AVAILABLE = 70;
+
+    [NativeTypeName("#define PF_ARM_SME2_INSTRUCTIONS_AVAILABLE 71")]
+    public const int PF_ARM_SME2_INSTRUCTIONS_AVAILABLE = 71;
+
+    [NativeTypeName("#define PF_ARM_SME2_1_INSTRUCTIONS_AVAILABLE 72")]
+    public const int PF_ARM_SME2_1_INSTRUCTIONS_AVAILABLE = 72;
+
+    [NativeTypeName("#define PF_ARM_SME2_2_INSTRUCTIONS_AVAILABLE 73")]
+    public const int PF_ARM_SME2_2_INSTRUCTIONS_AVAILABLE = 73;
+
+    [NativeTypeName("#define PF_ARM_SME_AES_INSTRUCTIONS_AVAILABLE 74")]
+    public const int PF_ARM_SME_AES_INSTRUCTIONS_AVAILABLE = 74;
+
+    [NativeTypeName("#define PF_ARM_SME_SBITPERM_INSTRUCTIONS_AVAILABLE 75")]
+    public const int PF_ARM_SME_SBITPERM_INSTRUCTIONS_AVAILABLE = 75;
+
+    [NativeTypeName("#define PF_ARM_SME_SF8MM4_INSTRUCTIONS_AVAILABLE 76")]
+    public const int PF_ARM_SME_SF8MM4_INSTRUCTIONS_AVAILABLE = 76;
+
+    [NativeTypeName("#define PF_ARM_SME_SF8MM8_INSTRUCTIONS_AVAILABLE 77")]
+    public const int PF_ARM_SME_SF8MM8_INSTRUCTIONS_AVAILABLE = 77;
+
+    [NativeTypeName("#define PF_ARM_SME_SF8DP2_INSTRUCTIONS_AVAILABLE 78")]
+    public const int PF_ARM_SME_SF8DP2_INSTRUCTIONS_AVAILABLE = 78;
+
+    [NativeTypeName("#define PF_ARM_SME_SF8DP4_INSTRUCTIONS_AVAILABLE 79")]
+    public const int PF_ARM_SME_SF8DP4_INSTRUCTIONS_AVAILABLE = 79;
+
+    [NativeTypeName("#define PF_ARM_SME_SF8FMA_INSTRUCTIONS_AVAILABLE 80")]
+    public const int PF_ARM_SME_SF8FMA_INSTRUCTIONS_AVAILABLE = 80;
+
+    [NativeTypeName("#define PF_ARM_SME_F8F32_INSTRUCTIONS_AVAILABLE 81")]
+    public const int PF_ARM_SME_F8F32_INSTRUCTIONS_AVAILABLE = 81;
+
+    [NativeTypeName("#define PF_ARM_SME_F8F16_INSTRUCTIONS_AVAILABLE 82")]
+    public const int PF_ARM_SME_F8F16_INSTRUCTIONS_AVAILABLE = 82;
+
+    [NativeTypeName("#define PF_ARM_SME_F16F16_INSTRUCTIONS_AVAILABLE 83")]
+    public const int PF_ARM_SME_F16F16_INSTRUCTIONS_AVAILABLE = 83;
+
+    [NativeTypeName("#define PF_ARM_SME_B16B16_INSTRUCTIONS_AVAILABLE 84")]
+    public const int PF_ARM_SME_B16B16_INSTRUCTIONS_AVAILABLE = 84;
+
+    [NativeTypeName("#define PF_ARM_SME_F64F64_INSTRUCTIONS_AVAILABLE 85")]
+    public const int PF_ARM_SME_F64F64_INSTRUCTIONS_AVAILABLE = 85;
+
+    [NativeTypeName("#define PF_ARM_SME_I16I64_INSTRUCTIONS_AVAILABLE 86")]
+    public const int PF_ARM_SME_I16I64_INSTRUCTIONS_AVAILABLE = 86;
+
+    [NativeTypeName("#define PF_ARM_SME_LUTv2_INSTRUCTIONS_AVAILABLE 87")]
+    public const int PF_ARM_SME_LUTv2_INSTRUCTIONS_AVAILABLE = 87;
+
+    [NativeTypeName("#define PF_ARM_SME_FA64_INSTRUCTIONS_AVAILABLE 88")]
+    public const int PF_ARM_SME_FA64_INSTRUCTIONS_AVAILABLE = 88;
 }

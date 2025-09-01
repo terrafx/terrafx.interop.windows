@@ -18,7 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("ISearchPaneSuggestionsRequestDeferral may be altered or unavailable for releases after Windows 10.")]
 public unsafe partial struct ISearchPaneSuggestionsRequestDeferral : ISearchPaneSuggestionsRequestDeferral.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISearchPaneSuggestionsRequestDeferral));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISearchPaneSuggestionsRequestDeferral);
 
     public void** lpVtbl;
 

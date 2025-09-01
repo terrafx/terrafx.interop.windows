@@ -51,4 +51,7 @@ public static partial class APPIDREGFLAGS
 
     [NativeTypeName("#define APPIDREGFLAGS_RESERVED9 0x4000")]
     public const int APPIDREGFLAGS_RESERVED9 = 0x4000;
+
+    [NativeTypeName("#define APPIDREGFLAGS_RESERVED10 0x8000")]
+    public const int APPIDREGFLAGS_RESERVED10 = 0x8000;
 }

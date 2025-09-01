@@ -2166,13 +2166,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "intshcut", "intshcut", "{9D
 		generation\Windows\um\intshcut\um-intshcut.h = generation\Windows\um\intshcut\um-intshcut.h
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "intsafe", "intsafe", "{B0139F96-9DFB-43EA-9840-3D52B4AC328F}"
-	ProjectSection(SolutionItems) = preProject
-		generation\Windows\um\intsafe\generate.rsp = generation\Windows\um\intsafe\generate.rsp
-		generation\Windows\um\intsafe\header.txt = generation\Windows\um\intsafe\header.txt
-		generation\Windows\um\intsafe\um-intsafe.h = generation\Windows\um\intsafe\um-intsafe.h
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imm", "imm", "{E4DE578F-B0C9-434C-8E09-E6FC42BB0681}"
 	ProjectSection(SolutionItems) = preProject
 		generation\Windows\um\imm\generate.rsp = generation\Windows\um\imm\generate.rsp
@@ -4118,6 +4111,48 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows.graphics.printing.p
 		generation\WinRT\winrt\windows.graphics.printing.printticket\winrt-windows.graphics.printing.printticket.h = generation\WinRT\winrt\windows.graphics.printing.printticket\winrt-windows.graphics.printing.printticket.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "http", "http", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\http\generate.rsp = generation\Windows\um\http\generate.rsp
+		generation\Windows\um\http\header.txt = generation\Windows\um\http\header.txt
+		generation\Windows\um\http\um-http.h = generation\Windows\um\http\um-http.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "httpserv", "httpserv", "{01124DC4-6B04-4481-8BBB-79D927B4EFF1}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\httpserv\generate.rsp = generation\Windows\um\httpserv\generate.rsp
+		generation\Windows\um\httpserv\header.txt = generation\Windows\um\httpserv\header.txt
+		generation\Windows\um\httpserv\um-httpserv.h = generation\Windows\um\httpserv\um-httpserv.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "httptrace", "httptrace", "{646EDF20-BD38-4031-9FE4-F13B2411DE37}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\httptrace\generate.rsp = generation\Windows\um\httptrace\generate.rsp
+		generation\Windows\um\httptrace\header.txt = generation\Windows\um\httptrace\header.txt
+		generation\Windows\um\httptrace\um-httptrace.h = generation\Windows\um\httptrace\um-httptrace.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{1DE7563B-3A58-478B-9E8C-938B1198DBCB}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\Presentation\generate.rsp = generation\Windows\um\Presentation\generate.rsp
+		generation\Windows\um\Presentation\header.txt = generation\Windows\um\Presentation\header.txt
+		generation\Windows\um\Presentation\um-Presentation.h = generation\Windows\um\Presentation\um-Presentation.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationTypes", "PresentationTypes", "{FE89C533-7AA6-4126-9A9A-28DE360F4D6B}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\PresentationTypes\generate.rsp = generation\Windows\um\PresentationTypes\generate.rsp
+		generation\Windows\um\PresentationTypes\header.txt = generation\Windows\um\PresentationTypes\header.txt
+		generation\Windows\um\PresentationTypes\um-PresentationTypes.h = generation\Windows\um\PresentationTypes\um-PresentationTypes.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wpframework", "wpframework", "{6CDAE3A0-9C7A-45C7-BA59-4D86BAFEFF56}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Windows\um\wpframework\generate.rsp = generation\Windows\um\wpframework\generate.rsp
+		generation\Windows\um\wpframework\header.txt = generation\Windows\um\wpframework\header.txt
+		generation\Windows\um\wpframework\um-wpframework.h = generation\Windows\um\wpframework\um-wpframework.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -4454,7 +4489,6 @@ Global
 		{B3544ED6-BD7B-4E21-8EF1-B753389DE9A2} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{7030D516-1A1C-45E6-A14E-B5340B54A798} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{9D2A8659-B865-4FA8-ACFB-76980F28B341} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
-		{B0139F96-9DFB-43EA-9840-3D52B4AC328F} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{E4DE578F-B0C9-434C-8E09-E6FC42BB0681} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{8BE18ACF-3CD7-47FB-904A-AA578998C98A} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 		{A4E59818-9847-48F2-BBFC-8B1B8E3217CA} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
@@ -4741,6 +4775,12 @@ Global
 		{2AC8D3B6-AFE3-4B28-A258-3D35044DCFA4} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{C8332D6C-E90D-4F2B-8969-6C8A9D831FC8} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
 		{BC333162-E344-47AD-AA7D-A2F57670D006} = {030D5AC2-A56E-4C79-AD45-5BD6093C8D9A}
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{01124DC4-6B04-4481-8BBB-79D927B4EFF1} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{646EDF20-BD38-4031-9FE4-F13B2411DE37} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{1DE7563B-3A58-478B-9E8C-938B1198DBCB} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{FE89C533-7AA6-4126-9A9A-28DE360F4D6B} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
+		{6CDAE3A0-9C7A-45C7-BA59-4D86BAFEFF56} = {67311E5E-FA9C-43A6-B431-9EF10047A0CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

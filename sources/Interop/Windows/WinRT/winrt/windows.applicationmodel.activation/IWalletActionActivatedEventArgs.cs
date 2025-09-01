@@ -18,7 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("IWalletActionActivatedEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]
 public unsafe partial struct IWalletActionActivatedEventArgs : IWalletActionActivatedEventArgs.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IWalletActionActivatedEventArgs));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWalletActionActivatedEventArgs);
 
     public void** lpVtbl;
 

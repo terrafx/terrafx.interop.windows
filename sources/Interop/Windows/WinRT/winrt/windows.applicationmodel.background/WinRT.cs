@@ -129,11 +129,17 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[79]")]
     public const string InterfaceName_Windows_ApplicationModel_Background_IBluetoothLEAdvertisementPublisherTrigger2 = "Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger2";
 
+    [NativeTypeName("const WCHAR[79]")]
+    public const string InterfaceName_Windows_ApplicationModel_Background_IBluetoothLEAdvertisementPublisherTrigger3 = "Windows.ApplicationModel.Background.IBluetoothLEAdvertisementPublisherTrigger3";
+
     [NativeTypeName("const WCHAR[76]")]
     public const string InterfaceName_Windows_ApplicationModel_Background_IBluetoothLEAdvertisementWatcherTrigger = "Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger";
 
     [NativeTypeName("const WCHAR[77]")]
     public const string InterfaceName_Windows_ApplicationModel_Background_IBluetoothLEAdvertisementWatcherTrigger2 = "Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger2";
+
+    [NativeTypeName("const WCHAR[77]")]
+    public const string InterfaceName_Windows_ApplicationModel_Background_IBluetoothLEAdvertisementWatcherTrigger3 = "Windows.ApplicationModel.Background.IBluetoothLEAdvertisementWatcherTrigger3";
 
     [NativeTypeName("const WCHAR[62]")]
     public const string InterfaceName_Windows_ApplicationModel_Background_ICachedFileUpdaterTrigger = "Windows.ApplicationModel.Background.ICachedFileUpdaterTrigger";

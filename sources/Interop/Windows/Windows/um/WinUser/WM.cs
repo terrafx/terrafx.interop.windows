@@ -775,6 +775,12 @@ public static partial class WM
     [NativeTypeName("#define WM_USER 0x0400")]
     public const int WM_USER = 0x0400;
 
+    [NativeTypeName("#define WM_INTERCEPTED_WINDOW_ACTION 0x0346")]
+    public const int WM_INTERCEPTED_WINDOW_ACTION = 0x0346;
+
     [NativeTypeName("#define WM_TOOLTIPDISMISS 0x0345")]
     public const int WM_TOOLTIPDISMISS = 0x0345;
+
+    [NativeTypeName("#define WM_CLOAKED_STATE_CHANGED 0x0347")]
+    public const int WM_CLOAKED_STATE_CHANGED = 0x0347;
 }

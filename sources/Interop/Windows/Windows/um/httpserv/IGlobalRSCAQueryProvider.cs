@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IGlobalRSCAQueryProvider : IGlobalRSCAQueryProvider.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IGlobalRSCAQueryProvider));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGlobalRSCAQueryProvider);
 
     public void** lpVtbl;
 
@@ -32,18 +32,18 @@ public unsafe partial struct IGlobalRSCAQueryProvider : IGlobalRSCAQueryProvider
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetFunctionName()
+    public readonly char* GetFunctionName()
     {
-        return ((delegate* unmanaged[MemberFunction]<IGlobalRSCAQueryProvider*, char*>)(lpVtbl[1]))((IGlobalRSCAQueryProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGlobalRSCAQueryProvider*, char*>)(lpVtbl[1]))((IGlobalRSCAQueryProvider*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IGlobalRSCAQueryProvider.xml' path='doc/member[@name="IGlobalRSCAQueryProvider.GetFunctionParameters"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetFunctionParameters()
+    public readonly char* GetFunctionParameters()
     {
-        return ((delegate* unmanaged[MemberFunction]<IGlobalRSCAQueryProvider*, char*>)(lpVtbl[2]))((IGlobalRSCAQueryProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGlobalRSCAQueryProvider*, char*>)(lpVtbl[2]))((IGlobalRSCAQueryProvider*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IGlobalRSCAQueryProvider.xml' path='doc/member[@name="IGlobalRSCAQueryProvider.GetOutputBuffer"]/*' />

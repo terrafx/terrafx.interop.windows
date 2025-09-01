@@ -19,8 +19,19 @@ public partial struct POINTER_TYPE_INFO
     public uint type;
 
     /// <include file='POINTER_TYPE_INFO.xml' path='doc/member[@name="POINTER_TYPE_INFO.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winuser_L6496_C5")]
+    [NativeTypeName("__AnonymousRecord_winuser_L6508_C5")]
     public _Anonymous_e__Union Anonymous;
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pointerInfo"]/*' />
+    [UnscopedRef]
+    public ref POINTER_INFO pointerInfo
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.pointerInfo;
+        }
+    }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.touchInfo"]/*' />
     [UnscopedRef]
@@ -48,6 +59,10 @@ public partial struct POINTER_TYPE_INFO
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
     {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pointerInfo"]/*' />
+        [FieldOffset(0)]
+        public POINTER_INFO pointerInfo;
+
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.touchInfo"]/*' />
         [FieldOffset(0)]
         public POINTER_TOUCH_INFO touchInfo;

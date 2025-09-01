@@ -367,6 +367,9 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_EMULATION_SYSCALL ((NTSTATUS)0x40000039L)")]
     public const int STATUS_EMULATION_SYSCALL = ((int)(0x40000039));
 
+    [NativeTypeName("#define STATUS_EMULATION_FLOAT_EXCEPTION ((NTSTATUS)0x4000003AL)")]
+    public const int STATUS_EMULATION_FLOAT_EXCEPTION = ((int)(0x4000003A));
+
     [NativeTypeName("#define STATUS_HEURISTIC_DAMAGE_POSSIBLE ((NTSTATUS)0x40190001L)")]
     public const int STATUS_HEURISTIC_DAMAGE_POSSIBLE = ((int)(0x40190001));
 
@@ -3754,6 +3757,9 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_RUNLEVEL_SWITCH_IN_PROGRESS ((NTSTATUS)0xC000A146L)")]
     public const int STATUS_RUNLEVEL_SWITCH_IN_PROGRESS = unchecked((int)(0xC000A146));
 
+    [NativeTypeName("#define STATUS_APISET_COMPOSE_FAILURE ((NTSTATUS)0xC000A161L)")]
+    public const int STATUS_APISET_COMPOSE_FAILURE = unchecked((int)(0xC000A161));
+
     [NativeTypeName("#define STATUS_NOT_APPCONTAINER ((NTSTATUS)0xC000A200L)")]
     public const int STATUS_NOT_APPCONTAINER = unchecked((int)(0xC000A200));
 
@@ -3924,6 +3930,9 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_CLOUD_FILE_US_MESSAGE_TIMEOUT ((NTSTATUS)0xC000CF21L)")]
     public const int STATUS_CLOUD_FILE_US_MESSAGE_TIMEOUT = unchecked((int)(0xC000CF21));
+
+    [NativeTypeName("#define STATUS_CLOUD_FILE_HYDRATION_NOT_AVAILABLE ((NTSTATUS)0xC000CF22L)")]
+    public const int STATUS_CLOUD_FILE_HYDRATION_NOT_AVAILABLE = unchecked((int)(0xC000CF22));
 
     [NativeTypeName("#define STATUS_FILE_SNAP_IN_PROGRESS ((NTSTATUS)0xC000F500L)")]
     public const int STATUS_FILE_SNAP_IN_PROGRESS = unchecked((int)(0xC000F500));
@@ -4786,6 +4795,9 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_TRANSACTION_NOT_ENLISTED ((NTSTATUS)0xC0190061L)")]
     public const int STATUS_TRANSACTION_NOT_ENLISTED = unchecked((int)(0xC0190061));
 
+    [NativeTypeName("#define STATUS_ENLISTMENT_NOT_INITIALIZED ((NTSTATUS)0xC0190062L)")]
+    public const int STATUS_ENLISTMENT_NOT_INITIALIZED = unchecked((int)(0xC0190062));
+
     [NativeTypeName("#define STATUS_LOG_SECTOR_INVALID ((NTSTATUS)0xC01A0001L)")]
     public const int STATUS_LOG_SECTOR_INVALID = unchecked((int)(0xC01A0001));
 
@@ -5560,6 +5572,12 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_GRAPHICS_UEFI_FRAME_BUFFER_NOT_FOUND ((NTSTATUS)0xC01E0601L)")]
     public const int STATUS_GRAPHICS_UEFI_FRAME_BUFFER_NOT_FOUND = unchecked((int)(0xC01E0601));
 
+    [NativeTypeName("#define STATUS_CAMERA_INVALID_CONFIGURATION ((NTSTATUS)0xC01F0000L)")]
+    public const int STATUS_CAMERA_INVALID_CONFIGURATION = unchecked((int)(0xC01F0000));
+
+    [NativeTypeName("#define STATUS_CAMERA_INSUFFICIENT_BANDWIDTH ((NTSTATUS)0xC01F0001L)")]
+    public const int STATUS_CAMERA_INSUFFICIENT_BANDWIDTH = unchecked((int)(0xC01F0001));
+
     [NativeTypeName("#define STATUS_FVE_LOCKED_VOLUME ((NTSTATUS)0xC0210000L)")]
     public const int STATUS_FVE_LOCKED_VOLUME = unchecked((int)(0xC0210000));
 
@@ -5790,6 +5808,18 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_FVE_PCR_BOOT_LOCK_BOUNDARY ((NTSTATUS)0xC0210051L)")]
     public const int STATUS_FVE_PCR_BOOT_LOCK_BOUNDARY = unchecked((int)(0xC0210051));
+
+    [NativeTypeName("#define STATUS_FVE_HW_ACCELERATED_ENCRYPTION_NOT_ALLOWED ((NTSTATUS)0xC0210057L)")]
+    public const int STATUS_FVE_HW_ACCELERATED_ENCRYPTION_NOT_ALLOWED = unchecked((int)(0xC0210057));
+
+    [NativeTypeName("#define STATUS_FVE_FAILED_TO_UNWRAP_HW_WRAPPED_KEY ((NTSTATUS)0xC021005EL)")]
+    public const int STATUS_FVE_FAILED_TO_UNWRAP_HW_WRAPPED_KEY = unchecked((int)(0xC021005E));
+
+    [NativeTypeName("#define STATUS_FVE_HARDWARE_CRYPTO_ACCELERATOR_NOT_FIPS_COMPLIANT ((NTSTATUS)0xC021005FL)")]
+    public const int STATUS_FVE_HARDWARE_CRYPTO_ACCELERATOR_NOT_FIPS_COMPLIANT = unchecked((int)(0xC021005F));
+
+    [NativeTypeName("#define STATUS_FVE_HARDWARE_CRYPTO_KEY_MANAGER_NOT_FIPS_COMPLIANT ((NTSTATUS)0xC0210060L)")]
+    public const int STATUS_FVE_HARDWARE_CRYPTO_KEY_MANAGER_NOT_FIPS_COMPLIANT = unchecked((int)(0xC0210060));
 
     [NativeTypeName("#define STATUS_FWP_CALLOUT_NOT_FOUND ((NTSTATUS)0xC0220001L)")]
     public const int STATUS_FWP_CALLOUT_NOT_FOUND = unchecked((int)(0xC0220001));
@@ -6705,6 +6735,12 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_TPM_PPI_FUNCTION_UNSUPPORTED ((NTSTATUS)0xC0291006L)")]
     public const int STATUS_TPM_PPI_FUNCTION_UNSUPPORTED = unchecked((int)(0xC0291006));
+
+    [NativeTypeName("#define STATUS_TPM_IN_EXCLUSIVE_MODE ((NTSTATUS)0xC0291007L)")]
+    public const int STATUS_TPM_IN_EXCLUSIVE_MODE = unchecked((int)(0xC0291007));
+
+    [NativeTypeName("#define STATUS_TPM_REBOOT_REQUIRED ((NTSTATUS)0xC0291008L)")]
+    public const int STATUS_TPM_REBOOT_REQUIRED = unchecked((int)(0xC0291008));
 
     [NativeTypeName("#define STATUS_PCP_ERROR_MASK ((NTSTATUS)0xC0292000L)")]
     public const int STATUS_PCP_ERROR_MASK = unchecked((int)(0xC0292000));
@@ -8109,6 +8145,9 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_VSM_DMA_PROTECTION_NOT_IN_USE ((NTSTATUS)0xC0450001L)")]
     public const int STATUS_VSM_DMA_PROTECTION_NOT_IN_USE = unchecked((int)(0xC0450001));
+
+    [NativeTypeName("#define STATUS_VSM_KEY_CI_POLICY_ROLLBACK_DETECTED ((NTSTATUS)0xC0450002L)")]
+    public const int STATUS_VSM_KEY_CI_POLICY_ROLLBACK_DETECTED = unchecked((int)(0xC0450002));
 
     [NativeTypeName("#define STATUS_APPEXEC_CONDITION_NOT_SATISFIED ((NTSTATUS)0xC0EC0000L)")]
     public const int STATUS_APPEXEC_CONDITION_NOT_SATISFIED = unchecked((int)(0xC0EC0000));

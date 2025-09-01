@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Resource")]
 public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1StrokeStyle));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1StrokeStyle);
 
     public void** lpVtbl;
 
@@ -50,82 +50,82 @@ public unsafe partial struct ID2D1StrokeStyle : ID2D1StrokeStyle.Interface, INat
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1StrokeStyle*)Unsafe.AsPointer(in this), factory);
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetStartCap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public D2D1_CAP_STYLE GetStartCap()
+    public readonly D2D1_CAP_STYLE GetStartCap()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[4]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[4]))((ID2D1StrokeStyle*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetEndCap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public D2D1_CAP_STYLE GetEndCap()
+    public readonly D2D1_CAP_STYLE GetEndCap()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[5]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[5]))((ID2D1StrokeStyle*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetDashCap"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public D2D1_CAP_STYLE GetDashCap()
+    public readonly D2D1_CAP_STYLE GetDashCap()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[6]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, D2D1_CAP_STYLE>)(lpVtbl[6]))((ID2D1StrokeStyle*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetMiterLimit"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public float GetMiterLimit()
+    public readonly float GetMiterLimit()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, float>)(lpVtbl[7]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, float>)(lpVtbl[7]))((ID2D1StrokeStyle*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetLineJoin"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public D2D1_LINE_JOIN GetLineJoin()
+    public readonly D2D1_LINE_JOIN GetLineJoin()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, D2D1_LINE_JOIN>)(lpVtbl[8]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, D2D1_LINE_JOIN>)(lpVtbl[8]))((ID2D1StrokeStyle*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetDashOffset"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public float GetDashOffset()
+    public readonly float GetDashOffset()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, float>)(lpVtbl[9]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, float>)(lpVtbl[9]))((ID2D1StrokeStyle*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetDashStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public D2D1_DASH_STYLE GetDashStyle()
+    public readonly D2D1_DASH_STYLE GetDashStyle()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, D2D1_DASH_STYLE>)(lpVtbl[10]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, D2D1_DASH_STYLE>)(lpVtbl[10]))((ID2D1StrokeStyle*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetDashesCount"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
     [return: NativeTypeName("UINT32")]
-    public uint GetDashesCount()
+    public readonly uint GetDashesCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, uint>)(lpVtbl[11]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, uint>)(lpVtbl[11]))((ID2D1StrokeStyle*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1StrokeStyle.xml' path='doc/member[@name="ID2D1StrokeStyle.GetDashes"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public void GetDashes(float* dashes, [NativeTypeName("UINT32")] uint dashesCount)
+    public readonly void GetDashes(float* dashes, [NativeTypeName("UINT32")] uint dashesCount)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, float*, uint, void>)(lpVtbl[12]))((ID2D1StrokeStyle*)Unsafe.AsPointer(ref this), dashes, dashesCount);
+        ((delegate* unmanaged[MemberFunction]<ID2D1StrokeStyle*, float*, uint, void>)(lpVtbl[12]))((ID2D1StrokeStyle*)Unsafe.AsPointer(in this), dashes, dashesCount);
     }
 
     public interface Interface : ID2D1Resource.Interface

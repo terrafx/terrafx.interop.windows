@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.614.0
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.616.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Diagnostics.CodeAnalysis;
@@ -20,7 +20,7 @@ public unsafe partial struct D3D12_BARRIER_GROUP
     public uint NumBarriers;
 
     /// <include file='D3D12_BARRIER_GROUP.xml' path='doc/member[@name="D3D12_BARRIER_GROUP.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12_L22079_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L22280_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pGlobalBarriers"]/*' />

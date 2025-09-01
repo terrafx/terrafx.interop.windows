@@ -32,6 +32,7 @@ HttpDelegateRequestEx=SupportedOSPlatform("windows10.0.19043.0")
 HttpFindUrlGroupId=SupportedOSPlatform("windows10.0.19043.0")
 HttpIsFeatureSupported=SupportedOSPlatform("windows10.0.19043.0")
 HttpPrepareUrl=SupportedOSPlatform("windows6.2")
+HttpQueryRequestProperty=SupportedOSPlatform("windows10.0.16299.0")
 HttpUpdateServiceConfiguration=SupportedOSPlatform("windows10.0.15063.0")
 --with-librarypath
 HttpAddFragmentToCache=httpapi
@@ -54,6 +55,7 @@ HttpGetExtension=httpapi
 HttpInitialize=httpapi
 HttpIsFeatureSupported=httpapi
 HttpPrepareUrl=httpapi
+HttpQueryRequestProperty=httpapi
 HttpQueryRequestQueueProperty=httpapi
 HttpQueryServerSessionProperty=httpapi
 HttpQueryServiceConfiguration=httpapi

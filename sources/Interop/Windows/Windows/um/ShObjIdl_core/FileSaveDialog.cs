@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("C0B4E2F3-BA21-4773-8DBA-335EC946EB8B")]
 public unsafe partial struct FileSaveDialog : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_FileSaveDialog));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_FileSaveDialog);
 }

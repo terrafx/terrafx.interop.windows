@@ -17,7 +17,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IViewObjectPresentSite")]
 public unsafe partial struct IViewObjectPresentNotifySite : IViewObjectPresentNotifySite.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IViewObjectPresentNotifySite));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IViewObjectPresentNotifySite);
 
     public void** lpVtbl;
 

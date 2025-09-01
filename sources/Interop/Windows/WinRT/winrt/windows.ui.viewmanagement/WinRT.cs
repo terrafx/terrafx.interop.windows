@@ -145,6 +145,9 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[42]")]
     public const string InterfaceName_Windows_UI_ViewManagement_IUIViewSettings = "Windows.UI.ViewManagement.IUIViewSettings";
 
+    [NativeTypeName("const WCHAR[66]")]
+    public const string InterfaceName_Windows_UI_ViewManagement_IUIViewSettingsPreferredInteractionMode = "Windows.UI.ViewManagement.IUIViewSettingsPreferredInteractionMode";
+
     [NativeTypeName("const WCHAR[49]")]
     public const string InterfaceName_Windows_UI_ViewManagement_IUIViewSettingsStatics = "Windows.UI.ViewManagement.IUIViewSettingsStatics";
 

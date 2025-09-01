@@ -19,7 +19,7 @@ public partial struct PROCESS_CREATION_SVE_VECTOR_LENGTH
 
     /// <include file='PROCESS_CREATION_SVE_VECTOR_LENGTH.xml' path='doc/member[@name="PROCESS_CREATION_SVE_VECTOR_LENGTH.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winbase_L3621_C5")]
+    [NativeTypeName("__AnonymousRecord_winbase_L3623_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.VectorLength"]/*' />

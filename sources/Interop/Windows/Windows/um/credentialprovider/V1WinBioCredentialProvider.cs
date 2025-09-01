@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("AC3AC249-E820-4343-A65B-377AC634DC09")]
 public unsafe partial struct V1WinBioCredentialProvider : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_V1WinBioCredentialProvider));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_V1WinBioCredentialProvider);
 }

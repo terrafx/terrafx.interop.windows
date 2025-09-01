@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1Multithread));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1Multithread);
 
     public void** lpVtbl;
 
@@ -50,9 +50,9 @@ public unsafe partial struct ID2D1Multithread : ID2D1Multithread.Interface, INat
     /// <include file='ID2D1Multithread.xml' path='doc/member[@name="ID2D1Multithread.GetMultithreadProtected"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public BOOL GetMultithreadProtected()
+    public readonly BOOL GetMultithreadProtected()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Multithread*, int>)(lpVtbl[3]))((ID2D1Multithread*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Multithread*, int>)(lpVtbl[3]))((ID2D1Multithread*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1Multithread.xml' path='doc/member[@name="ID2D1Multithread.Enter"]/*' />

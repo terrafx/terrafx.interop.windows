@@ -25,7 +25,7 @@ public partial struct KERNEL_CET_CONTEXT
     public ushort SegCs;
 
     /// <include file='KERNEL_CET_CONTEXT.xml' path='doc/member[@name="KERNEL_CET_CONTEXT.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L2789_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L2797_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='KERNEL_CET_CONTEXT.xml' path='doc/member[@name="KERNEL_CET_CONTEXT.Fill"]/*' />
@@ -102,7 +102,7 @@ public partial struct KERNEL_CET_CONTEXT
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L2791_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L2799_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

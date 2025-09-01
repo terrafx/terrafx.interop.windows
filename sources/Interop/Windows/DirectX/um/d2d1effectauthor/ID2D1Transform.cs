@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1TransformNode")]
 public unsafe partial struct ID2D1Transform : ID2D1Transform.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1Transform));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1Transform);
 
     public void** lpVtbl;
 
@@ -51,17 +51,17 @@ public unsafe partial struct ID2D1Transform : ID2D1Transform.Interface, INativeG
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("UINT32")]
-    public uint GetInputCount()
+    public readonly uint GetInputCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Transform*, uint>)(lpVtbl[3]))((ID2D1Transform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Transform*, uint>)(lpVtbl[3]))((ID2D1Transform*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1Transform.xml' path='doc/member[@name="ID2D1Transform.MapOutputRectToInputRects"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT MapOutputRectToInputRects([NativeTypeName("const D2D1_RECT_L *")] RECT* outputRect, [NativeTypeName("D2D1_RECT_L *")] RECT* inputRects, [NativeTypeName("UINT32")] uint inputRectsCount)
+    public readonly HRESULT MapOutputRectToInputRects([NativeTypeName("const D2D1_RECT_L *")] RECT* outputRect, [NativeTypeName("D2D1_RECT_L *")] RECT* inputRects, [NativeTypeName("UINT32")] uint inputRectsCount)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Transform*, RECT*, RECT*, uint, int>)(lpVtbl[4]))((ID2D1Transform*)Unsafe.AsPointer(ref this), outputRect, inputRects, inputRectsCount);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Transform*, RECT*, RECT*, uint, int>)(lpVtbl[4]))((ID2D1Transform*)Unsafe.AsPointer(in this), outputRect, inputRects, inputRectsCount);
     }
 
     /// <include file='ID2D1Transform.xml' path='doc/member[@name="ID2D1Transform.MapInputRectsToOutputRect"]/*' />
@@ -75,9 +75,9 @@ public unsafe partial struct ID2D1Transform : ID2D1Transform.Interface, INativeG
     /// <include file='ID2D1Transform.xml' path='doc/member[@name="ID2D1Transform.MapInvalidRect"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT MapInvalidRect([NativeTypeName("UINT32")] uint inputIndex, [NativeTypeName("D2D1_RECT_L")] RECT invalidInputRect, [NativeTypeName("D2D1_RECT_L *")] RECT* invalidOutputRect)
+    public readonly HRESULT MapInvalidRect([NativeTypeName("UINT32")] uint inputIndex, [NativeTypeName("D2D1_RECT_L")] RECT invalidInputRect, [NativeTypeName("D2D1_RECT_L *")] RECT* invalidOutputRect)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Transform*, uint, RECT, RECT*, int>)(lpVtbl[6]))((ID2D1Transform*)Unsafe.AsPointer(ref this), inputIndex, invalidInputRect, invalidOutputRect);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Transform*, uint, RECT, RECT*, int>)(lpVtbl[6]))((ID2D1Transform*)Unsafe.AsPointer(in this), inputIndex, invalidInputRect, invalidOutputRect);
     }
 
     public interface Interface : ID2D1TransformNode.Interface

@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("C827F149-55C1-4D28-935E-57E47CAED973")]
 public unsafe partial struct WebWizardHost : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_WebWizardHost));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_WebWizardHost);
 }

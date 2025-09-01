@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("1D6322AD-AA85-4EF5-A828-86D71067D145")]
 public unsafe partial struct UIAnimationTransitionLibrary : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_UIAnimationTransitionLibrary));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_UIAnimationTransitionLibrary);
 }

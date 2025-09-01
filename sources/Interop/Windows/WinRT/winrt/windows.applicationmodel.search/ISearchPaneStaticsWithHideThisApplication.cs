@@ -18,7 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("ISearchPaneStaticsWithHideThisApplication may be altered or unavailable for releases after Windows 10.")]
 public unsafe partial struct ISearchPaneStaticsWithHideThisApplication : ISearchPaneStaticsWithHideThisApplication.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISearchPaneStaticsWithHideThisApplication));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISearchPaneStaticsWithHideThisApplication);
 
     public void** lpVtbl;
 

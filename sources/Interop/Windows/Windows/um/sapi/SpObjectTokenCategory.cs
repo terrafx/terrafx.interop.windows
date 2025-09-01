@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("A910187F-0C7A-45AC-92CC-59EDAFB77B53")]
 public unsafe partial struct SpObjectTokenCategory : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_SpObjectTokenCategory));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SpObjectTokenCategory);
 }

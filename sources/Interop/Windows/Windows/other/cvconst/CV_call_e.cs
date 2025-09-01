@@ -86,6 +86,9 @@ public enum CV_call_e
     /// <include file='CV_call_e.xml' path='doc/member[@name="CV_call_e.CV_CALL_SWIFT"]/*' />
     CV_CALL_SWIFT = 0x19,
 
+    /// <include file='CV_call_e.xml' path='doc/member[@name="CV_call_e.CV_CALL_PRESERVE_NONE"]/*' />
+    CV_CALL_PRESERVE_NONE = 0x20,
+
     /// <include file='CV_call_e.xml' path='doc/member[@name="CV_call_e.CV_CALL_RESERVED"]/*' />
-    CV_CALL_RESERVED = 0x20,
+    CV_CALL_RESERVED = 0x21,
 }

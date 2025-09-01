@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct TXFS_READ_BACKUP_INFORMATION_OUT
 {
     /// <include file='TXFS_READ_BACKUP_INFORMATION_OUT.xml' path='doc/member[@name="TXFS_READ_BACKUP_INFORMATION_OUT.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L13788_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L14090_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BufferLength"]/*' />

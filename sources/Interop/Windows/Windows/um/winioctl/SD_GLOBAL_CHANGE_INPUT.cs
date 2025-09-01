@@ -21,7 +21,7 @@ public partial struct SD_GLOBAL_CHANGE_INPUT
     public uint ChangeType;
 
     /// <include file='SD_GLOBAL_CHANGE_INPUT.xml' path='doc/member[@name="SD_GLOBAL_CHANGE_INPUT.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L14615_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L14917_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.SdChange"]/*' />

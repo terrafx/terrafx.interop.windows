@@ -15,7 +15,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("6E6FFA6A-9BAE-4613-A51E-91652D508C21")]
 public unsafe partial struct ID3D11ShaderReflectionType : ID3D11ShaderReflectionType.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID3D11ShaderReflectionType));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D11ShaderReflectionType);
 
     public void** lpVtbl;
 

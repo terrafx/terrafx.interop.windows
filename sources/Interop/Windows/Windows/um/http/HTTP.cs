@@ -286,6 +286,24 @@ public static partial class HTTP
     [NativeTypeName("#define HTTP_RESPONSE_INFO_FLAGS_PRESERVE_ORDER 0x00000001")]
     public const int HTTP_RESPONSE_INFO_FLAGS_PRESERVE_ORDER = 0x00000001;
 
+    [NativeTypeName("#define HTTP_CERT_CHECK_MODE_NO_REVOCATION 0x00001")]
+    public const int HTTP_CERT_CHECK_MODE_NO_REVOCATION = 0x00001;
+
+    [NativeTypeName("#define HTTP_CERT_CHECK_MODE_CACHED_REVOCATION 0x00002")]
+    public const int HTTP_CERT_CHECK_MODE_CACHED_REVOCATION = 0x00002;
+
+    [NativeTypeName("#define HTTP_CERT_CHECK_MODE_USE_REVOCATION_FRESHNESS 0x00004")]
+    public const int HTTP_CERT_CHECK_MODE_USE_REVOCATION_FRESHNESS = 0x00004;
+
+    [NativeTypeName("#define HTTP_CERT_CHECK_MODE_CACHED_URLS 0x00008")]
+    public const int HTTP_CERT_CHECK_MODE_CACHED_URLS = 0x00008;
+
+    [NativeTypeName("#define HTTP_CERT_CHECK_MODE_NO_AIA 0x00010")]
+    public const int HTTP_CERT_CHECK_MODE_NO_AIA = 0x00010;
+
+    [NativeTypeName("#define HTTP_CERT_CHECK_MODE_NO_USAGE_CHECK 0x10000")]
+    public const int HTTP_CERT_CHECK_MODE_NO_USAGE_CHECK = 0x10000;
+
     [NativeTypeName("#define HTTP_SSL_CERT_SHA_HASH_LENGTH 20")]
     public const int HTTP_SSL_CERT_SHA_HASH_LENGTH = 20;
 

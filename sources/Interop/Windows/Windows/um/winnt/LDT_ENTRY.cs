@@ -20,7 +20,7 @@ public partial struct LDT_ENTRY
     public ushort BaseLow;
 
     /// <include file='LDT_ENTRY.xml' path='doc/member[@name="LDT_ENTRY.HighWord"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L8610_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L8607_C5")]
     public _HighWord_e__Union HighWord;
 
     /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union"]/*' />
@@ -29,12 +29,12 @@ public partial struct LDT_ENTRY
     {
         /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union.Bytes"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L8611_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L8608_C9")]
         public _Bytes_e__Struct Bytes;
 
         /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union.Bits"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L8617_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L8614_C9")]
         public _Bits_e__Struct Bits;
 
         /// <include file='_Bytes_e__Struct.xml' path='doc/member[@name="_Bytes_e__Struct"]/*' />

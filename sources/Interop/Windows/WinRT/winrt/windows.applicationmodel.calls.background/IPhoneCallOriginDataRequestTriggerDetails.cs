@@ -18,7 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("PhoneCallOriginDataRequestTriggerDetails is deprecated and might not work for all platforms. For more info, see MSDN.")]
 public unsafe partial struct IPhoneCallOriginDataRequestTriggerDetails : IPhoneCallOriginDataRequestTriggerDetails.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IPhoneCallOriginDataRequestTriggerDetails));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPhoneCallOriginDataRequestTriggerDetails);
 
     public void** lpVtbl;
 

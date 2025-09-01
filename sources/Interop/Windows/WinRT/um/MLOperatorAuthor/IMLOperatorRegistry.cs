@@ -17,7 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMLOperatorRegistry : IMLOperatorRegistry.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMLOperatorRegistry));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMLOperatorRegistry);
 
     public void** lpVtbl;
 
@@ -50,17 +50,17 @@ public unsafe partial struct IMLOperatorRegistry : IMLOperatorRegistry.Interface
     /// <include file='IMLOperatorRegistry.xml' path='doc/member[@name="IMLOperatorRegistry.RegisterOperatorSetSchema"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT RegisterOperatorSetSchema([NativeTypeName("const MLOperatorSetId *")] MLOperatorSetId* operatorSetId, [NativeTypeName("int32_t")] int baselineVersion, [NativeTypeName("const MLOperatorSchemaDescription *const *")] MLOperatorSchemaDescription** schema, [NativeTypeName("uint32_t")] uint schemaCount, IMLOperatorTypeInferrer* typeInferrer, IMLOperatorShapeInferrer* shapeInferrer)
+    public readonly HRESULT RegisterOperatorSetSchema([NativeTypeName("const MLOperatorSetId *")] MLOperatorSetId* operatorSetId, [NativeTypeName("int32_t")] int baselineVersion, [NativeTypeName("const MLOperatorSchemaDescription *const *")] MLOperatorSchemaDescription** schema, [NativeTypeName("uint32_t")] uint schemaCount, IMLOperatorTypeInferrer* typeInferrer, IMLOperatorShapeInferrer* shapeInferrer)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorRegistry*, MLOperatorSetId*, int, MLOperatorSchemaDescription**, uint, IMLOperatorTypeInferrer*, IMLOperatorShapeInferrer*, int>)(lpVtbl[3]))((IMLOperatorRegistry*)Unsafe.AsPointer(ref this), operatorSetId, baselineVersion, schema, schemaCount, typeInferrer, shapeInferrer);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorRegistry*, MLOperatorSetId*, int, MLOperatorSchemaDescription**, uint, IMLOperatorTypeInferrer*, IMLOperatorShapeInferrer*, int>)(lpVtbl[3]))((IMLOperatorRegistry*)Unsafe.AsPointer(in this), operatorSetId, baselineVersion, schema, schemaCount, typeInferrer, shapeInferrer);
     }
 
     /// <include file='IMLOperatorRegistry.xml' path='doc/member[@name="IMLOperatorRegistry.RegisterOperatorKernel"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT RegisterOperatorKernel([NativeTypeName("const MLOperatorKernelDescription *")] MLOperatorKernelDescription* operatorKernel, IMLOperatorKernelFactory* operatorKernelFactory, IMLOperatorShapeInferrer* shapeInferrer)
+    public readonly HRESULT RegisterOperatorKernel([NativeTypeName("const MLOperatorKernelDescription *")] MLOperatorKernelDescription* operatorKernel, IMLOperatorKernelFactory* operatorKernelFactory, IMLOperatorShapeInferrer* shapeInferrer)
     {
-        return ((delegate* unmanaged[MemberFunction]<IMLOperatorRegistry*, MLOperatorKernelDescription*, IMLOperatorKernelFactory*, IMLOperatorShapeInferrer*, int>)(lpVtbl[4]))((IMLOperatorRegistry*)Unsafe.AsPointer(ref this), operatorKernel, operatorKernelFactory, shapeInferrer);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorRegistry*, MLOperatorKernelDescription*, IMLOperatorKernelFactory*, IMLOperatorShapeInferrer*, int>)(lpVtbl[4]))((IMLOperatorRegistry*)Unsafe.AsPointer(in this), operatorKernel, operatorKernelFactory, shapeInferrer);
     }
 
     public interface Interface : IUnknown.Interface

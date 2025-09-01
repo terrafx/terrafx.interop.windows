@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Brush")]
 public unsafe partial struct ID2D1ImageBrush : ID2D1ImageBrush.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1ImageBrush));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1ImageBrush);
 
     public void** lpVtbl;
 
@@ -50,9 +50,9 @@ public unsafe partial struct ID2D1ImageBrush : ID2D1ImageBrush.Interface, INativ
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1ImageBrush*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1ImageBrush*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1ImageBrush*)Unsafe.AsPointer(in this), factory);
     }
 
     /// <inheritdoc cref="ID2D1Brush.SetOpacity" />
@@ -74,17 +74,17 @@ public unsafe partial struct ID2D1ImageBrush : ID2D1ImageBrush.Interface, INativ
     /// <inheritdoc cref="ID2D1Brush.GetOpacity" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public float GetOpacity()
+    public readonly float GetOpacity()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1ImageBrush*, float>)(lpVtbl[6]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1ImageBrush*, float>)(lpVtbl[6]))((ID2D1ImageBrush*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="ID2D1Brush.GetTransform" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
+    public readonly void GetTransform([NativeTypeName("D2D1_MATRIX_3X2_F *")] D2D_MATRIX_3X2_F* transform)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1ImageBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), transform);
+        ((delegate* unmanaged[MemberFunction]<ID2D1ImageBrush*, D2D_MATRIX_3X2_F*, void>)(lpVtbl[7]))((ID2D1ImageBrush*)Unsafe.AsPointer(in this), transform);
     }
 
     /// <include file='ID2D1ImageBrush.xml' path='doc/member[@name="ID2D1ImageBrush.SetImage"]/*' />
@@ -130,41 +130,41 @@ public unsafe partial struct ID2D1ImageBrush : ID2D1ImageBrush.Interface, INativ
     /// <include file='ID2D1ImageBrush.xml' path='doc/member[@name="ID2D1ImageBrush.GetImage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public void GetImage(ID2D1Image** image)
+    public readonly void GetImage(ID2D1Image** image)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1ImageBrush*, ID2D1Image**, void>)(lpVtbl[13]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), image);
+        ((delegate* unmanaged[MemberFunction]<ID2D1ImageBrush*, ID2D1Image**, void>)(lpVtbl[13]))((ID2D1ImageBrush*)Unsafe.AsPointer(in this), image);
     }
 
     /// <include file='ID2D1ImageBrush.xml' path='doc/member[@name="ID2D1ImageBrush.GetExtendModeX"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public D2D1_EXTEND_MODE GetExtendModeX()
+    public readonly D2D1_EXTEND_MODE GetExtendModeX()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1ImageBrush*, D2D1_EXTEND_MODE>)(lpVtbl[14]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1ImageBrush*, D2D1_EXTEND_MODE>)(lpVtbl[14]))((ID2D1ImageBrush*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1ImageBrush.xml' path='doc/member[@name="ID2D1ImageBrush.GetExtendModeY"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public D2D1_EXTEND_MODE GetExtendModeY()
+    public readonly D2D1_EXTEND_MODE GetExtendModeY()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1ImageBrush*, D2D1_EXTEND_MODE>)(lpVtbl[15]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1ImageBrush*, D2D1_EXTEND_MODE>)(lpVtbl[15]))((ID2D1ImageBrush*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1ImageBrush.xml' path='doc/member[@name="ID2D1ImageBrush.GetInterpolationMode"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public D2D1_INTERPOLATION_MODE GetInterpolationMode()
+    public readonly D2D1_INTERPOLATION_MODE GetInterpolationMode()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1ImageBrush*, D2D1_INTERPOLATION_MODE>)(lpVtbl[16]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1ImageBrush*, D2D1_INTERPOLATION_MODE>)(lpVtbl[16]))((ID2D1ImageBrush*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1ImageBrush.xml' path='doc/member[@name="ID2D1ImageBrush.GetSourceRectangle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public void GetSourceRectangle([NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle)
+    public readonly void GetSourceRectangle([NativeTypeName("D2D1_RECT_F *")] D2D_RECT_F* sourceRectangle)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1ImageBrush*, D2D_RECT_F*, void>)(lpVtbl[17]))((ID2D1ImageBrush*)Unsafe.AsPointer(ref this), sourceRectangle);
+        ((delegate* unmanaged[MemberFunction]<ID2D1ImageBrush*, D2D_RECT_F*, void>)(lpVtbl[17]))((ID2D1ImageBrush*)Unsafe.AsPointer(in this), sourceRectangle);
     }
 
     public interface Interface : ID2D1Brush.Interface

@@ -14,16 +14,16 @@ namespace TerraFX.Interop.Windows;
 [Guid("37776AFF-852E-4EEC-93A5-B85A285A95B8")]
 public unsafe partial struct IHttpCacheSpecificData : IHttpCacheSpecificData.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpCacheSpecificData));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpCacheSpecificData);
 
     public void** lpVtbl;
 
     /// <include file='IHttpCacheSpecificData.xml' path='doc/member[@name="IHttpCacheSpecificData.GetCacheKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
-    public IHttpCacheKey* GetCacheKey()
+    public readonly IHttpCacheKey* GetCacheKey()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCacheSpecificData*, IHttpCacheKey*>)(lpVtbl[0]))((IHttpCacheSpecificData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpCacheSpecificData*, IHttpCacheKey*>)(lpVtbl[0]))((IHttpCacheSpecificData*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpCacheSpecificData.xml' path='doc/member[@name="IHttpCacheSpecificData.ReferenceCacheData"]/*' />
@@ -69,9 +69,9 @@ public unsafe partial struct IHttpCacheSpecificData : IHttpCacheSpecificData.Int
     /// <include file='IHttpCacheSpecificData.xml' path='doc/member[@name="IHttpCacheSpecificData.GetFlushed"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public BOOL GetFlushed()
+    public readonly BOOL GetFlushed()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpCacheSpecificData*, int>)(lpVtbl[6]))((IHttpCacheSpecificData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpCacheSpecificData*, int>)(lpVtbl[6]))((IHttpCacheSpecificData*)Unsafe.AsPointer(in this));
     }
 
     public interface Interface

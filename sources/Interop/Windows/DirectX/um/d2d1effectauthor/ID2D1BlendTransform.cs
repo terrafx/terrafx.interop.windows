@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1ConcreteTransform")]
 public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1BlendTransform));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1BlendTransform);
 
     public void** lpVtbl;
 
@@ -51,9 +51,9 @@ public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
     [return: NativeTypeName("UINT32")]
-    public uint GetInputCount()
+    public readonly uint GetInputCount()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1BlendTransform*, uint>)(lpVtbl[3]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1BlendTransform*, uint>)(lpVtbl[3]))((ID2D1BlendTransform*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="ID2D1ConcreteTransform.SetOutputBuffer" />
@@ -83,9 +83,9 @@ public unsafe partial struct ID2D1BlendTransform : ID2D1BlendTransform.Interface
     /// <include file='ID2D1BlendTransform.xml' path='doc/member[@name="ID2D1BlendTransform.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public void GetDescription(D2D1_BLEND_DESCRIPTION* description)
+    public readonly void GetDescription(D2D1_BLEND_DESCRIPTION* description)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1BlendTransform*, D2D1_BLEND_DESCRIPTION*, void>)(lpVtbl[7]))((ID2D1BlendTransform*)Unsafe.AsPointer(ref this), description);
+        ((delegate* unmanaged[MemberFunction]<ID2D1BlendTransform*, D2D1_BLEND_DESCRIPTION*, void>)(lpVtbl[7]))((ID2D1BlendTransform*)Unsafe.AsPointer(in this), description);
     }
 
     public interface Interface : ID2D1ConcreteTransform.Interface

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12compatibility.h in microsoft/DirectX-Headers tag v1.614.0
+// Ported from d3d12compatibility.h in microsoft/DirectX-Headers tag v1.616.0
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
@@ -66,5 +66,12 @@ public static partial class IIDTests
     public static void IID_DirectMLPyTorchCreatorIDTest()
     {
         Assert.That(IID_DirectMLPyTorchCreatorID, Is.EqualTo(new Guid(0xaf029192, 0xfba1, 0x4b05, 0x91, 0x16, 0x23, 0x5e, 0x06, 0x56, 0x03, 0x54)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_DirectMLWebNNCreatorID" /> property is correct.</summary>
+    [Test]
+    public static void IID_DirectMLWebNNCreatorIDTest()
+    {
+        Assert.That(IID_DirectMLWebNNCreatorID, Is.EqualTo(new Guid(0xfdf01a76, 0x1e11, 0x450f, 0x90, 0x2b, 0x74, 0xf0, 0x4e, 0xa0, 0x80, 0x94)));
     }
 }

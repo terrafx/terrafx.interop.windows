@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpApplicationProvider")]
 public unsafe partial struct IHttpApplicationResolveModulesProvider : IHttpApplicationResolveModulesProvider.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpApplicationResolveModulesProvider));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpApplicationResolveModulesProvider);
 
     public void** lpVtbl;
 

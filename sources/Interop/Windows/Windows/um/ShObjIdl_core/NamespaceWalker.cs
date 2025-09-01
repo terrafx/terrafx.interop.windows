@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("72EB61E0-8672-4303-9175-F2E4C68B2E7C")]
 public unsafe partial struct NamespaceWalker : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_NamespaceWalker));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_NamespaceWalker);
 }

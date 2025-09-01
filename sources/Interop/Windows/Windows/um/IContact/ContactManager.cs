@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("7165C8AB-AF88-42BD-86FD-5310B4285A02")]
 public unsafe partial struct ContactManager : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_ContactManager));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_ContactManager);
 }

@@ -18,7 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("ISmsDeviceStatics may be altered or unavailable for releases after Windows 10.")]
 public unsafe partial struct ISmsDeviceStatics : ISmsDeviceStatics.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISmsDeviceStatics));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISmsDeviceStatics);
 
     public void** lpVtbl;
 

@@ -14,5 +14,5 @@ namespace TerraFX.Interop.DirectX;
 [Guid("C2633B16-471B-4498-B8C5-4F0959E2EC09")]
 public unsafe partial struct AudioReverb : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_AudioReverb));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_AudioReverb);
 }

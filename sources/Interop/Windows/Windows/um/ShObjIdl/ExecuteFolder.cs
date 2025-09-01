@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("11DBB47C-A525-400B-9E80-A54615A090C0")]
 public unsafe partial struct ExecuteFolder : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ExecuteFolder));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ExecuteFolder);
 }

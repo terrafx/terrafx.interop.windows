@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("00000000-0000-0010-8000-00AA00389B71")]
 public unsafe partial struct KSDATAFORMAT_SUBTYPE_WAVEFORMATEX : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_KSDATAFORMAT_SUBTYPE_WAVEFORMATEX));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_KSDATAFORMAT_SUBTYPE_WAVEFORMATEX);
 }

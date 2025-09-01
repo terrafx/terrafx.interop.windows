@@ -16,6 +16,12 @@ public static partial class REG
     [NativeTypeName("#define REG_MUI_STRING_TRUNCATE 0x00000001")]
     public const int REG_MUI_STRING_TRUNCATE = 0x00000001;
 
-    [NativeTypeName("#define REG_SECURE_CONNECTION 1")]
-    public const int REG_SECURE_CONNECTION = 1;
+    [NativeTypeName("#define REG_SECURE_CONNECTION 0x1")]
+    public const int REG_SECURE_CONNECTION = 0x1;
+
+    [NativeTypeName("#define REG_ALLOW_TRANSPORT_FALLBACK 0x2")]
+    public const int REG_ALLOW_TRANSPORT_FALLBACK = 0x2;
+
+    [NativeTypeName("#define REG_ALLOW_UNSECURE_CONNECTION 0x4")]
+    public const int REG_ALLOW_UNSECURE_CONNECTION = 0x4;
 }

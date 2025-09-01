@@ -15,6 +15,11 @@ public static unsafe partial class Windows
     [return: NativeTypeName("TBS_RESULT")]
     public static extern uint Tbsi_Context_Create([NativeTypeName("PCTBS_CONTEXT_PARAMS")] TBS_CONTEXT_PARAMS* pContextParams, [NativeTypeName("PTBS_HCONTEXT")] void** phContext);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Tbsi_Tpm_Vendor_Maintenance_Mode"]/*' />
+    [DllImport("tbs", ExactSpelling = true)]
+    [return: NativeTypeName("TBS_RESULT")]
+    public static extern uint Tbsi_Tpm_Vendor_Maintenance_Mode([NativeTypeName("PCTBS_CONTEXT_PARAMS")] TBS_CONTEXT_PARAMS* pContextParams, [NativeTypeName("PTBS_HCONTEXT")] void** phContext);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.Tbsip_Context_Close"]/*' />
     [DllImport("tbs", ExactSpelling = true)]
     [return: NativeTypeName("TBS_RESULT")]

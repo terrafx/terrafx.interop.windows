@@ -18,7 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("ISearchPaneVisibilityChangedEventArgs may be altered or unavailable for releases after Windows 10.")]
 public unsafe partial struct ISearchPaneVisibilityChangedEventArgs : ISearchPaneVisibilityChangedEventArgs.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISearchPaneVisibilityChangedEventArgs));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISearchPaneVisibilityChangedEventArgs);
 
     public void** lpVtbl;
 

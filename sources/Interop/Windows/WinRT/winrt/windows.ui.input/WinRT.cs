@@ -88,6 +88,9 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[31]")]
     public const string InterfaceName_Windows_UI_Input_IPointerPoint = "Windows.UI.Input.IPointerPoint";
 
+    [NativeTypeName("const WCHAR[47]")]
+    public const string InterfaceName_Windows_UI_Input_IPointerPointPhysicalPosition = "Windows.UI.Input.IPointerPointPhysicalPosition";
+
     [NativeTypeName("const WCHAR[41]")]
     public const string InterfaceName_Windows_UI_Input_IPointerPointProperties = "Windows.UI.Input.IPointerPointProperties";
 

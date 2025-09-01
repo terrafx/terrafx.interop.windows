@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFExtendedCameraIntrinsicsDistortionModel6KT : IMFExtendedCameraIntrinsicsDistortionModel6KT.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMFExtendedCameraIntrinsicsDistortionModel6KT));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFExtendedCameraIntrinsicsDistortionModel6KT);
 
     public void** lpVtbl;
 

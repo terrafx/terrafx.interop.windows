@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("D2E8E399-0623-4BF3-92A8-4D1818529DED")]
 public unsafe partial struct CODECAPI_AVEnableInLoopDeblockFilter : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEnableInLoopDeblockFilter));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEnableInLoopDeblockFilter);
 }

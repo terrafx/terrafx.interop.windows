@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("062584A6-F830-4BDC-A4D2-0A10AB062B1D")]
 public unsafe partial struct InkDesktopHost : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_InkDesktopHost));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_InkDesktopHost);
 }

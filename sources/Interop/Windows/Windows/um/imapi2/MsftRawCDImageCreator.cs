@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("25983561-9D65-49CE-B335-40630D901227")]
 public unsafe partial struct MsftRawCDImageCreator : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_MsftRawCDImageCreator));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_MsftRawCDImageCreator);
 }

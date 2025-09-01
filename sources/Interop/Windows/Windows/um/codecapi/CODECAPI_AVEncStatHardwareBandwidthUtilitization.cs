@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("0124BA9B-DC41-4826-B45F-18AC01B3D5A8")]
 public unsafe partial struct CODECAPI_AVEncStatHardwareBandwidthUtilitization : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_CODECAPI_AVEncStatHardwareBandwidthUtilitization));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncStatHardwareBandwidthUtilitization);
 }

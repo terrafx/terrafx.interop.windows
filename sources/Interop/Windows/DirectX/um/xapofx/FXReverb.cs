@@ -13,7 +13,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("7D9ACA56-CB68-4807-B632-B137352E8596")]
 public unsafe partial struct FXReverb : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_FXReverb));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_FXReverb);
 
     [NativeTypeName("#define FXREVERB_MIN_DIFFUSION 0.0f")]
     public const float FXREVERB_MIN_DIFFUSION = 0.0f;

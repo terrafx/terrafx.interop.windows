@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Resource")]
 public unsafe partial struct ID2D1ColorContext : ID2D1ColorContext.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1ColorContext));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1ColorContext);
 
     public void** lpVtbl;
 
@@ -50,34 +50,34 @@ public unsafe partial struct ID2D1ColorContext : ID2D1ColorContext.Interface, IN
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1ColorContext*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1ColorContext*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1ColorContext*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1ColorContext*)Unsafe.AsPointer(in this), factory);
     }
 
     /// <include file='ID2D1ColorContext.xml' path='doc/member[@name="ID2D1ColorContext.GetColorSpace"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public D2D1_COLOR_SPACE GetColorSpace()
+    public readonly D2D1_COLOR_SPACE GetColorSpace()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1ColorContext*, D2D1_COLOR_SPACE>)(lpVtbl[4]))((ID2D1ColorContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1ColorContext*, D2D1_COLOR_SPACE>)(lpVtbl[4]))((ID2D1ColorContext*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1ColorContext.xml' path='doc/member[@name="ID2D1ColorContext.GetProfileSize"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
     [return: NativeTypeName("UINT32")]
-    public uint GetProfileSize()
+    public readonly uint GetProfileSize()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1ColorContext*, uint>)(lpVtbl[5]))((ID2D1ColorContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1ColorContext*, uint>)(lpVtbl[5]))((ID2D1ColorContext*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='ID2D1ColorContext.xml' path='doc/member[@name="ID2D1ColorContext.GetProfile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetProfile(byte* profile, [NativeTypeName("UINT32")] uint profileSize)
+    public readonly HRESULT GetProfile(byte* profile, [NativeTypeName("UINT32")] uint profileSize)
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1ColorContext*, byte*, uint, int>)(lpVtbl[6]))((ID2D1ColorContext*)Unsafe.AsPointer(ref this), profile, profileSize);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1ColorContext*, byte*, uint, int>)(lpVtbl[6]))((ID2D1ColorContext*)Unsafe.AsPointer(in this), profile, profileSize);
     }
 
     public interface Interface : ID2D1Resource.Interface

@@ -17,7 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Device2")]
 public unsafe partial struct ID2D1Device3 : ID2D1Device3.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ID2D1Device3));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1Device3);
 
     public void** lpVtbl;
 
@@ -50,9 +50,9 @@ public unsafe partial struct ID2D1Device3 : ID2D1Device3.Interface, INativeGuid
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public void GetFactory(ID2D1Factory** factory)
+    public readonly void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged[MemberFunction]<ID2D1Device3*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Device3*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1Device3*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1Device3*)Unsafe.AsPointer(in this), factory);
     }
 
     /// <inheritdoc cref="ID2D1Device.CreateDeviceContext" />
@@ -83,9 +83,9 @@ public unsafe partial struct ID2D1Device3 : ID2D1Device3.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
     [return: NativeTypeName("UINT64")]
-    public ulong GetMaximumTextureMemory()
+    public readonly ulong GetMaximumTextureMemory()
     {
-        return ((delegate* unmanaged[MemberFunction]<ID2D1Device3*, ulong>)(lpVtbl[7]))((ID2D1Device3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1Device3*, ulong>)(lpVtbl[7]))((ID2D1Device3*)Unsafe.AsPointer(in this));
     }
 
     /// <inheritdoc cref="ID2D1Device.ClearResources" />

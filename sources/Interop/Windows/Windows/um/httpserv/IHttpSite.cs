@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("EB16A6EC-BA5D-436F-BF24-3EDE13906450")]
 public unsafe partial struct IHttpSite : IHttpSite.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IHttpSite));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpSite);
 
     public void** lpVtbl;
 
@@ -22,18 +22,18 @@ public unsafe partial struct IHttpSite : IHttpSite.Interface, INativeGuid
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(0)]
     [return: NativeTypeName("DWORD")]
-    public uint GetSiteId()
+    public readonly uint GetSiteId()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpSite*, uint>)(lpVtbl[0]))((IHttpSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpSite*, uint>)(lpVtbl[0]))((IHttpSite*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpSite.xml' path='doc/member[@name="IHttpSite.GetSiteName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetSiteName()
+    public readonly char* GetSiteName()
     {
-        return ((delegate* unmanaged[MemberFunction]<IHttpSite*, char*>)(lpVtbl[1]))((IHttpSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHttpSite*, char*>)(lpVtbl[1]))((IHttpSite*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IHttpSite.xml' path='doc/member[@name="IHttpSite.GetModuleContextContainer"]/*' />

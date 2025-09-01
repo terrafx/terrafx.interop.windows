@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct FILE_RENAME_INFO
 {
     /// <include file='FILE_RENAME_INFO.xml' path='doc/member[@name="FILE_RENAME_INFO.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winbase_L9111_C5")]
+    [NativeTypeName("__AnonymousRecord_winbase_L9113_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='FILE_RENAME_INFO.xml' path='doc/member[@name="FILE_RENAME_INFO.RootDirectory"]/*' />

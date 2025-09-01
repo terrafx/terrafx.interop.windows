@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IMapPathProvider : IMapPathProvider.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_IMapPathProvider));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMapPathProvider);
 
     public void** lpVtbl;
 
@@ -32,18 +32,18 @@ public unsafe partial struct IMapPathProvider : IMapPathProvider.Interface, INat
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetUrl()
+    public readonly char* GetUrl()
     {
-        return ((delegate* unmanaged[MemberFunction]<IMapPathProvider*, char*>)(lpVtbl[1]))((IMapPathProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMapPathProvider*, char*>)(lpVtbl[1]))((IMapPathProvider*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IMapPathProvider.xml' path='doc/member[@name="IMapPathProvider.GetPhysicalPath"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
     [return: NativeTypeName("PCWSTR")]
-    public char* GetPhysicalPath()
+    public readonly char* GetPhysicalPath()
     {
-        return ((delegate* unmanaged[MemberFunction]<IMapPathProvider*, char*>)(lpVtbl[2]))((IMapPathProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMapPathProvider*, char*>)(lpVtbl[2]))((IMapPathProvider*)Unsafe.AsPointer(in this));
     }
 
     /// <include file='IMapPathProvider.xml' path='doc/member[@name="IMapPathProvider.SetPhysicalPath"]/*' />

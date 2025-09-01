@@ -6444,6 +6444,22 @@ public static partial class PKEYTests
         Assert.That(PKEY_MsGraph_DriveId.pid, Is.EqualTo(3));
     }
 
+    /// <summary>Validates that the value of the <see cref="PKEY_MsGraph_GraphFileType" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_MsGraph_GraphFileTypeTest()
+    {
+        Assert.That(PKEY_MsGraph_GraphFileType.fmtid, Is.EqualTo(new Guid(0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29)));
+        Assert.That(PKEY_MsGraph_GraphFileType.pid, Is.EqualTo(16));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_MsGraph_IconUrl" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_MsGraph_IconUrlTest()
+    {
+        Assert.That(PKEY_MsGraph_IconUrl.fmtid, Is.EqualTo(new Guid(0x4F85567E, 0xFFF0, 0x4DF5, 0xB1, 0xD9, 0x98, 0xB3, 0x14, 0xFF, 0x07, 0x29)));
+        Assert.That(PKEY_MsGraph_IconUrl.pid, Is.EqualTo(15));
+    }
+
     /// <summary>Validates that the value of the <see cref="PKEY_MsGraph_ItemId" /> property is correct.</summary>
     [Test]
     public static void PKEY_MsGraph_ItemIdTest()
@@ -7868,6 +7884,30 @@ public static partial class PKEYTests
         Assert.That(PKEY_Search_IsFullyContained.pid, Is.EqualTo(24));
     }
 
+    /// <summary>Validates that the value of the <see cref="PKEY_Search_MatchKind" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_Search_MatchKindTest()
+    {
+        Assert.That(PKEY_Search_MatchKind.fmtid, Is.EqualTo(new Guid(0x49691C90, 0x7E17, 0x101A, 0xA9, 0x1C, 0x08, 0x00, 0x2B, 0x2E, 0xCD, 0xA9)));
+        Assert.That(PKEY_Search_MatchKind.pid, Is.EqualTo(29));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_Search_MatchTags" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_Search_MatchTagsTest()
+    {
+        Assert.That(PKEY_Search_MatchTags.fmtid, Is.EqualTo(new Guid(0x49691C90, 0x7E17, 0x101A, 0xA9, 0x1C, 0x08, 0x00, 0x2B, 0x2E, 0xCD, 0xA9)));
+        Assert.That(PKEY_Search_MatchTags.pid, Is.EqualTo(30));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_Search_OcrContent" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_Search_OcrContentTest()
+    {
+        Assert.That(PKEY_Search_OcrContent.fmtid, Is.EqualTo(new Guid(0xB725F130, 0x47EF, 0x101A, 0xA5, 0xF1, 0x02, 0x60, 0x8C, 0x9E, 0xEB, 0xAC)));
+        Assert.That(PKEY_Search_OcrContent.pid, Is.EqualTo(28));
+    }
+
     /// <summary>Validates that the value of the <see cref="PKEY_Search_QueryFocusedSummary" /> property is correct.</summary>
     [Test]
     public static void PKEY_Search_QueryFocusedSummaryTest()
@@ -8012,6 +8052,30 @@ public static partial class PKEYTests
         Assert.That(PKEY_Home_ItemFolderPathDisplay.pid, Is.EqualTo(6));
     }
 
+    /// <summary>Validates that the value of the <see cref="PKEY_Home_RecommendationActivityDate" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_Home_RecommendationActivityDateTest()
+    {
+        Assert.That(PKEY_Home_RecommendationActivityDate.fmtid, Is.EqualTo(new Guid(0x30C8EEF4, 0xA832, 0x41E2, 0xAB, 0x32, 0xE3, 0xC3, 0xCA, 0x28, 0xFD, 0x29)));
+        Assert.That(PKEY_Home_RecommendationActivityDate.pid, Is.EqualTo(22));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_Home_RecommendationProviderSource" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_Home_RecommendationProviderSourceTest()
+    {
+        Assert.That(PKEY_Home_RecommendationProviderSource.fmtid, Is.EqualTo(new Guid(0x5CA9B1CB, 0xC69F, 0x404B, 0xAB, 0xC6, 0xFD, 0x33, 0x67, 0x93, 0xA6, 0xA7)));
+        Assert.That(PKEY_Home_RecommendationProviderSource.pid, Is.EqualTo(22));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_Home_RecommendationReasonIcon" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_Home_RecommendationReasonIconTest()
+    {
+        Assert.That(PKEY_Home_RecommendationReasonIcon.fmtid, Is.EqualTo(new Guid(0x30C8EEF4, 0xA832, 0x41E2, 0xAB, 0x32, 0xE3, 0xC3, 0xCA, 0x28, 0xFD, 0x29)));
+        Assert.That(PKEY_Home_RecommendationReasonIcon.pid, Is.EqualTo(21));
+    }
+
     /// <summary>Validates that the value of the <see cref="PKEY_Home_Recommended" /> property is correct.</summary>
     [Test]
     public static void PKEY_Home_RecommendedTest()
@@ -8058,6 +8122,14 @@ public static partial class PKEYTests
     {
         Assert.That(PKEY_NamespaceCLSID.fmtid, Is.EqualTo(new Guid(0x28636AA6, 0x953D, 0x11D2, 0xB5, 0xD6, 0x00, 0xC0, 0x4F, 0xD9, 0x18, 0xD0)));
         Assert.That(PKEY_NamespaceCLSID.pid, Is.EqualTo(6));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_Shell_CopilotKeyProviderFastPathMessage" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_Shell_CopilotKeyProviderFastPathMessageTest()
+    {
+        Assert.That(PKEY_Shell_CopilotKeyProviderFastPathMessage.fmtid, Is.EqualTo(new Guid(0x38652BCA, 0x4329, 0x4E74, 0x86, 0xF9, 0x39, 0xCF, 0x29, 0x34, 0x5E, 0xEA)));
+        Assert.That(PKEY_Shell_CopilotKeyProviderFastPathMessage.pid, Is.EqualTo(2));
     }
 
     /// <summary>Validates that the value of the <see cref="PKEY_Shell_SFGAOFlagsStrings" /> property is correct.</summary>

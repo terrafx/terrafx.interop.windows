@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("E6756135-1E65-4D17-8576-610761398C3C")]
 public unsafe partial struct DiaSource : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in CLSID_DiaSource));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_DiaSource);
 }

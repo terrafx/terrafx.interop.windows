@@ -73,8 +73,29 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[62]")]
     public const string InterfaceName_Windows_Storage_Provider_IStorageProviderPropertyCapabilities = "Windows.Storage.Provider.IStorageProviderPropertyCapabilities";
 
+    [NativeTypeName("const WCHAR[53]")]
+    public const string InterfaceName_Windows_Storage_Provider_IStorageProviderQueryResult = "Windows.Storage.Provider.IStorageProviderQueryResult";
+
+    [NativeTypeName("const WCHAR[56]")]
+    public const string InterfaceName_Windows_Storage_Provider_IStorageProviderQueryResultSet = "Windows.Storage.Provider.IStorageProviderQueryResultSet";
+
+    [NativeTypeName("const WCHAR[63]")]
+    public const string InterfaceName_Windows_Storage_Provider_IStorageProviderQueryResultSetFactory = "Windows.Storage.Provider.IStorageProviderQueryResultSetFactory";
+
     [NativeTypeName("const WCHAR[49]")]
     public const string InterfaceName_Windows_Storage_Provider_IStorageProviderQuotaUI = "Windows.Storage.Provider.IStorageProviderQuotaUI";
+
+    [NativeTypeName("const WCHAR[55]")]
+    public const string InterfaceName_Windows_Storage_Provider_IStorageProviderSearchHandler = "Windows.Storage.Provider.IStorageProviderSearchHandler";
+
+    [NativeTypeName("const WCHAR[62]")]
+    public const string InterfaceName_Windows_Storage_Provider_IStorageProviderSearchHandlerFactory = "Windows.Storage.Provider.IStorageProviderSearchHandlerFactory";
+
+    [NativeTypeName("const WCHAR[60]")]
+    public const string InterfaceName_Windows_Storage_Provider_IStorageProviderSearchQueryOptions = "Windows.Storage.Provider.IStorageProviderSearchQueryOptions";
+
+    [NativeTypeName("const WCHAR[54]")]
+    public const string InterfaceName_Windows_Storage_Provider_IStorageProviderSearchResult = "Windows.Storage.Provider.IStorageProviderSearchResult";
 
     [NativeTypeName("const WCHAR[50]")]
     public const string InterfaceName_Windows_Storage_Provider_IStorageProviderStatusUI = "Windows.Storage.Provider.IStorageProviderStatusUI";
@@ -151,8 +172,17 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[51]")]
     public const string RuntimeClass_Windows_Storage_Provider_StorageProviderMoreInfoUI = "Windows.Storage.Provider.StorageProviderMoreInfoUI";
 
+    [NativeTypeName("const WCHAR[55]")]
+    public const string RuntimeClass_Windows_Storage_Provider_StorageProviderQueryResultSet = "Windows.Storage.Provider.StorageProviderQueryResultSet";
+
     [NativeTypeName("const WCHAR[48]")]
     public const string RuntimeClass_Windows_Storage_Provider_StorageProviderQuotaUI = "Windows.Storage.Provider.StorageProviderQuotaUI";
+
+    [NativeTypeName("const WCHAR[59]")]
+    public const string RuntimeClass_Windows_Storage_Provider_StorageProviderSearchQueryOptions = "Windows.Storage.Provider.StorageProviderSearchQueryOptions";
+
+    [NativeTypeName("const WCHAR[53]")]
+    public const string RuntimeClass_Windows_Storage_Provider_StorageProviderSearchResult = "Windows.Storage.Provider.StorageProviderSearchResult";
 
     [NativeTypeName("const WCHAR[49]")]
     public const string RuntimeClass_Windows_Storage_Provider_StorageProviderStatusUI = "Windows.Storage.Provider.StorageProviderStatusUI";

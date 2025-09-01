@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("30510571-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct SVGSymbolElement : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_SVGSymbolElement));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_SVGSymbolElement);
 }

@@ -16,6 +16,7 @@ DEPRECATEDENUMERATOR
 IID_IBluetoothAdapter
 IID_IBluetoothAdapter2
 IID_IBluetoothAdapter3
+IID_IBluetoothAdapter4
 IID_IBluetoothAdapterStatics
 IID_IBluetoothClassOfDevice
 IID_IBluetoothClassOfDeviceStatics

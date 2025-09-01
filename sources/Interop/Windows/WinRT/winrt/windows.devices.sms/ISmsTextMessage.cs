@@ -18,7 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("SmsTextMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsTextMessage2.")]
 public unsafe partial struct ISmsTextMessage : ISmsTextMessage.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_ISmsTextMessage));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISmsTextMessage);
 
     public void** lpVtbl;
 
