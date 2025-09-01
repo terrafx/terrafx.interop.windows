@@ -52,12 +52,6 @@ jobs:
           ./artifacts/log/**/*
           ./artifacts/tst/**/*
         if-no-files-found: error
-    - uses: actions/upload-artifact@v4
-      with:
-        name: ${{ matrix.os }}_${{ matrix.configuration }}_${{ matrix.architecture }}_pkg
-        path: |
-          ./artifacts/pkg/**/*.win-arm64.*
-        if-no-files-found: error
   sign-nuget:
     runs-on: windows-latest
     if: ${{ github.event_name == 'push' }}
