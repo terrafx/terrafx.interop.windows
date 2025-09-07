@@ -1,0 +1,2964 @@
+<Solution>
+  <Folder Name="/.github/" />
+  <Folder Name="/.github/ISSUE_TEMPLATE/">
+    <File Path=".github/ISSUE_TEMPLATE/bug.md" />
+    <File Path=".github/ISSUE_TEMPLATE/proposal.md" />
+    <File Path=".github/ISSUE_TEMPLATE/regression.md" />
+  </Folder>
+  <Folder Name="/.github/workflows/">
+    <File Path=".github/workflows/ci.yml" />
+  </Folder>
+  <Folder Name="/.root/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="build.cmd" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="Directory.Packages.props" />
+    <File Path="exclusion.dic" />
+    <File Path="global.json" />
+    <File Path="LICENSE.md" />
+    <File Path="NuGet.config" />
+    <File Path="pack.cmd" />
+    <File Path="restore.cmd" />
+    <File Path="TerraFX.snk" />
+    <File Path="test.cmd" />
+    <File Path="THIRD-PARTY-NOTICES.md" />
+  </Folder>
+  <Folder Name="/docs/">
+    <File Path="docs/CODEOWNERS" />
+    <File Path="docs/CODE_OF_CONDUCT.md" />
+    <File Path="docs/CONTRIBUTING.md" />
+    <File Path="docs/ISSUE_TEMPLATE.md" />
+    <File Path="docs/PULL_REQUEST_TEMPLATE.md" />
+    <File Path="docs/README.md" />
+  </Folder>
+  <Folder Name="/generation/">
+    <File Path="generation/remap-classes.rsp" />
+    <File Path="generation/remap-guids.rsp" />
+    <File Path="generation/remap-handles.rsp" />
+    <File Path="generation/remap-members.rsp" />
+    <File Path="generation/remap-namespaces.rsp" />
+    <File Path="generation/remap-nints.rsp" />
+    <File Path="generation/remap-structs.rsp" />
+    <File Path="generation/remap-transparent.rsp" />
+    <File Path="generation/remap-types.rsp" />
+    <File Path="generation/remap.rsp" />
+    <File Path="generation/settings.rsp" />
+    <File Path="generation/TerraFX.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/" />
+  <Folder Name="/generation/DirectX/d3d12/" />
+  <Folder Name="/generation/DirectX/d3d12/d3d12/">
+    <File Path="generation/DirectX/d3d12/d3d12/d3d12-d3d12.h" />
+    <File Path="generation/DirectX/d3d12/d3d12/generate.rsp" />
+    <File Path="generation/DirectX/d3d12/d3d12/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3d12/d3d12compatibility/">
+    <File Path="generation/DirectX/d3d12/d3d12compatibility/d3d12-d3d12compatibility.h" />
+    <File Path="generation/DirectX/d3d12/d3d12compatibility/generate.rsp" />
+    <File Path="generation/DirectX/d3d12/d3d12compatibility/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3d12/d3d12sdklayers/">
+    <File Path="generation/DirectX/d3d12/d3d12sdklayers/d3d12-d3d12sdklayers.h" />
+    <File Path="generation/DirectX/d3d12/d3d12sdklayers/generate.rsp" />
+    <File Path="generation/DirectX/d3d12/d3d12sdklayers/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3d12/d3d12shader/">
+    <File Path="generation/DirectX/d3d12/d3d12shader/d3d12-d3d12shader.h" />
+    <File Path="generation/DirectX/d3d12/d3d12shader/generate.rsp" />
+    <File Path="generation/DirectX/d3d12/d3d12shader/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3d12/D3D12TokenizedProgramFormat/">
+    <File Path="generation/DirectX/d3d12/D3D12TokenizedProgramFormat/d3d12-D3D12TokenizedProgramFormat.h" />
+    <File Path="generation/DirectX/d3d12/D3D12TokenizedProgramFormat/generate.rsp" />
+    <File Path="generation/DirectX/d3d12/D3D12TokenizedProgramFormat/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3d12/d3d12video/">
+    <File Path="generation/DirectX/d3d12/d3d12video/d3d12-d3d12video.h" />
+    <File Path="generation/DirectX/d3d12/d3d12video/generate.rsp" />
+    <File Path="generation/DirectX/d3d12/d3d12video/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3d12/d3dcommon/">
+    <File Path="generation/DirectX/d3d12/d3dcommon/d3d12-d3dcommon.h" />
+    <File Path="generation/DirectX/d3d12/d3dcommon/generate.rsp" />
+    <File Path="generation/DirectX/d3d12/d3dcommon/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3d12/DirectML/">
+    <File Path="generation/DirectX/d3d12/DirectML/d3d12-DirectML.h" />
+    <File Path="generation/DirectX/d3d12/DirectML/generate.rsp" />
+    <File Path="generation/DirectX/d3d12/DirectML/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3d12/dxcore/">
+    <File Path="generation/DirectX/d3d12/dxcore/d3d12-dxcore.h" />
+    <File Path="generation/DirectX/d3d12/dxcore/generate.rsp" />
+    <File Path="generation/DirectX/d3d12/dxcore/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3d12/dxcore_interface/">
+    <File Path="generation/DirectX/d3d12/dxcore_interface/d3d12-dxcore_interface.h" />
+    <File Path="generation/DirectX/d3d12/dxcore_interface/generate.rsp" />
+    <File Path="generation/DirectX/d3d12/dxcore_interface/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3d12/dxgicommon/">
+    <File Path="generation/DirectX/d3d12/dxgicommon/d3d12-dxgicommon.h" />
+    <File Path="generation/DirectX/d3d12/dxgicommon/generate.rsp" />
+    <File Path="generation/DirectX/d3d12/dxgicommon/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3d12/dxgiformat/">
+    <File Path="generation/DirectX/d3d12/dxgiformat/d3d12-dxgiformat.h" />
+    <File Path="generation/DirectX/d3d12/dxgiformat/generate.rsp" />
+    <File Path="generation/DirectX/d3d12/dxgiformat/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3d12on7/" />
+  <Folder Name="/generation/DirectX/d3d12on7/D3D11On12On7/">
+    <File Path="generation/DirectX/d3d12on7/D3D11On12On7/d3d12on7-d3d11on12on7.h" />
+    <File Path="generation/DirectX/d3d12on7/D3D11On12On7/generate.rsp" />
+    <File Path="generation/DirectX/d3d12on7/D3D11On12On7/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3d12on7/D3D12Downlevel/">
+    <File Path="generation/DirectX/d3d12on7/D3D12Downlevel/d3d12on7-d3d12downlevel.h" />
+    <File Path="generation/DirectX/d3d12on7/D3D12Downlevel/generate.rsp" />
+    <File Path="generation/DirectX/d3d12on7/D3D12Downlevel/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3dx12/" />
+  <Folder Name="/generation/DirectX/d3dx12/d3dx12/">
+    <File Path="generation/DirectX/d3dx12/d3dx12/d3dx12-d3dx12.h" />
+    <File Path="generation/DirectX/d3dx12/d3dx12/generate.rsp" />
+    <File Path="generation/DirectX/d3dx12/d3dx12/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3dx12/d3dx12_barriers/">
+    <File Path="generation/DirectX/d3dx12/d3dx12_barriers/d3dx12-d3dx12_barriers.h" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_barriers/generate.rsp" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_barriers/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3dx12/d3dx12_check_feature_support/">
+    <File Path="generation/DirectX/d3dx12/d3dx12_check_feature_support/d3dx12-d3dx12_check_feature_support.h" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_check_feature_support/generate.rsp" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_check_feature_support/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3dx12/d3dx12_core/">
+    <File Path="generation/DirectX/d3dx12/d3dx12_core/d3dx12-d3dx12_core.h" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_core/generate.rsp" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_core/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3dx12/d3dx12_default/">
+    <File Path="generation/DirectX/d3dx12/d3dx12_default/d3dx12-d3dx12_default.h" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_default/generate.rsp" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_default/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3dx12/d3dx12_pipeline_state_stream/">
+    <File Path="generation/DirectX/d3dx12/d3dx12_pipeline_state_stream/d3dx12-d3dx12_pipeline_state_stream.h" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_pipeline_state_stream/generate.rsp" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_pipeline_state_stream/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3dx12/d3dx12_property_format_table/">
+    <File Path="generation/DirectX/d3dx12/d3dx12_property_format_table/d3dx12-d3dx12_property_format_table.h" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_property_format_table/generate.rsp" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_property_format_table/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3dx12/d3dx12_render_pass/">
+    <File Path="generation/DirectX/d3dx12/d3dx12_render_pass/d3dx12-d3dx12_render_pass.h" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_render_pass/generate.rsp" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_render_pass/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3dx12/d3dx12_resource_helpers/">
+    <File Path="generation/DirectX/d3dx12/d3dx12_resource_helpers/d3dx12-d3dx12_resource_helpers.h" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_resource_helpers/generate.rsp" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_resource_helpers/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3dx12/d3dx12_root_signature/">
+    <File Path="generation/DirectX/d3dx12/d3dx12_root_signature/d3dx12-d3dx12_root_signature.h" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_root_signature/generate.rsp" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_root_signature/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3dx12/d3dx12_state_object/">
+    <File Path="generation/DirectX/d3dx12/d3dx12_state_object/d3dx12-d3dx12_state_object.h" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_state_object/generate.rsp" />
+    <File Path="generation/DirectX/d3dx12/d3dx12_state_object/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/dxtk12/" />
+  <Folder Name="/generation/DirectX/dxtk12/DirectXHelpers/">
+    <File Path="generation/DirectX/dxtk12/DirectXHelpers/dxtk12-DirectXHelpers.h" />
+    <File Path="generation/DirectX/dxtk12/DirectXHelpers/generate.rsp" />
+    <File Path="generation/DirectX/dxtk12/DirectXHelpers/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/shared/" />
+  <Folder Name="/generation/DirectX/shared/d3d9/">
+    <File Path="generation/DirectX/shared/d3d9/generate.rsp" />
+    <File Path="generation/DirectX/shared/d3d9/header.txt" />
+    <File Path="generation/DirectX/shared/d3d9/shared-d3d9.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/shared/d3d9caps/">
+    <File Path="generation/DirectX/shared/d3d9caps/generate.rsp" />
+    <File Path="generation/DirectX/shared/d3d9caps/header.txt" />
+    <File Path="generation/DirectX/shared/d3d9caps/shared-d3d9caps.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/shared/d3d9types/">
+    <File Path="generation/DirectX/shared/d3d9types/generate.rsp" />
+    <File Path="generation/DirectX/shared/d3d9types/header.txt" />
+    <File Path="generation/DirectX/shared/d3d9types/shared-d3d9types.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/shared/dcomptypes/">
+    <File Path="generation/DirectX/shared/dcomptypes/generate.rsp" />
+    <File Path="generation/DirectX/shared/dcomptypes/header.txt" />
+    <File Path="generation/DirectX/shared/dcomptypes/shared-dcomptypes.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/shared/dxgi/">
+    <File Path="generation/DirectX/shared/dxgi/generate.rsp" />
+    <File Path="generation/DirectX/shared/dxgi/header.txt" />
+    <File Path="generation/DirectX/shared/dxgi/shared-dxgi.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/shared/dxgi1_2/">
+    <File Path="generation/DirectX/shared/dxgi1_2/generate.rsp" />
+    <File Path="generation/DirectX/shared/dxgi1_2/header.txt" />
+    <File Path="generation/DirectX/shared/dxgi1_2/shared-dxgi1_2.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/shared/dxgi1_3/">
+    <File Path="generation/DirectX/shared/dxgi1_3/generate.rsp" />
+    <File Path="generation/DirectX/shared/dxgi1_3/header.txt" />
+    <File Path="generation/DirectX/shared/dxgi1_3/shared-dxgi1_3.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/shared/dxgi1_4/">
+    <File Path="generation/DirectX/shared/dxgi1_4/generate.rsp" />
+    <File Path="generation/DirectX/shared/dxgi1_4/header.txt" />
+    <File Path="generation/DirectX/shared/dxgi1_4/shared-dxgi1_4.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/shared/dxgi1_5/">
+    <File Path="generation/DirectX/shared/dxgi1_5/generate.rsp" />
+    <File Path="generation/DirectX/shared/dxgi1_5/header.txt" />
+    <File Path="generation/DirectX/shared/dxgi1_5/shared-dxgi1_5.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/shared/dxgi1_6/">
+    <File Path="generation/DirectX/shared/dxgi1_6/generate.rsp" />
+    <File Path="generation/DirectX/shared/dxgi1_6/header.txt" />
+    <File Path="generation/DirectX/shared/dxgi1_6/shared-dxgi1_6.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/shared/dxgitype/">
+    <File Path="generation/DirectX/shared/dxgitype/generate.rsp" />
+    <File Path="generation/DirectX/shared/dxgitype/header.txt" />
+    <File Path="generation/DirectX/shared/dxgitype/shared-dxgitype.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/" />
+  <Folder Name="/generation/DirectX/um/d2d1/">
+    <File Path="generation/DirectX/um/d2d1/generate.rsp" />
+    <File Path="generation/DirectX/um/d2d1/header.txt" />
+    <File Path="generation/DirectX/um/d2d1/um-d2d1.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d2d1effectauthor/">
+    <File Path="generation/DirectX/um/d2d1effectauthor/generate.rsp" />
+    <File Path="generation/DirectX/um/d2d1effectauthor/header.txt" />
+    <File Path="generation/DirectX/um/d2d1effectauthor/um-d2d1effectauthor.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d2d1effectauthor_1/">
+    <File Path="generation/DirectX/um/d2d1effectauthor_1/generate.rsp" />
+    <File Path="generation/DirectX/um/d2d1effectauthor_1/header.txt" />
+    <File Path="generation/DirectX/um/d2d1effectauthor_1/um-d2d1effectauthor_1.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d2d1effects/">
+    <File Path="generation/DirectX/um/d2d1effects/generate.rsp" />
+    <File Path="generation/DirectX/um/d2d1effects/header.txt" />
+    <File Path="generation/DirectX/um/d2d1effects/um-d2d1effects.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d2d1effects_1/">
+    <File Path="generation/DirectX/um/d2d1effects_1/generate.rsp" />
+    <File Path="generation/DirectX/um/d2d1effects_1/header.txt" />
+    <File Path="generation/DirectX/um/d2d1effects_1/um-d2d1effects_1.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d2d1effects_2/">
+    <File Path="generation/DirectX/um/d2d1effects_2/generate.rsp" />
+    <File Path="generation/DirectX/um/d2d1effects_2/header.txt" />
+    <File Path="generation/DirectX/um/d2d1effects_2/um-d2d1effects_2.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d2d1helper/">
+    <File Path="generation/DirectX/um/d2d1helper/generate.rsp" />
+    <File Path="generation/DirectX/um/d2d1helper/header.txt" />
+    <File Path="generation/DirectX/um/d2d1helper/um-d2d1helper.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d2d1svg/">
+    <File Path="generation/DirectX/um/d2d1svg/generate.rsp" />
+    <File Path="generation/DirectX/um/d2d1svg/header.txt" />
+    <File Path="generation/DirectX/um/d2d1svg/um-d2d1svg.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d2d1_1/">
+    <File Path="generation/DirectX/um/d2d1_1/generate.rsp" />
+    <File Path="generation/DirectX/um/d2d1_1/header.txt" />
+    <File Path="generation/DirectX/um/d2d1_1/um-d2d1_1.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d2d1_1helper/">
+    <File Path="generation/DirectX/um/d2d1_1helper/generate.rsp" />
+    <File Path="generation/DirectX/um/d2d1_1helper/header.txt" />
+    <File Path="generation/DirectX/um/d2d1_1helper/um-d2d1_1helper.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d2d1_2/">
+    <File Path="generation/DirectX/um/d2d1_2/generate.rsp" />
+    <File Path="generation/DirectX/um/d2d1_2/header.txt" />
+    <File Path="generation/DirectX/um/d2d1_2/um-d2d1_2.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d2d1_2helper/">
+    <File Path="generation/DirectX/um/d2d1_2helper/generate.rsp" />
+    <File Path="generation/DirectX/um/d2d1_2helper/header.txt" />
+    <File Path="generation/DirectX/um/d2d1_2helper/um-d2d1_2helper.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d2d1_3/">
+    <File Path="generation/DirectX/um/d2d1_3/generate.rsp" />
+    <File Path="generation/DirectX/um/d2d1_3/header.txt" />
+    <File Path="generation/DirectX/um/d2d1_3/um-d2d1_3.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d2d1_3helper/">
+    <File Path="generation/DirectX/um/d2d1_3helper/generate.rsp" />
+    <File Path="generation/DirectX/um/d2d1_3helper/header.txt" />
+    <File Path="generation/DirectX/um/d2d1_3helper/um-d2d1_3helper.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/D2DErr/">
+    <File Path="generation/DirectX/um/D2DErr/generate.rsp" />
+    <File Path="generation/DirectX/um/D2DErr/header.txt" />
+    <File Path="generation/DirectX/um/D2DErr/um-D2DErr.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3d10/">
+    <File Path="generation/DirectX/um/d3d10/generate.rsp" />
+    <File Path="generation/DirectX/um/d3d10/header.txt" />
+    <File Path="generation/DirectX/um/d3d10/um-d3d10.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3d10effect/">
+    <File Path="generation/DirectX/um/d3d10effect/generate.rsp" />
+    <File Path="generation/DirectX/um/d3d10effect/header.txt" />
+    <File Path="generation/DirectX/um/d3d10effect/um-d3d10effect.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3d10misc/">
+    <File Path="generation/DirectX/um/d3d10misc/generate.rsp" />
+    <File Path="generation/DirectX/um/d3d10misc/header.txt" />
+    <File Path="generation/DirectX/um/d3d10misc/um-d3d10misc.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3d10sdklayers/">
+    <File Path="generation/DirectX/um/d3d10sdklayers/generate.rsp" />
+    <File Path="generation/DirectX/um/d3d10sdklayers/header.txt" />
+    <File Path="generation/DirectX/um/d3d10sdklayers/um-d3d10sdklayers.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3d10shader/">
+    <File Path="generation/DirectX/um/d3d10shader/generate.rsp" />
+    <File Path="generation/DirectX/um/d3d10shader/header.txt" />
+    <File Path="generation/DirectX/um/d3d10shader/um-d3d10shader.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3d10_1/">
+    <File Path="generation/DirectX/um/d3d10_1/generate.rsp" />
+    <File Path="generation/DirectX/um/d3d10_1/header.txt" />
+    <File Path="generation/DirectX/um/d3d10_1/um-d3d10_1.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3d10_1shader/">
+    <File Path="generation/DirectX/um/d3d10_1shader/generate.rsp" />
+    <File Path="generation/DirectX/um/d3d10_1shader/header.txt" />
+    <File Path="generation/DirectX/um/d3d10_1shader/um-d3d10_1shader.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3d11/">
+    <File Path="generation/DirectX/um/d3d11/generate.rsp" />
+    <File Path="generation/DirectX/um/d3d11/header.txt" />
+    <File Path="generation/DirectX/um/d3d11/um-d3d11.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3d11on12/">
+    <File Path="generation/DirectX/um/d3d11on12/generate.rsp" />
+    <File Path="generation/DirectX/um/d3d11on12/header.txt" />
+    <File Path="generation/DirectX/um/d3d11on12/um-d3d11on12.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3d11sdklayers/">
+    <File Path="generation/DirectX/um/d3d11sdklayers/generate.rsp" />
+    <File Path="generation/DirectX/um/d3d11sdklayers/header.txt" />
+    <File Path="generation/DirectX/um/d3d11sdklayers/um-d3d11sdklayers.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3d11shader/">
+    <File Path="generation/DirectX/um/d3d11shader/generate.rsp" />
+    <File Path="generation/DirectX/um/d3d11shader/header.txt" />
+    <File Path="generation/DirectX/um/d3d11shader/um-d3d11shader.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3d11shadertracing/">
+    <File Path="generation/DirectX/um/d3d11shadertracing/generate.rsp" />
+    <File Path="generation/DirectX/um/d3d11shadertracing/header.txt" />
+    <File Path="generation/DirectX/um/d3d11shadertracing/um-d3d11shadertracing.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3d11_1/">
+    <File Path="generation/DirectX/um/d3d11_1/generate.rsp" />
+    <File Path="generation/DirectX/um/d3d11_1/header.txt" />
+    <File Path="generation/DirectX/um/d3d11_1/um-d3d11_1.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3d11_2/">
+    <File Path="generation/DirectX/um/d3d11_2/generate.rsp" />
+    <File Path="generation/DirectX/um/d3d11_2/header.txt" />
+    <File Path="generation/DirectX/um/d3d11_2/um-d3d11_2.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3d11_3/">
+    <File Path="generation/DirectX/um/d3d11_3/generate.rsp" />
+    <File Path="generation/DirectX/um/d3d11_3/header.txt" />
+    <File Path="generation/DirectX/um/d3d11_3/um-d3d11_3.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3d11_4/">
+    <File Path="generation/DirectX/um/d3d11_4/generate.rsp" />
+    <File Path="generation/DirectX/um/d3d11_4/header.txt" />
+    <File Path="generation/DirectX/um/d3d11_4/um-d3d11_4.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/d3dcompiler/">
+    <File Path="generation/DirectX/um/d3dcompiler/generate.rsp" />
+    <File Path="generation/DirectX/um/d3dcompiler/header.txt" />
+    <File Path="generation/DirectX/um/d3dcompiler/um-d3dcompiler.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/dcommon/">
+    <File Path="generation/DirectX/um/dcommon/generate.rsp" />
+    <File Path="generation/DirectX/um/dcommon/header.txt" />
+    <File Path="generation/DirectX/um/dcommon/um-dcommon.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/dcomp/">
+    <File Path="generation/DirectX/um/dcomp/generate.rsp" />
+    <File Path="generation/DirectX/um/dcomp/header.txt" />
+    <File Path="generation/DirectX/um/dcomp/um-dcomp.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/dcompanimation/">
+    <File Path="generation/DirectX/um/dcompanimation/generate.rsp" />
+    <File Path="generation/DirectX/um/dcompanimation/header.txt" />
+    <File Path="generation/DirectX/um/dcompanimation/um-dcompanimation.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/ddraw/">
+    <File Path="generation/DirectX/um/ddraw/generate.rsp" />
+    <File Path="generation/DirectX/um/ddraw/header.txt" />
+    <File Path="generation/DirectX/um/ddraw/um-ddraw.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/dinput/">
+    <File Path="generation/DirectX/um/dinput/generate.rsp" />
+    <File Path="generation/DirectX/um/dinput/header.txt" />
+    <File Path="generation/DirectX/um/dinput/um-dinput.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/directmanipulation/">
+    <File Path="generation/DirectX/um/directmanipulation/directmanipulation.h" />
+    <File Path="generation/DirectX/um/directmanipulation/generate.rsp" />
+    <File Path="generation/DirectX/um/directmanipulation/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/dwrite/">
+    <File Path="generation/DirectX/um/dwrite/generate.rsp" />
+    <File Path="generation/DirectX/um/dwrite/header.txt" />
+    <File Path="generation/DirectX/um/dwrite/um-dwrite.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/dwrite_1/">
+    <File Path="generation/DirectX/um/dwrite_1/generate.rsp" />
+    <File Path="generation/DirectX/um/dwrite_1/header.txt" />
+    <File Path="generation/DirectX/um/dwrite_1/um-dwrite_1.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/dwrite_2/">
+    <File Path="generation/DirectX/um/dwrite_2/generate.rsp" />
+    <File Path="generation/DirectX/um/dwrite_2/header.txt" />
+    <File Path="generation/DirectX/um/dwrite_2/um-dwrite_2.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/dwrite_3/">
+    <File Path="generation/DirectX/um/dwrite_3/generate.rsp" />
+    <File Path="generation/DirectX/um/dwrite_3/header.txt" />
+    <File Path="generation/DirectX/um/dwrite_3/um-dwrite_3.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/dxcapi/">
+    <File Path="generation/DirectX/um/dxcapi/generate.rsp" />
+    <File Path="generation/DirectX/um/dxcapi/header.txt" />
+    <File Path="generation/DirectX/um/dxcapi/um-dxcapi.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/dxdiag/">
+    <File Path="generation/DirectX/um/dxdiag/generate.rsp" />
+    <File Path="generation/DirectX/um/dxdiag/header.txt" />
+    <File Path="generation/DirectX/um/dxdiag/um-dxdiag.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/dxgidebug/">
+    <File Path="generation/DirectX/um/dxgidebug/generate.rsp" />
+    <File Path="generation/DirectX/um/dxgidebug/header.txt" />
+    <File Path="generation/DirectX/um/dxgidebug/um-dxgidebug.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/DXGIMessages/">
+    <File Path="generation/DirectX/um/DXGIMessages/generate.rsp" />
+    <File Path="generation/DirectX/um/DXGIMessages/header.txt" />
+    <File Path="generation/DirectX/um/DXGIMessages/um-DXGIMessages.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/DXProgrammableCapture/">
+    <File Path="generation/DirectX/um/DXProgrammableCapture/generate.rsp" />
+    <File Path="generation/DirectX/um/DXProgrammableCapture/header.txt" />
+    <File Path="generation/DirectX/um/DXProgrammableCapture/um-dxprogrammablecapture.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/x3daudio/">
+    <File Path="generation/DirectX/um/x3daudio/generate.rsp" />
+    <File Path="generation/DirectX/um/x3daudio/header.txt" />
+    <File Path="generation/DirectX/um/x3daudio/um-x3daudio.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/xapo/">
+    <File Path="generation/DirectX/um/xapo/generate.rsp" />
+    <File Path="generation/DirectX/um/xapo/header.txt" />
+    <File Path="generation/DirectX/um/xapo/um-xapo.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/xapobase/">
+    <File Path="generation/DirectX/um/xapobase/generate.rsp" />
+    <File Path="generation/DirectX/um/xapobase/header.txt" />
+    <File Path="generation/DirectX/um/xapobase/um-xapobase.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/xapofx/">
+    <File Path="generation/DirectX/um/xapofx/generate.rsp" />
+    <File Path="generation/DirectX/um/xapofx/header.txt" />
+    <File Path="generation/DirectX/um/xapofx/um-xapofx.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/xaudio2/">
+    <File Path="generation/DirectX/um/xaudio2/generate.rsp" />
+    <File Path="generation/DirectX/um/xaudio2/header.txt" />
+    <File Path="generation/DirectX/um/xaudio2/um-xaudio2.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/xaudio2fx/">
+    <File Path="generation/DirectX/um/xaudio2fx/generate.rsp" />
+    <File Path="generation/DirectX/um/xaudio2fx/header.txt" />
+    <File Path="generation/DirectX/um/xaudio2fx/um-xaudio2fx.h" />
+  </Folder>
+  <Folder Name="/generation/DirectX/um/Xinput/">
+    <File Path="generation/DirectX/um/Xinput/generate.rsp" />
+    <File Path="generation/DirectX/um/Xinput/header.txt" />
+    <File Path="generation/DirectX/um/Xinput/um-Xinput.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/" />
+  <Folder Name="/generation/Gdiplus/um/" />
+  <Folder Name="/generation/Gdiplus/um/gdiplus/">
+    <File Path="generation/Gdiplus/um/gdiplus/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplus/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplus/um-gdiplus.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusbase/">
+    <File Path="generation/Gdiplus/um/gdiplusbase/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusbase/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusbase/um-gdiplusbase.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusbitmap/">
+    <File Path="generation/Gdiplus/um/gdiplusbitmap/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusbitmap/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusbitmap/um-gdiplusbitmap.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusbrush/">
+    <File Path="generation/Gdiplus/um/gdiplusbrush/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusbrush/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusbrush/um-gdiplusbrush.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdipluscachedbitmap/">
+    <File Path="generation/Gdiplus/um/gdipluscachedbitmap/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdipluscachedbitmap/header.txt" />
+    <File Path="generation/Gdiplus/um/gdipluscachedbitmap/um-gdipluscachedbitmap.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdipluscolor/">
+    <File Path="generation/Gdiplus/um/gdipluscolor/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdipluscolor/header.txt" />
+    <File Path="generation/Gdiplus/um/gdipluscolor/um-gdipluscolor.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdipluscolormatrix/">
+    <File Path="generation/Gdiplus/um/gdipluscolormatrix/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdipluscolormatrix/header.txt" />
+    <File Path="generation/Gdiplus/um/gdipluscolormatrix/um-gdipluscolormatrix.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdipluseffects/">
+    <File Path="generation/Gdiplus/um/gdipluseffects/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdipluseffects/header.txt" />
+    <File Path="generation/Gdiplus/um/gdipluseffects/um-gdipluseffects.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusenums/">
+    <File Path="generation/Gdiplus/um/gdiplusenums/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusenums/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusenums/um-gdiplusenums.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusflat/">
+    <File Path="generation/Gdiplus/um/gdiplusflat/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusflat/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusflat/um-gdiplusflat.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusfont/">
+    <File Path="generation/Gdiplus/um/gdiplusfont/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusfont/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusfont/um-gdiplusfont.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusfontcollection/">
+    <File Path="generation/Gdiplus/um/gdiplusfontcollection/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusfontcollection/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusfontcollection/um-gdiplusfontcollection.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusfontfamily/">
+    <File Path="generation/Gdiplus/um/gdiplusfontfamily/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusfontfamily/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusfontfamily/um-gdiplusfontfamily.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusgpstubs/">
+    <File Path="generation/Gdiplus/um/gdiplusgpstubs/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusgpstubs/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusgpstubs/um-gdiplusgpstubs.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusgraphics/">
+    <File Path="generation/Gdiplus/um/gdiplusgraphics/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusgraphics/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusgraphics/um-gdiplusgraphics.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusheaders/">
+    <File Path="generation/Gdiplus/um/gdiplusheaders/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusheaders/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusheaders/um-gdiplusheaders.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusimageattributes/">
+    <File Path="generation/Gdiplus/um/gdiplusimageattributes/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusimageattributes/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusimageattributes/um-gdiplusimageattributes.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusimagecodec/">
+    <File Path="generation/Gdiplus/um/gdiplusimagecodec/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusimagecodec/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusimagecodec/um-gdiplusimagecodec.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusimaging/">
+    <File Path="generation/Gdiplus/um/gdiplusimaging/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusimaging/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusimaging/um-gdiplusimaging.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusinit/">
+    <File Path="generation/Gdiplus/um/gdiplusinit/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusinit/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusinit/um-gdiplusinit.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdipluslinecaps/">
+    <File Path="generation/Gdiplus/um/gdipluslinecaps/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdipluslinecaps/header.txt" />
+    <File Path="generation/Gdiplus/um/gdipluslinecaps/um-gdipluslinecaps.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusmatrix/">
+    <File Path="generation/Gdiplus/um/gdiplusmatrix/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusmatrix/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusmatrix/um-gdiplusmatrix.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusmem/">
+    <File Path="generation/Gdiplus/um/gdiplusmem/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusmem/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusmem/um-gdiplusmem.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusmetafile/">
+    <File Path="generation/Gdiplus/um/gdiplusmetafile/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusmetafile/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusmetafile/um-gdiplusmetafile.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusmetaheader/">
+    <File Path="generation/Gdiplus/um/gdiplusmetaheader/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusmetaheader/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusmetaheader/um-gdiplusmetaheader.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdipluspath/">
+    <File Path="generation/Gdiplus/um/gdipluspath/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdipluspath/header.txt" />
+    <File Path="generation/Gdiplus/um/gdipluspath/um-gdipluspath.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdipluspen/">
+    <File Path="generation/Gdiplus/um/gdipluspen/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdipluspen/header.txt" />
+    <File Path="generation/Gdiplus/um/gdipluspen/um-gdipluspen.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdipluspixelformats/">
+    <File Path="generation/Gdiplus/um/gdipluspixelformats/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdipluspixelformats/header.txt" />
+    <File Path="generation/Gdiplus/um/gdipluspixelformats/um-gdipluspixelformats.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusregion/">
+    <File Path="generation/Gdiplus/um/gdiplusregion/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusregion/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusregion/um-gdiplusregion.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplusstringformat/">
+    <File Path="generation/Gdiplus/um/gdiplusstringformat/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplusstringformat/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplusstringformat/um-gdiplusstringformat.h" />
+  </Folder>
+  <Folder Name="/generation/Gdiplus/um/gdiplustypes/">
+    <File Path="generation/Gdiplus/um/gdiplustypes/generate.rsp" />
+    <File Path="generation/Gdiplus/um/gdiplustypes/header.txt" />
+    <File Path="generation/Gdiplus/um/gdiplustypes/um-gdiplustypes.h" />
+  </Folder>
+  <Folder Name="/generation/include/">
+    <File Path="generation/include/cpuid.h" />
+    <File Path="generation/include/mssign32.h" />
+  </Folder>
+  <Folder Name="/generation/include/d3d12/">
+    <File Path="generation/include/d3d12/d3d12.h" />
+    <File Path="generation/include/d3d12/d3d12compatibility.h" />
+    <File Path="generation/include/d3d12/d3d12sdklayers.h" />
+    <File Path="generation/include/d3d12/d3d12shader.h" />
+    <File Path="generation/include/d3d12/d3d12video.h" />
+    <File Path="generation/include/d3d12/d3dcommon.h" />
+    <File Path="generation/include/d3d12/dxgiformat.h" />
+  </Folder>
+  <Folder Name="/generation/include/d3d12on7/">
+    <File Path="generation/include/d3d12on7/D3D11On12On7.h" />
+    <File Path="generation/include/d3d12on7/D3D12Downlevel.h" />
+  </Folder>
+  <Folder Name="/generation/include/d3dx12/">
+    <File Path="generation/include/d3dx12/d3dx12.h" />
+  </Folder>
+  <Folder Name="/generation/include/dxtk12/">
+    <File Path="generation/include/dxtk12/DirectXHelpers.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/" />
+  <Folder Name="/generation/Windows/other/" />
+  <Folder Name="/generation/Windows/other/cvconst/">
+    <File Path="generation/Windows/other/cvconst/generate.rsp" />
+    <File Path="generation/Windows/other/cvconst/header.txt" />
+    <File Path="generation/Windows/other/cvconst/other-cvconst.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/other/dia2/">
+    <File Path="generation/Windows/other/dia2/generate.rsp" />
+    <File Path="generation/Windows/other/dia2/header.txt" />
+    <File Path="generation/Windows/other/dia2/other-dia2.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/other/diacreate/">
+    <File Path="generation/Windows/other/diacreate/generate.rsp" />
+    <File Path="generation/Windows/other/diacreate/header.txt" />
+    <File Path="generation/Windows/other/diacreate/other-diacreate.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/other/helper-types/">
+    <File Path="generation/Windows/other/helper-types/generate.rsp" />
+    <File Path="generation/Windows/other/helper-types/header.txt" />
+    <File Path="generation/Windows/other/helper-types/other-helper-types.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/other/mssign32/">
+    <File Path="generation/Windows/other/mssign32/generate.rsp" />
+    <File Path="generation/Windows/other/mssign32/header.txt" />
+    <File Path="generation/Windows/other/mssign32/other-mssign32.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/" />
+  <Folder Name="/generation/Windows/shared/devpropdef/">
+    <File Path="generation/Windows/shared/devpropdef/generate.rsp" />
+    <File Path="generation/Windows/shared/devpropdef/header.txt" />
+    <File Path="generation/Windows/shared/devpropdef/shared-devpropdef.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/evntprov/">
+    <File Path="generation/Windows/shared/evntprov/generate.rsp" />
+    <File Path="generation/Windows/shared/evntprov/header.txt" />
+    <File Path="generation/Windows/shared/evntprov/shared-evntprov.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/guiddef/">
+    <File Path="generation/Windows/shared/guiddef/generate.rsp" />
+    <File Path="generation/Windows/shared/guiddef/header.txt" />
+    <File Path="generation/Windows/shared/guiddef/shared-guiddef.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/hidclass/">
+    <File Path="generation/Windows/shared/hidclass/generate.rsp" />
+    <File Path="generation/Windows/shared/hidclass/header.txt" />
+    <File Path="generation/Windows/shared/hidclass/shared-hidclass.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/hidpi/">
+    <File Path="generation/Windows/shared/hidpi/generate.rsp" />
+    <File Path="generation/Windows/shared/hidpi/header.txt" />
+    <File Path="generation/Windows/shared/hidpi/shared-hidpi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/hidsdi/">
+    <File Path="generation/Windows/shared/hidsdi/generate.rsp" />
+    <File Path="generation/Windows/shared/hidsdi/header.txt" />
+    <File Path="generation/Windows/shared/hidsdi/shared-hidsdi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/hidusage/">
+    <File Path="generation/Windows/shared/hidusage/generate.rsp" />
+    <File Path="generation/Windows/shared/hidusage/header.txt" />
+    <File Path="generation/Windows/shared/hidusage/shared-hidusage.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/ifdef/">
+    <File Path="generation/Windows/shared/ifdef/generate.rsp" />
+    <File Path="generation/Windows/shared/ifdef/header.txt" />
+    <File Path="generation/Windows/shared/ifdef/shared-ifdef.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/ifmib/">
+    <File Path="generation/Windows/shared/ifmib/generate.rsp" />
+    <File Path="generation/Windows/shared/ifmib/header.txt" />
+    <File Path="generation/Windows/shared/ifmib/shared-ifmib.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/in6addr/">
+    <File Path="generation/Windows/shared/in6addr/generate.rsp" />
+    <File Path="generation/Windows/shared/in6addr/header.txt" />
+    <File Path="generation/Windows/shared/in6addr/shared-in6addr.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/inaddr/">
+    <File Path="generation/Windows/shared/inaddr/generate.rsp" />
+    <File Path="generation/Windows/shared/inaddr/header.txt" />
+    <File Path="generation/Windows/shared/inaddr/shared-inaddr.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/intsafe/">
+    <File Path="generation/Windows/shared/intsafe/generate.rsp" />
+    <File Path="generation/Windows/shared/intsafe/header.txt" />
+    <File Path="generation/Windows/shared/intsafe/shared-intsafe.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/ipifcons/">
+    <File Path="generation/Windows/shared/ipifcons/generate.rsp" />
+    <File Path="generation/Windows/shared/ipifcons/header.txt" />
+    <File Path="generation/Windows/shared/ipifcons/shared-ipifcons.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/ipmib/">
+    <File Path="generation/Windows/shared/ipmib/generate.rsp" />
+    <File Path="generation/Windows/shared/ipmib/header.txt" />
+    <File Path="generation/Windows/shared/ipmib/shared-ipmib.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/Iprtrmib/">
+    <File Path="generation/Windows/shared/Iprtrmib/generate.rsp" />
+    <File Path="generation/Windows/shared/Iprtrmib/header.txt" />
+    <File Path="generation/Windows/shared/Iprtrmib/shared-Iprtrmib.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/ktmtypes/">
+    <File Path="generation/Windows/shared/ktmtypes/generate.rsp" />
+    <File Path="generation/Windows/shared/ktmtypes/header.txt" />
+    <File Path="generation/Windows/shared/ktmtypes/shared-ktmtypes.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/lmerr/">
+    <File Path="generation/Windows/shared/lmerr/generate.rsp" />
+    <File Path="generation/Windows/shared/lmerr/header.txt" />
+    <File Path="generation/Windows/shared/lmerr/shared-lmerr.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/minwindef/">
+    <File Path="generation/Windows/shared/minwindef/generate.rsp" />
+    <File Path="generation/Windows/shared/minwindef/header.txt" />
+    <File Path="generation/Windows/shared/minwindef/shared-minwindef.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/mmreg/">
+    <File Path="generation/Windows/shared/mmreg/generate.rsp" />
+    <File Path="generation/Windows/shared/mmreg/header.txt" />
+    <File Path="generation/Windows/shared/mmreg/shared-mmreg.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/nldef/">
+    <File Path="generation/Windows/shared/nldef/generate.rsp" />
+    <File Path="generation/Windows/shared/nldef/header.txt" />
+    <File Path="generation/Windows/shared/nldef/shared-nldef.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/ntstatus/">
+    <File Path="generation/Windows/shared/ntstatus/generate.rsp" />
+    <File Path="generation/Windows/shared/ntstatus/header.txt" />
+    <File Path="generation/Windows/shared/ntstatus/shared-ntstatus.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/sddl/">
+    <File Path="generation/Windows/shared/sddl/generate.rsp" />
+    <File Path="generation/Windows/shared/sddl/header.txt" />
+    <File Path="generation/Windows/shared/sddl/shared-sddl.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/strsafe/">
+    <File Path="generation/Windows/shared/strsafe/generate.rsp" />
+    <File Path="generation/Windows/shared/strsafe/header.txt" />
+    <File Path="generation/Windows/shared/strsafe/shared-strsafe.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/tbs/">
+    <File Path="generation/Windows/shared/tbs/generate.rsp" />
+    <File Path="generation/Windows/shared/tbs/header.txt" />
+    <File Path="generation/Windows/shared/tbs/shared-tbs.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/tcpestats/">
+    <File Path="generation/Windows/shared/tcpestats/generate.rsp" />
+    <File Path="generation/Windows/shared/tcpestats/header.txt" />
+    <File Path="generation/Windows/shared/tcpestats/shared-tcpestats.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/tcpmib/">
+    <File Path="generation/Windows/shared/tcpmib/generate.rsp" />
+    <File Path="generation/Windows/shared/tcpmib/header.txt" />
+    <File Path="generation/Windows/shared/tcpmib/shared-tcpmib.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/tvout/">
+    <File Path="generation/Windows/shared/tvout/generate.rsp" />
+    <File Path="generation/Windows/shared/tvout/header.txt" />
+    <File Path="generation/Windows/shared/tvout/shared-tvout.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/udpmib/">
+    <File Path="generation/Windows/shared/udpmib/generate.rsp" />
+    <File Path="generation/Windows/shared/udpmib/header.txt" />
+    <File Path="generation/Windows/shared/udpmib/shared-udpmib.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/uuids/">
+    <File Path="generation/Windows/shared/uuids/generate.rsp" />
+    <File Path="generation/Windows/shared/uuids/header.txt" />
+    <File Path="generation/Windows/shared/uuids/shared-uuids.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/windef/">
+    <File Path="generation/Windows/shared/windef/generate.rsp" />
+    <File Path="generation/Windows/shared/windef/header.txt" />
+    <File Path="generation/Windows/shared/windef/shared-windef.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/windowsx/">
+    <File Path="generation/Windows/shared/windowsx/generate.rsp" />
+    <File Path="generation/Windows/shared/windowsx/header.txt" />
+    <File Path="generation/Windows/shared/windowsx/shared-windowsx.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/winerror/">
+    <File Path="generation/Windows/shared/winerror/generate.rsp" />
+    <File Path="generation/Windows/shared/winerror/header.txt" />
+    <File Path="generation/Windows/shared/winerror/shared-winerror.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/ws2def/">
+    <File Path="generation/Windows/shared/ws2def/generate.rsp" />
+    <File Path="generation/Windows/shared/ws2def/header.txt" />
+    <File Path="generation/Windows/shared/ws2def/shared-ws2def.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/ws2ipdef/">
+    <File Path="generation/Windows/shared/ws2ipdef/generate.rsp" />
+    <File Path="generation/Windows/shared/ws2ipdef/header.txt" />
+    <File Path="generation/Windows/shared/ws2ipdef/shared-ws2ipdef.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/wtypes/">
+    <File Path="generation/Windows/shared/wtypes/generate.rsp" />
+    <File Path="generation/Windows/shared/wtypes/header.txt" />
+    <File Path="generation/Windows/shared/wtypes/shared-wtypes.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/shared/wtypesbase/">
+    <File Path="generation/Windows/shared/wtypesbase/generate.rsp" />
+    <File Path="generation/Windows/shared/wtypesbase/header.txt" />
+    <File Path="generation/Windows/shared/wtypesbase/shared-wtypesbase.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/" />
+  <Folder Name="/generation/Windows/um/accctrl/">
+    <File Path="generation/Windows/um/accctrl/generate.rsp" />
+    <File Path="generation/Windows/um/accctrl/header.txt" />
+    <File Path="generation/Windows/um/accctrl/um-accctrl.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/AclAPI/">
+    <File Path="generation/Windows/um/AclAPI/generate.rsp" />
+    <File Path="generation/Windows/um/AclAPI/header.txt" />
+    <File Path="generation/Windows/um/AclAPI/um-aclapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/amvideo/">
+    <File Path="generation/Windows/um/amvideo/generate.rsp" />
+    <File Path="generation/Windows/um/amvideo/header.txt" />
+    <File Path="generation/Windows/um/amvideo/um-amvideo.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/appmgmt/">
+    <File Path="generation/Windows/um/appmgmt/generate.rsp" />
+    <File Path="generation/Windows/um/appmgmt/header.txt" />
+    <File Path="generation/Windows/um/appmgmt/um-appmgmt.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/appmodel/">
+    <File Path="generation/Windows/um/appmodel/generate.rsp" />
+    <File Path="generation/Windows/um/appmodel/header.txt" />
+    <File Path="generation/Windows/um/appmodel/um-appmodel.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/appnotify/">
+    <File Path="generation/Windows/um/appnotify/generate.rsp" />
+    <File Path="generation/Windows/um/appnotify/header.txt" />
+    <File Path="generation/Windows/um/appnotify/um-appnotify.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/AppxPackaging/">
+    <File Path="generation/Windows/um/AppxPackaging/generate.rsp" />
+    <File Path="generation/Windows/um/AppxPackaging/header.txt" />
+    <File Path="generation/Windows/um/AppxPackaging/um-AppxPackaging.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/Audioclient/">
+    <File Path="generation/Windows/um/Audioclient/generate.rsp" />
+    <File Path="generation/Windows/um/Audioclient/header.txt" />
+    <File Path="generation/Windows/um/Audioclient/um-Audioclient.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/audioclientactivationparams/">
+    <File Path="generation/Windows/um/audioclientactivationparams/generate.rsp" />
+    <File Path="generation/Windows/um/audioclientactivationparams/header.txt" />
+    <File Path="generation/Windows/um/audioclientactivationparams/um-audioclientactivationparams.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/audiopolicy/">
+    <File Path="generation/Windows/um/audiopolicy/generate.rsp" />
+    <File Path="generation/Windows/um/audiopolicy/header.txt" />
+    <File Path="generation/Windows/um/audiopolicy/um-audiopolicy.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/AudioSessionTypes/">
+    <File Path="generation/Windows/um/AudioSessionTypes/generate.rsp" />
+    <File Path="generation/Windows/um/AudioSessionTypes/header.txt" />
+    <File Path="generation/Windows/um/AudioSessionTypes/um-AudioSessionTypes.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/codecapi/">
+    <File Path="generation/Windows/um/codecapi/generate.rsp" />
+    <File Path="generation/Windows/um/codecapi/header.txt" />
+    <File Path="generation/Windows/um/codecapi/um-codecapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/combaseapi/">
+    <File Path="generation/Windows/um/combaseapi/generate.rsp" />
+    <File Path="generation/Windows/um/combaseapi/header.txt" />
+    <File Path="generation/Windows/um/combaseapi/um-combaseapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/comcat/">
+    <File Path="generation/Windows/um/comcat/generate.rsp" />
+    <File Path="generation/Windows/um/comcat/header.txt" />
+    <File Path="generation/Windows/um/comcat/um-comcat.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/coml2api/">
+    <File Path="generation/Windows/um/coml2api/generate.rsp" />
+    <File Path="generation/Windows/um/coml2api/header.txt" />
+    <File Path="generation/Windows/um/coml2api/um-coml2api.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/CommCtrl/">
+    <File Path="generation/Windows/um/CommCtrl/generate.rsp" />
+    <File Path="generation/Windows/um/CommCtrl/header.txt" />
+    <File Path="generation/Windows/um/CommCtrl/um-CommCtrl.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/CommDlg/">
+    <File Path="generation/Windows/um/CommDlg/generate.rsp" />
+    <File Path="generation/Windows/um/CommDlg/header.txt" />
+    <File Path="generation/Windows/um/CommDlg/um-CommDlg.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/commoncontrols/">
+    <File Path="generation/Windows/um/commoncontrols/generate.rsp" />
+    <File Path="generation/Windows/um/commoncontrols/header.txt" />
+    <File Path="generation/Windows/um/commoncontrols/um-commoncontrols.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/compressapi/">
+    <File Path="generation/Windows/um/compressapi/generate.rsp" />
+    <File Path="generation/Windows/um/compressapi/header.txt" />
+    <File Path="generation/Windows/um/compressapi/um-compressapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/consoleapi/">
+    <File Path="generation/Windows/um/consoleapi/generate.rsp" />
+    <File Path="generation/Windows/um/consoleapi/header.txt" />
+    <File Path="generation/Windows/um/consoleapi/um-consoleapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/consoleapi2/">
+    <File Path="generation/Windows/um/consoleapi2/generate.rsp" />
+    <File Path="generation/Windows/um/consoleapi2/header.txt" />
+    <File Path="generation/Windows/um/consoleapi2/um-consoleapi2.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/consoleapi3/">
+    <File Path="generation/Windows/um/consoleapi3/generate.rsp" />
+    <File Path="generation/Windows/um/consoleapi3/header.txt" />
+    <File Path="generation/Windows/um/consoleapi3/um-consoleapi3.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/control/">
+    <File Path="generation/Windows/um/control/generate.rsp" />
+    <File Path="generation/Windows/um/control/header.txt" />
+    <File Path="generation/Windows/um/control/um-control.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/Cpl/">
+    <File Path="generation/Windows/um/cpl/generate.rsp" />
+    <File Path="generation/Windows/um/cpl/header.txt" />
+    <File Path="generation/Windows/um/cpl/um-Cpl.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/Cplext/">
+    <File Path="generation/Windows/um/Cplext/generate.rsp" />
+    <File Path="generation/Windows/um/Cplext/header.txt" />
+    <File Path="generation/Windows/um/Cplext/um-Cplext.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/credentialprovider/">
+    <File Path="generation/Windows/um/credentialprovider/generate.rsp" />
+    <File Path="generation/Windows/um/credentialprovider/header.txt" />
+    <File Path="generation/Windows/um/credentialprovider/um-credentialprovider.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ctffunc/">
+    <File Path="generation/Windows/um/ctffunc/generate.rsp" />
+    <File Path="generation/Windows/um/ctffunc/header.txt" />
+    <File Path="generation/Windows/um/ctffunc/um-ctffunc.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ctfspui/">
+    <File Path="generation/Windows/um/ctfspui/generate.rsp" />
+    <File Path="generation/Windows/um/ctfspui/header.txt" />
+    <File Path="generation/Windows/um/ctfspui/um-ctfspui.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ctfutb/">
+    <File Path="generation/Windows/um/ctfutb/generate.rsp" />
+    <File Path="generation/Windows/um/ctfutb/header.txt" />
+    <File Path="generation/Windows/um/ctfutb/um-ctfutb.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/davclnt/">
+    <File Path="generation/Windows/um/davclnt/generate.rsp" />
+    <File Path="generation/Windows/um/davclnt/header.txt" />
+    <File Path="generation/Windows/um/davclnt/um-davclnt.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/DbgHelp/">
+    <File Path="generation/Windows/um/DbgHelp/generate.rsp" />
+    <File Path="generation/Windows/um/DbgHelp/header.txt" />
+    <File Path="generation/Windows/um/DbgHelp/um-DbgHelp.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ddpbackup/">
+    <File Path="generation/Windows/um/ddpbackup/generate.rsp" />
+    <File Path="generation/Windows/um/ddpbackup/header.txt" />
+    <File Path="generation/Windows/um/ddpbackup/um-ddpbackup.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/devicetopology/">
+    <File Path="generation/Windows/um/devicetopology/generate.rsp" />
+    <File Path="generation/Windows/um/devicetopology/header.txt" />
+    <File Path="generation/Windows/um/devicetopology/um-devicetopology.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/Dimm/">
+    <File Path="generation/Windows/um/dimm/generate.rsp" />
+    <File Path="generation/Windows/um/dimm/header.txt" />
+    <File Path="generation/Windows/um/dimm/um-Dimm.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/DispatcherQueue/">
+    <File Path="generation/Windows/um/DispatcherQueue/generate.rsp" />
+    <File Path="generation/Windows/um/DispatcherQueue/header.txt" />
+    <File Path="generation/Windows/um/DispatcherQueue/um-DispatcherQueue.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/DocObj/">
+    <File Path="generation/Windows/um/DocObj/generate.rsp" />
+    <File Path="generation/Windows/um/DocObj/header.txt" />
+    <File Path="generation/Windows/um/DocObj/um-DocObj.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/documenttarget/">
+    <File Path="generation/Windows/um/documenttarget/generate.rsp" />
+    <File Path="generation/Windows/um/documenttarget/header.txt" />
+    <File Path="generation/Windows/um/documenttarget/um-documenttarget.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/dvdmedia/">
+    <File Path="generation/Windows/um/dvdmedia/generate.rsp" />
+    <File Path="generation/Windows/um/dvdmedia/header.txt" />
+    <File Path="generation/Windows/um/dvdmedia/um-dvdmedia.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/dwmapi/">
+    <File Path="generation/Windows/um/dwmapi/generate.rsp" />
+    <File Path="generation/Windows/um/dwmapi/header.txt" />
+    <File Path="generation/Windows/um/dwmapi/um-dwmapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/endpointvolume/">
+    <File Path="generation/Windows/um/endpointvolume/generate.rsp" />
+    <File Path="generation/Windows/um/endpointvolume/header.txt" />
+    <File Path="generation/Windows/um/endpointvolume/um-endpointvolume.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/errhandlingapi/">
+    <File Path="generation/Windows/um/errhandlingapi/generate.rsp" />
+    <File Path="generation/Windows/um/errhandlingapi/header.txt" />
+    <File Path="generation/Windows/um/errhandlingapi/um-errhandlingapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/EvColl/">
+    <File Path="generation/Windows/um/EvColl/generate.rsp" />
+    <File Path="generation/Windows/um/EvColl/header.txt" />
+    <File Path="generation/Windows/um/EvColl/um-EvColl.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ExDisp/">
+    <File Path="generation/Windows/um/ExDisp/generate.rsp" />
+    <File Path="generation/Windows/um/ExDisp/header.txt" />
+    <File Path="generation/Windows/um/ExDisp/um-ExDisp.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ExDispid/">
+    <File Path="generation/Windows/um/ExDispid/generate.rsp" />
+    <File Path="generation/Windows/um/ExDispid/header.txt" />
+    <File Path="generation/Windows/um/ExDispid/um-ExDispid.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/fci/">
+    <File Path="generation/Windows/um/fci/generate.rsp" />
+    <File Path="generation/Windows/um/fci/header.txt" />
+    <File Path="generation/Windows/um/fci/um-fci.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/fdi/">
+    <File Path="generation/Windows/um/fdi/generate.rsp" />
+    <File Path="generation/Windows/um/fdi/header.txt" />
+    <File Path="generation/Windows/um/fdi/um-fdi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/fdi_fci_types/">
+    <File Path="generation/Windows/um/fdi_fci_types/generate.rsp" />
+    <File Path="generation/Windows/um/fdi_fci_types/header.txt" />
+    <File Path="generation/Windows/um/fdi_fci_types/um-fdi_fci_types.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/fileapi/">
+    <File Path="generation/Windows/um/fileapi/generate.rsp" />
+    <File Path="generation/Windows/um/fileapi/header.txt" />
+    <File Path="generation/Windows/um/fileapi/um-fileapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/handleapi/">
+    <File Path="generation/Windows/um/handleapi/generate.rsp" />
+    <File Path="generation/Windows/um/handleapi/header.txt" />
+    <File Path="generation/Windows/um/handleapi/um-handleapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/heapapi/">
+    <File Path="generation/Windows/um/heapapi/generate.rsp" />
+    <File Path="generation/Windows/um/heapapi/header.txt" />
+    <File Path="generation/Windows/um/heapapi/um-heapapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/HLink/">
+    <File Path="generation/Windows/um/HLink/generate.rsp" />
+    <File Path="generation/Windows/um/HLink/header.txt" />
+    <File Path="generation/Windows/um/HLink/um-HLink.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/http/">
+    <File Path="generation/Windows/um/http/generate.rsp" />
+    <File Path="generation/Windows/um/http/header.txt" />
+    <File Path="generation/Windows/um/http/um-http.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/httpserv/">
+    <File Path="generation/Windows/um/httpserv/generate.rsp" />
+    <File Path="generation/Windows/um/httpserv/header.txt" />
+    <File Path="generation/Windows/um/httpserv/um-httpserv.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/httptrace/">
+    <File Path="generation/Windows/um/httptrace/generate.rsp" />
+    <File Path="generation/Windows/um/httptrace/header.txt" />
+    <File Path="generation/Windows/um/httptrace/um-httptrace.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/icm/">
+    <File Path="generation/Windows/um/icm/generate.rsp" />
+    <File Path="generation/Windows/um/icm/header.txt" />
+    <File Path="generation/Windows/um/icm/um-icm.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/IContact/">
+    <File Path="generation/Windows/um/IContact/generate.rsp" />
+    <File Path="generation/Windows/um/IContact/header.txt" />
+    <File Path="generation/Windows/um/IContact/um-IContact.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ImageTranscode/">
+    <File Path="generation/Windows/um/imagetranscode/generate.rsp" />
+    <File Path="generation/Windows/um/imagetranscode/header.txt" />
+    <File Path="generation/Windows/um/imagetranscode/um-imagetranscode.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/imapi/">
+    <File Path="generation/Windows/um/imapi/generate.rsp" />
+    <File Path="generation/Windows/um/imapi/header.txt" />
+    <File Path="generation/Windows/um/imapi/um-imapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/imapi2/">
+    <File Path="generation/Windows/um/imapi2/generate.rsp" />
+    <File Path="generation/Windows/um/imapi2/header.txt" />
+    <File Path="generation/Windows/um/imapi2/um-imapi2.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/imapi2fs/">
+    <File Path="generation/Windows/um/imapi2fs/generate.rsp" />
+    <File Path="generation/Windows/um/imapi2fs/header.txt" />
+    <File Path="generation/Windows/um/imapi2fs/um-imapi2fs.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/imm/">
+    <File Path="generation/Windows/um/imm/generate.rsp" />
+    <File Path="generation/Windows/um/imm/header.txt" />
+    <File Path="generation/Windows/um/imm/um-imm.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/immdev/">
+    <File Path="generation/Windows/um/immdev/generate.rsp" />
+    <File Path="generation/Windows/um/immdev/header.txt" />
+    <File Path="generation/Windows/um/immdev/um-immdev.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/InkPresenterDesktop/">
+    <File Path="generation/Windows/um/InkPresenterDesktop/generate.rsp" />
+    <File Path="generation/Windows/um/InkPresenterDesktop/header.txt" />
+    <File Path="generation/Windows/um/InkPresenterDesktop/um-InkPresenterDesktop.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/inkrenderer/">
+    <File Path="generation/Windows/um/inkrenderer/generate.rsp" />
+    <File Path="generation/Windows/um/inkrenderer/header.txt" />
+    <File Path="generation/Windows/um/inkrenderer/um-inkrenderer.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/inputpanelconfiguration/">
+    <File Path="generation/Windows/um/inputpanelconfiguration/generate.rsp" />
+    <File Path="generation/Windows/um/inputpanelconfiguration/header.txt" />
+    <File Path="generation/Windows/um/inputpanelconfiguration/um-inputpanelconfiguration.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/InputScope/">
+    <File Path="generation/Windows/um/InputScope/generate.rsp" />
+    <File Path="generation/Windows/um/InputScope/header.txt" />
+    <File Path="generation/Windows/um/InputScope/um-InputScope.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/InteractionContext/">
+    <File Path="generation/Windows/um/InteractionContext/generate.rsp" />
+    <File Path="generation/Windows/um/InteractionContext/header.txt" />
+    <File Path="generation/Windows/um/InteractionContext/um-InteractionContext.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/intshcut/">
+    <File Path="generation/Windows/um/intshcut/generate.rsp" />
+    <File Path="generation/Windows/um/intshcut/header.txt" />
+    <File Path="generation/Windows/um/intshcut/um-intshcut.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ioapiset/">
+    <File Path="generation/Windows/um/ioapiset/generate.rsp" />
+    <File Path="generation/Windows/um/ioapiset/header.txt" />
+    <File Path="generation/Windows/um/ioapiset/um-ioapiset.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/IPExport/">
+    <File Path="generation/Windows/um/IPExport/generate.rsp" />
+    <File Path="generation/Windows/um/IPExport/header.txt" />
+    <File Path="generation/Windows/um/IPExport/um-IPExport.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/iphlpapi/">
+    <File Path="generation/Windows/um/iphlpapi/generate.rsp" />
+    <File Path="generation/Windows/um/iphlpapi/header.txt" />
+    <File Path="generation/Windows/um/iphlpapi/um-iphlpapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/IPTypes/">
+    <File Path="generation/Windows/um/IPTypes/generate.rsp" />
+    <File Path="generation/Windows/um/IPTypes/header.txt" />
+    <File Path="generation/Windows/um/IPTypes/um-IPTypes.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/IsolatedAppLauncher/">
+    <File Path="generation/Windows/um/IsolatedAppLauncher/generate.rsp" />
+    <File Path="generation/Windows/um/IsolatedAppLauncher/header.txt" />
+    <File Path="generation/Windows/um/IsolatedAppLauncher/um-IsolatedAppLauncher.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/jobapi2/">
+    <File Path="generation/Windows/um/jobapi2/generate.rsp" />
+    <File Path="generation/Windows/um/jobapi2/header.txt" />
+    <File Path="generation/Windows/um/jobapi2/um-jobapi2.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/knownfolderpathscom/">
+    <File Path="generation/Windows/um/knownfolderpathscom/generate.rsp" />
+    <File Path="generation/Windows/um/knownfolderpathscom/header.txt" />
+    <File Path="generation/Windows/um/knownfolderpathscom/um-knownfolderpathscom.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/knownfolders/">
+    <File Path="generation/Windows/um/knownfolders/generate.rsp" />
+    <File Path="generation/Windows/um/knownfolders/header.txt" />
+    <File Path="generation/Windows/um/knownfolders/um-knownfolders.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ktmw32/">
+    <File Path="generation/Windows/um/ktmw32/generate.rsp" />
+    <File Path="generation/Windows/um/ktmw32/header.txt" />
+    <File Path="generation/Windows/um/ktmw32/um-ktmw32.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/libloaderapi/">
+    <File Path="generation/Windows/um/libloaderapi/generate.rsp" />
+    <File Path="generation/Windows/um/libloaderapi/header.txt" />
+    <File Path="generation/Windows/um/libloaderapi/um-libloaderapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/LsaLookup/">
+    <File Path="generation/Windows/um/LsaLookup/generate.rsp" />
+    <File Path="generation/Windows/um/LsaLookup/header.txt" />
+    <File Path="generation/Windows/um/LsaLookup/um-lsalookup.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/lzexpand/">
+    <File Path="generation/Windows/um/lzexpand/generate.rsp" />
+    <File Path="generation/Windows/um/lzexpand/header.txt" />
+    <File Path="generation/Windows/um/lzexpand/um-lzexpand.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/manipulations/">
+    <File Path="generation/Windows/um/manipulations/generate.rsp" />
+    <File Path="generation/Windows/um/manipulations/header.txt" />
+    <File Path="generation/Windows/um/manipulations/um-manipulations.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/MDMRegistration/">
+    <File Path="generation/Windows/um/MDMRegistration/generate.rsp" />
+    <File Path="generation/Windows/um/MDMRegistration/header.txt" />
+    <File Path="generation/Windows/um/MDMRegistration/um-MDMRegistration.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mediaobj/">
+    <File Path="generation/Windows/um/mediaobj/generate.rsp" />
+    <File Path="generation/Windows/um/mediaobj/header.txt" />
+    <File Path="generation/Windows/um/mediaobj/um-mediaobj.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/memoryapi/">
+    <File Path="generation/Windows/um/memoryapi/generate.rsp" />
+    <File Path="generation/Windows/um/memoryapi/header.txt" />
+    <File Path="generation/Windows/um/memoryapi/um-memoryapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mfapi/">
+    <File Path="generation/Windows/um/mfapi/generate.rsp" />
+    <File Path="generation/Windows/um/mfapi/header.txt" />
+    <File Path="generation/Windows/um/mfapi/um-mfapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mfcaptureengine/">
+    <File Path="generation/Windows/um/mfcaptureengine/generate.rsp" />
+    <File Path="generation/Windows/um/mfcaptureengine/header.txt" />
+    <File Path="generation/Windows/um/mfcaptureengine/um-mfcaptureengine.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mfcontentdecryptionmodule/">
+    <File Path="generation/Windows/um/mfcontentdecryptionmodule/generate.rsp" />
+    <File Path="generation/Windows/um/mfcontentdecryptionmodule/header.txt" />
+    <File Path="generation/Windows/um/mfcontentdecryptionmodule/um-mfcontentdecryptionmodule.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/Mferror/">
+    <File Path="generation/Windows/um/Mferror/generate.rsp" />
+    <File Path="generation/Windows/um/Mferror/header.txt" />
+    <File Path="generation/Windows/um/Mferror/um-Mferror.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mfidl/">
+    <File Path="generation/Windows/um/mfidl/generate.rsp" />
+    <File Path="generation/Windows/um/mfidl/header.txt" />
+    <File Path="generation/Windows/um/mfidl/um-mfidl.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mfmediacapture/">
+    <File Path="generation/Windows/um/mfmediacapture/generate.rsp" />
+    <File Path="generation/Windows/um/mfmediacapture/header.txt" />
+    <File Path="generation/Windows/um/mfmediacapture/um-mfmediacapture.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mfmediaengine/">
+    <File Path="generation/Windows/um/mfmediaengine/generate.rsp" />
+    <File Path="generation/Windows/um/mfmediaengine/header.txt" />
+    <File Path="generation/Windows/um/mfmediaengine/um-mfmediaengine.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mfmp2dlna/">
+    <File Path="generation/Windows/um/mfmp2dlna/generate.rsp" />
+    <File Path="generation/Windows/um/mfmp2dlna/header.txt" />
+    <File Path="generation/Windows/um/mfmp2dlna/um-mfmp2dlna.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mfobjects/">
+    <File Path="generation/Windows/um/mfobjects/generate.rsp" />
+    <File Path="generation/Windows/um/mfobjects/header.txt" />
+    <File Path="generation/Windows/um/mfobjects/um-mfobjects.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mfplay/">
+    <File Path="generation/Windows/um/mfplay/generate.rsp" />
+    <File Path="generation/Windows/um/mfplay/header.txt" />
+    <File Path="generation/Windows/um/mfplay/um-mfplay.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mfreadwrite/">
+    <File Path="generation/Windows/um/mfreadwrite/generate.rsp" />
+    <File Path="generation/Windows/um/mfreadwrite/header.txt" />
+    <File Path="generation/Windows/um/mfreadwrite/um-mfreadwrite.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mfsharingengine/">
+    <File Path="generation/Windows/um/mfsharingengine/generate.rsp" />
+    <File Path="generation/Windows/um/mfsharingengine/header.txt" />
+    <File Path="generation/Windows/um/mfsharingengine/um-mfsharingengine.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mfspatialaudio/">
+    <File Path="generation/Windows/um/mfspatialaudio/generate.rsp" />
+    <File Path="generation/Windows/um/mfspatialaudio/header.txt" />
+    <File Path="generation/Windows/um/mfspatialaudio/um-mfspatialaudio.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mftransform/">
+    <File Path="generation/Windows/um/mftransform/generate.rsp" />
+    <File Path="generation/Windows/um/mftransform/header.txt" />
+    <File Path="generation/Windows/um/mftransform/um-mftransform.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/minwinbase/">
+    <File Path="generation/Windows/um/minwinbase/generate.rsp" />
+    <File Path="generation/Windows/um/minwinbase/header.txt" />
+    <File Path="generation/Windows/um/minwinbase/um-minwinbase.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mmdeviceapi/">
+    <File Path="generation/Windows/um/mmdeviceapi/generate.rsp" />
+    <File Path="generation/Windows/um/mmdeviceapi/header.txt" />
+    <File Path="generation/Windows/um/mmdeviceapi/um-mmdeviceapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mmeapi/">
+    <File Path="generation/Windows/um/mmeapi/generate.rsp" />
+    <File Path="generation/Windows/um/mmeapi/header.txt" />
+    <File Path="generation/Windows/um/mmeapi/um-mmeapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mmsyscom/">
+    <File Path="generation/Windows/um/mmsyscom/generate.rsp" />
+    <File Path="generation/Windows/um/mmsyscom/header.txt" />
+    <File Path="generation/Windows/um/mmsyscom/um-mmsyscom.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mobsync/">
+    <File Path="generation/Windows/um/mobsync/generate.rsp" />
+    <File Path="generation/Windows/um/mobsync/header.txt" />
+    <File Path="generation/Windows/um/mobsync/um-mobsync.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/MSAAText/">
+    <File Path="generation/Windows/um/MSAAText/generate.rsp" />
+    <File Path="generation/Windows/um/MSAAText/header.txt" />
+    <File Path="generation/Windows/um/MSAAText/um-MSAAText.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/MSChapp/">
+    <File Path="generation/Windows/um/MSChapp/generate.rsp" />
+    <File Path="generation/Windows/um/MSChapp/header.txt" />
+    <File Path="generation/Windows/um/MSChapp/um-MSChapp.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/msctf/">
+    <File Path="generation/Windows/um/msctf/generate.rsp" />
+    <File Path="generation/Windows/um/msctf/header.txt" />
+    <File Path="generation/Windows/um/msctf/um-msctf.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/MsCtfMonitorApi/">
+    <File Path="generation/Windows/um/MsCtfMonitorApi/generate.rsp" />
+    <File Path="generation/Windows/um/MsCtfMonitorApi/header.txt" />
+    <File Path="generation/Windows/um/MsCtfMonitorApi/um-MsCtfMonitorApi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/MsHTML/">
+    <File Path="generation/Windows/um/MsHTML/generate.rsp" />
+    <File Path="generation/Windows/um/MsHTML/header.txt" />
+    <File Path="generation/Windows/um/MsHTML/um-MsHTML.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/Msi/">
+    <File Path="generation/Windows/um/Msi/generate.rsp" />
+    <File Path="generation/Windows/um/Msi/header.txt" />
+    <File Path="generation/Windows/um/Msi/um-Msi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/MsiDefs/">
+    <File Path="generation/Windows/um/MsiDefs/generate.rsp" />
+    <File Path="generation/Windows/um/MsiDefs/header.txt" />
+    <File Path="generation/Windows/um/MsiDefs/um-MsiDefs.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/msiltcfg/">
+    <File Path="generation/Windows/um/msiltcfg/generate.rsp" />
+    <File Path="generation/Windows/um/msiltcfg/header.txt" />
+    <File Path="generation/Windows/um/msiltcfg/um-msiltcfg.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/MsiQuery/">
+    <File Path="generation/Windows/um/MsiQuery/generate.rsp" />
+    <File Path="generation/Windows/um/MsiQuery/header.txt" />
+    <File Path="generation/Windows/um/MsiQuery/um-MsiQuery.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/msports/">
+    <File Path="generation/Windows/um/msports/generate.rsp" />
+    <File Path="generation/Windows/um/msports/header.txt" />
+    <File Path="generation/Windows/um/msports/um-msports.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/mssip/">
+    <File Path="generation/Windows/um/mssip/generate.rsp" />
+    <File Path="generation/Windows/um/mssip/header.txt" />
+    <File Path="generation/Windows/um/mssip/um-mssip.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/msxml/">
+    <File Path="generation/Windows/um/msxml/generate.rsp" />
+    <File Path="generation/Windows/um/msxml/header.txt" />
+    <File Path="generation/Windows/um/msxml/um-msxml.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/namespaceapi/">
+    <File Path="generation/Windows/um/namespaceapi/generate.rsp" />
+    <File Path="generation/Windows/um/namespaceapi/header.txt" />
+    <File Path="generation/Windows/um/namespaceapi/um-namespaceapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/NotificationActivationCallback/">
+    <File Path="generation/Windows/um/NotificationActivationCallback/generate.rsp" />
+    <File Path="generation/Windows/um/NotificationActivationCallback/header.txt" />
+    <File Path="generation/Windows/um/NotificationActivationCallback/um-NotificationActivationCallback.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ntsecapi/">
+    <File Path="generation/Windows/um/ntsecapi/generate.rsp" />
+    <File Path="generation/Windows/um/ntsecapi/header.txt" />
+    <File Path="generation/Windows/um/ntsecapi/um-ntsecapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/OAIdl/">
+    <File Path="generation/Windows/um/OAIdl/generate.rsp" />
+    <File Path="generation/Windows/um/OAIdl/header.txt" />
+    <File Path="generation/Windows/um/OAIdl/um-OAIdl.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/objbase/">
+    <File Path="generation/Windows/um/objbase/generate.rsp" />
+    <File Path="generation/Windows/um/objbase/header.txt" />
+    <File Path="generation/Windows/um/objbase/um-objbase.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/objectarray/">
+    <File Path="generation/Windows/um/objectarray/generate.rsp" />
+    <File Path="generation/Windows/um/objectarray/header.txt" />
+    <File Path="generation/Windows/um/objectarray/um-objectarray.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ObjIdl/">
+    <File Path="generation/Windows/um/ObjIdl/generate.rsp" />
+    <File Path="generation/Windows/um/ObjIdl/header.txt" />
+    <File Path="generation/Windows/um/ObjIdl/um-ObjIdl.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ObjIdlbase/">
+    <File Path="generation/Windows/um/ObjIdlbase/generate.rsp" />
+    <File Path="generation/Windows/um/ObjIdlbase/header.txt" />
+    <File Path="generation/Windows/um/ObjIdlbase/um-ObjIdlbase.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/OCIdl/">
+    <File Path="generation/Windows/um/OCIdl/generate.rsp" />
+    <File Path="generation/Windows/um/OCIdl/header.txt" />
+    <File Path="generation/Windows/um/OCIdl/um-OCIdl.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/oleauto/">
+    <File Path="generation/Windows/um/oleauto/generate.rsp" />
+    <File Path="generation/Windows/um/oleauto/header.txt" />
+    <File Path="generation/Windows/um/oleauto/um-oleauto.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/oleidl/">
+    <File Path="generation/Windows/um/oleidl/generate.rsp" />
+    <File Path="generation/Windows/um/oleidl/header.txt" />
+    <File Path="generation/Windows/um/oleidl/um-oleidl.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/oobenotification/">
+    <File Path="generation/Windows/um/oobenotification/generate.rsp" />
+    <File Path="generation/Windows/um/oobenotification/header.txt" />
+    <File Path="generation/Windows/um/oobenotification/um-oobenotification.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/pathcch/">
+    <File Path="generation/Windows/um/pathcch/generate.rsp" />
+    <File Path="generation/Windows/um/pathcch/header.txt" />
+    <File Path="generation/Windows/um/pathcch/um-pathcch.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/Presentation/">
+    <File Path="generation/Windows/um/Presentation/generate.rsp" />
+    <File Path="generation/Windows/um/Presentation/header.txt" />
+    <File Path="generation/Windows/um/Presentation/um-Presentation.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/PresentationTypes/">
+    <File Path="generation/Windows/um/PresentationTypes/generate.rsp" />
+    <File Path="generation/Windows/um/PresentationTypes/header.txt" />
+    <File Path="generation/Windows/um/PresentationTypes/um-PresentationTypes.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/processenv/">
+    <File Path="generation/Windows/um/processenv/generate.rsp" />
+    <File Path="generation/Windows/um/processenv/header.txt" />
+    <File Path="generation/Windows/um/processenv/um-processenv.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ProcessSnapshot/">
+    <File Path="generation/Windows/um/ProcessSnapshot/generate.rsp" />
+    <File Path="generation/Windows/um/ProcessSnapshot/header.txt" />
+    <File Path="generation/Windows/um/ProcessSnapshot/um-ProcessSnapshot.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/processthreadsapi/">
+    <File Path="generation/Windows/um/processthreadsapi/generate.rsp" />
+    <File Path="generation/Windows/um/processthreadsapi/header.txt" />
+    <File Path="generation/Windows/um/processthreadsapi/um-processthreadsapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/profileapi/">
+    <File Path="generation/Windows/um/profileapi/generate.rsp" />
+    <File Path="generation/Windows/um/profileapi/header.txt" />
+    <File Path="generation/Windows/um/profileapi/um-profileapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/profinfo/">
+    <File Path="generation/Windows/um/profinfo/generate.rsp" />
+    <File Path="generation/Windows/um/profinfo/header.txt" />
+    <File Path="generation/Windows/um/profinfo/um-profinfo.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/projectedfslib/">
+    <File Path="generation/Windows/um/projectedfslib/generate.rsp" />
+    <File Path="generation/Windows/um/projectedfslib/header.txt" />
+    <File Path="generation/Windows/um/projectedfslib/um-projectedfslib.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/PropIdl/">
+    <File Path="generation/Windows/um/PropIdl/generate.rsp" />
+    <File Path="generation/Windows/um/PropIdl/header.txt" />
+    <File Path="generation/Windows/um/PropIdl/um-PropIdl.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/PropIdlBase/">
+    <File Path="generation/Windows/um/PropIdlBase/generate.rsp" />
+    <File Path="generation/Windows/um/PropIdlBase/header.txt" />
+    <File Path="generation/Windows/um/PropIdlBase/um-PropIdlBase.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/propkey/">
+    <File Path="generation/Windows/um/propkey/generate.rsp" />
+    <File Path="generation/Windows/um/propkey/header.txt" />
+    <File Path="generation/Windows/um/propkey/um-propkey.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/propkeydef/">
+    <File Path="generation/Windows/um/propkeydef/generate.rsp" />
+    <File Path="generation/Windows/um/propkeydef/header.txt" />
+    <File Path="generation/Windows/um/propkeydef/um-propkeydef.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/propsys/">
+    <File Path="generation/Windows/um/propsys/generate.rsp" />
+    <File Path="generation/Windows/um/propsys/header.txt" />
+    <File Path="generation/Windows/um/propsys/um-propsys.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/propvarutil/">
+    <File Path="generation/Windows/um/propvarutil/generate.rsp" />
+    <File Path="generation/Windows/um/propvarutil/header.txt" />
+    <File Path="generation/Windows/um/propvarutil/um-propvarutil.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/prsht/">
+    <File Path="generation/Windows/um/prsht/generate.rsp" />
+    <File Path="generation/Windows/um/prsht/header.txt" />
+    <File Path="generation/Windows/um/prsht/um-prsht.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/Psapi/">
+    <File Path="generation/Windows/um/Psapi/generate.rsp" />
+    <File Path="generation/Windows/um/Psapi/header.txt" />
+    <File Path="generation/Windows/um/Psapi/um-Psapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/reason/">
+    <File Path="generation/Windows/um/reason/generate.rsp" />
+    <File Path="generation/Windows/um/reason/header.txt" />
+    <File Path="generation/Windows/um/reason/um-reason.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/rendezvoussession/">
+    <File Path="generation/Windows/um/rendezvoussession/generate.rsp" />
+    <File Path="generation/Windows/um/rendezvoussession/header.txt" />
+    <File Path="generation/Windows/um/rendezvoussession/um-rendezvoussession.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/RestartManager/">
+    <File Path="generation/Windows/um/RestartManager/generate.rsp" />
+    <File Path="generation/Windows/um/RestartManager/header.txt" />
+    <File Path="generation/Windows/um/RestartManager/um-RestartManager.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/sapi/">
+    <File Path="generation/Windows/um/sapi/generate.rsp" />
+    <File Path="generation/Windows/um/sapi/header.txt" />
+    <File Path="generation/Windows/um/sapi/um-sapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/schannel/">
+    <File Path="generation/Windows/um/schannel/generate.rsp" />
+    <File Path="generation/Windows/um/schannel/header.txt" />
+    <File Path="generation/Windows/um/schannel/um-schannel.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/scrnsave/">
+    <File Path="generation/Windows/um/scrnsave/generate.rsp" />
+    <File Path="generation/Windows/um/scrnsave/header.txt" />
+    <File Path="generation/Windows/um/scrnsave/um-scrnsave.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/securitybaseapi/">
+    <File Path="generation/Windows/um/securitybaseapi/generate.rsp" />
+    <File Path="generation/Windows/um/securitybaseapi/header.txt" />
+    <File Path="generation/Windows/um/securitybaseapi/um-securitybaseapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/servprov/">
+    <File Path="generation/Windows/um/servprov/generate.rsp" />
+    <File Path="generation/Windows/um/servprov/header.txt" />
+    <File Path="generation/Windows/um/servprov/um-servprov.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/SetupAPI/">
+    <File Path="generation/Windows/um/SetupAPI/generate.rsp" />
+    <File Path="generation/Windows/um/SetupAPI/header.txt" />
+    <File Path="generation/Windows/um/SetupAPI/um-SetupAPI.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/shappmgr/">
+    <File Path="generation/Windows/um/shappmgr/generate.rsp" />
+    <File Path="generation/Windows/um/shappmgr/header.txt" />
+    <File Path="generation/Windows/um/shappmgr/um-shappmgr.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/shdeprecated/">
+    <File Path="generation/Windows/um/shdeprecated/generate.rsp" />
+    <File Path="generation/Windows/um/shdeprecated/header.txt" />
+    <File Path="generation/Windows/um/shdeprecated/um-shdeprecated.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/shellapi/">
+    <File Path="generation/Windows/um/shellapi/generate.rsp" />
+    <File Path="generation/Windows/um/shellapi/header.txt" />
+    <File Path="generation/Windows/um/shellapi/um-shellapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ShellScalingApi/">
+    <File Path="generation/Windows/um/ShellScalingApi/generate.rsp" />
+    <File Path="generation/Windows/um/ShellScalingApi/header.txt" />
+    <File Path="generation/Windows/um/ShellScalingApi/um-ShellScalingApi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/shidfact/">
+    <File Path="generation/Windows/um/shidfact/generate.rsp" />
+    <File Path="generation/Windows/um/shidfact/header.txt" />
+    <File Path="generation/Windows/um/shidfact/um-shidfact.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/shimgdata/">
+    <File Path="generation/Windows/um/shimgdata/generate.rsp" />
+    <File Path="generation/Windows/um/shimgdata/header.txt" />
+    <File Path="generation/Windows/um/shimgdata/um-shimgdata.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ShlDisp/">
+    <File Path="generation/Windows/um/ShlDisp/generate.rsp" />
+    <File Path="generation/Windows/um/ShlDisp/header.txt" />
+    <File Path="generation/Windows/um/ShlDisp/um-ShlDisp.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ShlGuid/">
+    <File Path="generation/Windows/um/ShlGuid/generate.rsp" />
+    <File Path="generation/Windows/um/ShlGuid/header.txt" />
+    <File Path="generation/Windows/um/ShlGuid/um-ShlGuid.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ShlObj/">
+    <File Path="generation/Windows/um/ShlObj/generate.rsp" />
+    <File Path="generation/Windows/um/ShlObj/header.txt" />
+    <File Path="generation/Windows/um/ShlObj/um-ShlObj.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ShlObj_core/">
+    <File Path="generation/Windows/um/ShlObj_core/generate.rsp" />
+    <File Path="generation/Windows/um/ShlObj_core/header.txt" />
+    <File Path="generation/Windows/um/ShlObj_core/um-ShlObj_core.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/shlwapi/">
+    <File Path="generation/Windows/um/shlwapi/generate.rsp" />
+    <File Path="generation/Windows/um/shlwapi/header.txt" />
+    <File Path="generation/Windows/um/shlwapi/um-shlwapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ShObjIdl/">
+    <File Path="generation/Windows/um/ShObjIdl/generate.rsp" />
+    <File Path="generation/Windows/um/ShObjIdl/header.txt" />
+    <File Path="generation/Windows/um/ShObjIdl/um-ShObjIdl.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/ShObjIdl_core/">
+    <File Path="generation/Windows/um/ShObjIdl_core/generate.rsp" />
+    <File Path="generation/Windows/um/ShObjIdl_core/header.txt" />
+    <File Path="generation/Windows/um/ShObjIdl_core/um-ShObjIdl_core.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/shtypes/">
+    <File Path="generation/Windows/um/shtypes/generate.rsp" />
+    <File Path="generation/Windows/um/shtypes/header.txt" />
+    <File Path="generation/Windows/um/shtypes/um-shtypes.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/SoftPub/">
+    <File Path="generation/Windows/um/SoftPub/generate.rsp" />
+    <File Path="generation/Windows/um/SoftPub/header.txt" />
+    <File Path="generation/Windows/um/SoftPub/um-SoftPub.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/SpatialAudioClient/">
+    <File Path="generation/Windows/um/SpatialAudioClient/generate.rsp" />
+    <File Path="generation/Windows/um/SpatialAudioClient/header.txt" />
+    <File Path="generation/Windows/um/SpatialAudioClient/um-SpatialAudioClient.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/SpatialAudioHrtf/">
+    <File Path="generation/Windows/um/SpatialAudioHrtf/generate.rsp" />
+    <File Path="generation/Windows/um/SpatialAudioHrtf/header.txt" />
+    <File Path="generation/Windows/um/SpatialAudioHrtf/um-SpatialAudioHrtf.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/SpatialAudioMetadata/">
+    <File Path="generation/Windows/um/SpatialAudioMetadata/generate.rsp" />
+    <File Path="generation/Windows/um/SpatialAudioMetadata/header.txt" />
+    <File Path="generation/Windows/um/SpatialAudioMetadata/um-SpatialAudioMetadata.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/SrRestorePtApi/">
+    <File Path="generation/Windows/um/SrRestorePtApi/generate.rsp" />
+    <File Path="generation/Windows/um/SrRestorePtApi/header.txt" />
+    <File Path="generation/Windows/um/SrRestorePtApi/um-SrRestorePtApi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/storageprovider/">
+    <File Path="generation/Windows/um/storageprovider/generate.rsp" />
+    <File Path="generation/Windows/um/storageprovider/header.txt" />
+    <File Path="generation/Windows/um/storageprovider/um-storageprovider.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/strmif/">
+    <File Path="generation/Windows/um/strmif/generate.rsp" />
+    <File Path="generation/Windows/um/strmif/header.txt" />
+    <File Path="generation/Windows/um/strmif/um-strmif.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/StructuredQueryCondition/">
+    <File Path="generation/Windows/um/StructuredQueryCondition/generate.rsp" />
+    <File Path="generation/Windows/um/StructuredQueryCondition/header.txt" />
+    <File Path="generation/Windows/um/StructuredQueryCondition/um-StructuredQueryCondition.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/swdevice/">
+    <File Path="generation/Windows/um/swdevice/generate.rsp" />
+    <File Path="generation/Windows/um/swdevice/header.txt" />
+    <File Path="generation/Windows/um/swdevice/um-swdevice.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/swdevicedef/">
+    <File Path="generation/Windows/um/swdevicedef/generate.rsp" />
+    <File Path="generation/Windows/um/swdevicedef/header.txt" />
+    <File Path="generation/Windows/um/swdevicedef/um-swdevicedef.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/synchapi/">
+    <File Path="generation/Windows/um/synchapi/generate.rsp" />
+    <File Path="generation/Windows/um/synchapi/header.txt" />
+    <File Path="generation/Windows/um/synchapi/um-synchapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/syncmgr/">
+    <File Path="generation/Windows/um/syncmgr/generate.rsp" />
+    <File Path="generation/Windows/um/syncmgr/header.txt" />
+    <File Path="generation/Windows/um/syncmgr/um-syncmgr.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/sysinfoapi/">
+    <File Path="generation/Windows/um/sysinfoapi/generate.rsp" />
+    <File Path="generation/Windows/um/sysinfoapi/header.txt" />
+    <File Path="generation/Windows/um/sysinfoapi/um-sysinfoapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/TextStor/">
+    <File Path="generation/Windows/um/TextStor/generate.rsp" />
+    <File Path="generation/Windows/um/TextStor/header.txt" />
+    <File Path="generation/Windows/um/TextStor/um-TextStor.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/thumbcache/">
+    <File Path="generation/Windows/um/thumbcache/generate.rsp" />
+    <File Path="generation/Windows/um/thumbcache/header.txt" />
+    <File Path="generation/Windows/um/thumbcache/um-thumbcache.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/thumbnailstreamcache/">
+    <File Path="generation/Windows/um/thumbnailstreamcache/generate.rsp" />
+    <File Path="generation/Windows/um/thumbnailstreamcache/header.txt" />
+    <File Path="generation/Windows/um/thumbnailstreamcache/um-thumbnailstreamcache.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/timeapi/">
+    <File Path="generation/Windows/um/timeapi/generate.rsp" />
+    <File Path="generation/Windows/um/timeapi/header.txt" />
+    <File Path="generation/Windows/um/timeapi/um-timeapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/timezoneapi/">
+    <File Path="generation/Windows/um/timezoneapi/generate.rsp" />
+    <File Path="generation/Windows/um/timezoneapi/header.txt" />
+    <File Path="generation/Windows/um/timezoneapi/um-timezoneapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/TlHelp32/">
+    <File Path="generation/Windows/um/TlHelp32/generate.rsp" />
+    <File Path="generation/Windows/um/TlHelp32/header.txt" />
+    <File Path="generation/Windows/um/TlHelp32/um-TlHelp32.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/tlogstg/">
+    <File Path="generation/Windows/um/tlogstg/generate.rsp" />
+    <File Path="generation/Windows/um/tlogstg/header.txt" />
+    <File Path="generation/Windows/um/tlogstg/um-tlogstg.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/tpcshrd/">
+    <File Path="generation/Windows/um/tpcshrd/generate.rsp" />
+    <File Path="generation/Windows/um/tpcshrd/header.txt" />
+    <File Path="generation/Windows/um/tpcshrd/um-tpcshrd.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/UIAnimation/">
+    <File Path="generation/Windows/um/UIAnimation/generate.rsp" />
+    <File Path="generation/Windows/um/UIAnimation/header.txt" />
+    <File Path="generation/Windows/um/UIAnimation/um-UIAnimation.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/Unknwnbase/">
+    <File Path="generation/Windows/um/Unknwnbase/generate.rsp" />
+    <File Path="generation/Windows/um/Unknwnbase/header.txt" />
+    <File Path="generation/Windows/um/Unknwnbase/um-Unknwnbase.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/urlmon/">
+    <File Path="generation/Windows/um/urlmon/generate.rsp" />
+    <File Path="generation/Windows/um/urlmon/header.txt" />
+    <File Path="generation/Windows/um/urlmon/um-urlmon.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/UserEnv/">
+    <File Path="generation/Windows/um/userenv/generate.rsp" />
+    <File Path="generation/Windows/um/userenv/header.txt" />
+    <File Path="generation/Windows/um/userenv/um-userenv.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/Uxtheme/">
+    <File Path="generation/Windows/um/Uxtheme/generate.rsp" />
+    <File Path="generation/Windows/um/Uxtheme/header.txt" />
+    <File Path="generation/Windows/um/Uxtheme/um-Uxtheme.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/verrsrc/">
+    <File Path="generation/Windows/um/verrsrc/generate.rsp" />
+    <File Path="generation/Windows/um/verrsrc/header.txt" />
+    <File Path="generation/Windows/um/verrsrc/um-verrsrc.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/vsstyle/">
+    <File Path="generation/Windows/um/vsstyle/generate.rsp" />
+    <File Path="generation/Windows/um/vsstyle/header.txt" />
+    <File Path="generation/Windows/um/vsstyle/um-vsstyle.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/vssym32/">
+    <File Path="generation/Windows/um/vssym32/generate.rsp" />
+    <File Path="generation/Windows/um/vssym32/header.txt" />
+    <File Path="generation/Windows/um/vssym32/um-vssym32.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/WbemCli/">
+    <File Path="generation/Windows/um/WbemCli/generate.rsp" />
+    <File Path="generation/Windows/um/WbemCli/header.txt" />
+    <File Path="generation/Windows/um/WbemCli/um-WbemCli.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/wcmapi/">
+    <File Path="generation/Windows/um/wcmapi/generate.rsp" />
+    <File Path="generation/Windows/um/wcmapi/header.txt" />
+    <File Path="generation/Windows/um/wcmapi/um-wcmapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/wcsplugin/">
+    <File Path="generation/Windows/um/wcsplugin/generate.rsp" />
+    <File Path="generation/Windows/um/wcsplugin/header.txt" />
+    <File Path="generation/Windows/um/wcsplugin/um-wcsplugin.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/WebServices/">
+    <File Path="generation/Windows/um/WebServices/generate.rsp" />
+    <File Path="generation/Windows/um/WebServices/header.txt" />
+    <File Path="generation/Windows/um/WebServices/um-WebServices.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/WinBase/">
+    <File Path="generation/Windows/um/WinBase/generate.rsp" />
+    <File Path="generation/Windows/um/WinBase/header.txt" />
+    <File Path="generation/Windows/um/WinBase/um-WinBase.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/wincodec/">
+    <File Path="generation/Windows/um/wincodec/generate.rsp" />
+    <File Path="generation/Windows/um/wincodec/header.txt" />
+    <File Path="generation/Windows/um/wincodec/um-wincodec.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/wincodecsdk/">
+    <File Path="generation/Windows/um/wincodecsdk/generate.rsp" />
+    <File Path="generation/Windows/um/wincodecsdk/header.txt" />
+    <File Path="generation/Windows/um/wincodecsdk/um-wincodecsdk.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/wincontypes/">
+    <File Path="generation/Windows/um/wincontypes/generate.rsp" />
+    <File Path="generation/Windows/um/wincontypes/header.txt" />
+    <File Path="generation/Windows/um/wincontypes/um-wincontypes.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/wincred/">
+    <File Path="generation/Windows/um/wincred/generate.rsp" />
+    <File Path="generation/Windows/um/wincred/header.txt" />
+    <File Path="generation/Windows/um/wincred/um-wincred.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/wincrypt/">
+    <File Path="generation/Windows/um/wincrypt/generate.rsp" />
+    <File Path="generation/Windows/um/wincrypt/header.txt" />
+    <File Path="generation/Windows/um/wincrypt/um-wincrypt.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/wingdi/">
+    <File Path="generation/Windows/um/wingdi/generate.rsp" />
+    <File Path="generation/Windows/um/wingdi/header.txt" />
+    <File Path="generation/Windows/um/wingdi/um-wingdi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/winhttp/">
+    <File Path="generation/Windows/um/winhttp/generate.rsp" />
+    <File Path="generation/Windows/um/winhttp/header.txt" />
+    <File Path="generation/Windows/um/winhttp/um-winhttp.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/winioctl/">
+    <File Path="generation/Windows/um/winioctl/generate.rsp" />
+    <File Path="generation/Windows/um/winioctl/header.txt" />
+    <File Path="generation/Windows/um/winioctl/um-winioctl.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/winnetwk/">
+    <File Path="generation/Windows/um/winnetwk/generate.rsp" />
+    <File Path="generation/Windows/um/winnetwk/header.txt" />
+    <File Path="generation/Windows/um/winnetwk/um-winnetwk.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/winnt/">
+    <File Path="generation/Windows/um/winnt/generate.rsp" />
+    <File Path="generation/Windows/um/winnt/header.txt" />
+    <File Path="generation/Windows/um/winnt/um-winnt.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/winreg/">
+    <File Path="generation/Windows/um/winreg/generate.rsp" />
+    <File Path="generation/Windows/um/winreg/header.txt" />
+    <File Path="generation/Windows/um/winreg/um-winreg.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/winternl/">
+    <File Path="generation/Windows/um/winternl/generate.rsp" />
+    <File Path="generation/Windows/um/winternl/header.txt" />
+    <File Path="generation/Windows/um/winternl/um-winternl.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/WinTrust/">
+    <File Path="generation/Windows/um/WinTrust/generate.rsp" />
+    <File Path="generation/Windows/um/WinTrust/header.txt" />
+    <File Path="generation/Windows/um/WinTrust/um-WinTrust.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/WinUser/">
+    <File Path="generation/Windows/um/WinUser/generate.rsp" />
+    <File Path="generation/Windows/um/WinUser/header.txt" />
+    <File Path="generation/Windows/um/WinUser/um-WinUser.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/wow64apiset/">
+    <File Path="generation/Windows/um/wow64apiset/generate.rsp" />
+    <File Path="generation/Windows/um/wow64apiset/header.txt" />
+    <File Path="generation/Windows/um/wow64apiset/um-wow64apiset.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/wpframework/">
+    <File Path="generation/Windows/um/wpframework/generate.rsp" />
+    <File Path="generation/Windows/um/wpframework/header.txt" />
+    <File Path="generation/Windows/um/wpframework/um-wpframework.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/wslapi/">
+    <File Path="generation/Windows/um/wslapi/generate.rsp" />
+    <File Path="generation/Windows/um/wslapi/header.txt" />
+    <File Path="generation/Windows/um/wslapi/um-wslapi.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/XblIdpAuthManager/">
+    <File Path="generation/Windows/um/XblIdpAuthManager/generate.rsp" />
+    <File Path="generation/Windows/um/XblIdpAuthManager/header.txt" />
+    <File Path="generation/Windows/um/XblIdpAuthManager/um-XblIdpAuthManager.h" />
+  </Folder>
+  <Folder Name="/generation/Windows/um/xmllite/">
+    <File Path="generation/Windows/um/xmllite/generate.rsp" />
+    <File Path="generation/Windows/um/xmllite/header.txt" />
+    <File Path="generation/Windows/um/xmllite/um-xmllite.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/" />
+  <Folder Name="/generation/WinRT/um/" />
+  <Folder Name="/generation/WinRT/um/accountssettingspaneinterop/">
+    <File Path="generation/WinRT/um/accountssettingspaneinterop/generate.rsp" />
+    <File Path="generation/WinRT/um/accountssettingspaneinterop/header.txt" />
+    <File Path="generation/WinRT/um/accountssettingspaneinterop/um-accountssettingspaneinterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/appserviceinterop/">
+    <File Path="generation/WinRT/um/appserviceinterop/generate.rsp" />
+    <File Path="generation/WinRT/um/appserviceinterop/header.txt" />
+    <File Path="generation/WinRT/um/appserviceinterop/um-appserviceinterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/CastingInterop/">
+    <File Path="generation/WinRT/um/CastingInterop/generate.rsp" />
+    <File Path="generation/WinRT/um/CastingInterop/header.txt" />
+    <File Path="generation/WinRT/um/CastingInterop/um-CastingInterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/dragdropinterop/">
+    <File Path="generation/WinRT/um/dragdropinterop/generate.rsp" />
+    <File Path="generation/WinRT/um/dragdropinterop/header.txt" />
+    <File Path="generation/WinRT/um/dragdropinterop/um-dragdropinterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/efswrtinterop/">
+    <File Path="generation/WinRT/um/efswrtinterop/generate.rsp" />
+    <File Path="generation/WinRT/um/efswrtinterop/header.txt" />
+    <File Path="generation/WinRT/um/efswrtinterop/um-efswrtinterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/gamingtcui/">
+    <File Path="generation/WinRT/um/gamingtcui/generate.rsp" />
+    <File Path="generation/WinRT/um/gamingtcui/header.txt" />
+    <File Path="generation/WinRT/um/gamingtcui/um-gamingtcui.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/HolographicSpaceInterop/">
+    <File Path="generation/WinRT/um/HolographicSpaceInterop/generate.rsp" />
+    <File Path="generation/WinRT/um/HolographicSpaceInterop/header.txt" />
+    <File Path="generation/WinRT/um/HolographicSpaceInterop/um-HolographicSpaceInterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/IContentPrefetcherTaskTrigger/">
+    <File Path="generation/WinRT/um/IContentPrefetcherTaskTrigger/generate.rsp" />
+    <File Path="generation/WinRT/um/IContentPrefetcherTaskTrigger/header.txt" />
+    <File Path="generation/WinRT/um/IContentPrefetcherTaskTrigger/um-IContentPrefetcherTaskTrigger.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/IMessageDispatcher/">
+    <File Path="generation/WinRT/um/IMessageDispatcher/generate.rsp" />
+    <File Path="generation/WinRT/um/IMessageDispatcher/header.txt" />
+    <File Path="generation/WinRT/um/IMessageDispatcher/um-IMessageDispatcher.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/inputpaneinterop/">
+    <File Path="generation/WinRT/um/inputpaneinterop/generate.rsp" />
+    <File Path="generation/WinRT/um/inputpaneinterop/header.txt" />
+    <File Path="generation/WinRT/um/inputpaneinterop/um-inputpaneinterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/MLOperatorAuthor/">
+    <File Path="generation/WinRT/um/MLOperatorAuthor/generate.rsp" />
+    <File Path="generation/WinRT/um/MLOperatorAuthor/header.txt" />
+    <File Path="generation/WinRT/um/MLOperatorAuthor/um-MLOperatorAuthor.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/PlayToManagerInterop/">
+    <File Path="generation/WinRT/um/PlayToManagerInterop/generate.rsp" />
+    <File Path="generation/WinRT/um/PlayToManagerInterop/header.txt" />
+    <File Path="generation/WinRT/um/PlayToManagerInterop/um-PlayToManagerInterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/Print3DManagerInterop/">
+    <File Path="generation/WinRT/um/Print3DManagerInterop/generate.rsp" />
+    <File Path="generation/WinRT/um/Print3DManagerInterop/header.txt" />
+    <File Path="generation/WinRT/um/Print3DManagerInterop/um-Print3DManagerInterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/PrintManagerInterop/">
+    <File Path="generation/WinRT/um/PrintManagerInterop/generate.rsp" />
+    <File Path="generation/WinRT/um/PrintManagerInterop/header.txt" />
+    <File Path="generation/WinRT/um/PrintManagerInterop/um-PrintManagerInterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/RadialControllerInterop/">
+    <File Path="generation/WinRT/um/RadialControllerInterop/generate.rsp" />
+    <File Path="generation/WinRT/um/RadialControllerInterop/header.txt" />
+    <File Path="generation/WinRT/um/RadialControllerInterop/um-RadialControllerInterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/remotesystemadditionalinfo/">
+    <File Path="generation/WinRT/um/remotesystemadditionalinfo/generate.rsp" />
+    <File Path="generation/WinRT/um/remotesystemadditionalinfo/header.txt" />
+    <File Path="generation/WinRT/um/remotesystemadditionalinfo/um-remotesystemadditionalinfo.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/RemoteSystemsInterop/">
+    <File Path="generation/WinRT/um/RemoteSystemsInterop/generate.rsp" />
+    <File Path="generation/WinRT/um/RemoteSystemsInterop/header.txt" />
+    <File Path="generation/WinRT/um/RemoteSystemsInterop/um-RemoteSystemsInterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/RestrictedErrorInfo/">
+    <File Path="generation/WinRT/um/RestrictedErrorInfo/generate.rsp" />
+    <File Path="generation/WinRT/um/RestrictedErrorInfo/header.txt" />
+    <File Path="generation/WinRT/um/RestrictedErrorInfo/um-RestrictedErrorInfo.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/SpatialInteractionManagerInterop/">
+    <File Path="generation/WinRT/um/SpatialInteractionManagerInterop/generate.rsp" />
+    <File Path="generation/WinRT/um/SpatialInteractionManagerInterop/header.txt" />
+    <File Path="generation/WinRT/um/SpatialInteractionManagerInterop/um-SpatialInteractionManagerInterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/SystemMediaTransportControlsInterop/">
+    <File Path="generation/WinRT/um/SystemMediaTransportControlsInterop/generate.rsp" />
+    <File Path="generation/WinRT/um/SystemMediaTransportControlsInterop/header.txt" />
+    <File Path="generation/WinRT/um/SystemMediaTransportControlsInterop/um-SystemMediaTransportControlsInterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/UIViewSettingsInterop/">
+    <File Path="generation/WinRT/um/UIViewSettingsInterop/generate.rsp" />
+    <File Path="generation/WinRT/um/UIViewSettingsInterop/header.txt" />
+    <File Path="generation/WinRT/um/UIViewSettingsInterop/um-UIViewSettingsInterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/useractivityinterop/">
+    <File Path="generation/WinRT/um/useractivityinterop/generate.rsp" />
+    <File Path="generation/WinRT/um/useractivityinterop/header.txt" />
+    <File Path="generation/WinRT/um/useractivityinterop/um-useractivityinterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/UserConsentVerifierInterop/">
+    <File Path="generation/WinRT/um/UserConsentVerifierInterop/generate.rsp" />
+    <File Path="generation/WinRT/um/UserConsentVerifierInterop/header.txt" />
+    <File Path="generation/WinRT/um/UserConsentVerifierInterop/um-UserConsentVerifierInterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/WebAuthenticationCoreManagerInterop/">
+    <File Path="generation/WinRT/um/WebAuthenticationCoreManagerInterop/generate.rsp" />
+    <File Path="generation/WinRT/um/WebAuthenticationCoreManagerInterop/header.txt" />
+    <File Path="generation/WinRT/um/WebAuthenticationCoreManagerInterop/um-WebAuthenticationCoreManagerInterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/windows.ai.machinelearning.native/">
+    <File Path="generation/WinRT/um/windows.ai.machinelearning.native/generate.rsp" />
+    <File Path="generation/WinRT/um/windows.ai.machinelearning.native/header.txt" />
+    <File Path="generation/WinRT/um/windows.ai.machinelearning.native/um-windows.ai.machinelearning.native.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/windows.data.pdf.interop/">
+    <File Path="generation/WinRT/um/windows.data.pdf.interop/generate.rsp" />
+    <File Path="generation/WinRT/um/windows.data.pdf.interop/header.txt" />
+    <File Path="generation/WinRT/um/windows.data.pdf.interop/um-windows.data.pdf.interop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/Windows.Devices.Display.Core.Interop/">
+    <File Path="generation/WinRT/um/Windows.Devices.Display.Core.Interop/generate.rsp" />
+    <File Path="generation/WinRT/um/Windows.Devices.Display.Core.Interop/header.txt" />
+    <File Path="generation/WinRT/um/Windows.Devices.Display.Core.Interop/um-Windows.Devices.Display.Core.Interop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/Windows.Graphics.Capture.Interop/">
+    <File Path="generation/WinRT/um/Windows.Graphics.Capture.Interop/generate.rsp" />
+    <File Path="generation/WinRT/um/Windows.Graphics.Capture.Interop/header.txt" />
+    <File Path="generation/WinRT/um/Windows.Graphics.Capture.Interop/um-Windows.Graphics.Capture.Interop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/windows.graphics.directx.direct3d11.interop/">
+    <File Path="generation/WinRT/um/windows.graphics.directx.direct3d11.interop/generate.rsp" />
+    <File Path="generation/WinRT/um/windows.graphics.directx.direct3d11.interop/header.txt" />
+    <File Path="generation/WinRT/um/windows.graphics.directx.direct3d11.interop/um-windows.graphics.directx.direct3d11.interop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/windows.graphics.holographic.interop/">
+    <File Path="generation/WinRT/um/windows.graphics.holographic.interop/generate.rsp" />
+    <File Path="generation/WinRT/um/windows.graphics.holographic.interop/header.txt" />
+    <File Path="generation/WinRT/um/windows.graphics.holographic.interop/um-windows.graphics.holographic.interop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/windows.graphics.imaging.interop/">
+    <File Path="generation/WinRT/um/windows.graphics.imaging.interop/generate.rsp" />
+    <File Path="generation/WinRT/um/windows.graphics.imaging.interop/header.txt" />
+    <File Path="generation/WinRT/um/windows.graphics.imaging.interop/um-windows.graphics.imaging.interop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/windows.media.core.interop/">
+    <File Path="generation/WinRT/um/windows.media.core.interop/generate.rsp" />
+    <File Path="generation/WinRT/um/windows.media.core.interop/header.txt" />
+    <File Path="generation/WinRT/um/windows.media.core.interop/um-windows.media.core.interop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/windows.ui.xaml.hosting.desktopwindowxamlsource/">
+    <File Path="generation/WinRT/um/windows.ui.xaml.hosting.desktopwindowxamlsource/generate.rsp" />
+    <File Path="generation/WinRT/um/windows.ui.xaml.hosting.desktopwindowxamlsource/header.txt" />
+    <File Path="generation/WinRT/um/windows.ui.xaml.hosting.desktopwindowxamlsource/um-windows.ui.xaml.hosting.desktopwindowxamlsource.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/windows.ui.xaml.media.dxinterop/">
+    <File Path="generation/WinRT/um/windows.ui.xaml.media.dxinterop/generate.rsp" />
+    <File Path="generation/WinRT/um/windows.ui.xaml.media.dxinterop/header.txt" />
+    <File Path="generation/WinRT/um/windows.ui.xaml.media.dxinterop/um-windows.ui.xaml.media.dxinterop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/WindowsStorageCOM/">
+    <File Path="generation/WinRT/um/WindowsStorageCOM/generate.rsp" />
+    <File Path="generation/WinRT/um/WindowsStorageCOM/header.txt" />
+    <File Path="generation/WinRT/um/WindowsStorageCOM/um-WindowsStorageCOM.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/um/xamlOM/">
+    <File Path="generation/WinRT/um/xamlOM/generate.rsp" />
+    <File Path="generation/WinRT/um/xamlOM/header.txt" />
+    <File Path="generation/WinRT/um/xamlOM/um-xamlOM.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/" />
+  <Folder Name="/generation/WinRT/winrt/activation/">
+    <File Path="generation/WinRT/winrt/activation/generate.rsp" />
+    <File Path="generation/WinRT/winrt/activation/header.txt" />
+    <File Path="generation/WinRT/winrt/activation/winrt-activation.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/asyncinfo/">
+    <File Path="generation/WinRT/winrt/asyncinfo/generate.rsp" />
+    <File Path="generation/WinRT/winrt/asyncinfo/header.txt" />
+    <File Path="generation/WinRT/winrt/asyncinfo/winrt-asyncinfo.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/CoreWindow/">
+    <File Path="generation/WinRT/winrt/CoreWindow/generate.rsp" />
+    <File Path="generation/WinRT/winrt/CoreWindow/header.txt" />
+    <File Path="generation/WinRT/winrt/CoreWindow/winrt-CoreWindow.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/DocumentSource/">
+    <File Path="generation/WinRT/winrt/DocumentSource/generate.rsp" />
+    <File Path="generation/WinRT/winrt/DocumentSource/header.txt" />
+    <File Path="generation/WinRT/winrt/DocumentSource/winrt-DocumentSource.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/EventToken/">
+    <File Path="generation/WinRT/winrt/EventToken/generate.rsp" />
+    <File Path="generation/WinRT/winrt/EventToken/header.txt" />
+    <File Path="generation/WinRT/winrt/EventToken/winrt-EventToken.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/hstring/">
+    <File Path="generation/WinRT/winrt/hstring/generate.rsp" />
+    <File Path="generation/WinRT/winrt/hstring/header.txt" />
+    <File Path="generation/WinRT/winrt/hstring/winrt-hstring.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/inspectable/">
+    <File Path="generation/WinRT/winrt/inspectable/generate.rsp" />
+    <File Path="generation/WinRT/winrt/inspectable/header.txt" />
+    <File Path="generation/WinRT/winrt/inspectable/winrt-inspectable.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/ivectorchangedeventargs/">
+    <File Path="generation/WinRT/winrt/ivectorchangedeventargs/generate.rsp" />
+    <File Path="generation/WinRT/winrt/ivectorchangedeventargs/header.txt" />
+    <File Path="generation/WinRT/winrt/ivectorchangedeventargs/winrt-ivectorchangedeventargs.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/MemoryBuffer/">
+    <File Path="generation/WinRT/winrt/MemoryBuffer/generate.rsp" />
+    <File Path="generation/WinRT/winrt/MemoryBuffer/header.txt" />
+    <File Path="generation/WinRT/winrt/MemoryBuffer/winrt-MemoryBuffer.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/MessageDispatcherApi/">
+    <File Path="generation/WinRT/winrt/MessageDispatcherApi/generate.rsp" />
+    <File Path="generation/WinRT/winrt/MessageDispatcherApi/header.txt" />
+    <File Path="generation/WinRT/winrt/MessageDispatcherApi/winrt-MessageDispatcherApi.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/roapi/">
+    <File Path="generation/WinRT/winrt/roapi/generate.rsp" />
+    <File Path="generation/WinRT/winrt/roapi/header.txt" />
+    <File Path="generation/WinRT/winrt/roapi/winrt-roapi.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/robuffer/">
+    <File Path="generation/WinRT/winrt/robuffer/generate.rsp" />
+    <File Path="generation/WinRT/winrt/robuffer/header.txt" />
+    <File Path="generation/WinRT/winrt/robuffer/winrt-robuffer.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/roerrorapi/">
+    <File Path="generation/WinRT/winrt/roerrorapi/generate.rsp" />
+    <File Path="generation/WinRT/winrt/roerrorapi/header.txt" />
+    <File Path="generation/WinRT/winrt/roerrorapi/winrt-roerrorapi.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/rometadata/">
+    <File Path="generation/WinRT/winrt/rometadata/generate.rsp" />
+    <File Path="generation/WinRT/winrt/rometadata/header.txt" />
+    <File Path="generation/WinRT/winrt/rometadata/winrt-rometadata.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/roparameterizediid/">
+    <File Path="generation/WinRT/winrt/roparameterizediid/generate.rsp" />
+    <File Path="generation/WinRT/winrt/roparameterizediid/header.txt" />
+    <File Path="generation/WinRT/winrt/roparameterizediid/winrt-roparameterizediid.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/shcore/">
+    <File Path="generation/WinRT/winrt/shcore/generate.rsp" />
+    <File Path="generation/WinRT/winrt/shcore/header.txt" />
+    <File Path="generation/WinRT/winrt/shcore/winrt-shcore.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/WeakReference/">
+    <File Path="generation/WinRT/winrt/WeakReference/generate.rsp" />
+    <File Path="generation/WinRT/winrt/WeakReference/header.txt" />
+    <File Path="generation/WinRT/winrt/WeakReference/winrt-WeakReference.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.activation/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.activation/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.activation/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.activation/winrt-windows.applicationmodel.activation.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.appointments.appointmentsprovider/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.appointments.appointmentsprovider/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.appointments.appointmentsprovider/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.appointments.appointmentsprovider/winrt-windows.applicationmodel.appointments.appointmentsprovider.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.appointments/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.appointments/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.appointments/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.appointments/winrt-windows.applicationmodel.appointments.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.appservice/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.appservice/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.appservice/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.appservice/winrt-windows.applicationmodel.appservice.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.background/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.background/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.background/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.background/winrt-windows.applicationmodel.background.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.calls.background/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.calls.background/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.calls.background/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.calls.background/winrt-windows.applicationmodel.calls.background.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.calls/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.calls/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.calls/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.calls/winrt-windows.applicationmodel.calls.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.contacts.provider/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.contacts.provider/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.contacts.provider/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.contacts.provider/winrt-windows.applicationmodel.contacts.provider.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.contacts/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.contacts/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.contacts/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.contacts/winrt-windows.applicationmodel.contacts.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.core/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.core/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.core/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.core/winrt-windows.applicationmodel.core.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.datatransfer.sharetarget/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.datatransfer.sharetarget/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.datatransfer.sharetarget/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.datatransfer.sharetarget/winrt-windows.applicationmodel.datatransfer.sharetarget.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.datatransfer/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.datatransfer/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.datatransfer/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.datatransfer/winrt-windows.applicationmodel.datatransfer.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.email/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.email/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.email/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.email/winrt-windows.applicationmodel.email.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.search.core/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.search.core/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.search.core/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.search.core/winrt-windows.applicationmodel.search.core.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.search/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.search/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.search/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.search/winrt-windows.applicationmodel.search.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.userdataaccounts.provider/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.userdataaccounts.provider/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.userdataaccounts.provider/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.userdataaccounts.provider/winrt-windows.applicationmodel.userdataaccounts.provider.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.userdataaccounts/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.userdataaccounts/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.userdataaccounts/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.userdataaccounts/winrt-windows.applicationmodel.userdataaccounts.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.userdatatasks/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.userdatatasks/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.userdatatasks/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.userdatatasks/winrt-windows.applicationmodel.userdatatasks.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel.wallet/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.wallet/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.wallet/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel.wallet/winrt-windows.applicationmodel.wallet.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.applicationmodel/">
+    <File Path="generation/WinRT/winrt/windows.applicationmodel/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.applicationmodel/winrt-windows.applicationmodel.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.data.json/">
+    <File Path="generation/WinRT/winrt/windows.data.json/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.data.json/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.data.json/winrt-windows.data.json.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.data.text/">
+    <File Path="generation/WinRT/winrt/windows.data.text/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.data.text/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.data.text/winrt-windows.data.text.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.data.xml.dom/">
+    <File Path="generation/WinRT/winrt/windows.data.xml.dom/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.data.xml.dom/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.data.xml.dom/winrt-windows.data.xml.dom.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.adc.provider/">
+    <File Path="generation/WinRT/winrt/windows.devices.adc.provider/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.adc.provider/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.adc.provider/winrt-windows.devices.adc.provider.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.adc/">
+    <File Path="generation/WinRT/winrt/windows.devices.adc/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.adc/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.adc/winrt-windows.devices.adc.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.bluetooth.advertisement/">
+    <File Path="generation/WinRT/winrt/windows.devices.bluetooth.advertisement/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.bluetooth.advertisement/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.bluetooth.advertisement/winrt-windows.devices.bluetooth.advertisement.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.bluetooth.background/">
+    <File Path="generation/WinRT/winrt/windows.devices.bluetooth.background/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.bluetooth.background/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.bluetooth.background/winrt-windows.devices.bluetooth.background.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.bluetooth.genericattributeprofile/">
+    <File Path="generation/WinRT/winrt/windows.devices.bluetooth.genericattributeprofile/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.bluetooth.genericattributeprofile/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.bluetooth.genericattributeprofile/winrt-windows.devices.bluetooth.genericattributeprofile.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.bluetooth.rfcomm/">
+    <File Path="generation/WinRT/winrt/windows.devices.bluetooth.rfcomm/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.bluetooth.rfcomm/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.bluetooth.rfcomm/winrt-windows.devices.bluetooth.rfcomm.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.bluetooth/">
+    <File Path="generation/WinRT/winrt/windows.devices.bluetooth/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.bluetooth/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.bluetooth/winrt-windows.devices.bluetooth.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.enumeration/">
+    <File Path="generation/WinRT/winrt/windows.devices.enumeration/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.enumeration/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.enumeration/winrt-windows.devices.enumeration.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.geolocation/">
+    <File Path="generation/WinRT/winrt/windows.devices.geolocation/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.geolocation/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.geolocation/winrt-windows.devices.geolocation.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.gpio.provider/">
+    <File Path="generation/WinRT/winrt/windows.devices.gpio.provider/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.gpio.provider/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.gpio.provider/winrt-windows.devices.gpio.provider.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.gpio/">
+    <File Path="generation/WinRT/winrt/windows.devices.gpio/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.gpio/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.gpio/winrt-windows.devices.gpio.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.haptics/">
+    <File Path="generation/WinRT/winrt/windows.devices.haptics/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.haptics/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.haptics/winrt-windows.devices.haptics.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.i2c.provider/">
+    <File Path="generation/WinRT/winrt/windows.devices.i2c.provider/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.i2c.provider/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.i2c.provider/winrt-windows.devices.i2c.provider.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.i2c/">
+    <File Path="generation/WinRT/winrt/windows.devices.i2c/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.i2c/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.i2c/winrt-windows.devices.i2c.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.input/">
+    <File Path="generation/WinRT/winrt/windows.devices.input/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.input/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.input/winrt-windows.devices.input.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.power/">
+    <File Path="generation/WinRT/winrt/windows.devices.power/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.power/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.power/winrt-windows.devices.power.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.printers.extensions/">
+    <File Path="generation/WinRT/winrt/windows.devices.printers.extensions/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.printers.extensions/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.printers.extensions/winrt-windows.devices.printers.extensions.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.printers/">
+    <File Path="generation/WinRT/winrt/windows.devices.printers/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.printers/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.printers/winrt-windows.devices.printers.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.pwm.provider/">
+    <File Path="generation/WinRT/winrt/windows.devices.pwm.provider/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.pwm.provider/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.pwm.provider/winrt-windows.devices.pwm.provider.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.pwm/">
+    <File Path="generation/WinRT/winrt/windows.devices.pwm/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.pwm/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.pwm/winrt-windows.devices.pwm.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.radios/">
+    <File Path="generation/WinRT/winrt/windows.devices.radios/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.radios/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.radios/winrt-windows.devices.radios.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.sensors/">
+    <File Path="generation/WinRT/winrt/windows.devices.sensors/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.sensors/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.sensors/winrt-windows.devices.sensors.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.smartcards/">
+    <File Path="generation/WinRT/winrt/windows.devices.smartcards/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.smartcards/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.smartcards/winrt-windows.devices.smartcards.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.sms/">
+    <File Path="generation/WinRT/winrt/windows.devices.sms/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.sms/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.sms/winrt-windows.devices.sms.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.spi.provider/">
+    <File Path="generation/WinRT/winrt/windows.devices.spi.provider/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.spi.provider/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.spi.provider/winrt-windows.devices.spi.provider.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices.spi/">
+    <File Path="generation/WinRT/winrt/windows.devices.spi/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices.spi/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices.spi/winrt-windows.devices.spi.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.devices/">
+    <File Path="generation/WinRT/winrt/windows.devices/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.devices/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.devices/winrt-windows.devices.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.foundation.metadata/">
+    <File Path="generation/WinRT/winrt/windows.foundation.metadata/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.foundation.metadata/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.foundation.metadata/winrt-windows.foundation.metadata.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.foundation.numerics/">
+    <File Path="generation/WinRT/winrt/windows.foundation.numerics/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.foundation.numerics/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.foundation.numerics/winrt-windows.foundation.numerics.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.foundation/">
+    <File Path="generation/WinRT/winrt/windows.foundation/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.foundation/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.foundation/winrt-windows.foundation.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.globalization/">
+    <File Path="generation/WinRT/winrt/windows.globalization/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.globalization/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.globalization/winrt-windows.globalization.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.graphics.directx.direct3d11/">
+    <File Path="generation/WinRT/winrt/windows.graphics.directx.direct3d11/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.graphics.directx.direct3d11/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.graphics.directx.direct3d11/winrt-windows.graphics.directx.direct3d11.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.graphics.directx/">
+    <File Path="generation/WinRT/winrt/windows.graphics.directx/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.graphics.directx/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.graphics.directx/winrt-windows.graphics.directx.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.graphics.display.core/">
+    <File Path="generation/WinRT/winrt/windows.graphics.display.core/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.graphics.display.core/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.graphics.display.core/winrt-windows.graphics.display.core.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.graphics.display/">
+    <File Path="generation/WinRT/winrt/windows.graphics.display/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.graphics.display/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.graphics.display/winrt-windows.graphics.display.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.graphics.effects.interop/">
+    <File Path="generation/WinRT/winrt/windows.graphics.effects.interop/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.graphics.effects.interop/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.graphics.effects.interop/winrt-windows.graphics.effects.interop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.graphics.effects/">
+    <File Path="generation/WinRT/winrt/windows.graphics.effects/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.graphics.effects/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.graphics.effects/winrt-windows.graphics.effects.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.graphics.imaging/">
+    <File Path="generation/WinRT/winrt/windows.graphics.imaging/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.graphics.imaging/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.graphics.imaging/winrt-windows.graphics.imaging.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.graphics.printing.printticket/">
+    <File Path="generation/WinRT/winrt/windows.graphics.printing.printticket/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.graphics.printing.printticket/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.graphics.printing.printticket/winrt-windows.graphics.printing.printticket.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.graphics.printing.workflow/">
+    <File Path="generation/WinRT/winrt/windows.graphics.printing.workflow/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.graphics.printing.workflow/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.graphics.printing.workflow/winrt-windows.graphics.printing.workflow.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.graphics.printing/">
+    <File Path="generation/WinRT/winrt/windows.graphics.printing/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.graphics.printing/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.graphics.printing/winrt-windows.graphics.printing.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.graphics/">
+    <File Path="generation/WinRT/winrt/windows.graphics/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.graphics/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.graphics/winrt-windows.graphics.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.audio/">
+    <File Path="generation/WinRT/winrt/windows.media.audio/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.audio/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.audio/winrt-windows.media.audio.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.capture.core/">
+    <File Path="generation/WinRT/winrt/windows.media.capture.core/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.capture.core/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.capture.core/winrt-windows.media.capture.core.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.capture.frames/">
+    <File Path="generation/WinRT/winrt/windows.media.capture.frames/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.capture.frames/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.capture.frames/winrt-windows.media.capture.frames.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.capture/">
+    <File Path="generation/WinRT/winrt/windows.media.capture/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.capture/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.capture/winrt-windows.media.capture.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.casting/">
+    <File Path="generation/WinRT/winrt/windows.media.casting/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.casting/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.casting/winrt-windows.media.casting.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.core/">
+    <File Path="generation/WinRT/winrt/windows.media.core/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.core/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.core/winrt-windows.media.core.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.devices.core/">
+    <File Path="generation/WinRT/winrt/windows.media.devices.core/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.devices.core/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.devices.core/winrt-windows.media.devices.core.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.devices/">
+    <File Path="generation/WinRT/winrt/windows.media.devices/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.devices/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.devices/winrt-windows.media.devices.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.editing/">
+    <File Path="generation/WinRT/winrt/windows.media.editing/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.editing/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.editing/winrt-windows.media.editing.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.effects/">
+    <File Path="generation/WinRT/winrt/windows.media.effects/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.effects/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.effects/winrt-windows.media.effects.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.faceanalysis/">
+    <File Path="generation/WinRT/winrt/windows.media.faceanalysis/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.faceanalysis/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.faceanalysis/winrt-windows.media.faceanalysis.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.mediaproperties/">
+    <File Path="generation/WinRT/winrt/windows.media.mediaproperties/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.mediaproperties/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.mediaproperties/winrt-windows.media.mediaproperties.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.playback/">
+    <File Path="generation/WinRT/winrt/windows.media.playback/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.playback/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.playback/winrt-windows.media.playback.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.protection/">
+    <File Path="generation/WinRT/winrt/windows.media.protection/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.protection/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.protection/winrt-windows.media.protection.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.render/">
+    <File Path="generation/WinRT/winrt/windows.media.render/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.render/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.render/winrt-windows.media.render.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.speechrecognition/">
+    <File Path="generation/WinRT/winrt/windows.media.speechrecognition/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.speechrecognition/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.speechrecognition/winrt-windows.media.speechrecognition.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.streaming.adaptive/">
+    <File Path="generation/WinRT/winrt/windows.media.streaming.adaptive/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.streaming.adaptive/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.streaming.adaptive/winrt-windows.media.streaming.adaptive.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.streaming/">
+    <File Path="generation/WinRT/winrt/windows.media.streaming/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.streaming/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.streaming/winrt-windows.media.streaming.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media.transcoding/">
+    <File Path="generation/WinRT/winrt/windows.media.transcoding/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media.transcoding/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media.transcoding/winrt-windows.media.transcoding.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.media/">
+    <File Path="generation/WinRT/winrt/windows.media/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.media/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.media/winrt-windows.media.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.networking.backgroundtransfer/">
+    <File Path="generation/WinRT/winrt/windows.networking.backgroundtransfer/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.networking.backgroundtransfer/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.networking.backgroundtransfer/winrt-windows.networking.backgroundtransfer.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.networking.connectivity/">
+    <File Path="generation/WinRT/winrt/windows.networking.connectivity/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.networking.connectivity/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.networking.connectivity/winrt-windows.networking.connectivity.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.networking.sockets/">
+    <File Path="generation/WinRT/winrt/windows.networking.sockets/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.networking.sockets/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.networking.sockets/winrt-windows.networking.sockets.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.networking/">
+    <File Path="generation/WinRT/winrt/windows.networking/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.networking/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.networking/winrt-windows.networking.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.perception.spatial/">
+    <File Path="generation/WinRT/winrt/windows.perception.spatial/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.perception.spatial/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.perception.spatial/winrt-windows.perception.spatial.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.perception/">
+    <File Path="generation/WinRT/winrt/windows.perception/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.perception/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.perception/winrt-windows.perception.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.security.authentication.web.core/">
+    <File Path="generation/WinRT/winrt/windows.security.authentication.web.core/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.security.authentication.web.core/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.security.authentication.web.core/winrt-windows.security.authentication.web.core.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.security.authentication.web.provider/">
+    <File Path="generation/WinRT/winrt/windows.security.authentication.web.provider/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.security.authentication.web.provider/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.security.authentication.web.provider/winrt-windows.security.authentication.web.provider.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.security.authentication.web/">
+    <File Path="generation/WinRT/winrt/windows.security.authentication.web/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.security.authentication.web/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.security.authentication.web/winrt-windows.security.authentication.web.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.security.credentials/">
+    <File Path="generation/WinRT/winrt/windows.security.credentials/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.security.credentials/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.security.credentials/winrt-windows.security.credentials.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.security.cryptography.certificates/">
+    <File Path="generation/WinRT/winrt/windows.security.cryptography.certificates/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.security.cryptography.certificates/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.security.cryptography.certificates/winrt-windows.security.cryptography.certificates.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.security.cryptography.core/">
+    <File Path="generation/WinRT/winrt/windows.security.cryptography.core/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.security.cryptography.core/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.security.cryptography.core/winrt-windows.security.cryptography.core.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.security.cryptography/">
+    <File Path="generation/WinRT/winrt/windows.security.cryptography/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.security.cryptography/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.security.cryptography/winrt-windows.security.cryptography.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.security.enterprisedata/">
+    <File Path="generation/WinRT/winrt/windows.security.enterprisedata/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.security.enterprisedata/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.security.enterprisedata/winrt-windows.security.enterprisedata.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.storage.fileproperties/">
+    <File Path="generation/WinRT/winrt/windows.storage.fileproperties/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.storage.fileproperties/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.storage.fileproperties/winrt-windows.storage.fileproperties.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.storage.pickers.provider/">
+    <File Path="generation/WinRT/winrt/windows.storage.pickers.provider/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.storage.pickers.provider/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.storage.pickers.provider/winrt-windows.storage.pickers.provider.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.storage.pickers/">
+    <File Path="generation/WinRT/winrt/windows.storage.pickers/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.storage.pickers/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.storage.pickers/winrt-windows.storage.pickers.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.storage.provider/">
+    <File Path="generation/WinRT/winrt/windows.storage.provider/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.storage.provider/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.storage.provider/winrt-windows.storage.provider.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.storage.search/">
+    <File Path="generation/WinRT/winrt/windows.storage.search/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.storage.search/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.storage.search/winrt-windows.storage.search.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.storage.streams/">
+    <File Path="generation/WinRT/winrt/windows.storage.streams/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.storage.streams/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.storage.streams/winrt-windows.storage.streams.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.storage/">
+    <File Path="generation/WinRT/winrt/windows.storage/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.storage/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.storage/winrt-windows.storage.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.system.diagnostics/">
+    <File Path="generation/WinRT/winrt/windows.system.diagnostics/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.system.diagnostics/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.system.diagnostics/winrt-windows.system.diagnostics.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.system.power/">
+    <File Path="generation/WinRT/winrt/windows.system.power/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.system.power/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.system.power/winrt-windows.system.power.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.system.remotesystems/">
+    <File Path="generation/WinRT/winrt/windows.system.remotesystems/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.system.remotesystems/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.system.remotesystems/winrt-windows.system.remotesystems.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.system/">
+    <File Path="generation/WinRT/winrt/windows.system/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.system/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.system/winrt-windows.system.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.ui.composition.core/">
+    <File Path="generation/WinRT/winrt/windows.ui.composition.core/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.ui.composition.core/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.ui.composition.core/winrt-windows.ui.composition.core.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.ui.composition.desktop/">
+    <File Path="generation/WinRT/winrt/windows.ui.composition.desktop/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.ui.composition.desktop/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.ui.composition.desktop/winrt-windows.ui.composition.desktop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.ui.composition.interop/">
+    <File Path="generation/WinRT/winrt/windows.ui.composition.interop/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.ui.composition.interop/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.ui.composition.interop/winrt-windows.ui.composition.interop.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.ui.composition/">
+    <File Path="generation/WinRT/winrt/windows.ui.composition/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.ui.composition/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.ui.composition/winrt-windows.ui.composition.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.ui.core/">
+    <File Path="generation/WinRT/winrt/windows.ui.core/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.ui.core/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.ui.core/winrt-windows.ui.core.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.ui.input.core/">
+    <File Path="generation/WinRT/winrt/windows.ui.input.core/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.ui.input.core/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.ui.input.core/winrt-windows.ui.input.core.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.ui.input/">
+    <File Path="generation/WinRT/winrt/windows.ui.input/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.ui.input/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.ui.input/winrt-windows.ui.input.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.ui.notifications/">
+    <File Path="generation/WinRT/winrt/windows.ui.notifications/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.ui.notifications/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.ui.notifications/winrt-windows.ui.notifications.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.ui.popups/">
+    <File Path="generation/WinRT/winrt/windows.ui.popups/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.ui.popups/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.ui.popups/winrt-windows.ui.popups.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.ui.text.core/">
+    <File Path="generation/WinRT/winrt/windows.ui.text.core/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.ui.text.core/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.ui.text.core/winrt-windows.ui.text.core.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.ui.text/">
+    <File Path="generation/WinRT/winrt/windows.ui.text/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.ui.text/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.ui.text/winrt-windows.ui.text.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.ui.viewmanagement.core/">
+    <File Path="generation/WinRT/winrt/windows.ui.viewmanagement.core/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.ui.viewmanagement.core/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.ui.viewmanagement.core/winrt-windows.ui.viewmanagement.core.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.ui.viewmanagement/">
+    <File Path="generation/WinRT/winrt/windows.ui.viewmanagement/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.ui.viewmanagement/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.ui.viewmanagement/winrt-windows.ui.viewmanagement.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.ui.windowmanagement/">
+    <File Path="generation/WinRT/winrt/windows.ui.windowmanagement/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.ui.windowmanagement/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.ui.windowmanagement/winrt-windows.ui.windowmanagement.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.ui/">
+    <File Path="generation/WinRT/winrt/windows.ui/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.ui/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.ui/winrt-windows.ui.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.web.http.filters/">
+    <File Path="generation/WinRT/winrt/windows.web.http.filters/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.web.http.filters/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.web.http.filters/winrt-windows.web.http.filters.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.web.http.headers/">
+    <File Path="generation/WinRT/winrt/windows.web.http.headers/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.web.http.headers/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.web.http.headers/winrt-windows.web.http.headers.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.web.http/">
+    <File Path="generation/WinRT/winrt/windows.web.http/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.web.http/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.web.http/winrt-windows.web.http.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/windows.web/">
+    <File Path="generation/WinRT/winrt/windows.web/generate.rsp" />
+    <File Path="generation/WinRT/winrt/windows.web/header.txt" />
+    <File Path="generation/WinRT/winrt/windows.web/winrt-windows.web.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/WindowsContracts/">
+    <File Path="generation/WinRT/winrt/WindowsContracts/generate.rsp" />
+    <File Path="generation/WinRT/winrt/WindowsContracts/header.txt" />
+    <File Path="generation/WinRT/winrt/WindowsContracts/winrt-WindowsContracts.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/winstring/">
+    <File Path="generation/WinRT/winrt/winstring/generate.rsp" />
+    <File Path="generation/WinRT/winrt/winstring/header.txt" />
+    <File Path="generation/WinRT/winrt/winstring/winrt-winstring.h" />
+  </Folder>
+  <Folder Name="/generation/WinRT/winrt/Wsdevlicensing/">
+    <File Path="generation/WinRT/winrt/Wsdevlicensing/generate.rsp" />
+    <File Path="generation/WinRT/winrt/Wsdevlicensing/header.txt" />
+    <File Path="generation/WinRT/winrt/Wsdevlicensing/winrt-Wsdevlicensing.h" />
+  </Folder>
+  <Folder Name="/samples/">
+    <File Path="samples/Directory.Build.props" />
+    <File Path="samples/Directory.Build.targets" />
+  </Folder>
+  <Folder Name="/samples/DirectX/">
+    <Project Path="samples/DirectX/TerraFX.Samples.DirectX.csproj" />
+  </Folder>
+  <Folder Name="/samples/WinForms/">
+    <Project Path="samples/WinForms/TerraFX.Samples.WinForms.csproj" />
+  </Folder>
+  <Folder Name="/scripts/">
+    <File Path="scripts/build.ps1" />
+    <File Path="scripts/cibuild.cmd" />
+  </Folder>
+  <Folder Name="/sources/">
+    <File Path="sources/Directory.Build.props" />
+    <File Path="sources/Directory.Build.targets" />
+  </Folder>
+  <Folder Name="/sources/Interop/">
+    <File Path="sources/Interop/.editorconfig" />
+  </Folder>
+  <Folder Name="/sources/Interop/Windows/">
+    <Project Path="sources/Interop/Windows/TerraFX.Interop.Windows.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <File Path="tests/Directory.Build.props" />
+    <File Path="tests/Directory.Build.targets" />
+  </Folder>
+  <Folder Name="/tests/Interop/">
+    <File Path="tests/Interop/.editorconfig" />
+  </Folder>
+  <Folder Name="/tests/Interop/Windows/">
+    <Project Path="tests/Interop/Windows/TerraFX.Interop.Windows.UnitTests.csproj" />
+  </Folder>
+</Solution>
