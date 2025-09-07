@@ -1519,6 +1519,11 @@
     <File Path="generation/Windows/um/OCIdl/header.txt" />
     <File Path="generation/Windows/um/OCIdl/um-OCIdl.h" />
   </Folder>
+  <Folder Name="/generation/Windows/um/ole2/">
+    <File Path="generation/Windows/um/ole2/generate.rsp" />
+    <File Path="generation/Windows/um/ole2/header.txt" />
+    <File Path="generation/Windows/um/ole2/um-ole2.h" />
+  </Folder>
   <Folder Name="/generation/Windows/um/oleauto/">
     <File Path="generation/Windows/um/oleauto/generate.rsp" />
     <File Path="generation/Windows/um/oleauto/header.txt" />
