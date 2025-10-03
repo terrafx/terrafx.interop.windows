@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/xmllite.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/minidumpapiset.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -12,7 +12,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MiniDumpWriteDump"]/*' />
     [DllImport("DbgHelp", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL MiniDumpWriteDump(HANDLE hProcess, [NativeTypeName("DWORD")] uint ProcessId, HANDLE hFile, MINIDUMP_TYPE DumpType, [NativeTypeName("PMINIDUMP_EXCEPTION_INFORMATION")] void* ExceptionParam, [NativeTypeName("PMINIDUMP_USER_STREAM_INFORMATION")] void* UserStreamParam, [NativeTypeName("PMINIDUMP_CALLBACK_INFORMATION")] void* CallbackParam);
+    public static extern BOOL MiniDumpWriteDump(HANDLE hProcess, [NativeTypeName("DWORD")] uint ProcessId, HANDLE hFile, MINIDUMP_TYPE DumpType, [NativeTypeName("PMINIDUMP_EXCEPTION_INFORMATION")] MINIDUMP_EXCEPTION_INFORMATION* ExceptionParam, [NativeTypeName("PMINIDUMP_USER_STREAM_INFORMATION")] MINIDUMP_USER_STREAM_INFORMATION* UserStreamParam, [NativeTypeName("PMINIDUMP_CALLBACK_INFORMATION")] MINIDUMP_CALLBACK_INFORMATION* CallbackParam);
 
     [NativeTypeName("#define MINIDUMP_SIGNATURE ('PMDM')")]
     public const int MINIDUMP_SIGNATURE = (0x504D444D);

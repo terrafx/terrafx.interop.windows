@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/xmllite.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/minidumpapiset.h in the Windows SDK for Windows 10.0.26100.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -88,4 +88,10 @@ public enum MINIDUMP_TYPE
 
     /// <include file='MINIDUMP_TYPE.xml' path='doc/member[@name="MINIDUMP_TYPE.MiniDumpValidTypeFlags"]/*' />
     MiniDumpValidTypeFlags = 0x01ffffff,
+
+    /// <include file='MINIDUMP_TYPE.xml' path='doc/member[@name="MINIDUMP_TYPE.MiniDumpNoIgnoreInaccessibleMemory"]/*' />
+    MiniDumpNoIgnoreInaccessibleMemory = 0x02000000,
+
+    /// <include file='MINIDUMP_TYPE.xml' path='doc/member[@name="MINIDUMP_TYPE.MiniDumpValidTypeFlagsEx"]/*' />
+    MiniDumpValidTypeFlagsEx = 0x03ffffff,
 }

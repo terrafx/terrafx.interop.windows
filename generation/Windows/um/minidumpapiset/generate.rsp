@@ -4,8 +4,6 @@
 _IMAGEHLP_SOURCE_
 --exclude
 MiniDumpReadDumpStream
---remap
-CONTEXT=void*
 --file
 um-minidumpapiset.h
 --methodClassName
@@ -22,3 +20,6 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/minidumpapiset.h
 MiniDumpWriteDump=DbgHelp
 --with-setlasterror
 MiniDumpWriteDump
+--with-attribute
+THREAD_WRITE_FLAGS=Flags
+MODULE_WRITE_FLAGS=Flags
