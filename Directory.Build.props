@@ -44,7 +44,7 @@
     <ContinuousIntegrationBuild Condition="'$(GITHUB_RUN_ID)' != ''">true</ContinuousIntegrationBuild>
     <IsAotCompatible>true</IsAotCompatible>
     <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
-    <PackageOutputPath>$(BaseArtifactsPath)pkg/$(Configuration)/</PackageOutputPath>
+    <PackageOutputPath>$(BaseArtifactsPath)pkg/$(Configuration)/$(PACKAGE_PUBLISH_MODE)</PackageOutputPath>
     <Product>TerraFX.Interop.Windows</Product>
     <RootNamespace>TerraFX.Interop</RootNamespace>
     <VersionPrefix>10.0.26100.3</VersionPrefix>
