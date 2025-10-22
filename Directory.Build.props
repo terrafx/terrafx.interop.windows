@@ -48,7 +48,7 @@
     <Product>TerraFX.Interop.Windows</Product>
     <RootNamespace>TerraFX.Interop</RootNamespace>
     <VersionPrefix>10.0.26100.3</VersionPrefix>
-    <VersionSuffix Condition="'$(EXCLUDE_SUFFIX_FROM_VERSION)' != 'true'">rc1</VersionSuffix>
+    <VersionSuffix Condition="'$(PACKAGE_PUBLISH_MODE)' != 'stable'">rc1</VersionSuffix>
     <VersionSuffix Condition="'$(GITHUB_EVENT_NAME)' == 'pull_request'">pr</VersionSuffix>
   </PropertyGroup>
 
