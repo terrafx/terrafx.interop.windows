@@ -6,7 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("0010890E-8789-413C-ADBC-48F5B511B3AF")]
 public unsafe partial struct UserNotification : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_UserNotification);
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_UserNotification);
 }

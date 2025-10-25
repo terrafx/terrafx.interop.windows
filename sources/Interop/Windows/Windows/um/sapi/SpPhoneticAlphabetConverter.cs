@@ -6,7 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("4F414126-DFE3-4629-99EE-797978317EAD")]
 public unsafe partial struct SpPhoneticAlphabetConverter : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_SpPhoneticAlphabetConverter);
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SpPhoneticAlphabetConverter);
 }

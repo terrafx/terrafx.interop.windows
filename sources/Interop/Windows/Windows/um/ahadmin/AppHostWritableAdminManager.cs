@@ -6,7 +6,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows;
 
@@ -14,5 +14,5 @@ namespace TerraFX.Interop.Windows;
 [Guid("2B72133B-3F5B-4602-8952-803546CE3344")]
 public unsafe partial struct AppHostWritableAdminManager : INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_AppHostWritableAdminManager);
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_AppHostWritableAdminManager);
 }

@@ -12,6 +12,30 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    public static ref readonly Guid CLSID_MsftDiscMaster2
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x2E, 0x41, 0x35, 0x27,
+                0x64, 0x7F,
+                0x0F, 0x5B,
+                0x8F,
+                0x00,
+                0x5D,
+                0x77,
+                0xAF,
+                0xBE,
+                0x26,
+                0x1E
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid CLSID_MsftDiscRecorder2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

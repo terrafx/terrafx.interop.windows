@@ -756,30 +756,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_ConflictFolder
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xAC, 0x78, 0x99, 0x28,
-                0x01, 0xA1,
-                0x41, 0x43,
-                0xA8,
-                0x17,
-                0x21,
-                0xEB,
-                0xA7,
-                0xFD,
-                0x04,
-                0x6D
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_SyncResultsFolder
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

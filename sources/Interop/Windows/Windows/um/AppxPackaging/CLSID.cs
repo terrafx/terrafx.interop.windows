@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -30,6 +31,7 @@ public static partial class CLSID
                 0x81
             ];
 
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
@@ -41,7 +43,7 @@ public static partial class CLSID
         {
             ReadOnlySpan<byte> data = [
                 0x46, 0x04, 0x8E, 0x37,
-                0x84, 0x52,
+                0x84, 0x53,
                 0xB7, 0x43,
                 0x88,
                 0x77,
@@ -53,6 +55,7 @@ public static partial class CLSID
                 0x46
             ];
 
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
@@ -76,6 +79,31 @@ public static partial class CLSID
                 0x5D
             ];
 
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid CLSID_AppxPackagingServiceProvider
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x39, 0x38, 0x1B, 0xFB,
+                0xDA, 0x09,
+                0x4F, 0x40,
+                0xB0,
+                0x02,
+                0x9C,
+                0xBB,
+                0x8D,
+                0xA5,
+                0xCA,
+                0x4F
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
@@ -99,6 +127,7 @@ public static partial class CLSID
                 0xF7
             ];
 
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
@@ -122,6 +151,7 @@ public static partial class CLSID
                 0xAB
             ];
 
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }

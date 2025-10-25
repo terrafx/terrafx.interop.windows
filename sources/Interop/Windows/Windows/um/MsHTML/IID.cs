@@ -468,30 +468,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLCSSStyleDeclaration
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x41, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLStyle
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -804,30 +780,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLStyle
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x85, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLRuleStyle
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -835,30 +787,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x5C, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLRuleStyle
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD0, 0xF3, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -1116,30 +1044,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLCSSRule
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xEF, 0x06, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLCSSImportRule
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1147,30 +1051,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x7E, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLCSSImportRule
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xF0, 0x06, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -1212,30 +1092,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLCSSMediaRule
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xF1, 0x06, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLCSSMediaList
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1243,30 +1099,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x97, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLCSSMediaList
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x32, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -1308,30 +1140,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLCSSNamespaceRule
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xF2, 0x06, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLMSCSSKeyframeRule
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1356,30 +1164,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLMSCSSKeyframeRule
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x0E, 0x08, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLMSCSSKeyframesRule
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1387,30 +1171,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xDF, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLMSCSSKeyframesRule
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x0F, 0x08, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -1459,30 +1219,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x8B, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLRenderStyle
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xAA, 0xF6, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -1627,30 +1363,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x57, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLCurrentStyle
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xDC, 0xF3, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -2196,30 +1908,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLDOMAttribute
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB2, 0xF4, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLDOMTextNode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2244,30 +1932,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLDOMTextNode
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xBA, 0xF4, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLDOMImplementation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2275,30 +1939,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x8F, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLDOMImplementation
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x0E, 0xF8, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -2460,30 +2100,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLAttributeCollection
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCC, 0xF4, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispStaticNodeList
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2508,30 +2124,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_StaticNodeList
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x67, 0x04, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispDOMChildrenCollection
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2539,30 +2131,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x77, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_DOMChildrenCollection
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xAA, 0xF5, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -3036,30 +2604,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLDefaults
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC8, 0xF6, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTCDefaultDispatch
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -3252,30 +2796,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTCDefaultDispatch
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xFC, 0xF4, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTCPropertyBehavior
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -3283,30 +2803,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x7F, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTCPropertyBehavior
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xDE, 0xF5, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -3348,30 +2844,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTCMethodBehavior
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x30, 0xF6, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTCEventBehavior
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -3379,30 +2851,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x74, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTCEventBehavior
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xFE, 0xF4, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -3444,30 +2892,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTCAttachBehavior
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xF5, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTCDescBehavior
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -3475,30 +2899,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x7E, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTCDescBehavior
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xDD, 0xF5, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -3564,30 +2964,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLUrnCollection
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x80, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLGenericElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -3619,30 +2995,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x63, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLGenericElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB8, 0xF4, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -3756,30 +3108,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLStyleSheetRule
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCE, 0xF3, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLStyleSheetRulesCollection
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -3787,30 +3115,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x2F, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLStyleSheetRulesCollection
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCD, 0xF3, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -3924,30 +3228,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLStyleSheetPage
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xEF, 0xF7, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLStyleSheetPagesCollection
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -3955,30 +3235,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x43, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLStyleSheetPagesCollection
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xF1, 0xF7, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -4116,30 +3372,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLStyleSheet
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xE4, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLStyleSheetsCollection2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -4171,30 +3403,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x47, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLStyleSheetsCollection
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x7F, 0xF3, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -4404,30 +3612,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLLinkElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x77, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLTxtRange
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -4555,30 +3739,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xA3, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLDOMRange
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC3, 0x06, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -4788,30 +3948,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLFormElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x51, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_HTMLControlElementEvents2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -4915,30 +4051,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x37, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLTextElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x6A, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -5292,54 +4404,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLImg
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x41, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLImageElementFactory
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x8F, 0xF3, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLBodyElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -5484,30 +4548,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLBody
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x4A, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLFontElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -5539,30 +4579,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x12, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLFontElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x7B, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -5724,30 +4740,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLAnchorElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x48, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_HTMLLabelEvents2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -5868,30 +4860,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLLabelElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x2B, 0xF3, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLListElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -5964,30 +4932,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLListElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x72, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLUListElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -6019,30 +4963,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x38, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLUListElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x69, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -6108,30 +5028,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLOListElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x70, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLLIElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -6163,30 +5059,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x23, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLLIElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x73, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -6300,30 +5172,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLBlockElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x81, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLDivElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -6355,30 +5203,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x0C, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLDivElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x7E, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -6444,30 +5268,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLDDElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x7F, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLDTElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -6499,30 +5299,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x0D, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLDTElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x7C, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -6588,30 +5364,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLBRElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x80, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLDListElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -6643,30 +5395,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x3B, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLDListElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x7D, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -6732,30 +5460,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLHRElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x52, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLParaElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -6787,30 +5491,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x2C, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLParaElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x6F, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -6924,30 +5604,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLElementCollection
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCB, 0xF4, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLHeaderElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -6979,30 +5635,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x15, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLHeaderElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x7A, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -7260,30 +5892,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLSelectElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x45, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLWndSelectElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -7291,30 +5899,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x97, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLWndSelectElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCF, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -7500,54 +6084,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLOptionElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x4D, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLOptionElementFactory
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x8D, 0xF3, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLWndOptionElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -7555,30 +6091,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x98, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLWndOptionElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD0, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -8124,30 +6636,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLInputElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD8, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLTextAreaElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -8220,30 +6708,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLTextAreaElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xAC, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLRichtextElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -8251,30 +6715,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x4D, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLRichtextElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xDF, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -8347,30 +6787,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x1F, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLButtonElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC6, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -8467,30 +6883,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x27, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLMarqueeElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB9, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -8748,30 +7140,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLHtmlElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x91, 0xF4, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLHeadElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -8779,30 +7147,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x61, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLHeadElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x93, 0xF4, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -8844,30 +7188,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLTitleElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x84, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLMetaElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -8892,30 +7212,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLMetaElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x75, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLBaseElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -8923,30 +7219,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x18, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLBaseElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x76, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -9060,30 +7332,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLIsIndexElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x78, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLNextIdElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -9091,30 +7339,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x1A, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLNextIdElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x79, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -9180,30 +7404,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLBaseFontElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x82, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLUnknownElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -9235,30 +7435,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x39, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLUnknownElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x68, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -9516,54 +7692,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLHistory
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xA3, 0xAA, 0xCE, 0xFE,
-                0x05, 0x84,
-                0xCF, 0x11,
-                0x8B,
-                0xA1,
-                0x00,
-                0xAA,
-                0x00,
-                0x47,
-                0x6D,
-                0xA6
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_COpsProfile
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x02, 0xF4, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLNavigator
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -9581,30 +7709,6 @@ public static partial class IID
                 0xBD,
                 0xCE,
                 0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLNavigator
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xA6, 0xAA, 0xCE, 0xFE,
-                0x05, 0x84,
-                0xCF, 0x11,
-                0x8B,
-                0xA1,
-                0x00,
-                0xAA,
-                0x00,
-                0x47,
-                0x6D,
-                0xA6
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -9636,54 +7740,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLLocation
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xE1, 0xB1, 0x3B, 0x16,
-                0x00, 0x6E,
-                0xCF, 0x11,
-                0x83,
-                0x7A,
-                0x48,
-                0xDC,
-                0x04,
-                0xC1,
-                0x00,
-                0x00
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_CMimeTypes
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xFE, 0xF3, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispCPlugins
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -9691,30 +7747,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x4A, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_CPlugins
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xFF, 0xF3, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -9924,30 +7956,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_CEventObj
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x8A, 0xF4, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLStyleMedia
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -9996,30 +8004,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLStyleMedia
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x4C, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLFramesCollection2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -10037,30 +8021,6 @@ public static partial class IID
                 0xD9,
                 0x01,
                 0x19
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_FramesCollection
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xF6, 0xF7, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -10548,30 +8508,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLScreen
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x5D, 0xF3, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLWindow2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -10596,30 +8532,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLWindow2
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC6, 0x6E, 0x8A, 0xD4,
-                0x4A, 0x6A,
-                0xCF, 0x11,
-                0x94,
-                0xA7,
-                0x44,
-                0x45,
-                0x53,
-                0x54,
-                0x00,
-                0x00
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLWindowProxy
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -10627,30 +8539,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x5E, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLWindowProxy
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x91, 0xF3, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -10740,30 +8628,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLDocumentCompatibleInfo
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x1B, 0x04, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLDocumentCompatibleInfoCollection
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -10771,30 +8635,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x3F, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLDocumentCompatibleInfoCollection
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x19, 0x04, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -11244,30 +9084,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLDocument
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x20, 0x69, 0x33, 0x25,
-                0xF9, 0x03,
-                0xCF, 0x11,
-                0x8F,
-                0xD0,
-                0x00,
-                0xAA,
-                0x00,
-                0x68,
-                0x6F,
-                0x13
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DWebBridgeEvents
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -11340,30 +9156,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_Scriptlet
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xAE, 0xFD, 0x24, 0xAE,
-                0xC6, 0x03,
-                0xD1, 0x11,
-                0x8B,
-                0x76,
-                0x00,
-                0x80,
-                0xC7,
-                0x44,
-                0xF3,
-                0x89
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLEmbedElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -11419,30 +9211,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x2E, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLEmbed
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x5D, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -11652,30 +9420,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLAreasCollection
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCA, 0xF4, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLMapElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -11683,30 +9427,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x26, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLMapElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x71, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -11844,30 +9564,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLAreaElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x83, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLTableCaption
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -11899,30 +9595,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x08, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLTableCaption
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xEC, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -12019,30 +9691,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x0A, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLCommentElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x17, 0xF3, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -12180,30 +9828,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLPhraseElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x6E, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLSpanElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -12212,30 +9836,6 @@ public static partial class IID
             ReadOnlySpan<byte> data = [
                 0x48, 0xF5, 0x50, 0x30,
                 0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLSpanElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xF5, 0xF3, 0x50, 0x30,
-                0xB4, 0x98,
                 0xCF, 0x11,
                 0xBB,
                 0x82,
@@ -12780,30 +10380,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLTable
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x6B, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLTableCol
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -12811,30 +10387,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x33, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLTableCol
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x6C, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -12876,30 +10428,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLTableSection
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xE9, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLTableRow
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -12924,30 +10452,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLTableRow
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x6D, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLTableCell
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -12955,30 +10459,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x36, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLTableCell
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x46, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -13164,30 +10644,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLScriptElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x8C, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLNoShowElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -13219,30 +10675,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x28, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLNoShowElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x8B, 0xF3, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -13500,30 +10932,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLObjectElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x4E, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLParamElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -13531,30 +10939,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x90, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLParamElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x3E, 0xF8, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -13692,30 +11076,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLFrameBase
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x12, 0xF3, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLFrameElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -13812,30 +11172,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLFrameElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x14, 0xF3, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLIFrameElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -13915,30 +11251,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x1B, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLIFrame
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x16, 0xF3, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -14100,30 +11412,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLDivPosition
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x49, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLFieldSetElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -14148,30 +11436,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLFieldSetElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xE8, 0xF3, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLLegendElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -14179,30 +11443,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x46, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLLegendElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xE9, 0xF3, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -14251,30 +11491,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x44, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLSpanFlow
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xE6, 0xF3, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -14388,30 +11604,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLFrameSetSite
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x1A, 0xF3, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLBGsound
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -14443,30 +11635,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x3C, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLBGsound
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x70, 0xF3, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -14676,30 +11844,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLStyleElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x7D, 0xF3, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLStyleFontFace
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -14755,30 +11899,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x81, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLStyleFontFace
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD4, 0xF3, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -14868,54 +11988,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_XDomainRequest
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x55, 0x04, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_XDomainRequestFactory
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x57, 0x04, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLStorage2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -14947,30 +12019,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x9D, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLStorage
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x75, 0x04, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -15036,30 +12084,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_DOMEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xBB, 0x04, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IDOMUIEvent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -15091,30 +12115,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x72, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_DOMUIEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCB, 0x06, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -15180,30 +12180,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_DOMMouseEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCF, 0x06, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IDOMDragEvent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -15235,30 +12211,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xA7, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_DOMDragEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x62, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -15324,30 +12276,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_DOMMouseWheelEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD1, 0x06, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IDOMWheelEvent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -15379,30 +12307,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x75, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_DOMWheelEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD3, 0x06, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -15468,30 +12372,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_DOMTextEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD5, 0x06, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IDOMKeyboardEvent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -15523,30 +12403,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x77, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_DOMKeyboardEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD7, 0x06, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -15612,30 +12468,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_DOMCompositionEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD9, 0x06, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IDOMMutationEvent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -15667,30 +12499,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x79, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_DOMMutationEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xDB, 0x06, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -15756,30 +12564,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_DOMBeforeUnloadEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x64, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IDOMFocusEvent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -15828,30 +12612,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_DOMFocusEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCD, 0x06, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IDOMCustomEvent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -15883,30 +12643,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x7C, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_DOMCustomEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xDF, 0x06, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -16116,30 +12852,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_CanvasGradient
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x15, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispCanvasPattern
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -16147,30 +12859,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x8D, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_CanvasPattern
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x17, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -16212,30 +12900,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_CanvasTextMetrics
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x19, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispCanvasImageData
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -16243,30 +12907,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x8F, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_CanvasImageData
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x1B, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -16308,30 +12948,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_CanvasRenderingContext2D
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x00, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLCanvasElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -16339,30 +12955,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x7B, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLCanvasElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xE5, 0x06, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -16428,30 +13020,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_DOMProgressEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x1F, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IDOMMessageEvent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -16483,30 +13051,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x92, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_DOMMessageEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x21, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -16572,30 +13116,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_DOMSiteModeEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x66, 0x07, 0x51, 0x30,
-                0xB6, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IDOMStorageEvent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -16644,30 +13164,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_DOMStorageEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x23, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IXMLHttpRequestEventTarget
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -16699,30 +13195,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xE7, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_XMLHttpRequestEventTarget
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x31, 0x08, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -16860,54 +13332,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLXMLHttpRequest
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x0B, 0x04, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLXMLHttpRequestFactory
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x0D, 0x04, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGAngle
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -16915,30 +13339,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xD3, 0x04, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGAngle
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x84, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -17412,30 +13812,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGAnimatedAngle
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xE4, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGTransformList
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -17443,54 +13819,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xF8, 0x04, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGAnimatedTransformList
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB1, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGAnimatedBoolean
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x8B, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -17532,30 +13860,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGAnimatedEnumeration
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x8E, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGAnimatedInteger
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -17563,30 +13867,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xCA, 0x04, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGAnimatedInteger
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x8F, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -17652,30 +13932,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGAnimatedLength
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x81, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGLengthList
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -17707,30 +13963,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xD2, 0x04, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGAnimatedLengthList
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x82, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -17796,30 +14028,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGAnimatedNumber
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x88, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGNumberList
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -17868,78 +14076,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGAnimatedNumberList
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x8A, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGAnimatedRect
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x86, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGAnimatedString
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x8C, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGClipPathElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -17971,30 +14107,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x3B, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGClipPathElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xE6, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -18084,30 +14196,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x64, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IICCSVGColor
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -18115,126 +14203,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xD6, 0x04, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGLength
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x7E, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGLengthList
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x80, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGMatrix
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xAE, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGNumber
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x87, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGNumberList
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x89, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -18307,30 +14275,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x2C, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGPatternElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD4, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -18828,30 +14772,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGPathSeg
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB3, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispSVGPathSegArcAbs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -18859,30 +14779,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x13, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGPathSegArcAbs
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xBB, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -18924,30 +14820,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGPathSegArcRel
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xBC, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispSVGPathSegClosePath
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -18955,30 +14827,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x15, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGPathSegClosePath
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xBD, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -19020,30 +14868,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGPathSegMovetoAbs
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCC, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispSVGPathSegMovetoRel
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -19051,30 +14875,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x25, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGPathSegMovetoRel
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCD, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -19116,30 +14916,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGPathSegLinetoAbs
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC6, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispSVGPathSegLinetoRel
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -19147,30 +14923,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x21, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGPathSegLinetoRel
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC9, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -19212,30 +14964,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGPathSegCurvetoCubicAbs
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xBE, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispSVGPathSegCurvetoCubicRel
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -19243,30 +14971,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x17, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGPathSegCurvetoCubicRel
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xBF, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -19308,30 +15012,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGPathSegCurvetoCubicSmoothAbs
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC0, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispSVGPathSegCurvetoCubicSmoothRel
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -19339,30 +15019,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x19, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGPathSegCurvetoCubicSmoothRel
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC1, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -19404,30 +15060,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGPathSegCurvetoQuadraticAbs
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC2, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispSVGPathSegCurvetoQuadraticRel
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -19435,30 +15067,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x1B, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGPathSegCurvetoQuadraticRel
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC3, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -19500,30 +15108,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGPathSegCurvetoQuadraticSmoothAbs
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC4, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispSVGPathSegCurvetoQuadraticSmoothRel
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -19531,30 +15115,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x1D, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGPathSegCurvetoQuadraticSmoothRel
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC5, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -19596,30 +15156,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGPathSegLinetoHorizontalAbs
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC7, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispSVGPathSegLinetoHorizontalRel
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -19627,30 +15163,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x20, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGPathSegLinetoHorizontalRel
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC8, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -19692,30 +15204,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGPathSegLinetoVerticalAbs
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCA, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispSVGPathSegLinetoVerticalRel
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -19723,30 +15211,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x23, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGPathSegLinetoVerticalRel
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCB, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -19788,30 +15252,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGPathSegList
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB4, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGPoint
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -19836,30 +15276,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGPoint
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xBA, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGPointList
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -19867,78 +15283,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xF5, 0x04, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGPointList
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB9, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGRect
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x83, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGStringList
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x8D, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -20004,30 +15348,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGTransform
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xAF, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispSVGSVGElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -20035,30 +15355,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x01, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGSVGElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x74, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -20148,30 +15444,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGUseElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x90, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLStyleSheetRulesAppliedCollection
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -20244,30 +15516,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLStyleSheetRulesAppliedCollection
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x45, 0xF8, 0x36, 0xEB,
-                0x95, 0x23,
-                0x19, 0x47,
-                0xB8,
-                0x5C,
-                0xD0,
-                0xD8,
-                0x0E,
-                0x18,
-                0x4B,
-                0xD9
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispRulesApplied
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -20285,30 +15533,6 @@ public static partial class IID
                 0xBD,
                 0xCE,
                 0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_RulesApplied
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x20, 0x39, 0x80, 0x7C,
-                0x53, 0x7A,
-                0x26, 0x4D,
-                0x98,
-                0xAC,
-                0xFD,
-                0xD2,
-                0x3E,
-                0x6B,
-                0x9E,
-                0x01
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -20340,30 +15564,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_RulesAppliedCollection
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xEE, 0x26, 0x19, 0x67,
-                0xCF, 0xC3,
-                0xAF, 0x40,
-                0xBE,
-                0x8F,
-                0x1C,
-                0xBA,
-                0xEE,
-                0x64,
-                0x86,
-                0xE8
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLW3CComputedStyle
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -20371,54 +15571,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x70, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLW3CComputedStyle
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC8, 0x06, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGTransformList
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB0, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -20628,30 +15780,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGCircleElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x78, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispSVGEllipseElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -20659,30 +15787,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x0B, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGEllipseElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x79, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -20724,30 +15828,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGLineElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x7A, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispSVGRectElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -20755,30 +15835,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x09, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGRectElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x77, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -20820,30 +15876,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGPolygonElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x7B, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispSVGPolylineElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -20851,30 +15883,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x0E, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGPolylineElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x7C, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -20940,30 +15948,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGGElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x6F, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGSymbolElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -21012,30 +15996,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGSymbolElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x71, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGDefsElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -21067,30 +16027,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x03, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGDefsElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x70, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -21180,30 +16116,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGPathElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB2, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGPreserveAspectRatio
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -21211,30 +16123,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xFA, 0x04, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGPreserveAspectRatio
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD0, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -21300,54 +16188,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGTextElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xDF, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGAnimatedPreserveAspectRatio
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCE, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGImageElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -21379,30 +16219,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x27, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGImageElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCF, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -21468,30 +16284,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGStopElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD5, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGGradientElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -21523,30 +16315,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x2E, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGGradientElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD6, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -21612,30 +16380,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGLinearGradientElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD2, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGRadialGradientElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -21667,30 +16411,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x2B, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGRadialGradientElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD3, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -21756,30 +16476,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGMaskElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xE7, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGMarkerElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -21811,30 +16507,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x36, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGMarkerElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xDE, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -21900,30 +16572,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGZoomEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD9, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGAElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -21972,30 +16620,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGAElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xDB, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGViewElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -22027,30 +16651,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x34, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGViewElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xDC, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -22332,30 +16932,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLMediaError
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x0A, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLTimeRanges
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -22363,30 +16939,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x87, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLTimeRanges
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x0B, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -22428,30 +16980,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLMediaElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x0C, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLSourceElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -22459,30 +16987,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x89, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLSourceElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x0D, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -22524,54 +17028,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLAudioElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x0E, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLAudioElementFactory
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xEC, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLVideoElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -22579,30 +17035,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x8B, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLVideoElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x0F, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -22668,30 +17100,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGSwitchElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD8, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGDescElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -22723,30 +17131,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x05, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGDescElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x72, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -22812,30 +17196,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGTitleElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x73, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGMetadataElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -22867,30 +17227,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x2F, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGMetadataElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD7, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -22956,30 +17292,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGElementInstance
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x75, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispSVGElementInstanceList
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -22987,30 +17299,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x08, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGElementInstanceList
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x76, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -23076,30 +17364,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_DOMException
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x2C, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IRangeException
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -23131,30 +17395,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x95, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_RangeException
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x2E, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -23220,30 +17460,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGException
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x30, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IEventException
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -23275,30 +17491,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x99, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_EventException
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x3B, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -23364,30 +17556,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGScriptElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xE1, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGStyleElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -23419,30 +17587,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x29, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGStyleElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD1, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -23508,30 +17652,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGTextContentElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xDD, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_ISVGTextPositioningElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -23580,30 +17700,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_SVGTextPositioningElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xE0, 0x05, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispDOMDocumentType
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -23611,30 +17707,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x98, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_DOMDocumentType
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x39, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -23676,30 +17748,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_NodeIterator
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x45, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispTreeWalker
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -23724,30 +17772,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_TreeWalker
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x47, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispDOMProcessingInstruction
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -23755,30 +17779,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x9B, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_DOMProcessingInstruction
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x43, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -23868,30 +17868,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLPerformance
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x4F, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLPerformanceNavigation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -23916,30 +17892,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLPerformanceNavigation
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x51, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLPerformanceTiming
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -23947,30 +17899,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xA1, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLPerformanceTiming
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x53, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -24019,30 +17947,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x3A, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGTSpanElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xE2, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -24180,30 +18084,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_CTemplatePrinter
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB3, 0xF6, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispCPrintManagerTemplatePrinter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24221,30 +18101,6 @@ public static partial class IID
                 0xBD,
                 0xCE,
                 0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_CPrintManagerTemplatePrinter
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x54, 0x9F, 0x61, 0x63,
-                0x71, 0x9D,
-                0x23, 0x4C,
-                0xA0,
-                0x8D,
-                0x50,
-                0xD7,
-                0xF1,
-                0x8D,
-                0xB2,
-                0xE9
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -24283,30 +18139,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x3D, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SVGTextPathElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xEB, 0x05, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -24396,30 +18228,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_XMLSerializer
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x7E, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispDOMParser
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24427,30 +18235,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xAE, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_DOMParser
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x82, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -24516,54 +18300,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLDOMXmlSerializerFactory
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x80, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_DOMParserFactory
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x84, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLSemanticElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24571,30 +18307,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xBA, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLSemanticElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB0, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -24660,30 +18372,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLProgressElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xD5, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IDOMMSTransitionEvent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24732,30 +18420,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_DOMMSTransitionEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB6, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IDOMMSAnimationEvent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24787,30 +18451,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xBC, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_DOMMSAnimationEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB8, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -24924,30 +18564,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_WebGeolocation
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC6, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispWebGeocoordinates
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -24955,30 +18571,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xBE, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_WebGeocoordinates
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC8, 0x07, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -25020,30 +18612,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_WebGeopositionError
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCA, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispWebGeoposition
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -25068,30 +18636,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_WebGeoposition
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCE, 0x07, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IClientCaps
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -25099,30 +18643,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x4D, 0xC4, 0x8B, 0x7E,
-                0xFF, 0xAE,
-                0xD1, 0x11,
-                0x89,
-                0xC2,
-                0x00,
-                0xC0,
-                0x4F,
-                0xB6,
-                0xBF,
-                0xC4
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_CClientCaps
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x4E, 0xC4, 0x8B, 0x7E,
                 0xFF, 0xAE,
                 0xD1, 0x11,
                 0x89,
@@ -25188,30 +18708,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_DOMMSManipulationEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x17, 0x08, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IDOMCloseEvent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -25260,30 +18756,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_DOMCloseEvent
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x00, 0x08, 0x51, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispApplicationCache
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -25291,30 +18763,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0xE4, 0x00, 0x59, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_ApplicationCache
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x29, 0x08, 0x51, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -26220,78 +19668,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HtmlDlgSafeHelper
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x19, 0xF8, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_BlockFormats
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x31, 0xF8, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_FontNames
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x3A, 0xF8, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IDeveloperConsoleMessageReceiver
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -26532,30 +19908,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLNamespace
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xBC, 0xF6, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispHTMLNamespaceCollection
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -26563,30 +19915,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x50, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLNamespaceCollection
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB9, 0xF6, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -26892,54 +20220,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_ThreadDialogProcParam
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xEB, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLDialog
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x8A, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IHTMLPopup
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -26971,30 +20251,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x89, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLPopup
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x67, 0xF6, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -27108,78 +20364,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLAppBehavior
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xCB, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_OldHTMLDocument
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC9, 0x6E, 0x8A, 0xD4,
-                0x4A, 0x6A,
-                0xCF, 0x11,
-                0x94,
-                0xA7,
-                0x44,
-                0x45,
-                0x53,
-                0x54,
-                0x00,
-                0x00
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_OldHTMLFormElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x85, 0xD2, 0x04, 0x0D,
-                0xEC, 0x6B,
-                0xCF, 0x11,
-                0x8B,
-                0x97,
-                0x00,
-                0xAA,
-                0x00,
-                0x47,
-                0x6D,
-                0xA6
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispIHTMLInputButtonElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -27187,30 +20371,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x1E, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLInputButtonElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB4, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -27252,30 +20412,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLInputTextElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xAB, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispIHTMLInputFileElement
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -27283,30 +20419,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x42, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLInputFileElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xAE, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,
@@ -27348,30 +20460,6 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_HTMLOptionButtonElement
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xBE, 0xF2, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DispIHTMLInputImage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -27379,30 +20467,6 @@ public static partial class IID
         {
             ReadOnlySpan<byte> data = [
                 0x1D, 0xF5, 0x50, 0x30,
-                0xB5, 0x98,
-                0xCF, 0x11,
-                0xBB,
-                0x82,
-                0x00,
-                0xAA,
-                0x00,
-                0xBD,
-                0xCE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_HTMLInputImage
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC4, 0xF2, 0x50, 0x30,
                 0xB5, 0x98,
                 0xCF, 0x11,
                 0xBB,

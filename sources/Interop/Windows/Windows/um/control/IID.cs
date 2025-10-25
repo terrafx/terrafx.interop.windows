@@ -411,28 +411,4 @@ public static partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
-
-    public static ref readonly Guid IID_FilgraphManager
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB3, 0xEB, 0x36, 0xE4,
-                0x4F, 0x52,
-                0xCE, 0x11,
-                0x9F,
-                0x53,
-                0x00,
-                0x20,
-                0xAF,
-                0x0B,
-                0xA7,
-                0x70
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
 }

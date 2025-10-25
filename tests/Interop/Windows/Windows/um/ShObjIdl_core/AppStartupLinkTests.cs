@@ -6,7 +6,7 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows.UnitTests;
 
@@ -17,6 +17,6 @@ public static unsafe partial class AppStartupLinkTests
     [Test]
     public static void GuidOfTest()
     {
-        Assert.That(typeof(AppStartupLink).GUID, Is.EqualTo(IID_AppStartupLink));
+        Assert.That(typeof(AppStartupLink).GUID, Is.EqualTo(CLSID_AppStartupLink));
     }
 }

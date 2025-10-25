@@ -9,45 +9,6 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
-    [NativeTypeName("#define STATIC_CODECAPI_AVEncProgressiveUpdateTime 0x649faf66")]
-    public const int STATIC_CODECAPI_AVEncProgressiveUpdateTime = 0x649faf66;
-
-    [NativeTypeName("#define STATIC_CODECAPI_AVEncChromaUpdateTime 0x4b4fd998")]
-    public const int STATIC_CODECAPI_AVEncChromaUpdateTime = 0x4b4fd998;
-
-    [NativeTypeName("#define STATIC_CODECAPI_AVEncAACEnableVBR 0xe836bb98")]
-    public const uint STATIC_CODECAPI_AVEncAACEnableVBR = 0xe836bb98;
-
-    [NativeTypeName("#define STATIC_CODECAPI_AVEncVideoConsecutiveFramesForLayer 0x0AF35522")]
-    public const int STATIC_CODECAPI_AVEncVideoConsecutiveFramesForLayer = 0x0AF35522;
-
-    [NativeTypeName("#define STATIC_CODECAPI_AVEncVideoMaxNumRefFrameForLayer 0x3141C639")]
-    public const int STATIC_CODECAPI_AVEncVideoMaxNumRefFrameForLayer = 0x3141C639;
-
-    [NativeTypeName("#define STATIC_CODECAPI_AVEncTileRows 0xFBC650FC")]
-    public const uint STATIC_CODECAPI_AVEncTileRows = 0xFBC650FC;
-
-    [NativeTypeName("#define STATIC_CODECAPI_AVEncTileColumns 0xB4B31205")]
-    public const uint STATIC_CODECAPI_AVEncTileColumns = 0xB4B31205;
-
-    [NativeTypeName("#define STATIC_CODECAPI_FeatureMapFlagsUsed 0x8bfda3b8")]
-    public const uint STATIC_CODECAPI_FeatureMapFlagsUsed = 0x8bfda3b8;
-
-    [NativeTypeName("#define STATIC_CODECAPI_AVEncVideoEnableSpatialAdaptiveQuantization 0x659cb943")]
-    public const int STATIC_CODECAPI_AVEncVideoEnableSpatialAdaptiveQuantization = 0x659cb943;
-
-    [NativeTypeName("#define STATIC_CODECAPI_AVEncVideoEnableFramePsnrYuv 0x2bbcdd1d")]
-    public const int STATIC_CODECAPI_AVEncVideoEnableFramePsnrYuv = 0x2bbcdd1d;
-
-    [NativeTypeName("#define STATIC_CODECAPI_AVEncVideoOutputQPMapBlockSize 0x97038743")]
-    public const uint STATIC_CODECAPI_AVEncVideoOutputQPMapBlockSize = 0x97038743;
-
-    [NativeTypeName("#define STATIC_CODECAPI_AVEncVideoOutputBitsUsedMapBlockSize 0x6c2cd11a")]
-    public const int STATIC_CODECAPI_AVEncVideoOutputBitsUsedMapBlockSize = 0x6c2cd11a;
-
-    [NativeTypeName("#define STATIC_CODECAPI_AVEncVideoSatdMapBlockSize 0x596f1106")]
-    public const int STATIC_CODECAPI_AVEncVideoSatdMapBlockSize = 0x596f1106;
-
     [NativeTypeName("#define eAVEncH264VProfile_ConstrainedHigh eAVEncH264VProfile_UCConstrainedHigh")]
     public const eAVEncH264VProfile eAVEncH264VProfile_ConstrainedHigh = eAVEncH264VProfile_UCConstrainedHigh;
 
