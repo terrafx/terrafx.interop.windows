@@ -14,6 +14,7 @@ public static partial class IID
 {
     public static ref readonly Guid IID_ISpNotifySource
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpNotifySink
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -60,6 +62,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpNotifyTranslator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -83,6 +86,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpDataKey
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -106,6 +110,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpRegDataKey
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -129,6 +134,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpObjectTokenCategory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -152,6 +158,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpObjectToken
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -175,6 +182,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpObjectTokenInit
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -198,6 +206,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IEnumSpObjectTokens
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -221,6 +230,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpObjectWithToken
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -244,6 +254,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpResourceManager
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -267,6 +278,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpEventSource
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -290,6 +302,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpEventSource2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -313,6 +326,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpEventSink
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -336,6 +350,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpStreamFormat
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -359,6 +374,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpStream
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -382,6 +398,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpStreamFormatConverter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -405,6 +422,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpAudio
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -428,6 +446,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpMMSysAudio
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -451,6 +470,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpTranscript
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -474,6 +494,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpLexicon
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -497,6 +518,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpContainerLexicon
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -520,6 +542,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpShortcut
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -543,6 +566,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpPhoneConverter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -566,6 +590,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpPhoneticAlphabetConverter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -589,6 +614,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpPhoneticAlphabetSelection
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -612,6 +638,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpVoice
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -635,6 +662,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpPhrase
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -658,6 +686,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpPhraseAlt
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -681,6 +710,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpPhrase2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -704,6 +734,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpRecoResult
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -727,6 +758,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpRecoResult2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -750,6 +782,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpXMLRecoResult
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -773,6 +806,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpGrammarBuilder
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -796,6 +830,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpRecoGrammar
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -819,6 +854,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpGrammarBuilder2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -842,6 +878,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpRecoGrammar2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -865,6 +902,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechResourceLoader
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -888,6 +926,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpRecoContext
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -911,6 +950,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpRecoContext2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -934,6 +974,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpProperties
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -957,6 +998,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpRecognizer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -980,6 +1022,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpSerializeState
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1003,6 +1046,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpRecognizer2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1026,6 +1070,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpRecoCategory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1049,6 +1094,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpRecognizer3
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1072,6 +1118,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpEnginePronunciation
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1095,6 +1142,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpDisplayAlternates
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1118,6 +1166,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechDataKey
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1141,6 +1190,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechObjectToken
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1164,6 +1214,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechObjectTokens
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1187,6 +1238,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechObjectTokenCategory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1210,6 +1262,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechAudioBufferInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1233,6 +1286,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechAudioStatus
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1256,6 +1310,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechAudioFormat
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1279,6 +1334,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechWaveFormatEx
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1302,6 +1358,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechBaseStream
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1325,6 +1382,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechFileStream
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1348,6 +1406,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechMemoryStream
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1371,6 +1430,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechCustomStream
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1394,6 +1454,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechAudio
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1417,6 +1478,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechMMSysAudio
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1440,6 +1502,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechVoice
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1463,6 +1526,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechVoiceStatus
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1486,6 +1550,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechRecognizer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1509,6 +1574,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechRecognizerStatus
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1532,6 +1598,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechRecoContext
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1555,6 +1622,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechRecoGrammar
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1578,6 +1646,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechGrammarRule
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1601,6 +1670,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechGrammarRules
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1624,6 +1694,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechGrammarRuleState
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1647,6 +1718,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechGrammarRuleStateTransition
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1670,6 +1742,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechGrammarRuleStateTransitions
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1693,6 +1766,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechTextSelectionInformation
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1716,6 +1790,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechRecoResult
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1739,6 +1814,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechRecoResult2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1762,6 +1838,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechRecoResultTimes
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1785,6 +1862,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechPhraseAlternate
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1808,6 +1886,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechPhraseAlternates
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1831,6 +1910,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechPhraseInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1854,6 +1934,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechPhraseElement
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1877,6 +1958,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechPhraseElements
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1900,6 +1982,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechPhraseReplacement
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1923,6 +2006,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechPhraseReplacements
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1946,6 +2030,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechPhraseProperty
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1969,6 +2054,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechPhraseProperties
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1992,6 +2078,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechPhraseRule
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2015,6 +2102,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechPhraseRules
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2038,6 +2126,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechLexicon
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2061,6 +2150,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechLexiconWords
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2084,6 +2174,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechLexiconWord
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2107,6 +2198,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechLexiconPronunciations
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2130,6 +2222,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechLexiconPronunciation
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2153,6 +2246,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechXMLRecoResult
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2176,6 +2270,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechRecoResultDispatch
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2199,6 +2294,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechPhraseInfoBuilder
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2222,6 +2318,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISpeechPhoneConverter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2245,6 +2342,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_SpPhoneticAlphabetConverter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2268,6 +2366,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_SpTextSelectionInformation
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

@@ -14,6 +14,7 @@ public static partial class IID
 {
     public static ref readonly Guid IID_ID2D1EffectContext1
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ID2D1EffectContext2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

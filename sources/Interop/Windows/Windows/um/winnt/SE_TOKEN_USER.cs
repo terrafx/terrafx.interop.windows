@@ -14,11 +14,11 @@ namespace TerraFX.Interop.Windows;
 public partial struct SE_TOKEN_USER
 {
     /// <include file='SE_TOKEN_USER.xml' path='doc/member[@name="SE_TOKEN_USER.Anonymous1"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L12099_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L12100_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='SE_TOKEN_USER.xml' path='doc/member[@name="SE_TOKEN_USER.Anonymous2"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L12104_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L12105_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.TokenUser"]/*' />

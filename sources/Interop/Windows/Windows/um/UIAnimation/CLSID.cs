@@ -14,6 +14,7 @@ public static partial class CLSID
 {
     public static ref readonly Guid CLSID_UIAnimationManager
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_UIAnimationManager2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -60,6 +62,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_UIAnimationTransitionLibrary
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -83,6 +86,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_UIAnimationTransitionLibrary2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -106,6 +110,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_UIAnimationTransitionFactory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -129,6 +134,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_UIAnimationTransitionFactory2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -152,6 +158,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_UIAnimationTimer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

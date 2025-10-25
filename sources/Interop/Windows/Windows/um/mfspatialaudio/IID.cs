@@ -14,6 +14,7 @@ public static partial class IID
 {
     public static ref readonly Guid IID_IMFSpatialAudioObjectBuffer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IMFSpatialAudioSample
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

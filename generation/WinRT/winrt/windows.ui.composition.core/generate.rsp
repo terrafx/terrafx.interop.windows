@@ -2,9 +2,9 @@
 @../../../remap.rsp
 --exclude
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Composition::Core::CompositorController *, IInspectable *>
+ABI::Windows::UI::Composition::Core::IID_ICompositorController
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_ICompositorController
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

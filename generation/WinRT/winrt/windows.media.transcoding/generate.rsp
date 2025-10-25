@@ -6,11 +6,11 @@ ABI::Windows::Foundation::IAsyncActionWithProgress<double>
 ABI::Windows::Foundation::IAsyncActionWithProgressCompletedHandler<double>
 ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::Transcoding::PrepareTranscodeResult *>
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::Transcoding::PrepareTranscodeResult *>
+ABI::Windows::Media::Transcoding::IID_IMediaTranscoder
+ABI::Windows::Media::Transcoding::IID_IMediaTranscoder2
+ABI::Windows::Media::Transcoding::IID_IPrepareTranscodeResult
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IMediaTranscoder
-IID_IMediaTranscoder2
-IID_IPrepareTranscodeResult
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

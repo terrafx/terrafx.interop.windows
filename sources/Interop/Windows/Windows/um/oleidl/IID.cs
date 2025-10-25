@@ -14,6 +14,7 @@ public static partial class IID
 {
     public static ref readonly Guid IID_IOleAdviseHolder
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleCache
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -60,6 +62,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleCache2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -83,6 +86,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleCacheControl
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -106,6 +110,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IParseDisplayName
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -129,6 +134,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleContainer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -152,6 +158,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleClientSite
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -175,6 +182,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleObject
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -198,6 +206,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleWindow
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -221,6 +230,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleLink
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -244,6 +254,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleItemContainer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -267,6 +278,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleInPlaceUIWindow
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -290,6 +302,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleInPlaceActiveObject
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -313,6 +326,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleInPlaceFrame
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -336,6 +350,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleInPlaceObject
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -359,6 +374,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleInPlaceSite
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -382,6 +398,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IContinue
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -405,6 +422,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IViewObject
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -428,6 +446,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IViewObject2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -451,6 +470,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IDropSource
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -474,6 +494,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IDropTarget
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -497,6 +518,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IDropSourceNotify
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -520,6 +542,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IEnterpriseDropTarget
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -543,6 +566,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IEnumOLEVERB
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

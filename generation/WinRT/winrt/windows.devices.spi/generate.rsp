@@ -1,6 +1,13 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Devices::Spi::IID_ISpiBusInfo
+ABI::Windows::Devices::Spi::IID_ISpiConnectionSettings
+ABI::Windows::Devices::Spi::IID_ISpiConnectionSettingsFactory
+ABI::Windows::Devices::Spi::IID_ISpiController
+ABI::Windows::Devices::Spi::IID_ISpiControllerStatics
+ABI::Windows::Devices::Spi::IID_ISpiDevice
+ABI::Windows::Devices::Spi::IID_ISpiDeviceStatics
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Spi::SpiController *>
 ABI::Windows::Foundation::Collections::IIterable<int>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Spi::SpiController *>
@@ -15,13 +22,6 @@ ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices:
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Spi::SpiController *> *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_ISpiBusInfo
-IID_ISpiConnectionSettings
-IID_ISpiConnectionSettingsFactory
-IID_ISpiController
-IID_ISpiControllerStatics
-IID_ISpiDevice
-IID_ISpiDeviceStatics
 WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION

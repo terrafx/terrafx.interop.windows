@@ -45,6 +45,9 @@ public static partial class Windows
     [NativeTypeName("#define STATIC_CODECAPI_AVEncVideoOutputBitsUsedMapBlockSize 0x6c2cd11a")]
     public const int STATIC_CODECAPI_AVEncVideoOutputBitsUsedMapBlockSize = 0x6c2cd11a;
 
+    [NativeTypeName("#define STATIC_CODECAPI_AVEncVideoSatdMapBlockSize 0x596f1106")]
+    public const int STATIC_CODECAPI_AVEncVideoSatdMapBlockSize = 0x596f1106;
+
     [NativeTypeName("#define eAVEncH264VProfile_ConstrainedHigh eAVEncH264VProfile_UCConstrainedHigh")]
     public const eAVEncH264VProfile eAVEncH264VProfile_ConstrainedHigh = eAVEncH264VProfile_UCConstrainedHigh;
 

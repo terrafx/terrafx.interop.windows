@@ -14,6 +14,7 @@ public static partial class CLSID
 {
     public static ref readonly Guid CLSID_AudioVolumeMeter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_AudioReverb
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

@@ -9,8 +9,7 @@ namespace TerraFX.Interop.DirectX;
 public partial struct D3D12_RAYTRACING_SERIALIZED_BLOCK
 {
     /// <include file='D3D12_RAYTRACING_SERIALIZED_BLOCK.xml' path='doc/member[@name="D3D12_RAYTRACING_SERIALIZED_BLOCK.Type"]/*' />
-    [NativeTypeName("D3D12_RAYTRACING_SERIALIZED_BLOCK_TYPE")]
-    public D3D12_SERIALIZED_BLOCK_TYPE Type;
+    public D3D12_RAYTRACING_SERIALIZED_BLOCK_TYPE Type;
 
     /// <include file='D3D12_RAYTRACING_SERIALIZED_BLOCK.xml' path='doc/member[@name="D3D12_RAYTRACING_SERIALIZED_BLOCK.NumBlockPointersAfterHeader"]/*' />
     [NativeTypeName("UINT64")]

@@ -3,11 +3,11 @@
 --exclude
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::Core::VariablePhotoSequenceCapture *, ABI::Windows::Media::Capture::Core::VariablePhotoCapturedEventArgs *>
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Capture::Core::VariablePhotoSequenceCapture *, IInspectable *>
+ABI::Windows::Media::Capture::Core::IID_IVariablePhotoCapturedEventArgs
+ABI::Windows::Media::Capture::Core::IID_IVariablePhotoSequenceCapture
+ABI::Windows::Media::Capture::Core::IID_IVariablePhotoSequenceCapture2
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IVariablePhotoCapturedEventArgs
-IID_IVariablePhotoSequenceCapture
-IID_IVariablePhotoSequenceCapture2
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 WINDOWS_MEDIA_CAPTURE_APPBROADCASTCONTRACT_VERSION

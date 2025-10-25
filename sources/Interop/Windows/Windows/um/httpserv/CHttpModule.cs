@@ -256,7 +256,7 @@ public unsafe partial struct CHttpModule : CHttpModule.Interface
         ((delegate* unmanaged[MemberFunction]<CHttpModule*, void>)(lpVtbl[29]))((CHttpModule*)Unsafe.AsPointer(ref this));
     }
 
-    /// <include file='CHttpModule.xml' path='doc/member[@name="CHttpModule.Finalize"]/*' />
+    /// <include file='CHttpModule.xml' path='doc/member[@name="CHttpModule.Destructor"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
     public void Destructor()

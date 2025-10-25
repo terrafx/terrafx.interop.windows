@@ -130,6 +130,7 @@ public static partial class Windows
 
     public static ref readonly Guid DIID__ISpeechVoiceEvents
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -153,6 +154,7 @@ public static partial class Windows
 
     public static ref readonly Guid DIID__ISpeechRecoContextEvents
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_HOT_PATCH_MACHINE
 {
     /// <include file='IMAGE_HOT_PATCH_MACHINE.xml' path='doc/member[@name="IMAGE_HOT_PATCH_MACHINE.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L21234_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L21239_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct._x86"]/*' />

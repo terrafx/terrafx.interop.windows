@@ -1,6 +1,15 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Devices::Gpio::IID_IGpioChangeCounter
+ABI::Windows::Devices::Gpio::IID_IGpioChangeCounterFactory
+ABI::Windows::Devices::Gpio::IID_IGpioChangeReader
+ABI::Windows::Devices::Gpio::IID_IGpioChangeReaderFactory
+ABI::Windows::Devices::Gpio::IID_IGpioController
+ABI::Windows::Devices::Gpio::IID_IGpioControllerStatics
+ABI::Windows::Devices::Gpio::IID_IGpioControllerStatics2
+ABI::Windows::Devices::Gpio::IID_IGpioPin
+ABI::Windows::Devices::Gpio::IID_IGpioPinValueChangedEventArgs
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Gpio::GpioChangeRecord>
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Gpio::GpioController *>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Gpio::GpioChangeRecord>
@@ -15,15 +24,6 @@ ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundati
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Gpio::GpioPin *, ABI::Windows::Devices::Gpio::GpioPinValueChangedEventArgs *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IGpioChangeCounter
-IID_IGpioChangeCounterFactory
-IID_IGpioChangeReader
-IID_IGpioChangeReaderFactory
-IID_IGpioController
-IID_IGpioControllerStatics
-IID_IGpioControllerStatics2
-IID_IGpioPin
-IID_IGpioPinValueChangedEventArgs
 WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION

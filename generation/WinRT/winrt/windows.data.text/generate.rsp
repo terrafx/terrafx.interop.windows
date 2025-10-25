@@ -1,6 +1,27 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Data::Text::IID_IAlternateWordForm
+ABI::Windows::Data::Text::IID_ISelectableWordSegment
+ABI::Windows::Data::Text::IID_ISelectableWordSegmentsTokenizingHandler
+ABI::Windows::Data::Text::IID_ISelectableWordsSegmenter
+ABI::Windows::Data::Text::IID_ISelectableWordsSegmenterFactory
+ABI::Windows::Data::Text::IID_ISemanticTextQuery
+ABI::Windows::Data::Text::IID_ISemanticTextQueryFactory
+ABI::Windows::Data::Text::IID_ITextConversionGenerator
+ABI::Windows::Data::Text::IID_ITextConversionGeneratorFactory
+ABI::Windows::Data::Text::IID_ITextPhoneme
+ABI::Windows::Data::Text::IID_ITextPredictionGenerator
+ABI::Windows::Data::Text::IID_ITextPredictionGenerator2
+ABI::Windows::Data::Text::IID_ITextPredictionGeneratorFactory
+ABI::Windows::Data::Text::IID_ITextReverseConversionGenerator
+ABI::Windows::Data::Text::IID_ITextReverseConversionGenerator2
+ABI::Windows::Data::Text::IID_ITextReverseConversionGeneratorFactory
+ABI::Windows::Data::Text::IID_IUnicodeCharactersStatics
+ABI::Windows::Data::Text::IID_IWordSegment
+ABI::Windows::Data::Text::IID_IWordSegmentsTokenizingHandler
+ABI::Windows::Data::Text::IID_IWordsSegmenter
+ABI::Windows::Data::Text::IID_IWordsSegmenterFactory
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Data::Text::AlternateWordForm *>
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Data::Text::SelectableWordSegment *>
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Data::Text::TextPhoneme *>
@@ -17,27 +38,6 @@ ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Foundation::Collections:
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Data::Text::TextPhoneme *> *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IAlternateWordForm
-IID_ISelectableWordSegment
-IID_ISelectableWordSegmentsTokenizingHandler
-IID_ISelectableWordsSegmenter
-IID_ISelectableWordsSegmenterFactory
-IID_ISemanticTextQuery
-IID_ISemanticTextQueryFactory
-IID_ITextConversionGenerator
-IID_ITextConversionGeneratorFactory
-IID_ITextPhoneme
-IID_ITextPredictionGenerator
-IID_ITextPredictionGenerator2
-IID_ITextPredictionGeneratorFactory
-IID_ITextReverseConversionGenerator
-IID_ITextReverseConversionGenerator2
-IID_ITextReverseConversionGeneratorFactory
-IID_IUnicodeCharactersStatics
-IID_IWordSegment
-IID_IWordSegmentsTokenizingHandler
-IID_IWordsSegmenter
-IID_IWordsSegmenterFactory
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

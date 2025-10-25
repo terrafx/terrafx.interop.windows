@@ -14,6 +14,7 @@ public static partial class IID
 {
     public static ref readonly Guid IID_IWbemClassObject
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemObjectAccess
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -60,6 +62,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemQualifierSet
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -83,6 +86,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemServices
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -106,6 +110,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemLocator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -129,6 +134,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemObjectSink
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -152,6 +158,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IEnumWbemClassObject
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -175,6 +182,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemCallResult
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -198,6 +206,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemContext
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -221,6 +230,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IUnsecuredApartment
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -244,6 +254,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemUnsecuredApartment
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -267,6 +278,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemStatusCodeText
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -290,6 +302,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemBackupRestore
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -313,6 +326,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemBackupRestoreEx
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -336,6 +350,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemRefresher
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -359,6 +374,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemHiPerfEnum
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -382,6 +398,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemConfigureRefresher
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -405,6 +422,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_WbemLocator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -428,6 +446,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_WbemContext
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -451,6 +470,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_UnsecuredApartment
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -474,6 +494,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_WbemClassObject
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -497,6 +518,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_MofCompiler
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -520,6 +542,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_WbemStatusCodeText
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -543,6 +566,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_WbemBackupRestore
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -566,6 +590,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_WbemRefresher
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -589,6 +614,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_WbemObjectTextSrc
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -612,6 +638,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemObjectSinkEx
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -635,6 +662,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemShutdown
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -658,6 +686,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWbemObjectTextSrc
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -681,6 +710,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IMofCompiler
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

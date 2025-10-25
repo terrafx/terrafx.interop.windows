@@ -1,6 +1,18 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Devices::Bluetooth::Background::IID_IBluetoothLEAdvertisementPublisherTriggerDetails
+ABI::Windows::Devices::Bluetooth::Background::IID_IBluetoothLEAdvertisementPublisherTriggerDetails2
+ABI::Windows::Devices::Bluetooth::Background::IID_IBluetoothLEAdvertisementWatcherTriggerDetails
+ABI::Windows::Devices::Bluetooth::Background::IID_IGattCharacteristicNotificationTriggerDetails
+ABI::Windows::Devices::Bluetooth::Background::IID_IGattCharacteristicNotificationTriggerDetails2
+ABI::Windows::Devices::Bluetooth::Background::IID_IGattServiceProviderConnection
+ABI::Windows::Devices::Bluetooth::Background::IID_IGattServiceProviderConnection2
+ABI::Windows::Devices::Bluetooth::Background::IID_IGattServiceProviderConnectionStatics
+ABI::Windows::Devices::Bluetooth::Background::IID_IGattServiceProviderTriggerDetails
+ABI::Windows::Devices::Bluetooth::Background::IID_IRfcommConnectionTriggerDetails
+ABI::Windows::Devices::Bluetooth::Background::IID_IRfcommInboundConnectionInformation
+ABI::Windows::Devices::Bluetooth::Background::IID_IRfcommOutboundConnectionInformation
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementReceivedEventArgs *>
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs *>
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Devices::Bluetooth::Background::GattServiceProviderConnection *> *>
@@ -13,20 +25,8 @@ ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Blueto
 ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Bluetooth::GenericAttributeProfile::GattValueChangedEventArgs *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IBluetoothLEAdvertisementPublisherTriggerDetails
-IID_IBluetoothLEAdvertisementPublisherTriggerDetails2
-IID_IBluetoothLEAdvertisementWatcherTriggerDetails
-IID_IGattCharacteristicNotificationTriggerDetails
-IID_IGattCharacteristicNotificationTriggerDetails2
-IID_IGattServiceProviderConnection
-IID_IGattServiceProviderConnection2
-IID_IGattServiceProviderConnectionStatics
-IID_IGattServiceProviderTriggerDetails
-IID_IRfcommConnectionTriggerDetails
-IID_IRfcommInboundConnectionInformation
-IID_IRfcommOutboundConnectionInformation
-WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
+WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file
 winrt-windows.devices.bluetooth.background.h

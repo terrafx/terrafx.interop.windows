@@ -15,16 +15,16 @@ ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Casting::Casti
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Casting::CastingConnection *, IInspectable *>
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Casting::CastingDevicePicker *, ABI::Windows::Media::Casting::CastingDeviceSelectedEventArgs *>
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Media::Casting::CastingDevicePicker *, IInspectable *>
+ABI::Windows::Media::Casting::IID_ICastingConnection
+ABI::Windows::Media::Casting::IID_ICastingConnectionErrorOccurredEventArgs
+ABI::Windows::Media::Casting::IID_ICastingDevice
+ABI::Windows::Media::Casting::IID_ICastingDevicePicker
+ABI::Windows::Media::Casting::IID_ICastingDevicePickerFilter
+ABI::Windows::Media::Casting::IID_ICastingDeviceSelectedEventArgs
+ABI::Windows::Media::Casting::IID_ICastingDeviceStatics
+ABI::Windows::Media::Casting::IID_ICastingSource
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_ICastingConnection
-IID_ICastingConnectionErrorOccurredEventArgs
-IID_ICastingDevice
-IID_ICastingDevicePicker
-IID_ICastingDevicePickerFilter
-IID_ICastingDeviceSelectedEventArgs
-IID_ICastingDeviceStatics
-IID_ICastingSource
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

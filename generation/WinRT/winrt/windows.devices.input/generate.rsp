@@ -1,6 +1,27 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Devices::Input::IID_IKeyboardCapabilities
+ABI::Windows::Devices::Input::IID_IMouseCapabilities
+ABI::Windows::Devices::Input::IID_IMouseDevice
+ABI::Windows::Devices::Input::IID_IMouseDeviceStatics
+ABI::Windows::Devices::Input::IID_IMouseEventArgs
+ABI::Windows::Devices::Input::IID_IPenButtonListener
+ABI::Windows::Devices::Input::IID_IPenButtonListenerStatics
+ABI::Windows::Devices::Input::IID_IPenDevice
+ABI::Windows::Devices::Input::IID_IPenDevice2
+ABI::Windows::Devices::Input::IID_IPenDeviceStatics
+ABI::Windows::Devices::Input::IID_IPenDockedEventArgs
+ABI::Windows::Devices::Input::IID_IPenDockListener
+ABI::Windows::Devices::Input::IID_IPenDockListenerStatics
+ABI::Windows::Devices::Input::IID_IPenTailButtonClickedEventArgs
+ABI::Windows::Devices::Input::IID_IPenTailButtonDoubleClickedEventArgs
+ABI::Windows::Devices::Input::IID_IPenTailButtonLongPressedEventArgs
+ABI::Windows::Devices::Input::IID_IPenUndockedEventArgs
+ABI::Windows::Devices::Input::IID_IPointerDevice
+ABI::Windows::Devices::Input::IID_IPointerDevice2
+ABI::Windows::Devices::Input::IID_IPointerDeviceStatics
+ABI::Windows::Devices::Input::IID_ITouchCapabilities
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Input::PointerDevice *>
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Input::PointerDeviceUsage>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Input::PointerDevice *>
@@ -17,27 +38,6 @@ ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Input::PenDo
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Input::PenDockListener *, IInspectable *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IKeyboardCapabilities
-IID_IMouseCapabilities
-IID_IMouseDevice
-IID_IMouseDeviceStatics
-IID_IMouseEventArgs
-IID_IPenButtonListener
-IID_IPenButtonListenerStatics
-IID_IPenDevice
-IID_IPenDevice2
-IID_IPenDeviceStatics
-IID_IPenDockedEventArgs
-IID_IPenDockListener
-IID_IPenDockListenerStatics
-IID_IPenTailButtonClickedEventArgs
-IID_IPenTailButtonDoubleClickedEventArgs
-IID_IPenTailButtonLongPressedEventArgs
-IID_IPenUndockedEventArgs
-IID_IPointerDevice
-IID_IPointerDevice2
-IID_IPointerDeviceStatics
-IID_ITouchCapabilities
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

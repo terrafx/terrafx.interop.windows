@@ -13,8 +13,20 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[44]")]
     public const string InterfaceName_Windows_Security_Credentials_IKeyCredential = "Windows.Security.Credentials.IKeyCredential";
 
+    [NativeTypeName("const WCHAR[45]")]
+    public const string InterfaceName_Windows_Security_Credentials_IKeyCredential2 = "Windows.Security.Credentials.IKeyCredential2";
+
     [NativeTypeName("const WCHAR[61]")]
     public const string InterfaceName_Windows_Security_Credentials_IKeyCredentialAttestationResult = "Windows.Security.Credentials.IKeyCredentialAttestationResult";
+
+    [NativeTypeName("const WCHAR[62]")]
+    public const string InterfaceName_Windows_Security_Credentials_IKeyCredentialCacheConfiguration = "Windows.Security.Credentials.IKeyCredentialCacheConfiguration";
+
+    [NativeTypeName("const WCHAR[69]")]
+    public const string InterfaceName_Windows_Security_Credentials_IKeyCredentialCacheConfigurationFactory = "Windows.Security.Credentials.IKeyCredentialCacheConfigurationFactory";
+
+    [NativeTypeName("const WCHAR[66]")]
+    public const string InterfaceName_Windows_Security_Credentials_IKeyCredentialManagerExtendedStatics = "Windows.Security.Credentials.IKeyCredentialManagerExtendedStatics";
 
     [NativeTypeName("const WCHAR[58]")]
     public const string InterfaceName_Windows_Security_Credentials_IKeyCredentialManagerStatics = "Windows.Security.Credentials.IKeyCredentialManagerStatics";
@@ -60,6 +72,9 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[60]")]
     public const string RuntimeClass_Windows_Security_Credentials_KeyCredentialAttestationResult = "Windows.Security.Credentials.KeyCredentialAttestationResult";
+
+    [NativeTypeName("const WCHAR[61]")]
+    public const string RuntimeClass_Windows_Security_Credentials_KeyCredentialCacheConfiguration = "Windows.Security.Credentials.KeyCredentialCacheConfiguration";
 
     [NativeTypeName("const WCHAR[50]")]
     public const string RuntimeClass_Windows_Security_Credentials_KeyCredentialManager = "Windows.Security.Credentials.KeyCredentialManager";

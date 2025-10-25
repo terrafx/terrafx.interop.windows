@@ -366,4 +366,10 @@ public static partial class CO
 
     [NativeTypeName("#define CO_E_CANCEL_DISABLED _HRESULT_TYPEDEF_(0x80010140L)")]
     public const int CO_E_CANCEL_DISABLED = unchecked((int)(0x80010140));
+
+    [NativeTypeName("#define CO_E_SERVER_CANNOT_BE_EQUAL_OR_GREATER_PRIVILEGE _HRESULT_TYPEDEF_(0x80010141L)")]
+    public const int CO_E_SERVER_CANNOT_BE_EQUAL_OR_GREATER_PRIVILEGE = unchecked((int)(0x80010141));
+
+    [NativeTypeName("#define CO_E_CANNOT_ACTIVATE_CROSS_PACKAGE_IN_SESSION_0 _HRESULT_TYPEDEF_(0x80010142L)")]
+    public const int CO_E_CANNOT_ACTIVATE_CROSS_PACKAGE_IN_SESSION_0 = unchecked((int)(0x80010142));
 }

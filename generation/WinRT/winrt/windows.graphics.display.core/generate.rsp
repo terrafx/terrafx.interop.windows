@@ -7,12 +7,12 @@ ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Graphics::Displ
 ABI::Windows::Foundation::IAsyncOperation<bool>
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<bool>
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Graphics::Display::Core::HdmiDisplayInformation *, IInspectable *>
+ABI::Windows::Graphics::Display::Core::IID_IHdmiDisplayInformation
+ABI::Windows::Graphics::Display::Core::IID_IHdmiDisplayInformationStatics
+ABI::Windows::Graphics::Display::Core::IID_IHdmiDisplayMode
+ABI::Windows::Graphics::Display::Core::IID_IHdmiDisplayMode2
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IHdmiDisplayInformation
-IID_IHdmiDisplayInformationStatics
-IID_IHdmiDisplayMode
-IID_IHdmiDisplayMode2
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

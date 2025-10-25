@@ -165,6 +165,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_DirectManipulationViewport
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -188,6 +189,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_DirectManipulationUpdateManager
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -211,6 +213,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_DirectManipulationPrimaryContent
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -234,6 +237,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_DirectManipulationManager
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -257,6 +261,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_DirectManipulationSharedManager
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -280,6 +285,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_DCompManipulationCompositor
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

@@ -14,6 +14,7 @@ public static partial class CLSID
 {
     public static ref readonly Guid CLSID_InMemoryPropertyStore
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_InMemoryPropertyStoreMarshalByValue
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -60,6 +62,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_PropertySystem
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

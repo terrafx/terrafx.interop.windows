@@ -89,6 +89,12 @@ public enum CLSCTX
     /// <include file='CLSCTX.xml' path='doc/member[@name="CLSCTX.CLSCTX_ALLOW_LOWER_TRUST_REGISTRATION"]/*' />
     CLSCTX_ALLOW_LOWER_TRUST_REGISTRATION = 0x4000000,
 
+    /// <include file='CLSCTX.xml' path='doc/member[@name="CLSCTX.CLSCTX_SERVER_MUST_BE_EQUAL_OR_GREATER_PRIVILEGE"]/*' />
+    CLSCTX_SERVER_MUST_BE_EQUAL_OR_GREATER_PRIVILEGE = 0x8000000,
+
+    /// <include file='CLSCTX.xml' path='doc/member[@name="CLSCTX.CLSCTX_DO_NOT_ELEVATE_SERVER"]/*' />
+    CLSCTX_DO_NOT_ELEVATE_SERVER = 0x10000000,
+
     /// <include file='CLSCTX.xml' path='doc/member[@name="CLSCTX.CLSCTX_PS_DLL"]/*' />
     CLSCTX_PS_DLL = unchecked((int)(0x80000000)),
 }

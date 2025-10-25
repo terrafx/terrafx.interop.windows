@@ -14,6 +14,7 @@ public static partial class IID
 {
     public static ref readonly Guid IID_IAppxFactory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxFactory2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -60,6 +62,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxFactory3
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -83,6 +86,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxPackageReader
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -106,6 +110,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxPackageWriter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -129,6 +134,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxPackageWriter2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -152,6 +158,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxPackageWriter3
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -175,6 +182,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxFile
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -198,6 +206,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxFile2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -221,6 +230,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxFilesEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -244,6 +254,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBlockMapReader
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -267,6 +278,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBlockMapFile
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -290,6 +302,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBlockMapFile2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -313,6 +326,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBlockMapFilesEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -336,6 +350,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBlockMapBlock
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -359,6 +374,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBlockMapBlocksEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -382,6 +398,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestReader
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -405,6 +422,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestReader2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -428,6 +446,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestReader3
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -451,6 +470,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestReader4
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -474,6 +494,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestReader5
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -497,6 +518,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestReader6
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -520,6 +542,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestReader7
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -543,6 +566,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestDriverDependenciesEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -566,6 +590,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestDriverDependency
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -589,6 +614,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestDriverConstraintsEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -612,6 +638,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestDriverConstraint
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -635,6 +662,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestOSPackageDependenciesEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -658,6 +686,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestOSPackageDependency
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -681,6 +710,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestHostRuntimeDependenciesEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -704,6 +734,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestHostRuntimeDependency
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -727,6 +758,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestHostRuntimeDependency2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -750,6 +782,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestOptionalPackageInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -773,6 +806,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestMainPackageDependenciesEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -796,6 +830,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestMainPackageDependency
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -819,6 +854,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestPackageId
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -842,6 +878,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestPackageId2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -865,6 +902,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestProperties
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -888,6 +926,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestTargetDeviceFamiliesEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -911,6 +950,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestTargetDeviceFamily
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -934,6 +974,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestPackageDependenciesEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -957,6 +998,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestPackageDependency
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -980,6 +1022,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestPackageDependency2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1003,6 +1046,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestPackageDependency3
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1026,6 +1070,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestResourcesEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1049,6 +1094,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestDeviceCapabilitiesEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1072,6 +1118,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestCapabilitiesEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1095,6 +1142,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestApplicationsEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1118,6 +1166,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestApplication
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1141,6 +1190,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestQualifiedResourcesEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1164,6 +1214,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxManifestQualifiedResource
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1187,6 +1238,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBundleFactory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1210,6 +1262,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBundleFactory2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1233,6 +1286,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBundleWriter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1256,6 +1310,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBundleWriter2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1279,6 +1334,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBundleWriter3
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1302,6 +1358,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBundleWriter4
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1325,6 +1382,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBundleReader
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1348,6 +1406,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBundleManifestReader
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1371,6 +1430,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBundleManifestReader2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1394,6 +1454,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBundleManifestPackageInfoEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1417,6 +1478,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBundleManifestPackageInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1440,6 +1502,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBundleManifestPackageInfo2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1463,6 +1526,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBundleManifestPackageInfo3
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1486,6 +1550,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBundleManifestPackageInfo4
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1509,6 +1574,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBundleManifestOptionalBundleInfoEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1532,6 +1598,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxBundleManifestOptionalBundleInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1555,6 +1622,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxContentGroupFilesEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1578,6 +1646,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxContentGroup
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1601,6 +1670,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxContentGroupsEnumerator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1624,6 +1694,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxContentGroupMapReader
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1647,6 +1718,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxSourceContentGroupMapReader
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1670,6 +1742,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxContentGroupMapWriter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1693,6 +1766,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxPackagingDiagnosticEventSink
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1716,6 +1790,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxPackagingDiagnosticEventSinkManager
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1739,6 +1814,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxAppInstallerReader
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1762,6 +1838,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxDigestProvider
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1785,6 +1862,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxEncryptionFactory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1808,6 +1886,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxEncryptionFactory2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1831,6 +1910,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxEncryptionFactory3
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1854,6 +1934,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxEncryptionFactory4
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1877,6 +1958,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxEncryptionFactory5
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1900,6 +1982,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxEncryptedPackageWriter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1923,6 +2006,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxEncryptedPackageWriter2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1946,6 +2030,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxEncryptedBundleWriter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1969,6 +2054,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxEncryptedBundleWriter2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1992,6 +2078,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxEncryptedBundleWriter3
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2015,6 +2102,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAppxPackageEditor
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2038,6 +2126,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_AppxFactory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2061,6 +2150,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_AppxBundleFactory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2084,6 +2174,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_AppxPackagingDiagnosticEventSinkManager
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2107,6 +2198,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_AppxPackagingServiceProvider
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2130,6 +2222,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_AppxEncryptionFactory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2153,6 +2246,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_AppxPackageEditor
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

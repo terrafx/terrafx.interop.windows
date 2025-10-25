@@ -1,6 +1,12 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Devices::I2c::IID_II2cConnectionSettings
+ABI::Windows::Devices::I2c::IID_II2cConnectionSettingsFactory
+ABI::Windows::Devices::I2c::IID_II2cController
+ABI::Windows::Devices::I2c::IID_II2cControllerStatics
+ABI::Windows::Devices::I2c::IID_II2cDevice
+ABI::Windows::Devices::I2c::IID_II2cDeviceStatics
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::I2c::I2cController *>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::I2c::I2cController *>
 ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::I2c::I2cController *>
@@ -12,12 +18,6 @@ ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices:
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::I2c::I2cController *> *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_II2cConnectionSettings
-IID_II2cConnectionSettingsFactory
-IID_II2cController
-IID_II2cControllerStatics
-IID_II2cDevice
-IID_II2cDeviceStatics
 WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION

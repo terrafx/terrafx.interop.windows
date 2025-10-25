@@ -14,6 +14,7 @@ public static partial class CLSID
 {
     public static ref readonly Guid CLSID_FXEQ
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_FXMasteringLimiter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -60,6 +62,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_FXReverb
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -83,6 +86,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_FXEcho
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

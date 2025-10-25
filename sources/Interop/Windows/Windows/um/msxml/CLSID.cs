@@ -14,6 +14,7 @@ public static partial class CLSID
 {
     public static ref readonly Guid CLSID_DOMDocument
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_DOMFreeThreadedDocument
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -60,6 +62,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_XMLHTTPRequest
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -83,6 +86,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_XMLDSOControl
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -106,6 +110,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_XMLDocument
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

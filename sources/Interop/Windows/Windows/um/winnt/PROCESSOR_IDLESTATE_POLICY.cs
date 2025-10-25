@@ -16,7 +16,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
     public ushort Revision;
 
     /// <include file='PROCESSOR_IDLESTATE_POLICY.xml' path='doc/member[@name="PROCESSOR_IDLESTATE_POLICY.Flags"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L19026_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L19031_C5")]
     public _Flags_e__Union Flags;
 
     /// <include file='PROCESSOR_IDLESTATE_POLICY.xml' path='doc/member[@name="PROCESSOR_IDLESTATE_POLICY.PolicyCount"]/*' />
@@ -38,7 +38,7 @@ public partial struct PROCESSOR_IDLESTATE_POLICY
 
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L19028_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L19033_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AllowScaling"]/*' />

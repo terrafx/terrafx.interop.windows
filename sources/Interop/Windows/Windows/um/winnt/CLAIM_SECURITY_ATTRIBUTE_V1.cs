@@ -33,7 +33,7 @@ public unsafe partial struct CLAIM_SECURITY_ATTRIBUTE_V1
     public uint ValueCount;
 
     /// <include file='CLAIM_SECURITY_ATTRIBUTE_V1.xml' path='doc/member[@name="CLAIM_SECURITY_ATTRIBUTE_V1.Values"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L12453_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L12454_C5")]
     public _Values_e__Union Values;
 
     /// <include file='_Values_e__Union.xml' path='doc/member[@name="_Values_e__Union"]/*' />

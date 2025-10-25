@@ -7,14 +7,14 @@ ABI::Windows::Foundation::Collections::IVector<ABI::Windows::UI::Popups::IUIComm
 ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::UI::Popups::IUICommand *>
 ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::UI::Popups::IUICommand *>
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::UI::Popups::IUICommand *>
+ABI::Windows::UI::Popups::IID_IMessageDialog
+ABI::Windows::UI::Popups::IID_IMessageDialogFactory
+ABI::Windows::UI::Popups::IID_IPopupMenu
+ABI::Windows::UI::Popups::IID_IUICommand
+ABI::Windows::UI::Popups::IID_IUICommandFactory
+ABI::Windows::UI::Popups::IID_IUICommandInvokedHandler
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IMessageDialog
-IID_IMessageDialogFactory
-IID_IPopupMenu
-IID_IUICommand
-IID_IUICommandFactory
-IID_IUICommandInvokedHandler
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

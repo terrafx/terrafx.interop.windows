@@ -469,6 +469,9 @@ public static partial class FACILITY
     [NativeTypeName("#define FACILITY_USERMODE_WIN_ACCEL 2343")]
     public const int FACILITY_USERMODE_WIN_ACCEL = 2343;
 
+    [NativeTypeName("#define FACILITY_PPF 2344")]
+    public const int FACILITY_PPF = 2344;
+
     [NativeTypeName("#define FACILITY_PIX 2748")]
     public const int FACILITY_PIX = 2748;
 

@@ -14,6 +14,7 @@ public static partial class IID
 {
     public static ref readonly Guid IID_IWICPalette
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmapSource
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -60,6 +62,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICFormatConverter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -83,6 +86,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICPlanarFormatConverter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -106,6 +110,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmapScaler
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -129,6 +134,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmapClipper
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -152,6 +158,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmapFlipRotator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -173,8 +180,33 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IWICBitmapToneMapper
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xED, 0x8D, 0x72, 0x44,
+                0xDF, 0x1E,
+                0xE9, 0x4F,
+                0xB5,
+                0x0B,
+                0xC8,
+                0x9A,
+                0x26,
+                0x4C,
+                0x94,
+                0x39
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IWICBitmapLock
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -198,6 +230,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmap
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -221,6 +254,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICColorContext
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -244,6 +278,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICColorTransform
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -267,6 +302,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICFastMetadataEncoder
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -290,6 +326,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICStream
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -313,6 +350,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICEnumMetadataItem
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -336,6 +374,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICMetadataQueryReader
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -359,6 +398,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICMetadataQueryWriter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -382,6 +422,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmapEncoder
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -405,6 +446,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmapFrameEncode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -428,6 +470,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICPlanarBitmapFrameEncode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -451,6 +494,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICImageEncoder
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -474,6 +518,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmapDecoder
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -497,6 +542,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmapSourceTransform
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -520,6 +566,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmapSourceTransform2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -543,6 +590,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICPlanarBitmapSourceTransform
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -566,6 +614,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmapFrameDecode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -589,6 +638,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmapFrameChainReader
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -612,6 +662,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmapFrameChainWriter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -635,6 +686,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICProgressiveLevelControl
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -658,6 +710,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICDisplayAdaptationControl
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -681,6 +734,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICDisplayAdaptationControl2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -702,8 +756,33 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IWICD3DTextureSource
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xC4, 0x5C, 0xF6, 0xCA,
+                0xBE, 0x8E,
+                0x18, 0x47,
+                0xA2,
+                0x1F,
+                0x8D,
+                0xBF,
+                0x40,
+                0xBB,
+                0x7E,
+                0x25
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IWICProgressCallback
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -727,6 +806,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmapCodecProgressNotification
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -750,6 +830,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICComponentInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -773,6 +854,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICFormatConverterInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -796,6 +878,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmapCodecInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -819,6 +902,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmapEncoderInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -842,6 +926,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICBitmapDecoderInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -865,6 +950,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICPixelFormatInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -888,6 +974,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICPixelFormatInfo2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -911,6 +998,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICImagingFactory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -934,6 +1022,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICImagingFactory2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -955,8 +1044,33 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IWICImagingFactory3
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x8B, 0x3D, 0x9B, 0x48,
+                0x4A, 0x62,
+                0x58, 0x42,
+                0xB6,
+                0x78,
+                0x7E,
+                0xEC,
+                0xE7,
+                0x0F,
+                0x29,
+                0x9D
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IWICDevelopRawNotificationCallback
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -980,6 +1094,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICDevelopRaw
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1003,6 +1118,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICDdsDecoder
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1026,6 +1142,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICDdsEncoder
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1049,6 +1166,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICDdsFrameDecode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1072,6 +1190,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICJpegFrameDecode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1095,6 +1214,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWICJpegFrameEncode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

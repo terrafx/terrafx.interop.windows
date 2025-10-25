@@ -1683,6 +1683,31 @@ public static unsafe partial class Windows
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFSampleExtension_VideoEncodeSatdMap
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x96, 0x1D, 0xF6, 0xAD,
+                0xD3, 0xC2,
+                0x57, 0x4B,
+                0xA1,
+                0x38,
+                0xDD,
+                0xE4,
+                0xD3,
+                0x51,
+                0xEA,
+                0xA9
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_PhotoThumbnail
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

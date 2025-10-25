@@ -8,4 +8,12 @@ namespace TerraFX.Interop.WinRT;
 /// <include file='OnlookerDetectionAction.xml' path='doc/member[@name="OnlookerDetectionAction"]/*' />
 public enum OnlookerDetectionAction
 {
+    /// <include file='OnlookerDetectionAction.xml' path='doc/member[@name="OnlookerDetectionAction.OnlookerDetectionAction_Dim"]/*' />
+    OnlookerDetectionAction_Dim = 0,
+
+    /// <include file='OnlookerDetectionAction.xml' path='doc/member[@name="OnlookerDetectionAction.OnlookerDetectionAction_Notify"]/*' />
+    OnlookerDetectionAction_Notify = 1,
+
+    /// <include file='OnlookerDetectionAction.xml' path='doc/member[@name="OnlookerDetectionAction.OnlookerDetectionAction_DimAndNotify"]/*' />
+    OnlookerDetectionAction_DimAndNotify = 2,
 }

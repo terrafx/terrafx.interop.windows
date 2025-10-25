@@ -4258,6 +4258,15 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_VSM_KEY_CI_POLICY_ROLLBACK_DETECTED 4562L")]
     public const int ERROR_VSM_KEY_CI_POLICY_ROLLBACK_DETECTED = 4562;
 
+    [NativeTypeName("#define ERROR_VSMIDK_KEYGEN_FAILURE 4563L")]
+    public const int ERROR_VSMIDK_KEYGEN_FAILURE = 4563;
+
+    [NativeTypeName("#define ERROR_VSMIDK_EXPORT_FAILURE 4564L")]
+    public const int ERROR_VSMIDK_EXPORT_FAILURE = 4564;
+
+    [NativeTypeName("#define ERROR_VSMIDK_MODULUS_MISMATCH 4565L")]
+    public const int ERROR_VSMIDK_MODULUS_MISMATCH = 4565;
+
     [NativeTypeName("#define ERROR_PLATFORM_MANIFEST_NOT_AUTHORIZED 4570L")]
     public const int ERROR_PLATFORM_MANIFEST_NOT_AUTHORIZED = 4570;
 
@@ -8217,6 +8226,9 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_PACKAGE_MANIFEST_NOT_FOUND 15678L")]
     public const int ERROR_PACKAGE_MANIFEST_NOT_FOUND = 15678;
+
+    [NativeTypeName("#define ERROR_DEPLOYMENT_BLOCKED_BY_REMOVEDEFAULTPACKAGES_POLICY 15679L")]
+    public const int ERROR_DEPLOYMENT_BLOCKED_BY_REMOVEDEFAULTPACKAGES_POLICY = 15679;
 
     [NativeTypeName("#define ERROR_STATE_LOAD_STORE_FAILED 15800L")]
     public const int ERROR_STATE_LOAD_STORE_FAILED = 15800;

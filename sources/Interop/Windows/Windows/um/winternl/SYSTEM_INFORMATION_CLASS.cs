@@ -40,4 +40,10 @@ public enum SYSTEM_INFORMATION_CLASS
 
     /// <include file='SYSTEM_INFORMATION_CLASS.xml' path='doc/member[@name="SYSTEM_INFORMATION_CLASS.SystemPolicyInformation"]/*' />
     SystemPolicyInformation = 134,
+
+    /// <include file='SYSTEM_INFORMATION_CLASS.xml' path='doc/member[@name="SYSTEM_INFORMATION_CLASS.SystemBasicProcessInformation"]/*' />
+    SystemBasicProcessInformation = 252,
+
+    /// <include file='SYSTEM_INFORMATION_CLASS.xml' path='doc/member[@name="SYSTEM_INFORMATION_CLASS.SystemHandleCountInformation"]/*' />
+    SystemHandleCountInformation = 253,
 }

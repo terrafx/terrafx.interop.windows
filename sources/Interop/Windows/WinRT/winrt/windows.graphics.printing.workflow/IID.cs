@@ -7,14 +7,14 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.WinRT;
 
 namespace TerraFX.Interop.Windows;
 
-public static unsafe partial class IID
+public static partial class IID
 {
     public static ref readonly Guid IID_IPrintWorkflowBackgroundSession
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -38,6 +38,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowBackgroundSetupRequestedEventArgs
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -61,6 +62,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowConfiguration
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -84,6 +86,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowConfiguration2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -107,6 +110,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowForegroundSession
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -130,6 +134,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowForegroundSetupRequestedEventArgs
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -153,6 +158,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowJobActivatedEventArgs
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -176,6 +182,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowJobBackgroundSession
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -199,6 +206,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowJobBackgroundSession2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -222,6 +230,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowJobIssueDetectedEventArgs
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -245,6 +254,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowJobNotificationEventArgs
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -268,6 +278,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowJobStartingEventArgs
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -291,6 +302,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowJobStartingEventArgs2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -314,6 +326,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowJobTriggerDetails
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -337,6 +350,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowJobUISession
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -360,6 +374,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowJobUISession2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -383,6 +398,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowObjectModelSourceFileContent
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -406,6 +422,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowObjectModelSourceFileContentFactory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -429,6 +446,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowObjectModelTargetPackage
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -452,6 +470,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowPdlConverter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -475,6 +494,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowPdlConverter2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -498,6 +518,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowPdlDataAvailableEventArgs
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -521,6 +542,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowPdlModificationRequestedEventArgs
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -544,6 +566,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowPdlModificationRequestedEventArgs2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -567,6 +590,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowPdlSourceContent
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -590,6 +614,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowPdlTargetStream
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -613,6 +638,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowPrinterJob
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -636,6 +662,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowPrinterJob2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -659,6 +686,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowSourceContent
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -682,6 +710,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowSpoolStreamContent
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -705,6 +734,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowStreamTarget
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -728,6 +758,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowSubmittedEventArgs
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -751,6 +782,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowSubmittedOperation
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -774,6 +806,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowTarget
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -797,6 +830,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowTriggerDetails
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -820,6 +854,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowUIActivatedEventArgs
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -843,6 +878,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowUILauncher
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -866,6 +902,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowVirtualPrinterDataAvailableEventArgs
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -889,6 +926,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowVirtualPrinterSession
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -912,6 +950,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowVirtualPrinterTriggerDetails
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -935,6 +974,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowVirtualPrinterUIEventArgs
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -958,6 +998,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintWorkflowXpsDataAvailableEventArgs
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

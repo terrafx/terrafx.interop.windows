@@ -14,6 +14,7 @@ public static partial class IID
 {
     public static ref readonly Guid IID_KSDATAFORMAT_SUBTYPE_PCM
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_KSDATAFORMAT_SUBTYPE_IEEE_FLOAT
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -60,6 +62,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_KSDATAFORMAT_SUBTYPE_WAVEFORMATEX
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

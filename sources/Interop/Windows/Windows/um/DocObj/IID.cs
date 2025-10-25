@@ -29,6 +29,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleDocument
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -52,6 +53,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleDocumentSite
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -75,6 +77,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleDocumentView
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -98,6 +101,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IEnumOleDocumentViews
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -121,6 +125,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IContinueCallback
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -144,6 +149,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IPrint
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -167,6 +173,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IOleCommandTarget
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -190,6 +197,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IZoomEvents
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -213,6 +221,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IProtectFocus
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -236,6 +245,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IProtectedModeMenuServices
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

@@ -14,6 +14,7 @@ public static partial class Windows
 {
     public static ref readonly Guid DIID_XMLDOMDocumentEvents
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

@@ -414,6 +414,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_FilgraphManager
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

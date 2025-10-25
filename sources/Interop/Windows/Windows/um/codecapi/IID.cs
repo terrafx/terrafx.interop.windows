@@ -14,6 +14,7 @@ public static partial class IID
 {
     public static ref readonly Guid IID_CODECAPI_AVEncCommonFormatConstraint
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatUnSpecified
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -60,6 +62,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatDVD_V
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -83,6 +86,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatDVD_DashVR
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -106,6 +110,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatDVD_PlusVR
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -129,6 +134,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatVCD
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -152,6 +158,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatSVCD
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -175,6 +182,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatATSC
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -198,6 +206,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatDVB
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -221,6 +230,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatMP3
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -244,6 +254,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatHighMAT
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -267,6 +278,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncCommonFormatHighMPV
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -290,6 +302,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCodecType
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -313,6 +326,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncMPEG1Video
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -336,6 +350,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncMPEG2Video
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -359,6 +374,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncMPEG1Audio
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -382,6 +398,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncMPEG2Audio
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -405,6 +422,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncWMV
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -428,6 +446,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEndMPEG4Video
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -451,6 +470,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncH264Video
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -474,6 +494,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncDV
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -497,6 +518,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncWMAPro
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -520,6 +542,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncWMALossless
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -543,6 +566,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncWMAVoice
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -566,6 +590,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncDolbyDigitalPro
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -589,6 +614,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncDolbyDigitalConsumer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -612,6 +638,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncDolbyDigitalPlus
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -635,6 +662,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncDTSHD
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -658,6 +686,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncDTS
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -681,6 +710,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncMLP
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -704,6 +734,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncPCM
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -727,6 +758,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVEncSDDS
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -750,6 +782,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonRateControlMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -773,6 +806,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonLowLatency
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -796,6 +830,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonMultipassMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -819,6 +854,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonPassStart
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -842,6 +878,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonPassEnd
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -865,6 +902,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonRealTime
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -888,6 +926,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonQuality
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -911,6 +950,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonQualityVsSpeed
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -934,6 +974,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonTranscodeEncodingProfile
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -957,6 +998,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonMeanBitRate
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -980,6 +1022,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonMeanBitRateInterval
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1003,6 +1046,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonMaxBitRate
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1026,6 +1070,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonMinBitRate
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1049,6 +1094,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonBufferSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1072,6 +1118,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonBufferInLevel
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1095,6 +1142,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonBufferOutLevel
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1118,6 +1166,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonStreamEndHandling
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1141,6 +1190,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncStatCommonCompletedPasses
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1164,6 +1214,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputFrameRate
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1187,6 +1238,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputFrameRateConversion
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1210,6 +1262,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoPixelAspectRatio
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1233,6 +1286,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoAcceleration_MPEG2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1256,6 +1310,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoAcceleration_H264
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1279,6 +1334,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoAcceleration_VC1
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1302,6 +1358,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoProcDeinterlaceCSC
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1325,6 +1382,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoThumbnailGenerationMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1348,6 +1406,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoMaxCodedWidth
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1371,6 +1430,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoMaxCodedHeight
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1394,6 +1454,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecNumWorkerThreads
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1417,6 +1478,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecSoftwareDynamicFormatChange
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1440,6 +1502,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecDisableVideoPostProcessing
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1463,6 +1526,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoDropPicWithMissingRef
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1486,6 +1550,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoSoftwareDeinterlaceMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1509,6 +1574,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoFastDecodeMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1532,6 +1598,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVLowLatencyMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1555,6 +1622,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoH264ErrorConcealment
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1578,6 +1646,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoMPEG2ErrorConcealment
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1601,6 +1670,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoCodecType
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1624,6 +1694,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoDXVAMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1647,6 +1718,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoDXVABusEncryption
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1670,6 +1742,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoForceSourceScanType
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1693,6 +1766,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoNoOfFieldsToEncode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1716,6 +1790,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoNoOfFieldsToSkip
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1739,6 +1814,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoEncodeDimension
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1762,6 +1838,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoEncodeOffsetOrigin
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1785,6 +1862,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoDisplayDimension
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1808,6 +1886,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputScanType
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1831,6 +1910,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoInverseTelecineEnable
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1854,6 +1934,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoInverseTelecineThreshold
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1877,6 +1958,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoSourceFilmContent
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1900,6 +1982,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoSourceIsBW
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1923,6 +2006,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoFieldSwap
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1946,6 +2030,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoInputChromaResolution
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1969,6 +2054,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputChromaResolution
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1992,6 +2078,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoInputChromaSubsampling
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2015,6 +2102,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputChromaSubsampling
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2038,6 +2126,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoInputColorPrimaries
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2061,6 +2150,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputColorPrimaries
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2084,6 +2174,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoInputColorTransferFunction
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2107,6 +2198,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputColorTransferFunction
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2130,6 +2222,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoInputColorTransferMatrix
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2153,6 +2246,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputColorTransferMatrix
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2176,6 +2270,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoInputColorLighting
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2199,6 +2294,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputColorLighting
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2222,6 +2318,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoInputColorNominalRange
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2245,6 +2342,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputColorNominalRange
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2268,6 +2366,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncInputVideoSystem
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2291,6 +2390,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoHeaderDropFrame
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2314,6 +2414,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoHeaderHours
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2337,6 +2438,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoHeaderMinutes
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2360,6 +2462,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoHeaderSeconds
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2383,6 +2486,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoHeaderFrames
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2406,6 +2510,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoDefaultUpperFieldDominant
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2429,6 +2534,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoCBRMotionTradeoff
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2452,6 +2558,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoCodedVideoAccessUnitSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2475,6 +2582,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoMaxKeyframeDistance
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2498,6 +2606,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncH264CABACEnable
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2521,6 +2630,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoContentType
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2544,6 +2654,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncNumWorkerThreads
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2567,6 +2678,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoEncodeQP
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2590,6 +2702,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoMinQP
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2613,6 +2726,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoForceKeyFrame
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2636,6 +2750,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncH264SPSID
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2659,6 +2774,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncH264PPSID
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2682,6 +2798,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAdaptiveMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2705,6 +2822,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVScenarioInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2728,6 +2846,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVGOPSizeMin
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2751,6 +2870,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVGOPSizeMax
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2774,6 +2894,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoMaxCTBSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2797,6 +2918,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoCTBSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2820,6 +2942,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_VideoEncoderDisplayContentType
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2843,6 +2966,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncEnableVideoProcessing
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2866,6 +2990,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoGradualIntraRefresh
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2889,6 +3014,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GetOPMContext
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2912,6 +3038,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_SetHDCPManagerContext
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2935,6 +3062,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoMaxTemporalLayers
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2958,6 +3086,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoNumGOPsPerIDR
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -2981,6 +3110,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncCommonAllowFrameDrops
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3004,6 +3134,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoIntraLayerPrediction
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3027,6 +3158,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoInstantTemporalUpSwitching
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3050,6 +3182,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncLowPowerEncoder
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3073,6 +3206,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEnableInLoopDeblockFilter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3096,6 +3230,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoSelectLayer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3119,6 +3254,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoTemporalLayerCount
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3142,6 +3278,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoUsage
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3165,6 +3302,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoRateControlParams
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3188,6 +3326,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoSupportedControls
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3211,6 +3350,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoEncodeFrameTypeQP
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3234,6 +3374,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncSliceControlMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3257,6 +3398,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncSliceControlSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3280,6 +3422,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncSliceGenerationMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3303,6 +3446,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoMaxNumRefFrame
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3326,6 +3470,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoMeanAbsoluteDifference
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3349,6 +3494,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoMaxQP
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3372,6 +3518,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoLTRBufferControl
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3395,6 +3542,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoMarkLTRFrame
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3418,6 +3566,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoUseLTRFrame
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3441,6 +3590,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoROIEnabled
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3464,6 +3614,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoDirtyRectEnabled
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3487,6 +3638,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMaxFrameRate
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3510,6 +3662,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMuxOutputStreamType
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3533,6 +3686,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncStatVideoOutputFrameRate
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3556,6 +3710,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncStatVideoCodedFrames
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3579,6 +3734,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncStatVideoTotalFrames
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3602,6 +3758,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioIntervalToEncode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3625,6 +3782,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioIntervalToSkip
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3648,6 +3806,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioDualMono
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3671,6 +3830,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMeanBitRate
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3694,6 +3854,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel0
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3717,6 +3878,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel1
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3740,6 +3902,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3763,6 +3926,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel3
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3786,6 +3950,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel4
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3809,6 +3974,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel5
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3832,6 +3998,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel6
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3855,6 +4022,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel7
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3878,6 +4046,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel8
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3901,6 +4070,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel9
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3924,6 +4094,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel10
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3947,6 +4118,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel11
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3970,6 +4142,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel12
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -3993,6 +4166,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel13
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4016,6 +4190,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel14
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4039,6 +4214,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioMapDestChannel15
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4062,6 +4238,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAudioInputContent
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4085,6 +4262,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncStatAudioPeakPCMValue
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4108,6 +4286,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncStatAudioAveragePCMValue
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4131,6 +4310,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncStatAudioAverageBPS
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4154,6 +4334,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncStatAverageBPS
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4177,6 +4358,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncStatHardwareProcessorUtilitization
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4200,6 +4382,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncStatHardwareBandwidthUtilitization
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4223,6 +4406,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVGOPSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4246,6 +4430,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVGOPOpen
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4269,6 +4454,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVDefaultBPictureCount
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4292,6 +4478,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVProfile
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4315,6 +4502,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVLevel
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4338,6 +4526,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVFrameFieldMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4361,6 +4550,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVAddSeqEndCode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4384,6 +4574,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVGOPSInSeq
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4407,6 +4598,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVUseConcealmentMotionVectors
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4430,6 +4622,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVSceneDetection
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4453,6 +4646,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVGenerateHeaderSeqExt
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4476,6 +4670,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVGenerateHeaderSeqDispExt
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4499,6 +4694,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVGenerateHeaderPicExt
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4522,6 +4718,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVGenerateHeaderPicDispExt
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4545,6 +4742,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVGenerateHeaderSeqScaleExt
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4568,6 +4766,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVScanPattern
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4591,6 +4790,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVIntraDCPrecision
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4614,6 +4814,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVQScaleType
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4637,6 +4838,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVIntraVLCTable
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4660,6 +4862,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVQuantMatrixIntra
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4683,6 +4886,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVQuantMatrixNonIntra
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4706,6 +4910,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVQuantMatrixChromaIntra
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4729,6 +4934,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPVQuantMatrixChromaNonIntra
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4752,6 +4958,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPALayer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4775,6 +4982,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPACodingMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4798,6 +5006,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPACopyright
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4821,6 +5030,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPAOriginalBitstream
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4844,6 +5054,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPAEnableRedundancyProtection
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4867,6 +5078,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPAPrivateUserBit
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4890,6 +5102,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMPAEmphasisType
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4913,6 +5126,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDService
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4936,6 +5150,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDDialogNormalization
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4959,6 +5174,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDCentreDownMixLevel
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -4982,6 +5198,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDSurroundDownMixLevel
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5005,6 +5222,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDProductionInfoExists
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5028,6 +5246,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDProductionRoomType
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5051,6 +5270,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDProductionMixLevel
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5074,6 +5294,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDCopyright
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5097,6 +5318,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDOriginalBitstream
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5120,6 +5342,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDDigitalDeemphasis
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5143,6 +5366,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDDCHighPassFilter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5166,6 +5390,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDChannelBWLowPassFilter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5189,6 +5414,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDLFELowPassFilter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5212,6 +5438,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDSurround90DegreeePhaseShift
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5235,6 +5462,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDSurround3dBAttenuation
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5258,6 +5486,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDDynamicRangeCompressionControl
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5281,6 +5510,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDRFPreEmphasisFilter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5304,6 +5534,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDSurroundExMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5327,6 +5558,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDPreferredStereoDownMixMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5350,6 +5582,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDLtRtCenterMixLvl_x10
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5373,6 +5606,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDLtRtSurroundMixLvl_x10
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5396,6 +5630,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDLoRoCenterMixLvl_x10
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5419,6 +5654,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDLoRoSurroundMixLvl_x10
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5442,6 +5678,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDAtoDConverterType
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5465,6 +5702,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncDDHeadphoneMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5488,6 +5726,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncWMVKeyFrameDistance
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5511,6 +5750,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncWMVInterlacedEncoding
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5534,6 +5774,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncWMVDecoderComplexity
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5557,6 +5798,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncWMVKeyFrameBufferLevelMarker
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5580,6 +5822,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncWMVProduceDummyFrames
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5603,6 +5846,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncStatWMVCBAvg
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5626,6 +5870,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncStatWMVCBMax
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5649,6 +5894,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncStatWMVDecoderComplexityProfile
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5672,6 +5918,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncStatMPVSkippedEmptyFrames
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5695,6 +5942,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12PktzSTDBuffer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5718,6 +5966,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12PktzStreamID
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5741,6 +5990,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12PktzInitialPTS
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5764,6 +6014,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12PktzPacketSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5787,6 +6038,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12PktzCopyright
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5810,6 +6062,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12PktzOriginal
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5833,6 +6086,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxPacketOverhead
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5856,6 +6110,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxNumStreams
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5879,6 +6134,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxEarliestPTS
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5902,6 +6158,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxLargestPacketSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5925,6 +6182,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxInitialSCR
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5948,6 +6206,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxMuxRate
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5971,6 +6230,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxPackSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -5994,6 +6254,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxSysSTDBufferBound
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6017,6 +6278,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxSysRateBound
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6040,6 +6302,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxTargetPacketizer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6063,6 +6326,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxSysFixed
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6086,6 +6350,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxSysCSPS
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6109,6 +6374,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxSysVideoLock
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6132,6 +6398,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxSysAudioLock
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6155,6 +6422,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncMP12MuxDVDNavPacks
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6178,6 +6446,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecCommonInputFormat
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6201,6 +6470,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecCommonOutputFormat
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6224,6 +6494,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecCommonMeanBitRate
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6247,6 +6518,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecCommonMeanBitRateInterval
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6270,6 +6542,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_MatrixEncoded
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6293,6 +6566,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioOutputFormat_PCM
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6316,6 +6590,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_PCM
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6339,6 +6614,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioOutputFormat_SPDIF_Bitstream
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6362,6 +6638,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Headphones
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6385,6 +6662,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6408,6 +6686,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoImageSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6431,6 +6710,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoPixelAspectRatio
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6454,6 +6734,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoInputScanType
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6477,6 +6758,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecVideoSWPowerLevel
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6500,6 +6782,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputWMA
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6523,6 +6806,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputWMAPro
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6546,6 +6830,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputDolby
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6569,6 +6854,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputDTS
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6592,6 +6878,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputPCM
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6615,6 +6902,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputMPEG
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6638,6 +6926,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputAAC
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6661,6 +6950,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputHEAAC
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6684,6 +6974,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_GUID_AVDecAudioInputDolbyDigitalPlus
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6707,6 +6998,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecAACDownmixMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6730,6 +7022,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecHEAACDynamicRangeControl
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6753,6 +7046,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecAudioDualMono
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6776,6 +7070,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecAudioDualMonoReproMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6799,6 +7094,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVAudioChannelCount
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6822,6 +7118,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVAudioChannelConfig
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6845,6 +7142,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVAudioSampleRate
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6868,6 +7166,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDDSurroundMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6891,6 +7190,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecDDOperationalMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6914,6 +7214,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecDDMatrixDecodingMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6937,6 +7238,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecDDDynamicRangeScaleHigh
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6960,6 +7262,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecDDDynamicRangeScaleLow
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -6983,6 +7286,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDecDDStereoDownMixMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7006,6 +7310,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDSPLoudnessEqualization
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7029,6 +7334,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVDSPSpeakerFill
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7052,6 +7358,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVPriorityControl
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7075,6 +7382,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVRealtimeControl
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7098,6 +7406,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_FeatureMapFlagsUsed
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7121,6 +7430,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncNoInputCopy
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7144,6 +7454,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncChromaEncodeMode
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7167,6 +7478,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncProgressiveUpdateTime
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7190,6 +7502,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncChromaUpdateTime
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7213,6 +7526,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncAACEnableVBR
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7236,6 +7550,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoConsecutiveFramesForLayer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7259,6 +7574,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoMaxNumRefFrameForLayer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7282,6 +7598,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncTileRows
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7305,6 +7622,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncTileColumns
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7328,6 +7646,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoEnableFramePsnrYuv
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7351,6 +7670,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoEnableSpatialAdaptiveQuantization
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7374,6 +7694,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputQPMapBlockSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7397,6 +7718,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_CODECAPI_AVEncVideoOutputBitsUsedMapBlockSize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -7411,6 +7733,30 @@ public static partial class IID
                 0x34,
                 0xC3,
                 0x6E
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_CODECAPI_AVEncVideoSatdMapBlockSize
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x06, 0x11, 0x6F, 0x59,
+                0xE0, 0x8C,
+                0x02, 0x43,
+                0xAF,
+                0x79,
+                0xC4,
+                0xEC,
+                0x67,
+                0xAA,
+                0xDC,
+                0x6D
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

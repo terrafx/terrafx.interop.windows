@@ -26,7 +26,7 @@ public partial struct NUMA_NODE_RELATIONSHIP
     public ushort GroupCount;
 
     /// <include file='NUMA_NODE_RELATIONSHIP.xml' path='doc/member[@name="NUMA_NODE_RELATIONSHIP.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L14002_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L14007_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.GroupMask"]/*' />

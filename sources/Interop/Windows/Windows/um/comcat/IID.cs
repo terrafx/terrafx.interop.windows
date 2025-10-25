@@ -20,6 +20,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IEnumGUID
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -43,6 +44,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IEnumCATEGORYINFO
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -66,6 +68,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ICatRegister
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -89,6 +92,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ICatInformation
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

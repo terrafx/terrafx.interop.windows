@@ -39,4 +39,7 @@ public static partial class WTS
 
     [NativeTypeName("#define WTS_SESSION_TERMINATE 0xb")]
     public const int WTS_SESSION_TERMINATE = 0xb;
+
+    [NativeTypeName("#define WTS_SESSION_DESKTOP_READY 0xf")]
+    public const int WTS_SESSION_DESKTOP_READY = 0xf;
 }

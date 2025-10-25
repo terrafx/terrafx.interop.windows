@@ -389,6 +389,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_MSAAControl
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -412,6 +413,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_AccStore
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -435,6 +437,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_AccDictionary
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -458,6 +461,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_AccServerDocMgr
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -481,6 +485,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_AccClientDocMgr
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -504,6 +509,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_DocWrap
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

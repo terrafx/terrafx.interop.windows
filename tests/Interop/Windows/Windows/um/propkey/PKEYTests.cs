@@ -2884,6 +2884,14 @@ public static partial class PKEYTests
         Assert.That(PKEY_StorageProviderFileCreatedBy.pid, Is.EqualTo(10));
     }
 
+    /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderFileDateShared" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_StorageProviderFileDateSharedTest()
+    {
+        Assert.That(PKEY_StorageProviderFileDateShared.fmtid, Is.EqualTo(new Guid(0xB2F9B9D6, 0xFEC4, 0x4DD5, 0x94, 0xD7, 0x89, 0x57, 0x48, 0x8C, 0x80, 0x7B)));
+        Assert.That(PKEY_StorageProviderFileDateShared.pid, Is.EqualTo(14));
+    }
+
     /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderFileFlags" /> property is correct.</summary>
     [Test]
     public static void PKEY_StorageProviderFileFlagsTest()
@@ -2916,12 +2924,28 @@ public static partial class PKEYTests
         Assert.That(PKEY_StorageProviderFileModifiedBy.pid, Is.EqualTo(11));
     }
 
+    /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderFileRemoteLocation" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_StorageProviderFileRemoteLocationTest()
+    {
+        Assert.That(PKEY_StorageProviderFileRemoteLocation.fmtid, Is.EqualTo(new Guid(0xB2F9B9D6, 0xFEC4, 0x4DD5, 0x94, 0xD7, 0x89, 0x57, 0x48, 0x8C, 0x80, 0x7B)));
+        Assert.That(PKEY_StorageProviderFileRemoteLocation.pid, Is.EqualTo(16));
+    }
+
     /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderFileRemoteUri" /> property is correct.</summary>
     [Test]
     public static void PKEY_StorageProviderFileRemoteUriTest()
     {
         Assert.That(PKEY_StorageProviderFileRemoteUri.fmtid, Is.EqualTo(new Guid(0xFCEFF153, 0xE839, 0x4CF3, 0xA9, 0xE7, 0xEA, 0x22, 0x83, 0x20, 0x94, 0xB8)));
         Assert.That(PKEY_StorageProviderFileRemoteUri.pid, Is.EqualTo(112));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderFileSharedBy" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_StorageProviderFileSharedByTest()
+    {
+        Assert.That(PKEY_StorageProviderFileSharedBy.fmtid, Is.EqualTo(new Guid(0xB2F9B9D6, 0xFEC4, 0x4DD5, 0x94, 0xD7, 0x89, 0x57, 0x48, 0x8C, 0x80, 0x7B)));
+        Assert.That(PKEY_StorageProviderFileSharedBy.pid, Is.EqualTo(15));
     }
 
     /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderFileVersion" /> property is correct.</summary>
@@ -2938,6 +2962,14 @@ public static partial class PKEYTests
     {
         Assert.That(PKEY_StorageProviderFileVersionWaterline.fmtid, Is.EqualTo(new Guid(0xB2F9B9D6, 0xFEC4, 0x4DD5, 0x94, 0xD7, 0x89, 0x57, 0x48, 0x8C, 0x80, 0x7B)));
         Assert.That(PKEY_StorageProviderFileVersionWaterline.pid, Is.EqualTo(6));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderFullyQualifiedId" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_StorageProviderFullyQualifiedIdTest()
+    {
+        Assert.That(PKEY_StorageProviderFullyQualifiedId.fmtid, Is.EqualTo(new Guid(0xFCEFF153, 0xE839, 0x4CF3, 0xA9, 0xE7, 0xEA, 0x22, 0x83, 0x20, 0x94, 0xB8)));
+        Assert.That(PKEY_StorageProviderFullyQualifiedId.pid, Is.EqualTo(119));
     }
 
     /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderId" /> property is correct.</summary>
@@ -2970,6 +3002,14 @@ public static partial class PKEYTests
     {
         Assert.That(PKEY_StorageProviderStatus.fmtid, Is.EqualTo(new Guid(0xFCEFF153, 0xE839, 0x4CF3, 0xA9, 0xE7, 0xEA, 0x22, 0x83, 0x20, 0x94, 0xB8)));
         Assert.That(PKEY_StorageProviderStatus.pid, Is.EqualTo(110));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderUserId" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_StorageProviderUserIdTest()
+    {
+        Assert.That(PKEY_StorageProviderUserId.fmtid, Is.EqualTo(new Guid(0xB2F9B9D6, 0xFEC4, 0x4DD5, 0x94, 0xD7, 0x89, 0x57, 0x48, 0x8C, 0x80, 0x7B)));
+        Assert.That(PKEY_StorageProviderUserId.pid, Is.EqualTo(13));
     }
 
     /// <summary>Validates that the value of the <see cref="PKEY_Subject" /> property is correct.</summary>
@@ -7812,6 +7852,14 @@ public static partial class PKEYTests
         Assert.That(PKEY_LocationEmptyString.pid, Is.EqualTo(3));
     }
 
+    /// <summary>Validates that the value of the <see cref="PKEY_Search_AutoCategory" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_Search_AutoCategoryTest()
+    {
+        Assert.That(PKEY_Search_AutoCategory.fmtid, Is.EqualTo(new Guid(0xB725F130, 0x47EF, 0x101A, 0xA5, 0xF1, 0x02, 0x60, 0x8C, 0x9E, 0xEB, 0xAC)));
+        Assert.That(PKEY_Search_AutoCategory.pid, Is.EqualTo(31));
+    }
+
     /// <summary>Validates that the value of the <see cref="PKEY_Search_AutoSummary" /> property is correct.</summary>
     [Test]
     public static void PKEY_Search_AutoSummaryTest()
@@ -8010,6 +8058,22 @@ public static partial class PKEYTests
     {
         Assert.That(PKEY_Supplemental_Tag.fmtid, Is.EqualTo(new Guid(0x0C73B141, 0x39D6, 0x4653, 0xA6, 0x83, 0xCA, 0xB2, 0x91, 0xEA, 0xF9, 0x5B)));
         Assert.That(PKEY_Supplemental_Tag.pid, Is.EqualTo(4));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_ActivityDate" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_ActivityDateTest()
+    {
+        Assert.That(PKEY_ActivityDate.fmtid, Is.EqualTo(new Guid(0x30C8EEF4, 0xA832, 0x41E2, 0xAB, 0x32, 0xE3, 0xC3, 0xCA, 0x28, 0xFD, 0x29)));
+        Assert.That(PKEY_ActivityDate.pid, Is.EqualTo(23));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_ActivityIcon" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_ActivityIconTest()
+    {
+        Assert.That(PKEY_ActivityIcon.fmtid, Is.EqualTo(new Guid(0x30C8EEF4, 0xA832, 0x41E2, 0xAB, 0x32, 0xE3, 0xC3, 0xCA, 0x28, 0xFD, 0x29)));
+        Assert.That(PKEY_ActivityIcon.pid, Is.EqualTo(24));
     }
 
     /// <summary>Validates that the value of the <see cref="PKEY_ActivityInfo" /> property is correct.</summary>

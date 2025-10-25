@@ -1,11 +1,11 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::UI::Input::Core::IID_IRadialControllerIndependentInputSource
+ABI::Windows::UI::Input::Core::IID_IRadialControllerIndependentInputSource2
+ABI::Windows::UI::Input::Core::IID_IRadialControllerIndependentInputSourceStatics
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IRadialControllerIndependentInputSource
-IID_IRadialControllerIndependentInputSource2
-IID_IRadialControllerIndependentInputSourceStatics
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION

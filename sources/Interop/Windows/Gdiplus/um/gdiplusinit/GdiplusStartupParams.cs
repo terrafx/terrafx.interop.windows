@@ -20,6 +20,12 @@ public enum GdiplusStartupParams
     /// <include file='GdiplusStartupParams.xml' path='doc/member[@name="GdiplusStartupParams.GdiplusStartupReserved0"]/*' />
     GdiplusStartupReserved0 = 0x00000004,
 
+    /// <include file='GdiplusStartupParams.xml' path='doc/member[@name="GdiplusStartupParams.GdiplusStartupReserved1"]/*' />
+    GdiplusStartupReserved1 = 0x00000008,
+
+    /// <include file='GdiplusStartupParams.xml' path='doc/member[@name="GdiplusStartupParams.GdiplusStartupReserved2"]/*' />
+    GdiplusStartupReserved2 = 0x00000010,
+
     /// <include file='GdiplusStartupParams.xml' path='doc/member[@name="GdiplusStartupParams.GdiplusStartupTransparencyMask"]/*' />
     GdiplusStartupTransparencyMask = unchecked((int)(0xFF000000)),
 }

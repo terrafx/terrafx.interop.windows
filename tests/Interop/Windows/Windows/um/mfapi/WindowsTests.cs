@@ -411,6 +411,13 @@ public static unsafe partial class WindowsTests
         Assert.That(MFSampleExtension_VideoEncodeBitsUsedMap, Is.EqualTo(new Guid(0x6894263d, 0xe6e2, 0x4bcc, 0x84, 0x9d, 0x85, 0x70, 0x36, 0x5f, 0x51, 0x14)));
     }
 
+    /// <summary>Validates that the value of the <see cref="MFSampleExtension_VideoEncodeSatdMap" /> property is correct.</summary>
+    [Test]
+    public static void MFSampleExtension_VideoEncodeSatdMapTest()
+    {
+        Assert.That(MFSampleExtension_VideoEncodeSatdMap, Is.EqualTo(new Guid(0xadf61d96, 0xc2d3, 0x4b57, 0xa1, 0x38, 0xdd, 0xe4, 0xd3, 0x51, 0xea, 0xa9)));
+    }
+
     /// <summary>Validates that the value of the <see cref="MFSampleExtension_PhotoThumbnail" /> property is correct.</summary>
     [Test]
     public static void MFSampleExtension_PhotoThumbnailTest()

@@ -49,4 +49,7 @@ public enum HTTP_REQUEST_INFO_TYPE
 
     /// <include file='HTTP_REQUEST_INFO_TYPE.xml' path='doc/member[@name="HTTP_REQUEST_INFO_TYPE.HttpRequestInfoTypeDscpTag"]/*' />
     HttpRequestInfoTypeDscpTag,
+
+    /// <include file='HTTP_REQUEST_INFO_TYPE.xml' path='doc/member[@name="HTTP_REQUEST_INFO_TYPE.HttpRequestInfoTypeInitialPacketTtl"]/*' />
+    HttpRequestInfoTypeInitialPacketTtl,
 }

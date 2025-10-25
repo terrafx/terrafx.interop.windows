@@ -13,17 +13,17 @@ ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage:
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::FileProperties::ImageProperties *>
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::FileProperties::MusicProperties *>
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Storage::FileProperties::VideoProperties *>
+ABI::Windows::Storage::FileProperties::IID_IBasicProperties
+ABI::Windows::Storage::FileProperties::IID_IDocumentProperties
+ABI::Windows::Storage::FileProperties::IID_IGeotagHelperStatics
+ABI::Windows::Storage::FileProperties::IID_IImageProperties
+ABI::Windows::Storage::FileProperties::IID_IMusicProperties
+ABI::Windows::Storage::FileProperties::IID_IStorageItemContentProperties
+ABI::Windows::Storage::FileProperties::IID_IStorageItemExtraProperties
+ABI::Windows::Storage::FileProperties::IID_IThumbnailProperties
+ABI::Windows::Storage::FileProperties::IID_IVideoProperties
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IBasicProperties
-IID_IDocumentProperties
-IID_IGeotagHelperStatics
-IID_IImageProperties
-IID_IMusicProperties
-IID_IStorageItemContentProperties
-IID_IStorageItemExtraProperties
-IID_IThumbnailProperties
-IID_IVideoProperties
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

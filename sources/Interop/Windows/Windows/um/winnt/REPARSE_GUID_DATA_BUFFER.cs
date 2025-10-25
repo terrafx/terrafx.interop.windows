@@ -29,7 +29,7 @@ public partial struct REPARSE_GUID_DATA_BUFFER
     public Guid ReparseGuid;
 
     /// <include file='REPARSE_GUID_DATA_BUFFER.xml' path='doc/member[@name="REPARSE_GUID_DATA_BUFFER.GenericReparseBuffer"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L15291_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L15296_C5")]
     public _GenericReparseBuffer_e__Struct GenericReparseBuffer;
 
     /// <include file='_GenericReparseBuffer_e__Struct.xml' path='doc/member[@name="_GenericReparseBuffer_e__Struct"]/*' />

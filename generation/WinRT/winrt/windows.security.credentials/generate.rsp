@@ -10,24 +10,29 @@ ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::Credentials::K
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::Credentials::KeyCredentialAttestationResult *>
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::Credentials::KeyCredentialOperationResult *>
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::Credentials::KeyCredentialRetrievalResult *>
+ABI::Windows::Security::Credentials::IID_IAttestationChallengeHandler
+ABI::Windows::Security::Credentials::IID_ICredentialFactory
+ABI::Windows::Security::Credentials::IID_IKeyCredential
+ABI::Windows::Security::Credentials::IID_IKeyCredential2
+ABI::Windows::Security::Credentials::IID_IKeyCredentialAttestationResult
+ABI::Windows::Security::Credentials::IID_IKeyCredentialCacheConfiguration
+ABI::Windows::Security::Credentials::IID_IKeyCredentialCacheConfigurationFactory
+ABI::Windows::Security::Credentials::IID_IKeyCredentialManagerExtendedStatics
+ABI::Windows::Security::Credentials::IID_IKeyCredentialManagerStatics
+ABI::Windows::Security::Credentials::IID_IKeyCredentialOperationResult
+ABI::Windows::Security::Credentials::IID_IKeyCredentialRetrievalResult
+ABI::Windows::Security::Credentials::IID_IPasswordCredential
+ABI::Windows::Security::Credentials::IID_IPasswordVault
+ABI::Windows::Security::Credentials::IID_IWebAccount
+ABI::Windows::Security::Credentials::IID_IWebAccount2
+ABI::Windows::Security::Credentials::IID_IWebAccountFactory
+ABI::Windows::Security::Credentials::IID_IWebAccountProvider
+ABI::Windows::Security::Credentials::IID_IWebAccountProvider2
+ABI::Windows::Security::Credentials::IID_IWebAccountProvider3
+ABI::Windows::Security::Credentials::IID_IWebAccountProvider4
+ABI::Windows::Security::Credentials::IID_IWebAccountProviderFactory
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_ICredentialFactory
-IID_IKeyCredential
-IID_IKeyCredentialAttestationResult
-IID_IKeyCredentialManagerStatics
-IID_IKeyCredentialOperationResult
-IID_IKeyCredentialRetrievalResult
-IID_IPasswordCredential
-IID_IPasswordVault
-IID_IWebAccount
-IID_IWebAccount2
-IID_IWebAccountFactory
-IID_IWebAccountProvider
-IID_IWebAccountProvider2
-IID_IWebAccountProvider3
-IID_IWebAccountProvider4
-IID_IWebAccountProviderFactory
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION

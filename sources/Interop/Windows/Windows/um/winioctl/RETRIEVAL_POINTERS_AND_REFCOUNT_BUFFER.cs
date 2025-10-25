@@ -21,7 +21,7 @@ public partial struct RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER
     public LARGE_INTEGER StartingVcn;
 
     /// <include file='RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER.xml' path='doc/member[@name="RETRIEVAL_POINTERS_AND_REFCOUNT_BUFFER.Extents"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.26100.0/um/winioctl.h:11778:5)[1]")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.26100.0/um/winioctl.h:11789:5)[1]")]
     public _Extents_e__FixedBuffer Extents;
 
     /// <include file='_Extents_e__Struct.xml' path='doc/member[@name="_Extents_e__Struct"]/*' />

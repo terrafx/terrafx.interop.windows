@@ -14,6 +14,7 @@ public static partial class IID
 {
     public static ref readonly Guid IID_IPrintManagerInterop
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

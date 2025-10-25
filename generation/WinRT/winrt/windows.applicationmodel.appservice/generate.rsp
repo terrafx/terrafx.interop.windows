@@ -1,6 +1,20 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::ApplicationModel::AppService::IID_IAppServiceCatalogStatics
+ABI::Windows::ApplicationModel::AppService::IID_IAppServiceClosedEventArgs
+ABI::Windows::ApplicationModel::AppService::IID_IAppServiceConnection
+ABI::Windows::ApplicationModel::AppService::IID_IAppServiceConnection2
+ABI::Windows::ApplicationModel::AppService::IID_IAppServiceConnectionStatics
+ABI::Windows::ApplicationModel::AppService::IID_IAppServiceDeferral
+ABI::Windows::ApplicationModel::AppService::IID_IAppServiceRequest
+ABI::Windows::ApplicationModel::AppService::IID_IAppServiceRequestReceivedEventArgs
+ABI::Windows::ApplicationModel::AppService::IID_IAppServiceResponse
+ABI::Windows::ApplicationModel::AppService::IID_IAppServiceTriggerDetails
+ABI::Windows::ApplicationModel::AppService::IID_IAppServiceTriggerDetails2
+ABI::Windows::ApplicationModel::AppService::IID_IAppServiceTriggerDetails3
+ABI::Windows::ApplicationModel::AppService::IID_IAppServiceTriggerDetails4
+ABI::Windows::ApplicationModel::AppService::IID_IStatelessAppServiceResponse
 ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::AppService::AppServiceConnectionStatus>
 ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::AppService::AppServiceResponse *>
 ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::ApplicationModel::AppService::AppServiceResponseStatus>
@@ -13,20 +27,6 @@ ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::App
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::AppService::AppServiceConnection *, ABI::Windows::ApplicationModel::AppService::AppServiceRequestReceivedEventArgs *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IAppServiceCatalogStatics
-IID_IAppServiceClosedEventArgs
-IID_IAppServiceConnection
-IID_IAppServiceConnection2
-IID_IAppServiceConnectionStatics
-IID_IAppServiceDeferral
-IID_IAppServiceRequest
-IID_IAppServiceRequestReceivedEventArgs
-IID_IAppServiceResponse
-IID_IAppServiceTriggerDetails
-IID_IAppServiceTriggerDetails2
-IID_IAppServiceTriggerDetails3
-IID_IAppServiceTriggerDetails4
-IID_IStatelessAppServiceResponse
 WINDOWS_APPLICATIONMODEL_FULLTRUSTAPPCONTRACT_VERSION
 WINDOWS_APPLICATIONMODEL_STARTUPTASKCONTRACT_VERSION
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION

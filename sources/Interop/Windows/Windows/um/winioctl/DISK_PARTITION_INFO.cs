@@ -21,7 +21,7 @@ public partial struct DISK_PARTITION_INFO
     public PARTITION_STYLE PartitionStyle;
 
     /// <include file='DISK_PARTITION_INFO.xml' path='doc/member[@name="DISK_PARTITION_INFO.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L9746_C9")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L9757_C9")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Mbr"]/*' />
@@ -52,12 +52,12 @@ public partial struct DISK_PARTITION_INFO
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Mbr"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L9747_C17")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L9758_C17")]
         public _Mbr_e__Struct Mbr;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Gpt"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L9751_C17")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L9762_C17")]
         public _Gpt_e__Struct Gpt;
 
         /// <include file='_Mbr_e__Struct.xml' path='doc/member[@name="_Mbr_e__Struct"]/*' />

@@ -14,6 +14,7 @@ public static partial class IID
 {
     public static ref readonly Guid IID_tagMFASYNCRESULT
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
