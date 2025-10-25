@@ -745,11 +745,41 @@ public static partial class FVE
     [NativeTypeName("#define FVE_E_PCR_BOOT_LOCK_BOUNDARY _HRESULT_TYPEDEF_(0xC0310102L)")]
     public const int FVE_E_PCR_BOOT_LOCK_BOUNDARY = unchecked((int)(0xC0310102));
 
+    [NativeTypeName("#define FVE_E_FW_UPDATE_TPM_BINDINGS_NOT_REFRESHED _HRESULT_TYPEDEF_(0xC0310103L)")]
+    public const int FVE_E_FW_UPDATE_TPM_BINDINGS_NOT_REFRESHED = unchecked((int)(0xC0310103));
+
     [NativeTypeName("#define FVE_E_EXCEED_MAX_LIMIT_RP_IN_MEID _HRESULT_TYPEDEF_(0xC0310104L)")]
     public const int FVE_E_EXCEED_MAX_LIMIT_RP_IN_MEID = unchecked((int)(0xC0310104));
 
+    [NativeTypeName("#define FVE_E_INVALID_TPM_BINDING_CONFIGURATION _HRESULT_TYPEDEF_(0xC0310105L)")]
+    public const int FVE_E_INVALID_TPM_BINDING_CONFIGURATION = unchecked((int)(0xC0310105));
+
+    [NativeTypeName("#define FVE_E_TOO_MANY_TPM_BINDINGS _HRESULT_TYPEDEF_(0xC0310106L)")]
+    public const int FVE_E_TOO_MANY_TPM_BINDINGS = unchecked((int)(0xC0310106));
+
+    [NativeTypeName("#define FVE_E_TPM_BINDING_ASSOCIATION_FAILURE _HRESULT_TYPEDEF_(0xC0310107L)")]
+    public const int FVE_E_TPM_BINDING_ASSOCIATION_FAILURE = unchecked((int)(0xC0310107));
+
+    [NativeTypeName("#define FVE_E_ORPHANED_PCR_DIGEST_DATUM _HRESULT_TYPEDEF_(0xC0310108L)")]
+    public const int FVE_E_ORPHANED_PCR_DIGEST_DATUM = unchecked((int)(0xC0310108));
+
     [NativeTypeName("#define FVE_E_HW_ACCELERATED_ENCRYPTION_NOT_ALLOWED _HRESULT_TYPEDEF_(0xC0310109L)")]
     public const int FVE_E_HW_ACCELERATED_ENCRYPTION_NOT_ALLOWED = unchecked((int)(0xC0310109));
+
+    [NativeTypeName("#define FVE_E_NO_MATCHING_TPM_BINDINGS _HRESULT_TYPEDEF_(0xC031010AL)")]
+    public const int FVE_E_NO_MATCHING_TPM_BINDINGS = unchecked((int)(0xC031010A));
+
+    [NativeTypeName("#define FVE_E_TPMPV2_USED_FAILURE _HRESULT_TYPEDEF_(0xC031010BL)")]
+    public const int FVE_E_TPMPV2_USED_FAILURE = unchecked((int)(0xC031010B));
+
+    [NativeTypeName("#define FVE_E_NO_TPM_BINDINGS _HRESULT_TYPEDEF_(0xC031010CL)")]
+    public const int FVE_E_NO_TPM_BINDINGS = unchecked((int)(0xC031010C));
+
+    [NativeTypeName("#define FVE_E_FW_UPDATE_PCRS_BLOCK _HRESULT_TYPEDEF_(0xC031010EL)")]
+    public const int FVE_E_FW_UPDATE_PCRS_BLOCK = unchecked((int)(0xC031010E));
+
+    [NativeTypeName("#define FVE_E_FW_UPDATE_PCRS_NOT_EXCLUDED _HRESULT_TYPEDEF_(0xC031010FL)")]
+    public const int FVE_E_FW_UPDATE_PCRS_NOT_EXCLUDED = unchecked((int)(0xC031010F));
 
     [NativeTypeName("#define FVE_E_DEVICE_NOT_JOINED _HRESULT_TYPEDEF_(0x80310110L)")]
     public const int FVE_E_DEVICE_NOT_JOINED = unchecked((int)(0x80310110));

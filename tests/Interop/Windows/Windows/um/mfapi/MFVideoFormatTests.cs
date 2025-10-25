@@ -159,6 +159,20 @@ public static partial class MFVideoFormatTests
         Assert.That(MFVideoFormat_I420, Is.EqualTo(new Guid(unchecked((((uint)(0x49343230) & 0xFF) << 24) | (((uint)(0x49343230) & 0xFF00) << 8) | (((uint)(0x49343230) & 0xFF0000) >> 8) | (((uint)(0x49343230) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71)));
     }
 
+    /// <summary>Validates that the value of the <see cref="MFVideoFormat_I422" /> property is correct.</summary>
+    [Test]
+    public static void MFVideoFormat_I422Test()
+    {
+        Assert.That(MFVideoFormat_I422, Is.EqualTo(new Guid(unchecked((((uint)(0x49343232) & 0xFF) << 24) | (((uint)(0x49343232) & 0xFF00) << 8) | (((uint)(0x49343232) & 0xFF0000) >> 8) | (((uint)(0x49343232) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MFVideoFormat_I444" /> property is correct.</summary>
+    [Test]
+    public static void MFVideoFormat_I444Test()
+    {
+        Assert.That(MFVideoFormat_I444, Is.EqualTo(new Guid(unchecked((((uint)(0x49343434) & 0xFF) << 24) | (((uint)(0x49343434) & 0xFF00) << 8) | (((uint)(0x49343434) & 0xFF0000) >> 8) | (((uint)(0x49343434) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71)));
+    }
+
     /// <summary>Validates that the value of the <see cref="MFVideoFormat_IYUV" /> property is correct.</summary>
     [Test]
     public static void MFVideoFormat_IYUVTest()

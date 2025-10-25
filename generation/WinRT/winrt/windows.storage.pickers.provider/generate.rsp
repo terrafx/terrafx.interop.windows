@@ -5,17 +5,17 @@ ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Storage::Pickers::Pro
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Storage::Pickers::Provider::FileOpenPickerUI *, ABI::Windows::Storage::Pickers::Provider::PickerClosingEventArgs *>
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Storage::Pickers::Provider::FileSavePickerUI *, ABI::Windows::Storage::Pickers::Provider::TargetFileRequestedEventArgs *>
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Storage::Pickers::Provider::FileSavePickerUI *, IInspectable *>
+ABI::Windows::Storage::Pickers::Provider::IID_IFileOpenPickerUI
+ABI::Windows::Storage::Pickers::Provider::IID_IFileRemovedEventArgs
+ABI::Windows::Storage::Pickers::Provider::IID_IFileSavePickerUI
+ABI::Windows::Storage::Pickers::Provider::IID_IPickerClosingDeferral
+ABI::Windows::Storage::Pickers::Provider::IID_IPickerClosingEventArgs
+ABI::Windows::Storage::Pickers::Provider::IID_IPickerClosingOperation
+ABI::Windows::Storage::Pickers::Provider::IID_ITargetFileRequest
+ABI::Windows::Storage::Pickers::Provider::IID_ITargetFileRequestDeferral
+ABI::Windows::Storage::Pickers::Provider::IID_ITargetFileRequestedEventArgs
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IFileOpenPickerUI
-IID_IFileRemovedEventArgs
-IID_IFileSavePickerUI
-IID_IPickerClosingDeferral
-IID_IPickerClosingEventArgs
-IID_IPickerClosingOperation
-IID_ITargetFileRequest
-IID_ITargetFileRequestDeferral
-IID_ITargetFileRequestedEventArgs
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

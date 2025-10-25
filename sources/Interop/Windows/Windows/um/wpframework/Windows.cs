@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadManagedRuntime"]/*' />
-    [DllImport("webengine4", ExactSpelling = true)]
+    [DllImport("webengine4", EntryPoint = "?LoadManagedRuntime@@YAJPEB_WPEAPEAUIUnknown@@@Z", ExactSpelling = true)]
     public static extern HRESULT LoadManagedRuntime([NativeTypeName("PCWSTR")] char* pwszRuntimeVersion, IUnknown** ppManagedRuntimeHost);
 
     [NativeTypeName("#define MANAGED_RUNTIME_LOADER_FUNCTION \"LoadManagedRuntime\"")]

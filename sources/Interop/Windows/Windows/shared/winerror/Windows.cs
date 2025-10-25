@@ -765,4 +765,19 @@ public static partial class Windows
 
     [NativeTypeName("#define UNIONFS_E_NESTED_UNION_NOT_ALLOWED _HRESULT_TYPEDEF_(0x8925000CL)")]
     public const int UNIONFS_E_NESTED_UNION_NOT_ALLOWED = unchecked((int)(0x8925000C));
+
+    [NativeTypeName("#define PPF_E_TRANSFORM_DIGEST_ALGO_NOT_SUPPORTED _HRESULT_TYPEDEF_(0xC9280000L)")]
+    public const int PPF_E_TRANSFORM_DIGEST_ALGO_NOT_SUPPORTED = unchecked((int)(0xC9280000));
+
+    [NativeTypeName("#define PPF_E_TRANSFORM_CONFLICT _HRESULT_TYPEDEF_(0xC9280001L)")]
+    public const int PPF_E_TRANSFORM_CONFLICT = unchecked((int)(0xC9280001));
+
+    [NativeTypeName("#define PPF_E_TRANSFORM_CLEANED_UP_NA _HRESULT_TYPEDEF_(0xC9280002L)")]
+    public const int PPF_E_TRANSFORM_CLEANED_UP_NA = unchecked((int)(0xC9280002));
+
+    [NativeTypeName("#define PPF_E_TRANSFORM_CLEANED_UP_STATE_CHANGE _HRESULT_TYPEDEF_(0xC9280003L)")]
+    public const int PPF_E_TRANSFORM_CLEANED_UP_STATE_CHANGE = unchecked((int)(0xC9280003));
+
+    [NativeTypeName("#define PPF_E_TRANSFORM_DIGEST_ALGO_NOT_PRESENT _HRESULT_TYPEDEF_(0xC9280004L)")]
+    public const int PPF_E_TRANSFORM_DIGEST_ALGO_NOT_PRESENT = unchecked((int)(0xC9280004));
 }

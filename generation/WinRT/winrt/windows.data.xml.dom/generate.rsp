@@ -1,6 +1,29 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Data::Xml::Dom::IID_IDtdEntity
+ABI::Windows::Data::Xml::Dom::IID_IDtdNotation
+ABI::Windows::Data::Xml::Dom::IID_IXmlAttribute
+ABI::Windows::Data::Xml::Dom::IID_IXmlCDataSection
+ABI::Windows::Data::Xml::Dom::IID_IXmlCharacterData
+ABI::Windows::Data::Xml::Dom::IID_IXmlComment
+ABI::Windows::Data::Xml::Dom::IID_IXmlDocument
+ABI::Windows::Data::Xml::Dom::IID_IXmlDocumentFragment
+ABI::Windows::Data::Xml::Dom::IID_IXmlDocumentIO
+ABI::Windows::Data::Xml::Dom::IID_IXmlDocumentIO2
+ABI::Windows::Data::Xml::Dom::IID_IXmlDocumentStatics
+ABI::Windows::Data::Xml::Dom::IID_IXmlDocumentType
+ABI::Windows::Data::Xml::Dom::IID_IXmlDomImplementation
+ABI::Windows::Data::Xml::Dom::IID_IXmlElement
+ABI::Windows::Data::Xml::Dom::IID_IXmlEntityReference
+ABI::Windows::Data::Xml::Dom::IID_IXmlLoadSettings
+ABI::Windows::Data::Xml::Dom::IID_IXmlNamedNodeMap
+ABI::Windows::Data::Xml::Dom::IID_IXmlNode
+ABI::Windows::Data::Xml::Dom::IID_IXmlNodeList
+ABI::Windows::Data::Xml::Dom::IID_IXmlNodeSelector
+ABI::Windows::Data::Xml::Dom::IID_IXmlNodeSerializer
+ABI::Windows::Data::Xml::Dom::IID_IXmlProcessingInstruction
+ABI::Windows::Data::Xml::Dom::IID_IXmlText
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Data::Xml::Dom::IXmlNode *>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Data::Xml::Dom::IXmlNode *>
 ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Data::Xml::Dom::IXmlNode *>
@@ -8,29 +31,6 @@ ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Data::Xml::Dom::XmlDocum
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Data::Xml::Dom::XmlDocument *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IDtdEntity
-IID_IDtdNotation
-IID_IXmlAttribute
-IID_IXmlCDataSection
-IID_IXmlCharacterData
-IID_IXmlComment
-IID_IXmlDocument
-IID_IXmlDocumentFragment
-IID_IXmlDocumentIO
-IID_IXmlDocumentIO2
-IID_IXmlDocumentStatics
-IID_IXmlDocumentType
-IID_IXmlDomImplementation
-IID_IXmlElement
-IID_IXmlEntityReference
-IID_IXmlLoadSettings
-IID_IXmlNamedNodeMap
-IID_IXmlNode
-IID_IXmlNodeList
-IID_IXmlNodeSelector
-IID_IXmlNodeSerializer
-IID_IXmlProcessingInstruction
-IID_IXmlText
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

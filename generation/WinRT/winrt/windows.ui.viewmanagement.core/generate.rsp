@@ -14,27 +14,27 @@ ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ViewManagement::C
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ViewManagement::Core::CoreInputView *, ABI::Windows::UI::ViewManagement::Core::CoreInputViewShowingEventArgs *>
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ViewManagement::Core::CoreInputView *, ABI::Windows::UI::ViewManagement::Core::CoreInputViewTransferringXYFocusEventArgs *>
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::ViewManagement::Core::CoreInputView *, IInspectable *>
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreFrameworkInputView
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreFrameworkInputViewAnimationStartingEventArgs
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreFrameworkInputViewOcclusionsChangedEventArgs
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreFrameworkInputViewStatics
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreInputView
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreInputView2
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreInputView3
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreInputView4
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreInputView5
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreInputViewAnimationStartingEventArgs
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreInputViewHidingEventArgs
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreInputViewOcclusion
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreInputViewOcclusionsChangedEventArgs
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreInputViewShowingEventArgs
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreInputViewStatics
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreInputViewStatics2
+ABI::Windows::UI::ViewManagement::Core::IID_ICoreInputViewTransferringXYFocusEventArgs
+ABI::Windows::UI::ViewManagement::Core::IID_IUISettingsController
+ABI::Windows::UI::ViewManagement::Core::IID_IUISettingsControllerStatics
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_ICoreFrameworkInputView
-IID_ICoreFrameworkInputViewAnimationStartingEventArgs
-IID_ICoreFrameworkInputViewOcclusionsChangedEventArgs
-IID_ICoreFrameworkInputViewStatics
-IID_ICoreInputView
-IID_ICoreInputView2
-IID_ICoreInputView3
-IID_ICoreInputView4
-IID_ICoreInputView5
-IID_ICoreInputViewAnimationStartingEventArgs
-IID_ICoreInputViewHidingEventArgs
-IID_ICoreInputViewOcclusion
-IID_ICoreInputViewOcclusionsChangedEventArgs
-IID_ICoreInputViewShowingEventArgs
-IID_ICoreInputViewStatics
-IID_ICoreInputViewStatics2
-IID_ICoreInputViewTransferringXYFocusEventArgs
-IID_IUISettingsController
-IID_IUISettingsControllerStatics
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

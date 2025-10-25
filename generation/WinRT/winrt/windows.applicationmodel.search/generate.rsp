@@ -1,6 +1,24 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::ApplicationModel::Search::IID_ILocalContentSuggestionSettings
+ABI::Windows::ApplicationModel::Search::IID_ISearchPane
+ABI::Windows::ApplicationModel::Search::IID_ISearchPaneQueryChangedEventArgs
+ABI::Windows::ApplicationModel::Search::IID_ISearchPaneQueryLinguisticDetails
+ABI::Windows::ApplicationModel::Search::IID_ISearchPaneQuerySubmittedEventArgs
+ABI::Windows::ApplicationModel::Search::IID_ISearchPaneQuerySubmittedEventArgsWithLinguisticDetails
+ABI::Windows::ApplicationModel::Search::IID_ISearchPaneResultSuggestionChosenEventArgs
+ABI::Windows::ApplicationModel::Search::IID_ISearchPaneStatics
+ABI::Windows::ApplicationModel::Search::IID_ISearchPaneStaticsWithHideThisApplication
+ABI::Windows::ApplicationModel::Search::IID_ISearchPaneSuggestionsRequest
+ABI::Windows::ApplicationModel::Search::IID_ISearchPaneSuggestionsRequestDeferral
+ABI::Windows::ApplicationModel::Search::IID_ISearchPaneSuggestionsRequestedEventArgs
+ABI::Windows::ApplicationModel::Search::IID_ISearchPaneVisibilityChangedEventArgs
+ABI::Windows::ApplicationModel::Search::IID_ISearchQueryLinguisticDetails
+ABI::Windows::ApplicationModel::Search::IID_ISearchQueryLinguisticDetailsFactory
+ABI::Windows::ApplicationModel::Search::IID_ISearchSuggestionCollection
+ABI::Windows::ApplicationModel::Search::IID_ISearchSuggestionsRequest
+ABI::Windows::ApplicationModel::Search::IID_ISearchSuggestionsRequestDeferral
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Search::SearchPane *, ABI::Windows::ApplicationModel::Search::SearchPaneQueryChangedEventArgs *>
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Search::SearchPane *, ABI::Windows::ApplicationModel::Search::SearchPaneQuerySubmittedEventArgs *>
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Search::SearchPane *, ABI::Windows::ApplicationModel::Search::SearchPaneResultSuggestionChosenEventArgs *>
@@ -8,24 +26,6 @@ ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Sea
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Search::SearchPane *, ABI::Windows::ApplicationModel::Search::SearchPaneVisibilityChangedEventArgs *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_ILocalContentSuggestionSettings
-IID_ISearchPane
-IID_ISearchPaneQueryChangedEventArgs
-IID_ISearchPaneQueryLinguisticDetails
-IID_ISearchPaneQuerySubmittedEventArgs
-IID_ISearchPaneQuerySubmittedEventArgsWithLinguisticDetails
-IID_ISearchPaneResultSuggestionChosenEventArgs
-IID_ISearchPaneStatics
-IID_ISearchPaneStaticsWithHideThisApplication
-IID_ISearchPaneSuggestionsRequest
-IID_ISearchPaneSuggestionsRequestDeferral
-IID_ISearchPaneSuggestionsRequestedEventArgs
-IID_ISearchPaneVisibilityChangedEventArgs
-IID_ISearchQueryLinguisticDetails
-IID_ISearchQueryLinguisticDetailsFactory
-IID_ISearchSuggestionCollection
-IID_ISearchSuggestionsRequest
-IID_ISearchSuggestionsRequestDeferral
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

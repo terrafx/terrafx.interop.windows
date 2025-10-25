@@ -8,13 +8,13 @@ ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Media::FaceAnalysis::Fac
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Media::FaceAnalysis::DetectedFace *> *>
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::FaceAnalysis::FaceDetector *>
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::FaceAnalysis::FaceTracker *>
+ABI::Windows::Media::FaceAnalysis::IID_IDetectedFace
+ABI::Windows::Media::FaceAnalysis::IID_IFaceDetector
+ABI::Windows::Media::FaceAnalysis::IID_IFaceDetectorStatics
+ABI::Windows::Media::FaceAnalysis::IID_IFaceTracker
+ABI::Windows::Media::FaceAnalysis::IID_IFaceTrackerStatics
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IDetectedFace
-IID_IFaceDetector
-IID_IFaceDetectorStatics
-IID_IFaceTracker
-IID_IFaceTrackerStatics
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 WINDOWS_MEDIA_MEDIACONTROLCONTRACT_VERSION

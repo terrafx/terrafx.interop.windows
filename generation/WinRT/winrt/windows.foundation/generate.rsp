@@ -1,6 +1,7 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Foundation::Collections::IID_IPropertySet
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, HSTRING> *>
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, IInspectable *> *>
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::IWwwFormUrlDecoderEntry *>
@@ -19,32 +20,31 @@ ABI::Windows::Foundation::Collections::IObservableMap<HSTRING__ *, IInspectable 
 ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Foundation::IWwwFormUrlDecoderEntry *>
 ABI::Windows::Foundation::Collections::MapChangedEventHandler<HSTRING__ *, HSTRING__ *>
 ABI::Windows::Foundation::Collections::MapChangedEventHandler<HSTRING__ *, IInspectable *>
+ABI::Windows::Foundation::IID_IAsyncAction
+ABI::Windows::Foundation::IID_IAsyncActionCompletedHandler
+ABI::Windows::Foundation::IID_IClosable
+ABI::Windows::Foundation::IID_IDeferral
+ABI::Windows::Foundation::IID_IDeferralCompletedHandler
+ABI::Windows::Foundation::IID_IDeferralFactory
+ABI::Windows::Foundation::IID_IGetActivationFactory
+ABI::Windows::Foundation::IID_IGuidHelperStatics
+ABI::Windows::Foundation::IID_IMemoryBuffer
+ABI::Windows::Foundation::IID_IMemoryBufferFactory
+ABI::Windows::Foundation::IID_IMemoryBufferReference
+ABI::Windows::Foundation::IID_IPropertyValue
+ABI::Windows::Foundation::IID_IPropertyValueStatics
+ABI::Windows::Foundation::IID_IStringable
+ABI::Windows::Foundation::IID_IUriEscapeStatics
+ABI::Windows::Foundation::IID_IUriRuntimeClass
+ABI::Windows::Foundation::IID_IUriRuntimeClassFactory
+ABI::Windows::Foundation::IID_IUriRuntimeClassWithAbsoluteCanonicalUri
+ABI::Windows::Foundation::IID_IWwwFormUrlDecoderEntry
+ABI::Windows::Foundation::IID_IWwwFormUrlDecoderRuntimeClass
+ABI::Windows::Foundation::IID_IWwwFormUrlDecoderRuntimeClassFactory
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Foundation::IMemoryBufferReference *, IInspectable *>
 ABI::Windows::Foundation::TimeSpan
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IAsyncAction
-IID_IAsyncActionCompletedHandler
-IID_IClosable
-IID_IDeferral
-IID_IDeferralCompletedHandler
-IID_IDeferralFactory
-IID_IGetActivationFactory
-IID_IGuidHelperStatics
-IID_IMemoryBuffer
-IID_IMemoryBufferFactory
-IID_IMemoryBufferReference
-IID_IPropertySet
-IID_IPropertyValue
-IID_IPropertyValueStatics
-IID_IStringable
-IID_IUriEscapeStatics
-IID_IUriRuntimeClass
-IID_IUriRuntimeClassFactory
-IID_IUriRuntimeClassWithAbsoluteCanonicalUri
-IID_IWwwFormUrlDecoderEntry
-IID_IWwwFormUrlDecoderRuntimeClass
-IID_IWwwFormUrlDecoderRuntimeClassFactory
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

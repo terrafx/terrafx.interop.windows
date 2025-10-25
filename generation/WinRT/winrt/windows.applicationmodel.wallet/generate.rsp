@@ -1,6 +1,19 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::ApplicationModel::Wallet::IID_IWalletBarcode
+ABI::Windows::ApplicationModel::Wallet::IID_IWalletBarcodeFactory
+ABI::Windows::ApplicationModel::Wallet::IID_IWalletItem
+ABI::Windows::ApplicationModel::Wallet::IID_IWalletItemCustomProperty
+ABI::Windows::ApplicationModel::Wallet::IID_IWalletItemCustomPropertyFactory
+ABI::Windows::ApplicationModel::Wallet::IID_IWalletItemFactory
+ABI::Windows::ApplicationModel::Wallet::IID_IWalletItemStore
+ABI::Windows::ApplicationModel::Wallet::IID_IWalletItemStore2
+ABI::Windows::ApplicationModel::Wallet::IID_IWalletManagerStatics
+ABI::Windows::ApplicationModel::Wallet::IID_IWalletRelevantLocation
+ABI::Windows::ApplicationModel::Wallet::IID_IWalletTransaction
+ABI::Windows::ApplicationModel::Wallet::IID_IWalletVerb
+ABI::Windows::ApplicationModel::Wallet::IID_IWalletVerbFactory
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Wallet::WalletItem *>
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::ApplicationModel::Wallet::WalletItemCustomProperty *> *>
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::ApplicationModel::Wallet::WalletRelevantLocation *> *>
@@ -33,19 +46,6 @@ ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundati
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Wallet::WalletItemStore *, IInspectable *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IWalletBarcode
-IID_IWalletBarcodeFactory
-IID_IWalletItem
-IID_IWalletItemCustomProperty
-IID_IWalletItemCustomPropertyFactory
-IID_IWalletItemFactory
-IID_IWalletItemStore
-IID_IWalletItemStore2
-IID_IWalletManagerStatics
-IID_IWalletRelevantLocation
-IID_IWalletTransaction
-IID_IWalletVerb
-IID_IWalletVerbFactory
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

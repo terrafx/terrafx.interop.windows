@@ -14,6 +14,7 @@ public static partial class CLSID
 {
     public static ref readonly Guid CLSID_SpNotifyTranslator
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpObjectTokenCategory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -60,6 +62,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpObjectToken
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -83,6 +86,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpResourceManager
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -106,6 +110,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpStreamFormatConverter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -129,6 +134,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpMMAudioEnum
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -152,6 +158,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpMMAudioIn
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -175,6 +182,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpMMAudioOut
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -198,6 +206,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpStream
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -221,6 +230,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpVoice
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -244,6 +254,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpSharedRecoContext
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -267,6 +278,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpInprocRecognizer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -290,6 +302,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpSharedRecognizer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -313,6 +326,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpLexicon
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -336,6 +350,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpUnCompressedLexicon
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -359,6 +374,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpCompressedLexicon
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -382,6 +398,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpShortcut
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -405,6 +422,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpPhoneConverter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -426,8 +444,33 @@ public static partial class CLSID
         }
     }
 
+    public static ref readonly Guid CLSID_SpPhoneticAlphabetConverter
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x26, 0x41, 0x41, 0x4F,
+                0xE3, 0xDF,
+                0x29, 0x46,
+                0x99,
+                0xEE,
+                0x79,
+                0x79,
+                0x78,
+                0x31,
+                0x7E,
+                0xAD
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid CLSID_SpNullPhoneConverter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -449,8 +492,33 @@ public static partial class CLSID
         }
     }
 
+    public static ref readonly Guid CLSID_SpTextSelectionInformation
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x0A, 0x03, 0x92, 0x0F,
+                0xFD, 0xCB,
+                0xB8, 0x4A,
+                0xA1,
+                0x64,
+                0xFF,
+                0x59,
+                0x85,
+                0x54,
+                0x7F,
+                0xF6
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid CLSID_SpPhraseInfoBuilder
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -474,6 +542,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpAudioFormat
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -497,6 +566,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpWaveFormatEx
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -520,6 +590,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpInProcRecoContext
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -543,6 +614,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpCustomStream
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -566,6 +638,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpFileStream
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -589,6 +662,7 @@ public static partial class CLSID
 
     public static ref readonly Guid CLSID_SpMemoryStream
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

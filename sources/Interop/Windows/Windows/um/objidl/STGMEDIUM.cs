@@ -17,7 +17,7 @@ public unsafe partial struct STGMEDIUM
     public uint tymed;
 
     /// <include file='STGMEDIUM.xml' path='doc/member[@name="STGMEDIUM.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_objidl_L12046_C36")]
+    [NativeTypeName("__AnonymousRecord_objidl_L12697_C36")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='STGMEDIUM.xml' path='doc/member[@name="STGMEDIUM.pUnkForRelease"]/*' />

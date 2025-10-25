@@ -14,6 +14,7 @@ public static partial class IID
 {
     public static ref readonly Guid IID_IWebBrowser
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_DWebBrowserEvents
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -60,6 +62,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWebBrowserApp
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -83,6 +86,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWebBrowser2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -106,6 +110,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_DWebBrowserEvents2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -127,123 +132,9 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_WebBrowser_V1
-    {
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xC3, 0x2A, 0xB2, 0xEA,
-                0xC1, 0x30,
-                0xCF, 0x11,
-                0xA7,
-                0xEB,
-                0x00,
-                0x00,
-                0xC0,
-                0x5B,
-                0xAE,
-                0x0B
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_WebBrowser
-    {
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x61, 0xF9, 0x56, 0x88,
-                0x0A, 0x34,
-                0xD0, 0x11,
-                0xA9,
-                0x6B,
-                0x00,
-                0xC0,
-                0x4F,
-                0xD7,
-                0x05,
-                0xA2
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_InternetExplorer
-    {
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x01, 0xDF, 0x02, 0x00,
-                0x00, 0x00,
-                0x00, 0x00,
-                0xC0,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x00,
-                0x46
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_InternetExplorerMedium
-    {
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x1D, 0x04, 0xE8, 0xD5,
-                0x0F, 0x92,
-                0xE9, 0x45,
-                0xB8,
-                0xFB,
-                0xB1,
-                0xDE,
-                0xB8,
-                0x2C,
-                0x6E,
-                0x5E
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_ShellBrowserWindow
-    {
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x90, 0xFD, 0x8A, 0xC0,
-                0xA1, 0xF2,
-                0xD1, 0x11,
-                0x84,
-                0x55,
-                0x00,
-                0xA0,
-                0xC9,
-                0x1F,
-                0x38,
-                0x80
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DShellWindowsEvents
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -267,6 +158,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IShellWindows
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -288,31 +180,9 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_ShellWindows
-    {
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x72, 0x59, 0xA0, 0x9B,
-                0xA8, 0xF6,
-                0xCF, 0x11,
-                0xA4,
-                0x42,
-                0x00,
-                0xA0,
-                0xC9,
-                0x0A,
-                0x8F,
-                0x39
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IShellUIHelper
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -336,6 +206,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IShellUIHelper2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -359,6 +230,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IShellUIHelper3
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -382,6 +254,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IShellUIHelper4
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -405,6 +278,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IShellUIHelper5
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -428,6 +302,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IShellUIHelper6
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -451,6 +326,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IShellUIHelper7
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -474,6 +350,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IShellUIHelper8
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -497,6 +374,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IShellUIHelper9
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -518,31 +396,9 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_ShellUIHelper
-    {
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0xB7, 0x4B, 0xAB, 0x64,
-                0x1E, 0x11,
-                0xD1, 0x11,
-                0x8F,
-                0x79,
-                0x00,
-                0xC0,
-                0x4F,
-                0xC2,
-                0xFB,
-                0xE1
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_DShellNameSpaceEvents
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -566,6 +422,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IShellFavoritesNameSpace
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -589,6 +446,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IShellNameSpace
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -610,59 +468,14 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_ShellNameSpace
-    {
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x05, 0x68, 0x13, 0x55,
-                0xDE, 0xB2,
-                0xD1, 0x11,
-                0xB9,
-                0xF2,
-                0x00,
-                0xA0,
-                0xC9,
-                0x8B,
-                0xC5,
-                0x47
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
     public static ref readonly Guid IID_IScriptErrorList
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
                 0x24, 0x0F, 0x47, 0xF3,
                 0xFD, 0x15,
-                0xD2, 0x11,
-                0xBB,
-                0x2E,
-                0x00,
-                0x80,
-                0x5F,
-                0xF7,
-                0xEF,
-                0xCA
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_CScriptErrorList
-    {
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x00, 0x13, 0xD0, 0xEF,
-                0x0F, 0x16,
                 0xD2, 0x11,
                 0xBB,
                 0x2E,

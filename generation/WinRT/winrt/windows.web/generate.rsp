@@ -1,10 +1,10 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Web::IID_IUriToStreamResolver
+ABI::Windows::Web::IID_IWebErrorStatics
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IUriToStreamResolver
-IID_IWebErrorStatics
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

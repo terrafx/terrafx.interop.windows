@@ -43,7 +43,7 @@ public partial struct POWER_LIMIT_ATTRIBUTES
     public uint DefaultDCValue;
 
     /// <include file='POWER_LIMIT_ATTRIBUTES.xml' path='doc/member[@name="POWER_LIMIT_ATTRIBUTES.Flags"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L18430_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L18435_C5")]
     public _Flags_e__Union Flags;
 
     /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union"]/*' />
@@ -52,7 +52,7 @@ public partial struct POWER_LIMIT_ATTRIBUTES
     {
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L18431_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L18436_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.AsUlong"]/*' />

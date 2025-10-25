@@ -1,6 +1,27 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Devices::Printers::IID_IIppAttributeError
+ABI::Windows::Devices::Printers::IID_IIppAttributeValue
+ABI::Windows::Devices::Printers::IID_IIppAttributeValueStatics
+ABI::Windows::Devices::Printers::IID_IIppIntegerRange
+ABI::Windows::Devices::Printers::IID_IIppIntegerRangeFactory
+ABI::Windows::Devices::Printers::IID_IIppPrintDevice
+ABI::Windows::Devices::Printers::IID_IIppPrintDevice2
+ABI::Windows::Devices::Printers::IID_IIppPrintDevice3
+ABI::Windows::Devices::Printers::IID_IIppPrintDevice4
+ABI::Windows::Devices::Printers::IID_IIppPrintDeviceStatics
+ABI::Windows::Devices::Printers::IID_IIppResolution
+ABI::Windows::Devices::Printers::IID_IIppResolutionFactory
+ABI::Windows::Devices::Printers::IID_IIppSetAttributesResult
+ABI::Windows::Devices::Printers::IID_IIppTextWithLanguage
+ABI::Windows::Devices::Printers::IID_IIppTextWithLanguageFactory
+ABI::Windows::Devices::Printers::IID_IPageConfigurationSettings
+ABI::Windows::Devices::Printers::IID_IPdlPassthroughProvider
+ABI::Windows::Devices::Printers::IID_IPdlPassthroughTarget
+ABI::Windows::Devices::Printers::IID_IPrint3DDevice
+ABI::Windows::Devices::Printers::IID_IPrint3DDeviceStatics
+ABI::Windows::Devices::Printers::IID_IPrintSchema
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Printers::IppAttributeValue *>
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Printers::IppIntegerRange *>
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Printers::IppResolution *>
@@ -43,27 +64,6 @@ ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Devices::Printers::Print
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices::Printers::Print3DDevice *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IIppAttributeError
-IID_IIppAttributeValue
-IID_IIppAttributeValueStatics
-IID_IIppIntegerRange
-IID_IIppIntegerRangeFactory
-IID_IIppPrintDevice
-IID_IIppPrintDevice2
-IID_IIppPrintDevice3
-IID_IIppPrintDevice4
-IID_IIppPrintDeviceStatics
-IID_IIppResolution
-IID_IIppResolutionFactory
-IID_IIppSetAttributesResult
-IID_IIppTextWithLanguage
-IID_IIppTextWithLanguageFactory
-IID_IPageConfigurationSettings
-IID_IPdlPassthroughProvider
-IID_IPdlPassthroughTarget
-IID_IPrint3DDevice
-IID_IPrint3DDeviceStatics
-IID_IPrintSchema
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

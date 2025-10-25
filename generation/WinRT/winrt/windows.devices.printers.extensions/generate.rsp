@@ -1,21 +1,21 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Devices::Printers::Extensions::IID_IPrint3DWorkflow
+ABI::Windows::Devices::Printers::Extensions::IID_IPrint3DWorkflow2
+ABI::Windows::Devices::Printers::Extensions::IID_IPrint3DWorkflowPrinterChangedEventArgs
+ABI::Windows::Devices::Printers::Extensions::IID_IPrint3DWorkflowPrintRequestedEventArgs
+ABI::Windows::Devices::Printers::Extensions::IID_IPrintExtensionContextStatic
+ABI::Windows::Devices::Printers::Extensions::IID_IPrintNotificationEventDetails
+ABI::Windows::Devices::Printers::Extensions::IID_IPrintTaskConfiguration
+ABI::Windows::Devices::Printers::Extensions::IID_IPrintTaskConfigurationSaveRequest
+ABI::Windows::Devices::Printers::Extensions::IID_IPrintTaskConfigurationSaveRequestedDeferral
+ABI::Windows::Devices::Printers::Extensions::IID_IPrintTaskConfigurationSaveRequestedEventArgs
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Printers::Extensions::Print3DWorkflow *, ABI::Windows::Devices::Printers::Extensions::Print3DWorkflowPrinterChangedEventArgs *>
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Printers::Extensions::Print3DWorkflow *, ABI::Windows::Devices::Printers::Extensions::Print3DWorkflowPrintRequestedEventArgs *>
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Printers::Extensions::PrintTaskConfiguration *, ABI::Windows::Devices::Printers::Extensions::PrintTaskConfigurationSaveRequestedEventArgs *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IPrint3DWorkflow
-IID_IPrint3DWorkflow2
-IID_IPrint3DWorkflowPrinterChangedEventArgs
-IID_IPrint3DWorkflowPrintRequestedEventArgs
-IID_IPrintExtensionContextStatic
-IID_IPrintNotificationEventDetails
-IID_IPrintTaskConfiguration
-IID_IPrintTaskConfigurationSaveRequest
-IID_IPrintTaskConfigurationSaveRequestedDeferral
-IID_IPrintTaskConfigurationSaveRequestedEventArgs
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

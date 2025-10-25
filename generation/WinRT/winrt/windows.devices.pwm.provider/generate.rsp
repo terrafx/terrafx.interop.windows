@@ -1,13 +1,13 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Devices::Pwm::Provider::IID_IPwmControllerProvider
+ABI::Windows::Devices::Pwm::Provider::IID_IPwmProvider
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Pwm::Provider::IPwmControllerProvider *>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Pwm::Provider::IPwmControllerProvider *>
 ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Pwm::Provider::IPwmControllerProvider *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IPwmControllerProvider
-IID_IPwmProvider
 WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION

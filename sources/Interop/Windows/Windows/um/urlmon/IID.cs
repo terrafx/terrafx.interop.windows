@@ -50,6 +50,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IPersistMoniker
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -73,6 +74,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IMonikerProp
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -96,6 +98,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IBindProtocol
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -119,6 +122,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IBinding
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -142,6 +146,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IBindStatusCallback
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -165,6 +170,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IBindStatusCallbackEx
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -188,6 +194,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAuthenticate
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -211,6 +218,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IAuthenticateEx
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -234,6 +242,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IHttpNegotiate
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -257,6 +266,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IHttpNegotiate2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -280,6 +290,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IHttpNegotiate3
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -303,6 +314,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWinInetFileStream
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -326,6 +338,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWindowForBindingUI
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -349,6 +362,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ICodeInstall
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -372,6 +386,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IUri
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -395,6 +410,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IUriContainer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -418,6 +434,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IUriBuilder
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -441,6 +458,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IUriBuilderFactory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -464,6 +482,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWinInetInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -487,6 +506,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IHttpSecurity
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -510,6 +530,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWinInetHttpInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -533,6 +554,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWinInetHttpTimeouts
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -556,6 +578,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWinInetCacheHints
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -579,6 +602,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWinInetCacheHints2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -602,6 +626,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IBindHost
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -625,6 +650,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternet
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -648,6 +674,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetBindInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -671,6 +698,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetBindInfoEx
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -694,6 +722,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetProtocolRoot
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -717,6 +746,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetProtocol
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -740,6 +770,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetProtocolEx
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -763,6 +794,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetProtocolSink
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -786,6 +818,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetProtocolSinkStackable
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -809,6 +842,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetSession
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -832,6 +866,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetThreadSwitch
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -855,6 +890,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetPriority
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -878,6 +914,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetProtocolInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -901,6 +938,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetSecurityMgrSite
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -924,6 +962,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetSecurityManager
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -947,6 +986,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetSecurityManagerEx
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -970,6 +1010,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetSecurityManagerEx2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -993,6 +1034,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IZoneIdentifier
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1016,6 +1058,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IZoneIdentifier2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1039,6 +1082,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetHostSecurityManager
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1062,6 +1106,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetZoneManager
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1085,6 +1130,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetZoneManagerEx
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1108,6 +1154,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IInternetZoneManagerEx2
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1131,6 +1178,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISoftDistExt
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1154,6 +1202,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ICatalogFileInfo
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1177,6 +1226,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IDataFilter
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1200,6 +1250,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IEncodingFilterFactory
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1223,6 +1274,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IWrappedProtocol
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1246,6 +1298,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IGetBindHandle
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1269,6 +1322,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IBindCallbackRedirect
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -1292,6 +1346,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IBindHttpSecurity
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

@@ -1,12 +1,12 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Devices::IID_ILowLevelDevicesAggregateProvider
+ABI::Windows::Devices::IID_ILowLevelDevicesAggregateProviderFactory
+ABI::Windows::Devices::IID_ILowLevelDevicesController
+ABI::Windows::Devices::IID_ILowLevelDevicesControllerStatics
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_ILowLevelDevicesAggregateProvider
-IID_ILowLevelDevicesAggregateProviderFactory
-IID_ILowLevelDevicesController
-IID_ILowLevelDevicesControllerStatics
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

@@ -532,8 +532,11 @@ public static partial class WINHTTP
     [NativeTypeName("#define WINHTTP_OPTION_HTTP11_DOWNGRADE_TTL 211")]
     public const int WINHTTP_OPTION_HTTP11_DOWNGRADE_TTL = 211;
 
-    [NativeTypeName("#define WINHTTP_LAST_OPTION WINHTTP_OPTION_HTTP11_DOWNGRADE_TTL")]
-    public const int WINHTTP_LAST_OPTION = 211;
+    [NativeTypeName("#define WINHTTP_OPTION_SESSION_ERROR_LOG_GUID 212")]
+    public const int WINHTTP_OPTION_SESSION_ERROR_LOG_GUID = 212;
+
+    [NativeTypeName("#define WINHTTP_LAST_OPTION WINHTTP_OPTION_SESSION_ERROR_LOG_GUID")]
+    public const int WINHTTP_LAST_OPTION = 212;
 
     [NativeTypeName("#define WINHTTP_OPTION_USERNAME 0x1000")]
     public const int WINHTTP_OPTION_USERNAME = 0x1000;
@@ -1506,4 +1509,7 @@ public static partial class WINHTTP
 
     [NativeTypeName("#define WINHTTP_FEATURE_HTTP11_DOWNGRADE_TTL 93")]
     public const int WINHTTP_FEATURE_HTTP11_DOWNGRADE_TTL = 93;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_SESSION_ERROR_LOG_GUID 94")]
+    public const int WINHTTP_FEATURE_SESSION_ERROR_LOG_GUID = 94;
 }

@@ -14,6 +14,7 @@ public static partial class IID
 {
     public static ref readonly Guid IID_ISyncMgrSynchronizeCallback
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -37,6 +38,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISyncMgrEnumItems
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -60,6 +62,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISyncMgrSynchronize
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -83,6 +86,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISyncMgrSynchronizeInvoke
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -106,33 +110,11 @@ public static partial class IID
 
     public static ref readonly Guid IID_ISyncMgrRegister
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
                 0x42, 0xDF, 0x95, 0x62,
-                0xEE, 0x35,
-                0xD1, 0x11,
-                0x87,
-                0x07,
-                0x00,
-                0xC0,
-                0x4F,
-                0xD9,
-                0x33,
-                0x27
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
-
-    public static ref readonly Guid IID_SyncMgr
-    {
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x27, 0xDF, 0x95, 0x62,
                 0xEE, 0x35,
                 0xD1, 0x11,
                 0x87,

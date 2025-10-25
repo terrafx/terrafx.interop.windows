@@ -7,14 +7,14 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.WinRT;
 
 namespace TerraFX.Interop.Windows;
 
-public static unsafe partial class IID
+public static partial class IID
 {
     public static ref readonly Guid IID_IPrintTicketCapabilities
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -38,6 +38,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintTicketFeature
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -61,6 +62,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintTicketOption
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -84,6 +86,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintTicketParameterDefinition
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -107,6 +110,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintTicketParameterInitializer
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -130,6 +134,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPrintTicketValue
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -153,6 +158,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IWorkflowPrintTicket
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -176,6 +182,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IWorkflowPrintTicketValidationResult
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

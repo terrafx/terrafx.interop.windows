@@ -17,6 +17,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IHlink
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -40,6 +41,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IHlinkSite
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -63,6 +65,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IHlinkTarget
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -86,6 +89,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IHlinkFrame
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -109,6 +113,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IEnumHLITEM
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -132,6 +137,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IHlinkBrowseContext
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -155,6 +161,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IExtensionServices
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

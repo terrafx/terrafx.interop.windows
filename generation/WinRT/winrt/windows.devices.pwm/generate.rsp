@@ -1,6 +1,11 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Devices::Pwm::IID_IPwmController
+ABI::Windows::Devices::Pwm::IID_IPwmControllerStatics
+ABI::Windows::Devices::Pwm::IID_IPwmControllerStatics2
+ABI::Windows::Devices::Pwm::IID_IPwmControllerStatics3
+ABI::Windows::Devices::Pwm::IID_IPwmPin
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Pwm::PwmController *>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Pwm::PwmController *>
 ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Pwm::PwmController *>
@@ -10,11 +15,6 @@ ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices:
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Pwm::PwmController *> *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IPwmController
-IID_IPwmControllerStatics
-IID_IPwmControllerStatics2
-IID_IPwmControllerStatics3
-IID_IPwmPin
 WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION

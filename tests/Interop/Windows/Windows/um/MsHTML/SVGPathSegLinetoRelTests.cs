@@ -6,7 +6,7 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows.UnitTests;
 
@@ -17,6 +17,6 @@ public static unsafe partial class SVGPathSegLinetoRelTests
     [Test]
     public static void GuidOfTest()
     {
-        Assert.That(typeof(SVGPathSegLinetoRel).GUID, Is.EqualTo(IID_SVGPathSegLinetoRel));
+        Assert.That(typeof(SVGPathSegLinetoRel).GUID, Is.EqualTo(CLSID_SVGPathSegLinetoRel));
     }
 }

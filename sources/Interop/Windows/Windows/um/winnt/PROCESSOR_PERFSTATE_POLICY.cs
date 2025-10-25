@@ -26,7 +26,7 @@ public partial struct PROCESSOR_PERFSTATE_POLICY
     public byte BusyAdjThreshold;
 
     /// <include file='PROCESSOR_PERFSTATE_POLICY.xml' path='doc/member[@name="PROCESSOR_PERFSTATE_POLICY.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L19100_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L19105_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='PROCESSOR_PERFSTATE_POLICY.xml' path='doc/member[@name="PROCESSOR_PERFSTATE_POLICY.TimeCheck"]/*' />
@@ -81,7 +81,7 @@ public partial struct PROCESSOR_PERFSTATE_POLICY
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L19102_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L19107_C9")]
         public _Flags_e__Union Flags;
 
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union"]/*' />
@@ -94,7 +94,7 @@ public partial struct PROCESSOR_PERFSTATE_POLICY
 
             /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.Anonymous"]/*' />
             [FieldOffset(0)]
-            [NativeTypeName("__AnonymousRecord_winnt_L19104_C13")]
+            [NativeTypeName("__AnonymousRecord_winnt_L19109_C13")]
             public _Anonymous_e__Struct Anonymous;
 
             /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NoDomainAccounting"]/*' />

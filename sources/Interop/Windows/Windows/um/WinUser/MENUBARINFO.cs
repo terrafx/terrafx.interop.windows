@@ -32,13 +32,13 @@ public partial struct MENUBARINFO
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield << 31) >> 31);
+            return (_bitfield << 31) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield = (_bitfield & ~0x1) | ((BOOL)(value) & 0x1);
+            _bitfield = (_bitfield & ~0x1) | (value & 0x1);
         }
     }
 
@@ -49,13 +49,13 @@ public partial struct MENUBARINFO
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield << 30) >> 31);
+            return (_bitfield << 30) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield = (_bitfield & ~(0x1 << 1)) | (((BOOL)(value) & 0x1) << 1);
+            _bitfield = (_bitfield & ~(0x1 << 1)) | ((value & 0x1) << 1);
         }
     }
 
@@ -66,13 +66,13 @@ public partial struct MENUBARINFO
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield << 0) >> 2);
+            return (_bitfield << 0) >> 2;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield = (_bitfield & ~(0x3FFFFFFF << 2)) | (((BOOL)(value) & 0x3FFFFFFF) << 2);
+            _bitfield = (_bitfield & ~(0x3FFFFFFF << 2)) | ((value & 0x3FFFFFFF) << 2);
         }
     }
 }

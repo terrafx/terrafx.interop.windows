@@ -29,13 +29,13 @@ public partial struct CABINETSTATE
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield << 31) >> 31);
+            return (_bitfield << 31) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield = (_bitfield & ~0x1) | ((BOOL)(value) & 0x1);
+            _bitfield = (_bitfield & ~0x1) | (value & 0x1);
         }
     }
 
@@ -46,13 +46,13 @@ public partial struct CABINETSTATE
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield << 30) >> 31);
+            return (_bitfield << 30) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield = (_bitfield & ~(0x1 << 1)) | (((BOOL)(value) & 0x1) << 1);
+            _bitfield = (_bitfield & ~(0x1 << 1)) | ((value & 0x1) << 1);
         }
     }
 
@@ -63,13 +63,13 @@ public partial struct CABINETSTATE
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield << 29) >> 31);
+            return (_bitfield << 29) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield = (_bitfield & ~(0x1 << 2)) | (((BOOL)(value) & 0x1) << 2);
+            _bitfield = (_bitfield & ~(0x1 << 2)) | ((value & 0x1) << 2);
         }
     }
 
@@ -80,13 +80,13 @@ public partial struct CABINETSTATE
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield << 28) >> 31);
+            return (_bitfield << 28) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield = (_bitfield & ~(0x1 << 3)) | (((BOOL)(value) & 0x1) << 3);
+            _bitfield = (_bitfield & ~(0x1 << 3)) | ((value & 0x1) << 3);
         }
     }
 
@@ -97,13 +97,13 @@ public partial struct CABINETSTATE
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield << 27) >> 31);
+            return (_bitfield << 27) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield = (_bitfield & ~(0x1 << 4)) | (((BOOL)(value) & 0x1) << 4);
+            _bitfield = (_bitfield & ~(0x1 << 4)) | ((value & 0x1) << 4);
         }
     }
 
@@ -114,13 +114,13 @@ public partial struct CABINETSTATE
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield << 26) >> 31);
+            return (_bitfield << 26) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield = (_bitfield & ~(0x1 << 5)) | (((BOOL)(value) & 0x1) << 5);
+            _bitfield = (_bitfield & ~(0x1 << 5)) | ((value & 0x1) << 5);
         }
     }
 
@@ -131,13 +131,13 @@ public partial struct CABINETSTATE
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield << 25) >> 31);
+            return (_bitfield << 25) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield = (_bitfield & ~(0x1 << 6)) | (((BOOL)(value) & 0x1) << 6);
+            _bitfield = (_bitfield & ~(0x1 << 6)) | ((value & 0x1) << 6);
         }
     }
 
@@ -148,13 +148,13 @@ public partial struct CABINETSTATE
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield << 24) >> 31);
+            return (_bitfield << 24) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield = (_bitfield & ~(0x1 << 7)) | (((BOOL)(value) & 0x1) << 7);
+            _bitfield = (_bitfield & ~(0x1 << 7)) | ((value & 0x1) << 7);
         }
     }
 
@@ -165,13 +165,13 @@ public partial struct CABINETSTATE
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield << 23) >> 31);
+            return (_bitfield << 23) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield = (_bitfield & ~(0x1 << 8)) | (((BOOL)(value) & 0x1) << 8);
+            _bitfield = (_bitfield & ~(0x1 << 8)) | ((value & 0x1) << 8);
         }
     }
 

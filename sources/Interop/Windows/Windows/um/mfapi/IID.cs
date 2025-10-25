@@ -12,8 +12,9 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
-    public static ref readonly Guid IID_tagMFASYNCRESULT
+    public static ref readonly Guid IID_MFASYNCRESULT
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

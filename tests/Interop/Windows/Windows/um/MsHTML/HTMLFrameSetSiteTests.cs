@@ -6,7 +6,7 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows.UnitTests;
 
@@ -17,6 +17,6 @@ public static unsafe partial class HTMLFrameSetSiteTests
     [Test]
     public static void GuidOfTest()
     {
-        Assert.That(typeof(HTMLFrameSetSite).GUID, Is.EqualTo(IID_HTMLFrameSetSite));
+        Assert.That(typeof(HTMLFrameSetSite).GUID, Is.EqualTo(CLSID_HTMLFrameSetSite));
     }
 }

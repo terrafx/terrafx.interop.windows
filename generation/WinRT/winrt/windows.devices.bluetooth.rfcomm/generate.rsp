@@ -1,6 +1,17 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Devices::Bluetooth::Rfcomm::IID_IRfcommDeviceService
+ABI::Windows::Devices::Bluetooth::Rfcomm::IID_IRfcommDeviceService2
+ABI::Windows::Devices::Bluetooth::Rfcomm::IID_IRfcommDeviceService3
+ABI::Windows::Devices::Bluetooth::Rfcomm::IID_IRfcommDeviceServicesResult
+ABI::Windows::Devices::Bluetooth::Rfcomm::IID_IRfcommDeviceServiceStatics
+ABI::Windows::Devices::Bluetooth::Rfcomm::IID_IRfcommDeviceServiceStatics2
+ABI::Windows::Devices::Bluetooth::Rfcomm::IID_IRfcommServiceId
+ABI::Windows::Devices::Bluetooth::Rfcomm::IID_IRfcommServiceIdStatics
+ABI::Windows::Devices::Bluetooth::Rfcomm::IID_IRfcommServiceProvider
+ABI::Windows::Devices::Bluetooth::Rfcomm::IID_IRfcommServiceProvider2
+ABI::Windows::Devices::Bluetooth::Rfcomm::IID_IRfcommServiceProviderStatics
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<UINT32, ABI::Windows::Storage::Streams::IBuffer *> *>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Collections::IKeyValuePair<UINT32, ABI::Windows::Storage::Streams::IBuffer *> *>
 ABI::Windows::Foundation::Collections::IKeyValuePair<unsigned int, ABI::Windows::Storage::Streams::IBuffer *>
@@ -14,17 +25,6 @@ ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices:
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IMapView<UINT32, ABI::Windows::Storage::Streams::IBuffer *> *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IRfcommDeviceService
-IID_IRfcommDeviceService2
-IID_IRfcommDeviceService3
-IID_IRfcommDeviceServicesResult
-IID_IRfcommDeviceServiceStatics
-IID_IRfcommDeviceServiceStatics2
-IID_IRfcommServiceId
-IID_IRfcommServiceIdStatics
-IID_IRfcommServiceProvider
-IID_IRfcommServiceProvider2
-IID_IRfcommServiceProviderStatics
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 WINDOWS_NETWORKING_SOCKETS_CONTROLCHANNELTRIGGERCONTRACT_VERSION

@@ -56,8 +56,11 @@ public enum HTTP_FEATURE_ID
     /// <include file='HTTP_FEATURE_ID.xml' path='doc/member[@name="HTTP_FEATURE_ID.HttpFeatureQueryCipherInfo"]/*' />
     HttpFeatureQueryCipherInfo = 15,
 
+    /// <include file='HTTP_FEATURE_ID.xml' path='doc/member[@name="HTTP_FEATURE_ID.HttpFeatureQueryInitialPacketTtl"]/*' />
+    HttpFeatureQueryInitialPacketTtl = 16,
+
     /// <include file='HTTP_FEATURE_ID.xml' path='doc/member[@name="HTTP_FEATURE_ID.HttpFeatureLast"]/*' />
-    HttpFeatureLast = 16,
+    HttpFeatureLast = 17,
 
     /// <include file='HTTP_FEATURE_ID.xml' path='doc/member[@name="HTTP_FEATURE_ID.HttpFeaturemax"]/*' />
     HttpFeaturemax = unchecked((int)(0xFFFFFFFF)),

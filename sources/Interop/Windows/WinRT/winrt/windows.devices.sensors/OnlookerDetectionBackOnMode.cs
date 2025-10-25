@@ -8,4 +8,15 @@ namespace TerraFX.Interop.WinRT;
 /// <include file='OnlookerDetectionBackOnMode.xml' path='doc/member[@name="OnlookerDetectionBackOnMode"]/*' />
 public enum OnlookerDetectionBackOnMode
 {
+    /// <include file='OnlookerDetectionBackOnMode.xml' path='doc/member[@name="OnlookerDetectionBackOnMode.OnlookerDetectionBackOnMode_Manually"]/*' />
+    OnlookerDetectionBackOnMode_Manually = 0,
+
+    /// <include file='OnlookerDetectionBackOnMode.xml' path='doc/member[@name="OnlookerDetectionBackOnMode.OnlookerDetectionBackOnMode_OneHour"]/*' />
+    OnlookerDetectionBackOnMode_OneHour = 1,
+
+    /// <include file='OnlookerDetectionBackOnMode.xml' path='doc/member[@name="OnlookerDetectionBackOnMode.OnlookerDetectionBackOnMode_FourHours"]/*' />
+    OnlookerDetectionBackOnMode_FourHours = 2,
+
+    /// <include file='OnlookerDetectionBackOnMode.xml' path='doc/member[@name="OnlookerDetectionBackOnMode.OnlookerDetectionBackOnMode_OneDay"]/*' />
+    OnlookerDetectionBackOnMode_OneDay = 3,
 }

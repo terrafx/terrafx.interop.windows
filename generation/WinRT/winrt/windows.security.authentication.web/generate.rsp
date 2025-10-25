@@ -3,11 +3,11 @@
 --exclude
 ABI::Windows::Foundation::IAsyncOperation<ABI::Windows::Security::Authentication::Web::WebAuthenticationResult *>
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Security::Authentication::Web::WebAuthenticationResult *>
+ABI::Windows::Security::Authentication::Web::IID_IWebAuthenticationBrokerStatics
+ABI::Windows::Security::Authentication::Web::IID_IWebAuthenticationBrokerStatics2
+ABI::Windows::Security::Authentication::Web::IID_IWebAuthenticationResult
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IWebAuthenticationBrokerStatics
-IID_IWebAuthenticationBrokerStatics2
-IID_IWebAuthenticationResult
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

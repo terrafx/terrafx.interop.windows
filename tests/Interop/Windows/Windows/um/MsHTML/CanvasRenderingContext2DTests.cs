@@ -6,7 +6,7 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows.UnitTests;
 
@@ -17,6 +17,6 @@ public static unsafe partial class CanvasRenderingContext2DTests
     [Test]
     public static void GuidOfTest()
     {
-        Assert.That(typeof(CanvasRenderingContext2D).GUID, Is.EqualTo(IID_CanvasRenderingContext2D));
+        Assert.That(typeof(CanvasRenderingContext2D).GUID, Is.EqualTo(CLSID_CanvasRenderingContext2D));
     }
 }

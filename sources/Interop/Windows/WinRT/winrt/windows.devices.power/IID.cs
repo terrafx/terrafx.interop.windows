@@ -7,14 +7,86 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using TerraFX.Interop.WinRT;
 
 namespace TerraFX.Interop.Windows;
 
-public static unsafe partial class IID
+public static partial class IID
 {
+    public static ref readonly Guid IID_IBattery
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xC6, 0x4F, 0x89, 0xBC,
+                0x72, 0x00,
+                0xC8, 0x47,
+                0x8B,
+                0x5D,
+                0x61,
+                0x4A,
+                0xAA,
+                0x7A,
+                0x43,
+                0x7E
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IBatteryReport
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x3A, 0x8C, 0x85, 0xC9,
+                0x13, 0x4E,
+                0x0A, 0x42,
+                0xA8,
+                0xD0,
+                0x24,
+                0xF1,
+                0x8F,
+                0x39,
+                0x54,
+                0x01
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IBatteryStatics
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xB6, 0x72, 0xCD, 0x79,
+                0x5E, 0x9E,
+                0x52, 0x44,
+                0xBE,
+                0xA6,
+                0xDF,
+                0xCD,
+                0x54,
+                0x1E,
+                0x59,
+                0x7F
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IPowerGridData
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -38,6 +110,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPowerGridForecast
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
@@ -61,6 +134,7 @@ public static unsafe partial class IID
 
     public static ref readonly Guid IID_IPowerGridForecastStatics
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

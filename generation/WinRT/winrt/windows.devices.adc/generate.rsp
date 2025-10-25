@@ -1,6 +1,10 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Devices::Adc::IID_IAdcChannel
+ABI::Windows::Devices::Adc::IID_IAdcController
+ABI::Windows::Devices::Adc::IID_IAdcControllerStatics
+ABI::Windows::Devices::Adc::IID_IAdcControllerStatics2
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Adc::AdcController *>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Adc::AdcController *>
 ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Adc::AdcController *>
@@ -10,10 +14,6 @@ ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Devices:
 ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Adc::AdcController *> *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IAdcChannel
-IID_IAdcController
-IID_IAdcControllerStatics
-IID_IAdcControllerStatics2
 WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION

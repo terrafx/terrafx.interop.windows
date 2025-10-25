@@ -4,27 +4,27 @@
 ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Storage::Streams::IBuffer *, unsigned int>
 ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Storage::Streams::IBuffer *, unsigned int>
 ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Storage::Streams::IBuffer *, unsigned int>
+ABI::Windows::Storage::Streams::IID_IBuffer
+ABI::Windows::Storage::Streams::IID_IBufferFactory
+ABI::Windows::Storage::Streams::IID_IBufferStatics
+ABI::Windows::Storage::Streams::IID_IContentTypeProvider
+ABI::Windows::Storage::Streams::IID_IDataReader
+ABI::Windows::Storage::Streams::IID_IDataReaderFactory
+ABI::Windows::Storage::Streams::IID_IDataReaderStatics
+ABI::Windows::Storage::Streams::IID_IDataWriter
+ABI::Windows::Storage::Streams::IID_IDataWriterFactory
+ABI::Windows::Storage::Streams::IID_IFileRandomAccessStreamStatics
+ABI::Windows::Storage::Streams::IID_IInputStream
+ABI::Windows::Storage::Streams::IID_IInputStreamReference
+ABI::Windows::Storage::Streams::IID_IOutputStream
+ABI::Windows::Storage::Streams::IID_IPropertySetSerializer
+ABI::Windows::Storage::Streams::IID_IRandomAccessStream
+ABI::Windows::Storage::Streams::IID_IRandomAccessStreamReference
+ABI::Windows::Storage::Streams::IID_IRandomAccessStreamReferenceStatics
+ABI::Windows::Storage::Streams::IID_IRandomAccessStreamStatics
+ABI::Windows::Storage::Streams::IID_IRandomAccessStreamWithContentType
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IBuffer
-IID_IBufferFactory
-IID_IBufferStatics
-IID_IContentTypeProvider
-IID_IDataReader
-IID_IDataReaderFactory
-IID_IDataReaderStatics
-IID_IDataWriter
-IID_IDataWriterFactory
-IID_IFileRandomAccessStreamStatics
-IID_IInputStream
-IID_IInputStreamReference
-IID_IOutputStream
-IID_IPropertySetSerializer
-IID_IRandomAccessStream
-IID_IRandomAccessStreamReference
-IID_IRandomAccessStreamReferenceStatics
-IID_IRandomAccessStreamStatics
-IID_IRandomAccessStreamWithContentType
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION

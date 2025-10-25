@@ -1,10 +1,10 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Graphics::Effects::IID_IGraphicsEffect
+ABI::Windows::Graphics::Effects::IID_IGraphicsEffectSource
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IGraphicsEffect
-IID_IGraphicsEffectSource
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

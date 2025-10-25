@@ -1,16 +1,16 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::ApplicationModel::UserDataAccounts::Provider::IID_IUserDataAccountPartnerAccountInfo
+ABI::Windows::ApplicationModel::UserDataAccounts::Provider::IID_IUserDataAccountProviderAddAccountOperation
+ABI::Windows::ApplicationModel::UserDataAccounts::Provider::IID_IUserDataAccountProviderOperation
+ABI::Windows::ApplicationModel::UserDataAccounts::Provider::IID_IUserDataAccountProviderResolveErrorsOperation
+ABI::Windows::ApplicationModel::UserDataAccounts::Provider::IID_IUserDataAccountProviderSettingsOperation
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo *>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo *>
 ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::ApplicationModel::UserDataAccounts::Provider::UserDataAccountPartnerAccountInfo *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IUserDataAccountPartnerAccountInfo
-IID_IUserDataAccountProviderAddAccountOperation
-IID_IUserDataAccountProviderOperation
-IID_IUserDataAccountProviderResolveErrorsOperation
-IID_IUserDataAccountProviderSettingsOperation
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

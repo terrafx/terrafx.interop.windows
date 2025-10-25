@@ -6,23 +6,23 @@ ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Foundation::Colle
 ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING__ *, ABI::Windows::Foundation::Collections::IVector<HSTRING> *>
 ABI::Windows::Foundation::Collections::IMap<HSTRING__ *, ABI::Windows::Foundation::Collections::IVector<HSTRING> *>
 ABI::Windows::Foundation::Collections::IMapView<HSTRING__ *, ABI::Windows::Foundation::Collections::IVector<HSTRING> *>
+ABI::Windows::Storage::Pickers::IID_IFileOpenPicker
+ABI::Windows::Storage::Pickers::IID_IFileOpenPicker2
+ABI::Windows::Storage::Pickers::IID_IFileOpenPicker3
+ABI::Windows::Storage::Pickers::IID_IFileOpenPickerStatics
+ABI::Windows::Storage::Pickers::IID_IFileOpenPickerStatics2
+ABI::Windows::Storage::Pickers::IID_IFileOpenPickerWithOperationId
+ABI::Windows::Storage::Pickers::IID_IFileSavePicker
+ABI::Windows::Storage::Pickers::IID_IFileSavePicker2
+ABI::Windows::Storage::Pickers::IID_IFileSavePicker3
+ABI::Windows::Storage::Pickers::IID_IFileSavePicker4
+ABI::Windows::Storage::Pickers::IID_IFileSavePickerStatics
+ABI::Windows::Storage::Pickers::IID_IFolderPicker
+ABI::Windows::Storage::Pickers::IID_IFolderPicker2
+ABI::Windows::Storage::Pickers::IID_IFolderPicker3
+ABI::Windows::Storage::Pickers::IID_IFolderPickerStatics
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IFileOpenPicker
-IID_IFileOpenPicker2
-IID_IFileOpenPicker3
-IID_IFileOpenPickerStatics
-IID_IFileOpenPickerStatics2
-IID_IFileOpenPickerWithOperationId
-IID_IFileSavePicker
-IID_IFileSavePicker2
-IID_IFileSavePicker3
-IID_IFileSavePicker4
-IID_IFileSavePickerStatics
-IID_IFolderPicker
-IID_IFolderPicker2
-IID_IFolderPicker3
-IID_IFolderPickerStatics
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 WINDOWS_SYSTEM_SYSTEMMANAGEMENTCONTRACT_VERSION

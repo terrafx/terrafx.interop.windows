@@ -22,7 +22,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
     public uint Size;
 
     /// <include file='PERSISTENT_RESERVE_COMMAND.xml' path='doc/member[@name="PERSISTENT_RESERVE_COMMAND.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L6257_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L6268_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.PR_IN"]/*' />
@@ -53,12 +53,12 @@ public partial struct PERSISTENT_RESERVE_COMMAND
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.PR_IN"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L6259_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L6270_C9")]
         public _PR_IN_e__Struct PR_IN;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.PR_OUT"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L6276_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L6287_C9")]
         public _PR_OUT_e__Struct PR_OUT;
 
         /// <include file='_PR_IN_e__Struct.xml' path='doc/member[@name="_PR_IN_e__Struct"]/*' />

@@ -21,7 +21,7 @@ public partial struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION
     public LOGICAL_PROCESSOR_RELATIONSHIP Relationship;
 
     /// <include file='SYSTEM_LOGICAL_PROCESSOR_INFORMATION.xml' path='doc/member[@name="SYSTEM_LOGICAL_PROCESSOR_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L13978_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L13983_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ProcessorCore"]/*' />
@@ -74,12 +74,12 @@ public partial struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ProcessorCore"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L13979_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L13984_C9")]
         public _ProcessorCore_e__Struct ProcessorCore;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NumaNode"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L13982_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L13987_C9")]
         public _NumaNode_e__Struct NumaNode;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Cache"]/*' />

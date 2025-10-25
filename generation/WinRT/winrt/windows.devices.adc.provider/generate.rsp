@@ -1,13 +1,13 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Devices::Adc::Provider::IID_IAdcControllerProvider
+ABI::Windows::Devices::Adc::Provider::IID_IAdcProvider
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider *>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider *>
 ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Adc::Provider::IAdcControllerProvider *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IAdcControllerProvider
-IID_IAdcProvider
 WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION

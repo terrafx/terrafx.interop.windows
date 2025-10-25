@@ -211,6 +211,9 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[48]")]
     public const string InterfaceName_Windows_Devices_Sensors_IHumanPresenceFeatures2 = "Windows.Devices.Sensors.IHumanPresenceFeatures2";
 
+    [NativeTypeName("const WCHAR[48]")]
+    public const string InterfaceName_Windows_Devices_Sensors_IHumanPresenceFeatures3 = "Windows.Devices.Sensors.IHumanPresenceFeatures3";
+
     [NativeTypeName("const WCHAR[45]")]
     public const string InterfaceName_Windows_Devices_Sensors_IHumanPresenceSensor = "Windows.Devices.Sensors.IHumanPresenceSensor";
 
@@ -252,6 +255,9 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[48]")]
     public const string InterfaceName_Windows_Devices_Sensors_IHumanPresenceSettings2 = "Windows.Devices.Sensors.IHumanPresenceSettings2";
+
+    [NativeTypeName("const WCHAR[48]")]
+    public const string InterfaceName_Windows_Devices_Sensors_IHumanPresenceSettings3 = "Windows.Devices.Sensors.IHumanPresenceSettings3";
 
     [NativeTypeName("const WCHAR[54]")]
     public const string InterfaceName_Windows_Devices_Sensors_IHumanPresenceSettingsStatics = "Windows.Devices.Sensors.IHumanPresenceSettingsStatics";
@@ -372,6 +378,9 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[46]")]
     public const string InterfaceName_Windows_Devices_Sensors_IMagnetometerStatics2 = "Windows.Devices.Sensors.IMagnetometerStatics2";
+
+    [NativeTypeName("const WCHAR[50]")]
+    public const string InterfaceName_Windows_Devices_Sensors_IOnlookerDetectionOptions = "Windows.Devices.Sensors.IOnlookerDetectionOptions";
 
     [NativeTypeName("const WCHAR[43]")]
     public const string InterfaceName_Windows_Devices_Sensors_IOrientationSensor = "Windows.Devices.Sensors.IOrientationSensor";
@@ -633,6 +642,9 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[60]")]
     public const string RuntimeClass_Windows_Devices_Sensors_MagnetometerReadingChangedEventArgs = "Windows.Devices.Sensors.MagnetometerReadingChangedEventArgs";
+
+    [NativeTypeName("const WCHAR[49]")]
+    public const string RuntimeClass_Windows_Devices_Sensors_OnlookerDetectionOptions = "Windows.Devices.Sensors.OnlookerDetectionOptions";
 
     [NativeTypeName("const WCHAR[42]")]
     public const string RuntimeClass_Windows_Devices_Sensors_OrientationSensor = "Windows.Devices.Sensors.OrientationSensor";

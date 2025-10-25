@@ -6,7 +6,7 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows.UnitTests;
 
@@ -17,6 +17,6 @@ public static unsafe partial class SVGTextPathElementTests
     [Test]
     public static void GuidOfTest()
     {
-        Assert.That(typeof(SVGTextPathElement).GUID, Is.EqualTo(IID_SVGTextPathElement));
+        Assert.That(typeof(SVGTextPathElement).GUID, Is.EqualTo(CLSID_SVGTextPathElement));
     }
 }

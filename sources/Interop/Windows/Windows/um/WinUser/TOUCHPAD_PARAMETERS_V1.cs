@@ -28,13 +28,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield1 << 31) >> 31);
+            return (_bitfield1 << 31) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield1 = (_bitfield1 & ~0x1) | ((BOOL)(value) & 0x1);
+            _bitfield1 = (_bitfield1 & ~0x1) | (value & 0x1);
         }
     }
 
@@ -45,13 +45,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield1 << 30) >> 31);
+            return (_bitfield1 << 30) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield1 = (_bitfield1 & ~(0x1 << 1)) | (((BOOL)(value) & 0x1) << 1);
+            _bitfield1 = (_bitfield1 & ~(0x1 << 1)) | ((value & 0x1) << 1);
         }
     }
 
@@ -62,13 +62,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield1 << 29) >> 31);
+            return (_bitfield1 << 29) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield1 = (_bitfield1 & ~(0x1 << 2)) | (((BOOL)(value) & 0x1) << 2);
+            _bitfield1 = (_bitfield1 & ~(0x1 << 2)) | ((value & 0x1) << 2);
         }
     }
 
@@ -79,13 +79,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield1 << 28) >> 31);
+            return (_bitfield1 << 28) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield1 = (_bitfield1 & ~(0x1 << 3)) | (((BOOL)(value) & 0x1) << 3);
+            _bitfield1 = (_bitfield1 & ~(0x1 << 3)) | ((value & 0x1) << 3);
         }
     }
 
@@ -96,13 +96,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield1 << 27) >> 31);
+            return (_bitfield1 << 27) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield1 = (_bitfield1 & ~(0x1 << 4)) | (((BOOL)(value) & 0x1) << 4);
+            _bitfield1 = (_bitfield1 & ~(0x1 << 4)) | ((value & 0x1) << 4);
         }
     }
 
@@ -113,13 +113,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield1 << 26) >> 31);
+            return (_bitfield1 << 26) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield1 = (_bitfield1 & ~(0x1 << 5)) | (((BOOL)(value) & 0x1) << 5);
+            _bitfield1 = (_bitfield1 & ~(0x1 << 5)) | ((value & 0x1) << 5);
         }
     }
 
@@ -130,13 +130,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield1 << 25) >> 31);
+            return (_bitfield1 << 25) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield1 = (_bitfield1 & ~(0x1 << 6)) | (((BOOL)(value) & 0x1) << 6);
+            _bitfield1 = (_bitfield1 & ~(0x1 << 6)) | ((value & 0x1) << 6);
         }
     }
 
@@ -147,13 +147,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield1 << 0) >> 7);
+            return (_bitfield1 << 0) >> 7;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield1 = (_bitfield1 & ~(0x1FFFFFF << 7)) | (((BOOL)(value) & 0x1FFFFFF) << 7);
+            _bitfield1 = (_bitfield1 & ~(0x1FFFFFF << 7)) | ((value & 0x1FFFFFF) << 7);
         }
     }
 
@@ -166,13 +166,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield2 << 31) >> 31);
+            return (_bitfield2 << 31) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield2 = (_bitfield2 & ~0x1) | ((BOOL)(value) & 0x1);
+            _bitfield2 = (_bitfield2 & ~0x1) | (value & 0x1);
         }
     }
 
@@ -183,13 +183,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield2 << 30) >> 31);
+            return (_bitfield2 << 30) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield2 = (_bitfield2 & ~(0x1 << 1)) | (((BOOL)(value) & 0x1) << 1);
+            _bitfield2 = (_bitfield2 & ~(0x1 << 1)) | ((value & 0x1) << 1);
         }
     }
 
@@ -200,13 +200,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield2 << 29) >> 31);
+            return (_bitfield2 << 29) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield2 = (_bitfield2 & ~(0x1 << 2)) | (((BOOL)(value) & 0x1) << 2);
+            _bitfield2 = (_bitfield2 & ~(0x1 << 2)) | ((value & 0x1) << 2);
         }
     }
 
@@ -217,13 +217,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield2 << 28) >> 31);
+            return (_bitfield2 << 28) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield2 = (_bitfield2 & ~(0x1 << 3)) | (((BOOL)(value) & 0x1) << 3);
+            _bitfield2 = (_bitfield2 & ~(0x1 << 3)) | ((value & 0x1) << 3);
         }
     }
 
@@ -234,13 +234,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield2 << 27) >> 31);
+            return (_bitfield2 << 27) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield2 = (_bitfield2 & ~(0x1 << 4)) | (((BOOL)(value) & 0x1) << 4);
+            _bitfield2 = (_bitfield2 & ~(0x1 << 4)) | ((value & 0x1) << 4);
         }
     }
 
@@ -251,13 +251,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield2 << 26) >> 31);
+            return (_bitfield2 << 26) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield2 = (_bitfield2 & ~(0x1 << 5)) | (((BOOL)(value) & 0x1) << 5);
+            _bitfield2 = (_bitfield2 & ~(0x1 << 5)) | ((value & 0x1) << 5);
         }
     }
 
@@ -268,13 +268,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield2 << 25) >> 31);
+            return (_bitfield2 << 25) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield2 = (_bitfield2 & ~(0x1 << 6)) | (((BOOL)(value) & 0x1) << 6);
+            _bitfield2 = (_bitfield2 & ~(0x1 << 6)) | ((value & 0x1) << 6);
         }
     }
 
@@ -285,13 +285,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield2 << 24) >> 31);
+            return (_bitfield2 << 24) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield2 = (_bitfield2 & ~(0x1 << 7)) | (((BOOL)(value) & 0x1) << 7);
+            _bitfield2 = (_bitfield2 & ~(0x1 << 7)) | ((value & 0x1) << 7);
         }
     }
 
@@ -302,13 +302,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield2 << 23) >> 31);
+            return (_bitfield2 << 23) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield2 = (_bitfield2 & ~(0x1 << 8)) | (((BOOL)(value) & 0x1) << 8);
+            _bitfield2 = (_bitfield2 & ~(0x1 << 8)) | ((value & 0x1) << 8);
         }
     }
 
@@ -319,13 +319,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield2 << 22) >> 31);
+            return (_bitfield2 << 22) >> 31;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield2 = (_bitfield2 & ~(0x1 << 9)) | (((BOOL)(value) & 0x1) << 9);
+            _bitfield2 = (_bitfield2 & ~(0x1 << 9)) | ((value & 0x1) << 9);
         }
     }
 
@@ -336,13 +336,13 @@ public partial struct TOUCHPAD_PARAMETERS_V1
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return (BOOL)((_bitfield2 << 0) >> 10);
+            return (_bitfield2 << 0) >> 10;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            _bitfield2 = (_bitfield2 & ~(0x3FFFFF << 10)) | (((BOOL)(value) & 0x3FFFFF) << 10);
+            _bitfield2 = (_bitfield2 & ~(0x3FFFFF << 10)) | ((value & 0x3FFFFF) << 10);
         }
     }
 

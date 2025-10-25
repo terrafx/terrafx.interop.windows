@@ -53,7 +53,7 @@ public static unsafe partial class Windows
         Input->Size = unchecked(Bytes);
         Input->Action = Definition->Action;
         Input->Flags = Flags;
-        if (ParameterBlockLength == 0)
+        if (Definition->ParameterBlockLength == 0 || ParameterBlockLength == 0)
         {
             goto Cleanup;
         }
@@ -96,6 +96,13 @@ public static unsafe partial class Windows
             Min = Definition->ParameterBlockLength;
             Max = InputLength - Input->ParameterBlockOffset;
             if (Input->ParameterBlockLength < Min || Input->ParameterBlockLength > Max)
+            {
+                goto Cleanup;
+            }
+        }
+        else
+        {
+            if (Input->ParameterBlockLength != 0 || Input->ParameterBlockOffset != 0)
             {
                 goto Cleanup;
             }

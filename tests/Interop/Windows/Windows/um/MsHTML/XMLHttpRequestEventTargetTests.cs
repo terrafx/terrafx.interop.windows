@@ -6,7 +6,7 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows.UnitTests;
 
@@ -17,6 +17,6 @@ public static unsafe partial class XMLHttpRequestEventTargetTests
     [Test]
     public static void GuidOfTest()
     {
-        Assert.That(typeof(XMLHttpRequestEventTarget).GUID, Is.EqualTo(IID_XMLHttpRequestEventTarget));
+        Assert.That(typeof(XMLHttpRequestEventTarget).GUID, Is.EqualTo(CLSID_XMLHttpRequestEventTarget));
     }
 }

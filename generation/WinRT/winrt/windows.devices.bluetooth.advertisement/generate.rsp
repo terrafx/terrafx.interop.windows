@@ -1,16 +1,41 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisement
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementBytePattern
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementBytePatternFactory
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementDataSection
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementDataSectionFactory
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementDataTypesStatics
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementFilter
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementPublisher
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementPublisher2
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementPublisher3
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementPublisherFactory
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementPublisherStatusChangedEventArgs
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementPublisherStatusChangedEventArgs2
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementReceivedEventArgs
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementReceivedEventArgs2
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementReceivedEventArgs3
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementScanParameters
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementScanParametersStatics
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementWatcher
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementWatcher2
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementWatcher3
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementWatcherFactory
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEAdvertisementWatcherStoppedEventArgs
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEManufacturerData
+ABI::Windows::Devices::Bluetooth::Advertisement::IID_IBluetoothLEManufacturerDataFactory
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementBytePattern *>
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection *>
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData *>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementBytePattern *>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection *>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData *>
+ABI::Windows::Foundation::Collections::IVector<_GUID>
 ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementBytePattern *>
 ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection *>
 ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData *>
-ABI::Windows::Foundation::Collections::IVector<_GUID>
 ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementBytePattern *>
 ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementDataSection *>
 ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEManufacturerData *>
@@ -20,31 +45,6 @@ ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Bluetooth::A
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcher *, ABI::Windows::Devices::Bluetooth::Advertisement::BluetoothLEAdvertisementWatcherStoppedEventArgs *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IBluetoothLEAdvertisement
-IID_IBluetoothLEAdvertisementBytePattern
-IID_IBluetoothLEAdvertisementBytePatternFactory
-IID_IBluetoothLEAdvertisementDataSection
-IID_IBluetoothLEAdvertisementDataSectionFactory
-IID_IBluetoothLEAdvertisementDataTypesStatics
-IID_IBluetoothLEAdvertisementFilter
-IID_IBluetoothLEAdvertisementPublisher
-IID_IBluetoothLEAdvertisementPublisher2
-IID_IBluetoothLEAdvertisementPublisher3
-IID_IBluetoothLEAdvertisementPublisherFactory
-IID_IBluetoothLEAdvertisementPublisherStatusChangedEventArgs
-IID_IBluetoothLEAdvertisementPublisherStatusChangedEventArgs2
-IID_IBluetoothLEAdvertisementReceivedEventArgs
-IID_IBluetoothLEAdvertisementReceivedEventArgs2
-IID_IBluetoothLEAdvertisementReceivedEventArgs3
-IID_IBluetoothLEAdvertisementScanParameters
-IID_IBluetoothLEAdvertisementScanParametersStatics
-IID_IBluetoothLEAdvertisementWatcher
-IID_IBluetoothLEAdvertisementWatcher2
-IID_IBluetoothLEAdvertisementWatcher3
-IID_IBluetoothLEAdvertisementWatcherFactory
-IID_IBluetoothLEAdvertisementWatcherStoppedEventArgs
-IID_IBluetoothLEManufacturerData
-IID_IBluetoothLEManufacturerDataFactory
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

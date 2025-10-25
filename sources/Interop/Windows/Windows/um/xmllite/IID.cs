@@ -89,6 +89,7 @@ public static partial class IID
 
     public static ref readonly Guid IID_IXmlWriterLite
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [

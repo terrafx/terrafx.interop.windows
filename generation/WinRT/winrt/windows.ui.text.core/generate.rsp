@@ -16,27 +16,27 @@ ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreT
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext *, ABI::Windows::UI::Text::Core::CoreTextTextUpdatingEventArgs *>
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextEditContext *, IInspectable *>
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::UI::Text::Core::CoreTextServicesManager *, IInspectable *>
+ABI::Windows::UI::Text::Core::IID_ICoreTextCompositionCompletedEventArgs
+ABI::Windows::UI::Text::Core::IID_ICoreTextCompositionSegment
+ABI::Windows::UI::Text::Core::IID_ICoreTextCompositionStartedEventArgs
+ABI::Windows::UI::Text::Core::IID_ICoreTextEditContext
+ABI::Windows::UI::Text::Core::IID_ICoreTextEditContext2
+ABI::Windows::UI::Text::Core::IID_ICoreTextFormatUpdatingEventArgs
+ABI::Windows::UI::Text::Core::IID_ICoreTextLayoutBounds
+ABI::Windows::UI::Text::Core::IID_ICoreTextLayoutRequest
+ABI::Windows::UI::Text::Core::IID_ICoreTextLayoutRequest2
+ABI::Windows::UI::Text::Core::IID_ICoreTextLayoutRequestedEventArgs
+ABI::Windows::UI::Text::Core::IID_ICoreTextSelectionRequest
+ABI::Windows::UI::Text::Core::IID_ICoreTextSelectionRequestedEventArgs
+ABI::Windows::UI::Text::Core::IID_ICoreTextSelectionUpdatingEventArgs
+ABI::Windows::UI::Text::Core::IID_ICoreTextServicesManager
+ABI::Windows::UI::Text::Core::IID_ICoreTextServicesManagerStatics
+ABI::Windows::UI::Text::Core::IID_ICoreTextServicesStatics
+ABI::Windows::UI::Text::Core::IID_ICoreTextTextRequest
+ABI::Windows::UI::Text::Core::IID_ICoreTextTextRequestedEventArgs
+ABI::Windows::UI::Text::Core::IID_ICoreTextTextUpdatingEventArgs
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_ICoreTextCompositionCompletedEventArgs
-IID_ICoreTextCompositionSegment
-IID_ICoreTextCompositionStartedEventArgs
-IID_ICoreTextEditContext
-IID_ICoreTextEditContext2
-IID_ICoreTextFormatUpdatingEventArgs
-IID_ICoreTextLayoutBounds
-IID_ICoreTextLayoutRequest
-IID_ICoreTextLayoutRequest2
-IID_ICoreTextLayoutRequestedEventArgs
-IID_ICoreTextSelectionRequest
-IID_ICoreTextSelectionRequestedEventArgs
-IID_ICoreTextSelectionUpdatingEventArgs
-IID_ICoreTextServicesManager
-IID_ICoreTextServicesManagerStatics
-IID_ICoreTextServicesStatics
-IID_ICoreTextTextRequest
-IID_ICoreTextTextRequestedEventArgs
-IID_ICoreTextTextUpdatingEventArgs
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 WINDOWS_GLOBALIZATION_GLOBALIZATIONJAPANESEPHONETICANALYZERCONTRACT_VERSION

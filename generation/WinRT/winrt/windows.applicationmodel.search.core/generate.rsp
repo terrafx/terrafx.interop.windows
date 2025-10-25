@@ -1,6 +1,10 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::ApplicationModel::Search::Core::IID_IRequestingFocusOnKeyboardInputEventArgs
+ABI::Windows::ApplicationModel::Search::Core::IID_ISearchSuggestion
+ABI::Windows::ApplicationModel::Search::Core::IID_ISearchSuggestionManager
+ABI::Windows::ApplicationModel::Search::Core::IID_ISearchSuggestionsRequestedEventArgs
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::ApplicationModel::Search::Core::SearchSuggestion *>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::ApplicationModel::Search::Core::SearchSuggestion *>
 ABI::Windows::Foundation::Collections::IObservableVector<ABI::Windows::ApplicationModel::Search::Core::SearchSuggestion *>
@@ -11,10 +15,6 @@ ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Sea
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::ApplicationModel::Search::Core::SearchSuggestionManager *, ABI::Windows::ApplicationModel::Search::Core::SearchSuggestionsRequestedEventArgs *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IRequestingFocusOnKeyboardInputEventArgs
-IID_ISearchSuggestion
-IID_ISearchSuggestionManager
-IID_ISearchSuggestionsRequestedEventArgs
 WINDOWS_APPLICATIONMODEL_SEARCH_SEARCHCONTRACT_VERSION
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION

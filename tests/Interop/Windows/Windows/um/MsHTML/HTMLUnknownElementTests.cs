@@ -6,7 +6,7 @@
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows.UnitTests;
 
@@ -17,6 +17,6 @@ public static unsafe partial class HTMLUnknownElementTests
     [Test]
     public static void GuidOfTest()
     {
-        Assert.That(typeof(HTMLUnknownElement).GUID, Is.EqualTo(IID_HTMLUnknownElement));
+        Assert.That(typeof(HTMLUnknownElement).GUID, Is.EqualTo(CLSID_HTMLUnknownElement));
     }
 }

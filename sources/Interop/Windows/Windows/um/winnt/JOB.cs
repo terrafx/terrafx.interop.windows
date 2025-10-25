@@ -193,11 +193,14 @@ public static partial class JOB
     [NativeTypeName("#define JOB_OBJECT_UILIMIT_IME 0x00000100")]
     public const int JOB_OBJECT_UILIMIT_IME = 0x00000100;
 
-    [NativeTypeName("#define JOB_OBJECT_UILIMIT_ALL 0x000001FF")]
-    public const int JOB_OBJECT_UILIMIT_ALL = 0x000001FF;
+    [NativeTypeName("#define JOB_OBJECT_UILIMIT_INJECTION 0x00000200")]
+    public const int JOB_OBJECT_UILIMIT_INJECTION = 0x00000200;
 
-    [NativeTypeName("#define JOB_OBJECT_UI_VALID_FLAGS 0x000001FF")]
-    public const int JOB_OBJECT_UI_VALID_FLAGS = 0x000001FF;
+    [NativeTypeName("#define JOB_OBJECT_UILIMIT_ALL 0x000003FF")]
+    public const int JOB_OBJECT_UILIMIT_ALL = 0x000003FF;
+
+    [NativeTypeName("#define JOB_OBJECT_UI_VALID_FLAGS 0x000003FF")]
+    public const int JOB_OBJECT_UI_VALID_FLAGS = 0x000003FF;
 
     [NativeTypeName("#define JOB_OBJECT_SECURITY_NO_ADMIN 0x00000001")]
     public const int JOB_OBJECT_SECURITY_NO_ADMIN = 0x00000001;

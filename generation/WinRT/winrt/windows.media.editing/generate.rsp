@@ -38,21 +38,21 @@ ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Media::E
 ABI::Windows::Foundation::IAsyncOperationProgressHandler<ABI::Windows::Media::Transcoding::TranscodeFailureReason, double>
 ABI::Windows::Foundation::IAsyncOperationWithProgress<ABI::Windows::Media::Transcoding::TranscodeFailureReason, double>
 ABI::Windows::Foundation::IAsyncOperationWithProgressCompletedHandler<ABI::Windows::Media::Transcoding::TranscodeFailureReason, double>
+ABI::Windows::Media::Editing::IID_IBackgroundAudioTrack
+ABI::Windows::Media::Editing::IID_IBackgroundAudioTrackStatics
+ABI::Windows::Media::Editing::IID_IEmbeddedAudioTrack
+ABI::Windows::Media::Editing::IID_IMediaClip
+ABI::Windows::Media::Editing::IID_IMediaClipStatics
+ABI::Windows::Media::Editing::IID_IMediaClipStatics2
+ABI::Windows::Media::Editing::IID_IMediaComposition
+ABI::Windows::Media::Editing::IID_IMediaComposition2
+ABI::Windows::Media::Editing::IID_IMediaCompositionStatics
+ABI::Windows::Media::Editing::IID_IMediaOverlay
+ABI::Windows::Media::Editing::IID_IMediaOverlayFactory
+ABI::Windows::Media::Editing::IID_IMediaOverlayLayer
+ABI::Windows::Media::Editing::IID_IMediaOverlayLayerFactory
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IBackgroundAudioTrack
-IID_IBackgroundAudioTrackStatics
-IID_IEmbeddedAudioTrack
-IID_IMediaClip
-IID_IMediaClipStatics
-IID_IMediaClipStatics2
-IID_IMediaComposition
-IID_IMediaComposition2
-IID_IMediaCompositionStatics
-IID_IMediaOverlay
-IID_IMediaOverlayFactory
-IID_IMediaOverlayLayer
-IID_IMediaOverlayLayerFactory
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

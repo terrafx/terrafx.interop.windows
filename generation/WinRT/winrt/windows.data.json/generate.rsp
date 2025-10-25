@@ -1,6 +1,15 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Data::Json::IID_IJsonArray
+ABI::Windows::Data::Json::IID_IJsonArrayStatics
+ABI::Windows::Data::Json::IID_IJsonErrorStatics2
+ABI::Windows::Data::Json::IID_IJsonObject
+ABI::Windows::Data::Json::IID_IJsonObjectStatics
+ABI::Windows::Data::Json::IID_IJsonObjectWithDefaultValues
+ABI::Windows::Data::Json::IID_IJsonValue
+ABI::Windows::Data::Json::IID_IJsonValueStatics
+ABI::Windows::Data::Json::IID_IJsonValueStatics2
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Data::Json::IJsonValue *>
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Foundation::Collections::IKeyValuePair<HSTRING, ABI::Windows::Data::Json::IJsonValue *> *>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Data::Json::IJsonValue *>
@@ -12,15 +21,6 @@ ABI::Windows::Foundation::Collections::IVector<ABI::Windows::Data::Json::IJsonVa
 ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Data::Json::IJsonValue *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IJsonArray
-IID_IJsonArrayStatics
-IID_IJsonErrorStatics2
-IID_IJsonObject
-IID_IJsonObjectStatics
-IID_IJsonObjectWithDefaultValues
-IID_IJsonValue
-IID_IJsonValueStatics
-IID_IJsonValueStatics2
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION
 --file

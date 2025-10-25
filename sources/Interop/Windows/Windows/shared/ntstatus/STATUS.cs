@@ -5809,8 +5809,38 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_FVE_PCR_BOOT_LOCK_BOUNDARY ((NTSTATUS)0xC0210051L)")]
     public const int STATUS_FVE_PCR_BOOT_LOCK_BOUNDARY = unchecked((int)(0xC0210051));
 
+    [NativeTypeName("#define STATUS_FVE_FW_UPDATE_TPM_BINDINGS_NOT_REFRESHED ((NTSTATUS)0xC0210052L)")]
+    public const int STATUS_FVE_FW_UPDATE_TPM_BINDINGS_NOT_REFRESHED = unchecked((int)(0xC0210052));
+
+    [NativeTypeName("#define STATUS_FVE_INVALID_TPM_BINDING_CONFIGURATION ((NTSTATUS)0xC0210053L)")]
+    public const int STATUS_FVE_INVALID_TPM_BINDING_CONFIGURATION = unchecked((int)(0xC0210053));
+
+    [NativeTypeName("#define STATUS_FVE_TOO_MANY_TPM_BINDINGS ((NTSTATUS)0xC0210054L)")]
+    public const int STATUS_FVE_TOO_MANY_TPM_BINDINGS = unchecked((int)(0xC0210054));
+
+    [NativeTypeName("#define STATUS_FVE_TPM_BINDING_ASSOCIATION_FAILURE ((NTSTATUS)0xC0210055L)")]
+    public const int STATUS_FVE_TPM_BINDING_ASSOCIATION_FAILURE = unchecked((int)(0xC0210055));
+
+    [NativeTypeName("#define STATUS_FVE_ORPHANED_PCR_DIGEST_DATUM ((NTSTATUS)0xC0210056L)")]
+    public const int STATUS_FVE_ORPHANED_PCR_DIGEST_DATUM = unchecked((int)(0xC0210056));
+
     [NativeTypeName("#define STATUS_FVE_HW_ACCELERATED_ENCRYPTION_NOT_ALLOWED ((NTSTATUS)0xC0210057L)")]
     public const int STATUS_FVE_HW_ACCELERATED_ENCRYPTION_NOT_ALLOWED = unchecked((int)(0xC0210057));
+
+    [NativeTypeName("#define STATUS_FVE_NO_MATCHING_TPM_BINDINGS ((NTSTATUS)0xC0210058L)")]
+    public const int STATUS_FVE_NO_MATCHING_TPM_BINDINGS = unchecked((int)(0xC0210058));
+
+    [NativeTypeName("#define STATUS_FVE_TPMPV2_USED_FAILURE ((NTSTATUS)0xC0210059L)")]
+    public const int STATUS_FVE_TPMPV2_USED_FAILURE = unchecked((int)(0xC0210059));
+
+    [NativeTypeName("#define STATUS_FVE_NO_TPM_BINDINGS ((NTSTATUS)0xC021005AL)")]
+    public const int STATUS_FVE_NO_TPM_BINDINGS = unchecked((int)(0xC021005A));
+
+    [NativeTypeName("#define STATUS_FVE_FW_UPDATE_PCRS_BLOCK ((NTSTATUS)0xC021005CL)")]
+    public const int STATUS_FVE_FW_UPDATE_PCRS_BLOCK = unchecked((int)(0xC021005C));
+
+    [NativeTypeName("#define STATUS_FVE_FW_UPDATE_PCRS_NOT_EXCLUDED ((NTSTATUS)0xC021005DL)")]
+    public const int STATUS_FVE_FW_UPDATE_PCRS_NOT_EXCLUDED = unchecked((int)(0xC021005D));
 
     [NativeTypeName("#define STATUS_FVE_FAILED_TO_UNWRAP_HW_WRAPPED_KEY ((NTSTATUS)0xC021005EL)")]
     public const int STATUS_FVE_FAILED_TO_UNWRAP_HW_WRAPPED_KEY = unchecked((int)(0xC021005E));
@@ -8149,6 +8179,15 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_VSM_KEY_CI_POLICY_ROLLBACK_DETECTED ((NTSTATUS)0xC0450002L)")]
     public const int STATUS_VSM_KEY_CI_POLICY_ROLLBACK_DETECTED = unchecked((int)(0xC0450002));
 
+    [NativeTypeName("#define STATUS_VSMIDK_KEYGEN_FAILURE ((NTSTATUS)0xC0450003L)")]
+    public const int STATUS_VSMIDK_KEYGEN_FAILURE = unchecked((int)(0xC0450003));
+
+    [NativeTypeName("#define STATUS_VSMIDK_EXPORT_FAILURE ((NTSTATUS)0xC0450004L)")]
+    public const int STATUS_VSMIDK_EXPORT_FAILURE = unchecked((int)(0xC0450004));
+
+    [NativeTypeName("#define STATUS_VSMIDK_MODULUS_MISMATCH ((NTSTATUS)0xC0450005L)")]
+    public const int STATUS_VSMIDK_MODULUS_MISMATCH = unchecked((int)(0xC0450005));
+
     [NativeTypeName("#define STATUS_APPEXEC_CONDITION_NOT_SATISFIED ((NTSTATUS)0xC0EC0000L)")]
     public const int STATUS_APPEXEC_CONDITION_NOT_SATISFIED = unchecked((int)(0xC0EC0000));
 
@@ -8322,4 +8361,34 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_ACCELERATOR_SUBMISSION_QUEUE_FULL ((NTSTATUS)0xC0EF0001L)")]
     public const int STATUS_ACCELERATOR_SUBMISSION_QUEUE_FULL = unchecked((int)(0xC0EF0001));
+
+    [NativeTypeName("#define STATUS_AAD_CLOUDAP_E_APNONCE_INVALID ((NTSTATUS)0xC0048550L)")]
+    public const int STATUS_AAD_CLOUDAP_E_APNONCE_INVALID = unchecked((int)(0xC0048550));
+
+    [NativeTypeName("#define STATUS_AAD_CLOUDAP_E_BAD_DEVICE_ACCESS_TOKEN_FORMAT ((NTSTATUS)0xC0048551L)")]
+    public const int STATUS_AAD_CLOUDAP_E_BAD_DEVICE_ACCESS_TOKEN_FORMAT = unchecked((int)(0xC0048551));
+
+    [NativeTypeName("#define STATUS_AAD_CLOUDAP_E_ASSERTION_MALFORMED ((NTSTATUS)0xC0048552L)")]
+    public const int STATUS_AAD_CLOUDAP_E_ASSERTION_MALFORMED = unchecked((int)(0xC0048552));
+
+    [NativeTypeName("#define STATUS_AAD_CLOUDAP_E_INVALID_TENANT ((NTSTATUS)0xC0048553L)")]
+    public const int STATUS_AAD_CLOUDAP_E_INVALID_TENANT = unchecked((int)(0xC0048553));
+
+    [NativeTypeName("#define STATUS_AAD_CLOUDAP_E_INVALID_DEVICE ((NTSTATUS)0xC0048554L)")]
+    public const int STATUS_AAD_CLOUDAP_E_INVALID_DEVICE = unchecked((int)(0xC0048554));
+
+    [NativeTypeName("#define STATUS_AAD_CLOUDAP_E_INVALID_ACCESS_TOKEN ((NTSTATUS)0xC0048556L)")]
+    public const int STATUS_AAD_CLOUDAP_E_INVALID_ACCESS_TOKEN = unchecked((int)(0xC0048556));
+
+    [NativeTypeName("#define STATUS_AAD_CLOUDAP_E_INVALID_BINDING_KEY_ID ((NTSTATUS)0xC0048557L)")]
+    public const int STATUS_AAD_CLOUDAP_E_INVALID_BINDING_KEY_ID = unchecked((int)(0xC0048557));
+
+    [NativeTypeName("#define STATUS_AAD_CLOUDAP_E_CANT_FIND_ROOT_CERT ((NTSTATUS)0xC0048559L)")]
+    public const int STATUS_AAD_CLOUDAP_E_CANT_FIND_ROOT_CERT = unchecked((int)(0xC0048559));
+
+    [NativeTypeName("#define STATUS_AAD_CLOUDAP_E_ASSERTION_INVALID ((NTSTATUS)0xC004855AL)")]
+    public const int STATUS_AAD_CLOUDAP_E_ASSERTION_INVALID = unchecked((int)(0xC004855A));
+
+    [NativeTypeName("#define STATUS_AAD_CLOUDAP_E_CALLER_MISMATCH ((NTSTATUS)0xC004855BL)")]
+    public const int STATUS_AAD_CLOUDAP_E_CALLER_MISMATCH = unchecked((int)(0xC004855B));
 }

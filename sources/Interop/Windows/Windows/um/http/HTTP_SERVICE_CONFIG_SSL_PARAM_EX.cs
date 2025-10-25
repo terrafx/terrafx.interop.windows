@@ -20,7 +20,7 @@ public partial struct HTTP_SERVICE_CONFIG_SSL_PARAM_EX
     public ulong Flags;
 
     /// <include file='HTTP_SERVICE_CONFIG_SSL_PARAM_EX.xml' path='doc/member[@name="HTTP_SERVICE_CONFIG_SSL_PARAM_EX.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_http_L2502_C5")]
+    [NativeTypeName("__AnonymousRecord_http_L2508_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Http2WindowSizeParam"]/*' />

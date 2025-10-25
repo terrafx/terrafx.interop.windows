@@ -1,17 +1,17 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Devices::Gpio::Provider::IID_IGpioControllerProvider
+ABI::Windows::Devices::Gpio::Provider::IID_IGpioPinProvider
+ABI::Windows::Devices::Gpio::Provider::IID_IGpioPinProviderValueChangedEventArgs
+ABI::Windows::Devices::Gpio::Provider::IID_IGpioPinProviderValueChangedEventArgsFactory
+ABI::Windows::Devices::Gpio::Provider::IID_IGpioProvider
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Gpio::Provider::IGpioControllerProvider *>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Gpio::Provider::IGpioControllerProvider *>
 ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Gpio::Provider::IGpioControllerProvider *>
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Gpio::Provider::IGpioPinProvider *, ABI::Windows::Devices::Gpio::Provider::GpioPinProviderValueChangedEventArgs *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IGpioControllerProvider
-IID_IGpioPinProvider
-IID_IGpioPinProviderValueChangedEventArgs
-IID_IGpioPinProviderValueChangedEventArgsFactory
-IID_IGpioProvider
 WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION

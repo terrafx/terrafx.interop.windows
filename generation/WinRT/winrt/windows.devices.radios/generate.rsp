@@ -1,6 +1,8 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+ABI::Windows::Devices::Radios::IID_IRadio
+ABI::Windows::Devices::Radios::IID_IRadioStatics
 ABI::Windows::Foundation::Collections::IIterable<ABI::Windows::Devices::Radios::Radio *>
 ABI::Windows::Foundation::Collections::IIterator<ABI::Windows::Devices::Radios::Radio *>
 ABI::Windows::Foundation::Collections::IVectorView<ABI::Windows::Devices::Radios::Radio *>
@@ -13,8 +15,6 @@ ABI::Windows::Foundation::IAsyncOperationCompletedHandler<ABI::Windows::Foundati
 ABI::Windows::Foundation::ITypedEventHandler<ABI::Windows::Devices::Radios::Radio *, IInspectable *>
 CHECK_NS_PREFIX_STATE
 DEPRECATEDENUMERATOR
-IID_IRadio
-IID_IRadioStatics
 WINDOWS_DEVICES_DEVICESLOWLEVELCONTRACT_VERSION
 WINDOWS_FOUNDATION_FOUNDATIONCONTRACT_VERSION
 WINDOWS_FOUNDATION_UNIVERSALAPICONTRACT_VERSION

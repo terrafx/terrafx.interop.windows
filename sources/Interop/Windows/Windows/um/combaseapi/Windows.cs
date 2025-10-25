@@ -367,13 +367,13 @@ public static unsafe partial class Windows
     public static extern HRESULT CoRevokeDeviceCatalog(CO_DEVICE_CATALOG_COOKIE cookie);
 
     [NativeTypeName("#define CLSCTX_INPROC (CLSCTX_INPROC_SERVER|CLSCTX_INPROC_HANDLER)")]
-    public const int CLSCTX_INPROC = ((int)(CLSCTX_INPROC_SERVER) | (int)(CLSCTX_INPROC_HANDLER));
+    public const CLSCTX CLSCTX_INPROC = (CLSCTX_INPROC_SERVER | CLSCTX_INPROC_HANDLER);
 
     [NativeTypeName("#define CLSCTX_ALL (CLSCTX_INPROC_SERVER| \\\r\n                                 CLSCTX_INPROC_HANDLER| \\\r\n                                 CLSCTX_LOCAL_SERVER| \\\r\n                                 CLSCTX_REMOTE_SERVER)")]
-    public const int CLSCTX_ALL = ((int)(CLSCTX_INPROC_SERVER) | (int)(CLSCTX_INPROC_HANDLER) | (int)(CLSCTX_LOCAL_SERVER) | (int)(CLSCTX_REMOTE_SERVER));
+    public const CLSCTX CLSCTX_ALL = (CLSCTX_INPROC_SERVER | CLSCTX_INPROC_HANDLER | CLSCTX_LOCAL_SERVER | CLSCTX_REMOTE_SERVER);
 
     [NativeTypeName("#define CLSCTX_SERVER (CLSCTX_INPROC_SERVER|CLSCTX_LOCAL_SERVER|CLSCTX_REMOTE_SERVER)")]
-    public const int CLSCTX_SERVER = ((int)(CLSCTX_INPROC_SERVER) | (int)(CLSCTX_LOCAL_SERVER) | (int)(CLSCTX_REMOTE_SERVER));
+    public const CLSCTX CLSCTX_SERVER = (CLSCTX_INPROC_SERVER | CLSCTX_LOCAL_SERVER | CLSCTX_REMOTE_SERVER);
 
     [NativeTypeName("#define COM_RIGHTS_EXECUTE 1")]
     public const int COM_RIGHTS_EXECUTE = 1;
