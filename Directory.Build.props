@@ -67,7 +67,7 @@
     <OverwriteReadOnlyFiles>true</OverwriteReadOnlyFiles>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
-    <PackageReadmeFile>$(MSBuildThisFileDirectory)docs/README.md</PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>d2d1;d3d9;d3d10;d3d11;d3d12;directx;dwrite;interop;naot;trimmable;wic;win32;windows;x3daudio;xapo;xaudio2</PackageTags>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <PublicSign>true</PublicSign>
