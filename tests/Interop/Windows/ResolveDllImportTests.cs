@@ -235,6 +235,8 @@ public static unsafe partial class ResolveDllImportTests
                     break;
                 }
 
+                case "D3D12CompilerCreateFactory":
+                case "D3D12CompilerSerializeVersionedRootSignature":
                 case "D3D12CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary":
                 {
                     // These methods come from DirectX Agility SDK and may not be present
