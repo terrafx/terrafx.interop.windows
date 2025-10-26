@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3dx12_pipeline_state_stream.h in microsoft/DirectX-Headers tag v1.616.0
+// Ported from d3dx12_pipeline_state_stream.h in microsoft/DirectX-Headers tag v1.618.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using TerraFX.Interop.Windows;
@@ -19,7 +19,7 @@ public static unsafe partial class DirectX
             return E_INVALIDARG;
         }
 
-        if (Desc.SizeInBytes == 0 || Desc.pPipelineStateSubobjectStream == null)
+        if ((Desc.SizeInBytes == 0) || (Desc.pPipelineStateSubobjectStream == null))
         {
             pCallbacks->ErrorBadInputParameter(1); // first parameter issue
             return E_INVALIDARG;
@@ -243,6 +243,13 @@ public static unsafe partial class DirectX
                     break;
                 }
 
+                case D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_SERIALIZED_ROOT_SIGNATURE:
+                {
+                    pCallbacks->SerializedRootSignatureCb(&((CD3DX12_PIPELINE_STATE_STREAM_SERIALIZED_ROOT_SIGNATURE*)(pStream))->Anonymous.pssInner);
+                    SizeOfSubobject = (uint)(sizeof(CD3DX12_PIPELINE_STATE_STREAM_SERIALIZED_ROOT_SIGNATURE));
+                    break;
+                }
+
                 default:
                 {
                     pCallbacks->ErrorUnknownSubobject((uint)(SubobjectType));
@@ -251,6 +258,7 @@ public static unsafe partial class DirectX
             }
         }
 
+        pCallbacks->FinalizeCb();
         return S_OK;
     }
 }

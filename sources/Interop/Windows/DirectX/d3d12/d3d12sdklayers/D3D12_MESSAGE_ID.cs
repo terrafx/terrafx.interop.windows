@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12sdklayers.h in microsoft/DirectX-Headers tag v1.616.0
+// Ported from d3d12sdklayers.h in microsoft/DirectX-Headers tag v1.618.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -2976,8 +2976,14 @@ public enum D3D12_MESSAGE_ID
     D3D12_MESSAGE_ID_FENCE_ZERO_WAIT = 1424,
 
     /// <include file='D3D12_MESSAGE_ID.xml' path='doc/member[@name="D3D12_MESSAGE_ID.D3D12_MESSAGE_ID_NON_COMMON_RESOURCE_IN_COPY_QUEUE"]/*' />
-    D3D12_MESSAGE_ID_NON_COMMON_RESOURCE_IN_COPY_QUEUE = 1425,
+    D3D12_MESSAGE_ID_NON_COMMON_RESOURCE_IN_COPY_QUEUE = 1431,
+
+    /// <include file='D3D12_MESSAGE_ID.xml' path='doc/member[@name="D3D12_MESSAGE_ID.D3D12_MESSAGE_ID_CREATEPIPELINESTATE_MULTIPLE_ROOT_SIGNATURES_DEFINED"]/*' />
+    D3D12_MESSAGE_ID_CREATEPIPELINESTATE_MULTIPLE_ROOT_SIGNATURES_DEFINED = 1435,
+
+    /// <include file='D3D12_MESSAGE_ID.xml' path='doc/member[@name="D3D12_MESSAGE_ID.D3D12_MESSAGE_ID_TEXTURE_BARRIER_INVALID_FLAGS"]/*' />
+    D3D12_MESSAGE_ID_TEXTURE_BARRIER_INVALID_FLAGS = 1436,
 
     /// <include file='D3D12_MESSAGE_ID.xml' path='doc/member[@name="D3D12_MESSAGE_ID.D3D12_MESSAGE_ID_D3D12_MESSAGES_END"]/*' />
-    D3D12_MESSAGE_ID_D3D12_MESSAGES_END = (D3D12_MESSAGE_ID_NON_COMMON_RESOURCE_IN_COPY_QUEUE + 1),
+    D3D12_MESSAGE_ID_D3D12_MESSAGES_END = 1442,
 }

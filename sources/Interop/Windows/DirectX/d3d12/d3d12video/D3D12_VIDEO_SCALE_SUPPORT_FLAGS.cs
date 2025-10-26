@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.616.0
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.618.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -19,4 +19,7 @@ public enum D3D12_VIDEO_SCALE_SUPPORT_FLAGS
 
     /// <include file='D3D12_VIDEO_SCALE_SUPPORT_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_SCALE_SUPPORT_FLAGS.D3D12_VIDEO_SCALE_SUPPORT_FLAG_EVEN_DIMENSIONS_ONLY"]/*' />
     D3D12_VIDEO_SCALE_SUPPORT_FLAG_EVEN_DIMENSIONS_ONLY = 0x2,
+
+    /// <include file='D3D12_VIDEO_SCALE_SUPPORT_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_SCALE_SUPPORT_FLAGS.D3D12_VIDEO_SCALE_SUPPORT_FLAG_DPB_ENCODER_RESOURCES"]/*' />
+    D3D12_VIDEO_SCALE_SUPPORT_FLAG_DPB_ENCODER_RESOURCES = 0x4,
 }

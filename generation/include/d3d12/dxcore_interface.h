@@ -494,4 +494,3 @@ public:
 #endif // __cplusplus
 
 #endif // __dxcore_interface_h__
-

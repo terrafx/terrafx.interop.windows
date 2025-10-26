@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.616.0
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.618.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -140,9 +140,15 @@ public enum D3D12_FEATURE
     /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS21"]/*' />
     D3D12_FEATURE_D3D12_OPTIONS21 = 53,
 
+    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_D3D12_TIGHT_ALIGNMENT"]/*' />
+    D3D12_FEATURE_D3D12_TIGHT_ALIGNMENT = 54,
+
     /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_APPLICATION_SPECIFIC_DRIVER_STATE"]/*' />
     D3D12_FEATURE_APPLICATION_SPECIFIC_DRIVER_STATE = 56,
 
     /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_BYTECODE_BYPASS_HASH_SUPPORTED"]/*' />
     D3D12_FEATURE_BYTECODE_BYPASS_HASH_SUPPORTED = 57,
+
+    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_SHADER_CACHE_ABI_SUPPORT"]/*' />
+    D3D12_FEATURE_SHADER_CACHE_ABI_SUPPORT = 61,
 }

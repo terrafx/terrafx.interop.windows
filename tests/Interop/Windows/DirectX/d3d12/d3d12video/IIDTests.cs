@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.616.0
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.618.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
@@ -199,5 +199,26 @@ public static partial class IIDTests
     public static void IID_ID3D12VideoEncodeCommandList3Test()
     {
         Assert.That(IID_ID3D12VideoEncodeCommandList3, Is.EqualTo(new Guid(0x7f027b22, 0x1515, 0x4e85, 0xaa, 0x0d, 0x02, 0x64, 0x86, 0x58, 0x05, 0x76)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoEncoderHeap1" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoEncoderHeap1Test()
+    {
+        Assert.That(IID_ID3D12VideoEncoderHeap1, Is.EqualTo(new Guid(0xea8f1968, 0x4aa0, 0x43a4, 0x9d, 0x30, 0xba, 0x86, 0xec, 0x84, 0xd4, 0xf9)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoDevice4" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoDevice4Test()
+    {
+        Assert.That(IID_ID3D12VideoDevice4, Is.EqualTo(new Guid(0xe59ad09e, 0xf1ae, 0x42bb, 0x89, 0x83, 0x9f, 0x6e, 0x55, 0x86, 0xc4, 0xeb)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoEncodeCommandList4" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoEncodeCommandList4Test()
+    {
+        Assert.That(IID_ID3D12VideoEncodeCommandList4, Is.EqualTo(new Guid(0x69aeb5b7, 0x55f2, 0x4012, 0x8b, 0x73, 0x3a, 0x88, 0xd6, 0x5a, 0x20, 0x4c)));
     }
 }

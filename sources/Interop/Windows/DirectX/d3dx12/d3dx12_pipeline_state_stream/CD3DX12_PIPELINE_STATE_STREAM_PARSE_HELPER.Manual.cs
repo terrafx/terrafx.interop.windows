@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3dx12_pipeline_state_stream.h in microsoft/DirectX-Headers tag v1.616.0
+// Ported from d3dx12_pipeline_state_stream.h in microsoft/DirectX-Headers tag v1.618.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Runtime.CompilerServices;
@@ -22,7 +22,7 @@ public unsafe struct CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER : ID3DX12Pipelin
 
     private static void** InitVtblInstance()
     {
-        void** lpVtbl = (void**)(RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER), 32 * sizeof(void*)));
+        void** lpVtbl = (void**)(RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER), 34 * sizeof(void*)));
 
         lpVtbl[0] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, D3D12_PIPELINE_STATE_FLAGS, void>)(&FlagsCb);
         lpVtbl[1] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, uint, void>)(&NodeMaskCb);
@@ -52,10 +52,12 @@ public unsafe struct CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER : ID3DX12Pipelin
         lpVtbl[25] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, uint, void>)(&SampleMaskCb);
         lpVtbl[26] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, D3D12_VIEW_INSTANCING_DESC*, void>)(&ViewInstancingCb);
         lpVtbl[27] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, D3D12_CACHED_PIPELINE_STATE*, void>)(&CachedPSOCb);
-        lpVtbl[28] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, uint, void>)(&ErrorBadInputParameter);
-        lpVtbl[29] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, D3D12_PIPELINE_STATE_SUBOBJECT_TYPE, void>)(&ErrorDuplicateSubobject);
-        lpVtbl[30] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, uint, void>)(&ErrorUnknownSubobject);
-        lpVtbl[31] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, void>)(&Dispose);
+        lpVtbl[28] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, D3D12_SERIALIZED_ROOT_SIGNATURE_DESC*, void>)(&SerializedRootSignatureCb);
+        lpVtbl[29] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, uint, void>)(&ErrorBadInputParameter);
+        lpVtbl[30] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, D3D12_PIPELINE_STATE_SUBOBJECT_TYPE, void>)(&ErrorDuplicateSubobject);
+        lpVtbl[31] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, uint, void>)(&ErrorUnknownSubobject);
+        lpVtbl[32] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, void>)(&FinalizeCb);
+        lpVtbl[33] = (delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, void>)(&Dispose);
 
         return lpVtbl;
     }
@@ -271,23 +273,35 @@ public unsafe struct CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER : ID3DX12Pipelin
 
     [VtblIndex(28)]
     [UnmanagedCallersOnly(CallConvs = [typeof(CallConvMemberFunction)])]
-    public static void ErrorBadInputParameter(CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER* pThis, uint ParameterIndex)
+    public static void SerializedRootSignatureCb(CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER* pThis, [NativeTypeName("const D3D12_SERIALIZED_ROOT_SIGNATURE_DESC &")] D3D12_SERIALIZED_ROOT_SIGNATURE_DESC* SerializedRootSignature)
     {
     }
 
     [VtblIndex(29)]
     [UnmanagedCallersOnly(CallConvs = [typeof(CallConvMemberFunction)])]
-    public static void ErrorDuplicateSubobject(CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER* pThis, D3D12_PIPELINE_STATE_SUBOBJECT_TYPE DuplicateType)
+    public static void ErrorBadInputParameter(CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER* pThis, uint ParameterIndex)
     {
     }
 
     [VtblIndex(30)]
     [UnmanagedCallersOnly(CallConvs = [typeof(CallConvMemberFunction)])]
-    public static void ErrorUnknownSubobject(CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER* pThis, uint UnknownTypeValue)
+    public static void ErrorDuplicateSubobject(CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER* pThis, D3D12_PIPELINE_STATE_SUBOBJECT_TYPE DuplicateType)
     {
     }
 
     [VtblIndex(31)]
+    [UnmanagedCallersOnly(CallConvs = [typeof(CallConvMemberFunction)])]
+    public static void ErrorUnknownSubobject(CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER* pThis, uint UnknownTypeValue)
+    {
+    }
+
+    [VtblIndex(32)]
+    [UnmanagedCallersOnly(CallConvs = [typeof(CallConvMemberFunction)])]
+    public static void FinalizeCb(CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER* pThis)
+    {
+    }
+
+    [VtblIndex(33)]
     [UnmanagedCallersOnly(CallConvs = [typeof(CallConvMemberFunction)])]
     public static void Dispose(CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER* pThis)
     {
@@ -493,29 +507,43 @@ public unsafe struct CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER : ID3DX12Pipelin
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    void ID3DX12PipelineParserCallbacks.Interface.ErrorBadInputParameter(uint ParameterIndex)
+    void ID3DX12PipelineParserCallbacks.Interface.SerializedRootSignatureCb(D3D12_SERIALIZED_ROOT_SIGNATURE_DESC* SerializedRootSignature)
     {
-        ((delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, uint, void>)(lpVtbl[28]))((CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*)(Unsafe.AsPointer(ref this)), ParameterIndex);
+        ((delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, D3D12_SERIALIZED_ROOT_SIGNATURE_DESC*, void>)(lpVtbl[28]))((CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*)(Unsafe.AsPointer(ref this)), SerializedRootSignature);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
-    void ID3DX12PipelineParserCallbacks.Interface.ErrorDuplicateSubobject(D3D12_PIPELINE_STATE_SUBOBJECT_TYPE DuplicateType)
+    void ID3DX12PipelineParserCallbacks.Interface.ErrorBadInputParameter(uint ParameterIndex)
     {
-        ((delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, D3D12_PIPELINE_STATE_SUBOBJECT_TYPE, void>)(lpVtbl[29]))((CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*)(Unsafe.AsPointer(ref this)), DuplicateType);
+        ((delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, uint, void>)(lpVtbl[29]))((CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*)(Unsafe.AsPointer(ref this)), ParameterIndex);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(30)]
-    void ID3DX12PipelineParserCallbacks.Interface.ErrorUnknownSubobject(uint UnknownTypeValue)
+    void ID3DX12PipelineParserCallbacks.Interface.ErrorDuplicateSubobject(D3D12_PIPELINE_STATE_SUBOBJECT_TYPE DuplicateType)
     {
-        ((delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, uint, void>)(lpVtbl[30]))((CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*)(Unsafe.AsPointer(ref this)), UnknownTypeValue);
+        ((delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, D3D12_PIPELINE_STATE_SUBOBJECT_TYPE, void>)(lpVtbl[30]))((CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*)(Unsafe.AsPointer(ref this)), DuplicateType);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(31)]
+    void ID3DX12PipelineParserCallbacks.Interface.ErrorUnknownSubobject(uint UnknownTypeValue)
+    {
+        ((delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, uint, void>)(lpVtbl[31]))((CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*)(Unsafe.AsPointer(ref this)), UnknownTypeValue);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(32)]
+    void ID3DX12PipelineParserCallbacks.Interface.FinalizeCb()
+    {
+        ((delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM2_PARSE_HELPER*, void>)(lpVtbl[32]))((CD3DX12_PIPELINE_STATE_STREAM2_PARSE_HELPER*)(Unsafe.AsPointer(ref this)));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(33)]
     void ID3DX12PipelineParserCallbacks.Interface.Dispose()
     {
-        ((delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, void>)(lpVtbl[31]))((CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*)(Unsafe.AsPointer(ref this)));
+        ((delegate* unmanaged[MemberFunction]<CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*, void>)(lpVtbl[33]))((CD3DX12_PIPELINE_STATE_STREAM_PARSE_HELPER*)(Unsafe.AsPointer(ref this)));
     }
 }

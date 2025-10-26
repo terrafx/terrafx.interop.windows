@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.616.0
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.618.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -681,6 +681,81 @@ public static partial class IID
                 0x58,
                 0x05,
                 0x76
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12VideoEncoderHeap1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x68, 0x19, 0x8F, 0xEA,
+                0xA0, 0x4A,
+                0xA4, 0x43,
+                0x9D,
+                0x30,
+                0xBA,
+                0x86,
+                0xEC,
+                0x84,
+                0xD4,
+                0xF9
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12VideoDevice4
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x9E, 0xD0, 0x9A, 0xE5,
+                0xAE, 0xF1,
+                0xBB, 0x42,
+                0x89,
+                0x83,
+                0x9F,
+                0x6E,
+                0x55,
+                0x86,
+                0xC4,
+                0xEB
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12VideoEncodeCommandList4
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xB7, 0xB5, 0xAE, 0x69,
+                0xF2, 0x55,
+                0x12, 0x40,
+                0x8B,
+                0x73,
+                0x3A,
+                0x88,
+                0xD6,
+                0x5A,
+                0x20,
+                0x4C
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

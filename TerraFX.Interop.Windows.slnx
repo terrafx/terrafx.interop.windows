@@ -60,6 +60,11 @@
     <File Path="generation/DirectX/d3d12/d3d12compatibility/generate.rsp" />
     <File Path="generation/DirectX/d3d12/d3d12compatibility/header.txt" />
   </Folder>
+  <Folder Name="/generation/DirectX/d3d12/d3d12compiler/">
+    <File Path="generation/DirectX/d3d12/d3d12compiler/d3d12-d3d12compiler.h" />
+    <File Path="generation/DirectX/d3d12/d3d12compiler/generate.rsp" />
+    <File Path="generation/DirectX/d3d12/d3d12compiler/header.txt" />
+  </Folder>
   <Folder Name="/generation/DirectX/d3d12/d3d12sdklayers/">
     <File Path="generation/DirectX/d3d12/d3d12sdklayers/d3d12-d3d12sdklayers.h" />
     <File Path="generation/DirectX/d3d12/d3d12sdklayers/generate.rsp" />
@@ -84,6 +89,11 @@
     <File Path="generation/DirectX/d3d12/d3dcommon/d3d12-d3dcommon.h" />
     <File Path="generation/DirectX/d3d12/d3dcommon/generate.rsp" />
     <File Path="generation/DirectX/d3d12/d3dcommon/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/d3d12/d3dshadercacheregistration/">
+    <File Path="generation/DirectX/d3d12/d3dshadercacheregistration/d3d12-d3dshadercacheregistration.h" />
+    <File Path="generation/DirectX/d3d12/d3dshadercacheregistration/generate.rsp" />
+    <File Path="generation/DirectX/d3d12/d3dshadercacheregistration/header.txt" />
   </Folder>
   <Folder Name="/generation/DirectX/d3d12/DirectML/">
     <File Path="generation/DirectX/d3d12/DirectML/d3d12-DirectML.h" />
