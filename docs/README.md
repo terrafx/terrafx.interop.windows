@@ -57,18 +57,18 @@ Not all headers are provided by default due to size, new ones are added upon req
   * xaudio2
 * GDI+
 * Win32
- * COM
- * CommCtrl
- * ConsoleAPI
- * FileAPI
- * HeapAPI
- * MediaFoundation
- * OLE
- * SetupAPI
- * ShellApi
- * WIC
- * WinGdi
- * WinUser
+  * COM
+  * CommCtrl
+  * ConsoleAPI
+  * FileAPI
+  * HeapAPI
+  * MediaFoundation
+  * OLE
+  * SetupAPI
+  * ShellApi
+  * WIC
+  * WinGdi
+  * WinUser
 
 ### .NET Foundation
 
