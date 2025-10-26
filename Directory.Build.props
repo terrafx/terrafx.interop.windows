@@ -57,7 +57,7 @@
     <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)TerraFX.snk</AssemblyOriginatorKeyFile>
     <AssemblyOriginatorPublicKey>002400000c800000940000000602000000240000525341310004000001000100897039f5ff762b25b9ba982c3f5836c34e299279c33df505bf806a07bccdf0e1216e661943f557b954cb18422ed522a5b3174b85385052677f39c4ce19f30a1ddbaa507054bc5943461651f396afc612cd80419c5ee2b5277571ff65f51d14ba99e4e4196de0f393e89850a465f019dbdc365ed5e81bbafe1370f54efd254ba8</AssemblyOriginatorPublicKey>
     <Copyright>Copyright © Tanner Gooding and Contributors</Copyright>
-    <Description>Interop bindings for Windows.</Description>
+    <Description>Interop bindings for the Windows 11 and DirectX Agility SDKs</Description>
     <Features>strict</Features>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <HighEntropyVA>true</HighEntropyVA>
@@ -67,6 +67,8 @@
     <OverwriteReadOnlyFiles>true</OverwriteReadOnlyFiles>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
+    <PackageReadme>$(MSBuildThisFileDirectory)docs/README.md</PackageReadme>
+    <PackageTags>d2d1;d3d9;d3d10;d3d11;d3d12;directx;dwrite;interop;naot;trimmable;wic;win32;windows;x3daudio;xapo;xaudio2</PackageTags>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <PublicSign>true</PublicSign>
     <RepositoryType>git</RepositoryType>
