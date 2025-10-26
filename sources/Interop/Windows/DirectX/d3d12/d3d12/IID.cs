@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.616.0
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.618.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -314,6 +314,31 @@ public static partial class IID
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12PipelineState1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x4C, 0x80, 0x46, 0x56,
+                0x38, 0x96,
+                0xF7, 0x48,
+                0x91,
+                0x82,
+                0xB3,
+                0xEE,
+                0x5A,
+                0x6B,
+                0x60,
+                0xFB
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12DescriptorHeap
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -506,6 +531,31 @@ public static partial class IID
                 0x76,
                 0x16,
                 0xED
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12CommandQueue1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x65, 0x31, 0x3C, 0x3A,
+                0xE7, 0x0E,
+                0x8E, 0x4B,
+                0xA0,
+                0xAF,
+                0x63,
+                0x56,
+                0xB4,
+                0xC3,
+                0xBB,
+                0xB9
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -881,6 +931,31 @@ public static partial class IID
                 0x49,
                 0x41,
                 0x38
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12StateObjectProperties2
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x17, 0x29, 0xE8, 0xD5,
+                0xF1, 0xF0,
+                0xCF, 0x44,
+                0xAE,
+                0x5E,
+                0xCE,
+                0x22,
+                0x2D,
+                0xD0,
+                0xB8,
+                0x84
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -1514,6 +1589,31 @@ public static partial class IID
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12StateObjectDatabase
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xB7, 0x60, 0x60, 0xC5,
+                0xFC, 0xB5,
+                0x35, 0x41,
+                0x98,
+                0xE0,
+                0xA1,
+                0xE9,
+                0x99,
+                0x7E,
+                0xAC,
+                0xE0
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VirtualizationGuestDevice
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1806,6 +1906,31 @@ public static partial class IID
                 0x87,
                 0x4E,
                 0x56
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12StateObjectDatabaseFactory
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xF0, 0x66, 0xB0, 0xF5,
+                0x8A, 0x64,
+                0x11, 0x46,
+                0xBD,
+                0x41,
+                0x27,
+                0xFD,
+                0x09,
+                0x48,
+                0xB9,
+                0xEB
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.616.0
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.618.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -28,4 +28,7 @@ public enum D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE
 
     /// <include file='D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE.D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE_CONFIGURABLE_GRID_PARTITION"]/*' />
     D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE_CONFIGURABLE_GRID_PARTITION = 6,
+
+    /// <include file='D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE.D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE_AUTO"]/*' />
+    D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE_AUTO = 7,
 }

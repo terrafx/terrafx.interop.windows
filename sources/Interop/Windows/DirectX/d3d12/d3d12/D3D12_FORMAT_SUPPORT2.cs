@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.616.0
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.618.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -49,4 +49,7 @@ public enum D3D12_FORMAT_SUPPORT2
 
     /// <include file='D3D12_FORMAT_SUPPORT2.xml' path='doc/member[@name="D3D12_FORMAT_SUPPORT2.D3D12_FORMAT_SUPPORT2_SAMPLER_FEEDBACK"]/*' />
     D3D12_FORMAT_SUPPORT2_SAMPLER_FEEDBACK = 0x8000,
+
+    /// <include file='D3D12_FORMAT_SUPPORT2.xml' path='doc/member[@name="D3D12_FORMAT_SUPPORT2.D3D12_FORMAT_SUPPORT2_DISPLAYABLE"]/*' />
+    D3D12_FORMAT_SUPPORT2_DISPLAYABLE = 0x10000,
 }

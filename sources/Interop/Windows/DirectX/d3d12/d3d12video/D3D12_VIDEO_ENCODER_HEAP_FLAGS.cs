@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.616.0
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.618.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -10,4 +10,16 @@ public enum D3D12_VIDEO_ENCODER_HEAP_FLAGS
 {
     /// <include file='D3D12_VIDEO_ENCODER_HEAP_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_HEAP_FLAGS.D3D12_VIDEO_ENCODER_HEAP_FLAG_NONE"]/*' />
     D3D12_VIDEO_ENCODER_HEAP_FLAG_NONE = 0,
+
+    /// <include file='D3D12_VIDEO_ENCODER_HEAP_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_HEAP_FLAGS.D3D12_VIDEO_ENCODER_HEAP_FLAG_ALLOW_SUBREGION_NOTIFICATION_ARRAY_OF_BUFFERS"]/*' />
+    D3D12_VIDEO_ENCODER_HEAP_FLAG_ALLOW_SUBREGION_NOTIFICATION_ARRAY_OF_BUFFERS = 0x1,
+
+    /// <include file='D3D12_VIDEO_ENCODER_HEAP_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_HEAP_FLAGS.D3D12_VIDEO_ENCODER_HEAP_FLAG_ALLOW_SUBREGION_NOTIFICATION_SINGLE_BUFFER"]/*' />
+    D3D12_VIDEO_ENCODER_HEAP_FLAG_ALLOW_SUBREGION_NOTIFICATION_SINGLE_BUFFER = 0x2,
+
+    /// <include file='D3D12_VIDEO_ENCODER_HEAP_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_HEAP_FLAGS.D3D12_VIDEO_ENCODER_HEAP_FLAG_ALLOW_DIRTY_REGIONS"]/*' />
+    D3D12_VIDEO_ENCODER_HEAP_FLAG_ALLOW_DIRTY_REGIONS = 0x4,
+
+    /// <include file='D3D12_VIDEO_ENCODER_HEAP_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_HEAP_FLAGS.D3D12_VIDEO_ENCODER_HEAP_FLAG_ALLOW_RATE_CONTROL_FRAME_ANALYSIS"]/*' />
+    D3D12_VIDEO_ENCODER_HEAP_FLAG_ALLOW_RATE_CONTROL_FRAME_ANALYSIS = 0x8,
 }

@@ -1499,7 +1499,7 @@ struct DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC
     const DML_TENSOR_DESC* AScaleTensor;
     _Maybenull_ const DML_TENSOR_DESC* AZeroPointTensor;
     const DML_TENSOR_DESC* BTensor;
-    const DML_TENSOR_DESC* BScaleTensor; 
+    const DML_TENSOR_DESC* BScaleTensor;
     _Maybenull_ const DML_TENSOR_DESC* BZeroPointTensor;
     const DML_TENSOR_DESC* OutputScaleTensor;
     _Maybenull_ const DML_TENSOR_DESC* OutputZeroPointTensor;
@@ -1668,7 +1668,7 @@ struct DML_SLICE_GRAD_OPERATOR_DESC
 };
 
 struct DML_ADAM_OPTIMIZER_OPERATOR_DESC
-{ 
+{
     const DML_TENSOR_DESC* InputParametersTensor;
     const DML_TENSOR_DESC* InputFirstMomentTensor;
     const DML_TENSOR_DESC* InputSecondMomentTensor;
@@ -2203,7 +2203,7 @@ enum DML_FEATURE_LEVEL
 {
     DML_FEATURE_LEVEL_1_0 = 0x1000,
     DML_FEATURE_LEVEL_2_0 = 0x2000,
-    DML_FEATURE_LEVEL_2_1 = 0x2100, 
+    DML_FEATURE_LEVEL_2_1 = 0x2100,
     DML_FEATURE_LEVEL_3_0 = 0x3000,
     DML_FEATURE_LEVEL_3_1 = 0x3100,
     DML_FEATURE_LEVEL_4_0 = 0x4000,
@@ -2344,48 +2344,48 @@ interface DML_DECLARE_INTERFACE("6dbd6437-96fd-423f-a98c-ae5e7c2a573f") IDMLDevi
         UINT featureSupportDataSize,
         _Out_writes_bytes_(featureSupportDataSize) void* featureSupportData
         ) = 0;
-    
+
     IFACEMETHOD(CreateOperator)(
         const DML_OPERATOR_DESC* desc,
         REFIID riid, // expected: IDMLOperator
         _COM_Outptr_opt_ void** ppv
         ) = 0;
-    
+
     IFACEMETHOD(CompileOperator)(
         IDMLOperator* op,
         DML_EXECUTION_FLAGS flags,
         REFIID riid, // expected: IDMLCompiledOperator
         _COM_Outptr_opt_ void** ppv
         ) = 0;
-    
+
     IFACEMETHOD(CreateOperatorInitializer)(
         UINT operatorCount,
         _In_reads_opt_(operatorCount) IDMLCompiledOperator* const* operators,
         REFIID riid, // expected: IDMLOperatorInitializer
         _COM_Outptr_ void** ppv
         ) = 0;
-    
+
     IFACEMETHOD(CreateCommandRecorder)(
         REFIID riid, // expected: IDMLCommandRecorder
         _COM_Outptr_ void** ppv
         ) = 0;
-    
+
     IFACEMETHOD(CreateBindingTable)(
         _In_opt_ const DML_BINDING_TABLE_DESC* desc,
         REFIID riid, // expected: IDMLBindingTable
         _COM_Outptr_ void** ppv
         ) = 0;
-    
+
     IFACEMETHOD(Evict)(
         UINT count,
         _In_reads_(count) IDMLPageable* const* ppObjects
         ) = 0;
-    
+
     IFACEMETHOD(MakeResident)(
         UINT count,
         _In_reads_(count) IDMLPageable* const* ppObjects
         ) = 0;
-    
+
     IFACEMETHOD(GetDeviceRemovedReason)(
         ) = 0;
 
@@ -2542,107 +2542,107 @@ interface DML_DECLARE_INTERFACE("7d6f3ac9-394a-4ac3-92a7-390cc57a8217") IDMLDebu
 };
 
 
-// =================================================================================================================== 
-// DML graph 
-// =================================================================================================================== 
+// ===================================================================================================================
+// DML graph
+// ===================================================================================================================
 
 #if DML_TARGET_VERSION >= 0x2100
 
-enum DML_GRAPH_EDGE_TYPE 
-{ 
-    DML_GRAPH_EDGE_TYPE_INVALID, 
-    DML_GRAPH_EDGE_TYPE_INPUT, 
-    DML_GRAPH_EDGE_TYPE_OUTPUT, 
-    DML_GRAPH_EDGE_TYPE_INTERMEDIATE, 
-}; 
+enum DML_GRAPH_EDGE_TYPE
+{
+    DML_GRAPH_EDGE_TYPE_INVALID,
+    DML_GRAPH_EDGE_TYPE_INPUT,
+    DML_GRAPH_EDGE_TYPE_OUTPUT,
+    DML_GRAPH_EDGE_TYPE_INTERMEDIATE,
+};
 
-struct DML_GRAPH_EDGE_DESC 
-{ 
-    DML_GRAPH_EDGE_TYPE Type; 
-    _Field_size_(_Inexpressible_("Dependent on edge type")) const void* Desc; 
-}; 
+struct DML_GRAPH_EDGE_DESC
+{
+    DML_GRAPH_EDGE_TYPE Type;
+    _Field_size_(_Inexpressible_("Dependent on edge type")) const void* Desc;
+};
 
-struct DML_INPUT_GRAPH_EDGE_DESC 
-{ 
-    UINT GraphInputIndex; 
-    UINT ToNodeIndex; 
-    UINT ToNodeInputIndex; 
-    _Field_z_ _Maybenull_ const char* Name; 
-}; 
+struct DML_INPUT_GRAPH_EDGE_DESC
+{
+    UINT GraphInputIndex;
+    UINT ToNodeIndex;
+    UINT ToNodeInputIndex;
+    _Field_z_ _Maybenull_ const char* Name;
+};
 
-struct DML_OUTPUT_GRAPH_EDGE_DESC 
-{ 
-    UINT FromNodeIndex; 
-    UINT FromNodeOutputIndex; 
-    UINT GraphOutputIndex; 
-    _Field_z_ _Maybenull_ const char* Name; 
-}; 
+struct DML_OUTPUT_GRAPH_EDGE_DESC
+{
+    UINT FromNodeIndex;
+    UINT FromNodeOutputIndex;
+    UINT GraphOutputIndex;
+    _Field_z_ _Maybenull_ const char* Name;
+};
 
-struct DML_INTERMEDIATE_GRAPH_EDGE_DESC 
-{ 
-    UINT FromNodeIndex; 
-    UINT FromNodeOutputIndex; 
-    UINT ToNodeIndex; 
-    UINT ToNodeInputIndex; 
-    _Field_z_ _Maybenull_ const char* Name; 
-}; 
+struct DML_INTERMEDIATE_GRAPH_EDGE_DESC
+{
+    UINT FromNodeIndex;
+    UINT FromNodeOutputIndex;
+    UINT ToNodeIndex;
+    UINT ToNodeInputIndex;
+    _Field_z_ _Maybenull_ const char* Name;
+};
 
-enum DML_GRAPH_NODE_TYPE 
-{ 
-    DML_GRAPH_NODE_TYPE_INVALID, 
+enum DML_GRAPH_NODE_TYPE
+{
+    DML_GRAPH_NODE_TYPE_INVALID,
     DML_GRAPH_NODE_TYPE_OPERATOR,
 #if DML_TARGET_VERSION >= 0x6200
     DML_GRAPH_NODE_TYPE_CONSTANT
 #endif // DML_TARGET_VERSION >= 0x6200
-}; 
+};
 
-struct DML_GRAPH_NODE_DESC 
-{ 
-    DML_GRAPH_NODE_TYPE Type; 
-    _Field_size_(_Inexpressible_("Dependent on node type")) const void* Desc; 
-}; 
+struct DML_GRAPH_NODE_DESC
+{
+    DML_GRAPH_NODE_TYPE Type;
+    _Field_size_(_Inexpressible_("Dependent on node type")) const void* Desc;
+};
 
-struct DML_OPERATOR_GRAPH_NODE_DESC 
-{ 
-    IDMLOperator* Operator; 
-    _Field_z_ _Maybenull_ const char* Name; 
-}; 
+struct DML_OPERATOR_GRAPH_NODE_DESC
+{
+    IDMLOperator* Operator;
+    _Field_z_ _Maybenull_ const char* Name;
+};
 
 #if DML_TARGET_VERSION >= 0x6200
-struct DML_CONSTANT_DATA_GRAPH_NODE_DESC 
-{ 
+struct DML_CONSTANT_DATA_GRAPH_NODE_DESC
+{
     _Field_size_bytes_(DataSize) const void* Data;
     SIZE_T DataSize;
-    _Field_z_ _Maybenull_ const char* Name; 
-}; 
+    _Field_z_ _Maybenull_ const char* Name;
+};
 #endif // DML_TARGET_VERSION >= 0x6200
 
-struct DML_GRAPH_DESC 
-{ 
-    UINT InputCount; 
-    UINT OutputCount; 
+struct DML_GRAPH_DESC
+{
+    UINT InputCount;
+    UINT OutputCount;
 
-    UINT NodeCount; 
-    _Field_size_(NodeCount) const DML_GRAPH_NODE_DESC* Nodes; 
+    UINT NodeCount;
+    _Field_size_(NodeCount) const DML_GRAPH_NODE_DESC* Nodes;
 
-    UINT InputEdgeCount; 
-    _Field_size_opt_(InputEdgeCount) const DML_GRAPH_EDGE_DESC* InputEdges; 
+    UINT InputEdgeCount;
+    _Field_size_opt_(InputEdgeCount) const DML_GRAPH_EDGE_DESC* InputEdges;
 
-    UINT OutputEdgeCount; 
-    _Field_size_(OutputEdgeCount) const DML_GRAPH_EDGE_DESC* OutputEdges; 
+    UINT OutputEdgeCount;
+    _Field_size_(OutputEdgeCount) const DML_GRAPH_EDGE_DESC* OutputEdges;
 
-    UINT IntermediateEdgeCount; 
-    _Field_size_opt_(IntermediateEdgeCount) const DML_GRAPH_EDGE_DESC* IntermediateEdges; 
-}; 
+    UINT IntermediateEdgeCount;
+    _Field_size_opt_(IntermediateEdgeCount) const DML_GRAPH_EDGE_DESC* IntermediateEdges;
+};
 
-interface DML_DECLARE_INTERFACE("a0884f9a-d2be-4355-aa5d-5901281ad1d2") IDMLDevice1 : IDMLDevice 
-{ 
-    IFACEMETHOD(CompileGraph)( 
-        const DML_GRAPH_DESC* desc, 
-        DML_EXECUTION_FLAGS flags, 
-        REFIID riid, // expected: IDMLCompiledOperator 
-        _COM_Outptr_opt_ void** ppv 
-        ) = 0; 
+interface DML_DECLARE_INTERFACE("a0884f9a-d2be-4355-aa5d-5901281ad1d2") IDMLDevice1 : IDMLDevice
+{
+    IFACEMETHOD(CompileGraph)(
+        const DML_GRAPH_DESC* desc,
+        DML_EXECUTION_FLAGS flags,
+        REFIID riid, // expected: IDMLCompiledOperator
+        _COM_Outptr_opt_ void** ppv
+        ) = 0;
 };
 
 #endif // DML_TARGET_VERSION >= 0x2100

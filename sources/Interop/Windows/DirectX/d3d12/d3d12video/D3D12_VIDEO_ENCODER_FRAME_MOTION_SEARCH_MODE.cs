@@ -1,0 +1,19 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.618.2
+// Original source is Copyright © Microsoft. Licensed under the MIT license
+
+namespace TerraFX.Interop.DirectX;
+
+/// <include file='D3D12_VIDEO_ENCODER_FRAME_MOTION_SEARCH_MODE.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_FRAME_MOTION_SEARCH_MODE"]/*' />
+public enum D3D12_VIDEO_ENCODER_FRAME_MOTION_SEARCH_MODE
+{
+    /// <include file='D3D12_VIDEO_ENCODER_FRAME_MOTION_SEARCH_MODE.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_FRAME_MOTION_SEARCH_MODE.D3D12_VIDEO_ENCODER_FRAME_MOTION_SEARCH_MODE_FULL_SEARCH"]/*' />
+    D3D12_VIDEO_ENCODER_FRAME_MOTION_SEARCH_MODE_FULL_SEARCH = 0,
+
+    /// <include file='D3D12_VIDEO_ENCODER_FRAME_MOTION_SEARCH_MODE.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_FRAME_MOTION_SEARCH_MODE.D3D12_VIDEO_ENCODER_FRAME_MOTION_SEARCH_MODE_START_HINT"]/*' />
+    D3D12_VIDEO_ENCODER_FRAME_MOTION_SEARCH_MODE_START_HINT = 1,
+
+    /// <include file='D3D12_VIDEO_ENCODER_FRAME_MOTION_SEARCH_MODE.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_FRAME_MOTION_SEARCH_MODE.D3D12_VIDEO_ENCODER_FRAME_MOTION_SEARCH_MODE_START_HINT_LIMITED_DISTANCE"]/*' />
+    D3D12_VIDEO_ENCODER_FRAME_MOTION_SEARCH_MODE_START_HINT_LIMITED_DISTANCE = 2,
+}

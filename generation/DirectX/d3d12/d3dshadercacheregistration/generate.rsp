@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+d3d12-d3dshadercacheregistration.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/d3d12/d3dshadercacheregistration
+--test-output
+../../../../tests/Interop/Windows/DirectX/d3d12/d3dshadercacheregistration
+--traverse
+../../../include/d3d12/d3dshadercacheregistration.h

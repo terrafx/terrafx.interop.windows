@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.616.0
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.618.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -133,4 +133,28 @@ public enum D3D12_FEATURE_VIDEO
 
     /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_SUPPORT1"]/*' />
     D3D12_FEATURE_VIDEO_ENCODER_SUPPORT1 = 47,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_RESOURCE_REQUIREMENTS1"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_RESOURCE_REQUIREMENTS1 = 48,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_RESOLVE_INPUT_PARAM_LAYOUT"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_RESOLVE_INPUT_PARAM_LAYOUT = 49,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_QPMAP_INPUT"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_QPMAP_INPUT = 50,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_DIRTY_REGIONS"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_DIRTY_REGIONS = 51,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_MOTION_SEARCH"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_MOTION_SEARCH = 52,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_SUPPORT2"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_SUPPORT2 = 55,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_HEAP_SIZE1"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_HEAP_SIZE1 = 56,
+
+    /// <include file='D3D12_FEATURE_VIDEO.xml' path='doc/member[@name="D3D12_FEATURE_VIDEO.D3D12_FEATURE_VIDEO_ENCODER_RATE_CONTROL_FRAME_ANALYSIS"]/*' />
+    D3D12_FEATURE_VIDEO_ENCODER_RATE_CONTROL_FRAME_ANALYSIS = 57,
 }

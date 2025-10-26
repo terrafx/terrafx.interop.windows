@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.616.0
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.618.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
@@ -96,6 +96,13 @@ public static partial class IIDTests
         Assert.That(IID_ID3D12PipelineState, Is.EqualTo(new Guid(0x765a30f3, 0xf624, 0x4c6f, 0xa8, 0x28, 0xac, 0xe9, 0x48, 0x62, 0x24, 0x45)));
     }
 
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12PipelineState1" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12PipelineState1Test()
+    {
+        Assert.That(IID_ID3D12PipelineState1, Is.EqualTo(new Guid(0x5646804c, 0x9638, 0x48f7, 0x91, 0x82, 0xb3, 0xee, 0x5a, 0x6b, 0x60, 0xfb)));
+    }
+
     /// <summary>Validates that the value of the <see cref="IID_ID3D12DescriptorHeap" /> property is correct.</summary>
     [Test]
     public static void IID_ID3D12DescriptorHeapTest()
@@ -150,6 +157,13 @@ public static partial class IIDTests
     public static void IID_ID3D12CommandQueueTest()
     {
         Assert.That(IID_ID3D12CommandQueue, Is.EqualTo(new Guid(0x0ec870a6, 0x5d7e, 0x4c22, 0x8c, 0xfc, 0x5b, 0xaa, 0xe0, 0x76, 0x16, 0xed)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12CommandQueue1" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12CommandQueue1Test()
+    {
+        Assert.That(IID_ID3D12CommandQueue1, Is.EqualTo(new Guid(0x3a3c3165, 0x0ee7, 0x4b8e, 0xa0, 0xaf, 0x63, 0x56, 0xb4, 0xc3, 0xbb, 0xb9)));
     }
 
     /// <summary>Validates that the value of the <see cref="IID_ID3D12Device" /> property is correct.</summary>
@@ -255,6 +269,13 @@ public static partial class IIDTests
     public static void IID_ID3D12StateObjectProperties1Test()
     {
         Assert.That(IID_ID3D12StateObjectProperties1, Is.EqualTo(new Guid(0x460caac7, 0x1d24, 0x446a, 0xa1, 0x84, 0xca, 0x67, 0xdb, 0x49, 0x41, 0x38)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12StateObjectProperties2" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12StateObjectProperties2Test()
+    {
+        Assert.That(IID_ID3D12StateObjectProperties2, Is.EqualTo(new Guid(0xd5e82917, 0xf0f1, 0x44cf, 0xae, 0x5e, 0xce, 0x22, 0x2d, 0xd0, 0xb8, 0x84)));
     }
 
     /// <summary>Validates that the value of the <see cref="IID_ID3D12WorkGraphProperties" /> property is correct.</summary>
@@ -432,6 +453,13 @@ public static partial class IIDTests
         Assert.That(IID_ID3D12Device14, Is.EqualTo(new Guid(0x5f6e592d, 0xd895, 0x44c2, 0x8e, 0x4a, 0x88, 0xad, 0x49, 0x26, 0xd3, 0x23)));
     }
 
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12StateObjectDatabase" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12StateObjectDatabaseTest()
+    {
+        Assert.That(IID_ID3D12StateObjectDatabase, Is.EqualTo(new Guid(0xc56060b7, 0xb5fc, 0x4135, 0x98, 0xe0, 0xa1, 0xe9, 0x99, 0x7e, 0xac, 0xe0)));
+    }
+
     /// <summary>Validates that the value of the <see cref="IID_ID3D12VirtualizationGuestDevice" /> property is correct.</summary>
     [Test]
     public static void IID_ID3D12VirtualizationGuestDeviceTest()
@@ -514,6 +542,13 @@ public static partial class IIDTests
     public static void IID_ID3D12DeviceConfiguration1Test()
     {
         Assert.That(IID_ID3D12DeviceConfiguration1, Is.EqualTo(new Guid(0xed342442, 0x6343, 0x4e16, 0xbb, 0x82, 0xa3, 0xa5, 0x77, 0x87, 0x4e, 0x56)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12StateObjectDatabaseFactory" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12StateObjectDatabaseFactoryTest()
+    {
+        Assert.That(IID_ID3D12StateObjectDatabaseFactory, Is.EqualTo(new Guid(0xf5b066f0, 0x648a, 0x4611, 0xbd, 0x41, 0x27, 0xfd, 0x09, 0x48, 0xb9, 0xeb)));
     }
 
     /// <summary>Validates that the value of the <see cref="IID_ID3D12GraphicsCommandList5" /> property is correct.</summary>
