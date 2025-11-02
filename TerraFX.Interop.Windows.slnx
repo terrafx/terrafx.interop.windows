@@ -1819,6 +1819,11 @@
     <File Path="generation/Windows/um/TextStor/header.txt" />
     <File Path="generation/Windows/um/TextStor/um-TextStor.h" />
   </Folder>
+  <Folder Name="/generation/Windows/um/threadpoolapiset/">
+    <File Path="generation/Windows/um/threadpoolapiset/generate.rsp" />
+    <File Path="generation/Windows/um/threadpoolapiset/header.txt" />
+    <File Path="generation/Windows/um/threadpoolapiset/um-threadpoolapiset.h" />
+  </Folder>
   <Folder Name="/generation/Windows/um/thumbcache/">
     <File Path="generation/Windows/um/thumbcache/generate.rsp" />
     <File Path="generation/Windows/um/thumbcache/header.txt" />
