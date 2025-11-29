@@ -10,7 +10,5 @@ TerraFX.Interop.DirectX
 ../../../../sources/Interop/Windows/DirectX/dxilconv/DxbcConverter
 --test-output
 ../../../../tests/Interop/Windows/DirectX/dxilconv/DxbcConverter
---include-directory
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um
 --with-librarypath
 *=dxilconv
