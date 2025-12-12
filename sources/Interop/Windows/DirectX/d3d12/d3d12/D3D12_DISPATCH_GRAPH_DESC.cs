@@ -16,7 +16,7 @@ public partial struct D3D12_DISPATCH_GRAPH_DESC
     public D3D12_DISPATCH_MODE Mode;
 
     /// <include file='D3D12_DISPATCH_GRAPH_DESC.xml' path='doc/member[@name="D3D12_DISPATCH_GRAPH_DESC.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12_L21997_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L22001_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NodeCPUInput"]/*' />

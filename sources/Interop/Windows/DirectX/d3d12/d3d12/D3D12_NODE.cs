@@ -16,7 +16,7 @@ public partial struct D3D12_NODE
     public D3D12_NODE_TYPE NodeType;
 
     /// <include file='D3D12_NODE.xml' path='doc/member[@name="D3D12_NODE.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12_L15213_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L15217_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Shader"]/*' />

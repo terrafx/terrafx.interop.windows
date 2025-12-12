@@ -25,7 +25,7 @@ public unsafe partial struct D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUT
     public D3D12_ELEMENTS_LAYOUT DescsLayout;
 
     /// <include file='D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS.xml' path='doc/member[@name="D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12_L15585_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L15589_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.InstanceDescs"]/*' />
