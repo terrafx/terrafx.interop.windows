@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.618.2
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.618.5
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -838,6 +838,9 @@ public static partial class D3D12
     [NativeTypeName("#define D3D12_MIP_LOD_RANGE_BIT_COUNT ( 8 )")]
     public const int D3D12_MIP_LOD_RANGE_BIT_COUNT = (8);
 
+    [NativeTypeName("#define D3D12_MS_DISPATCH_MAX_THREAD_GROUPS_PER_GRID ( 4194303 )")]
+    public const int D3D12_MS_DISPATCH_MAX_THREAD_GROUPS_PER_GRID = (4194303);
+
     [NativeTypeName("#define D3D12_MULTISAMPLE_ANTIALIAS_LINE_WIDTH ( 1.4f )")]
     public const float D3D12_MULTISAMPLE_ANTIALIAS_LINE_WIDTH = (1.4f);
 
@@ -1329,6 +1332,9 @@ public static partial class D3D12
 
     [NativeTypeName("#define D3D12_WORK_GRAPHS_BACKING_MEMORY_ALIGNMENT_IN_BYTES ( 8 )")]
     public const int D3D12_WORK_GRAPHS_BACKING_MEMORY_ALIGNMENT_IN_BYTES = (8);
+
+    [NativeTypeName("#define D3D12_WORK_GRAPHS_DISPATCH_MAX_THREAD_GROUPS_PER_GRID ( 16777215 )")]
+    public const int D3D12_WORK_GRAPHS_DISPATCH_MAX_THREAD_GROUPS_PER_GRID = (16777215);
 
     [NativeTypeName("#define D3D12_WORK_GRAPHS_MAX_NODE_DEPTH ( 32 )")]
     public const int D3D12_WORK_GRAPHS_MAX_NODE_DEPTH = (32);

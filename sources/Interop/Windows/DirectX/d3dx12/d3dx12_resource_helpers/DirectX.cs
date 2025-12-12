@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3dx12_resource_helpers.h in microsoft/DirectX-Headers tag v1.618.2
+// Ported from d3dx12_resource_helpers.h in microsoft/DirectX-Headers tag v1.618.5
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Runtime.InteropServices;

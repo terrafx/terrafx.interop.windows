@@ -47,7 +47,7 @@
     <PackageOutputPath>$(BaseArtifactsPath)pkg/$(Configuration)/$(PACKAGE_PUBLISH_MODE)</PackageOutputPath>
     <Product>TerraFX.Interop.Windows</Product>
     <RootNamespace>TerraFX.Interop</RootNamespace>
-    <VersionPrefix>10.0.26100.5</VersionPrefix>
+    <VersionPrefix>10.0.26100.6</VersionPrefix>
     <VersionSuffix Condition="'$(PACKAGE_PUBLISH_MODE)' != 'stable'">rc1</VersionSuffix>
     <VersionSuffix Condition="'$(GITHUB_EVENT_NAME)' == 'pull_request'">pr</VersionSuffix>
   </PropertyGroup>
