@@ -1,6 +1,6 @@
 # TerraFX.Interop.Windows
 
-Interop bindings for the Windows 11 (v10.0.26100.6584) and DirectX Agility (v1.618.2) SDKs
+Interop bindings for the Windows 11 (v10.0.26100.6584) and DirectX Agility (v1.618.5) SDKs
 
 ![ci](https://github.com/terrafx/terrafx.interop.windows/actions/workflows/ci.yml/badge.svg?branch=main&event=push)
 [![Discord](https://img.shields.io/discord/593547387457372212.svg?label=Discord&style=plastic)](https://discord.terrafx.dev/)
@@ -36,7 +36,7 @@ If you are looking to contribute you should read our
 
 ### Goals
 
-Provide interop bindings for the Windows 11 (v10.0.26100.6584) and DirectX Agility (v1.618.2) SDKs
+Provide interop bindings for the Windows 11 (v10.0.26100.6584) and DirectX Agility (v1.618.5) SDKs
 
 The bindings should be blittable, trim safe, AOT compatible, and as close to 1-to-1 with the underlying C API definitions as feasible. Put simply, they are as close to `#include <Windows.h>` as you can get in .NET
 
