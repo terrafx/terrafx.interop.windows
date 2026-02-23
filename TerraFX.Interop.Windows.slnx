@@ -189,9 +189,12 @@
   </Folder>
   <Folder Name="/generation/DirectX/dxilconv/" />
   <Folder Name="/generation/DirectX/dxilconv/DxbcConverter/">
-    <File Path="generation/DirectX/dxilconv/DxbcConverter/DxbcConverter.h" />
+    <File Path="generation/DirectX/dxilconv/DxbcConverter/dxilconv-DxbcConverter.h" />
     <File Path="generation/DirectX/dxilconv/DxbcConverter/generate.rsp" />
     <File Path="generation/DirectX/dxilconv/DxbcConverter/header.txt" />
+  </Folder>
+  <Folder Name="/generation/DirectX/dxilconv/DxbcConverter/dxc/">
+    <File Path="generation/DirectX/dxilconv/DxbcConverter/dxc/dxcapi.h" />
   </Folder>
   <Folder Name="/generation/DirectX/dxtk12/" />
   <Folder Name="/generation/DirectX/dxtk12/DirectXHelpers/">
@@ -702,6 +705,9 @@
   </Folder>
   <Folder Name="/generation/include/d3dx12/">
     <File Path="generation/include/d3dx12/d3dx12.h" />
+  </Folder>
+  <Folder Name="/generation/include/dxilconv/">
+    <File Path="generation/include/dxilconv/DxbcConverter.h" />
   </Folder>
   <Folder Name="/generation/include/dxtk12/">
     <File Path="generation/include/dxtk12/DirectXHelpers.h" />
