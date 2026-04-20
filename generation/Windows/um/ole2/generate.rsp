@@ -13,7 +13,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/ole2
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/ole2.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.28000.0/um/ole2.h
 --with-librarypath
 CreateOleAdviseHolder=ole32
 DoDragDrop=ole32

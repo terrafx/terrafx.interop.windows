@@ -36,7 +36,7 @@ If you are looking to contribute you should read our
 
 ### Goals
 
-Provide interop bindings for the Windows 11 (v10.0.26100.6584) and DirectX Agility (v1.618.5) SDKs
+Provide interop bindings for the Windows 11 (v10.0.28000.1721) and DirectX Agility (v1.618.5) SDKs
 
 The bindings should be blittable, trim safe, AOT compatible, and as close to 1-to-1 with the underlying C API definitions as feasible. Put simply, they are as close to `#include <Windows.h>` as you can get in .NET
 
