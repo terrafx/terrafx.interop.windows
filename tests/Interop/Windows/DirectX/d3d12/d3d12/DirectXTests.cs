@@ -19,13 +19,6 @@ public static unsafe partial class DirectXTests
         Assert.That(D3D12ExperimentalShaderModels, Is.EqualTo(new Guid(0x76f5573e, 0xf13a, 0x40f5, 0xb2, 0x97, 0x81, 0xce, 0x9e, 0x18, 0x93, 0x3f)));
     }
 
-    /// <summary>Validates that the value of the <see cref="D3D12TiledResourceTier4" /> property is correct.</summary>
-    [Test]
-    public static void D3D12TiledResourceTier4Test()
-    {
-        Assert.That(D3D12TiledResourceTier4, Is.EqualTo(new Guid(0xc9c4725f, 0xa81a, 0x4f56, 0x8c, 0x5b, 0xc5, 0x10, 0x39, 0xd6, 0x94, 0xfb)));
-    }
-
     /// <summary>Validates that the value of the <see cref="D3D12GPUUploadHeapsOnUnsupportedOS" /> property is correct.</summary>
     [Test]
     public static void D3D12GPUUploadHeapsOnUnsupportedOSTest()

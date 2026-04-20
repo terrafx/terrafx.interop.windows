@@ -187,4 +187,54 @@ public static partial class CLSID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_D3D12RuntimeValidationControl
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x74, 0x3E, 0xB5, 0xE5,
+                0xCA, 0x3F,
+                0xB4, 0x47,
+                0x88,
+                0xB9,
+                0xA8,
+                0xB4,
+                0x1E,
+                0xF8,
+                0xFB,
+                0x73
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_D3D12ApplicationIdentity
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xE8, 0xE1, 0xD8, 0x08,
+                0xA6, 0x75,
+                0xA7, 0x42,
+                0xBF,
+                0x3A,
+                0xD0,
+                0x5F,
+                0xE5,
+                0x29,
+                0xC4,
+                0x7C
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

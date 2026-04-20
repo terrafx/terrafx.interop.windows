@@ -151,4 +151,10 @@ public enum D3D12_FEATURE
 
     /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_SHADER_CACHE_ABI_SUPPORT"]/*' />
     D3D12_FEATURE_SHADER_CACHE_ABI_SUPPORT = 61,
+
+    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_BARRIER_LAYOUT"]/*' />
+    D3D12_FEATURE_BARRIER_LAYOUT = 64,
+
+    /// <include file='D3D12_FEATURE.xml' path='doc/member[@name="D3D12_FEATURE.D3D12_FEATURE_D3D12_OPTIONS22"]/*' />
+    D3D12_FEATURE_D3D12_OPTIONS22 = 65,
 }

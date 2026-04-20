@@ -44,6 +44,9 @@ public enum D3D_SHADER_MODEL
     /// <include file='D3D_SHADER_MODEL.xml' path='doc/member[@name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_6_9"]/*' />
     D3D_SHADER_MODEL_6_9 = 0x69,
 
+    /// <include file='D3D_SHADER_MODEL.xml' path='doc/member[@name="D3D_SHADER_MODEL.D3D_SHADER_MODEL_6_10"]/*' />
+    D3D_SHADER_MODEL_6_10 = 0x6a,
+
     /// <include file='D3D_SHADER_MODEL.xml' path='doc/member[@name="D3D_SHADER_MODEL.D3D_HIGHEST_SHADER_MODEL"]/*' />
-    D3D_HIGHEST_SHADER_MODEL = D3D_SHADER_MODEL_6_9,
+    D3D_HIGHEST_SHADER_MODEL = D3D_SHADER_MODEL_6_10,
 }

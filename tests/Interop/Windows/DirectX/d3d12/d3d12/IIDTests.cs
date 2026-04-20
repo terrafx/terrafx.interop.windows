@@ -33,6 +33,13 @@ public static partial class IIDTests
         Assert.That(IID_ID3D12RootSignature, Is.EqualTo(new Guid(0xc54a6b66, 0x72df, 0x4ee8, 0x8b, 0xe5, 0xa9, 0x46, 0xa1, 0x42, 0x92, 0x14)));
     }
 
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12RootSignature1" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12RootSignature1Test()
+    {
+        Assert.That(IID_ID3D12RootSignature1, Is.EqualTo(new Guid(0xc390bd7d, 0x9142, 0x4a95, 0xb0, 0x72, 0x6d, 0x34, 0x39, 0xad, 0xe5, 0xc4)));
+    }
+
     /// <summary>Validates that the value of the <see cref="IID_ID3D12RootSignatureDeserializer" /> property is correct.</summary>
     [Test]
     public static void IID_ID3D12RootSignatureDeserializerTest()
@@ -453,6 +460,13 @@ public static partial class IIDTests
         Assert.That(IID_ID3D12Device14, Is.EqualTo(new Guid(0x5f6e592d, 0xd895, 0x44c2, 0x8e, 0x4a, 0x88, 0xad, 0x49, 0x26, 0xd3, 0x23)));
     }
 
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12Device15" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12Device15Test()
+    {
+        Assert.That(IID_ID3D12Device15, Is.EqualTo(new Guid(0x76cff76f, 0x1e9b, 0x4450, 0x8c, 0xdc, 0x34, 0xf1, 0xaf, 0x78, 0x8e, 0x5b)));
+    }
+
     /// <summary>Validates that the value of the <see cref="IID_ID3D12StateObjectDatabase" /> property is correct.</summary>
     [Test]
     public static void IID_ID3D12StateObjectDatabaseTest()
@@ -486,6 +500,13 @@ public static partial class IIDTests
     public static void IID_ID3D12Tools2Test()
     {
         Assert.That(IID_ID3D12Tools2, Is.EqualTo(new Guid(0x01d393c5, 0xc9b0, 0x42a1, 0x95, 0x8c, 0xc2, 0x6b, 0x02, 0xd4, 0xd0, 0x97)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12RuntimeValidationControl" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12RuntimeValidationControlTest()
+    {
+        Assert.That(IID_ID3D12RuntimeValidationControl, Is.EqualTo(new Guid(0xc706c811, 0x3663, 0x4bf1, 0x91, 0xb9, 0x1e, 0x8a, 0x7c, 0x11, 0x4a, 0xb9)));
     }
 
     /// <summary>Validates that the value of the <see cref="IID_ID3D12PageableTools" /> property is correct.</summary>
@@ -551,6 +572,13 @@ public static partial class IIDTests
         Assert.That(IID_ID3D12StateObjectDatabaseFactory, Is.EqualTo(new Guid(0xf5b066f0, 0x648a, 0x4611, 0xbd, 0x41, 0x27, 0xfd, 0x09, 0x48, 0xb9, 0xeb)));
     }
 
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12ApplicationIdentity" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12ApplicationIdentityTest()
+    {
+        Assert.That(IID_ID3D12ApplicationIdentity, Is.EqualTo(new Guid(0x82dc6c85, 0x727b, 0x4a8d, 0x91, 0x69, 0xdb, 0x6c, 0xe3, 0xe9, 0x75, 0xa0)));
+    }
+
     /// <summary>Validates that the value of the <see cref="IID_ID3D12GraphicsCommandList5" /> property is correct.</summary>
     [Test]
     public static void IID_ID3D12GraphicsCommandList5Test()
@@ -605,5 +633,12 @@ public static partial class IIDTests
     public static void IID_ID3D12GBVDiagnosticsTest()
     {
         Assert.That(IID_ID3D12GBVDiagnostics, Is.EqualTo(new Guid(0x597985ab, 0x9b75, 0x4dbb, 0xbe, 0x23, 0x07, 0x61, 0x19, 0x5b, 0xeb, 0xee)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12DeviceStatistics" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12DeviceStatisticsTest()
+    {
+        Assert.That(IID_ID3D12DeviceStatistics, Is.EqualTo(new Guid(0x3d5ca1a8, 0xa39e, 0x4619, 0x95, 0xe0, 0xf9, 0xb0, 0xa4, 0x03, 0x40, 0xf5)));
     }
 }

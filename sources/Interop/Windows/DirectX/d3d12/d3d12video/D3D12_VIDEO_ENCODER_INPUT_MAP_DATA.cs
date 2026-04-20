@@ -16,7 +16,7 @@ public partial struct D3D12_VIDEO_ENCODER_INPUT_MAP_DATA
     public D3D12_VIDEO_ENCODER_INPUT_MAP_TYPE MapType;
 
     /// <include file='D3D12_VIDEO_ENCODER_INPUT_MAP_DATA.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_INPUT_MAP_DATA.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12video_L10281_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12video_L10289_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Quantization"]/*' />

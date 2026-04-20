@@ -35,7 +35,7 @@ public partial struct D3D12_UNORDERED_ACCESS_VIEW_DESC
     {
         D3D12_UNORDERED_ACCESS_VIEW_DESC desc = new D3D12_UNORDERED_ACCESS_VIEW_DESC();
 
-        desc.Format = DXGI_FORMAT_R32_UINT;
+        desc.Format = DXGI_FORMAT_R32_TYPELESS;
         desc.ViewDimension = D3D12_UAV_DIMENSION_BUFFER;
         desc.Anonymous.Buffer.FirstElement = FirstElement;
         desc.Anonymous.Buffer.NumElements = NumElements;

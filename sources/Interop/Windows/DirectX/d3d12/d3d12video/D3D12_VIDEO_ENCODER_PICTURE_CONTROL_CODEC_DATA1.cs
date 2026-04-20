@@ -16,7 +16,7 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA1
     public uint DataSize;
 
     /// <include file='D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA1.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA1.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12video_L10151_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12video_L10159_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pH264PicData"]/*' />

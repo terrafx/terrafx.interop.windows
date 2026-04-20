@@ -16,7 +16,7 @@ public partial struct D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM1
     public D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM_NOTIFICATION_MODE NotificationMode;
 
     /// <include file='D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM1.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM1.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12video_L10217_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12video_L10225_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FrameOutputBuffer"]/*' />

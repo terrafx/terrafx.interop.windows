@@ -16,7 +16,7 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_DIRTY_REGIONS
     public D3D12_VIDEO_ENCODER_INPUT_MAP_SOURCE MapSource;
 
     /// <include file='D3D12_VIDEO_ENCODER_DIRTY_REGIONS.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_DIRTY_REGIONS.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12video_L10067_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12video_L10075_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pOpaqueLayoutBuffer"]/*' />

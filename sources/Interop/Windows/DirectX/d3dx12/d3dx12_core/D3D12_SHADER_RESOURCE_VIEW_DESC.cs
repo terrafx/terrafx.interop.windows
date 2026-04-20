@@ -35,7 +35,7 @@ public partial struct D3D12_SHADER_RESOURCE_VIEW_DESC
     {
         D3D12_SHADER_RESOURCE_VIEW_DESC desc = new D3D12_SHADER_RESOURCE_VIEW_DESC();
 
-        desc.Format = DXGI_FORMAT_R32_UINT;
+        desc.Format = DXGI_FORMAT_R32_TYPELESS;
         desc.ViewDimension = D3D12_SRV_DIMENSION_BUFFER;
         desc.Shader4ComponentMapping = ((((0) & 0x7) | (((1) & 0x7) << 3) | (((2) & 0x7) << (3 * 2)) | (((3) & 0x7) << (3 * 3)) | (1 << (3 * 4))));
         desc.Anonymous.Buffer.FirstElement = FirstElement;

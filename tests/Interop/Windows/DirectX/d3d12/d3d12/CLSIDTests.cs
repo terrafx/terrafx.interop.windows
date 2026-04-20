@@ -60,4 +60,18 @@ public static partial class CLSIDTests
     {
         Assert.That(CLSID_D3D12StateObjectFactory, Is.EqualTo(new Guid(0x54e1c9f3, 0x1303, 0x4112, 0xbf, 0x8e, 0x7b, 0xf2, 0xbb, 0x60, 0x6a, 0x73)));
     }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_D3D12RuntimeValidationControl" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_D3D12RuntimeValidationControlTest()
+    {
+        Assert.That(CLSID_D3D12RuntimeValidationControl, Is.EqualTo(new Guid(0xe5b53e74, 0x3fca, 0x47b4, 0x88, 0xb9, 0xa8, 0xb4, 0x1e, 0xf8, 0xfb, 0x73)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_D3D12ApplicationIdentity" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_D3D12ApplicationIdentityTest()
+    {
+        Assert.That(CLSID_D3D12ApplicationIdentity, Is.EqualTo(new Guid(0x08d8e1e8, 0x75a6, 0x42a7, 0xbf, 0x3a, 0xd0, 0x5f, 0xe5, 0x29, 0xc4, 0x7c)));
+    }
 }
