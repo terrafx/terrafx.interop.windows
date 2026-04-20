@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.system.remotesystems.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from winrt/windows.system.remotesystems.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.WinRT;
@@ -13,4 +13,7 @@ public enum RemoteSystemAuthorizationKind
 
     /// <include file='RemoteSystemAuthorizationKind.xml' path='doc/member[@name="RemoteSystemAuthorizationKind.RemoteSystemAuthorizationKind_Anonymous"]/*' />
     RemoteSystemAuthorizationKind_Anonymous = 1,
+
+    /// <include file='RemoteSystemAuthorizationKind.xml' path='doc/member[@name="RemoteSystemAuthorizationKind.RemoteSystemAuthorizationKind_SameFamily"]/*' />
+    RemoteSystemAuthorizationKind_SameFamily = 2,
 }

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -102,4 +102,7 @@ public static partial class HCS
 
     [NativeTypeName("#define HCS_E_OPERATION_ALREADY_CANCELLED _HRESULT_TYPEDEF_(0x80370121L)")]
     public const int HCS_E_OPERATION_ALREADY_CANCELLED = unchecked((int)(0x80370121));
+
+    [NativeTypeName("#define HCS_E_INVALID_PROCESSOR_TOPOLOGY _HRESULT_TYPEDEF_(0x80370122L)")]
+    public const int HCS_E_INVALID_PROCESSOR_TOPOLOGY = unchecked((int)(0x80370122));
 }

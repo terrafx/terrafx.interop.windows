@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/http.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/http.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -183,6 +183,9 @@ public static partial class HTTP
 
     [NativeTypeName("#define HTTP_LOGGING_FLAG_LOG_SUCCESS_ONLY (0x00000008)")]
     public const int HTTP_LOGGING_FLAG_LOG_SUCCESS_ONLY = (0x00000008);
+
+    [NativeTypeName("#define HTTP_REQUEST_INFO_FLAG_INITIAL_TTL (0x00000001ULL)")]
+    public const ulong HTTP_REQUEST_INFO_FLAG_INITIAL_TTL = (0x00000001UL);
 
     [NativeTypeName("#define HTTP_CREATE_REQUEST_QUEUE_FLAG_OPEN_EXISTING (0x00000001)")]
     public const int HTTP_CREATE_REQUEST_QUEUE_FLAG_OPEN_EXISTING = (0x00000001);

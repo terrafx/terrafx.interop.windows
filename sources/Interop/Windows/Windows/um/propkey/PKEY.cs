@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/propkey.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/propkey.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -9729,6 +9729,32 @@ public static partial class PKEY
                 0x94,
                 0xB8,
                 0x6E, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_StorageProviderUserAccountKind
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xD6, 0xB9, 0xF9, 0xB2,
+                0xC4, 0xFE,
+                0xD5, 0x4D,
+                0x94,
+                0xD7,
+                0x89,
+                0x57,
+                0x48,
+                0x8C,
+                0x80,
+                0x7B,
+                0x11, 0x00, 0x00, 0x00
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());

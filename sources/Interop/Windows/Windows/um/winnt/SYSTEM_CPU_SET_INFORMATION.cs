@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -22,7 +22,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
     public CPU_SET_INFORMATION_TYPE Type;
 
     /// <include file='SYSTEM_CPU_SET_INFORMATION.xml' path='doc/member[@name="SYSTEM_CPU_SET_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L14063_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L14457_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.CpuSet"]/*' />
@@ -42,7 +42,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.CpuSet"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L14064_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L14458_C9")]
         public _CpuSet_e__Struct CpuSet;
 
         /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct"]/*' />
@@ -72,11 +72,11 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
             public byte EfficiencyClass;
 
             /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.Anonymous1"]/*' />
-            [NativeTypeName("__AnonymousRecord_winnt_L14072_C13")]
+            [NativeTypeName("__AnonymousRecord_winnt_L14466_C13")]
             public _Anonymous1_e__Union Anonymous1;
 
             /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.Anonymous2"]/*' />
-            [NativeTypeName("__AnonymousRecord_winnt_L14089_C13")]
+            [NativeTypeName("__AnonymousRecord_winnt_L14483_C13")]
             public _Anonymous2_e__Union Anonymous2;
 
             /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.AllocationTag"]/*' />
@@ -206,7 +206,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
 
                 /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous"]/*' />
                 [FieldOffset(0)]
-                [NativeTypeName("__AnonymousRecord_winnt_L14080_C17")]
+                [NativeTypeName("__AnonymousRecord_winnt_L14474_C17")]
                 public _Anonymous_e__Struct Anonymous;
 
                 /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

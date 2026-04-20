@@ -1,16 +1,17 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.storage.provider.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from winrt/windows.storage.provider.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using TerraFX.Interop.WinRT;
 
 namespace TerraFX.Interop.Windows;
 
-public static partial class IID
+public static unsafe partial class IID
 {
     public static ref readonly Guid IID_IStorageProviderKnownFolderSyncRequestedHandler
     {
@@ -821,6 +822,78 @@ public static partial class IID
                 0xEE,
                 0x7D,
                 0xD8
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IStorageProviderSuggestionsHandler
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xF6, 0x93, 0xF4, 0xAF,
+                0xFD, 0xE1,
+                0x03, 0x5D,
+                0xB4,
+                0x80,
+                0xF1,
+                0x84,
+                0x9C,
+                0x83,
+                0xEF,
+                0x4A
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IStorageProviderSuggestionsHandlerFactory
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xD8, 0x35, 0x7B, 0xDC,
+                0x5B, 0xA2,
+                0xA3, 0x58,
+                0xAC,
+                0xE7,
+                0xB3,
+                0x54,
+                0x31,
+                0x06,
+                0xA2,
+                0xAA
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IStorageProviderSuggestionsQueryOptions
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x4D, 0xB7, 0xB8, 0xEF,
+                0x84, 0x0D,
+                0x9C, 0x57,
+                0xB1,
+                0x37,
+                0xEA,
+                0x73,
+                0x06,
+                0x35,
+                0xD9,
+                0xBB
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

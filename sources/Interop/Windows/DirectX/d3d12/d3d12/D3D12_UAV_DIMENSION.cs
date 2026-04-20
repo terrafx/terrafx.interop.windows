@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.618.5
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.619.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -34,4 +34,7 @@ public enum D3D12_UAV_DIMENSION
 
     /// <include file='D3D12_UAV_DIMENSION.xml' path='doc/member[@name="D3D12_UAV_DIMENSION.D3D12_UAV_DIMENSION_TEXTURE3D"]/*' />
     D3D12_UAV_DIMENSION_TEXTURE3D = 8,
+
+    /// <include file='D3D12_UAV_DIMENSION.xml' path='doc/member[@name="D3D12_UAV_DIMENSION.D3D12_UAV_DIMENSION_BUFFER_BYTE_OFFSET"]/*' />
+    D3D12_UAV_DIMENSION_BUFFER_BYTE_OFFSET = 9,
 }

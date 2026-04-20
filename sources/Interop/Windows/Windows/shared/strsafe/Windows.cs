@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/strsafe.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from shared/strsafe.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -1868,6 +1868,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define __WARNING_MISSING_ZERO_TERMINATION2 6054")]
     public const int __WARNING_MISSING_ZERO_TERMINATION2 = 6054;
+
+    [NativeTypeName("#define __WARNING_WRITE_OVERRUN 6386")]
+    public const int __WARNING_WRITE_OVERRUN = 6386;
 
     [NativeTypeName("#define __WARNING_INVALID_PARAM_VALUE_1 6387")]
     public const int __WARNING_INVALID_PARAM_VALUE_1 = 6387;

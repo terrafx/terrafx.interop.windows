@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -78,6 +78,11 @@ public static unsafe partial class Windows
         uint Max = 0;
         uint Min = 0;
         byte Valid = 0;
+
+        if (Input->Size != unchecked(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES)))
+        {
+            goto Cleanup;
+        }
 
         if (Definition->Action != Input->Action)
         {
@@ -619,6 +624,15 @@ public static unsafe partial class Windows
     [NativeTypeName("#define REQUEST_OPLOCK_INPUT_FLAG_COMPLETE_ACK_ON_CLOSE (0x00000004)")]
     public const int REQUEST_OPLOCK_INPUT_FLAG_COMPLETE_ACK_ON_CLOSE = (0x00000004);
 
+    [NativeTypeName("#define REQUEST_OPLOCK_INPUT_FLAG_RH_ALWAYS_BLOCK_UNTIL_ACK (0x00000008)")]
+    public const int REQUEST_OPLOCK_INPUT_FLAG_RH_ALWAYS_BLOCK_UNTIL_ACK = (0x00000008);
+
+    [NativeTypeName("#define REQUEST_OPLOCK_INPUT_FLAG_RH_IGNORE_WRITES (0x00000010)")]
+    public const int REQUEST_OPLOCK_INPUT_FLAG_RH_IGNORE_WRITES = (0x00000010);
+
+    [NativeTypeName("#define REQUEST_OPLOCK_INPUT_FLAG_RH_NO_NON_CACHED_IO (0x00000020)")]
+    public const int REQUEST_OPLOCK_INPUT_FLAG_RH_NO_NON_CACHED_IO = (0x00000020);
+
     [NativeTypeName("#define REQUEST_OPLOCK_CURRENT_VERSION 1")]
     public const int REQUEST_OPLOCK_CURRENT_VERSION = 1;
 
@@ -630,6 +644,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define REQUEST_OPLOCK_OUTPUT_FLAG_WRITABLE_SECTION_PRESENT (0x00000004)")]
     public const int REQUEST_OPLOCK_OUTPUT_FLAG_WRITABLE_SECTION_PRESENT = (0x00000004);
+
+    [NativeTypeName("#define REQUEST_OPLOCK_OUTPUT_FLAG_NON_CACHED_IO_PRESENT (0x00000008)")]
+    public const int REQUEST_OPLOCK_OUTPUT_FLAG_NON_CACHED_IO_PRESENT = (0x00000008);
 
     [NativeTypeName("#define SD_GLOBAL_CHANGE_TYPE_MACHINE_SID 1")]
     public const int SD_GLOBAL_CHANGE_TYPE_MACHINE_SID = 1;

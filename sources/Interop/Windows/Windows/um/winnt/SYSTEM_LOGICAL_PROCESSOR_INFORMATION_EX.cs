@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -20,7 +20,7 @@ public partial struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX
     public uint Size;
 
     /// <include file='SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX.xml' path='doc/member[@name="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L14046_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L14439_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Processor"]/*' />
@@ -67,6 +67,17 @@ public partial struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.SharedComputeUnit"]/*' />
+    [UnscopedRef]
+    public ref SHARED_COMPUTE_UNIT_RELATIONSHIP SharedComputeUnit
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.SharedComputeUnit;
+        }
+    }
+
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
@@ -86,5 +97,9 @@ public partial struct SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Group"]/*' />
         [FieldOffset(0)]
         public GROUP_RELATIONSHIP Group;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.SharedComputeUnit"]/*' />
+        [FieldOffset(0)]
+        public SHARED_COMPUTE_UNIT_RELATIONSHIP SharedComputeUnit;
     }
 }

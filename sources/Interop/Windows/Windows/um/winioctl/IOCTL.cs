@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.Versioning;
@@ -163,6 +163,15 @@ public static partial class IOCTL
     [NativeTypeName("#define IOCTL_STORAGE_FIRMWARE_ACTIVATE CTL_CODE(IOCTL_STORAGE_BASE, 0x0702, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
     [SupportedOSPlatform("windows10.0")]
     public const int IOCTL_STORAGE_FIRMWARE_ACTIVATE = (((0x0000002d) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x0702) << 2) | (0));
+
+    [NativeTypeName("#define IOCTL_STORAGE_BOOT_PARTITION_DOWNLOAD CTL_CODE(IOCTL_STORAGE_BASE, 0x0703, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
+    public const int IOCTL_STORAGE_BOOT_PARTITION_DOWNLOAD = (((0x0000002d) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x0703) << 2) | (0));
+
+    [NativeTypeName("#define IOCTL_STORAGE_BOOT_PARTITION_ACTIVATE CTL_CODE(IOCTL_STORAGE_BASE, 0x0704, METHOD_BUFFERED, FILE_READ_ACCESS | FILE_WRITE_ACCESS)")]
+    public const int IOCTL_STORAGE_BOOT_PARTITION_ACTIVATE = (((0x0000002d) << 16) | (((0x0001) | (0x0002)) << 14) | ((0x0704) << 2) | (0));
+
+    [NativeTypeName("#define IOCTL_STORAGE_BOOT_PARTITION_GET_INFO CTL_CODE(IOCTL_STORAGE_BASE, 0x0705, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int IOCTL_STORAGE_BOOT_PARTITION_GET_INFO = (((0x0000002d) << 16) | ((0) << 14) | ((0x0705) << 2) | (0));
 
     [NativeTypeName("#define IOCTL_STORAGE_ENABLE_IDLE_POWER CTL_CODE(IOCTL_STORAGE_BASE, 0x0720, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
     public const int IOCTL_STORAGE_ENABLE_IDLE_POWER = (((0x0000002d) << 16) | ((0) << 14) | ((0x0720) << 2) | (0));

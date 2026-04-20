@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.618.5
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.619.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -91,4 +91,7 @@ public enum D3D12_VIDEO_ENCODER_AV1_FEATURE_FLAGS
 
     /// <include file='D3D12_VIDEO_ENCODER_AV1_FEATURE_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_AV1_FEATURE_FLAGS.D3D12_VIDEO_ENCODER_AV1_FEATURE_FLAG_DELTA_LF_PARAMS"]/*' />
     D3D12_VIDEO_ENCODER_AV1_FEATURE_FLAG_DELTA_LF_PARAMS = 0x2000000,
+
+    /// <include file='D3D12_VIDEO_ENCODER_AV1_FEATURE_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_AV1_FEATURE_FLAGS.D3D12_VIDEO_ENCODER_AV1_FEATURE_FLAG_DISABLE_CDF_UPDATE_UNSUPPORTED"]/*' />
+    D3D12_VIDEO_ENCODER_AV1_FEATURE_FLAG_DISABLE_CDF_UPDATE_UNSUPPORTED = 0x4000000,
 }

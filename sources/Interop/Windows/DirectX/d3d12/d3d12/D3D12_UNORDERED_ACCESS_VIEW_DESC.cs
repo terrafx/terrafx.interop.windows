@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.618.5
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.619.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Diagnostics.CodeAnalysis;
@@ -19,7 +19,7 @@ public partial struct D3D12_UNORDERED_ACCESS_VIEW_DESC
     public D3D12_UAV_DIMENSION ViewDimension;
 
     /// <include file='D3D12_UNORDERED_ACCESS_VIEW_DESC.xml' path='doc/member[@name="D3D12_UNORDERED_ACCESS_VIEW_DESC.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12_L3857_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L4079_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Buffer"]/*' />
@@ -110,6 +110,17 @@ public partial struct D3D12_UNORDERED_ACCESS_VIEW_DESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BufferByteOffset"]/*' />
+    [UnscopedRef]
+    public ref D3D12_BUFFER_UAV_BYTE_OFFSET BufferByteOffset
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.BufferByteOffset;
+        }
+    }
+
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
@@ -145,5 +156,9 @@ public partial struct D3D12_UNORDERED_ACCESS_VIEW_DESC
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Texture3D"]/*' />
         [FieldOffset(0)]
         public D3D12_TEX3D_UAV Texture3D;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.BufferByteOffset"]/*' />
+        [FieldOffset(0)]
+        public D3D12_BUFFER_UAV_BYTE_OFFSET BufferByteOffset;
     }
 }

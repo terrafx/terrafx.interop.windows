@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -258,6 +258,9 @@ public static partial class SE
 
     [NativeTypeName("#define SE_APP_SILO_PRINT_CAPABILITY L\"isolatedWin32-print\"")]
     public const string SE_APP_SILO_PRINT_CAPABILITY = "isolatedWin32-print";
+
+    [NativeTypeName("#define SE_APP_SILO_SCANNER_CAPABILITY L\"isolatedWin32-scanner\"")]
+    public const string SE_APP_SILO_SCANNER_CAPABILITY = "isolatedWin32-scanner";
 
     [NativeTypeName("#define SE_SIGNING_LEVEL_UNCHECKED 0x00000000")]
     public const int SE_SIGNING_LEVEL_UNCHECKED = 0x00000000;

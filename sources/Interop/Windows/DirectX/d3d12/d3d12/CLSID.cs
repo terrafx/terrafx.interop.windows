@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.618.5
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.619.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -181,6 +181,56 @@ public static partial class CLSID
                 0x60,
                 0x6A,
                 0x73
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_D3D12RuntimeValidationControl
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x74, 0x3E, 0xB5, 0xE5,
+                0xCA, 0x3F,
+                0xB4, 0x47,
+                0x88,
+                0xB9,
+                0xA8,
+                0xB4,
+                0x1E,
+                0xF8,
+                0xFB,
+                0x73
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_D3D12ApplicationIdentity
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xE8, 0xE1, 0xD8, 0x08,
+                0xA6, 0x75,
+                0xA7, 0x42,
+                0xBF,
+                0x3A,
+                0xD0,
+                0x5F,
+                0xE5,
+                0x29,
+                0xC4,
+                0x7C
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

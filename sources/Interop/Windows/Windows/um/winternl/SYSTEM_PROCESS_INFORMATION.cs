@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winternl.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/winternl.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -32,9 +32,8 @@ public unsafe partial struct SYSTEM_PROCESS_INFORMATION
     /// <include file='SYSTEM_PROCESS_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESS_INFORMATION.UniqueProcessId"]/*' />
     public HANDLE UniqueProcessId;
 
-    /// <include file='SYSTEM_PROCESS_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESS_INFORMATION.Reserved2"]/*' />
-    [NativeTypeName("PVOID")]
-    public void* Reserved2;
+    /// <include file='SYSTEM_PROCESS_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESS_INFORMATION.InheritedFromUniqueProcessId"]/*' />
+    public HANDLE InheritedFromUniqueProcessId;
 
     /// <include file='SYSTEM_PROCESS_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESS_INFORMATION.HandleCount"]/*' />
     [NativeTypeName("ULONG")]

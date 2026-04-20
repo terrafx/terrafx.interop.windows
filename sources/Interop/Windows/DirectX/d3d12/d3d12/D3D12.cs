@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.618.5
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.619.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -51,6 +51,9 @@ public static partial class D3D12
 
     [NativeTypeName("#define D3D12_ARRAY_AXIS_ADDRESS_RANGE_BIT_COUNT ( 9 )")]
     public const int D3D12_ARRAY_AXIS_ADDRESS_RANGE_BIT_COUNT = (9);
+
+    [NativeTypeName("#define D3D12_AS_TGSM_BYTES_MINIMUM_SUPPORT ( 32768 )")]
+    public const int D3D12_AS_TGSM_BYTES_MINIMUM_SUPPORT = (32768);
 
     [NativeTypeName("#define D3D12_CLIP_OR_CULL_DISTANCE_COUNT ( 8 )")]
     public const int D3D12_CLIP_OR_CULL_DISTANCE_COUNT = (8);
@@ -282,6 +285,9 @@ public static partial class D3D12
 
     [NativeTypeName("#define D3D12_CS_DISPATCH_MAX_THREAD_GROUPS_PER_DIMENSION ( 65535 )")]
     public const int D3D12_CS_DISPATCH_MAX_THREAD_GROUPS_PER_DIMENSION = (65535);
+
+    [NativeTypeName("#define D3D12_CS_TGSM_BYTES_MINIMUM_SUPPORT ( 32768 )")]
+    public const int D3D12_CS_TGSM_BYTES_MINIMUM_SUPPORT = (32768);
 
     [NativeTypeName("#define D3D12_CS_TGSM_REGISTER_COUNT ( 8192 )")]
     public const int D3D12_CS_TGSM_REGISTER_COUNT = (8192);
@@ -613,6 +619,15 @@ public static partial class D3D12
     [NativeTypeName("#define D3D12_GS_OUTPUT_REGISTER_COUNT ( 32 )")]
     public const int D3D12_GS_OUTPUT_REGISTER_COUNT = (32);
 
+    [NativeTypeName("#define D3D12_GUID_TEXTURE_LAYOUT_ROW_MAJOR_HEIGHT_ALIGNMENT ( 4 )")]
+    public const int D3D12_GUID_TEXTURE_LAYOUT_ROW_MAJOR_HEIGHT_ALIGNMENT = (4);
+
+    [NativeTypeName("#define D3D12_GUID_TEXTURE_LAYOUT_ROW_MAJOR_PITCH_ALIGNMENT ( 256 )")]
+    public const int D3D12_GUID_TEXTURE_LAYOUT_ROW_MAJOR_PITCH_ALIGNMENT = (256);
+
+    [NativeTypeName("#define D3D12_GUID_TEXTURE_LAYOUT_ROW_MAJOR_PLANE_ALIGNMENT ( 4096 )")]
+    public const int D3D12_GUID_TEXTURE_LAYOUT_ROW_MAJOR_PLANE_ALIGNMENT = (4096);
+
     [NativeTypeName("#define D3D12_HS_CONTROL_POINT_PHASE_INPUT_REGISTER_COUNT ( 32 )")]
     public const int D3D12_HS_CONTROL_POINT_PHASE_INPUT_REGISTER_COUNT = (32);
 
@@ -841,6 +856,9 @@ public static partial class D3D12
     [NativeTypeName("#define D3D12_MS_DISPATCH_MAX_THREAD_GROUPS_PER_GRID ( 4194303 )")]
     public const int D3D12_MS_DISPATCH_MAX_THREAD_GROUPS_PER_GRID = (4194303);
 
+    [NativeTypeName("#define D3D12_MS_TGSM_BYTES_MINIMUM_SUPPORT ( 28672 )")]
+    public const int D3D12_MS_TGSM_BYTES_MINIMUM_SUPPORT = (28672);
+
     [NativeTypeName("#define D3D12_MULTISAMPLE_ANTIALIAS_LINE_WIDTH ( 1.4f )")]
     public const float D3D12_MULTISAMPLE_ANTIALIAS_LINE_WIDTH = (1.4f);
 
@@ -859,8 +877,8 @@ public static partial class D3D12
     [NativeTypeName("#define D3D12_PIXEL_ADDRESS_RANGE_BIT_COUNT ( 15 )")]
     public const int D3D12_PIXEL_ADDRESS_RANGE_BIT_COUNT = (15);
 
-    [NativeTypeName("#define D3D12_PREVIEW_SDK_VERSION ( 717 )")]
-    public const int D3D12_PREVIEW_SDK_VERSION = (717);
+    [NativeTypeName("#define D3D12_PREVIEW_SDK_VERSION ( 719 )")]
+    public const int D3D12_PREVIEW_SDK_VERSION = (719);
 
     [NativeTypeName("#define D3D12_PRE_SCISSOR_PIXEL_ADDRESS_RANGE_BIT_COUNT ( 16 )")]
     public const int D3D12_PRE_SCISSOR_PIXEL_ADDRESS_RANGE_BIT_COUNT = (16);
@@ -1069,8 +1087,8 @@ public static partial class D3D12
     [NativeTypeName("#define D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT ( 2 )")]
     public const int D3D12_RS_SET_SHADING_RATE_COMBINER_COUNT = (2);
 
-    [NativeTypeName("#define D3D12_SDK_VERSION ( 618 )")]
-    public const int D3D12_SDK_VERSION = (618);
+    [NativeTypeName("#define D3D12_SDK_VERSION ( 619 )")]
+    public const int D3D12_SDK_VERSION = (619);
 
     [NativeTypeName("#define D3D12_SHADER_IDENTIFIER_SIZE_IN_BYTES ( 32 )")]
     public const int D3D12_SHADER_IDENTIFIER_SIZE_IN_BYTES = (32);

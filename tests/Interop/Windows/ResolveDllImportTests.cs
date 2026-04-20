@@ -235,6 +235,22 @@ public static unsafe partial class ResolveDllImportTests
                     break;
                 }
 
+                case "GetRuntimeAttestationReport":
+                case "ConvertPrimaryPointerToMouseDrag":
+                {
+                    if (!OperatingSystem.IsWindowsVersionAtLeast(10, 0, 28000, 0))
+                    {
+                        // This isn't good practice, but current CI runs Windows Server and these APIs aren't available
+                        // due to only being in a newer version of Windows.
+                        Assert.Warn($"Warn: {exception.Message}");
+                    }
+                    else
+                    {
+                        goto default;
+                    }
+                    break;
+                }
+
                 case "D3D12CompilerCreateFactory":
                 case "D3D12CompilerSerializeVersionedRootSignature":
                 case "D3D12CreateVersionedRootSignatureDeserializerFromSubobjectInLibrary":

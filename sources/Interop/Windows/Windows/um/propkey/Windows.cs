@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/propkey.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/propkey.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -342,6 +342,15 @@ public static partial class Windows
 
     [NativeTypeName("#define STORAGEPROVIDERCUSTOM_ICON_PHONE 0ul")]
     public const uint STORAGEPROVIDERCUSTOM_ICON_PHONE = 0U;
+
+    [NativeTypeName("#define STORAGEPROVIDERUSERACCOUNTKIND_UNKNOWN 0ul")]
+    public const uint STORAGEPROVIDERUSERACCOUNTKIND_UNKNOWN = 0U;
+
+    [NativeTypeName("#define STORAGEPROVIDERUSERACCOUNTKIND_CONSUMER 1ul")]
+    public const uint STORAGEPROVIDERUSERACCOUNTKIND_CONSUMER = 1U;
+
+    [NativeTypeName("#define STORAGEPROVIDERUSERACCOUNTKIND_BUSINESS 2ul")]
+    public const uint STORAGEPROVIDERUSERACCOUNTKIND_BUSINESS = 2U;
 
     [NativeTypeName("#define BLUETOOTH_ADDRESS_TYPE_PUBLIC 0")]
     public const int BLUETOOTH_ADDRESS_TYPE_PUBLIC = 0;

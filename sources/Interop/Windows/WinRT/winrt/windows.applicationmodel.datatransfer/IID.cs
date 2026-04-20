@@ -1,16 +1,17 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.applicationmodel.datatransfer.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from winrt/windows.applicationmodel.datatransfer.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using TerraFX.Interop.WinRT;
 
 namespace TerraFX.Interop.Windows;
 
-public static partial class IID
+public static unsafe partial class IID
 {
     public static ref readonly Guid IID_IDataProviderHandler
     {
@@ -1205,6 +1206,198 @@ public static partial class IID
                 0xB8,
                 0x6C,
                 0x1D
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ITransferTarget
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xE5, 0x04, 0x7E, 0x89,
+                0xC2, 0x60,
+                0xAE, 0x5E,
+                0x90,
+                0x9F,
+                0xE6,
+                0x25,
+                0x7E,
+                0x32,
+                0xC6,
+                0x44
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ITransferTargetChangedEventArgs
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x98, 0xD1, 0x13, 0xD5,
+                0x74, 0x41,
+                0xCF, 0x53,
+                0xA0,
+                0x6E,
+                0x4C,
+                0xD2,
+                0x63,
+                0xD0,
+                0xDF,
+                0xEF
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ITransferTargetDiscoveryOptions
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xB5, 0xE3, 0x2F, 0x71,
+                0x4F, 0x64,
+                0x6B, 0x5F,
+                0x97,
+                0xB6,
+                0x3A,
+                0x34,
+                0x00,
+                0x99,
+                0x9E,
+                0xD7
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ITransferTargetDiscoveryOptionsFactory
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xFC, 0x7F, 0x4B, 0xEC,
+                0xC6, 0xCB,
+                0x12, 0x5E,
+                0x8E,
+                0x9B,
+                0xD5,
+                0xE8,
+                0x92,
+                0xF2,
+                0xC6,
+                0xF8
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ITransferTargetInvokeResult
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xA6, 0x20, 0xF2, 0x15,
+                0xFE, 0xCF,
+                0xF5, 0x56,
+                0xB4,
+                0x03,
+                0xED,
+                0x44,
+                0xE9,
+                0xC3,
+                0xAD,
+                0x38
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ITransferTargetStatics
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x04, 0x88, 0x5B, 0x81,
+                0xF1, 0xE7,
+                0x37, 0x5F,
+                0xB5,
+                0x2F,
+                0xBE,
+                0x1C,
+                0xEB,
+                0xA9,
+                0xA5,
+                0x9E
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ITransferTargetWatcher
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x29, 0xCA, 0x85, 0x2F,
+                0x00, 0x01,
+                0x09, 0x5D,
+                0x90,
+                0x7C,
+                0xFE,
+                0x55,
+                0x4D,
+                0x2F,
+                0xCD,
+                0x1A
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ITransferTargetWatcherStatics
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x28, 0x35, 0x4B, 0xA2,
+                0x4E, 0xDB,
+                0xDD, 0x5B,
+                0x9D,
+                0x30,
+                0xDC,
+                0xB1,
+                0x92,
+                0xC7,
+                0x01,
+                0xF5
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

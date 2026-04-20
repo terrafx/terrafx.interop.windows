@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -37,7 +37,7 @@ public partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD
     public uint OperationError;
 
     /// <include file='DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.xml' path='doc/member[@name="DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD.StackSpecific"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L6607_C9")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L6619_C9")]
     public _StackSpecific_e__Union StackSpecific;
 
     /// <include file='_StackSpecific_e__Union.xml' path='doc/member[@name="_StackSpecific_e__Union"]/*' />
@@ -46,17 +46,17 @@ public partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD
     {
         /// <include file='_StackSpecific_e__Union.xml' path='doc/member[@name="_StackSpecific_e__Union.ExternalStack"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L6608_C10")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L6620_C10")]
         public _ExternalStack_e__Struct ExternalStack;
 
         /// <include file='_StackSpecific_e__Union.xml' path='doc/member[@name="_StackSpecific_e__Union.AtaPort"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L6612_C10")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L6624_C10")]
         public _AtaPort_e__Struct AtaPort;
 
         /// <include file='_StackSpecific_e__Union.xml' path='doc/member[@name="_StackSpecific_e__Union.StorPort"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L6616_C10")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L6628_C10")]
         public _StorPort_e__Struct StorPort;
 
         /// <include file='_ExternalStack_e__Struct.xml' path='doc/member[@name="_ExternalStack_e__Struct"]/*' />

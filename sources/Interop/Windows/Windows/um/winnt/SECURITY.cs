@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using static TerraFX.Interop.Windows.SECURITY_IMPERSONATION_LEVEL;
@@ -240,6 +240,9 @@ public static unsafe partial class SECURITY
     [NativeTypeName("#define SECURITY_RESTRICTED_SERVICES_RID_COUNT (6L)")]
     public const int SECURITY_RESTRICTED_SERVICES_RID_COUNT = (6);
 
+    [NativeTypeName("#define SECURITY_SHADOWADMINACCOUNT_RID (0x00000064L)")]
+    public const int SECURITY_SHADOWADMINACCOUNT_RID = (0x00000064);
+
     [NativeTypeName("#define SECURITY_MAX_BASE_RID (0x0000006FL)")]
     public const int SECURITY_MAX_BASE_RID = (0x0000006F);
 
@@ -365,6 +368,9 @@ public static unsafe partial class SECURITY
 
     [NativeTypeName("#define SECURITY_MANDATORY_PROTECTED_PROCESS_RID (0x00005000L)")]
     public const int SECURITY_MANDATORY_PROTECTED_PROCESS_RID = (0x00005000);
+
+    [NativeTypeName("#define SECURITY_MANDATORY_MEDIUM_PLUS_CREDUI_RID (SECURITY_MANDATORY_MEDIUM_RID + 0xA)")]
+    public const int SECURITY_MANDATORY_MEDIUM_PLUS_CREDUI_RID = ((0x00002000) + 0xA);
 
     [NativeTypeName("#define SECURITY_MANDATORY_MAXIMUM_USER_RID SECURITY_MANDATORY_SYSTEM_RID")]
     public const int SECURITY_MANDATORY_MAXIMUM_USER_RID = (0x00004000);

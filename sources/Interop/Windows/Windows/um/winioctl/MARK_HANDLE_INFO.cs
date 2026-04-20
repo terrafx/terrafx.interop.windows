@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Diagnostics.CodeAnalysis;
@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct MARK_HANDLE_INFO
 {
     /// <include file='MARK_HANDLE_INFO.xml' path='doc/member[@name="MARK_HANDLE_INFO.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L12230_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L12316_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='MARK_HANDLE_INFO.xml' path='doc/member[@name="MARK_HANDLE_INFO.VolumeHandle"]/*' />

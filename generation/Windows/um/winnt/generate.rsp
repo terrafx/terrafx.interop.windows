@@ -1,10 +1,16 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+AddNoFence
+AddNoFence16
+AddNoFence64
 AddRaw
 AddRaw64
+AddULong64NoFence
 AddULong64Raw
+AddULongNoFence
 AddULongRaw
+AddUShortNoFence
 ARM64_MAX_BREAKPOINTS
 ARM64_MAX_WATCHPOINTS
 ARRAYSIZE
@@ -98,7 +104,9 @@ IMAGE_SNAP_BY_ORDINAL64
 INCREF
 IncrementRaw
 IncrementRaw64
+IncrementULong64NoFence
 IncrementULong64Raw
+IncrementULongNoFence
 IncrementULongRaw
 INITIAL_MXCSR
 INITIAL_FPCSR
@@ -275,6 +283,7 @@ RtlFlushNonVolatileMemory
 RtlFlushNonVolatileMemoryRanges
 RtlFreeNonVolatileToken
 RtlGetDeviceFamilyInfoEnum
+RtlGetImageFileMachines
 RtlGetNonVolatileToken
 RtlGetProductInfo
 RtlGetReturnAddressHijackTarget
@@ -311,6 +320,7 @@ RtlUnwind2
 RtlUnwindEx
 RtlValidateCorrelationVector
 RtlVirtualUnwind
+RtlVirtualUnwind2
 RtlWriteNonVolatileMemory
 RtlZeroDeviceMemory
 RtlZeroMemory
@@ -597,7 +607,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/winnt
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/winnt.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.28000.0/um/winnt.h
 --with-attribute
 ACCESS_REASON_TYPE=Flags
 CLAIM_SECURITY_ATTRIBUTES_INFORMATION=SupportedOSPlatform("windows6.2")

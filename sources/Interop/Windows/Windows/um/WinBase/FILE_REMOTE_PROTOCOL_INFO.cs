@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -38,11 +38,11 @@ public partial struct FILE_REMOTE_PROTOCOL_INFO
     public uint Flags;
 
     /// <include file='FILE_REMOTE_PROTOCOL_INFO.xml' path='doc/member[@name="FILE_REMOTE_PROTOCOL_INFO.GenericReserved"]/*' />
-    [NativeTypeName("__AnonymousRecord_winbase_L9342_C5")]
+    [NativeTypeName("__AnonymousRecord_winbase_L9373_C5")]
     public _GenericReserved_e__Struct GenericReserved;
 
     /// <include file='FILE_REMOTE_PROTOCOL_INFO.xml' path='doc/member[@name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific"]/*' />
-    [NativeTypeName("__AnonymousRecord_winbase_L9355_C5")]
+    [NativeTypeName("__AnonymousRecord_winbase_L9386_C5")]
     public _ProtocolSpecific_e__Union ProtocolSpecific;
 
     /// <include file='_GenericReserved_e__Struct.xml' path='doc/member[@name="_GenericReserved_e__Struct"]/*' />
@@ -66,7 +66,7 @@ public partial struct FILE_REMOTE_PROTOCOL_INFO
     {
         /// <include file='_ProtocolSpecific_e__Union.xml' path='doc/member[@name="_ProtocolSpecific_e__Union.Smb2"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winbase_L9357_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L9388_C9")]
         public _Smb2_e__Struct Smb2;
 
         /// <include file='_ProtocolSpecific_e__Union.xml' path='doc/member[@name="_ProtocolSpecific_e__Union.Reserved"]/*' />
@@ -78,11 +78,11 @@ public partial struct FILE_REMOTE_PROTOCOL_INFO
         public partial struct _Smb2_e__Struct
         {
             /// <include file='_Smb2_e__Struct.xml' path='doc/member[@name="_Smb2_e__Struct.Server"]/*' />
-            [NativeTypeName("__AnonymousRecord_winbase_L9359_C13")]
+            [NativeTypeName("__AnonymousRecord_winbase_L9390_C13")]
             public _Server_e__Struct Server;
 
             /// <include file='_Smb2_e__Struct.xml' path='doc/member[@name="_Smb2_e__Struct.Share"]/*' />
-            [NativeTypeName("__AnonymousRecord_winbase_L9363_C13")]
+            [NativeTypeName("__AnonymousRecord_winbase_L9394_C13")]
             public _Share_e__Struct Share;
 
             /// <include file='_Server_e__Struct.xml' path='doc/member[@name="_Server_e__Struct"]/*' />

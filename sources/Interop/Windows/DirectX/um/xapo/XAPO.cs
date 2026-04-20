@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/xapo.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/xapo.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using TerraFX.Interop.Windows;
@@ -21,8 +21,8 @@ public static partial class XAPO
     [NativeTypeName("#define XAPO_MIN_FRAMERATE 1000")]
     public const int XAPO_MIN_FRAMERATE = 1000;
 
-    [NativeTypeName("#define XAPO_MAX_FRAMERATE 200000")]
-    public const int XAPO_MAX_FRAMERATE = 200000;
+    [NativeTypeName("#define XAPO_MAX_FRAMERATE 384000")]
+    public const int XAPO_MAX_FRAMERATE = 384000;
 
     [NativeTypeName("#define XAPO_REGISTRATION_STRING_LENGTH 256")]
     public const int XAPO_REGISTRATION_STRING_LENGTH = 256;

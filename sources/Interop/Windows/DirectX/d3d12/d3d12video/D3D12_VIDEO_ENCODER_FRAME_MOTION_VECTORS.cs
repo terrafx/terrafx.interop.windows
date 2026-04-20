@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.618.5
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.619.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Diagnostics.CodeAnalysis;
@@ -16,7 +16,7 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_FRAME_MOTION_VECTORS
     public D3D12_VIDEO_ENCODER_INPUT_MAP_SOURCE MapSource;
 
     /// <include file='D3D12_VIDEO_ENCODER_FRAME_MOTION_VECTORS.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_FRAME_MOTION_VECTORS.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12video_L10111_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12video_L10119_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pOpaqueLayoutBuffer"]/*' />

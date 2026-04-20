@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.applicationmodel.datatransfer.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from winrt/windows.applicationmodel.datatransfer.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.WinRT;
@@ -151,6 +151,30 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[72]")]
     public const string InterfaceName_Windows_ApplicationModel_DataTransfer_ITargetApplicationChosenEventArgs = "Windows.ApplicationModel.DataTransfer.ITargetApplicationChosenEventArgs";
 
+    [NativeTypeName("const WCHAR[54]")]
+    public const string InterfaceName_Windows_ApplicationModel_DataTransfer_ITransferTarget = "Windows.ApplicationModel.DataTransfer.ITransferTarget";
+
+    [NativeTypeName("const WCHAR[70]")]
+    public const string InterfaceName_Windows_ApplicationModel_DataTransfer_ITransferTargetChangedEventArgs = "Windows.ApplicationModel.DataTransfer.ITransferTargetChangedEventArgs";
+
+    [NativeTypeName("const WCHAR[70]")]
+    public const string InterfaceName_Windows_ApplicationModel_DataTransfer_ITransferTargetDiscoveryOptions = "Windows.ApplicationModel.DataTransfer.ITransferTargetDiscoveryOptions";
+
+    [NativeTypeName("const WCHAR[77]")]
+    public const string InterfaceName_Windows_ApplicationModel_DataTransfer_ITransferTargetDiscoveryOptionsFactory = "Windows.ApplicationModel.DataTransfer.ITransferTargetDiscoveryOptionsFactory";
+
+    [NativeTypeName("const WCHAR[66]")]
+    public const string InterfaceName_Windows_ApplicationModel_DataTransfer_ITransferTargetInvokeResult = "Windows.ApplicationModel.DataTransfer.ITransferTargetInvokeResult";
+
+    [NativeTypeName("const WCHAR[61]")]
+    public const string InterfaceName_Windows_ApplicationModel_DataTransfer_ITransferTargetStatics = "Windows.ApplicationModel.DataTransfer.ITransferTargetStatics";
+
+    [NativeTypeName("const WCHAR[61]")]
+    public const string InterfaceName_Windows_ApplicationModel_DataTransfer_ITransferTargetWatcher = "Windows.ApplicationModel.DataTransfer.ITransferTargetWatcher";
+
+    [NativeTypeName("const WCHAR[68]")]
+    public const string InterfaceName_Windows_ApplicationModel_DataTransfer_ITransferTargetWatcherStatics = "Windows.ApplicationModel.DataTransfer.ITransferTargetWatcherStatics";
+
     [NativeTypeName("const WCHAR[48]")]
     public const string RuntimeClass_Windows_ApplicationModel_DataTransfer_Clipboard = "Windows.ApplicationModel.DataTransfer.Clipboard";
 
@@ -228,4 +252,19 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[71]")]
     public const string RuntimeClass_Windows_ApplicationModel_DataTransfer_TargetApplicationChosenEventArgs = "Windows.ApplicationModel.DataTransfer.TargetApplicationChosenEventArgs";
+
+    [NativeTypeName("const WCHAR[53]")]
+    public const string RuntimeClass_Windows_ApplicationModel_DataTransfer_TransferTarget = "Windows.ApplicationModel.DataTransfer.TransferTarget";
+
+    [NativeTypeName("const WCHAR[69]")]
+    public const string RuntimeClass_Windows_ApplicationModel_DataTransfer_TransferTargetChangedEventArgs = "Windows.ApplicationModel.DataTransfer.TransferTargetChangedEventArgs";
+
+    [NativeTypeName("const WCHAR[69]")]
+    public const string RuntimeClass_Windows_ApplicationModel_DataTransfer_TransferTargetDiscoveryOptions = "Windows.ApplicationModel.DataTransfer.TransferTargetDiscoveryOptions";
+
+    [NativeTypeName("const WCHAR[65]")]
+    public const string RuntimeClass_Windows_ApplicationModel_DataTransfer_TransferTargetInvokeResult = "Windows.ApplicationModel.DataTransfer.TransferTargetInvokeResult";
+
+    [NativeTypeName("const WCHAR[60]")]
+    public const string RuntimeClass_Windows_ApplicationModel_DataTransfer_TransferTargetWatcher = "Windows.ApplicationModel.DataTransfer.TransferTargetWatcher";
 }

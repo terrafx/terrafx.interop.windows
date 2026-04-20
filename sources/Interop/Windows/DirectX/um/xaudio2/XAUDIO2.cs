@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/xaudio2.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/xaudio2.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -35,8 +35,8 @@ public static partial class XAUDIO2
     [NativeTypeName("#define XAUDIO2_MIN_SAMPLE_RATE 1000")]
     public const int XAUDIO2_MIN_SAMPLE_RATE = 1000;
 
-    [NativeTypeName("#define XAUDIO2_MAX_SAMPLE_RATE 200000")]
-    public const int XAUDIO2_MAX_SAMPLE_RATE = 200000;
+    [NativeTypeName("#define XAUDIO2_MAX_SAMPLE_RATE 384000")]
+    public const int XAUDIO2_MAX_SAMPLE_RATE = 384000;
 
     [NativeTypeName("#define XAUDIO2_MAX_VOLUME_LEVEL 16777216.0f")]
     public const float XAUDIO2_MAX_VOLUME_LEVEL = 16777216.0f;

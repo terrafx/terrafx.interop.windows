@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -3461,6 +3461,30 @@ public static partial class IID
                 0xFB,
                 0x3F,
                 0x1B
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_DestinationListBoth
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xF4, 0x0C, 0xFE, 0x38,
+                0x59, 0x6A,
+                0x29, 0x47,
+                0x8E,
+                0x4A,
+                0x2D,
+                0x58,
+                0x00,
+                0x59,
+                0xED,
+                0xE4
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

@@ -919,6 +919,11 @@
     <File Path="generation/Windows/um/AclAPI/header.txt" />
     <File Path="generation/Windows/um/AclAPI/um-aclapi.h" />
   </Folder>
+  <Folder Name="/generation/Windows/um/ahadmin/">
+    <File Path="generation/Windows/um/ahadmin/generate.rsp" />
+    <File Path="generation/Windows/um/ahadmin/header.txt" />
+    <File Path="generation/Windows/um/ahadmin/um-ahadmin.h" />
+  </Folder>
   <Folder Name="/generation/Windows/um/amvideo/">
     <File Path="generation/Windows/um/amvideo/generate.rsp" />
     <File Path="generation/Windows/um/amvideo/header.txt" />

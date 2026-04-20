@@ -1,12 +1,12 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ShlDisp.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/ShlDisp.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Interop.Windows.IID;
+using static TerraFX.Interop.Windows.CLSID;
 
 namespace TerraFX.Interop.Windows.UnitTests;
 
@@ -17,6 +17,6 @@ public static unsafe partial class ShellFolderItemTests
     [Test]
     public static void GuidOfTest()
     {
-        Assert.That(typeof(ShellFolderItem).GUID, Is.EqualTo(IID_ShellFolderItem));
+        Assert.That(typeof(ShellFolderItem).GUID, Is.EqualTo(CLSID_ShellFolderItem));
     }
 }

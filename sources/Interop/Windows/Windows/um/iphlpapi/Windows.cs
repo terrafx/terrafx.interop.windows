@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/iphlpapi.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/iphlpapi.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -266,11 +266,6 @@ public static unsafe partial class Windows
     [DllImport("iphlpapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
     public static extern uint GetBestInterface([NativeTypeName("IPAddr")] uint dwDestAddr, [NativeTypeName("PDWORD")] uint* pdwBestIfIndex);
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetBestInterfaceEx"]/*' />
-    [DllImport("iphlpapi", ExactSpelling = true)]
-    [return: NativeTypeName("DWORD")]
-    public static extern uint GetBestInterfaceEx([NativeTypeName("struct sockaddr *")] SOCKADDR* pDestAddr, [NativeTypeName("PDWORD")] uint* pdwBestIfIndex);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetBestRoute"]/*' />
     [DllImport("iphlpapi", ExactSpelling = true)]

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.618.5
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.619.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -43,4 +43,7 @@ public enum D3D12_SRV_DIMENSION
 
     /// <include file='D3D12_SRV_DIMENSION.xml' path='doc/member[@name="D3D12_SRV_DIMENSION.D3D12_SRV_DIMENSION_RAYTRACING_ACCELERATION_STRUCTURE"]/*' />
     D3D12_SRV_DIMENSION_RAYTRACING_ACCELERATION_STRUCTURE = 11,
+
+    /// <include file='D3D12_SRV_DIMENSION.xml' path='doc/member[@name="D3D12_SRV_DIMENSION.D3D12_SRV_DIMENSION_BUFFER_BYTE_OFFSET"]/*' />
+    D3D12_SRV_DIMENSION_BUFFER_BYTE_OFFSET = 12,
 }

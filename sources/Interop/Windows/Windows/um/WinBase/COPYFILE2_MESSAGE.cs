@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -20,7 +20,7 @@ public partial struct COPYFILE2_MESSAGE
     public uint dwPadding;
 
     /// <include file='COPYFILE2_MESSAGE.xml' path='doc/member[@name="COPYFILE2_MESSAGE.Info"]/*' />
-    [NativeTypeName("__AnonymousRecord_winbase_L5853_C5")]
+    [NativeTypeName("__AnonymousRecord_winbase_L5878_C5")]
     public _Info_e__Union Info;
 
     /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union"]/*' />
@@ -29,33 +29,38 @@ public partial struct COPYFILE2_MESSAGE
     {
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.ChunkStarted"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winbase_L5855_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L5880_C9")]
         public _ChunkStarted_e__Struct ChunkStarted;
 
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.ChunkFinished"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winbase_L5866_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L5891_C9")]
         public _ChunkFinished_e__Struct ChunkFinished;
 
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.StreamStarted"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winbase_L5879_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L5904_C9")]
         public _StreamStarted_e__Struct StreamStarted;
 
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.StreamFinished"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winbase_L5888_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L5913_C9")]
         public _StreamFinished_e__Struct StreamFinished;
 
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.PollContinue"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winbase_L5899_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L5924_C9")]
         public _PollContinue_e__Struct PollContinue;
 
         /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.Error"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winbase_L5903_C9")]
+        [NativeTypeName("__AnonymousRecord_winbase_L5928_C9")]
         public _Error_e__Struct Error;
+
+        /// <include file='_Info_e__Union.xml' path='doc/member[@name="_Info_e__Union.SparseChunkStatus"]/*' />
+        [FieldOffset(0)]
+        [NativeTypeName("__AnonymousRecord_winbase_L5940_C9")]
+        public _SparseChunkStatus_e__Struct SparseChunkStatus;
 
         /// <include file='_ChunkStarted_e__Struct.xml' path='doc/member[@name="_ChunkStarted_e__Struct"]/*' />
         public partial struct _ChunkStarted_e__Struct
@@ -216,6 +221,19 @@ public partial struct COPYFILE2_MESSAGE
 
             /// <include file='_Error_e__Struct.xml' path='doc/member[@name="_Error_e__Struct.uliTotalBytesTransferred"]/*' />
             public ULARGE_INTEGER uliTotalBytesTransferred;
+        }
+
+        /// <include file='_SparseChunkStatus_e__Struct.xml' path='doc/member[@name="_SparseChunkStatus_e__Struct"]/*' />
+        public partial struct _SparseChunkStatus_e__Struct
+        {
+            /// <include file='_SparseChunkStatus_e__Struct.xml' path='doc/member[@name="_SparseChunkStatus_e__Struct.uliChunkNumber"]/*' />
+            public ULARGE_INTEGER uliChunkNumber;
+
+            /// <include file='_SparseChunkStatus_e__Struct.xml' path='doc/member[@name="_SparseChunkStatus_e__Struct.uliChunkSize"]/*' />
+            public ULARGE_INTEGER uliChunkSize;
+
+            /// <include file='_SparseChunkStatus_e__Struct.xml' path='doc/member[@name="_SparseChunkStatus_e__Struct.uliChunkOffset"]/*' />
+            public ULARGE_INTEGER uliChunkOffset;
         }
     }
 }

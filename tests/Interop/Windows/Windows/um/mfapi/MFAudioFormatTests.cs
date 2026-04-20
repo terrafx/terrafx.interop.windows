@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfapi.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/mfapi.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -269,6 +269,13 @@ public static partial class MFAudioFormatTests
     public static void MFAudioFormat_DTS_UHDYTest()
     {
         Assert.That(MFAudioFormat_DTS_UHDY, Is.EqualTo(new Guid(0x9B9CCA00, 0x91B9, 0x4CCC, 0x88, 0x3A, 0x8F, 0x78, 0x7A, 0xC3, 0xCC, 0x86)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MFAudioFormat_IAMF" /> property is correct.</summary>
+    [Test]
+    public static void MFAudioFormat_IAMFTest()
+    {
+        Assert.That(MFAudioFormat_IAMF, Is.EqualTo(new Guid(0x78a8eba0, 0xf446, 0x4851, 0xa5, 0x5d, 0x53, 0x72, 0x28, 0x0e, 0x6b, 0x0b)));
     }
 
     /// <summary>Validates that the value of the <see cref="MFAudioFormat_Float_SpatialObjects" /> property is correct.</summary>

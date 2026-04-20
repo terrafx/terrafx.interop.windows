@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/sysinfoapi.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/sysinfoapi.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -241,6 +241,10 @@ public static unsafe partial class Windows
     [DllImport("kernelbase", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.22631.0")]
     public static extern DEVELOPER_DRIVE_ENABLEMENT_STATE GetDeveloperDriveEnablementState();
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetRuntimeAttestationReport"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    public static extern BOOL GetRuntimeAttestationReport([NativeTypeName("UCHAR *")] byte* Nonce, [NativeTypeName("UINT16")] ushort PackageVersion, [NativeTypeName("UINT64")] ulong ReportTypesBitmap, [NativeTypeName("PVOID")] void* ReportBuffer, [NativeTypeName("PUINT32")] uint* ReportBufferSize);
 
     [NativeTypeName("#define USER_CET_ENVIRONMENT_WIN32_PROCESS 0x00000000")]
     public const int USER_CET_ENVIRONMENT_WIN32_PROCESS = 0x00000000;

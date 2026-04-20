@@ -11,7 +11,7 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/sysinfoapi
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/sysinfoapi.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.28000.0/um/sysinfoapi.h
 --with-attribute
 GetDeveloperDriveEnablementState=SupportedOSPlatform("windows10.0.22631.0")
 GetIntegratedDisplaySize=SupportedOSPlatform("windows10.0")
@@ -34,6 +34,7 @@ GetNativeSystemInfo=kernel32
 GetPhysicallyInstalledSystemMemory=kernel32
 GetProcessorSystemCycleTime=kernel32
 GetProductInfo=kernel32
+GetRuntimeAttestationReport=kernel32
 GetSystemDirectory=kernel32
 GetSystemDirectoryA=kernel32
 GetSystemDirectoryW=kernel32

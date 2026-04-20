@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.618.5
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.619.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Diagnostics.CodeAnalysis;
@@ -16,7 +16,7 @@ public partial struct D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM1
     public D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM_NOTIFICATION_MODE NotificationMode;
 
     /// <include file='D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM1.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM1.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12video_L10217_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12video_L10225_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FrameOutputBuffer"]/*' />

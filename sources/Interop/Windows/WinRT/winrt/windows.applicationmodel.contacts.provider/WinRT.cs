@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.applicationmodel.contacts.provider.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from winrt/windows.applicationmodel.contacts.provider.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.WinRT;
@@ -12,6 +12,9 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[61]")]
     public const string InterfaceName_Windows_ApplicationModel_Contacts_Provider_IContactPickerUI2 = "Windows.ApplicationModel.Contacts.Provider.IContactPickerUI2";
+
+    [NativeTypeName("const WCHAR[60]")]
+    public const string InterfaceName_Windows_ApplicationModel_Contacts_Provider_IContactProvider = "Windows.ApplicationModel.Contacts.Provider.IContactProvider";
 
     [NativeTypeName("const WCHAR[68]")]
     public const string InterfaceName_Windows_ApplicationModel_Contacts_Provider_IContactRemovedEventArgs = "Windows.ApplicationModel.Contacts.Provider.IContactRemovedEventArgs";

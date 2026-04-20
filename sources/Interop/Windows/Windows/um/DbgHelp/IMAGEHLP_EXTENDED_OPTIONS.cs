@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -19,6 +19,9 @@ public enum IMAGEHLP_EXTENDED_OPTIONS
 
     /// <include file='IMAGEHLP_EXTENDED_OPTIONS.xml' path='doc/member[@name="IMAGEHLP_EXTENDED_OPTIONS.SYMOPT_EX_NEVERLOADSYMBOLS"]/*' />
     SYMOPT_EX_NEVERLOADSYMBOLS,
+
+    /// <include file='IMAGEHLP_EXTENDED_OPTIONS.xml' path='doc/member[@name="IMAGEHLP_EXTENDED_OPTIONS.SYMOPT_EX_DISALLOW_NETWORK_PATHS"]/*' />
+    SYMOPT_EX_DISALLOW_NETWORK_PATHS,
 
     /// <include file='IMAGEHLP_EXTENDED_OPTIONS.xml' path='doc/member[@name="IMAGEHLP_EXTENDED_OPTIONS.SYMOPT_EX_MAX"]/*' />
     SYMOPT_EX_MAX,

@@ -1,16 +1,17 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.media.core.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from winrt/windows.media.core.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using TerraFX.Interop.WinRT;
 
 namespace TerraFX.Interop.Windows;
 
-public static partial class IID
+public static unsafe partial class IID
 {
     public static ref readonly Guid IID_IAudioStreamDescriptor
     {
@@ -269,6 +270,30 @@ public static partial class IID
                 0xB0,
                 0x23,
                 0x82
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ICodecSubtypesStatics2
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x30, 0x09, 0x3B, 0x36,
+                0x26, 0xDE,
+                0x2E, 0x58,
+                0x80,
+                0x14,
+                0xF5,
+                0x46,
+                0xD0,
+                0x75,
+                0x38,
+                0x87
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

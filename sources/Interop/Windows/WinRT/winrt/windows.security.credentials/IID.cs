@@ -1,16 +1,17 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.security.credentials.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from winrt/windows.security.credentials.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using TerraFX.Interop.WinRT;
 
 namespace TerraFX.Interop.Windows;
 
-public static partial class IID
+public static unsafe partial class IID
 {
     public static ref readonly Guid IID_IAttestationChallengeHandler
     {
@@ -90,17 +91,17 @@ public static partial class IID
         get
         {
             ReadOnlySpan<byte> data = [
-                0x73, 0x32, 0x34, 0xCA,
-                0x58, 0xF5,
-                0xEF, 0x53,
-                0xB9,
-                0x43,
-                0x4A,
-                0x3E,
-                0xC8,
-                0x1A,
-                0x21,
-                0x7E
+                0x09, 0x5E, 0x7C, 0x3B,
+                0x72, 0x7B,
+                0x05, 0x5A,
+                0xB2,
+                0xF0,
+                0x71,
+                0x19,
+                0xCA,
+                0x3F,
+                0xD5,
+                0xDF
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -180,23 +181,23 @@ public static partial class IID
         }
     }
 
-    public static ref readonly Guid IID_IKeyCredentialManagerExtendedStatics
+    public static ref readonly Guid IID_IKeyCredentialManagerCreateWithWindowStatics
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
             ReadOnlySpan<byte> data = [
-                0x27, 0x2D, 0x31, 0xA5,
-                0x08, 0xB4,
-                0x11, 0x50,
-                0x9B,
-                0x36,
-                0xB0,
-                0x7A,
-                0xB0,
-                0xA6,
-                0x7A,
-                0x7E
+                0xC9, 0xB9, 0xB1, 0x30,
+                0xEF, 0x61,
+                0xE8, 0x43,
+                0x88,
+                0xAC,
+                0xCC,
+                0x43,
+                0x3B,
+                0x38,
+                0xD1,
+                0xA6
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -221,6 +222,30 @@ public static partial class IID
                 0x6A,
                 0x63,
                 0xB5
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IKeyCredentialManagerStatics2
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x5D, 0x89, 0x39, 0x64,
+                0xC5, 0x68,
+                0x1B, 0x52,
+                0x9D,
+                0xC4,
+                0x7C,
+                0x19,
+                0x97,
+                0x94,
+                0xF0,
+                0xD8
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -269,6 +294,30 @@ public static partial class IID
                 0xC9,
                 0x64,
                 0x4E
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IKeyCredentialWithWindow
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x3B, 0xEB, 0x0D, 0x05,
+                0x9C, 0xB1,
+                0x35, 0x46,
+                0x9D,
+                0xF6,
+                0x56,
+                0x50,
+                0xD6,
+                0x6C,
+                0x62,
+                0xB1
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

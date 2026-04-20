@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/dxgi.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from shared/dxgi.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -49,4 +49,7 @@ public enum DXGI_SWAP_CHAIN_FLAG
 
     /// <include file='DXGI_SWAP_CHAIN_FLAG.xml' path='doc/member[@name="DXGI_SWAP_CHAIN_FLAG.DXGI_SWAP_CHAIN_FLAG_RESTRICTED_TO_ALL_HOLOGRAPHIC_DISPLAYS"]/*' />
     DXGI_SWAP_CHAIN_FLAG_RESTRICTED_TO_ALL_HOLOGRAPHIC_DISPLAYS = 4096,
+
+    /// <include file='DXGI_SWAP_CHAIN_FLAG.xml' path='doc/member[@name="DXGI_SWAP_CHAIN_FLAG.DXGI_SWAP_CHAIN_FLAG_USE_DEFAULT_COLOR_SPACE"]/*' />
+    DXGI_SWAP_CHAIN_FLAG_USE_DEFAULT_COLOR_SPACE = 32768,
 }

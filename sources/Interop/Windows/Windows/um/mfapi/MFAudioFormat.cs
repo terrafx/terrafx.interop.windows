@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfapi.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/mfapi.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -930,6 +930,31 @@ public static partial class MFAudioFormat
                 0xC3,
                 0xCC,
                 0x86
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFAudioFormat_IAMF
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xA0, 0xEB, 0xA8, 0x78,
+                0x46, 0xF4,
+                0x51, 0x48,
+                0xA5,
+                0x5D,
+                0x53,
+                0x72,
+                0x28,
+                0x0E,
+                0x6B,
+                0x0B
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/AppxPackaging.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/AppxPackaging.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -77,6 +77,30 @@ public static partial class IID
                 0x8B,
                 0xFD,
                 0xBB
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IAppxFactory4
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x00, 0x00, 0xE5, 0x92,
+                0x34, 0x69,
+                0x8D, 0x4C,
+                0xB4,
+                0x72,
+                0x22,
+                0x9D,
+                0x43,
+                0x1D,
+                0xAD,
+                0xDF
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -1284,6 +1308,30 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IAppxBundleFactory3
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xB6, 0xA6, 0x1E, 0xD1,
+                0x09, 0x39,
+                0x76, 0x43,
+                0xB7,
+                0xC4,
+                0x10,
+                0xD5,
+                0x0F,
+                0x5C,
+                0xF3,
+                0xAE
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IAppxBundleWriter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1397,6 +1445,30 @@ public static partial class IID
                 0x1D,
                 0xC5,
                 0xC8
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IAppxBundleReader2
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x95, 0x21, 0x26, 0x98,
+                0x3A, 0xD6,
+                0x10, 0x4C,
+                0xB4,
+                0xCF,
+                0xDD,
+                0x72,
+                0xE0,
+                0x61,
+                0xBA,
+                0x87
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

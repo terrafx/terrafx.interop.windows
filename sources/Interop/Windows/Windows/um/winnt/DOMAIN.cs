@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -192,4 +192,7 @@ public static partial class DOMAIN
 
     [NativeTypeName("#define DOMAIN_ALIAS_RID_OPENSSH_USERS (0x00000249L)")]
     public const int DOMAIN_ALIAS_RID_OPENSSH_USERS = (0x00000249);
+
+    [NativeTypeName("#define DOMAIN_ALIAS_RID_CUA_USERS (0x0000024AL)")]
+    public const int DOMAIN_ALIAS_RID_CUA_USERS = (0x0000024A);
 }

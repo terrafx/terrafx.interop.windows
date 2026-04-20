@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/winioctl.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.Versioning;
@@ -689,6 +689,18 @@ public static partial class FSCTL
 
     [NativeTypeName("#define FSCTL_CASCADES_REFS_SET_FILE_REMOTE CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 295, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
     public const int FSCTL_CASCADES_REFS_SET_FILE_REMOTE = (((0x00000009) << 16) | ((0) << 14) | ((295) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_CIMFS_QUERY_BACKING_REGION_NAMES CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 296, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_CIMFS_QUERY_BACKING_REGION_NAMES = (((0x00000009) << 16) | ((0) << 14) | ((296) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_REFS_VOLUME_ATTESTATION_PREPARE_TO_SIGN CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 297, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_REFS_VOLUME_ATTESTATION_PREPARE_TO_SIGN = (((0x00000009) << 16) | ((0) << 14) | ((297) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_REFS_VOLUME_ATTESTATION_INJECT_CERTIFICATE CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 298, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_REFS_VOLUME_ATTESTATION_INJECT_CERTIFICATE = (((0x00000009) << 16) | ((0) << 14) | ((298) << 2) | (0));
+
+    [NativeTypeName("#define FSCTL_REFS_VOLUME_ATTESTATION_QUERY_STATUS CTL_CODE(FILE_DEVICE_FILE_SYSTEM, 299, METHOD_BUFFERED, FILE_ANY_ACCESS)")]
+    public const int FSCTL_REFS_VOLUME_ATTESTATION_QUERY_STATUS = (((0x00000009) << 16) | ((0) << 14) | ((299) << 2) | (0));
 
     [NativeTypeName("#define FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OFF (1)")]
     public const int FSCTL_INTEGRITY_FLAG_CHECKSUM_ENFORCEMENT_OFF = (1);

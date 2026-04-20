@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/WinUser.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -3398,6 +3398,10 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.22621.0")]
     public static extern BOOL RegisterForTooltipDismissNotification(HWND hWnd, TOOLTIP_DISMISS_FLAGS tdFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ConvertPrimaryPointerToMouseDrag"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    public static extern BOOL ConvertPrimaryPointerToMouseDrag();
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsWindowArranged"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.18362.0")]
@@ -5582,11 +5586,11 @@ public static unsafe partial class Windows
     [NativeTypeName("#define GIDC_REMOVAL 2")]
     public const int GIDC_REMOVAL = 2;
 
-    [NativeTypeName("#define TOUCHPAD_PARAMETERS_LATEST_VERSION 1")]
-    public const int TOUCHPAD_PARAMETERS_LATEST_VERSION = 1;
-
     [NativeTypeName("#define TOUCHPAD_PARAMETERS_VERSION_1 1")]
     public const int TOUCHPAD_PARAMETERS_VERSION_1 = 1;
+
+    [NativeTypeName("#define TOUCHPAD_PARAMETERS_VERSION_2 0x2")]
+    public const int TOUCHPAD_PARAMETERS_VERSION_2 = 0x2;
 
     [NativeTypeName("#define MSGFLT_ADD 1")]
     public const int MSGFLT_ADD = 1;

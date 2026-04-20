@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/mfreadwrite.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/mfreadwrite.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using NUnit.Framework;
@@ -136,6 +136,13 @@ public static partial class MFTests
     public static void MF_READWRITE_ENABLE_HARDWARE_TRANSFORMSTest()
     {
         Assert.That(MF_READWRITE_ENABLE_HARDWARE_TRANSFORMS, Is.EqualTo(new Guid(0xa634a91c, 0x822b, 0x41b9, 0xa4, 0x94, 0x4d, 0xe4, 0x64, 0x36, 0x12, 0xb0)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MF_READWRITE_USE_ONLY_HARDWARE_TRANSFORMS" /> property is correct.</summary>
+    [Test]
+    public static void MF_READWRITE_USE_ONLY_HARDWARE_TRANSFORMSTest()
+    {
+        Assert.That(MF_READWRITE_USE_ONLY_HARDWARE_TRANSFORMS, Is.EqualTo(new Guid(0xf9074427, 0xbf8b, 0x4f69, 0xbb, 0xaf, 0x52, 0x49, 0x69, 0x5, 0x6f, 0xb6)));
     }
 
     /// <summary>Validates that the value of the <see cref="MF_READWRITE_MMCSS_CLASS" /> property is correct.</summary>

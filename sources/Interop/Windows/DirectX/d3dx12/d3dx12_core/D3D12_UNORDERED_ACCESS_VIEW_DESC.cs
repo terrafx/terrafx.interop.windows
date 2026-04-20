@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3dx12_core.h in microsoft/DirectX-Headers tag v1.618.5
+// Ported from d3dx12_core.h in microsoft/DirectX-Headers tag v1.619.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using static TerraFX.Interop.DirectX.D3D12_BUFFER_UAV_FLAGS;
@@ -35,7 +35,7 @@ public partial struct D3D12_UNORDERED_ACCESS_VIEW_DESC
     {
         D3D12_UNORDERED_ACCESS_VIEW_DESC desc = new D3D12_UNORDERED_ACCESS_VIEW_DESC();
 
-        desc.Format = DXGI_FORMAT_R32_UINT;
+        desc.Format = DXGI_FORMAT_R32_TYPELESS;
         desc.ViewDimension = D3D12_UAV_DIMENSION_BUFFER;
         desc.Anonymous.Buffer.FirstElement = FirstElement;
         desc.Anonymous.Buffer.NumElements = NumElements;

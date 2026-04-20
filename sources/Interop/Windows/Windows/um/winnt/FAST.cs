@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -231,6 +231,9 @@ public static partial class FAST
 
     [NativeTypeName("#define FAST_FAIL_KERNEL_POINTER_EXPECTED 77")]
     public const int FAST_FAIL_KERNEL_POINTER_EXPECTED = 77;
+
+    [NativeTypeName("#define FAST_FAIL_INVALID_SME_STATE 78")]
+    public const int FAST_FAIL_INVALID_SME_STATE = 78;
 
     [NativeTypeName("#define FAST_FAIL_INVALID_FAST_FAIL_CODE 0xFFFFFFFF")]
     public const uint FAST_FAIL_INVALID_FAST_FAIL_CODE = 0xFFFFFFFF;

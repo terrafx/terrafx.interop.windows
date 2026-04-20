@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
@@ -1341,6 +1341,9 @@ public static unsafe partial class Windows
     [NativeTypeName("#define CBA_DEFERRED_SYMBOL_LOAD_PARTIAL 0x00000020")]
     public const int CBA_DEFERRED_SYMBOL_LOAD_PARTIAL = 0x00000020;
 
+    [NativeTypeName("#define CBA_QUERY_IF_SYMBOL_DOWNLOAD_DISALLOWED 0x00000040")]
+    public const int CBA_QUERY_IF_SYMBOL_DOWNLOAD_DISALLOWED = 0x00000040;
+
     [NativeTypeName("#define CBA_DEBUG_INFO 0x10000000")]
     public const int CBA_DEBUG_INFO = 0x10000000;
 
@@ -1659,6 +1662,9 @@ public static unsafe partial class Windows
     [NativeTypeName("#define SSRVURI_HTTP_FILEPTR 0x04")]
     public const int SSRVURI_HTTP_FILEPTR = 0x04;
 
+    [NativeTypeName("#define SSRVURI_HTTP_MSFZ0 0x08")]
+    public const int SSRVURI_HTTP_MSFZ0 = 0x08;
+
     [NativeTypeName("#define SSRVURI_UNC_NORMAL 0x10")]
     public const int SSRVURI_UNC_NORMAL = 0x10;
 
@@ -1667,6 +1673,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define SSRVURI_UNC_FILEPTR 0x40")]
     public const int SSRVURI_UNC_FILEPTR = 0x40;
+
+    [NativeTypeName("#define SSRVURI_UNC_MSFZ0 0x80")]
+    public const int SSRVURI_UNC_MSFZ0 = 0x80;
 
     [NativeTypeName("#define SSRVURI_HTTP_MASK 0x0F")]
     public const int SSRVURI_HTTP_MASK = 0x0F;
@@ -1709,6 +1718,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define SSRVACTION_CHECKSUMSTATUS 8")]
     public const int SSRVACTION_CHECKSUMSTATUS = 8;
+
+    [NativeTypeName("#define SSRVACTION_QUERY_IF_DOWNLOAD_DISALLOWED 9")]
+    public const int SSRVACTION_QUERY_IF_DOWNLOAD_DISALLOWED = 9;
 
     [NativeTypeName("#define SYMSTOREOPT_COMPRESS 0x01")]
     public const int SYMSTOREOPT_COMPRESS = 0x01;
@@ -1814,6 +1826,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define IMAGEHLP_RMAP_IGNORE_MISCOMPARE 0x00000004")]
     public const int IMAGEHLP_RMAP_IGNORE_MISCOMPARE = 0x00000004;
+
+    [NativeTypeName("#define IMAGEHLP_RMAP_NOBASERELOCATIONS 0x08000000")]
+    public const int IMAGEHLP_RMAP_NOBASERELOCATIONS = 0x08000000;
 
     [NativeTypeName("#define IMAGEHLP_RMAP_FIXUP_ARM64X 0x10000000")]
     public const int IMAGEHLP_RMAP_FIXUP_ARM64X = 0x10000000;

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from shared/winerror.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -765,6 +765,9 @@ public static partial class Windows
 
     [NativeTypeName("#define UNIONFS_E_NESTED_UNION_NOT_ALLOWED _HRESULT_TYPEDEF_(0x8925000CL)")]
     public const int UNIONFS_E_NESTED_UNION_NOT_ALLOWED = unchecked((int)(0x8925000C));
+
+    [NativeTypeName("#define UNIONFS_E_BOOT_LAYER_NOT_ATTACHED _HRESULT_TYPEDEF_(0x8925000DL)")]
+    public const int UNIONFS_E_BOOT_LAYER_NOT_ATTACHED = unchecked((int)(0x8925000D));
 
     [NativeTypeName("#define PPF_E_TRANSFORM_DIGEST_ALGO_NOT_SUPPORTED _HRESULT_TYPEDEF_(0xC9280000L)")]
     public const int PPF_E_TRANSFORM_DIGEST_ALGO_NOT_SUPPORTED = unchecked((int)(0xC9280000));

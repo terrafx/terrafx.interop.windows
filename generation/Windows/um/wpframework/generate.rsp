@@ -11,6 +11,6 @@ TerraFX.Interop.Windows
 --test-output
 ../../../../tests/Interop/Windows/Windows/um/wpframework
 --traverse
-C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um/wpframework.h
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.28000.0/um/wpframework.h
 --with-librarypath
 LoadManagedRuntime=webengine4

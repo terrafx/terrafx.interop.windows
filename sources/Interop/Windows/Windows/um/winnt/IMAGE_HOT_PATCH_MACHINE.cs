@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/winnt.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
@@ -11,7 +11,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_HOT_PATCH_MACHINE
 {
     /// <include file='IMAGE_HOT_PATCH_MACHINE.xml' path='doc/member[@name="IMAGE_HOT_PATCH_MACHINE.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L21239_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L22187_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct._x86"]/*' />

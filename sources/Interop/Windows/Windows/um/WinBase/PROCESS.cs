@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/WinBase.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.Windows;
@@ -471,6 +471,9 @@ public static partial class PROCESS
 
     [NativeTypeName("#define PROCESS_CREATION_DESKTOP_APP_BREAKAWAY_OVERRIDE 0x04")]
     public const int PROCESS_CREATION_DESKTOP_APP_BREAKAWAY_OVERRIDE = 0x04;
+
+    [NativeTypeName("#define PROCESS_CREATION_DESKTOP_APP_TRUSTED_LAUNCH_ALLOW_WINDOWS_HOST 0x08")]
+    public const int PROCESS_CREATION_DESKTOP_APP_TRUSTED_LAUNCH_ALLOW_WINDOWS_HOST = 0x08;
 
     [NativeTypeName("#define PROCESS_CREATION_MITIGATION_AUDIT_POLICY2_CET_USER_SHADOW_STACKS_MASK (0x00000003ui64 << 28)")]
     public const ulong PROCESS_CREATION_MITIGATION_AUDIT_POLICY2_CET_USER_SHADOW_STACKS_MASK = (0x00000003UL << 28);

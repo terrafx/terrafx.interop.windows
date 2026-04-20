@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from um/ntsecapi.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from um/ntsecapi.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.InteropServices;
@@ -21,7 +21,7 @@ public partial struct LSA_FOREST_TRUST_RECORD2
     public LARGE_INTEGER Time;
 
     /// <include file='LSA_FOREST_TRUST_RECORD2.xml' path='doc/member[@name="LSA_FOREST_TRUST_RECORD2.ForestTrustData"]/*' />
-    [NativeTypeName("__AnonymousRecord_ntsecapi_L2756_C5")]
+    [NativeTypeName("__AnonymousRecord_ntsecapi_L2755_C5")]
     public _ForestTrustData_e__Union ForestTrustData;
 
     /// <include file='_ForestTrustData_e__Union.xml' path='doc/member[@name="_ForestTrustData_e__Union"]/*' />

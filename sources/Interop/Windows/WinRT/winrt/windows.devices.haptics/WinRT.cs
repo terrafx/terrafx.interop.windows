@@ -1,12 +1,18 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from winrt/windows.devices.haptics.h in the Windows SDK for Windows 10.0.26100.0
+// Ported from winrt/windows.devices.haptics.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
 namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    [NativeTypeName("const WCHAR[45]")]
+    public const string InterfaceName_Windows_Devices_Haptics_IInputHapticsManager = "Windows.Devices.Haptics.IInputHapticsManager";
+
+    [NativeTypeName("const WCHAR[52]")]
+    public const string InterfaceName_Windows_Devices_Haptics_IInputHapticsManagerStatics = "Windows.Devices.Haptics.IInputHapticsManagerStatics";
+
     [NativeTypeName("const WCHAR[70]")]
     public const string InterfaceName_Windows_Devices_Haptics_IKnownSimpleHapticsControllerWaveformsStatics = "Windows.Devices.Haptics.IKnownSimpleHapticsControllerWaveformsStatics";
 
@@ -24,6 +30,9 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[48]")]
     public const string InterfaceName_Windows_Devices_Haptics_IVibrationDeviceStatics = "Windows.Devices.Haptics.IVibrationDeviceStatics";
+
+    [NativeTypeName("const WCHAR[44]")]
+    public const string RuntimeClass_Windows_Devices_Haptics_InputHapticsManager = "Windows.Devices.Haptics.InputHapticsManager";
 
     [NativeTypeName("const WCHAR[62]")]
     public const string RuntimeClass_Windows_Devices_Haptics_KnownSimpleHapticsControllerWaveforms = "Windows.Devices.Haptics.KnownSimpleHapticsControllerWaveforms";
