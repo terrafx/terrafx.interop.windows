@@ -11,7 +11,7 @@ using static TerraFX.Interop.Windows.RUNTIME_REPORT_TYPE;
 
 namespace TerraFX.Interop.Windows;
 
-public static unsafe partial class Windows
+public static partial class Windows
 {
     [NativeTypeName("const GUID")]
     public static ref readonly Guid NO_SUBGROUP_GUID

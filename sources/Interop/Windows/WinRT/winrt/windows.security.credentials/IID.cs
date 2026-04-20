@@ -564,28 +564,4 @@ public static unsafe partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
-
-    public static ref readonly Guid IID_IKeyCredentialManagerExtendedStatics
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            ReadOnlySpan<byte> data = [
-                0x27, 0x2D, 0x31, 0xA5,
-                0x08, 0xB4,
-                0x11, 0x50,
-                0x9B,
-                0x36,
-                0xB0,
-                0x7A,
-                0xB0,
-                0xA6,
-                0x7A,
-                0x7E
-            ];
-
-            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
-            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
-        }
-    }
 }

@@ -10,7 +10,7 @@ using static TerraFX.Interop.Windows.Windows;
 namespace TerraFX.Interop.Windows.UnitTests;
 
 /// <summary>Provides validation of the <see cref="Windows" /> class.</summary>
-public static unsafe partial class WindowsTests
+public static partial class WindowsTests
 {
     /// <summary>Validates that the value of the <see cref="NO_SUBGROUP_GUID" /> property is correct.</summary>
     [Test]
