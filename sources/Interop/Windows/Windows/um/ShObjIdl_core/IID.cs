@@ -3468,6 +3468,30 @@ public static partial class IID
         }
     }
 
+    public static ref readonly Guid IID_DestinationListBoth
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xF4, 0x0C, 0xFE, 0x38,
+                0x59, 0x6A,
+                0x29, 0x47,
+                0x8E,
+                0x4A,
+                0x2D,
+                0x58,
+                0x00,
+                0x59,
+                0xED,
+                0xE4
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IAssocHandlerInvoker
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

@@ -173,8 +173,8 @@ public enum POWER_MONITOR_REQUEST_REASON
     /// <include file='POWER_MONITOR_REQUEST_REASON.xml' path='doc/member[@name="POWER_MONITOR_REQUEST_REASON.MonitorRequestReasonUserInputTouch"]/*' />
     MonitorRequestReasonUserInputTouch,
 
-    /// <include file='POWER_MONITOR_REQUEST_REASON.xml' path='doc/member[@name="POWER_MONITOR_REQUEST_REASON.MonitorRequestReasonAusterityBatteryDrain"]/*' />
-    MonitorRequestReasonAusterityBatteryDrain,
+    /// <include file='POWER_MONITOR_REQUEST_REASON.xml' path='doc/member[@name="POWER_MONITOR_REQUEST_REASON.MonitorRequestReasonRestrictedStandbyBatteryDrain"]/*' />
+    MonitorRequestReasonRestrictedStandbyBatteryDrain,
 
     /// <include file='POWER_MONITOR_REQUEST_REASON.xml' path='doc/member[@name="POWER_MONITOR_REQUEST_REASON.MonitorRequestReasonDozeRestrictedStandby"]/*' />
     MonitorRequestReasonDozeRestrictedStandby,

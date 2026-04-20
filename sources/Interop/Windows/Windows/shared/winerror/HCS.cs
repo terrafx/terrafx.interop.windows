@@ -102,4 +102,7 @@ public static partial class HCS
 
     [NativeTypeName("#define HCS_E_OPERATION_ALREADY_CANCELLED _HRESULT_TYPEDEF_(0x80370121L)")]
     public const int HCS_E_OPERATION_ALREADY_CANCELLED = unchecked((int)(0x80370121));
+
+    [NativeTypeName("#define HCS_E_INVALID_PROCESSOR_TOPOLOGY _HRESULT_TYPEDEF_(0x80370122L)")]
+    public const int HCS_E_INVALID_PROCESSOR_TOPOLOGY = unchecked((int)(0x80370122));
 }

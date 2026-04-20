@@ -7,10 +7,11 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.RUNTIME_REPORT_TYPE;
 
 namespace TerraFX.Interop.Windows;
 
-public static partial class Windows
+public static unsafe partial class Windows
 {
     [NativeTypeName("const GUID")]
     public static ref readonly Guid NO_SUBGROUP_GUID
@@ -148,6 +149,9 @@ public static partial class Windows
 
     [NativeTypeName("#define _MM_HINT_NTA 0")]
     public const int _MM_HINT_NTA = 0;
+
+    [NativeTypeName("#define ARM64_TPIDR2_BLOCK_ALIGN 16")]
+    public const int ARM64_TPIDR2_BLOCK_ALIGN = 16;
 
     [NativeTypeName("#define DELETE (0x00010000L)")]
     public const int DELETE = (0x00010000);
@@ -362,6 +366,36 @@ public static partial class Windows
     [NativeTypeName("#define CACHE_FULLY_ASSOCIATIVE 0xFF")]
     public const int CACHE_FULLY_ASSOCIATIVE = 0xFF;
 
+    [NativeTypeName("#define RUNTIME_REPORT_PACKAGE_MAGIC 0x52545250")]
+    public const int RUNTIME_REPORT_PACKAGE_MAGIC = 0x52545250;
+
+    [NativeTypeName("#define RUNTIME_REPORT_PACKAGE_VERSION_CURRENT (1)")]
+    public const int RUNTIME_REPORT_PACKAGE_VERSION_CURRENT = (1);
+
+    [NativeTypeName("#define RUNTIME_REPORT_NONCE_SIZE 32")]
+    public const int RUNTIME_REPORT_NONCE_SIZE = 32;
+
+    [NativeTypeName("#define RUNTIME_REPORT_DIGEST_MAX_SIZE 64")]
+    public const int RUNTIME_REPORT_DIGEST_MAX_SIZE = 64;
+
+    [NativeTypeName("#define RUNTIME_REPORT_SIGNATURE_SCHEME_SHA512_RSA_PSS_SHA512 (1)")]
+    public const int RUNTIME_REPORT_SIGNATURE_SCHEME_SHA512_RSA_PSS_SHA512 = (1);
+
+    [NativeTypeName("#define RUNTIME_REPORT_TYPE_MASK_ALL ((1ULL << RuntimeReportTypeMax) - 1)")]
+    public const ulong RUNTIME_REPORT_TYPE_MASK_ALL = ((1UL << (int)(RuntimeReportTypeMax)) - 1);
+
+    [NativeTypeName("#define DRIVER_REPORT_DIGEST_MAX_SIZE RUNTIME_REPORT_DIGEST_MAX_SIZE")]
+    public const int DRIVER_REPORT_DIGEST_MAX_SIZE = 64;
+
+    [NativeTypeName("#define DRIVER_REPORT_NAME_MAX_LENGTH 32")]
+    public const int DRIVER_REPORT_NAME_MAX_LENGTH = 32;
+
+    [NativeTypeName("#define CODE_INTEGRITY_REPORT_GENERATION_VERSION_CURRENT (1)")]
+    public const int CODE_INTEGRITY_REPORT_GENERATION_VERSION_CURRENT = (1);
+
+    [NativeTypeName("#define CODE_INTEGRITY_REPORT_RECORD_VERSION_CURRENT (1)")]
+    public const int CODE_INTEGRITY_REPORT_RECORD_VERSION_CURRENT = (1);
+
     [NativeTypeName("#define CFG_CALL_TARGET_VALID (0x00000001)")]
     public const int CFG_CALL_TARGET_VALID = (0x00000001);
 
@@ -544,6 +578,18 @@ public static partial class Windows
 
     [NativeTypeName("#define PARKING_TOPOLOGY_POLICY_SEQUENTIAL 2")]
     public const int PARKING_TOPOLOGY_POLICY_SEQUENTIAL = 2;
+
+    [NativeTypeName("#define PARKING_TOPOLOGY_POLICY_ROUNDROBIN_P_ROUNDROBIN_E 3")]
+    public const int PARKING_TOPOLOGY_POLICY_ROUNDROBIN_P_ROUNDROBIN_E = 3;
+
+    [NativeTypeName("#define PARKING_TOPOLOGY_POLICY_SEQUENTIAL_P_SEQUENTIAL_E 4")]
+    public const int PARKING_TOPOLOGY_POLICY_SEQUENTIAL_P_SEQUENTIAL_E = 4;
+
+    [NativeTypeName("#define PARKING_TOPOLOGY_POLICY_ROUNDROBIN_P_SEQUENTIAL_E 5")]
+    public const int PARKING_TOPOLOGY_POLICY_ROUNDROBIN_P_SEQUENTIAL_E = 5;
+
+    [NativeTypeName("#define PARKING_TOPOLOGY_POLICY_SEQUENTIAL_P_ROUNDROBIN_E 6")]
+    public const int PARKING_TOPOLOGY_POLICY_SEQUENTIAL_P_ROUNDROBIN_E = 6;
 
     [NativeTypeName("#define SMT_UNPARKING_POLICY_CORE 0")]
     public const int SMT_UNPARKING_POLICY_CORE = 0;

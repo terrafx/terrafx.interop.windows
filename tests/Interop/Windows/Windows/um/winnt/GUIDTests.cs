@@ -719,6 +719,27 @@ public static partial class GUIDTests
         Assert.That(GUID_PROCESSOR_FREQUENCY_LIMIT_2, Is.EqualTo(new Guid(0x75b0ae3f, 0xbce0, 0x45a7, 0x8c, 0x89, 0xc9, 0x61, 0x1c, 0x25, 0xe1, 0x02)));
     }
 
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_FREQUENCY_MINIMUM" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_FREQUENCY_MINIMUMTest()
+    {
+        Assert.That(GUID_PROCESSOR_FREQUENCY_MINIMUM, Is.EqualTo(new Guid(0x2ac92cea, 0x5efa, 0x4a1b, 0xbe, 0xd5, 0x1a, 0x2b, 0xd9, 0xaa, 0xb, 0x94)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_FREQUENCY_MINIMUM_1" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_FREQUENCY_MINIMUM_1Test()
+    {
+        Assert.That(GUID_PROCESSOR_FREQUENCY_MINIMUM_1, Is.EqualTo(new Guid(0x2ac92cea, 0x5efa, 0x4a1b, 0xbe, 0xd5, 0x1a, 0x2b, 0xd9, 0xaa, 0xb, 0x95)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_FREQUENCY_MINIMUM_2" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_FREQUENCY_MINIMUM_2Test()
+    {
+        Assert.That(GUID_PROCESSOR_FREQUENCY_MINIMUM_2, Is.EqualTo(new Guid(0x2ac92cea, 0x5efa, 0x4a1b, 0xbe, 0xd5, 0x1a, 0x2b, 0xd9, 0xaa, 0xb, 0x96)));
+    }
+
     /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_ALLOW_THROTTLING" /> property is correct.</summary>
     [Test]
     public static void GUID_PROCESSOR_ALLOW_THROTTLINGTest()
@@ -1048,6 +1069,13 @@ public static partial class GUIDTests
         Assert.That(GUID_PROCESSOR_CORE_PARKING_OVER_UTILIZATION_THRESHOLD, Is.EqualTo(new Guid(0x943c8cb6, 0x6f93, 0x4227, 0xad, 0x87, 0xe9, 0xa3, 0xfe, 0xec, 0x08, 0xd1)));
     }
 
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_PACKAGE_C6_POLICY" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_PACKAGE_C6_POLICYTest()
+    {
+        Assert.That(GUID_PROCESSOR_PACKAGE_C6_POLICY, Is.EqualTo(new Guid(0xfc1b015c, 0xeb75, 0x496a, 0xab, 0x47, 0x02, 0x8b, 0x04, 0x59, 0xc8, 0xf8)));
+    }
+
     /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_PARKING_CORE_OVERRIDE" /> property is correct.</summary>
     [Test]
     public static void GUID_PROCESSOR_PARKING_CORE_OVERRIDETest()
@@ -1158,6 +1186,27 @@ public static partial class GUIDTests
     public static void GUID_PROCESSOR_PERF_LATENCY_HINT_PERF_2Test()
     {
         Assert.That(GUID_PROCESSOR_PERF_LATENCY_HINT_PERF_2, Is.EqualTo(new Guid(0x619b7505, 0x3b, 0x4e82, 0xb7, 0xa6, 0x4d, 0xd2, 0x9c, 0x30, 0x9, 0x73)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_PERF_LATENCY_HINT_FREQTest()
+    {
+        Assert.That(GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ, Is.EqualTo(new Guid(0x81202931, 0xacbb, 0x405c, 0xa7, 0xee, 0x3e, 0x2b, 0xa4, 0x86, 0x6f, 0x6f)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ_1" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ_1Test()
+    {
+        Assert.That(GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ_1, Is.EqualTo(new Guid(0x81202931, 0xacbb, 0x405c, 0xa7, 0xee, 0x3e, 0x2b, 0xa4, 0x86, 0x6f, 0x70)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ_2" /> property is correct.</summary>
+    [Test]
+    public static void GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ_2Test()
+    {
+        Assert.That(GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ_2, Is.EqualTo(new Guid(0x81202931, 0xacbb, 0x405c, 0xa7, 0xee, 0x3e, 0x2b, 0xa4, 0x86, 0x6f, 0x71)));
     }
 
     /// <summary>Validates that the value of the <see cref="GUID_PROCESSOR_PERF_LATENCY_HINT_EPP" /> property is correct.</summary>

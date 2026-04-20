@@ -171,4 +171,7 @@ public static partial class CALG
 
     [NativeTypeName("#define CALG_OID_INFO_PARAMETERS 0xFFFFFFFE")]
     public const uint CALG_OID_INFO_PARAMETERS = 0xFFFFFFFE;
+
+    [NativeTypeName("#define CALG_OID_INFO_PQ 0xFFFFFFFD")]
+    public const uint CALG_OID_INFO_PQ = 0xFFFFFFFD;
 }

@@ -471,6 +471,12 @@ public static unsafe partial class CRYPT
     [NativeTypeName("#define CRYPT_OID_INFO_NO_PARAMETERS_ALGORITHM L\"CryptOIDInfoNoParameters\"")]
     public const string CRYPT_OID_INFO_NO_PARAMETERS_ALGORITHM = "CryptOIDInfoNoParameters";
 
+    [NativeTypeName("#define CRYPT_OID_INFO_NO_HASH_ALGORITHM L\"NoHash\"")]
+    public const string CRYPT_OID_INFO_NO_HASH_ALGORITHM = "NoHash";
+
+    [NativeTypeName("#define CRYPT_OID_INFO_PREHASH_ALGORITHM L\"PreHash\"")]
+    public const string CRYPT_OID_INFO_PREHASH_ALGORITHM = "PreHash";
+
     [NativeTypeName("#define CRYPT_HASH_ALG_OID_GROUP_ID 1")]
     public const int CRYPT_HASH_ALG_OID_GROUP_ID = 1;
 
@@ -510,6 +516,27 @@ public static unsafe partial class CRYPT
     [NativeTypeName("#define CRYPT_LAST_ALG_OID_GROUP_ID CRYPT_SIGN_ALG_OID_GROUP_ID")]
     public const int CRYPT_LAST_ALG_OID_GROUP_ID = 4;
 
+    [NativeTypeName("#define CRYPT_OID_PQ_EXTRA_INFO_FLAGS_INDEX 0")]
+    public const int CRYPT_OID_PQ_EXTRA_INFO_FLAGS_INDEX = 0;
+
+    [NativeTypeName("#define CRYPT_OID_PQ_EXTRA_INFO_PUBLIC_MAGIC_INDEX 1")]
+    public const int CRYPT_OID_PQ_EXTRA_INFO_PUBLIC_MAGIC_INDEX = 1;
+
+    [NativeTypeName("#define CRYPT_OID_PQ_EXTRA_INFO_PRIVATE_MAGIC_INDEX 2")]
+    public const int CRYPT_OID_PQ_EXTRA_INFO_PRIVATE_MAGIC_INDEX = 2;
+
+    [NativeTypeName("#define CRYPT_OID_PQ_EXTRA_INFO_PUBLIC_KEY_LENGTH_INDEX 3")]
+    public const int CRYPT_OID_PQ_EXTRA_INFO_PUBLIC_KEY_LENGTH_INDEX = 3;
+
+    [NativeTypeName("#define CRYPT_OID_PQ_EXTRA_INFO_PRIVATE_KEY_LENGTH_INDEX 4")]
+    public const int CRYPT_OID_PQ_EXTRA_INFO_PRIVATE_KEY_LENGTH_INDEX = 4;
+
+    [NativeTypeName("#define CRYPT_OID_PQ_EXTRA_INFO_SIGNATURE_LENGTH_INDEX 5")]
+    public const int CRYPT_OID_PQ_EXTRA_INFO_SIGNATURE_LENGTH_INDEX = 5;
+
+    [NativeTypeName("#define CRYPT_OID_PQ_EXTRA_INFO_MAX_LENGTH 6")]
+    public const int CRYPT_OID_PQ_EXTRA_INFO_MAX_LENGTH = 6;
+
     [NativeTypeName("#define CRYPT_OID_INHIBIT_SIGNATURE_FORMAT_FLAG 0x00000001")]
     public const int CRYPT_OID_INHIBIT_SIGNATURE_FORMAT_FLAG = 0x00000001;
 
@@ -530,6 +557,12 @@ public static unsafe partial class CRYPT
 
     [NativeTypeName("#define CRYPT_OID_USE_CURVE_PARAMETERS_FOR_ENCODE_FLAG 0x10000000")]
     public const int CRYPT_OID_USE_CURVE_PARAMETERS_FOR_ENCODE_FLAG = 0x10000000;
+
+    [NativeTypeName("#define CRYPT_OID_PUBKEY_PURE_ONLY_FLAG 0x08000000")]
+    public const int CRYPT_OID_PUBKEY_PURE_ONLY_FLAG = 0x08000000;
+
+    [NativeTypeName("#define CRYPT_OID_PUBKEY_PREHASH_ONLY_FLAG 0x04000000")]
+    public const int CRYPT_OID_PUBKEY_PREHASH_ONLY_FLAG = 0x04000000;
 
     [NativeTypeName("#define CRYPT_OID_INFO_OID_KEY 1")]
     public const int CRYPT_OID_INFO_OID_KEY = 1;
@@ -557,6 +590,12 @@ public static unsafe partial class CRYPT
 
     [NativeTypeName("#define CRYPT_OID_INFO_PUBKEY_ENCRYPT_KEY_FLAG 0x40000000")]
     public const int CRYPT_OID_INFO_PUBKEY_ENCRYPT_KEY_FLAG = 0x40000000;
+
+    [NativeTypeName("#define CRYPT_OID_INFO_PUBKEY_PURE_KEY_FLAG 0x08000000")]
+    public const int CRYPT_OID_INFO_PUBKEY_PURE_KEY_FLAG = 0x08000000;
+
+    [NativeTypeName("#define CRYPT_OID_INFO_PUBKEY_PREHASH_KEY_FLAG 0x04000000")]
+    public const int CRYPT_OID_INFO_PUBKEY_PREHASH_KEY_FLAG = 0x04000000;
 
     [NativeTypeName("#define CRYPT_OID_DISABLE_SEARCH_DS_FLAG 0x80000000")]
     public const uint CRYPT_OID_DISABLE_SEARCH_DS_FLAG = 0x80000000;

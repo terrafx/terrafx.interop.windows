@@ -21,8 +21,8 @@ public static partial class XAPO
     [NativeTypeName("#define XAPO_MIN_FRAMERATE 1000")]
     public const int XAPO_MIN_FRAMERATE = 1000;
 
-    [NativeTypeName("#define XAPO_MAX_FRAMERATE 200000")]
-    public const int XAPO_MAX_FRAMERATE = 200000;
+    [NativeTypeName("#define XAPO_MAX_FRAMERATE 384000")]
+    public const int XAPO_MAX_FRAMERATE = 384000;
 
     [NativeTypeName("#define XAPO_REGISTRATION_STRING_LENGTH 256")]
     public const int XAPO_REGISTRATION_STRING_LENGTH = 256;

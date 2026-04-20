@@ -591,6 +591,111 @@ public static partial class szOID
     [NativeTypeName("#define szOID_NIST_sha512 \"2.16.840.1.101.3.4.2.3\"")]
     public static ReadOnlySpan<byte> szOID_NIST_sha512 => "2.16.840.1.101.3.4.2.3"u8;
 
+    [NativeTypeName("#define szOID_NIST_shake128 \"2.16.840.1.101.3.4.2.11\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_shake128 => "2.16.840.1.101.3.4.2.11"u8;
+
+    [NativeTypeName("#define szOID_NIST_shake256 \"2.16.840.1.101.3.4.2.12\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_shake256 => "2.16.840.1.101.3.4.2.12"u8;
+
+    [NativeTypeName("#define szOID_NIST_ml_dsa_44 \"2.16.840.1.101.3.4.3.17\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_ml_dsa_44 => "2.16.840.1.101.3.4.3.17"u8;
+
+    [NativeTypeName("#define szOID_NIST_ml_dsa_65 \"2.16.840.1.101.3.4.3.18\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_ml_dsa_65 => "2.16.840.1.101.3.4.3.18"u8;
+
+    [NativeTypeName("#define szOID_NIST_ml_dsa_87 \"2.16.840.1.101.3.4.3.19\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_ml_dsa_87 => "2.16.840.1.101.3.4.3.19"u8;
+
+    [NativeTypeName("#define szOID_NIST_hash_ml_dsa_44_with_sha512 \"2.16.840.1.101.3.4.3.32\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_hash_ml_dsa_44_with_sha512 => "2.16.840.1.101.3.4.3.32"u8;
+
+    [NativeTypeName("#define szOID_NIST_hash_ml_dsa_65_with_sha512 \"2.16.840.1.101.3.4.3.33\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_hash_ml_dsa_65_with_sha512 => "2.16.840.1.101.3.4.3.33"u8;
+
+    [NativeTypeName("#define szOID_NIST_hash_ml_dsa_87_with_sha512 \"2.16.840.1.101.3.4.3.34\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_hash_ml_dsa_87_with_sha512 => "2.16.840.1.101.3.4.3.34"u8;
+
+    [NativeTypeName("#define szOID_NIST_ml_kem_512 \"2.16.840.1.101.3.4.4.1\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_ml_kem_512 => "2.16.840.1.101.3.4.4.1"u8;
+
+    [NativeTypeName("#define szOID_NIST_ml_kem_768 \"2.16.840.1.101.3.4.4.2\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_ml_kem_768 => "2.16.840.1.101.3.4.4.2"u8;
+
+    [NativeTypeName("#define szOID_NIST_ml_kem_1024 \"2.16.840.1.101.3.4.4.3\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_ml_kem_1024 => "2.16.840.1.101.3.4.4.3"u8;
+
+    [NativeTypeName("#define szOID_NIST_slh_dsa_sha2_128s \"2.16.840.1.101.3.4.3.20\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_slh_dsa_sha2_128s => "2.16.840.1.101.3.4.3.20"u8;
+
+    [NativeTypeName("#define szOID_NIST_slh_dsa_sha2_128f \"2.16.840.1.101.3.4.3.21\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_slh_dsa_sha2_128f => "2.16.840.1.101.3.4.3.21"u8;
+
+    [NativeTypeName("#define szOID_NIST_slh_dsa_sha2_192s \"2.16.840.1.101.3.4.3.22\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_slh_dsa_sha2_192s => "2.16.840.1.101.3.4.3.22"u8;
+
+    [NativeTypeName("#define szOID_NIST_slh_dsa_sha2_192f \"2.16.840.1.101.3.4.3.23\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_slh_dsa_sha2_192f => "2.16.840.1.101.3.4.3.23"u8;
+
+    [NativeTypeName("#define szOID_NIST_slh_dsa_sha2_256s \"2.16.840.1.101.3.4.3.24\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_slh_dsa_sha2_256s => "2.16.840.1.101.3.4.3.24"u8;
+
+    [NativeTypeName("#define szOID_NIST_slh_dsa_sha2_256f \"2.16.840.1.101.3.4.3.25\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_slh_dsa_sha2_256f => "2.16.840.1.101.3.4.3.25"u8;
+
+    [NativeTypeName("#define szOID_NIST_slh_dsa_shake_128s \"2.16.840.1.101.3.4.3.26\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_slh_dsa_shake_128s => "2.16.840.1.101.3.4.3.26"u8;
+
+    [NativeTypeName("#define szOID_NIST_slh_dsa_shake_128f \"2.16.840.1.101.3.4.3.27\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_slh_dsa_shake_128f => "2.16.840.1.101.3.4.3.27"u8;
+
+    [NativeTypeName("#define szOID_NIST_slh_dsa_shake_192s \"2.16.840.1.101.3.4.3.28\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_slh_dsa_shake_192s => "2.16.840.1.101.3.4.3.28"u8;
+
+    [NativeTypeName("#define szOID_NIST_slh_dsa_shake_192f \"2.16.840.1.101.3.4.3.29\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_slh_dsa_shake_192f => "2.16.840.1.101.3.4.3.29"u8;
+
+    [NativeTypeName("#define szOID_NIST_slh_dsa_shake_256s \"2.16.840.1.101.3.4.3.30\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_slh_dsa_shake_256s => "2.16.840.1.101.3.4.3.30"u8;
+
+    [NativeTypeName("#define szOID_NIST_slh_dsa_shake_256f \"2.16.840.1.101.3.4.3.31\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_slh_dsa_shake_256f => "2.16.840.1.101.3.4.3.31"u8;
+
+    [NativeTypeName("#define szOID_NIST_hash_slh_dsa_sha2_128s_with_sha256 \"2.16.840.1.101.3.4.3.35\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_hash_slh_dsa_sha2_128s_with_sha256 => "2.16.840.1.101.3.4.3.35"u8;
+
+    [NativeTypeName("#define szOID_NIST_hash_slh_dsa_sha2_128f_with_sha256 \"2.16.840.1.101.3.4.3.36\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_hash_slh_dsa_sha2_128f_with_sha256 => "2.16.840.1.101.3.4.3.36"u8;
+
+    [NativeTypeName("#define szOID_NIST_hash_slh_dsa_sha2_192s_with_sha512 \"2.16.840.1.101.3.4.3.37\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_hash_slh_dsa_sha2_192s_with_sha512 => "2.16.840.1.101.3.4.3.37"u8;
+
+    [NativeTypeName("#define szOID_NIST_hash_slh_dsa_sha2_192f_with_sha512 \"2.16.840.1.101.3.4.3.38\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_hash_slh_dsa_sha2_192f_with_sha512 => "2.16.840.1.101.3.4.3.38"u8;
+
+    [NativeTypeName("#define szOID_NIST_hash_slh_dsa_sha2_256s_with_sha512 \"2.16.840.1.101.3.4.3.39\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_hash_slh_dsa_sha2_256s_with_sha512 => "2.16.840.1.101.3.4.3.39"u8;
+
+    [NativeTypeName("#define szOID_NIST_hash_slh_dsa_sha2_256f_with_sha512 \"2.16.840.1.101.3.4.3.40\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_hash_slh_dsa_sha2_256f_with_sha512 => "2.16.840.1.101.3.4.3.40"u8;
+
+    [NativeTypeName("#define szOID_NIST_hash_slh_dsa_shake_128s_with_shake128 \"2.16.840.1.101.3.4.3.41\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_hash_slh_dsa_shake_128s_with_shake128 => "2.16.840.1.101.3.4.3.41"u8;
+
+    [NativeTypeName("#define szOID_NIST_hash_slh_dsa_shake_128f_with_shake128 \"2.16.840.1.101.3.4.3.42\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_hash_slh_dsa_shake_128f_with_shake128 => "2.16.840.1.101.3.4.3.42"u8;
+
+    [NativeTypeName("#define szOID_NIST_hash_slh_dsa_shake_192s_with_shake256 \"2.16.840.1.101.3.4.3.43\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_hash_slh_dsa_shake_192s_with_shake256 => "2.16.840.1.101.3.4.3.43"u8;
+
+    [NativeTypeName("#define szOID_NIST_hash_slh_dsa_shake_192f_with_shake256 \"2.16.840.1.101.3.4.3.44\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_hash_slh_dsa_shake_192f_with_shake256 => "2.16.840.1.101.3.4.3.44"u8;
+
+    [NativeTypeName("#define szOID_NIST_hash_slh_dsa_shake_256s_with_shake256 \"2.16.840.1.101.3.4.3.45\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_hash_slh_dsa_shake_256s_with_shake256 => "2.16.840.1.101.3.4.3.45"u8;
+
+    [NativeTypeName("#define szOID_NIST_hash_slh_dsa_shake_256f_with_shake256 \"2.16.840.1.101.3.4.3.46\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_hash_slh_dsa_shake_256f_with_shake256 => "2.16.840.1.101.3.4.3.46"u8;
+
     [NativeTypeName("#define szOID_COMMON_NAME \"2.5.4.3\"")]
     public static ReadOnlySpan<byte> szOID_COMMON_NAME => "2.5.4.3"u8;
 
@@ -1496,6 +1601,9 @@ public static partial class szOID
 
     [NativeTypeName("#define szOID_CERT_STRONG_KEY_OS_CURRENT szOID_CERT_STRONG_KEY_OS_1")]
     public static ReadOnlySpan<byte> szOID_CERT_STRONG_KEY_OS_CURRENT => "1.3.6.1.4.1.311.72.2.1"u8;
+
+    [NativeTypeName("#define szOID_NO_HASH \"1.3.6.1.4.1.311.73.1\"")]
+    public static ReadOnlySpan<byte> szOID_NO_HASH => "1.3.6.1.4.1.311.73.1"u8;
 
     [NativeTypeName("#define szOID_PKCS_7_DATA \"1.2.840.113549.1.7.1\"")]
     public static ReadOnlySpan<byte> szOID_PKCS_7_DATA => "1.2.840.113549.1.7.1"u8;

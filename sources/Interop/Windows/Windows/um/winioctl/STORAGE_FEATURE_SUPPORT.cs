@@ -20,7 +20,7 @@ public partial struct STORAGE_FEATURE_SUPPORT
     public uint Version;
 
     /// <include file='STORAGE_FEATURE_SUPPORT.xml' path='doc/member[@name="STORAGE_FEATURE_SUPPORT.Flags"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L586_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L597_C5")]
     public _Flags_e__Union Flags;
 
     /// <include file='STORAGE_FEATURE_SUPPORT.xml' path='doc/member[@name="STORAGE_FEATURE_SUPPORT.Reserved"]/*' />
@@ -33,7 +33,7 @@ public partial struct STORAGE_FEATURE_SUPPORT
     {
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winioctl_L588_C9")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L599_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.AsUlonglong"]/*' />

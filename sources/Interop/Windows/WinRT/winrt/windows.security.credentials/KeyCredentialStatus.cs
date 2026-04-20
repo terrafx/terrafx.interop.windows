@@ -28,4 +28,7 @@ public enum KeyCredentialStatus
 
     /// <include file='KeyCredentialStatus.xml' path='doc/member[@name="KeyCredentialStatus.KeyCredentialStatus_SecurityDeviceLocked"]/*' />
     KeyCredentialStatus_SecurityDeviceLocked = 6,
+
+    /// <include file='KeyCredentialStatus.xml' path='doc/member[@name="KeyCredentialStatus.KeyCredentialStatus_AlgorithmNotSupported"]/*' />
+    KeyCredentialStatus_AlgorithmNotSupported = 7,
 }

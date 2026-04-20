@@ -57,4 +57,7 @@ public static partial class SHUTDOWN
 
     [NativeTypeName("#define SHUTDOWN_SYSTEM_INITIATED 0x00010000")]
     public const int SHUTDOWN_SYSTEM_INITIATED = 0x00010000;
+
+    [NativeTypeName("#define SHUTDOWN_UPDATE_POWEROFF 0x00020000")]
+    public const int SHUTDOWN_UPDATE_POWEROFF = 0x00020000;
 }

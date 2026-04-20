@@ -242,6 +242,10 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.22631.0")]
     public static extern DEVELOPER_DRIVE_ENABLEMENT_STATE GetDeveloperDriveEnablementState();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetRuntimeAttestationReport"]/*' />
+    [DllImport("kernel32", ExactSpelling = true)]
+    public static extern BOOL GetRuntimeAttestationReport([NativeTypeName("UCHAR *")] byte* Nonce, [NativeTypeName("UINT16")] ushort PackageVersion, [NativeTypeName("UINT64")] ulong ReportTypesBitmap, [NativeTypeName("PVOID")] void* ReportBuffer, [NativeTypeName("PUINT32")] uint* ReportBufferSize);
+
     [NativeTypeName("#define USER_CET_ENVIRONMENT_WIN32_PROCESS 0x00000000")]
     public const int USER_CET_ENVIRONMENT_WIN32_PROCESS = 0x00000000;
 

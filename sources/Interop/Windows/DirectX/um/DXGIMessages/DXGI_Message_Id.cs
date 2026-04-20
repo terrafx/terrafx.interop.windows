@@ -905,6 +905,24 @@ public enum DXGI_Message_Id
     /// <include file='DXGI_Message_Id.xml' path='doc/member[@name="DXGI_Message_Id.DXGI_MSG_IDXGIFactory_MakeWindowAssociation_NoOpBehavior"]/*' />
     DXGI_MSG_IDXGIFactory_MakeWindowAssociation_NoOpBehavior,
 
+    /// <include file='DXGI_Message_Id.xml' path='doc/member[@name="DXGI_Message_Id.DXGI_MSG_IDXGIFactory8_CreateSwapChain_InvalidColorSpaceFlag"]/*' />
+    DXGI_MSG_IDXGIFactory8_CreateSwapChain_InvalidColorSpaceFlag,
+
+    /// <include file='DXGI_Message_Id.xml' path='doc/member[@name="DXGI_Message_Id.DXGI_MSG_IDXGIFactory8_CreateSwapChain_InvalidColorSpace"]/*' />
+    DXGI_MSG_IDXGIFactory8_CreateSwapChain_InvalidColorSpace,
+
+    /// <include file='DXGI_Message_Id.xml' path='doc/member[@name="DXGI_Message_Id.DXGI_MSG_IDXGISwapChain5_ResizeBuffers2_InvalidColorSpace"]/*' />
+    DXGI_MSG_IDXGISwapChain5_ResizeBuffers2_InvalidColorSpace,
+
+    /// <include file='DXGI_Message_Id.xml' path='doc/member[@name="DXGI_Message_Id.DXGI_MSG_IDXGISwapChain5_SetColorSpace1_Unsupported"]/*' />
+    DXGI_MSG_IDXGISwapChain5_SetColorSpace1_Unsupported,
+
+    /// <include file='DXGI_Message_Id.xml' path='doc/member[@name="DXGI_Message_Id.DXGI_MSG_IDXGIAdapter5_GetSingleAdapterHybridMode_Unsupported"]/*' />
+    DXGI_MSG_IDXGIAdapter5_GetSingleAdapterHybridMode_Unsupported,
+
+    /// <include file='DXGI_Message_Id.xml' path='doc/member[@name="DXGI_Message_Id.DXGI_MSG_IDXGIAdapter5_SetSingleAdapterHybridMode_Unsupported"]/*' />
+    DXGI_MSG_IDXGIAdapter5_SetSingleAdapterHybridMode_Unsupported,
+
     /// <include file='DXGI_Message_Id.xml' path='doc/member[@name="DXGI_Message_Id.DXGI_MSG_Phone_IDXGIFactory_CreateSwapChain_NotForegroundWindow"]/*' />
     DXGI_MSG_Phone_IDXGIFactory_CreateSwapChain_NotForegroundWindow = 1000,
 

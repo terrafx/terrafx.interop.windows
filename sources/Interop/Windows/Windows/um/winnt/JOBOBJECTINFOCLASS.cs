@@ -161,6 +161,9 @@ public enum JOBOBJECTINFOCLASS
     /// <include file='JOBOBJECTINFOCLASS.xml' path='doc/member[@name="JOBOBJECTINFOCLASS.JobObjectNetworkAccountingInformation"]/*' />
     JobObjectNetworkAccountingInformation,
 
+    /// <include file='JOBOBJECTINFOCLASS.xml' path='doc/member[@name="JOBOBJECTINFOCLASS.JobObjectCpuPartition"]/*' />
+    JobObjectCpuPartition,
+
     /// <include file='JOBOBJECTINFOCLASS.xml' path='doc/member[@name="JOBOBJECTINFOCLASS.MaxJobObjectInfoClass"]/*' />
     MaxJobObjectInfoClass,
 }

@@ -15,6 +15,10 @@ public partial struct PARTITION_INFORMATION_EX
     /// <include file='PARTITION_INFORMATION_EX.xml' path='doc/member[@name="PARTITION_INFORMATION_EX.PartitionStyle"]/*' />
     public PARTITION_STYLE PartitionStyle;
 
+    /// <include file='PARTITION_INFORMATION_EX.xml' path='doc/member[@name="PARTITION_INFORMATION_EX.PartitionOrdinal"]/*' />
+    [NativeTypeName("WORD")]
+    public ushort PartitionOrdinal;
+
     /// <include file='PARTITION_INFORMATION_EX.xml' path='doc/member[@name="PARTITION_INFORMATION_EX.StartingOffset"]/*' />
     public LARGE_INTEGER StartingOffset;
 
@@ -34,7 +38,7 @@ public partial struct PARTITION_INFORMATION_EX
     public byte IsServicePartition;
 
     /// <include file='PARTITION_INFORMATION_EX.xml' path='doc/member[@name="PARTITION_INFORMATION_EX.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winioctl_L9624_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L9702_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Mbr"]/*' />

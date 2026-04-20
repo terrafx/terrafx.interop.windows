@@ -267,11 +267,6 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint GetBestInterface([NativeTypeName("IPAddr")] uint dwDestAddr, [NativeTypeName("PDWORD")] uint* pdwBestIfIndex);
 
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetBestInterfaceEx"]/*' />
-    [DllImport("iphlpapi", ExactSpelling = true)]
-    [return: NativeTypeName("DWORD")]
-    public static extern uint GetBestInterfaceEx([NativeTypeName("struct sockaddr *")] SOCKADDR* pDestAddr, [NativeTypeName("PDWORD")] uint* pdwBestIfIndex);
-
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetBestRoute"]/*' />
     [DllImport("iphlpapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]

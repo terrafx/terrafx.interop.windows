@@ -100,8 +100,26 @@ public static partial class XSTATE
     [NativeTypeName("#define XSTATE_ARM64_SVE (2)")]
     public const int XSTATE_ARM64_SVE = (2);
 
+    [NativeTypeName("#define XSTATE_ARM64_SME_ZA (3)")]
+    public const int XSTATE_ARM64_SME_ZA = (3);
+
+    [NativeTypeName("#define XSTATE_ARM64_SME_TPIDR2 (4)")]
+    public const int XSTATE_ARM64_SME_TPIDR2 = (4);
+
+    [NativeTypeName("#define XSTATE_ARM64_SME_ZT (5)")]
+    public const int XSTATE_ARM64_SME_ZT = (5);
+
     [NativeTypeName("#define XSTATE_MASK_ARM64_SVE (1ui64 << (XSTATE_ARM64_SVE))")]
     public const ulong XSTATE_MASK_ARM64_SVE = (1UL << ((2)));
+
+    [NativeTypeName("#define XSTATE_MASK_ARM64_SME_ZA (1ui64 << (XSTATE_ARM64_SME_ZA))")]
+    public const ulong XSTATE_MASK_ARM64_SME_ZA = (1UL << ((3)));
+
+    [NativeTypeName("#define XSTATE_MASK_ARM64_SME_TPIDR2 (1ui64 << (XSTATE_ARM64_SME_TPIDR2))")]
+    public const ulong XSTATE_MASK_ARM64_SME_TPIDR2 = (1UL << ((4)));
+
+    [NativeTypeName("#define XSTATE_MASK_ARM64_SME_ZT (1ui64 << (XSTATE_ARM64_SME_ZT))")]
+    public const ulong XSTATE_MASK_ARM64_SME_ZT = (1UL << ((5)));
 
     [NativeTypeName("#define XSTATE_MASK_LEGACY (XSTATE_MASK_LEGACY_FLOATING_POINT | \\\r\n                                             XSTATE_MASK_LEGACY_SSE)")]
     public const ulong XSTATE_MASK_LEGACY = ((1UL << ((0))) | (1UL << ((1))));

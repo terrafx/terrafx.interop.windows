@@ -184,6 +184,9 @@ public static partial class HTTP
     [NativeTypeName("#define HTTP_LOGGING_FLAG_LOG_SUCCESS_ONLY (0x00000008)")]
     public const int HTTP_LOGGING_FLAG_LOG_SUCCESS_ONLY = (0x00000008);
 
+    [NativeTypeName("#define HTTP_REQUEST_INFO_FLAG_INITIAL_TTL (0x00000001ULL)")]
+    public const ulong HTTP_REQUEST_INFO_FLAG_INITIAL_TTL = (0x00000001UL);
+
     [NativeTypeName("#define HTTP_CREATE_REQUEST_QUEUE_FLAG_OPEN_EXISTING (0x00000001)")]
     public const int HTTP_CREATE_REQUEST_QUEUE_FLAG_OPEN_EXISTING = (0x00000001);
 

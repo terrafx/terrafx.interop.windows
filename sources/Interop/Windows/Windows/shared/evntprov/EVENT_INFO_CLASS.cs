@@ -20,6 +20,9 @@ public enum EVENT_INFO_CLASS
     /// <include file='EVENT_INFO_CLASS.xml' path='doc/member[@name="EVENT_INFO_CLASS.EventProviderUseDescriptorType"]/*' />
     EventProviderUseDescriptorType,
 
+    /// <include file='EVENT_INFO_CLASS.xml' path='doc/member[@name="EVENT_INFO_CLASS.EventProviderSetReserved2"]/*' />
+    EventProviderSetReserved2,
+
     /// <include file='EVENT_INFO_CLASS.xml' path='doc/member[@name="EVENT_INFO_CLASS.MaxEventInfo"]/*' />
     MaxEventInfo,
 }

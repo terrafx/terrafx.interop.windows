@@ -64,4 +64,7 @@ public static partial class HEAP
 
     [NativeTypeName("#define HEAP_OPTIMIZE_RESOURCES_CURRENT_VERSION 1")]
     public const int HEAP_OPTIMIZE_RESOURCES_CURRENT_VERSION = 1;
+
+    [NativeTypeName("#define HEAP_MEMORY_USAGE_INFO_CURRENT_VERSION 0x1")]
+    public const int HEAP_MEMORY_USAGE_INFO_CURRENT_VERSION = 0x1;
 }

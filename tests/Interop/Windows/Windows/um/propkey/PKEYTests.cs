@@ -3004,6 +3004,14 @@ public static partial class PKEYTests
         Assert.That(PKEY_StorageProviderStatus.pid, Is.EqualTo(110));
     }
 
+    /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderUserAccountKind" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_StorageProviderUserAccountKindTest()
+    {
+        Assert.That(PKEY_StorageProviderUserAccountKind.fmtid, Is.EqualTo(new Guid(0xB2F9B9D6, 0xFEC4, 0x4DD5, 0x94, 0xD7, 0x89, 0x57, 0x48, 0x8C, 0x80, 0x7B)));
+        Assert.That(PKEY_StorageProviderUserAccountKind.pid, Is.EqualTo(17));
+    }
+
     /// <summary>Validates that the value of the <see cref="PKEY_StorageProviderUserId" /> property is correct.</summary>
     [Test]
     public static void PKEY_StorageProviderUserIdTest()

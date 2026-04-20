@@ -16,7 +16,7 @@ public partial struct NET_ADDRESS_INFO
     public NET_ADDRESS_FORMAT Format;
 
     /// <include file='NET_ADDRESS_INFO.xml' path='doc/member[@name="NET_ADDRESS_INFO.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_iphlpapi_L1416_C4")]
+    [NativeTypeName("__AnonymousRecord_iphlpapi_L1402_C4")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NamedAddress"]/*' />
@@ -69,7 +69,7 @@ public partial struct NET_ADDRESS_INFO
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NamedAddress"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_iphlpapi_L1418_C7")]
+        [NativeTypeName("__AnonymousRecord_iphlpapi_L1404_C7")]
         public _NamedAddress_e__Struct NamedAddress;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Ipv4Address"]/*' />

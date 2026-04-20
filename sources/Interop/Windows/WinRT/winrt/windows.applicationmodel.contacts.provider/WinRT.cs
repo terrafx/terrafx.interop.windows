@@ -13,6 +13,9 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[61]")]
     public const string InterfaceName_Windows_ApplicationModel_Contacts_Provider_IContactPickerUI2 = "Windows.ApplicationModel.Contacts.Provider.IContactPickerUI2";
 
+    [NativeTypeName("const WCHAR[60]")]
+    public const string InterfaceName_Windows_ApplicationModel_Contacts_Provider_IContactProvider = "Windows.ApplicationModel.Contacts.Provider.IContactProvider";
+
     [NativeTypeName("const WCHAR[68]")]
     public const string InterfaceName_Windows_ApplicationModel_Contacts_Provider_IContactRemovedEventArgs = "Windows.ApplicationModel.Contacts.Provider.IContactRemovedEventArgs";
 

@@ -16,4 +16,7 @@ public enum WINHTTP_PROXY_SETTINGS_TYPE
 
     /// <include file='WINHTTP_PROXY_SETTINGS_TYPE.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS_TYPE.WinHttpProxySettingsTypeWsa"]/*' />
     WinHttpProxySettingsTypeWsa,
+
+    /// <include file='WINHTTP_PROXY_SETTINGS_TYPE.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS_TYPE.WinHttpProxySettingsTypeXBox"]/*' />
+    WinHttpProxySettingsTypeXBox,
 }

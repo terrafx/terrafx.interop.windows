@@ -418,6 +418,27 @@ public static unsafe partial class WindowsTests
         Assert.That(MFSampleExtension_VideoEncodeSatdMap, Is.EqualTo(new Guid(0xadf61d96, 0xc2d3, 0x4b57, 0xa1, 0x38, 0xdd, 0xe4, 0xd3, 0x51, 0xea, 0xa9)));
     }
 
+    /// <summary>Validates that the value of the <see cref="MFSampleExtension_VideoEncodeInputDeltaQPMap" /> property is correct.</summary>
+    [Test]
+    public static void MFSampleExtension_VideoEncodeInputDeltaQPMapTest()
+    {
+        Assert.That(MFSampleExtension_VideoEncodeInputDeltaQPMap, Is.EqualTo(new Guid(0xdab419c3, 0xbf21, 0x4b46, 0x86, 0x92, 0x9a, 0x7b, 0xf0, 0xa7, 0x17, 0x69)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MFSampleExtension_VideoEncodeInputAbsoluteQPMap" /> property is correct.</summary>
+    [Test]
+    public static void MFSampleExtension_VideoEncodeInputAbsoluteQPMapTest()
+    {
+        Assert.That(MFSampleExtension_VideoEncodeInputAbsoluteQPMap, Is.EqualTo(new Guid(0x432a6e9a, 0xf1ed, 0x456e, 0x8d, 0xc3, 0x6f, 0x89, 0x85, 0x64, 0x9e, 0xb9)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MFSampleExtension_VideoEncodeD3D12ReconstructedPicture" /> property is correct.</summary>
+    [Test]
+    public static void MFSampleExtension_VideoEncodeD3D12ReconstructedPictureTest()
+    {
+        Assert.That(MFSampleExtension_VideoEncodeD3D12ReconstructedPicture, Is.EqualTo(new Guid(0x3e8a1b7f, 0x5c92, 0x4d6e, 0xb8, 0x34, 0xf0, 0xa7, 0x29, 0xe6, 0x5c, 0x48)));
+    }
+
     /// <summary>Validates that the value of the <see cref="MFSampleExtension_PhotoThumbnail" /> property is correct.</summary>
     [Test]
     public static void MFSampleExtension_PhotoThumbnailTest()

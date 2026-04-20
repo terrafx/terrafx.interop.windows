@@ -509,6 +509,13 @@ public static partial class MFVideoFormatTests
         Assert.That(MFVideoFormat_Theora, Is.EqualTo(new Guid(unchecked((((uint)(0x7468656F) & 0xFF) << 24) | (((uint)(0x7468656F) & 0xFF00) << 8) | (((uint)(0x7468656F) & 0xFF0000) >> 8) | (((uint)(0x7468656F) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71)));
     }
 
+    /// <summary>Validates that the value of the <see cref="MFVideoFormat_APV" /> property is correct.</summary>
+    [Test]
+    public static void MFVideoFormat_APVTest()
+    {
+        Assert.That(MFVideoFormat_APV, Is.EqualTo(new Guid(unchecked((((uint)(0x41505620) & 0xFF) << 24) | (((uint)(0x41505620) & 0xFF00) << 8) | (((uint)(0x41505620) & 0xFF0000) >> 8) | (((uint)(0x41505620) & 0xFF000000) >> 24)), 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71)));
+    }
+
     /// <summary>Validates that the value of the <see cref="MFVideoFormat_H264_ES" /> property is correct.</summary>
     [Test]
     public static void MFVideoFormat_H264_ESTest()

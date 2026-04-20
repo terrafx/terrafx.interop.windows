@@ -271,6 +271,13 @@ public static partial class MFAudioFormatTests
         Assert.That(MFAudioFormat_DTS_UHDY, Is.EqualTo(new Guid(0x9B9CCA00, 0x91B9, 0x4CCC, 0x88, 0x3A, 0x8F, 0x78, 0x7A, 0xC3, 0xCC, 0x86)));
     }
 
+    /// <summary>Validates that the value of the <see cref="MFAudioFormat_IAMF" /> property is correct.</summary>
+    [Test]
+    public static void MFAudioFormat_IAMFTest()
+    {
+        Assert.That(MFAudioFormat_IAMF, Is.EqualTo(new Guid(0x78a8eba0, 0xf446, 0x4851, 0xa5, 0x5d, 0x53, 0x72, 0x28, 0x0e, 0x6b, 0x0b)));
+    }
+
     /// <summary>Validates that the value of the <see cref="MFAudioFormat_Float_SpatialObjects" /> property is correct.</summary>
     [Test]
     public static void MFAudioFormat_Float_SpatialObjectsTest()

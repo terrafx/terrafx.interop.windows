@@ -35,8 +35,8 @@ public static partial class XAUDIO2
     [NativeTypeName("#define XAUDIO2_MIN_SAMPLE_RATE 1000")]
     public const int XAUDIO2_MIN_SAMPLE_RATE = 1000;
 
-    [NativeTypeName("#define XAUDIO2_MAX_SAMPLE_RATE 200000")]
-    public const int XAUDIO2_MAX_SAMPLE_RATE = 200000;
+    [NativeTypeName("#define XAUDIO2_MAX_SAMPLE_RATE 384000")]
+    public const int XAUDIO2_MAX_SAMPLE_RATE = 384000;
 
     [NativeTypeName("#define XAUDIO2_MAX_VOLUME_LEVEL 16777216.0f")]
     public const float XAUDIO2_MAX_VOLUME_LEVEL = 16777216.0f;

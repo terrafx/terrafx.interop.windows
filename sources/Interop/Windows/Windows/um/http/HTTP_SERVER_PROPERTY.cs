@@ -49,4 +49,7 @@ public enum HTTP_SERVER_PROPERTY
 
     /// <include file='HTTP_SERVER_PROPERTY.xml' path='doc/member[@name="HTTP_SERVER_PROPERTY.HttpServerFastForwardingProperty"]/*' />
     HttpServerFastForwardingProperty = 18,
+
+    /// <include file='HTTP_SERVER_PROPERTY.xml' path='doc/member[@name="HTTP_SERVER_PROPERTY.HttpServerRequestInfoProperty"]/*' />
+    HttpServerRequestInfoProperty = 19,
 }

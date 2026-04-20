@@ -9,11 +9,8 @@ namespace TerraFX.Interop.WinRT;
 public enum KeyCredentialCacheOption
 {
     /// <include file='KeyCredentialCacheOption.xml' path='doc/member[@name="KeyCredentialCacheOption.KeyCredentialCacheOption_NoCache"]/*' />
-    KeyCredentialCacheOption_NoCache = 1,
+    KeyCredentialCacheOption_NoCache = 0,
 
     /// <include file='KeyCredentialCacheOption.xml' path='doc/member[@name="KeyCredentialCacheOption.KeyCredentialCacheOption_CacheWhenUnlocked"]/*' />
-    KeyCredentialCacheOption_CacheWhenUnlocked = 2,
-
-    /// <include file='KeyCredentialCacheOption.xml' path='doc/member[@name="KeyCredentialCacheOption.KeyCredentialCacheOption_CacheUnderLock"]/*' />
-    KeyCredentialCacheOption_CacheUnderLock = 4,
+    KeyCredentialCacheOption_CacheWhenUnlocked = 1,
 }

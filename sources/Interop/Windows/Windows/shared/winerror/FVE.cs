@@ -775,6 +775,9 @@ public static partial class FVE
     [NativeTypeName("#define FVE_E_NO_TPM_BINDINGS _HRESULT_TYPEDEF_(0xC031010CL)")]
     public const int FVE_E_NO_TPM_BINDINGS = unchecked((int)(0xC031010C));
 
+    [NativeTypeName("#define FVE_E_BOOT_CRIT_DEVICE_UNEXPECTED_BEHAVIOR _HRESULT_TYPEDEF_(0xC031010DL)")]
+    public const int FVE_E_BOOT_CRIT_DEVICE_UNEXPECTED_BEHAVIOR = unchecked((int)(0xC031010D));
+
     [NativeTypeName("#define FVE_E_FW_UPDATE_PCRS_BLOCK _HRESULT_TYPEDEF_(0xC031010EL)")]
     public const int FVE_E_FW_UPDATE_PCRS_BLOCK = unchecked((int)(0xC031010E));
 
@@ -798,4 +801,16 @@ public static partial class FVE
 
     [NativeTypeName("#define FVE_E_HARDWARE_CRYPTO_KEY_MANAGER_NOT_FIPS_COMPLIANT _HRESULT_TYPEDEF_(0xC0310115L)")]
     public const int FVE_E_HARDWARE_CRYPTO_KEY_MANAGER_NOT_FIPS_COMPLIANT = unchecked((int)(0xC0310115));
+
+    [NativeTypeName("#define FVE_E_NOT_ALLOWED_ON_EPHEMERAL_VOLUME _HRESULT_TYPEDEF_(0xC0310116L)")]
+    public const int FVE_E_NOT_ALLOWED_ON_EPHEMERAL_VOLUME = unchecked((int)(0xC0310116));
+
+    [NativeTypeName("#define FVE_E_UNTRUSTED_OFFLOAD_STORAGE _HRESULT_TYPEDEF_(0xC0310117L)")]
+    public const int FVE_E_UNTRUSTED_OFFLOAD_STORAGE = unchecked((int)(0xC0310117));
+
+    [NativeTypeName("#define FVE_E_TPM_PCRS_DO_NOT_MATCH_LOG _HRESULT_TYPEDEF_(0xC0310118L)")]
+    public const int FVE_E_TPM_PCRS_DO_NOT_MATCH_LOG = unchecked((int)(0xC0310118));
+
+    [NativeTypeName("#define FVE_E_MISSING_PROTECTORS _HRESULT_TYPEDEF_(0xC0310119L)")]
+    public const int FVE_E_MISSING_PROTECTORS = unchecked((int)(0xC0310119));
 }

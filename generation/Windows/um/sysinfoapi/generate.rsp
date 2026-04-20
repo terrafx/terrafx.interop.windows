@@ -34,6 +34,7 @@ GetNativeSystemInfo=kernel32
 GetPhysicallyInstalledSystemMemory=kernel32
 GetProcessorSystemCycleTime=kernel32
 GetProductInfo=kernel32
+GetRuntimeAttestationReport=kernel32
 GetSystemDirectory=kernel32
 GetSystemDirectoryA=kernel32
 GetSystemDirectoryW=kernel32

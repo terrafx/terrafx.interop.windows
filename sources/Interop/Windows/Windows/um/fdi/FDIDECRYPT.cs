@@ -19,7 +19,7 @@ public unsafe partial struct FDIDECRYPT
     public void* pvUser;
 
     /// <include file='FDIDECRYPT.xml' path='doc/member[@name="FDIDECRYPT.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_fdi_L416_C5")]
+    [NativeTypeName("__AnonymousRecord_fdi_L418_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cabinet"]/*' />
@@ -61,17 +61,17 @@ public unsafe partial struct FDIDECRYPT
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cabinet"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_fdi_L417_C9")]
+        [NativeTypeName("__AnonymousRecord_fdi_L419_C9")]
         public _cabinet_e__Struct cabinet;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.folder"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_fdi_L424_C9")]
+        [NativeTypeName("__AnonymousRecord_fdi_L426_C9")]
         public _folder_e__Struct folder;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.decrypt"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_fdi_L430_C9")]
+        [NativeTypeName("__AnonymousRecord_fdi_L432_C9")]
         public _decrypt_e__Struct decrypt;
 
         /// <include file='_cabinet_e__Struct.xml' path='doc/member[@name="_cabinet_e__Struct"]/*' />

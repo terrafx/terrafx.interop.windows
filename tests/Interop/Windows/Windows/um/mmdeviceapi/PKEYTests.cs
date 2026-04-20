@@ -92,6 +92,22 @@ public static partial class PKEYTests
         Assert.That(PKEY_AudioEndpoint_Default_VolumeInDb.pid, Is.EqualTo(9));
     }
 
+    /// <summary>Validates that the value of the <see cref="PKEY_AudioEndpoint_Max_VolumeInDb" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_AudioEndpoint_Max_VolumeInDbTest()
+    {
+        Assert.That(PKEY_AudioEndpoint_Max_VolumeInDb.fmtid, Is.EqualTo(new Guid(0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e)));
+        Assert.That(PKEY_AudioEndpoint_Max_VolumeInDb.pid, Is.EqualTo(10));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_AudioEndpoint_Min_VolumeInDb" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_AudioEndpoint_Min_VolumeInDbTest()
+    {
+        Assert.That(PKEY_AudioEndpoint_Min_VolumeInDb.fmtid, Is.EqualTo(new Guid(0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e)));
+        Assert.That(PKEY_AudioEndpoint_Min_VolumeInDb.pid, Is.EqualTo(11));
+    }
+
     /// <summary>Validates that the value of the <see cref="PKEY_AudioEngine_DeviceFormat" /> property is correct.</summary>
     [Test]
     public static void PKEY_AudioEngine_DeviceFormatTest()

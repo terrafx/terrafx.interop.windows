@@ -25,17 +25,23 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[69]")]
     public const string InterfaceName_Windows_Security_Credentials_IKeyCredentialCacheConfigurationFactory = "Windows.Security.Credentials.IKeyCredentialCacheConfigurationFactory";
 
-    [NativeTypeName("const WCHAR[66]")]
-    public const string InterfaceName_Windows_Security_Credentials_IKeyCredentialManagerExtendedStatics = "Windows.Security.Credentials.IKeyCredentialManagerExtendedStatics";
+    [NativeTypeName("const WCHAR[74]")]
+    public const string InterfaceName_Windows_Security_Credentials_IKeyCredentialManagerCreateWithWindowStatics = "Windows.Security.Credentials.IKeyCredentialManagerCreateWithWindowStatics";
 
     [NativeTypeName("const WCHAR[58]")]
     public const string InterfaceName_Windows_Security_Credentials_IKeyCredentialManagerStatics = "Windows.Security.Credentials.IKeyCredentialManagerStatics";
+
+    [NativeTypeName("const WCHAR[59]")]
+    public const string InterfaceName_Windows_Security_Credentials_IKeyCredentialManagerStatics2 = "Windows.Security.Credentials.IKeyCredentialManagerStatics2";
 
     [NativeTypeName("const WCHAR[59]")]
     public const string InterfaceName_Windows_Security_Credentials_IKeyCredentialOperationResult = "Windows.Security.Credentials.IKeyCredentialOperationResult";
 
     [NativeTypeName("const WCHAR[59]")]
     public const string InterfaceName_Windows_Security_Credentials_IKeyCredentialRetrievalResult = "Windows.Security.Credentials.IKeyCredentialRetrievalResult";
+
+    [NativeTypeName("const WCHAR[54]")]
+    public const string InterfaceName_Windows_Security_Credentials_IKeyCredentialWithWindow = "Windows.Security.Credentials.IKeyCredentialWithWindow";
 
     [NativeTypeName("const WCHAR[49]")]
     public const string InterfaceName_Windows_Security_Credentials_IPasswordCredential = "Windows.Security.Credentials.IPasswordCredential";

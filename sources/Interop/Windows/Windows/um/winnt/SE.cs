@@ -259,6 +259,9 @@ public static partial class SE
     [NativeTypeName("#define SE_APP_SILO_PRINT_CAPABILITY L\"isolatedWin32-print\"")]
     public const string SE_APP_SILO_PRINT_CAPABILITY = "isolatedWin32-print";
 
+    [NativeTypeName("#define SE_APP_SILO_SCANNER_CAPABILITY L\"isolatedWin32-scanner\"")]
+    public const string SE_APP_SILO_SCANNER_CAPABILITY = "isolatedWin32-scanner";
+
     [NativeTypeName("#define SE_SIGNING_LEVEL_UNCHECKED 0x00000000")]
     public const int SE_SIGNING_LEVEL_UNCHECKED = 0x00000000;
 

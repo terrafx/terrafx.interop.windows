@@ -40,6 +40,9 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[41]")]
     public const string InterfaceName_Windows_Media_Core_ICodecSubtypesStatics = "Windows.Media.Core.ICodecSubtypesStatics";
 
+    [NativeTypeName("const WCHAR[42]")]
+    public const string InterfaceName_Windows_Media_Core_ICodecSubtypesStatics2 = "Windows.Media.Core.ICodecSubtypesStatics2";
+
     [NativeTypeName("const WCHAR[28]")]
     public const string InterfaceName_Windows_Media_Core_IDataCue = "Windows.Media.Core.IDataCue";
 

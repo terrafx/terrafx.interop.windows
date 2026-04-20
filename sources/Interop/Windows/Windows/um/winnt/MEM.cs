@@ -88,6 +88,12 @@ public static partial class MEM
     [NativeTypeName("#define MEM_EXTENDED_PARAMETER_EC_CODE 0x00000040")]
     public const int MEM_EXTENDED_PARAMETER_EC_CODE = 0x00000040;
 
+    [NativeTypeName("#define MEM_EXTENDED_PARAMETER_SECURE_PAGES 0x00000080")]
+    public const int MEM_EXTENDED_PARAMETER_SECURE_PAGES = 0x00000080;
+
+    [NativeTypeName("#define MEM_EXTENDED_PARAMETER_TAGGED 0x00000100")]
+    public const int MEM_EXTENDED_PARAMETER_TAGGED = 0x00000100;
+
     [NativeTypeName("#define MEM_EXTENDED_PARAMETER_NUMA_NODE_MANDATORY MINLONG64")]
     public const long MEM_EXTENDED_PARAMETER_NUMA_NODE_MANDATORY = unchecked((long)(~((long)(((ulong)(~((ulong)(0)))) >> 1))));
 
@@ -96,6 +102,9 @@ public static partial class MEM
 
     [NativeTypeName("#define MEM_DEDICATED_ATTRIBUTE_NOT_SPECIFIED ((DWORD64) -1)")]
     public const ulong MEM_DEDICATED_ATTRIBUTE_NOT_SPECIFIED = unchecked((ulong)(-1));
+
+    [NativeTypeName("#define MEM_SECTION_ATTRIBUTE_SECURE_PAGES 0x00000001")]
+    public const int MEM_SECTION_ATTRIBUTE_SECURE_PAGES = 0x00000001;
 
     [NativeTypeName("#define MEM_PRIVATE 0x00020000")]
     public const int MEM_PRIVATE = 0x00020000;

@@ -1869,6 +1869,9 @@ public static unsafe partial class Windows
     [NativeTypeName("#define __WARNING_MISSING_ZERO_TERMINATION2 6054")]
     public const int __WARNING_MISSING_ZERO_TERMINATION2 = 6054;
 
+    [NativeTypeName("#define __WARNING_WRITE_OVERRUN 6386")]
+    public const int __WARNING_WRITE_OVERRUN = 6386;
+
     [NativeTypeName("#define __WARNING_INVALID_PARAM_VALUE_1 6387")]
     public const int __WARNING_INVALID_PARAM_VALUE_1 = 6387;
 

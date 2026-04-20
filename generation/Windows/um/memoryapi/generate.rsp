@@ -1,5 +1,11 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--exclude
+GetNumaNodeMemoryClosestInitiatorNode
+GetNumaNodeMemoryReadBandwidth
+GetNumaNodeMemoryReadLatency
+GetNumaNodeMemoryWriteBandwidth
+GetNumaNodeMemoryWriteLatency
 --file
 um-memoryapi.h
 --methodClassName

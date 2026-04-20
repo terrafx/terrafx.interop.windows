@@ -32,6 +32,9 @@ public enum LOGICAL_PROCESSOR_RELATIONSHIP
     /// <include file='LOGICAL_PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="LOGICAL_PROCESSOR_RELATIONSHIP.RelationProcessorModule"]/*' />
     RelationProcessorModule,
 
+    /// <include file='LOGICAL_PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="LOGICAL_PROCESSOR_RELATIONSHIP.RelationProcessorSharedComputeUnit"]/*' />
+    RelationProcessorSharedComputeUnit,
+
     /// <include file='LOGICAL_PROCESSOR_RELATIONSHIP.xml' path='doc/member[@name="LOGICAL_PROCESSOR_RELATIONSHIP.RelationAll"]/*' />
     RelationAll = 0xffff,
 }

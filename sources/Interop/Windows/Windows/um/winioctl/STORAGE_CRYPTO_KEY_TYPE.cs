@@ -14,7 +14,7 @@ public partial struct STORAGE_CRYPTO_KEY_TYPE
 {
     /// <include file='STORAGE_CRYPTO_KEY_TYPE.xml' path='doc/member[@name="STORAGE_CRYPTO_KEY_TYPE.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winioctl_L2031_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L2041_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='STORAGE_CRYPTO_KEY_TYPE.xml' path='doc/member[@name="STORAGE_CRYPTO_KEY_TYPE.AsUchar"]/*' />

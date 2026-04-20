@@ -1542,6 +1542,12 @@ public static partial class IMAGE
     [NativeTypeName("#define IMAGE_HOT_PATCH_DYNAMIC_VALUE 0x00078000")]
     public const int IMAGE_HOT_PATCH_DYNAMIC_VALUE = 0x00078000;
 
+    [NativeTypeName("#define IMAGE_HOTSWAP_ENDPOINT_TABLE_SECTION \".shsept\"")]
+    public static ReadOnlySpan<byte> IMAGE_HOTSWAP_ENDPOINT_TABLE_SECTION => ".shsept"u8;
+
+    [NativeTypeName("#define IMAGE_HOTSWAP_ENDPOINT_INFO_V2 2")]
+    public const int IMAGE_HOTSWAP_ENDPOINT_INFO_V2 = 2;
+
     [NativeTypeName("#define IMAGE_GUARD_CF_INSTRUMENTED 0x00000100")]
     public const int IMAGE_GUARD_CF_INSTRUMENTED = 0x00000100;
 

@@ -114,4 +114,79 @@ public static partial class MF
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MF_ENCRYPTEDMEDIAEXTENSIONS_ACTIVATE
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x1E, 0xB5, 0xF7, 0x2D,
+                0x7B, 0x79,
+                0x06, 0x4D,
+                0xBE,
+                0x71,
+                0xD1,
+                0x4A,
+                0x52,
+                0xCF,
+                0x84,
+                0x21
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MF_ENCRYPTEDMEDIAEXTENSIONS_ACTIVATABLE_CLASS_ID
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x31, 0x1A, 0x63, 0x77,
+                0xE7, 0xE5,
+                0x85, 0x47,
+                0xBF,
+                0x17,
+                0x20,
+                0xF5,
+                0x7B,
+                0x22,
+                0x48,
+                0x02
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const IID")]
+    public static ref readonly Guid MF_ENCRYPTEDMEDIAEXTENSIONS_INITIALIZATION_DATA
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x5C, 0x73, 0x73, 0x3E,
+                0xC0, 0xE6,
+                0x1D, 0x48,
+                0x82,
+                0x60,
+                0xEE,
+                0x5D,
+                0xB1,
+                0x34,
+                0x3B,
+                0x5F
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

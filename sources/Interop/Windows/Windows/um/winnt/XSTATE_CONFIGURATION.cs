@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -24,9 +25,9 @@ public partial struct XSTATE_CONFIGURATION
     [NativeTypeName("DWORD")]
     public uint Size;
 
-    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L14461_C5")]
-    public _Anonymous_e__Union Anonymous;
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Anonymous1"]/*' />
+    [NativeTypeName("__AnonymousRecord_winnt_L14867_C5")]
+    public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Features"]/*' />
     [NativeTypeName("XSTATE_FEATURE[64]")]
@@ -60,22 +61,22 @@ public partial struct XSTATE_CONFIGURATION
     [NativeTypeName("DWORD")]
     public uint AllNonLargeFeatureSize;
 
-    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.MaxSveVectorLength"]/*' />
-    [NativeTypeName("WORD")]
-    public ushort MaxSveVectorLength;
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Anonymous2"]/*' />
+    [NativeTypeName("__AnonymousRecord_winnt_L14901_C5")]
+    public _Anonymous2_e__Union Anonymous2;
 
-    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Spare1"]/*' />
-    [NativeTypeName("WORD")]
-    public ushort Spare1;
+    /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Spare"]/*' />
+    [NativeTypeName("DWORD64")]
+    public ulong Spare;
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ControlFlags"]/*' />
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.ControlFlags"]/*' />
     [UnscopedRef]
     public ref uint ControlFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return ref Anonymous.ControlFlags;
+            return ref Anonymous1.ControlFlags;
         }
     }
 
@@ -85,13 +86,13 @@ public partial struct XSTATE_CONFIGURATION
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return Anonymous.Anonymous.OptimizedSave;
+            return Anonymous1.Anonymous.OptimizedSave;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            Anonymous.Anonymous.OptimizedSave = value;
+            Anonymous1.Anonymous.OptimizedSave = value;
         }
     }
 
@@ -101,13 +102,13 @@ public partial struct XSTATE_CONFIGURATION
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return Anonymous.Anonymous.CompactionEnabled;
+            return Anonymous1.Anonymous.CompactionEnabled;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            Anonymous.Anonymous.CompactionEnabled = value;
+            Anonymous1.Anonymous.CompactionEnabled = value;
         }
     }
 
@@ -117,28 +118,121 @@ public partial struct XSTATE_CONFIGURATION
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         readonly get
         {
-            return Anonymous.Anonymous.ExtendedFeatureDisable;
+            return Anonymous1.Anonymous.ExtendedFeatureDisable;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         set
         {
-            Anonymous.Anonymous.ExtendedFeatureDisable = value;
+            Anonymous1.Anonymous.ExtendedFeatureDisable = value;
         }
     }
 
-    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
-    [StructLayout(LayoutKind.Explicit)]
-    public partial struct _Anonymous_e__Union
+    /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.Amd64Spare1"]/*' />
+    [UnscopedRef]
+    public Span<uint> Amd64Spare1
     {
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ControlFlags"]/*' />
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous2.Anonymous1.Amd64Spare1;
+        }
+    }
+
+    /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.MaxSveVectorLength"]/*' />
+    [UnscopedRef]
+    public ref ushort MaxSveVectorLength
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous2.Anonymous2.MaxSveVectorLength;
+        }
+    }
+
+    /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.MaxSmeVectorLength"]/*' />
+    [UnscopedRef]
+    public ref ushort MaxSmeVectorLength
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous2.Anonymous2.MaxSmeVectorLength;
+        }
+    }
+
+    /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.SmeZTRegisterCount"]/*' />
+    [UnscopedRef]
+    public ref ushort SmeZTRegisterCount
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous2.Anonymous2.SmeZTRegisterCount;
+        }
+    }
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Arm64Flags"]/*' />
+    [UnscopedRef]
+    public ref ushort Arm64Flags
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous2.Anonymous2.Anonymous.Arm64Flags;
+        }
+    }
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SmeFa64"]/*' />
+    public ushort SmeFa64
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        readonly get
+        {
+            return Anonymous2.Anonymous2.Anonymous.Anonymous.SmeFa64;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous2.Anonymous2.Anonymous.Anonymous.SmeFa64 = value;
+        }
+    }
+
+    /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.SupportedSmeVectorLengths"]/*' />
+    [UnscopedRef]
+    public ref byte SupportedSmeVectorLengths
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous2.Anonymous2.SupportedSmeVectorLengths;
+        }
+    }
+
+    /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.Arm64Spare"]/*' />
+    [UnscopedRef]
+    public Span<byte> Arm64Spare
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return Anonymous2.Anonymous2.Arm64Spare;
+        }
+    }
+
+    /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union"]/*' />
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous1_e__Union
+    {
+        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.ControlFlags"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint ControlFlags;
 
-        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
+        /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L14463_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L14869_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
@@ -195,6 +289,108 @@ public partial struct XSTATE_CONFIGURATION
                 {
                     _bitfield = (_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2);
                 }
+            }
+        }
+    }
+
+    /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union"]/*' />
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous2_e__Union
+    {
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Anonymous1"]/*' />
+        [FieldOffset(0)]
+        [NativeTypeName("__AnonymousRecord_winnt_L14903_C9")]
+        public _Anonymous1_e__Struct Anonymous1;
+
+        /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Anonymous2"]/*' />
+        [FieldOffset(0)]
+        [NativeTypeName("__AnonymousRecord_winnt_L14908_C9")]
+        public _Anonymous2_e__Struct Anonymous2;
+
+        /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct"]/*' />
+        public partial struct _Anonymous1_e__Struct
+        {
+            /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.Amd64Spare1"]/*' />
+            [NativeTypeName("DWORD[3]")]
+            public _Amd64Spare1_e__FixedBuffer Amd64Spare1;
+
+            /// <include file='_Amd64Spare1_e__FixedBuffer.xml' path='doc/member[@name="_Amd64Spare1_e__FixedBuffer"]/*' />
+            [InlineArray(3)]
+            public partial struct _Amd64Spare1_e__FixedBuffer
+            {
+                public uint e0;
+            }
+        }
+
+        /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct"]/*' />
+        public partial struct _Anonymous2_e__Struct
+        {
+            /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.MaxSveVectorLength"]/*' />
+            [NativeTypeName("WORD")]
+            public ushort MaxSveVectorLength;
+
+            /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.MaxSmeVectorLength"]/*' />
+            [NativeTypeName("WORD")]
+            public ushort MaxSmeVectorLength;
+
+            /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.SmeZTRegisterCount"]/*' />
+            [NativeTypeName("WORD")]
+            public ushort SmeZTRegisterCount;
+
+            /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.Anonymous"]/*' />
+            [NativeTypeName("__AnonymousRecord_winnt_L14920_C13")]
+            public _Anonymous_e__Union Anonymous;
+
+            /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.SupportedSmeVectorLengths"]/*' />
+            public byte SupportedSmeVectorLengths;
+
+            /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.Arm64Spare"]/*' />
+            [NativeTypeName("BYTE[3]")]
+            public _Arm64Spare_e__FixedBuffer Arm64Spare;
+
+            /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
+            [StructLayout(LayoutKind.Explicit)]
+            public partial struct _Anonymous_e__Union
+            {
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Arm64Flags"]/*' />
+                [FieldOffset(0)]
+                [NativeTypeName("WORD")]
+                public ushort Arm64Flags;
+
+                /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
+                [FieldOffset(0)]
+                [NativeTypeName("__AnonymousRecord_winnt_L14922_C17")]
+                public _Anonymous_e__Struct Anonymous;
+
+                /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
+                public partial struct _Anonymous_e__Struct
+                {
+                    public ushort _bitfield;
+
+                    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SmeFa64"]/*' />
+                    [NativeTypeName("WORD : 1")]
+                    public ushort SmeFa64
+                    {
+                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                        readonly get
+                        {
+                            return (ushort)(_bitfield & 0x1u);
+                        }
+
+                        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                        set
+                        {
+                            _bitfield = (ushort)((_bitfield & ~0x1u) | (value & 0x1u));
+                        }
+                    }
+                }
+            }
+
+            /// <include file='_Arm64Spare_e__FixedBuffer.xml' path='doc/member[@name="_Arm64Spare_e__FixedBuffer"]/*' />
+            [InlineArray(3)]
+            public partial struct _Arm64Spare_e__FixedBuffer
+            {
+                public byte e0;
             }
         }
     }

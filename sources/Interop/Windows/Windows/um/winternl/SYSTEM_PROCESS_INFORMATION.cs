@@ -32,9 +32,8 @@ public unsafe partial struct SYSTEM_PROCESS_INFORMATION
     /// <include file='SYSTEM_PROCESS_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESS_INFORMATION.UniqueProcessId"]/*' />
     public HANDLE UniqueProcessId;
 
-    /// <include file='SYSTEM_PROCESS_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESS_INFORMATION.Reserved2"]/*' />
-    [NativeTypeName("PVOID")]
-    public void* Reserved2;
+    /// <include file='SYSTEM_PROCESS_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESS_INFORMATION.InheritedFromUniqueProcessId"]/*' />
+    public HANDLE InheritedFromUniqueProcessId;
 
     /// <include file='SYSTEM_PROCESS_INFORMATION.xml' path='doc/member[@name="SYSTEM_PROCESS_INFORMATION.HandleCount"]/*' />
     [NativeTypeName("ULONG")]

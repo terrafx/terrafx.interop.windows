@@ -13,4 +13,7 @@ public enum RemoteSystemAuthorizationKind
 
     /// <include file='RemoteSystemAuthorizationKind.xml' path='doc/member[@name="RemoteSystemAuthorizationKind.RemoteSystemAuthorizationKind_Anonymous"]/*' />
     RemoteSystemAuthorizationKind_Anonymous = 1,
+
+    /// <include file='RemoteSystemAuthorizationKind.xml' path='doc/member[@name="RemoteSystemAuthorizationKind.RemoteSystemAuthorizationKind_SameFamily"]/*' />
+    RemoteSystemAuthorizationKind_SameFamily = 2,
 }

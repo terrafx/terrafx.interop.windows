@@ -12,7 +12,7 @@ using static TerraFX.Interop.Windows.IID;
 namespace TerraFX.Interop.WinRT;
 
 /// <include file='IKeyCredential2.xml' path='doc/member[@name="IKeyCredential2"]/*' />
-[Guid("CA343273-F558-53EF-B943-4A3EC81A217E")]
+[Guid("3B7C5E09-7B72-5A05-B2F0-7119CA3FD5DF")]
 [NativeTypeName("struct IKeyCredential2 : IInspectable")]
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IKeyCredential2 : IKeyCredential2.Interface, INativeGuid
@@ -74,26 +74,26 @@ public unsafe partial struct IKeyCredential2 : IKeyCredential2.Interface, INativ
     /// <include file='IKeyCredential2.xml' path='doc/member[@name="IKeyCredential2.RequestDeriveSharedSecretAsync"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT RequestDeriveSharedSecretAsync([NativeTypeName("ABI::Windows::UI::WindowId")] WindowId windowId, HSTRING message, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* publicKey, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialOperationResult_t **")] IAsyncOperation<Pointer<IKeyCredentialOperationResult>>** operation)
+    public HRESULT RequestDeriveSharedSecretAsync([NativeTypeName("ABI::Windows::UI::WindowId")] WindowId windowId, HSTRING message, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* encryptedRequest, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialOperationResult_t **")] IAsyncOperation<Pointer<IKeyCredentialOperationResult>>** operation)
     {
-        return ((delegate* unmanaged[MemberFunction]<IKeyCredential2*, WindowId, HSTRING, IBuffer*, IAsyncOperation<Pointer<IKeyCredentialOperationResult>>**, int>)(lpVtbl[6]))((IKeyCredential2*)Unsafe.AsPointer(ref this), windowId, message, publicKey, operation);
+        return ((delegate* unmanaged[MemberFunction]<IKeyCredential2*, WindowId, HSTRING, IBuffer*, IAsyncOperation<Pointer<IKeyCredentialOperationResult>>**, int>)(lpVtbl[6]))((IKeyCredential2*)Unsafe.AsPointer(ref this), windowId, message, encryptedRequest, operation);
     }
 
     /// <include file='IKeyCredential2.xml' path='doc/member[@name="IKeyCredential2.RetrieveAuthorizationContext"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT RetrieveAuthorizationContext([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer **")] IBuffer** result)
+    public HRESULT RetrieveAuthorizationContext([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* encryptedRequest, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer **")] IBuffer** result)
     {
-        return ((delegate* unmanaged[MemberFunction]<IKeyCredential2*, IBuffer**, int>)(lpVtbl[7]))((IKeyCredential2*)Unsafe.AsPointer(ref this), result);
+        return ((delegate* unmanaged[MemberFunction]<IKeyCredential2*, IBuffer*, IBuffer**, int>)(lpVtbl[7]))((IKeyCredential2*)Unsafe.AsPointer(ref this), encryptedRequest, result);
     }
 
     public interface Interface : IInspectable.Interface
     {
         [VtblIndex(6)]
-        HRESULT RequestDeriveSharedSecretAsync([NativeTypeName("ABI::Windows::UI::WindowId")] WindowId windowId, HSTRING message, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* publicKey, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialOperationResult_t **")] IAsyncOperation<Pointer<IKeyCredentialOperationResult>>** operation);
+        HRESULT RequestDeriveSharedSecretAsync([NativeTypeName("ABI::Windows::UI::WindowId")] WindowId windowId, HSTRING message, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* encryptedRequest, [NativeTypeName("ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialOperationResult_t **")] IAsyncOperation<Pointer<IKeyCredentialOperationResult>>** operation);
 
         [VtblIndex(7)]
-        HRESULT RetrieveAuthorizationContext([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer **")] IBuffer** result);
+        HRESULT RetrieveAuthorizationContext([NativeTypeName("ABI::Windows::Storage::Streams::IBuffer *")] IBuffer* encryptedRequest, [NativeTypeName("ABI::Windows::Storage::Streams::IBuffer **")] IBuffer** result);
     }
 
     public partial struct Vtbl<TSelf>
@@ -120,7 +120,7 @@ public unsafe partial struct IKeyCredential2 : IKeyCredential2.Interface, INativ
         [NativeTypeName("HRESULT (ABI::Windows::UI::WindowId, HSTRING, ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Foundation::__FIAsyncOperation_1_Windows__CSecurity__CCredentials__CKeyCredentialOperationResult_t **) __attribute__((stdcall))")]
         public delegate* unmanaged[MemberFunction]<TSelf*, WindowId, HSTRING, IBuffer*, IAsyncOperation<Pointer<IKeyCredentialOperationResult>>**, int> RequestDeriveSharedSecretAsync;
 
-        [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IBuffer **) __attribute__((stdcall))")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer**, int> RetrieveAuthorizationContext;
+        [NativeTypeName("HRESULT (ABI::Windows::Storage::Streams::IBuffer *, ABI::Windows::Storage::Streams::IBuffer **) __attribute__((stdcall))")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBuffer*, IBuffer**, int> RetrieveAuthorizationContext;
     }
 }

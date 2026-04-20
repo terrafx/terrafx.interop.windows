@@ -7,11 +7,60 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using TerraFX.Interop.WinRT;
 
 namespace TerraFX.Interop.Windows;
 
-public static partial class IID
+public static unsafe partial class IID
 {
+    public static ref readonly Guid IID_IInputHapticsManager
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xDF, 0x91, 0x0E, 0x04,
+                0x3A, 0xBB,
+                0x7C, 0x50,
+                0x9E,
+                0x25,
+                0xA2,
+                0xD2,
+                0xC6,
+                0x85,
+                0xB2,
+                0xE5
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IInputHapticsManagerStatics
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x77, 0x0F, 0xB4, 0x7B,
+                0x87, 0xE1,
+                0x22, 0x53,
+                0x84,
+                0x4E,
+                0xAA,
+                0x58,
+                0x22,
+                0x3C,
+                0x28,
+                0x1A
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IKnownSimpleHapticsControllerWaveformsStatics
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

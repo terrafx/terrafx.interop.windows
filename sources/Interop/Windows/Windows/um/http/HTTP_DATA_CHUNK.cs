@@ -16,7 +16,7 @@ public partial struct HTTP_DATA_CHUNK
     public HTTP_DATA_CHUNK_TYPE DataChunkType;
 
     /// <include file='HTTP_DATA_CHUNK.xml' path='doc/member[@name="HTTP_DATA_CHUNK.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_http_L1292_C5")]
+    [NativeTypeName("__AnonymousRecord_http_L1312_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FromMemory"]/*' />
@@ -91,32 +91,32 @@ public partial struct HTTP_DATA_CHUNK
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FromMemory"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_http_L1298_C9")]
+        [NativeTypeName("__AnonymousRecord_http_L1318_C9")]
         public _FromMemory_e__Struct FromMemory;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FromFileHandle"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_http_L1309_C9")]
+        [NativeTypeName("__AnonymousRecord_http_L1329_C9")]
         public _FromFileHandle_e__Struct FromFileHandle;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FromFragmentCache"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_http_L1320_C9")]
+        [NativeTypeName("__AnonymousRecord_http_L1340_C9")]
         public _FromFragmentCache_e__Struct FromFragmentCache;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FromFragmentCacheEx"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_http_L1331_C9")]
+        [NativeTypeName("__AnonymousRecord_http_L1351_C9")]
         public _FromFragmentCacheEx_e__Struct FromFragmentCacheEx;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Trailers"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_http_L1342_C9")]
+        [NativeTypeName("__AnonymousRecord_http_L1362_C9")]
         public _Trailers_e__Struct Trailers;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FromWinHttpFastForwarding"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_http_L1349_C9")]
+        [NativeTypeName("__AnonymousRecord_http_L1369_C9")]
         public _FromWinHttpFastForwarding_e__Struct FromWinHttpFastForwarding;
 
         /// <include file='_FromMemory_e__Struct.xml' path='doc/member[@name="_FromMemory_e__Struct"]/*' />

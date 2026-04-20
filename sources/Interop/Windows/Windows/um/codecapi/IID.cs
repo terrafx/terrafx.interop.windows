@@ -7763,4 +7763,76 @@ public static partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    public static ref readonly Guid IID_CODECAPI_AVEncVideoInputDeltaQPBlockSettings
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xDC, 0x87, 0x47, 0x5A,
+                0x48, 0x06,
+                0xAA, 0x47,
+                0xB9,
+                0x45,
+                0x55,
+                0x2B,
+                0xFA,
+                0xD2,
+                0xA6,
+                0xD8
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_CODECAPI_AVEncVideoInputAbsoluteQPBlockSettings
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x45, 0xA1, 0x95, 0xEF,
+                0x91, 0x4F,
+                0xEA, 0x4D,
+                0x81,
+                0x73,
+                0xAC,
+                0xFF,
+                0x11,
+                0x43,
+                0x42,
+                0x10
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_CODECAPI_AVEncVideoD3D12ReconstructedPictureOutputMode
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x8F, 0x2E, 0x7B, 0x4A,
+                0x93, 0x1D,
+                0x6A, 0x4C,
+                0xB5,
+                0x48,
+                0x91,
+                0xE2,
+                0xF8,
+                0xC5,
+                0xA7,
+                0xD3
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

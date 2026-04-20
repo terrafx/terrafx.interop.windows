@@ -1,5 +1,6 @@
 --additional
 -m64
+-Wno-comment
 -Wno-deprecated-declarations
 -Wno-expansion-to-defined
 -Wno-extern-c-compat
@@ -47,6 +48,7 @@ header.txt
 ../../../include/d3dx12
 ../../../include/dxtk12
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.28000.0/shared
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.28000.0/ucrt
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.28000.0/um
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.28000.0/winrt
 --with-callconv

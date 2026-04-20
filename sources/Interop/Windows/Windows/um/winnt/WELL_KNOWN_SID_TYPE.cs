@@ -373,4 +373,7 @@ public enum WELL_KNOWN_SID_TYPE
 
     /// <include file='WELL_KNOWN_SID_TYPE.xml' path='doc/member[@name="WELL_KNOWN_SID_TYPE.WinBuiltinOpenSSHUsersSid"]/*' />
     WinBuiltinOpenSSHUsersSid = 121,
+
+    /// <include file='WELL_KNOWN_SID_TYPE.xml' path='doc/member[@name="WELL_KNOWN_SID_TYPE.WinBuiltinCUAUsersSid"]/*' />
+    WinBuiltinCUAUsersSid = 122,
 }

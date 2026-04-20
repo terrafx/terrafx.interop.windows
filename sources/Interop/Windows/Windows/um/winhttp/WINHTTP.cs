@@ -1512,4 +1512,7 @@ public static partial class WINHTTP
 
     [NativeTypeName("#define WINHTTP_FEATURE_SESSION_ERROR_LOG_GUID 94")]
     public const int WINHTTP_FEATURE_SESSION_ERROR_LOG_GUID = 94;
+
+    [NativeTypeName("#define WINHTTP_FEATURE_GET_PROXY_SETTINGS_EX_XBOX 95")]
+    public const int WINHTTP_FEATURE_GET_PROXY_SETTINGS_EX_XBOX = 95;
 }

@@ -14,7 +14,7 @@ public partial struct STORAGE_SECURITY_COMPLIANCE_BITMASK
 {
     /// <include file='STORAGE_SECURITY_COMPLIANCE_BITMASK.xml' path='doc/member[@name="STORAGE_SECURITY_COMPLIANCE_BITMASK.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("__AnonymousRecord_winioctl_L2018_C5")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L2028_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='STORAGE_SECURITY_COMPLIANCE_BITMASK.xml' path='doc/member[@name="STORAGE_SECURITY_COMPLIANCE_BITMASK.AsUchar"]/*' />

@@ -192,4 +192,7 @@ public static partial class DOMAIN
 
     [NativeTypeName("#define DOMAIN_ALIAS_RID_OPENSSH_USERS (0x00000249L)")]
     public const int DOMAIN_ALIAS_RID_OPENSSH_USERS = (0x00000249);
+
+    [NativeTypeName("#define DOMAIN_ALIAS_RID_CUA_USERS (0x0000024AL)")]
+    public const int DOMAIN_ALIAS_RID_CUA_USERS = (0x0000024A);
 }

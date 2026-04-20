@@ -42,4 +42,25 @@ public static partial class MFTests
     {
         Assert.That(MF_CONTENTDECRYPTIONMODULE_SERVICE, Is.EqualTo(new Guid(0x15320c45, 0xff80, 0x484a, 0x9d, 0xcb, 0xd, 0xf8, 0x94, 0xe6, 0x9a, 0x1)));
     }
+
+    /// <summary>Validates that the value of the <see cref="MF_ENCRYPTEDMEDIAEXTENSIONS_ACTIVATE" /> property is correct.</summary>
+    [Test]
+    public static void MF_ENCRYPTEDMEDIAEXTENSIONS_ACTIVATETest()
+    {
+        Assert.That(MF_ENCRYPTEDMEDIAEXTENSIONS_ACTIVATE, Is.EqualTo(new Guid(0x2df7b51e, 0x797b, 0x4d06, 0xbe, 0x71, 0xd1, 0x4a, 0x52, 0xcf, 0x84, 0x21)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MF_ENCRYPTEDMEDIAEXTENSIONS_ACTIVATABLE_CLASS_ID" /> property is correct.</summary>
+    [Test]
+    public static void MF_ENCRYPTEDMEDIAEXTENSIONS_ACTIVATABLE_CLASS_IDTest()
+    {
+        Assert.That(MF_ENCRYPTEDMEDIAEXTENSIONS_ACTIVATABLE_CLASS_ID, Is.EqualTo(new Guid(0x77631a31, 0xe5e7, 0x4785, 0xbf, 0x17, 0x20, 0xf5, 0x7b, 0x22, 0x48, 0x02)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MF_ENCRYPTEDMEDIAEXTENSIONS_INITIALIZATION_DATA" /> property is correct.</summary>
+    [Test]
+    public static void MF_ENCRYPTEDMEDIAEXTENSIONS_INITIALIZATION_DATATest()
+    {
+        Assert.That(MF_ENCRYPTEDMEDIAEXTENSIONS_INITIALIZATION_DATA, Is.EqualTo(new Guid(0x3e73735c, 0xe6c0, 0x481d, 0x82, 0x60, 0xee, 0x5d, 0xb1, 0x34, 0x3b, 0x5f)));
+    }
 }

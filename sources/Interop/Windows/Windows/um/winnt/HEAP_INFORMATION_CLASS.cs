@@ -19,4 +19,7 @@ public enum HEAP_INFORMATION_CLASS
 
     /// <include file='HEAP_INFORMATION_CLASS.xml' path='doc/member[@name="HEAP_INFORMATION_CLASS.HeapTag"]/*' />
     HeapTag = 7,
+
+    /// <include file='HEAP_INFORMATION_CLASS.xml' path='doc/member[@name="HEAP_INFORMATION_CLASS.HeapMemoryUsageInformation"]/*' />
+    HeapMemoryUsageInformation = 8,
 }

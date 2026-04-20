@@ -330,6 +330,7 @@ CloseGestureInfoHandle=user32
 CloseTouchInputHandle=user32
 CloseWindow=user32
 CloseWindowStation=user32
+ConvertPrimaryPointerToMouseDrag=user32
 ConvertToInterceptWindow=user32
 CopyAcceleratorTable=user32
 CopyAcceleratorTableA=user32

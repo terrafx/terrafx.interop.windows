@@ -221,6 +221,8 @@ Int64ToULongLong
 Int64ToULongPtr
 Int64ToUShort
 Int64ToWord
+INT128_MAX
+INT128_MIN
 IntPtrToByte
 IntPtrToChar
 IntPtrToDWord
@@ -603,6 +605,7 @@ UInt64ToULong
 UInt64ToULongPtr
 UInt64ToUShort
 UInt64ToWord
+UINT128_MAX
 UIntAdd
 UIntMult
 UIntPtrAdd

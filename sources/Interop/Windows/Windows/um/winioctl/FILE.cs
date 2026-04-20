@@ -286,6 +286,12 @@ public static partial class FILE
     [NativeTypeName("#define FILE_DEVICE_I3C 0x00000065")]
     public const int FILE_DEVICE_I3C = 0x00000065;
 
+    [NativeTypeName("#define FILE_DEVICE_MULTITIER_MEMORY 0x00000066")]
+    public const int FILE_DEVICE_MULTITIER_MEMORY = 0x00000066;
+
+    [NativeTypeName("#define FILE_DEVICE_CXL_TYPE3 0x00000067")]
+    public const int FILE_DEVICE_CXL_TYPE3 = 0x00000067;
+
     [NativeTypeName("#define FILE_ANY_ACCESS 0")]
     public const int FILE_ANY_ACCESS = 0;
 

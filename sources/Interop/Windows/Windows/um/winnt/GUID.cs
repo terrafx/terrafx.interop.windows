@@ -2538,6 +2538,81 @@ public static partial class GUID
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_FREQUENCY_MINIMUM
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xEA, 0x2C, 0xC9, 0x2A,
+                0xFA, 0x5E,
+                0x1B, 0x4A,
+                0xBE,
+                0xD5,
+                0x1A,
+                0x2B,
+                0xD9,
+                0xAA,
+                0x0B,
+                0x94
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_FREQUENCY_MINIMUM_1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xEA, 0x2C, 0xC9, 0x2A,
+                0xFA, 0x5E,
+                0x1B, 0x4A,
+                0xBE,
+                0xD5,
+                0x1A,
+                0x2B,
+                0xD9,
+                0xAA,
+                0x0B,
+                0x95
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_FREQUENCY_MINIMUM_2
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xEA, 0x2C, 0xC9, 0x2A,
+                0xFA, 0x5E,
+                0x1B, 0x4A,
+                0xBE,
+                0xD5,
+                0x1A,
+                0x2B,
+                0xD9,
+                0xAA,
+                0x0B,
+                0x96
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_ALLOW_THROTTLING
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -3713,6 +3788,31 @@ public static partial class GUID
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_PACKAGE_C6_POLICY
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x5C, 0x01, 0x1B, 0xFC,
+                0x75, 0xEB,
+                0x6A, 0x49,
+                0xAB,
+                0x47,
+                0x02,
+                0x8B,
+                0x04,
+                0x59,
+                0xC8,
+                0xF8
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_PROCESSOR_PARKING_CORE_OVERRIDE
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -4105,6 +4205,81 @@ public static partial class GUID
                 0x30,
                 0x09,
                 0x73
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x31, 0x29, 0x20, 0x81,
+                0xBB, 0xAC,
+                0x5C, 0x40,
+                0xA7,
+                0xEE,
+                0x3E,
+                0x2B,
+                0xA4,
+                0x86,
+                0x6F,
+                0x6F
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ_1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x31, 0x29, 0x20, 0x81,
+                0xBB, 0xAC,
+                0x5C, 0x40,
+                0xA7,
+                0xEE,
+                0x3E,
+                0x2B,
+                0xA4,
+                0x86,
+                0x6F,
+                0x70
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid GUID_PROCESSOR_PERF_LATENCY_HINT_FREQ_2
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x31, 0x29, 0x20, 0x81,
+                0xBB, 0xAC,
+                0x5C, 0x40,
+                0xA7,
+                0xEE,
+                0x3E,
+                0x2B,
+                0xA4,
+                0x86,
+                0x6F,
+                0x71
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

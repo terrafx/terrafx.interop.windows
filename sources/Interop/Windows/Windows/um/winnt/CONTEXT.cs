@@ -21,4 +21,10 @@ public static partial class CONTEXT
 
     [NativeTypeName("#define CONTEXT_ARM64_XSTATE (CONTEXT_ARM64 | 0x20L)")]
     public const int CONTEXT_ARM64_XSTATE = (0x00400000 | 0x20);
+
+    [NativeTypeName("#define CONTEXT_ARM64_FLOATING_POINT_LOW (CONTEXT_ARM64 | 0x40L)")]
+    public const int CONTEXT_ARM64_FLOATING_POINT_LOW = (0x00400000 | 0x40);
+
+    [NativeTypeName("#define CONTEXT_ARM64_FLOATING_POINT_HIGH (CONTEXT_ARM64 | 0x80L)")]
+    public const int CONTEXT_ARM64_FLOATING_POINT_HIGH = (0x00400000 | 0x80);
 }

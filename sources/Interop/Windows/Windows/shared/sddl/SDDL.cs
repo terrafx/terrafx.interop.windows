@@ -409,6 +409,9 @@ public static partial class SDDL
     [NativeTypeName("#define SDDL_OPENSSH_USERS TEXT(\"SH\")")]
     public const string SDDL_OPENSSH_USERS = "SH";
 
+    [NativeTypeName("#define SDDL_CUA_USERS TEXT(\"CU\")")]
+    public const string SDDL_CUA_USERS = "CU";
+
     [NativeTypeName("#define SDDL_ML_LOW TEXT(\"LW\")")]
     public const string SDDL_ML_LOW = "LW";
 
