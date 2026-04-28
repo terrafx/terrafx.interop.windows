@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+dxilconv-DxbcConverter.h
+--methodClassName
+DxilConv
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/dxilconv/DxbcConverter
+--test-output
+../../../../tests/Interop/Windows/DirectX/dxilconv/DxbcConverter
+--traverse
+../../../include/dxilconv/DxbcConverter.h
+--with-librarypath
+*=dxilconv
