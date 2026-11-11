@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAttachmentExecute : IAttachmentExecute.Interface, INativeGuid
 {
+    /// <include file='IAttachmentExecute.xml' path='doc/member[@name="IAttachmentExecute.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAttachmentExecute);
 
     public void** lpVtbl;

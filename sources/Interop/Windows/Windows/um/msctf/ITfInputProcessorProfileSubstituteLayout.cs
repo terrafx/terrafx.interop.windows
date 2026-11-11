@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfInputProcessorProfileSubstituteLayout : ITfInputProcessorProfileSubstituteLayout.Interface, INativeGuid
 {
+    /// <include file='ITfInputProcessorProfileSubstituteLayout.xml' path='doc/member[@name="ITfInputProcessorProfileSubstituteLayout.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfInputProcessorProfileSubstituteLayout);
 
     public void** lpVtbl;

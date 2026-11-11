@@ -7,30 +7,39 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CC
 {
+    /// <include file='CC.xml' path='doc/member[@name="CC.CC_RGBINIT"]/*' />
     [NativeTypeName("#define CC_RGBINIT 0x00000001")]
     public const int CC_RGBINIT = 0x00000001;
 
+    /// <include file='CC.xml' path='doc/member[@name="CC.CC_FULLOPEN"]/*' />
     [NativeTypeName("#define CC_FULLOPEN 0x00000002")]
     public const int CC_FULLOPEN = 0x00000002;
 
+    /// <include file='CC.xml' path='doc/member[@name="CC.CC_PREVENTFULLOPEN"]/*' />
     [NativeTypeName("#define CC_PREVENTFULLOPEN 0x00000004")]
     public const int CC_PREVENTFULLOPEN = 0x00000004;
 
+    /// <include file='CC.xml' path='doc/member[@name="CC.CC_SHOWHELP"]/*' />
     [NativeTypeName("#define CC_SHOWHELP 0x00000008")]
     public const int CC_SHOWHELP = 0x00000008;
 
+    /// <include file='CC.xml' path='doc/member[@name="CC.CC_ENABLEHOOK"]/*' />
     [NativeTypeName("#define CC_ENABLEHOOK 0x00000010")]
     public const int CC_ENABLEHOOK = 0x00000010;
 
+    /// <include file='CC.xml' path='doc/member[@name="CC.CC_ENABLETEMPLATE"]/*' />
     [NativeTypeName("#define CC_ENABLETEMPLATE 0x00000020")]
     public const int CC_ENABLETEMPLATE = 0x00000020;
 
+    /// <include file='CC.xml' path='doc/member[@name="CC.CC_ENABLETEMPLATEHANDLE"]/*' />
     [NativeTypeName("#define CC_ENABLETEMPLATEHANDLE 0x00000040")]
     public const int CC_ENABLETEMPLATEHANDLE = 0x00000040;
 
+    /// <include file='CC.xml' path='doc/member[@name="CC.CC_SOLIDCOLOR"]/*' />
     [NativeTypeName("#define CC_SOLIDCOLOR 0x00000080")]
     public const int CC_SOLIDCOLOR = 0x00000080;
 
+    /// <include file='CC.xml' path='doc/member[@name="CC.CC_ANYCOLOR"]/*' />
     [NativeTypeName("#define CC_ANYCOLOR 0x00000100")]
     public const int CC_ANYCOLOR = 0x00000100;
 }

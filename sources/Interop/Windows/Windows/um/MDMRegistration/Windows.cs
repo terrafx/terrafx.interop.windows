@@ -83,18 +83,23 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.3")]
     public static extern HRESULT DiscoverManagementServiceEx([NativeTypeName("LPCWSTR")] char* pszUPN, [NativeTypeName("LPCWSTR")] char* pszDiscoveryServiceCandidate, [NativeTypeName("PMANAGEMENT_SERVICE_INFO *")] MANAGEMENT_SERVICE_INFO** ppMgmtInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MDM_REGISTRATION_FACILITY_CODE"]/*' />
     [NativeTypeName("#define MDM_REGISTRATION_FACILITY_CODE 25")]
     public const int MDM_REGISTRATION_FACILITY_CODE = 25;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DEVICEREGISTRATIONTYPE_MDM_ONLY"]/*' />
     [NativeTypeName("#define DEVICEREGISTRATIONTYPE_MDM_ONLY 0")]
     public const int DEVICEREGISTRATIONTYPE_MDM_ONLY = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DEVICEREGISTRATIONTYPE_MAM"]/*' />
     [NativeTypeName("#define DEVICEREGISTRATIONTYPE_MAM 5")]
     public const int DEVICEREGISTRATIONTYPE_MAM = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DEVICEREGISTRATIONTYPE_MDM_DEVICEWIDE_WITH_AAD"]/*' />
     [NativeTypeName("#define DEVICEREGISTRATIONTYPE_MDM_DEVICEWIDE_WITH_AAD 6")]
     public const int DEVICEREGISTRATIONTYPE_MDM_DEVICEWIDE_WITH_AAD = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DEVICEREGISTRATIONTYPE_MDM_USERSPECIFIC_WITH_AAD"]/*' />
     [NativeTypeName("#define DEVICEREGISTRATIONTYPE_MDM_USERSPECIFIC_WITH_AAD 13")]
     public const int DEVICEREGISTRATIONTYPE_MDM_USERSPECIFIC_WITH_AAD = 13;
 }

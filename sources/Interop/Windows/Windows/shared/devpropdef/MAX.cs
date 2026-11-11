@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_DEVPROP_TYPE"]/*' />
     [NativeTypeName("#define MAX_DEVPROP_TYPE 0x00000019")]
     public const int MAX_DEVPROP_TYPE = 0x00000019;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_DEVPROP_TYPEMOD"]/*' />
     [NativeTypeName("#define MAX_DEVPROP_TYPEMOD 0x00002000")]
     public const int MAX_DEVPROP_TYPEMOD = 0x00002000;
 }

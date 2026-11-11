@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.15063.0")]
 public unsafe partial struct IMFDeviceTransform : IMFDeviceTransform.Interface, INativeGuid
 {
+    /// <include file='IMFDeviceTransform.xml' path='doc/member[@name="IMFDeviceTransform.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFDeviceTransform);
 
     public void** lpVtbl;

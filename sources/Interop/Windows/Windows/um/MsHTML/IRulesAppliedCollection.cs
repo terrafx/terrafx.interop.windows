@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IRulesAppliedCollection : IRulesAppliedCollection.Interface, INativeGuid
 {
+    /// <include file='IRulesAppliedCollection.xml' path='doc/member[@name="IRulesAppliedCollection.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRulesAppliedCollection);
 
     public void** lpVtbl;

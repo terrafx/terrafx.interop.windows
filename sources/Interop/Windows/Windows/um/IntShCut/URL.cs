@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class URL
 {
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_E_INVALID_SYNTAX"]/*' />
     [NativeTypeName("#define URL_E_INVALID_SYNTAX MAKE_SCODE(SEVERITY_ERROR, FACILITY_ITF, 0x1001)")]
     public const int URL_E_INVALID_SYNTAX = unchecked((int)(((uint)(1) << 31) | ((uint)(4) << 16) | ((uint)(0x1001))));
 
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_E_UNREGISTERED_PROTOCOL"]/*' />
     [NativeTypeName("#define URL_E_UNREGISTERED_PROTOCOL MAKE_SCODE(SEVERITY_ERROR, FACILITY_ITF, 0x1002)")]
     public const int URL_E_UNREGISTERED_PROTOCOL = unchecked((int)(((uint)(1) << 31) | ((uint)(4) << 16) | ((uint)(0x1002))));
 }

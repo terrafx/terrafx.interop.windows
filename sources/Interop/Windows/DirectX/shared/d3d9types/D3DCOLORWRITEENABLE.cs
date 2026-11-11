@@ -7,15 +7,19 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DCOLORWRITEENABLE
 {
+    /// <include file='D3DCOLORWRITEENABLE.xml' path='doc/member[@name="D3DCOLORWRITEENABLE.D3DCOLORWRITEENABLE_RED"]/*' />
     [NativeTypeName("#define D3DCOLORWRITEENABLE_RED (1L<<0)")]
     public const int D3DCOLORWRITEENABLE_RED = (1 << 0);
 
+    /// <include file='D3DCOLORWRITEENABLE.xml' path='doc/member[@name="D3DCOLORWRITEENABLE.D3DCOLORWRITEENABLE_GREEN"]/*' />
     [NativeTypeName("#define D3DCOLORWRITEENABLE_GREEN (1L<<1)")]
     public const int D3DCOLORWRITEENABLE_GREEN = (1 << 1);
 
+    /// <include file='D3DCOLORWRITEENABLE.xml' path='doc/member[@name="D3DCOLORWRITEENABLE.D3DCOLORWRITEENABLE_BLUE"]/*' />
     [NativeTypeName("#define D3DCOLORWRITEENABLE_BLUE (1L<<2)")]
     public const int D3DCOLORWRITEENABLE_BLUE = (1 << 2);
 
+    /// <include file='D3DCOLORWRITEENABLE.xml' path='doc/member[@name="D3DCOLORWRITEENABLE.D3DCOLORWRITEENABLE_ALPHA"]/*' />
     [NativeTypeName("#define D3DCOLORWRITEENABLE_ALPHA (1L<<3)")]
     public const int D3DCOLORWRITEENABLE_ALPHA = (1 << 3);
 }

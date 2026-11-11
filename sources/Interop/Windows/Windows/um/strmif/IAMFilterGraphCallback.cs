@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAMFilterGraphCallback : IAMFilterGraphCallback.Interface, INativeGuid
 {
+    /// <include file='IAMFilterGraphCallback.xml' path='doc/member[@name="IAMFilterGraphCallback.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMFilterGraphCallback);
 
     public void** lpVtbl;

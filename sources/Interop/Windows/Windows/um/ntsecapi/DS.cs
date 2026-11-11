@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DS
 {
+    /// <include file='DS.xml' path='doc/member[@name="DS.DS_UNKNOWN_ADDRESS_TYPE"]/*' />
     [NativeTypeName("#define DS_UNKNOWN_ADDRESS_TYPE 0")]
     public const int DS_UNKNOWN_ADDRESS_TYPE = 0;
 }

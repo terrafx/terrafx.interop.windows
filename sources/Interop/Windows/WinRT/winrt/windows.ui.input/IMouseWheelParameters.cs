@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMouseWheelParameters : IMouseWheelParameters.Interface, INativeGuid
 {
+    /// <include file='IMouseWheelParameters.xml' path='doc/member[@name="IMouseWheelParameters.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMouseWheelParameters);
 
     public void** lpVtbl;

@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class THREAD
 {
+    /// <include file='THREAD.xml' path='doc/member[@name="THREAD.THREAD_POWER_THROTTLING_CURRENT_VERSION"]/*' />
     [NativeTypeName("#define THREAD_POWER_THROTTLING_CURRENT_VERSION 1")]
     public const int THREAD_POWER_THROTTLING_CURRENT_VERSION = 1;
 
+    /// <include file='THREAD.xml' path='doc/member[@name="THREAD.THREAD_POWER_THROTTLING_EXECUTION_SPEED"]/*' />
     [NativeTypeName("#define THREAD_POWER_THROTTLING_EXECUTION_SPEED 0x1")]
     public const int THREAD_POWER_THROTTLING_EXECUTION_SPEED = 0x1;
 
+    /// <include file='THREAD.xml' path='doc/member[@name="THREAD.THREAD_POWER_THROTTLING_VALID_FLAGS"]/*' />
     [NativeTypeName("#define THREAD_POWER_THROTTLING_VALID_FLAGS (THREAD_POWER_THROTTLING_EXECUTION_SPEED)")]
     public const int THREAD_POWER_THROTTLING_VALID_FLAGS = (0x1);
 }

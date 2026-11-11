@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IGlobalRSCAQueryProvider : IGlobalRSCAQueryProvider.Interface, INativeGuid
 {
+    /// <include file='IGlobalRSCAQueryProvider.xml' path='doc/member[@name="IGlobalRSCAQueryProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGlobalRSCAQueryProvider);
 
     public void** lpVtbl;

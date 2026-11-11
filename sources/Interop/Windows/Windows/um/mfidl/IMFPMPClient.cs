@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFPMPClient : IMFPMPClient.Interface, INativeGuid
 {
+    /// <include file='IMFPMPClient.xml' path='doc/member[@name="IMFPMPClient.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFPMPClient);
 
     public void** lpVtbl;

@@ -9,12 +9,15 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D2DERR
 {
+    /// <include file='D2DERR.xml' path='doc/member[@name="D2DERR.D2DERR_UNSUPPORTED_PIXEL_FORMAT"]/*' />
     [NativeTypeName("#define D2DERR_UNSUPPORTED_PIXEL_FORMAT WINCODEC_ERR_UNSUPPORTEDPIXELFORMAT")]
     public const int D2DERR_UNSUPPORTED_PIXEL_FORMAT = unchecked((int)(0x88982F80));
 
+    /// <include file='D2DERR.xml' path='doc/member[@name="D2DERR.D2DERR_INSUFFICIENT_BUFFER"]/*' />
     [NativeTypeName("#define D2DERR_INSUFFICIENT_BUFFER HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)")]
     public const int D2DERR_INSUFFICIENT_BUFFER = -2147024774;
 
+    /// <include file='D2DERR.xml' path='doc/member[@name="D2DERR.D2DERR_FILE_NOT_FOUND"]/*' />
     [NativeTypeName("#define D2DERR_FILE_NOT_FOUND HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)")]
     public const int D2DERR_FILE_NOT_FOUND = -2147024894;
 }

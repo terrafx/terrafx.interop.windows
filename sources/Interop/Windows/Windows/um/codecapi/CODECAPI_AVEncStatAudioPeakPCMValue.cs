@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("DCE7FD34-DC00-4C16-821B-35D9EB00FB1A")]
 public unsafe partial struct CODECAPI_AVEncStatAudioPeakPCMValue : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncStatAudioPeakPCMValue.xml' path='doc/member[@name="CODECAPI_AVEncStatAudioPeakPCMValue.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncStatAudioPeakPCMValue);
 }

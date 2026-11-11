@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DSTREAMSOURCE
 {
+    /// <include file='D3DSTREAMSOURCE.xml' path='doc/member[@name="D3DSTREAMSOURCE.D3DSTREAMSOURCE_INDEXEDDATA"]/*' />
     [NativeTypeName("#define D3DSTREAMSOURCE_INDEXEDDATA (1<<30)")]
     public const int D3DSTREAMSOURCE_INDEXEDDATA = (1 << 30);
 
+    /// <include file='D3DSTREAMSOURCE.xml' path='doc/member[@name="D3DSTREAMSOURCE.D3DSTREAMSOURCE_INSTANCEDATA"]/*' />
     [NativeTypeName("#define D3DSTREAMSOURCE_INSTANCEDATA (2<<30)")]
     public const int D3DSTREAMSOURCE_INSTANCEDATA = (2 << 30);
 }

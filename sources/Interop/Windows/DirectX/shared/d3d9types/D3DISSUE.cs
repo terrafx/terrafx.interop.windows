@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DISSUE
 {
+    /// <include file='D3DISSUE.xml' path='doc/member[@name="D3DISSUE.D3DISSUE_END"]/*' />
     [NativeTypeName("#define D3DISSUE_END (1 << 0)")]
     public const int D3DISSUE_END = (1 << 0);
 
+    /// <include file='D3DISSUE.xml' path='doc/member[@name="D3DISSUE.D3DISSUE_BEGIN"]/*' />
     [NativeTypeName("#define D3DISSUE_BEGIN (1 << 1)")]
     public const int D3DISSUE_BEGIN = (1 << 1);
 }

@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("30510723-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct DOMStorageEvent : INativeGuid
 {
+    /// <include file='DOMStorageEvent.xml' path='doc/member[@name="DOMStorageEvent.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_DOMStorageEvent);
 }

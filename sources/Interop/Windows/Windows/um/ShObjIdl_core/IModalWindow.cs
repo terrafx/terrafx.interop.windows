@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IModalWindow : IModalWindow.Interface, INativeGuid
 {
+    /// <include file='IModalWindow.xml' path='doc/member[@name="IModalWindow.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IModalWindow);
 
     public void** lpVtbl;

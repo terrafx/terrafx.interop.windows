@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMetadataInfo")]
 public unsafe partial struct IReferencedMetadataInfo : IReferencedMetadataInfo.Interface, INativeGuid
 {
+    /// <include file='IReferencedMetadataInfo.xml' path='doc/member[@name="IReferencedMetadataInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IReferencedMetadataInfo);
 
     public void** lpVtbl;

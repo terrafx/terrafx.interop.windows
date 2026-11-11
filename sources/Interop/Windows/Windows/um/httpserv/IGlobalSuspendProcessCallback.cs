@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IGlobalSuspendProcessCallback : IGlobalSuspendProcessCallback.Interface, INativeGuid
 {
+    /// <include file='IGlobalSuspendProcessCallback.xml' path='doc/member[@name="IGlobalSuspendProcessCallback.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGlobalSuspendProcessCallback);
 
     public void** lpVtbl;

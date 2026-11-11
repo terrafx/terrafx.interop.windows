@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IZoneIdentifier")]
 public unsafe partial struct IZoneIdentifier2 : IZoneIdentifier2.Interface, INativeGuid
 {
+    /// <include file='IZoneIdentifier2.xml' path='doc/member[@name="IZoneIdentifier2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IZoneIdentifier2);
 
     public void** lpVtbl;

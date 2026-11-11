@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IStorageItemHandleAccess : IStorageItemHandleAccess.Interface, INativeGuid
 {
+    /// <include file='IStorageItemHandleAccess.xml' path='doc/member[@name="IStorageItemHandleAccess.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IStorageItemHandleAccess);
 
     public void** lpVtbl;

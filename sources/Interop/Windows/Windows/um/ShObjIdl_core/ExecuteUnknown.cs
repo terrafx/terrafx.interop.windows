@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("E44E9428-BDBC-4987-A099-40DC8FD255E7")]
 public unsafe partial struct ExecuteUnknown : INativeGuid
 {
+    /// <include file='ExecuteUnknown.xml' path='doc/member[@name="ExecuteUnknown.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_ExecuteUnknown);
 }

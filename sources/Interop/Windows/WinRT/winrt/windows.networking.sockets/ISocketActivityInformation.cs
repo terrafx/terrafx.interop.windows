@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISocketActivityInformation : ISocketActivityInformation.Interface, INativeGuid
 {
+    /// <include file='ISocketActivityInformation.xml' path='doc/member[@name="ISocketActivityInformation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISocketActivityInformation);
 
     public void** lpVtbl;

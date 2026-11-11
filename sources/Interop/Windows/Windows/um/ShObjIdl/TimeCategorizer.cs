@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("3BB4118F-DDFD-4D30-A348-9FB5D6BF1AFE")]
 public unsafe partial struct TimeCategorizer : INativeGuid
 {
+    /// <include file='TimeCategorizer.xml' path='doc/member[@name="TimeCategorizer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_TimeCategorizer);
 }

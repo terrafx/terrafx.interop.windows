@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IZoomControl2 : IZoomControl2.Interface, INativeGuid
 {
+    /// <include file='IZoomControl2.xml' path='doc/member[@name="IZoomControl2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IZoomControl2);
 
     public void** lpVtbl;

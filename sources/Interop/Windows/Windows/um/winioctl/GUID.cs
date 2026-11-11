@@ -9,9 +9,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GUID
 {
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_CLASS_COMPORT"]/*' />
     [NativeTypeName("#define GUID_CLASS_COMPORT GUID_DEVINTERFACE_COMPORT")]
     public static ref readonly Guid GUID_CLASS_COMPORT => ref GUID_DEVINTERFACE_COMPORT;
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_SERENUM_BUS_ENUMERATOR"]/*' />
     [NativeTypeName("#define GUID_SERENUM_BUS_ENUMERATOR GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR")]
     public static ref readonly Guid GUID_SERENUM_BUS_ENUMERATOR => ref GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR;
 }

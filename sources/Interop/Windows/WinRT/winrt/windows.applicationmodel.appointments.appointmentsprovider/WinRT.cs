@@ -7,30 +7,39 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_ApplicationModel_Appointments_AppointmentsProvider_IAddAppointmentOperation"]/*' />
     [NativeTypeName("const WCHAR[84]")]
     public const string InterfaceName_Windows_ApplicationModel_Appointments_AppointmentsProvider_IAddAppointmentOperation = "Windows.ApplicationModel.Appointments.AppointmentsProvider.IAddAppointmentOperation";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_ApplicationModel_Appointments_AppointmentsProvider_IAppointmentsProviderLaunchActionVerbsStatics"]/*' />
     [NativeTypeName("const WCHAR[105]")]
     public const string InterfaceName_Windows_ApplicationModel_Appointments_AppointmentsProvider_IAppointmentsProviderLaunchActionVerbsStatics = "Windows.ApplicationModel.Appointments.AppointmentsProvider.IAppointmentsProviderLaunchActionVerbsStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_ApplicationModel_Appointments_AppointmentsProvider_IAppointmentsProviderLaunchActionVerbsStatics2"]/*' />
     [NativeTypeName("const WCHAR[106]")]
     public const string InterfaceName_Windows_ApplicationModel_Appointments_AppointmentsProvider_IAppointmentsProviderLaunchActionVerbsStatics2 = "Windows.ApplicationModel.Appointments.AppointmentsProvider.IAppointmentsProviderLaunchActionVerbsStatics2";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_ApplicationModel_Appointments_AppointmentsProvider_IRemoveAppointmentOperation"]/*' />
     [NativeTypeName("const WCHAR[87]")]
     public const string InterfaceName_Windows_ApplicationModel_Appointments_AppointmentsProvider_IRemoveAppointmentOperation = "Windows.ApplicationModel.Appointments.AppointmentsProvider.IRemoveAppointmentOperation";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_ApplicationModel_Appointments_AppointmentsProvider_IReplaceAppointmentOperation"]/*' />
     [NativeTypeName("const WCHAR[88]")]
     public const string InterfaceName_Windows_ApplicationModel_Appointments_AppointmentsProvider_IReplaceAppointmentOperation = "Windows.ApplicationModel.Appointments.AppointmentsProvider.IReplaceAppointmentOperation";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_ApplicationModel_Appointments_AppointmentsProvider_AddAppointmentOperation"]/*' />
     [NativeTypeName("const WCHAR[83]")]
     public const string RuntimeClass_Windows_ApplicationModel_Appointments_AppointmentsProvider_AddAppointmentOperation = "Windows.ApplicationModel.Appointments.AppointmentsProvider.AddAppointmentOperation";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_ApplicationModel_Appointments_AppointmentsProvider_AppointmentsProviderLaunchActionVerbs"]/*' />
     [NativeTypeName("const WCHAR[97]")]
     public const string RuntimeClass_Windows_ApplicationModel_Appointments_AppointmentsProvider_AppointmentsProviderLaunchActionVerbs = "Windows.ApplicationModel.Appointments.AppointmentsProvider.AppointmentsProviderLaunchActionVerbs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_ApplicationModel_Appointments_AppointmentsProvider_RemoveAppointmentOperation"]/*' />
     [NativeTypeName("const WCHAR[86]")]
     public const string RuntimeClass_Windows_ApplicationModel_Appointments_AppointmentsProvider_RemoveAppointmentOperation = "Windows.ApplicationModel.Appointments.AppointmentsProvider.RemoveAppointmentOperation";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_ApplicationModel_Appointments_AppointmentsProvider_ReplaceAppointmentOperation"]/*' />
     [NativeTypeName("const WCHAR[87]")]
     public const string RuntimeClass_Windows_ApplicationModel_Appointments_AppointmentsProvider_ReplaceAppointmentOperation = "Windows.ApplicationModel.Appointments.AppointmentsProvider.ReplaceAppointmentOperation";
 }

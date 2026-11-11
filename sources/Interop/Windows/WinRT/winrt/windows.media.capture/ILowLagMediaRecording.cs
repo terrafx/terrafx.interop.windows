@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ILowLagMediaRecording : ILowLagMediaRecording.Interface, INativeGuid
 {
+    /// <include file='ILowLagMediaRecording.xml' path='doc/member[@name="ILowLagMediaRecording.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILowLagMediaRecording);
 
     public void** lpVtbl;

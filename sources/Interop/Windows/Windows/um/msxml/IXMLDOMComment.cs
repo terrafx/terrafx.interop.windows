@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IXMLDOMCharacterData")]
 public unsafe partial struct IXMLDOMComment : IXMLDOMComment.Interface, INativeGuid
 {
+    /// <include file='IXMLDOMComment.xml' path='doc/member[@name="IXMLDOMComment.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IXMLDOMComment);
 
     public void** lpVtbl;

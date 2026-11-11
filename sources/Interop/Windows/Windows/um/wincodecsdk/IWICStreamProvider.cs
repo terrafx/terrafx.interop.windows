@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface, INativeGuid
 {
+    /// <include file='IWICStreamProvider.xml' path='doc/member[@name="IWICStreamProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICStreamProvider);
 
     public void** lpVtbl;

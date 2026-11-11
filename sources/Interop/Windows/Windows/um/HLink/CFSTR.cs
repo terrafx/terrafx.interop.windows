@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CFSTR
 {
+    /// <include file='CFSTR.xml' path='doc/member[@name="CFSTR.CFSTR_HYPERLINK"]/*' />
     [NativeTypeName("#define CFSTR_HYPERLINK (TEXT(\"Hyperlink\"))")]
     public const string CFSTR_HYPERLINK = ("Hyperlink");
 }

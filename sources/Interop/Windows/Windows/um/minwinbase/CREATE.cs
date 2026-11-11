@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CREATE
 {
+    /// <include file='CREATE.xml' path='doc/member[@name="CREATE.CREATE_THREAD_DEBUG_EVENT"]/*' />
     [NativeTypeName("#define CREATE_THREAD_DEBUG_EVENT 2")]
     public const int CREATE_THREAD_DEBUG_EVENT = 2;
 
+    /// <include file='CREATE.xml' path='doc/member[@name="CREATE.CREATE_PROCESS_DEBUG_EVENT"]/*' />
     [NativeTypeName("#define CREATE_PROCESS_DEBUG_EVENT 3")]
     public const int CREATE_PROCESS_DEBUG_EVENT = 3;
 }

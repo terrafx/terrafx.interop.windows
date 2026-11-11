@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IInternetThreadSwitch : IInternetThreadSwitch.Interface, INativeGuid
 {
+    /// <include file='IInternetThreadSwitch.xml' path='doc/member[@name="IInternetThreadSwitch.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInternetThreadSwitch);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IFileOpenPickerActivatedEventArgs2 : IFileOpenPickerActivatedEventArgs2.Interface, INativeGuid
 {
+    /// <include file='IFileOpenPickerActivatedEventArgs2.xml' path='doc/member[@name="IFileOpenPickerActivatedEventArgs2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFileOpenPickerActivatedEventArgs2);
 
     public void** lpVtbl;

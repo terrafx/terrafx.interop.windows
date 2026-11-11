@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IUICommandInvokedHandler : IUICommandInvokedHandler.Interface, INativeGuid
 {
+    /// <include file='IUICommandInvokedHandler.xml' path='doc/member[@name="IUICommandInvokedHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUICommandInvokedHandler);
 
     public void** lpVtbl;

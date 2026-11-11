@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDiscRecorder : IDiscRecorder.Interface, INativeGuid
 {
+    /// <include file='IDiscRecorder.xml' path='doc/member[@name="IDiscRecorder.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDiscRecorder);
 
     public void** lpVtbl;

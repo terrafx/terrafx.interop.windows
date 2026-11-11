@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("51FF1115-33AC-426C-A1B1-09321BDF96B4")]
 public unsafe partial struct CODECAPI_AVEncWMVKeyFrameBufferLevelMarker : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncWMVKeyFrameBufferLevelMarker.xml' path='doc/member[@name="CODECAPI_AVEncWMVKeyFrameBufferLevelMarker.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncWMVKeyFrameBufferLevelMarker);
 }

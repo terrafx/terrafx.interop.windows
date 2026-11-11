@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMediaPlaybackSessionOutputDegradationPolicyState : IMediaPlaybackSessionOutputDegradationPolicyState.Interface, INativeGuid
 {
+    /// <include file='IMediaPlaybackSessionOutputDegradationPolicyState.xml' path='doc/member[@name="IMediaPlaybackSessionOutputDegradationPolicyState.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMediaPlaybackSessionOutputDegradationPolicyState);
 
     public void** lpVtbl;

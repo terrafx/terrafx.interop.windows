@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IDOMNodeIterator : IDOMNodeIterator.Interface, INativeGuid
 {
+    /// <include file='IDOMNodeIterator.xml' path='doc/member[@name="IDOMNodeIterator.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDOMNodeIterator);
 
     public void** lpVtbl;

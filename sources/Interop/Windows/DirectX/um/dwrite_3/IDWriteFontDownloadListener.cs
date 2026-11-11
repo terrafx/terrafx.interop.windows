@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDWriteFontDownloadListener : IDWriteFontDownloadListener.Interface, INativeGuid
 {
+    /// <include file='IDWriteFontDownloadListener.xml' path='doc/member[@name="IDWriteFontDownloadListener.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDWriteFontDownloadListener);
 
     public void** lpVtbl;

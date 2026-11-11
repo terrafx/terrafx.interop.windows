@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IWeakReference : IWeakReference.Interface, INativeGuid
 {
+    /// <include file='IWeakReference.xml' path='doc/member[@name="IWeakReference.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWeakReference);
 
     public void** lpVtbl;

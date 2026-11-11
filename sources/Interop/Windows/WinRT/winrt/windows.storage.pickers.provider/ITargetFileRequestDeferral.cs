@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ITargetFileRequestDeferral : ITargetFileRequestDeferral.Interface, INativeGuid
 {
+    /// <include file='ITargetFileRequestDeferral.xml' path='doc/member[@name="ITargetFileRequestDeferral.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITargetFileRequestDeferral);
 
     public void** lpVtbl;

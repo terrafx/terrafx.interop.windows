@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("27354122-7F64-5B0F-8F00-5D77AFBE261E")]
 public unsafe partial struct MsftMultisessionSequential : INativeGuid
 {
+    /// <include file='MsftMultisessionSequential.xml' path='doc/member[@name="MsftMultisessionSequential.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_MsftMultisessionSequential);
 }

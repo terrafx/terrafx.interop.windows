@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectDraw"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectDraw
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectDraw2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectDraw2
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectDraw4"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectDraw4
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectDraw7"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectDraw7
     {
@@ -113,6 +117,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectDrawSurface"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectDrawSurface
     {
@@ -138,6 +143,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectDrawSurface2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectDrawSurface2
     {
@@ -163,6 +169,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectDrawSurface3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectDrawSurface3
     {
@@ -188,6 +195,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectDrawSurface4"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectDrawSurface4
     {
@@ -213,6 +221,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectDrawSurface7"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectDrawSurface7
     {
@@ -238,6 +247,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectDrawPalette"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectDrawPalette
     {
@@ -263,6 +273,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectDrawClipper"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectDrawClipper
     {
@@ -288,6 +299,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectDrawColorControl"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectDrawColorControl
     {
@@ -313,6 +325,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectDrawGammaControl"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectDrawGammaControl
     {

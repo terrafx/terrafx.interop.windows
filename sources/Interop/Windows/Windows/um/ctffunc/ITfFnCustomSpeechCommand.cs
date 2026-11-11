@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ITfFunction")]
 public unsafe partial struct ITfFnCustomSpeechCommand : ITfFnCustomSpeechCommand.Interface, INativeGuid
 {
+    /// <include file='ITfFnCustomSpeechCommand.xml' path='doc/member[@name="ITfFnCustomSpeechCommand.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfFnCustomSpeechCommand);
 
     public void** lpVtbl;

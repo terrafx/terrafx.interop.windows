@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BROADCAST_NODETYPE"]/*' />
     [NativeTypeName("#define BROADCAST_NODETYPE 1")]
     public const int BROADCAST_NODETYPE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIXED_NODETYPE"]/*' />
     [NativeTypeName("#define MIXED_NODETYPE 4")]
     public const int MIXED_NODETYPE = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HYBRID_NODETYPE"]/*' />
     [NativeTypeName("#define HYBRID_NODETYPE 8")]
     public const int HYBRID_NODETYPE = 8;
 }

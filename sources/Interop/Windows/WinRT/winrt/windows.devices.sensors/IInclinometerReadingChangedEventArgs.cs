@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IInclinometerReadingChangedEventArgs : IInclinometerReadingChangedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IInclinometerReadingChangedEventArgs.xml' path='doc/member[@name="IInclinometerReadingChangedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInclinometerReadingChangedEventArgs);
 
     public void** lpVtbl;

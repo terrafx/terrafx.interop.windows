@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class BATTERY
 {
+    /// <include file='BATTERY.xml' path='doc/member[@name="BATTERY.BATTERY_DISCHARGE_FLAGS_EVENTCODE_MASK"]/*' />
     [NativeTypeName("#define BATTERY_DISCHARGE_FLAGS_EVENTCODE_MASK 0x00000007")]
     public const int BATTERY_DISCHARGE_FLAGS_EVENTCODE_MASK = 0x00000007;
 
+    /// <include file='BATTERY.xml' path='doc/member[@name="BATTERY.BATTERY_DISCHARGE_FLAGS_ENABLE"]/*' />
     [NativeTypeName("#define BATTERY_DISCHARGE_FLAGS_ENABLE 0x80000000")]
     public const uint BATTERY_DISCHARGE_FLAGS_ENABLE = 0x80000000;
 }

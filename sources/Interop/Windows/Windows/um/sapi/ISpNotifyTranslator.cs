@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ISpNotifySink")]
 public unsafe partial struct ISpNotifyTranslator : ISpNotifyTranslator.Interface, INativeGuid
 {
+    /// <include file='ISpNotifyTranslator.xml' path='doc/member[@name="ISpNotifyTranslator.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpNotifyTranslator);
 
     public void** lpVtbl;

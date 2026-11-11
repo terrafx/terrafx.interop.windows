@@ -12,6 +12,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DXGI
 {
+    /// <include file='DXGI.xml' path='doc/member[@name="DXGI.DXGI_DEBUG_ALL"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DXGI_DEBUG_ALL
     {
@@ -37,6 +38,7 @@ public static partial class DXGI
         }
     }
 
+    /// <include file='DXGI.xml' path='doc/member[@name="DXGI.DXGI_DEBUG_DX"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DXGI_DEBUG_DX
     {
@@ -62,6 +64,7 @@ public static partial class DXGI
         }
     }
 
+    /// <include file='DXGI.xml' path='doc/member[@name="DXGI.DXGI_DEBUG_DXGI"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DXGI_DEBUG_DXGI
     {
@@ -87,6 +90,7 @@ public static partial class DXGI
         }
     }
 
+    /// <include file='DXGI.xml' path='doc/member[@name="DXGI.DXGI_DEBUG_APP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DXGI_DEBUG_APP
     {
@@ -112,12 +116,15 @@ public static partial class DXGI
         }
     }
 
+    /// <include file='DXGI.xml' path='doc/member[@name="DXGI.DXGI_DEBUG_BINARY_VERSION"]/*' />
     [NativeTypeName("#define DXGI_DEBUG_BINARY_VERSION ( 1 )")]
     public const int DXGI_DEBUG_BINARY_VERSION = (1);
 
+    /// <include file='DXGI.xml' path='doc/member[@name="DXGI.DXGI_INFO_QUEUE_MESSAGE_ID_STRING_FROM_APPLICATION"]/*' />
     [NativeTypeName("#define DXGI_INFO_QUEUE_MESSAGE_ID_STRING_FROM_APPLICATION 0")]
     public const int DXGI_INFO_QUEUE_MESSAGE_ID_STRING_FROM_APPLICATION = 0;
 
+    /// <include file='DXGI.xml' path='doc/member[@name="DXGI.DXGI_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT"]/*' />
     [NativeTypeName("#define DXGI_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT 1024")]
     public const int DXGI_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
 }

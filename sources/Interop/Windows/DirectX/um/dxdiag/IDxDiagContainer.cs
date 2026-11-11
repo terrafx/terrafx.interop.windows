@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDxDiagContainer : IDxDiagContainer.Interface, INativeGuid
 {
+    /// <include file='IDxDiagContainer.xml' path='doc/member[@name="IDxDiagContainer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDxDiagContainer);
 
     public void** lpVtbl;

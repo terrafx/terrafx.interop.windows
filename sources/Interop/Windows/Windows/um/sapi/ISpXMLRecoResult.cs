@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ISpRecoResult")]
 public unsafe partial struct ISpXMLRecoResult : ISpXMLRecoResult.Interface, INativeGuid
 {
+    /// <include file='ISpXMLRecoResult.xml' path='doc/member[@name="ISpXMLRecoResult.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpXMLRecoResult);
 
     public void** lpVtbl;

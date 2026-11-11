@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IDevicePairingRequestedEventArgs3 : IDevicePairingRequestedEventArgs3.Interface, INativeGuid
 {
+    /// <include file='IDevicePairingRequestedEventArgs3.xml' path='doc/member[@name="IDevicePairingRequestedEventArgs3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDevicePairingRequestedEventArgs3);
 
     public void** lpVtbl;

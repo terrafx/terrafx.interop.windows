@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMachineGlobalObjectTable : IMachineGlobalObjectTable.Interface, INativeGuid
 {
+    /// <include file='IMachineGlobalObjectTable.xml' path='doc/member[@name="IMachineGlobalObjectTable.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMachineGlobalObjectTable);
 
     public void** lpVtbl;

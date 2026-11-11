@@ -7,18 +7,23 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class PRF
 {
+    /// <include file='PRF.xml' path='doc/member[@name="PRF.PRF_VERIFYEXISTS"]/*' />
     [NativeTypeName("#define PRF_VERIFYEXISTS 0x0001")]
     public const int PRF_VERIFYEXISTS = 0x0001;
 
+    /// <include file='PRF.xml' path='doc/member[@name="PRF.PRF_TRYPROGRAMEXTENSIONS"]/*' />
     [NativeTypeName("#define PRF_TRYPROGRAMEXTENSIONS (0x0002 | PRF_VERIFYEXISTS)")]
     public const int PRF_TRYPROGRAMEXTENSIONS = (0x0002 | 0x0001);
 
+    /// <include file='PRF.xml' path='doc/member[@name="PRF.PRF_FIRSTDIRDEF"]/*' />
     [NativeTypeName("#define PRF_FIRSTDIRDEF 0x0004")]
     public const int PRF_FIRSTDIRDEF = 0x0004;
 
+    /// <include file='PRF.xml' path='doc/member[@name="PRF.PRF_DONTFINDLNK"]/*' />
     [NativeTypeName("#define PRF_DONTFINDLNK 0x0008")]
     public const int PRF_DONTFINDLNK = 0x0008;
 
+    /// <include file='PRF.xml' path='doc/member[@name="PRF.PRF_REQUIREABSOLUTE"]/*' />
     [NativeTypeName("#define PRF_REQUIREABSOLUTE 0x0010")]
     public const int PRF_REQUIREABSOLUTE = 0x0010;
 }

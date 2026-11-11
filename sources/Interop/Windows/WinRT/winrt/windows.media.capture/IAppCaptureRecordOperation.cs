@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAppCaptureRecordOperation : IAppCaptureRecordOperation.Interface, INativeGuid
 {
+    /// <include file='IAppCaptureRecordOperation.xml' path='doc/member[@name="IAppCaptureRecordOperation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppCaptureRecordOperation);
 
     public void** lpVtbl;

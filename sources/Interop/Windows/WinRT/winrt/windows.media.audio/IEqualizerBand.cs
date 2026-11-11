@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IEqualizerBand : IEqualizerBand.Interface, INativeGuid
 {
+    /// <include file='IEqualizerBand.xml' path='doc/member[@name="IEqualizerBand.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEqualizerBand);
 
     public void** lpVtbl;

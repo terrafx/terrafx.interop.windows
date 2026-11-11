@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IStartupTaskStatics : IStartupTaskStatics.Interface, INativeGuid
 {
+    /// <include file='IStartupTaskStatics.xml' path='doc/member[@name="IStartupTaskStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IStartupTaskStatics);
 
     public void** lpVtbl;

@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("ISearchPaneQueryChangedEventArgs may be altered or unavailable for releases after Windows 10.")]
 public unsafe partial struct ISearchPaneQueryChangedEventArgs : ISearchPaneQueryChangedEventArgs.Interface, INativeGuid
 {
+    /// <include file='ISearchPaneQueryChangedEventArgs.xml' path='doc/member[@name="ISearchPaneQueryChangedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISearchPaneQueryChangedEventArgs);
 
     public void** lpVtbl;

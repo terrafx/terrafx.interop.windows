@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IVideoFrame2 : IVideoFrame2.Interface, INativeGuid
 {
+    /// <include file='IVideoFrame2.xml' path='doc/member[@name="IVideoFrame2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVideoFrame2);
 
     public void** lpVtbl;

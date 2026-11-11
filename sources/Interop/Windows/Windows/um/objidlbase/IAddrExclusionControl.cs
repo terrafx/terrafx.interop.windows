@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAddrExclusionControl : IAddrExclusionControl.Interface, INativeGuid
 {
+    /// <include file='IAddrExclusionControl.xml' path='doc/member[@name="IAddrExclusionControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAddrExclusionControl);
 
     public void** lpVtbl;

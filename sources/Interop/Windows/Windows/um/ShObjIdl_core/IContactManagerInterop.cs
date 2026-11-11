@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IContactManagerInterop : IContactManagerInterop.Interface, INativeGuid
 {
+    /// <include file='IContactManagerInterop.xml' path='doc/member[@name="IContactManagerInterop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IContactManagerInterop);
 
     public void** lpVtbl;

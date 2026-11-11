@@ -19,6 +19,7 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint MSChapSrvChangePassword2([NativeTypeName("PWSTR")] char* ServerName, [NativeTypeName("PWSTR")] char* UserName, [NativeTypeName("PSAMPR_ENCRYPTED_USER_PASSWORD")] SAMPR_ENCRYPTED_USER_PASSWORD* NewPasswordEncryptedWithOldNt, [NativeTypeName("PENCRYPTED_NT_OWF_PASSWORD")] ENCRYPTED_LM_OWF_PASSWORD* OldNtOwfPasswordEncryptedWithNewNt, [NativeTypeName("BOOLEAN")] byte LmPresent, [NativeTypeName("PSAMPR_ENCRYPTED_USER_PASSWORD")] SAMPR_ENCRYPTED_USER_PASSWORD* NewPasswordEncryptedWithOldLm, [NativeTypeName("PENCRYPTED_LM_OWF_PASSWORD")] ENCRYPTED_LM_OWF_PASSWORD* OldLmOwfPasswordEncryptedWithNewLmOrNt);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CYPHER_BLOCK_LENGTH"]/*' />
     [NativeTypeName("#define CYPHER_BLOCK_LENGTH 8")]
     public const int CYPHER_BLOCK_LENGTH = 8;
 }

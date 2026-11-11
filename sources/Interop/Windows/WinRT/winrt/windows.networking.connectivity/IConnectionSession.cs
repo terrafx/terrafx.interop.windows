@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IConnectionSession : IConnectionSession.Interface, INativeGuid
 {
+    /// <include file='IConnectionSession.xml' path='doc/member[@name="IConnectionSession.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IConnectionSession);
 
     public void** lpVtbl;

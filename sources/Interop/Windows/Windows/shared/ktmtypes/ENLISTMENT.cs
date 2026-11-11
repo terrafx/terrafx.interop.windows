@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ENLISTMENT
 {
+    /// <include file='ENLISTMENT.xml' path='doc/member[@name="ENLISTMENT.ENLISTMENT_SUPERIOR"]/*' />
     [NativeTypeName("#define ENLISTMENT_SUPERIOR 0x00000001")]
     public const int ENLISTMENT_SUPERIOR = 0x00000001;
 
+    /// <include file='ENLISTMENT.xml' path='doc/member[@name="ENLISTMENT.ENLISTMENT_MAXIMUM_OPTION"]/*' />
     [NativeTypeName("#define ENLISTMENT_MAXIMUM_OPTION 0x00000001")]
     public const int ENLISTMENT_MAXIMUM_OPTION = 0x00000001;
 
+    /// <include file='ENLISTMENT.xml' path='doc/member[@name="ENLISTMENT.ENLISTMENT_OBJECT_PATH"]/*' />
     [NativeTypeName("#define ENLISTMENT_OBJECT_PATH L\"\\Enlistment\"")]
     public const string ENLISTMENT_OBJECT_PATH = "\\Enlistment\\";
 
+    /// <include file='ENLISTMENT.xml' path='doc/member[@name="ENLISTMENT.ENLISTMENT_OBJECT_NAME_LENGTH_IN_BYTES"]/*' />
     [NativeTypeName("#define ENLISTMENT_OBJECT_NAME_LENGTH_IN_BYTES (sizeof(ENLISTMENT_OBJECT_PATH)+(38*sizeof(WCHAR)))")]
     public const uint ENLISTMENT_OBJECT_NAME_LENGTH_IN_BYTES = (26 + (38 * 2));
 }

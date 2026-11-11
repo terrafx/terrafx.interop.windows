@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("AA509086-5CA9-4C25-8F95-589D3C07B48A")]
 public unsafe partial struct VirtualDesktopManager : INativeGuid
 {
+    /// <include file='VirtualDesktopManager.xml' path='doc/member[@name="VirtualDesktopManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_VirtualDesktopManager);
 }

@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ENABLE
 {
+    /// <include file='ENABLE.xml' path='doc/member[@name="ENABLE.ENABLE_GAMUT_CHECKING"]/*' />
     [NativeTypeName("#define ENABLE_GAMUT_CHECKING 0x00010000")]
     public const int ENABLE_GAMUT_CHECKING = 0x00010000;
 }

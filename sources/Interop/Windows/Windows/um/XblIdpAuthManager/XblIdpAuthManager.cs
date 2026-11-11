@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("CE23534B-56D8-4978-86A2-7EE570640468")]
 public unsafe partial struct XblIdpAuthManager : INativeGuid
 {
+    /// <include file='XblIdpAuthManager.xml' path='doc/member[@name="XblIdpAuthManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_XblIdpAuthManager);
 }

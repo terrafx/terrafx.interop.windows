@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("C834D038-F5E8-4408-9B60-88F36493FEDF")]
 public unsafe partial struct CODECAPI_AVEncMP12PktzStreamID : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncMP12PktzStreamID.xml' path='doc/member[@name="CODECAPI_AVEncMP12PktzStreamID.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncMP12PktzStreamID);
 }

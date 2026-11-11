@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDxcCompiler : IDxcCompiler.Interface, INativeGuid
 {
+    /// <include file='IDxcCompiler.xml' path='doc/member[@name="IDxcCompiler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDxcCompiler);
 
     public void** lpVtbl;

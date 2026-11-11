@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISceneModeControl : ISceneModeControl.Interface, INativeGuid
 {
+    /// <include file='ISceneModeControl.xml' path='doc/member[@name="ISceneModeControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISceneModeControl);
 
     public void** lpVtbl;

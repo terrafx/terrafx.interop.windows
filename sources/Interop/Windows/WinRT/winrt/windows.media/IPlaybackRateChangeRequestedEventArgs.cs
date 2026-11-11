@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPlaybackRateChangeRequestedEventArgs : IPlaybackRateChangeRequestedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IPlaybackRateChangeRequestedEventArgs.xml' path='doc/member[@name="IPlaybackRateChangeRequestedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPlaybackRateChangeRequestedEventArgs);
 
     public void** lpVtbl;

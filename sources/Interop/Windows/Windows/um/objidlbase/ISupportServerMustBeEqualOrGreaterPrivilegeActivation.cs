@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISupportServerMustBeEqualOrGreaterPrivilegeActivation : ISupportServerMustBeEqualOrGreaterPrivilegeActivation.Interface, INativeGuid
 {
+    /// <include file='ISupportServerMustBeEqualOrGreaterPrivilegeActivation.xml' path='doc/member[@name="ISupportServerMustBeEqualOrGreaterPrivilegeActivation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISupportServerMustBeEqualOrGreaterPrivilegeActivation);
 
     public void** lpVtbl;

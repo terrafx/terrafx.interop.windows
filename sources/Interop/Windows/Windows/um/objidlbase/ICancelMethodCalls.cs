@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ICancelMethodCalls : ICancelMethodCalls.Interface, INativeGuid
 {
+    /// <include file='ICancelMethodCalls.xml' path='doc/member[@name="ICancelMethodCalls.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICancelMethodCalls);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDXGIObject")]
 public unsafe partial struct IDXGIFactory : IDXGIFactory.Interface, INativeGuid
 {
+    /// <include file='IDXGIFactory.xml' path='doc/member[@name="IDXGIFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDXGIFactory);
 
     public void** lpVtbl;

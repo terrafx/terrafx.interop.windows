@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ACTIVATION
 {
+    /// <include file='ACTIVATION.xml' path='doc/member[@name="ACTIVATION.ACTIVATION_CONTEXT_BASIC_INFORMATION_DEFINED"]/*' />
     [NativeTypeName("#define ACTIVATION_CONTEXT_BASIC_INFORMATION_DEFINED 1")]
     public const int ACTIVATION_CONTEXT_BASIC_INFORMATION_DEFINED = 1;
 }

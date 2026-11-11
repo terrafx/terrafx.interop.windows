@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ISpGrammarBuilder")]
 public unsafe partial struct ISpRecoGrammar : ISpRecoGrammar.Interface, INativeGuid
 {
+    /// <include file='ISpRecoGrammar.xml' path='doc/member[@name="ISpRecoGrammar.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpRecoGrammar);
 
     public void** lpVtbl;

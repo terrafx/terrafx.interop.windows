@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DFMT
 {
+    /// <include file='D3DFMT.xml' path='doc/member[@name="D3DFMT.D3DFMT_A1_SURFACE_MAXWIDTH"]/*' />
     [NativeTypeName("#define D3DFMT_A1_SURFACE_MAXWIDTH 8192")]
     public const int D3DFMT_A1_SURFACE_MAXWIDTH = 8192;
 
+    /// <include file='D3DFMT.xml' path='doc/member[@name="D3DFMT.D3DFMT_A1_SURFACE_MAXHEIGHT"]/*' />
     [NativeTypeName("#define D3DFMT_A1_SURFACE_MAXHEIGHT 2048")]
     public const int D3DFMT_A1_SURFACE_MAXHEIGHT = 2048;
 }

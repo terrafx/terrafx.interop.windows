@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IAudioEndpointVolume")]
 public unsafe partial struct IAudioEndpointVolumeEx : IAudioEndpointVolumeEx.Interface, INativeGuid
 {
+    /// <include file='IAudioEndpointVolumeEx.xml' path='doc/member[@name="IAudioEndpointVolumeEx.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioEndpointVolumeEx);
 
     public void** lpVtbl;

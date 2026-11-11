@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IXmlNodeSelector : IXmlNodeSelector.Interface, INativeGuid
 {
+    /// <include file='IXmlNodeSelector.xml' path='doc/member[@name="IXmlNodeSelector.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IXmlNodeSelector);
 
     public void** lpVtbl;

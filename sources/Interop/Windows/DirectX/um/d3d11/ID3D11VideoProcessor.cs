@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ID3D11VideoProcessor : ID3D11VideoProcessor.Interface, INativeGuid
 {
+    /// <include file='ID3D11VideoProcessor.xml' path='doc/member[@name="ID3D11VideoProcessor.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D11VideoProcessor);
 
     public void** lpVtbl;

@@ -7,54 +7,71 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class LBS
 {
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_NOTIFY"]/*' />
     [NativeTypeName("#define LBS_NOTIFY 0x0001L")]
     public const int LBS_NOTIFY = 0x0001;
 
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_SORT"]/*' />
     [NativeTypeName("#define LBS_SORT 0x0002L")]
     public const int LBS_SORT = 0x0002;
 
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_NOREDRAW"]/*' />
     [NativeTypeName("#define LBS_NOREDRAW 0x0004L")]
     public const int LBS_NOREDRAW = 0x0004;
 
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_MULTIPLESEL"]/*' />
     [NativeTypeName("#define LBS_MULTIPLESEL 0x0008L")]
     public const int LBS_MULTIPLESEL = 0x0008;
 
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_OWNERDRAWFIXED"]/*' />
     [NativeTypeName("#define LBS_OWNERDRAWFIXED 0x0010L")]
     public const int LBS_OWNERDRAWFIXED = 0x0010;
 
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_OWNERDRAWVARIABLE"]/*' />
     [NativeTypeName("#define LBS_OWNERDRAWVARIABLE 0x0020L")]
     public const int LBS_OWNERDRAWVARIABLE = 0x0020;
 
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_HASSTRINGS"]/*' />
     [NativeTypeName("#define LBS_HASSTRINGS 0x0040L")]
     public const int LBS_HASSTRINGS = 0x0040;
 
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_USETABSTOPS"]/*' />
     [NativeTypeName("#define LBS_USETABSTOPS 0x0080L")]
     public const int LBS_USETABSTOPS = 0x0080;
 
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_NOINTEGRALHEIGHT"]/*' />
     [NativeTypeName("#define LBS_NOINTEGRALHEIGHT 0x0100L")]
     public const int LBS_NOINTEGRALHEIGHT = 0x0100;
 
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_MULTICOLUMN"]/*' />
     [NativeTypeName("#define LBS_MULTICOLUMN 0x0200L")]
     public const int LBS_MULTICOLUMN = 0x0200;
 
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_WANTKEYBOARDINPUT"]/*' />
     [NativeTypeName("#define LBS_WANTKEYBOARDINPUT 0x0400L")]
     public const int LBS_WANTKEYBOARDINPUT = 0x0400;
 
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_EXTENDEDSEL"]/*' />
     [NativeTypeName("#define LBS_EXTENDEDSEL 0x0800L")]
     public const int LBS_EXTENDEDSEL = 0x0800;
 
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_DISABLENOSCROLL"]/*' />
     [NativeTypeName("#define LBS_DISABLENOSCROLL 0x1000L")]
     public const int LBS_DISABLENOSCROLL = 0x1000;
 
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_NODATA"]/*' />
     [NativeTypeName("#define LBS_NODATA 0x2000L")]
     public const int LBS_NODATA = 0x2000;
 
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_NOSEL"]/*' />
     [NativeTypeName("#define LBS_NOSEL 0x4000L")]
     public const int LBS_NOSEL = 0x4000;
 
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_COMBOBOX"]/*' />
     [NativeTypeName("#define LBS_COMBOBOX 0x8000L")]
     public const int LBS_COMBOBOX = 0x8000;
 
+    /// <include file='LBS.xml' path='doc/member[@name="LBS.LBS_STANDARD"]/*' />
     [NativeTypeName("#define LBS_STANDARD (LBS_NOTIFY | LBS_SORT | WS_VSCROLL | WS_BORDER)")]
     public const int LBS_STANDARD = (0x0001 | 0x0002 | 0x00200000 | 0x00800000);
 }

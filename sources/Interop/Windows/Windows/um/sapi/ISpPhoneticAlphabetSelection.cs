@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISpPhoneticAlphabetSelection : ISpPhoneticAlphabetSelection.Interface, INativeGuid
 {
+    /// <include file='ISpPhoneticAlphabetSelection.xml' path='doc/member[@name="ISpPhoneticAlphabetSelection.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpPhoneticAlphabetSelection);
 
     public void** lpVtbl;

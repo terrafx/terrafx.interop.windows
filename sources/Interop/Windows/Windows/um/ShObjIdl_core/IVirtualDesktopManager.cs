@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IVirtualDesktopManager : IVirtualDesktopManager.Interface, INativeGuid
 {
+    /// <include file='IVirtualDesktopManager.xml' path='doc/member[@name="IVirtualDesktopManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVirtualDesktopManager);
 
     public void** lpVtbl;

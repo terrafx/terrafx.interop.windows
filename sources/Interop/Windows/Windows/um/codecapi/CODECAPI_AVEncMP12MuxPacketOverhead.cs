@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("E40BD720-3955-4453-ACF9-B79132A38FA0")]
 public unsafe partial struct CODECAPI_AVEncMP12MuxPacketOverhead : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncMP12MuxPacketOverhead.xml' path='doc/member[@name="CODECAPI_AVEncMP12MuxPacketOverhead.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncMP12MuxPacketOverhead);
 }

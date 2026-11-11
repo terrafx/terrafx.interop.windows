@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISpatialAnchorRawCoordinateSystemAdjustedEventArgs : ISpatialAnchorRawCoordinateSystemAdjustedEventArgs.Interface, INativeGuid
 {
+    /// <include file='ISpatialAnchorRawCoordinateSystemAdjustedEventArgs.xml' path='doc/member[@name="ISpatialAnchorRawCoordinateSystemAdjustedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpatialAnchorRawCoordinateSystemAdjustedEventArgs);
 
     public void** lpVtbl;

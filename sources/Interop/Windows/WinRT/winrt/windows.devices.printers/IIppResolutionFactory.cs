@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IIppResolutionFactory : IIppResolutionFactory.Interface, INativeGuid
 {
+    /// <include file='IIppResolutionFactory.xml' path='doc/member[@name="IIppResolutionFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IIppResolutionFactory);
 
     public void** lpVtbl;

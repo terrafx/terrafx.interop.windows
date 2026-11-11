@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("38FE0CF4-6A59-4729-8E4A-2D580059EDE4")]
 public unsafe partial struct DestinationListBoth : INativeGuid
 {
+    /// <include file='DestinationListBoth.xml' path='doc/member[@name="DestinationListBoth.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_DestinationListBoth);
 }

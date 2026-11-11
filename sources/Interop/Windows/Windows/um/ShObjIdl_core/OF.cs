@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class OF
 {
+    /// <include file='OF.xml' path='doc/member[@name="OF.OF_CAP_CANSWITCHTO"]/*' />
     [NativeTypeName("#define OF_CAP_CANSWITCHTO 0x0001")]
     public const int OF_CAP_CANSWITCHTO = 0x0001;
 
+    /// <include file='OF.xml' path='doc/member[@name="OF.OF_CAP_CANCLOSE"]/*' />
     [NativeTypeName("#define OF_CAP_CANCLOSE 0x0002")]
     public const int OF_CAP_CANCLOSE = 0x0002;
 }

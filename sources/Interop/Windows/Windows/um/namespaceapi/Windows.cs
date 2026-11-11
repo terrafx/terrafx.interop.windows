@@ -38,6 +38,7 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     public static extern void DeleteBoundaryDescriptor(HANDLE BoundaryDescriptor);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PRIVATE_NAMESPACE_FLAG_DESTROY"]/*' />
     [NativeTypeName("#define PRIVATE_NAMESPACE_FLAG_DESTROY 0x00000001")]
     public const int PRIVATE_NAMESPACE_FLAG_DESTROY = 0x00000001;
 }

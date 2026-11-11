@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MF
 {
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_SESSIONCAPS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_SESSIONCAPS
     {
@@ -37,6 +38,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_SESSIONCAPS_DELTA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_SESSIONCAPS_DELTA
     {
@@ -62,6 +64,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_TOPOLOGY_STATUS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_TOPOLOGY_STATUS
     {
@@ -87,6 +90,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_START_PRESENTATION_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_START_PRESENTATION_TIME
     {
@@ -112,6 +116,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_PRESENTATION_TIME_OFFSET"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_PRESENTATION_TIME_OFFSET
     {
@@ -137,6 +142,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_START_PRESENTATION_TIME_AT_OUTPUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_START_PRESENTATION_TIME_AT_OUTPUT
     {
@@ -162,6 +168,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_SOURCE_FAKE_START"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_SOURCE_FAKE_START
     {
@@ -187,6 +194,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_SOURCE_PROJECTSTART"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_SOURCE_PROJECTSTART
     {
@@ -212,6 +220,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_SOURCE_ACTUAL_START"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_SOURCE_ACTUAL_START
     {
@@ -237,6 +246,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_SOURCE_TOPOLOGY_CANCELED"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_SOURCE_TOPOLOGY_CANCELED
     {
@@ -262,6 +272,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_SOURCE_CHARACTERISTICS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_SOURCE_CHARACTERISTICS
     {
@@ -287,6 +298,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_SOURCE_CHARACTERISTICS_OLD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_SOURCE_CHARACTERISTICS_OLD
     {
@@ -312,6 +324,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_DO_THINNING"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_DO_THINNING
     {
@@ -337,6 +350,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_SCRUBSAMPLE_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_SCRUBSAMPLE_TIME
     {
@@ -362,6 +376,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_OUTPUT_NODE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_OUTPUT_NODE
     {
@@ -387,6 +402,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_MFT_INPUT_STREAM_ID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_MFT_INPUT_STREAM_ID
     {
@@ -412,6 +428,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_MFT_CONTEXT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_MFT_CONTEXT
     {
@@ -437,6 +454,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_STREAM_METADATA_KEYDATA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_STREAM_METADATA_KEYDATA
     {
@@ -462,6 +480,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_STREAM_METADATA_CONTENT_KEYIDS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_STREAM_METADATA_CONTENT_KEYIDS
     {
@@ -487,6 +506,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_STREAM_METADATA_SYSTEMID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_EVENT_STREAM_METADATA_SYSTEMID
     {
@@ -512,6 +532,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_PHOTO_FRAME_FLASH"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_PHOTO_FRAME_FLASH
     {
@@ -537,6 +558,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_FRAME_RAWSTREAM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_FRAME_RAWSTREAM
     {
@@ -562,6 +584,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_FOCUSSTATE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_FOCUSSTATE
     {
@@ -587,6 +610,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_REQUESTED_FRAME_SETTING_ID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_REQUESTED_FRAME_SETTING_ID
     {
@@ -612,6 +636,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_EXPOSURE_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_EXPOSURE_TIME
     {
@@ -637,6 +662,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_EXPOSURE_COMPENSATION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_EXPOSURE_COMPENSATION
     {
@@ -662,6 +688,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_ISO_SPEED"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_ISO_SPEED
     {
@@ -687,6 +714,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_LENS_POSITION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_LENS_POSITION
     {
@@ -712,6 +740,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_SCENE_MODE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_SCENE_MODE
     {
@@ -737,6 +766,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_FLASH"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_FLASH
     {
@@ -762,6 +792,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_FLASH_POWER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_FLASH_POWER
     {
@@ -787,6 +818,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_WHITEBALANCE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_WHITEBALANCE
     {
@@ -812,6 +844,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_ZOOMFACTOR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_ZOOMFACTOR
     {
@@ -837,6 +870,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_FACEROIS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_FACEROIS
     {
@@ -862,6 +896,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_FACEROITIMESTAMPS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_FACEROITIMESTAMPS
     {
@@ -887,6 +922,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_FACEROICHARACTERIZATIONS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_FACEROICHARACTERIZATIONS
     {
@@ -912,6 +948,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_ISO_GAINS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_ISO_GAINS
     {
@@ -937,6 +974,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_SENSORFRAMERATE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_SENSORFRAMERATE
     {
@@ -962,6 +1000,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_WHITEBALANCE_GAINS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_WHITEBALANCE_GAINS
     {
@@ -987,6 +1026,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_HISTOGRAM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_HISTOGRAM
     {
@@ -1012,6 +1052,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_EXIF"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_EXIF
     {
@@ -1037,6 +1078,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_FRAME_ILLUMINATION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_FRAME_ILLUMINATION
     {
@@ -1062,6 +1104,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_UVC_PAYLOADHEADER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_UVC_PAYLOADHEADER
     {
@@ -1087,6 +1130,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_FIRST_SCANLINE_START_TIME_QPC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_FIRST_SCANLINE_START_TIME_QPC
     {
@@ -1112,6 +1156,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_LAST_SCANLINE_END_TIME_QPC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_LAST_SCANLINE_END_TIME_QPC
     {
@@ -1137,6 +1182,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_SCANLINE_TIME_QPC_ACCURACY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_SCANLINE_TIME_QPC_ACCURACY
     {
@@ -1162,6 +1208,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_SCANLINE_DIRECTION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_SCANLINE_DIRECTION
     {
@@ -1187,6 +1234,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_DIGITALWINDOW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_DIGITALWINDOW
     {
@@ -1212,6 +1260,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CAPTURE_METADATA_FRAME_BACKGROUND_MASK"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_CAPTURE_METADATA_FRAME_BACKGROUND_MASK
     {
@@ -1237,6 +1286,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MAJOR_TYPE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MAJOR_TYPE
     {
@@ -1262,6 +1312,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_SUBTYPE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_SUBTYPE
     {
@@ -1287,6 +1338,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_ALL_SAMPLES_INDEPENDENT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_ALL_SAMPLES_INDEPENDENT
     {
@@ -1312,6 +1364,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_FIXED_SIZE_SAMPLES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_FIXED_SIZE_SAMPLES
     {
@@ -1337,6 +1390,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_COMPRESSED"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_COMPRESSED
     {
@@ -1362,6 +1416,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_SAMPLE_SIZE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_SAMPLE_SIZE
     {
@@ -1387,6 +1442,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_WRAPPED_TYPE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_WRAPPED_TYPE
     {
@@ -1412,6 +1468,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_VIDEO_3D"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_VIDEO_3D
     {
@@ -1437,6 +1494,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_VIDEO_3D_FORMAT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_VIDEO_3D_FORMAT
     {
@@ -1462,6 +1520,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_VIDEO_3D_NUM_VIEWS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_VIDEO_3D_NUM_VIEWS
     {
@@ -1487,6 +1546,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_VIDEO_3D_LEFT_IS_BASE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_VIDEO_3D_LEFT_IS_BASE
     {
@@ -1512,6 +1572,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_VIDEO_3D_FIRST_IS_LEFT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_VIDEO_3D_FIRST_IS_LEFT
     {
@@ -1537,6 +1598,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_VIDEO_ROTATION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_VIDEO_ROTATION
     {
@@ -1562,6 +1624,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_DEVICESTREAM_MULTIPLEXED_MANAGER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_DEVICESTREAM_MULTIPLEXED_MANAGER
     {
@@ -1587,6 +1650,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIATYPE_MULTIPLEXED_MANAGER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MEDIATYPE_MULTIPLEXED_MANAGER
     {
@@ -1612,6 +1676,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_SECURE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_SECURE
     {
@@ -1637,6 +1702,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_DEVICESTREAM_ATTRIBUTE_FRAMESOURCE_TYPES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_DEVICESTREAM_ATTRIBUTE_FRAMESOURCE_TYPES
     {
@@ -1662,6 +1728,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_ALPHA_MODE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_ALPHA_MODE
     {
@@ -1687,6 +1754,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_DEPTH_MEASUREMENT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_DEPTH_MEASUREMENT
     {
@@ -1712,6 +1780,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_DEPTH_VALUE_UNIT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_DEPTH_VALUE_UNIT
     {
@@ -1737,6 +1806,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_VIDEO_NO_FRAME_ORDERING"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_VIDEO_NO_FRAME_ORDERING
     {
@@ -1762,6 +1832,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_VIDEO_H264_NO_FMOASO"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_VIDEO_H264_NO_FMOASO
     {
@@ -1787,6 +1858,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_FORWARD_CUSTOM_NALU"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_FORWARD_CUSTOM_NALU
     {
@@ -1812,6 +1884,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_FORWARD_CUSTOM_SEI"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_FORWARD_CUSTOM_SEI
     {
@@ -1837,6 +1910,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_VIDEO_RENDERER_EXTENSION_PROFILE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_VIDEO_RENDERER_EXTENSION_PROFILE
     {
@@ -1862,6 +1936,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_DECODER_FWD_CUSTOM_SEI_DECODE_ORDER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_DECODER_FWD_CUSTOM_SEI_DECODE_ORDER
     {
@@ -1887,6 +1962,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_VIDEO_RENDERER_EFFECT_APP_SERVICE_NAME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_VIDEO_RENDERER_EFFECT_APP_SERVICE_NAME
     {
@@ -1912,6 +1988,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AUDIO_NUM_CHANNELS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AUDIO_NUM_CHANNELS
     {
@@ -1937,6 +2014,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AUDIO_SAMPLES_PER_SECOND"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AUDIO_SAMPLES_PER_SECOND
     {
@@ -1962,6 +2040,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AUDIO_FLOAT_SAMPLES_PER_SECOND"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AUDIO_FLOAT_SAMPLES_PER_SECOND
     {
@@ -1987,6 +2066,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AUDIO_AVG_BYTES_PER_SECOND"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AUDIO_AVG_BYTES_PER_SECOND
     {
@@ -2012,6 +2092,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AUDIO_BLOCK_ALIGNMENT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AUDIO_BLOCK_ALIGNMENT
     {
@@ -2037,6 +2118,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AUDIO_BITS_PER_SAMPLE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AUDIO_BITS_PER_SAMPLE
     {
@@ -2062,6 +2144,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AUDIO_VALID_BITS_PER_SAMPLE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AUDIO_VALID_BITS_PER_SAMPLE
     {
@@ -2087,6 +2170,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AUDIO_SAMPLES_PER_BLOCK"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AUDIO_SAMPLES_PER_BLOCK
     {
@@ -2112,6 +2196,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AUDIO_CHANNEL_MASK"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AUDIO_CHANNEL_MASK
     {
@@ -2137,6 +2222,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AUDIO_FOLDDOWN_MATRIX"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AUDIO_FOLDDOWN_MATRIX
     {
@@ -2162,6 +2248,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AUDIO_WMADRC_PEAKREF"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AUDIO_WMADRC_PEAKREF
     {
@@ -2187,6 +2274,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AUDIO_WMADRC_PEAKTARGET"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AUDIO_WMADRC_PEAKTARGET
     {
@@ -2212,6 +2300,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AUDIO_WMADRC_AVGREF"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AUDIO_WMADRC_AVGREF
     {
@@ -2237,6 +2326,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AUDIO_WMADRC_AVGTARGET"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AUDIO_WMADRC_AVGTARGET
     {
@@ -2262,6 +2352,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AUDIO_PREFER_WAVEFORMATEX"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AUDIO_PREFER_WAVEFORMATEX
     {
@@ -2287,6 +2378,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AAC_PAYLOAD_TYPE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AAC_PAYLOAD_TYPE
     {
@@ -2312,6 +2404,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AAC_AUDIO_PROFILE_LEVEL_INDICATION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AAC_AUDIO_PROFILE_LEVEL_INDICATION
     {
@@ -2337,6 +2430,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AUDIO_FLAC_MAX_BLOCK_SIZE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AUDIO_FLAC_MAX_BLOCK_SIZE
     {
@@ -2362,6 +2456,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_SPATIAL_AUDIO_MAX_DYNAMIC_OBJECTS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_SPATIAL_AUDIO_MAX_DYNAMIC_OBJECTS
     {
@@ -2387,6 +2482,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_SPATIAL_AUDIO_OBJECT_METADATA_FORMAT_ID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_SPATIAL_AUDIO_OBJECT_METADATA_FORMAT_ID
     {
@@ -2412,6 +2508,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_SPATIAL_AUDIO_OBJECT_METADATA_LENGTH"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_SPATIAL_AUDIO_OBJECT_METADATA_LENGTH
     {
@@ -2437,6 +2534,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_SPATIAL_AUDIO_MAX_METADATA_ITEMS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_SPATIAL_AUDIO_MAX_METADATA_ITEMS
     {
@@ -2462,6 +2560,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_SPATIAL_AUDIO_MIN_METADATA_ITEM_OFFSET_SPACING"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_SPATIAL_AUDIO_MIN_METADATA_ITEM_OFFSET_SPACING
     {
@@ -2487,6 +2586,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_SPATIAL_AUDIO_DATA_PRESENT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_SPATIAL_AUDIO_DATA_PRESENT
     {
@@ -2512,6 +2612,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_SPATIAL_AUDIO_IS_PREVIRTUALIZED"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_SPATIAL_AUDIO_IS_PREVIRTUALIZED
     {
@@ -2537,6 +2638,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MPEGH_AUDIO_PROFILE_LEVEL_INDICATION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MPEGH_AUDIO_PROFILE_LEVEL_INDICATION
     {
@@ -2562,6 +2664,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_FRAME_SIZE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_FRAME_SIZE
     {
@@ -2587,6 +2690,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_FRAME_RATE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_FRAME_RATE
     {
@@ -2612,6 +2716,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_PIXEL_ASPECT_RATIO"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_PIXEL_ASPECT_RATIO
     {
@@ -2637,6 +2742,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_DRM_FLAGS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_DRM_FLAGS
     {
@@ -2662,6 +2768,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_TIMESTAMP_CAN_BE_DTS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_TIMESTAMP_CAN_BE_DTS
     {
@@ -2687,6 +2794,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_PAD_CONTROL_FLAGS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_PAD_CONTROL_FLAGS
     {
@@ -2712,6 +2820,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_SOURCE_CONTENT_HINT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_SOURCE_CONTENT_HINT
     {
@@ -2737,6 +2846,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_VIDEO_CHROMA_SITING"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_VIDEO_CHROMA_SITING
     {
@@ -2762,6 +2872,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_INTERLACE_MODE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_INTERLACE_MODE
     {
@@ -2787,6 +2898,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_TRANSFER_FUNCTION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_TRANSFER_FUNCTION
     {
@@ -2812,6 +2924,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_VIDEO_PRIMARIES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_VIDEO_PRIMARIES
     {
@@ -2837,6 +2950,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MAX_LUMINANCE_LEVEL"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MAX_LUMINANCE_LEVEL
     {
@@ -2862,6 +2976,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MAX_FRAME_AVERAGE_LUMINANCE_LEVEL"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MAX_FRAME_AVERAGE_LUMINANCE_LEVEL
     {
@@ -2887,6 +3002,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MAX_MASTERING_LUMINANCE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MAX_MASTERING_LUMINANCE
     {
@@ -2912,6 +3028,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MIN_MASTERING_LUMINANCE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MIN_MASTERING_LUMINANCE
     {
@@ -2937,6 +3054,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_DECODER_USE_MAX_RESOLUTION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_DECODER_USE_MAX_RESOLUTION
     {
@@ -2962,6 +3080,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_DECODER_MAX_DPB_COUNT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_DECODER_MAX_DPB_COUNT
     {
@@ -2987,6 +3106,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_CUSTOM_VIDEO_PRIMARIES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_CUSTOM_VIDEO_PRIMARIES
     {
@@ -3012,6 +3132,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_YUV_MATRIX"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_YUV_MATRIX
     {
@@ -3037,6 +3158,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_VIDEO_LIGHTING"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_VIDEO_LIGHTING
     {
@@ -3062,6 +3184,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_VIDEO_NOMINAL_RANGE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_VIDEO_NOMINAL_RANGE
     {
@@ -3087,6 +3210,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_GEOMETRIC_APERTURE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_GEOMETRIC_APERTURE
     {
@@ -3112,6 +3236,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MINIMUM_DISPLAY_APERTURE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MINIMUM_DISPLAY_APERTURE
     {
@@ -3137,6 +3262,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_PAN_SCAN_APERTURE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_PAN_SCAN_APERTURE
     {
@@ -3162,6 +3288,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_PAN_SCAN_ENABLED"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_PAN_SCAN_ENABLED
     {
@@ -3187,6 +3314,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AVG_BITRATE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AVG_BITRATE
     {
@@ -3212,6 +3340,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AVG_BIT_ERROR_RATE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AVG_BIT_ERROR_RATE
     {
@@ -3237,6 +3366,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MAX_KEYFRAME_SPACING"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MAX_KEYFRAME_SPACING
     {
@@ -3262,6 +3392,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_USER_DATA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_USER_DATA
     {
@@ -3287,6 +3418,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_OUTPUT_BUFFER_NUM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_OUTPUT_BUFFER_NUM
     {
@@ -3312,6 +3444,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_REALTIME_CONTENT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_REALTIME_CONTENT
     {
@@ -3337,6 +3470,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_DEFAULT_STRIDE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_DEFAULT_STRIDE
     {
@@ -3362,6 +3496,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_PALETTE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_PALETTE
     {
@@ -3387,6 +3522,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_AM_FORMAT_TYPE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_AM_FORMAT_TYPE
     {
@@ -3412,6 +3548,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_VIDEO_PROFILE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_VIDEO_PROFILE
     {
@@ -3437,6 +3574,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_VIDEO_LEVEL"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_VIDEO_LEVEL
     {
@@ -3462,6 +3600,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MPEG_START_TIME_CODE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MPEG_START_TIME_CODE
     {
@@ -3487,6 +3626,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MPEG2_PROFILE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MPEG2_PROFILE
     {
@@ -3512,6 +3652,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MPEG2_LEVEL"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MPEG2_LEVEL
     {
@@ -3537,6 +3678,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MPEG2_FLAGS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MPEG2_FLAGS
     {
@@ -3562,6 +3704,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MPEG_SEQUENCE_HEADER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MPEG_SEQUENCE_HEADER
     {
@@ -3587,6 +3730,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MPEG2_STANDARD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MPEG2_STANDARD
     {
@@ -3612,6 +3756,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MPEG2_TIMECODE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MPEG2_TIMECODE
     {
@@ -3637,6 +3782,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MPEG2_CONTENT_PACKET"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MPEG2_CONTENT_PACKET
     {
@@ -3662,6 +3808,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MPEG2_ONE_FRAME_PER_PACKET"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MPEG2_ONE_FRAME_PER_PACKET
     {
@@ -3687,6 +3834,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MPEG2_HDCP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MPEG2_HDCP
     {
@@ -3712,6 +3860,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_H264_MAX_CODEC_CONFIG_DELAY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_H264_MAX_CODEC_CONFIG_DELAY
     {
@@ -3737,6 +3886,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_H264_SUPPORTED_SLICE_MODES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_H264_SUPPORTED_SLICE_MODES
     {
@@ -3762,6 +3912,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_H264_SUPPORTED_SYNC_FRAME_TYPES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_H264_SUPPORTED_SYNC_FRAME_TYPES
     {
@@ -3787,6 +3938,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_H264_RESOLUTION_SCALING"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_H264_RESOLUTION_SCALING
     {
@@ -3812,6 +3964,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_H264_SIMULCAST_SUPPORT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_H264_SIMULCAST_SUPPORT
     {
@@ -3837,6 +3990,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_H264_SUPPORTED_RATE_CONTROL_MODES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_H264_SUPPORTED_RATE_CONTROL_MODES
     {
@@ -3862,6 +4016,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_H264_MAX_MB_PER_SEC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_H264_MAX_MB_PER_SEC
     {
@@ -3887,6 +4042,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_H264_SUPPORTED_USAGES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_H264_SUPPORTED_USAGES
     {
@@ -3912,6 +4068,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_H264_CAPABILITIES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_H264_CAPABILITIES
     {
@@ -3937,6 +4094,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_H264_SVC_CAPABILITIES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_H264_SVC_CAPABILITIES
     {
@@ -3962,6 +4120,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_H264_USAGE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_H264_USAGE
     {
@@ -3987,6 +4146,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_H264_RATE_CONTROL_MODES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_H264_RATE_CONTROL_MODES
     {
@@ -4012,6 +4172,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_H264_LAYOUT_PER_STREAM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_H264_LAYOUT_PER_STREAM
     {
@@ -4037,6 +4198,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_IN_BAND_PARAMETER_SET"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_IN_BAND_PARAMETER_SET
     {
@@ -4062,6 +4224,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MPEG4_TRACK_TYPE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MPEG4_TRACK_TYPE
     {
@@ -4087,6 +4250,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_CONTAINER_RATE_SCALING"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_CONTAINER_RATE_SCALING
     {
@@ -4112,6 +4276,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_DV_AAUX_SRC_PACK_0"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_DV_AAUX_SRC_PACK_0
     {
@@ -4137,6 +4302,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_DV_AAUX_CTRL_PACK_0"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_DV_AAUX_CTRL_PACK_0
     {
@@ -4162,6 +4328,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_DV_AAUX_SRC_PACK_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_DV_AAUX_SRC_PACK_1
     {
@@ -4187,6 +4354,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_DV_AAUX_CTRL_PACK_1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_DV_AAUX_CTRL_PACK_1
     {
@@ -4212,6 +4380,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_DV_VAUX_SRC_PACK"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_DV_VAUX_SRC_PACK
     {
@@ -4237,6 +4406,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_DV_VAUX_CTRL_PACK"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_DV_VAUX_CTRL_PACK
     {
@@ -4262,6 +4432,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_ARBITRARY_HEADER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_ARBITRARY_HEADER
     {
@@ -4287,6 +4458,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_ARBITRARY_FORMAT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_ARBITRARY_FORMAT
     {
@@ -4312,6 +4484,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_IMAGE_LOSS_TOLERANT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_IMAGE_LOSS_TOLERANT
     {
@@ -4337,6 +4510,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MPEG4_SAMPLE_DESCRIPTION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MPEG4_SAMPLE_DESCRIPTION
     {
@@ -4362,6 +4536,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_MPEG4_CURRENT_SAMPLE_ENTRY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_MPEG4_CURRENT_SAMPLE_ENTRY
     {
@@ -4387,6 +4562,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SD_AMBISONICS_SAMPLE3D_DESCRIPTION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_SD_AMBISONICS_SAMPLE3D_DESCRIPTION
     {
@@ -4412,6 +4588,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_ORIGINAL_4CC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_ORIGINAL_4CC
     {
@@ -4437,6 +4614,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_ORIGINAL_WAVE_FORMAT_TAG"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_ORIGINAL_WAVE_FORMAT_TAG
     {
@@ -4462,6 +4640,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_FRAME_RATE_RANGE_MIN"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_FRAME_RATE_RANGE_MIN
     {
@@ -4487,6 +4666,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MT_FRAME_RATE_RANGE_MAX"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_MT_FRAME_RATE_RANGE_MAX
     {
@@ -4512,6 +4692,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_LOW_LATENCY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_LOW_LATENCY
     {
@@ -4537,6 +4718,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_VIDEO_MAX_MB_PER_SEC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_VIDEO_MAX_MB_PER_SEC
     {
@@ -4562,6 +4744,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_DISABLE_FRAME_CORRUPTION_INFO"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_DISABLE_FRAME_CORRUPTION_INFO
     {
@@ -4587,6 +4770,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_DEVICESTREAM_ATTRIBUTE_FACEAUTH_CAPABILITY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_DEVICESTREAM_ATTRIBUTE_FACEAUTH_CAPABILITY
     {
@@ -4612,6 +4796,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_DEVICESTREAM_ATTRIBUTE_SECURE_CAPABILITY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MF_DEVICESTREAM_ATTRIBUTE_SECURE_CAPABILITY
     {
@@ -4637,90 +4822,119 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_SDK_VERSION"]/*' />
     [NativeTypeName("#define MF_SDK_VERSION 0x0002")]
     public const int MF_SDK_VERSION = 0x0002;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_API_VERSION"]/*' />
     [NativeTypeName("#define MF_API_VERSION 0x0070")]
     public const int MF_API_VERSION = 0x0070;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_VERSION"]/*' />
     [NativeTypeName("#define MF_VERSION (MF_SDK_VERSION << 16 | MF_API_VERSION)")]
     public const int MF_VERSION = (0x0002 << 16 | 0x0070);
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_E_DXGI_DEVICE_NOT_INITIALIZED"]/*' />
     [NativeTypeName("#define MF_E_DXGI_DEVICE_NOT_INITIALIZED ((HRESULT)0x80041000L)")]
     public const int MF_E_DXGI_DEVICE_NOT_INITIALIZED = unchecked((int)(0x80041000));
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_E_DXGI_NEW_VIDEO_DEVICE"]/*' />
     [NativeTypeName("#define MF_E_DXGI_NEW_VIDEO_DEVICE ((HRESULT)0x80041001L)")]
     public const int MF_E_DXGI_NEW_VIDEO_DEVICE = unchecked((int)(0x80041001));
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_E_DXGI_VIDEO_DEVICE_LOCKED"]/*' />
     [NativeTypeName("#define MF_E_DXGI_VIDEO_DEVICE_LOCKED ((HRESULT)0x80041002L)")]
     public const int MF_E_DXGI_VIDEO_DEVICE_LOCKED = unchecked((int)(0x80041002));
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_1_BYTE_ALIGNMENT"]/*' />
     [NativeTypeName("#define MF_1_BYTE_ALIGNMENT 0x00000000")]
     public const int MF_1_BYTE_ALIGNMENT = 0x00000000;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_2_BYTE_ALIGNMENT"]/*' />
     [NativeTypeName("#define MF_2_BYTE_ALIGNMENT 0x00000001")]
     public const int MF_2_BYTE_ALIGNMENT = 0x00000001;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_4_BYTE_ALIGNMENT"]/*' />
     [NativeTypeName("#define MF_4_BYTE_ALIGNMENT 0x00000003")]
     public const int MF_4_BYTE_ALIGNMENT = 0x00000003;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_8_BYTE_ALIGNMENT"]/*' />
     [NativeTypeName("#define MF_8_BYTE_ALIGNMENT 0x00000007")]
     public const int MF_8_BYTE_ALIGNMENT = 0x00000007;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_16_BYTE_ALIGNMENT"]/*' />
     [NativeTypeName("#define MF_16_BYTE_ALIGNMENT 0x0000000f")]
     public const int MF_16_BYTE_ALIGNMENT = 0x0000000f;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_32_BYTE_ALIGNMENT"]/*' />
     [NativeTypeName("#define MF_32_BYTE_ALIGNMENT 0x0000001f")]
     public const int MF_32_BYTE_ALIGNMENT = 0x0000001f;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_64_BYTE_ALIGNMENT"]/*' />
     [NativeTypeName("#define MF_64_BYTE_ALIGNMENT 0x0000003f")]
     public const int MF_64_BYTE_ALIGNMENT = 0x0000003f;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_128_BYTE_ALIGNMENT"]/*' />
     [NativeTypeName("#define MF_128_BYTE_ALIGNMENT 0x0000007f")]
     public const int MF_128_BYTE_ALIGNMENT = 0x0000007f;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_256_BYTE_ALIGNMENT"]/*' />
     [NativeTypeName("#define MF_256_BYTE_ALIGNMENT 0x000000ff")]
     public const int MF_256_BYTE_ALIGNMENT = 0x000000ff;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_512_BYTE_ALIGNMENT"]/*' />
     [NativeTypeName("#define MF_512_BYTE_ALIGNMENT 0x000001ff")]
     public const int MF_512_BYTE_ALIGNMENT = 0x000001ff;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_1024_BYTE_ALIGNMENT"]/*' />
     [NativeTypeName("#define MF_1024_BYTE_ALIGNMENT 0x000003ff")]
     public const int MF_1024_BYTE_ALIGNMENT = 0x000003ff;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_2048_BYTE_ALIGNMENT"]/*' />
     [NativeTypeName("#define MF_2048_BYTE_ALIGNMENT 0x000007ff")]
     public const int MF_2048_BYTE_ALIGNMENT = 0x000007ff;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_4096_BYTE_ALIGNMENT"]/*' />
     [NativeTypeName("#define MF_4096_BYTE_ALIGNMENT 0x00000fff")]
     public const int MF_4096_BYTE_ALIGNMENT = 0x00000fff;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_8192_BYTE_ALIGNMENT"]/*' />
     [NativeTypeName("#define MF_8192_BYTE_ALIGNMENT 0x00001fff")]
     public const int MF_8192_BYTE_ALIGNMENT = 0x00001fff;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_METADATAFACIALEXPRESSION_SMILE"]/*' />
     [NativeTypeName("#define MF_METADATAFACIALEXPRESSION_SMILE 0x00000001")]
     public const int MF_METADATAFACIALEXPRESSION_SMILE = 0x00000001;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_METADATATIMESTAMPS_DEVICE"]/*' />
     [NativeTypeName("#define MF_METADATATIMESTAMPS_DEVICE 0x00000001")]
     public const int MF_METADATATIMESTAMPS_DEVICE = 0x00000001;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_METADATATIMESTAMPS_PRESENTATION"]/*' />
     [NativeTypeName("#define MF_METADATATIMESTAMPS_PRESENTATION 0x00000002")]
     public const int MF_METADATATIMESTAMPS_PRESENTATION = 0x00000002;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_HISTOGRAM_CHANNEL_Y"]/*' />
     [NativeTypeName("#define MF_HISTOGRAM_CHANNEL_Y 0x00000001")]
     public const int MF_HISTOGRAM_CHANNEL_Y = 0x00000001;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_HISTOGRAM_CHANNEL_R"]/*' />
     [NativeTypeName("#define MF_HISTOGRAM_CHANNEL_R 0x00000002")]
     public const int MF_HISTOGRAM_CHANNEL_R = 0x00000002;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_HISTOGRAM_CHANNEL_G"]/*' />
     [NativeTypeName("#define MF_HISTOGRAM_CHANNEL_G 0x00000004")]
     public const int MF_HISTOGRAM_CHANNEL_G = 0x00000004;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_HISTOGRAM_CHANNEL_B"]/*' />
     [NativeTypeName("#define MF_HISTOGRAM_CHANNEL_B 0x00000008")]
     public const int MF_HISTOGRAM_CHANNEL_B = 0x00000008;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_HISTOGRAM_CHANNEL_Cb"]/*' />
     [NativeTypeName("#define MF_HISTOGRAM_CHANNEL_Cb 0x00000010")]
     public const int MF_HISTOGRAM_CHANNEL_Cb = 0x00000010;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_HISTOGRAM_CHANNEL_Cr"]/*' />
     [NativeTypeName("#define MF_HISTOGRAM_CHANNEL_Cr 0x00000020")]
     public const int MF_HISTOGRAM_CHANNEL_Cr = 0x00000020;
 }

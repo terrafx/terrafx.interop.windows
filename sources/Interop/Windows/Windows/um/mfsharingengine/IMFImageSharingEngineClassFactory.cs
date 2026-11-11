@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFImageSharingEngineClassFactory : IMFImageSharingEngineClassFactory.Interface, INativeGuid
 {
+    /// <include file='IMFImageSharingEngineClassFactory.xml' path='doc/member[@name="IMFImageSharingEngineClassFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFImageSharingEngineClassFactory);
 
     public void** lpVtbl;

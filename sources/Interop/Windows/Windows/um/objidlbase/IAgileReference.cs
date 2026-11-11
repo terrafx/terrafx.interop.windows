@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAgileReference : IAgileReference.Interface, INativeGuid
 {
+    /// <include file='IAgileReference.xml' path='doc/member[@name="IAgileReference.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAgileReference);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ICategorizer : ICategorizer.Interface, INativeGuid
 {
+    /// <include file='ICategorizer.xml' path='doc/member[@name="ICategorizer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICategorizer);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMultisession")]
 public unsafe partial struct IMultisessionRandomWrite : IMultisessionRandomWrite.Interface, INativeGuid
 {
+    /// <include file='IMultisessionRandomWrite.xml' path='doc/member[@name="IMultisessionRandomWrite.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMultisessionRandomWrite);
 
     public void** lpVtbl;

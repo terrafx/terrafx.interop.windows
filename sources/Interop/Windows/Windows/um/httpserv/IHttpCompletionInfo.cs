@@ -14,6 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("49DD20E3-D9C0-463C-8821-F3413B55CC00")]
 public unsafe partial struct IHttpCompletionInfo : IHttpCompletionInfo.Interface, INativeGuid
 {
+    /// <include file='IHttpCompletionInfo.xml' path='doc/member[@name="IHttpCompletionInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpCompletionInfo);
 
     public void** lpVtbl;

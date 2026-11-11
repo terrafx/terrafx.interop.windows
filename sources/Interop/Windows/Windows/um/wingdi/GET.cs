@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GET
 {
+    /// <include file='GET.xml' path='doc/member[@name="GET.GET_PS_FEATURESETTING"]/*' />
     [NativeTypeName("#define GET_PS_FEATURESETTING 4121")]
     public const int GET_PS_FEATURESETTING = 4121;
 }

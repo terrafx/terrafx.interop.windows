@@ -7,18 +7,23 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Capture_Core_IVariablePhotoCapturedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[59]")]
     public const string InterfaceName_Windows_Media_Capture_Core_IVariablePhotoCapturedEventArgs = "Windows.Media.Capture.Core.IVariablePhotoCapturedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Capture_Core_IVariablePhotoSequenceCapture"]/*' />
     [NativeTypeName("const WCHAR[57]")]
     public const string InterfaceName_Windows_Media_Capture_Core_IVariablePhotoSequenceCapture = "Windows.Media.Capture.Core.IVariablePhotoSequenceCapture";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Capture_Core_IVariablePhotoSequenceCapture2"]/*' />
     [NativeTypeName("const WCHAR[58]")]
     public const string InterfaceName_Windows_Media_Capture_Core_IVariablePhotoSequenceCapture2 = "Windows.Media.Capture.Core.IVariablePhotoSequenceCapture2";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Media_Capture_Core_VariablePhotoCapturedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[58]")]
     public const string RuntimeClass_Windows_Media_Capture_Core_VariablePhotoCapturedEventArgs = "Windows.Media.Capture.Core.VariablePhotoCapturedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Media_Capture_Core_VariablePhotoSequenceCapture"]/*' />
     [NativeTypeName("const WCHAR[56]")]
     public const string RuntimeClass_Windows_Media_Capture_Core_VariablePhotoSequenceCapture = "Windows.Media.Capture.Core.VariablePhotoSequenceCapture";
 }

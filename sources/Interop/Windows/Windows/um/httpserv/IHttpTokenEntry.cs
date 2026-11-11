@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpCacheSpecificData")]
 public unsafe partial struct IHttpTokenEntry : IHttpTokenEntry.Interface, INativeGuid
 {
+    /// <include file='IHttpTokenEntry.xml' path='doc/member[@name="IHttpTokenEntry.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpTokenEntry);
 
     public void** lpVtbl;

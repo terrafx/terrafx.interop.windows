@@ -24,6 +24,14 @@ public unsafe partial struct CHttpModule : CHttpModule.Interface
         return ((delegate* unmanaged[MemberFunction]<CHttpModule*, IHttpContext*, IHttpEventProvider*, REQUEST_NOTIFICATION_STATUS>)(lpVtbl[0]))((CHttpModule*)Unsafe.AsPointer(ref this), pHttpContext, pProvider);
     }
 
+    /// <include file='CHttpModule.xml' path='doc/member[@name="CHttpModule.Destructor"]/*' />
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(0)]
+    public void Destructor()
+    {
+        ((delegate* unmanaged[MemberFunction]<CHttpModule*, void>)(lpVtbl[0]))((CHttpModule*)Unsafe.AsPointer(ref this));
+    }
+
     /// <include file='CHttpModule.xml' path='doc/member[@name="CHttpModule.OnPostBeginRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(1)]
@@ -256,18 +264,13 @@ public unsafe partial struct CHttpModule : CHttpModule.Interface
         ((delegate* unmanaged[MemberFunction]<CHttpModule*, void>)(lpVtbl[29]))((CHttpModule*)Unsafe.AsPointer(ref this));
     }
 
-    /// <include file='CHttpModule.xml' path='doc/member[@name="CHttpModule.Destructor"]/*' />
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(30)]
-    public void Destructor()
-    {
-        ((delegate* unmanaged[MemberFunction]<CHttpModule*, void>)(lpVtbl[30]))((CHttpModule*)Unsafe.AsPointer(ref this));
-    }
-
     public interface Interface
     {
         [VtblIndex(0)]
         REQUEST_NOTIFICATION_STATUS OnBeginRequest(IHttpContext* pHttpContext, IHttpEventProvider* pProvider);
+
+        [VtblIndex(0)]
+        void Destructor();
 
         [VtblIndex(1)]
         REQUEST_NOTIFICATION_STATUS OnPostBeginRequest(IHttpContext* pHttpContext, IHttpEventProvider* pProvider);
@@ -355,9 +358,6 @@ public unsafe partial struct CHttpModule : CHttpModule.Interface
 
         [VtblIndex(29)]
         void Dispose();
-
-        [VtblIndex(30)]
-        void Destructor();
     }
 
     public partial struct Vtbl<TSelf>
@@ -365,6 +365,9 @@ public unsafe partial struct CHttpModule : CHttpModule.Interface
     {
         [NativeTypeName("REQUEST_NOTIFICATION_STATUS (IHttpContext *, IHttpEventProvider *)")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IHttpContext*, IHttpEventProvider*, REQUEST_NOTIFICATION_STATUS> OnBeginRequest;
+
+        [NativeTypeName("void () noexcept")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Destructor;
 
         [NativeTypeName("REQUEST_NOTIFICATION_STATUS (IHttpContext *, IHttpEventProvider *)")]
         public delegate* unmanaged[MemberFunction]<TSelf*, IHttpContext*, IHttpEventProvider*, REQUEST_NOTIFICATION_STATUS> OnPostBeginRequest;
@@ -452,8 +455,5 @@ public unsafe partial struct CHttpModule : CHttpModule.Interface
 
         [NativeTypeName("void ()")]
         public delegate* unmanaged[MemberFunction]<TSelf*, void> Dispose;
-
-        [NativeTypeName("void () noexcept")]
-        public delegate* unmanaged[MemberFunction]<TSelf*, void> Destructor;
     }
 }

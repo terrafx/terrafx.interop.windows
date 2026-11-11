@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IPropertyEnumTypeList : IPropertyEnumTypeList.Interface, INativeGuid
 {
+    /// <include file='IPropertyEnumTypeList.xml' path='doc/member[@name="IPropertyEnumTypeList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPropertyEnumTypeList);
 
     public void** lpVtbl;

@@ -9,6 +9,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DOK
 {
+    /// <include file='D3DOK.xml' path='doc/member[@name="D3DOK.D3DOK_NOAUTOGEN"]/*' />
     [NativeTypeName("#define D3DOK_NOAUTOGEN MAKE_D3DSTATUS(2159)")]
     public const int D3DOK_NOAUTOGEN = unchecked((int)(((uint)(0) << 31) | ((uint)(0x876) << 16) | ((uint)(2159))));
 }

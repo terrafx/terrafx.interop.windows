@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IStorageLibraryChangeTrackerTriggerDetails : IStorageLibraryChangeTrackerTriggerDetails.Interface, INativeGuid
 {
+    /// <include file='IStorageLibraryChangeTrackerTriggerDetails.xml' path='doc/member[@name="IStorageLibraryChangeTrackerTriggerDetails.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IStorageLibraryChangeTrackerTriggerDetails);
 
     public void** lpVtbl;

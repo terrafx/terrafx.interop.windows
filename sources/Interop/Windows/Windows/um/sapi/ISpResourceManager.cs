@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IServiceProvider")]
 public unsafe partial struct ISpResourceManager : ISpResourceManager.Interface, INativeGuid
 {
+    /// <include file='ISpResourceManager.xml' path='doc/member[@name="ISpResourceManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpResourceManager);
 
     public void** lpVtbl;

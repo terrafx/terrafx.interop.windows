@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DVS20CAPS
 {
+    /// <include file='D3DVS20CAPS.xml' path='doc/member[@name="D3DVS20CAPS.D3DVS20CAPS_PREDICATION"]/*' />
     [NativeTypeName("#define D3DVS20CAPS_PREDICATION (1<<0)")]
     public const int D3DVS20CAPS_PREDICATION = (1 << 0);
 }

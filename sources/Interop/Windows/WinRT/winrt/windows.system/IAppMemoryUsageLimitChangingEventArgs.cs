@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAppMemoryUsageLimitChangingEventArgs : IAppMemoryUsageLimitChangingEventArgs.Interface, INativeGuid
 {
+    /// <include file='IAppMemoryUsageLimitChangingEventArgs.xml' path='doc/member[@name="IAppMemoryUsageLimitChangingEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppMemoryUsageLimitChangingEventArgs);
 
     public void** lpVtbl;

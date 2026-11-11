@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MFReadWriteClassFactory"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MFReadWriteClassFactory
     {
@@ -37,6 +38,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MFSourceReader"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MFSourceReader
     {
@@ -62,6 +64,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MFSinkWriter"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MFSinkWriter
     {

@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class E
 {
+    /// <include file='E.xml' path='doc/member[@name="E.E_PREVIEWHANDLER_DRM_FAIL"]/*' />
     [NativeTypeName("#define E_PREVIEWHANDLER_DRM_FAIL _HRESULT_TYPEDEF_(0x86420001L)")]
     public const int E_PREVIEWHANDLER_DRM_FAIL = unchecked((int)(0x86420001));
 
+    /// <include file='E.xml' path='doc/member[@name="E.E_PREVIEWHANDLER_NOAUTH"]/*' />
     [NativeTypeName("#define E_PREVIEWHANDLER_NOAUTH _HRESULT_TYPEDEF_(0x86420002L)")]
     public const int E_PREVIEWHANDLER_NOAUTH = unchecked((int)(0x86420002));
 
+    /// <include file='E.xml' path='doc/member[@name="E.E_PREVIEWHANDLER_NOTFOUND"]/*' />
     [NativeTypeName("#define E_PREVIEWHANDLER_NOTFOUND _HRESULT_TYPEDEF_(0x86420003L)")]
     public const int E_PREVIEWHANDLER_NOTFOUND = unchecked((int)(0x86420003));
 
+    /// <include file='E.xml' path='doc/member[@name="E.E_PREVIEWHANDLER_CORRUPT"]/*' />
     [NativeTypeName("#define E_PREVIEWHANDLER_CORRUPT _HRESULT_TYPEDEF_(0x86420004L)")]
     public const int E_PREVIEWHANDLER_CORRUPT = unchecked((int)(0x86420004));
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPasswordVault : IPasswordVault.Interface, INativeGuid
 {
+    /// <include file='IPasswordVault.xml' path='doc/member[@name="IPasswordVault.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPasswordVault);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IFrameControlCapabilities2 : IFrameControlCapabilities2.Interface, INativeGuid
 {
+    /// <include file='IFrameControlCapabilities2.xml' path='doc/member[@name="IFrameControlCapabilities2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFrameControlCapabilities2);
 
     public void** lpVtbl;

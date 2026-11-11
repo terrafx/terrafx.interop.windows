@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CONTAINER
 {
+    /// <include file='CONTAINER.xml' path='doc/member[@name="CONTAINER.CONTAINER_INHERIT_ACE"]/*' />
     [NativeTypeName("#define CONTAINER_INHERIT_ACE (0x2)")]
     public const int CONTAINER_INHERIT_ACE = (0x2);
 }

@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("596AB062-B4D2-4215-9F74-E9109B0A8153")]
 public unsafe partial struct PreviousVersions : INativeGuid
 {
+    /// <include file='PreviousVersions.xml' path='doc/member[@name="PreviousVersions.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_PreviousVersions);
 }

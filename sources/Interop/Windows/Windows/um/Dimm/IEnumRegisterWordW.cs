@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IEnumRegisterWordW : IEnumRegisterWordW.Interface, INativeGuid
 {
+    /// <include file='IEnumRegisterWordW.xml' path='doc/member[@name="IEnumRegisterWordW.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEnumRegisterWordW);
 
     public void** lpVtbl;

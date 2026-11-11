@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("SecondaryAuthenticationFactorAuthenticationTrigger is deprecated and might not work on all platforms. For more info, see MSDN.")]
 public unsafe partial struct ISecondaryAuthenticationFactorAuthenticationTrigger : ISecondaryAuthenticationFactorAuthenticationTrigger.Interface, INativeGuid
 {
+    /// <include file='ISecondaryAuthenticationFactorAuthenticationTrigger.xml' path='doc/member[@name="ISecondaryAuthenticationFactorAuthenticationTrigger.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISecondaryAuthenticationFactorAuthenticationTrigger);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISearchQueryLinguisticDetails : ISearchQueryLinguisticDetails.Interface, INativeGuid
 {
+    /// <include file='ISearchQueryLinguisticDetails.xml' path='doc/member[@name="ISearchQueryLinguisticDetails.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISearchQueryLinguisticDetails);
 
     public void** lpVtbl;

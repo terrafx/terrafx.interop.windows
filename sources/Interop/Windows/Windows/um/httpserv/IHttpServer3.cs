@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpServer2")]
 public unsafe partial struct IHttpServer3 : IHttpServer3.Interface, INativeGuid
 {
+    /// <include file='IHttpServer3.xml' path='doc/member[@name="IHttpServer3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpServer3);
 
     public void** lpVtbl;

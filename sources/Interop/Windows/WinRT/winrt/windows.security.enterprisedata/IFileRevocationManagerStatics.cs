@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("FileRevocationManager might be unavailable after Windows 10. Instead, use FileProtectionManager.")]
 public unsafe partial struct IFileRevocationManagerStatics : IFileRevocationManagerStatics.Interface, INativeGuid
 {
+    /// <include file='IFileRevocationManagerStatics.xml' path='doc/member[@name="IFileRevocationManagerStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFileRevocationManagerStatics);
 
     public void** lpVtbl;

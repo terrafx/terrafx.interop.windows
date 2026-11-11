@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ICMP6_INFOMSG_MASK"]/*' />
     [NativeTypeName("#define ICMP6_INFOMSG_MASK 0x80")]
     public const int ICMP6_INFOMSG_MASK = 0x80;
 }

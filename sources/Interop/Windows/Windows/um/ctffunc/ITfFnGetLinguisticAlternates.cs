@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAlternates.Interface, INativeGuid
 {
+    /// <include file='ITfFnGetLinguisticAlternates.xml' path='doc/member[@name="ITfFnGetLinguisticAlternates.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfFnGetLinguisticAlternates);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IGlobalTraceEventProvider : IGlobalTraceEventProvider.Interface, INativeGuid
 {
+    /// <include file='IGlobalTraceEventProvider.xml' path='doc/member[@name="IGlobalTraceEventProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGlobalTraceEventProvider);
 
     public void** lpVtbl;

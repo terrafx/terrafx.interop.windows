@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IContinue : IContinue.Interface, INativeGuid
 {
+    /// <include file='IContinue.xml' path='doc/member[@name="IContinue.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IContinue);
 
     public void** lpVtbl;

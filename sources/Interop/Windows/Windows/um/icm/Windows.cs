@@ -495,362 +495,481 @@ public static unsafe partial class Windows
     [DllImport("mscms", ExactSpelling = true)]
     public static extern HRESULT ColorProfileGetDeviceCapabilities(WCS_PROFILE_MANAGEMENT_SCOPE scope, LUID targetAdapterID, [NativeTypeName("UINT32")] uint sourceID, WCS_DEVICE_CAPABILITIES_TYPE capsType, [NativeTypeName("PVOID")] void* outputCapabilities);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INTENT_PERCEPTUAL"]/*' />
     [NativeTypeName("#define INTENT_PERCEPTUAL 0")]
     public const int INTENT_PERCEPTUAL = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INTENT_RELATIVE_COLORIMETRIC"]/*' />
     [NativeTypeName("#define INTENT_RELATIVE_COLORIMETRIC 1")]
     public const int INTENT_RELATIVE_COLORIMETRIC = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INTENT_SATURATION"]/*' />
     [NativeTypeName("#define INTENT_SATURATION 2")]
     public const int INTENT_SATURATION = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INTENT_ABSOLUTE_COLORIMETRIC"]/*' />
     [NativeTypeName("#define INTENT_ABSOLUTE_COLORIMETRIC 3")]
     public const int INTENT_ABSOLUTE_COLORIMETRIC = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLASS_MONITOR"]/*' />
     [NativeTypeName("#define CLASS_MONITOR 'mntr'")]
     public const int CLASS_MONITOR = 0x6D6E7472;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLASS_PRINTER"]/*' />
     [NativeTypeName("#define CLASS_PRINTER 'prtr'")]
     public const int CLASS_PRINTER = 0x70727472;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLASS_SCANNER"]/*' />
     [NativeTypeName("#define CLASS_SCANNER 'scnr'")]
     public const int CLASS_SCANNER = 0x73636E72;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLASS_LINK"]/*' />
     [NativeTypeName("#define CLASS_LINK 'link'")]
     public const int CLASS_LINK = 0x6C696E6B;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLASS_ABSTRACT"]/*' />
     [NativeTypeName("#define CLASS_ABSTRACT 'abst'")]
     public const int CLASS_ABSTRACT = 0x61627374;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLASS_COLORSPACE"]/*' />
     [NativeTypeName("#define CLASS_COLORSPACE 'spac'")]
     public const int CLASS_COLORSPACE = 0x73706163;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLASS_NAMED"]/*' />
     [NativeTypeName("#define CLASS_NAMED 'nmcl'")]
     public const int CLASS_NAMED = 0x6E6D636C;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLASS_CAMP"]/*' />
     [NativeTypeName("#define CLASS_CAMP 'camp'")]
     public const int CLASS_CAMP = 0x63616D70;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLASS_GMMP"]/*' />
     [NativeTypeName("#define CLASS_GMMP 'gmmp'")]
     public const int CLASS_GMMP = 0x676D6D70;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_XYZ"]/*' />
     [NativeTypeName("#define SPACE_XYZ 'XYZ '")]
     public const int SPACE_XYZ = 0x58595A20;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_Lab"]/*' />
     [NativeTypeName("#define SPACE_Lab 'Lab '")]
     public const int SPACE_Lab = 0x4C616220;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_Luv"]/*' />
     [NativeTypeName("#define SPACE_Luv 'Luv '")]
     public const int SPACE_Luv = 0x4C757620;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_YCbCr"]/*' />
     [NativeTypeName("#define SPACE_YCbCr 'YCbr'")]
     public const int SPACE_YCbCr = 0x59436272;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_Yxy"]/*' />
     [NativeTypeName("#define SPACE_Yxy 'Yxy '")]
     public const int SPACE_Yxy = 0x59787920;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_RGB"]/*' />
     [NativeTypeName("#define SPACE_RGB 'RGB '")]
     public const int SPACE_RGB = 0x52474220;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_GRAY"]/*' />
     [NativeTypeName("#define SPACE_GRAY 'GRAY'")]
     public const int SPACE_GRAY = 0x47524159;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_HSV"]/*' />
     [NativeTypeName("#define SPACE_HSV 'HSV '")]
     public const int SPACE_HSV = 0x48535620;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_HLS"]/*' />
     [NativeTypeName("#define SPACE_HLS 'HLS '")]
     public const int SPACE_HLS = 0x484C5320;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_CMYK"]/*' />
     [NativeTypeName("#define SPACE_CMYK 'CMYK'")]
     public const int SPACE_CMYK = 0x434D594B;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_CMY"]/*' />
     [NativeTypeName("#define SPACE_CMY 'CMY '")]
     public const int SPACE_CMY = 0x434D5920;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_2_CHANNEL"]/*' />
     [NativeTypeName("#define SPACE_2_CHANNEL '2CLR'")]
     public const int SPACE_2_CHANNEL = 0x32434C52;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_3_CHANNEL"]/*' />
     [NativeTypeName("#define SPACE_3_CHANNEL '3CLR'")]
     public const int SPACE_3_CHANNEL = 0x33434C52;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_4_CHANNEL"]/*' />
     [NativeTypeName("#define SPACE_4_CHANNEL '4CLR'")]
     public const int SPACE_4_CHANNEL = 0x34434C52;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_5_CHANNEL"]/*' />
     [NativeTypeName("#define SPACE_5_CHANNEL '5CLR'")]
     public const int SPACE_5_CHANNEL = 0x35434C52;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_6_CHANNEL"]/*' />
     [NativeTypeName("#define SPACE_6_CHANNEL '6CLR'")]
     public const int SPACE_6_CHANNEL = 0x36434C52;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_7_CHANNEL"]/*' />
     [NativeTypeName("#define SPACE_7_CHANNEL '7CLR'")]
     public const int SPACE_7_CHANNEL = 0x37434C52;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPACE_8_CHANNEL"]/*' />
     [NativeTypeName("#define SPACE_8_CHANNEL '8CLR'")]
     public const int SPACE_8_CHANNEL = 0x38434C52;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ATTRIB_TRANSPARENCY"]/*' />
     [NativeTypeName("#define ATTRIB_TRANSPARENCY 0x00000001")]
     public const int ATTRIB_TRANSPARENCY = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ATTRIB_MATTE"]/*' />
     [NativeTypeName("#define ATTRIB_MATTE 0x00000002")]
     public const int ATTRIB_MATTE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROFILE_FILENAME"]/*' />
     [NativeTypeName("#define PROFILE_FILENAME 1")]
     public const int PROFILE_FILENAME = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROFILE_MEMBUFFER"]/*' />
     [NativeTypeName("#define PROFILE_MEMBUFFER 2")]
     public const int PROFILE_MEMBUFFER = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROFILE_READ"]/*' />
     [NativeTypeName("#define PROFILE_READ 1")]
     public const int PROFILE_READ = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROFILE_READWRITE"]/*' />
     [NativeTypeName("#define PROFILE_READWRITE 2")]
     public const int PROFILE_READWRITE = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INDEX_DONT_CARE"]/*' />
     [NativeTypeName("#define INDEX_DONT_CARE 0")]
     public const int INDEX_DONT_CARE = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMM_FROM_PROFILE"]/*' />
     [NativeTypeName("#define CMM_FROM_PROFILE INDEX_DONT_CARE")]
     public const int CMM_FROM_PROFILE = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMM_WINDOWS_DEFAULT"]/*' />
     [NativeTypeName("#define CMM_WINDOWS_DEFAULT 'Win '")]
     public const int CMM_WINDOWS_DEFAULT = 0x57696E20;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_DEVICENAME"]/*' />
     [NativeTypeName("#define ET_DEVICENAME 0x00000001")]
     public const int ET_DEVICENAME = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_MEDIATYPE"]/*' />
     [NativeTypeName("#define ET_MEDIATYPE 0x00000002")]
     public const int ET_MEDIATYPE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_DITHERMODE"]/*' />
     [NativeTypeName("#define ET_DITHERMODE 0x00000004")]
     public const int ET_DITHERMODE = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_RESOLUTION"]/*' />
     [NativeTypeName("#define ET_RESOLUTION 0x00000008")]
     public const int ET_RESOLUTION = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_CMMTYPE"]/*' />
     [NativeTypeName("#define ET_CMMTYPE 0x00000010")]
     public const int ET_CMMTYPE = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_CLASS"]/*' />
     [NativeTypeName("#define ET_CLASS 0x00000020")]
     public const int ET_CLASS = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_DATACOLORSPACE"]/*' />
     [NativeTypeName("#define ET_DATACOLORSPACE 0x00000040")]
     public const int ET_DATACOLORSPACE = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_CONNECTIONSPACE"]/*' />
     [NativeTypeName("#define ET_CONNECTIONSPACE 0x00000080")]
     public const int ET_CONNECTIONSPACE = 0x00000080;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_SIGNATURE"]/*' />
     [NativeTypeName("#define ET_SIGNATURE 0x00000100")]
     public const int ET_SIGNATURE = 0x00000100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_PLATFORM"]/*' />
     [NativeTypeName("#define ET_PLATFORM 0x00000200")]
     public const int ET_PLATFORM = 0x00000200;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_PROFILEFLAGS"]/*' />
     [NativeTypeName("#define ET_PROFILEFLAGS 0x00000400")]
     public const int ET_PROFILEFLAGS = 0x00000400;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_MANUFACTURER"]/*' />
     [NativeTypeName("#define ET_MANUFACTURER 0x00000800")]
     public const int ET_MANUFACTURER = 0x00000800;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_MODEL"]/*' />
     [NativeTypeName("#define ET_MODEL 0x00001000")]
     public const int ET_MODEL = 0x00001000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_ATTRIBUTES"]/*' />
     [NativeTypeName("#define ET_ATTRIBUTES 0x00002000")]
     public const int ET_ATTRIBUTES = 0x00002000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_RENDERINGINTENT"]/*' />
     [NativeTypeName("#define ET_RENDERINGINTENT 0x00004000")]
     public const int ET_RENDERINGINTENT = 0x00004000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_CREATOR"]/*' />
     [NativeTypeName("#define ET_CREATOR 0x00008000")]
     public const int ET_CREATOR = 0x00008000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_DEVICECLASS"]/*' />
     [NativeTypeName("#define ET_DEVICECLASS 0x00010000")]
     public const int ET_DEVICECLASS = 0x00010000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_STANDARDDISPLAYCOLOR"]/*' />
     [NativeTypeName("#define ET_STANDARDDISPLAYCOLOR 0x00020000")]
     public const int ET_STANDARDDISPLAYCOLOR = 0x00020000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ET_EXTENDEDDISPLAYCOLOR"]/*' />
     [NativeTypeName("#define ET_EXTENDEDDISPLAYCOLOR 0x00040000")]
     public const int ET_EXTENDEDDISPLAYCOLOR = 0x00040000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PROOF_MODE"]/*' />
     [NativeTypeName("#define PROOF_MODE 0x00000001")]
     public const int PROOF_MODE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NORMAL_MODE"]/*' />
     [NativeTypeName("#define NORMAL_MODE 0x00000002")]
     public const int NORMAL_MODE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BEST_MODE"]/*' />
     [NativeTypeName("#define BEST_MODE 0x00000003")]
     public const int BEST_MODE = 0x00000003;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.USE_RELATIVE_COLORIMETRIC"]/*' />
     [NativeTypeName("#define USE_RELATIVE_COLORIMETRIC 0x00020000")]
     public const int USE_RELATIVE_COLORIMETRIC = 0x00020000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PRESERVEBLACK"]/*' />
     [NativeTypeName("#define PRESERVEBLACK 0x00100000")]
     public const int PRESERVEBLACK = 0x00100000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WCS_ALWAYS"]/*' />
     [NativeTypeName("#define WCS_ALWAYS 0x00200000")]
     public const int WCS_ALWAYS = 0x00200000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SEQUENTIAL_TRANSFORM"]/*' />
     [NativeTypeName("#define SEQUENTIAL_TRANSFORM 0x80800000")]
     public const uint SEQUENTIAL_TRANSFORM = 0x80800000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RESERVED"]/*' />
     [NativeTypeName("#define RESERVED 0x80000000")]
     public const uint RESERVED = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CSA_A"]/*' />
     [NativeTypeName("#define CSA_A 1")]
     public const int CSA_A = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CSA_ABC"]/*' />
     [NativeTypeName("#define CSA_ABC 2")]
     public const int CSA_ABC = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CSA_DEF"]/*' />
     [NativeTypeName("#define CSA_DEF 3")]
     public const int CSA_DEF = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CSA_DEFG"]/*' />
     [NativeTypeName("#define CSA_DEFG 4")]
     public const int CSA_DEFG = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CSA_GRAY"]/*' />
     [NativeTypeName("#define CSA_GRAY 5")]
     public const int CSA_GRAY = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CSA_RGB"]/*' />
     [NativeTypeName("#define CSA_RGB 6")]
     public const int CSA_RGB = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CSA_CMYK"]/*' />
     [NativeTypeName("#define CSA_CMYK 7")]
     public const int CSA_CMYK = 7;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CSA_Lab"]/*' />
     [NativeTypeName("#define CSA_Lab 8")]
     public const int CSA_Lab = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMM_WIN_VERSION"]/*' />
     [NativeTypeName("#define CMM_WIN_VERSION 0")]
     public const int CMM_WIN_VERSION = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMM_IDENT"]/*' />
     [NativeTypeName("#define CMM_IDENT 1")]
     public const int CMM_IDENT = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMM_DRIVER_VERSION"]/*' />
     [NativeTypeName("#define CMM_DRIVER_VERSION 2")]
     public const int CMM_DRIVER_VERSION = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMM_DLL_VERSION"]/*' />
     [NativeTypeName("#define CMM_DLL_VERSION 3")]
     public const int CMM_DLL_VERSION = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMM_VERSION"]/*' />
     [NativeTypeName("#define CMM_VERSION 4")]
     public const int CMM_VERSION = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMM_DESCRIPTION"]/*' />
     [NativeTypeName("#define CMM_DESCRIPTION 5")]
     public const int CMM_DESCRIPTION = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMM_LOGOICON"]/*' />
     [NativeTypeName("#define CMM_LOGOICON 6")]
     public const int CMM_LOGOICON = 6;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_FORWARD"]/*' />
     [NativeTypeName("#define CMS_FORWARD 0")]
     public const int CMS_FORWARD = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_BACKWARD"]/*' />
     [NativeTypeName("#define CMS_BACKWARD 1")]
     public const int CMS_BACKWARD = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_DISABLEICM"]/*' />
     [NativeTypeName("#define CMS_DISABLEICM 1")]
     public const int CMS_DISABLEICM = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_ENABLEPROOFING"]/*' />
     [NativeTypeName("#define CMS_ENABLEPROOFING 2")]
     public const int CMS_ENABLEPROOFING = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_SETRENDERINTENT"]/*' />
     [NativeTypeName("#define CMS_SETRENDERINTENT 4")]
     public const int CMS_SETRENDERINTENT = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_SETPROOFINTENT"]/*' />
     [NativeTypeName("#define CMS_SETPROOFINTENT 8")]
     public const int CMS_SETPROOFINTENT = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_SETMONITORPROFILE"]/*' />
     [NativeTypeName("#define CMS_SETMONITORPROFILE 0x10")]
     public const int CMS_SETMONITORPROFILE = 0x10;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_SETPRINTERPROFILE"]/*' />
     [NativeTypeName("#define CMS_SETPRINTERPROFILE 0x20")]
     public const int CMS_SETPRINTERPROFILE = 0x20;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_SETTARGETPROFILE"]/*' />
     [NativeTypeName("#define CMS_SETTARGETPROFILE 0x40")]
     public const int CMS_SETTARGETPROFILE = 0x40;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_USEHOOK"]/*' />
     [NativeTypeName("#define CMS_USEHOOK 0x80")]
     public const int CMS_USEHOOK = 0x80;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_USEAPPLYCALLBACK"]/*' />
     [NativeTypeName("#define CMS_USEAPPLYCALLBACK 0x100")]
     public const int CMS_USEAPPLYCALLBACK = 0x100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_USEDESCRIPTION"]/*' />
     [NativeTypeName("#define CMS_USEDESCRIPTION 0x200")]
     public const int CMS_USEDESCRIPTION = 0x200;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_DISABLEINTENT"]/*' />
     [NativeTypeName("#define CMS_DISABLEINTENT 0x400")]
     public const int CMS_DISABLEINTENT = 0x400;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_DISABLERENDERINTENT"]/*' />
     [NativeTypeName("#define CMS_DISABLERENDERINTENT 0x800")]
     public const int CMS_DISABLERENDERINTENT = 0x800;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_MONITOROVERFLOW"]/*' />
     [NativeTypeName("#define CMS_MONITOROVERFLOW 0x80000000L")]
     public const uint CMS_MONITOROVERFLOW = 0x80000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_PRINTEROVERFLOW"]/*' />
     [NativeTypeName("#define CMS_PRINTEROVERFLOW 0x40000000L")]
     public const int CMS_PRINTEROVERFLOW = 0x40000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CMS_TARGETOVERFLOW"]/*' />
     [NativeTypeName("#define CMS_TARGETOVERFLOW 0x20000000L")]
     public const int CMS_TARGETOVERFLOW = 0x20000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InstallColorProfile"]/*' />
     [NativeTypeName("#define InstallColorProfile InstallColorProfileW")]
     public static delegate*<char*, char*, BOOL> InstallColorProfile => &InstallColorProfileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateColorTransform"]/*' />
     [NativeTypeName("#define CreateColorTransform CreateColorTransformW")]
     public static delegate*<LOGCOLORSPACEW*, HPROFILE, HPROFILE, uint, HTRANSFORM> CreateColorTransform => &CreateColorTransformW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenColorProfile"]/*' />
     [NativeTypeName("#define OpenColorProfile OpenColorProfileW")]
     public static delegate*<PROFILE*, uint, uint, uint, HPROFILE> OpenColorProfile => &OpenColorProfileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateProfileFromLogColorSpace"]/*' />
     [NativeTypeName("#define CreateProfileFromLogColorSpace CreateProfileFromLogColorSpaceW")]
     public static delegate*<LOGCOLORSPACEW*, byte**, BOOL> CreateProfileFromLogColorSpace => &CreateProfileFromLogColorSpaceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterCMM"]/*' />
     [NativeTypeName("#define RegisterCMM RegisterCMMW")]
     public static delegate*<char*, uint, char*, BOOL> RegisterCMM => &RegisterCMMW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UnregisterCMM"]/*' />
     [NativeTypeName("#define UnregisterCMM UnregisterCMMW")]
     public static delegate*<char*, uint, BOOL> UnregisterCMM => &UnregisterCMMW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetColorDirectory"]/*' />
     [NativeTypeName("#define GetColorDirectory GetColorDirectoryW")]
     [Obsolete("GetColorDirectory is deprecated and might not work on all platforms. For more info, see MSDN.")]
     public static delegate*<char*, char*, uint*, BOOL> GetColorDirectory => &GetColorDirectoryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UninstallColorProfile"]/*' />
     [NativeTypeName("#define UninstallColorProfile UninstallColorProfileW")]
     public static delegate*<char*, char*, BOOL, BOOL> UninstallColorProfile => &UninstallColorProfileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AssociateColorProfileWithDevice"]/*' />
     [NativeTypeName("#define AssociateColorProfileWithDevice AssociateColorProfileWithDeviceW")]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static delegate*<char*, char*, char*, BOOL> AssociateColorProfileWithDevice => &AssociateColorProfileWithDeviceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DisassociateColorProfileFromDevice"]/*' />
     [NativeTypeName("#define DisassociateColorProfileFromDevice DisassociateColorProfileFromDeviceW")]
     public static delegate*<char*, char*, char*, BOOL> DisassociateColorProfileFromDevice => &DisassociateColorProfileFromDeviceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumColorProfiles"]/*' />
     [NativeTypeName("#define EnumColorProfiles EnumColorProfilesW")]
     public static delegate*<char*, ENUMTYPEW*, byte*, uint*, uint*, BOOL> EnumColorProfiles => &EnumColorProfilesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetStandardColorSpaceProfile"]/*' />
     [NativeTypeName("#define SetStandardColorSpaceProfile SetStandardColorSpaceProfileW")]
     public static delegate*<char*, uint, char*, BOOL> SetStandardColorSpaceProfile => &SetStandardColorSpaceProfileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetStandardColorSpaceProfile"]/*' />
     [NativeTypeName("#define GetStandardColorSpaceProfile GetStandardColorSpaceProfileW")]
     public static delegate*<char*, uint, char*, uint*, BOOL> GetStandardColorSpaceProfile => &GetStandardColorSpaceProfileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetupColorMatching"]/*' />
     [NativeTypeName("#define SetupColorMatching SetupColorMatchingW")]
     public static delegate*<COLORMATCHSETUPW*, BOOL> SetupColorMatching => &SetupColorMatchingW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WcsOpenColorProfile"]/*' />
     [NativeTypeName("#define WcsOpenColorProfile WcsOpenColorProfileW")]
     public static delegate*<PROFILE*, PROFILE*, PROFILE*, uint, uint, uint, uint, HPROFILE> WcsOpenColorProfile => &WcsOpenColorProfileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DONT_USE_EMBEDDED_WCS_PROFILES"]/*' />
     [NativeTypeName("#define DONT_USE_EMBEDDED_WCS_PROFILES 0x00000001L")]
     public const int DONT_USE_EMBEDDED_WCS_PROFILES = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WCS_DEFAULT"]/*' />
     [NativeTypeName("#define WCS_DEFAULT 0x00000000L")]
     public const int WCS_DEFAULT = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WCS_ICCONLY"]/*' />
     [NativeTypeName("#define WCS_ICCONLY 0x00010000L")]
     public const int WCS_ICCONLY = 0x00010000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WCS_EMBEDDED_TAG_SIGNATURE"]/*' />
     [NativeTypeName("#define WCS_EMBEDDED_TAG_SIGNATURE 'MS00'")]
     public const int WCS_EMBEDDED_TAG_SIGNATURE = 0x4D533030;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WCS_EMBEDDED_TAG_TYPE_SIGNATURE"]/*' />
     [NativeTypeName("#define WCS_EMBEDDED_TAG_TYPE_SIGNATURE 'MS10'")]
     public const int WCS_EMBEDDED_TAG_TYPE_SIGNATURE = 0x4D533130;
 }

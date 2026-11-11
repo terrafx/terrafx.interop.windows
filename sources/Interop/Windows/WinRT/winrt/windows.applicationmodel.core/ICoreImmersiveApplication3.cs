@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreImmersiveApplication3 : ICoreImmersiveApplication3.Interface, INativeGuid
 {
+    /// <include file='ICoreImmersiveApplication3.xml' path='doc/member[@name="ICoreImmersiveApplication3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreImmersiveApplication3);
 
     public void** lpVtbl;

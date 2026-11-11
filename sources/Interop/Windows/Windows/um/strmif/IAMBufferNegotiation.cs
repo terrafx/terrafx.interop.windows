@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAMBufferNegotiation : IAMBufferNegotiation.Interface, INativeGuid
 {
+    /// <include file='IAMBufferNegotiation.xml' path='doc/member[@name="IAMBufferNegotiation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMBufferNegotiation);
 
     public void** lpVtbl;

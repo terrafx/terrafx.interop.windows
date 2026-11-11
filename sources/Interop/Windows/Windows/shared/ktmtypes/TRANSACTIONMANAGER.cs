@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class TRANSACTIONMANAGER
 {
+    /// <include file='TRANSACTIONMANAGER.xml' path='doc/member[@name="TRANSACTIONMANAGER.TRANSACTIONMANAGER_OBJECT_PATH"]/*' />
     [NativeTypeName("#define TRANSACTIONMANAGER_OBJECT_PATH L\"\\TransactionManager\"")]
     public const string TRANSACTIONMANAGER_OBJECT_PATH = "\\TransactionManager\\";
 
+    /// <include file='TRANSACTIONMANAGER.xml' path='doc/member[@name="TRANSACTIONMANAGER.TRANSACTIONMANAGER_OBJECT_NAME_LENGTH_IN_BYTES"]/*' />
     [NativeTypeName("#define TRANSACTIONMANAGER_OBJECT_NAME_LENGTH_IN_BYTES (sizeof(TRANSACTIONMANAGER_OBJECT_PATH)+(38*sizeof(WCHAR)))")]
     public const uint TRANSACTIONMANAGER_OBJECT_NAME_LENGTH_IN_BYTES = (42 + (38 * 2));
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IRevocationAndRenewalInformation : IRevocationAndRenewalInformation.Interface, INativeGuid
 {
+    /// <include file='IRevocationAndRenewalInformation.xml' path='doc/member[@name="IRevocationAndRenewalInformation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRevocationAndRenewalInformation);
 
     public void** lpVtbl;

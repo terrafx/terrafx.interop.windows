@@ -7,9 +7,11 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Graphics_Effects_IGraphicsEffect"]/*' />
     [NativeTypeName("const WCHAR[41]")]
     public const string InterfaceName_Windows_Graphics_Effects_IGraphicsEffect = "Windows.Graphics.Effects.IGraphicsEffect";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Graphics_Effects_IGraphicsEffectSource"]/*' />
     [NativeTypeName("const WCHAR[47]")]
     public const string InterfaceName_Windows_Graphics_Effects_IGraphicsEffectSource = "Windows.Graphics.Effects.IGraphicsEffectSource";
 }

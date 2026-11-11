@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IEnumOleDocumentViews : IEnumOleDocumentViews.Interface, INativeGuid
 {
+    /// <include file='IEnumOleDocumentViews.xml' path='doc/member[@name="IEnumOleDocumentViews.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEnumOleDocumentViews);
 
     public void** lpVtbl;

@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_FOREST_TRUST_BINARY_DATA_SIZE"]/*' />
     [NativeTypeName("#define MAX_FOREST_TRUST_BINARY_DATA_SIZE ( 128 * 1024 )")]
     public const int MAX_FOREST_TRUST_BINARY_DATA_SIZE = (128 * 1024);
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_RECORDS_IN_FOREST_TRUST_INFO"]/*' />
     [NativeTypeName("#define MAX_RECORDS_IN_FOREST_TRUST_INFO 4000")]
     public const int MAX_RECORDS_IN_FOREST_TRUST_INFO = 4000;
 }

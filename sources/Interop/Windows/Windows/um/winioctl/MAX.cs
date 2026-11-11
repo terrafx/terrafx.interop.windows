@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_FW_BUCKET_ID_LENGTH"]/*' />
     [NativeTypeName("#define MAX_FW_BUCKET_ID_LENGTH 132")]
     public const int MAX_FW_BUCKET_ID_LENGTH = 132;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_INTERFACE_CODES"]/*' />
     [NativeTypeName("#define MAX_INTERFACE_CODES 8")]
     public const int MAX_INTERFACE_CODES = 8;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_VOLUME_ID_SIZE"]/*' />
     [NativeTypeName("#define MAX_VOLUME_ID_SIZE 36")]
     public const int MAX_VOLUME_ID_SIZE = 36;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_VOLUME_TEMPLATE_SIZE"]/*' />
     [NativeTypeName("#define MAX_VOLUME_TEMPLATE_SIZE 40")]
     public const int MAX_VOLUME_TEMPLATE_SIZE = 40;
 }

@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("8278F931-2A3E-11D2-838F-00C04FD918D0")]
 public unsafe partial struct TrackShellMenu : INativeGuid
 {
+    /// <include file='TrackShellMenu.xml' path='doc/member[@name="TrackShellMenu.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_TrackShellMenu);
 }

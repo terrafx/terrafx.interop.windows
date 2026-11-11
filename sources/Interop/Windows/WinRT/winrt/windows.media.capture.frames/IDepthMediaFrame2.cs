@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IDepthMediaFrame2 : IDepthMediaFrame2.Interface, INativeGuid
 {
+    /// <include file='IDepthMediaFrame2.xml' path='doc/member[@name="IDepthMediaFrame2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDepthMediaFrame2);
 
     public void** lpVtbl;

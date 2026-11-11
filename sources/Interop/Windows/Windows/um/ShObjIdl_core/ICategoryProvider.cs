@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ICategoryProvider : ICategoryProvider.Interface, INativeGuid
 {
+    /// <include file='ICategoryProvider.xml' path='doc/member[@name="ICategoryProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICategoryProvider);
 
     public void** lpVtbl;

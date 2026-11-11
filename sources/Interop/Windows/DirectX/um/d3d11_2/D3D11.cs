@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3D11
 {
+    /// <include file='D3D11.xml' path='doc/member[@name="D3D11.D3D11_PACKED_TILE"]/*' />
     [NativeTypeName("#define D3D11_PACKED_TILE ( 0xffffffff )")]
     public const uint D3D11_PACKED_TILE = (0xffffffff);
 }

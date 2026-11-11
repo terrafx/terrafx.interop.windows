@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DIPROPCALIBRATIONMODE
 {
+    /// <include file='DIPROPCALIBRATIONMODE.xml' path='doc/member[@name="DIPROPCALIBRATIONMODE.DIPROPCALIBRATIONMODE_COOKED"]/*' />
     [NativeTypeName("#define DIPROPCALIBRATIONMODE_COOKED 0")]
     public const int DIPROPCALIBRATIONMODE_COOKED = 0;
 
+    /// <include file='DIPROPCALIBRATIONMODE.xml' path='doc/member[@name="DIPROPCALIBRATIONMODE.DIPROPCALIBRATIONMODE_RAW"]/*' />
     [NativeTypeName("#define DIPROPCALIBRATIONMODE_RAW 1")]
     public const int DIPROPCALIBRATIONMODE_RAW = 1;
 }

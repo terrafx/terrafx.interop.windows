@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IRpcSyntaxNegotiate : IRpcSyntaxNegotiate.Interface, INativeGuid
 {
+    /// <include file='IRpcSyntaxNegotiate.xml' path='doc/member[@name="IRpcSyntaxNegotiate.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRpcSyntaxNegotiate);
 
     public void** lpVtbl;

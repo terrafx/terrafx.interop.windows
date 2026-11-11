@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IActivateAudioInterfaceCompletionHandler : IActivateAudioInterfaceCompletionHandler.Interface, INativeGuid
 {
+    /// <include file='IActivateAudioInterfaceCompletionHandler.xml' path='doc/member[@name="IActivateAudioInterfaceCompletionHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IActivateAudioInterfaceCompletionHandler);
 
     public void** lpVtbl;

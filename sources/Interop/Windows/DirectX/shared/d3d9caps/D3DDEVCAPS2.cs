@@ -7,24 +7,31 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DDEVCAPS2
 {
+    /// <include file='D3DDEVCAPS2.xml' path='doc/member[@name="D3DDEVCAPS2.D3DDEVCAPS2_STREAMOFFSET"]/*' />
     [NativeTypeName("#define D3DDEVCAPS2_STREAMOFFSET 0x00000001L")]
     public const int D3DDEVCAPS2_STREAMOFFSET = 0x00000001;
 
+    /// <include file='D3DDEVCAPS2.xml' path='doc/member[@name="D3DDEVCAPS2.D3DDEVCAPS2_DMAPNPATCH"]/*' />
     [NativeTypeName("#define D3DDEVCAPS2_DMAPNPATCH 0x00000002L")]
     public const int D3DDEVCAPS2_DMAPNPATCH = 0x00000002;
 
+    /// <include file='D3DDEVCAPS2.xml' path='doc/member[@name="D3DDEVCAPS2.D3DDEVCAPS2_ADAPTIVETESSRTPATCH"]/*' />
     [NativeTypeName("#define D3DDEVCAPS2_ADAPTIVETESSRTPATCH 0x00000004L")]
     public const int D3DDEVCAPS2_ADAPTIVETESSRTPATCH = 0x00000004;
 
+    /// <include file='D3DDEVCAPS2.xml' path='doc/member[@name="D3DDEVCAPS2.D3DDEVCAPS2_ADAPTIVETESSNPATCH"]/*' />
     [NativeTypeName("#define D3DDEVCAPS2_ADAPTIVETESSNPATCH 0x00000008L")]
     public const int D3DDEVCAPS2_ADAPTIVETESSNPATCH = 0x00000008;
 
+    /// <include file='D3DDEVCAPS2.xml' path='doc/member[@name="D3DDEVCAPS2.D3DDEVCAPS2_CAN_STRETCHRECT_FROM_TEXTURES"]/*' />
     [NativeTypeName("#define D3DDEVCAPS2_CAN_STRETCHRECT_FROM_TEXTURES 0x00000010L")]
     public const int D3DDEVCAPS2_CAN_STRETCHRECT_FROM_TEXTURES = 0x00000010;
 
+    /// <include file='D3DDEVCAPS2.xml' path='doc/member[@name="D3DDEVCAPS2.D3DDEVCAPS2_PRESAMPLEDDMAPNPATCH"]/*' />
     [NativeTypeName("#define D3DDEVCAPS2_PRESAMPLEDDMAPNPATCH 0x00000020L")]
     public const int D3DDEVCAPS2_PRESAMPLEDDMAPNPATCH = 0x00000020;
 
+    /// <include file='D3DDEVCAPS2.xml' path='doc/member[@name="D3DDEVCAPS2.D3DDEVCAPS2_VERTEXELEMENTSCANSHARESTREAMOFFSET"]/*' />
     [NativeTypeName("#define D3DDEVCAPS2_VERTEXELEMENTSCANSHARESTREAMOFFSET 0x00000040L")]
     public const int D3DDEVCAPS2_VERTEXELEMENTSCANSHARESTREAMOFFSET = 0x00000040;
 }

@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("30510745-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct NodeIterator : INativeGuid
 {
+    /// <include file='NodeIterator.xml' path='doc/member[@name="NodeIterator.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_NodeIterator);
 }

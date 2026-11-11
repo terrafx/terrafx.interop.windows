@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IRestrictedErrorInfo : IRestrictedErrorInfo.Interface, INativeGuid
 {
+    /// <include file='IRestrictedErrorInfo.xml' path='doc/member[@name="IRestrictedErrorInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRestrictedErrorInfo);
 
     public void** lpVtbl;

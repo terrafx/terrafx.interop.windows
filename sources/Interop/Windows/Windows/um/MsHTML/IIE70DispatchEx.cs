@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatchEx")]
 public unsafe partial struct IIE70DispatchEx : IIE70DispatchEx.Interface, INativeGuid
 {
+    /// <include file='IIE70DispatchEx.xml' path='doc/member[@name="IIE70DispatchEx.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IIE70DispatchEx);
 
     public void** lpVtbl;

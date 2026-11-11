@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class TIME
 {
+    /// <include file='TIME.xml' path='doc/member[@name="TIME.TIME_ZONE_ID_UNKNOWN"]/*' />
     [NativeTypeName("#define TIME_ZONE_ID_UNKNOWN 0")]
     public const int TIME_ZONE_ID_UNKNOWN = 0;
 
+    /// <include file='TIME.xml' path='doc/member[@name="TIME.TIME_ZONE_ID_STANDARD"]/*' />
     [NativeTypeName("#define TIME_ZONE_ID_STANDARD 1")]
     public const int TIME_ZONE_ID_STANDARD = 1;
 
+    /// <include file='TIME.xml' path='doc/member[@name="TIME.TIME_ZONE_ID_DAYLIGHT"]/*' />
     [NativeTypeName("#define TIME_ZONE_ID_DAYLIGHT 2")]
     public const int TIME_ZONE_ID_DAYLIGHT = 2;
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreWindowDialogFactory : ICoreWindowDialogFactory.Interface, INativeGuid
 {
+    /// <include file='ICoreWindowDialogFactory.xml' path='doc/member[@name="ICoreWindowDialogFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreWindowDialogFactory);
 
     public void** lpVtbl;

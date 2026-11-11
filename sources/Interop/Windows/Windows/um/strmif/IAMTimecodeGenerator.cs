@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interface, INativeGuid
 {
+    /// <include file='IAMTimecodeGenerator.xml' path='doc/member[@name="IAMTimecodeGenerator.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMTimecodeGenerator);
 
     public void** lpVtbl;

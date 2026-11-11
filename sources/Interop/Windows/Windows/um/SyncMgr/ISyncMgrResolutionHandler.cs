@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISyncMgrResolutionHandler : ISyncMgrResolutionHandler.Interface, INativeGuid
 {
+    /// <include file='ISyncMgrResolutionHandler.xml' path='doc/member[@name="ISyncMgrResolutionHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISyncMgrResolutionHandler);
 
     public void** lpVtbl;

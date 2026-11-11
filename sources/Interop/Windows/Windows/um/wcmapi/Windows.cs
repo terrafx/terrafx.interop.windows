@@ -40,15 +40,19 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.2")]
     public static extern void WcmFreeMemory(void* pMemory);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WCM_API_VERSION_1_0"]/*' />
     [NativeTypeName("#define WCM_API_VERSION_1_0 0x00000001")]
     public const int WCM_API_VERSION_1_0 = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WCM_API_VERSION"]/*' />
     [NativeTypeName("#define WCM_API_VERSION WCM_API_VERSION_1_0")]
     public const int WCM_API_VERSION = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WCM_UNKNOWN_DATAPLAN_STATUS"]/*' />
     [NativeTypeName("#define WCM_UNKNOWN_DATAPLAN_STATUS 0xFFFFFFFF")]
     public const uint WCM_UNKNOWN_DATAPLAN_STATUS = 0xFFFFFFFF;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WCM_MAX_PROFILE_NAME"]/*' />
     [NativeTypeName("#define WCM_MAX_PROFILE_NAME 256")]
     public const int WCM_MAX_PROFILE_NAME = 256;
 }

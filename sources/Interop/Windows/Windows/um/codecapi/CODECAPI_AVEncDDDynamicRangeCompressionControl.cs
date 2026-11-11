@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("CFC2FF6D-79B8-4B8D-A8AA-A0C9BD1C2940")]
 public unsafe partial struct CODECAPI_AVEncDDDynamicRangeCompressionControl : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncDDDynamicRangeCompressionControl.xml' path='doc/member[@name="CODECAPI_AVEncDDDynamicRangeCompressionControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncDDDynamicRangeCompressionControl);
 }

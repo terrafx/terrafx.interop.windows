@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class EXCEPTION
 {
+    /// <include file='EXCEPTION.xml' path='doc/member[@name="EXCEPTION.EXCEPTION_SPAPI_UNRECOVERABLE_STACK_OVERFLOW"]/*' />
     [NativeTypeName("#define EXCEPTION_SPAPI_UNRECOVERABLE_STACK_OVERFLOW ERROR_UNRECOVERABLE_STACK_OVERFLOW")]
     public const uint EXCEPTION_SPAPI_UNRECOVERABLE_STACK_OVERFLOW = (0x20000000 | 0xC0000000 | 0x300);
 }

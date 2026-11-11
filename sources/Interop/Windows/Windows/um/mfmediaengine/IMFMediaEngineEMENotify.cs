@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFMediaEngineEMENotify : IMFMediaEngineEMENotify.Interface, INativeGuid
 {
+    /// <include file='IMFMediaEngineEMENotify.xml' path='doc/member[@name="IMFMediaEngineEMENotify.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFMediaEngineEMENotify);
 
     public void** lpVtbl;

@@ -7,24 +7,31 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DOMAIN
 {
+    /// <include file='DOMAIN.xml' path='doc/member[@name="DOMAIN.DOMAIN_PASSWORD_COMPLEX"]/*' />
     [NativeTypeName("#define DOMAIN_PASSWORD_COMPLEX 0x00000001L")]
     public const int DOMAIN_PASSWORD_COMPLEX = 0x00000001;
 
+    /// <include file='DOMAIN.xml' path='doc/member[@name="DOMAIN.DOMAIN_PASSWORD_NO_ANON_CHANGE"]/*' />
     [NativeTypeName("#define DOMAIN_PASSWORD_NO_ANON_CHANGE 0x00000002L")]
     public const int DOMAIN_PASSWORD_NO_ANON_CHANGE = 0x00000002;
 
+    /// <include file='DOMAIN.xml' path='doc/member[@name="DOMAIN.DOMAIN_PASSWORD_NO_CLEAR_CHANGE"]/*' />
     [NativeTypeName("#define DOMAIN_PASSWORD_NO_CLEAR_CHANGE 0x00000004L")]
     public const int DOMAIN_PASSWORD_NO_CLEAR_CHANGE = 0x00000004;
 
+    /// <include file='DOMAIN.xml' path='doc/member[@name="DOMAIN.DOMAIN_LOCKOUT_ADMINS"]/*' />
     [NativeTypeName("#define DOMAIN_LOCKOUT_ADMINS 0x00000008L")]
     public const int DOMAIN_LOCKOUT_ADMINS = 0x00000008;
 
+    /// <include file='DOMAIN.xml' path='doc/member[@name="DOMAIN.DOMAIN_PASSWORD_STORE_CLEARTEXT"]/*' />
     [NativeTypeName("#define DOMAIN_PASSWORD_STORE_CLEARTEXT 0x00000010L")]
     public const int DOMAIN_PASSWORD_STORE_CLEARTEXT = 0x00000010;
 
+    /// <include file='DOMAIN.xml' path='doc/member[@name="DOMAIN.DOMAIN_REFUSE_PASSWORD_CHANGE"]/*' />
     [NativeTypeName("#define DOMAIN_REFUSE_PASSWORD_CHANGE 0x00000020L")]
     public const int DOMAIN_REFUSE_PASSWORD_CHANGE = 0x00000020;
 
+    /// <include file='DOMAIN.xml' path='doc/member[@name="DOMAIN.DOMAIN_NO_LM_OWF_CHANGE"]/*' />
     [NativeTypeName("#define DOMAIN_NO_LM_OWF_CHANGE 0x00000040L")]
     public const int DOMAIN_NO_LM_OWF_CHANGE = 0x00000040;
 }

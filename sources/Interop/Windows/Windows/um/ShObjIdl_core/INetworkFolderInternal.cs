@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct INetworkFolderInternal : INetworkFolderInternal.Interface, INativeGuid
 {
+    /// <include file='INetworkFolderInternal.xml' path='doc/member[@name="INetworkFolderInternal.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_INetworkFolderInternal);
 
     public void** lpVtbl;

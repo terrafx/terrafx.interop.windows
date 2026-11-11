@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MFPKEY
 {
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_CLSID"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_CLSID
     {
@@ -38,6 +39,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_CATEGORY"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_CATEGORY
     {
@@ -64,6 +66,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_EXATTRIBUTE_SUPPORTED"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_EXATTRIBUTE_SUPPORTED
     {
@@ -90,6 +93,7 @@ public static partial class MFPKEY
         }
     }
 
+    /// <include file='MFPKEY.xml' path='doc/member[@name="MFPKEY.MFPKEY_MULTICHANNEL_CHANNEL_MASK"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MFPKEY_MULTICHANNEL_CHANNEL_MASK
     {

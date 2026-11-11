@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPrintWorkflowPrinterJob2 : IPrintWorkflowPrinterJob2.Interface, INativeGuid
 {
+    /// <include file='IPrintWorkflowPrinterJob2.xml' path='doc/member[@name="IPrintWorkflowPrinterJob2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPrintWorkflowPrinterJob2);
 
     public void** lpVtbl;

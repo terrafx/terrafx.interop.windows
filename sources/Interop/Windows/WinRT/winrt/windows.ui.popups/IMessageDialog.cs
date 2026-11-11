@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMessageDialog : IMessageDialog.Interface, INativeGuid
 {
+    /// <include file='IMessageDialog.xml' path='doc/member[@name="IMessageDialog.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMessageDialog);
 
     public void** lpVtbl;

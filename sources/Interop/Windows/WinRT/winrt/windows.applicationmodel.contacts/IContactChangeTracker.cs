@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IContactChangeTracker : IContactChangeTracker.Interface, INativeGuid
 {
+    /// <include file='IContactChangeTracker.xml' path='doc/member[@name="IContactChangeTracker.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IContactChangeTracker);
 
     public void** lpVtbl;

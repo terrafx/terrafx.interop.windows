@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DxcCompiler"]/*' />
     [NativeTypeName("const CLSID")]
     public static ref readonly Guid CLSID_DxcCompiler
     {
@@ -38,6 +39,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DxcLinker"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DxcLinker
     {
@@ -63,6 +65,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DxcDiaDataSource"]/*' />
     [NativeTypeName("const CLSID")]
     public static ref readonly Guid CLSID_DxcDiaDataSource
     {
@@ -88,6 +91,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DxcCompilerArgs"]/*' />
     [NativeTypeName("const CLSID")]
     public static ref readonly Guid CLSID_DxcCompilerArgs
     {
@@ -113,6 +117,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DxcLibrary"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DxcLibrary
     {
@@ -138,9 +143,11 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DxcUtils"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DxcUtils => ref CLSID_DxcLibrary;
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DxcValidator"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DxcValidator
     {
@@ -166,6 +173,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DxcAssembler"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DxcAssembler
     {
@@ -191,6 +199,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DxcContainerReflection"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DxcContainerReflection
     {
@@ -216,6 +225,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DxcOptimizer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DxcOptimizer
     {
@@ -241,6 +251,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DxcContainerBuilder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DxcContainerBuilder
     {
@@ -266,6 +277,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DxcPdbUtils"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DxcPdbUtils
     {

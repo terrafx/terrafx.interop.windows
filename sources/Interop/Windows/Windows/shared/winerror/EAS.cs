@@ -7,42 +7,55 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class EAS
 {
+    /// <include file='EAS.xml' path='doc/member[@name="EAS.EAS_E_POLICY_NOT_MANAGED_BY_OS"]/*' />
     [NativeTypeName("#define EAS_E_POLICY_NOT_MANAGED_BY_OS _HRESULT_TYPEDEF_(0x80550001L)")]
     public const int EAS_E_POLICY_NOT_MANAGED_BY_OS = unchecked((int)(0x80550001));
 
+    /// <include file='EAS.xml' path='doc/member[@name="EAS.EAS_E_POLICY_COMPLIANT_WITH_ACTIONS"]/*' />
     [NativeTypeName("#define EAS_E_POLICY_COMPLIANT_WITH_ACTIONS _HRESULT_TYPEDEF_(0x80550002L)")]
     public const int EAS_E_POLICY_COMPLIANT_WITH_ACTIONS = unchecked((int)(0x80550002));
 
+    /// <include file='EAS.xml' path='doc/member[@name="EAS.EAS_E_REQUESTED_POLICY_NOT_ENFORCEABLE"]/*' />
     [NativeTypeName("#define EAS_E_REQUESTED_POLICY_NOT_ENFORCEABLE _HRESULT_TYPEDEF_(0x80550003L)")]
     public const int EAS_E_REQUESTED_POLICY_NOT_ENFORCEABLE = unchecked((int)(0x80550003));
 
+    /// <include file='EAS.xml' path='doc/member[@name="EAS.EAS_E_CURRENT_USER_HAS_BLANK_PASSWORD"]/*' />
     [NativeTypeName("#define EAS_E_CURRENT_USER_HAS_BLANK_PASSWORD _HRESULT_TYPEDEF_(0x80550004L)")]
     public const int EAS_E_CURRENT_USER_HAS_BLANK_PASSWORD = unchecked((int)(0x80550004));
 
+    /// <include file='EAS.xml' path='doc/member[@name="EAS.EAS_E_REQUESTED_POLICY_PASSWORD_EXPIRATION_INCOMPATIBLE"]/*' />
     [NativeTypeName("#define EAS_E_REQUESTED_POLICY_PASSWORD_EXPIRATION_INCOMPATIBLE _HRESULT_TYPEDEF_(0x80550005L)")]
     public const int EAS_E_REQUESTED_POLICY_PASSWORD_EXPIRATION_INCOMPATIBLE = unchecked((int)(0x80550005));
 
+    /// <include file='EAS.xml' path='doc/member[@name="EAS.EAS_E_USER_CANNOT_CHANGE_PASSWORD"]/*' />
     [NativeTypeName("#define EAS_E_USER_CANNOT_CHANGE_PASSWORD _HRESULT_TYPEDEF_(0x80550006L)")]
     public const int EAS_E_USER_CANNOT_CHANGE_PASSWORD = unchecked((int)(0x80550006));
 
+    /// <include file='EAS.xml' path='doc/member[@name="EAS.EAS_E_ADMINS_HAVE_BLANK_PASSWORD"]/*' />
     [NativeTypeName("#define EAS_E_ADMINS_HAVE_BLANK_PASSWORD _HRESULT_TYPEDEF_(0x80550007L)")]
     public const int EAS_E_ADMINS_HAVE_BLANK_PASSWORD = unchecked((int)(0x80550007));
 
+    /// <include file='EAS.xml' path='doc/member[@name="EAS.EAS_E_ADMINS_CANNOT_CHANGE_PASSWORD"]/*' />
     [NativeTypeName("#define EAS_E_ADMINS_CANNOT_CHANGE_PASSWORD _HRESULT_TYPEDEF_(0x80550008L)")]
     public const int EAS_E_ADMINS_CANNOT_CHANGE_PASSWORD = unchecked((int)(0x80550008));
 
+    /// <include file='EAS.xml' path='doc/member[@name="EAS.EAS_E_LOCAL_CONTROLLED_USERS_CANNOT_CHANGE_PASSWORD"]/*' />
     [NativeTypeName("#define EAS_E_LOCAL_CONTROLLED_USERS_CANNOT_CHANGE_PASSWORD _HRESULT_TYPEDEF_(0x80550009L)")]
     public const int EAS_E_LOCAL_CONTROLLED_USERS_CANNOT_CHANGE_PASSWORD = unchecked((int)(0x80550009));
 
+    /// <include file='EAS.xml' path='doc/member[@name="EAS.EAS_E_PASSWORD_POLICY_NOT_ENFORCEABLE_FOR_CONNECTED_ADMINS"]/*' />
     [NativeTypeName("#define EAS_E_PASSWORD_POLICY_NOT_ENFORCEABLE_FOR_CONNECTED_ADMINS _HRESULT_TYPEDEF_(0x8055000AL)")]
     public const int EAS_E_PASSWORD_POLICY_NOT_ENFORCEABLE_FOR_CONNECTED_ADMINS = unchecked((int)(0x8055000A));
 
+    /// <include file='EAS.xml' path='doc/member[@name="EAS.EAS_E_CONNECTED_ADMINS_NEED_TO_CHANGE_PASSWORD"]/*' />
     [NativeTypeName("#define EAS_E_CONNECTED_ADMINS_NEED_TO_CHANGE_PASSWORD _HRESULT_TYPEDEF_(0x8055000BL)")]
     public const int EAS_E_CONNECTED_ADMINS_NEED_TO_CHANGE_PASSWORD = unchecked((int)(0x8055000B));
 
+    /// <include file='EAS.xml' path='doc/member[@name="EAS.EAS_E_PASSWORD_POLICY_NOT_ENFORCEABLE_FOR_CURRENT_CONNECTED_USER"]/*' />
     [NativeTypeName("#define EAS_E_PASSWORD_POLICY_NOT_ENFORCEABLE_FOR_CURRENT_CONNECTED_USER _HRESULT_TYPEDEF_(0x8055000CL)")]
     public const int EAS_E_PASSWORD_POLICY_NOT_ENFORCEABLE_FOR_CURRENT_CONNECTED_USER = unchecked((int)(0x8055000C));
 
+    /// <include file='EAS.xml' path='doc/member[@name="EAS.EAS_E_CURRENT_CONNECTED_USER_NEED_TO_CHANGE_PASSWORD"]/*' />
     [NativeTypeName("#define EAS_E_CURRENT_CONNECTED_USER_NEED_TO_CHANGE_PASSWORD _HRESULT_TYPEDEF_(0x8055000DL)")]
     public const int EAS_E_CURRENT_CONNECTED_USER_NEED_TO_CHANGE_PASSWORD = unchecked((int)(0x8055000D));
 }

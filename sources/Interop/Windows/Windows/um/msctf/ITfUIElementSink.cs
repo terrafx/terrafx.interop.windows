@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfUIElementSink : ITfUIElementSink.Interface, INativeGuid
 {
+    /// <include file='ITfUIElementSink.xml' path='doc/member[@name="ITfUIElementSink.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfUIElementSink);
 
     public void** lpVtbl;

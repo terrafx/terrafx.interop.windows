@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMessageWebSocketMessageReceivedEventArgs : IMessageWebSocketMessageReceivedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IMessageWebSocketMessageReceivedEventArgs.xml' path='doc/member[@name="IMessageWebSocketMessageReceivedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMessageWebSocketMessageReceivedEventArgs);
 
     public void** lpVtbl;

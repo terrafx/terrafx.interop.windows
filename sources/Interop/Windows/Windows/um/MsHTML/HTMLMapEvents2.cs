@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct HTMLMapEvents2 : HTMLMapEvents2.Interface, INativeGuid
 {
+    /// <include file='HTMLMapEvents2.xml' path='doc/member[@name="HTMLMapEvents2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_HTMLMapEvents2);
 
     public void** lpVtbl;

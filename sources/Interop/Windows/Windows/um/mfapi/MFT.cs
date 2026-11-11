@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MFT
 {
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_ENCODER_ERROR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_ENCODER_ERROR
     {
@@ -37,6 +38,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_GFX_DRIVER_VERSION_ID_Attribute"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_GFX_DRIVER_VERSION_ID_Attribute
     {
@@ -62,6 +64,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_CATEGORY_VIDEO_DECODER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_CATEGORY_VIDEO_DECODER
     {
@@ -87,6 +90,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_CATEGORY_VIDEO_ENCODER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_CATEGORY_VIDEO_ENCODER
     {
@@ -112,6 +116,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_CATEGORY_VIDEO_EFFECT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_CATEGORY_VIDEO_EFFECT
     {
@@ -137,6 +142,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_CATEGORY_MULTIPLEXER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_CATEGORY_MULTIPLEXER
     {
@@ -162,6 +168,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_CATEGORY_DEMULTIPLEXER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_CATEGORY_DEMULTIPLEXER
     {
@@ -187,6 +194,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_CATEGORY_AUDIO_DECODER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_CATEGORY_AUDIO_DECODER
     {
@@ -212,6 +220,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_CATEGORY_AUDIO_ENCODER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_CATEGORY_AUDIO_ENCODER
     {
@@ -237,6 +246,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_CATEGORY_AUDIO_EFFECT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_CATEGORY_AUDIO_EFFECT
     {
@@ -262,6 +272,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_CATEGORY_VIDEO_PROCESSOR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_CATEGORY_VIDEO_PROCESSOR
     {
@@ -287,6 +298,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_CATEGORY_OTHER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_CATEGORY_OTHER
     {
@@ -312,6 +324,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_CATEGORY_ENCRYPTOR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_CATEGORY_ENCRYPTOR
     {
@@ -337,6 +350,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_CATEGORY_VIDEO_RENDERER_EFFECT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_CATEGORY_VIDEO_RENDERER_EFFECT
     {
@@ -362,6 +376,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_ENUM_VIDEO_RENDERER_EXTENSION_PROFILE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_ENUM_VIDEO_RENDERER_EXTENSION_PROFILE
     {
@@ -387,6 +402,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_ENUM_ADAPTER_LUID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_ENUM_ADAPTER_LUID
     {
@@ -412,6 +428,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_SUPPORT_DYNAMIC_FORMAT_CHANGE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_SUPPORT_DYNAMIC_FORMAT_CHANGE
     {
@@ -430,6 +447,32 @@ public static partial class MFT
                 0xC9,
                 0x67,
                 0x41
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_DECODER_AUTO_POSTPROCESS"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFT_DECODER_AUTO_POSTPROCESS
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xBC, 0x3D, 0x13, 0xAE,
+                0x2A, 0xF9,
+                0xEF, 0x46,
+                0xA9,
+                0x00,
+                0x2F,
+                0xBE,
+                0x11,
+                0x17,
+                0x24,
+                0x88
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

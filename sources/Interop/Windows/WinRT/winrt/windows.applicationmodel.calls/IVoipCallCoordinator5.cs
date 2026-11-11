@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IVoipCallCoordinator5 : IVoipCallCoordinator5.Interface, INativeGuid
 {
+    /// <include file='IVoipCallCoordinator5.xml' path='doc/member[@name="IVoipCallCoordinator5.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVoipCallCoordinator5);
 
     public void** lpVtbl;

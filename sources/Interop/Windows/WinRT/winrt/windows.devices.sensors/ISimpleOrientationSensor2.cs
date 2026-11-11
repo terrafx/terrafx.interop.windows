@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISimpleOrientationSensor2 : ISimpleOrientationSensor2.Interface, INativeGuid
 {
+    /// <include file='ISimpleOrientationSensor2.xml' path='doc/member[@name="ISimpleOrientationSensor2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISimpleOrientationSensor2);
 
     public void** lpVtbl;

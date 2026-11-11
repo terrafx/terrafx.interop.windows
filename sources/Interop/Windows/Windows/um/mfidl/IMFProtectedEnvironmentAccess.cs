@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFProtectedEnvironmentAccess : IMFProtectedEnvironmentAccess.Interface, INativeGuid
 {
+    /// <include file='IMFProtectedEnvironmentAccess.xml' path='doc/member[@name="IMFProtectedEnvironmentAccess.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFProtectedEnvironmentAccess);
 
     public void** lpVtbl;

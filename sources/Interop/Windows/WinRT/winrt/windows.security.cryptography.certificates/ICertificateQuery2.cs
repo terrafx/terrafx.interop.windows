@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICertificateQuery2 : ICertificateQuery2.Interface, INativeGuid
 {
+    /// <include file='ICertificateQuery2.xml' path='doc/member[@name="ICertificateQuery2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICertificateQuery2);
 
     public void** lpVtbl;

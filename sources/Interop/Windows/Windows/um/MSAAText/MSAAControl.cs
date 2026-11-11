@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("08CD963F-7A3E-4F5C-9BD8-D692BB043C5B")]
 public unsafe partial struct MSAAControl : INativeGuid
 {
+    /// <include file='MSAAControl.xml' path='doc/member[@name="MSAAControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_MSAAControl);
 }

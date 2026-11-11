@@ -14,6 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("9F9098D5-915C-4294-A52E-66532A232BC9")]
 public unsafe partial struct IHttpTraceContext : IHttpTraceContext.Interface, INativeGuid
 {
+    /// <include file='IHttpTraceContext.xml' path='doc/member[@name="IHttpTraceContext.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpTraceContext);
 
     public void** lpVtbl;

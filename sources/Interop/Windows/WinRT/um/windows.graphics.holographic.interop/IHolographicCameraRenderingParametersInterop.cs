@@ -20,6 +20,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct IHolographicCameraRenderingParametersInterop : IHolographicCameraRenderingParametersInterop.Interface, INativeGuid
 {
+    /// <include file='IHolographicCameraRenderingParametersInterop.xml' path='doc/member[@name="IHolographicCameraRenderingParametersInterop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHolographicCameraRenderingParametersInterop);
 
     public void** lpVtbl;

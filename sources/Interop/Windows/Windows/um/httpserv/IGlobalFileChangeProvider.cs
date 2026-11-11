@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IGlobalFileChangeProvider : IGlobalFileChangeProvider.Interface, INativeGuid
 {
+    /// <include file='IGlobalFileChangeProvider.xml' path='doc/member[@name="IGlobalFileChangeProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGlobalFileChangeProvider);
 
     public void** lpVtbl;

@@ -7,21 +7,27 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class TRUSTEE
 {
+    /// <include file='TRUSTEE.xml' path='doc/member[@name="TRUSTEE.TRUSTEE_ACCESS_ALLOWED"]/*' />
     [NativeTypeName("#define TRUSTEE_ACCESS_ALLOWED 0x00000001L")]
     public const int TRUSTEE_ACCESS_ALLOWED = 0x00000001;
 
+    /// <include file='TRUSTEE.xml' path='doc/member[@name="TRUSTEE.TRUSTEE_ACCESS_READ"]/*' />
     [NativeTypeName("#define TRUSTEE_ACCESS_READ 0x00000002L")]
     public const int TRUSTEE_ACCESS_READ = 0x00000002;
 
+    /// <include file='TRUSTEE.xml' path='doc/member[@name="TRUSTEE.TRUSTEE_ACCESS_WRITE"]/*' />
     [NativeTypeName("#define TRUSTEE_ACCESS_WRITE 0x00000004L")]
     public const int TRUSTEE_ACCESS_WRITE = 0x00000004;
 
+    /// <include file='TRUSTEE.xml' path='doc/member[@name="TRUSTEE.TRUSTEE_ACCESS_EXPLICIT"]/*' />
     [NativeTypeName("#define TRUSTEE_ACCESS_EXPLICIT 0x00000001L")]
     public const int TRUSTEE_ACCESS_EXPLICIT = 0x00000001;
 
+    /// <include file='TRUSTEE.xml' path='doc/member[@name="TRUSTEE.TRUSTEE_ACCESS_READ_WRITE"]/*' />
     [NativeTypeName("#define TRUSTEE_ACCESS_READ_WRITE (TRUSTEE_ACCESS_READ |                  \\\r\n                                     TRUSTEE_ACCESS_WRITE)")]
     public const int TRUSTEE_ACCESS_READ_WRITE = (0x00000002 | 0x00000004);
 
+    /// <include file='TRUSTEE.xml' path='doc/member[@name="TRUSTEE.TRUSTEE_ACCESS_ALL"]/*' />
     [NativeTypeName("#define TRUSTEE_ACCESS_ALL 0xFFFFFFFFL")]
     public const uint TRUSTEE_ACCESS_ALL = 0xFFFFFFFF;
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IHttpDateOrDeltaHeaderValue : IHttpDateOrDeltaHeaderValue.Interface, INativeGuid
 {
+    /// <include file='IHttpDateOrDeltaHeaderValue.xml' path='doc/member[@name="IHttpDateOrDeltaHeaderValue.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpDateOrDeltaHeaderValue);
 
     public void** lpVtbl;

@@ -178,12 +178,15 @@ public static unsafe partial class Windows
     [return: NativeTypeName("ULONG")]
     public static extern uint RtlUniform([NativeTypeName("PULONG")] uint* Seed);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INTERNAL_TS_ACTIVE_CONSOLE_ID"]/*' />
     [NativeTypeName("#define INTERNAL_TS_ACTIVE_CONSOLE_ID ( *((volatile ULONG*)(0x7ffe02d8)) )")]
     public static uint INTERNAL_TS_ACTIVE_CONSOLE_ID => (*((uint*)(0x7ffe02d8)));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOGONID_CURRENT"]/*' />
     [NativeTypeName("#define LOGONID_CURRENT ((ULONG)-1)")]
     public const uint LOGONID_CURRENT = unchecked((uint)(-1));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SERVERNAME_CURRENT"]/*' />
     [NativeTypeName("#define SERVERNAME_CURRENT ((HANDLE)NULL)")]
     public static void* SERVERNAME_CURRENT => unchecked((HANDLE)(0));
 }

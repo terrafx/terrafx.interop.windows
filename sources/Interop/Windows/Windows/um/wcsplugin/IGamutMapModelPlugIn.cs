@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IGamutMapModelPlugIn : IGamutMapModelPlugIn.Interface, INativeGuid
 {
+    /// <include file='IGamutMapModelPlugIn.xml' path='doc/member[@name="IGamutMapModelPlugIn.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGamutMapModelPlugIn);
 
     public void** lpVtbl;

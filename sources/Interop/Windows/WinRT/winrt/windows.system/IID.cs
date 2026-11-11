@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
-public static partial class IID
+public static unsafe partial class IID
 {
     public static ref readonly Guid IID_IDispatcherQueueHandler
     {
@@ -1685,6 +1685,54 @@ public static partial class IID
                 0x99,
                 0x1A,
                 0x10
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IUser3
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xE2, 0x18, 0x0E, 0x52,
+                0x0D, 0xF0,
+                0xD1, 0x53,
+                0xA9,
+                0xF6,
+                0x88,
+                0xC6,
+                0x97,
+                0x56,
+                0x1D,
+                0xC0
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IUserAgeRange
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xCA, 0xFF, 0x02, 0xD0,
+                0x30, 0x81,
+                0x64, 0x5F,
+                0xBE,
+                0x0F,
+                0xE6,
+                0x6A,
+                0xDB,
+                0x64,
+                0xDD,
+                0x12
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ENABLE
 {
+    /// <include file='ENABLE.xml' path='doc/member[@name="ENABLE.ENABLE_DISABLE_AUTOSAVE"]/*' />
     [NativeTypeName("#define ENABLE_DISABLE_AUTOSAVE 0xD2")]
     public const int ENABLE_DISABLE_AUTOSAVE = 0xD2;
 
+    /// <include file='ENABLE.xml' path='doc/member[@name="ENABLE.ENABLE_SMART"]/*' />
     [NativeTypeName("#define ENABLE_SMART 0xD8")]
     public const int ENABLE_SMART = 0xD8;
 
+    /// <include file='ENABLE.xml' path='doc/member[@name="ENABLE.ENABLE_DISABLE_AUTO_OFFLINE"]/*' />
     [NativeTypeName("#define ENABLE_DISABLE_AUTO_OFFLINE 0xDB")]
     public const int ENABLE_DISABLE_AUTO_OFFLINE = 0xDB;
 }

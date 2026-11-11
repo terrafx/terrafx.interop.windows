@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IBindHost : IBindHost.Interface, INativeGuid
 {
+    /// <include file='IBindHost.xml' path='doc/member[@name="IBindHost.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBindHost);
 
     public void** lpVtbl;

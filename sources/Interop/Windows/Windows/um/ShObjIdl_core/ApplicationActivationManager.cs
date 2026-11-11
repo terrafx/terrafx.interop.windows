@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("45BA127D-10A8-46EA-8AB7-56EA9078943C")]
 public unsafe partial struct ApplicationActivationManager : INativeGuid
 {
+    /// <include file='ApplicationActivationManager.xml' path='doc/member[@name="ApplicationActivationManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_ApplicationActivationManager);
 }

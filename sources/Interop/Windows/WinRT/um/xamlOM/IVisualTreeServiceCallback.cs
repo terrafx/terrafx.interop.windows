@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IVisualTreeServiceCallback : IVisualTreeServiceCallback.Interface, INativeGuid
 {
+    /// <include file='IVisualTreeServiceCallback.xml' path='doc/member[@name="IVisualTreeServiceCallback.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVisualTreeServiceCallback);
 
     public void** lpVtbl;

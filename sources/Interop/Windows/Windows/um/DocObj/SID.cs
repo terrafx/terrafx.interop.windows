@@ -10,6 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 public partial struct SID
 {
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SProtectFocus"]/*' />
     [NativeTypeName("#define SID_SProtectFocus IID_IProtectFocus")]
     public static ref readonly Guid SID_SProtectFocus => ref IID_IProtectFocus;
 }

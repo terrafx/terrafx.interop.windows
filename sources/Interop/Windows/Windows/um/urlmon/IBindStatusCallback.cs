@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IBindStatusCallback : IBindStatusCallback.Interface, INativeGuid
 {
+    /// <include file='IBindStatusCallback.xml' path='doc/member[@name="IBindStatusCallback.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBindStatusCallback);
 
     public void** lpVtbl;

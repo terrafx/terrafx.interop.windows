@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAppxManifestDriverDependency : IAppxManifestDriverDependency.Interface, INativeGuid
 {
+    /// <include file='IAppxManifestDriverDependency.xml' path='doc/member[@name="IAppxManifestDriverDependency.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppxManifestDriverDependency);
 
     public void** lpVtbl;

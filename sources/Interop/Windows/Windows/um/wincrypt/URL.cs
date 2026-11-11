@@ -9,45 +9,59 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class URL
 {
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_OID_GET_OBJECT_URL_FUNC"]/*' />
     [NativeTypeName("#define URL_OID_GET_OBJECT_URL_FUNC \"UrlDllGetObjectUrl\"")]
     public static ReadOnlySpan<byte> URL_OID_GET_OBJECT_URL_FUNC => "UrlDllGetObjectUrl"u8;
 
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_OID_CERTIFICATE_ISSUER"]/*' />
     [NativeTypeName("#define URL_OID_CERTIFICATE_ISSUER ((LPCSTR)1)")]
     public static sbyte* URL_OID_CERTIFICATE_ISSUER => ((sbyte*)(1));
 
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_OID_CERTIFICATE_CRL_DIST_POINT"]/*' />
     [NativeTypeName("#define URL_OID_CERTIFICATE_CRL_DIST_POINT ((LPCSTR)2)")]
     public static sbyte* URL_OID_CERTIFICATE_CRL_DIST_POINT => ((sbyte*)(2));
 
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_OID_CTL_ISSUER"]/*' />
     [NativeTypeName("#define URL_OID_CTL_ISSUER ((LPCSTR)3)")]
     public static sbyte* URL_OID_CTL_ISSUER => ((sbyte*)(3));
 
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_OID_CTL_NEXT_UPDATE"]/*' />
     [NativeTypeName("#define URL_OID_CTL_NEXT_UPDATE ((LPCSTR)4)")]
     public static sbyte* URL_OID_CTL_NEXT_UPDATE => ((sbyte*)(4));
 
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_OID_CRL_ISSUER"]/*' />
     [NativeTypeName("#define URL_OID_CRL_ISSUER ((LPCSTR)5)")]
     public static sbyte* URL_OID_CRL_ISSUER => ((sbyte*)(5));
 
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_OID_CERTIFICATE_FRESHEST_CRL"]/*' />
     [NativeTypeName("#define URL_OID_CERTIFICATE_FRESHEST_CRL ((LPCSTR)6)")]
     public static sbyte* URL_OID_CERTIFICATE_FRESHEST_CRL => ((sbyte*)(6));
 
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_OID_CRL_FRESHEST_CRL"]/*' />
     [NativeTypeName("#define URL_OID_CRL_FRESHEST_CRL ((LPCSTR)7)")]
     public static sbyte* URL_OID_CRL_FRESHEST_CRL => ((sbyte*)(7));
 
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_OID_CROSS_CERT_DIST_POINT"]/*' />
     [NativeTypeName("#define URL_OID_CROSS_CERT_DIST_POINT ((LPCSTR)8)")]
     public static sbyte* URL_OID_CROSS_CERT_DIST_POINT => ((sbyte*)(8));
 
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_OID_CERTIFICATE_OCSP"]/*' />
     [NativeTypeName("#define URL_OID_CERTIFICATE_OCSP ((LPCSTR)9)")]
     public static sbyte* URL_OID_CERTIFICATE_OCSP => ((sbyte*)(9));
 
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_OID_CERTIFICATE_OCSP_AND_CRL_DIST_POINT"]/*' />
     [NativeTypeName("#define URL_OID_CERTIFICATE_OCSP_AND_CRL_DIST_POINT ((LPCSTR)10)")]
     public static sbyte* URL_OID_CERTIFICATE_OCSP_AND_CRL_DIST_POINT => ((sbyte*)(10));
 
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_OID_CERTIFICATE_CRL_DIST_POINT_AND_OCSP"]/*' />
     [NativeTypeName("#define URL_OID_CERTIFICATE_CRL_DIST_POINT_AND_OCSP ((LPCSTR)11)")]
     public static sbyte* URL_OID_CERTIFICATE_CRL_DIST_POINT_AND_OCSP => ((sbyte*)(11));
 
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_OID_CROSS_CERT_SUBJECT_INFO_ACCESS"]/*' />
     [NativeTypeName("#define URL_OID_CROSS_CERT_SUBJECT_INFO_ACCESS ((LPCSTR)12)")]
     public static sbyte* URL_OID_CROSS_CERT_SUBJECT_INFO_ACCESS => ((sbyte*)(12));
 
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_OID_CERTIFICATE_ONLY_OCSP"]/*' />
     [NativeTypeName("#define URL_OID_CERTIFICATE_ONLY_OCSP ((LPCSTR)13)")]
     public static sbyte* URL_OID_CERTIFICATE_ONLY_OCSP => ((sbyte*)(13));
 }

@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("6089A37E-EB8A-482D-BD6F-F9F46904D16D")]
 public unsafe partial struct AccServerDocMgr : INativeGuid
 {
+    /// <include file='AccServerDocMgr.xml' path='doc/member[@name="AccServerDocMgr.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_AccServerDocMgr);
 }

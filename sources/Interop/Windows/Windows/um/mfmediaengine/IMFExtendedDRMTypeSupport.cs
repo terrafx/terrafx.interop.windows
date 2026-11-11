@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFExtendedDRMTypeSupport : IMFExtendedDRMTypeSupport.Interface, INativeGuid
 {
+    /// <include file='IMFExtendedDRMTypeSupport.xml' path='doc/member[@name="IMFExtendedDRMTypeSupport.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFExtendedDRMTypeSupport);
 
     public void** lpVtbl;

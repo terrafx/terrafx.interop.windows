@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SZ
 {
+    /// <include file='SZ.xml' path='doc/member[@name="SZ.SZ_URLCONTEXT"]/*' />
     [NativeTypeName("#define SZ_URLCONTEXT OLESTR(\"URL Context\")")]
     public const string SZ_URLCONTEXT = "URL Context";
 
+    /// <include file='SZ.xml' path='doc/member[@name="SZ.SZ_ASYNC_CALLEE"]/*' />
     [NativeTypeName("#define SZ_ASYNC_CALLEE OLESTR(\"AsyncCallee\")")]
     public const string SZ_ASYNC_CALLEE = "AsyncCallee";
 }

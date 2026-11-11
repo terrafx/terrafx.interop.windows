@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreApplicationExit : ICoreApplicationExit.Interface, INativeGuid
 {
+    /// <include file='ICoreApplicationExit.xml' path='doc/member[@name="ICoreApplicationExit.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreApplicationExit);
 
     public void** lpVtbl;

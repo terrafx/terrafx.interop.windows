@@ -7,21 +7,27 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MIM
 {
+    /// <include file='MIM.xml' path='doc/member[@name="MIM.MIM_MAXHEIGHT"]/*' />
     [NativeTypeName("#define MIM_MAXHEIGHT 0x00000001")]
     public const int MIM_MAXHEIGHT = 0x00000001;
 
+    /// <include file='MIM.xml' path='doc/member[@name="MIM.MIM_BACKGROUND"]/*' />
     [NativeTypeName("#define MIM_BACKGROUND 0x00000002")]
     public const int MIM_BACKGROUND = 0x00000002;
 
+    /// <include file='MIM.xml' path='doc/member[@name="MIM.MIM_HELPID"]/*' />
     [NativeTypeName("#define MIM_HELPID 0x00000004")]
     public const int MIM_HELPID = 0x00000004;
 
+    /// <include file='MIM.xml' path='doc/member[@name="MIM.MIM_MENUDATA"]/*' />
     [NativeTypeName("#define MIM_MENUDATA 0x00000008")]
     public const int MIM_MENUDATA = 0x00000008;
 
+    /// <include file='MIM.xml' path='doc/member[@name="MIM.MIM_STYLE"]/*' />
     [NativeTypeName("#define MIM_STYLE 0x00000010")]
     public const int MIM_STYLE = 0x00000010;
 
+    /// <include file='MIM.xml' path='doc/member[@name="MIM.MIM_APPLYTOSUBMENUS"]/*' />
     [NativeTypeName("#define MIM_APPLYTOSUBMENUS 0x80000000")]
     public const uint MIM_APPLYTOSUBMENUS = 0x80000000;
 }

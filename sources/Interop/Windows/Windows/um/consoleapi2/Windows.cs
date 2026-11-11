@@ -208,81 +208,107 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern BOOL SetConsoleTitleW([NativeTypeName("LPCWSTR")] char* lpConsoleTitle);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOREGROUND_BLUE"]/*' />
     [NativeTypeName("#define FOREGROUND_BLUE 0x0001")]
     public const int FOREGROUND_BLUE = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOREGROUND_GREEN"]/*' />
     [NativeTypeName("#define FOREGROUND_GREEN 0x0002")]
     public const int FOREGROUND_GREEN = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOREGROUND_RED"]/*' />
     [NativeTypeName("#define FOREGROUND_RED 0x0004")]
     public const int FOREGROUND_RED = 0x0004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOREGROUND_INTENSITY"]/*' />
     [NativeTypeName("#define FOREGROUND_INTENSITY 0x0008")]
     public const int FOREGROUND_INTENSITY = 0x0008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BACKGROUND_BLUE"]/*' />
     [NativeTypeName("#define BACKGROUND_BLUE 0x0010")]
     public const int BACKGROUND_BLUE = 0x0010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BACKGROUND_GREEN"]/*' />
     [NativeTypeName("#define BACKGROUND_GREEN 0x0020")]
     public const int BACKGROUND_GREEN = 0x0020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BACKGROUND_RED"]/*' />
     [NativeTypeName("#define BACKGROUND_RED 0x0040")]
     public const int BACKGROUND_RED = 0x0040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BACKGROUND_INTENSITY"]/*' />
     [NativeTypeName("#define BACKGROUND_INTENSITY 0x0080")]
     public const int BACKGROUND_INTENSITY = 0x0080;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMMON_LVB_LEADING_BYTE"]/*' />
     [NativeTypeName("#define COMMON_LVB_LEADING_BYTE 0x0100")]
     public const int COMMON_LVB_LEADING_BYTE = 0x0100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMMON_LVB_TRAILING_BYTE"]/*' />
     [NativeTypeName("#define COMMON_LVB_TRAILING_BYTE 0x0200")]
     public const int COMMON_LVB_TRAILING_BYTE = 0x0200;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMMON_LVB_GRID_HORIZONTAL"]/*' />
     [NativeTypeName("#define COMMON_LVB_GRID_HORIZONTAL 0x0400")]
     public const int COMMON_LVB_GRID_HORIZONTAL = 0x0400;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMMON_LVB_GRID_LVERTICAL"]/*' />
     [NativeTypeName("#define COMMON_LVB_GRID_LVERTICAL 0x0800")]
     public const int COMMON_LVB_GRID_LVERTICAL = 0x0800;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMMON_LVB_GRID_RVERTICAL"]/*' />
     [NativeTypeName("#define COMMON_LVB_GRID_RVERTICAL 0x1000")]
     public const int COMMON_LVB_GRID_RVERTICAL = 0x1000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMMON_LVB_REVERSE_VIDEO"]/*' />
     [NativeTypeName("#define COMMON_LVB_REVERSE_VIDEO 0x4000")]
     public const int COMMON_LVB_REVERSE_VIDEO = 0x4000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMMON_LVB_UNDERSCORE"]/*' />
     [NativeTypeName("#define COMMON_LVB_UNDERSCORE 0x8000")]
     public const int COMMON_LVB_UNDERSCORE = 0x8000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COMMON_LVB_SBCSDBCS"]/*' />
     [NativeTypeName("#define COMMON_LVB_SBCSDBCS 0x0300")]
     public const int COMMON_LVB_SBCSDBCS = 0x0300;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FillConsoleOutputCharacter"]/*' />
     [NativeTypeName("#define FillConsoleOutputCharacter FillConsoleOutputCharacterW")]
     public static delegate*<HANDLE, char, uint, COORD, uint*, BOOL> FillConsoleOutputCharacter => &FillConsoleOutputCharacterW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteConsoleOutputCharacter"]/*' />
     [NativeTypeName("#define WriteConsoleOutputCharacter WriteConsoleOutputCharacterW")]
     public static delegate*<HANDLE, char*, uint, COORD, uint*, BOOL> WriteConsoleOutputCharacter => &WriteConsoleOutputCharacterW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReadConsoleOutputCharacter"]/*' />
     [NativeTypeName("#define ReadConsoleOutputCharacter ReadConsoleOutputCharacterW")]
     public static delegate*<HANDLE, char*, uint, COORD, uint*, BOOL> ReadConsoleOutputCharacter => &ReadConsoleOutputCharacterW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteConsoleInput"]/*' />
     [NativeTypeName("#define WriteConsoleInput WriteConsoleInputW")]
     public static delegate*<HANDLE, INPUT_RECORD*, uint, uint*, BOOL> WriteConsoleInput => &WriteConsoleInputW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ScrollConsoleScreenBuffer"]/*' />
     [NativeTypeName("#define ScrollConsoleScreenBuffer ScrollConsoleScreenBufferW")]
     public static delegate*<HANDLE, SMALL_RECT*, SMALL_RECT*, COORD, CHAR_INFO*, BOOL> ScrollConsoleScreenBuffer => &ScrollConsoleScreenBufferW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteConsoleOutput"]/*' />
     [NativeTypeName("#define WriteConsoleOutput WriteConsoleOutputW")]
     public static delegate*<HANDLE, CHAR_INFO*, COORD, COORD, SMALL_RECT*, BOOL> WriteConsoleOutput => &WriteConsoleOutputW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReadConsoleOutput"]/*' />
     [NativeTypeName("#define ReadConsoleOutput ReadConsoleOutputW")]
     public static delegate*<HANDLE, CHAR_INFO*, COORD, COORD, SMALL_RECT*, BOOL> ReadConsoleOutput => &ReadConsoleOutputW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleTitle"]/*' />
     [NativeTypeName("#define GetConsoleTitle GetConsoleTitleW")]
     public static delegate*<char*, uint, uint> GetConsoleTitle => &GetConsoleTitleW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleOriginalTitle"]/*' />
     [NativeTypeName("#define GetConsoleOriginalTitle GetConsoleOriginalTitleW")]
     public static delegate*<char*, uint, uint> GetConsoleOriginalTitle => &GetConsoleOriginalTitleW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleTitle"]/*' />
     [NativeTypeName("#define SetConsoleTitle SetConsoleTitleW")]
     public static delegate*<char*, BOOL> SetConsoleTitle => &SetConsoleTitleW;
 }

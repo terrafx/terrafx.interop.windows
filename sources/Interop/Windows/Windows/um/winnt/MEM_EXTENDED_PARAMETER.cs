@@ -15,11 +15,11 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct MEM_EXTENDED_PARAMETER
 {
     /// <include file='MEM_EXTENDED_PARAMETER.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER.Anonymous1"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L15573_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L16406_C5")]
     public _Anonymous1_e__Struct Anonymous1;
 
     /// <include file='MEM_EXTENDED_PARAMETER.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER.Anonymous2"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L15578_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L16411_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.Type"]/*' />

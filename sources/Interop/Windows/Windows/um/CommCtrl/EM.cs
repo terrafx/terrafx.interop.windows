@@ -7,72 +7,95 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class EM
 {
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_SETCUEBANNER"]/*' />
     [NativeTypeName("#define EM_SETCUEBANNER (ECM_FIRST + 1)")]
     public const int EM_SETCUEBANNER = (0x1500 + 1);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_GETCUEBANNER"]/*' />
     [NativeTypeName("#define EM_GETCUEBANNER (ECM_FIRST + 2)")]
     public const int EM_GETCUEBANNER = (0x1500 + 2);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_SHOWBALLOONTIP"]/*' />
     [NativeTypeName("#define EM_SHOWBALLOONTIP (ECM_FIRST + 3)")]
     public const int EM_SHOWBALLOONTIP = (0x1500 + 3);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_HIDEBALLOONTIP"]/*' />
     [NativeTypeName("#define EM_HIDEBALLOONTIP (ECM_FIRST + 4)")]
     public const int EM_HIDEBALLOONTIP = (0x1500 + 4);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_SETHILITE"]/*' />
     [NativeTypeName("#define EM_SETHILITE (ECM_FIRST + 5)")]
     public const int EM_SETHILITE = (0x1500 + 5);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_GETHILITE"]/*' />
     [NativeTypeName("#define EM_GETHILITE (ECM_FIRST + 6)")]
     public const int EM_GETHILITE = (0x1500 + 6);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_NOSETFOCUS"]/*' />
     [NativeTypeName("#define EM_NOSETFOCUS (ECM_FIRST + 7)")]
     public const int EM_NOSETFOCUS = (0x1500 + 7);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_TAKEFOCUS"]/*' />
     [NativeTypeName("#define EM_TAKEFOCUS (ECM_FIRST + 8)")]
     public const int EM_TAKEFOCUS = (0x1500 + 8);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_SETEXTENDEDSTYLE"]/*' />
     [NativeTypeName("#define EM_SETEXTENDEDSTYLE (ECM_FIRST + 10)")]
     public const int EM_SETEXTENDEDSTYLE = (0x1500 + 10);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_GETEXTENDEDSTYLE"]/*' />
     [NativeTypeName("#define EM_GETEXTENDEDSTYLE (ECM_FIRST + 11)")]
     public const int EM_GETEXTENDEDSTYLE = (0x1500 + 11);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_SETENDOFLINE"]/*' />
     [NativeTypeName("#define EM_SETENDOFLINE (ECM_FIRST + 12)")]
     public const int EM_SETENDOFLINE = (0x1500 + 12);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_GETENDOFLINE"]/*' />
     [NativeTypeName("#define EM_GETENDOFLINE (ECM_FIRST + 13)")]
     public const int EM_GETENDOFLINE = (0x1500 + 13);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_ENABLESEARCHWEB"]/*' />
     [NativeTypeName("#define EM_ENABLESEARCHWEB (ECM_FIRST + 14)")]
     public const int EM_ENABLESEARCHWEB = (0x1500 + 14);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_SEARCHWEB"]/*' />
     [NativeTypeName("#define EM_SEARCHWEB (ECM_FIRST + 15)")]
     public const int EM_SEARCHWEB = (0x1500 + 15);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_SETCARETINDEX"]/*' />
     [NativeTypeName("#define EM_SETCARETINDEX (ECM_FIRST + 17)")]
     public const int EM_SETCARETINDEX = (0x1500 + 17);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_GETCARETINDEX"]/*' />
     [NativeTypeName("#define EM_GETCARETINDEX (ECM_FIRST + 18)")]
     public const int EM_GETCARETINDEX = (0x1500 + 18);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_GETZOOM"]/*' />
     [NativeTypeName("#define EM_GETZOOM (WM_USER + 224)")]
     public const int EM_GETZOOM = (0x0400 + 224);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_SETZOOM"]/*' />
     [NativeTypeName("#define EM_SETZOOM (WM_USER + 225)")]
     public const int EM_SETZOOM = (0x0400 + 225);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_FILELINEFROMCHAR"]/*' />
     [NativeTypeName("#define EM_FILELINEFROMCHAR (ECM_FIRST + 19)")]
     public const int EM_FILELINEFROMCHAR = (0x1500 + 19);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_FILELINEINDEX"]/*' />
     [NativeTypeName("#define EM_FILELINEINDEX (ECM_FIRST + 20)")]
     public const int EM_FILELINEINDEX = (0x1500 + 20);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_FILELINELENGTH"]/*' />
     [NativeTypeName("#define EM_FILELINELENGTH (ECM_FIRST + 21)")]
     public const int EM_FILELINELENGTH = (0x1500 + 21);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_GETFILELINE"]/*' />
     [NativeTypeName("#define EM_GETFILELINE (ECM_FIRST + 22)")]
     public const int EM_GETFILELINE = (0x1500 + 22);
 
+    /// <include file='EM.xml' path='doc/member[@name="EM.EM_GETFILELINECOUNT"]/*' />
     [NativeTypeName("#define EM_GETFILELINECOUNT (ECM_FIRST + 23)")]
     public const int EM_GETFILELINECOUNT = (0x1500 + 23);
 }

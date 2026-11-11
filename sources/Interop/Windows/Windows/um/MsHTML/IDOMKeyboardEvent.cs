@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IDOMKeyboardEvent : IDOMKeyboardEvent.Interface, INativeGuid
 {
+    /// <include file='IDOMKeyboardEvent.xml' path='doc/member[@name="IDOMKeyboardEvent.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDOMKeyboardEvent);
 
     public void** lpVtbl;

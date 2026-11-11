@@ -325,105 +325,139 @@ public static unsafe partial class Windows
     [DllImport("uxtheme", ExactSpelling = true)]
     public static extern HRESULT GetThemeTransitionDuration(HTHEME hTheme, int iPartId, int iStateIdFrom, int iStateIdTo, int iPropId, [NativeTypeName("DWORD *")] uint* pdwDuration);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OTD_FORCE_RECT_SIZING"]/*' />
     [NativeTypeName("#define OTD_FORCE_RECT_SIZING 0x00000001")]
     public const int OTD_FORCE_RECT_SIZING = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OTD_NONCLIENT"]/*' />
     [NativeTypeName("#define OTD_NONCLIENT 0x00000002")]
     public const int OTD_NONCLIENT = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OTD_VALIDBITS"]/*' />
     [NativeTypeName("#define OTD_VALIDBITS (OTD_FORCE_RECT_SIZING | \\\r\n                                 OTD_NONCLIENT)")]
     public const int OTD_VALIDBITS = (0x00000001 | 0x00000002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DTBG_CLIPRECT"]/*' />
     [NativeTypeName("#define DTBG_CLIPRECT 0x00000001")]
     public const int DTBG_CLIPRECT = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DTBG_DRAWSOLID"]/*' />
     [NativeTypeName("#define DTBG_DRAWSOLID 0x00000002")]
     public const int DTBG_DRAWSOLID = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DTBG_OMITBORDER"]/*' />
     [NativeTypeName("#define DTBG_OMITBORDER 0x00000004")]
     public const int DTBG_OMITBORDER = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DTBG_OMITCONTENT"]/*' />
     [NativeTypeName("#define DTBG_OMITCONTENT 0x00000008")]
     public const int DTBG_OMITCONTENT = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DTBG_COMPUTINGREGION"]/*' />
     [NativeTypeName("#define DTBG_COMPUTINGREGION 0x00000010")]
     public const int DTBG_COMPUTINGREGION = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DTBG_MIRRORDC"]/*' />
     [NativeTypeName("#define DTBG_MIRRORDC 0x00000020")]
     public const int DTBG_MIRRORDC = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DTBG_NOMIRROR"]/*' />
     [NativeTypeName("#define DTBG_NOMIRROR 0x00000040")]
     public const int DTBG_NOMIRROR = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DTBG_VALIDBITS"]/*' />
     [NativeTypeName("#define DTBG_VALIDBITS (DTBG_CLIPRECT | \\\r\n                                 DTBG_DRAWSOLID | \\\r\n                                 DTBG_OMITBORDER | \\\r\n                                 DTBG_OMITCONTENT | \\\r\n                                 DTBG_COMPUTINGREGION | \\\r\n                                 DTBG_MIRRORDC | \\\r\n                                 DTBG_NOMIRROR)")]
     public const int DTBG_VALIDBITS = (0x00000001 | 0x00000002 | 0x00000004 | 0x00000008 | 0x00000010 | 0x00000020 | 0x00000040);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ETDT_DISABLE"]/*' />
     [NativeTypeName("#define ETDT_DISABLE 0x00000001")]
     public const int ETDT_DISABLE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ETDT_ENABLE"]/*' />
     [NativeTypeName("#define ETDT_ENABLE 0x00000002")]
     public const int ETDT_ENABLE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ETDT_USETABTEXTURE"]/*' />
     [NativeTypeName("#define ETDT_USETABTEXTURE 0x00000004")]
     public const int ETDT_USETABTEXTURE = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ETDT_ENABLETAB"]/*' />
     [NativeTypeName("#define ETDT_ENABLETAB (ETDT_ENABLE | \\\r\n                                     ETDT_USETABTEXTURE)")]
     public const int ETDT_ENABLETAB = (0x00000002 | 0x00000004);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ETDT_USEAEROWIZARDTABTEXTURE"]/*' />
     [NativeTypeName("#define ETDT_USEAEROWIZARDTABTEXTURE 0x00000008")]
     public const int ETDT_USEAEROWIZARDTABTEXTURE = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ETDT_ENABLEAEROWIZARDTAB"]/*' />
     [NativeTypeName("#define ETDT_ENABLEAEROWIZARDTAB (ETDT_ENABLE | \\\r\n                                     ETDT_USEAEROWIZARDTABTEXTURE)")]
     public const int ETDT_ENABLEAEROWIZARDTAB = (0x00000002 | 0x00000008);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ETDT_VALIDBITS"]/*' />
     [NativeTypeName("#define ETDT_VALIDBITS (ETDT_DISABLE | \\\r\n                                     ETDT_ENABLE | \\\r\n                                     ETDT_USETABTEXTURE | \\\r\n                                     ETDT_USEAEROWIZARDTABTEXTURE)")]
     public const int ETDT_VALIDBITS = (0x00000001 | 0x00000002 | 0x00000004 | 0x00000008);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STAP_ALLOW_NONCLIENT"]/*' />
     [NativeTypeName("#define STAP_ALLOW_NONCLIENT (1UL << 0)")]
     public const uint STAP_ALLOW_NONCLIENT = (1U << 0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STAP_ALLOW_CONTROLS"]/*' />
     [NativeTypeName("#define STAP_ALLOW_CONTROLS (1UL << 1)")]
     public const uint STAP_ALLOW_CONTROLS = (1U << 1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STAP_ALLOW_WEBCONTENT"]/*' />
     [NativeTypeName("#define STAP_ALLOW_WEBCONTENT (1UL << 2)")]
     public const uint STAP_ALLOW_WEBCONTENT = (1U << 2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STAP_VALIDBITS"]/*' />
     [NativeTypeName("#define STAP_VALIDBITS (STAP_ALLOW_NONCLIENT | \\\r\n                                 STAP_ALLOW_CONTROLS | \\\r\n                                 STAP_ALLOW_WEBCONTENT)")]
     public const uint STAP_VALIDBITS = ((1U << 0) | (1U << 1) | (1U << 2));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GBF_DIRECT"]/*' />
     [NativeTypeName("#define GBF_DIRECT 0x00000001")]
     public const int GBF_DIRECT = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GBF_COPY"]/*' />
     [NativeTypeName("#define GBF_COPY 0x00000002")]
     public const int GBF_COPY = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GBF_VALIDBITS"]/*' />
     [NativeTypeName("#define GBF_VALIDBITS (GBF_DIRECT | \\\r\n                         GBF_COPY)")]
     public const int GBF_VALIDBITS = (0x00000001 | 0x00000002);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DTPB_WINDOWDC"]/*' />
     [NativeTypeName("#define DTPB_WINDOWDC 0x00000001")]
     public const int DTPB_WINDOWDC = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DTPB_USECTLCOLORSTATIC"]/*' />
     [NativeTypeName("#define DTPB_USECTLCOLORSTATIC 0x00000002")]
     public const int DTPB_USECTLCOLORSTATIC = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DTPB_USEERASEBKGND"]/*' />
     [NativeTypeName("#define DTPB_USEERASEBKGND 0x00000004")]
     public const int DTPB_USEERASEBKGND = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WTNCA_NODRAWCAPTION"]/*' />
     [NativeTypeName("#define WTNCA_NODRAWCAPTION 0x00000001")]
     public const int WTNCA_NODRAWCAPTION = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WTNCA_NODRAWICON"]/*' />
     [NativeTypeName("#define WTNCA_NODRAWICON 0x00000002")]
     public const int WTNCA_NODRAWICON = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WTNCA_NOSYSMENU"]/*' />
     [NativeTypeName("#define WTNCA_NOSYSMENU 0x00000004")]
     public const int WTNCA_NOSYSMENU = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WTNCA_NOMIRRORHELP"]/*' />
     [NativeTypeName("#define WTNCA_NOMIRRORHELP 0x00000008")]
     public const int WTNCA_NOMIRRORHELP = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WTNCA_VALIDBITS"]/*' />
     [NativeTypeName("#define WTNCA_VALIDBITS (WTNCA_NODRAWCAPTION | \\\r\n                                   WTNCA_NODRAWICON | \\\r\n                                   WTNCA_NOSYSMENU | \\\r\n                                   WTNCA_NOMIRRORHELP)")]
     public const int WTNCA_VALIDBITS = (0x00000001 | 0x00000002 | 0x00000004 | 0x00000008);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BPBF_COMPOSITED"]/*' />
     [NativeTypeName("#define BPBF_COMPOSITED BPBF_TOPDOWNDIB")]
     public const BP_BUFFERFORMAT BPBF_COMPOSITED = BPBF_TOPDOWNDIB;
 }

@@ -7,12 +7,15 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDWAITVB
 {
+    /// <include file='DDWAITVB.xml' path='doc/member[@name="DDWAITVB.DDWAITVB_BLOCKBEGIN"]/*' />
     [NativeTypeName("#define DDWAITVB_BLOCKBEGIN 0x00000001l")]
     public const int DDWAITVB_BLOCKBEGIN = 0x00000001;
 
+    /// <include file='DDWAITVB.xml' path='doc/member[@name="DDWAITVB.DDWAITVB_BLOCKBEGINEVENT"]/*' />
     [NativeTypeName("#define DDWAITVB_BLOCKBEGINEVENT 0x00000002l")]
     public const int DDWAITVB_BLOCKBEGINEVENT = 0x00000002;
 
+    /// <include file='DDWAITVB.xml' path='doc/member[@name="DDWAITVB.DDWAITVB_BLOCKEND"]/*' />
     [NativeTypeName("#define DDWAITVB_BLOCKEND 0x00000004l")]
     public const int DDWAITVB_BLOCKEND = 0x00000004;
 }

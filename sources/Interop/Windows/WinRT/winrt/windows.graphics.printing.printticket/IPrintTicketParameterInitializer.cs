@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPrintTicketParameterInitializer : IPrintTicketParameterInitializer.Interface, INativeGuid
 {
+    /// <include file='IPrintTicketParameterInitializer.xml' path='doc/member[@name="IPrintTicketParameterInitializer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPrintTicketParameterInitializer);
 
     public void** lpVtbl;

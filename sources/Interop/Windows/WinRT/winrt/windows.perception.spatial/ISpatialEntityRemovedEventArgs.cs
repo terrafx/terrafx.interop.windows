@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISpatialEntityRemovedEventArgs : ISpatialEntityRemovedEventArgs.Interface, INativeGuid
 {
+    /// <include file='ISpatialEntityRemovedEventArgs.xml' path='doc/member[@name="ISpatialEntityRemovedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpatialEntityRemovedEventArgs);
 
     public void** lpVtbl;

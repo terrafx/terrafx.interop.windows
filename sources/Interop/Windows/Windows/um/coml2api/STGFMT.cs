@@ -7,21 +7,27 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class STGFMT
 {
+    /// <include file='STGFMT.xml' path='doc/member[@name="STGFMT.STGFMT_STORAGE"]/*' />
     [NativeTypeName("#define STGFMT_STORAGE 0")]
     public const int STGFMT_STORAGE = 0;
 
+    /// <include file='STGFMT.xml' path='doc/member[@name="STGFMT.STGFMT_NATIVE"]/*' />
     [NativeTypeName("#define STGFMT_NATIVE 1")]
     public const int STGFMT_NATIVE = 1;
 
+    /// <include file='STGFMT.xml' path='doc/member[@name="STGFMT.STGFMT_FILE"]/*' />
     [NativeTypeName("#define STGFMT_FILE 3")]
     public const int STGFMT_FILE = 3;
 
+    /// <include file='STGFMT.xml' path='doc/member[@name="STGFMT.STGFMT_ANY"]/*' />
     [NativeTypeName("#define STGFMT_ANY 4")]
     public const int STGFMT_ANY = 4;
 
+    /// <include file='STGFMT.xml' path='doc/member[@name="STGFMT.STGFMT_DOCFILE"]/*' />
     [NativeTypeName("#define STGFMT_DOCFILE 5")]
     public const int STGFMT_DOCFILE = 5;
 
+    /// <include file='STGFMT.xml' path='doc/member[@name="STGFMT.STGFMT_DOCUMENT"]/*' />
     [NativeTypeName("#define STGFMT_DOCUMENT 0")]
     public const int STGFMT_DOCUMENT = 0;
 }

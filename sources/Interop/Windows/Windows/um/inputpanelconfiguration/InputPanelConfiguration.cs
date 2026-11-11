@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("2853ADD3-F096-4C63-A78F-7FA3EA837FB7")]
 public unsafe partial struct InputPanelConfiguration : INativeGuid
 {
+    /// <include file='InputPanelConfiguration.xml' path='doc/member[@name="InputPanelConfiguration.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_InputPanelConfiguration);
 }

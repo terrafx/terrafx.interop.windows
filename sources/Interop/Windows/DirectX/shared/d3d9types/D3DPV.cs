@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DPV
 {
+    /// <include file='D3DPV.xml' path='doc/member[@name="D3DPV.D3DPV_DONOTCOPYDATA"]/*' />
     [NativeTypeName("#define D3DPV_DONOTCOPYDATA (1 << 0)")]
     public const int D3DPV_DONOTCOPYDATA = (1 << 0);
 }

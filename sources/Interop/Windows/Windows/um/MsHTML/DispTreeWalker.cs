@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct DispTreeWalker : DispTreeWalker.Interface, INativeGuid
 {
+    /// <include file='DispTreeWalker.xml' path='doc/member[@name="DispTreeWalker.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DispTreeWalker);
 
     public void** lpVtbl;

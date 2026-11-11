@@ -7,36 +7,47 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IDF
 {
+    /// <include file='IDF.xml' path='doc/member[@name="IDF.IDF_NOBROWSE"]/*' />
     [NativeTypeName("#define IDF_NOBROWSE 0x00000001")]
     public const int IDF_NOBROWSE = 0x00000001;
 
+    /// <include file='IDF.xml' path='doc/member[@name="IDF.IDF_NOSKIP"]/*' />
     [NativeTypeName("#define IDF_NOSKIP 0x00000002")]
     public const int IDF_NOSKIP = 0x00000002;
 
+    /// <include file='IDF.xml' path='doc/member[@name="IDF.IDF_NODETAILS"]/*' />
     [NativeTypeName("#define IDF_NODETAILS 0x00000004")]
     public const int IDF_NODETAILS = 0x00000004;
 
+    /// <include file='IDF.xml' path='doc/member[@name="IDF.IDF_NOCOMPRESSED"]/*' />
     [NativeTypeName("#define IDF_NOCOMPRESSED 0x00000008")]
     public const int IDF_NOCOMPRESSED = 0x00000008;
 
+    /// <include file='IDF.xml' path='doc/member[@name="IDF.IDF_CHECKFIRST"]/*' />
     [NativeTypeName("#define IDF_CHECKFIRST 0x00000100")]
     public const int IDF_CHECKFIRST = 0x00000100;
 
+    /// <include file='IDF.xml' path='doc/member[@name="IDF.IDF_NOBEEP"]/*' />
     [NativeTypeName("#define IDF_NOBEEP 0x00000200")]
     public const int IDF_NOBEEP = 0x00000200;
 
+    /// <include file='IDF.xml' path='doc/member[@name="IDF.IDF_NOFOREGROUND"]/*' />
     [NativeTypeName("#define IDF_NOFOREGROUND 0x00000400")]
     public const int IDF_NOFOREGROUND = 0x00000400;
 
+    /// <include file='IDF.xml' path='doc/member[@name="IDF.IDF_WARNIFSKIP"]/*' />
     [NativeTypeName("#define IDF_WARNIFSKIP 0x00000800")]
     public const int IDF_WARNIFSKIP = 0x00000800;
 
+    /// <include file='IDF.xml' path='doc/member[@name="IDF.IDF_NOREMOVABLEMEDIAPROMPT"]/*' />
     [NativeTypeName("#define IDF_NOREMOVABLEMEDIAPROMPT 0x00001000")]
     public const int IDF_NOREMOVABLEMEDIAPROMPT = 0x00001000;
 
+    /// <include file='IDF.xml' path='doc/member[@name="IDF.IDF_USEDISKNAMEASPROMPT"]/*' />
     [NativeTypeName("#define IDF_USEDISKNAMEASPROMPT 0x00002000")]
     public const int IDF_USEDISKNAMEASPROMPT = 0x00002000;
 
+    /// <include file='IDF.xml' path='doc/member[@name="IDF.IDF_OEMDISK"]/*' />
     [NativeTypeName("#define IDF_OEMDISK 0x80000000")]
     public const uint IDF_OEMDISK = 0x80000000;
 }

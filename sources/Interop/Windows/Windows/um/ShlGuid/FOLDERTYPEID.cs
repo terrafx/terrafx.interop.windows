@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FOLDERTYPEID
 {
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_Invalid"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_Invalid
     {
@@ -37,6 +38,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_Generic"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_Generic
     {
@@ -62,6 +64,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_GenericSearchResults"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_GenericSearchResults
     {
@@ -87,6 +90,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_GenericLibrary"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_GenericLibrary
     {
@@ -112,6 +116,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_Documents"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_Documents
     {
@@ -137,6 +142,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_Pictures"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_Pictures
     {
@@ -162,6 +168,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_Music"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_Music
     {
@@ -187,6 +194,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_Videos"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_Videos
     {
@@ -212,6 +220,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_Downloads"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_Downloads
     {
@@ -237,6 +246,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_UserFiles"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_UserFiles
     {
@@ -262,6 +272,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_UsersLibraries"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_UsersLibraries
     {
@@ -287,6 +298,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_OtherUsers"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_OtherUsers
     {
@@ -312,6 +324,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_PublishedItems"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_PublishedItems
     {
@@ -337,6 +350,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_Communications"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_Communications
     {
@@ -362,6 +376,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_Contacts"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_Contacts
     {
@@ -387,6 +402,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_StartMenu"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_StartMenu
     {
@@ -412,6 +428,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_RecordedTV"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_RecordedTV
     {
@@ -437,6 +454,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_SavedGames"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_SavedGames
     {
@@ -462,6 +480,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_OpenSearch"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_OpenSearch
     {
@@ -487,6 +506,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_SearchConnector"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_SearchConnector
     {
@@ -512,6 +532,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_AccountPictures"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_AccountPictures
     {
@@ -537,6 +558,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_Games"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_Games
     {
@@ -562,6 +584,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_ControlPanelCategory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_ControlPanelCategory
     {
@@ -587,6 +610,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_ControlPanelClassic"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_ControlPanelClassic
     {
@@ -612,6 +636,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_Printers"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_Printers
     {
@@ -637,6 +662,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_RecycleBin"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_RecycleBin
     {
@@ -662,6 +688,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_SoftwareExplorer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_SoftwareExplorer
     {
@@ -687,6 +714,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_CompressedFolder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_CompressedFolder
     {
@@ -712,6 +740,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_NetworkExplorer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_NetworkExplorer
     {
@@ -737,6 +766,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_Searches"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_Searches
     {
@@ -762,6 +792,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_SearchHome"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_SearchHome
     {
@@ -787,6 +818,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_StorageProviderGeneric"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_StorageProviderGeneric
     {
@@ -812,6 +844,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_StorageProviderDocuments"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_StorageProviderDocuments
     {
@@ -837,6 +870,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_StorageProviderPictures"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_StorageProviderPictures
     {
@@ -862,6 +896,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_StorageProviderMusic"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_StorageProviderMusic
     {
@@ -887,6 +922,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_StorageProviderVideos"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_StorageProviderVideos
     {
@@ -912,6 +948,7 @@ public static partial class FOLDERTYPEID
         }
     }
 
+    /// <include file='FOLDERTYPEID.xml' path='doc/member[@name="FOLDERTYPEID.FOLDERTYPEID_VersionControl"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERTYPEID_VersionControl
     {

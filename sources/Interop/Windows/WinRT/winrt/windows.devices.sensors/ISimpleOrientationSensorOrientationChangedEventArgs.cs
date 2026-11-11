@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISimpleOrientationSensorOrientationChangedEventArgs : ISimpleOrientationSensorOrientationChangedEventArgs.Interface, INativeGuid
 {
+    /// <include file='ISimpleOrientationSensorOrientationChangedEventArgs.xml' path='doc/member[@name="ISimpleOrientationSensorOrientationChangedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISimpleOrientationSensorOrientationChangedEventArgs);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IGlobalApplicationPreloadProvider")]
 public unsafe partial struct IGlobalApplicationPreloadProvider2 : IGlobalApplicationPreloadProvider2.Interface, INativeGuid
 {
+    /// <include file='IGlobalApplicationPreloadProvider2.xml' path='doc/member[@name="IGlobalApplicationPreloadProvider2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGlobalApplicationPreloadProvider2);
 
     public void** lpVtbl;

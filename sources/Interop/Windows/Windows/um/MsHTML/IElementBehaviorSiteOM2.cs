@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IElementBehaviorSiteOM")]
 public unsafe partial struct IElementBehaviorSiteOM2 : IElementBehaviorSiteOM2.Interface, INativeGuid
 {
+    /// <include file='IElementBehaviorSiteOM2.xml' path='doc/member[@name="IElementBehaviorSiteOM2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IElementBehaviorSiteOM2);
 
     public void** lpVtbl;

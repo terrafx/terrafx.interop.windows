@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("IApplicationViewFullscreenStatics is deprecated after Windows 8. Please use other resize APIs.")]
 public unsafe partial struct IApplicationViewFullscreenStatics : IApplicationViewFullscreenStatics.Interface, INativeGuid
 {
+    /// <include file='IApplicationViewFullscreenStatics.xml' path='doc/member[@name="IApplicationViewFullscreenStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IApplicationViewFullscreenStatics);
 
     public void** lpVtbl;

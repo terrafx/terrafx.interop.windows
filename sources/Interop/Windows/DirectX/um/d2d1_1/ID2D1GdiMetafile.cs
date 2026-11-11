@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ID2D1GdiMetafile : ID2D1GdiMetafile.Interface, INativeGuid
 {
+    /// <include file='ID2D1GdiMetafile.xml' path='doc/member[@name="ID2D1GdiMetafile.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1GdiMetafile);
 
     public void** lpVtbl;

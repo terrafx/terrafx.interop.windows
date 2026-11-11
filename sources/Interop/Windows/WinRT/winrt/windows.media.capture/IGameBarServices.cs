@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGameBarServices : IGameBarServices.Interface, INativeGuid
 {
+    /// <include file='IGameBarServices.xml' path='doc/member[@name="IGameBarServices.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGameBarServices);
 
     public void** lpVtbl;

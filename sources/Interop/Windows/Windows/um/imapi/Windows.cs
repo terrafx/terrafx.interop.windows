@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RECORDER_DOING_NOTHING"]/*' />
     [NativeTypeName("#define RECORDER_DOING_NOTHING ( 0 )")]
     public const int RECORDER_DOING_NOTHING = (0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RECORDER_OPENED"]/*' />
     [NativeTypeName("#define RECORDER_OPENED ( 0x1 )")]
     public const int RECORDER_OPENED = (0x1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RECORDER_BURNING"]/*' />
     [NativeTypeName("#define RECORDER_BURNING ( 0x2 )")]
     public const int RECORDER_BURNING = (0x2);
 }

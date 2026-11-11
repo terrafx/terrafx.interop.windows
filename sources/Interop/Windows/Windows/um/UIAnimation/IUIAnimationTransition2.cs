@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IUIAnimationTransition2 : IUIAnimationTransition2.Interface, INativeGuid
 {
+    /// <include file='IUIAnimationTransition2.xml' path='doc/member[@name="IUIAnimationTransition2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUIAnimationTransition2);
 
     public void** lpVtbl;

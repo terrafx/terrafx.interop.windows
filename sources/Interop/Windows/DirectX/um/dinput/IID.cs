@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInputA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInputA
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInputW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInputW
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInput2A"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInput2A
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInput2W"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInput2W
     {
@@ -113,6 +117,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInput7A"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInput7A
     {
@@ -138,6 +143,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInput7W"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInput7W
     {
@@ -163,6 +169,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInput8A"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInput8A
     {
@@ -188,6 +195,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInput8W"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInput8W
     {
@@ -213,6 +221,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInputDeviceA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInputDeviceA
     {
@@ -238,6 +247,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInputDeviceW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInputDeviceW
     {
@@ -263,6 +273,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInputDevice2A"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInputDevice2A
     {
@@ -288,6 +299,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInputDevice2W"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInputDevice2W
     {
@@ -313,6 +325,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInputDevice7A"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInputDevice7A
     {
@@ -338,6 +351,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInputDevice7W"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInputDevice7W
     {
@@ -363,6 +377,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInputDevice8A"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInputDevice8A
     {
@@ -388,6 +403,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInputDevice8W"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInputDevice8W
     {
@@ -413,6 +429,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInputEffect"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirectInputEffect
     {
@@ -438,27 +455,35 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInputDevice"]/*' />
     [NativeTypeName("#define IID_IDirectInputDevice IID_IDirectInputDeviceW")]
     public static ref readonly Guid IID_IDirectInputDevice => ref IID_IDirectInputDeviceW;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInputDevice2"]/*' />
     [NativeTypeName("#define IID_IDirectInputDevice2 IID_IDirectInputDevice2W")]
     public static ref readonly Guid IID_IDirectInputDevice2 => ref IID_IDirectInputDevice2W;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInputDevice7"]/*' />
     [NativeTypeName("#define IID_IDirectInputDevice7 IID_IDirectInputDevice7W")]
     public static ref readonly Guid IID_IDirectInputDevice7 => ref IID_IDirectInputDevice7W;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInputDevice8"]/*' />
     [NativeTypeName("#define IID_IDirectInputDevice8 IID_IDirectInputDevice8W")]
     public static ref readonly Guid IID_IDirectInputDevice8 => ref IID_IDirectInputDevice8W;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInput"]/*' />
     [NativeTypeName("#define IID_IDirectInput IID_IDirectInputW")]
     public static ref readonly Guid IID_IDirectInput => ref IID_IDirectInputW;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInput2"]/*' />
     [NativeTypeName("#define IID_IDirectInput2 IID_IDirectInput2W")]
     public static ref readonly Guid IID_IDirectInput2 => ref IID_IDirectInput2W;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInput7"]/*' />
     [NativeTypeName("#define IID_IDirectInput7 IID_IDirectInput7W")]
     public static ref readonly Guid IID_IDirectInput7 => ref IID_IDirectInput7W;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirectInput8"]/*' />
     [NativeTypeName("#define IID_IDirectInput8 IID_IDirectInput8W")]
     public static ref readonly Guid IID_IDirectInput8 => ref IID_IDirectInput8W;
 }

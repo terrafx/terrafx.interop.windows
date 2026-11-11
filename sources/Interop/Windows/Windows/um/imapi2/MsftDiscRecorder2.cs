@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("2735412D-7F64-5B0F-8F00-5D77AFBE261E")]
 public unsafe partial struct MsftDiscRecorder2 : INativeGuid
 {
+    /// <include file='MsftDiscRecorder2.xml' path='doc/member[@name="MsftDiscRecorder2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_MsftDiscRecorder2);
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAppBroadcastPreviewStreamVideoFrame : IAppBroadcastPreviewStreamVideoFrame.Interface, INativeGuid
 {
+    /// <include file='IAppBroadcastPreviewStreamVideoFrame.xml' path='doc/member[@name="IAppBroadcastPreviewStreamVideoFrame.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppBroadcastPreviewStreamVideoFrame);
 
     public void** lpVtbl;

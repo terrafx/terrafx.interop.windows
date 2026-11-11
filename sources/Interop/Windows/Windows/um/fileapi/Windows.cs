@@ -558,127 +558,167 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.26100.0")]
     public static extern BOOL DeleteFile2W([NativeTypeName("LPCWSTR")] char* lpFileName, [NativeTypeName("DWORD")] uint Flags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TRUNCATE_EXISTING"]/*' />
     [NativeTypeName("#define TRUNCATE_EXISTING 5")]
     public const int TRUNCATE_EXISTING = 5;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INVALID_FILE_SIZE"]/*' />
     [NativeTypeName("#define INVALID_FILE_SIZE ((DWORD)0xFFFFFFFF)")]
     public const uint INVALID_FILE_SIZE = ((uint)(0xFFFFFFFF));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INVALID_SET_FILE_POINTER"]/*' />
     [NativeTypeName("#define INVALID_SET_FILE_POINTER ((DWORD)-1)")]
     public const uint INVALID_SET_FILE_POINTER = unchecked((uint)(-1));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INVALID_FILE_ATTRIBUTES"]/*' />
     [NativeTypeName("#define INVALID_FILE_ATTRIBUTES ((DWORD)-1)")]
     public const uint INVALID_FILE_ATTRIBUTES = unchecked((uint)(-1));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDirectory"]/*' />
     [NativeTypeName("#define CreateDirectory CreateDirectoryW")]
     public static delegate*<char*, SECURITY_ATTRIBUTES*, BOOL> CreateDirectory => &CreateDirectoryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFile"]/*' />
     [NativeTypeName("#define CreateFile CreateFileW")]
     public static delegate*<char*, uint, uint, SECURITY_ATTRIBUTES*, uint, uint, HANDLE, HANDLE> CreateFile => &CreateFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DefineDosDevice"]/*' />
     [NativeTypeName("#define DefineDosDevice DefineDosDeviceW")]
     public static delegate*<uint, char*, char*, BOOL> DefineDosDevice => &DefineDosDeviceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteFile"]/*' />
     [NativeTypeName("#define DeleteFile DeleteFileW")]
     public static delegate*<char*, BOOL> DeleteFile => &DeleteFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteVolumeMountPoint"]/*' />
     [NativeTypeName("#define DeleteVolumeMountPoint DeleteVolumeMountPointW")]
     public static delegate*<char*, BOOL> DeleteVolumeMountPoint => &DeleteVolumeMountPointW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindFirstChangeNotification"]/*' />
     [NativeTypeName("#define FindFirstChangeNotification FindFirstChangeNotificationW")]
     public static delegate*<char*, BOOL, uint, HANDLE> FindFirstChangeNotification => &FindFirstChangeNotificationW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindFirstFile"]/*' />
     [NativeTypeName("#define FindFirstFile FindFirstFileW")]
     public static delegate*<char*, WIN32_FIND_DATAW*, HANDLE> FindFirstFile => &FindFirstFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindFirstFileEx"]/*' />
     [NativeTypeName("#define FindFirstFileEx FindFirstFileExW")]
     public static delegate*<char*, FINDEX_INFO_LEVELS, void*, FINDEX_SEARCH_OPS, void*, uint, HANDLE> FindFirstFileEx => &FindFirstFileExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindFirstVolume"]/*' />
     [NativeTypeName("#define FindFirstVolume FindFirstVolumeW")]
     public static delegate*<char*, uint, HANDLE> FindFirstVolume => &FindFirstVolumeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindNextFile"]/*' />
     [NativeTypeName("#define FindNextFile FindNextFileW")]
     public static delegate*<HANDLE, WIN32_FIND_DATAW*, BOOL> FindNextFile => &FindNextFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindNextVolume"]/*' />
     [NativeTypeName("#define FindNextVolume FindNextVolumeW")]
     public static delegate*<HANDLE, char*, uint, BOOL> FindNextVolume => &FindNextVolumeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDiskFreeSpace"]/*' />
     [NativeTypeName("#define GetDiskFreeSpace GetDiskFreeSpaceW")]
     public static delegate*<char*, uint*, uint*, uint*, uint*, BOOL> GetDiskFreeSpace => &GetDiskFreeSpaceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDiskFreeSpaceEx"]/*' />
     [NativeTypeName("#define GetDiskFreeSpaceEx GetDiskFreeSpaceExW")]
     public static delegate*<char*, ULARGE_INTEGER*, ULARGE_INTEGER*, ULARGE_INTEGER*, BOOL> GetDiskFreeSpaceEx => &GetDiskFreeSpaceExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDiskSpaceInformation"]/*' />
     [NativeTypeName("#define GetDiskSpaceInformation GetDiskSpaceInformationW")]
     [SupportedOSPlatform("windows10.0.17763.0")]
     public static delegate*<char*, DISK_SPACE_INFORMATION*, HRESULT> GetDiskSpaceInformation => &GetDiskSpaceInformationW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDriveType"]/*' />
     [NativeTypeName("#define GetDriveType GetDriveTypeW")]
     public static delegate*<char*, uint> GetDriveType => &GetDriveTypeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetFileAttributes"]/*' />
     [NativeTypeName("#define GetFileAttributes GetFileAttributesW")]
     public static delegate*<char*, uint> GetFileAttributes => &GetFileAttributesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetFileAttributesEx"]/*' />
     [NativeTypeName("#define GetFileAttributesEx GetFileAttributesExW")]
     public static delegate*<char*, GET_FILEEX_INFO_LEVELS, void*, BOOL> GetFileAttributesEx => &GetFileAttributesExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetFinalPathNameByHandle"]/*' />
     [NativeTypeName("#define GetFinalPathNameByHandle GetFinalPathNameByHandleW")]
     public static delegate*<HANDLE, char*, uint, uint, uint> GetFinalPathNameByHandle => &GetFinalPathNameByHandleW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetFullPathName"]/*' />
     [NativeTypeName("#define GetFullPathName GetFullPathNameW")]
     public static delegate*<char*, uint, char*, char**, uint> GetFullPathName => &GetFullPathNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetLogicalDriveStrings"]/*' />
     [NativeTypeName("#define GetLogicalDriveStrings GetLogicalDriveStringsW")]
     public static delegate*<uint, char*, uint> GetLogicalDriveStrings => &GetLogicalDriveStringsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetLongPathName"]/*' />
     [NativeTypeName("#define GetLongPathName GetLongPathNameW")]
     public static delegate*<char*, char*, uint, uint> GetLongPathName => &GetLongPathNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetShortPathName"]/*' />
     [NativeTypeName("#define GetShortPathName GetShortPathNameW")]
     public static delegate*<char*, char*, uint, uint> GetShortPathName => &GetShortPathNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTempFileName"]/*' />
     [NativeTypeName("#define GetTempFileName GetTempFileNameW")]
     public static delegate*<char*, char*, uint, char*, uint> GetTempFileName => &GetTempFileNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetVolumeInformation"]/*' />
     [NativeTypeName("#define GetVolumeInformation GetVolumeInformationW")]
     public static delegate*<char*, char*, uint, uint*, uint*, uint*, char*, uint, BOOL> GetVolumeInformation => &GetVolumeInformationW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetVolumePathName"]/*' />
     [NativeTypeName("#define GetVolumePathName GetVolumePathNameW")]
     public static delegate*<char*, char*, uint, BOOL> GetVolumePathName => &GetVolumePathNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.QueryDosDevice"]/*' />
     [NativeTypeName("#define QueryDosDevice QueryDosDeviceW")]
     public static delegate*<char*, char*, uint, uint> QueryDosDevice => &QueryDosDeviceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveDirectory"]/*' />
     [NativeTypeName("#define RemoveDirectory RemoveDirectoryW")]
     public static delegate*<char*, BOOL> RemoveDirectory => &RemoveDirectoryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetFileAttributes"]/*' />
     [NativeTypeName("#define SetFileAttributes SetFileAttributesW")]
     public static delegate*<char*, uint, BOOL> SetFileAttributes => &SetFileAttributesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTempPath"]/*' />
     [NativeTypeName("#define GetTempPath GetTempPathW")]
     public static delegate*<uint, char*, uint> GetTempPath => &GetTempPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetVolumeNameForVolumeMountPoint"]/*' />
     [NativeTypeName("#define GetVolumeNameForVolumeMountPoint GetVolumeNameForVolumeMountPointW")]
     public static delegate*<char*, char*, uint, BOOL> GetVolumeNameForVolumeMountPoint => &GetVolumeNameForVolumeMountPointW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetVolumePathNamesForVolumeName"]/*' />
     [NativeTypeName("#define GetVolumePathNamesForVolumeName GetVolumePathNamesForVolumeNameW")]
     public static delegate*<char*, char*, uint, uint*, BOOL> GetVolumePathNamesForVolumeName => &GetVolumePathNamesForVolumeNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCompressedFileSize"]/*' />
     [NativeTypeName("#define GetCompressedFileSize GetCompressedFileSizeW")]
     public static delegate*<char*, uint*, uint> GetCompressedFileSize => &GetCompressedFileSizeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTempPath2"]/*' />
     [NativeTypeName("#define GetTempPath2 GetTempPath2W")]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static delegate*<uint, char*, uint> GetTempPath2 => &GetTempPath2W;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDirectory2"]/*' />
     [NativeTypeName("#define CreateDirectory2 CreateDirectory2W")]
     [SupportedOSPlatform("windows10.0.26100.0")]
     public static delegate*<char*, uint, uint, DIRECTORY_FLAGS, SECURITY_ATTRIBUTES*, HANDLE> CreateDirectory2 => &CreateDirectory2W;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveDirectory2"]/*' />
     [NativeTypeName("#define RemoveDirectory2 RemoveDirectory2W")]
     [SupportedOSPlatform("windows10.0.26100.0")]
     public static delegate*<char*, DIRECTORY_FLAGS, BOOL> RemoveDirectory2 => &RemoveDirectory2W;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteFile2"]/*' />
     [NativeTypeName("#define DeleteFile2 DeleteFile2W")]
     [SupportedOSPlatform("windows10.0.26100.0")]
     public static delegate*<char*, uint, BOOL> DeleteFile2 => &DeleteFile2W;

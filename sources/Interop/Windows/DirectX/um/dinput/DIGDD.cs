@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DIGDD
 {
+    /// <include file='DIGDD.xml' path='doc/member[@name="DIGDD.DIGDD_PEEK"]/*' />
     [NativeTypeName("#define DIGDD_PEEK 0x00000001")]
     public const int DIGDD_PEEK = 0x00000001;
 }

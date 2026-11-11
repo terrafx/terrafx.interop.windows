@@ -7,36 +7,47 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DRAGDROP
 {
+    /// <include file='DRAGDROP.xml' path='doc/member[@name="DRAGDROP.DRAGDROP_E_FIRST"]/*' />
     [NativeTypeName("#define DRAGDROP_E_FIRST 0x80040100L")]
     public const uint DRAGDROP_E_FIRST = 0x80040100;
 
+    /// <include file='DRAGDROP.xml' path='doc/member[@name="DRAGDROP.DRAGDROP_E_LAST"]/*' />
     [NativeTypeName("#define DRAGDROP_E_LAST 0x8004010FL")]
     public const uint DRAGDROP_E_LAST = 0x8004010F;
 
+    /// <include file='DRAGDROP.xml' path='doc/member[@name="DRAGDROP.DRAGDROP_S_FIRST"]/*' />
     [NativeTypeName("#define DRAGDROP_S_FIRST 0x00040100L")]
     public const int DRAGDROP_S_FIRST = 0x00040100;
 
+    /// <include file='DRAGDROP.xml' path='doc/member[@name="DRAGDROP.DRAGDROP_S_LAST"]/*' />
     [NativeTypeName("#define DRAGDROP_S_LAST 0x0004010FL")]
     public const int DRAGDROP_S_LAST = 0x0004010F;
 
+    /// <include file='DRAGDROP.xml' path='doc/member[@name="DRAGDROP.DRAGDROP_E_NOTREGISTERED"]/*' />
     [NativeTypeName("#define DRAGDROP_E_NOTREGISTERED _HRESULT_TYPEDEF_(0x80040100L)")]
     public const int DRAGDROP_E_NOTREGISTERED = unchecked((int)(0x80040100));
 
+    /// <include file='DRAGDROP.xml' path='doc/member[@name="DRAGDROP.DRAGDROP_E_ALREADYREGISTERED"]/*' />
     [NativeTypeName("#define DRAGDROP_E_ALREADYREGISTERED _HRESULT_TYPEDEF_(0x80040101L)")]
     public const int DRAGDROP_E_ALREADYREGISTERED = unchecked((int)(0x80040101));
 
+    /// <include file='DRAGDROP.xml' path='doc/member[@name="DRAGDROP.DRAGDROP_E_INVALIDHWND"]/*' />
     [NativeTypeName("#define DRAGDROP_E_INVALIDHWND _HRESULT_TYPEDEF_(0x80040102L)")]
     public const int DRAGDROP_E_INVALIDHWND = unchecked((int)(0x80040102));
 
+    /// <include file='DRAGDROP.xml' path='doc/member[@name="DRAGDROP.DRAGDROP_E_CONCURRENT_DRAG_ATTEMPTED"]/*' />
     [NativeTypeName("#define DRAGDROP_E_CONCURRENT_DRAG_ATTEMPTED _HRESULT_TYPEDEF_(0x80040103L)")]
     public const int DRAGDROP_E_CONCURRENT_DRAG_ATTEMPTED = unchecked((int)(0x80040103));
 
+    /// <include file='DRAGDROP.xml' path='doc/member[@name="DRAGDROP.DRAGDROP_S_DROP"]/*' />
     [NativeTypeName("#define DRAGDROP_S_DROP _HRESULT_TYPEDEF_(0x00040100L)")]
     public const int DRAGDROP_S_DROP = ((int)(0x00040100));
 
+    /// <include file='DRAGDROP.xml' path='doc/member[@name="DRAGDROP.DRAGDROP_S_CANCEL"]/*' />
     [NativeTypeName("#define DRAGDROP_S_CANCEL _HRESULT_TYPEDEF_(0x00040101L)")]
     public const int DRAGDROP_S_CANCEL = ((int)(0x00040101));
 
+    /// <include file='DRAGDROP.xml' path='doc/member[@name="DRAGDROP.DRAGDROP_S_USEDEFAULTCURSORS"]/*' />
     [NativeTypeName("#define DRAGDROP_S_USEDEFAULTCURSORS _HRESULT_TYPEDEF_(0x00040102L)")]
     public const int DRAGDROP_S_USEDEFAULTCURSORS = ((int)(0x00040102));
 }

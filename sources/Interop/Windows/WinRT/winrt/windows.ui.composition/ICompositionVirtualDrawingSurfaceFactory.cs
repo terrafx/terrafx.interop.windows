@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICompositionVirtualDrawingSurfaceFactory : ICompositionVirtualDrawingSurfaceFactory.Interface, INativeGuid
 {
+    /// <include file='ICompositionVirtualDrawingSurfaceFactory.xml' path='doc/member[@name="ICompositionVirtualDrawingSurfaceFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICompositionVirtualDrawingSurfaceFactory);
 
     public void** lpVtbl;

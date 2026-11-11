@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IAgileObject : IAgileObject.Interface, INativeGuid
 {
+    /// <include file='IAgileObject.xml' path='doc/member[@name="IAgileObject.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAgileObject);
 
     public void** lpVtbl;

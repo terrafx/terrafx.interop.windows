@@ -1491,276 +1491,367 @@ public static unsafe partial class Windows
     [DllImport("oleaut32", ExactSpelling = true)]
     public static extern void OaEnablePerUserTLibRegistration();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STDOLE_MAJORVERNUM"]/*' />
     [NativeTypeName("#define STDOLE_MAJORVERNUM 0x1")]
     public const int STDOLE_MAJORVERNUM = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STDOLE_MINORVERNUM"]/*' />
     [NativeTypeName("#define STDOLE_MINORVERNUM 0x0")]
     public const int STDOLE_MINORVERNUM = 0x0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STDOLE_LCID"]/*' />
     [NativeTypeName("#define STDOLE_LCID 0x0000")]
     public const int STDOLE_LCID = 0x0000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STDOLE2_MAJORVERNUM"]/*' />
     [NativeTypeName("#define STDOLE2_MAJORVERNUM 0x2")]
     public const int STDOLE2_MAJORVERNUM = 0x2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STDOLE2_MINORVERNUM"]/*' />
     [NativeTypeName("#define STDOLE2_MINORVERNUM 0x0")]
     public const int STDOLE2_MINORVERNUM = 0x0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STDOLE2_LCID"]/*' />
     [NativeTypeName("#define STDOLE2_LCID 0x0000")]
     public const int STDOLE2_LCID = 0x0000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VARIANT_NOVALUEPROP"]/*' />
     [NativeTypeName("#define VARIANT_NOVALUEPROP 0x01")]
     public const int VARIANT_NOVALUEPROP = 0x01;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VARIANT_ALPHABOOL"]/*' />
     [NativeTypeName("#define VARIANT_ALPHABOOL 0x02")]
     public const int VARIANT_ALPHABOOL = 0x02;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VARIANT_NOUSEROVERRIDE"]/*' />
     [NativeTypeName("#define VARIANT_NOUSEROVERRIDE 0x04")]
     public const int VARIANT_NOUSEROVERRIDE = 0x04;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VARIANT_CALENDAR_HIJRI"]/*' />
     [NativeTypeName("#define VARIANT_CALENDAR_HIJRI 0x08")]
     public const int VARIANT_CALENDAR_HIJRI = 0x08;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VARIANT_LOCALBOOL"]/*' />
     [NativeTypeName("#define VARIANT_LOCALBOOL 0x10")]
     public const int VARIANT_LOCALBOOL = 0x10;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VARIANT_CALENDAR_THAI"]/*' />
     [NativeTypeName("#define VARIANT_CALENDAR_THAI 0x20")]
     public const int VARIANT_CALENDAR_THAI = 0x20;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VARIANT_CALENDAR_GREGORIAN"]/*' />
     [NativeTypeName("#define VARIANT_CALENDAR_GREGORIAN 0x40")]
     public const int VARIANT_CALENDAR_GREGORIAN = 0x40;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VARIANT_USE_NLS"]/*' />
     [NativeTypeName("#define VARIANT_USE_NLS 0x80")]
     public const int VARIANT_USE_NLS = 0x80;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VAR_TIMEVALUEONLY"]/*' />
     [NativeTypeName("#define VAR_TIMEVALUEONLY ((DWORD)0x00000001)")]
     public const uint VAR_TIMEVALUEONLY = ((uint)(0x00000001));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VAR_DATEVALUEONLY"]/*' />
     [NativeTypeName("#define VAR_DATEVALUEONLY ((DWORD)0x00000002)")]
     public const uint VAR_DATEVALUEONLY = ((uint)(0x00000002));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VAR_VALIDDATE"]/*' />
     [NativeTypeName("#define VAR_VALIDDATE ((DWORD)0x00000004)")]
     public const uint VAR_VALIDDATE = ((uint)(0x00000004));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VAR_CALENDAR_HIJRI"]/*' />
     [NativeTypeName("#define VAR_CALENDAR_HIJRI ((DWORD)0x00000008)")]
     public const uint VAR_CALENDAR_HIJRI = ((uint)(0x00000008));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VAR_LOCALBOOL"]/*' />
     [NativeTypeName("#define VAR_LOCALBOOL ((DWORD)0x00000010)")]
     public const uint VAR_LOCALBOOL = ((uint)(0x00000010));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VAR_FORMAT_NOSUBSTITUTE"]/*' />
     [NativeTypeName("#define VAR_FORMAT_NOSUBSTITUTE ((DWORD)0x00000020)")]
     public const uint VAR_FORMAT_NOSUBSTITUTE = ((uint)(0x00000020));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VAR_FOURDIGITYEARS"]/*' />
     [NativeTypeName("#define VAR_FOURDIGITYEARS ((DWORD)0x00000040)")]
     public const uint VAR_FOURDIGITYEARS = ((uint)(0x00000040));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VAR_CALENDAR_THAI"]/*' />
     [NativeTypeName("#define VAR_CALENDAR_THAI ((DWORD)0x00000080)")]
     public const uint VAR_CALENDAR_THAI = ((uint)(0x00000080));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VAR_CALENDAR_GREGORIAN"]/*' />
     [NativeTypeName("#define VAR_CALENDAR_GREGORIAN ((DWORD)0x00000100)")]
     public const uint VAR_CALENDAR_GREGORIAN = ((uint)(0x00000100));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VTDATEGRE_MAX"]/*' />
     [NativeTypeName("#define VTDATEGRE_MAX 2958465")]
     public const int VTDATEGRE_MAX = 2958465;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VTDATEGRE_MIN"]/*' />
     [NativeTypeName("#define VTDATEGRE_MIN -657434")]
     public const int VTDATEGRE_MIN = -657434;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUI1FromInt"]/*' />
     [NativeTypeName("#define VarUI1FromInt VarUI1FromI4")]
     public static delegate*<int, byte*, HRESULT> VarUI1FromInt => &VarUI1FromI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUI1FromUint"]/*' />
     [NativeTypeName("#define VarUI1FromUint VarUI1FromUI4")]
     public static delegate*<uint, byte*, HRESULT> VarUI1FromUint => &VarUI1FromUI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarI2FromInt"]/*' />
     [NativeTypeName("#define VarI2FromInt VarI2FromI4")]
     public static delegate*<int, short*, HRESULT> VarI2FromInt => &VarI2FromI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarI2FromUint"]/*' />
     [NativeTypeName("#define VarI2FromUint VarI2FromUI4")]
     public static delegate*<uint, short*, HRESULT> VarI2FromUint => &VarI2FromUI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarI4FromUint"]/*' />
     [NativeTypeName("#define VarI4FromUint VarI4FromUI4")]
     public static delegate*<uint, int*, HRESULT> VarI4FromUint => &VarI4FromUI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarI8FromUint"]/*' />
     [NativeTypeName("#define VarI8FromUint VarI8FromUI4")]
     public static delegate*<uint, long*, HRESULT> VarI8FromUint => &VarI8FromUI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarR4FromInt"]/*' />
     [NativeTypeName("#define VarR4FromInt VarR4FromI4")]
     public static delegate*<int, float*, HRESULT> VarR4FromInt => &VarR4FromI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarR4FromUint"]/*' />
     [NativeTypeName("#define VarR4FromUint VarR4FromUI4")]
     public static delegate*<uint, float*, HRESULT> VarR4FromUint => &VarR4FromUI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarR8FromInt"]/*' />
     [NativeTypeName("#define VarR8FromInt VarR8FromI4")]
     public static delegate*<int, double*, HRESULT> VarR8FromInt => &VarR8FromI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarR8FromUint"]/*' />
     [NativeTypeName("#define VarR8FromUint VarR8FromUI4")]
     public static delegate*<uint, double*, HRESULT> VarR8FromUint => &VarR8FromUI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarDateFromInt"]/*' />
     [NativeTypeName("#define VarDateFromInt VarDateFromI4")]
     public static delegate*<int, double*, HRESULT> VarDateFromInt => &VarDateFromI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarDateFromUint"]/*' />
     [NativeTypeName("#define VarDateFromUint VarDateFromUI4")]
     public static delegate*<uint, double*, HRESULT> VarDateFromUint => &VarDateFromUI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarCyFromInt"]/*' />
     [NativeTypeName("#define VarCyFromInt VarCyFromI4")]
     public static delegate*<int, CY*, HRESULT> VarCyFromInt => &VarCyFromI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarCyFromUint"]/*' />
     [NativeTypeName("#define VarCyFromUint VarCyFromUI4")]
     public static delegate*<uint, CY*, HRESULT> VarCyFromUint => &VarCyFromUI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromInt"]/*' />
     [NativeTypeName("#define VarBstrFromInt VarBstrFromI4")]
     public static delegate*<int, uint, uint, char**, HRESULT> VarBstrFromInt => &VarBstrFromI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBstrFromUint"]/*' />
     [NativeTypeName("#define VarBstrFromUint VarBstrFromUI4")]
     public static delegate*<uint, uint, uint, char**, HRESULT> VarBstrFromUint => &VarBstrFromUI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBoolFromInt"]/*' />
     [NativeTypeName("#define VarBoolFromInt VarBoolFromI4")]
     public static delegate*<int, short*, HRESULT> VarBoolFromInt => &VarBoolFromI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarBoolFromUint"]/*' />
     [NativeTypeName("#define VarBoolFromUint VarBoolFromUI4")]
     public static delegate*<uint, short*, HRESULT> VarBoolFromUint => &VarBoolFromUI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarI1FromInt"]/*' />
     [NativeTypeName("#define VarI1FromInt VarI1FromI4")]
     public static delegate*<int, sbyte*, HRESULT> VarI1FromInt => &VarI1FromI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarI1FromUint"]/*' />
     [NativeTypeName("#define VarI1FromUint VarI1FromUI4")]
     public static delegate*<uint, sbyte*, HRESULT> VarI1FromUint => &VarI1FromUI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUI2FromInt"]/*' />
     [NativeTypeName("#define VarUI2FromInt VarUI2FromI4")]
     public static delegate*<int, ushort*, HRESULT> VarUI2FromInt => &VarUI2FromI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUI2FromUint"]/*' />
     [NativeTypeName("#define VarUI2FromUint VarUI2FromUI4")]
     public static delegate*<uint, ushort*, HRESULT> VarUI2FromUint => &VarUI2FromUI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUI4FromInt"]/*' />
     [NativeTypeName("#define VarUI4FromInt VarUI4FromI4")]
     public static delegate*<int, uint*, HRESULT> VarUI4FromInt => &VarUI4FromI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarDecFromInt"]/*' />
     [NativeTypeName("#define VarDecFromInt VarDecFromI4")]
     public static delegate*<int, DECIMAL*, HRESULT> VarDecFromInt => &VarDecFromI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarDecFromUint"]/*' />
     [NativeTypeName("#define VarDecFromUint VarDecFromUI4")]
     public static delegate*<uint, DECIMAL*, HRESULT> VarDecFromUint => &VarDecFromUI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarIntFromUI1"]/*' />
     [NativeTypeName("#define VarIntFromUI1 VarI4FromUI1")]
     public static delegate*<byte, int*, HRESULT> VarIntFromUI1 => &VarI4FromUI1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarIntFromI2"]/*' />
     [NativeTypeName("#define VarIntFromI2 VarI4FromI2")]
     public static delegate*<short, int*, HRESULT> VarIntFromI2 => &VarI4FromI2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarIntFromI8"]/*' />
     [NativeTypeName("#define VarIntFromI8 VarI4FromI8")]
     public static delegate*<long, int*, HRESULT> VarIntFromI8 => &VarI4FromI8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarIntFromR4"]/*' />
     [NativeTypeName("#define VarIntFromR4 VarI4FromR4")]
     public static delegate*<float, int*, HRESULT> VarIntFromR4 => &VarI4FromR4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarIntFromR8"]/*' />
     [NativeTypeName("#define VarIntFromR8 VarI4FromR8")]
     public static delegate*<double, int*, HRESULT> VarIntFromR8 => &VarI4FromR8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarIntFromDate"]/*' />
     [NativeTypeName("#define VarIntFromDate VarI4FromDate")]
     public static delegate*<double, int*, HRESULT> VarIntFromDate => &VarI4FromDate;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarIntFromCy"]/*' />
     [NativeTypeName("#define VarIntFromCy VarI4FromCy")]
     public static delegate*<CY, int*, HRESULT> VarIntFromCy => &VarI4FromCy;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarIntFromStr"]/*' />
     [NativeTypeName("#define VarIntFromStr VarI4FromStr")]
     public static delegate*<char*, uint, uint, int*, HRESULT> VarIntFromStr => &VarI4FromStr;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarIntFromDisp"]/*' />
     [NativeTypeName("#define VarIntFromDisp VarI4FromDisp")]
     public static delegate*<IDispatch*, uint, int*, HRESULT> VarIntFromDisp => &VarI4FromDisp;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarIntFromBool"]/*' />
     [NativeTypeName("#define VarIntFromBool VarI4FromBool")]
     public static delegate*<short, int*, HRESULT> VarIntFromBool => &VarI4FromBool;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarIntFromI1"]/*' />
     [NativeTypeName("#define VarIntFromI1 VarI4FromI1")]
     public static delegate*<sbyte, int*, HRESULT> VarIntFromI1 => &VarI4FromI1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarIntFromUI2"]/*' />
     [NativeTypeName("#define VarIntFromUI2 VarI4FromUI2")]
     public static delegate*<ushort, int*, HRESULT> VarIntFromUI2 => &VarI4FromUI2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarIntFromUI4"]/*' />
     [NativeTypeName("#define VarIntFromUI4 VarI4FromUI4")]
     public static delegate*<uint, int*, HRESULT> VarIntFromUI4 => &VarI4FromUI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarIntFromUI8"]/*' />
     [NativeTypeName("#define VarIntFromUI8 VarI4FromUI8")]
     public static delegate*<ulong, int*, HRESULT> VarIntFromUI8 => &VarI4FromUI8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarIntFromDec"]/*' />
     [NativeTypeName("#define VarIntFromDec VarI4FromDec")]
     public static delegate*<DECIMAL*, int*, HRESULT> VarIntFromDec => &VarI4FromDec;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarIntFromUint"]/*' />
     [NativeTypeName("#define VarIntFromUint VarI4FromUI4")]
     public static delegate*<uint, int*, HRESULT> VarIntFromUint => &VarI4FromUI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUintFromUI1"]/*' />
     [NativeTypeName("#define VarUintFromUI1 VarUI4FromUI1")]
     public static delegate*<byte, uint*, HRESULT> VarUintFromUI1 => &VarUI4FromUI1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUintFromI2"]/*' />
     [NativeTypeName("#define VarUintFromI2 VarUI4FromI2")]
     public static delegate*<short, uint*, HRESULT> VarUintFromI2 => &VarUI4FromI2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUintFromI4"]/*' />
     [NativeTypeName("#define VarUintFromI4 VarUI4FromI4")]
     public static delegate*<int, uint*, HRESULT> VarUintFromI4 => &VarUI4FromI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUintFromI8"]/*' />
     [NativeTypeName("#define VarUintFromI8 VarUI4FromI8")]
     public static delegate*<long, uint*, HRESULT> VarUintFromI8 => &VarUI4FromI8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUintFromR4"]/*' />
     [NativeTypeName("#define VarUintFromR4 VarUI4FromR4")]
     public static delegate*<float, uint*, HRESULT> VarUintFromR4 => &VarUI4FromR4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUintFromR8"]/*' />
     [NativeTypeName("#define VarUintFromR8 VarUI4FromR8")]
     public static delegate*<double, uint*, HRESULT> VarUintFromR8 => &VarUI4FromR8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUintFromDate"]/*' />
     [NativeTypeName("#define VarUintFromDate VarUI4FromDate")]
     public static delegate*<double, uint*, HRESULT> VarUintFromDate => &VarUI4FromDate;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUintFromCy"]/*' />
     [NativeTypeName("#define VarUintFromCy VarUI4FromCy")]
     public static delegate*<CY, uint*, HRESULT> VarUintFromCy => &VarUI4FromCy;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUintFromStr"]/*' />
     [NativeTypeName("#define VarUintFromStr VarUI4FromStr")]
     public static delegate*<char*, uint, uint, uint*, HRESULT> VarUintFromStr => &VarUI4FromStr;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUintFromDisp"]/*' />
     [NativeTypeName("#define VarUintFromDisp VarUI4FromDisp")]
     public static delegate*<IDispatch*, uint, uint*, HRESULT> VarUintFromDisp => &VarUI4FromDisp;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUintFromBool"]/*' />
     [NativeTypeName("#define VarUintFromBool VarUI4FromBool")]
     public static delegate*<short, uint*, HRESULT> VarUintFromBool => &VarUI4FromBool;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUintFromI1"]/*' />
     [NativeTypeName("#define VarUintFromI1 VarUI4FromI1")]
     public static delegate*<sbyte, uint*, HRESULT> VarUintFromI1 => &VarUI4FromI1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUintFromUI2"]/*' />
     [NativeTypeName("#define VarUintFromUI2 VarUI4FromUI2")]
     public static delegate*<ushort, uint*, HRESULT> VarUintFromUI2 => &VarUI4FromUI2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUintFromUI8"]/*' />
     [NativeTypeName("#define VarUintFromUI8 VarUI4FromUI8")]
     public static delegate*<ulong, uint*, HRESULT> VarUintFromUI8 => &VarUI4FromUI8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUintFromDec"]/*' />
     [NativeTypeName("#define VarUintFromDec VarUI4FromDec")]
     public static delegate*<DECIMAL*, uint*, HRESULT> VarUintFromDec => &VarUI4FromDec;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VarUintFromInt"]/*' />
     [NativeTypeName("#define VarUintFromInt VarUI4FromI4")]
     public static delegate*<int, uint*, HRESULT> VarUintFromInt => &VarUI4FromI4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.VT_HARDTYPE"]/*' />
     [NativeTypeName("#define VT_HARDTYPE VT_RESERVED")]
     public const VARENUM VT_HARDTYPE = VT_RESERVED;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEMBERID_NIL"]/*' />
     [NativeTypeName("#define MEMBERID_NIL DISPID_UNKNOWN")]
     public const int MEMBERID_NIL = (-1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DISPATCH_METHOD"]/*' />
     [NativeTypeName("#define DISPATCH_METHOD 0x1")]
     public const int DISPATCH_METHOD = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DISPATCH_PROPERTYGET"]/*' />
     [NativeTypeName("#define DISPATCH_PROPERTYGET 0x2")]
     public const int DISPATCH_PROPERTYGET = 0x2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DISPATCH_PROPERTYPUT"]/*' />
     [NativeTypeName("#define DISPATCH_PROPERTYPUT 0x4")]
     public const int DISPATCH_PROPERTYPUT = 0x4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DISPATCH_PROPERTYPUTREF"]/*' />
     [NativeTypeName("#define DISPATCH_PROPERTYPUTREF 0x8")]
     public const int DISPATCH_PROPERTYPUTREF = 0x8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MASK_TO_RESET_TLB_BITS"]/*' />
     [NativeTypeName("#define MASK_TO_RESET_TLB_BITS ~(LOAD_TLB_AS_32BIT | LOAD_TLB_AS_64BIT)")]
     public const int MASK_TO_RESET_TLB_BITS = ~(0x20 | 0x40);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ACTIVEOBJECT_STRONG"]/*' />
     [NativeTypeName("#define ACTIVEOBJECT_STRONG 0x0")]
     public const int ACTIVEOBJECT_STRONG = 0x0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ACTIVEOBJECT_WEAK"]/*' />
     [NativeTypeName("#define ACTIVEOBJECT_WEAK 0x1")]
     public const int ACTIVEOBJECT_WEAK = 0x1;
 }

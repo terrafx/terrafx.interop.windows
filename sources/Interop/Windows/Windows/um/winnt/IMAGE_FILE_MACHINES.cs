@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_FILE_MACHINES
 {
     /// <include file='IMAGE_FILE_MACHINES.xml' path='doc/member[@name="IMAGE_FILE_MACHINES.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L25509_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L26353_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Value"]/*' />
@@ -118,7 +118,7 @@ public partial struct IMAGE_FILE_MACHINES
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L25512_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L26356_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

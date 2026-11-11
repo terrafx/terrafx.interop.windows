@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_NERR"]/*' />
     [NativeTypeName("#define MAX_NERR (NERR_BASE+899)")]
     public const int MAX_NERR = (2100 + 899);
 }

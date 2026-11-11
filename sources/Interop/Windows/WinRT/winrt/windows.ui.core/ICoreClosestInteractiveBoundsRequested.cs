@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreClosestInteractiveBoundsRequested : ICoreClosestInteractiveBoundsRequested.Interface, INativeGuid
 {
+    /// <include file='ICoreClosestInteractiveBoundsRequested.xml' path='doc/member[@name="ICoreClosestInteractiveBoundsRequested.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreClosestInteractiveBoundsRequested);
 
     public void** lpVtbl;

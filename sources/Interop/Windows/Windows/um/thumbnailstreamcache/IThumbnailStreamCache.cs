@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IThumbnailStreamCache : IThumbnailStreamCache.Interface, INativeGuid
 {
+    /// <include file='IThumbnailStreamCache.xml' path='doc/member[@name="IThumbnailStreamCache.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IThumbnailStreamCache);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IExecuteCommand : IExecuteCommand.Interface, INativeGuid
 {
+    /// <include file='IExecuteCommand.xml' path='doc/member[@name="IExecuteCommand.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IExecuteCommand);
 
     public void** lpVtbl;

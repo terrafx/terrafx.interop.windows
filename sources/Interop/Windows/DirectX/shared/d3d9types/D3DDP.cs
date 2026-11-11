@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DDP
 {
+    /// <include file='D3DDP.xml' path='doc/member[@name="D3DDP.D3DDP_MAXTEXCOORD"]/*' />
     [NativeTypeName("#define D3DDP_MAXTEXCOORD 8")]
     public const int D3DDP_MAXTEXCOORD = 8;
 }

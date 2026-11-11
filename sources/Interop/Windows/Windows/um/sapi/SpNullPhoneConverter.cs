@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("455F24E9-7396-4A16-9715-7C0FDBE3EFE3")]
 public unsafe partial struct SpNullPhoneConverter : INativeGuid
 {
+    /// <include file='SpNullPhoneConverter.xml' path='doc/member[@name="SpNullPhoneConverter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SpNullPhoneConverter);
 }

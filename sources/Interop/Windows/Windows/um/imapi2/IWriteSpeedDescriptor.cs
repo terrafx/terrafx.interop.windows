@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IWriteSpeedDescriptor : IWriteSpeedDescriptor.Interface, INativeGuid
 {
+    /// <include file='IWriteSpeedDescriptor.xml' path='doc/member[@name="IWriteSpeedDescriptor.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWriteSpeedDescriptor);
 
     public void** lpVtbl;

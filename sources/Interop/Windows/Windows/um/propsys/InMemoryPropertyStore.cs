@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("9A02E012-6303-4E1E-B9A1-630F802592C5")]
 public unsafe partial struct InMemoryPropertyStore : INativeGuid
 {
+    /// <include file='InMemoryPropertyStore.xml' path='doc/member[@name="InMemoryPropertyStore.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_InMemoryPropertyStore);
 }

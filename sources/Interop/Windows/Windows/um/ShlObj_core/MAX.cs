@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_COLUMN_NAME_LEN"]/*' />
     [NativeTypeName("#define MAX_COLUMN_NAME_LEN 80")]
     public const int MAX_COLUMN_NAME_LEN = 80;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_COLUMN_DESC_LEN"]/*' />
     [NativeTypeName("#define MAX_COLUMN_DESC_LEN 128")]
     public const int MAX_COLUMN_DESC_LEN = 128;
 }

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IHTMLPainter : IHTMLPainter.Interface, INativeGuid
 {
+    /// <include file='IHTMLPainter.xml' path='doc/member[@name="IHTMLPainter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHTMLPainter);
 
     public void** lpVtbl;

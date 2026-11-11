@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMLOperatorKernelFactory : IMLOperatorKernelFactory.Interface, INativeGuid
 {
+    /// <include file='IMLOperatorKernelFactory.xml' path='doc/member[@name="IMLOperatorKernelFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMLOperatorKernelFactory);
 
     public void** lpVtbl;

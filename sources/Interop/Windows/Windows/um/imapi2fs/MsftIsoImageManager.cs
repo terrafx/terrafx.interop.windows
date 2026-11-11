@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("CEEE3B62-8F56-4056-869B-EF16917E3EFC")]
 public unsafe partial struct MsftIsoImageManager : INativeGuid
 {
+    /// <include file='MsftIsoImageManager.xml' path='doc/member[@name="MsftIsoImageManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_MsftIsoImageManager);
 }

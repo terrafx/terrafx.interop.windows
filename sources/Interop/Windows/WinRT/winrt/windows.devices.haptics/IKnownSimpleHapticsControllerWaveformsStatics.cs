@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IKnownSimpleHapticsControllerWaveformsStatics : IKnownSimpleHapticsControllerWaveformsStatics.Interface, INativeGuid
 {
+    /// <include file='IKnownSimpleHapticsControllerWaveformsStatics.xml' path='doc/member[@name="IKnownSimpleHapticsControllerWaveformsStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IKnownSimpleHapticsControllerWaveformsStatics);
 
     public void** lpVtbl;

@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAXIMUM
 {
+    /// <include file='MAXIMUM.xml' path='doc/member[@name="MAXIMUM.MAXIMUM_CAPES_PER_CAP"]/*' />
     [NativeTypeName("#define MAXIMUM_CAPES_PER_CAP 0x7F")]
     public const int MAXIMUM_CAPES_PER_CAP = 0x7F;
 }

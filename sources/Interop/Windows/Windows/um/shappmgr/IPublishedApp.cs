@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IShellApp")]
 public unsafe partial struct IPublishedApp : IPublishedApp.Interface, INativeGuid
 {
+    /// <include file='IPublishedApp.xml' path='doc/member[@name="IPublishedApp.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPublishedApp);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreApplicationUseCount : ICoreApplicationUseCount.Interface, INativeGuid
 {
+    /// <include file='ICoreApplicationUseCount.xml' path='doc/member[@name="ICoreApplicationUseCount.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreApplicationUseCount);
 
     public void** lpVtbl;

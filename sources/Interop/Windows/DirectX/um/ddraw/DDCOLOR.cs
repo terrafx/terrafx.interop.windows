@@ -7,24 +7,31 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDCOLOR
 {
+    /// <include file='DDCOLOR.xml' path='doc/member[@name="DDCOLOR.DDCOLOR_BRIGHTNESS"]/*' />
     [NativeTypeName("#define DDCOLOR_BRIGHTNESS 0x00000001l")]
     public const int DDCOLOR_BRIGHTNESS = 0x00000001;
 
+    /// <include file='DDCOLOR.xml' path='doc/member[@name="DDCOLOR.DDCOLOR_CONTRAST"]/*' />
     [NativeTypeName("#define DDCOLOR_CONTRAST 0x00000002l")]
     public const int DDCOLOR_CONTRAST = 0x00000002;
 
+    /// <include file='DDCOLOR.xml' path='doc/member[@name="DDCOLOR.DDCOLOR_HUE"]/*' />
     [NativeTypeName("#define DDCOLOR_HUE 0x00000004l")]
     public const int DDCOLOR_HUE = 0x00000004;
 
+    /// <include file='DDCOLOR.xml' path='doc/member[@name="DDCOLOR.DDCOLOR_SATURATION"]/*' />
     [NativeTypeName("#define DDCOLOR_SATURATION 0x00000008l")]
     public const int DDCOLOR_SATURATION = 0x00000008;
 
+    /// <include file='DDCOLOR.xml' path='doc/member[@name="DDCOLOR.DDCOLOR_SHARPNESS"]/*' />
     [NativeTypeName("#define DDCOLOR_SHARPNESS 0x00000010l")]
     public const int DDCOLOR_SHARPNESS = 0x00000010;
 
+    /// <include file='DDCOLOR.xml' path='doc/member[@name="DDCOLOR.DDCOLOR_GAMMA"]/*' />
     [NativeTypeName("#define DDCOLOR_GAMMA 0x00000020l")]
     public const int DDCOLOR_GAMMA = 0x00000020;
 
+    /// <include file='DDCOLOR.xml' path='doc/member[@name="DDCOLOR.DDCOLOR_COLORENABLE"]/*' />
     [NativeTypeName("#define DDCOLOR_COLORENABLE 0x00000040l")]
     public const int DDCOLOR_COLORENABLE = 0x00000040;
 }

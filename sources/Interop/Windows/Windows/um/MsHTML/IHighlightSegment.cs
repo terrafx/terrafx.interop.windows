@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ISegment")]
 public unsafe partial struct IHighlightSegment : IHighlightSegment.Interface, INativeGuid
 {
+    /// <include file='IHighlightSegment.xml' path='doc/member[@name="IHighlightSegment.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHighlightSegment);
 
     public void** lpVtbl;

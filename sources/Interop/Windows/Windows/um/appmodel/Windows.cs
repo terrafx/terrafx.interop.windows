@@ -206,6 +206,14 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.3")]
     public static extern int GetStagedPackageOrigin([NativeTypeName("PCWSTR")] char* packageFullName, PackageOrigin* origin);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetStagedPackageOrigin2"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    public static extern HRESULT GetStagedPackageOrigin2([NativeTypeName("PCWSTR")] char* packageFullName, [NativeTypeName("PackageOrigin2 *")] _PackageOrigin2* origin);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsPackageFeatureSupported"]/*' />
+    [DllImport("kernelbase", ExactSpelling = true)]
+    public static extern BOOL IsPackageFeatureSupported(AppModelPackageFeature feature);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCurrentPackageInfo"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]

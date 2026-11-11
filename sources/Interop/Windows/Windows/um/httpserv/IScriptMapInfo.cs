@@ -14,6 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("D7FE3D77-68BC-4D4A-851F-EEC9FB68017C")]
 public unsafe partial struct IScriptMapInfo : IScriptMapInfo.Interface, INativeGuid
 {
+    /// <include file='IScriptMapInfo.xml' path='doc/member[@name="IScriptMapInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IScriptMapInfo);
 
     public void** lpVtbl;

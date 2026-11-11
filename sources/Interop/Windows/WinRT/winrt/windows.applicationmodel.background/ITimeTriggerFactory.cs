@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ITimeTriggerFactory : ITimeTriggerFactory.Interface, INativeGuid
 {
+    /// <include file='ITimeTriggerFactory.xml' path='doc/member[@name="ITimeTriggerFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITimeTriggerFactory);
 
     public void** lpVtbl;

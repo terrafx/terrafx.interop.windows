@@ -7,24 +7,31 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CONTEXT
 {
+    /// <include file='CONTEXT.xml' path='doc/member[@name="CONTEXT.CONTEXT_EXCEPTION_ACTIVE"]/*' />
     [NativeTypeName("#define CONTEXT_EXCEPTION_ACTIVE 0x08000000L")]
     public const int CONTEXT_EXCEPTION_ACTIVE = 0x08000000;
 
+    /// <include file='CONTEXT.xml' path='doc/member[@name="CONTEXT.CONTEXT_SERVICE_ACTIVE"]/*' />
     [NativeTypeName("#define CONTEXT_SERVICE_ACTIVE 0x10000000L")]
     public const int CONTEXT_SERVICE_ACTIVE = 0x10000000;
 
+    /// <include file='CONTEXT.xml' path='doc/member[@name="CONTEXT.CONTEXT_EXCEPTION_REQUEST"]/*' />
     [NativeTypeName("#define CONTEXT_EXCEPTION_REQUEST 0x40000000L")]
     public const int CONTEXT_EXCEPTION_REQUEST = 0x40000000;
 
+    /// <include file='CONTEXT.xml' path='doc/member[@name="CONTEXT.CONTEXT_EXCEPTION_REPORTING"]/*' />
     [NativeTypeName("#define CONTEXT_EXCEPTION_REPORTING 0x80000000L")]
     public const uint CONTEXT_EXCEPTION_REPORTING = 0x80000000;
 
+    /// <include file='CONTEXT.xml' path='doc/member[@name="CONTEXT.CONTEXT_ARM64_XSTATE"]/*' />
     [NativeTypeName("#define CONTEXT_ARM64_XSTATE (CONTEXT_ARM64 | 0x20L)")]
     public const int CONTEXT_ARM64_XSTATE = (0x00400000 | 0x20);
 
+    /// <include file='CONTEXT.xml' path='doc/member[@name="CONTEXT.CONTEXT_ARM64_FLOATING_POINT_LOW"]/*' />
     [NativeTypeName("#define CONTEXT_ARM64_FLOATING_POINT_LOW (CONTEXT_ARM64 | 0x40L)")]
     public const int CONTEXT_ARM64_FLOATING_POINT_LOW = (0x00400000 | 0x40);
 
+    /// <include file='CONTEXT.xml' path='doc/member[@name="CONTEXT.CONTEXT_ARM64_FLOATING_POINT_HIGH"]/*' />
     [NativeTypeName("#define CONTEXT_ARM64_FLOATING_POINT_HIGH (CONTEXT_ARM64 | 0x80L)")]
     public const int CONTEXT_ARM64_FLOATING_POINT_HIGH = (0x00400000 | 0x80);
 }

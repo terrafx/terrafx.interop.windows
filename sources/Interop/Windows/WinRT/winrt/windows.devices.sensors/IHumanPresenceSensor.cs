@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IHumanPresenceSensor : IHumanPresenceSensor.Interface, INativeGuid
 {
+    /// <include file='IHumanPresenceSensor.xml' path='doc/member[@name="IHumanPresenceSensor.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHumanPresenceSensor);
 
     public void** lpVtbl;

@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IVector2NaturalMotionAnimation : IVector2NaturalMotionAnimation.Interface, INativeGuid
 {
+    /// <include file='IVector2NaturalMotionAnimation.xml' path='doc/member[@name="IVector2NaturalMotionAnimation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVector2NaturalMotionAnimation);
 
     public void** lpVtbl;

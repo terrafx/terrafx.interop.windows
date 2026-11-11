@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFCaptureEngineOnEventCallback : IMFCaptureEngineOnEventCallback.Interface, INativeGuid
 {
+    /// <include file='IMFCaptureEngineOnEventCallback.xml' path='doc/member[@name="IMFCaptureEngineOnEventCallback.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFCaptureEngineOnEventCallback);
 
     public void** lpVtbl;

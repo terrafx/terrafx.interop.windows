@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IInputPane2 : IInputPane2.Interface, INativeGuid
 {
+    /// <include file='IInputPane2.xml' path='doc/member[@name="IInputPane2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInputPane2);
 
     public void** lpVtbl;

@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MIDIERR
 {
+    /// <include file='MIDIERR.xml' path='doc/member[@name="MIDIERR.MIDIERR_BASE"]/*' />
     [NativeTypeName("#define MIDIERR_BASE 64")]
     public const int MIDIERR_BASE = 64;
 }

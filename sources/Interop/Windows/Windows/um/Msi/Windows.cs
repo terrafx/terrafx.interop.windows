@@ -675,252 +675,335 @@ public static unsafe partial class Windows
     [DllImport("msi", ExactSpelling = true)]
     public static extern uint MsiJoinTransaction(MSIHANDLE hTransactionHandle, [NativeTypeName("DWORD")] uint dwTransactionAttributes, HANDLE* phChangeOfOwnerEvent);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSetExternalUI"]/*' />
     [NativeTypeName("#define MsiSetExternalUI MsiSetExternalUIW")]
     public static delegate*<delegate* unmanaged<void*, uint, char*, int>, uint, void*, delegate* unmanaged<void*, uint, char*, int>> MsiSetExternalUI => &MsiSetExternalUIW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnableLog"]/*' />
     [NativeTypeName("#define MsiEnableLog MsiEnableLogW")]
     public static delegate*<uint, char*, uint, uint> MsiEnableLog => &MsiEnableLogW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiQueryProductState"]/*' />
     [NativeTypeName("#define MsiQueryProductState MsiQueryProductStateW")]
     public static delegate*<char*, INSTALLSTATE> MsiQueryProductState => &MsiQueryProductStateW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetProductInfo"]/*' />
     [NativeTypeName("#define MsiGetProductInfo MsiGetProductInfoW")]
     public static delegate*<char*, char*, char*, uint*, uint> MsiGetProductInfo => &MsiGetProductInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetProductInfoEx"]/*' />
     [NativeTypeName("#define MsiGetProductInfoEx MsiGetProductInfoExW")]
     public static delegate*<char*, char*, MSIINSTALLCONTEXT, char*, char*, uint*, uint> MsiGetProductInfoEx => &MsiGetProductInfoExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiInstallProduct"]/*' />
     [NativeTypeName("#define MsiInstallProduct MsiInstallProductW")]
     public static delegate*<char*, char*, uint> MsiInstallProduct => &MsiInstallProductW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiConfigureProduct"]/*' />
     [NativeTypeName("#define MsiConfigureProduct MsiConfigureProductW")]
     public static delegate*<char*, int, INSTALLSTATE, uint> MsiConfigureProduct => &MsiConfigureProductW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiConfigureProductEx"]/*' />
     [NativeTypeName("#define MsiConfigureProductEx MsiConfigureProductExW")]
     public static delegate*<char*, int, INSTALLSTATE, char*, uint> MsiConfigureProductEx => &MsiConfigureProductExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiReinstallProduct"]/*' />
     [NativeTypeName("#define MsiReinstallProduct MsiReinstallProductW")]
     public static delegate*<char*, uint, uint> MsiReinstallProduct => &MsiReinstallProductW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiAdvertiseProductEx"]/*' />
     [NativeTypeName("#define MsiAdvertiseProductEx MsiAdvertiseProductExW")]
     public static delegate*<char*, char*, char*, ushort, uint, uint, uint> MsiAdvertiseProductEx => &MsiAdvertiseProductExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiAdvertiseProduct"]/*' />
     [NativeTypeName("#define MsiAdvertiseProduct MsiAdvertiseProductW")]
     public static delegate*<char*, char*, char*, ushort, uint> MsiAdvertiseProduct => &MsiAdvertiseProductW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiProcessAdvertiseScript"]/*' />
     [NativeTypeName("#define MsiProcessAdvertiseScript MsiProcessAdvertiseScriptW")]
     public static delegate*<char*, char*, HKEY, BOOL, BOOL, uint> MsiProcessAdvertiseScript => &MsiProcessAdvertiseScriptW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiAdvertiseScript"]/*' />
     [NativeTypeName("#define MsiAdvertiseScript MsiAdvertiseScriptW")]
     public static delegate*<char*, uint, HKEY*, BOOL, uint> MsiAdvertiseScript => &MsiAdvertiseScriptW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetProductInfoFromScript"]/*' />
     [NativeTypeName("#define MsiGetProductInfoFromScript MsiGetProductInfoFromScriptW")]
     public static delegate*<char*, char*, ushort*, uint*, char*, uint*, char*, uint*, uint> MsiGetProductInfoFromScript => &MsiGetProductInfoFromScriptW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetProductCode"]/*' />
     [NativeTypeName("#define MsiGetProductCode MsiGetProductCodeW")]
     public static delegate*<char*, char*, uint> MsiGetProductCode => &MsiGetProductCodeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetUserInfo"]/*' />
     [NativeTypeName("#define MsiGetUserInfo MsiGetUserInfoW")]
     public static delegate*<char*, char*, uint*, char*, uint*, char*, uint*, USERINFOSTATE> MsiGetUserInfo => &MsiGetUserInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiCollectUserInfo"]/*' />
     [NativeTypeName("#define MsiCollectUserInfo MsiCollectUserInfoW")]
     public static delegate*<char*, uint> MsiCollectUserInfo => &MsiCollectUserInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiApplyPatch"]/*' />
     [NativeTypeName("#define MsiApplyPatch MsiApplyPatchW")]
     public static delegate*<char*, char*, INSTALLTYPE, char*, uint> MsiApplyPatch => &MsiApplyPatchW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetPatchInfo"]/*' />
     [NativeTypeName("#define MsiGetPatchInfo MsiGetPatchInfoW")]
     public static delegate*<char*, char*, char*, uint*, uint> MsiGetPatchInfo => &MsiGetPatchInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumPatches"]/*' />
     [NativeTypeName("#define MsiEnumPatches MsiEnumPatchesW")]
     public static delegate*<char*, uint, char*, char*, uint*, uint> MsiEnumPatches => &MsiEnumPatchesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiRemovePatches"]/*' />
     [NativeTypeName("#define MsiRemovePatches MsiRemovePatchesW")]
     public static delegate*<char*, char*, INSTALLTYPE, char*, uint> MsiRemovePatches => &MsiRemovePatchesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiExtractPatchXMLData"]/*' />
     [NativeTypeName("#define MsiExtractPatchXMLData MsiExtractPatchXMLDataW")]
     public static delegate*<char*, uint, char*, uint*, uint> MsiExtractPatchXMLData => &MsiExtractPatchXMLDataW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetPatchInfoEx"]/*' />
     [NativeTypeName("#define MsiGetPatchInfoEx MsiGetPatchInfoExW")]
     public static delegate*<char*, char*, char*, MSIINSTALLCONTEXT, char*, char*, uint*, uint> MsiGetPatchInfoEx => &MsiGetPatchInfoExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiApplyMultiplePatches"]/*' />
     [NativeTypeName("#define MsiApplyMultiplePatches MsiApplyMultiplePatchesW")]
     public static delegate*<char*, char*, char*, uint> MsiApplyMultiplePatches => &MsiApplyMultiplePatchesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDeterminePatchSequence"]/*' />
     [NativeTypeName("#define MsiDeterminePatchSequence MsiDeterminePatchSequenceW")]
     public static delegate*<char*, char*, MSIINSTALLCONTEXT, uint, MSIPATCHSEQUENCEINFOW*, uint> MsiDeterminePatchSequence => &MsiDeterminePatchSequenceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiDetermineApplicablePatches"]/*' />
     [NativeTypeName("#define MsiDetermineApplicablePatches MsiDetermineApplicablePatchesW")]
     public static delegate*<char*, uint, MSIPATCHSEQUENCEINFOW*, uint> MsiDetermineApplicablePatches => &MsiDetermineApplicablePatchesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumPatchesEx"]/*' />
     [NativeTypeName("#define MsiEnumPatchesEx MsiEnumPatchesExW")]
     public static delegate*<char*, char*, uint, uint, uint, char*, char*, MSIINSTALLCONTEXT*, char*, uint*, uint> MsiEnumPatchesEx => &MsiEnumPatchesExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiQueryFeatureState"]/*' />
     [NativeTypeName("#define MsiQueryFeatureState MsiQueryFeatureStateW")]
     public static delegate*<char*, char*, INSTALLSTATE> MsiQueryFeatureState => &MsiQueryFeatureStateW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiQueryFeatureStateEx"]/*' />
     [NativeTypeName("#define MsiQueryFeatureStateEx MsiQueryFeatureStateExW")]
     public static delegate*<char*, char*, MSIINSTALLCONTEXT, char*, INSTALLSTATE*, uint> MsiQueryFeatureStateEx => &MsiQueryFeatureStateExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiUseFeature"]/*' />
     [NativeTypeName("#define MsiUseFeature MsiUseFeatureW")]
     public static delegate*<char*, char*, INSTALLSTATE> MsiUseFeature => &MsiUseFeatureW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiUseFeatureEx"]/*' />
     [NativeTypeName("#define MsiUseFeatureEx MsiUseFeatureExW")]
     public static delegate*<char*, char*, uint, uint, INSTALLSTATE> MsiUseFeatureEx => &MsiUseFeatureExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetFeatureUsage"]/*' />
     [NativeTypeName("#define MsiGetFeatureUsage MsiGetFeatureUsageW")]
     public static delegate*<char*, char*, uint*, ushort*, uint> MsiGetFeatureUsage => &MsiGetFeatureUsageW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiConfigureFeature"]/*' />
     [NativeTypeName("#define MsiConfigureFeature MsiConfigureFeatureW")]
     public static delegate*<char*, char*, INSTALLSTATE, uint> MsiConfigureFeature => &MsiConfigureFeatureW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiReinstallFeature"]/*' />
     [NativeTypeName("#define MsiReinstallFeature MsiReinstallFeatureW")]
     public static delegate*<char*, char*, uint, uint> MsiReinstallFeature => &MsiReinstallFeatureW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiProvideComponent"]/*' />
     [NativeTypeName("#define MsiProvideComponent MsiProvideComponentW")]
     public static delegate*<char*, char*, char*, uint, char*, uint*, uint> MsiProvideComponent => &MsiProvideComponentW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiProvideQualifiedComponent"]/*' />
     [NativeTypeName("#define MsiProvideQualifiedComponent MsiProvideQualifiedComponentW")]
     public static delegate*<char*, char*, uint, char*, uint*, uint> MsiProvideQualifiedComponent => &MsiProvideQualifiedComponentW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiProvideQualifiedComponentEx"]/*' />
     [NativeTypeName("#define MsiProvideQualifiedComponentEx MsiProvideQualifiedComponentExW")]
     public static delegate*<char*, char*, uint, char*, uint, uint, char*, uint*, uint> MsiProvideQualifiedComponentEx => &MsiProvideQualifiedComponentExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetComponentPath"]/*' />
     [NativeTypeName("#define MsiGetComponentPath MsiGetComponentPathW")]
     public static delegate*<char*, char*, char*, uint*, INSTALLSTATE> MsiGetComponentPath => &MsiGetComponentPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetComponentPathEx"]/*' />
     [NativeTypeName("#define MsiGetComponentPathEx MsiGetComponentPathExW")]
     public static delegate*<char*, char*, char*, MSIINSTALLCONTEXT, char*, uint*, INSTALLSTATE> MsiGetComponentPathEx => &MsiGetComponentPathExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSIASSEMBLYINFO_NETASSEMBLY"]/*' />
     [NativeTypeName("#define MSIASSEMBLYINFO_NETASSEMBLY 0")]
     public const int MSIASSEMBLYINFO_NETASSEMBLY = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSIASSEMBLYINFO_WIN32ASSEMBLY"]/*' />
     [NativeTypeName("#define MSIASSEMBLYINFO_WIN32ASSEMBLY 1")]
     public const int MSIASSEMBLYINFO_WIN32ASSEMBLY = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiProvideAssembly"]/*' />
     [NativeTypeName("#define MsiProvideAssembly MsiProvideAssemblyW")]
     public static delegate*<char*, char*, uint, uint, char*, uint*, uint> MsiProvideAssembly => &MsiProvideAssemblyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiQueryComponentState"]/*' />
     [NativeTypeName("#define MsiQueryComponentState MsiQueryComponentStateW")]
     public static delegate*<char*, char*, MSIINSTALLCONTEXT, char*, INSTALLSTATE*, uint> MsiQueryComponentState => &MsiQueryComponentStateW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumProducts"]/*' />
     [NativeTypeName("#define MsiEnumProducts MsiEnumProductsW")]
     public static delegate*<uint, char*, uint> MsiEnumProducts => &MsiEnumProductsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumProductsEx"]/*' />
     [NativeTypeName("#define MsiEnumProductsEx MsiEnumProductsExW")]
     public static delegate*<char*, char*, uint, uint, char*, MSIINSTALLCONTEXT*, char*, uint*, uint> MsiEnumProductsEx => &MsiEnumProductsExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumRelatedProducts"]/*' />
     [NativeTypeName("#define MsiEnumRelatedProducts MsiEnumRelatedProductsW")]
     public static delegate*<char*, uint, uint, char*, uint> MsiEnumRelatedProducts => &MsiEnumRelatedProductsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumFeatures"]/*' />
     [NativeTypeName("#define MsiEnumFeatures MsiEnumFeaturesW")]
     public static delegate*<char*, uint, char*, char*, uint> MsiEnumFeatures => &MsiEnumFeaturesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumComponents"]/*' />
     [NativeTypeName("#define MsiEnumComponents MsiEnumComponentsW")]
     public static delegate*<uint, char*, uint> MsiEnumComponents => &MsiEnumComponentsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumComponentsEx"]/*' />
     [NativeTypeName("#define MsiEnumComponentsEx MsiEnumComponentsExW")]
     public static delegate*<char*, uint, uint, char*, MSIINSTALLCONTEXT*, char*, uint*, uint> MsiEnumComponentsEx => &MsiEnumComponentsExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumClients"]/*' />
     [NativeTypeName("#define MsiEnumClients MsiEnumClientsW")]
     public static delegate*<char*, uint, char*, uint> MsiEnumClients => &MsiEnumClientsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumClientsEx"]/*' />
     [NativeTypeName("#define MsiEnumClientsEx MsiEnumClientsExW")]
     public static delegate*<char*, char*, uint, uint, char*, MSIINSTALLCONTEXT*, char*, uint*, uint> MsiEnumClientsEx => &MsiEnumClientsExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiEnumComponentQualifiers"]/*' />
     [NativeTypeName("#define MsiEnumComponentQualifiers MsiEnumComponentQualifiersW")]
     public static delegate*<char*, uint, char*, uint*, char*, uint*, uint> MsiEnumComponentQualifiers => &MsiEnumComponentQualifiersW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiOpenProduct"]/*' />
     [NativeTypeName("#define MsiOpenProduct MsiOpenProductW")]
     public static delegate*<char*, MSIHANDLE*, uint> MsiOpenProduct => &MsiOpenProductW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiOpenPackage"]/*' />
     [NativeTypeName("#define MsiOpenPackage MsiOpenPackageW")]
     public static delegate*<char*, MSIHANDLE*, uint> MsiOpenPackage => &MsiOpenPackageW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiOpenPackageEx"]/*' />
     [NativeTypeName("#define MsiOpenPackageEx MsiOpenPackageExW")]
     public static delegate*<char*, uint, MSIHANDLE*, uint> MsiOpenPackageEx => &MsiOpenPackageExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetPatchFileList"]/*' />
     [NativeTypeName("#define MsiGetPatchFileList MsiGetPatchFileListW")]
     public static delegate*<char*, char*, uint*, MSIHANDLE**, uint> MsiGetPatchFileList => &MsiGetPatchFileListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetProductProperty"]/*' />
     [NativeTypeName("#define MsiGetProductProperty MsiGetProductPropertyW")]
     public static delegate*<MSIHANDLE, char*, char*, uint*, uint> MsiGetProductProperty => &MsiGetProductPropertyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiVerifyPackage"]/*' />
     [NativeTypeName("#define MsiVerifyPackage MsiVerifyPackageW")]
     public static delegate*<char*, uint> MsiVerifyPackage => &MsiVerifyPackageW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetFeatureInfo"]/*' />
     [NativeTypeName("#define MsiGetFeatureInfo MsiGetFeatureInfoW")]
     public static delegate*<MSIHANDLE, char*, uint*, char*, uint*, char*, uint*, uint> MsiGetFeatureInfo => &MsiGetFeatureInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiInstallMissingComponent"]/*' />
     [NativeTypeName("#define MsiInstallMissingComponent MsiInstallMissingComponentW")]
     public static delegate*<char*, char*, INSTALLSTATE, uint> MsiInstallMissingComponent => &MsiInstallMissingComponentW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiInstallMissingFile"]/*' />
     [NativeTypeName("#define MsiInstallMissingFile MsiInstallMissingFileW")]
     public static delegate*<char*, char*, uint> MsiInstallMissingFile => &MsiInstallMissingFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiLocateComponent"]/*' />
     [NativeTypeName("#define MsiLocateComponent MsiLocateComponentW")]
     public static delegate*<char*, char*, uint*, INSTALLSTATE> MsiLocateComponent => &MsiLocateComponentW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSourceListClearAll"]/*' />
     [NativeTypeName("#define MsiSourceListClearAll MsiSourceListClearAllW")]
     public static delegate*<char*, char*, uint, uint> MsiSourceListClearAll => &MsiSourceListClearAllW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSourceListAddSource"]/*' />
     [NativeTypeName("#define MsiSourceListAddSource MsiSourceListAddSourceW")]
     public static delegate*<char*, char*, uint, char*, uint> MsiSourceListAddSource => &MsiSourceListAddSourceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSourceListForceResolution"]/*' />
     [NativeTypeName("#define MsiSourceListForceResolution MsiSourceListForceResolutionW")]
     public static delegate*<char*, char*, uint, uint> MsiSourceListForceResolution => &MsiSourceListForceResolutionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSourceListAddSourceEx"]/*' />
     [NativeTypeName("#define MsiSourceListAddSourceEx MsiSourceListAddSourceExW")]
     public static delegate*<char*, char*, MSIINSTALLCONTEXT, uint, char*, uint, uint> MsiSourceListAddSourceEx => &MsiSourceListAddSourceExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSourceListAddMediaDisk"]/*' />
     [NativeTypeName("#define MsiSourceListAddMediaDisk MsiSourceListAddMediaDiskW")]
     public static delegate*<char*, char*, MSIINSTALLCONTEXT, uint, uint, char*, char*, uint> MsiSourceListAddMediaDisk => &MsiSourceListAddMediaDiskW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSourceListClearSource"]/*' />
     [NativeTypeName("#define MsiSourceListClearSource MsiSourceListClearSourceW")]
     public static delegate*<char*, char*, MSIINSTALLCONTEXT, uint, char*, uint> MsiSourceListClearSource => &MsiSourceListClearSourceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSourceListClearMediaDisk"]/*' />
     [NativeTypeName("#define MsiSourceListClearMediaDisk MsiSourceListClearMediaDiskW")]
     public static delegate*<char*, char*, MSIINSTALLCONTEXT, uint, uint, uint> MsiSourceListClearMediaDisk => &MsiSourceListClearMediaDiskW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSourceListClearAllEx"]/*' />
     [NativeTypeName("#define MsiSourceListClearAllEx MsiSourceListClearAllExW")]
     public static delegate*<char*, char*, MSIINSTALLCONTEXT, uint, uint> MsiSourceListClearAllEx => &MsiSourceListClearAllExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSourceListForceResolutionEx"]/*' />
     [NativeTypeName("#define MsiSourceListForceResolutionEx MsiSourceListForceResolutionExW")]
     public static delegate*<char*, char*, MSIINSTALLCONTEXT, uint, uint> MsiSourceListForceResolutionEx => &MsiSourceListForceResolutionExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSourceListSetInfo"]/*' />
     [NativeTypeName("#define MsiSourceListSetInfo MsiSourceListSetInfoW")]
     public static delegate*<char*, char*, MSIINSTALLCONTEXT, uint, char*, char*, uint> MsiSourceListSetInfo => &MsiSourceListSetInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSourceListGetInfo"]/*' />
     [NativeTypeName("#define MsiSourceListGetInfo MsiSourceListGetInfoW")]
     public static delegate*<char*, char*, MSIINSTALLCONTEXT, uint, char*, char*, uint*, uint> MsiSourceListGetInfo => &MsiSourceListGetInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSourceListEnumSources"]/*' />
     [NativeTypeName("#define MsiSourceListEnumSources MsiSourceListEnumSourcesW")]
     public static delegate*<char*, char*, MSIINSTALLCONTEXT, uint, uint, char*, uint*, uint> MsiSourceListEnumSources => &MsiSourceListEnumSourcesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiSourceListEnumMediaDisks"]/*' />
     [NativeTypeName("#define MsiSourceListEnumMediaDisks MsiSourceListEnumMediaDisksW")]
     public static delegate*<char*, char*, MSIINSTALLCONTEXT, uint, uint, uint*, char*, uint*, char*, uint*, uint> MsiSourceListEnumMediaDisks => &MsiSourceListEnumMediaDisksW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetFileVersion"]/*' />
     [NativeTypeName("#define MsiGetFileVersion MsiGetFileVersionW")]
     public static delegate*<char*, char*, uint*, char*, uint*, uint> MsiGetFileVersion => &MsiGetFileVersionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetFileHash"]/*' />
     [NativeTypeName("#define MsiGetFileHash MsiGetFileHashW")]
     public static delegate*<char*, uint, MSIFILEHASHINFO*, uint> MsiGetFileHash => &MsiGetFileHashW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetFileSignatureInformation"]/*' />
     [NativeTypeName("#define MsiGetFileSignatureInformation MsiGetFileSignatureInformationW")]
     public static delegate*<char*, uint, CERT_CONTEXT**, byte*, uint*, HRESULT> MsiGetFileSignatureInformation => &MsiGetFileSignatureInformationW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSI_INVALID_HASH_IS_FATAL"]/*' />
     [NativeTypeName("#define MSI_INVALID_HASH_IS_FATAL 0x1")]
     public const int MSI_INVALID_HASH_IS_FATAL = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiGetShortcutTarget"]/*' />
     [NativeTypeName("#define MsiGetShortcutTarget MsiGetShortcutTargetW")]
     public static delegate*<char*, char*, char*, char*, uint> MsiGetShortcutTarget => &MsiGetShortcutTargetW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiIsProductElevated"]/*' />
     [NativeTypeName("#define MsiIsProductElevated MsiIsProductElevatedW")]
     public static delegate*<char*, BOOL*, uint> MsiIsProductElevated => &MsiIsProductElevatedW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiNotifySidChange"]/*' />
     [NativeTypeName("#define MsiNotifySidChange MsiNotifySidChangeW")]
     public static delegate*<char*, char*, uint> MsiNotifySidChange => &MsiNotifySidChangeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MsiBeginTransaction"]/*' />
     [NativeTypeName("#define MsiBeginTransaction MsiBeginTransactionW")]
     public static delegate*<char*, uint, MSIHANDLE*, HANDLE*, uint> MsiBeginTransaction => &MsiBeginTransactionW;
 }

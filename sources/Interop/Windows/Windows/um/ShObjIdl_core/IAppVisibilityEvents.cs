@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IAppVisibilityEvents : IAppVisibilityEvents.Interface, INativeGuid
 {
+    /// <include file='IAppVisibilityEvents.xml' path='doc/member[@name="IAppVisibilityEvents.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppVisibilityEvents);
 
     public void** lpVtbl;

@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IPrintManagerInterop : IPrintManagerInterop.Interface, INativeGuid
 {
+    /// <include file='IPrintManagerInterop.xml' path='doc/member[@name="IPrintManagerInterop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPrintManagerInterop);
 
     public void** lpVtbl;

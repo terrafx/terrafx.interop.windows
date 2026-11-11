@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Identity_LocalUserProvider"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid Identity_LocalUserProvider
     {
@@ -37,6 +38,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CREDENTIAL_PROVIDER_NO_DEFAULT"]/*' />
     [NativeTypeName("#define CREDENTIAL_PROVIDER_NO_DEFAULT ((DWORD)-1)")]
     public const uint CREDENTIAL_PROVIDER_NO_DEFAULT = unchecked((uint)(-1));
 }

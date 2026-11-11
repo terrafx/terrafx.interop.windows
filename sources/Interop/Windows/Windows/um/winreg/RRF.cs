@@ -7,48 +7,63 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class RRF
 {
+    /// <include file='RRF.xml' path='doc/member[@name="RRF.RRF_RT_REG_NONE"]/*' />
     [NativeTypeName("#define RRF_RT_REG_NONE 0x00000001")]
     public const int RRF_RT_REG_NONE = 0x00000001;
 
+    /// <include file='RRF.xml' path='doc/member[@name="RRF.RRF_RT_REG_SZ"]/*' />
     [NativeTypeName("#define RRF_RT_REG_SZ 0x00000002")]
     public const int RRF_RT_REG_SZ = 0x00000002;
 
+    /// <include file='RRF.xml' path='doc/member[@name="RRF.RRF_RT_REG_EXPAND_SZ"]/*' />
     [NativeTypeName("#define RRF_RT_REG_EXPAND_SZ 0x00000004")]
     public const int RRF_RT_REG_EXPAND_SZ = 0x00000004;
 
+    /// <include file='RRF.xml' path='doc/member[@name="RRF.RRF_RT_REG_BINARY"]/*' />
     [NativeTypeName("#define RRF_RT_REG_BINARY 0x00000008")]
     public const int RRF_RT_REG_BINARY = 0x00000008;
 
+    /// <include file='RRF.xml' path='doc/member[@name="RRF.RRF_RT_REG_DWORD"]/*' />
     [NativeTypeName("#define RRF_RT_REG_DWORD 0x00000010")]
     public const int RRF_RT_REG_DWORD = 0x00000010;
 
+    /// <include file='RRF.xml' path='doc/member[@name="RRF.RRF_RT_REG_MULTI_SZ"]/*' />
     [NativeTypeName("#define RRF_RT_REG_MULTI_SZ 0x00000020")]
     public const int RRF_RT_REG_MULTI_SZ = 0x00000020;
 
+    /// <include file='RRF.xml' path='doc/member[@name="RRF.RRF_RT_REG_QWORD"]/*' />
     [NativeTypeName("#define RRF_RT_REG_QWORD 0x00000040")]
     public const int RRF_RT_REG_QWORD = 0x00000040;
 
+    /// <include file='RRF.xml' path='doc/member[@name="RRF.RRF_RT_DWORD"]/*' />
     [NativeTypeName("#define RRF_RT_DWORD (RRF_RT_REG_BINARY | RRF_RT_REG_DWORD)")]
     public const int RRF_RT_DWORD = (0x00000008 | 0x00000010);
 
+    /// <include file='RRF.xml' path='doc/member[@name="RRF.RRF_RT_QWORD"]/*' />
     [NativeTypeName("#define RRF_RT_QWORD (RRF_RT_REG_BINARY | RRF_RT_REG_QWORD)")]
     public const int RRF_RT_QWORD = (0x00000008 | 0x00000040);
 
+    /// <include file='RRF.xml' path='doc/member[@name="RRF.RRF_RT_ANY"]/*' />
     [NativeTypeName("#define RRF_RT_ANY 0x0000ffff")]
     public const int RRF_RT_ANY = 0x0000ffff;
 
+    /// <include file='RRF.xml' path='doc/member[@name="RRF.RRF_SUBKEY_WOW6464KEY"]/*' />
     [NativeTypeName("#define RRF_SUBKEY_WOW6464KEY 0x00010000")]
     public const int RRF_SUBKEY_WOW6464KEY = 0x00010000;
 
+    /// <include file='RRF.xml' path='doc/member[@name="RRF.RRF_SUBKEY_WOW6432KEY"]/*' />
     [NativeTypeName("#define RRF_SUBKEY_WOW6432KEY 0x00020000")]
     public const int RRF_SUBKEY_WOW6432KEY = 0x00020000;
 
+    /// <include file='RRF.xml' path='doc/member[@name="RRF.RRF_WOW64_MASK"]/*' />
     [NativeTypeName("#define RRF_WOW64_MASK 0x00030000")]
     public const int RRF_WOW64_MASK = 0x00030000;
 
+    /// <include file='RRF.xml' path='doc/member[@name="RRF.RRF_NOEXPAND"]/*' />
     [NativeTypeName("#define RRF_NOEXPAND 0x10000000")]
     public const int RRF_NOEXPAND = 0x10000000;
 
+    /// <include file='RRF.xml' path='doc/member[@name="RRF.RRF_ZEROONFAILURE"]/*' />
     [NativeTypeName("#define RRF_ZEROONFAILURE 0x20000000")]
     public const int RRF_ZEROONFAILURE = 0x20000000;
 }

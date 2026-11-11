@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAudioDeviceModulesManager : IAudioDeviceModulesManager.Interface, INativeGuid
 {
+    /// <include file='IAudioDeviceModulesManager.xml' path='doc/member[@name="IAudioDeviceModulesManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioDeviceModulesManager);
 
     public void** lpVtbl;

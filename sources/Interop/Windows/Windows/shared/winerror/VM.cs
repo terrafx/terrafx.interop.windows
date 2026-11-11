@@ -7,69 +7,91 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class VM
 {
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_SAVED_STATE_DUMP_E_PARTITION_STATE_NOT_FOUND"]/*' />
     [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_PARTITION_STATE_NOT_FOUND _HRESULT_TYPEDEF_(0xC0370500L)")]
     public const int VM_SAVED_STATE_DUMP_E_PARTITION_STATE_NOT_FOUND = unchecked((int)(0xC0370500));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_SAVED_STATE_DUMP_E_GUEST_MEMORY_NOT_FOUND"]/*' />
     [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_GUEST_MEMORY_NOT_FOUND _HRESULT_TYPEDEF_(0xC0370501L)")]
     public const int VM_SAVED_STATE_DUMP_E_GUEST_MEMORY_NOT_FOUND = unchecked((int)(0xC0370501));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_SAVED_STATE_DUMP_E_NO_VP_FOUND_IN_PARTITION_STATE"]/*' />
     [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_NO_VP_FOUND_IN_PARTITION_STATE _HRESULT_TYPEDEF_(0xC0370502L)")]
     public const int VM_SAVED_STATE_DUMP_E_NO_VP_FOUND_IN_PARTITION_STATE = unchecked((int)(0xC0370502));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_SAVED_STATE_DUMP_E_NESTED_VIRTUALIZATION_NOT_SUPPORTED"]/*' />
     [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_NESTED_VIRTUALIZATION_NOT_SUPPORTED _HRESULT_TYPEDEF_(0xC0370503L)")]
     public const int VM_SAVED_STATE_DUMP_E_NESTED_VIRTUALIZATION_NOT_SUPPORTED = unchecked((int)(0xC0370503));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_SAVED_STATE_DUMP_E_WINDOWS_KERNEL_IMAGE_NOT_FOUND"]/*' />
     [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_WINDOWS_KERNEL_IMAGE_NOT_FOUND _HRESULT_TYPEDEF_(0xC0370504L)")]
     public const int VM_SAVED_STATE_DUMP_E_WINDOWS_KERNEL_IMAGE_NOT_FOUND = unchecked((int)(0xC0370504));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_SAVED_STATE_DUMP_E_VA_NOT_MAPPED"]/*' />
     [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_VA_NOT_MAPPED _HRESULT_TYPEDEF_(0xC0370505L)")]
     public const int VM_SAVED_STATE_DUMP_E_VA_NOT_MAPPED = unchecked((int)(0xC0370505));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_SAVED_STATE_DUMP_E_INVALID_VP_STATE"]/*' />
     [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_INVALID_VP_STATE _HRESULT_TYPEDEF_(0xC0370506L)")]
     public const int VM_SAVED_STATE_DUMP_E_INVALID_VP_STATE = unchecked((int)(0xC0370506));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_SAVED_STATE_DUMP_E_VP_VTL_NOT_ENABLED"]/*' />
     [NativeTypeName("#define VM_SAVED_STATE_DUMP_E_VP_VTL_NOT_ENABLED _HRESULT_TYPEDEF_(0xC0370509L)")]
     public const int VM_SAVED_STATE_DUMP_E_VP_VTL_NOT_ENABLED = unchecked((int)(0xC0370509));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_E_CLIENT_NAME_REQUIRED"]/*' />
     [NativeTypeName("#define VM_E_CLIENT_NAME_REQUIRED _HRESULT_TYPEDEF_(0xC0370700L)")]
     public const int VM_E_CLIENT_NAME_REQUIRED = unchecked((int)(0xC0370700));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_E_MODIFY_VTL2_SETTINGS_CONFLICT"]/*' />
     [NativeTypeName("#define VM_E_MODIFY_VTL2_SETTINGS_CONFLICT _HRESULT_TYPEDEF_(0xC0370701L)")]
     public const int VM_E_MODIFY_VTL2_SETTINGS_CONFLICT = unchecked((int)(0xC0370701));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_E_VTL2_NOT_AVAILABLE"]/*' />
     [NativeTypeName("#define VM_E_VTL2_NOT_AVAILABLE _HRESULT_TYPEDEF_(0xC0370702L)")]
     public const int VM_E_VTL2_NOT_AVAILABLE = unchecked((int)(0xC0370702));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_E_MANAGEMENT_VTL_RELOAD_IN_PROGRESS"]/*' />
     [NativeTypeName("#define VM_E_MANAGEMENT_VTL_RELOAD_IN_PROGRESS _HRESULT_TYPEDEF_(0xC0370800L)")]
     public const int VM_E_MANAGEMENT_VTL_RELOAD_IN_PROGRESS = unchecked((int)(0xC0370800));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_E_MANAGEMENT_VTL_RELOAD_INVALID_PROTOCOL_RESPONSE"]/*' />
     [NativeTypeName("#define VM_E_MANAGEMENT_VTL_RELOAD_INVALID_PROTOCOL_RESPONSE _HRESULT_TYPEDEF_(0xC0370801L)")]
     public const int VM_E_MANAGEMENT_VTL_RELOAD_INVALID_PROTOCOL_RESPONSE = unchecked((int)(0xC0370801));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_E_MANAGEMENT_VTL_RELOAD_SAVE_FAILURE"]/*' />
     [NativeTypeName("#define VM_E_MANAGEMENT_VTL_RELOAD_SAVE_FAILURE _HRESULT_TYPEDEF_(0xC0370802L)")]
     public const int VM_E_MANAGEMENT_VTL_RELOAD_SAVE_FAILURE = unchecked((int)(0xC0370802));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_E_MANAGEMENT_VTL_RELOAD_RESTORE_FAILURE"]/*' />
     [NativeTypeName("#define VM_E_MANAGEMENT_VTL_RELOAD_RESTORE_FAILURE _HRESULT_TYPEDEF_(0xC0370803L)")]
     public const int VM_E_MANAGEMENT_VTL_RELOAD_RESTORE_FAILURE = unchecked((int)(0xC0370803));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_E_MANAGEMENT_VTL_RELOAD_NO_SAVED_STATE"]/*' />
     [NativeTypeName("#define VM_E_MANAGEMENT_VTL_RELOAD_NO_SAVED_STATE _HRESULT_TYPEDEF_(0xC0370804L)")]
     public const int VM_E_MANAGEMENT_VTL_RELOAD_NO_SAVED_STATE = unchecked((int)(0xC0370804));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_E_MANAGEMENT_VTL_RELOAD_INVALID_SAVE_NOTIFICATION_RECEIVED"]/*' />
     [NativeTypeName("#define VM_E_MANAGEMENT_VTL_RELOAD_INVALID_SAVE_NOTIFICATION_RECEIVED _HRESULT_TYPEDEF_(0xC0370805L)")]
     public const int VM_E_MANAGEMENT_VTL_RELOAD_INVALID_SAVE_NOTIFICATION_RECEIVED = unchecked((int)(0xC0370805));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_E_MANAGEMENT_VTL_RELOAD_INVALID_RESTORE_REQUEST_RECEIVED"]/*' />
     [NativeTypeName("#define VM_E_MANAGEMENT_VTL_RELOAD_INVALID_RESTORE_REQUEST_RECEIVED _HRESULT_TYPEDEF_(0xC0370806L)")]
     public const int VM_E_MANAGEMENT_VTL_RELOAD_INVALID_RESTORE_REQUEST_RECEIVED = unchecked((int)(0xC0370806));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_E_MANAGEMENT_VTL_RELOAD_INVALID_RESTORE_NOTIFICATION_RECEIVED"]/*' />
     [NativeTypeName("#define VM_E_MANAGEMENT_VTL_RELOAD_INVALID_RESTORE_NOTIFICATION_RECEIVED _HRESULT_TYPEDEF_(0xC0370807L)")]
     public const int VM_E_MANAGEMENT_VTL_RELOAD_INVALID_RESTORE_NOTIFICATION_RECEIVED = unchecked((int)(0xC0370807));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_E_MANAGEMENT_VTL_RELOAD_NO_IGVM_FILE"]/*' />
     [NativeTypeName("#define VM_E_MANAGEMENT_VTL_RELOAD_NO_IGVM_FILE _HRESULT_TYPEDEF_(0xC0370808L)")]
     public const int VM_E_MANAGEMENT_VTL_RELOAD_NO_IGVM_FILE = unchecked((int)(0xC0370808));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_E_MANAGEMENT_VTL_RELOAD_UNSUPPORTED"]/*' />
     [NativeTypeName("#define VM_E_MANAGEMENT_VTL_RELOAD_UNSUPPORTED _HRESULT_TYPEDEF_(0xC0370809L)")]
     public const int VM_E_MANAGEMENT_VTL_RELOAD_UNSUPPORTED = unchecked((int)(0xC0370809));
 
+    /// <include file='VM.xml' path='doc/member[@name="VM.VM_E_MANAGEMENT_VTL_PROTOCOL_ESTABLISHMENT_TIMEOUT"]/*' />
     [NativeTypeName("#define VM_E_MANAGEMENT_VTL_PROTOCOL_ESTABLISHMENT_TIMEOUT _HRESULT_TYPEDEF_(0xC037080AL)")]
     public const int VM_E_MANAGEMENT_VTL_PROTOCOL_ESTABLISHMENT_TIMEOUT = unchecked((int)(0xC037080A));
 }

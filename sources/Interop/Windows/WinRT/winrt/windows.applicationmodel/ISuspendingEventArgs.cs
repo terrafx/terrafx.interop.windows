@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISuspendingEventArgs : ISuspendingEventArgs.Interface, INativeGuid
 {
+    /// <include file='ISuspendingEventArgs.xml' path='doc/member[@name="ISuspendingEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISuspendingEventArgs);
 
     public void** lpVtbl;

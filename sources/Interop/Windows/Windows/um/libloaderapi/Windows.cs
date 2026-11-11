@@ -182,57 +182,75 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern BOOL EnumResourceNamesA(HMODULE hModule, [NativeTypeName("LPCSTR")] sbyte* lpType, [NativeTypeName("ENUMRESNAMEPROCA")] delegate* unmanaged<HMODULE, sbyte*, sbyte*, nint, BOOL> lpEnumFunc, [NativeTypeName("LONG_PTR")] nint lParam);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FIND_RESOURCE_DIRECTORY_TYPES"]/*' />
     [NativeTypeName("#define FIND_RESOURCE_DIRECTORY_TYPES (0x0100)")]
     public const int FIND_RESOURCE_DIRECTORY_TYPES = (0x0100);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FIND_RESOURCE_DIRECTORY_NAMES"]/*' />
     [NativeTypeName("#define FIND_RESOURCE_DIRECTORY_NAMES (0x0200)")]
     public const int FIND_RESOURCE_DIRECTORY_NAMES = (0x0200);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FIND_RESOURCE_DIRECTORY_LANGUAGES"]/*' />
     [NativeTypeName("#define FIND_RESOURCE_DIRECTORY_LANGUAGES (0x0400)")]
     public const int FIND_RESOURCE_DIRECTORY_LANGUAGES = (0x0400);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SUPPORT_LANG_NUMBER"]/*' />
     [NativeTypeName("#define SUPPORT_LANG_NUMBER 32")]
     public const int SUPPORT_LANG_NUMBER = 32;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindResourceEx"]/*' />
     [NativeTypeName("#define FindResourceEx FindResourceExW")]
     public static delegate*<HMODULE, char*, char*, ushort, HRSRC> FindResourceEx => &FindResourceExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetModuleFileName"]/*' />
     [NativeTypeName("#define GetModuleFileName GetModuleFileNameW")]
     public static delegate*<HMODULE, char*, uint, uint> GetModuleFileName => &GetModuleFileNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetModuleHandle"]/*' />
     [NativeTypeName("#define GetModuleHandle GetModuleHandleW")]
     public static delegate*<char*, HMODULE> GetModuleHandle => &GetModuleHandleW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetModuleHandleEx"]/*' />
     [NativeTypeName("#define GetModuleHandleEx GetModuleHandleExW")]
     public static delegate*<uint, char*, HMODULE*, BOOL> GetModuleHandleEx => &GetModuleHandleExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CURRENT_IMPORT_REDIRECTION_VERSION"]/*' />
     [NativeTypeName("#define CURRENT_IMPORT_REDIRECTION_VERSION 1")]
     public const int CURRENT_IMPORT_REDIRECTION_VERSION = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadLibraryEx"]/*' />
     [NativeTypeName("#define LoadLibraryEx LoadLibraryExW")]
     public static delegate*<char*, HANDLE, uint, HMODULE> LoadLibraryEx => &LoadLibraryExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DONT_RESOLVE_DLL_REFERENCES"]/*' />
     [NativeTypeName("#define DONT_RESOLVE_DLL_REFERENCES 0x00000001")]
     public const int DONT_RESOLVE_DLL_REFERENCES = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadString"]/*' />
     [NativeTypeName("#define LoadString LoadStringW")]
     public static delegate*<HINSTANCE, uint, char*, int, int> LoadString => &LoadStringW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumResourceLanguagesEx"]/*' />
     [NativeTypeName("#define EnumResourceLanguagesEx EnumResourceLanguagesExW")]
     public static delegate*<HMODULE, char*, char*, delegate* unmanaged<HMODULE, char*, char*, ushort, nint, BOOL>, nint, uint, ushort, BOOL> EnumResourceLanguagesEx => &EnumResourceLanguagesExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumResourceNamesEx"]/*' />
     [NativeTypeName("#define EnumResourceNamesEx EnumResourceNamesExW")]
     public static delegate*<HMODULE, char*, delegate* unmanaged<HMODULE, char*, char*, nint, BOOL>, nint, uint, ushort, BOOL> EnumResourceNamesEx => &EnumResourceNamesExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumResourceTypesEx"]/*' />
     [NativeTypeName("#define EnumResourceTypesEx EnumResourceTypesExW")]
     public static delegate*<HMODULE, delegate* unmanaged<HMODULE, char*, nint, BOOL>, nint, uint, ushort, BOOL> EnumResourceTypesEx => &EnumResourceTypesExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindResource"]/*' />
     [NativeTypeName("#define FindResource FindResourceW")]
     public static delegate*<HMODULE, char*, char*, HRSRC> FindResource => &FindResourceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadLibrary"]/*' />
     [NativeTypeName("#define LoadLibrary LoadLibraryW")]
     public static delegate*<char*, HMODULE> LoadLibrary => &LoadLibraryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumResourceNames"]/*' />
     [NativeTypeName("#define EnumResourceNames EnumResourceNamesW")]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static delegate*<HMODULE, char*, delegate* unmanaged<HMODULE, char*, char*, nint, BOOL>, nint, BOOL> EnumResourceNames => &EnumResourceNamesW;

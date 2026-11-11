@@ -7,42 +7,55 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CREDUIWIN
 {
+    /// <include file='CREDUIWIN.xml' path='doc/member[@name="CREDUIWIN.CREDUIWIN_GENERIC"]/*' />
     [NativeTypeName("#define CREDUIWIN_GENERIC 0x00000001")]
     public const int CREDUIWIN_GENERIC = 0x00000001;
 
+    /// <include file='CREDUIWIN.xml' path='doc/member[@name="CREDUIWIN.CREDUIWIN_CHECKBOX"]/*' />
     [NativeTypeName("#define CREDUIWIN_CHECKBOX 0x00000002")]
     public const int CREDUIWIN_CHECKBOX = 0x00000002;
 
+    /// <include file='CREDUIWIN.xml' path='doc/member[@name="CREDUIWIN.CREDUIWIN_AUTHPACKAGE_ONLY"]/*' />
     [NativeTypeName("#define CREDUIWIN_AUTHPACKAGE_ONLY 0x00000010")]
     public const int CREDUIWIN_AUTHPACKAGE_ONLY = 0x00000010;
 
+    /// <include file='CREDUIWIN.xml' path='doc/member[@name="CREDUIWIN.CREDUIWIN_IN_CRED_ONLY"]/*' />
     [NativeTypeName("#define CREDUIWIN_IN_CRED_ONLY 0x00000020")]
     public const int CREDUIWIN_IN_CRED_ONLY = 0x00000020;
 
+    /// <include file='CREDUIWIN.xml' path='doc/member[@name="CREDUIWIN.CREDUIWIN_ENUMERATE_ADMINS"]/*' />
     [NativeTypeName("#define CREDUIWIN_ENUMERATE_ADMINS 0x00000100")]
     public const int CREDUIWIN_ENUMERATE_ADMINS = 0x00000100;
 
+    /// <include file='CREDUIWIN.xml' path='doc/member[@name="CREDUIWIN.CREDUIWIN_ENUMERATE_CURRENT_USER"]/*' />
     [NativeTypeName("#define CREDUIWIN_ENUMERATE_CURRENT_USER 0x00000200")]
     public const int CREDUIWIN_ENUMERATE_CURRENT_USER = 0x00000200;
 
+    /// <include file='CREDUIWIN.xml' path='doc/member[@name="CREDUIWIN.CREDUIWIN_SECURE_PROMPT"]/*' />
     [NativeTypeName("#define CREDUIWIN_SECURE_PROMPT 0x00001000")]
     public const int CREDUIWIN_SECURE_PROMPT = 0x00001000;
 
+    /// <include file='CREDUIWIN.xml' path='doc/member[@name="CREDUIWIN.CREDUIWIN_PREPROMPTING"]/*' />
     [NativeTypeName("#define CREDUIWIN_PREPROMPTING 0X00002000")]
     public const int CREDUIWIN_PREPROMPTING = 0X00002000;
 
+    /// <include file='CREDUIWIN.xml' path='doc/member[@name="CREDUIWIN.CREDUIWIN_PACK_32_WOW"]/*' />
     [NativeTypeName("#define CREDUIWIN_PACK_32_WOW 0x10000000")]
     public const int CREDUIWIN_PACK_32_WOW = 0x10000000;
 
+    /// <include file='CREDUIWIN.xml' path='doc/member[@name="CREDUIWIN.CREDUIWIN_USE_V2"]/*' />
     [NativeTypeName("#define CREDUIWIN_USE_V2 0x00000040")]
     public const int CREDUIWIN_USE_V2 = 0x00000040;
 
+    /// <include file='CREDUIWIN.xml' path='doc/member[@name="CREDUIWIN.CREDUIWIN_IGNORE_CLOUDAUTHORITY_NAME"]/*' />
     [NativeTypeName("#define CREDUIWIN_IGNORE_CLOUDAUTHORITY_NAME 0x00040000")]
     public const int CREDUIWIN_IGNORE_CLOUDAUTHORITY_NAME = 0x00040000;
 
+    /// <include file='CREDUIWIN.xml' path='doc/member[@name="CREDUIWIN.CREDUIWIN_DOWNLEVEL_HELLO_AS_SMART_CARD"]/*' />
     [NativeTypeName("#define CREDUIWIN_DOWNLEVEL_HELLO_AS_SMART_CARD 0x80000000")]
     public const uint CREDUIWIN_DOWNLEVEL_HELLO_AS_SMART_CARD = 0x80000000;
 
+    /// <include file='CREDUIWIN.xml' path='doc/member[@name="CREDUIWIN.CREDUIWIN_VALID_FLAGS"]/*' />
     [NativeTypeName("#define CREDUIWIN_VALID_FLAGS ( \\\r\n        CREDUIWIN_GENERIC                | \\\r\n        CREDUIWIN_CHECKBOX               | \\\r\n        CREDUIWIN_AUTHPACKAGE_ONLY       | \\\r\n        CREDUIWIN_IN_CRED_ONLY           | \\\r\n        CREDUIWIN_ENUMERATE_ADMINS       | \\\r\n        CREDUIWIN_ENUMERATE_CURRENT_USER | \\\r\n        CREDUIWIN_SECURE_PROMPT          | \\\r\n        CREDUIWIN_PREPROMPTING           | \\\r\n        CREDUIWIN_PACK_32_WOW            | \\\r\n        CREDUIWIN_IGNORE_CLOUDAUTHORITY_NAME    | \\\r\n        CREDUIWIN_DOWNLEVEL_HELLO_AS_SMART_CARD )")]
     public const uint CREDUIWIN_VALID_FLAGS = (0x00000001 | 0x00000002 | 0x00000010 | 0x00000020 | 0x00000100 | 0x00000200 | 0x00001000 | 0X00002000 | 0x10000000 | 0x00040000 | 0x80000000);
 }

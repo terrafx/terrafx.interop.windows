@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICompositionSupportsSystemBackdrop : ICompositionSupportsSystemBackdrop.Interface, INativeGuid
 {
+    /// <include file='ICompositionSupportsSystemBackdrop.xml' path='doc/member[@name="ICompositionSupportsSystemBackdrop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICompositionSupportsSystemBackdrop);
 
     public void** lpVtbl;

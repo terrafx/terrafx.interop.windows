@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDirectWriterLock : IDirectWriterLock.Interface, INativeGuid
 {
+    /// <include file='IDirectWriterLock.xml' path='doc/member[@name="IDirectWriterLock.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDirectWriterLock);
 
     public void** lpVtbl;

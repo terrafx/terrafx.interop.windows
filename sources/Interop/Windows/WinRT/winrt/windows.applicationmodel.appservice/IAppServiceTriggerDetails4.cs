@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAppServiceTriggerDetails4 : IAppServiceTriggerDetails4.Interface, INativeGuid
 {
+    /// <include file='IAppServiceTriggerDetails4.xml' path='doc/member[@name="IAppServiceTriggerDetails4.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppServiceTriggerDetails4);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID3D10ShaderResourceView")]
 public unsafe partial struct ID3D10ShaderResourceView1 : ID3D10ShaderResourceView1.Interface, INativeGuid
 {
+    /// <include file='ID3D10ShaderResourceView1.xml' path='doc/member[@name="ID3D10ShaderResourceView1.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D10ShaderResourceView1);
 
     public void** lpVtbl;

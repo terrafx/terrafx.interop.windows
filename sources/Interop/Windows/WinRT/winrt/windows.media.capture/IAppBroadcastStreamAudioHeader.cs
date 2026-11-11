@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAppBroadcastStreamAudioHeader : IAppBroadcastStreamAudioHeader.Interface, INativeGuid
 {
+    /// <include file='IAppBroadcastStreamAudioHeader.xml' path='doc/member[@name="IAppBroadcastStreamAudioHeader.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppBroadcastStreamAudioHeader);
 
     public void** lpVtbl;

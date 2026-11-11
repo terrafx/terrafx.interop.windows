@@ -7,5 +7,6 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SFBID
 {
+    /// <include file='SFBID.xml' path='doc/member[@name="SFBID.SFBID_PIDLCHANGED"]/*' />
     public const int SFBID_PIDLCHANGED = 0;
 }

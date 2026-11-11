@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class KEY
 {
+    /// <include file='KEY.xml' path='doc/member[@name="KEY.KEY_EVENT"]/*' />
     [NativeTypeName("#define KEY_EVENT 0x0001")]
     public const int KEY_EVENT = 0x0001;
 }

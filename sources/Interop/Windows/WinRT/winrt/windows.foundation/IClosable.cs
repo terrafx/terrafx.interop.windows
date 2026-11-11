@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IClosable : IClosable.Interface, INativeGuid
 {
+    /// <include file='IClosable.xml' path='doc/member[@name="IClosable.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IClosable);
 
     public void** lpVtbl;

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
-public static partial class IID
+public static unsafe partial class IID
 {
     public static ref readonly Guid IID_IAttachableInputObject
     {
@@ -221,6 +221,30 @@ public static partial class IID
                 0xD6,
                 0x0A,
                 0x14
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IGamepadKeyRoutingConfigurationStatics
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x27, 0xE4, 0x68, 0xA0,
+                0x9E, 0x0E,
+                0x74, 0x51,
+                0x90,
+                0x12,
+                0x4F,
+                0xB3,
+                0xA7,
+                0x64,
+                0xFD,
+                0xD2
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -629,6 +653,30 @@ public static partial class IID
                 0x56,
                 0x44,
                 0x68
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IPhysicalGestureRecognizer
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x4D, 0x9F, 0xA2, 0x79,
+                0xA6, 0x32,
+                0xA5, 0x5A,
+                0xA9,
+                0x99,
+                0x42,
+                0xB0,
+                0xB4,
+                0x20,
+                0xC6,
+                0x6D
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -1661,6 +1709,78 @@ public static partial class IID
                 0xFA,
                 0x96,
                 0x8C
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ITouchpadGesturesController
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xDD, 0x3C, 0xC1, 0x28,
+                0x68, 0xE0,
+                0x9F, 0x54,
+                0x89,
+                0xC6,
+                0x1A,
+                0x44,
+                0x0C,
+                0x6F,
+                0xC3,
+                0x27
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ITouchpadGesturesControllerStatics
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x71, 0xF1, 0x7E, 0x20,
+                0x73, 0x1A,
+                0xCD, 0x51,
+                0xA6,
+                0x94,
+                0x88,
+                0x40,
+                0xE0,
+                0x9D,
+                0xBA,
+                0xFA
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_ITouchpadGlobalActionEventArgs
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x06, 0xD2, 0xDA, 0x6E,
+                0xE3, 0xE4,
+                0x39, 0x5F,
+                0x9D,
+                0x13,
+                0x85,
+                0x75,
+                0xE8,
+                0xE2,
+                0xA1,
+                0x2B
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

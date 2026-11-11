@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IXMLGenericParse : IXMLGenericParse.Interface, INativeGuid
 {
+    /// <include file='IXMLGenericParse.xml' path='doc/member[@name="IXMLGenericParse.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IXMLGenericParse);
 
     public void** lpVtbl;

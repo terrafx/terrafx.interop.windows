@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("27354129-7F64-5B0F-8F00-5D77AFBE261E")]
 public unsafe partial struct MsftDiscFormat2TrackAtOnce : INativeGuid
 {
+    /// <include file='MsftDiscFormat2TrackAtOnce.xml' path='doc/member[@name="MsftDiscFormat2TrackAtOnce.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_MsftDiscFormat2TrackAtOnce);
 }

@@ -7,66 +7,87 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GL
 {
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_LEVEL_NOGUIDELINE"]/*' />
     [NativeTypeName("#define GL_LEVEL_NOGUIDELINE 0x00000000")]
     public const int GL_LEVEL_NOGUIDELINE = 0x00000000;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_LEVEL_FATAL"]/*' />
     [NativeTypeName("#define GL_LEVEL_FATAL 0x00000001")]
     public const int GL_LEVEL_FATAL = 0x00000001;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_LEVEL_ERROR"]/*' />
     [NativeTypeName("#define GL_LEVEL_ERROR 0x00000002")]
     public const int GL_LEVEL_ERROR = 0x00000002;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_LEVEL_WARNING"]/*' />
     [NativeTypeName("#define GL_LEVEL_WARNING 0x00000003")]
     public const int GL_LEVEL_WARNING = 0x00000003;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_LEVEL_INFORMATION"]/*' />
     [NativeTypeName("#define GL_LEVEL_INFORMATION 0x00000004")]
     public const int GL_LEVEL_INFORMATION = 0x00000004;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_ID_UNKNOWN"]/*' />
     [NativeTypeName("#define GL_ID_UNKNOWN 0x00000000")]
     public const int GL_ID_UNKNOWN = 0x00000000;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_ID_NOMODULE"]/*' />
     [NativeTypeName("#define GL_ID_NOMODULE 0x00000001")]
     public const int GL_ID_NOMODULE = 0x00000001;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_ID_NODICTIONARY"]/*' />
     [NativeTypeName("#define GL_ID_NODICTIONARY 0x00000010")]
     public const int GL_ID_NODICTIONARY = 0x00000010;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_ID_CANNOTSAVE"]/*' />
     [NativeTypeName("#define GL_ID_CANNOTSAVE 0x00000011")]
     public const int GL_ID_CANNOTSAVE = 0x00000011;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_ID_NOCONVERT"]/*' />
     [NativeTypeName("#define GL_ID_NOCONVERT 0x00000020")]
     public const int GL_ID_NOCONVERT = 0x00000020;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_ID_TYPINGERROR"]/*' />
     [NativeTypeName("#define GL_ID_TYPINGERROR 0x00000021")]
     public const int GL_ID_TYPINGERROR = 0x00000021;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_ID_TOOMANYSTROKE"]/*' />
     [NativeTypeName("#define GL_ID_TOOMANYSTROKE 0x00000022")]
     public const int GL_ID_TOOMANYSTROKE = 0x00000022;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_ID_READINGCONFLICT"]/*' />
     [NativeTypeName("#define GL_ID_READINGCONFLICT 0x00000023")]
     public const int GL_ID_READINGCONFLICT = 0x00000023;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_ID_INPUTREADING"]/*' />
     [NativeTypeName("#define GL_ID_INPUTREADING 0x00000024")]
     public const int GL_ID_INPUTREADING = 0x00000024;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_ID_INPUTRADICAL"]/*' />
     [NativeTypeName("#define GL_ID_INPUTRADICAL 0x00000025")]
     public const int GL_ID_INPUTRADICAL = 0x00000025;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_ID_INPUTCODE"]/*' />
     [NativeTypeName("#define GL_ID_INPUTCODE 0x00000026")]
     public const int GL_ID_INPUTCODE = 0x00000026;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_ID_INPUTSYMBOL"]/*' />
     [NativeTypeName("#define GL_ID_INPUTSYMBOL 0x00000027")]
     public const int GL_ID_INPUTSYMBOL = 0x00000027;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_ID_CHOOSECANDIDATE"]/*' />
     [NativeTypeName("#define GL_ID_CHOOSECANDIDATE 0x00000028")]
     public const int GL_ID_CHOOSECANDIDATE = 0x00000028;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_ID_REVERSECONVERSION"]/*' />
     [NativeTypeName("#define GL_ID_REVERSECONVERSION 0x00000029")]
     public const int GL_ID_REVERSECONVERSION = 0x00000029;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_ID_PRIVATE_FIRST"]/*' />
     [NativeTypeName("#define GL_ID_PRIVATE_FIRST 0x00008000")]
     public const int GL_ID_PRIVATE_FIRST = 0x00008000;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_ID_PRIVATE_LAST"]/*' />
     [NativeTypeName("#define GL_ID_PRIVATE_LAST 0x0000FFFF")]
     public const int GL_ID_PRIVATE_LAST = 0x0000FFFF;
 }

@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class STORAGE
 {
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_INFO_FLAGS_ALIGNED_DEVICE"]/*' />
     [NativeTypeName("#define STORAGE_INFO_FLAGS_ALIGNED_DEVICE 0x00000001")]
     public const int STORAGE_INFO_FLAGS_ALIGNED_DEVICE = 0x00000001;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_INFO_FLAGS_PARTITION_ALIGNED_ON_DEVICE"]/*' />
     [NativeTypeName("#define STORAGE_INFO_FLAGS_PARTITION_ALIGNED_ON_DEVICE 0x00000002")]
     public const int STORAGE_INFO_FLAGS_PARTITION_ALIGNED_ON_DEVICE = 0x00000002;
 
+    /// <include file='STORAGE.xml' path='doc/member[@name="STORAGE.STORAGE_INFO_OFFSET_UNKNOWN"]/*' />
     [NativeTypeName("#define STORAGE_INFO_OFFSET_UNKNOWN (0xffffffff)")]
     public const uint STORAGE_INFO_OFFSET_UNKNOWN = (0xffffffff);
 }

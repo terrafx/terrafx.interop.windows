@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IChannelHook : IChannelHook.Interface, INativeGuid
 {
+    /// <include file='IChannelHook.xml' path='doc/member[@name="IChannelHook.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IChannelHook);
 
     public void** lpVtbl;

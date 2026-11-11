@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISpatialAnchorExporter : ISpatialAnchorExporter.Interface, INativeGuid
 {
+    /// <include file='ISpatialAnchorExporter.xml' path='doc/member[@name="ISpatialAnchorExporter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpatialAnchorExporter);
 
     public void** lpVtbl;

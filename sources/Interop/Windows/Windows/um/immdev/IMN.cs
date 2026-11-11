@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IMN
 {
+    /// <include file='IMN.xml' path='doc/member[@name="IMN.IMN_SOFTKBDDESTROYED"]/*' />
     [NativeTypeName("#define IMN_SOFTKBDDESTROYED 0x0011")]
     public const int IMN_SOFTKBDDESTROYED = 0x0011;
 }

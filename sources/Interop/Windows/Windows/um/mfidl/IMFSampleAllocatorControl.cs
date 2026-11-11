@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct IMFSampleAllocatorControl : IMFSampleAllocatorControl.Interface, INativeGuid
 {
+    /// <include file='IMFSampleAllocatorControl.xml' path='doc/member[@name="IMFSampleAllocatorControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFSampleAllocatorControl);
 
     public void** lpVtbl;

@@ -14,6 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("985422DA-B0CF-473B-BA9E-8148CEB3E240")]
 public unsafe partial struct IHttpFileMonitor : IHttpFileMonitor.Interface, INativeGuid
 {
+    /// <include file='IHttpFileMonitor.xml' path='doc/member[@name="IHttpFileMonitor.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpFileMonitor);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface, INativeGuid
 {
+    /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBaseVideoMixer);
 
     public void** lpVtbl;

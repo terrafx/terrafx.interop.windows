@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct ID2D1GradientMesh : ID2D1GradientMesh.Interface, INativeGuid
 {
+    /// <include file='ID2D1GradientMesh.xml' path='doc/member[@name="ID2D1GradientMesh.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1GradientMesh);
 
     public void** lpVtbl;

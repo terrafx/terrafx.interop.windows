@@ -7,183 +7,243 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SP
 {
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_PCT1_SERVER"]/*' />
     [NativeTypeName("#define SP_PROT_PCT1_SERVER 0x00000001")]
     public const int SP_PROT_PCT1_SERVER = 0x00000001;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_PCT1_CLIENT"]/*' />
     [NativeTypeName("#define SP_PROT_PCT1_CLIENT 0x00000002")]
     public const int SP_PROT_PCT1_CLIENT = 0x00000002;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_PCT1"]/*' />
     [NativeTypeName("#define SP_PROT_PCT1 (SP_PROT_PCT1_SERVER | SP_PROT_PCT1_CLIENT)")]
     public const int SP_PROT_PCT1 = (0x00000001 | 0x00000002);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_SSL2_SERVER"]/*' />
     [NativeTypeName("#define SP_PROT_SSL2_SERVER 0x00000004")]
     public const int SP_PROT_SSL2_SERVER = 0x00000004;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_SSL2_CLIENT"]/*' />
     [NativeTypeName("#define SP_PROT_SSL2_CLIENT 0x00000008")]
     public const int SP_PROT_SSL2_CLIENT = 0x00000008;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_SSL2"]/*' />
     [NativeTypeName("#define SP_PROT_SSL2 (SP_PROT_SSL2_SERVER | SP_PROT_SSL2_CLIENT)")]
     public const int SP_PROT_SSL2 = (0x00000004 | 0x00000008);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_SSL3_SERVER"]/*' />
     [NativeTypeName("#define SP_PROT_SSL3_SERVER 0x00000010")]
     public const int SP_PROT_SSL3_SERVER = 0x00000010;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_SSL3_CLIENT"]/*' />
     [NativeTypeName("#define SP_PROT_SSL3_CLIENT 0x00000020")]
     public const int SP_PROT_SSL3_CLIENT = 0x00000020;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_SSL3"]/*' />
     [NativeTypeName("#define SP_PROT_SSL3 (SP_PROT_SSL3_SERVER | SP_PROT_SSL3_CLIENT)")]
     public const int SP_PROT_SSL3 = (0x00000010 | 0x00000020);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_SERVER"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_SERVER 0x00000040")]
     public const int SP_PROT_TLS1_SERVER = 0x00000040;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_CLIENT"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_CLIENT 0x00000080")]
     public const int SP_PROT_TLS1_CLIENT = 0x00000080;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1 (SP_PROT_TLS1_SERVER | SP_PROT_TLS1_CLIENT)")]
     public const int SP_PROT_TLS1 = (0x00000040 | 0x00000080);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_SSL3TLS1_CLIENTS"]/*' />
     [NativeTypeName("#define SP_PROT_SSL3TLS1_CLIENTS (SP_PROT_TLS1_CLIENT | SP_PROT_SSL3_CLIENT)")]
     public const int SP_PROT_SSL3TLS1_CLIENTS = (0x00000080 | 0x00000020);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_SSL3TLS1_SERVERS"]/*' />
     [NativeTypeName("#define SP_PROT_SSL3TLS1_SERVERS (SP_PROT_TLS1_SERVER | SP_PROT_SSL3_SERVER)")]
     public const int SP_PROT_SSL3TLS1_SERVERS = (0x00000040 | 0x00000010);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_SSL3TLS1"]/*' />
     [NativeTypeName("#define SP_PROT_SSL3TLS1 (SP_PROT_SSL3 | SP_PROT_TLS1)")]
     public const int SP_PROT_SSL3TLS1 = ((0x00000010 | 0x00000020) | (0x00000040 | 0x00000080));
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_UNI_SERVER"]/*' />
     [NativeTypeName("#define SP_PROT_UNI_SERVER 0x40000000")]
     public const int SP_PROT_UNI_SERVER = 0x40000000;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_UNI_CLIENT"]/*' />
     [NativeTypeName("#define SP_PROT_UNI_CLIENT 0x80000000")]
     public const uint SP_PROT_UNI_CLIENT = 0x80000000;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_UNI"]/*' />
     [NativeTypeName("#define SP_PROT_UNI (SP_PROT_UNI_SERVER | SP_PROT_UNI_CLIENT)")]
     public const uint SP_PROT_UNI = (0x40000000 | 0x80000000);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_ALL"]/*' />
     [NativeTypeName("#define SP_PROT_ALL 0xffffffff")]
     public const uint SP_PROT_ALL = 0xffffffff;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_NONE"]/*' />
     [NativeTypeName("#define SP_PROT_NONE 0")]
     public const int SP_PROT_NONE = 0;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_CLIENTS"]/*' />
     [NativeTypeName("#define SP_PROT_CLIENTS (SP_PROT_PCT1_CLIENT | SP_PROT_SSL2_CLIENT | SP_PROT_SSL3_CLIENT | SP_PROT_UNI_CLIENT | SP_PROT_TLS1_CLIENT)")]
     public const uint SP_PROT_CLIENTS = (0x00000002 | 0x00000008 | 0x00000020 | 0x80000000 | 0x00000080);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_SERVERS"]/*' />
     [NativeTypeName("#define SP_PROT_SERVERS (SP_PROT_PCT1_SERVER | SP_PROT_SSL2_SERVER | SP_PROT_SSL3_SERVER | SP_PROT_UNI_SERVER | SP_PROT_TLS1_SERVER)")]
     public const int SP_PROT_SERVERS = (0x00000001 | 0x00000004 | 0x00000010 | 0x40000000 | 0x00000040);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_0_SERVER"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_0_SERVER SP_PROT_TLS1_SERVER")]
     public const int SP_PROT_TLS1_0_SERVER = 0x00000040;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_0_CLIENT"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_0_CLIENT SP_PROT_TLS1_CLIENT")]
     public const int SP_PROT_TLS1_0_CLIENT = 0x00000080;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_0"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_0 (SP_PROT_TLS1_0_SERVER | \\\r\n                                         SP_PROT_TLS1_0_CLIENT)")]
     public const int SP_PROT_TLS1_0 = (0x00000040 | 0x00000080);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_1_SERVER"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_1_SERVER 0x00000100")]
     public const int SP_PROT_TLS1_1_SERVER = 0x00000100;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_1_CLIENT"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_1_CLIENT 0x00000200")]
     public const int SP_PROT_TLS1_1_CLIENT = 0x00000200;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_1"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_1 (SP_PROT_TLS1_1_SERVER | \\\r\n                                         SP_PROT_TLS1_1_CLIENT)")]
     public const int SP_PROT_TLS1_1 = (0x00000100 | 0x00000200);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_2_SERVER"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_2_SERVER 0x00000400")]
     public const int SP_PROT_TLS1_2_SERVER = 0x00000400;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_2_CLIENT"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_2_CLIENT 0x00000800")]
     public const int SP_PROT_TLS1_2_CLIENT = 0x00000800;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_2"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_2 (SP_PROT_TLS1_2_SERVER | \\\r\n                                         SP_PROT_TLS1_2_CLIENT)")]
     public const int SP_PROT_TLS1_2 = (0x00000400 | 0x00000800);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_3_SERVER"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_3_SERVER 0x00001000")]
     public const int SP_PROT_TLS1_3_SERVER = 0x00001000;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_3_CLIENT"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_3_CLIENT 0x00002000")]
     public const int SP_PROT_TLS1_3_CLIENT = 0x00002000;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_3"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_3 (SP_PROT_TLS1_3_SERVER | \\\r\n                                         SP_PROT_TLS1_3_CLIENT)")]
     public const int SP_PROT_TLS1_3 = (0x00001000 | 0x00002000);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_DTLS_SERVER"]/*' />
     [NativeTypeName("#define SP_PROT_DTLS_SERVER 0x00010000")]
     public const int SP_PROT_DTLS_SERVER = 0x00010000;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_DTLS_CLIENT"]/*' />
     [NativeTypeName("#define SP_PROT_DTLS_CLIENT 0x00020000")]
     public const int SP_PROT_DTLS_CLIENT = 0x00020000;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_DTLS"]/*' />
     [NativeTypeName("#define SP_PROT_DTLS (SP_PROT_DTLS_SERVER | \\\r\n                                         SP_PROT_DTLS_CLIENT )")]
     public const int SP_PROT_DTLS = (0x00010000 | 0x00020000);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_DTLS1_0_SERVER"]/*' />
     [NativeTypeName("#define SP_PROT_DTLS1_0_SERVER SP_PROT_DTLS_SERVER")]
     public const int SP_PROT_DTLS1_0_SERVER = 0x00010000;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_DTLS1_0_CLIENT"]/*' />
     [NativeTypeName("#define SP_PROT_DTLS1_0_CLIENT SP_PROT_DTLS_CLIENT")]
     public const int SP_PROT_DTLS1_0_CLIENT = 0x00020000;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_DTLS1_0"]/*' />
     [NativeTypeName("#define SP_PROT_DTLS1_0 (SP_PROT_DTLS1_0_SERVER | SP_PROT_DTLS1_0_CLIENT)")]
     public const int SP_PROT_DTLS1_0 = (0x00010000 | 0x00020000);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_DTLS1_2_SERVER"]/*' />
     [NativeTypeName("#define SP_PROT_DTLS1_2_SERVER 0x00040000")]
     public const int SP_PROT_DTLS1_2_SERVER = 0x00040000;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_DTLS1_2_CLIENT"]/*' />
     [NativeTypeName("#define SP_PROT_DTLS1_2_CLIENT 0x00080000")]
     public const int SP_PROT_DTLS1_2_CLIENT = 0x00080000;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_DTLS1_2"]/*' />
     [NativeTypeName("#define SP_PROT_DTLS1_2 (SP_PROT_DTLS1_2_SERVER | SP_PROT_DTLS1_2_CLIENT)")]
     public const int SP_PROT_DTLS1_2 = (0x00040000 | 0x00080000);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_DTLS1_X_SERVER"]/*' />
     [NativeTypeName("#define SP_PROT_DTLS1_X_SERVER (SP_PROT_DTLS1_0_SERVER | \\\r\n                                         SP_PROT_DTLS1_2_SERVER)")]
     public const int SP_PROT_DTLS1_X_SERVER = (0x00010000 | 0x00040000);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_DTLS1_X_CLIENT"]/*' />
     [NativeTypeName("#define SP_PROT_DTLS1_X_CLIENT (SP_PROT_DTLS1_0_CLIENT | \\\r\n                                         SP_PROT_DTLS1_2_CLIENT)")]
     public const int SP_PROT_DTLS1_X_CLIENT = (0x00020000 | 0x00080000);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_DTLS1_X"]/*' />
     [NativeTypeName("#define SP_PROT_DTLS1_X (SP_PROT_DTLS1_X_SERVER | \\\r\n                                         SP_PROT_DTLS1_X_CLIENT)")]
     public const int SP_PROT_DTLS1_X = ((0x00010000 | 0x00040000) | (0x00020000 | 0x00080000));
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_1PLUS_SERVER"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_1PLUS_SERVER (SP_PROT_TLS1_1_SERVER | \\\r\n                                         SP_PROT_TLS1_2_SERVER | \\\r\n                                         SP_PROT_TLS1_3_SERVER)")]
     public const int SP_PROT_TLS1_1PLUS_SERVER = (0x00000100 | 0x00000400 | 0x00001000);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_1PLUS_CLIENT"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_1PLUS_CLIENT (SP_PROT_TLS1_1_CLIENT | \\\r\n                                         SP_PROT_TLS1_2_CLIENT | \\\r\n                                         SP_PROT_TLS1_3_CLIENT)")]
     public const int SP_PROT_TLS1_1PLUS_CLIENT = (0x00000200 | 0x00000800 | 0x00002000);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_1PLUS"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_1PLUS (SP_PROT_TLS1_1PLUS_SERVER | \\\r\n                                         SP_PROT_TLS1_1PLUS_CLIENT)")]
     public const int SP_PROT_TLS1_1PLUS = ((0x00000100 | 0x00000400 | 0x00001000) | (0x00000200 | 0x00000800 | 0x00002000));
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_3PLUS_SERVER"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_3PLUS_SERVER SP_PROT_TLS1_3_SERVER")]
     public const int SP_PROT_TLS1_3PLUS_SERVER = 0x00001000;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_3PLUS_CLIENT"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_3PLUS_CLIENT SP_PROT_TLS1_3_CLIENT")]
     public const int SP_PROT_TLS1_3PLUS_CLIENT = 0x00002000;
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_3PLUS"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_3PLUS (SP_PROT_TLS1_3PLUS_SERVER | \\\r\n                                         SP_PROT_TLS1_3PLUS_CLIENT)")]
     public const int SP_PROT_TLS1_3PLUS = (0x00001000 | 0x00002000);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_X_SERVER"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_X_SERVER (SP_PROT_TLS1_0_SERVER | \\\r\n                                         SP_PROT_TLS1_1_SERVER | \\\r\n                                         SP_PROT_TLS1_2_SERVER | \\\r\n                                         SP_PROT_TLS1_3_SERVER)")]
     public const int SP_PROT_TLS1_X_SERVER = (0x00000040 | 0x00000100 | 0x00000400 | 0x00001000);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_X_CLIENT"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_X_CLIENT (SP_PROT_TLS1_0_CLIENT | \\\r\n                                         SP_PROT_TLS1_1_CLIENT | \\\r\n                                         SP_PROT_TLS1_2_CLIENT | \\\r\n                                         SP_PROT_TLS1_3_CLIENT)")]
     public const int SP_PROT_TLS1_X_CLIENT = (0x00000080 | 0x00000200 | 0x00000800 | 0x00002000);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_TLS1_X"]/*' />
     [NativeTypeName("#define SP_PROT_TLS1_X (SP_PROT_TLS1_X_SERVER | \\\r\n                                         SP_PROT_TLS1_X_CLIENT)")]
     public const int SP_PROT_TLS1_X = ((0x00000040 | 0x00000100 | 0x00000400 | 0x00001000) | (0x00000080 | 0x00000200 | 0x00000800 | 0x00002000));
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_SSL3TLS1_X_CLIENTS"]/*' />
     [NativeTypeName("#define SP_PROT_SSL3TLS1_X_CLIENTS (SP_PROT_TLS1_X_CLIENT | \\\r\n                                         SP_PROT_SSL3_CLIENT)")]
     public const int SP_PROT_SSL3TLS1_X_CLIENTS = ((0x00000080 | 0x00000200 | 0x00000800 | 0x00002000) | 0x00000020);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_SSL3TLS1_X_SERVERS"]/*' />
     [NativeTypeName("#define SP_PROT_SSL3TLS1_X_SERVERS (SP_PROT_TLS1_X_SERVER | \\\r\n                                         SP_PROT_SSL3_SERVER)")]
     public const int SP_PROT_SSL3TLS1_X_SERVERS = ((0x00000040 | 0x00000100 | 0x00000400 | 0x00001000) | 0x00000010);
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_SSL3TLS1_X"]/*' />
     [NativeTypeName("#define SP_PROT_SSL3TLS1_X (SP_PROT_SSL3 | SP_PROT_TLS1_X)")]
     public const int SP_PROT_SSL3TLS1_X = ((0x00000010 | 0x00000020) | ((0x00000040 | 0x00000100 | 0x00000400 | 0x00001000) | (0x00000080 | 0x00000200 | 0x00000800 | 0x00002000)));
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_X_CLIENTS"]/*' />
     [NativeTypeName("#define SP_PROT_X_CLIENTS (SP_PROT_CLIENTS | \\\r\n                                         SP_PROT_TLS1_X_CLIENT | \\\r\n                                         SP_PROT_DTLS1_X_CLIENT )")]
     public const uint SP_PROT_X_CLIENTS = ((0x00000002 | 0x00000008 | 0x00000020 | 0x80000000 | 0x00000080) | (0x00000080 | 0x00000200 | 0x00000800 | 0x00002000) | (0x00020000 | 0x00080000));
 
+    /// <include file='SP.xml' path='doc/member[@name="SP.SP_PROT_X_SERVERS"]/*' />
     [NativeTypeName("#define SP_PROT_X_SERVERS (SP_PROT_SERVERS | \\\r\n                                         SP_PROT_TLS1_X_SERVER | \\\r\n                                         SP_PROT_DTLS1_X_SERVER )")]
     public const int SP_PROT_X_SERVERS = ((0x00000001 | 0x00000004 | 0x00000010 | 0x40000000 | 0x00000040) | (0x00000040 | 0x00000100 | 0x00000400 | 0x00001000) | (0x00010000 | 0x00040000));
 }

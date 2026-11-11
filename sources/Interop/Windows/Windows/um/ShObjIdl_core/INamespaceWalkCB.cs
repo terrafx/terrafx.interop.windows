@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct INamespaceWalkCB : INamespaceWalkCB.Interface, INativeGuid
 {
+    /// <include file='INamespaceWalkCB.xml' path='doc/member[@name="INamespaceWalkCB.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_INamespaceWalkCB);
 
     public void** lpVtbl;

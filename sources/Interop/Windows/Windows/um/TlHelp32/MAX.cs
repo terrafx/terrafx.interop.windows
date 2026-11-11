@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_MODULE_NAME32"]/*' />
     [NativeTypeName("#define MAX_MODULE_NAME32 255")]
     public const int MAX_MODULE_NAME32 = 255;
 }

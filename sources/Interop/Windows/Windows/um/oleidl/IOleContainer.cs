@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IParseDisplayName")]
 public unsafe partial struct IOleContainer : IOleContainer.Interface, INativeGuid
 {
+    /// <include file='IOleContainer.xml' path='doc/member[@name="IOleContainer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IOleContainer);
 
     public void** lpVtbl;

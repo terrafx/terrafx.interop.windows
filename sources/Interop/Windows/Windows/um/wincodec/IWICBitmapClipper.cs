@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IWICBitmapSource")]
 public unsafe partial struct IWICBitmapClipper : IWICBitmapClipper.Interface, INativeGuid
 {
+    /// <include file='IWICBitmapClipper.xml' path='doc/member[@name="IWICBitmapClipper.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICBitmapClipper);
 
     public void** lpVtbl;

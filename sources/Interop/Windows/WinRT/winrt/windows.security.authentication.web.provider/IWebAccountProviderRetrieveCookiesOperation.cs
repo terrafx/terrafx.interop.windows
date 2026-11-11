@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IWebAccountProviderRetrieveCookiesOperation : IWebAccountProviderRetrieveCookiesOperation.Interface, INativeGuid
 {
+    /// <include file='IWebAccountProviderRetrieveCookiesOperation.xml' path='doc/member[@name="IWebAccountProviderRetrieveCookiesOperation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWebAccountProviderRetrieveCookiesOperation);
 
     public void** lpVtbl;

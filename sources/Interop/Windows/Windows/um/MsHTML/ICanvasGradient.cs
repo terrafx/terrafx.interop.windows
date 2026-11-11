@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct ICanvasGradient : ICanvasGradient.Interface, INativeGuid
 {
+    /// <include file='ICanvasGradient.xml' path='doc/member[@name="ICanvasGradient.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICanvasGradient);
 
     public void** lpVtbl;

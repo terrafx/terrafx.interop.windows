@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_SYNCMGRITEMNAME"]/*' />
     [NativeTypeName("#define MAX_SYNCMGRITEMNAME ( 128 )")]
     public const int MAX_SYNCMGRITEMNAME = (128);
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_SYNCMGRHANDLERNAME"]/*' />
     [NativeTypeName("#define MAX_SYNCMGRHANDLERNAME ( 32 )")]
     public const int MAX_SYNCMGRHANDLERNAME = (32);
 }

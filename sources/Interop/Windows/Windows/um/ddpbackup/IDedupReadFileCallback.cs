@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDedupReadFileCallback : IDedupReadFileCallback.Interface, INativeGuid
 {
+    /// <include file='IDedupReadFileCallback.xml' path='doc/member[@name="IDedupReadFileCallback.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDedupReadFileCallback);
 
     public void** lpVtbl;

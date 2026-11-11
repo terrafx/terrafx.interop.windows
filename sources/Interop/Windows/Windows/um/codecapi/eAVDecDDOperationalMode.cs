@@ -31,4 +31,7 @@ public enum eAVDecDDOperationalMode
 
     /// <include file='eAVDecDDOperationalMode.xml' path='doc/member[@name="eAVDecDDOperationalMode.eAVDecDDOperationalMode_PORTABLE14"]/*' />
     eAVDecDDOperationalMode_PORTABLE14 = 7,
+
+    /// <include file='eAVDecDDOperationalMode.xml' path='doc/member[@name="eAVDecDDOperationalMode.eAVDecDDOperationalMode_PORTABLE16"]/*' />
+    eAVDecDDOperationalMode_PORTABLE16 = 8,
 }

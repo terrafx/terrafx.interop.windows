@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3D9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3D9
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DDevice9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DDevice9
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DResource9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DResource9
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DBaseTexture9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DBaseTexture9
     {
@@ -113,6 +117,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DTexture9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DTexture9
     {
@@ -138,6 +143,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DCubeTexture9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DCubeTexture9
     {
@@ -163,6 +169,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DVolumeTexture9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DVolumeTexture9
     {
@@ -188,6 +195,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DVertexBuffer9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DVertexBuffer9
     {
@@ -213,6 +221,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DIndexBuffer9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DIndexBuffer9
     {
@@ -238,6 +247,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DSurface9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DSurface9
     {
@@ -263,6 +273,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DVolume9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DVolume9
     {
@@ -288,6 +299,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DSwapChain9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DSwapChain9
     {
@@ -313,6 +325,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DVertexDeclaration9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DVertexDeclaration9
     {
@@ -338,6 +351,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DVertexShader9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DVertexShader9
     {
@@ -363,6 +377,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DPixelShader9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DPixelShader9
     {
@@ -388,6 +403,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DStateBlock9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DStateBlock9
     {
@@ -413,6 +429,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DQuery9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DQuery9
     {
@@ -438,6 +455,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_HelperName"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_HelperName
     {
@@ -463,6 +481,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3D9Ex"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3D9Ex
     {
@@ -488,6 +507,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DDevice9Ex"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DDevice9Ex
     {
@@ -513,6 +533,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DSwapChain9Ex"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DSwapChain9Ex
     {
@@ -538,6 +559,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3D9ExOverlayExtension"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3D9ExOverlayExtension
     {
@@ -563,6 +585,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DDevice9Video"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DDevice9Video
     {
@@ -588,6 +611,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DAuthenticatedChannel9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DAuthenticatedChannel9
     {
@@ -613,6 +637,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDirect3DCryptoSession9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDirect3DCryptoSession9
     {

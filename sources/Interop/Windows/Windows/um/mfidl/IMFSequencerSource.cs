@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFSequencerSource : IMFSequencerSource.Interface, INativeGuid
 {
+    /// <include file='IMFSequencerSource.xml' path='doc/member[@name="IMFSequencerSource.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFSequencerSource);
 
     public void** lpVtbl;

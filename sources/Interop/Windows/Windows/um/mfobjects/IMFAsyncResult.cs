@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFAsyncResult : IMFAsyncResult.Interface, INativeGuid
 {
+    /// <include file='IMFAsyncResult.xml' path='doc/member[@name="IMFAsyncResult.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFAsyncResult);
 
     public void** lpVtbl;

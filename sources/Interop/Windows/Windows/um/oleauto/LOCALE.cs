@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class LOCALE
 {
+    /// <include file='LOCALE.xml' path='doc/member[@name="LOCALE.LOCALE_USE_NLS"]/*' />
     [NativeTypeName("#define LOCALE_USE_NLS 0x10000000")]
     public const int LOCALE_USE_NLS = 0x10000000;
 }

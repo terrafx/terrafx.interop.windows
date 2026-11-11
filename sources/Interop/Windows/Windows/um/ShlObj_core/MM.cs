@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MM
 {
+    /// <include file='MM.xml' path='doc/member[@name="MM.MM_ADDSEPARATOR"]/*' />
     [NativeTypeName("#define MM_ADDSEPARATOR 0x00000001L")]
     public const int MM_ADDSEPARATOR = 0x00000001;
 
+    /// <include file='MM.xml' path='doc/member[@name="MM.MM_SUBMENUSHAVEIDS"]/*' />
     [NativeTypeName("#define MM_SUBMENUSHAVEIDS 0x00000002L")]
     public const int MM_SUBMENUSHAVEIDS = 0x00000002;
 
+    /// <include file='MM.xml' path='doc/member[@name="MM.MM_DONTREMOVESEPS"]/*' />
     [NativeTypeName("#define MM_DONTREMOVESEPS 0x00000004L")]
     public const int MM_DONTREMOVESEPS = 0x00000004;
 }

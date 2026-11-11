@@ -7,8 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public partial struct WS_HTTP_HEADER_MAPPING
 {
+    /// <include file='WS_HTTP_HEADER_MAPPING.xml' path='doc/member[@name="WS_HTTP_HEADER_MAPPING.WS_HTTP_HEADER_MAPPING_COMMA_SEPARATOR"]/*' />
     public const int WS_HTTP_HEADER_MAPPING_COMMA_SEPARATOR = 0x1;
+    /// <include file='WS_HTTP_HEADER_MAPPING.xml' path='doc/member[@name="WS_HTTP_HEADER_MAPPING.WS_HTTP_HEADER_MAPPING_SEMICOLON_SEPARATOR"]/*' />
     public const int WS_HTTP_HEADER_MAPPING_SEMICOLON_SEPARATOR = 0x2;
+    /// <include file='WS_HTTP_HEADER_MAPPING.xml' path='doc/member[@name="WS_HTTP_HEADER_MAPPING.WS_HTTP_HEADER_MAPPING_QUOTED_VALUE"]/*' />
     public const int WS_HTTP_HEADER_MAPPING_QUOTED_VALUE = 0x4;
 
     /// <include file='WS_HTTP_HEADER_MAPPING.xml' path='doc/member[@name="WS_HTTP_HEADER_MAPPING.headerName"]/*' />

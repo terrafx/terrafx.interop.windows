@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfPreservedKeyNotifySink : ITfPreservedKeyNotifySink.Interface, INativeGuid
 {
+    /// <include file='ITfPreservedKeyNotifySink.xml' path='doc/member[@name="ITfPreservedKeyNotifySink.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfPreservedKeyNotifySink);
 
     public void** lpVtbl;

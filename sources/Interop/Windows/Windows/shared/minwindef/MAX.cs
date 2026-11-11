@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_PATH"]/*' />
     [NativeTypeName("#define MAX_PATH 260")]
     public const int MAX_PATH = 260;
 }

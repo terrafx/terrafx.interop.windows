@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("7007ACC7-3202-11D1-AAD2-00805FC1270E")]
 public unsafe partial struct NetworkConnections : INativeGuid
 {
+    /// <include file='NetworkConnections.xml' path='doc/member[@name="NetworkConnections.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_NetworkConnections);
 }

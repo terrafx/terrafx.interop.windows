@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11BlendState1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11BlendState1
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11RasterizerState1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11RasterizerState1
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3DDeviceContextState"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3DDeviceContextState
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11DeviceContext1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11DeviceContext1
     {
@@ -113,6 +117,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11VideoContext1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11VideoContext1
     {
@@ -138,6 +143,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11VideoDevice1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11VideoDevice1
     {
@@ -163,6 +169,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11VideoProcessorEnumerator1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11VideoProcessorEnumerator1
     {
@@ -188,6 +195,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11Device1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11Device1
     {
@@ -213,6 +221,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3DUserDefinedAnnotation"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3DUserDefinedAnnotation
     {

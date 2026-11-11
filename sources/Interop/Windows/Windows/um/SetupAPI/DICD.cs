@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DICD
 {
+    /// <include file='DICD.xml' path='doc/member[@name="DICD.DICD_GENERATE_ID"]/*' />
     [NativeTypeName("#define DICD_GENERATE_ID 0x00000001")]
     public const int DICD_GENERATE_ID = 0x00000001;
 
+    /// <include file='DICD.xml' path='doc/member[@name="DICD.DICD_INHERIT_CLASSDRVS"]/*' />
     [NativeTypeName("#define DICD_INHERIT_CLASSDRVS 0x00000002")]
     public const int DICD_INHERIT_CLASSDRVS = 0x00000002;
 }

@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct ILaunchTargetMonitor : ILaunchTargetMonitor.Interface, INativeGuid
 {
+    /// <include file='ILaunchTargetMonitor.xml' path='doc/member[@name="ILaunchTargetMonitor.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILaunchTargetMonitor);
 
     public void** lpVtbl;

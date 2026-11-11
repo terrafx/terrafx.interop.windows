@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FACILITY
 {
+    /// <include file='FACILITY.xml' path='doc/member[@name="FACILITY.FACILITY_WINCODEC_ERR"]/*' />
     [NativeTypeName("#define FACILITY_WINCODEC_ERR 0x898")]
     public const int FACILITY_WINCODEC_ERR = 0x898;
 }

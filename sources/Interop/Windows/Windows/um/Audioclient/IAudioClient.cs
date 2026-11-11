@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAudioClient : IAudioClient.Interface, INativeGuid
 {
+    /// <include file='IAudioClient.xml' path='doc/member[@name="IAudioClient.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioClient);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IFileSavePicker4 : IFileSavePicker4.Interface, INativeGuid
 {
+    /// <include file='IFileSavePicker4.xml' path='doc/member[@name="IFileSavePicker4.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFileSavePicker4);
 
     public void** lpVtbl;

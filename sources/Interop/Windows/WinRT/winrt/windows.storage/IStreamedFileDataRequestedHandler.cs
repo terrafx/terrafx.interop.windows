@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IStreamedFileDataRequestedHandler : IStreamedFileDataRequestedHandler.Interface, INativeGuid
 {
+    /// <include file='IStreamedFileDataRequestedHandler.xml' path='doc/member[@name="IStreamedFileDataRequestedHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IStreamedFileDataRequestedHandler);
 
     public void** lpVtbl;

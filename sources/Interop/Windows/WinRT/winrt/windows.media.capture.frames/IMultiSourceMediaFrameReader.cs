@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMultiSourceMediaFrameReader : IMultiSourceMediaFrameReader.Interface, INativeGuid
 {
+    /// <include file='IMultiSourceMediaFrameReader.xml' path='doc/member[@name="IMultiSourceMediaFrameReader.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMultiSourceMediaFrameReader);
 
     public void** lpVtbl;

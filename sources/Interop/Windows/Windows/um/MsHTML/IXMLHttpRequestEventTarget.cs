@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IXMLHttpRequestEventTarget : IXMLHttpRequestEventTarget.Interface, INativeGuid
 {
+    /// <include file='IXMLHttpRequestEventTarget.xml' path='doc/member[@name="IXMLHttpRequestEventTarget.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IXMLHttpRequestEventTarget);
 
     public void** lpVtbl;

@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GUID
 {
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_VendorMicrosoft"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_VendorMicrosoft
     {
@@ -37,6 +38,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_VendorMicrosoftBuiltIn"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_VendorMicrosoftBuiltIn
     {
@@ -62,6 +64,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ContainerFormatBmp"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ContainerFormatBmp
     {
@@ -87,6 +90,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ContainerFormatPng"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ContainerFormatPng
     {
@@ -112,6 +116,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ContainerFormatIco"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ContainerFormatIco
     {
@@ -137,6 +142,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ContainerFormatJpeg"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ContainerFormatJpeg
     {
@@ -162,6 +168,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ContainerFormatTiff"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ContainerFormatTiff
     {
@@ -187,6 +194,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ContainerFormatGif"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ContainerFormatGif
     {
@@ -212,6 +220,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ContainerFormatWmp"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ContainerFormatWmp
     {
@@ -237,6 +246,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ContainerFormatDds"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ContainerFormatDds
     {
@@ -262,6 +272,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ContainerFormatAdng"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ContainerFormatAdng
     {
@@ -287,6 +298,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ContainerFormatHeif"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ContainerFormatHeif
     {
@@ -312,6 +324,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ContainerFormatWebp"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ContainerFormatWebp
     {
@@ -337,6 +350,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ContainerFormatRaw"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ContainerFormatRaw
     {
@@ -362,6 +376,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_ContainerFormatJpegXL"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_ContainerFormatJpegXL
     {
@@ -387,6 +402,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormatDontCare"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormatDontCare
     {
@@ -412,6 +428,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat1bppIndexed"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat1bppIndexed
     {
@@ -437,6 +454,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat2bppIndexed"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat2bppIndexed
     {
@@ -462,6 +480,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat4bppIndexed"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat4bppIndexed
     {
@@ -487,6 +506,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat8bppIndexed"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat8bppIndexed
     {
@@ -512,6 +532,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormatBlackWhite"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormatBlackWhite
     {
@@ -537,6 +558,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat2bppGray"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat2bppGray
     {
@@ -562,6 +584,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat4bppGray"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat4bppGray
     {
@@ -587,6 +610,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat8bppGray"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat8bppGray
     {
@@ -612,6 +636,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat8bppAlpha"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat8bppAlpha
     {
@@ -637,6 +662,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat8bppDepth"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat8bppDepth
     {
@@ -662,6 +688,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat8bppGain"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat8bppGain
     {
@@ -687,6 +714,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat24bppRGBGain"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat24bppRGBGain
     {
@@ -712,6 +740,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bppBGRGain"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bppBGRGain
     {
@@ -737,6 +766,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat16bppBGR555"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat16bppBGR555
     {
@@ -762,6 +792,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat16bppBGR565"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat16bppBGR565
     {
@@ -787,6 +818,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat16bppBGRA5551"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat16bppBGRA5551
     {
@@ -812,6 +844,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat16bppGray"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat16bppGray
     {
@@ -837,6 +870,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat24bppBGR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat24bppBGR
     {
@@ -862,6 +896,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat24bppRGB"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat24bppRGB
     {
@@ -887,6 +922,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bppBGR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bppBGR
     {
@@ -912,6 +948,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bppBGRA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bppBGRA
     {
@@ -937,6 +974,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bppPBGRA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bppPBGRA
     {
@@ -962,6 +1000,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bppGrayFloat"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bppGrayFloat
     {
@@ -987,6 +1026,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bppRGB"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bppRGB
     {
@@ -1012,6 +1052,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bppRGBA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bppRGBA
     {
@@ -1037,6 +1078,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bppPRGBA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bppPRGBA
     {
@@ -1062,6 +1104,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat48bppRGB"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat48bppRGB
     {
@@ -1087,6 +1130,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat48bppBGR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat48bppBGR
     {
@@ -1112,6 +1156,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat64bppRGB"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat64bppRGB
     {
@@ -1137,6 +1182,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat64bppRGBA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat64bppRGBA
     {
@@ -1162,6 +1208,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat64bppBGRA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat64bppBGRA
     {
@@ -1187,6 +1234,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat64bppPRGBA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat64bppPRGBA
     {
@@ -1212,6 +1260,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat64bppPBGRA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat64bppPBGRA
     {
@@ -1237,6 +1286,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat16bppGrayFixedPoint"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat16bppGrayFixedPoint
     {
@@ -1262,6 +1312,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bppBGR101010"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bppBGR101010
     {
@@ -1287,6 +1338,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat48bppRGBFixedPoint"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat48bppRGBFixedPoint
     {
@@ -1312,6 +1364,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat48bppBGRFixedPoint"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat48bppBGRFixedPoint
     {
@@ -1337,6 +1390,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat96bppRGBFixedPoint"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat96bppRGBFixedPoint
     {
@@ -1362,6 +1416,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat96bppRGBFloat"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat96bppRGBFloat
     {
@@ -1387,6 +1442,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat128bppRGBAFloat"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat128bppRGBAFloat
     {
@@ -1412,6 +1468,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat128bppPRGBAFloat"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat128bppPRGBAFloat
     {
@@ -1437,6 +1494,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat128bppRGBFloat"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat128bppRGBFloat
     {
@@ -1462,6 +1520,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bppCMYK"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bppCMYK
     {
@@ -1487,6 +1546,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat64bppRGBAFixedPoint"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat64bppRGBAFixedPoint
     {
@@ -1512,6 +1572,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat64bppBGRAFixedPoint"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat64bppBGRAFixedPoint
     {
@@ -1537,6 +1598,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat64bppRGBFixedPoint"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat64bppRGBFixedPoint
     {
@@ -1562,6 +1624,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat128bppRGBAFixedPoint"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat128bppRGBAFixedPoint
     {
@@ -1587,6 +1650,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat128bppRGBFixedPoint"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat128bppRGBFixedPoint
     {
@@ -1612,6 +1676,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat64bppRGBAHalf"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat64bppRGBAHalf
     {
@@ -1637,6 +1702,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat64bppPRGBAHalf"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat64bppPRGBAHalf
     {
@@ -1662,6 +1728,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat64bppRGBHalf"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat64bppRGBHalf
     {
@@ -1687,6 +1754,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat48bppRGBHalf"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat48bppRGBHalf
     {
@@ -1712,6 +1780,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bppRGBE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bppRGBE
     {
@@ -1737,6 +1806,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat16bppGrayHalf"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat16bppGrayHalf
     {
@@ -1762,6 +1832,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bppGrayFixedPoint"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bppGrayFixedPoint
     {
@@ -1787,6 +1858,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bppRGBA1010102"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bppRGBA1010102
     {
@@ -1812,6 +1884,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bppRGBA1010102XR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bppRGBA1010102XR
     {
@@ -1837,6 +1910,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bppR10G10B10A2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bppR10G10B10A2
     {
@@ -1862,6 +1936,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bppR10G10B10A2HDR10"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bppR10G10B10A2HDR10
     {
@@ -1887,6 +1962,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat64bppCMYK"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat64bppCMYK
     {
@@ -1912,6 +1988,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat24bpp3Channels"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat24bpp3Channels
     {
@@ -1937,6 +2014,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bpp4Channels"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bpp4Channels
     {
@@ -1962,6 +2040,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat40bpp5Channels"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat40bpp5Channels
     {
@@ -1987,6 +2066,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat48bpp6Channels"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat48bpp6Channels
     {
@@ -2012,6 +2092,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat56bpp7Channels"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat56bpp7Channels
     {
@@ -2037,6 +2118,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat64bpp8Channels"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat64bpp8Channels
     {
@@ -2062,6 +2144,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat48bpp3Channels"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat48bpp3Channels
     {
@@ -2087,6 +2170,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat64bpp4Channels"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat64bpp4Channels
     {
@@ -2112,6 +2196,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat80bpp5Channels"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat80bpp5Channels
     {
@@ -2137,6 +2222,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat96bpp6Channels"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat96bpp6Channels
     {
@@ -2162,6 +2248,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat112bpp7Channels"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat112bpp7Channels
     {
@@ -2187,6 +2274,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat128bpp8Channels"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat128bpp8Channels
     {
@@ -2212,6 +2300,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat40bppCMYKAlpha"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat40bppCMYKAlpha
     {
@@ -2237,6 +2326,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat80bppCMYKAlpha"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat80bppCMYKAlpha
     {
@@ -2262,6 +2352,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat32bpp3ChannelsAlpha"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat32bpp3ChannelsAlpha
     {
@@ -2287,6 +2378,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat40bpp4ChannelsAlpha"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat40bpp4ChannelsAlpha
     {
@@ -2312,6 +2404,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat48bpp5ChannelsAlpha"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat48bpp5ChannelsAlpha
     {
@@ -2337,6 +2430,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat56bpp6ChannelsAlpha"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat56bpp6ChannelsAlpha
     {
@@ -2362,6 +2456,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat64bpp7ChannelsAlpha"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat64bpp7ChannelsAlpha
     {
@@ -2387,6 +2482,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat72bpp8ChannelsAlpha"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat72bpp8ChannelsAlpha
     {
@@ -2412,6 +2508,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat64bpp3ChannelsAlpha"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat64bpp3ChannelsAlpha
     {
@@ -2437,6 +2534,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat80bpp4ChannelsAlpha"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat80bpp4ChannelsAlpha
     {
@@ -2462,6 +2560,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat96bpp5ChannelsAlpha"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat96bpp5ChannelsAlpha
     {
@@ -2487,6 +2586,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat112bpp6ChannelsAlpha"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat112bpp6ChannelsAlpha
     {
@@ -2512,6 +2612,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat128bpp7ChannelsAlpha"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat128bpp7ChannelsAlpha
     {
@@ -2537,6 +2638,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat144bpp8ChannelsAlpha"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat144bpp8ChannelsAlpha
     {
@@ -2562,6 +2664,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat8bppY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat8bppY
     {
@@ -2587,6 +2690,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat8bppCb"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat8bppCb
     {
@@ -2612,6 +2716,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat8bppCr"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat8bppCr
     {
@@ -2637,6 +2742,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat16bppCbCr"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat16bppCbCr
     {
@@ -2662,6 +2768,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat16bppYQuantizedDctCoefficients"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat16bppYQuantizedDctCoefficients
     {
@@ -2687,6 +2794,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat16bppCbQuantizedDctCoefficients"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat16bppCbQuantizedDctCoefficients
     {
@@ -2712,6 +2820,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormat16bppCrQuantizedDctCoefficients"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_WICPixelFormat16bppCrQuantizedDctCoefficients
     {
@@ -2737,6 +2846,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_WICPixelFormatUndefined"]/*' />
     [NativeTypeName("#define GUID_WICPixelFormatUndefined GUID_WICPixelFormatDontCare")]
     public static ref readonly Guid GUID_WICPixelFormatUndefined => ref GUID_WICPixelFormatDontCare;
 }

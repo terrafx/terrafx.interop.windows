@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfMessagePump : ITfMessagePump.Interface, INativeGuid
 {
+    /// <include file='ITfMessagePump.xml' path='doc/member[@name="ITfMessagePump.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfMessagePump);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ILockScreenCallEndCallDeferral : ILockScreenCallEndCallDeferral.Interface, INativeGuid
 {
+    /// <include file='ILockScreenCallEndCallDeferral.xml' path='doc/member[@name="ILockScreenCallEndCallDeferral.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILockScreenCallEndCallDeferral);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMacAlgorithmProvider : IMacAlgorithmProvider.Interface, INativeGuid
 {
+    /// <include file='IMacAlgorithmProvider.xml' path='doc/member[@name="IMacAlgorithmProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMacAlgorithmProvider);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IVMRMixerBitmap : IVMRMixerBitmap.Interface, INativeGuid
 {
+    /// <include file='IVMRMixerBitmap.xml' path='doc/member[@name="IVMRMixerBitmap.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVMRMixerBitmap);
 
     public void** lpVtbl;

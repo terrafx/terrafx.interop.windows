@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IDataTransferManagerInterop : IDataTransferManagerInterop.Interface, INativeGuid
 {
+    /// <include file='IDataTransferManagerInterop.xml' path='doc/member[@name="IDataTransferManagerInterop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDataTransferManagerInterop);
 
     public void** lpVtbl;

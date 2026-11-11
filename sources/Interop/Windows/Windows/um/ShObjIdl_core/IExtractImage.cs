@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IExtractImage : IExtractImage.Interface, INativeGuid
 {
+    /// <include file='IExtractImage.xml' path='doc/member[@name="IExtractImage.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IExtractImage);
 
     public void** lpVtbl;

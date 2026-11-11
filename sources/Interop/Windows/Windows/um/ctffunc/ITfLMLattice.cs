@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfLMLattice : ITfLMLattice.Interface, INativeGuid
 {
+    /// <include file='ITfLMLattice.xml' path='doc/member[@name="ITfLMLattice.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfLMLattice);
 
     public void** lpVtbl;

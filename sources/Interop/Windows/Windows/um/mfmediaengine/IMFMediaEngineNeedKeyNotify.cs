@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IMFMediaEngineNeedKeyNotify : IMFMediaEngineNeedKeyNotify.Interface, INativeGuid
 {
+    /// <include file='IMFMediaEngineNeedKeyNotify.xml' path='doc/member[@name="IMFMediaEngineNeedKeyNotify.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFMediaEngineNeedKeyNotify);
 
     public void** lpVtbl;

@@ -13,23 +13,30 @@ namespace TerraFX.Interop.DirectX;
 [Guid("C4137916-2BE1-46FD-8599-441536F49856")]
 public unsafe partial struct FXMasteringLimiter : INativeGuid
 {
+    /// <include file='FXMasteringLimiter.xml' path='doc/member[@name="FXMasteringLimiter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_FXMasteringLimiter);
 
+    /// <include file='FXMasteringLimiter.xml' path='doc/member[@name="FXMasteringLimiter.FXMASTERINGLIMITER_MIN_RELEASE"]/*' />
     [NativeTypeName("#define FXMASTERINGLIMITER_MIN_RELEASE 1")]
     public const int FXMASTERINGLIMITER_MIN_RELEASE = 1;
 
+    /// <include file='FXMasteringLimiter.xml' path='doc/member[@name="FXMasteringLimiter.FXMASTERINGLIMITER_MAX_RELEASE"]/*' />
     [NativeTypeName("#define FXMASTERINGLIMITER_MAX_RELEASE 20")]
     public const int FXMASTERINGLIMITER_MAX_RELEASE = 20;
 
+    /// <include file='FXMasteringLimiter.xml' path='doc/member[@name="FXMasteringLimiter.FXMASTERINGLIMITER_DEFAULT_RELEASE"]/*' />
     [NativeTypeName("#define FXMASTERINGLIMITER_DEFAULT_RELEASE 6")]
     public const int FXMASTERINGLIMITER_DEFAULT_RELEASE = 6;
 
+    /// <include file='FXMasteringLimiter.xml' path='doc/member[@name="FXMasteringLimiter.FXMASTERINGLIMITER_MIN_LOUDNESS"]/*' />
     [NativeTypeName("#define FXMASTERINGLIMITER_MIN_LOUDNESS 1")]
     public const int FXMASTERINGLIMITER_MIN_LOUDNESS = 1;
 
+    /// <include file='FXMasteringLimiter.xml' path='doc/member[@name="FXMasteringLimiter.FXMASTERINGLIMITER_MAX_LOUDNESS"]/*' />
     [NativeTypeName("#define FXMASTERINGLIMITER_MAX_LOUDNESS 1800")]
     public const int FXMASTERINGLIMITER_MAX_LOUDNESS = 1800;
 
+    /// <include file='FXMasteringLimiter.xml' path='doc/member[@name="FXMasteringLimiter.FXMASTERINGLIMITER_DEFAULT_LOUDNESS"]/*' />
     [NativeTypeName("#define FXMASTERINGLIMITER_DEFAULT_LOUDNESS 1000")]
     public const int FXMASTERINGLIMITER_DEFAULT_LOUDNESS = 1000;
 }

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpStoredContext")]
 public unsafe partial struct IHttpConnectionStoredContext : IHttpConnectionStoredContext.Interface, INativeGuid
 {
+    /// <include file='IHttpConnectionStoredContext.xml' path='doc/member[@name="IHttpConnectionStoredContext.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpConnectionStoredContext);
 
     public void** lpVtbl;

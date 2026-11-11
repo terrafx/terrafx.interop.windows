@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("SmsBinaryMessage may be altered or unavailable for releases after Windows 10. Instead, use SmsAppMessage.")]
 public unsafe partial struct ISmsBinaryMessage : ISmsBinaryMessage.Interface, INativeGuid
 {
+    /// <include file='ISmsBinaryMessage.xml' path='doc/member[@name="ISmsBinaryMessage.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISmsBinaryMessage);
 
     public void** lpVtbl;

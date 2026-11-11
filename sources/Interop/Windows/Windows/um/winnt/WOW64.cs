@@ -7,54 +7,71 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class WOW64
 {
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_CONTEXT_i386"]/*' />
     [NativeTypeName("#define WOW64_CONTEXT_i386 0x00010000")]
     public const int WOW64_CONTEXT_i386 = 0x00010000;
 
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_CONTEXT_i486"]/*' />
     [NativeTypeName("#define WOW64_CONTEXT_i486 0x00010000")]
     public const int WOW64_CONTEXT_i486 = 0x00010000;
 
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_CONTEXT_CONTROL"]/*' />
     [NativeTypeName("#define WOW64_CONTEXT_CONTROL (WOW64_CONTEXT_i386 | 0x00000001L)")]
     public const int WOW64_CONTEXT_CONTROL = (0x00010000 | 0x00000001);
 
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_CONTEXT_INTEGER"]/*' />
     [NativeTypeName("#define WOW64_CONTEXT_INTEGER (WOW64_CONTEXT_i386 | 0x00000002L)")]
     public const int WOW64_CONTEXT_INTEGER = (0x00010000 | 0x00000002);
 
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_CONTEXT_SEGMENTS"]/*' />
     [NativeTypeName("#define WOW64_CONTEXT_SEGMENTS (WOW64_CONTEXT_i386 | 0x00000004L)")]
     public const int WOW64_CONTEXT_SEGMENTS = (0x00010000 | 0x00000004);
 
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_CONTEXT_FLOATING_POINT"]/*' />
     [NativeTypeName("#define WOW64_CONTEXT_FLOATING_POINT (WOW64_CONTEXT_i386 | 0x00000008L)")]
     public const int WOW64_CONTEXT_FLOATING_POINT = (0x00010000 | 0x00000008);
 
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_CONTEXT_DEBUG_REGISTERS"]/*' />
     [NativeTypeName("#define WOW64_CONTEXT_DEBUG_REGISTERS (WOW64_CONTEXT_i386 | 0x00000010L)")]
     public const int WOW64_CONTEXT_DEBUG_REGISTERS = (0x00010000 | 0x00000010);
 
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_CONTEXT_EXTENDED_REGISTERS"]/*' />
     [NativeTypeName("#define WOW64_CONTEXT_EXTENDED_REGISTERS (WOW64_CONTEXT_i386 | 0x00000020L)")]
     public const int WOW64_CONTEXT_EXTENDED_REGISTERS = (0x00010000 | 0x00000020);
 
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_CONTEXT_FULL"]/*' />
     [NativeTypeName("#define WOW64_CONTEXT_FULL (WOW64_CONTEXT_CONTROL | WOW64_CONTEXT_INTEGER | WOW64_CONTEXT_SEGMENTS)")]
     public const int WOW64_CONTEXT_FULL = ((0x00010000 | 0x00000001) | (0x00010000 | 0x00000002) | (0x00010000 | 0x00000004));
 
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_CONTEXT_ALL"]/*' />
     [NativeTypeName("#define WOW64_CONTEXT_ALL (WOW64_CONTEXT_CONTROL | WOW64_CONTEXT_INTEGER | WOW64_CONTEXT_SEGMENTS | \\\r\n                                 WOW64_CONTEXT_FLOATING_POINT | WOW64_CONTEXT_DEBUG_REGISTERS | \\\r\n                                 WOW64_CONTEXT_EXTENDED_REGISTERS)")]
     public const int WOW64_CONTEXT_ALL = ((0x00010000 | 0x00000001) | (0x00010000 | 0x00000002) | (0x00010000 | 0x00000004) | (0x00010000 | 0x00000008) | (0x00010000 | 0x00000010) | (0x00010000 | 0x00000020));
 
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_CONTEXT_XSTATE"]/*' />
     [NativeTypeName("#define WOW64_CONTEXT_XSTATE (WOW64_CONTEXT_i386 | 0x00000040L)")]
     public const int WOW64_CONTEXT_XSTATE = (0x00010000 | 0x00000040);
 
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_CONTEXT_EXCEPTION_ACTIVE"]/*' />
     [NativeTypeName("#define WOW64_CONTEXT_EXCEPTION_ACTIVE 0x08000000")]
     public const int WOW64_CONTEXT_EXCEPTION_ACTIVE = 0x08000000;
 
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_CONTEXT_SERVICE_ACTIVE"]/*' />
     [NativeTypeName("#define WOW64_CONTEXT_SERVICE_ACTIVE 0x10000000")]
     public const int WOW64_CONTEXT_SERVICE_ACTIVE = 0x10000000;
 
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_CONTEXT_EXCEPTION_REQUEST"]/*' />
     [NativeTypeName("#define WOW64_CONTEXT_EXCEPTION_REQUEST 0x40000000")]
     public const int WOW64_CONTEXT_EXCEPTION_REQUEST = 0x40000000;
 
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_CONTEXT_EXCEPTION_REPORTING"]/*' />
     [NativeTypeName("#define WOW64_CONTEXT_EXCEPTION_REPORTING 0x80000000")]
     public const uint WOW64_CONTEXT_EXCEPTION_REPORTING = 0x80000000;
 
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_SIZE_OF_80387_REGISTERS"]/*' />
     [NativeTypeName("#define WOW64_SIZE_OF_80387_REGISTERS 80")]
     public const int WOW64_SIZE_OF_80387_REGISTERS = 80;
 
+    /// <include file='WOW64.xml' path='doc/member[@name="WOW64.WOW64_MAXIMUM_SUPPORTED_EXTENSION"]/*' />
     [NativeTypeName("#define WOW64_MAXIMUM_SUPPORTED_EXTENSION 512")]
     public const int WOW64_MAXIMUM_SUPPORTED_EXTENSION = 512;
 }

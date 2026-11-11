@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPlaybackMediaMarkerReachedEventArgs : IPlaybackMediaMarkerReachedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IPlaybackMediaMarkerReachedEventArgs.xml' path='doc/member[@name="IPlaybackMediaMarkerReachedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPlaybackMediaMarkerReachedEventArgs);
 
     public void** lpVtbl;

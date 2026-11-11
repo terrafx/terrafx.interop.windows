@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class STG
 {
+    /// <include file='STG.xml' path='doc/member[@name="STG.STG_TOEND"]/*' />
     [NativeTypeName("#define STG_TOEND 0xFFFFFFFFL")]
     public const uint STG_TOEND = 0xFFFFFFFF;
 
+    /// <include file='STG.xml' path='doc/member[@name="STG.STG_LAYOUT_SEQUENTIAL"]/*' />
     [NativeTypeName("#define STG_LAYOUT_SEQUENTIAL 0x00000000L")]
     public const int STG_LAYOUT_SEQUENTIAL = 0x00000000;
 
+    /// <include file='STG.xml' path='doc/member[@name="STG.STG_LAYOUT_INTERLEAVED"]/*' />
     [NativeTypeName("#define STG_LAYOUT_INTERLEAVED 0x00000001L")]
     public const int STG_LAYOUT_INTERLEAVED = 0x00000001;
 }

@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DIPROPAUTOCENTER
 {
+    /// <include file='DIPROPAUTOCENTER.xml' path='doc/member[@name="DIPROPAUTOCENTER.DIPROPAUTOCENTER_OFF"]/*' />
     [NativeTypeName("#define DIPROPAUTOCENTER_OFF 0")]
     public const int DIPROPAUTOCENTER_OFF = 0;
 
+    /// <include file='DIPROPAUTOCENTER.xml' path='doc/member[@name="DIPROPAUTOCENTER.DIPROPAUTOCENTER_ON"]/*' />
     [NativeTypeName("#define DIPROPAUTOCENTER_ON 1")]
     public const int DIPROPAUTOCENTER_ON = 1;
 }

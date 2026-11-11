@@ -7,99 +7,131 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class EMARCH
 {
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM7B_INST_WORD_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM7B_INST_WORD_X 3")]
     public const int EMARCH_ENC_I17_IMM7B_INST_WORD_X = 3;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM7B_SIZE_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM7B_SIZE_X 7")]
     public const int EMARCH_ENC_I17_IMM7B_SIZE_X = 7;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM7B_INST_WORD_POS_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM7B_INST_WORD_POS_X 4")]
     public const int EMARCH_ENC_I17_IMM7B_INST_WORD_POS_X = 4;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM7B_VAL_POS_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM7B_VAL_POS_X 0")]
     public const int EMARCH_ENC_I17_IMM7B_VAL_POS_X = 0;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM9D_INST_WORD_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM9D_INST_WORD_X 3")]
     public const int EMARCH_ENC_I17_IMM9D_INST_WORD_X = 3;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM9D_SIZE_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM9D_SIZE_X 9")]
     public const int EMARCH_ENC_I17_IMM9D_SIZE_X = 9;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM9D_INST_WORD_POS_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM9D_INST_WORD_POS_X 18")]
     public const int EMARCH_ENC_I17_IMM9D_INST_WORD_POS_X = 18;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM9D_VAL_POS_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM9D_VAL_POS_X 7")]
     public const int EMARCH_ENC_I17_IMM9D_VAL_POS_X = 7;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM5C_INST_WORD_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM5C_INST_WORD_X 3")]
     public const int EMARCH_ENC_I17_IMM5C_INST_WORD_X = 3;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM5C_SIZE_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM5C_SIZE_X 5")]
     public const int EMARCH_ENC_I17_IMM5C_SIZE_X = 5;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM5C_INST_WORD_POS_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM5C_INST_WORD_POS_X 13")]
     public const int EMARCH_ENC_I17_IMM5C_INST_WORD_POS_X = 13;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM5C_VAL_POS_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM5C_VAL_POS_X 16")]
     public const int EMARCH_ENC_I17_IMM5C_VAL_POS_X = 16;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IC_INST_WORD_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IC_INST_WORD_X 3")]
     public const int EMARCH_ENC_I17_IC_INST_WORD_X = 3;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IC_SIZE_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IC_SIZE_X 1")]
     public const int EMARCH_ENC_I17_IC_SIZE_X = 1;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IC_INST_WORD_POS_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IC_INST_WORD_POS_X 12")]
     public const int EMARCH_ENC_I17_IC_INST_WORD_POS_X = 12;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IC_VAL_POS_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IC_VAL_POS_X 21")]
     public const int EMARCH_ENC_I17_IC_VAL_POS_X = 21;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM41a_INST_WORD_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM41a_INST_WORD_X 1")]
     public const int EMARCH_ENC_I17_IMM41a_INST_WORD_X = 1;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM41a_SIZE_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM41a_SIZE_X 10")]
     public const int EMARCH_ENC_I17_IMM41a_SIZE_X = 10;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM41a_INST_WORD_POS_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM41a_INST_WORD_POS_X 14")]
     public const int EMARCH_ENC_I17_IMM41a_INST_WORD_POS_X = 14;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM41a_VAL_POS_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM41a_VAL_POS_X 22")]
     public const int EMARCH_ENC_I17_IMM41a_VAL_POS_X = 22;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM41b_INST_WORD_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM41b_INST_WORD_X 1")]
     public const int EMARCH_ENC_I17_IMM41b_INST_WORD_X = 1;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM41b_SIZE_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM41b_SIZE_X 8")]
     public const int EMARCH_ENC_I17_IMM41b_SIZE_X = 8;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM41b_INST_WORD_POS_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM41b_INST_WORD_POS_X 24")]
     public const int EMARCH_ENC_I17_IMM41b_INST_WORD_POS_X = 24;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM41b_VAL_POS_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM41b_VAL_POS_X 32")]
     public const int EMARCH_ENC_I17_IMM41b_VAL_POS_X = 32;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM41c_INST_WORD_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM41c_INST_WORD_X 2")]
     public const int EMARCH_ENC_I17_IMM41c_INST_WORD_X = 2;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM41c_SIZE_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM41c_SIZE_X 23")]
     public const int EMARCH_ENC_I17_IMM41c_SIZE_X = 23;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM41c_INST_WORD_POS_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM41c_INST_WORD_POS_X 0")]
     public const int EMARCH_ENC_I17_IMM41c_INST_WORD_POS_X = 0;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_IMM41c_VAL_POS_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_IMM41c_VAL_POS_X 40")]
     public const int EMARCH_ENC_I17_IMM41c_VAL_POS_X = 40;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_SIGN_INST_WORD_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_SIGN_INST_WORD_X 3")]
     public const int EMARCH_ENC_I17_SIGN_INST_WORD_X = 3;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_SIGN_SIZE_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_SIGN_SIZE_X 1")]
     public const int EMARCH_ENC_I17_SIGN_SIZE_X = 1;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_SIGN_INST_WORD_POS_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_SIGN_INST_WORD_POS_X 27")]
     public const int EMARCH_ENC_I17_SIGN_INST_WORD_POS_X = 27;
 
+    /// <include file='EMARCH.xml' path='doc/member[@name="EMARCH.EMARCH_ENC_I17_SIGN_VAL_POS_X"]/*' />
     [NativeTypeName("#define EMARCH_ENC_I17_SIGN_VAL_POS_X 63")]
     public const int EMARCH_ENC_I17_SIGN_VAL_POS_X = 63;
 }

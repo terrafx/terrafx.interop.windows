@@ -7,18 +7,23 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CREATE
 {
+    /// <include file='CREATE.xml' path='doc/member[@name="CREATE.CREATE_MUTEX_INITIAL_OWNER"]/*' />
     [NativeTypeName("#define CREATE_MUTEX_INITIAL_OWNER 0x00000001")]
     public const int CREATE_MUTEX_INITIAL_OWNER = 0x00000001;
 
+    /// <include file='CREATE.xml' path='doc/member[@name="CREATE.CREATE_EVENT_MANUAL_RESET"]/*' />
     [NativeTypeName("#define CREATE_EVENT_MANUAL_RESET 0x00000001")]
     public const int CREATE_EVENT_MANUAL_RESET = 0x00000001;
 
+    /// <include file='CREATE.xml' path='doc/member[@name="CREATE.CREATE_EVENT_INITIAL_SET"]/*' />
     [NativeTypeName("#define CREATE_EVENT_INITIAL_SET 0x00000002")]
     public const int CREATE_EVENT_INITIAL_SET = 0x00000002;
 
+    /// <include file='CREATE.xml' path='doc/member[@name="CREATE.CREATE_WAITABLE_TIMER_MANUAL_RESET"]/*' />
     [NativeTypeName("#define CREATE_WAITABLE_TIMER_MANUAL_RESET 0x00000001")]
     public const int CREATE_WAITABLE_TIMER_MANUAL_RESET = 0x00000001;
 
+    /// <include file='CREATE.xml' path='doc/member[@name="CREATE.CREATE_WAITABLE_TIMER_HIGH_RESOLUTION"]/*' />
     [NativeTypeName("#define CREATE_WAITABLE_TIMER_HIGH_RESOLUTION 0x00000002")]
     public const int CREATE_WAITABLE_TIMER_HIGH_RESOLUTION = 0x00000002;
 }

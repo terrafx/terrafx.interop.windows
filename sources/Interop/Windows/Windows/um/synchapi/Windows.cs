@@ -302,57 +302,75 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern HANDLE CreateWaitableTimerW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpTimerAttributes, BOOL bManualReset, [NativeTypeName("LPCWSTR")] char* lpTimerName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CONDITION_VARIABLE_LOCKMODE_SHARED"]/*' />
     [NativeTypeName("#define CONDITION_VARIABLE_LOCKMODE_SHARED RTL_CONDITION_VARIABLE_LOCKMODE_SHARED")]
     public const int CONDITION_VARIABLE_LOCKMODE_SHARED = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MUTEX_MODIFY_STATE"]/*' />
     [NativeTypeName("#define MUTEX_MODIFY_STATE MUTANT_QUERY_STATE")]
     public const int MUTEX_MODIFY_STATE = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MUTEX_ALL_ACCESS"]/*' />
     [NativeTypeName("#define MUTEX_ALL_ACCESS MUTANT_ALL_ACCESS")]
     public const int MUTEX_ALL_ACCESS = ((0x000F0000) | (0x00100000) | 0x0001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateMutex"]/*' />
     [NativeTypeName("#define CreateMutex CreateMutexW")]
     public static delegate*<SECURITY_ATTRIBUTES*, BOOL, char*, HANDLE> CreateMutex => &CreateMutexW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenMutex"]/*' />
     [NativeTypeName("#define OpenMutex OpenMutexW")]
     public static delegate*<uint, BOOL, char*, HANDLE> OpenMutex => &OpenMutexW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateEvent"]/*' />
     [NativeTypeName("#define CreateEvent CreateEventW")]
     public static delegate*<SECURITY_ATTRIBUTES*, BOOL, BOOL, char*, HANDLE> CreateEvent => &CreateEventW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenEvent"]/*' />
     [NativeTypeName("#define OpenEvent OpenEventW")]
     public static delegate*<uint, BOOL, char*, HANDLE> OpenEvent => &OpenEventW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenSemaphore"]/*' />
     [NativeTypeName("#define OpenSemaphore OpenSemaphoreW")]
     public static delegate*<uint, BOOL, char*, HANDLE> OpenSemaphore => &OpenSemaphoreW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenWaitableTimer"]/*' />
     [NativeTypeName("#define OpenWaitableTimer OpenWaitableTimerW")]
     public static delegate*<uint, BOOL, char*, HANDLE> OpenWaitableTimer => &OpenWaitableTimerW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateMutexEx"]/*' />
     [NativeTypeName("#define CreateMutexEx CreateMutexExW")]
     public static delegate*<SECURITY_ATTRIBUTES*, char*, uint, uint, HANDLE> CreateMutexEx => &CreateMutexExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateEventEx"]/*' />
     [NativeTypeName("#define CreateEventEx CreateEventExW")]
     public static delegate*<SECURITY_ATTRIBUTES*, char*, uint, uint, HANDLE> CreateEventEx => &CreateEventExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateSemaphoreEx"]/*' />
     [NativeTypeName("#define CreateSemaphoreEx CreateSemaphoreExW")]
     public static delegate*<SECURITY_ATTRIBUTES*, int, int, char*, uint, uint, HANDLE> CreateSemaphoreEx => &CreateSemaphoreExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateWaitableTimerEx"]/*' />
     [NativeTypeName("#define CreateWaitableTimerEx CreateWaitableTimerExW")]
     public static delegate*<SECURITY_ATTRIBUTES*, char*, uint, uint, HANDLE> CreateWaitableTimerEx => &CreateWaitableTimerExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYNCHRONIZATION_BARRIER_FLAGS_SPIN_ONLY"]/*' />
     [NativeTypeName("#define SYNCHRONIZATION_BARRIER_FLAGS_SPIN_ONLY 0x01")]
     public const int SYNCHRONIZATION_BARRIER_FLAGS_SPIN_ONLY = 0x01;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYNCHRONIZATION_BARRIER_FLAGS_BLOCK_ONLY"]/*' />
     [NativeTypeName("#define SYNCHRONIZATION_BARRIER_FLAGS_BLOCK_ONLY 0x02")]
     public const int SYNCHRONIZATION_BARRIER_FLAGS_BLOCK_ONLY = 0x02;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYNCHRONIZATION_BARRIER_FLAGS_NO_DELETE"]/*' />
     [NativeTypeName("#define SYNCHRONIZATION_BARRIER_FLAGS_NO_DELETE 0x04")]
     public const int SYNCHRONIZATION_BARRIER_FLAGS_NO_DELETE = 0x04;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateSemaphore"]/*' />
     [NativeTypeName("#define CreateSemaphore CreateSemaphoreW")]
     public static delegate*<SECURITY_ATTRIBUTES*, int, int, char*, HANDLE> CreateSemaphore => &CreateSemaphoreW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateWaitableTimer"]/*' />
     [NativeTypeName("#define CreateWaitableTimer CreateWaitableTimerW")]
     public static delegate*<SECURITY_ATTRIBUTES*, BOOL, char*, HANDLE> CreateWaitableTimer => &CreateWaitableTimerW;
 }

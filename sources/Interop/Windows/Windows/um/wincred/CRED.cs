@@ -9,330 +9,439 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CRED
 {
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_MAX_STRING_LENGTH"]/*' />
     [NativeTypeName("#define CRED_MAX_STRING_LENGTH 256")]
     public const int CRED_MAX_STRING_LENGTH = 256;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_MAX_USERNAME_LENGTH"]/*' />
     [NativeTypeName("#define CRED_MAX_USERNAME_LENGTH (256+1+256)")]
     public const int CRED_MAX_USERNAME_LENGTH = (256 + 1 + 256);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_MAX_GENERIC_TARGET_NAME_LENGTH"]/*' />
     [NativeTypeName("#define CRED_MAX_GENERIC_TARGET_NAME_LENGTH 32767")]
     public const int CRED_MAX_GENERIC_TARGET_NAME_LENGTH = 32767;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_MAX_DOMAIN_TARGET_NAME_LENGTH"]/*' />
     [NativeTypeName("#define CRED_MAX_DOMAIN_TARGET_NAME_LENGTH (256+1+80)")]
     public const int CRED_MAX_DOMAIN_TARGET_NAME_LENGTH = (256 + 1 + 80);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_MAX_TARGETNAME_NAMESPACE_LENGTH"]/*' />
     [NativeTypeName("#define CRED_MAX_TARGETNAME_NAMESPACE_LENGTH (256)")]
     public const int CRED_MAX_TARGETNAME_NAMESPACE_LENGTH = (256);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_MAX_TARGETNAME_ATTRIBUTE_LENGTH"]/*' />
     [NativeTypeName("#define CRED_MAX_TARGETNAME_ATTRIBUTE_LENGTH (256)")]
     public const int CRED_MAX_TARGETNAME_ATTRIBUTE_LENGTH = (256);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_MAX_VALUE_SIZE"]/*' />
     [NativeTypeName("#define CRED_MAX_VALUE_SIZE (256)")]
     public const int CRED_MAX_VALUE_SIZE = (256);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_MAX_ATTRIBUTES"]/*' />
     [NativeTypeName("#define CRED_MAX_ATTRIBUTES 64")]
     public const int CRED_MAX_ATTRIBUTES = 64;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_SESSION_WILDCARD_NAME_W"]/*' />
     [NativeTypeName("#define CRED_SESSION_WILDCARD_NAME_W L\"*Session\"")]
     public const string CRED_SESSION_WILDCARD_NAME_W = "*Session";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_SESSION_WILDCARD_NAME_A"]/*' />
     [NativeTypeName("#define CRED_SESSION_WILDCARD_NAME_A \"*Session\"")]
     public static ReadOnlySpan<byte> CRED_SESSION_WILDCARD_NAME_A => "*Session"u8;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_UNIVERSAL_WILDCARD_W"]/*' />
     [NativeTypeName("#define CRED_UNIVERSAL_WILDCARD_W L'*'")]
     public const char CRED_UNIVERSAL_WILDCARD_W = '*';
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_UNIVERSAL_WILDCARD_A"]/*' />
     [NativeTypeName("#define CRED_UNIVERSAL_WILDCARD_A '*'")]
     public const sbyte CRED_UNIVERSAL_WILDCARD_A = (sbyte)('*');
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_SESSION_WILDCARD_NAME_LENGTH"]/*' />
     [NativeTypeName("#define CRED_SESSION_WILDCARD_NAME_LENGTH (sizeof(CRED_SESSION_WILDCARD_NAME_A)-1)")]
     public const uint CRED_SESSION_WILDCARD_NAME_LENGTH = (9 - 1);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_DOMAIN_NAMESPACE_W"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_DOMAIN_NAMESPACE_W L\"Domain\"")]
     public const string CRED_TARGETNAME_DOMAIN_NAMESPACE_W = "Domain";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_DOMAIN_NAMESPACE_A"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_DOMAIN_NAMESPACE_A \"Domain\"")]
     public static ReadOnlySpan<byte> CRED_TARGETNAME_DOMAIN_NAMESPACE_A => "Domain"u8;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_DOMAIN_NAMESPACE_LENGTH"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_DOMAIN_NAMESPACE_LENGTH (sizeof(CRED_TARGETNAME_DOMAIN_NAMESPACE_A)-1)")]
     public const uint CRED_TARGETNAME_DOMAIN_NAMESPACE_LENGTH = (7 - 1);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_W"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_W L\"LegacyGeneric\"")]
     public const string CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_W = "LegacyGeneric";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_A"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_A \"LegacyGeneric\"")]
     public static ReadOnlySpan<byte> CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_A => "LegacyGeneric"u8;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_LENGTH"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_LENGTH (sizeof(CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_A)-1)")]
     public const uint CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_LENGTH = (14 - 1);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_NAMESPACE_SEPERATOR_W"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_NAMESPACE_SEPERATOR_W L':'")]
     public const char CRED_TARGETNAME_NAMESPACE_SEPERATOR_W = ':';
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_NAMESPACE_SEPERATOR_A"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_NAMESPACE_SEPERATOR_A ':'")]
     public const sbyte CRED_TARGETNAME_NAMESPACE_SEPERATOR_A = (sbyte)(':');
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_SEPERATOR_W"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_SEPERATOR_W L'='")]
     public const char CRED_TARGETNAME_ATTRIBUTE_SEPERATOR_W = '=';
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_SEPERATOR_A"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_SEPERATOR_A '='")]
     public const sbyte CRED_TARGETNAME_ATTRIBUTE_SEPERATOR_A = (sbyte)('=');
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_DOMAIN_EXTENDED_USERNAME_SEPARATOR_W"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_DOMAIN_EXTENDED_USERNAME_SEPARATOR_W L'|'")]
     public const char CRED_TARGETNAME_DOMAIN_EXTENDED_USERNAME_SEPARATOR_W = '|';
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_DOMAIN_EXTENDED_USERNAME_SEPARATOR_A"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_DOMAIN_EXTENDED_USERNAME_SEPARATOR_A '|'")]
     public const sbyte CRED_TARGETNAME_DOMAIN_EXTENDED_USERNAME_SEPARATOR_A = (sbyte)('|');
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_TARGET_W"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_TARGET_W L\"target\"")]
     public const string CRED_TARGETNAME_ATTRIBUTE_TARGET_W = "target";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_TARGET_A"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_TARGET_A \"target\"")]
     public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_TARGET_A => "target"u8;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_TARGET_LENGTH"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_TARGET_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_TARGET_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_TARGET_LENGTH = (7 - 1);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_NAME_W"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NAME_W L\"name\"")]
     public const string CRED_TARGETNAME_ATTRIBUTE_NAME_W = "name";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_NAME_A"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NAME_A \"name\"")]
     public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_NAME_A => "name"u8;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_NAME_LENGTH"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NAME_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_NAME_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_NAME_LENGTH = (5 - 1);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_BATCH_W"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_BATCH_W L\"batch\"")]
     public const string CRED_TARGETNAME_ATTRIBUTE_BATCH_W = "batch";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_BATCH_A"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_BATCH_A \"batch\"")]
     public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_BATCH_A => "batch"u8;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_BATCH_LENGTH"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_BATCH_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_BATCH_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_BATCH_LENGTH = (6 - 1);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_W"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_W L\"interactive\"")]
     public const string CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_W = "interactive";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_A"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_A \"interactive\"")]
     public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_A => "interactive"u8;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_LENGTH"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_LENGTH = (12 - 1);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_SERVICE_W"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_SERVICE_W L\"service\"")]
     public const string CRED_TARGETNAME_ATTRIBUTE_SERVICE_W = "service";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_SERVICE_A"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_SERVICE_A \"service\"")]
     public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_SERVICE_A => "service"u8;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_SERVICE_LENGTH"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_SERVICE_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_SERVICE_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_SERVICE_LENGTH = (8 - 1);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_NETWORK_W"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NETWORK_W L\"network\"")]
     public const string CRED_TARGETNAME_ATTRIBUTE_NETWORK_W = "network";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_NETWORK_A"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NETWORK_A \"network\"")]
     public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_NETWORK_A => "network"u8;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_NETWORK_LENGTH"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NETWORK_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_NETWORK_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_NETWORK_LENGTH = (8 - 1);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_W"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_W L\"networkcleartext\"")]
     public const string CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_W = "networkcleartext";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_A"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_A \"networkcleartext\"")]
     public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_A => "networkcleartext"u8;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_LENGTH"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_LENGTH = (17 - 1);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_W"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_W L\"remoteinteractive\"")]
     public const string CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_W = "remoteinteractive";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_A"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_A \"remoteinteractive\"")]
     public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_A => "remoteinteractive"u8;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_LENGTH"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_LENGTH = (18 - 1);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_W"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_W L\"cachedinteractive\"")]
     public const string CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_W = "cachedinteractive";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_A"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_A \"cachedinteractive\"")]
     public static ReadOnlySpan<byte> CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_A => "cachedinteractive"u8;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_LENGTH"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_LENGTH (sizeof(CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_A)-1)")]
     public const uint CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_LENGTH = (18 - 1);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_SESSION_WILDCARD_NAME"]/*' />
     [NativeTypeName("#define CRED_SESSION_WILDCARD_NAME CRED_SESSION_WILDCARD_NAME_W")]
     public const string CRED_SESSION_WILDCARD_NAME = "*Session";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_DOMAIN_NAMESPACE"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_DOMAIN_NAMESPACE CRED_TARGETNAME_DOMAIN_NAMESPACE_W")]
     public const string CRED_TARGETNAME_DOMAIN_NAMESPACE = "Domain";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_NAME"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NAME CRED_TARGETNAME_ATTRIBUTE_NAME_W")]
     public const string CRED_TARGETNAME_ATTRIBUTE_NAME = "name";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_TARGET"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_TARGET CRED_TARGETNAME_ATTRIBUTE_TARGET_W")]
     public const string CRED_TARGETNAME_ATTRIBUTE_TARGET = "target";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_BATCH"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_BATCH CRED_TARGETNAME_ATTRIBUTE_BATCH_W")]
     public const string CRED_TARGETNAME_ATTRIBUTE_BATCH = "batch";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE_W")]
     public const string CRED_TARGETNAME_ATTRIBUTE_INTERACTIVE = "interactive";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_SERVICE"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_SERVICE CRED_TARGETNAME_ATTRIBUTE_SERVICE_W")]
     public const string CRED_TARGETNAME_ATTRIBUTE_SERVICE = "service";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_NETWORK"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NETWORK CRED_TARGETNAME_ATTRIBUTE_NETWORK_W")]
     public const string CRED_TARGETNAME_ATTRIBUTE_NETWORK = "network";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT_W")]
     public const string CRED_TARGETNAME_ATTRIBUTE_NETWORKCLEARTEXT = "networkcleartext";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE_W")]
     public const string CRED_TARGETNAME_ATTRIBUTE_REMOTEINTERACTIVE = "remoteinteractive";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE"]/*' />
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE_W")]
     public const string CRED_TARGETNAME_ATTRIBUTE_CACHEDINTERACTIVE = "cachedinteractive";
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_LOGON_TYPES_MASK"]/*' />
     [NativeTypeName("#define CRED_LOGON_TYPES_MASK 0xF000")]
     public const int CRED_LOGON_TYPES_MASK = 0xF000;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_FLAGS_PASSWORD_FOR_CERT"]/*' />
     [NativeTypeName("#define CRED_FLAGS_PASSWORD_FOR_CERT 0x0001")]
     public const int CRED_FLAGS_PASSWORD_FOR_CERT = 0x0001;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_FLAGS_PROMPT_NOW"]/*' />
     [NativeTypeName("#define CRED_FLAGS_PROMPT_NOW 0x0002")]
     public const int CRED_FLAGS_PROMPT_NOW = 0x0002;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_FLAGS_USERNAME_TARGET"]/*' />
     [NativeTypeName("#define CRED_FLAGS_USERNAME_TARGET 0x0004")]
     public const int CRED_FLAGS_USERNAME_TARGET = 0x0004;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_FLAGS_OWF_CRED_BLOB"]/*' />
     [NativeTypeName("#define CRED_FLAGS_OWF_CRED_BLOB 0x0008")]
     public const int CRED_FLAGS_OWF_CRED_BLOB = 0x0008;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_FLAGS_REQUIRE_CONFIRMATION"]/*' />
     [NativeTypeName("#define CRED_FLAGS_REQUIRE_CONFIRMATION 0x0010")]
     public const int CRED_FLAGS_REQUIRE_CONFIRMATION = 0x0010;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_FLAGS_WILDCARD_MATCH"]/*' />
     [NativeTypeName("#define CRED_FLAGS_WILDCARD_MATCH 0x0020")]
     public const int CRED_FLAGS_WILDCARD_MATCH = 0x0020;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_FLAGS_VSM_PROTECTED"]/*' />
     [NativeTypeName("#define CRED_FLAGS_VSM_PROTECTED 0x0040")]
     public const int CRED_FLAGS_VSM_PROTECTED = 0x0040;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_FLAGS_NGC_CERT"]/*' />
     [NativeTypeName("#define CRED_FLAGS_NGC_CERT 0x0080")]
     public const int CRED_FLAGS_NGC_CERT = 0x0080;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_FLAGS_VALID_FLAGS"]/*' />
     [NativeTypeName("#define CRED_FLAGS_VALID_FLAGS 0xF0FF")]
     public const int CRED_FLAGS_VALID_FLAGS = 0xF0FF;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_FLAGS_VALID_INPUT_FLAGS"]/*' />
     [NativeTypeName("#define CRED_FLAGS_VALID_INPUT_FLAGS 0xF09F")]
     public const int CRED_FLAGS_VALID_INPUT_FLAGS = 0xF09F;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TYPE_GENERIC"]/*' />
     [NativeTypeName("#define CRED_TYPE_GENERIC 1")]
     public const int CRED_TYPE_GENERIC = 1;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TYPE_DOMAIN_PASSWORD"]/*' />
     [NativeTypeName("#define CRED_TYPE_DOMAIN_PASSWORD 2")]
     public const int CRED_TYPE_DOMAIN_PASSWORD = 2;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TYPE_DOMAIN_CERTIFICATE"]/*' />
     [NativeTypeName("#define CRED_TYPE_DOMAIN_CERTIFICATE 3")]
     public const int CRED_TYPE_DOMAIN_CERTIFICATE = 3;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TYPE_DOMAIN_VISIBLE_PASSWORD"]/*' />
     [NativeTypeName("#define CRED_TYPE_DOMAIN_VISIBLE_PASSWORD 4")]
     public const int CRED_TYPE_DOMAIN_VISIBLE_PASSWORD = 4;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TYPE_GENERIC_CERTIFICATE"]/*' />
     [NativeTypeName("#define CRED_TYPE_GENERIC_CERTIFICATE 5")]
     public const int CRED_TYPE_GENERIC_CERTIFICATE = 5;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TYPE_DOMAIN_EXTENDED"]/*' />
     [NativeTypeName("#define CRED_TYPE_DOMAIN_EXTENDED 6")]
     public const int CRED_TYPE_DOMAIN_EXTENDED = 6;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TYPE_MAXIMUM"]/*' />
     [NativeTypeName("#define CRED_TYPE_MAXIMUM 7")]
     public const int CRED_TYPE_MAXIMUM = 7;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TYPE_MAXIMUM_EX"]/*' />
     [NativeTypeName("#define CRED_TYPE_MAXIMUM_EX (CRED_TYPE_MAXIMUM+1000)")]
     public const int CRED_TYPE_MAXIMUM_EX = (7 + 1000);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_MAX_CREDENTIAL_BLOB_SIZE"]/*' />
     [NativeTypeName("#define CRED_MAX_CREDENTIAL_BLOB_SIZE (5*512)")]
     public const int CRED_MAX_CREDENTIAL_BLOB_SIZE = (5 * 512);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_PERSIST_NONE"]/*' />
     [NativeTypeName("#define CRED_PERSIST_NONE 0")]
     public const int CRED_PERSIST_NONE = 0;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_PERSIST_SESSION"]/*' />
     [NativeTypeName("#define CRED_PERSIST_SESSION 1")]
     public const int CRED_PERSIST_SESSION = 1;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_PERSIST_LOCAL_MACHINE"]/*' />
     [NativeTypeName("#define CRED_PERSIST_LOCAL_MACHINE 2")]
     public const int CRED_PERSIST_LOCAL_MACHINE = 2;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_PERSIST_ENTERPRISE"]/*' />
     [NativeTypeName("#define CRED_PERSIST_ENTERPRISE 3")]
     public const int CRED_PERSIST_ENTERPRISE = 3;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TI_SERVER_FORMAT_UNKNOWN"]/*' />
     [NativeTypeName("#define CRED_TI_SERVER_FORMAT_UNKNOWN 0x0001")]
     public const int CRED_TI_SERVER_FORMAT_UNKNOWN = 0x0001;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TI_DOMAIN_FORMAT_UNKNOWN"]/*' />
     [NativeTypeName("#define CRED_TI_DOMAIN_FORMAT_UNKNOWN 0x0002")]
     public const int CRED_TI_DOMAIN_FORMAT_UNKNOWN = 0x0002;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TI_ONLY_PASSWORD_REQUIRED"]/*' />
     [NativeTypeName("#define CRED_TI_ONLY_PASSWORD_REQUIRED 0x0004")]
     public const int CRED_TI_ONLY_PASSWORD_REQUIRED = 0x0004;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TI_USERNAME_TARGET"]/*' />
     [NativeTypeName("#define CRED_TI_USERNAME_TARGET 0x0008")]
     public const int CRED_TI_USERNAME_TARGET = 0x0008;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TI_CREATE_EXPLICIT_CRED"]/*' />
     [NativeTypeName("#define CRED_TI_CREATE_EXPLICIT_CRED 0x0010")]
     public const int CRED_TI_CREATE_EXPLICIT_CRED = 0x0010;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TI_WORKGROUP_MEMBER"]/*' />
     [NativeTypeName("#define CRED_TI_WORKGROUP_MEMBER 0x0020")]
     public const int CRED_TI_WORKGROUP_MEMBER = 0x0020;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TI_DNSTREE_IS_DFS_SERVER"]/*' />
     [NativeTypeName("#define CRED_TI_DNSTREE_IS_DFS_SERVER 0x0040")]
     public const int CRED_TI_DNSTREE_IS_DFS_SERVER = 0x0040;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_TI_VALID_FLAGS"]/*' />
     [NativeTypeName("#define CRED_TI_VALID_FLAGS 0xF07F")]
     public const int CRED_TI_VALID_FLAGS = 0xF07F;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_PACK_PROTECTED_CREDENTIALS"]/*' />
     [NativeTypeName("#define CRED_PACK_PROTECTED_CREDENTIALS 0x1")]
     public const int CRED_PACK_PROTECTED_CREDENTIALS = 0x1;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_PACK_WOW_BUFFER"]/*' />
     [NativeTypeName("#define CRED_PACK_WOW_BUFFER 0x2")]
     public const int CRED_PACK_WOW_BUFFER = 0x2;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_PACK_GENERIC_CREDENTIALS"]/*' />
     [NativeTypeName("#define CRED_PACK_GENERIC_CREDENTIALS 0x4")]
     public const int CRED_PACK_GENERIC_CREDENTIALS = 0x4;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_PACK_ID_PROVIDER_CREDENTIALS"]/*' />
     [NativeTypeName("#define CRED_PACK_ID_PROVIDER_CREDENTIALS 0x8")]
     public const int CRED_PACK_ID_PROVIDER_CREDENTIALS = 0x8;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_PRESERVE_CREDENTIAL_BLOB"]/*' />
     [NativeTypeName("#define CRED_PRESERVE_CREDENTIAL_BLOB 0x1")]
     public const int CRED_PRESERVE_CREDENTIAL_BLOB = 0x1;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_ENUMERATE_ALL_CREDENTIALS"]/*' />
     [NativeTypeName("#define CRED_ENUMERATE_ALL_CREDENTIALS 0x1")]
     public const int CRED_ENUMERATE_ALL_CREDENTIALS = 0x1;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_CACHE_TARGET_INFORMATION"]/*' />
     [NativeTypeName("#define CRED_CACHE_TARGET_INFORMATION 0x1")]
     public const int CRED_CACHE_TARGET_INFORMATION = 0x1;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_ALLOW_NAME_RESOLUTION"]/*' />
     [NativeTypeName("#define CRED_ALLOW_NAME_RESOLUTION 0x1")]
     public const int CRED_ALLOW_NAME_RESOLUTION = 0x1;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_PROTECT_AS_SELF"]/*' />
     [NativeTypeName("#define CRED_PROTECT_AS_SELF 0x1")]
     public const int CRED_PROTECT_AS_SELF = 0x1;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_PROTECT_TO_SYSTEM"]/*' />
     [NativeTypeName("#define CRED_PROTECT_TO_SYSTEM 0x2")]
     public const int CRED_PROTECT_TO_SYSTEM = 0x2;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_PROTECT_VALID_FLAGS"]/*' />
     [NativeTypeName("#define CRED_PROTECT_VALID_FLAGS (CRED_PROTECT_AS_SELF | CRED_PROTECT_TO_SYSTEM)")]
     public const int CRED_PROTECT_VALID_FLAGS = (0x1 | 0x2);
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_UNPROTECT_AS_SELF"]/*' />
     [NativeTypeName("#define CRED_UNPROTECT_AS_SELF 0x1")]
     public const int CRED_UNPROTECT_AS_SELF = 0x1;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_UNPROTECT_ALLOW_TO_SYSTEM"]/*' />
     [NativeTypeName("#define CRED_UNPROTECT_ALLOW_TO_SYSTEM 0x2")]
     public const int CRED_UNPROTECT_ALLOW_TO_SYSTEM = 0x2;
 
+    /// <include file='CRED.xml' path='doc/member[@name="CRED.CRED_UNPROTECT_VALID_FLAGS"]/*' />
     [NativeTypeName("#define CRED_UNPROTECT_VALID_FLAGS (CRED_UNPROTECT_AS_SELF | CRED_UNPROTECT_ALLOW_TO_SYSTEM)")]
     public const int CRED_UNPROTECT_VALID_FLAGS = (0x1 | 0x2);
 }

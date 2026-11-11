@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDWriteTextLayout3 : IDWriteTextLayout3.Interface, INativeGuid
 {
+    /// <include file='IDWriteTextLayout3.xml' path='doc/member[@name="IDWriteTextLayout3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDWriteTextLayout3);
 
     public void** lpVtbl;

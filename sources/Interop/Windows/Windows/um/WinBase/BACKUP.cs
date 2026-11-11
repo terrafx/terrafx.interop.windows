@@ -7,39 +7,51 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class BACKUP
 {
+    /// <include file='BACKUP.xml' path='doc/member[@name="BACKUP.BACKUP_INVALID"]/*' />
     [NativeTypeName("#define BACKUP_INVALID 0x00000000")]
     public const int BACKUP_INVALID = 0x00000000;
 
+    /// <include file='BACKUP.xml' path='doc/member[@name="BACKUP.BACKUP_DATA"]/*' />
     [NativeTypeName("#define BACKUP_DATA 0x00000001")]
     public const int BACKUP_DATA = 0x00000001;
 
+    /// <include file='BACKUP.xml' path='doc/member[@name="BACKUP.BACKUP_EA_DATA"]/*' />
     [NativeTypeName("#define BACKUP_EA_DATA 0x00000002")]
     public const int BACKUP_EA_DATA = 0x00000002;
 
+    /// <include file='BACKUP.xml' path='doc/member[@name="BACKUP.BACKUP_SECURITY_DATA"]/*' />
     [NativeTypeName("#define BACKUP_SECURITY_DATA 0x00000003")]
     public const int BACKUP_SECURITY_DATA = 0x00000003;
 
+    /// <include file='BACKUP.xml' path='doc/member[@name="BACKUP.BACKUP_ALTERNATE_DATA"]/*' />
     [NativeTypeName("#define BACKUP_ALTERNATE_DATA 0x00000004")]
     public const int BACKUP_ALTERNATE_DATA = 0x00000004;
 
+    /// <include file='BACKUP.xml' path='doc/member[@name="BACKUP.BACKUP_LINK"]/*' />
     [NativeTypeName("#define BACKUP_LINK 0x00000005")]
     public const int BACKUP_LINK = 0x00000005;
 
+    /// <include file='BACKUP.xml' path='doc/member[@name="BACKUP.BACKUP_PROPERTY_DATA"]/*' />
     [NativeTypeName("#define BACKUP_PROPERTY_DATA 0x00000006")]
     public const int BACKUP_PROPERTY_DATA = 0x00000006;
 
+    /// <include file='BACKUP.xml' path='doc/member[@name="BACKUP.BACKUP_OBJECT_ID"]/*' />
     [NativeTypeName("#define BACKUP_OBJECT_ID 0x00000007")]
     public const int BACKUP_OBJECT_ID = 0x00000007;
 
+    /// <include file='BACKUP.xml' path='doc/member[@name="BACKUP.BACKUP_REPARSE_DATA"]/*' />
     [NativeTypeName("#define BACKUP_REPARSE_DATA 0x00000008")]
     public const int BACKUP_REPARSE_DATA = 0x00000008;
 
+    /// <include file='BACKUP.xml' path='doc/member[@name="BACKUP.BACKUP_SPARSE_BLOCK"]/*' />
     [NativeTypeName("#define BACKUP_SPARSE_BLOCK 0x00000009")]
     public const int BACKUP_SPARSE_BLOCK = 0x00000009;
 
+    /// <include file='BACKUP.xml' path='doc/member[@name="BACKUP.BACKUP_TXFS_DATA"]/*' />
     [NativeTypeName("#define BACKUP_TXFS_DATA 0x0000000a")]
     public const int BACKUP_TXFS_DATA = 0x0000000a;
 
+    /// <include file='BACKUP.xml' path='doc/member[@name="BACKUP.BACKUP_GHOSTED_FILE_EXTENTS"]/*' />
     [NativeTypeName("#define BACKUP_GHOSTED_FILE_EXTENTS 0x0000000b")]
     public const int BACKUP_GHOSTED_FILE_EXTENTS = 0x0000000b;
 }

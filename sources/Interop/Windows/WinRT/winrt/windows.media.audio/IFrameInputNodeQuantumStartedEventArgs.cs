@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IFrameInputNodeQuantumStartedEventArgs : IFrameInputNodeQuantumStartedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IFrameInputNodeQuantumStartedEventArgs.xml' path='doc/member[@name="IFrameInputNodeQuantumStartedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFrameInputNodeQuantumStartedEventArgs);
 
     public void** lpVtbl;

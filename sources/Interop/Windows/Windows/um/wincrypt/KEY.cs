@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class KEY
 {
+    /// <include file='KEY.xml' path='doc/member[@name="KEY.KEY_LENGTH_MASK"]/*' />
     [NativeTypeName("#define KEY_LENGTH_MASK 0xFFFF0000")]
     public const uint KEY_LENGTH_MASK = 0xFFFF0000;
 }

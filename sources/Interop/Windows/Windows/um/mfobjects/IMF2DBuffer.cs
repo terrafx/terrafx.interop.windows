@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface, INativeGuid
 {
+    /// <include file='IMF2DBuffer.xml' path='doc/member[@name="IMF2DBuffer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMF2DBuffer);
 
     public void** lpVtbl;

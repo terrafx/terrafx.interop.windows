@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DCAPS
 {
+    /// <include file='D3DCAPS.xml' path='doc/member[@name="D3DCAPS.D3DCAPS_OVERLAY"]/*' />
     [NativeTypeName("#define D3DCAPS_OVERLAY 0x00000800L")]
     public const int D3DCAPS_OVERLAY = 0x00000800;
 
+    /// <include file='D3DCAPS.xml' path='doc/member[@name="D3DCAPS.D3DCAPS_READ_SCANLINE"]/*' />
     [NativeTypeName("#define D3DCAPS_READ_SCANLINE 0x00020000L")]
     public const int D3DCAPS_READ_SCANLINE = 0x00020000;
 }

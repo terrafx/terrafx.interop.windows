@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ISpObjectWithToken")]
 public unsafe partial struct ISpPhoneConverter : ISpPhoneConverter.Interface, INativeGuid
 {
+    /// <include file='ISpPhoneConverter.xml' path='doc/member[@name="ISpPhoneConverter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpPhoneConverter);
 
     public void** lpVtbl;

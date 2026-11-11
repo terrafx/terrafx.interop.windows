@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("4ED3A719-CEA8-4BD9-910D-E252F997AFC2")]
 public unsafe partial struct AppShellVerbHandler : INativeGuid
 {
+    /// <include file='AppShellVerbHandler.xml' path='doc/member[@name="AppShellVerbHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_AppShellVerbHandler);
 }

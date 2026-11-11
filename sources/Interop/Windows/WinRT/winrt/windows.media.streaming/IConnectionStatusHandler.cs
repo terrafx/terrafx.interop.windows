@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IConnectionStatusHandler : IConnectionStatusHandler.Interface, INativeGuid
 {
+    /// <include file='IConnectionStatusHandler.xml' path='doc/member[@name="IConnectionStatusHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IConnectionStatusHandler);
 
     public void** lpVtbl;

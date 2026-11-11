@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ILayoutStorage : ILayoutStorage.Interface, INativeGuid
 {
+    /// <include file='ILayoutStorage.xml' path='doc/member[@name="ILayoutStorage.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILayoutStorage);
 
     public void** lpVtbl;

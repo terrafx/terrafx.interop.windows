@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("4DB26476-6787-4046-B836-E8412A9E8A27")]
 public unsafe partial struct SharedBitmap : INativeGuid
 {
+    /// <include file='SharedBitmap.xml' path='doc/member[@name="SharedBitmap.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SharedBitmap);
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreTouchHitTesting : ICoreTouchHitTesting.Interface, INativeGuid
 {
+    /// <include file='ICoreTouchHitTesting.xml' path='doc/member[@name="ICoreTouchHitTesting.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreTouchHitTesting);
 
     public void** lpVtbl;

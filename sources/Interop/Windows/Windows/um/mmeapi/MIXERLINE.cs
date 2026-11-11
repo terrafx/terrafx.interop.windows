@@ -7,102 +7,135 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MIXERLINE
 {
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_LINEF_ACTIVE"]/*' />
     [NativeTypeName("#define MIXERLINE_LINEF_ACTIVE 0x00000001L")]
     public const int MIXERLINE_LINEF_ACTIVE = 0x00000001;
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_LINEF_DISCONNECTED"]/*' />
     [NativeTypeName("#define MIXERLINE_LINEF_DISCONNECTED 0x00008000L")]
     public const int MIXERLINE_LINEF_DISCONNECTED = 0x00008000;
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_LINEF_SOURCE"]/*' />
     [NativeTypeName("#define MIXERLINE_LINEF_SOURCE 0x80000000L")]
     public const uint MIXERLINE_LINEF_SOURCE = 0x80000000;
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_DST_FIRST"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_FIRST 0x00000000L")]
     public const int MIXERLINE_COMPONENTTYPE_DST_FIRST = 0x00000000;
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_DST_UNDEFINED"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_UNDEFINED (MIXERLINE_COMPONENTTYPE_DST_FIRST + 0)")]
     public const int MIXERLINE_COMPONENTTYPE_DST_UNDEFINED = (0x00000000 + 0);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_DST_DIGITAL"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_DIGITAL (MIXERLINE_COMPONENTTYPE_DST_FIRST + 1)")]
     public const int MIXERLINE_COMPONENTTYPE_DST_DIGITAL = (0x00000000 + 1);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_DST_LINE"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_LINE (MIXERLINE_COMPONENTTYPE_DST_FIRST + 2)")]
     public const int MIXERLINE_COMPONENTTYPE_DST_LINE = (0x00000000 + 2);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_DST_MONITOR"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_MONITOR (MIXERLINE_COMPONENTTYPE_DST_FIRST + 3)")]
     public const int MIXERLINE_COMPONENTTYPE_DST_MONITOR = (0x00000000 + 3);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_DST_SPEAKERS"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_SPEAKERS (MIXERLINE_COMPONENTTYPE_DST_FIRST + 4)")]
     public const int MIXERLINE_COMPONENTTYPE_DST_SPEAKERS = (0x00000000 + 4);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_DST_HEADPHONES"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_HEADPHONES (MIXERLINE_COMPONENTTYPE_DST_FIRST + 5)")]
     public const int MIXERLINE_COMPONENTTYPE_DST_HEADPHONES = (0x00000000 + 5);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_DST_TELEPHONE"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_TELEPHONE (MIXERLINE_COMPONENTTYPE_DST_FIRST + 6)")]
     public const int MIXERLINE_COMPONENTTYPE_DST_TELEPHONE = (0x00000000 + 6);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_DST_WAVEIN"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_WAVEIN (MIXERLINE_COMPONENTTYPE_DST_FIRST + 7)")]
     public const int MIXERLINE_COMPONENTTYPE_DST_WAVEIN = (0x00000000 + 7);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_DST_VOICEIN"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_VOICEIN (MIXERLINE_COMPONENTTYPE_DST_FIRST + 8)")]
     public const int MIXERLINE_COMPONENTTYPE_DST_VOICEIN = (0x00000000 + 8);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_DST_LAST"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_DST_LAST (MIXERLINE_COMPONENTTYPE_DST_FIRST + 8)")]
     public const int MIXERLINE_COMPONENTTYPE_DST_LAST = (0x00000000 + 8);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_SRC_FIRST"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_FIRST 0x00001000L")]
     public const int MIXERLINE_COMPONENTTYPE_SRC_FIRST = 0x00001000;
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_SRC_UNDEFINED"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_UNDEFINED (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 0)")]
     public const int MIXERLINE_COMPONENTTYPE_SRC_UNDEFINED = (0x00001000 + 0);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_SRC_DIGITAL"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_DIGITAL (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 1)")]
     public const int MIXERLINE_COMPONENTTYPE_SRC_DIGITAL = (0x00001000 + 1);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_SRC_LINE"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_LINE (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 2)")]
     public const int MIXERLINE_COMPONENTTYPE_SRC_LINE = (0x00001000 + 2);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_SRC_MICROPHONE"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_MICROPHONE (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 3)")]
     public const int MIXERLINE_COMPONENTTYPE_SRC_MICROPHONE = (0x00001000 + 3);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_SRC_SYNTHESIZER"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_SYNTHESIZER (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 4)")]
     public const int MIXERLINE_COMPONENTTYPE_SRC_SYNTHESIZER = (0x00001000 + 4);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_SRC_COMPACTDISC"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_COMPACTDISC (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 5)")]
     public const int MIXERLINE_COMPONENTTYPE_SRC_COMPACTDISC = (0x00001000 + 5);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_SRC_TELEPHONE"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_TELEPHONE (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 6)")]
     public const int MIXERLINE_COMPONENTTYPE_SRC_TELEPHONE = (0x00001000 + 6);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_SRC_PCSPEAKER"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_PCSPEAKER (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 7)")]
     public const int MIXERLINE_COMPONENTTYPE_SRC_PCSPEAKER = (0x00001000 + 7);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_SRC_WAVEOUT"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_WAVEOUT (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 8)")]
     public const int MIXERLINE_COMPONENTTYPE_SRC_WAVEOUT = (0x00001000 + 8);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_SRC_AUXILIARY"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_AUXILIARY (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 9)")]
     public const int MIXERLINE_COMPONENTTYPE_SRC_AUXILIARY = (0x00001000 + 9);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_SRC_ANALOG"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_ANALOG (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 10)")]
     public const int MIXERLINE_COMPONENTTYPE_SRC_ANALOG = (0x00001000 + 10);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_COMPONENTTYPE_SRC_LAST"]/*' />
     [NativeTypeName("#define MIXERLINE_COMPONENTTYPE_SRC_LAST (MIXERLINE_COMPONENTTYPE_SRC_FIRST + 10)")]
     public const int MIXERLINE_COMPONENTTYPE_SRC_LAST = (0x00001000 + 10);
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_TARGETTYPE_UNDEFINED"]/*' />
     [NativeTypeName("#define MIXERLINE_TARGETTYPE_UNDEFINED 0")]
     public const int MIXERLINE_TARGETTYPE_UNDEFINED = 0;
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_TARGETTYPE_WAVEOUT"]/*' />
     [NativeTypeName("#define MIXERLINE_TARGETTYPE_WAVEOUT 1")]
     public const int MIXERLINE_TARGETTYPE_WAVEOUT = 1;
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_TARGETTYPE_WAVEIN"]/*' />
     [NativeTypeName("#define MIXERLINE_TARGETTYPE_WAVEIN 2")]
     public const int MIXERLINE_TARGETTYPE_WAVEIN = 2;
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_TARGETTYPE_MIDIOUT"]/*' />
     [NativeTypeName("#define MIXERLINE_TARGETTYPE_MIDIOUT 3")]
     public const int MIXERLINE_TARGETTYPE_MIDIOUT = 3;
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_TARGETTYPE_MIDIIN"]/*' />
     [NativeTypeName("#define MIXERLINE_TARGETTYPE_MIDIIN 4")]
     public const int MIXERLINE_TARGETTYPE_MIDIIN = 4;
 
+    /// <include file='MIXERLINE.xml' path='doc/member[@name="MIXERLINE.MIXERLINE_TARGETTYPE_AUX"]/*' />
     [NativeTypeName("#define MIXERLINE_TARGETTYPE_AUX 5")]
     public const int MIXERLINE_TARGETTYPE_AUX = 5;
 }

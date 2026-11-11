@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.15063.0")]
 public unsafe partial struct ISpatialAudioMetadataItemsBuffer : ISpatialAudioMetadataItemsBuffer.Interface, INativeGuid
 {
+    /// <include file='ISpatialAudioMetadataItemsBuffer.xml' path='doc/member[@name="ISpatialAudioMetadataItemsBuffer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpatialAudioMetadataItemsBuffer);
 
     public void** lpVtbl;

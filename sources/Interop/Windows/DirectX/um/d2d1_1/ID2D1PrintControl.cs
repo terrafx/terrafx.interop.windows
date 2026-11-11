@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID2D1PrintControl : ID2D1PrintControl.Interface, INativeGuid
 {
+    /// <include file='ID2D1PrintControl.xml' path='doc/member[@name="ID2D1PrintControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1PrintControl);
 
     public void** lpVtbl;

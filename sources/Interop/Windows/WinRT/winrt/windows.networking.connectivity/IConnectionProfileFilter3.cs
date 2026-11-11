@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IConnectionProfileFilter3 : IConnectionProfileFilter3.Interface, INativeGuid
 {
+    /// <include file='IConnectionProfileFilter3.xml' path='doc/member[@name="IConnectionProfileFilter3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IConnectionProfileFilter3);
 
     public void** lpVtbl;

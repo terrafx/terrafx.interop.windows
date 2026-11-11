@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID__IManipulationEvents"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid IID__IManipulationEvents
     {
@@ -37,6 +38,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IInertiaProcessor"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid IID_IInertiaProcessor
     {
@@ -62,6 +64,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IManipulationProcessor"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid IID_IManipulationProcessor
     {

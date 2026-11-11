@@ -19,6 +19,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IWICImagingFactory2 : IWICImagingFactory2.Interface, INativeGuid
 {
+    /// <include file='IWICImagingFactory2.xml' path='doc/member[@name="IWICImagingFactory2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICImagingFactory2);
 
     public void** lpVtbl;

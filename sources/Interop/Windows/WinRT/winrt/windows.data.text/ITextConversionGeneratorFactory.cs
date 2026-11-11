@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ITextConversionGeneratorFactory : ITextConversionGeneratorFactory.Interface, INativeGuid
 {
+    /// <include file='ITextConversionGeneratorFactory.xml' path='doc/member[@name="ITextConversionGeneratorFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITextConversionGeneratorFactory);
 
     public void** lpVtbl;

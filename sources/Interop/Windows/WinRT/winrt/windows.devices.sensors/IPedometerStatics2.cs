@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPedometerStatics2 : IPedometerStatics2.Interface, INativeGuid
 {
+    /// <include file='IPedometerStatics2.xml' path='doc/member[@name="IPedometerStatics2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPedometerStatics2);
 
     public void** lpVtbl;

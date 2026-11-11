@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDirectDrawClipper : IDirectDrawClipper.Interface, INativeGuid
 {
+    /// <include file='IDirectDrawClipper.xml' path='doc/member[@name="IDirectDrawClipper.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDirectDrawClipper);
 
     public void** lpVtbl;

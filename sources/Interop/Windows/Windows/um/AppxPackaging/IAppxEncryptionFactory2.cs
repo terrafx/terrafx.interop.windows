@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IAppxEncryptionFactory2 : IAppxEncryptionFactory2.Interface, INativeGuid
 {
+    /// <include file='IAppxEncryptionFactory2.xml' path='doc/member[@name="IAppxEncryptionFactory2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppxEncryptionFactory2);
 
     public void** lpVtbl;

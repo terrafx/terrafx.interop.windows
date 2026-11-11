@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("30510700-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct CanvasRenderingContext2D : INativeGuid
 {
+    /// <include file='CanvasRenderingContext2D.xml' path='doc/member[@name="CanvasRenderingContext2D.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_CanvasRenderingContext2D);
 }

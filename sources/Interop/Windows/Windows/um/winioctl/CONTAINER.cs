@@ -7,39 +7,51 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CONTAINER
 {
+    /// <include file='CONTAINER.xml' path='doc/member[@name="CONTAINER.CONTAINER_VOLUME_STATE_HOSTING_CONTAINER"]/*' />
     [NativeTypeName("#define CONTAINER_VOLUME_STATE_HOSTING_CONTAINER (0x00000001)")]
     public const int CONTAINER_VOLUME_STATE_HOSTING_CONTAINER = (0x00000001);
 
+    /// <include file='CONTAINER.xml' path='doc/member[@name="CONTAINER.CONTAINER_ROOT_INFO_FLAG_SCRATCH_ROOT"]/*' />
     [NativeTypeName("#define CONTAINER_ROOT_INFO_FLAG_SCRATCH_ROOT (0x00000001)")]
     public const int CONTAINER_ROOT_INFO_FLAG_SCRATCH_ROOT = (0x00000001);
 
+    /// <include file='CONTAINER.xml' path='doc/member[@name="CONTAINER.CONTAINER_ROOT_INFO_FLAG_LAYER_ROOT"]/*' />
     [NativeTypeName("#define CONTAINER_ROOT_INFO_FLAG_LAYER_ROOT (0x00000002)")]
     public const int CONTAINER_ROOT_INFO_FLAG_LAYER_ROOT = (0x00000002);
 
+    /// <include file='CONTAINER.xml' path='doc/member[@name="CONTAINER.CONTAINER_ROOT_INFO_FLAG_VIRTUALIZATION_ROOT"]/*' />
     [NativeTypeName("#define CONTAINER_ROOT_INFO_FLAG_VIRTUALIZATION_ROOT (0x00000004)")]
     public const int CONTAINER_ROOT_INFO_FLAG_VIRTUALIZATION_ROOT = (0x00000004);
 
+    /// <include file='CONTAINER.xml' path='doc/member[@name="CONTAINER.CONTAINER_ROOT_INFO_FLAG_VIRTUALIZATION_TARGET_ROOT"]/*' />
     [NativeTypeName("#define CONTAINER_ROOT_INFO_FLAG_VIRTUALIZATION_TARGET_ROOT (0x00000008)")]
     public const int CONTAINER_ROOT_INFO_FLAG_VIRTUALIZATION_TARGET_ROOT = (0x00000008);
 
+    /// <include file='CONTAINER.xml' path='doc/member[@name="CONTAINER.CONTAINER_ROOT_INFO_FLAG_VIRTUALIZATION_EXCEPTION_ROOT"]/*' />
     [NativeTypeName("#define CONTAINER_ROOT_INFO_FLAG_VIRTUALIZATION_EXCEPTION_ROOT (0x00000010)")]
     public const int CONTAINER_ROOT_INFO_FLAG_VIRTUALIZATION_EXCEPTION_ROOT = (0x00000010);
 
+    /// <include file='CONTAINER.xml' path='doc/member[@name="CONTAINER.CONTAINER_ROOT_INFO_FLAG_BIND_ROOT"]/*' />
     [NativeTypeName("#define CONTAINER_ROOT_INFO_FLAG_BIND_ROOT (0x00000020)")]
     public const int CONTAINER_ROOT_INFO_FLAG_BIND_ROOT = (0x00000020);
 
+    /// <include file='CONTAINER.xml' path='doc/member[@name="CONTAINER.CONTAINER_ROOT_INFO_FLAG_BIND_TARGET_ROOT"]/*' />
     [NativeTypeName("#define CONTAINER_ROOT_INFO_FLAG_BIND_TARGET_ROOT (0x00000040)")]
     public const int CONTAINER_ROOT_INFO_FLAG_BIND_TARGET_ROOT = (0x00000040);
 
+    /// <include file='CONTAINER.xml' path='doc/member[@name="CONTAINER.CONTAINER_ROOT_INFO_FLAG_BIND_EXCEPTION_ROOT"]/*' />
     [NativeTypeName("#define CONTAINER_ROOT_INFO_FLAG_BIND_EXCEPTION_ROOT (0x00000080)")]
     public const int CONTAINER_ROOT_INFO_FLAG_BIND_EXCEPTION_ROOT = (0x00000080);
 
+    /// <include file='CONTAINER.xml' path='doc/member[@name="CONTAINER.CONTAINER_ROOT_INFO_FLAG_BIND_DO_NOT_MAP_NAME"]/*' />
     [NativeTypeName("#define CONTAINER_ROOT_INFO_FLAG_BIND_DO_NOT_MAP_NAME (0x00000100)")]
     public const int CONTAINER_ROOT_INFO_FLAG_BIND_DO_NOT_MAP_NAME = (0x00000100);
 
+    /// <include file='CONTAINER.xml' path='doc/member[@name="CONTAINER.CONTAINER_ROOT_INFO_FLAG_UNION_LAYER_ROOT"]/*' />
     [NativeTypeName("#define CONTAINER_ROOT_INFO_FLAG_UNION_LAYER_ROOT (0x00000200)")]
     public const int CONTAINER_ROOT_INFO_FLAG_UNION_LAYER_ROOT = (0x00000200);
 
+    /// <include file='CONTAINER.xml' path='doc/member[@name="CONTAINER.CONTAINER_ROOT_INFO_VALID_FLAGS"]/*' />
     [NativeTypeName("#define CONTAINER_ROOT_INFO_VALID_FLAGS (0x000003ff)")]
     public const int CONTAINER_ROOT_INFO_VALID_FLAGS = (0x000003ff);
 }

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IKnownFolder : IKnownFolder.Interface, INativeGuid
 {
+    /// <include file='IKnownFolder.xml' path='doc/member[@name="IKnownFolder.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IKnownFolder);
 
     public void** lpVtbl;

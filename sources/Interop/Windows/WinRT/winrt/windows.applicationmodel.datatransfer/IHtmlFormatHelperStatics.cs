@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IHtmlFormatHelperStatics : IHtmlFormatHelperStatics.Interface, INativeGuid
 {
+    /// <include file='IHtmlFormatHelperStatics.xml' path='doc/member[@name="IHtmlFormatHelperStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHtmlFormatHelperStatics);
 
     public void** lpVtbl;

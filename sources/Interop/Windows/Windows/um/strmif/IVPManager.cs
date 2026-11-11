@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IVPManager : IVPManager.Interface, INativeGuid
 {
+    /// <include file='IVPManager.xml' path='doc/member[@name="IVPManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVPManager);
 
     public void** lpVtbl;

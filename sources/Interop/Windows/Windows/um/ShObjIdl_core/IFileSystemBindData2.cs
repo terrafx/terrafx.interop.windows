@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IFileSystemBindData")]
 public unsafe partial struct IFileSystemBindData2 : IFileSystemBindData2.Interface, INativeGuid
 {
+    /// <include file='IFileSystemBindData2.xml' path='doc/member[@name="IFileSystemBindData2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFileSystemBindData2);
 
     public void** lpVtbl;

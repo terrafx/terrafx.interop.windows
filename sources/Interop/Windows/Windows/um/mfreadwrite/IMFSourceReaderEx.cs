@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFSourceReaderEx : IMFSourceReaderEx.Interface, INativeGuid
 {
+    /// <include file='IMFSourceReaderEx.xml' path='doc/member[@name="IMFSourceReaderEx.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFSourceReaderEx);
 
     public void** lpVtbl;

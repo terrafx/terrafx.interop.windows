@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IMFTimedTextTrackList : IMFTimedTextTrackList.Interface, INativeGuid
 {
+    /// <include file='IMFTimedTextTrackList.xml' path='doc/member[@name="IMFTimedTextTrackList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFTimedTextTrackList);
 
     public void** lpVtbl;

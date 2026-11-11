@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISystemConditionFactory : ISystemConditionFactory.Interface, INativeGuid
 {
+    /// <include file='ISystemConditionFactory.xml' path='doc/member[@name="ISystemConditionFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISystemConditionFactory);
 
     public void** lpVtbl;

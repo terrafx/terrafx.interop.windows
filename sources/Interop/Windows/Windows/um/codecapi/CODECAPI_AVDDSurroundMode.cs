@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("99F2F386-98D1-4452-A163-ABC78A6EB770")]
 public unsafe partial struct CODECAPI_AVDDSurroundMode : INativeGuid
 {
+    /// <include file='CODECAPI_AVDDSurroundMode.xml' path='doc/member[@name="CODECAPI_AVDDSurroundMode.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVDDSurroundMode);
 }

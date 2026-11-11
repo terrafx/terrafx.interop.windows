@@ -7,12 +7,15 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DIRECTMANIPULATION
 {
+    /// <include file='DIRECTMANIPULATION.xml' path='doc/member[@name="DIRECTMANIPULATION.DIRECTMANIPULATION_KEYBOARDFOCUS"]/*' />
     [NativeTypeName("#define DIRECTMANIPULATION_KEYBOARDFOCUS ( 0xfffffffe )")]
     public const uint DIRECTMANIPULATION_KEYBOARDFOCUS = (0xfffffffe);
 
+    /// <include file='DIRECTMANIPULATION.xml' path='doc/member[@name="DIRECTMANIPULATION.DIRECTMANIPULATION_MOUSEFOCUS"]/*' />
     [NativeTypeName("#define DIRECTMANIPULATION_MOUSEFOCUS ( 0xfffffffd )")]
     public const uint DIRECTMANIPULATION_MOUSEFOCUS = (0xfffffffd);
 
+    /// <include file='DIRECTMANIPULATION.xml' path='doc/member[@name="DIRECTMANIPULATION.DIRECTMANIPULATION_MINIMUM_ZOOM"]/*' />
     [NativeTypeName("#define DIRECTMANIPULATION_MINIMUM_ZOOM ( ( float  )0.1 )")]
     public const float DIRECTMANIPULATION_MINIMUM_ZOOM = ((float)(0.1));
 }

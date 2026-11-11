@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfCategoryMgr : ITfCategoryMgr.Interface, INativeGuid
 {
+    /// <include file='ITfCategoryMgr.xml' path='doc/member[@name="ITfCategoryMgr.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfCategoryMgr);
 
     public void** lpVtbl;

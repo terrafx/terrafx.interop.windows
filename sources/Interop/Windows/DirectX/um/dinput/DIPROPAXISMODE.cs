@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DIPROPAXISMODE
 {
+    /// <include file='DIPROPAXISMODE.xml' path='doc/member[@name="DIPROPAXISMODE.DIPROPAXISMODE_ABS"]/*' />
     [NativeTypeName("#define DIPROPAXISMODE_ABS 0")]
     public const int DIPROPAXISMODE_ABS = 0;
 
+    /// <include file='DIPROPAXISMODE.xml' path='doc/member[@name="DIPROPAXISMODE.DIPROPAXISMODE_REL"]/*' />
     [NativeTypeName("#define DIPROPAXISMODE_REL 1")]
     public const int DIPROPAXISMODE_REL = 1;
 }

@@ -9,15 +9,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.eAVEncH264VProfile_ConstrainedHigh"]/*' />
     [NativeTypeName("#define eAVEncH264VProfile_ConstrainedHigh eAVEncH264VProfile_UCConstrainedHigh")]
     public const eAVEncH264VProfile eAVEncH264VProfile_ConstrainedHigh = eAVEncH264VProfile_UCConstrainedHigh;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AVENC_H263V_LEVELCOUNT"]/*' />
     [NativeTypeName("#define AVENC_H263V_LEVELCOUNT 8")]
     public const int AVENC_H263V_LEVELCOUNT = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AVENC_H264V_LEVELCOUNT"]/*' />
     [NativeTypeName("#define AVENC_H264V_LEVELCOUNT 16")]
     public const int AVENC_H264V_LEVELCOUNT = 16;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AVENC_H264V_MAX_MBBITS"]/*' />
     [NativeTypeName("#define AVENC_H264V_MAX_MBBITS 3200")]
     public const int AVENC_H264V_MAX_MBBITS = 3200;
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ITextParagraphFormat : ITextParagraphFormat.Interface, INativeGuid
 {
+    /// <include file='ITextParagraphFormat.xml' path='doc/member[@name="ITextParagraphFormat.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITextParagraphFormat);
 
     public void** lpVtbl;

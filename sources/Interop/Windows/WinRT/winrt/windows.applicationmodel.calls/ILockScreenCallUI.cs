@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ILockScreenCallUI : ILockScreenCallUI.Interface, INativeGuid
 {
+    /// <include file='ILockScreenCallUI.xml' path='doc/member[@name="ILockScreenCallUI.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILockScreenCallUI);
 
     public void** lpVtbl;

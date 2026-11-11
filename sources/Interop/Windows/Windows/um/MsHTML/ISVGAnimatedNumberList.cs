@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct ISVGAnimatedNumberList : ISVGAnimatedNumberList.Interface, INativeGuid
 {
+    /// <include file='ISVGAnimatedNumberList.xml' path='doc/member[@name="ISVGAnimatedNumberList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISVGAnimatedNumberList);
 
     public void** lpVtbl;

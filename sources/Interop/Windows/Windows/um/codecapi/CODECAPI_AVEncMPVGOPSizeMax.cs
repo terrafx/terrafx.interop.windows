@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("FE7DE4C4-1936-4FE2-BDF7-1F18CA1D001F")]
 public unsafe partial struct CODECAPI_AVEncMPVGOPSizeMax : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncMPVGOPSizeMax.xml' path='doc/member[@name="CODECAPI_AVEncMPVGOPSizeMax.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncMPVGOPSizeMax);
 }

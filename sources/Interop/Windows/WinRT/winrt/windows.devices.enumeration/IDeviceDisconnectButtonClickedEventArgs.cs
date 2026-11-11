@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IDeviceDisconnectButtonClickedEventArgs : IDeviceDisconnectButtonClickedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IDeviceDisconnectButtonClickedEventArgs.xml' path='doc/member[@name="IDeviceDisconnectButtonClickedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDeviceDisconnectButtonClickedEventArgs);
 
     public void** lpVtbl;

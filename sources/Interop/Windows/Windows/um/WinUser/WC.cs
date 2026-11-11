@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class WC
 {
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_DIALOG"]/*' />
     [NativeTypeName("#define WC_DIALOG (MAKEINTATOM(0x8002))")]
     public static char* WC_DIALOG => ((char*)((nuint)((ushort)(0x8002))));
 }

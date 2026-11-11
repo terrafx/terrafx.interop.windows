@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IExecuteCommandHost : IExecuteCommandHost.Interface, INativeGuid
 {
+    /// <include file='IExecuteCommandHost.xml' path='doc/member[@name="IExecuteCommandHost.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IExecuteCommandHost);
 
     public void** lpVtbl;

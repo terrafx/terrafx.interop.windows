@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IDeferralFactory : IDeferralFactory.Interface, INativeGuid
 {
+    /// <include file='IDeferralFactory.xml' path='doc/member[@name="IDeferralFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDeferralFactory);
 
     public void** lpVtbl;

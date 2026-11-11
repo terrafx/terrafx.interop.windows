@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CATID
 {
+    /// <include file='CATID.xml' path='doc/member[@name="CATID.CATID_WcsPlugin"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CATID_WcsPlugin
     {

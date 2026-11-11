@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct ICanvasTextMetrics : ICanvasTextMetrics.Interface, INativeGuid
 {
+    /// <include file='ICanvasTextMetrics.xml' path='doc/member[@name="ICanvasTextMetrics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICanvasTextMetrics);
 
     public void** lpVtbl;

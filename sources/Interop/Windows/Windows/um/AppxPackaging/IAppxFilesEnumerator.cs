@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IAppxFilesEnumerator : IAppxFilesEnumerator.Interface, INativeGuid
 {
+    /// <include file='IAppxFilesEnumerator.xml' path='doc/member[@name="IAppxFilesEnumerator.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppxFilesEnumerator);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID3D10InfoQueue : ID3D10InfoQueue.Interface, INativeGuid
 {
+    /// <include file='ID3D10InfoQueue.xml' path='doc/member[@name="ID3D10InfoQueue.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D10InfoQueue);
 
     public void** lpVtbl;

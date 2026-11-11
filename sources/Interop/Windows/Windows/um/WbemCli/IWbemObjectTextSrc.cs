@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWbemObjectTextSrc : IWbemObjectTextSrc.Interface, INativeGuid
 {
+    /// <include file='IWbemObjectTextSrc.xml' path='doc/member[@name="IWbemObjectTextSrc.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWbemObjectTextSrc);
 
     public void** lpVtbl;

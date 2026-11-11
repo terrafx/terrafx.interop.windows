@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.15063.0")]
 public unsafe partial struct IHolographicSpaceInterop : IHolographicSpaceInterop.Interface, INativeGuid
 {
+    /// <include file='IHolographicSpaceInterop.xml' path='doc/member[@name="IHolographicSpaceInterop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHolographicSpaceInterop);
 
     public void** lpVtbl;

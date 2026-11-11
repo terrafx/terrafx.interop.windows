@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ITfFnLMProcessor")]
 public unsafe partial struct ITfFnLMInternal : ITfFnLMInternal.Interface, INativeGuid
 {
+    /// <include file='ITfFnLMInternal.xml' path='doc/member[@name="ITfFnLMInternal.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfFnLMInternal);
 
     public void** lpVtbl;

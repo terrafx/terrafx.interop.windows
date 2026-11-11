@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IInputPanelInvocationConfiguration : IInputPanelInvocationConfiguration.Interface, INativeGuid
 {
+    /// <include file='IInputPanelInvocationConfiguration.xml' path='doc/member[@name="IInputPanelInvocationConfiguration.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInputPanelInvocationConfiguration);
 
     public void** lpVtbl;

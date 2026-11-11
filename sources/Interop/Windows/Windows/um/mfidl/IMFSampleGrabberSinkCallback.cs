@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMFClockStateSink")]
 public unsafe partial struct IMFSampleGrabberSinkCallback : IMFSampleGrabberSinkCallback.Interface, INativeGuid
 {
+    /// <include file='IMFSampleGrabberSinkCallback.xml' path='doc/member[@name="IMFSampleGrabberSinkCallback.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFSampleGrabberSinkCallback);
 
     public void** lpVtbl;

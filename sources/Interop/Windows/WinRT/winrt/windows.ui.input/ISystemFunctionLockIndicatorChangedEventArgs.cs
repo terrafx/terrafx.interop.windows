@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISystemFunctionLockIndicatorChangedEventArgs : ISystemFunctionLockIndicatorChangedEventArgs.Interface, INativeGuid
 {
+    /// <include file='ISystemFunctionLockIndicatorChangedEventArgs.xml' path='doc/member[@name="ISystemFunctionLockIndicatorChangedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISystemFunctionLockIndicatorChangedEventArgs);
 
     public void** lpVtbl;

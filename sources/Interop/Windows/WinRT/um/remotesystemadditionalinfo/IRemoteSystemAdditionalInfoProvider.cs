@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IRemoteSystemAdditionalInfoProvider : IRemoteSystemAdditionalInfoProvider.Interface, INativeGuid
 {
+    /// <include file='IRemoteSystemAdditionalInfoProvider.xml' path='doc/member[@name="IRemoteSystemAdditionalInfoProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRemoteSystemAdditionalInfoProvider);
 
     public void** lpVtbl;

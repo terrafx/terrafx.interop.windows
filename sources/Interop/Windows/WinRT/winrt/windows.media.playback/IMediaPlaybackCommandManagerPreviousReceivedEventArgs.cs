@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMediaPlaybackCommandManagerPreviousReceivedEventArgs : IMediaPlaybackCommandManagerPreviousReceivedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IMediaPlaybackCommandManagerPreviousReceivedEventArgs.xml' path='doc/member[@name="IMediaPlaybackCommandManagerPreviousReceivedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMediaPlaybackCommandManagerPreviousReceivedEventArgs);
 
     public void** lpVtbl;

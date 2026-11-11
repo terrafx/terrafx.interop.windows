@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class BS
 {
+    /// <include file='BS.xml' path='doc/member[@name="BS.BS_SPLITBUTTON"]/*' />
     [NativeTypeName("#define BS_SPLITBUTTON 0x0000000CL")]
     public const int BS_SPLITBUTTON = 0x0000000C;
 
+    /// <include file='BS.xml' path='doc/member[@name="BS.BS_DEFSPLITBUTTON"]/*' />
     [NativeTypeName("#define BS_DEFSPLITBUTTON 0x0000000DL")]
     public const int BS_DEFSPLITBUTTON = 0x0000000D;
 
+    /// <include file='BS.xml' path='doc/member[@name="BS.BS_COMMANDLINK"]/*' />
     [NativeTypeName("#define BS_COMMANDLINK 0x0000000EL")]
     public const int BS_COMMANDLINK = 0x0000000E;
 
+    /// <include file='BS.xml' path='doc/member[@name="BS.BS_DEFCOMMANDLINK"]/*' />
     [NativeTypeName("#define BS_DEFCOMMANDLINK 0x0000000FL")]
     public const int BS_DEFCOMMANDLINK = 0x0000000F;
 }

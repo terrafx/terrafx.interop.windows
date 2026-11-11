@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs : IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs.xml' path='doc/member[@name="IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMediaCaptureDeviceExclusiveControlStatusChangedEventArgs);
 
     public void** lpVtbl;

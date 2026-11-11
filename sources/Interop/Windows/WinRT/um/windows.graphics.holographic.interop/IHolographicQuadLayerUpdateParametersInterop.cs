@@ -20,6 +20,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct IHolographicQuadLayerUpdateParametersInterop : IHolographicQuadLayerUpdateParametersInterop.Interface, INativeGuid
 {
+    /// <include file='IHolographicQuadLayerUpdateParametersInterop.xml' path='doc/member[@name="IHolographicQuadLayerUpdateParametersInterop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHolographicQuadLayerUpdateParametersInterop);
 
     public void** lpVtbl;

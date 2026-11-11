@@ -10,6 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 public partial struct SID
 {
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SHlinkFrame"]/*' />
     [NativeTypeName("#define SID_SHlinkFrame IID_IHlinkFrame")]
     public static ref readonly Guid SID_SHlinkFrame => ref IID_IHlinkFrame;
 }

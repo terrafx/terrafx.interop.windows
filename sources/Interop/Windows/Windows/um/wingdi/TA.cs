@@ -7,33 +7,43 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class TA
 {
+    /// <include file='TA.xml' path='doc/member[@name="TA.TA_NOUPDATECP"]/*' />
     [NativeTypeName("#define TA_NOUPDATECP 0")]
     public const int TA_NOUPDATECP = 0;
 
+    /// <include file='TA.xml' path='doc/member[@name="TA.TA_UPDATECP"]/*' />
     [NativeTypeName("#define TA_UPDATECP 1")]
     public const int TA_UPDATECP = 1;
 
+    /// <include file='TA.xml' path='doc/member[@name="TA.TA_LEFT"]/*' />
     [NativeTypeName("#define TA_LEFT 0")]
     public const int TA_LEFT = 0;
 
+    /// <include file='TA.xml' path='doc/member[@name="TA.TA_RIGHT"]/*' />
     [NativeTypeName("#define TA_RIGHT 2")]
     public const int TA_RIGHT = 2;
 
+    /// <include file='TA.xml' path='doc/member[@name="TA.TA_CENTER"]/*' />
     [NativeTypeName("#define TA_CENTER 6")]
     public const int TA_CENTER = 6;
 
+    /// <include file='TA.xml' path='doc/member[@name="TA.TA_TOP"]/*' />
     [NativeTypeName("#define TA_TOP 0")]
     public const int TA_TOP = 0;
 
+    /// <include file='TA.xml' path='doc/member[@name="TA.TA_BOTTOM"]/*' />
     [NativeTypeName("#define TA_BOTTOM 8")]
     public const int TA_BOTTOM = 8;
 
+    /// <include file='TA.xml' path='doc/member[@name="TA.TA_BASELINE"]/*' />
     [NativeTypeName("#define TA_BASELINE 24")]
     public const int TA_BASELINE = 24;
 
+    /// <include file='TA.xml' path='doc/member[@name="TA.TA_RTLREADING"]/*' />
     [NativeTypeName("#define TA_RTLREADING 256")]
     public const int TA_RTLREADING = 256;
 
+    /// <include file='TA.xml' path='doc/member[@name="TA.TA_MASK"]/*' />
     [NativeTypeName("#define TA_MASK (TA_BASELINE+TA_CENTER+TA_UPDATECP+TA_RTLREADING)")]
     public const int TA_MASK = (24 + 6 + 1 + 256);
 }

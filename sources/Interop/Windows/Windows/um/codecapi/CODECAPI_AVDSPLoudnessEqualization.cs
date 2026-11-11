@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("8AFD1A15-1812-4CBF-9319-433A5B2A3B27")]
 public unsafe partial struct CODECAPI_AVDSPLoudnessEqualization : INativeGuid
 {
+    /// <include file='CODECAPI_AVDSPLoudnessEqualization.xml' path='doc/member[@name="CODECAPI_AVDSPLoudnessEqualization.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVDSPLoudnessEqualization);
 }

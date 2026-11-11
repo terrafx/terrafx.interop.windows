@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAMAsyncReaderTimestampScaling : IAMAsyncReaderTimestampScaling.Interface, INativeGuid
 {
+    /// <include file='IAMAsyncReaderTimestampScaling.xml' path='doc/member[@name="IAMAsyncReaderTimestampScaling.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMAsyncReaderTimestampScaling);
 
     public void** lpVtbl;

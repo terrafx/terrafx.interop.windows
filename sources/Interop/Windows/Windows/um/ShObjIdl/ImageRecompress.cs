@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("6E33091C-D2F8-4740-B55E-2E11D1477A2C")]
 public unsafe partial struct ImageRecompress : INativeGuid
 {
+    /// <include file='ImageRecompress.xml' path='doc/member[@name="ImageRecompress.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_ImageRecompress);
 }

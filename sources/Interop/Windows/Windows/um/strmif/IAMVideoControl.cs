@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface, INativeGuid
 {
+    /// <include file='IAMVideoControl.xml' path='doc/member[@name="IAMVideoControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMVideoControl);
 
     public void** lpVtbl;

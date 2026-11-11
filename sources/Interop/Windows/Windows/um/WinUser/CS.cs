@@ -7,42 +7,55 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CS
 {
+    /// <include file='CS.xml' path='doc/member[@name="CS.CS_VREDRAW"]/*' />
     [NativeTypeName("#define CS_VREDRAW 0x0001")]
     public const int CS_VREDRAW = 0x0001;
 
+    /// <include file='CS.xml' path='doc/member[@name="CS.CS_HREDRAW"]/*' />
     [NativeTypeName("#define CS_HREDRAW 0x0002")]
     public const int CS_HREDRAW = 0x0002;
 
+    /// <include file='CS.xml' path='doc/member[@name="CS.CS_DBLCLKS"]/*' />
     [NativeTypeName("#define CS_DBLCLKS 0x0008")]
     public const int CS_DBLCLKS = 0x0008;
 
+    /// <include file='CS.xml' path='doc/member[@name="CS.CS_OWNDC"]/*' />
     [NativeTypeName("#define CS_OWNDC 0x0020")]
     public const int CS_OWNDC = 0x0020;
 
+    /// <include file='CS.xml' path='doc/member[@name="CS.CS_CLASSDC"]/*' />
     [NativeTypeName("#define CS_CLASSDC 0x0040")]
     public const int CS_CLASSDC = 0x0040;
 
+    /// <include file='CS.xml' path='doc/member[@name="CS.CS_PARENTDC"]/*' />
     [NativeTypeName("#define CS_PARENTDC 0x0080")]
     public const int CS_PARENTDC = 0x0080;
 
+    /// <include file='CS.xml' path='doc/member[@name="CS.CS_NOCLOSE"]/*' />
     [NativeTypeName("#define CS_NOCLOSE 0x0200")]
     public const int CS_NOCLOSE = 0x0200;
 
+    /// <include file='CS.xml' path='doc/member[@name="CS.CS_SAVEBITS"]/*' />
     [NativeTypeName("#define CS_SAVEBITS 0x0800")]
     public const int CS_SAVEBITS = 0x0800;
 
+    /// <include file='CS.xml' path='doc/member[@name="CS.CS_BYTEALIGNCLIENT"]/*' />
     [NativeTypeName("#define CS_BYTEALIGNCLIENT 0x1000")]
     public const int CS_BYTEALIGNCLIENT = 0x1000;
 
+    /// <include file='CS.xml' path='doc/member[@name="CS.CS_BYTEALIGNWINDOW"]/*' />
     [NativeTypeName("#define CS_BYTEALIGNWINDOW 0x2000")]
     public const int CS_BYTEALIGNWINDOW = 0x2000;
 
+    /// <include file='CS.xml' path='doc/member[@name="CS.CS_GLOBALCLASS"]/*' />
     [NativeTypeName("#define CS_GLOBALCLASS 0x4000")]
     public const int CS_GLOBALCLASS = 0x4000;
 
+    /// <include file='CS.xml' path='doc/member[@name="CS.CS_IME"]/*' />
     [NativeTypeName("#define CS_IME 0x00010000")]
     public const int CS_IME = 0x00010000;
 
+    /// <include file='CS.xml' path='doc/member[@name="CS.CS_DROPSHADOW"]/*' />
     [NativeTypeName("#define CS_DROPSHADOW 0x00020000")]
     public const int CS_DROPSHADOW = 0x00020000;
 }

@@ -7,42 +7,55 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class X3DAUDIO
 {
+    /// <include file='X3DAUDIO.xml' path='doc/member[@name="X3DAUDIO.X3DAUDIO_HANDLE_BYTESIZE"]/*' />
     [NativeTypeName("#define X3DAUDIO_HANDLE_BYTESIZE 20")]
     public const int X3DAUDIO_HANDLE_BYTESIZE = 20;
 
+    /// <include file='X3DAUDIO.xml' path='doc/member[@name="X3DAUDIO.X3DAUDIO_PI"]/*' />
     [NativeTypeName("#define X3DAUDIO_PI 3.141592654f")]
     public const float X3DAUDIO_PI = 3.141592654f;
 
+    /// <include file='X3DAUDIO.xml' path='doc/member[@name="X3DAUDIO.X3DAUDIO_2PI"]/*' />
     [NativeTypeName("#define X3DAUDIO_2PI 6.283185307f")]
     public const float X3DAUDIO_2PI = 6.283185307f;
 
+    /// <include file='X3DAUDIO.xml' path='doc/member[@name="X3DAUDIO.X3DAUDIO_SPEED_OF_SOUND"]/*' />
     [NativeTypeName("#define X3DAUDIO_SPEED_OF_SOUND 343.5f")]
     public const float X3DAUDIO_SPEED_OF_SOUND = 343.5f;
 
+    /// <include file='X3DAUDIO.xml' path='doc/member[@name="X3DAUDIO.X3DAUDIO_CALCULATE_MATRIX"]/*' />
     [NativeTypeName("#define X3DAUDIO_CALCULATE_MATRIX 0x00000001")]
     public const int X3DAUDIO_CALCULATE_MATRIX = 0x00000001;
 
+    /// <include file='X3DAUDIO.xml' path='doc/member[@name="X3DAUDIO.X3DAUDIO_CALCULATE_DELAY"]/*' />
     [NativeTypeName("#define X3DAUDIO_CALCULATE_DELAY 0x00000002")]
     public const int X3DAUDIO_CALCULATE_DELAY = 0x00000002;
 
+    /// <include file='X3DAUDIO.xml' path='doc/member[@name="X3DAUDIO.X3DAUDIO_CALCULATE_LPF_DIRECT"]/*' />
     [NativeTypeName("#define X3DAUDIO_CALCULATE_LPF_DIRECT 0x00000004")]
     public const int X3DAUDIO_CALCULATE_LPF_DIRECT = 0x00000004;
 
+    /// <include file='X3DAUDIO.xml' path='doc/member[@name="X3DAUDIO.X3DAUDIO_CALCULATE_LPF_REVERB"]/*' />
     [NativeTypeName("#define X3DAUDIO_CALCULATE_LPF_REVERB 0x00000008")]
     public const int X3DAUDIO_CALCULATE_LPF_REVERB = 0x00000008;
 
+    /// <include file='X3DAUDIO.xml' path='doc/member[@name="X3DAUDIO.X3DAUDIO_CALCULATE_REVERB"]/*' />
     [NativeTypeName("#define X3DAUDIO_CALCULATE_REVERB 0x00000010")]
     public const int X3DAUDIO_CALCULATE_REVERB = 0x00000010;
 
+    /// <include file='X3DAUDIO.xml' path='doc/member[@name="X3DAUDIO.X3DAUDIO_CALCULATE_DOPPLER"]/*' />
     [NativeTypeName("#define X3DAUDIO_CALCULATE_DOPPLER 0x00000020")]
     public const int X3DAUDIO_CALCULATE_DOPPLER = 0x00000020;
 
+    /// <include file='X3DAUDIO.xml' path='doc/member[@name="X3DAUDIO.X3DAUDIO_CALCULATE_EMITTER_ANGLE"]/*' />
     [NativeTypeName("#define X3DAUDIO_CALCULATE_EMITTER_ANGLE 0x00000040")]
     public const int X3DAUDIO_CALCULATE_EMITTER_ANGLE = 0x00000040;
 
+    /// <include file='X3DAUDIO.xml' path='doc/member[@name="X3DAUDIO.X3DAUDIO_CALCULATE_ZEROCENTER"]/*' />
     [NativeTypeName("#define X3DAUDIO_CALCULATE_ZEROCENTER 0x00010000")]
     public const int X3DAUDIO_CALCULATE_ZEROCENTER = 0x00010000;
 
+    /// <include file='X3DAUDIO.xml' path='doc/member[@name="X3DAUDIO.X3DAUDIO_CALCULATE_REDIRECT_TO_LFE"]/*' />
     [NativeTypeName("#define X3DAUDIO_CALCULATE_REDIRECT_TO_LFE 0x00020000")]
     public const int X3DAUDIO_CALCULATE_REDIRECT_TO_LFE = 0x00020000;
 }

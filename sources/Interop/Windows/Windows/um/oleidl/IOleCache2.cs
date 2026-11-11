@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IOleCache")]
 public unsafe partial struct IOleCache2 : IOleCache2.Interface, INativeGuid
 {
+    /// <include file='IOleCache2.xml' path='doc/member[@name="IOleCache2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IOleCache2);
 
     public void** lpVtbl;

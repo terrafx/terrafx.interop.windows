@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IMAGE
 {
+    /// <include file='IMAGE.xml' path='doc/member[@name="IMAGE.IMAGE_SEPARATION"]/*' />
     [NativeTypeName("#define IMAGE_SEPARATION (64*1024)")]
     public const int IMAGE_SEPARATION = (64 * 1024);
 }

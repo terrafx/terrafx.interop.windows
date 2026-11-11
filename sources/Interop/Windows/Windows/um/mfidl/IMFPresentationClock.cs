@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMFClock")]
 public unsafe partial struct IMFPresentationClock : IMFPresentationClock.Interface, INativeGuid
 {
+    /// <include file='IMFPresentationClock.xml' path='doc/member[@name="IMFPresentationClock.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFPresentationClock);
 
     public void** lpVtbl;

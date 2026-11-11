@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMediaProcessingTriggerDetails : IMediaProcessingTriggerDetails.Interface, INativeGuid
 {
+    /// <include file='IMediaProcessingTriggerDetails.xml' path='doc/member[@name="IMediaProcessingTriggerDetails.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMediaProcessingTriggerDetails);
 
     public void** lpVtbl;

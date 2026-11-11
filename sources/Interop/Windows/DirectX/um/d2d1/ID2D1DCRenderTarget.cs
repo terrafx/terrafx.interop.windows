@@ -23,6 +23,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1RenderTarget")]
 public unsafe partial struct ID2D1DCRenderTarget : ID2D1DCRenderTarget.Interface, INativeGuid
 {
+    /// <include file='ID2D1DCRenderTarget.xml' path='doc/member[@name="ID2D1DCRenderTarget.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1DCRenderTarget);
 
     public void** lpVtbl;

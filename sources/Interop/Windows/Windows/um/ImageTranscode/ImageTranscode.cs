@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("17B75166-928F-417D-9685-64AA135565C1")]
 public unsafe partial struct ImageTranscode : INativeGuid
 {
+    /// <include file='ImageTranscode.xml' path='doc/member[@name="ImageTranscode.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_ImageTranscode);
 }

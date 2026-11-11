@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IFontWeights : IFontWeights.Interface, INativeGuid
 {
+    /// <include file='IFontWeights.xml' path='doc/member[@name="IFontWeights.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFontWeights);
 
     public void** lpVtbl;

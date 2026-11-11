@@ -9,12 +9,15 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DCOMPOSITION
 {
+    /// <include file='DCOMPOSITION.xml' path='doc/member[@name="DCOMPOSITION.DCOMPOSITION_ERROR_WINDOW_ALREADY_COMPOSED"]/*' />
     [NativeTypeName("#define DCOMPOSITION_ERROR_WINDOW_ALREADY_COMPOSED _HRESULT_TYPEDEF_(0x88980800L)")]
     public const int DCOMPOSITION_ERROR_WINDOW_ALREADY_COMPOSED = unchecked((int)(0x88980800));
 
+    /// <include file='DCOMPOSITION.xml' path='doc/member[@name="DCOMPOSITION.DCOMPOSITION_ERROR_SURFACE_BEING_RENDERED"]/*' />
     [NativeTypeName("#define DCOMPOSITION_ERROR_SURFACE_BEING_RENDERED _HRESULT_TYPEDEF_(0x88980801L)")]
     public const int DCOMPOSITION_ERROR_SURFACE_BEING_RENDERED = unchecked((int)(0x88980801));
 
+    /// <include file='DCOMPOSITION.xml' path='doc/member[@name="DCOMPOSITION.DCOMPOSITION_ERROR_SURFACE_NOT_BEING_RENDERED"]/*' />
     [NativeTypeName("#define DCOMPOSITION_ERROR_SURFACE_NOT_BEING_RENDERED _HRESULT_TYPEDEF_(0x88980802L)")]
     public const int DCOMPOSITION_ERROR_SURFACE_NOT_BEING_RENDERED = unchecked((int)(0x88980802));
 }

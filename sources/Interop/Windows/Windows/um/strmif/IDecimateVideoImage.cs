@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDecimateVideoImage : IDecimateVideoImage.Interface, INativeGuid
 {
+    /// <include file='IDecimateVideoImage.xml' path='doc/member[@name="IDecimateVideoImage.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDecimateVideoImage);
 
     public void** lpVtbl;

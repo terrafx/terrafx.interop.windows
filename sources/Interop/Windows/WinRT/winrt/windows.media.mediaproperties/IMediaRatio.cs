@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMediaRatio : IMediaRatio.Interface, INativeGuid
 {
+    /// <include file='IMediaRatio.xml' path='doc/member[@name="IMediaRatio.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMediaRatio);
 
     public void** lpVtbl;

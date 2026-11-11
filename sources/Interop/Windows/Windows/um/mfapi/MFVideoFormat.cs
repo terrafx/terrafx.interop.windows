@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MFVideoFormat
 {
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_Base"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_Base
     {
@@ -37,6 +38,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_RGB32"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_RGB32
     {
@@ -62,6 +64,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_ARGB32"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_ARGB32
     {
@@ -87,6 +90,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_RGB24"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_RGB24
     {
@@ -112,6 +116,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_RGB555"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_RGB555
     {
@@ -137,6 +142,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_RGB565"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_RGB565
     {
@@ -162,6 +168,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_RGB8"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_RGB8
     {
@@ -187,6 +194,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_L8"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_L8
     {
@@ -212,6 +220,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_L16"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_L16
     {
@@ -237,6 +246,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_D16"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_D16
     {
@@ -262,6 +272,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_AI44"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_AI44
     {
@@ -287,6 +298,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_AYUV"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_AYUV
     {
@@ -312,6 +324,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_YUY2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_YUY2
     {
@@ -337,6 +350,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_YVYU"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_YVYU
     {
@@ -362,6 +376,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_YVU9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_YVU9
     {
@@ -387,6 +402,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_UYVY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_UYVY
     {
@@ -412,6 +428,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_NV11"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_NV11
     {
@@ -437,6 +454,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_NV12"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_NV12
     {
@@ -462,6 +480,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_NV21"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_NV21
     {
@@ -487,6 +506,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_YV12"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_YV12
     {
@@ -512,6 +532,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_I420"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_I420
     {
@@ -537,6 +558,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_I422"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_I422
     {
@@ -562,6 +584,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_I444"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_I444
     {
@@ -587,6 +610,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_IYUV"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_IYUV
     {
@@ -612,6 +636,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_Y210"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_Y210
     {
@@ -637,6 +662,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_Y216"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_Y216
     {
@@ -662,6 +688,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_Y410"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_Y410
     {
@@ -687,6 +714,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_Y416"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_Y416
     {
@@ -712,6 +740,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_Y41P"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_Y41P
     {
@@ -737,6 +766,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_Y41T"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_Y41T
     {
@@ -762,6 +792,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_Y42T"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_Y42T
     {
@@ -787,6 +818,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_P210"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_P210
     {
@@ -812,6 +844,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_P216"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_P216
     {
@@ -837,6 +870,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_P010"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_P010
     {
@@ -862,6 +896,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_P016"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_P016
     {
@@ -887,6 +922,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_v210"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_v210
     {
@@ -912,6 +948,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_v216"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_v216
     {
@@ -937,6 +974,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_v410"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_v410
     {
@@ -962,6 +1000,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_MP43"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_MP43
     {
@@ -987,6 +1026,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_MP4S"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_MP4S
     {
@@ -1012,6 +1052,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_M4S2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_M4S2
     {
@@ -1037,6 +1078,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_MP4V"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_MP4V
     {
@@ -1062,6 +1104,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_WMV1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_WMV1
     {
@@ -1087,6 +1130,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_WMV2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_WMV2
     {
@@ -1112,6 +1156,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_WMV3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_WMV3
     {
@@ -1137,6 +1182,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_WVC1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_WVC1
     {
@@ -1162,6 +1208,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_MSS1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_MSS1
     {
@@ -1187,6 +1234,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_MSS2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_MSS2
     {
@@ -1212,6 +1260,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_MPG1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_MPG1
     {
@@ -1237,6 +1286,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_DVSL"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_DVSL
     {
@@ -1262,6 +1312,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_DVSD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_DVSD
     {
@@ -1287,6 +1338,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_DVHD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_DVHD
     {
@@ -1312,6 +1364,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_DV25"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_DV25
     {
@@ -1337,6 +1390,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_DV50"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_DV50
     {
@@ -1362,6 +1416,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_DVH1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_DVH1
     {
@@ -1387,6 +1442,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_DVC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_DVC
     {
@@ -1412,6 +1468,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_H264"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_H264
     {
@@ -1437,6 +1494,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_H265"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_H265
     {
@@ -1462,6 +1520,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_MJPG"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_MJPG
     {
@@ -1487,6 +1546,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_420O"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_420O
     {
@@ -1512,6 +1572,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_HEVC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_HEVC
     {
@@ -1537,6 +1598,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_HEVC_ES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_HEVC_ES
     {
@@ -1562,6 +1624,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_VP80"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_VP80
     {
@@ -1587,6 +1650,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_VP90"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_VP90
     {
@@ -1612,6 +1676,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_ORAW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_ORAW
     {
@@ -1637,6 +1702,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_H263"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_H263
     {
@@ -1662,6 +1728,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_A2R10G10B10"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_A2R10G10B10
     {
@@ -1687,6 +1754,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_A16B16G16R16F"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_A16B16G16R16F
     {
@@ -1712,6 +1780,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_VP10"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_VP10
     {
@@ -1737,6 +1806,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_AV1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_AV1
     {
@@ -1762,6 +1832,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_Theora"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_Theora
     {
@@ -1787,6 +1858,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_APV"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_APV
     {
@@ -1812,6 +1884,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_H264_ES"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_H264_ES
     {
@@ -1837,6 +1910,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_MPEG2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_MPEG2
     {
@@ -1862,6 +1936,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_H264_HDCP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_H264_HDCP
     {
@@ -1887,6 +1962,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_HEVC_HDCP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_HEVC_HDCP
     {
@@ -1912,6 +1988,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_Base_HDCP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFVideoFormat_Base_HDCP
     {
@@ -1937,6 +2014,7 @@ public static partial class MFVideoFormat
         }
     }
 
+    /// <include file='MFVideoFormat.xml' path='doc/member[@name="MFVideoFormat.MFVideoFormat_MPG2"]/*' />
     [NativeTypeName("#define MFVideoFormat_MPG2 MFVideoFormat_MPEG2")]
     public static ref readonly Guid MFVideoFormat_MPG2 => ref MFVideoFormat_MPEG2;
 }

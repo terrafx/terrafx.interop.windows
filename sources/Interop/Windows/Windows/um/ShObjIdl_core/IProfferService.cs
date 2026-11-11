@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IProfferService : IProfferService.Interface, INativeGuid
 {
+    /// <include file='IProfferService.xml' path='doc/member[@name="IProfferService.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IProfferService);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFDXGICrossAdapterBuffer : IMFDXGICrossAdapterBuffer.Interface, INativeGuid
 {
+    /// <include file='IMFDXGICrossAdapterBuffer.xml' path='doc/member[@name="IMFDXGICrossAdapterBuffer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFDXGICrossAdapterBuffer);
 
     public void** lpVtbl;

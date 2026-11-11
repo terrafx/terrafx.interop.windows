@@ -1,5 +1,9 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--remap
+PhysicalGestureRecognizer=IPhysicalGestureRecognizer
+TouchpadGesturesController=ITouchpadGesturesController
+TouchpadGlobalActionEventArgs=ITouchpadGlobalActionEventArgs
 --exclude
 ABI::Windows::UI::Input::IID_IAttachableInputObject
 ABI::Windows::UI::Input::IID_IAttachableInputObjectFactory

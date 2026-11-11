@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreInputViewTransferringXYFocusEventArgs : ICoreInputViewTransferringXYFocusEventArgs.Interface, INativeGuid
 {
+    /// <include file='ICoreInputViewTransferringXYFocusEventArgs.xml' path='doc/member[@name="ICoreInputViewTransferringXYFocusEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreInputViewTransferringXYFocusEventArgs);
 
     public void** lpVtbl;

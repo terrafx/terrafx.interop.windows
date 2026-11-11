@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D12DAffineTransform"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D12DAffineTransform
     {
@@ -38,6 +39,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D13DPerspectiveTransform"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D13DPerspectiveTransform
     {
@@ -63,6 +65,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D13DTransform"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D13DTransform
     {
@@ -88,6 +91,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1ArithmeticComposite"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1ArithmeticComposite
     {
@@ -113,6 +117,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Atlas"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Atlas
     {
@@ -138,6 +143,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1BitmapSource"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1BitmapSource
     {
@@ -163,6 +169,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Blend"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Blend
     {
@@ -188,6 +195,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Border"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Border
     {
@@ -213,6 +221,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Brightness"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Brightness
     {
@@ -238,6 +247,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1ColorManagement"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1ColorManagement
     {
@@ -263,6 +273,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1ColorMatrix"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1ColorMatrix
     {
@@ -288,6 +299,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Composite"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Composite
     {
@@ -313,6 +325,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1ConvolveMatrix"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1ConvolveMatrix
     {
@@ -338,6 +351,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Crop"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Crop
     {
@@ -363,6 +377,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1DirectionalBlur"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1DirectionalBlur
     {
@@ -388,6 +403,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1DiscreteTransfer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1DiscreteTransfer
     {
@@ -413,6 +429,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1DisplacementMap"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1DisplacementMap
     {
@@ -438,6 +455,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1DistantDiffuse"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1DistantDiffuse
     {
@@ -463,6 +481,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1DistantSpecular"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1DistantSpecular
     {
@@ -488,6 +507,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1DpiCompensation"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1DpiCompensation
     {
@@ -513,6 +533,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Flood"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Flood
     {
@@ -538,6 +559,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1GammaTransfer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1GammaTransfer
     {
@@ -563,6 +585,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1GaussianBlur"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1GaussianBlur
     {
@@ -588,6 +611,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Scale"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Scale
     {
@@ -613,6 +637,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Histogram"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Histogram
     {
@@ -638,6 +663,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1HueRotation"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1HueRotation
     {
@@ -663,6 +689,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1LinearTransfer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1LinearTransfer
     {
@@ -688,6 +715,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1LuminanceToAlpha"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1LuminanceToAlpha
     {
@@ -713,6 +741,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Morphology"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Morphology
     {
@@ -738,6 +767,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1OpacityMetadata"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1OpacityMetadata
     {
@@ -763,6 +793,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1PointDiffuse"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1PointDiffuse
     {
@@ -788,6 +819,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1PointSpecular"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1PointSpecular
     {
@@ -813,6 +845,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Premultiply"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Premultiply
     {
@@ -838,6 +871,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Saturation"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Saturation
     {
@@ -863,6 +897,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Shadow"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Shadow
     {
@@ -888,6 +923,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1SpotDiffuse"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1SpotDiffuse
     {
@@ -913,6 +949,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1SpotSpecular"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1SpotSpecular
     {
@@ -938,6 +975,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1TableTransfer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1TableTransfer
     {
@@ -963,6 +1001,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Tile"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Tile
     {
@@ -988,6 +1027,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1Turbulence"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1Turbulence
     {
@@ -1013,6 +1053,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D2D1UnPremultiply"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D2D1UnPremultiply
     {

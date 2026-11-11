@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDirect3DDxgiInterfaceAccess : IDirect3DDxgiInterfaceAccess.Interface, INativeGuid
 {
+    /// <include file='IDirect3DDxgiInterfaceAccess.xml' path='doc/member[@name="IDirect3DDxgiInterfaceAccess.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDirect3DDxgiInterfaceAccess);
 
     public void** lpVtbl;

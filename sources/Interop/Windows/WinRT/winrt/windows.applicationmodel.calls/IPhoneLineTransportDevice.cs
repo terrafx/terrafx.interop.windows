@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPhoneLineTransportDevice : IPhoneLineTransportDevice.Interface, INativeGuid
 {
+    /// <include file='IPhoneLineTransportDevice.xml' path='doc/member[@name="IPhoneLineTransportDevice.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPhoneLineTransportDevice);
 
     public void** lpVtbl;

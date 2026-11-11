@@ -257,6 +257,7 @@ public static unsafe partial class Windows
     [DllImport("mfplat", ExactSpelling = true)]
     public static extern HRESULT MFCreateSample(IMFSample** ppIMFSample);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_MaxDecodeFrameSize"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_MaxDecodeFrameSize
     {
@@ -282,6 +283,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_AccumulatedNonRefPicPercent"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_AccumulatedNonRefPicPercent
     {
@@ -307,6 +309,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_ProtectionScheme"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_ProtectionScheme
     {
@@ -332,6 +335,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_CryptByteBlock"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_CryptByteBlock
     {
@@ -357,6 +361,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_SkipByteBlock"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_SkipByteBlock
     {
@@ -382,6 +387,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_SubSample_Mapping"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_SubSample_Mapping
     {
@@ -407,6 +413,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_ClearSliceHeaderData"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_ClearSliceHeaderData
     {
@@ -432,6 +439,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_HardwareProtection_KeyInfoID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_HardwareProtection_KeyInfoID
     {
@@ -457,6 +465,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_HardwareProtection_KeyInfo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_HardwareProtection_KeyInfo
     {
@@ -482,6 +491,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_HardwareProtection_VideoDecryptorContext"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_HardwareProtection_VideoDecryptorContext
     {
@@ -507,6 +517,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_Opaque_Data"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_Opaque_Data
     {
@@ -532,6 +543,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_NALULengthInfo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_NALULengthInfo
     {
@@ -557,6 +569,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_ResumeVideoOutput"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_ResumeVideoOutput
     {
@@ -582,6 +595,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_NALUTypes"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_NALUTypes
     {
@@ -607,6 +621,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_SPSPPSData"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_SPSPPSData
     {
@@ -632,6 +647,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_SEIData"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_SEIData
     {
@@ -657,6 +673,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_HardwareProtection"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_HardwareProtection
     {
@@ -682,6 +699,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_CleanPoint"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_CleanPoint
     {
@@ -707,6 +725,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Discontinuity"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Discontinuity
     {
@@ -732,6 +751,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Token"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Token
     {
@@ -757,6 +777,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_ClosedCaption_CEA708"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_ClosedCaption_CEA708
     {
@@ -782,6 +803,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_DecodeTimestamp"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_DecodeTimestamp
     {
@@ -807,6 +829,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_VideoEncodeQP"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_VideoEncodeQP
     {
@@ -832,6 +855,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_VideoEncodePictureType"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_VideoEncodePictureType
     {
@@ -857,6 +881,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_FrameCorruption"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_FrameCorruption
     {
@@ -882,6 +907,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_DirtyRects"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_DirtyRects
     {
@@ -907,6 +933,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_MoveRegions"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_MoveRegions
     {
@@ -932,6 +959,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_HDCP_OptionalHeader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_HDCP_OptionalHeader
     {
@@ -957,6 +985,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_HDCP_FrameCounter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_HDCP_FrameCounter
     {
@@ -982,6 +1011,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_HDCP_StreamID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_HDCP_StreamID
     {
@@ -1007,6 +1037,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Timestamp"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Timestamp
     {
@@ -1032,6 +1063,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_RepeatFrame"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_RepeatFrame
     {
@@ -1057,6 +1089,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_DescrambleData"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_DescrambleData
     {
@@ -1082,6 +1115,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_SampleKeyID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_SampleKeyID
     {
@@ -1107,6 +1141,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_GenKeyFunc"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_GenKeyFunc
     {
@@ -1132,6 +1167,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_GenKeyCtx"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_GenKeyCtx
     {
@@ -1157,6 +1193,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_PacketCrossOffsets"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_PacketCrossOffsets
     {
@@ -1182,6 +1219,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_SampleID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_SampleID
     {
@@ -1207,6 +1245,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_KeyID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_KeyID
     {
@@ -1232,6 +1271,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Content_KeyID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Content_KeyID
     {
@@ -1257,6 +1297,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Encryption_SubSampleMappingSplit"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Encryption_SubSampleMappingSplit
     {
@@ -1282,6 +1323,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Interlaced"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Interlaced
     {
@@ -1307,6 +1349,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_BottomFieldFirst"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_BottomFieldFirst
     {
@@ -1332,6 +1375,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_RepeatFirstField"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_RepeatFirstField
     {
@@ -1357,6 +1401,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_SingleField"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_SingleField
     {
@@ -1382,6 +1427,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_DerivedFromTopField"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_DerivedFromTopField
     {
@@ -1407,6 +1453,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_MeanAbsoluteDifference"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_MeanAbsoluteDifference
     {
@@ -1432,6 +1479,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_LongTermReferenceFrameInfo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_LongTermReferenceFrameInfo
     {
@@ -1457,6 +1505,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_ROIRectangle"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_ROIRectangle
     {
@@ -1482,6 +1531,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_LastSlice"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_LastSlice
     {
@@ -1507,6 +1557,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_FeatureMap"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_FeatureMap
     {
@@ -1532,6 +1583,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_ChromaOnly"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_ChromaOnly
     {
@@ -1557,6 +1609,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_SpatialLayerId"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_SpatialLayerId
     {
@@ -1582,6 +1635,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_TemporalLayerId"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_TemporalLayerId
     {
@@ -1607,6 +1661,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_FramePsnrYuv"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_FramePsnrYuv
     {
@@ -1632,6 +1687,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_VideoEncodeQPMap"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_VideoEncodeQPMap
     {
@@ -1657,6 +1713,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_VideoEncodeBitsUsedMap"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_VideoEncodeBitsUsedMap
     {
@@ -1682,6 +1739,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_VideoEncodeSatdMap"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_VideoEncodeSatdMap
     {
@@ -1707,6 +1765,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_VideoEncodeInputDeltaQPMap"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_VideoEncodeInputDeltaQPMap
     {
@@ -1732,6 +1791,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_VideoEncodeInputAbsoluteQPMap"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_VideoEncodeInputAbsoluteQPMap
     {
@@ -1757,6 +1817,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_VideoEncodeD3D12ReconstructedPicture"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_VideoEncodeD3D12ReconstructedPicture
     {
@@ -1782,6 +1843,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_PhotoThumbnail"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_PhotoThumbnail
     {
@@ -1807,6 +1869,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_PhotoThumbnailMediaType"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_PhotoThumbnailMediaType
     {
@@ -1832,6 +1895,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_CaptureMetadata"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_CaptureMetadata
     {
@@ -1857,6 +1921,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_MDLCacheCookie"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_MDLCacheCookie
     {
@@ -1882,6 +1947,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Depth_MinReliableDepth"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Depth_MinReliableDepth
     {
@@ -1907,6 +1973,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Depth_MaxReliableDepth"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_Depth_MaxReliableDepth
     {
@@ -2017,6 +2084,7 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT MFCreateMediaExtensionActivate([NativeTypeName("PCWSTR")] char* szActivatableClassId, IUnknown* pConfiguration, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvObject);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMPEG4Format_Base"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMPEG4Format_Base
     {
@@ -2042,6 +2110,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSubtitleFormat_XML"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSubtitleFormat_XML
     {
@@ -2067,6 +2136,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSubtitleFormat_TTML"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSubtitleFormat_TTML
     {
@@ -2092,6 +2162,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSubtitleFormat_ATSC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSubtitleFormat_ATSC
     {
@@ -2117,6 +2188,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSubtitleFormat_WebVTT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSubtitleFormat_WebVTT
     {
@@ -2142,6 +2214,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSubtitleFormat_SRT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSubtitleFormat_SRT
     {
@@ -2167,6 +2240,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSubtitleFormat_SSA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSubtitleFormat_SSA
     {
@@ -2192,6 +2266,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSubtitleFormat_CustomUserData"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSubtitleFormat_CustomUserData
     {
@@ -2217,6 +2292,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSubtitleFormat_PGS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSubtitleFormat_PGS
     {
@@ -2242,6 +2318,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSubtitleFormat_VobSub"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSubtitleFormat_VobSub
     {
@@ -2267,6 +2344,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFBinaryFormat_Base"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFBinaryFormat_Base
     {
@@ -2292,6 +2370,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFBinaryFormat_GPMD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFBinaryFormat_GPMD
     {
@@ -2317,6 +2396,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_3DVideo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_3DVideo
     {
@@ -2342,6 +2422,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_3DVideo_SampleFormat"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_3DVideo_SampleFormat
     {
@@ -2367,6 +2448,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_MULTIPLEXED_MANAGER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_MULTIPLEXED_MANAGER
     {
@@ -2407,6 +2489,7 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.15063.0")]
     public static extern HRESULT MFCreateMuxStreamSample(IMFCollection* pSamplesToMux, IMFSample** ppMuxSample);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_ForwardedDecodeUnits"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_ForwardedDecodeUnits
     {
@@ -2432,6 +2515,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_TargetGlobalLuminance"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_TargetGlobalLuminance
     {
@@ -2457,6 +2541,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_ForwardedDecodeUnitType"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_ForwardedDecodeUnitType
     {
@@ -2482,6 +2567,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFStreamExtension_CameraExtrinsics"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFStreamExtension_CameraExtrinsics
     {
@@ -2507,6 +2593,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_CameraExtrinsics"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_CameraExtrinsics
     {
@@ -2532,6 +2619,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFStreamExtension_PinholeCameraIntrinsics"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFStreamExtension_PinholeCameraIntrinsics
     {
@@ -2557,6 +2645,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_PinholeCameraIntrinsics"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_PinholeCameraIntrinsics
     {
@@ -2582,6 +2671,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMediaType_Default"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMediaType_Default
     {
@@ -2607,6 +2697,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMediaType_Audio"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMediaType_Audio
     {
@@ -2632,6 +2723,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMediaType_Video"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMediaType_Video
     {
@@ -2657,6 +2749,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMediaType_Protected"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMediaType_Protected
     {
@@ -2682,6 +2775,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMediaType_SAMI"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMediaType_SAMI
     {
@@ -2707,6 +2801,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMediaType_Script"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMediaType_Script
     {
@@ -2732,6 +2827,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMediaType_Image"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMediaType_Image
     {
@@ -2757,6 +2853,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMediaType_HTML"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMediaType_HTML
     {
@@ -2782,6 +2879,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMediaType_Binary"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMediaType_Binary
     {
@@ -2807,6 +2905,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMediaType_FileTransfer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMediaType_FileTransfer
     {
@@ -2832,6 +2931,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMediaType_Stream"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMediaType_Stream
     {
@@ -2857,6 +2957,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMediaType_MultiplexedFrames"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMediaType_MultiplexedFrames
     {
@@ -2882,6 +2983,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMediaType_Subtitle"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMediaType_Subtitle
     {
@@ -2907,6 +3009,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMediaType_Perception"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMediaType_Perception
     {
@@ -2932,6 +3035,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFImageFormat_JPEG"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFImageFormat_JPEG
     {
@@ -2957,6 +3061,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFImageFormat_RGB32"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFImageFormat_RGB32
     {
@@ -2982,6 +3087,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFStreamFormat_MPEG2Transport"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFStreamFormat_MPEG2Transport
     {
@@ -3007,6 +3113,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFStreamFormat_MPEG2Program"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFStreamFormat_MPEG2Program
     {
@@ -3032,6 +3139,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFMediaType_Metadata"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFMediaType_Metadata
     {
@@ -3392,63 +3500,135 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.19041.0")]
     public static extern HRESULT MFSplitSample(IMFSample* pSample, IMFSample** pOutputSamples, [NativeTypeName("DWORD")] uint dwOutputSampleMaxCount, [NativeTypeName("DWORD *")] uint* pdwOutputSampleCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_AverageBitrate"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFSampleExtension_AverageBitrate
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x3C, 0x5A, 0x7E, 0x21,
+                0xEC, 0xFC,
+                0xF6, 0x43,
+                0x8C,
+                0x05,
+                0x1F,
+                0x97,
+                0x46,
+                0x8A,
+                0x90,
+                0x42
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_ScenarioInfo"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFSampleExtension_ScenarioInfo
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x35, 0xCD, 0x1E, 0x9D,
+                0xCF, 0xA5,
+                0xF2, 0x4C,
+                0x80,
+                0xA8,
+                0x9D,
+                0xEA,
+                0x2E,
+                0x4D,
+                0x80,
+                0x3E
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSTARTUP_NOSOCKET"]/*' />
     [NativeTypeName("#define MFSTARTUP_NOSOCKET 0x1")]
     public const int MFSTARTUP_NOSOCKET = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSTARTUP_LITE"]/*' />
     [NativeTypeName("#define MFSTARTUP_LITE (MFSTARTUP_NOSOCKET)")]
     public const int MFSTARTUP_LITE = (0x1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSTARTUP_FULL"]/*' />
     [NativeTypeName("#define MFSTARTUP_FULL 0")]
     public const int MFSTARTUP_FULL = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSESSIONCAP_START"]/*' />
     [NativeTypeName("#define MFSESSIONCAP_START 0x00000001")]
     public const int MFSESSIONCAP_START = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSESSIONCAP_SEEK"]/*' />
     [NativeTypeName("#define MFSESSIONCAP_SEEK 0x00000002")]
     public const int MFSESSIONCAP_SEEK = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSESSIONCAP_PAUSE"]/*' />
     [NativeTypeName("#define MFSESSIONCAP_PAUSE 0x00000004")]
     public const int MFSESSIONCAP_PAUSE = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSESSIONCAP_RATE_FORWARD"]/*' />
     [NativeTypeName("#define MFSESSIONCAP_RATE_FORWARD 0x00000010")]
     public const int MFSESSIONCAP_RATE_FORWARD = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSESSIONCAP_RATE_REVERSE"]/*' />
     [NativeTypeName("#define MFSESSIONCAP_RATE_REVERSE 0x00000020")]
     public const int MFSESSIONCAP_RATE_REVERSE = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSESSIONCAP_DOES_NOT_USE_NETWORK"]/*' />
     [NativeTypeName("#define MFSESSIONCAP_DOES_NOT_USE_NETWORK 0x00000040")]
     public const int MFSESSIONCAP_DOES_NOT_USE_NETWORK = 0x00000040;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_ClosedCaption_CEA708_MAX_SIZE"]/*' />
     [NativeTypeName("#define MFSampleExtension_ClosedCaption_CEA708_MAX_SIZE 256")]
     public const int MFSampleExtension_ClosedCaption_CEA708_MAX_SIZE = 256;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MACROBLOCK_FLAG_SKIP"]/*' />
     [NativeTypeName("#define MACROBLOCK_FLAG_SKIP 0x00000001")]
     public const int MACROBLOCK_FLAG_SKIP = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MACROBLOCK_FLAG_DIRTY"]/*' />
     [NativeTypeName("#define MACROBLOCK_FLAG_DIRTY 0x00000002")]
     public const int MACROBLOCK_FLAG_DIRTY = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MACROBLOCK_FLAG_MOTION"]/*' />
     [NativeTypeName("#define MACROBLOCK_FLAG_MOTION 0x00000004")]
     public const int MACROBLOCK_FLAG_MOTION = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MACROBLOCK_FLAG_VIDEO"]/*' />
     [NativeTypeName("#define MACROBLOCK_FLAG_VIDEO 0x00000008")]
     public const int MACROBLOCK_FLAG_VIDEO = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MACROBLOCK_FLAG_HAS_MOTION_VECTOR"]/*' />
     [NativeTypeName("#define MACROBLOCK_FLAG_HAS_MOTION_VECTOR 0x00000010")]
     public const int MACROBLOCK_FLAG_HAS_MOTION_VECTOR = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MACROBLOCK_FLAG_HAS_QP"]/*' />
     [NativeTypeName("#define MACROBLOCK_FLAG_HAS_QP 0x00000020")]
     public const int MACROBLOCK_FLAG_HAS_QP = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCAPTURE_METADATA_SCAN_RIGHT_LEFT"]/*' />
     [NativeTypeName("#define MFCAPTURE_METADATA_SCAN_RIGHT_LEFT 0x00000001")]
     public const int MFCAPTURE_METADATA_SCAN_RIGHT_LEFT = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCAPTURE_METADATA_SCAN_BOTTOM_TOP"]/*' />
     [NativeTypeName("#define MFCAPTURE_METADATA_SCAN_BOTTOM_TOP 0x00000002")]
     public const int MFCAPTURE_METADATA_SCAN_BOTTOM_TOP = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCAPTURE_METADATA_SCANLINE_VERTICAL"]/*' />
     [NativeTypeName("#define MFCAPTURE_METADATA_SCANLINE_VERTICAL 0x00000004")]
     public const int MFCAPTURE_METADATA_SCANLINE_VERTICAL = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOCAL_D3DFMT_DEFINES"]/*' />
     [NativeTypeName("#define LOCAL_D3DFMT_DEFINES 1")]
     public const int LOCAL_D3DFMT_DEFINES = 1;
 }

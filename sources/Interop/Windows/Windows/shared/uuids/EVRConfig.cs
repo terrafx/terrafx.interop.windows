@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class EVRConfig
 {
+    /// <include file='EVRConfig.xml' path='doc/member[@name="EVRConfig.EVRConfig_ForceBob"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EVRConfig_ForceBob
     {
@@ -37,6 +38,7 @@ public static partial class EVRConfig
         }
     }
 
+    /// <include file='EVRConfig.xml' path='doc/member[@name="EVRConfig.EVRConfig_AllowDropToBob"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EVRConfig_AllowDropToBob
     {
@@ -62,6 +64,7 @@ public static partial class EVRConfig
         }
     }
 
+    /// <include file='EVRConfig.xml' path='doc/member[@name="EVRConfig.EVRConfig_ForceThrottle"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EVRConfig_ForceThrottle
     {
@@ -87,6 +90,7 @@ public static partial class EVRConfig
         }
     }
 
+    /// <include file='EVRConfig.xml' path='doc/member[@name="EVRConfig.EVRConfig_AllowDropToThrottle"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EVRConfig_AllowDropToThrottle
     {
@@ -112,6 +116,7 @@ public static partial class EVRConfig
         }
     }
 
+    /// <include file='EVRConfig.xml' path='doc/member[@name="EVRConfig.EVRConfig_ForceHalfInterlace"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EVRConfig_ForceHalfInterlace
     {
@@ -137,6 +142,7 @@ public static partial class EVRConfig
         }
     }
 
+    /// <include file='EVRConfig.xml' path='doc/member[@name="EVRConfig.EVRConfig_AllowDropToHalfInterlace"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EVRConfig_AllowDropToHalfInterlace
     {
@@ -162,6 +168,7 @@ public static partial class EVRConfig
         }
     }
 
+    /// <include file='EVRConfig.xml' path='doc/member[@name="EVRConfig.EVRConfig_ForceScaling"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EVRConfig_ForceScaling
     {
@@ -187,6 +194,7 @@ public static partial class EVRConfig
         }
     }
 
+    /// <include file='EVRConfig.xml' path='doc/member[@name="EVRConfig.EVRConfig_AllowScaling"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EVRConfig_AllowScaling
     {
@@ -212,6 +220,7 @@ public static partial class EVRConfig
         }
     }
 
+    /// <include file='EVRConfig.xml' path='doc/member[@name="EVRConfig.EVRConfig_ForceBatching"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EVRConfig_ForceBatching
     {
@@ -237,6 +246,7 @@ public static partial class EVRConfig
         }
     }
 
+    /// <include file='EVRConfig.xml' path='doc/member[@name="EVRConfig.EVRConfig_AllowBatching"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid EVRConfig_AllowBatching
     {

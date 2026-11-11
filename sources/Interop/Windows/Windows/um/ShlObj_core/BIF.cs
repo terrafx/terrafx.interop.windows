@@ -7,54 +7,71 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class BIF
 {
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_RETURNONLYFSDIRS"]/*' />
     [NativeTypeName("#define BIF_RETURNONLYFSDIRS 0x00000001")]
     public const int BIF_RETURNONLYFSDIRS = 0x00000001;
 
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_DONTGOBELOWDOMAIN"]/*' />
     [NativeTypeName("#define BIF_DONTGOBELOWDOMAIN 0x00000002")]
     public const int BIF_DONTGOBELOWDOMAIN = 0x00000002;
 
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_STATUSTEXT"]/*' />
     [NativeTypeName("#define BIF_STATUSTEXT 0x00000004")]
     public const int BIF_STATUSTEXT = 0x00000004;
 
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_RETURNFSANCESTORS"]/*' />
     [NativeTypeName("#define BIF_RETURNFSANCESTORS 0x00000008")]
     public const int BIF_RETURNFSANCESTORS = 0x00000008;
 
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_EDITBOX"]/*' />
     [NativeTypeName("#define BIF_EDITBOX 0x00000010")]
     public const int BIF_EDITBOX = 0x00000010;
 
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_VALIDATE"]/*' />
     [NativeTypeName("#define BIF_VALIDATE 0x00000020")]
     public const int BIF_VALIDATE = 0x00000020;
 
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_NEWDIALOGSTYLE"]/*' />
     [NativeTypeName("#define BIF_NEWDIALOGSTYLE 0x00000040")]
     public const int BIF_NEWDIALOGSTYLE = 0x00000040;
 
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_USENEWUI"]/*' />
     [NativeTypeName("#define BIF_USENEWUI (BIF_NEWDIALOGSTYLE | BIF_EDITBOX)")]
     public const int BIF_USENEWUI = (0x00000040 | 0x00000010);
 
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_BROWSEINCLUDEURLS"]/*' />
     [NativeTypeName("#define BIF_BROWSEINCLUDEURLS 0x00000080")]
     public const int BIF_BROWSEINCLUDEURLS = 0x00000080;
 
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_UAHINT"]/*' />
     [NativeTypeName("#define BIF_UAHINT 0x00000100")]
     public const int BIF_UAHINT = 0x00000100;
 
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_NONEWFOLDERBUTTON"]/*' />
     [NativeTypeName("#define BIF_NONEWFOLDERBUTTON 0x00000200")]
     public const int BIF_NONEWFOLDERBUTTON = 0x00000200;
 
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_NOTRANSLATETARGETS"]/*' />
     [NativeTypeName("#define BIF_NOTRANSLATETARGETS 0x00000400")]
     public const int BIF_NOTRANSLATETARGETS = 0x00000400;
 
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_BROWSEFORCOMPUTER"]/*' />
     [NativeTypeName("#define BIF_BROWSEFORCOMPUTER 0x00001000")]
     public const int BIF_BROWSEFORCOMPUTER = 0x00001000;
 
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_BROWSEFORPRINTER"]/*' />
     [NativeTypeName("#define BIF_BROWSEFORPRINTER 0x00002000")]
     public const int BIF_BROWSEFORPRINTER = 0x00002000;
 
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_BROWSEINCLUDEFILES"]/*' />
     [NativeTypeName("#define BIF_BROWSEINCLUDEFILES 0x00004000")]
     public const int BIF_BROWSEINCLUDEFILES = 0x00004000;
 
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_SHAREABLE"]/*' />
     [NativeTypeName("#define BIF_SHAREABLE 0x00008000")]
     public const int BIF_SHAREABLE = 0x00008000;
 
+    /// <include file='BIF.xml' path='doc/member[@name="BIF.BIF_BROWSEFILEJUNCTIONS"]/*' />
     [NativeTypeName("#define BIF_BROWSEFILEJUNCTIONS 0x00010000")]
     public const int BIF_BROWSEFILEJUNCTIONS = 0x00010000;
 }

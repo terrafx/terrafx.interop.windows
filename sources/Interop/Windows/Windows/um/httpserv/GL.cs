@@ -7,51 +7,67 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GL
 {
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_STOP_LISTENING"]/*' />
     [NativeTypeName("#define GL_STOP_LISTENING 0x00000002")]
     public const int GL_STOP_LISTENING = 0x00000002;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_CACHE_CLEANUP"]/*' />
     [NativeTypeName("#define GL_CACHE_CLEANUP 0x00000004")]
     public const int GL_CACHE_CLEANUP = 0x00000004;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_CACHE_OPERATION"]/*' />
     [NativeTypeName("#define GL_CACHE_OPERATION 0x00000010")]
     public const int GL_CACHE_OPERATION = 0x00000010;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_HEALTH_CHECK"]/*' />
     [NativeTypeName("#define GL_HEALTH_CHECK 0x00000020")]
     public const int GL_HEALTH_CHECK = 0x00000020;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_CONFIGURATION_CHANGE"]/*' />
     [NativeTypeName("#define GL_CONFIGURATION_CHANGE 0x00000040")]
     public const int GL_CONFIGURATION_CHANGE = 0x00000040;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_FILE_CHANGE"]/*' />
     [NativeTypeName("#define GL_FILE_CHANGE 0x00000080")]
     public const int GL_FILE_CHANGE = 0x00000080;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_PRE_BEGIN_REQUEST"]/*' />
     [NativeTypeName("#define GL_PRE_BEGIN_REQUEST 0x00000100")]
     public const int GL_PRE_BEGIN_REQUEST = 0x00000100;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_APPLICATION_START"]/*' />
     [NativeTypeName("#define GL_APPLICATION_START 0x00000200")]
     public const int GL_APPLICATION_START = 0x00000200;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_APPLICATION_RESOLVE_MODULES"]/*' />
     [NativeTypeName("#define GL_APPLICATION_RESOLVE_MODULES 0x00000400")]
     public const int GL_APPLICATION_RESOLVE_MODULES = 0x00000400;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_APPLICATION_STOP"]/*' />
     [NativeTypeName("#define GL_APPLICATION_STOP 0x00000800")]
     public const int GL_APPLICATION_STOP = 0x00000800;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_RSCA_QUERY"]/*' />
     [NativeTypeName("#define GL_RSCA_QUERY 0x00001000")]
     public const int GL_RSCA_QUERY = 0x00001000;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_TRACE_EVENT"]/*' />
     [NativeTypeName("#define GL_TRACE_EVENT 0x00002000")]
     public const int GL_TRACE_EVENT = 0x00002000;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_CUSTOM_NOTIFICATION"]/*' />
     [NativeTypeName("#define GL_CUSTOM_NOTIFICATION 0x00004000")]
     public const int GL_CUSTOM_NOTIFICATION = 0x00004000;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_THREAD_CLEANUP"]/*' />
     [NativeTypeName("#define GL_THREAD_CLEANUP 0x00008000")]
     public const int GL_THREAD_CLEANUP = 0x00008000;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_APPLICATION_PRELOAD"]/*' />
     [NativeTypeName("#define GL_APPLICATION_PRELOAD 0x00010000")]
     public const int GL_APPLICATION_PRELOAD = 0x00010000;
 
+    /// <include file='GL.xml' path='doc/member[@name="GL.GL_SUSPEND_PROCESS"]/*' />
     [NativeTypeName("#define GL_SUSPEND_PROCESS 0x00020000")]
     public const int GL_SUSPEND_PROCESS = 0x00020000;
 }

@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDENUMRET
 {
+    /// <include file='DDENUMRET.xml' path='doc/member[@name="DDENUMRET.DDENUMRET_CANCEL"]/*' />
     [NativeTypeName("#define DDENUMRET_CANCEL 0")]
     public const int DDENUMRET_CANCEL = 0;
 
+    /// <include file='DDENUMRET.xml' path='doc/member[@name="DDENUMRET.DDENUMRET_OK"]/*' />
     [NativeTypeName("#define DDENUMRET_OK 1")]
     public const int DDENUMRET_OK = 1;
 }

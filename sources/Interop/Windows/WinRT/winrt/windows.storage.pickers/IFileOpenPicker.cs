@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IFileOpenPicker : IFileOpenPicker.Interface, INativeGuid
 {
+    /// <include file='IFileOpenPicker.xml' path='doc/member[@name="IFileOpenPicker.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFileOpenPicker);
 
     public void** lpVtbl;

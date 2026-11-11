@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWinInetCacheHints : IWinInetCacheHints.Interface, INativeGuid
 {
+    /// <include file='IWinInetCacheHints.xml' path='doc/member[@name="IWinInetCacheHints.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWinInetCacheHints);
 
     public void** lpVtbl;

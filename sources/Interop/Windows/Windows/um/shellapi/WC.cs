@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class WC
 {
+    /// <include file='WC.xml' path='doc/member[@name="WC.WC_NETADDRESS"]/*' />
     [NativeTypeName("#define WC_NETADDRESS L\"msctls_netaddress\"")]
     public const string WC_NETADDRESS = "msctls_netaddress";
 }

@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIDevice3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIDevice3
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGISwapChain2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGISwapChain2
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIOutput2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIOutput2
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIFactory3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIFactory3
     {
@@ -113,6 +117,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIDecodeSwapChain"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIDecodeSwapChain
     {
@@ -138,6 +143,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIFactoryMedia"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIFactoryMedia
     {
@@ -163,6 +169,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGISwapChainMedia"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGISwapChainMedia
     {
@@ -188,6 +195,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXGIOutput3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXGIOutput3
     {

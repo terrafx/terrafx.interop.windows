@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GCS
 {
+    /// <include file='GCS.xml' path='doc/member[@name="GCS.GCS_COMP"]/*' />
     [NativeTypeName("#define GCS_COMP (GCS_COMPSTR|GCS_COMPATTR|GCS_COMPCLAUSE)")]
     public const int GCS_COMP = (0x0008 | 0x0010 | 0x0020);
 
+    /// <include file='GCS.xml' path='doc/member[@name="GCS.GCS_COMPREAD"]/*' />
     [NativeTypeName("#define GCS_COMPREAD (GCS_COMPREADSTR|GCS_COMPREADATTR |GCS_COMPREADCLAUSE)")]
     public const int GCS_COMPREAD = (0x0001 | 0x0002 | 0x0004);
 
+    /// <include file='GCS.xml' path='doc/member[@name="GCS.GCS_RESULT"]/*' />
     [NativeTypeName("#define GCS_RESULT (GCS_RESULTSTR|GCS_RESULTCLAUSE)")]
     public const int GCS_RESULT = (0x0800 | 0x1000);
 
+    /// <include file='GCS.xml' path='doc/member[@name="GCS.GCS_RESULTREAD"]/*' />
     [NativeTypeName("#define GCS_RESULTREAD (GCS_RESULTREADSTR|GCS_RESULTREADCLAUSE)")]
     public const int GCS_RESULTREAD = (0x0200 | 0x0400);
 }

@@ -14,6 +14,7 @@ namespace TerraFX.Interop.Windows;
 
 public partial struct SID
 {
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_DefView"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_DefView
     {
@@ -39,6 +40,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SInPlaceBrowser"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_SInPlaceBrowser
     {
@@ -64,6 +66,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SSearchBoxInfo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_SSearchBoxInfo
     {
@@ -89,6 +92,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_CommandsPropertyBag"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_CommandsPropertyBag
     {
@@ -114,6 +118,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_STopLevelBrowser"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_STopLevelBrowser
     {
@@ -139,6 +144,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_STopWindow"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_STopWindow
     {
@@ -164,6 +170,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SGetViewFromViewDual"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_SGetViewFromViewDual
     {
@@ -189,6 +196,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_CtxQueryAssociations"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_CtxQueryAssociations
     {
@@ -214,6 +222,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SMenuBandChild"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_SMenuBandChild
     {
@@ -239,6 +248,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SMenuBandParent"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_SMenuBandParent
     {
@@ -264,6 +274,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SMenuPopup"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_SMenuPopup
     {
@@ -289,6 +300,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SMenuBandBottomSelected"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_SMenuBandBottomSelected
     {
@@ -314,6 +326,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SMenuBandBottom"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_SMenuBandBottom
     {
@@ -339,6 +352,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_MenuShellFolder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_MenuShellFolder
     {
@@ -364,6 +378,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SMenuBandContextMenuModifier"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_SMenuBandContextMenuModifier
     {
@@ -389,6 +404,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SMenuBandBKContextMenu"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_SMenuBandBKContextMenu
     {
@@ -414,6 +430,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SMenuBandTop"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_SMenuBandTop
     {
@@ -439,6 +456,7 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SCommDlgBrowser"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid SID_SCommDlgBrowser
     {
@@ -464,24 +482,31 @@ public partial struct SID
         }
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_LinkSite"]/*' />
     [NativeTypeName("#define SID_LinkSite IID_IShellLinkW")]
     public static ref readonly Guid SID_LinkSite => ref IID_IShellLinkW;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_ShellFolderViewCB"]/*' />
     [NativeTypeName("#define SID_ShellFolderViewCB IID_IShellFolderViewCB")]
     public static ref readonly Guid SID_ShellFolderViewCB => ref IID_IShellFolderViewCB;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SShellBrowser"]/*' />
     [NativeTypeName("#define SID_SShellBrowser IID_IShellBrowser")]
     public static ref readonly Guid SID_SShellBrowser => ref IID_IShellBrowser;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SUrlHistory"]/*' />
     [NativeTypeName("#define SID_SUrlHistory CLSID_CUrlHistory")]
     public static ref readonly Guid SID_SUrlHistory => ref CLSID_CUrlHistory;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SInternetExplorer"]/*' />
     [NativeTypeName("#define SID_SInternetExplorer IID_IWebBrowserApp")]
     public static ref readonly Guid SID_SInternetExplorer => ref IID_IWebBrowserApp;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SWebBrowserApp"]/*' />
     [NativeTypeName("#define SID_SWebBrowserApp IID_IWebBrowserApp")]
     public static ref readonly Guid SID_SWebBrowserApp => ref IID_IWebBrowserApp;
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SProgressUI"]/*' />
     [NativeTypeName("#define SID_SProgressUI CLSID_ProgressDialog")]
     public static ref readonly Guid SID_SProgressUI => ref CLSID_ProgressDialog;
 }

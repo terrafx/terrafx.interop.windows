@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDirectInput8A : IDirectInput8A.Interface, INativeGuid
 {
+    /// <include file='IDirectInput8A.xml' path='doc/member[@name="IDirectInput8A.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDirectInput8A);
 
     public void** lpVtbl;

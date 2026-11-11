@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IPersist")]
 public unsafe partial struct IPersistStream : IPersistStream.Interface, INativeGuid
 {
+    /// <include file='IPersistStream.xml' path='doc/member[@name="IPersistStream.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPersistStream);
 
     public void** lpVtbl;

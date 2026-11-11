@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IContactProperties : IContactProperties.Interface, INativeGuid
 {
+    /// <include file='IContactProperties.xml' path='doc/member[@name="IContactProperties.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IContactProperties);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IProxyConfiguration : IProxyConfiguration.Interface, INativeGuid
 {
+    /// <include file='IProxyConfiguration.xml' path='doc/member[@name="IProxyConfiguration.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IProxyConfiguration);
 
     public void** lpVtbl;

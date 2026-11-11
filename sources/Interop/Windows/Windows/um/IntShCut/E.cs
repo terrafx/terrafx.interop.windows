@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class E
 {
+    /// <include file='E.xml' path='doc/member[@name="E.E_FLAGS"]/*' />
     [NativeTypeName("#define E_FLAGS MAKE_SCODE(SEVERITY_ERROR, FACILITY_ITF, 0x1000)")]
     public const int E_FLAGS = unchecked((int)(((uint)(1) << 31) | ((uint)(4) << 16) | ((uint)(0x1000))));
 }

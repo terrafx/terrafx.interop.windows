@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IWordsSegmenter : IWordsSegmenter.Interface, INativeGuid
 {
+    /// <include file='IWordsSegmenter.xml' path='doc/member[@name="IWordsSegmenter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWordsSegmenter);
 
     public void** lpVtbl;

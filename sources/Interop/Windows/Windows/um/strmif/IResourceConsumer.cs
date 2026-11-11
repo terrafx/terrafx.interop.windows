@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IResourceConsumer : IResourceConsumer.Interface, INativeGuid
 {
+    /// <include file='IResourceConsumer.xml' path='doc/member[@name="IResourceConsumer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IResourceConsumer);
 
     public void** lpVtbl;

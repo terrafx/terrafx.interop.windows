@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct ISVGAnimatedPreserveAspectRatio : ISVGAnimatedPreserveAspectRatio.Interface, INativeGuid
 {
+    /// <include file='ISVGAnimatedPreserveAspectRatio.xml' path='doc/member[@name="ISVGAnimatedPreserveAspectRatio.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISVGAnimatedPreserveAspectRatio);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGpioControllerStatics : IGpioControllerStatics.Interface, INativeGuid
 {
+    /// <include file='IGpioControllerStatics.xml' path='doc/member[@name="IGpioControllerStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGpioControllerStatics);
 
     public void** lpVtbl;

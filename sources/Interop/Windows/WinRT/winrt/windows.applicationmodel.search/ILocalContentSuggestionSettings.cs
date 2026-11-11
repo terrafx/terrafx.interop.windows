@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ILocalContentSuggestionSettings : ILocalContentSuggestionSettings.Interface, INativeGuid
 {
+    /// <include file='ILocalContentSuggestionSettings.xml' path='doc/member[@name="ILocalContentSuggestionSettings.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILocalContentSuggestionSettings);
 
     public void** lpVtbl;

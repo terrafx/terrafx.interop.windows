@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfLanguageProfileNotifySink : ITfLanguageProfileNotifySink.Interface, INativeGuid
 {
+    /// <include file='ITfLanguageProfileNotifySink.xml' path='doc/member[@name="ITfLanguageProfileNotifySink.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfLanguageProfileNotifySink);
 
     public void** lpVtbl;

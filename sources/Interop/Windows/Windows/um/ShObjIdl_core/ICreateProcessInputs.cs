@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interface, INativeGuid
 {
+    /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICreateProcessInputs);
 
     public void** lpVtbl;

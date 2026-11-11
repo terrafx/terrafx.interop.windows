@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_THEMECOLOR"]/*' />
     [NativeTypeName("#define MAX_THEMECOLOR 64")]
     public const int MAX_THEMECOLOR = 64;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_THEMESIZE"]/*' />
     [NativeTypeName("#define MAX_THEMESIZE 64")]
     public const int MAX_THEMESIZE = 64;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_INTLIST_COUNT"]/*' />
     [NativeTypeName("#define MAX_INTLIST_COUNT 402")]
     public const int MAX_INTLIST_COUNT = 402;
 }

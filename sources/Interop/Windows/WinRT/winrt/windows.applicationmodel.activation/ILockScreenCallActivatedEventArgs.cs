@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ILockScreenCallActivatedEventArgs : ILockScreenCallActivatedEventArgs.Interface, INativeGuid
 {
+    /// <include file='ILockScreenCallActivatedEventArgs.xml' path='doc/member[@name="ILockScreenCallActivatedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILockScreenCallActivatedEventArgs);
 
     public void** lpVtbl;

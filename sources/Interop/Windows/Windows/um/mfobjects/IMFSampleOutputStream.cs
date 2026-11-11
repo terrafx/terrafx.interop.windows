@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFSampleOutputStream : IMFSampleOutputStream.Interface, INativeGuid
 {
+    /// <include file='IMFSampleOutputStream.xml' path='doc/member[@name="IMFSampleOutputStream.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFSampleOutputStream);
 
     public void** lpVtbl;

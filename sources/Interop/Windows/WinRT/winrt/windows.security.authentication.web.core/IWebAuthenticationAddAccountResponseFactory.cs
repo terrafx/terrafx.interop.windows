@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IWebAuthenticationAddAccountResponseFactory : IWebAuthenticationAddAccountResponseFactory.Interface, INativeGuid
 {
+    /// <include file='IWebAuthenticationAddAccountResponseFactory.xml' path='doc/member[@name="IWebAuthenticationAddAccountResponseFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWebAuthenticationAddAccountResponseFactory);
 
     public void** lpVtbl;

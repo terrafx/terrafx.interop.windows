@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEDeviceStreamCreated"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MEDeviceStreamCreated
     {

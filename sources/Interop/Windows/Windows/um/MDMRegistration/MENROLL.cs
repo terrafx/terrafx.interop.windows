@@ -7,18 +7,23 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MENROLL
 {
+    /// <include file='MENROLL.xml' path='doc/member[@name="MENROLL.MENROLL_E_DEVICE_CERTIFCATEREQUEST_ERROR"]/*' />
     [NativeTypeName("#define MENROLL_E_DEVICE_CERTIFCATEREQUEST_ERROR MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 4)")]
     public const int MENROLL_E_DEVICE_CERTIFCATEREQUEST_ERROR = unchecked((int)(((uint)(1) << 31) | ((uint)(24) << 16) | ((uint)(4))));
 
+    /// <include file='MENROLL.xml' path='doc/member[@name="MENROLL.MENROLL_E_DEVICE_NOT_ENROLLED"]/*' />
     [NativeTypeName("#define MENROLL_E_DEVICE_NOT_ENROLLED MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 11)")]
     public const int MENROLL_E_DEVICE_NOT_ENROLLED = unchecked((int)(((uint)(1) << 31) | ((uint)(24) << 16) | ((uint)(11))));
 
+    /// <include file='MENROLL.xml' path='doc/member[@name="MENROLL.MENROLL_E_NOTSUPPORTED"]/*' />
     [NativeTypeName("#define MENROLL_E_NOTSUPPORTED MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 21)")]
     public const int MENROLL_E_NOTSUPPORTED = unchecked((int)(((uint)(1) << 31) | ((uint)(24) << 16) | ((uint)(21))));
 
+    /// <include file='MENROLL.xml' path='doc/member[@name="MENROLL.MENROLL_E_USERLICENSE"]/*' />
     [NativeTypeName("#define MENROLL_E_USERLICENSE MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 24)")]
     public const int MENROLL_E_USERLICENSE = unchecked((int)(((uint)(1) << 31) | ((uint)(24) << 16) | ((uint)(24))));
 
+    /// <include file='MENROLL.xml' path='doc/member[@name="MENROLL.MENROLL_E_USER_CANCELED"]/*' />
     [NativeTypeName("#define MENROLL_E_USER_CANCELED MAKE_HRESULT(SEVERITY_ERROR, DEVICE_ENROLLER_FACILITY_CODE, 42)")]
     public const int MENROLL_E_USER_CANCELED = unchecked((int)(((uint)(1) << 31) | ((uint)(24) << 16) | ((uint)(42))));
 }

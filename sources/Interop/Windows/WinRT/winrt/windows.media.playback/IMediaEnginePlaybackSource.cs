@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("Use MediaPlayer instead of MediaEngine. For more info, see MSDN.")]
 public unsafe partial struct IMediaEnginePlaybackSource : IMediaEnginePlaybackSource.Interface, INativeGuid
 {
+    /// <include file='IMediaEnginePlaybackSource.xml' path='doc/member[@name="IMediaEnginePlaybackSource.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMediaEnginePlaybackSource);
 
     public void** lpVtbl;

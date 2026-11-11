@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GET
 {
+    /// <include file='GET.xml' path='doc/member[@name="GET.GET_MODULE_HANDLE_EX_FLAG_PIN"]/*' />
     [NativeTypeName("#define GET_MODULE_HANDLE_EX_FLAG_PIN (0x00000001)")]
     public const int GET_MODULE_HANDLE_EX_FLAG_PIN = (0x00000001);
 
+    /// <include file='GET.xml' path='doc/member[@name="GET.GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT"]/*' />
     [NativeTypeName("#define GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT (0x00000002)")]
     public const int GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT = (0x00000002);
 
+    /// <include file='GET.xml' path='doc/member[@name="GET.GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS"]/*' />
     [NativeTypeName("#define GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS (0x00000004)")]
     public const int GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS = (0x00000004);
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ITextCharacterFormat : ITextCharacterFormat.Interface, INativeGuid
 {
+    /// <include file='ITextCharacterFormat.xml' path='doc/member[@name="ITextCharacterFormat.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITextCharacterFormat);
 
     public void** lpVtbl;

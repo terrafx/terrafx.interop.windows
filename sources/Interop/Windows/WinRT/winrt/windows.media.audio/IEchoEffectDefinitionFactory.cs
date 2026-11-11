@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IEchoEffectDefinitionFactory : IEchoEffectDefinitionFactory.Interface, INativeGuid
 {
+    /// <include file='IEchoEffectDefinitionFactory.xml' path='doc/member[@name="IEchoEffectDefinitionFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEchoEffectDefinitionFactory);
 
     public void** lpVtbl;

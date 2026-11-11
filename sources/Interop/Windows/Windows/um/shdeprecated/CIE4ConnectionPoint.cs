@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IConnectionPoint")]
 public unsafe partial struct CIE4ConnectionPoint : CIE4ConnectionPoint.Interface, INativeGuid
 {
+    /// <include file='CIE4ConnectionPoint.xml' path='doc/member[@name="CIE4ConnectionPoint.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CIE4ConnectionPoint);
 
     public void** lpVtbl;

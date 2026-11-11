@@ -7,90 +7,119 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class PARTITION
 {
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_ENTRY_UNUSED"]/*' />
     [NativeTypeName("#define PARTITION_ENTRY_UNUSED 0x00")]
     public const int PARTITION_ENTRY_UNUSED = 0x00;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_FAT_12"]/*' />
     [NativeTypeName("#define PARTITION_FAT_12 0x01")]
     public const int PARTITION_FAT_12 = 0x01;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_XENIX_1"]/*' />
     [NativeTypeName("#define PARTITION_XENIX_1 0x02")]
     public const int PARTITION_XENIX_1 = 0x02;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_XENIX_2"]/*' />
     [NativeTypeName("#define PARTITION_XENIX_2 0x03")]
     public const int PARTITION_XENIX_2 = 0x03;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_FAT_16"]/*' />
     [NativeTypeName("#define PARTITION_FAT_16 0x04")]
     public const int PARTITION_FAT_16 = 0x04;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_EXTENDED"]/*' />
     [NativeTypeName("#define PARTITION_EXTENDED 0x05")]
     public const int PARTITION_EXTENDED = 0x05;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_HUGE"]/*' />
     [NativeTypeName("#define PARTITION_HUGE 0x06")]
     public const int PARTITION_HUGE = 0x06;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_IFS"]/*' />
     [NativeTypeName("#define PARTITION_IFS 0x07")]
     public const int PARTITION_IFS = 0x07;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_OS2BOOTMGR"]/*' />
     [NativeTypeName("#define PARTITION_OS2BOOTMGR 0x0A")]
     public const int PARTITION_OS2BOOTMGR = 0x0A;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_FAT32"]/*' />
     [NativeTypeName("#define PARTITION_FAT32 0x0B")]
     public const int PARTITION_FAT32 = 0x0B;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_FAT32_XINT13"]/*' />
     [NativeTypeName("#define PARTITION_FAT32_XINT13 0x0C")]
     public const int PARTITION_FAT32_XINT13 = 0x0C;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_XINT13"]/*' />
     [NativeTypeName("#define PARTITION_XINT13 0x0E")]
     public const int PARTITION_XINT13 = 0x0E;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_XINT13_EXTENDED"]/*' />
     [NativeTypeName("#define PARTITION_XINT13_EXTENDED 0x0F")]
     public const int PARTITION_XINT13_EXTENDED = 0x0F;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_MSFT_RECOVERY"]/*' />
     [NativeTypeName("#define PARTITION_MSFT_RECOVERY 0x27")]
     public const int PARTITION_MSFT_RECOVERY = 0x27;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_MAIN_OS"]/*' />
     [NativeTypeName("#define PARTITION_MAIN_OS 0x28")]
     public const int PARTITION_MAIN_OS = 0x28;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_PRE_INSTALLED"]/*' />
     [NativeTypeName("#define PARTITION_PRE_INSTALLED 0x2a")]
     public const int PARTITION_PRE_INSTALLED = 0x2a;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_BSP"]/*' />
     [NativeTypeName("#define PARTITION_BSP 0x2b")]
     public const int PARTITION_BSP = 0x2b;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_DPP"]/*' />
     [NativeTypeName("#define PARTITION_DPP 0x2c")]
     public const int PARTITION_DPP = 0x2c;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_WINDOWS_SYSTEM"]/*' />
     [NativeTypeName("#define PARTITION_WINDOWS_SYSTEM 0x2d")]
     public const int PARTITION_WINDOWS_SYSTEM = 0x2d;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_PREP"]/*' />
     [NativeTypeName("#define PARTITION_PREP 0x41")]
     public const int PARTITION_PREP = 0x41;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_LDM"]/*' />
     [NativeTypeName("#define PARTITION_LDM 0x42")]
     public const int PARTITION_LDM = 0x42;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_DM"]/*' />
     [NativeTypeName("#define PARTITION_DM 0x54")]
     public const int PARTITION_DM = 0x54;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_EZDRIVE"]/*' />
     [NativeTypeName("#define PARTITION_EZDRIVE 0x55")]
     public const int PARTITION_EZDRIVE = 0x55;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_UNIX"]/*' />
     [NativeTypeName("#define PARTITION_UNIX 0x63")]
     public const int PARTITION_UNIX = 0x63;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_SPACES_DATA"]/*' />
     [NativeTypeName("#define PARTITION_SPACES_DATA 0xD7")]
     public const int PARTITION_SPACES_DATA = 0xD7;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_SPACES"]/*' />
     [NativeTypeName("#define PARTITION_SPACES 0xE7")]
     public const int PARTITION_SPACES = 0xE7;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_GPT"]/*' />
     [NativeTypeName("#define PARTITION_GPT 0xEE")]
     public const int PARTITION_GPT = 0xEE;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_SYSTEM"]/*' />
     [NativeTypeName("#define PARTITION_SYSTEM 0xEF")]
     public const int PARTITION_SYSTEM = 0xEF;
 
+    /// <include file='PARTITION.xml' path='doc/member[@name="PARTITION.PARTITION_NTFT"]/*' />
     [NativeTypeName("#define PARTITION_NTFT 0x80")]
     public const int PARTITION_NTFT = 0x80;
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISuspendingOperation : ISuspendingOperation.Interface, INativeGuid
 {
+    /// <include file='ISuspendingOperation.xml' path='doc/member[@name="ISuspendingOperation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISuspendingOperation);
 
     public void** lpVtbl;

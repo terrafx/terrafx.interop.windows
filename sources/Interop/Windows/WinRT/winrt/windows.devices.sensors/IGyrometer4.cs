@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGyrometer4 : IGyrometer4.Interface, INativeGuid
 {
+    /// <include file='IGyrometer4.xml' path='doc/member[@name="IGyrometer4.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGyrometer4);
 
     public void** lpVtbl;

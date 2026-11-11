@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.22621.0")]
 public unsafe partial struct IMFCameraControlMonitor : IMFCameraControlMonitor.Interface, INativeGuid
 {
+    /// <include file='IMFCameraControlMonitor.xml' path='doc/member[@name="IMFCameraControlMonitor.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFCameraControlMonitor);
 
     public void** lpVtbl;

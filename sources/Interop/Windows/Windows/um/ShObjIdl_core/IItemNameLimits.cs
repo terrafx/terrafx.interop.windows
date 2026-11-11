@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IItemNameLimits : IItemNameLimits.Interface, INativeGuid
 {
+    /// <include file='IItemNameLimits.xml' path='doc/member[@name="IItemNameLimits.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IItemNameLimits);
 
     public void** lpVtbl;

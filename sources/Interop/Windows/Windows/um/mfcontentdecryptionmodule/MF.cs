@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MF
 {
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CONTENTDECRYPTIONMODULE_INPRIVATESTOREPATH"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MF_CONTENTDECRYPTIONMODULE_INPRIVATESTOREPATH
     {
@@ -38,6 +39,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CONTENTDECRYPTIONMODULE_STOREPATH"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MF_CONTENTDECRYPTIONMODULE_STOREPATH
     {
@@ -64,6 +66,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CONTENTDECRYPTIONMODULE_PMPSTORECONTEXT"]/*' />
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY MF_CONTENTDECRYPTIONMODULE_PMPSTORECONTEXT
     {
@@ -90,6 +93,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_CONTENTDECRYPTIONMODULE_SERVICE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_CONTENTDECRYPTIONMODULE_SERVICE
     {
@@ -115,6 +119,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_ENCRYPTEDMEDIAEXTENSIONS_ACTIVATE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_ENCRYPTEDMEDIAEXTENSIONS_ACTIVATE
     {
@@ -140,6 +145,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_ENCRYPTEDMEDIAEXTENSIONS_ACTIVATABLE_CLASS_ID"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_ENCRYPTEDMEDIAEXTENSIONS_ACTIVATABLE_CLASS_ID
     {
@@ -165,6 +171,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_ENCRYPTEDMEDIAEXTENSIONS_INITIALIZATION_DATA"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_ENCRYPTEDMEDIAEXTENSIONS_INITIALIZATION_DATA
     {

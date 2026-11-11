@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISplashScreen : ISplashScreen.Interface, INativeGuid
 {
+    /// <include file='ISplashScreen.xml' path='doc/member[@name="ISplashScreen.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISplashScreen);
 
     public void** lpVtbl;

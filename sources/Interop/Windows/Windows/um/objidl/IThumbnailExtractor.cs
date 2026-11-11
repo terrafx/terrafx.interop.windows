@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IThumbnailExtractor : IThumbnailExtractor.Interface, INativeGuid
 {
+    /// <include file='IThumbnailExtractor.xml' path='doc/member[@name="IThumbnailExtractor.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IThumbnailExtractor);
 
     public void** lpVtbl;

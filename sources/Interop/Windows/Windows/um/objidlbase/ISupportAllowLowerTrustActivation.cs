@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISupportAllowLowerTrustActivation : ISupportAllowLowerTrustActivation.Interface, INativeGuid
 {
+    /// <include file='ISupportAllowLowerTrustActivation.xml' path='doc/member[@name="ISupportAllowLowerTrustActivation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISupportAllowLowerTrustActivation);
 
     public void** lpVtbl;

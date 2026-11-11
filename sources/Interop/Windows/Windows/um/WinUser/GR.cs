@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GR
 {
+    /// <include file='GR.xml' path='doc/member[@name="GR.GR_GDIOBJECTS"]/*' />
     [NativeTypeName("#define GR_GDIOBJECTS 0")]
     public const int GR_GDIOBJECTS = 0;
 
+    /// <include file='GR.xml' path='doc/member[@name="GR.GR_USEROBJECTS"]/*' />
     [NativeTypeName("#define GR_USEROBJECTS 1")]
     public const int GR_USEROBJECTS = 1;
 
+    /// <include file='GR.xml' path='doc/member[@name="GR.GR_GDIOBJECTS_PEAK"]/*' />
     [NativeTypeName("#define GR_GDIOBJECTS_PEAK 2")]
     public const int GR_GDIOBJECTS_PEAK = 2;
 
+    /// <include file='GR.xml' path='doc/member[@name="GR.GR_USEROBJECTS_PEAK"]/*' />
     [NativeTypeName("#define GR_USEROBJECTS_PEAK 4")]
     public const int GR_USEROBJECTS_PEAK = 4;
 }

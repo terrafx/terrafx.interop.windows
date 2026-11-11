@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ITextStoreACPSink")]
 public unsafe partial struct ITextStoreACPSinkEx : ITextStoreACPSinkEx.Interface, INativeGuid
 {
+    /// <include file='ITextStoreACPSinkEx.xml' path='doc/member[@name="ITextStoreACPSinkEx.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITextStoreACPSinkEx);
 
     public void** lpVtbl;

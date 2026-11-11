@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IAppxPackageEditor : IAppxPackageEditor.Interface, INativeGuid
 {
+    /// <include file='IAppxPackageEditor.xml' path='doc/member[@name="IAppxPackageEditor.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppxPackageEditor);
 
     public void** lpVtbl;

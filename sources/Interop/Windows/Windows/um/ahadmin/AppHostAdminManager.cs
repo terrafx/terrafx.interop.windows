@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("228FB8F7-FB53-4FD5-8C7B-FF59DE606C5B")]
 public unsafe partial struct AppHostAdminManager : INativeGuid
 {
+    /// <include file='AppHostAdminManager.xml' path='doc/member[@name="AppHostAdminManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_AppHostAdminManager);
 }

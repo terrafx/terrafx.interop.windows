@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class FXLOUDNESS
 {
+    /// <include file='FXLOUDNESS.xml' path='doc/member[@name="FXLOUDNESS.FXLOUDNESS_DEFAULT_MOMENTARY_MS"]/*' />
     [NativeTypeName("#define FXLOUDNESS_DEFAULT_MOMENTARY_MS 400")]
     public const int FXLOUDNESS_DEFAULT_MOMENTARY_MS = 400;
 
+    /// <include file='FXLOUDNESS.xml' path='doc/member[@name="FXLOUDNESS.FXLOUDNESS_DEFAULT_SHORTTERM_MS"]/*' />
     [NativeTypeName("#define FXLOUDNESS_DEFAULT_SHORTTERM_MS 3000")]
     public const int FXLOUDNESS_DEFAULT_SHORTTERM_MS = 3000;
 }

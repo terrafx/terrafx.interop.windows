@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISmartCardAppletIdGroupStatics : ISmartCardAppletIdGroupStatics.Interface, INativeGuid
 {
+    /// <include file='ISmartCardAppletIdGroupStatics.xml' path='doc/member[@name="ISmartCardAppletIdGroupStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISmartCardAppletIdGroupStatics);
 
     public void** lpVtbl;

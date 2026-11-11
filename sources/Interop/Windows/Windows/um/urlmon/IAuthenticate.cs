@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAuthenticate : IAuthenticate.Interface, INativeGuid
 {
+    /// <include file='IAuthenticate.xml' path='doc/member[@name="IAuthenticate.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAuthenticate);
 
     public void** lpVtbl;

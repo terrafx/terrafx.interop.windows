@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IElementNamespaceTable : IElementNamespaceTable.Interface, INativeGuid
 {
+    /// <include file='IElementNamespaceTable.xml' path='doc/member[@name="IElementNamespaceTable.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IElementNamespaceTable);
 
     public void** lpVtbl;

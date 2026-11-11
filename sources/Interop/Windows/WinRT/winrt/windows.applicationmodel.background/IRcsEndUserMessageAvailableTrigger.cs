@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IRcsEndUserMessageAvailableTrigger : IRcsEndUserMessageAvailableTrigger.Interface, INativeGuid
 {
+    /// <include file='IRcsEndUserMessageAvailableTrigger.xml' path='doc/member[@name="IRcsEndUserMessageAvailableTrigger.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRcsEndUserMessageAvailableTrigger);
 
     public void** lpVtbl;

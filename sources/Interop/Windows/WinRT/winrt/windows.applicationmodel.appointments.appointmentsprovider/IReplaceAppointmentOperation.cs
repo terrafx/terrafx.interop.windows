@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IReplaceAppointmentOperation : IReplaceAppointmentOperation.Interface, INativeGuid
 {
+    /// <include file='IReplaceAppointmentOperation.xml' path='doc/member[@name="IReplaceAppointmentOperation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IReplaceAppointmentOperation);
 
     public void** lpVtbl;

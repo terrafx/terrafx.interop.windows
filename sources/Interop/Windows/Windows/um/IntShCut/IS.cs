@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IS
 {
+    /// <include file='IS.xml' path='doc/member[@name="IS.IS_E_EXEC_FAILED"]/*' />
     [NativeTypeName("#define IS_E_EXEC_FAILED MAKE_SCODE(SEVERITY_ERROR, FACILITY_ITF, 0x2002)")]
     public const int IS_E_EXEC_FAILED = unchecked((int)(((uint)(1) << 31) | ((uint)(4) << 16) | ((uint)(0x2002))));
 }

@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.15063.0")]
 public unsafe partial struct IMFMuxStreamMediaTypeManager : IMFMuxStreamMediaTypeManager.Interface, INativeGuid
 {
+    /// <include file='IMFMuxStreamMediaTypeManager.xml' path='doc/member[@name="IMFMuxStreamMediaTypeManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFMuxStreamMediaTypeManager);
 
     public void** lpVtbl;

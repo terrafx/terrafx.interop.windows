@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct INewMenuClient : INewMenuClient.Interface, INativeGuid
 {
+    /// <include file='INewMenuClient.xml' path='doc/member[@name="INewMenuClient.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_INewMenuClient);
 
     public void** lpVtbl;

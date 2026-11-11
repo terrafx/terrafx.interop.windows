@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IUnbufferedFileHandleProvider : IUnbufferedFileHandleProvider.Interface, INativeGuid
 {
+    /// <include file='IUnbufferedFileHandleProvider.xml' path='doc/member[@name="IUnbufferedFileHandleProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUnbufferedFileHandleProvider);
 
     public void** lpVtbl;
