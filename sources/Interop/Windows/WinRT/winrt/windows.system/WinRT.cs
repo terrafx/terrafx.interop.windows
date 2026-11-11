@@ -214,6 +214,14 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[22]")]
     public const string InterfaceName_Windows_System_IUser2 = "Windows.System.IUser2";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_System_IUser3"]/*' />
+    [NativeTypeName("const WCHAR[22]")]
+    public const string InterfaceName_Windows_System_IUser3 = "Windows.System.IUser3";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_System_IUserAgeRange"]/*' />
+    [NativeTypeName("const WCHAR[29]")]
+    public const string InterfaceName_Windows_System_IUserAgeRange = "Windows.System.IUserAgeRange";
+
     [NativeTypeName("const WCHAR[55]")]
     public const string InterfaceName_Windows_System_IUserAuthenticationStatusChangeDeferral = "Windows.System.IUserAuthenticationStatusChangeDeferral";
 
@@ -363,6 +371,10 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[20]")]
     public const string RuntimeClass_Windows_System_User = "Windows.System.User";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_System_UserAgeRange"]/*' />
+    [NativeTypeName("const WCHAR[28]")]
+    public const string RuntimeClass_Windows_System_UserAgeRange = "Windows.System.UserAgeRange";
 
     [NativeTypeName("const WCHAR[54]")]
     public const string RuntimeClass_Windows_System_UserAuthenticationStatusChangeDeferral = "Windows.System.UserAuthenticationStatusChangeDeferral";

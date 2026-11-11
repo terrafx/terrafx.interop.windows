@@ -105,6 +105,10 @@ public static partial class szOID
     [NativeTypeName("#define szOID_RSA_envelopedData \"1.2.840.113549.1.7.3\"")]
     public static ReadOnlySpan<byte> szOID_RSA_envelopedData => "1.2.840.113549.1.7.3"u8;
 
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_RSA_authEnvelopedData"]/*' />
+    [NativeTypeName("#define szOID_RSA_authEnvelopedData \"1.2.840.113549.1.9.16.1.23\"")]
+    public static ReadOnlySpan<byte> szOID_RSA_authEnvelopedData => "1.2.840.113549.1.9.16.1.23"u8;
+
     [NativeTypeName("#define szOID_RSA_signEnvData \"1.2.840.113549.1.7.4\"")]
     public static ReadOnlySpan<byte> szOID_RSA_signEnvData => "1.2.840.113549.1.7.4"u8;
 
@@ -176,6 +180,10 @@ public static partial class szOID
 
     [NativeTypeName("#define szOID_RSA_SMIMEalgCMSRC2wrap \"1.2.840.113549.1.9.16.3.7\"")]
     public static ReadOnlySpan<byte> szOID_RSA_SMIMEalgCMSRC2wrap => "1.2.840.113549.1.9.16.3.7"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_RSA_HKDF_WITH_SHA256"]/*' />
+    [NativeTypeName("#define szOID_RSA_HKDF_WITH_SHA256 \"1.2.840.113549.1.9.16.3.28\"")]
+    public static ReadOnlySpan<byte> szOID_RSA_HKDF_WITH_SHA256 => "1.2.840.113549.1.9.16.3.28"u8;
 
     [NativeTypeName("#define szOID_RSA_MD2 \"1.2.840.113549.2.2\"")]
     public static ReadOnlySpan<byte> szOID_RSA_MD2 => "1.2.840.113549.2.2"u8;
@@ -383,6 +391,30 @@ public static partial class szOID
 
     [NativeTypeName("#define szOID_NIST_AES256_WRAP \"2.16.840.1.101.3.4.1.45\"")]
     public static ReadOnlySpan<byte> szOID_NIST_AES256_WRAP => "2.16.840.1.101.3.4.1.45"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_NIST_AES128_CCM"]/*' />
+    [NativeTypeName("#define szOID_NIST_AES128_CCM \"2.16.840.1.101.3.4.1.7\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_AES128_CCM => "2.16.840.1.101.3.4.1.7"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_NIST_AES192_CCM"]/*' />
+    [NativeTypeName("#define szOID_NIST_AES192_CCM \"2.16.840.1.101.3.4.1.27\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_AES192_CCM => "2.16.840.1.101.3.4.1.27"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_NIST_AES256_CCM"]/*' />
+    [NativeTypeName("#define szOID_NIST_AES256_CCM \"2.16.840.1.101.3.4.1.47\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_AES256_CCM => "2.16.840.1.101.3.4.1.47"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_NIST_AES128_GCM"]/*' />
+    [NativeTypeName("#define szOID_NIST_AES128_GCM \"2.16.840.1.101.3.4.1.6\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_AES128_GCM => "2.16.840.1.101.3.4.1.6"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_NIST_AES192_GCM"]/*' />
+    [NativeTypeName("#define szOID_NIST_AES192_GCM \"2.16.840.1.101.3.4.1.67\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_AES192_GCM => "2.16.840.1.101.3.4.1.67"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_NIST_AES256_GCM"]/*' />
+    [NativeTypeName("#define szOID_NIST_AES256_GCM \"2.16.840.1.101.3.4.1.46\"")]
+    public static ReadOnlySpan<byte> szOID_NIST_AES256_GCM => "2.16.840.1.101.3.4.1.46"u8;
 
     [NativeTypeName("#define szOID_DH_SINGLE_PASS_STDDH_SHA1_KDF \"1.3.133.16.840.63.0.2\"")]
     public static ReadOnlySpan<byte> szOID_DH_SINGLE_PASS_STDDH_SHA1_KDF => "1.3.133.16.840.63.0.2"u8;
@@ -695,6 +727,34 @@ public static partial class szOID
 
     [NativeTypeName("#define szOID_NIST_hash_slh_dsa_shake_256f_with_shake256 \"2.16.840.1.101.3.4.3.46\"")]
     public static ReadOnlySpan<byte> szOID_NIST_hash_slh_dsa_shake_256f_with_shake256 => "2.16.840.1.101.3.4.3.46"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_MLDSA44_ECDSA_P256_SHA256"]/*' />
+    [NativeTypeName("#define szOID_MLDSA44_ECDSA_P256_SHA256 \"1.3.6.1.5.5.7.6.40\"")]
+    public static ReadOnlySpan<byte> szOID_MLDSA44_ECDSA_P256_SHA256 => "1.3.6.1.5.5.7.6.40"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_MLDSA65_ECDSA_P256_SHA512"]/*' />
+    [NativeTypeName("#define szOID_MLDSA65_ECDSA_P256_SHA512 \"1.3.6.1.5.5.7.6.45\"")]
+    public static ReadOnlySpan<byte> szOID_MLDSA65_ECDSA_P256_SHA512 => "1.3.6.1.5.5.7.6.45"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_MLDSA65_ECDSA_P384_SHA512"]/*' />
+    [NativeTypeName("#define szOID_MLDSA65_ECDSA_P384_SHA512 \"1.3.6.1.5.5.7.6.46\"")]
+    public static ReadOnlySpan<byte> szOID_MLDSA65_ECDSA_P384_SHA512 => "1.3.6.1.5.5.7.6.46"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_MLDSA87_ECDSA_P384_SHA512"]/*' />
+    [NativeTypeName("#define szOID_MLDSA87_ECDSA_P384_SHA512 \"1.3.6.1.5.5.7.6.49\"")]
+    public static ReadOnlySpan<byte> szOID_MLDSA87_ECDSA_P384_SHA512 => "1.3.6.1.5.5.7.6.49"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_MLKEM768_X25519_SHA3_256"]/*' />
+    [NativeTypeName("#define szOID_MLKEM768_X25519_SHA3_256 \"1.3.6.1.5.5.7.6.58\"")]
+    public static ReadOnlySpan<byte> szOID_MLKEM768_X25519_SHA3_256 => "1.3.6.1.5.5.7.6.58"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_MLKEM768_ECDH_P256_SHA3_256"]/*' />
+    [NativeTypeName("#define szOID_MLKEM768_ECDH_P256_SHA3_256 \"1.3.6.1.5.5.7.6.59\"")]
+    public static ReadOnlySpan<byte> szOID_MLKEM768_ECDH_P256_SHA3_256 => "1.3.6.1.5.5.7.6.59"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_MLKEM1024_ECDH_P384_SHA3_256"]/*' />
+    [NativeTypeName("#define szOID_MLKEM1024_ECDH_P384_SHA3_256 \"1.3.6.1.5.5.7.6.63\"")]
+    public static ReadOnlySpan<byte> szOID_MLKEM1024_ECDH_P384_SHA3_256 => "1.3.6.1.5.5.7.6.63"u8;
 
     [NativeTypeName("#define szOID_COMMON_NAME \"2.5.4.3\"")]
     public static ReadOnlySpan<byte> szOID_COMMON_NAME => "2.5.4.3"u8;
@@ -1419,6 +1479,30 @@ public static partial class szOID
     [NativeTypeName("#define szOID_ENROLL_EK_CA_KEYID \"1.3.6.1.4.1.311.21.43\"")]
     public static ReadOnlySpan<byte> szOID_ENROLL_EK_CA_KEYID => "1.3.6.1.4.1.311.21.43"u8;
 
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_ENROLL_V2_CONTAINER_NAME"]/*' />
+    [NativeTypeName("#define szOID_ENROLL_V2_CONTAINER_NAME \"1.3.6.1.4.1.311.21.44\"")]
+    public static ReadOnlySpan<byte> szOID_ENROLL_V2_CONTAINER_NAME => "1.3.6.1.4.1.311.21.44"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_ENROLL_V2_EK_ALGORITHM"]/*' />
+    [NativeTypeName("#define szOID_ENROLL_V2_EK_ALGORITHM \"1.3.6.1.4.1.311.21.45\"")]
+    public static ReadOnlySpan<byte> szOID_ENROLL_V2_EK_ALGORITHM => "1.3.6.1.4.1.311.21.45"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_ENROLL_V2_EK_PARAMETER"]/*' />
+    [NativeTypeName("#define szOID_ENROLL_V2_EK_PARAMETER \"1.3.6.1.4.1.311.21.46\"")]
+    public static ReadOnlySpan<byte> szOID_ENROLL_V2_EK_PARAMETER => "1.3.6.1.4.1.311.21.46"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_ENROLL_V2_AIK_INFO"]/*' />
+    [NativeTypeName("#define szOID_ENROLL_V2_AIK_INFO \"1.3.6.1.4.1.311.21.47\"")]
+    public static ReadOnlySpan<byte> szOID_ENROLL_V2_AIK_INFO => "1.3.6.1.4.1.311.21.47"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_ENROLL_V2_ATTESTATION_STATEMENT"]/*' />
+    [NativeTypeName("#define szOID_ENROLL_V2_ATTESTATION_STATEMENT \"1.3.6.1.4.1.311.21.48\"")]
+    public static ReadOnlySpan<byte> szOID_ENROLL_V2_ATTESTATION_STATEMENT => "1.3.6.1.4.1.311.21.48"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_CERTSRV_V2_ATTESTATION_VERIFIED"]/*' />
+    [NativeTypeName("#define szOID_CERTSRV_V2_ATTESTATION_VERIFIED \"1.3.6.1.4.1.311.21.49\"")]
+    public static ReadOnlySpan<byte> szOID_CERTSRV_V2_ATTESTATION_VERIFIED => "1.3.6.1.4.1.311.21.49"u8;
+
     [NativeTypeName("#define szOID_ATTR_SUPPORTED_ALGORITHMS \"2.5.4.52\"")]
     public static ReadOnlySpan<byte> szOID_ATTR_SUPPORTED_ALGORITHMS => "2.5.4.52"u8;
 
@@ -1605,6 +1689,10 @@ public static partial class szOID
     [NativeTypeName("#define szOID_NO_HASH \"1.3.6.1.4.1.311.73.1\"")]
     public static ReadOnlySpan<byte> szOID_NO_HASH => "1.3.6.1.4.1.311.73.1"u8;
 
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_PREHASH"]/*' />
+    [NativeTypeName("#define szOID_PREHASH \"1.3.6.1.4.1.311.73.2\"")]
+    public static ReadOnlySpan<byte> szOID_PREHASH => "1.3.6.1.4.1.311.73.2"u8;
+
     [NativeTypeName("#define szOID_PKCS_7_DATA \"1.2.840.113549.1.7.1\"")]
     public static ReadOnlySpan<byte> szOID_PKCS_7_DATA => "1.2.840.113549.1.7.1"u8;
 
@@ -1628,6 +1716,10 @@ public static partial class szOID
 
     [NativeTypeName("#define szOID_PKCS_9_MESSAGE_DIGEST \"1.2.840.113549.1.9.4\"")]
     public static ReadOnlySpan<byte> szOID_PKCS_9_MESSAGE_DIGEST => "1.2.840.113549.1.9.4"u8;
+
+    /// <include file='szOID.xml' path='doc/member[@name="szOID.szOID_ORI_KEM"]/*' />
+    [NativeTypeName("#define szOID_ORI_KEM \"1.2.840.113549.1.9.16.13.3\"")]
+    public static ReadOnlySpan<byte> szOID_ORI_KEM => "1.2.840.113549.1.9.16.13.3"u8;
 
     [NativeTypeName("#define szOID_CERT_PROP_ID_PREFIX \"1.3.6.1.4.1.311.10.11.\"")]
     public static ReadOnlySpan<byte> szOID_CERT_PROP_ID_PREFIX => "1.3.6.1.4.1.311.10.11."u8;

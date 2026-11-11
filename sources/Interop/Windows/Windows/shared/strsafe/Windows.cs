@@ -128,7 +128,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = cchRemaining * sizeof(sbyte);
+                        cbRemaining = cchRemaining * (uint)(sizeof(sbyte));
                         _ = StringExHandleFillBehindNullA(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -145,7 +145,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(sbyte);
+                cbDest = cchDest * (uint)(sizeof(sbyte));
                 _ = StringExHandleOtherFlagsA(pszDest, cbDest, 0, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -217,7 +217,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = cchRemaining * sizeof(char);
+                        cbRemaining = cchRemaining * (uint)(sizeof(char));
                         _ = StringExHandleFillBehindNullW(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -234,7 +234,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(char);
+                cbDest = cchDest * (uint)(sizeof(char));
                 _ = StringExHandleOtherFlagsW(pszDest, cbDest, 0, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -408,7 +408,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = cchRemaining * sizeof(sbyte);
+                        cbRemaining = cchRemaining * (uint)(sizeof(sbyte));
                         _ = StringExHandleFillBehindNullA(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -425,7 +425,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(sbyte);
+                cbDest = cchDest * (uint)(sizeof(sbyte));
                 _ = StringExHandleOtherFlagsA(pszDest, cbDest, 0, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -497,7 +497,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = cchRemaining * sizeof(char);
+                        cbRemaining = cchRemaining * (uint)(sizeof(char));
                         _ = StringExHandleFillBehindNullW(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -514,7 +514,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(char);
+                cbDest = cchDest * (uint)(sizeof(char));
                 _ = StringExHandleOtherFlagsW(pszDest, cbDest, 0, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -645,7 +645,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = cchRemaining * sizeof(sbyte);
+                        cbRemaining = cchRemaining * (uint)(sizeof(sbyte));
                         _ = StringExHandleFillBehindNullA(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -655,7 +655,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(sbyte);
+                cbDest = cchDest * (uint)(sizeof(sbyte));
                 _ = StringExHandleOtherFlagsA(pszDest, cbDest, cchDestLength, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -720,7 +720,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = cchRemaining * sizeof(char);
+                        cbRemaining = cchRemaining * (uint)(sizeof(char));
                         _ = StringExHandleFillBehindNullW(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -730,7 +730,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(char);
+                cbDest = cchDest * (uint)(sizeof(char));
                 _ = StringExHandleOtherFlagsW(pszDest, cbDest, cchDestLength, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -796,7 +796,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = (cchRemaining * sizeof(sbyte)) + (cbDest % sizeof(sbyte));
+                        cbRemaining = (cchRemaining * (uint)(sizeof(sbyte))) + (cbDest % (uint)(sizeof(sbyte)));
                         _ = StringExHandleFillBehindNullA(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -816,7 +816,7 @@ public static unsafe partial class Windows
 
                 if ((pcbRemaining) != null)
                 {
-                    *pcbRemaining = (cchRemaining * sizeof(sbyte)) + (cbDest % sizeof(sbyte));
+                    *pcbRemaining = (cchRemaining * (uint)(sizeof(sbyte))) + (cbDest % (uint)(sizeof(sbyte)));
                 }
             }
         }
@@ -869,7 +869,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = (cchRemaining * sizeof(char)) + (cbDest % sizeof(char));
+                        cbRemaining = (cchRemaining * (uint)(sizeof(char))) + (cbDest % (uint)(sizeof(char)));
                         _ = StringExHandleFillBehindNullW(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -889,7 +889,7 @@ public static unsafe partial class Windows
 
                 if ((pcbRemaining) != null)
                 {
-                    *pcbRemaining = (cchRemaining * sizeof(char)) + (cbDest % sizeof(char));
+                    *pcbRemaining = (cchRemaining * (uint)(sizeof(char))) + (cbDest % (uint)(sizeof(char)));
                 }
             }
         }
@@ -1035,7 +1035,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = cchRemaining * sizeof(sbyte);
+                        cbRemaining = cchRemaining * (uint)(sizeof(sbyte));
                         _ = StringExHandleFillBehindNullA(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -1045,7 +1045,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(sbyte);
+                cbDest = cchDest * (uint)(sizeof(sbyte));
                 _ = StringExHandleOtherFlagsA(pszDest, cbDest, cchDestLength, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -1110,7 +1110,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = cchRemaining * sizeof(char);
+                        cbRemaining = cchRemaining * (uint)(sizeof(char));
                         _ = StringExHandleFillBehindNullW(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -1120,7 +1120,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(char);
+                cbDest = cchDest * (uint)(sizeof(char));
                 _ = StringExHandleOtherFlagsW(pszDest, cbDest, cchDestLength, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -1187,7 +1187,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = (cchRemaining * sizeof(sbyte)) + (cbDest % sizeof(sbyte));
+                        cbRemaining = (cchRemaining * (uint)(sizeof(sbyte))) + (cbDest % (uint)(sizeof(sbyte)));
                         _ = StringExHandleFillBehindNullA(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -1207,7 +1207,7 @@ public static unsafe partial class Windows
 
                 if ((pcbRemaining) != null)
                 {
-                    *pcbRemaining = (cchRemaining * sizeof(sbyte)) + (cbDest % sizeof(sbyte));
+                    *pcbRemaining = (cchRemaining * (uint)(sizeof(sbyte))) + (cbDest % (uint)(sizeof(sbyte)));
                 }
             }
         }
@@ -1261,7 +1261,7 @@ public static unsafe partial class Windows
                     {
                         nuint cbRemaining;
 
-                        cbRemaining = (cchRemaining * sizeof(char)) + (cbDest % sizeof(char));
+                        cbRemaining = (cchRemaining * (uint)(sizeof(char))) + (cbDest % (uint)(sizeof(char)));
                         _ = StringExHandleFillBehindNullW(pszDestEnd, cbRemaining, dwFlags);
                     }
                 }
@@ -1281,7 +1281,7 @@ public static unsafe partial class Windows
 
                 if ((pcbRemaining) != null)
                 {
-                    *pcbRemaining = (cchRemaining * sizeof(char)) + (cbDest % sizeof(char));
+                    *pcbRemaining = (cchRemaining * (uint)(sizeof(char))) + (cbDest % (uint)(sizeof(char)));
                 }
             }
         }
@@ -1404,7 +1404,7 @@ public static unsafe partial class Windows
                 {
                     nuint cbRemaining;
 
-                    cbRemaining = cchRemaining * sizeof(sbyte);
+                    cbRemaining = cchRemaining * (uint)(sizeof(sbyte));
                     _ = StringExHandleFillBehindNullA(pszDestEnd, cbRemaining, dwFlags);
                 }
             }
@@ -1413,7 +1413,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(sbyte);
+                cbDest = cchDest * (uint)(sizeof(sbyte));
                 _ = StringExHandleOtherFlagsA(pszDest, cbDest, 0, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -1479,7 +1479,7 @@ public static unsafe partial class Windows
                 {
                     nuint cbRemaining;
 
-                    cbRemaining = cchRemaining * sizeof(char);
+                    cbRemaining = cchRemaining * (uint)(sizeof(char));
                     _ = StringExHandleFillBehindNullW(pszDestEnd, cbRemaining, dwFlags);
                 }
             }
@@ -1488,7 +1488,7 @@ public static unsafe partial class Windows
             {
                 nuint cbDest;
 
-                cbDest = cchDest * sizeof(char);
+                cbDest = cchDest * (uint)(sizeof(char));
                 _ = StringExHandleOtherFlagsW(pszDest, cbDest, 0, &pszDestEnd, &cchRemaining, dwFlags);
             }
 
@@ -1555,7 +1555,7 @@ public static unsafe partial class Windows
                 {
                     nuint cbRemaining;
 
-                    cbRemaining = (cchRemaining * sizeof(sbyte)) + (cbDest % sizeof(sbyte));
+                    cbRemaining = (cchRemaining * (uint)(sizeof(sbyte))) + (cbDest % (uint)(sizeof(sbyte)));
                     _ = StringExHandleFillBehindNullA(pszDestEnd, cbRemaining, dwFlags);
                 }
             }
@@ -1574,7 +1574,7 @@ public static unsafe partial class Windows
 
                 if ((pcbRemaining) != null)
                 {
-                    *pcbRemaining = (cchRemaining * sizeof(sbyte)) + (cbDest % sizeof(sbyte));
+                    *pcbRemaining = (cchRemaining * (uint)(sizeof(sbyte))) + (cbDest % (uint)(sizeof(sbyte)));
                 }
             }
         }
@@ -1628,7 +1628,7 @@ public static unsafe partial class Windows
                 {
                     nuint cbRemaining;
 
-                    cbRemaining = (cchRemaining * sizeof(char)) + (cbDest % sizeof(char));
+                    cbRemaining = (cchRemaining * (uint)(sizeof(char))) + (cbDest % (uint)(sizeof(char)));
                     _ = StringExHandleFillBehindNullW(pszDestEnd, cbRemaining, dwFlags);
                 }
             }
@@ -1647,7 +1647,7 @@ public static unsafe partial class Windows
 
                 if ((pcbRemaining) != null)
                 {
-                    *pcbRemaining = (cchRemaining * sizeof(char)) + (cbDest % sizeof(char));
+                    *pcbRemaining = (cchRemaining * (uint)(sizeof(char))) + (cbDest % (uint)(sizeof(char)));
                 }
             }
         }
@@ -1723,7 +1723,7 @@ public static unsafe partial class Windows
         {
             if ((((HRESULT)(hr)) >= 0))
             {
-                *pcbLength = cchLength * sizeof(sbyte);
+                *pcbLength = cchLength * (uint)(sizeof(sbyte));
             }
             else
             {
@@ -1754,7 +1754,7 @@ public static unsafe partial class Windows
         {
             if ((((HRESULT)(hr)) >= 0))
             {
-                *pcbLength = cchLength * sizeof(char);
+                *pcbLength = cchLength * (uint)(sizeof(char));
             }
             else
             {
@@ -1807,7 +1807,7 @@ public static unsafe partial class Windows
         {
             if ((((HRESULT)(hr)) >= 0))
             {
-                *pcbLength = cchLength * sizeof(char);
+                *pcbLength = cchLength * (uint)(sizeof(char));
             }
             else
             {

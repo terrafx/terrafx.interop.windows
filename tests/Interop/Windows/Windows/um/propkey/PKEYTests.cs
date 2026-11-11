@@ -2364,6 +2364,14 @@ public static partial class PKEYTests
         Assert.That(PKEY_ItemFolderPathDisplayNarrow.pid, Is.EqualTo(100));
     }
 
+    /// <summary>Validates that the value of the <see cref="PKEY_ItemFolderPathDisplayNarrowNamespaceRelative" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_ItemFolderPathDisplayNarrowNamespaceRelativeTest()
+    {
+        Assert.That(PKEY_ItemFolderPathDisplayNarrowNamespaceRelative.fmtid, Is.EqualTo(new Guid(0xDABD30ED, 0x0043, 0x4789, 0xA7, 0xF8, 0xD0, 0x13, 0xA4, 0x73, 0x66, 0x22)));
+        Assert.That(PKEY_ItemFolderPathDisplayNarrowNamespaceRelative.pid, Is.EqualTo(101));
+    }
+
     /// <summary>Validates that the value of the <see cref="PKEY_ItemName" /> property is correct.</summary>
     [Test]
     public static void PKEY_ItemNameTest()
@@ -4818,6 +4826,14 @@ public static partial class PKEYTests
     {
         Assert.That(PKEY_Devices_WiFi_InterfaceGuid.fmtid, Is.EqualTo(new Guid(0xEF1167EB, 0xCBFC, 0x4341, 0xA5, 0x68, 0xA7, 0xC9, 0x1A, 0x68, 0x98, 0x2C)));
         Assert.That(PKEY_Devices_WiFi_InterfaceGuid.pid, Is.EqualTo(2));
+    }
+
+    /// <summary>Validates that the value of the <see cref="PKEY_Devices_WiFiAware_IsSupported" /> property is correct.</summary>
+    [Test]
+    public static void PKEY_Devices_WiFiAware_IsSupportedTest()
+    {
+        Assert.That(PKEY_Devices_WiFiAware_IsSupported.fmtid, Is.EqualTo(new Guid(0x9D2E9E67, 0x70D4, 0x4D1A, 0xAE, 0xFD, 0x11, 0x3C, 0xF6, 0xA7, 0xDF, 0xCA)));
+        Assert.That(PKEY_Devices_WiFiAware_IsSupported.pid, Is.EqualTo(2));
     }
 
     /// <summary>Validates that the value of the <see cref="PKEY_Devices_WiFiDirect_DeviceAddress" /> property is correct.</summary>

@@ -18,6 +18,10 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[42]")]
     public const string InterfaceName_Windows_System_Power_IPowerManagerStatics = "Windows.System.Power.IPowerManagerStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_System_Power_IPowerManagerStatics2"]/*' />
+    [NativeTypeName("const WCHAR[43]")]
+    public const string InterfaceName_Windows_System_Power_IPowerManagerStatics2 = "Windows.System.Power.IPowerManagerStatics2";
+
     [NativeTypeName("const WCHAR[45]")]
     [Obsolete("Background Energy Manager has been deprecated. For more info, see MSDN.")]
     public const string RuntimeClass_Windows_System_Power_BackgroundEnergyManager = "Windows.System.Power.BackgroundEnergyManager";

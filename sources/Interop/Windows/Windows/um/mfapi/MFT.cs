@@ -436,4 +436,30 @@ public static partial class MFT
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_DECODER_AUTO_POSTPROCESS"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFT_DECODER_AUTO_POSTPROCESS
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xBC, 0x3D, 0x13, 0xAE,
+                0x2A, 0xF9,
+                0xEF, 0x46,
+                0xA9,
+                0x00,
+                0x2F,
+                0xBE,
+                0x11,
+                0x17,
+                0x24,
+                0x88
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

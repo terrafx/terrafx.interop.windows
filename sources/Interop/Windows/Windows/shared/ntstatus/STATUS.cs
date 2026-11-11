@@ -3238,6 +3238,10 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_VOLUME_ROLLBACK_DETECTED ((NTSTATUS)0xC00004E3L)")]
     public const int STATUS_VOLUME_ROLLBACK_DETECTED = unchecked((int)(0xC00004E3));
 
+    /// <include file='STATUS.xml' path='doc/member[@name="STATUS.STATUS_DEVICE_NACKED"]/*' />
+    [NativeTypeName("#define STATUS_DEVICE_NACKED ((NTSTATUS)0xC00004E5L)")]
+    public const int STATUS_DEVICE_NACKED = unchecked((int)(0xC00004E5));
+
     [NativeTypeName("#define STATUS_INVALID_TASK_NAME ((NTSTATUS)0xC0000500L)")]
     public const int STATUS_INVALID_TASK_NAME = unchecked((int)(0xC0000500));
 
@@ -3651,6 +3655,10 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_CC_NEEDS_CALLBACK_SECTION_DRAIN ((NTSTATUS)0xC000A008L)")]
     public const int STATUS_CC_NEEDS_CALLBACK_SECTION_DRAIN = unchecked((int)(0xC000A008));
+
+    /// <include file='STATUS.xml' path='doc/member[@name="STATUS.STATUS_FIPS_FAILURE"]/*' />
+    [NativeTypeName("#define STATUS_FIPS_FAILURE ((NTSTATUS)0xC000A009L)")]
+    public const int STATUS_FIPS_FAILURE = unchecked((int)(0xC000A009));
 
     [NativeTypeName("#define STATUS_IPSEC_QUEUE_OVERFLOW ((NTSTATUS)0xC000A010L)")]
     public const int STATUS_IPSEC_QUEUE_OVERFLOW = unchecked((int)(0xC000A010));
@@ -5880,6 +5888,10 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_FVE_MISSING_PROTECTORS ((NTSTATUS)0xC0210064L)")]
     public const int STATUS_FVE_MISSING_PROTECTORS = unchecked((int)(0xC0210064));
+
+    /// <include file='STATUS.xml' path='doc/member[@name="STATUS.STATUS_FVE_VOLUME_HANDLE_OPEN"]/*' />
+    [NativeTypeName("#define STATUS_FVE_VOLUME_HANDLE_OPEN ((NTSTATUS)0xC0210065L)")]
+    public const int STATUS_FVE_VOLUME_HANDLE_OPEN = unchecked((int)(0xC0210065));
 
     [NativeTypeName("#define STATUS_FWP_CALLOUT_NOT_FOUND ((NTSTATUS)0xC0220001L)")]
     public const int STATUS_FWP_CALLOUT_NOT_FOUND = unchecked((int)(0xC0220001));
@@ -8196,6 +8208,14 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_SPACES_REPAIR_IN_PROGRESS ((NTSTATUS)0xC0E70027L)")]
     public const int STATUS_SPACES_REPAIR_IN_PROGRESS = unchecked((int)(0xC0E70027));
+
+    /// <include file='STATUS.xml' path='doc/member[@name="STATUS.STATUS_SPACES_API_VERSION_MISMATCH"]/*' />
+    [NativeTypeName("#define STATUS_SPACES_API_VERSION_MISMATCH ((NTSTATUS)0xC0E70028L)")]
+    public const int STATUS_SPACES_API_VERSION_MISMATCH = unchecked((int)(0xC0E70028));
+
+    /// <include file='STATUS.xml' path='doc/member[@name="STATUS.STATUS_SPACES_METADATA_SIZE_INVALID"]/*' />
+    [NativeTypeName("#define STATUS_SPACES_METADATA_SIZE_INVALID ((NTSTATUS)0xC0E70029L)")]
+    public const int STATUS_SPACES_METADATA_SIZE_INVALID = unchecked((int)(0xC0E70029));
 
     [NativeTypeName("#define STATUS_VOLSNAP_BOOTFILE_NOT_VALID ((NTSTATUS)0xC0500003L)")]
     public const int STATUS_VOLSNAP_BOOTFILE_NOT_VALID = unchecked((int)(0xC0500003));

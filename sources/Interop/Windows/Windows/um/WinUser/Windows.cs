@@ -1364,6 +1364,22 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetPointerFramePenInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_PEN_INFO* penInfo);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerTouchpadInfo"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    public static extern BOOL GetPointerTouchpadInfo([NativeTypeName("UINT32")] uint pointerId, POINTER_TOUCH_INFO* touchpadInfo);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerTouchpadInfoHistory"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    public static extern BOOL GetPointerTouchpadInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, POINTER_TOUCH_INFO* touchpadInfo);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerFrameTouchpadInfo"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    public static extern BOOL GetPointerFrameTouchpadInfo([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_TOUCH_INFO* touchpadInfo);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetPointerFrameTouchpadInfoHistory"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    public static extern BOOL GetPointerFrameTouchpadInfoHistory([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32 *")] uint* entriesCount, [NativeTypeName("UINT32 *")] uint* pointerCount, POINTER_TOUCH_INFO* touchpadInfo);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SkipPointerFrameMessages"]/*' />
     [DllImport("user32", ExactSpelling = true)]
     [SetsLastSystemError]
@@ -1408,6 +1424,14 @@ public static unsafe partial class Windows
     [DllImport("user32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.17763.0")]
     public static extern void DestroySyntheticPointerDevice(HSYNTHETICPOINTERDEVICE device);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateSyntheticPointerDevice2"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    public static extern HSYNTHETICPOINTERDEVICE CreateSyntheticPointerDevice2(SYNTHETIC_DEVICE_CREATION_PARAMS* pParams);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.InjectTouchpadAction"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    public static extern BOOL InjectTouchpadAction(HSYNTHETICPOINTERDEVICE hDevice, TOUCHPAD_ACTION action);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnableMouseInPointer"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -1459,6 +1483,10 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     [SupportedOSPlatform("windows6.3")]
     public static extern BOOL GetPointerInputTransform([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32")] uint historyCount, INPUT_TRANSFORM* inputTransform);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReportWindowContentInertia"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    public static extern BOOL ReportWindowContentInertia(HWND hWnd, BOOL bStartInertia);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetLastInputInfo"]/*' />
     [DllImport("user32", ExactSpelling = true)]
@@ -3281,6 +3309,18 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     [SupportedOSPlatform("windows6.2")]
     public static extern BOOL GetRawPointerDeviceData([NativeTypeName("UINT32")] uint pointerId, [NativeTypeName("UINT32")] uint historyCount, [NativeTypeName("UINT32")] uint propertiesCount, POINTER_DEVICE_PROPERTY* pProperties, [NativeTypeName("LONG *")] int* pValues);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterTouchpadCapableWindow"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    public static extern BOOL RegisterTouchpadCapableWindow(HWND hWnd, BOOL fEnable);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RegisterTouchpadCapableThread"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    public static extern BOOL RegisterTouchpadCapableThread(BOOL fEnable);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetMaxTouchpadSensitivity"]/*' />
+    [DllImport("user32", ExactSpelling = true)]
+    public static extern BOOL SetMaxTouchpadSensitivity(BOOL maxSensitivity);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ChangeWindowMessageFilter"]/*' />
     [DllImport("user32", ExactSpelling = true)]

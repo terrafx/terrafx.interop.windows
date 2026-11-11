@@ -816,4 +816,8 @@ public static partial class FVE
 
     [NativeTypeName("#define FVE_E_METHOD_MISMATCH _HRESULT_TYPEDEF_(0xC031011AL)")]
     public const int FVE_E_METHOD_MISMATCH = unchecked((int)(0xC031011A));
+
+    /// <include file='FVE.xml' path='doc/member[@name="FVE.FVE_E_WIM_TRUST_DISABLED_BY_POLICY"]/*' />
+    [NativeTypeName("#define FVE_E_WIM_TRUST_DISABLED_BY_POLICY _HRESULT_TYPEDEF_(0xC031011CL)")]
+    public const int FVE_E_WIM_TRUST_DISABLED_BY_POLICY = unchecked((int)(0xC031011C));
 }

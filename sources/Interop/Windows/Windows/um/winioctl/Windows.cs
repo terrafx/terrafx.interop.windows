@@ -79,7 +79,7 @@ public static unsafe partial class Windows
         uint Min = 0;
         byte Valid = 0;
 
-        if (Input->Size != unchecked(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES)))
+        if (Input->Size != unchecked((uint)(sizeof(DEVICE_MANAGE_DATA_SET_ATTRIBUTES))))
         {
             goto Cleanup;
         }
@@ -404,6 +404,22 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define TELEMETRY_COMMAND_SIZE 16")]
     public const int TELEMETRY_COMMAND_SIZE = 16;
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STOR_MAX_PAGING_DEVICES"]/*' />
+    [NativeTypeName("#define STOR_MAX_PAGING_DEVICES 16")]
+    public const int STOR_MAX_PAGING_DEVICES = 16;
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STOR_PAGING_DEVICE_MINIPORT_NAME_LENGTH"]/*' />
+    [NativeTypeName("#define STOR_PAGING_DEVICE_MINIPORT_NAME_LENGTH 32")]
+    public const int STOR_PAGING_DEVICE_MINIPORT_NAME_LENGTH = 32;
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STOR_PAGING_DEVICE_MODEL_NAME_LENGTH"]/*' />
+    [NativeTypeName("#define STOR_PAGING_DEVICE_MODEL_NAME_LENGTH 64")]
+    public const int STOR_PAGING_DEVICE_MODEL_NAME_LENGTH = 64;
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STOR_PAGING_DEVICE_FW_REVISION_LENGTH"]/*' />
+    [NativeTypeName("#define STOR_PAGING_DEVICE_FW_REVISION_LENGTH 16")]
+    public const int STOR_PAGING_DEVICE_FW_REVISION_LENGTH = 16;
 
     [NativeTypeName("#define DEVICEDUMP_CAP_PRIVATE_SECTION 0x00000001")]
     public const int DEVICEDUMP_CAP_PRIVATE_SECTION = 0x00000001;

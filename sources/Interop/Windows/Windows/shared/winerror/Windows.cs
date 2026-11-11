@@ -783,4 +783,40 @@ public static partial class Windows
 
     [NativeTypeName("#define PPF_E_TRANSFORM_DIGEST_ALGO_NOT_PRESENT _HRESULT_TYPEDEF_(0xC9280004L)")]
     public const int PPF_E_TRANSFORM_DIGEST_ALGO_NOT_PRESENT = unchecked((int)(0xC9280004));
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PPF_E_TRANSFORM_UNKNOWN_FORMAT"]/*' />
+    [NativeTypeName("#define PPF_E_TRANSFORM_UNKNOWN_FORMAT _HRESULT_TYPEDEF_(0xC9280005L)")]
+    public const int PPF_E_TRANSFORM_UNKNOWN_FORMAT = unchecked((int)(0xC9280005));
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PPF_E_JSONTX_INSERT_NO_MATCH_EVENTS"]/*' />
+    [NativeTypeName("#define PPF_E_JSONTX_INSERT_NO_MATCH_EVENTS _HRESULT_TYPEDEF_(0xC9280006L)")]
+    public const int PPF_E_JSONTX_INSERT_NO_MATCH_EVENTS = unchecked((int)(0xC9280006));
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PPF_E_JSONTX_MULTIPLE_MATCHES_FOR_UNIQUE"]/*' />
+    [NativeTypeName("#define PPF_E_JSONTX_MULTIPLE_MATCHES_FOR_UNIQUE _HRESULT_TYPEDEF_(0xC9280007L)")]
+    public const int PPF_E_JSONTX_MULTIPLE_MATCHES_FOR_UNIQUE = unchecked((int)(0xC9280007));
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PPF_E_TXGENBM_NO_EVENTS_GENERATED"]/*' />
+    [NativeTypeName("#define PPF_E_TXGENBM_NO_EVENTS_GENERATED _HRESULT_TYPEDEF_(0xC9280008L)")]
+    public const int PPF_E_TXGENBM_NO_EVENTS_GENERATED = unchecked((int)(0xC9280008));
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PPF_E_TRANSFORM_NOT_APPLICABLE"]/*' />
+    [NativeTypeName("#define PPF_E_TRANSFORM_NOT_APPLICABLE _HRESULT_TYPEDEF_(0xC9280009L)")]
+    public const int PPF_E_TRANSFORM_NOT_APPLICABLE = unchecked((int)(0xC9280009));
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PPF_E_JSONTX_NO_MATCH_EVENTS"]/*' />
+    [NativeTypeName("#define PPF_E_JSONTX_NO_MATCH_EVENTS _HRESULT_TYPEDEF_(0xC928000AL)")]
+    public const int PPF_E_JSONTX_NO_MATCH_EVENTS = unchecked((int)(0xC928000A));
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PPF_E_JSONTX_NO_NEW_EVENTS_TO_INSERT"]/*' />
+    [NativeTypeName("#define PPF_E_JSONTX_NO_NEW_EVENTS_TO_INSERT _HRESULT_TYPEDEF_(0xC928000BL)")]
+    public const int PPF_E_JSONTX_NO_NEW_EVENTS_TO_INSERT = unchecked((int)(0xC928000B));
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PPF_E_JSONTX_EMPTY_RULE"]/*' />
+    [NativeTypeName("#define PPF_E_JSONTX_EMPTY_RULE _HRESULT_TYPEDEF_(0xC928000CL)")]
+    public const int PPF_E_JSONTX_EMPTY_RULE = unchecked((int)(0xC928000C));
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PPF_E_JSONTX_EVENT_TYPE_ERROR"]/*' />
+    [NativeTypeName("#define PPF_E_JSONTX_EVENT_TYPE_ERROR _HRESULT_TYPEDEF_(0xC928000DL)")]
+    public const int PPF_E_JSONTX_EVENT_TYPE_ERROR = unchecked((int)(0xC928000D));
 }

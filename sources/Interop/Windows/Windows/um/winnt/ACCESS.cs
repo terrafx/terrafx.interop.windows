@@ -60,8 +60,8 @@ public static partial class ACCESS
     [NativeTypeName("#define ACCESS_DENIED_CALLBACK_OBJECT_ACE_TYPE (0xC)")]
     public const int ACCESS_DENIED_CALLBACK_OBJECT_ACE_TYPE = (0xC);
 
-    [NativeTypeName("#define ACCESS_MAX_MS_V5_ACE_TYPE (0x15)")]
-    public const int ACCESS_MAX_MS_V5_ACE_TYPE = (0x15);
+    [NativeTypeName("#define ACCESS_MAX_MS_V5_ACE_TYPE (0x17)")]
+    public const int ACCESS_MAX_MS_V5_ACE_TYPE = (0x17);
 
     [NativeTypeName("#define ACCESS_OBJECT_GUID 0")]
     public const int ACCESS_OBJECT_GUID = 0;

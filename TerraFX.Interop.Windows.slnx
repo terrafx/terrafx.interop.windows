@@ -37,6 +37,7 @@
   <Folder Name="/generation/">
     <File Path="generation/remap-classes.rsp" />
     <File Path="generation/remap-guids.rsp" />
+    <File Path="generation/remap-guids-winrt.rsp" />
     <File Path="generation/remap-handles.rsp" />
     <File Path="generation/remap-members.rsp" />
     <File Path="generation/remap-namespaces.rsp" />

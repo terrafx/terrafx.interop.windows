@@ -767,4 +767,18 @@ public static unsafe partial class WindowsTests
     {
         Assert.That(MFMediaType_Metadata, Is.EqualTo(new Guid(0x2c8fa20c, 0x82bb, 0x4782, 0x90, 0xa0, 0x98, 0xa2, 0xa5, 0xbd, 0x8e, 0xf8)));
     }
+
+    /// <summary>Validates that the value of the <see cref="MFSampleExtension_AverageBitrate" /> property is correct.</summary>
+    [Test]
+    public static void MFSampleExtension_AverageBitrateTest()
+    {
+        Assert.That(MFSampleExtension_AverageBitrate, Is.EqualTo(new Guid(0x217e5a3c, 0xfcec, 0x43f6, 0x8c, 0x5, 0x1f, 0x97, 0x46, 0x8a, 0x90, 0x42)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="MFSampleExtension_ScenarioInfo" /> property is correct.</summary>
+    [Test]
+    public static void MFSampleExtension_ScenarioInfoTest()
+    {
+        Assert.That(MFSampleExtension_ScenarioInfo, Is.EqualTo(new Guid(0x9d1ecd35, 0xa5cf, 0x4cf2, 0x80, 0xa8, 0x9d, 0xea, 0x2e, 0x4d, 0x80, 0x3e)));
+    }
 }

@@ -547,6 +547,14 @@ public static partial class WM
     [NativeTypeName("#define WM_POINTERDEVICEOUTOFRANGE 0x23A")]
     public const int WM_POINTERDEVICEOUTOFRANGE = 0x23A;
 
+    /// <include file='WM.xml' path='doc/member[@name="WM.WM_STOPINERTIA"]/*' />
+    [NativeTypeName("#define WM_STOPINERTIA 0x023B")]
+    public const int WM_STOPINERTIA = 0x023B;
+
+    /// <include file='WM.xml' path='doc/member[@name="WM.WM_ENDINERTIA"]/*' />
+    [NativeTypeName("#define WM_ENDINERTIA 0x023C")]
+    public const int WM_ENDINERTIA = 0x023C;
+
     [NativeTypeName("#define WM_TOUCH 0x0240")]
     public const int WM_TOUCH = 0x0240;
 

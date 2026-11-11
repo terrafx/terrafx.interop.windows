@@ -34,6 +34,10 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[71]")]
     public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowJobBackgroundSession2 = "Windows.Graphics.Printing.Workflow.IPrintWorkflowJobBackgroundSession2";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowJobBackgroundSession3"]/*' />
+    [NativeTypeName("const WCHAR[71]")]
+    public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowJobBackgroundSession3 = "Windows.Graphics.Printing.Workflow.IPrintWorkflowJobBackgroundSession3";
+
     [NativeTypeName("const WCHAR[75]")]
     public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowJobIssueDetectedEventArgs = "Windows.Graphics.Printing.Workflow.IPrintWorkflowJobIssueDetectedEventArgs";
 
@@ -55,6 +59,10 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[63]")]
     public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowJobUISession2 = "Windows.Graphics.Printing.Workflow.IPrintWorkflowJobUISession2";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowObjectModelProvider"]/*' />
+    [NativeTypeName("const WCHAR[69]")]
+    public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowObjectModelProvider = "Windows.Graphics.Printing.Workflow.IPrintWorkflowObjectModelProvider";
+
     [NativeTypeName("const WCHAR[78]")]
     public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowObjectModelSourceFileContent = "Windows.Graphics.Printing.Workflow.IPrintWorkflowObjectModelSourceFileContent";
 
@@ -70,6 +78,10 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[63]")]
     public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowPdlConverter2 = "Windows.Graphics.Printing.Workflow.IPrintWorkflowPdlConverter2";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowPdlConverter3"]/*' />
+    [NativeTypeName("const WCHAR[63]")]
+    public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowPdlConverter3 = "Windows.Graphics.Printing.Workflow.IPrintWorkflowPdlConverter3";
+
     [NativeTypeName("const WCHAR[75]")]
     public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowPdlDataAvailableEventArgs = "Windows.Graphics.Printing.Workflow.IPrintWorkflowPdlDataAvailableEventArgs";
 
@@ -78,6 +90,10 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[84]")]
     public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowPdlModificationRequestedEventArgs2 = "Windows.Graphics.Printing.Workflow.IPrintWorkflowPdlModificationRequestedEventArgs2";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowPdlModificationRequestedEventArgs3"]/*' />
+    [NativeTypeName("const WCHAR[84]")]
+    public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowPdlModificationRequestedEventArgs3 = "Windows.Graphics.Printing.Workflow.IPrintWorkflowPdlModificationRequestedEventArgs3";
 
     [NativeTypeName("const WCHAR[66]")]
     public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowPdlSourceContent = "Windows.Graphics.Printing.Workflow.IPrintWorkflowPdlSourceContent";
@@ -93,6 +109,10 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[61]")]
     public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowPrinterJob3 = "Windows.Graphics.Printing.Workflow.IPrintWorkflowPrinterJob3";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowPrinterJobStatusChangedEventArgs"]/*' />
+    [NativeTypeName("const WCHAR[82]")]
+    public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowPrinterJobStatusChangedEventArgs = "Windows.Graphics.Printing.Workflow.IPrintWorkflowPrinterJobStatusChangedEventArgs";
 
     [NativeTypeName("const WCHAR[63]")]
     public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowSourceContent = "Windows.Graphics.Printing.Workflow.IPrintWorkflowSourceContent";
@@ -135,6 +155,10 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[75]")]
     public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowXpsDataAvailableEventArgs = "Windows.Graphics.Printing.Workflow.IPrintWorkflowXpsDataAvailableEventArgs";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowXpsObjectModelProvider"]/*' />
+    [NativeTypeName("const WCHAR[72]")]
+    public const string InterfaceName_Windows_Graphics_Printing_Workflow_IPrintWorkflowXpsObjectModelProvider = "Windows.Graphics.Printing.Workflow.IPrintWorkflowXpsObjectModelProvider";
 
     [NativeTypeName("const WCHAR[66]")]
     public const string RuntimeClass_Windows_Graphics_Printing_Workflow_PrintWorkflowBackgroundSession = "Windows.Graphics.Printing.Workflow.PrintWorkflowBackgroundSession";
@@ -196,6 +220,10 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[59]")]
     public const string RuntimeClass_Windows_Graphics_Printing_Workflow_PrintWorkflowPrinterJob = "Windows.Graphics.Printing.Workflow.PrintWorkflowPrinterJob";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Graphics_Printing_Workflow_PrintWorkflowPrinterJobStatusChangedEventArgs"]/*' />
+    [NativeTypeName("const WCHAR[81]")]
+    public const string RuntimeClass_Windows_Graphics_Printing_Workflow_PrintWorkflowPrinterJobStatusChangedEventArgs = "Windows.Graphics.Printing.Workflow.PrintWorkflowPrinterJobStatusChangedEventArgs";
+
     [NativeTypeName("const WCHAR[62]")]
     public const string RuntimeClass_Windows_Graphics_Printing_Workflow_PrintWorkflowSourceContent = "Windows.Graphics.Printing.Workflow.PrintWorkflowSourceContent";
 
@@ -237,4 +265,8 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[74]")]
     public const string RuntimeClass_Windows_Graphics_Printing_Workflow_PrintWorkflowXpsDataAvailableEventArgs = "Windows.Graphics.Printing.Workflow.PrintWorkflowXpsDataAvailableEventArgs";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Graphics_Printing_Workflow_PrintWorkflowXpsObjectModelProvider"]/*' />
+    [NativeTypeName("const WCHAR[71]")]
+    public const string RuntimeClass_Windows_Graphics_Printing_Workflow_PrintWorkflowXpsObjectModelProvider = "Windows.Graphics.Printing.Workflow.PrintWorkflowXpsObjectModelProvider";
 }

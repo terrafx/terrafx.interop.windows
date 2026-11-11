@@ -3392,6 +3392,58 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.19041.0")]
     public static extern HRESULT MFSplitSample(IMFSample* pSample, IMFSample** pOutputSamples, [NativeTypeName("DWORD")] uint dwOutputSampleMaxCount, [NativeTypeName("DWORD *")] uint* pdwOutputSampleCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_AverageBitrate"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFSampleExtension_AverageBitrate
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x3C, 0x5A, 0x7E, 0x21,
+                0xEC, 0xFC,
+                0xF6, 0x43,
+                0x8C,
+                0x05,
+                0x1F,
+                0x97,
+                0x46,
+                0x8A,
+                0x90,
+                0x42
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_ScenarioInfo"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid MFSampleExtension_ScenarioInfo
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x35, 0xCD, 0x1E, 0x9D,
+                0xCF, 0xA5,
+                0xF2, 0x4C,
+                0x80,
+                0xA8,
+                0x9D,
+                0xEA,
+                0x2E,
+                0x4D,
+                0x80,
+                0x3E
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     [NativeTypeName("#define MFSTARTUP_NOSOCKET 0x1")]
     public const int MFSTARTUP_NOSOCKET = 0x1;
 

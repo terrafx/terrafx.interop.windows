@@ -516,6 +516,34 @@ public static unsafe partial class CRYPT
     [NativeTypeName("#define CRYPT_LAST_ALG_OID_GROUP_ID CRYPT_SIGN_ALG_OID_GROUP_ID")]
     public const int CRYPT_LAST_ALG_OID_GROUP_ID = 4;
 
+    /// <include file='CRYPT.xml' path='doc/member[@name="CRYPT.CRYPT_OID_AES_EXTRA_INFO_BIT_LENGTH_INDEX"]/*' />
+    [NativeTypeName("#define CRYPT_OID_AES_EXTRA_INFO_BIT_LENGTH_INDEX 0")]
+    public const int CRYPT_OID_AES_EXTRA_INFO_BIT_LENGTH_INDEX = 0;
+
+    /// <include file='CRYPT.xml' path='doc/member[@name="CRYPT.CRYPT_OID_AES_EXTRA_INFO_TYPE_INDEX"]/*' />
+    [NativeTypeName("#define CRYPT_OID_AES_EXTRA_INFO_TYPE_INDEX 1")]
+    public const int CRYPT_OID_AES_EXTRA_INFO_TYPE_INDEX = 1;
+
+    /// <include file='CRYPT.xml' path='doc/member[@name="CRYPT.CRYPT_OID_AES_EXTRA_INFO_MAX_LENGTH"]/*' />
+    [NativeTypeName("#define CRYPT_OID_AES_EXTRA_INFO_MAX_LENGTH 2")]
+    public const int CRYPT_OID_AES_EXTRA_INFO_MAX_LENGTH = 2;
+
+    /// <include file='CRYPT.xml' path='doc/member[@name="CRYPT.CRYPT_OID_AES_EXTRA_INFO_CBC_TYPE"]/*' />
+    [NativeTypeName("#define CRYPT_OID_AES_EXTRA_INFO_CBC_TYPE 1")]
+    public const int CRYPT_OID_AES_EXTRA_INFO_CBC_TYPE = 1;
+
+    /// <include file='CRYPT.xml' path='doc/member[@name="CRYPT.CRYPT_OID_AES_EXTRA_INFO_CCM_TYPE"]/*' />
+    [NativeTypeName("#define CRYPT_OID_AES_EXTRA_INFO_CCM_TYPE 2")]
+    public const int CRYPT_OID_AES_EXTRA_INFO_CCM_TYPE = 2;
+
+    /// <include file='CRYPT.xml' path='doc/member[@name="CRYPT.CRYPT_OID_AES_EXTRA_INFO_GCM_TYPE"]/*' />
+    [NativeTypeName("#define CRYPT_OID_AES_EXTRA_INFO_GCM_TYPE 3")]
+    public const int CRYPT_OID_AES_EXTRA_INFO_GCM_TYPE = 3;
+
+    /// <include file='CRYPT.xml' path='doc/member[@name="CRYPT.CRYPT_OID_AES_EXTRA_INFO_WRAP_TYPE"]/*' />
+    [NativeTypeName("#define CRYPT_OID_AES_EXTRA_INFO_WRAP_TYPE 4")]
+    public const int CRYPT_OID_AES_EXTRA_INFO_WRAP_TYPE = 4;
+
     [NativeTypeName("#define CRYPT_OID_PQ_EXTRA_INFO_FLAGS_INDEX 0")]
     public const int CRYPT_OID_PQ_EXTRA_INFO_FLAGS_INDEX = 0;
 
@@ -563,6 +591,10 @@ public static unsafe partial class CRYPT
 
     [NativeTypeName("#define CRYPT_OID_PUBKEY_PREHASH_ONLY_FLAG 0x04000000")]
     public const int CRYPT_OID_PUBKEY_PREHASH_ONLY_FLAG = 0x04000000;
+
+    /// <include file='CRYPT.xml' path='doc/member[@name="CRYPT.CRYPT_OID_COMPOSITE_ECDSA_FLAG"]/*' />
+    [NativeTypeName("#define CRYPT_OID_COMPOSITE_ECDSA_FLAG 0x02000000")]
+    public const int CRYPT_OID_COMPOSITE_ECDSA_FLAG = 0x02000000;
 
     [NativeTypeName("#define CRYPT_OID_INFO_OID_KEY 1")]
     public const int CRYPT_OID_INFO_OID_KEY = 1;
@@ -776,6 +808,14 @@ public static unsafe partial class CRYPT
 
     [NativeTypeName("#define CRYPT_MESSAGE_KEYID_RECIPIENT_FLAG 0x4")]
     public const int CRYPT_MESSAGE_KEYID_RECIPIENT_FLAG = 0x4;
+
+    /// <include file='CRYPT.xml' path='doc/member[@name="CRYPT.CRYPT_MESSAGE_REQUIRE_OAEP_FLAG"]/*' />
+    [NativeTypeName("#define CRYPT_MESSAGE_REQUIRE_OAEP_FLAG 0x00000100")]
+    public const int CRYPT_MESSAGE_REQUIRE_OAEP_FLAG = 0x00000100;
+
+    /// <include file='CRYPT.xml' path='doc/member[@name="CRYPT.CRYPT_MESSAGE_REQUIRE_AUTH_FLAG"]/*' />
+    [NativeTypeName("#define CRYPT_MESSAGE_REQUIRE_AUTH_FLAG 0x00000200")]
+    public const int CRYPT_MESSAGE_REQUIRE_AUTH_FLAG = 0x00000200;
 
     [NativeTypeName("#define CRYPT_RETRIEVE_MULTIPLE_OBJECTS 0x00000001")]
     public const int CRYPT_RETRIEVE_MULTIPLE_OBJECTS = 0x00000001;

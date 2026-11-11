@@ -1,8 +1,5 @@
 @../../../settings.rsp
 @../../../remap.rsp
---remap
-VirtualPrinterInstallationResult=IVirtualPrinterInstallationResult
-VirtualPrinterSupportedFormat=IVirtualPrinterSupportedFormat
 --exclude
 ABI::Windows::Devices::Printers::IID_IIppAttributeError
 ABI::Windows::Devices::Printers::IID_IIppAttributeValue

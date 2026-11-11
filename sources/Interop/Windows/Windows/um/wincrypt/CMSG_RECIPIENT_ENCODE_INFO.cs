@@ -53,6 +53,17 @@ public unsafe partial struct CMSG_RECIPIENT_ENCODE_INFO
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pKem"]/*' />
+    [UnscopedRef]
+    public ref CMSG_KEM_RECIPIENT_ENCODE_INFO* pKem
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.pKem;
+        }
+    }
+
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct _Anonymous_e__Union
@@ -71,5 +82,10 @@ public unsafe partial struct CMSG_RECIPIENT_ENCODE_INFO
         [FieldOffset(0)]
         [NativeTypeName("PCMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO")]
         public CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO* pMailList;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pKem"]/*' />
+        [FieldOffset(0)]
+        [NativeTypeName("PCMSG_KEM_RECIPIENT_ENCODE_INFO")]
+        public CMSG_KEM_RECIPIENT_ENCODE_INFO* pKem;
     }
 }

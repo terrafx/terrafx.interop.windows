@@ -60,8 +60,20 @@ public static partial class PROC
     [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_SVE_VECTOR_LENGTH ProcThreadAttributeValue (ProcThreadAttributeSveVectorLength, FALSE, TRUE, FALSE)")]
     public const int PROC_THREAD_ATTRIBUTE_SVE_VECTOR_LENGTH = (((int)(ProcThreadAttributeSveVectorLength) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
 
+    /// <include file='PROC.xml' path='doc/member[@name="PROC.PROC_THREAD_ATTRIBUTE_CONTAINMENT_CONFIGURATION"]/*' />
+    [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_CONTAINMENT_CONFIGURATION ProcThreadAttributeValue (ProcThreadAttributeContainmentConfiguration, FALSE, TRUE, FALSE)")]
+    public const int PROC_THREAD_ATTRIBUTE_CONTAINMENT_CONFIGURATION = (((int)(ProcThreadAttributeContainmentConfiguration) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
+
+    /// <include file='PROC.xml' path='doc/member[@name="PROC.PROC_THREAD_ATTRIBUTE_ISOLATION_CONFIGURATION"]/*' />
+    [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_ISOLATION_CONFIGURATION ProcThreadAttributeValue (ProcThreadAttributeIsolationConfiguration, FALSE, TRUE, FALSE)")]
+    public const int PROC_THREAD_ATTRIBUTE_ISOLATION_CONFIGURATION = (((int)(ProcThreadAttributeIsolationConfiguration) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
+
     [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_SME_VECTOR_LENGTH ProcThreadAttributeValue (ProcThreadAttributeSmeVectorLength, FALSE, TRUE, FALSE)")]
     public const int PROC_THREAD_ATTRIBUTE_SME_VECTOR_LENGTH = (((int)(ProcThreadAttributeSmeVectorLength) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
+
+    /// <include file='PROC.xml' path='doc/member[@name="PROC.PROC_THREAD_ATTRIBUTE_DESKTOP_APP_IDENTITY_POLICY"]/*' />
+    [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_DESKTOP_APP_IDENTITY_POLICY ProcThreadAttributeValue (ProcThreadAttributeDesktopAppIdentityPolicy, FALSE, TRUE, FALSE)")]
+    public const int PROC_THREAD_ATTRIBUTE_DESKTOP_APP_IDENTITY_POLICY = (((int)(ProcThreadAttributeDesktopAppIdentityPolicy) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));
 
     [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_JOB_LIST ProcThreadAttributeValue (ProcThreadAttributeJobList, FALSE, TRUE, FALSE)")]
     public const int PROC_THREAD_ATTRIBUTE_JOB_LIST = (((int)(ProcThreadAttributeJobList) & 0x0000FFFF) | ((0 != 0) ? 0x00010000 : 0) | ((1 != 0) ? 0x00020000 : 0) | ((0 != 0) ? 0x00040000 : 0));

@@ -49,6 +49,14 @@ public static partial class Windows
     [NativeTypeName("#define DROPEFFECT_SCROLL ( 0x80000000 )")]
     public const uint DROPEFFECT_SCROLL = (0x80000000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DROPEFFECT_NEWTARGET"]/*' />
+    [NativeTypeName("#define DROPEFFECT_NEWTARGET ( 0x40000000 )")]
+    public const int DROPEFFECT_NEWTARGET = (0x40000000);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DROPEFFECT_BACKGROUNDTARGET"]/*' />
+    [NativeTypeName("#define DROPEFFECT_BACKGROUNDTARGET ( 0x20000000 )")]
+    public const int DROPEFFECT_BACKGROUNDTARGET = (0x20000000);
+
     [NativeTypeName("#define DD_DEFSCROLLINSET ( 11 )")]
     public const int DD_DEFSCROLLINSET = (11);
 

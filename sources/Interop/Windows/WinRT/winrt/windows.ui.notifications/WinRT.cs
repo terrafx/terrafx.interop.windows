@@ -190,6 +190,10 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[59]")]
     public const string InterfaceName_Windows_UI_Notifications_IToastNotificationManagerStatics5 = "Windows.UI.Notifications.IToastNotificationManagerStatics5";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Notifications_IToastNotificationStatics"]/*' />
+    [NativeTypeName("const WCHAR[51]")]
+    public const string InterfaceName_Windows_UI_Notifications_IToastNotificationStatics = "Windows.UI.Notifications.IToastNotificationStatics";
+
     [NativeTypeName("const WCHAR[40]")]
     public const string InterfaceName_Windows_UI_Notifications_IToastNotifier = "Windows.UI.Notifications.IToastNotifier";
 

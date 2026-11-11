@@ -1526,6 +1526,22 @@ public static unsafe partial class Windows
     [NativeTypeName("#define CRYPT32_MLDSA_87_ALGORITHM BCRYPT_MLDSA_ALGORITHM, ")]
     public const string CRYPT32_MLDSA_87_ALGORITHM = "ML-DSA:87";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_COMPOSITE_MLDSA_44_ECDSA_P256_SHA256_ALGORITHM"]/*' />
+    [NativeTypeName("#define CRYPT32_COMPOSITE_MLDSA_44_ECDSA_P256_SHA256_ALGORITHM BCRYPT_COMPOSITE_MLDSA_ALGORITHM, ")]
+    public const string CRYPT32_COMPOSITE_MLDSA_44_ECDSA_P256_SHA256_ALGORITHM = "Composite-ML-DSA:44-ECDSA-P256-SHA256";
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_COMPOSITE_MLDSA_65_ECDSA_P256_SHA512_ALGORITHM"]/*' />
+    [NativeTypeName("#define CRYPT32_COMPOSITE_MLDSA_65_ECDSA_P256_SHA512_ALGORITHM BCRYPT_COMPOSITE_MLDSA_ALGORITHM, ")]
+    public const string CRYPT32_COMPOSITE_MLDSA_65_ECDSA_P256_SHA512_ALGORITHM = "Composite-ML-DSA:65-ECDSA-P256-SHA512";
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_COMPOSITE_MLDSA_65_ECDSA_P384_SHA512_ALGORITHM"]/*' />
+    [NativeTypeName("#define CRYPT32_COMPOSITE_MLDSA_65_ECDSA_P384_SHA512_ALGORITHM BCRYPT_COMPOSITE_MLDSA_ALGORITHM, ")]
+    public const string CRYPT32_COMPOSITE_MLDSA_65_ECDSA_P384_SHA512_ALGORITHM = "Composite-ML-DSA:65-ECDSA-P384-SHA512";
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_COMPOSITE_MLDSA_87_ECDSA_P384_SHA512_ALGORITHM"]/*' />
+    [NativeTypeName("#define CRYPT32_COMPOSITE_MLDSA_87_ECDSA_P384_SHA512_ALGORITHM BCRYPT_COMPOSITE_MLDSA_ALGORITHM, ")]
+    public const string CRYPT32_COMPOSITE_MLDSA_87_ECDSA_P384_SHA512_ALGORITHM = "Composite-ML-DSA:87-ECDSA-P384-SHA512";
+
     [NativeTypeName("#define CRYPT32_MLKEM_512_ALGORITHM BCRYPT_MLKEM_ALGORITHM, ")]
     public const string CRYPT32_MLKEM_512_ALGORITHM = "ML-KEM:512";
 
@@ -1534,6 +1550,18 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define CRYPT32_MLKEM_1024_ALGORITHM BCRYPT_MLKEM_ALGORITHM, ")]
     public const string CRYPT32_MLKEM_1024_ALGORITHM = "ML-KEM:1024";
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_COMPOSITE_MLKEM_768_P256_ALGORITHM"]/*' />
+    [NativeTypeName("#define CRYPT32_COMPOSITE_MLKEM_768_P256_ALGORITHM BCRYPT_COMPOSITE_MLKEM_ALGORITHM, ")]
+    public const string CRYPT32_COMPOSITE_MLKEM_768_P256_ALGORITHM = "Composite-ML-KEM:768-P256";
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_COMPOSITE_MLKEM_768_X25519_ALGORITHM"]/*' />
+    [NativeTypeName("#define CRYPT32_COMPOSITE_MLKEM_768_X25519_ALGORITHM BCRYPT_COMPOSITE_MLKEM_ALGORITHM, ")]
+    public const string CRYPT32_COMPOSITE_MLKEM_768_X25519_ALGORITHM = "Composite-ML-KEM:768-X25519";
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CRYPT32_COMPOSITE_MLKEM_1024_P384_ALGORITHM"]/*' />
+    [NativeTypeName("#define CRYPT32_COMPOSITE_MLKEM_1024_P384_ALGORITHM BCRYPT_COMPOSITE_MLKEM_ALGORITHM, ")]
+    public const string CRYPT32_COMPOSITE_MLKEM_1024_P384_ALGORITHM = "Composite-ML-KEM:1024-P384";
 
     [NativeTypeName("#define CRYPT32_SLHDSA_SHA2_128S_ALGORITHM BCRYPT_SLHDSA_ALGORITHM, ")]
     public const string CRYPT32_SLHDSA_SHA2_128S_ALGORITHM = "SLH-DSA:SHA2-128s";

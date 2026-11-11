@@ -7656,6 +7656,33 @@ public static partial class PKEY
         }
     }
 
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_ItemFolderPathDisplayNarrowNamespaceRelative"]/*' />
+    [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_ItemFolderPathDisplayNarrowNamespaceRelative
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xED, 0x30, 0xBD, 0xDA,
+                0x43, 0x00,
+                0x89, 0x47,
+                0xA7,
+                0xF8,
+                0xD0,
+                0x13,
+                0xA4,
+                0x73,
+                0x66,
+                0x22,
+                0x65, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     [NativeTypeName("const PROPERTYKEY")]
     public static ref readonly PROPERTYKEY PKEY_ItemName
     {
@@ -15630,6 +15657,33 @@ public static partial class PKEY
                 0x68,
                 0x98,
                 0x2C,
+                0x02, 0x00, 0x00, 0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<PROPERTYKEY>());
+            return ref Unsafe.As<byte, PROPERTYKEY>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='PKEY.xml' path='doc/member[@name="PKEY.PKEY_Devices_WiFiAware_IsSupported"]/*' />
+    [NativeTypeName("const PROPERTYKEY")]
+    public static ref readonly PROPERTYKEY PKEY_Devices_WiFiAware_IsSupported
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x67, 0x9E, 0x2E, 0x9D,
+                0xD4, 0x70,
+                0x1A, 0x4D,
+                0xAE,
+                0xFD,
+                0x11,
+                0x3C,
+                0xF6,
+                0xA7,
+                0xDF,
+                0xCA,
                 0x02, 0x00, 0x00, 0x00
             ];
 

@@ -28,6 +28,10 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[59]")]
     public const string InterfaceName_Windows_Graphics_Printing_PrintTicket_IWorkflowPrintTicket = "Windows.Graphics.Printing.PrintTicket.IWorkflowPrintTicket";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Graphics_Printing_PrintTicket_IWorkflowPrintTicketFactory"]/*' />
+    [NativeTypeName("const WCHAR[66]")]
+    public const string InterfaceName_Windows_Graphics_Printing_PrintTicket_IWorkflowPrintTicketFactory = "Windows.Graphics.Printing.PrintTicket.IWorkflowPrintTicketFactory";
+
     [NativeTypeName("const WCHAR[75]")]
     public const string InterfaceName_Windows_Graphics_Printing_PrintTicket_IWorkflowPrintTicketValidationResult = "Windows.Graphics.Printing.PrintTicket.IWorkflowPrintTicketValidationResult";
 

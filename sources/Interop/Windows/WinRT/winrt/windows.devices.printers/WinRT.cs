@@ -37,6 +37,18 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[42]")]
     public const string InterfaceName_Windows_Devices_Printers_IIppPrintDevice4 = "Windows.Devices.Printers.IIppPrintDevice4";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Printers_IIppPrintDevice5"]/*' />
+    [NativeTypeName("const WCHAR[42]")]
+    public const string InterfaceName_Windows_Devices_Printers_IIppPrintDevice5 = "Windows.Devices.Printers.IIppPrintDevice5";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Printers_IIppPrintDeviceInstallationResult"]/*' />
+    [NativeTypeName("const WCHAR[59]")]
+    public const string InterfaceName_Windows_Devices_Printers_IIppPrintDeviceInstallationResult = "Windows.Devices.Printers.IIppPrintDeviceInstallationResult";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Printers_IIppPrintDeviceManagerStatics"]/*' />
+    [NativeTypeName("const WCHAR[55]")]
+    public const string InterfaceName_Windows_Devices_Printers_IIppPrintDeviceManagerStatics = "Windows.Devices.Printers.IIppPrintDeviceManagerStatics";
+
     [NativeTypeName("const WCHAR[48]")]
     public const string InterfaceName_Windows_Devices_Printers_IIppPrintDeviceStatics = "Windows.Devices.Printers.IIppPrintDeviceStatics";
 
@@ -76,6 +88,10 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[38]")]
     public const string InterfaceName_Windows_Devices_Printers_IPrintSchema = "Windows.Devices.Printers.IPrintSchema";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Printers_IReplaceDevicePropertiesResult"]/*' />
+    [NativeTypeName("const WCHAR[56]")]
+    public const string InterfaceName_Windows_Devices_Printers_IReplaceDevicePropertiesResult = "Windows.Devices.Printers.IReplaceDevicePropertiesResult";
+
     [NativeTypeName("const WCHAR[63]")]
     public const string InterfaceName_Windows_Devices_Printers_IVirtualPrinterInstallationParameters = "Windows.Devices.Printers.IVirtualPrinterInstallationParameters";
 
@@ -106,6 +122,14 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[40]")]
     public const string RuntimeClass_Windows_Devices_Printers_IppPrintDevice = "Windows.Devices.Printers.IppPrintDevice";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Printers_IppPrintDeviceInstallationResult"]/*' />
+    [NativeTypeName("const WCHAR[58]")]
+    public const string RuntimeClass_Windows_Devices_Printers_IppPrintDeviceInstallationResult = "Windows.Devices.Printers.IppPrintDeviceInstallationResult";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Printers_IppPrintDeviceManager"]/*' />
+    [NativeTypeName("const WCHAR[47]")]
+    public const string RuntimeClass_Windows_Devices_Printers_IppPrintDeviceManager = "Windows.Devices.Printers.IppPrintDeviceManager";
+
     [NativeTypeName("const WCHAR[39]")]
     public const string RuntimeClass_Windows_Devices_Printers_IppResolution = "Windows.Devices.Printers.IppResolution";
 
@@ -129,6 +153,10 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[37]")]
     public const string RuntimeClass_Windows_Devices_Printers_PrintSchema = "Windows.Devices.Printers.PrintSchema";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Printers_ReplaceDevicePropertiesResult"]/*' />
+    [NativeTypeName("const WCHAR[55]")]
+    public const string RuntimeClass_Windows_Devices_Printers_ReplaceDevicePropertiesResult = "Windows.Devices.Printers.ReplaceDevicePropertiesResult";
 
     [NativeTypeName("const WCHAR[62]")]
     public const string RuntimeClass_Windows_Devices_Printers_VirtualPrinterInstallationParameters = "Windows.Devices.Printers.VirtualPrinterInstallationParameters";

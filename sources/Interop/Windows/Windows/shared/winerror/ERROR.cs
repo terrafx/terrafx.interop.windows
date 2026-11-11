@@ -1123,6 +1123,10 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_DEVICE_HARDWARE_ERROR 483L")]
     public const int ERROR_DEVICE_HARDWARE_ERROR = 483;
 
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_DEVICE_NACKED"]/*' />
+    [NativeTypeName("#define ERROR_DEVICE_NACKED 484L")]
+    public const int ERROR_DEVICE_NACKED = 484;
+
     [NativeTypeName("#define ERROR_INVALID_ADDRESS 487L")]
     public const int ERROR_INVALID_ADDRESS = 487;
 
@@ -10251,6 +10255,14 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_SPACES_REPAIR_IN_PROGRESS _HRESULT_TYPEDEF_(0x80E70027L)")]
     public const int ERROR_SPACES_REPAIR_IN_PROGRESS = unchecked((int)(0x80E70027));
+
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_SPACES_API_VERSION_MISMATCH"]/*' />
+    [NativeTypeName("#define ERROR_SPACES_API_VERSION_MISMATCH _HRESULT_TYPEDEF_(0x80E70028L)")]
+    public const int ERROR_SPACES_API_VERSION_MISMATCH = unchecked((int)(0x80E70028));
+
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_SPACES_METADATA_SIZE_INVALID"]/*' />
+    [NativeTypeName("#define ERROR_SPACES_METADATA_SIZE_INVALID _HRESULT_TYPEDEF_(0x80E70029L)")]
+    public const int ERROR_SPACES_METADATA_SIZE_INVALID = unchecked((int)(0x80E70029));
 
     [NativeTypeName("#define ERROR_VOLSNAP_BOOTFILE_NOT_VALID _HRESULT_TYPEDEF_(0x80820001L)")]
     public const int ERROR_VOLSNAP_BOOTFILE_NOT_VALID = unchecked((int)(0x80820001));

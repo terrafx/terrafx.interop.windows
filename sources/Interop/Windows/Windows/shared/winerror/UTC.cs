@@ -264,4 +264,12 @@ public static partial class UTC
 
     [NativeTypeName("#define UTC_E_TRACE_THROTTLED _HRESULT_TYPEDEF_(0x87C5105DL)")]
     public const int UTC_E_TRACE_THROTTLED = unchecked((int)(0x87C5105D));
+
+    /// <include file='UTC.xml' path='doc/member[@name="UTC.UTC_E_WINRE_COMPLIANCE_CAPTURE_FAILED"]/*' />
+    [NativeTypeName("#define UTC_E_WINRE_COMPLIANCE_CAPTURE_FAILED _HRESULT_TYPEDEF_(0x87C5105EL)")]
+    public const int UTC_E_WINRE_COMPLIANCE_CAPTURE_FAILED = unchecked((int)(0x87C5105E));
+
+    /// <include file='UTC.xml' path='doc/member[@name="UTC.UTC_E_WINRE_ETM_ENABLED"]/*' />
+    [NativeTypeName("#define UTC_E_WINRE_ETM_ENABLED _HRESULT_TYPEDEF_(0x87C5105FL)")]
+    public const int UTC_E_WINRE_ETM_ENABLED = unchecked((int)(0x87C5105F));
 }

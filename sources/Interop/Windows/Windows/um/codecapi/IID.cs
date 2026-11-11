@@ -7835,4 +7835,28 @@ public static partial class IID
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    public static ref readonly Guid IID_CODECAPI_AVEncAV1EncoderOperatingMode
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x91, 0x1F, 0x2E, 0x8F,
+                0x4C, 0x5B,
+                0x1A, 0x4E,
+                0x9C,
+                0x3D,
+                0x2F,
+                0x6A,
+                0x8B,
+                0x1D,
+                0x4E,
+                0x7C
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
 }

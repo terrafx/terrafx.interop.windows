@@ -34,6 +34,10 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[37]")]
     public const string InterfaceName_Windows_UI_Input_IEdgeGestureStatics = "Windows.UI.Input.IEdgeGestureStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Input_IGamepadKeyRoutingConfigurationStatics"]/*' />
+    [NativeTypeName("const WCHAR[56]")]
+    public const string InterfaceName_Windows_UI_Input_IGamepadKeyRoutingConfigurationStatics = "Windows.UI.Input.IGamepadKeyRoutingConfigurationStatics";
+
     [NativeTypeName("const WCHAR[36]")]
     public const string InterfaceName_Windows_UI_Input_IGestureRecognizer = "Windows.UI.Input.IGestureRecognizer";
 
@@ -84,6 +88,10 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[39]")]
     public const string InterfaceName_Windows_UI_Input_IMouseWheelParameters = "Windows.UI.Input.IMouseWheelParameters";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Input_IPhysicalGestureRecognizer"]/*' />
+    [NativeTypeName("const WCHAR[44]")]
+    public const string InterfaceName_Windows_UI_Input_IPhysicalGestureRecognizer = "Windows.UI.Input.IPhysicalGestureRecognizer";
 
     [NativeTypeName("const WCHAR[31]")]
     public const string InterfaceName_Windows_UI_Input_IPointerPoint = "Windows.UI.Input.IPointerPoint";
@@ -214,6 +222,18 @@ public static partial class WinRT
     [NativeTypeName("const WCHAR[35]")]
     public const string InterfaceName_Windows_UI_Input_ITappedEventArgs2 = "Windows.UI.Input.ITappedEventArgs2";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Input_ITouchpadGesturesController"]/*' />
+    [NativeTypeName("const WCHAR[45]")]
+    public const string InterfaceName_Windows_UI_Input_ITouchpadGesturesController = "Windows.UI.Input.ITouchpadGesturesController";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Input_ITouchpadGesturesControllerStatics"]/*' />
+    [NativeTypeName("const WCHAR[52]")]
+    public const string InterfaceName_Windows_UI_Input_ITouchpadGesturesControllerStatics = "Windows.UI.Input.ITouchpadGesturesControllerStatics";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_UI_Input_ITouchpadGlobalActionEventArgs"]/*' />
+    [NativeTypeName("const WCHAR[48]")]
+    public const string InterfaceName_Windows_UI_Input_ITouchpadGlobalActionEventArgs = "Windows.UI.Input.ITouchpadGlobalActionEventArgs";
+
     [NativeTypeName("const WCHAR[39]")]
     public const string RuntimeClass_Windows_UI_Input_AttachableInputObject = "Windows.UI.Input.AttachableInputObject";
 
@@ -228,6 +248,10 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[38]")]
     public const string RuntimeClass_Windows_UI_Input_EdgeGestureEventArgs = "Windows.UI.Input.EdgeGestureEventArgs";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_UI_Input_GamepadKeyRoutingConfiguration"]/*' />
+    [NativeTypeName("const WCHAR[48]")]
+    public const string RuntimeClass_Windows_UI_Input_GamepadKeyRoutingConfiguration = "Windows.UI.Input.GamepadKeyRoutingConfiguration";
 
     [NativeTypeName("const WCHAR[35]")]
     public const string RuntimeClass_Windows_UI_Input_GestureRecognizer = "Windows.UI.Input.GestureRecognizer";
@@ -258,6 +282,10 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[38]")]
     public const string RuntimeClass_Windows_UI_Input_MouseWheelParameters = "Windows.UI.Input.MouseWheelParameters";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_UI_Input_PhysicalGestureRecognizer"]/*' />
+    [NativeTypeName("const WCHAR[43]")]
+    public const string RuntimeClass_Windows_UI_Input_PhysicalGestureRecognizer = "Windows.UI.Input.PhysicalGestureRecognizer";
 
     [NativeTypeName("const WCHAR[30]")]
     public const string RuntimeClass_Windows_UI_Input_PointerPoint = "Windows.UI.Input.PointerPoint";
@@ -327,4 +355,12 @@ public static partial class WinRT
 
     [NativeTypeName("const WCHAR[33]")]
     public const string RuntimeClass_Windows_UI_Input_TappedEventArgs = "Windows.UI.Input.TappedEventArgs";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_UI_Input_TouchpadGesturesController"]/*' />
+    [NativeTypeName("const WCHAR[44]")]
+    public const string RuntimeClass_Windows_UI_Input_TouchpadGesturesController = "Windows.UI.Input.TouchpadGesturesController";
+
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_UI_Input_TouchpadGlobalActionEventArgs"]/*' />
+    [NativeTypeName("const WCHAR[47]")]
+    public const string RuntimeClass_Windows_UI_Input_TouchpadGlobalActionEventArgs = "Windows.UI.Input.TouchpadGlobalActionEventArgs";
 }

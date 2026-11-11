@@ -30,6 +30,10 @@ public static unsafe partial class CMSG
     [NativeTypeName("#define CMSG_ENCRYPTED 6")]
     public const int CMSG_ENCRYPTED = 6;
 
+    /// <include file='CMSG.xml' path='doc/member[@name="CMSG.CMSG_AUTH_ENVELOPED"]/*' />
+    [NativeTypeName("#define CMSG_AUTH_ENVELOPED 7")]
+    public const int CMSG_AUTH_ENVELOPED = 7;
+
     [NativeTypeName("#define CMSG_ALL_FLAGS (~0UL)")]
     public const uint CMSG_ALL_FLAGS = (~0U);
 
@@ -51,6 +55,10 @@ public static unsafe partial class CMSG
     [NativeTypeName("#define CMSG_ENCRYPTED_FLAG (1 << CMSG_ENCRYPTED)")]
     public const int CMSG_ENCRYPTED_FLAG = (1 << 6);
 
+    /// <include file='CMSG.xml' path='doc/member[@name="CMSG.CMSG_AUTH_ENVELOPED_FLAG"]/*' />
+    [NativeTypeName("#define CMSG_AUTH_ENVELOPED_FLAG (1 << CMSG_AUTH_ENVELOPED)")]
+    public const int CMSG_AUTH_ENVELOPED_FLAG = (1 << 7);
+
     [NativeTypeName("#define CMSG_KEY_AGREE_EPHEMERAL_KEY_CHOICE 1")]
     public const int CMSG_KEY_AGREE_EPHEMERAL_KEY_CHOICE = 1;
 
@@ -68,6 +76,10 @@ public static unsafe partial class CMSG
 
     [NativeTypeName("#define CMSG_MAIL_LIST_RECIPIENT 3")]
     public const int CMSG_MAIL_LIST_RECIPIENT = 3;
+
+    /// <include file='CMSG.xml' path='doc/member[@name="CMSG.CMSG_KEM_RECIPIENT"]/*' />
+    [NativeTypeName("#define CMSG_KEM_RECIPIENT 4")]
+    public const int CMSG_KEM_RECIPIENT = 4;
 
     [NativeTypeName("#define CMSG_SP3_COMPATIBLE_ENCRYPT_FLAG 0x80000000")]
     public const uint CMSG_SP3_COMPATIBLE_ENCRYPT_FLAG = 0x80000000;
@@ -252,11 +264,23 @@ public static unsafe partial class CMSG
     [NativeTypeName("#define CMSG_ENVELOPED_DATA_V2 2")]
     public const int CMSG_ENVELOPED_DATA_V2 = 2;
 
+    /// <include file='CMSG.xml' path='doc/member[@name="CMSG.CMSG_ENVELOPED_DATA_V3"]/*' />
+    [NativeTypeName("#define CMSG_ENVELOPED_DATA_V3 3")]
+    public const int CMSG_ENVELOPED_DATA_V3 = 3;
+
     [NativeTypeName("#define CMSG_ENVELOPED_DATA_PKCS_1_5_VERSION CMSG_ENVELOPED_DATA_V0")]
     public const int CMSG_ENVELOPED_DATA_PKCS_1_5_VERSION = 0;
 
     [NativeTypeName("#define CMSG_ENVELOPED_DATA_CMS_VERSION CMSG_ENVELOPED_DATA_V2")]
     public const int CMSG_ENVELOPED_DATA_CMS_VERSION = 2;
+
+    /// <include file='CMSG.xml' path='doc/member[@name="CMSG.CMSG_ENVELOPED_DATA_ORI_VERSION"]/*' />
+    [NativeTypeName("#define CMSG_ENVELOPED_DATA_ORI_VERSION CMSG_ENVELOPED_DATA_V3")]
+    public const int CMSG_ENVELOPED_DATA_ORI_VERSION = 3;
+
+    /// <include file='CMSG.xml' path='doc/member[@name="CMSG.CMSG_AUTH_ENVELOPED_DATA_V0"]/*' />
+    [NativeTypeName("#define CMSG_AUTH_ENVELOPED_DATA_V0 0")]
+    public const int CMSG_AUTH_ENVELOPED_DATA_V0 = 0;
 
     [NativeTypeName("#define CMSG_KEY_AGREE_ORIGINATOR_CERT 1")]
     public const int CMSG_KEY_AGREE_ORIGINATOR_CERT = 1;
@@ -287,6 +311,10 @@ public static unsafe partial class CMSG
 
     [NativeTypeName("#define CMSG_MAIL_LIST_VERSION CMSG_ENVELOPED_RECIPIENT_V4")]
     public const int CMSG_MAIL_LIST_VERSION = 4;
+
+    /// <include file='CMSG.xml' path='doc/member[@name="CMSG.CMSG_KEM_VERSION"]/*' />
+    [NativeTypeName("#define CMSG_KEM_VERSION CMSG_ENVELOPED_RECIPIENT_V0")]
+    public const int CMSG_KEM_VERSION = 0;
 
     [NativeTypeName("#define CMSG_CTRL_VERIFY_SIGNATURE 1")]
     public const int CMSG_CTRL_VERIFY_SIGNATURE = 1;
@@ -345,6 +373,10 @@ public static unsafe partial class CMSG
     [NativeTypeName("#define CMSG_CTRL_ENABLE_STRONG_SIGNATURE 21")]
     public const int CMSG_CTRL_ENABLE_STRONG_SIGNATURE = 21;
 
+    /// <include file='CMSG.xml' path='doc/member[@name="CMSG.CMSG_CTRL_KEM_DECRYPT"]/*' />
+    [NativeTypeName("#define CMSG_CTRL_KEM_DECRYPT 22")]
+    public const int CMSG_CTRL_KEM_DECRYPT = 22;
+
     [NativeTypeName("#define CMSG_VERIFY_SIGNER_PUBKEY 1")]
     public const int CMSG_VERIFY_SIGNER_PUBKEY = 1;
 
@@ -380,6 +412,10 @@ public static unsafe partial class CMSG
 
     [NativeTypeName("#define CMSG_CONTENT_ENCRYPT_FREE_OBJID_FLAG 0x00000002")]
     public const int CMSG_CONTENT_ENCRYPT_FREE_OBJID_FLAG = 0x00000002;
+
+    /// <include file='CMSG.xml' path='doc/member[@name="CMSG.CMSG_CONTENT_ENCRYPT_FREE_ASN1_ENCODE_PARA_FLAG"]/*' />
+    [NativeTypeName("#define CMSG_CONTENT_ENCRYPT_FREE_ASN1_ENCODE_PARA_FLAG 0x00000004")]
+    public const int CMSG_CONTENT_ENCRYPT_FREE_ASN1_ENCODE_PARA_FLAG = 0x00000004;
 
     [NativeTypeName("#define CMSG_CONTENT_ENCRYPT_RELEASE_CONTEXT_FLAG 0x00008000")]
     public const int CMSG_CONTENT_ENCRYPT_RELEASE_CONTEXT_FLAG = 0x00008000;

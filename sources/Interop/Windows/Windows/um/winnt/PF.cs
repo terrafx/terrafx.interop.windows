@@ -288,4 +288,16 @@ public static partial class PF
 
     [NativeTypeName("#define PF_UMONITOR_INSTRUCTION_AVAILABLE 89")]
     public const int PF_UMONITOR_INSTRUCTION_AVAILABLE = 89;
+
+    /// <include file='PF.xml' path='doc/member[@name="PF.PF_APX_F_INSTRUCTIONS_AVAILABLE"]/*' />
+    [NativeTypeName("#define PF_APX_F_INSTRUCTIONS_AVAILABLE 90")]
+    public const int PF_APX_F_INSTRUCTIONS_AVAILABLE = 90;
+
+    /// <include file='PF.xml' path='doc/member[@name="PF.PF_ARM_FEAT_ECV_INSTRUCTIONS_AVAILABLE"]/*' />
+    [NativeTypeName("#define PF_ARM_FEAT_ECV_INSTRUCTIONS_AVAILABLE 91")]
+    public const int PF_ARM_FEAT_ECV_INSTRUCTIONS_AVAILABLE = 91;
+
+    /// <include file='PF.xml' path='doc/member[@name="PF.PF_ARM_FEAT_ECV_POFF_INSTRUCTIONS_AVAILABLE"]/*' />
+    [NativeTypeName("#define PF_ARM_FEAT_ECV_POFF_INSTRUCTIONS_AVAILABLE 92")]
+    public const int PF_ARM_FEAT_ECV_POFF_INSTRUCTIONS_AVAILABLE = 92;
 }

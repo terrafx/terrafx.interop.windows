@@ -55,6 +55,10 @@ public static partial class XSTATE
     [NativeTypeName("#define XSTATE_AMX_TILE_DATA (18)")]
     public const int XSTATE_AMX_TILE_DATA = (18);
 
+    /// <include file='XSTATE.xml' path='doc/member[@name="XSTATE.XSTATE_APX_F"]/*' />
+    [NativeTypeName("#define XSTATE_APX_F (19)")]
+    public const int XSTATE_APX_F = (19);
+
     [NativeTypeName("#define XSTATE_LWP (62)")]
     public const int XSTATE_LWP = (62);
 
@@ -93,6 +97,10 @@ public static partial class XSTATE
 
     [NativeTypeName("#define XSTATE_MASK_AMX_TILE_DATA (1ui64 << (XSTATE_AMX_TILE_DATA))")]
     public const ulong XSTATE_MASK_AMX_TILE_DATA = (1UL << ((18)));
+
+    /// <include file='XSTATE.xml' path='doc/member[@name="XSTATE.XSTATE_MASK_APX_F"]/*' />
+    [NativeTypeName("#define XSTATE_MASK_APX_F (1ui64 << (XSTATE_APX_F))")]
+    public const ulong XSTATE_MASK_APX_F = (1UL << ((19)));
 
     [NativeTypeName("#define XSTATE_MASK_LWP (1ui64 << (XSTATE_LWP))")]
     public const ulong XSTATE_MASK_LWP = (1UL << ((62)));

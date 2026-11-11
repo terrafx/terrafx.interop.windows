@@ -181,6 +181,10 @@ public static partial class NTE
     [NativeTypeName("#define NTE_VBS_CANNOT_DECRYPT_KEY _HRESULT_TYPEDEF_(0x8009003AL)")]
     public const int NTE_VBS_CANNOT_DECRYPT_KEY = unchecked((int)(0x8009003A));
 
+    /// <include file='NTE.xml' path='doc/member[@name="NTE.NTE_FIPS_FAILURE"]/*' />
+    [NativeTypeName("#define NTE_FIPS_FAILURE _HRESULT_TYPEDEF_(0x8009003BL)")]
+    public const int NTE_FIPS_FAILURE = unchecked((int)(0x8009003B));
+
     [NativeTypeName("#define NTE_OP_OK 0")]
     public const int NTE_OP_OK = 0;
 }

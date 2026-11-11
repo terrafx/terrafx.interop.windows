@@ -288,6 +288,10 @@ public static partial class Windows
     [NativeTypeName("#define SCOPE_SECURITY_INFORMATION (0x00000040L)")]
     public const int SCOPE_SECURITY_INFORMATION = (0x00000040);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MANDATORY_ACCESS_SECURITY_INFORMATION"]/*' />
+    [NativeTypeName("#define MANDATORY_ACCESS_SECURITY_INFORMATION (0x00000200L)")]
+    public const int MANDATORY_ACCESS_SECURITY_INFORMATION = (0x00000200);
+
     [NativeTypeName("#define PROTECTED_DACL_SECURITY_INFORMATION (0x80000000L)")]
     public const uint PROTECTED_DACL_SECURITY_INFORMATION = (0x80000000);
 

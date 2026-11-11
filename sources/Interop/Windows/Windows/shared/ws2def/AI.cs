@@ -96,4 +96,8 @@ public static partial class AI
 
     [NativeTypeName("#define AI_EXTRA_DNSSEC_REQUIRED 0x0000000000000001")]
     public const int AI_EXTRA_DNSSEC_REQUIRED = 0x0000000000000001;
+
+    /// <include file='AI.xml' path='doc/member[@name="AI.AI_EXTRA_UNTRUSTED_QUERY"]/*' />
+    [NativeTypeName("#define AI_EXTRA_UNTRUSTED_QUERY 0x0000000000000002")]
+    public const int AI_EXTRA_UNTRUSTED_QUERY = 0x0000000000000002;
 }

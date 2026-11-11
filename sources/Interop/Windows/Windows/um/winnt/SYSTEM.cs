@@ -46,6 +46,14 @@ public static partial class SYSTEM
     [NativeTypeName("#define SYSTEM_ACCESS_FILTER_ACE_TYPE (0x15)")]
     public const int SYSTEM_ACCESS_FILTER_ACE_TYPE = (0x15);
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_MANDATORY_APP_ACCESS_ALLOWED_ACE_TYPE"]/*' />
+    [NativeTypeName("#define SYSTEM_MANDATORY_APP_ACCESS_ALLOWED_ACE_TYPE (0x16)")]
+    public const int SYSTEM_MANDATORY_APP_ACCESS_ALLOWED_ACE_TYPE = (0x16);
+
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_MANDATORY_ACCESS_ALLOWED_ACE_TYPE"]/*' />
+    [NativeTypeName("#define SYSTEM_MANDATORY_ACCESS_ALLOWED_ACE_TYPE (0x17)")]
+    public const int SYSTEM_MANDATORY_ACCESS_ALLOWED_ACE_TYPE = (0x17);
+
     [NativeTypeName("#define SYSTEM_MANDATORY_LABEL_NO_WRITE_UP 0x1")]
     public const int SYSTEM_MANDATORY_LABEL_NO_WRITE_UP = 0x1;
 

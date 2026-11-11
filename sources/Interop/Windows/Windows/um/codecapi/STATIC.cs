@@ -15,4 +15,8 @@ public static partial class STATIC
 
     [NativeTypeName("#define STATIC_CODECAPI_AVEncVideoD3D12ReconstructedPictureOutputMode 0x4a7b2e8f")]
     public const int STATIC_CODECAPI_AVEncVideoD3D12ReconstructedPictureOutputMode = 0x4a7b2e8f;
+
+    /// <include file='STATIC.xml' path='doc/member[@name="STATIC.STATIC_CODECAPI_AVEncAV1EncoderOperatingMode"]/*' />
+    [NativeTypeName("#define STATIC_CODECAPI_AVEncAV1EncoderOperatingMode 0x8f2e1f91")]
+    public const uint STATIC_CODECAPI_AVEncAV1EncoderOperatingMode = 0x8f2e1f91;
 }

@@ -292,6 +292,36 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint WinHttpProtocolReceive(HINTERNET ProtocolHandle, [NativeTypeName("ULONGLONG")] ulong Flags, [NativeTypeName("PVOID")] void* pvBuffer, [NativeTypeName("DWORD")] uint dwBufferLength, [NativeTypeName("DWORD *")] uint* pdwBytesRead);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpConnectionSetProxyInfo"]/*' />
+    [DllImport("winhttp", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint WinHttpConnectionSetProxyInfo([NativeTypeName("PCWSTR")] char* pwszConnectionName, WINHTTP_CONNECTION_PROXY_TYPE Type, [NativeTypeName("const WINHTTP_CONNECTION_PROXY_INFO *")] WINHTTP_CONNECTION_PROXY_INFO* pProxyInfo);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpConnectionDeleteProxyInfo"]/*' />
+    [DllImport("winhttp", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint WinHttpConnectionDeleteProxyInfo([NativeTypeName("PCWSTR")] char* pwszConnectionName, WINHTTP_CONNECTION_PROXY_TYPE Type);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpConnectionUpdateIfIndexTable"]/*' />
+    [DllImport("winhttp", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint WinHttpConnectionUpdateIfIndexTable(HINTERNET hSession, WINHTTP_CONNECTION_IFINDEX_LIST* pConnectionIfIndexEntries);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpConnectionSetPolicyEntries"]/*' />
+    [DllImport("winhttp", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint WinHttpConnectionSetPolicyEntries(HINTERNET hSession, WINHTTP_CONNECTION_POLICY_TAG PolicyEntryTag, WINHTTP_CONNECTION_POLICY_ENTRY_LIST* pPolicyEntryList);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpConnectionDeletePolicyEntries"]/*' />
+    [DllImport("winhttp", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint WinHttpConnectionDeletePolicyEntries(HINTERNET hSession, WINHTTP_CONNECTION_POLICY_TAG PolicyEntryTag);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpConnectionDeletePolicyEntriesByAppSid"]/*' />
+    [DllImport("winhttp", ExactSpelling = true)]
+    [return: NativeTypeName("DWORD")]
+    public static extern uint WinHttpConnectionDeletePolicyEntriesByAppSid(HINTERNET hSession, [NativeTypeName("DWORD")] uint cbAppSid, [NativeTypeName("PBYTE")] byte* pbAppSid);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WinHttpRegisterProxyChangeNotification"]/*' />
     [DllImport("winhttp", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]

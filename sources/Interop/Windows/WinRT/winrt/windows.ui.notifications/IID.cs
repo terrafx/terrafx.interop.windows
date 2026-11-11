@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
-public static partial class IID
+public static unsafe partial class IID
 {
     public static ref readonly Guid IID_IAdaptiveNotificationContent
     {
@@ -1469,6 +1469,30 @@ public static partial class IID
                 0x2C,
                 0xFD,
                 0x14
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IToastNotificationStatics
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x13, 0xF2, 0xA8, 0x2A,
+                0xC9, 0xD8,
+                0xFE, 0x48,
+                0xB6,
+                0x41,
+                0x4A,
+                0x63,
+                0xD6,
+                0x9C,
+                0xE0,
+                0x79
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

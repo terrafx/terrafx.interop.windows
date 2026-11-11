@@ -22,6 +22,14 @@ public static partial class PROCESS
     [NativeTypeName("#define PROCESS_NAME_NATIVE 0x00000001")]
     public const int PROCESS_NAME_NATIVE = 0x00000001;
 
+    /// <include file='PROCESS.xml' path='doc/member[@name="PROCESS.PROCESS_CREATION_DESKTOP_APP_IDENTITY_ENABLE"]/*' />
+    [NativeTypeName("#define PROCESS_CREATION_DESKTOP_APP_IDENTITY_ENABLE 0x01")]
+    public const int PROCESS_CREATION_DESKTOP_APP_IDENTITY_ENABLE = 0x01;
+
+    /// <include file='PROCESS.xml' path='doc/member[@name="PROCESS.PROCESS_CREATION_DESKTOP_APP_IDENTITY_DISABLE"]/*' />
+    [NativeTypeName("#define PROCESS_CREATION_DESKTOP_APP_IDENTITY_DISABLE 0x02")]
+    public const int PROCESS_CREATION_DESKTOP_APP_IDENTITY_DISABLE = 0x02;
+
     [NativeTypeName("#define PROCESS_CREATION_MITIGATION_POLICY_DEP_ENABLE 0x01")]
     public const int PROCESS_CREATION_MITIGATION_POLICY_DEP_ENABLE = 0x01;
 
