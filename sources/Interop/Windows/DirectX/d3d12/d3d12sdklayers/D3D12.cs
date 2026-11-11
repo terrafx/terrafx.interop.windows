@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3D12
 {
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT"]/*' />
     [NativeTypeName("#define D3D12_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT 1024")]
     public const int D3D12_INFO_QUEUE_DEFAULT_MESSAGE_COUNT_LIMIT = 1024;
 }

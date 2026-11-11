@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12CompatibilityDevice"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12CompatibilityDevice
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_D3D11On12CreatorID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_D3D11On12CreatorID
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_D3D9On12CreatorID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_D3D9On12CreatorID
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_OpenGLOn12CreatorID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_OpenGLOn12CreatorID
     {
@@ -113,6 +117,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_OpenCLOn12CreatorID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_OpenCLOn12CreatorID
     {
@@ -138,6 +143,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_VulkanOn12CreatorID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_VulkanOn12CreatorID
     {
@@ -163,6 +169,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_DirectMLTensorFlowCreatorID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_DirectMLTensorFlowCreatorID
     {
@@ -188,6 +195,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_DirectMLPyTorchCreatorID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_DirectMLPyTorchCreatorID
     {
@@ -213,6 +221,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_DirectMLWebNNCreatorID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_DirectMLWebNNCreatorID
     {

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID3D12ManualWriteTrackingResource : ID3D12ManualWriteTrackingResource.Interface, INativeGuid
 {
+    /// <include file='ID3D12ManualWriteTrackingResource.xml' path='doc/member[@name="ID3D12ManualWriteTrackingResource.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D12ManualWriteTrackingResource);
 
     public void** lpVtbl;

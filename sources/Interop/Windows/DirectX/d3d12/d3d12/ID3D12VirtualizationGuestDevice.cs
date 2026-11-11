@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows10.0.22621.0")]
 public unsafe partial struct ID3D12VirtualizationGuestDevice : ID3D12VirtualizationGuestDevice.Interface, INativeGuid
 {
+    /// <include file='ID3D12VirtualizationGuestDevice.xml' path='doc/member[@name="ID3D12VirtualizationGuestDevice.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D12VirtualizationGuestDevice);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct DirectMLWebNNCreatorID : DirectMLWebNNCreatorID.Interface, INativeGuid
 {
+    /// <include file='DirectMLWebNNCreatorID.xml' path='doc/member[@name="DirectMLWebNNCreatorID.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DirectMLWebNNCreatorID);
 
     public void** lpVtbl;

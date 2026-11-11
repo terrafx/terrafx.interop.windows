@@ -16,7 +16,7 @@ public partial struct D3D12_DISPATCH_GRAPH_DESC
     public D3D12_DISPATCH_MODE Mode;
 
     /// <include file='D3D12_DISPATCH_GRAPH_DESC.xml' path='doc/member[@name="D3D12_DISPATCH_GRAPH_DESC.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12_L22224_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L22760_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NodeCPUInput"]/*' />
@@ -63,6 +63,17 @@ public partial struct D3D12_DISPATCH_GRAPH_DESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.MlirProgramBindings"]/*' />
+    [UnscopedRef]
+    public ref D3D12_MLIR_PROGRAM_BINDINGS MlirProgramBindings
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.MlirProgramBindings;
+        }
+    }
+
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
@@ -84,5 +95,9 @@ public partial struct D3D12_DISPATCH_GRAPH_DESC
         [FieldOffset(0)]
         [NativeTypeName("D3D12_GPU_VIRTUAL_ADDRESS")]
         public ulong MultiNodeGPUInput;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.MlirProgramBindings"]/*' />
+        [FieldOffset(0)]
+        public D3D12_MLIR_PROGRAM_BINDINGS MlirProgramBindings;
     }
 }

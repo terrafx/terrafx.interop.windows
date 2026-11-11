@@ -270,4 +270,53 @@ public static partial class D3D12Tests
     {
         Assert.That(D3D12_VIDEO_DECODE_PROFILE_JPEG_VLD_444, Is.EqualTo(new Guid(0x4cd00e17, 0x89ba, 0x48ef, 0xb9, 0xf9, 0xed, 0xcb, 0x82, 0x71, 0x3f, 0x65)));
     }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_APV_VLD_422_10" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_APV_VLD_422_10Test()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_APV_VLD_422_10, Is.EqualTo(new Guid(0x226a709d, 0xae12, 0x44c5, 0xba, 0x21, 0x16, 0x4f, 0xee, 0xb7, 0xf9, 0xb6)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_APV_VLD_422_12" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_APV_VLD_422_12Test()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_APV_VLD_422_12, Is.EqualTo(new Guid(0xf6f152ad, 0x94e5, 0x4bfa, 0x92, 0x27, 0x67, 0x6c, 0xdd, 0xef, 0xf4, 0x2b)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_APV_VLD_444_10" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_APV_VLD_444_10Test()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_APV_VLD_444_10, Is.EqualTo(new Guid(0x6a4a8d7d, 0x7610, 0x469f, 0x85, 0x5f, 0x39, 0xf1, 0x30, 0x51, 0xc0, 0x13)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_APV_VLD_444_12" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_APV_VLD_444_12Test()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_APV_VLD_444_12, Is.EqualTo(new Guid(0xf1039a1c, 0xe208, 0x45c1, 0x95, 0x2c, 0x04, 0x08, 0x41, 0xb6, 0x76, 0x67)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_APV_VLD_4444_10" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_APV_VLD_4444_10Test()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_APV_VLD_4444_10, Is.EqualTo(new Guid(0xc83799b9, 0x9655, 0x4b95, 0x80, 0x08, 0x56, 0xa3, 0x22, 0xce, 0x5d, 0x81)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_APV_VLD_4444_12" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_APV_VLD_4444_12Test()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_APV_VLD_4444_12, Is.EqualTo(new Guid(0x6a763ee3, 0x4d05, 0x47fe, 0xa4, 0x29, 0x72, 0x34, 0x74, 0xb6, 0x9d, 0x7c)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="D3D12_VIDEO_DECODE_PROFILE_APV_VLD_400_10" /> property is correct.</summary>
+    [Test]
+    public static void D3D12_VIDEO_DECODE_PROFILE_APV_VLD_400_10Test()
+    {
+        Assert.That(D3D12_VIDEO_DECODE_PROFILE_APV_VLD_400_10, Is.EqualTo(new Guid(0x37148862, 0x6bd6, 0x4618, 0x82, 0x93, 0x77, 0x7b, 0x68, 0x6b, 0x08, 0x24)));
+    }
 }

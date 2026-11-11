@@ -16,7 +16,7 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA1
     public uint DataSize;
 
     /// <include file='D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA1.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA1.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12video_L10159_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12video_L10912_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pH264PicData"]/*' />
@@ -58,14 +58,17 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA1
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pH264PicData"]/*' />
         [FieldOffset(0)]
+        [NativeTypeName("const D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264 *")]
         public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264* pH264PicData;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pHEVCPicData"]/*' />
         [FieldOffset(0)]
+        [NativeTypeName("const D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC2 *")]
         public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC2* pHEVCPicData;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pAV1PicData"]/*' />
         [FieldOffset(0)]
+        [NativeTypeName("const D3D12_VIDEO_ENCODER_AV1_PICTURE_CONTROL_CODEC_DATA *")]
         public D3D12_VIDEO_ENCODER_AV1_PICTURE_CONTROL_CODEC_DATA* pAV1PicData;
     }
 }

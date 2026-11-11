@@ -12,6 +12,8 @@ TerraFX.Interop.DirectX
 ../../../../tests/Interop/Windows/DirectX/d3d12/d3d12sdklayers
 --traverse
 ../../../include/d3d12/d3d12sdklayers.h
+--with-library-path
+D3D12SDKLayersGetInterface=d3d12sdklayers
 --with-attribute
 D3D12_DEBUG_FEATURE=Flags
 D3D12_GPU_BASED_VALIDATION_FLAGS=Flags

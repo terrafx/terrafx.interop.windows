@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct IDXCoreAdapter : IDXCoreAdapter.Interface, INativeGuid
 {
+    /// <include file='IDXCoreAdapter.xml' path='doc/member[@name="IDXCoreAdapter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDXCoreAdapter);
 
     public void** lpVtbl;

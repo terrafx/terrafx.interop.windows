@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDMLDeviceChild")]
 public unsafe partial struct IDMLCommandRecorder : IDMLCommandRecorder.Interface, INativeGuid
 {
+    /// <include file='IDMLCommandRecorder.xml' path='doc/member[@name="IDMLCommandRecorder.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDMLCommandRecorder);
 
     public void** lpVtbl;

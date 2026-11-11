@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID3D12PipelineState")]
 public unsafe partial struct ID3D12PipelineState1 : ID3D12PipelineState1.Interface, INativeGuid
 {
+    /// <include file='ID3D12PipelineState1.xml' path='doc/member[@name="ID3D12PipelineState1.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D12PipelineState1);
 
     public void** lpVtbl;

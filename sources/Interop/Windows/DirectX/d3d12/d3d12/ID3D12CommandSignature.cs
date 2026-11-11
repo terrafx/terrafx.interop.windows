@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID3D12Pageable")]
 public unsafe partial struct ID3D12CommandSignature : ID3D12CommandSignature.Interface, INativeGuid
 {
+    /// <include file='ID3D12CommandSignature.xml' path='doc/member[@name="ID3D12CommandSignature.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D12CommandSignature);
 
     public void** lpVtbl;

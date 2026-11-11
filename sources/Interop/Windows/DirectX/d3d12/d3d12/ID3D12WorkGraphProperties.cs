@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID3D12WorkGraphProperties : ID3D12WorkGraphProperties.Interface, INativeGuid
 {
+    /// <include file='ID3D12WorkGraphProperties.xml' path='doc/member[@name="ID3D12WorkGraphProperties.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D12WorkGraphProperties);
 
     public void** lpVtbl;

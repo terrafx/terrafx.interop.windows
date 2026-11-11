@@ -3,7 +3,10 @@
 // Ported from d3dx12_core.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
+using System;
+using TerraFX.Interop.Windows;
 using static TerraFX.Interop.DirectX.D3D12;
+using static TerraFX.Interop.DirectX.D3D12_FEATURE;
 using static TerraFX.Interop.DirectX.D3D12_RESOURCE_DIMENSION;
 using static TerraFX.Interop.DirectX.D3D12_RESOURCE_FLAGS;
 using static TerraFX.Interop.DirectX.D3D12_TEXTURE_LAYOUT;
@@ -16,6 +19,39 @@ public static unsafe partial class DirectX
         where t_CommandListType : unmanaged, ID3D12CommandList.Interface
     {
         return (ID3D12CommandList**)(pp);
+    }
+
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12GetFormatPlaneCount"]/*' />
+    [return: NativeTypeName("UINT8")]
+    public static byte D3D12GetFormatPlaneCount(ID3D12Device* pDevice, DXGI_FORMAT Format)
+    {
+        D3D12_FEATURE_DATA_FORMAT_INFO formatInfo = new()
+        {
+            Format = Format,
+            PlaneCount = 0,
+        };
+        ID3D12Device16* pDevice16 = null;
+        Guid device16IID = typeof(ID3D12Device16).GUID;
+
+        if (pDevice->QueryInterface(&device16IID, (void**)(&pDevice16)) >= 0)
+        {
+            HRESULT hr = pDevice16->CheckFeatureSupport1(D3D12_FEATURE_FORMAT_INFO, &formatInfo, (uint)sizeof(D3D12_FEATURE_DATA_FORMAT_INFO), D3D12_SDK_VERSION);
+            _ = pDevice16->Release();
+
+            if (hr < 0)
+            {
+                return 0;
+            }
+
+            return formatInfo.PlaneCount;
+        }
+
+        if (pDevice->CheckFeatureSupport(D3D12_FEATURE_FORMAT_INFO, &formatInfo, (uint)sizeof(D3D12_FEATURE_DATA_FORMAT_INFO)) < 0)
+        {
+            return 0;
+        }
+
+        return formatInfo.PlaneCount;
     }
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DX12ConditionallyExpandAPIDesc"]/*' />

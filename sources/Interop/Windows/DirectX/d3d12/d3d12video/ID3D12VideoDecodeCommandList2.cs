@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct ID3D12VideoDecodeCommandList2 : ID3D12VideoDecodeCommandList2.Interface, INativeGuid
 {
+    /// <include file='ID3D12VideoDecodeCommandList2.xml' path='doc/member[@name="ID3D12VideoDecodeCommandList2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D12VideoDecodeCommandList2);
 
     public void** lpVtbl;

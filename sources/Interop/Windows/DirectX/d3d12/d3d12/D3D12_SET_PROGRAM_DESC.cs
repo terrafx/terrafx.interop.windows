@@ -16,7 +16,7 @@ public partial struct D3D12_SET_PROGRAM_DESC
     public D3D12_PROGRAM_TYPE Type;
 
     /// <include file='D3D12_SET_PROGRAM_DESC.xml' path='doc/member[@name="D3D12_SET_PROGRAM_DESC.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12_L22176_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L22669_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.GenericPipeline"]/*' />
@@ -52,6 +52,17 @@ public partial struct D3D12_SET_PROGRAM_DESC
         }
     }
 
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.MlirProgram"]/*' />
+    [UnscopedRef]
+    public ref D3D12_SET_MLIR_PROGRAM_DESC MlirProgram
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.MlirProgram;
+        }
+    }
+
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
     public partial struct _Anonymous_e__Union
@@ -67,5 +78,9 @@ public partial struct D3D12_SET_PROGRAM_DESC
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.WorkGraph"]/*' />
         [FieldOffset(0)]
         public D3D12_SET_WORK_GRAPH_DESC WorkGraph;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.MlirProgram"]/*' />
+        [FieldOffset(0)]
+        public D3D12_SET_MLIR_PROGRAM_DESC MlirProgram;
     }
 }

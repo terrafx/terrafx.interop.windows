@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.MAP_ALIGN_REQUIREMENT"]/*' />
     [NativeTypeName("#define MAP_ALIGN_REQUIREMENT 16")]
     public const int MAP_ALIGN_REQUIREMENT = 16;
 }

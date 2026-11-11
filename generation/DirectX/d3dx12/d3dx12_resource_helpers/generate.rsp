@@ -1,6 +1,11 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+CD3DX12_RESOURCE_DESC2
+D3DX12ConditionallyExpandAPIDesc
+D3DX12GetCopyableFootprints
+D3DX12ResourceDesc0ToDesc2
+D3DX12ResourceDesc1ToDesc2
 D3DX12ConditionallyExpandAPIDesc(D3D12_RESOURCE_DESC1 &, const D3D12_RESOURCE_DESC1 *, const bool, const bool):const CD3DX12_RESOURCE_DESC1 *
 D3DX12GetCopyableFootprints(const D3D12_RESOURCE_DESC &, UINT, UINT, UINT64, D3D12_PLACED_SUBRESOURCE_FOOTPRINT *, UINT *, UINT64 *, UINT64 *):bool 
 D3DX12GetCopyableFootprints(const D3D12_RESOURCE_DESC1 &, UINT, UINT, UINT64, D3D12_PLACED_SUBRESOURCE_FOOTPRINT *, UINT *, UINT64 *, UINT64 *):bool

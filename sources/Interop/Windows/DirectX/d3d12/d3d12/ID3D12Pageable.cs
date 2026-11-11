@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID3D12DeviceChild")]
 public unsafe partial struct ID3D12Pageable : ID3D12Pageable.Interface, INativeGuid
 {
+    /// <include file='ID3D12Pageable.xml' path='doc/member[@name="ID3D12Pageable.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D12Pageable);
 
     public void** lpVtbl;

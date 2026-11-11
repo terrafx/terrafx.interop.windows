@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12ShaderReflectionType"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12ShaderReflectionType
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12ShaderReflectionVariable"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12ShaderReflectionVariable
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12ShaderReflectionConstantBuffer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12ShaderReflectionConstantBuffer
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12ShaderReflection"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12ShaderReflection
     {
@@ -113,6 +117,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12LibraryReflection"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12LibraryReflection
     {
@@ -138,6 +143,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12FunctionReflection"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12FunctionReflection
     {
@@ -163,6 +169,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12FunctionParameterReflection"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12FunctionParameterReflection
     {

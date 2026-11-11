@@ -19,6 +19,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct IDMLDevice1 : IDMLDevice1.Interface, INativeGuid
 {
+    /// <include file='IDMLDevice1.xml' path='doc/member[@name="IDMLDevice1.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDMLDevice1);
 
     public void** lpVtbl;

@@ -18,4 +18,8 @@ public static unsafe partial class DirectX
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12CompilerSerializeVersionedRootSignature"]/*' />
     [DllImport("d3d12stateobjectcompiler", ExactSpelling = true)]
     public static extern HRESULT D3D12CompilerSerializeVersionedRootSignature([NativeTypeName("const D3D12_VERSIONED_ROOT_SIGNATURE_DESC *")] D3D12_VERSIONED_ROOT_SIGNATURE_DESC* pRootSignature, ID3DBlob** ppBlob, ID3DBlob** ppErrorBlob);
+
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12CompilerGetInterface"]/*' />
+    [DllImport("d3d12stateobjectcompiler", ExactSpelling = true)]
+    public static extern HRESULT D3D12CompilerGetInterface([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, void** ppvIface);
 }

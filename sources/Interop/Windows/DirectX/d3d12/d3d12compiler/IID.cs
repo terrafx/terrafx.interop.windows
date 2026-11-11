@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12CompilerFactoryChild"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12CompilerFactoryChild
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12CompilerCacheSession"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12CompilerCacheSession
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12CompilerStateObject"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12CompilerStateObject
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12Compiler"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12Compiler
     {
@@ -113,6 +117,33 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12Compiler1"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12Compiler1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xF2, 0xF9, 0x24, 0xE5,
+                0x7E, 0x49,
+                0xE2, 0x43,
+                0x93,
+                0x86,
+                0x02,
+                0xD5,
+                0x3B,
+                0xDC,
+                0x2D,
+                0x52
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12CompilerFactory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12CompilerFactory
     {

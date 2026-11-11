@@ -145,6 +145,13 @@ public static partial class IIDTests
         Assert.That(IID_ID3D12VideoDecodeCommandList3, Is.EqualTo(new Guid(0x2aee8c37, 0x9562, 0x42da, 0x8a, 0xbf, 0x61, 0xef, 0xeb, 0x2e, 0x45, 0x13)));
     }
 
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoDecodeCommandList4" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoDecodeCommandList4Test()
+    {
+        Assert.That(IID_ID3D12VideoDecodeCommandList4, Is.EqualTo(new Guid(0xa9b3e23c, 0x7d4f, 0x4a90, 0xb6, 0xe1, 0x3c, 0x8a, 0x0f, 0x57, 0x14, 0xd2)));
+    }
+
     /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoProcessCommandList2" /> property is correct.</summary>
     [Test]
     public static void IID_ID3D12VideoProcessCommandList2Test()
@@ -157,6 +164,13 @@ public static partial class IIDTests
     public static void IID_ID3D12VideoProcessCommandList3Test()
     {
         Assert.That(IID_ID3D12VideoProcessCommandList3, Is.EqualTo(new Guid(0x1a0a4ca4, 0x9f08, 0x40ce, 0x95, 0x58, 0xb4, 0x11, 0xfd, 0x26, 0x66, 0xff)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoProcessCommandList4" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoProcessCommandList4Test()
+    {
+        Assert.That(IID_ID3D12VideoProcessCommandList4, Is.EqualTo(new Guid(0xe7fc6a4b, 0x8d2c, 0x4e19, 0xa5, 0xf3, 0x7b, 0x91, 0xd0, 0xc2, 0x8e, 0x56)));
     }
 
     /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoEncodeCommandList1" /> property is correct.</summary>
@@ -220,5 +234,40 @@ public static partial class IIDTests
     public static void IID_ID3D12VideoEncodeCommandList4Test()
     {
         Assert.That(IID_ID3D12VideoEncodeCommandList4, Is.EqualTo(new Guid(0x69aeb5b7, 0x55f2, 0x4012, 0x8b, 0x73, 0x3a, 0x88, 0xd6, 0x5a, 0x20, 0x4c)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoEncodeCommandList5" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoEncodeCommandList5Test()
+    {
+        Assert.That(IID_ID3D12VideoEncodeCommandList5, Is.EqualTo(new Guid(0x5d1a6fc3, 0xb8e7, 0x42a0, 0x97, 0xd5, 0x6e, 0x4c, 0x1f, 0x3a, 0x9b, 0x82)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoProcessor2" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoProcessor2Test()
+    {
+        Assert.That(IID_ID3D12VideoProcessor2, Is.EqualTo(new Guid(0xa24fdd6b, 0xa2e2, 0x41e4, 0x9e, 0xa7, 0xf4, 0x35, 0xe4, 0xb0, 0x37, 0x51)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoProcessCommandList5" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoProcessCommandList5Test()
+    {
+        Assert.That(IID_ID3D12VideoProcessCommandList5, Is.EqualTo(new Guid(0x187116cc, 0x73da, 0x4a7e, 0xb9, 0x85, 0x43, 0x66, 0xb4, 0xc7, 0xa3, 0x0e)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoDevice5" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoDevice5Test()
+    {
+        Assert.That(IID_ID3D12VideoDevice5, Is.EqualTo(new Guid(0xabbac731, 0x6f08, 0x4ff9, 0x8c, 0x7c, 0x40, 0x4b, 0x40, 0x35, 0xbc, 0x5f)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12VideoEncoder1" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12VideoEncoder1Test()
+    {
+        Assert.That(IID_ID3D12VideoEncoder1, Is.EqualTo(new Guid(0xB84DE40C, 0x5B43, 0x4B5F, 0x9A, 0x75, 0xDA, 0x29, 0xF1, 0xB3, 0xC8, 0x33)));
     }
 }

@@ -9,9 +9,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_D3D10_SB_TOKENIZED_PROGRAM_LENGTH"]/*' />
     [NativeTypeName("#define MAX_D3D10_SB_TOKENIZED_PROGRAM_LENGTH (0xffffffff)")]
     public const uint MAX_D3D10_SB_TOKENIZED_PROGRAM_LENGTH = (0xffffffff);
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_D3D10_SB_TOKENIZED_INSTRUCTION_LENGTH"]/*' />
     [NativeTypeName("#define MAX_D3D10_SB_TOKENIZED_INSTRUCTION_LENGTH 127")]
     public const int MAX_D3D10_SB_TOKENIZED_INSTRUCTION_LENGTH = 127;
 }

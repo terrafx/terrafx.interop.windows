@@ -46,6 +46,7 @@ public static unsafe partial class DirectX
     [DllImport("d3d12", ExactSpelling = true)]
     public static extern HRESULT D3D12EnableExperimentalFeatures(uint NumFeatures, [NativeTypeName("const IID *")] Guid* pIIDs, void* pConfigurationStructs, uint* pConfigurationStructSizes);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12ExperimentalShaderModels"]/*' />
     [NativeTypeName("const UUID")]
     public static ref readonly Guid D3D12ExperimentalShaderModels
     {
@@ -71,6 +72,7 @@ public static unsafe partial class DirectX
         }
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12GPUUploadHeapsOnUnsupportedOS"]/*' />
     [NativeTypeName("const UUID")]
     public static ref readonly Guid D3D12GPUUploadHeapsOnUnsupportedOS
     {

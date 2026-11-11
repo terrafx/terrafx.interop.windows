@@ -12,6 +12,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.WKPDID_D3DDebugObjectName"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid WKPDID_D3DDebugObjectName
     {
@@ -37,6 +38,7 @@ public static partial class DirectX
         }
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.WKPDID_D3DDebugObjectNameW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid WKPDID_D3DDebugObjectNameW
     {
@@ -62,6 +64,7 @@ public static partial class DirectX
         }
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.WKPDID_CommentStringW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid WKPDID_CommentStringW
     {
@@ -87,6 +90,7 @@ public static partial class DirectX
         }
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.WKPDID_D3D12UniqueObjectId"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid WKPDID_D3D12UniqueObjectId
     {

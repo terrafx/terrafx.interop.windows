@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID3D12CompilerFactoryChild")]
 public unsafe partial struct ID3D12CompilerCacheSession : ID3D12CompilerCacheSession.Interface, INativeGuid
 {
+    /// <include file='ID3D12CompilerCacheSession.xml' path='doc/member[@name="ID3D12CompilerCacheSession.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D12CompilerCacheSession);
 
     public void** lpVtbl;

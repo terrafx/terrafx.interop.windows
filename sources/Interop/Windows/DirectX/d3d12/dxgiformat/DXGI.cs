@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DXGI
 {
+    /// <include file='DXGI.xml' path='doc/member[@name="DXGI.DXGI_FORMAT_DEFINED"]/*' />
     [NativeTypeName("#define DXGI_FORMAT_DEFINED 1")]
     public const int DXGI_FORMAT_DEFINED = 1;
 }

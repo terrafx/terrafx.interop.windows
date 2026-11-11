@@ -12,6 +12,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DXGI
 {
+    /// <include file='DXGI.xml' path='doc/member[@name="DXGI.DXGI_DEBUG_D3D12"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DXGI_DEBUG_D3D12
     {

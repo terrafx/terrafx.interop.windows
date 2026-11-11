@@ -17,10 +17,35 @@ public partial struct D3D12_VERSION_NUMBER
     [NativeTypeName("UINT64")]
     public ulong Version;
 
+    /// <include file='D3D12_VERSION_NUMBER.xml' path='doc/member[@name="D3D12_VERSION_NUMBER.Components"]/*' />
+    [FieldOffset(0)]
+    [NativeTypeName("struct D3D12_VERSION_NUMBER_COMPONENTS")]
+    public D3D12_VERSION_NUMBER_COMPONENTS Components;
+
     /// <include file='D3D12_VERSION_NUMBER.xml' path='doc/member[@name="D3D12_VERSION_NUMBER.VersionParts"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("UINT16[4]")]
     public _VersionParts_e__FixedBuffer VersionParts;
+
+    /// <include file='D3D12_VERSION_NUMBER_COMPONENTS.xml' path='doc/member[@name="D3D12_VERSION_NUMBER_COMPONENTS"]/*' />
+    public partial struct D3D12_VERSION_NUMBER_COMPONENTS
+    {
+        /// <include file='D3D12_VERSION_NUMBER_COMPONENTS.xml' path='doc/member[@name="D3D12_VERSION_NUMBER_COMPONENTS.Revision"]/*' />
+        [NativeTypeName("UINT16")]
+        public ushort Revision;
+
+        /// <include file='D3D12_VERSION_NUMBER_COMPONENTS.xml' path='doc/member[@name="D3D12_VERSION_NUMBER_COMPONENTS.Build"]/*' />
+        [NativeTypeName("UINT16")]
+        public ushort Build;
+
+        /// <include file='D3D12_VERSION_NUMBER_COMPONENTS.xml' path='doc/member[@name="D3D12_VERSION_NUMBER_COMPONENTS.Minor"]/*' />
+        [NativeTypeName("UINT16")]
+        public ushort Minor;
+
+        /// <include file='D3D12_VERSION_NUMBER_COMPONENTS.xml' path='doc/member[@name="D3D12_VERSION_NUMBER_COMPONENTS.Major"]/*' />
+        [NativeTypeName("UINT16")]
+        public ushort Major;
+    }
 
     /// <include file='_VersionParts_e__FixedBuffer.xml' path='doc/member[@name="_VersionParts_e__FixedBuffer"]/*' />
     [InlineArray(4)]

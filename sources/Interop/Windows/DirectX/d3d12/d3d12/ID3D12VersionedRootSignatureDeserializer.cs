@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID3D12VersionedRootSignatureDeserializer : ID3D12VersionedRootSignatureDeserializer.Interface, INativeGuid
 {
+    /// <include file='ID3D12VersionedRootSignatureDeserializer.xml' path='doc/member[@name="ID3D12VersionedRootSignatureDeserializer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D12VersionedRootSignatureDeserializer);
 
     public void** lpVtbl;

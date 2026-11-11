@@ -1,0 +1,22 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.620.2
+// Original source is Copyright © Microsoft. Licensed under the MIT license
+
+namespace TerraFX.Interop.DirectX;
+
+/// <include file='D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAGS"]/*' />
+public enum D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAGS
+{
+    /// <include file='D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAGS.D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAG_NONE"]/*' />
+    D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAG_NONE = 0,
+
+    /// <include file='D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAGS.D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAG_SUPPORTED"]/*' />
+    D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAG_SUPPORTED = 0x1,
+
+    /// <include file='D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAGS.D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAG_1DLUT_SPACING_CURVE"]/*' />
+    D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAG_1DLUT_SPACING_CURVE = 0x2,
+
+    /// <include file='D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAGS.xml' path='doc/member[@name="D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAGS.D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAG_1DLUT_NON_MONOTONICALLY_INCREASING_CURVE"]/*' />
+    D3D12_VIDEO_PROCESS_LUT_SUPPORT_FLAG_1DLUT_NON_MONOTONICALLY_INCREASING_CURVE = 0x4,
+}

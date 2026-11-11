@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12Debug"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12Debug
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12Debug1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12Debug1
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12Debug2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12Debug2
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12Debug3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12Debug3
     {
@@ -113,6 +117,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12Debug4"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12Debug4
     {
@@ -138,6 +143,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12Debug5"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12Debug5
     {
@@ -163,6 +169,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12Debug6"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12Debug6
     {
@@ -188,6 +195,33 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12Debug7"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12Debug7
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xF9, 0x09, 0xD4, 0x31,
+                0xB4, 0x22,
+                0x9D, 0x40,
+                0x9C,
+                0x44,
+                0xF7,
+                0x2D,
+                0xA8,
+                0xA2,
+                0xBA,
+                0x61
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12DebugDevice1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12DebugDevice1
     {
@@ -213,6 +247,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12DebugDevice"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12DebugDevice
     {
@@ -238,6 +273,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12DebugDevice2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12DebugDevice2
     {
@@ -263,6 +299,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12DebugCommandQueue"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12DebugCommandQueue
     {
@@ -288,6 +325,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12DebugCommandQueue1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12DebugCommandQueue1
     {
@@ -313,6 +351,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12DebugCommandList1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12DebugCommandList1
     {
@@ -338,6 +377,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12DebugCommandList"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12DebugCommandList
     {
@@ -363,6 +403,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12DebugCommandList2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12DebugCommandList2
     {
@@ -388,6 +429,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12DebugCommandList3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12DebugCommandList3
     {
@@ -413,6 +455,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12SharingContract"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12SharingContract
     {
@@ -438,6 +481,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12ManualWriteTrackingResource"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12ManualWriteTrackingResource
     {
@@ -463,6 +507,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12InfoQueue"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12InfoQueue
     {
@@ -488,6 +533,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12InfoQueue1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12InfoQueue1
     {

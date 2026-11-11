@@ -7,11 +7,13 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
-public static partial class DirectX
+public static unsafe partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.WKPDID_D3DAutoDebugObjectNameW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid WKPDID_D3DAutoDebugObjectNameW
     {
@@ -36,4 +38,8 @@ public static partial class DirectX
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }
     }
+
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D12SDKLayersGetInterface"]/*' />
+    [DllImport("d3d12sdklayers", ExactSpelling = true)]
+    public static extern HRESULT D3D12SDKLayersGetInterface([NativeTypeName("const IID &")] Guid* rclsid, [NativeTypeName("const IID &")] Guid* riid, void** ppvInterface);
 }

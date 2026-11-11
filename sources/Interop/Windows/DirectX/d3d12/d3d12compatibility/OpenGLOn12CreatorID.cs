@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct OpenGLOn12CreatorID : OpenGLOn12CreatorID.Interface, INativeGuid
 {
+    /// <include file='OpenGLOn12CreatorID.xml' path='doc/member[@name="OpenGLOn12CreatorID.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_OpenGLOn12CreatorID);
 
     public void** lpVtbl;

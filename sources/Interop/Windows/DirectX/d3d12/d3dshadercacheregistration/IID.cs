@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3DShaderCacheInstallerClient"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3DShaderCacheInstallerClient
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3DShaderCacheComponent"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3DShaderCacheComponent
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3DShaderCacheApplication"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3DShaderCacheApplication
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3DShaderCacheInstaller"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3DShaderCacheInstaller
     {
@@ -113,6 +117,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3DShaderCacheExplorer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3DShaderCacheExplorer
     {
@@ -138,6 +143,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3DShaderCacheInstallerFactory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3DShaderCacheInstallerFactory
     {

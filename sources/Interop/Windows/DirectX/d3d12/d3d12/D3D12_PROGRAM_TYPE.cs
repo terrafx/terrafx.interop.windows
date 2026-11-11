@@ -16,4 +16,7 @@ public enum D3D12_PROGRAM_TYPE
 
     /// <include file='D3D12_PROGRAM_TYPE.xml' path='doc/member[@name="D3D12_PROGRAM_TYPE.D3D12_PROGRAM_TYPE_WORK_GRAPH"]/*' />
     D3D12_PROGRAM_TYPE_WORK_GRAPH = 5,
+
+    /// <include file='D3D12_PROGRAM_TYPE.xml' path='doc/member[@name="D3D12_PROGRAM_TYPE.D3D12_PROGRAM_TYPE_MLIR_PROGRAM"]/*' />
+    D3D12_PROGRAM_TYPE_MLIR_PROGRAM = 6,
 }

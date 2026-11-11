@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID3DShaderCacheApplication : ID3DShaderCacheApplication.Interface, INativeGuid
 {
+    /// <include file='ID3DShaderCacheApplication.xml' path='doc/member[@name="ID3DShaderCacheApplication.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3DShaderCacheApplication);
 
     public void** lpVtbl;
