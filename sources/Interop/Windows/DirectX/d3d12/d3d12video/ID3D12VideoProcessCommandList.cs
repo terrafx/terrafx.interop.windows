@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID3D12CommandList")]
 public unsafe partial struct ID3D12VideoProcessCommandList : ID3D12VideoProcessCommandList.Interface, INativeGuid
 {
+    /// <include file='ID3D12VideoProcessCommandList.xml' path='doc/member[@name="ID3D12VideoProcessCommandList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D12VideoProcessCommandList);
 
     public void** lpVtbl;

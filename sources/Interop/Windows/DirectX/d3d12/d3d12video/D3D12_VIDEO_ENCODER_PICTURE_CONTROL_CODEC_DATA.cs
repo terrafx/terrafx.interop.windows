@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Diagnostics.CodeAnalysis;
@@ -16,7 +16,7 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA
     public uint DataSize;
 
     /// <include file='D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12video_L8518_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12video_L9271_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pH264PicData"]/*' />
@@ -69,18 +69,22 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pH264PicData"]/*' />
         [FieldOffset(0)]
+        [NativeTypeName("const D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264 *")]
         public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264* pH264PicData;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pHEVCPicData"]/*' />
         [FieldOffset(0)]
+        [NativeTypeName("const D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC *")]
         public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC* pHEVCPicData;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pHEVCPicData1"]/*' />
         [FieldOffset(0)]
+        [NativeTypeName("const D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC1 *")]
         public D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC1* pHEVCPicData1;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pAV1PicData"]/*' />
         [FieldOffset(0)]
+        [NativeTypeName("const D3D12_VIDEO_ENCODER_AV1_PICTURE_CONTROL_CODEC_DATA *")]
         public D3D12_VIDEO_ENCODER_AV1_PICTURE_CONTROL_CODEC_DATA* pAV1PicData;
     }
 }

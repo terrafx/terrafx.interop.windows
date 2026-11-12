@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -22,4 +22,16 @@ public enum D3D12_STATE_OBJECT_FLAGS
 
     /// <include file='D3D12_STATE_OBJECT_FLAGS.xml' path='doc/member[@name="D3D12_STATE_OBJECT_FLAGS.D3D12_STATE_OBJECT_FLAG_ALLOW_STATE_OBJECT_ADDITIONS"]/*' />
     D3D12_STATE_OBJECT_FLAG_ALLOW_STATE_OBJECT_ADDITIONS = 0x4,
+
+    /// <include file='D3D12_STATE_OBJECT_FLAGS.xml' path='doc/member[@name="D3D12_STATE_OBJECT_FLAGS.D3D12_STATE_OBJECT_FLAG_FULL_SPECIALIZATION"]/*' />
+    D3D12_STATE_OBJECT_FLAG_FULL_SPECIALIZATION = 0x8,
+
+    /// <include file='D3D12_STATE_OBJECT_FLAGS.xml' path='doc/member[@name="D3D12_STATE_OBJECT_FLAGS.D3D12_STATE_OBJECT_FLAG_PREFER_MINIMAL_LINK"]/*' />
+    D3D12_STATE_OBJECT_FLAG_PREFER_MINIMAL_LINK = 0x200,
+
+    /// <include file='D3D12_STATE_OBJECT_FLAGS.xml' path='doc/member[@name="D3D12_STATE_OBJECT_FLAGS.D3D12_STATE_OBJECT_FLAG_PREFER_MINIMAL_LINK_BACKGROUND_SPECIALIZE"]/*' />
+    D3D12_STATE_OBJECT_FLAG_PREFER_MINIMAL_LINK_BACKGROUND_SPECIALIZE = 0x400,
+
+    /// <include file='D3D12_STATE_OBJECT_FLAGS.xml' path='doc/member[@name="D3D12_STATE_OBJECT_FLAGS.D3D12_STATE_OBJECT_FLAG_RAYQUERY_ALLOW_OPACITY_MICROMAPS_ON_PRE_SM69_SHADERS"]/*' />
+    D3D12_STATE_OBJECT_FLAG_RAYQUERY_ALLOW_OPACITY_MICROMAPS_ON_PRE_SM69_SHADERS = 0x800,
 }

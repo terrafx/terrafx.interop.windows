@@ -56,12 +56,12 @@ public static partial class Windows
 
     public static HRESULT MAKE_HRESULT(int sev, int fac, int code)
     {
-        return (int)(((uint)sev << 31) | ((uint)fac << 16) | (uint)code);
+        return unchecked((int)(((uint)sev << 31) | ((uint)fac << 16) | (uint)code));
     }
 
     public static HRESULT MAKE_SCODE(int sev, int fac, int code)
     {
-        return (int)(((uint)sev << 31) | ((uint)fac << 16) | (uint)code);
+        return unchecked((int)(((uint)sev << 31) | ((uint)fac << 16) | (uint)code));
     }
 
     public static HRESULT HRESULT_FROM_WIN32(int x)

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
@@ -73,5 +73,26 @@ public static partial class CLSIDTests
     public static void CLSID_D3D12ApplicationIdentityTest()
     {
         Assert.That(CLSID_D3D12ApplicationIdentity, Is.EqualTo(new Guid(0x08d8e1e8, 0x75a6, 0x42a7, 0xbf, 0x3a, 0xd0, 0x5f, 0xe5, 0x29, 0xc4, 0x7c)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_D3D12AsyncCommandsFallback" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_D3D12AsyncCommandsFallbackTest()
+    {
+        Assert.That(CLSID_D3D12AsyncCommandsFallback, Is.EqualTo(new Guid(0xef4992f0, 0x0fae, 0x424e, 0xb4, 0x84, 0x7b, 0xcd, 0x8e, 0x56, 0x9e, 0x3e)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_D3D12InfoQueue" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_D3D12InfoQueueTest()
+    {
+        Assert.That(CLSID_D3D12InfoQueue, Is.EqualTo(new Guid(0x4a87fbe2, 0x9e5b, 0x4c5d, 0xa8, 0x21, 0x8e, 0x06, 0xf8, 0x33, 0x71, 0x9a)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="CLSID_D3D12StateObjectDatabaseCapture" /> property is correct.</summary>
+    [Test]
+    public static void CLSID_D3D12StateObjectDatabaseCaptureTest()
+    {
+        Assert.That(CLSID_D3D12StateObjectDatabaseCapture, Is.EqualTo(new Guid(0x2b6c3e2f, 0xeb8e, 0x4db9, 0x8c, 0xf4, 0x1e, 0x04, 0x7e, 0x67, 0x1b, 0x7f)));
     }
 }

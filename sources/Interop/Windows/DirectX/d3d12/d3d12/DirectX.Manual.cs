@@ -16,6 +16,14 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    public static ulong D3D12_MAKE_VERSION_NUMBER(ulong major, ulong minor, ulong build, ulong rev)
+    {
+        return ((major & 0xFFFFUL) << 48)
+             | ((minor & 0xFFFFUL) << 32)
+             | ((build & 0xFFFFUL) << 16)
+             | (rev & 0xFFFFUL);
+    }
+
     public static ref readonly Guid D3D12ComputeOnlyDevices
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

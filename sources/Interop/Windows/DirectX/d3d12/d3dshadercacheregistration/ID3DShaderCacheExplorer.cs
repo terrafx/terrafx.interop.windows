@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3dshadercacheregistration.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3dshadercacheregistration.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ID3DShaderCacheExplorer : ID3DShaderCacheExplorer.Interface, INativeGuid
 {
+    /// <include file='ID3DShaderCacheExplorer.xml' path='doc/member[@name="ID3DShaderCacheExplorer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3DShaderCacheExplorer);
 
     public void** lpVtbl;

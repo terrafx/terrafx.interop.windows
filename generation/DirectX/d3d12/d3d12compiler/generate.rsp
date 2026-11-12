@@ -16,4 +16,5 @@ TerraFX.Interop.DirectX
 D3D12_COMPILER_VALUE_TYPE_FLAGS=Flags
 --with-library-path
 D3D12CompilerCreateFactory=d3d12stateobjectcompiler
+D3D12CompilerGetInterface=d3d12stateobjectcompiler
 D3D12CompilerSerializeVersionedRootSignature=d3d12stateobjectcompiler

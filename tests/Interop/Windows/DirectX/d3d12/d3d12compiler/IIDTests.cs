@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12compiler.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3d12compiler.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
@@ -38,6 +38,13 @@ public static partial class IIDTests
     public static void IID_ID3D12CompilerTest()
     {
         Assert.That(IID_ID3D12Compiler, Is.EqualTo(new Guid(0x8c403c12, 0x993b, 0x4583, 0x80, 0xf1, 0x68, 0x24, 0x13, 0x8f, 0xa6, 0x8e)));
+    }
+
+    /// <summary>Validates that the value of the <see cref="IID_ID3D12Compiler1" /> property is correct.</summary>
+    [Test]
+    public static void IID_ID3D12Compiler1Test()
+    {
+        Assert.That(IID_ID3D12Compiler1, Is.EqualTo(new Guid(0xe524f9f2, 0x497e, 0x43e2, 0x93, 0x86, 0x02, 0xd5, 0x3b, 0xdc, 0x2d, 0x52)));
     }
 
     /// <summary>Validates that the value of the <see cref="IID_ID3D12CompilerFactory" /> property is correct.</summary>

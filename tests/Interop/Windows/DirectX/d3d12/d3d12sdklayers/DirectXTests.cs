@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12sdklayers.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3d12sdklayers.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using NUnit.Framework;
@@ -10,7 +10,7 @@ using static TerraFX.Interop.DirectX.DirectX;
 namespace TerraFX.Interop.DirectX.UnitTests;
 
 /// <summary>Provides validation of the <see cref="DirectX" /> class.</summary>
-public static partial class DirectXTests
+public static unsafe partial class DirectXTests
 {
     /// <summary>Validates that the value of the <see cref="WKPDID_D3DAutoDebugObjectNameW" /> property is correct.</summary>
     [Test]

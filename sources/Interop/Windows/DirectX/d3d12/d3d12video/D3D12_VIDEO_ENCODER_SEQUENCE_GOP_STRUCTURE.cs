@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Diagnostics.CodeAnalysis;
@@ -16,7 +16,7 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE
     public uint DataSize;
 
     /// <include file='D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE.xml' path='doc/member[@name="D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12video_L7645_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12video_L8398_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pH264GroupOfPictures"]/*' />
@@ -58,14 +58,17 @@ public unsafe partial struct D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pH264GroupOfPictures"]/*' />
         [FieldOffset(0)]
+        [NativeTypeName("const D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_H264 *")]
         public D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_H264* pH264GroupOfPictures;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pHEVCGroupOfPictures"]/*' />
         [FieldOffset(0)]
+        [NativeTypeName("const D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_HEVC *")]
         public D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE_HEVC* pHEVCGroupOfPictures;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pAV1SequenceStructure"]/*' />
         [FieldOffset(0)]
+        [NativeTypeName("const D3D12_VIDEO_ENCODER_AV1_SEQUENCE_STRUCTURE *")]
         public D3D12_VIDEO_ENCODER_AV1_SEQUENCE_STRUCTURE* pAV1SequenceStructure;
     }
 }

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3dx12_resource_helpers.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3dx12_resource_helpers.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Diagnostics;
@@ -238,8 +238,7 @@ public static unsafe partial class DirectX
         return (aligned > uAlign) ? aligned : uAlign;
     }
 
-    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DX12GetCopyableFootprints"]/*' />
-    public static bool D3DX12GetCopyableFootprints([NativeTypeName("const D3D12_RESOURCE_DESC1 &")] in D3D12_RESOURCE_DESC1 ResourceDesc, uint FirstSubresource, uint NumSubresources, [NativeTypeName("UINT64")] ulong BaseOffset, D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, uint* pNumRows, [NativeTypeName("UINT64 *")] ulong* pRowSizeInBytes, [NativeTypeName("UINT64 *")] ulong* pTotalBytes)
+    public static bool D3DX12GetCopyableFootprints([NativeTypeName("const D3D12_RESOURCE_DESC2 &")] in D3D12_RESOURCE_DESC2 ResourceDesc, uint FirstSubresource, uint NumSubresources, [NativeTypeName("UINT64")] ulong BaseOffset, D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, uint* pNumRows, [NativeTypeName("UINT64 *")] ulong* pRowSizeInBytes, [NativeTypeName("UINT64 *")] ulong* pTotalBytes)
     {
         const ulong uint64_max = ~0ul;
         ulong TotalBytes = uint64_max;
@@ -250,11 +249,16 @@ public static unsafe partial class DirectX
 
         DXGI_FORMAT Format = ResourceDesc.Format;
 
-        Unsafe.SkipInit(out D3D12_RESOURCE_DESC1 LresourceDesc);
-        ref readonly D3D12_RESOURCE_DESC1 resourceDesc = ref D3DX12ConditionallyExpandAPIDesc(ref LresourceDesc, in ResourceDesc);
+        Unsafe.SkipInit(out D3D12_RESOURCE_DESC2 LresourceDesc);
+        ref readonly D3D12_RESOURCE_DESC2 resourceDesc = ref D3DX12ConditionallyExpandAPIDesc(ref LresourceDesc, in ResourceDesc);
 
         // Check if its a valid format
         Debug.Assert(D3D12_PROPERTY_LAYOUT_FORMAT_TABLE.FormatExists(Format));
+
+        if ((ResourceDesc.Dimension == D3D12_RESOURCE_DIMENSION_BUFFER) && (ResourceDesc.Width >= uint.MaxValue))
+        {
+            return false;
+        }
 
         uint WidthAlignment = D3D12_PROPERTY_LAYOUT_FORMAT_TABLE.GetWidthAlignment(Format);
         uint HeightAlignment = D3D12_PROPERTY_LAYOUT_FORMAT_TABLE.GetHeightAlignment(Format);
@@ -268,7 +272,7 @@ public static unsafe partial class DirectX
             Debug.Assert(resourceDesc.MipLevels != 0);
             uint subresourceCount = (uint)(resourceDesc.MipLevels) * resourceDesc.ArraySize() * D3D12_PROPERTY_LAYOUT_FORMAT_TABLE.GetPlaneCount(resourceDesc.Format);
 
-            if (Subresource > subresourceCount)
+            if (Subresource >= subresourceCount)
             {
                 break;
             }
@@ -368,9 +372,16 @@ public static unsafe partial class DirectX
     }
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DX12GetCopyableFootprints"]/*' />
+    public static bool D3DX12GetCopyableFootprints([NativeTypeName("const D3D12_RESOURCE_DESC1 &")] in D3D12_RESOURCE_DESC1 pResourceDesc, uint FirstSubresource, uint NumSubresources, [NativeTypeName("UINT64")] ulong BaseOffset, D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, uint* pNumRows, [NativeTypeName("UINT64 *")] ulong* pRowSizeInBytes, [NativeTypeName("UINT64 *")] ulong* pTotalBytes)
+    {
+        D3D12_RESOURCE_DESC2 desc = D3DX12ResourceDesc1ToDesc2(in pResourceDesc);
+        return D3DX12GetCopyableFootprints(in desc, FirstSubresource, NumSubresources, BaseOffset, pLayouts, pNumRows, pRowSizeInBytes, pTotalBytes);
+    }
+
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DX12GetCopyableFootprints"]/*' />
     public static bool D3DX12GetCopyableFootprints([NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC pResourceDesc, uint FirstSubresource, uint NumSubresources, [NativeTypeName("UINT64")] ulong BaseOffset, D3D12_PLACED_SUBRESOURCE_FOOTPRINT* pLayouts, uint* pNumRows, [NativeTypeName("UINT64 *")] ulong* pRowSizeInBytes, [NativeTypeName("UINT64 *")] ulong* pTotalBytes)
     {
-        D3D12_RESOURCE_DESC1 desc = D3DX12ResourceDesc0ToDesc1(pResourceDesc);
+        D3D12_RESOURCE_DESC2 desc = D3DX12ResourceDesc0ToDesc2(in pResourceDesc);
         return D3DX12GetCopyableFootprints(in desc, FirstSubresource, NumSubresources, BaseOffset, pLayouts, pNumRows, pRowSizeInBytes, pTotalBytes);
     }
 
@@ -399,5 +410,15 @@ public static unsafe partial class DirectX
             },
         };
         return desc1;
+    }
+
+    public static D3D12_RESOURCE_DESC2 D3DX12ResourceDesc0ToDesc2([NativeTypeName("const D3D12_RESOURCE_DESC &")] in D3D12_RESOURCE_DESC desc0)
+    {
+        return new D3D12_RESOURCE_DESC2(in desc0);
+    }
+
+    public static D3D12_RESOURCE_DESC2 D3DX12ResourceDesc1ToDesc2([NativeTypeName("const D3D12_RESOURCE_DESC1 &")] in D3D12_RESOURCE_DESC1 desc1)
+    {
+        return new D3D12_RESOURCE_DESC2(in desc1);
     }
 }

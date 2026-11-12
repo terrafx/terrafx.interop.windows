@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Diagnostics.CodeAnalysis;
@@ -16,7 +16,7 @@ public partial struct D3D12_INDIRECT_ARGUMENT_DESC
     public D3D12_INDIRECT_ARGUMENT_TYPE Type;
 
     /// <include file='D3D12_INDIRECT_ARGUMENT_DESC.xml' path='doc/member[@name="D3D12_INDIRECT_ARGUMENT_DESC.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_d3d12_L4929_C5")]
+    [NativeTypeName("__AnonymousRecord_d3d12_L5087_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.VertexBuffer"]/*' />
@@ -91,32 +91,32 @@ public partial struct D3D12_INDIRECT_ARGUMENT_DESC
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.VertexBuffer"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_d3d12_L4931_C9")]
+        [NativeTypeName("__AnonymousRecord_d3d12_L5089_C9")]
         public _VertexBuffer_e__Struct VertexBuffer;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Constant"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_d3d12_L4935_C9")]
+        [NativeTypeName("__AnonymousRecord_d3d12_L5093_C9")]
         public _Constant_e__Struct Constant;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ConstantBufferView"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_d3d12_L4941_C9")]
+        [NativeTypeName("__AnonymousRecord_d3d12_L5099_C9")]
         public _ConstantBufferView_e__Struct ConstantBufferView;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ShaderResourceView"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_d3d12_L4945_C9")]
+        [NativeTypeName("__AnonymousRecord_d3d12_L5103_C9")]
         public _ShaderResourceView_e__Struct ShaderResourceView;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.UnorderedAccessView"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_d3d12_L4949_C9")]
+        [NativeTypeName("__AnonymousRecord_d3d12_L5107_C9")]
         public _UnorderedAccessView_e__Struct UnorderedAccessView;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.IncrementingConstant"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_d3d12_L4953_C9")]
+        [NativeTypeName("__AnonymousRecord_d3d12_L5111_C9")]
         public _IncrementingConstant_e__Struct IncrementingConstant;
 
         /// <include file='_VertexBuffer_e__Struct.xml' path='doc/member[@name="_VertexBuffer_e__Struct"]/*' />

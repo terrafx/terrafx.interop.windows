@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3dx12_property_format_table.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3dx12_property_format_table.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -221,7 +221,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                _bitfield2 = (_bitfield2 & ~(0x1u << 9)) | (((uint)(value) & 0x1) << 9);
+                _bitfield2 = (_bitfield2 & ~(0x1u << 9)) | ((unchecked((uint)value) & 0x1) << 9);
             }
         }
 
@@ -237,7 +237,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                _bitfield2 = (_bitfield2 & ~(0x3u << 10)) | (((uint)(value) & 0x3) << 10);
+                _bitfield2 = (_bitfield2 & ~(0x3u << 10)) | ((unchecked((uint)value) & 0x3) << 10);
             }
         }
 
@@ -253,7 +253,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                _bitfield2 = (_bitfield2 & ~(0x7u << 12)) | (((uint)(value) & 0x7) << 12);
+                _bitfield2 = (_bitfield2 & ~(0x7u << 12)) | ((unchecked((uint)value) & 0x7) << 12);
             }
         }
 
@@ -269,7 +269,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                _bitfield2 = (_bitfield2 & ~(0x7u << 15)) | (((uint)(value) & 0x7) << 15);
+                _bitfield2 = (_bitfield2 & ~(0x7u << 15)) | ((unchecked((uint)value) & 0x7) << 15);
             }
         }
 
@@ -285,7 +285,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                _bitfield2 = (_bitfield2 & ~(0x7u << 18)) | (((uint)(value) & 0x7) << 18);
+                _bitfield2 = (_bitfield2 & ~(0x7u << 18)) | ((unchecked((uint)value) & 0x7) << 18);
             }
         }
 
@@ -301,7 +301,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                _bitfield2 = (_bitfield2 & ~(0x7u << 21)) | (((uint)(value) & 0x7) << 21);
+                _bitfield2 = (_bitfield2 & ~(0x7u << 21)) | ((unchecked((uint)value) & 0x7) << 21);
             }
         }
 
@@ -317,7 +317,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                _bitfield2 = (_bitfield2 & ~(0x7u << 24)) | (((uint)(value) & 0x7) << 24);
+                _bitfield2 = (_bitfield2 & ~(0x7u << 24)) | ((unchecked((uint)value) & 0x7) << 24);
             }
         }
 
@@ -333,7 +333,7 @@ public unsafe partial struct D3D12_PROPERTY_LAYOUT_FORMAT_TABLE
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set
             {
-                _bitfield2 = (_bitfield2 & ~(0x7u << 27)) | (((uint)(value) & 0x7) << 27);
+                _bitfield2 = (_bitfield2 & ~(0x7u << 27)) | ((unchecked((uint)value) & 0x7) << 27);
             }
         }
 

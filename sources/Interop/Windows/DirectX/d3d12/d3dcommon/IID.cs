@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3dcommon.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3dcommon.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D10Blob"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D10Blob
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3DBlob"]/*' />
     [NativeTypeName("#define IID_ID3DBlob IID_ID3D10Blob")]
     public static ref readonly Guid IID_ID3DBlob => ref IID_ID3D10Blob;
 

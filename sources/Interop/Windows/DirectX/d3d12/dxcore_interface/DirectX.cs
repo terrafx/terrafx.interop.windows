@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from dxcore_interface.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from dxcore_interface.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -12,6 +12,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DXCORE_ADAPTER_ATTRIBUTE_D3D11_GRAPHICS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DXCORE_ADAPTER_ATTRIBUTE_D3D11_GRAPHICS
     {
@@ -37,6 +38,7 @@ public static partial class DirectX
         }
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DXCORE_ADAPTER_ATTRIBUTE_D3D12_GRAPHICS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DXCORE_ADAPTER_ATTRIBUTE_D3D12_GRAPHICS
     {
@@ -62,6 +64,7 @@ public static partial class DirectX
         }
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DXCORE_ADAPTER_ATTRIBUTE_D3D12_CORE_COMPUTE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DXCORE_ADAPTER_ATTRIBUTE_D3D12_CORE_COMPUTE
     {
@@ -87,6 +90,7 @@ public static partial class DirectX
         }
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DXCORE_ADAPTER_ATTRIBUTE_D3D12_GENERIC_ML"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DXCORE_ADAPTER_ATTRIBUTE_D3D12_GENERIC_ML
     {
@@ -112,6 +116,7 @@ public static partial class DirectX
         }
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DXCORE_ADAPTER_ATTRIBUTE_D3D12_GENERIC_MEDIA"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DXCORE_ADAPTER_ATTRIBUTE_D3D12_GENERIC_MEDIA
     {
@@ -137,6 +142,7 @@ public static partial class DirectX
         }
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DXCORE_HARDWARE_TYPE_ATTRIBUTE_GPU"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DXCORE_HARDWARE_TYPE_ATTRIBUTE_GPU
     {
@@ -162,6 +168,7 @@ public static partial class DirectX
         }
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DXCORE_HARDWARE_TYPE_ATTRIBUTE_COMPUTE_ACCELERATOR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DXCORE_HARDWARE_TYPE_ATTRIBUTE_COMPUTE_ACCELERATOR
     {
@@ -187,6 +194,7 @@ public static partial class DirectX
         }
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DXCORE_HARDWARE_TYPE_ATTRIBUTE_NPU"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DXCORE_HARDWARE_TYPE_ATTRIBUTE_NPU
     {
@@ -212,6 +220,7 @@ public static partial class DirectX
         }
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DXCORE_HARDWARE_TYPE_ATTRIBUTE_MEDIA_ACCELERATOR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DXCORE_HARDWARE_TYPE_ATTRIBUTE_MEDIA_ACCELERATOR
     {
@@ -237,6 +246,7 @@ public static partial class DirectX
         }
     }
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX._FACDXCORE"]/*' />
     [NativeTypeName("#define _FACDXCORE 0x880")]
     public const int _FACDXCORE = 0x880;
 }

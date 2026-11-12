@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -12,6 +12,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3D12
 {
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_MPEG2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_MPEG2
     {
@@ -37,6 +38,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_MPEG1_AND_MPEG2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_MPEG1_AND_MPEG2
     {
@@ -62,6 +64,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_H264"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_H264
     {
@@ -87,6 +90,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_H264_STEREO_PROGRESSIVE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_H264_STEREO_PROGRESSIVE
     {
@@ -112,6 +116,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_H264_STEREO"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_H264_STEREO
     {
@@ -137,6 +142,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_H264_MULTIVIEW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_H264_MULTIVIEW
     {
@@ -162,6 +168,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_VC1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_VC1
     {
@@ -187,6 +194,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_VC1_D2010"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_VC1_D2010
     {
@@ -212,6 +220,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_MPEG4PT2_SIMPLE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_MPEG4PT2_SIMPLE
     {
@@ -237,6 +246,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_MPEG4PT2_ADVSIMPLE_NOGMC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_MPEG4PT2_ADVSIMPLE_NOGMC
     {
@@ -262,6 +272,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN
     {
@@ -287,6 +298,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10
     {
@@ -312,6 +324,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_HEVC_MONOCHROME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MONOCHROME
     {
@@ -337,6 +350,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_HEVC_MONOCHROME10"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MONOCHROME10
     {
@@ -362,6 +376,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12
     {
@@ -387,6 +402,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_422"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_422
     {
@@ -412,6 +428,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12_422"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12_422
     {
@@ -437,6 +454,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN_444"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN_444
     {
@@ -462,6 +480,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_EXT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_EXT
     {
@@ -487,6 +506,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_444"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN10_444
     {
@@ -512,6 +532,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12_444"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN12_444
     {
@@ -537,6 +558,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN16"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_HEVC_MAIN16
     {
@@ -562,6 +584,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_VP9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_VP9
     {
@@ -587,6 +610,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_VP9_10BIT_PROFILE2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_VP9_10BIT_PROFILE2
     {
@@ -612,6 +636,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_VP8"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_VP8
     {
@@ -637,6 +662,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_AV1_PROFILE0"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_AV1_PROFILE0
     {
@@ -662,6 +688,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_AV1_PROFILE1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_AV1_PROFILE1
     {
@@ -687,6 +714,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_AV1_PROFILE2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_AV1_PROFILE2
     {
@@ -712,6 +740,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_AV1_12BIT_PROFILE2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_AV1_12BIT_PROFILE2
     {
@@ -737,6 +766,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_AV1_12BIT_PROFILE2_420"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_AV1_12BIT_PROFILE2_420
     {
@@ -762,6 +792,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_MJPEG_VLD_420"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_MJPEG_VLD_420
     {
@@ -787,6 +818,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_MJPEG_VLD_422"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_MJPEG_VLD_422
     {
@@ -812,6 +844,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_MJPEG_VLD_444"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_MJPEG_VLD_444
     {
@@ -837,6 +870,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_MJPEG_VLD_4444"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_MJPEG_VLD_4444
     {
@@ -862,6 +896,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_JPEG_VLD_420"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_JPEG_VLD_420
     {
@@ -887,6 +922,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_JPEG_VLD_422"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_JPEG_VLD_422
     {
@@ -912,6 +948,7 @@ public static partial class D3D12
         }
     }
 
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_JPEG_VLD_444"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_JPEG_VLD_444
     {
@@ -930,6 +967,188 @@ public static partial class D3D12
                 0x71,
                 0x3F,
                 0x65
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_APV_VLD_422_10"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_APV_VLD_422_10
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x9D, 0x70, 0x6A, 0x22,
+                0x12, 0xAE,
+                0xC5, 0x44,
+                0xBA,
+                0x21,
+                0x16,
+                0x4F,
+                0xEE,
+                0xB7,
+                0xF9,
+                0xB6
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_APV_VLD_422_12"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_APV_VLD_422_12
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xAD, 0x52, 0xF1, 0xF6,
+                0xE5, 0x94,
+                0xFA, 0x4B,
+                0x92,
+                0x27,
+                0x67,
+                0x6C,
+                0xDD,
+                0xEF,
+                0xF4,
+                0x2B
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_APV_VLD_444_10"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_APV_VLD_444_10
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x7D, 0x8D, 0x4A, 0x6A,
+                0x10, 0x76,
+                0x9F, 0x46,
+                0x85,
+                0x5F,
+                0x39,
+                0xF1,
+                0x30,
+                0x51,
+                0xC0,
+                0x13
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_APV_VLD_444_12"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_APV_VLD_444_12
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x1C, 0x9A, 0x03, 0xF1,
+                0x08, 0xE2,
+                0xC1, 0x45,
+                0x95,
+                0x2C,
+                0x04,
+                0x08,
+                0x41,
+                0xB6,
+                0x76,
+                0x67
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_APV_VLD_4444_10"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_APV_VLD_4444_10
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xB9, 0x99, 0x37, 0xC8,
+                0x55, 0x96,
+                0x95, 0x4B,
+                0x80,
+                0x08,
+                0x56,
+                0xA3,
+                0x22,
+                0xCE,
+                0x5D,
+                0x81
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_APV_VLD_4444_12"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_APV_VLD_4444_12
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xE3, 0x3E, 0x76, 0x6A,
+                0x05, 0x4D,
+                0xFE, 0x47,
+                0xA4,
+                0x29,
+                0x72,
+                0x34,
+                0x74,
+                0xB6,
+                0x9D,
+                0x7C
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='D3D12.xml' path='doc/member[@name="D3D12.D3D12_VIDEO_DECODE_PROFILE_APV_VLD_400_10"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D12_VIDEO_DECODE_PROFILE_APV_VLD_400_10
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x62, 0x88, 0x14, 0x37,
+                0xD6, 0x6B,
+                0x18, 0x46,
+                0x82,
+                0x93,
+                0x77,
+                0x7B,
+                0x68,
+                0x6B,
+                0x08,
+                0x24
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from dxcore_interface.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from dxcore_interface.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXCoreAdapterFactory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXCoreAdapterFactory
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXCoreAdapterFactory1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXCoreAdapterFactory1
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXCoreAdapterList"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXCoreAdapterList
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXCoreAdapter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXCoreAdapter
     {
@@ -113,6 +117,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDXCoreAdapter1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDXCoreAdapter1
     {

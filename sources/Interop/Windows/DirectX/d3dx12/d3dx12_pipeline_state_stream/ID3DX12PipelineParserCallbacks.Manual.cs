@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3dx12_pipeline_state_stream.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3dx12_pipeline_state_stream.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System.Runtime.CompilerServices;
@@ -243,44 +243,50 @@ public unsafe partial struct ID3DX12PipelineParserCallbacks : ID3DX12PipelinePar
         ((delegate* unmanaged[MemberFunction]<ID3DX12PipelineParserCallbacks*, D3D12_SERIALIZED_ROOT_SIGNATURE_DESC*, void>)(lpVtbl[28]))((ID3DX12PipelineParserCallbacks*)(Unsafe.AsPointer(ref this)), SerializedRootSignature);
     }
 
-    /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.ErrorBadInputParameter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(29)]
+    public void PsdbCb(D3D12_SHADER_CACHE_SESSION_SUBOBJECT_DESC* Desc)
+    {
+        ((delegate* unmanaged[MemberFunction]<ID3DX12PipelineParserCallbacks*, D3D12_SHADER_CACHE_SESSION_SUBOBJECT_DESC*, void>)(lpVtbl[29]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), Desc);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [VtblIndex(30)]
     public void ErrorBadInputParameter(uint ParameterIndex)
     {
-        ((delegate* unmanaged[MemberFunction]<ID3DX12PipelineParserCallbacks*, uint, void>)(lpVtbl[29]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), ParameterIndex);
+        ((delegate* unmanaged[MemberFunction]<ID3DX12PipelineParserCallbacks*, uint, void>)(lpVtbl[30]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), ParameterIndex);
     }
 
     /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.ErrorDuplicateSubobject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(30)]
+    [VtblIndex(31)]
     public void ErrorDuplicateSubobject(D3D12_PIPELINE_STATE_SUBOBJECT_TYPE DuplicateType)
     {
-        ((delegate* unmanaged[MemberFunction]<ID3DX12PipelineParserCallbacks*, D3D12_PIPELINE_STATE_SUBOBJECT_TYPE, void>)(lpVtbl[30]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), DuplicateType);
+        ((delegate* unmanaged[MemberFunction]<ID3DX12PipelineParserCallbacks*, D3D12_PIPELINE_STATE_SUBOBJECT_TYPE, void>)(lpVtbl[31]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), DuplicateType);
     }
 
     /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.ErrorUnknownSubobject"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(31)]
+    [VtblIndex(32)]
     public void ErrorUnknownSubobject(uint UnknownTypeValue)
     {
-        ((delegate* unmanaged[MemberFunction]<ID3DX12PipelineParserCallbacks*, uint, void>)(lpVtbl[31]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), UnknownTypeValue);
+        ((delegate* unmanaged[MemberFunction]<ID3DX12PipelineParserCallbacks*, uint, void>)(lpVtbl[32]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this), UnknownTypeValue);
     }
 
     /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.FinalizeCb"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(32)]
+    [VtblIndex(33)]
     public void FinalizeCb()
     {
-        ((delegate* unmanaged[MemberFunction]<ID3DX12PipelineParserCallbacks*, void>)(lpVtbl[32]))((ID3DX12PipelineParserCallbacks*)(Unsafe.AsPointer(ref this)));
+        ((delegate* unmanaged[MemberFunction]<ID3DX12PipelineParserCallbacks*, void>)(lpVtbl[33]))((ID3DX12PipelineParserCallbacks*)(Unsafe.AsPointer(ref this)));
     }
 
     /// <include file='ID3DX12PipelineParserCallbacks.xml' path='doc/member[@name="ID3DX12PipelineParserCallbacks.Dispose"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [VtblIndex(33)]
+    [VtblIndex(34)]
     public void Dispose()
     {
-        ((delegate* unmanaged[MemberFunction]<ID3DX12PipelineParserCallbacks*, void>)(lpVtbl[33]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<ID3DX12PipelineParserCallbacks*, void>)(lpVtbl[34]))((ID3DX12PipelineParserCallbacks*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface
@@ -373,18 +379,21 @@ public unsafe partial struct ID3DX12PipelineParserCallbacks : ID3DX12PipelinePar
         void SerializedRootSignatureCb([NativeTypeName("const D3D12_SERIALIZED_ROOT_SIGNATURE_DESC &")] D3D12_SERIALIZED_ROOT_SIGNATURE_DESC* SerializedRootSignature);
 
         [VtblIndex(29)]
-        void ErrorBadInputParameter(uint ParameterIndex);
+        void PsdbCb([NativeTypeName("const D3D12_SHADER_CACHE_SESSION_SUBOBJECT_DESC &")] D3D12_SHADER_CACHE_SESSION_SUBOBJECT_DESC* Desc);
 
         [VtblIndex(30)]
-        void ErrorDuplicateSubobject(D3D12_PIPELINE_STATE_SUBOBJECT_TYPE DuplicateType);
+        void ErrorBadInputParameter(uint ParameterIndex);
 
         [VtblIndex(31)]
-        void ErrorUnknownSubobject(uint UnknownTypeValue);
+        void ErrorDuplicateSubobject(D3D12_PIPELINE_STATE_SUBOBJECT_TYPE DuplicateType);
 
         [VtblIndex(32)]
-        void FinalizeCb();
+        void ErrorUnknownSubobject(uint UnknownTypeValue);
 
         [VtblIndex(33)]
+        void FinalizeCb();
+
+        [VtblIndex(34)]
         void Dispose();
     }
 
@@ -477,6 +486,9 @@ public unsafe partial struct ID3DX12PipelineParserCallbacks : ID3DX12PipelinePar
 
         [NativeTypeName("void (const D3D12_SERIALIZED_ROOT_SIGNATURE_DESC &)")]
         public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_SERIALIZED_ROOT_SIGNATURE_DESC*, void> SerializedRootSignatureCb;
+
+        [NativeTypeName("void (const D3D12_SHADER_CACHE_SESSION_SUBOBJECT_DESC &)")]
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D12_SHADER_CACHE_SESSION_SUBOBJECT_DESC*, void> PsdbCb;
 
         [NativeTypeName("void (UINT)")]
         public delegate* unmanaged[MemberFunction]<TSelf*, uint, void> ErrorBadInputParameter;

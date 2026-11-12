@@ -229,6 +229,24 @@ public static unsafe partial class DirectX
         return vec4;
     }
 
+    public static D2D_MATRIX_4X3_F Matrix4x3F()
+        => D2D_MATRIX_4X3_F.Identity;
+
+    public static D2D_MATRIX_4X3_F Matrix4x3F(float m11, float m12, float m13, float m21, float m22, float m23, float m31, float m32, float m33, float m41, float m42, float m43)
+        => new(m11, m12, m13, m21, m22, m23, m31, m32, m33, m41, m42, m43);
+
+    public static D2D_MATRIX_4X4_F Matrix4x4F()
+        => D2D_MATRIX_4X4_F.Identity;
+
+    public static D2D_MATRIX_4X4_F Matrix4x4F(float m11, float m12, float m13, float m14, float m21, float m22, float m23, float m24, float m31, float m32, float m33, float m34, float m41, float m42, float m43, float m44)
+        => new(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44);
+
+    public static D2D_MATRIX_5X4_F Matrix5x4F()
+        => D2D_MATRIX_5X4_F.Identity;
+
+    public static D2D_MATRIX_5X4_F Matrix5x4F(float m11, float m12, float m13, float m14, float m21, float m22, float m23, float m24, float m31, float m32, float m33, float m34, float m41, float m42, float m43, float m44, float m51, float m52, float m53, float m54)
+        => new(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44, m51, m52, m53, m54);
+
     [return: NativeTypeName("D2D1_POINT_2L")]
     public static POINT Point2L([NativeTypeName("INT32")] int x = 0, [NativeTypeName("INT32")] int y = 0)
     {

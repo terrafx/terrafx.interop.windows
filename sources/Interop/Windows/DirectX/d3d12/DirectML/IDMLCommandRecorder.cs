@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from DirectML.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from DirectML.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDMLDeviceChild")]
 public unsafe partial struct IDMLCommandRecorder : IDMLCommandRecorder.Interface, INativeGuid
 {
+    /// <include file='IDMLCommandRecorder.xml' path='doc/member[@name="IDMLCommandRecorder.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDMLCommandRecorder);
 
     public void** lpVtbl;

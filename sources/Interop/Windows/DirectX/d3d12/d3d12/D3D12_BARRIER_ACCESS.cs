@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -82,6 +82,9 @@ public enum D3D12_BARRIER_ACCESS
 
     /// <include file='D3D12_BARRIER_ACCESS.xml' path='doc/member[@name="D3D12_BARRIER_ACCESS.D3D12_BARRIER_ACCESS_VIDEO_ENCODE_WRITE"]/*' />
     D3D12_BARRIER_ACCESS_VIDEO_ENCODE_WRITE = 0x400000,
+
+    /// <include file='D3D12_BARRIER_ACCESS.xml' path='doc/member[@name="D3D12_BARRIER_ACCESS.D3D12_BARRIER_ACCESS_GLOBAL"]/*' />
+    D3D12_BARRIER_ACCESS_GLOBAL = 0x40000000,
 
     /// <include file='D3D12_BARRIER_ACCESS.xml' path='doc/member[@name="D3D12_BARRIER_ACCESS.D3D12_BARRIER_ACCESS_NO_ACCESS"]/*' />
     D3D12_BARRIER_ACCESS_NO_ACCESS = unchecked((int)(0x80000000)),

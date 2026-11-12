@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D3D12Debug"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D3D12Debug
     {
@@ -38,6 +39,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D3D12Tools"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D3D12Tools
     {
@@ -63,6 +65,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D3D12DeviceRemovedExtendedData"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D3D12DeviceRemovedExtendedData
     {
@@ -88,6 +91,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D3D12SDKConfiguration"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D3D12SDKConfiguration
     {
@@ -113,6 +117,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D3D12DeviceFactory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D3D12DeviceFactory
     {
@@ -138,6 +143,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D3D12DSRDeviceFactory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D3D12DSRDeviceFactory
     {
@@ -163,6 +169,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D3D12StateObjectFactory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D3D12StateObjectFactory
     {
@@ -188,6 +195,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D3D12RuntimeValidationControl"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D3D12RuntimeValidationControl
     {
@@ -213,6 +221,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D3D12ApplicationIdentity"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_D3D12ApplicationIdentity
     {
@@ -231,6 +240,84 @@ public static partial class CLSID
                 0x29,
                 0xC4,
                 0x7C
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D3D12AsyncCommandsFallback"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_D3D12AsyncCommandsFallback
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xF0, 0x92, 0x49, 0xEF,
+                0xAE, 0x0F,
+                0x4E, 0x42,
+                0xB4,
+                0x84,
+                0x7B,
+                0xCD,
+                0x8E,
+                0x56,
+                0x9E,
+                0x3E
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D3D12InfoQueue"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_D3D12InfoQueue
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xE2, 0xFB, 0x87, 0x4A,
+                0x5B, 0x9E,
+                0x5D, 0x4C,
+                0xA8,
+                0x21,
+                0x8E,
+                0x06,
+                0xF8,
+                0x33,
+                0x71,
+                0x9A
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_D3D12StateObjectDatabaseCapture"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid CLSID_D3D12StateObjectDatabaseCapture
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x2F, 0x3E, 0x6C, 0x2B,
+                0x8E, 0xEB,
+                0xB9, 0x4D,
+                0x8C,
+                0xF4,
+                0x1E,
+                0x04,
+                0x7E,
+                0x67,
+                0x1B,
+                0x7F
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

@@ -16,7 +16,7 @@ public static unsafe partial class DIMOFS
         get
         {
             Unsafe.SkipInit(out DIMOUSESTATE tmp);
-            return (uint)(&tmp.lX) - (uint)(&tmp);
+            return (uint)((nuint)(&tmp.lX) - (nuint)(&tmp));
         }
     }
 
@@ -27,7 +27,7 @@ public static unsafe partial class DIMOFS
         get
         {
             Unsafe.SkipInit(out DIMOUSESTATE tmp);
-            return (uint)(&tmp.lY) - (uint)(&tmp);
+            return (uint)((nuint)(&tmp.lY) - (nuint)(&tmp));
         }
     }
 
@@ -38,7 +38,7 @@ public static unsafe partial class DIMOFS
         get
         {
             Unsafe.SkipInit(out DIMOUSESTATE tmp);
-            return (uint)(&tmp.lZ) - (uint)(&tmp);
+            return (uint)((nuint)(&tmp.lZ) - (nuint)(&tmp));
         }
     }
 
@@ -46,7 +46,7 @@ public static unsafe partial class DIMOFS
     public static uint DIMOFS_BUTTON(uint n)
     {
         Unsafe.SkipInit(out DIMOUSESTATE tmp);
-        return ((uint)(&tmp.rgbButtons) - (uint)(&tmp)) + n;
+        return (uint)(((nuint)(&tmp.rgbButtons) - (nuint)(&tmp)) + n);
     }
 
     [NativeTypeName("#define DIMOFS_BUTTON0 (FIELD_OFFSET(DIMOUSESTATE, rgbButtons) + 0)")]

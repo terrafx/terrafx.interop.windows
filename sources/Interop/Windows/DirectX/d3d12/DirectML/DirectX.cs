@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from DirectML.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from DirectML.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -12,18 +12,23 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DML_TENSOR_DIMENSION_COUNT_MAX"]/*' />
     [NativeTypeName("const UINT")]
     public const uint DML_TENSOR_DIMENSION_COUNT_MAX = 5;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DML_TENSOR_DIMENSION_COUNT_MAX1"]/*' />
     [NativeTypeName("const UINT")]
     public const uint DML_TENSOR_DIMENSION_COUNT_MAX1 = 8;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DML_TEMPORARY_BUFFER_ALIGNMENT"]/*' />
     [NativeTypeName("const UINT")]
     public const uint DML_TEMPORARY_BUFFER_ALIGNMENT = 256;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DML_PERSISTENT_BUFFER_ALIGNMENT"]/*' />
     [NativeTypeName("const UINT")]
     public const uint DML_PERSISTENT_BUFFER_ALIGNMENT = 256;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DML_MINIMUM_BUFFER_TENSOR_ALIGNMENT"]/*' />
     [NativeTypeName("const UINT")]
     public const uint DML_MINIMUM_BUFFER_TENSOR_ALIGNMENT = 16;
 
@@ -37,6 +42,7 @@ public static unsafe partial class DirectX
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static extern HRESULT DMLCreateDevice1(ID3D12Device* d3d12Device, DML_CREATE_DEVICE_FLAGS flags, DML_FEATURE_LEVEL minimumFeatureLevel, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DML_TARGET_VERSION"]/*' />
     [NativeTypeName("#define DML_TARGET_VERSION 0x5000")]
     public const int DML_TARGET_VERSION = 0x5000;
 }

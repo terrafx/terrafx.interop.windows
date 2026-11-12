@@ -3,12 +3,27 @@
 // Ported from um/dinput.h in the Windows SDK for Windows 10.0.28000.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using static TerraFX.Interop.DirectX.DIMOFS;
 
 namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    public static uint DIBUTTON_ANY(uint instance) => 0xFF004400u | instance;
+
+    public static uint DIMAKEUSAGEDWORD(uint UsagePage, uint Usage)
+        => unchecked((ushort)Usage) | (unchecked((uint)(ushort)UsagePage) << 16);
+
+    public static byte GET_DIDEVICE_TYPE(uint dwDevType) => (byte)(dwDevType & 0xFF);
+
+    public static byte GET_DIDEVICE_SUBTYPE(uint dwDevType) => (byte)((dwDevType >> 8) & 0xFF);
+
+    public static int DISEQUENCE_COMPARE(uint dwSequence1, uint dwSequence2)
+        => unchecked((int)(dwSequence1 - dwSequence2));
+
+    public static Guid* MAKEDIPROP(nuint property) => (Guid*)property;
+
     [NativeTypeName("#define DIMOUSE_XAXISAB (0x82000200 |DIMOFS_X )")]
     public static uint DIMOUSE_XAXISAB => 0x82000200u | DIMOFS_X;
 

@@ -16,7 +16,7 @@ public static unsafe partial class DIJOFS
         get
         {
             Unsafe.SkipInit(out DIJOYSTATE tmp);
-            return (uint)(&tmp.lX) - (uint)(&tmp);
+                return (uint)((nuint)(&tmp.lX) - (nuint)(&tmp));
         }
     }
 
@@ -27,7 +27,7 @@ public static unsafe partial class DIJOFS
         get
         {
             Unsafe.SkipInit(out DIJOYSTATE tmp);
-            return (uint)(&tmp.lY) - (uint)(&tmp);
+            return (uint)((nuint)(&tmp.lY) - (nuint)(&tmp));
         }
     }
 
@@ -38,7 +38,7 @@ public static unsafe partial class DIJOFS
         get
         {
             Unsafe.SkipInit(out DIJOYSTATE tmp);
-            return (uint)(&tmp.lZ) - (uint)(&tmp);
+            return (uint)((nuint)(&tmp.lZ) - (nuint)(&tmp));
         }
     }
 
@@ -49,7 +49,7 @@ public static unsafe partial class DIJOFS
         get
         {
             Unsafe.SkipInit(out DIJOYSTATE tmp);
-            return (uint)(&tmp.lRx) - (uint)(&tmp);
+            return (uint)((nuint)(&tmp.lRx) - (nuint)(&tmp));
         }
     }
 
@@ -60,7 +60,7 @@ public static unsafe partial class DIJOFS
         get
         {
             Unsafe.SkipInit(out DIJOYSTATE tmp);
-            return (uint)(&tmp.lRy) - (uint)(&tmp);
+            return (uint)((nuint)(&tmp.lRy) - (nuint)(&tmp));
         }
     }
 
@@ -71,7 +71,7 @@ public static unsafe partial class DIJOFS
         get
         {
             Unsafe.SkipInit(out DIJOYSTATE tmp);
-            return (uint)(&tmp.lRz) - (uint)(&tmp);
+            return (uint)((nuint)(&tmp.lRz) - (nuint)(&tmp));
         }
     }
 
@@ -79,7 +79,21 @@ public static unsafe partial class DIJOFS
     public static uint DIJOFS_BUTTON(uint n)
     {
         Unsafe.SkipInit(out DIJOYSTATE tmp);
-        return ((uint)(&tmp.rgbButtons) - (uint)(&tmp)) + n;
+        return (uint)(((nuint)(&tmp.rgbButtons) - (nuint)(&tmp)) + n);
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static uint DIJOFS_SLIDER(uint n)
+    {
+        Unsafe.SkipInit(out DIJOYSTATE tmp);
+        return (uint)(((nuint)(&tmp.rglSlider) - (nuint)(&tmp)) + ((nuint)n * sizeof(int)));
+    }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static uint DIJOFS_POV(uint n)
+    {
+        Unsafe.SkipInit(out DIJOYSTATE tmp);
+        return (uint)(((nuint)(&tmp.rgdwPOV) - (nuint)(&tmp)) + ((nuint)n * sizeof(uint)));
     }
 
     [NativeTypeName("#define DIJOFS_BUTTON0 DIJOFS_BUTTON(0)")]

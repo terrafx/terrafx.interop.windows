@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -40,6 +40,12 @@ public enum D3D12_RESOURCE_FLAGS
 
     /// <include file='D3D12_RESOURCE_FLAGS.xml' path='doc/member[@name="D3D12_RESOURCE_FLAGS.D3D12_RESOURCE_FLAG_RAYTRACING_ACCELERATION_STRUCTURE"]/*' />
     D3D12_RESOURCE_FLAG_RAYTRACING_ACCELERATION_STRUCTURE = 0x100,
+
+    /// <include file='D3D12_RESOURCE_FLAGS.xml' path='doc/member[@name="D3D12_RESOURCE_FLAGS.D3D12_RESOURCE_FLAG_VIDEO_PROCESS_3DLUT_ONLY"]/*' />
+    D3D12_RESOURCE_FLAG_VIDEO_PROCESS_3DLUT_ONLY = 0x200,
+
+    /// <include file='D3D12_RESOURCE_FLAGS.xml' path='doc/member[@name="D3D12_RESOURCE_FLAGS.D3D12_RESOURCE_FLAG_VIDEO_PROCESS_1DLUT_ONLY"]/*' />
+    D3D12_RESOURCE_FLAG_VIDEO_PROCESS_1DLUT_ONLY = 0x800,
 
     /// <include file='D3D12_RESOURCE_FLAGS.xml' path='doc/member[@name="D3D12_RESOURCE_FLAGS.D3D12_RESOURCE_FLAG_USE_TIGHT_ALIGNMENT"]/*' />
     D3D12_RESOURCE_FLAG_USE_TIGHT_ALIGNMENT = 0x400,

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3d12.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 namespace TerraFX.Interop.DirectX;
@@ -169,4 +169,43 @@ public enum D3D12_MARKER_API
 
     /// <include file='D3D12_MARKER_API.xml' path='doc/member[@name="D3D12_MARKER_API.D3D12_MARKER_API_SET_WORK_GRAPH_MAXIMUM_GPU_INPUT_RECORDS"]/*' />
     D3D12_MARKER_API_SET_WORK_GRAPH_MAXIMUM_GPU_INPUT_RECORDS = 53,
+
+    /// <include file='D3D12_MARKER_API.xml' path='doc/member[@name="D3D12_MARKER_API.D3D12_MARKER_API_WAITBARRIER"]/*' />
+    D3D12_MARKER_API_WAITBARRIER = 54,
+
+    /// <include file='D3D12_MARKER_API.xml' path='doc/member[@name="D3D12_MARKER_API.D3D12_MARKER_API_SIGNALBARRIER"]/*' />
+    D3D12_MARKER_API_SIGNALBARRIER = 55,
+
+    /// <include file='D3D12_MARKER_API.xml' path='doc/member[@name="D3D12_MARKER_API.D3D12_MARKER_API_COPYBUFFERREGIONS"]/*' />
+    D3D12_MARKER_API_COPYBUFFERREGIONS = 57,
+
+    /// <include file='D3D12_MARKER_API.xml' path='doc/member[@name="D3D12_MARKER_API.D3D12_MARKER_API_COPYTEXTUREREGIONS"]/*' />
+    D3D12_MARKER_API_COPYTEXTUREREGIONS = 58,
+
+    /// <include file='D3D12_MARKER_API.xml' path='doc/member[@name="D3D12_MARKER_API.D3D12_MARKER_API_COPYRESOURCES"]/*' />
+    D3D12_MARKER_API_COPYRESOURCES = 59,
+
+    /// <include file='D3D12_MARKER_API.xml' path='doc/member[@name="D3D12_MARKER_API.D3D12_MARKER_API_ASYNCCOPYTILES"]/*' />
+    D3D12_MARKER_API_ASYNCCOPYTILES = 60,
+
+    /// <include file='D3D12_MARKER_API.xml' path='doc/member[@name="D3D12_MARKER_API.D3D12_MARKER_API_ASYNCRESOLVESUBRESOURCEREGION"]/*' />
+    D3D12_MARKER_API_ASYNCRESOLVESUBRESOURCEREGION = 61,
+
+    /// <include file='D3D12_MARKER_API.xml' path='doc/member[@name="D3D12_MARKER_API.D3D12_MARKER_API_ASYNCRESOLVEQUERYDATA"]/*' />
+    D3D12_MARKER_API_ASYNCRESOLVEQUERYDATA = 62,
+
+    /// <include file='D3D12_MARKER_API.xml' path='doc/member[@name="D3D12_MARKER_API.D3D12_MARKER_API_CLEARBOUNDDEPTHSTENCILVIEW"]/*' />
+    D3D12_MARKER_API_CLEARBOUNDDEPTHSTENCILVIEW = 63,
+
+    /// <include file='D3D12_MARKER_API.xml' path='doc/member[@name="D3D12_MARKER_API.D3D12_MARKER_API_CLEARBOUNDRENDERTARGETVIEWS"]/*' />
+    D3D12_MARKER_API_CLEARBOUNDRENDERTARGETVIEWS = 64,
+
+    /// <include file='D3D12_MARKER_API.xml' path='doc/member[@name="D3D12_MARKER_API.D3D12_MARKER_API_CLEARTEXTURESUBRESOURCES"]/*' />
+    D3D12_MARKER_API_CLEARTEXTURESUBRESOURCES = 65,
+
+    /// <include file='D3D12_MARKER_API.xml' path='doc/member[@name="D3D12_MARKER_API.D3D12_MARKER_API_FILLBUFFERS"]/*' />
+    D3D12_MARKER_API_FILLBUFFERS = 66,
+
+    /// <include file='D3D12_MARKER_API.xml' path='doc/member[@name="D3D12_MARKER_API.D3D12_MARKER_API_NONE"]/*' />
+    D3D12_MARKER_API_NONE = 255,
 }

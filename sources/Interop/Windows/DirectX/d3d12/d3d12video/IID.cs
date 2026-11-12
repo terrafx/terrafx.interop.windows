@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.619.2
+// Ported from d3d12video.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
 using System;
@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoDecoderHeap"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoDecoderHeap
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoDevice"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoDevice
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoDecoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoDecoder
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoProcessor"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoProcessor
     {
@@ -113,6 +117,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoDecodeCommandList"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoDecodeCommandList
     {
@@ -138,6 +143,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoProcessCommandList"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoProcessCommandList
     {
@@ -163,6 +169,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoDecodeCommandList1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoDecodeCommandList1
     {
@@ -188,6 +195,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoProcessCommandList1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoProcessCommandList1
     {
@@ -213,6 +221,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoMotionEstimator"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoMotionEstimator
     {
@@ -238,6 +247,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoMotionVectorHeap"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoMotionVectorHeap
     {
@@ -263,6 +273,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoDevice1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoDevice1
     {
@@ -288,6 +299,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoEncodeCommandList"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoEncodeCommandList
     {
@@ -313,6 +325,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoDecoder1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoDecoder1
     {
@@ -338,6 +351,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoDecoderHeap1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoDecoderHeap1
     {
@@ -363,6 +377,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoProcessor1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoProcessor1
     {
@@ -388,6 +403,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoExtensionCommand"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoExtensionCommand
     {
@@ -413,6 +429,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoDevice2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoDevice2
     {
@@ -438,6 +455,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoDecodeCommandList2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoDecodeCommandList2
     {
@@ -463,6 +481,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoDecodeCommandList3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoDecodeCommandList3
     {
@@ -488,6 +507,33 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoDecodeCommandList4"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12VideoDecodeCommandList4
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x3C, 0xE2, 0xB3, 0xA9,
+                0x4F, 0x7D,
+                0x90, 0x4A,
+                0xB6,
+                0xE1,
+                0x3C,
+                0x8A,
+                0x0F,
+                0x57,
+                0x14,
+                0xD2
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoProcessCommandList2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoProcessCommandList2
     {
@@ -513,6 +559,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoProcessCommandList3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoProcessCommandList3
     {
@@ -538,6 +585,33 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoProcessCommandList4"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12VideoProcessCommandList4
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x4B, 0x6A, 0xFC, 0xE7,
+                0x2C, 0x8D,
+                0x19, 0x4E,
+                0xA5,
+                0xF3,
+                0x7B,
+                0x91,
+                0xD0,
+                0xC2,
+                0x8E,
+                0x56
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoEncodeCommandList1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoEncodeCommandList1
     {
@@ -563,6 +637,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoEncoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoEncoder
     {
@@ -588,6 +663,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoEncoderHeap"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoEncoderHeap
     {
@@ -613,6 +689,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoDevice3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoDevice3
     {
@@ -638,6 +715,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoEncodeCommandList2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoEncodeCommandList2
     {
@@ -663,6 +741,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoEncodeCommandList3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoEncodeCommandList3
     {
@@ -688,6 +767,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoEncoderHeap1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoEncoderHeap1
     {
@@ -713,6 +793,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoDevice4"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoDevice4
     {
@@ -738,6 +819,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoEncodeCommandList4"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D12VideoEncodeCommandList4
     {
@@ -756,6 +838,136 @@ public static partial class IID
                 0x5A,
                 0x20,
                 0x4C
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoEncodeCommandList5"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12VideoEncodeCommandList5
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xC3, 0x6F, 0x1A, 0x5D,
+                0xE7, 0xB8,
+                0xA0, 0x42,
+                0x97,
+                0xD5,
+                0x6E,
+                0x4C,
+                0x1F,
+                0x3A,
+                0x9B,
+                0x82
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoProcessor2"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12VideoProcessor2
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x6B, 0xDD, 0x4F, 0xA2,
+                0xE2, 0xA2,
+                0xE4, 0x41,
+                0x9E,
+                0xA7,
+                0xF4,
+                0x35,
+                0xE4,
+                0xB0,
+                0x37,
+                0x51
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoProcessCommandList5"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12VideoProcessCommandList5
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xCC, 0x16, 0x71, 0x18,
+                0xDA, 0x73,
+                0x7E, 0x4A,
+                0xB9,
+                0x85,
+                0x43,
+                0x66,
+                0xB4,
+                0xC7,
+                0xA3,
+                0x0E
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoDevice5"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12VideoDevice5
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x31, 0xC7, 0xBA, 0xAB,
+                0x08, 0x6F,
+                0xF9, 0x4F,
+                0x8C,
+                0x7C,
+                0x40,
+                0x4B,
+                0x40,
+                0x35,
+                0xBC,
+                0x5F
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D12VideoEncoder1"]/*' />
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid IID_ID3D12VideoEncoder1
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x0C, 0xE4, 0x4D, 0xB8,
+                0x43, 0x5B,
+                0x5F, 0x4B,
+                0x9A,
+                0x75,
+                0xDA,
+                0x29,
+                0xF1,
+                0xB3,
+                0xC8,
+                0x33
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
