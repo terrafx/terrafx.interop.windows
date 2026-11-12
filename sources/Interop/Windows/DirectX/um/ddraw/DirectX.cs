@@ -62,10 +62,12 @@ public static unsafe partial class DirectX
     [NativeTypeName("#define FOURCC_DXT5 (MAKEFOURCC('D','X','T','5'))")]
     public const uint FOURCC_DXT5 = (((uint)((byte)('D')) | ((uint)((byte)('X')) << 8) | ((uint)((byte)('T')) << 16) | ((uint)((byte)('5')) << 24)));
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DirectDrawEnumerate"]/*' />
     [NativeTypeName("#define DirectDrawEnumerate DirectDrawEnumerateW")]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static delegate*<delegate* unmanaged<Guid*, char*, char*, void*, BOOL>, void*, HRESULT> DirectDrawEnumerate => &DirectDrawEnumerateW;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DirectDrawEnumerateEx"]/*' />
     [NativeTypeName("#define DirectDrawEnumerateEx DirectDrawEnumerateExW")]
     public static delegate*<delegate* unmanaged<Guid*, char*, char*, void*, HMONITOR, BOOL>, void*, uint, HRESULT> DirectDrawEnumerateEx => &DirectDrawEnumerateExW;
 
