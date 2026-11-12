@@ -1388,6 +1388,181 @@ public static partial class D3D11
     }
 
     [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D11_DECODER_PROFILE_APV_VLD_422_10
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x9D, 0x70, 0x6A, 0x22,
+                0x12, 0xAE,
+                0xC5, 0x44,
+                0xBA,
+                0x21,
+                0x16,
+                0x4F,
+                0xEE,
+                0xB7,
+                0xF9,
+                0xB6
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D11_DECODER_PROFILE_APV_VLD_422_12
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xAD, 0x52, 0xF1, 0xF6,
+                0xE5, 0x94,
+                0xFA, 0x4B,
+                0x92,
+                0x27,
+                0x67,
+                0x6C,
+                0xDD,
+                0xEF,
+                0xF4,
+                0x2B
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D11_DECODER_PROFILE_APV_VLD_444_10
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x7D, 0x8D, 0x4A, 0x6A,
+                0x10, 0x76,
+                0x9F, 0x46,
+                0x85,
+                0x5F,
+                0x39,
+                0xF1,
+                0x30,
+                0x51,
+                0xC0,
+                0x13
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D11_DECODER_PROFILE_APV_VLD_444_12
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x1C, 0x9A, 0x03, 0xF1,
+                0x08, 0xE2,
+                0xC1, 0x45,
+                0x95,
+                0x2C,
+                0x04,
+                0x08,
+                0x41,
+                0xB6,
+                0x76,
+                0x67
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D11_DECODER_PROFILE_APV_VLD_4444_10
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xB9, 0x99, 0x37, 0xC8,
+                0x55, 0x96,
+                0x95, 0x4B,
+                0x80,
+                0x08,
+                0x56,
+                0xA3,
+                0x22,
+                0xCE,
+                0x5D,
+                0x81
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D11_DECODER_PROFILE_APV_VLD_4444_12
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xE3, 0x3E, 0x76, 0x6A,
+                0x05, 0x4D,
+                0xFE, 0x47,
+                0xA4,
+                0x29,
+                0x72,
+                0x34,
+                0x74,
+                0xB6,
+                0x9D,
+                0x7C
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
+    public static ref readonly Guid D3D11_DECODER_PROFILE_APV_VLD_400_10
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x62, 0x88, 0x14, 0x37,
+                0xD6, 0x6B,
+                0x18, 0x46,
+                0x82,
+                0x93,
+                0x77,
+                0x7B,
+                0x68,
+                0x6B,
+                0x08,
+                0x24
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    [NativeTypeName("const GUID")]
     public static ref readonly Guid D3D11_CRYPTO_TYPE_AES128_CTR
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

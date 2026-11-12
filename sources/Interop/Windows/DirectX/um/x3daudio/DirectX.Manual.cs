@@ -30,8 +30,19 @@ public static unsafe partial class DirectX
         }
     }
 
-    // public static ref readonly X3DAUDIO_DISTANCE_CURVE X3DAudioDefault_LinearCurve => new X3DAUDIO_DISTANCE_CURVE {
-    //    pPoints = &X3DAudioDefault_LinearCurvePoints[0],
-    //    PointsCount = 2,
-    // };
+    public static X3DAUDIO_DISTANCE_CURVE X3DAudioDefault_LinearCurve
+    {
+        get
+        {
+            ReadOnlySpan<X3DAUDIO_DISTANCE_CURVE_POINT> points = X3DAudioDefault_LinearCurvePoints;
+            fixed (X3DAUDIO_DISTANCE_CURVE_POINT* pPoints = points)
+            {
+                return new X3DAUDIO_DISTANCE_CURVE
+                {
+                    pPoints = pPoints,
+                    PointCount = (uint)(points.Length),
+                };
+            }
+        }
+    }
 }

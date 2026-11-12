@@ -58,7 +58,10 @@ public static unsafe partial class DirectX
     [return: NativeTypeName("const CD3DX12_RESOURCE_DESC1 *")]
     public static ref readonly D3D12_RESOURCE_DESC1 D3DX12ConditionallyExpandAPIDesc([NativeTypeName("CD3DX12_RESOURCE_DESC1 &")] ref D3D12_RESOURCE_DESC1 LclDesc, [NativeTypeName("const CD3DX12_RESOURCE_DESC1 *")] in D3D12_RESOURCE_DESC1 pDesc, [NativeTypeName("const bool")] bool tightAlignmentSupported = false, [NativeTypeName("const bool")] bool alignAsCommitted = false)
     {
-        if ((pDesc.MipLevels == 0) || (pDesc.Alignment == 0))
+        bool recomputeAlignment = (pDesc.Alignment == 0)
+            || (tightAlignmentSupported && ((pDesc.Flags & D3D12_RESOURCE_FLAG_USE_TIGHT_ALIGNMENT) != 0));
+
+        if ((pDesc.MipLevels == 0) || recomputeAlignment)
         {
             LclDesc = pDesc;
 
@@ -77,11 +80,11 @@ public static unsafe partial class DirectX
                 LclDesc.MipLevels = uiRet;
             }
 
-            if (pDesc.Alignment == 0)
+            if (recomputeAlignment)
             {
                 if ((pDesc.Layout == D3D12_TEXTURE_LAYOUT_64KB_UNDEFINED_SWIZZLE) || (pDesc.Layout == D3D12_TEXTURE_LAYOUT_64KB_STANDARD_SWIZZLE))
                 {
-                    LclDesc.Alignment = D3D12_DEFAULT_RESOURCE_PLACEMENT_ALIGNMENT;
+                    LclDesc.Alignment = (ulong)D3D12_DEFAULT_RESOURCE_PLACEMENT_ALIGNMENT;
                 }
                 else if (!(tightAlignmentSupported && ((pDesc.Flags & D3D12_RESOURCE_FLAG_USE_TIGHT_ALIGNMENT) != 0)) || ((pDesc.Flags & D3D12_RESOURCE_FLAG_ALLOW_CROSS_ADAPTER) != 0))
                 {
@@ -89,14 +92,13 @@ public static unsafe partial class DirectX
                 }
                 else
                 {
-                    if (alignAsCommitted)
-                    {
-                        LclDesc.Alignment = D3D12_TIGHT_ALIGNMENT_MIN_COMMITTED_RESOURCE_ALIGNMENT;
-                    }
-                    else
-                    {
-                        LclDesc.Alignment = D3D12_TIGHT_ALIGNMENT_MIN_PLACED_RESOURCE_ALIGNMENT;
-                    }
+                    ulong runtimeMin = (ulong)(alignAsCommitted ? D3D12_TIGHT_ALIGNMENT_MIN_COMMITTED_RESOURCE_ALIGNMENT : D3D12_TIGHT_ALIGNMENT_MIN_PLACED_RESOURCE_ALIGNMENT);
+                    ulong specMax = (pDesc.Dimension == D3D12_RESOURCE_DIMENSION_BUFFER)
+                        ? (alignAsCommitted ? (ulong)D3D12_TIGHT_ALIGNMENT_MAX_COMMITTED_BUFFER_ALIGNMENT : (ulong)D3D12_TIGHT_ALIGNMENT_MAX_PLACED_BUFFER_ALIGNMENT)
+                        : (ulong)(pDesc.SampleDesc.Count > 1 ? D3D12_DEFAULT_MSAA_RESOURCE_PLACEMENT_ALIGNMENT : D3D12_DEFAULT_RESOURCE_PLACEMENT_ALIGNMENT);
+                    ulong appAlignment = pDesc.Alignment;
+                    bool appAlignmentIsValidFloor = appAlignment != 0 && (appAlignment & (appAlignment - 1)) == 0 && appAlignment <= specMax;
+                    LclDesc.Alignment = appAlignmentIsValidFloor ? ulong.Max(appAlignment, runtimeMin) : runtimeMin;
                 }
             }
 
@@ -106,5 +108,57 @@ public static unsafe partial class DirectX
         {
             return ref pDesc;
         }
+    }
+
+    [return: NativeTypeName("const CD3DX12_RESOURCE_DESC2 *")]
+    public static ref readonly D3D12_RESOURCE_DESC2 D3DX12ConditionallyExpandAPIDesc([NativeTypeName("CD3DX12_RESOURCE_DESC2 &")] ref D3D12_RESOURCE_DESC2 LclDesc, [NativeTypeName("const CD3DX12_RESOURCE_DESC2 *")] in D3D12_RESOURCE_DESC2 pDesc, [NativeTypeName("const bool")] bool tightAlignmentSupported = false, [NativeTypeName("const bool")] bool alignAsCommitted = false)
+    {
+        bool recomputeAlignment = (pDesc.Alignment == 0)
+            || (tightAlignmentSupported && ((pDesc.Flags & D3D12_RESOURCE_FLAG_USE_TIGHT_ALIGNMENT) != 0));
+
+        if ((pDesc.MipLevels == 0) || recomputeAlignment)
+        {
+            LclDesc = pDesc;
+
+            if (pDesc.MipLevels == 0)
+            {
+                ulong maxDimension = ulong.Max((LclDesc.Dimension == D3D12_RESOURCE_DIMENSION_TEXTURE3D) ? LclDesc.DepthOrArraySize : 1UL, ulong.Max(LclDesc.Width, LclDesc.Height));
+                ushort mipLevels = 0;
+
+                while (maxDimension > 0)
+                {
+                    mipLevels++;
+                    maxDimension >>= 1;
+                }
+
+                LclDesc.MipLevels = mipLevels;
+            }
+
+            if (recomputeAlignment)
+            {
+                if ((pDesc.Layout == D3D12_TEXTURE_LAYOUT_64KB_UNDEFINED_SWIZZLE) || (pDesc.Layout == D3D12_TEXTURE_LAYOUT_64KB_STANDARD_SWIZZLE))
+                {
+                    LclDesc.Alignment = (ulong)D3D12_DEFAULT_RESOURCE_PLACEMENT_ALIGNMENT;
+                }
+                else if (!(tightAlignmentSupported && ((pDesc.Flags & D3D12_RESOURCE_FLAG_USE_TIGHT_ALIGNMENT) != 0)) || ((pDesc.Flags & D3D12_RESOURCE_FLAG_ALLOW_CROSS_ADAPTER) != 0))
+                {
+                    LclDesc.Alignment = (ulong)(pDesc.SampleDesc.Count > 1 ? D3D12_DEFAULT_MSAA_RESOURCE_PLACEMENT_ALIGNMENT : D3D12_DEFAULT_RESOURCE_PLACEMENT_ALIGNMENT);
+                }
+                else
+                {
+                    ulong runtimeMin = (ulong)(alignAsCommitted ? D3D12_TIGHT_ALIGNMENT_MIN_COMMITTED_RESOURCE_ALIGNMENT : D3D12_TIGHT_ALIGNMENT_MIN_PLACED_RESOURCE_ALIGNMENT);
+                    ulong specMax = (pDesc.Dimension == D3D12_RESOURCE_DIMENSION_BUFFER)
+                        ? (alignAsCommitted ? (ulong)D3D12_TIGHT_ALIGNMENT_MAX_COMMITTED_BUFFER_ALIGNMENT : (ulong)D3D12_TIGHT_ALIGNMENT_MAX_PLACED_BUFFER_ALIGNMENT)
+                        : (ulong)(pDesc.SampleDesc.Count > 1 ? D3D12_DEFAULT_MSAA_RESOURCE_PLACEMENT_ALIGNMENT : D3D12_DEFAULT_RESOURCE_PLACEMENT_ALIGNMENT);
+                    ulong appAlignment = pDesc.Alignment;
+                    bool appAlignmentIsValidFloor = appAlignment != 0 && (appAlignment & (appAlignment - 1)) == 0 && appAlignment <= specMax;
+                    LclDesc.Alignment = appAlignmentIsValidFloor ? ulong.Max(appAlignment, runtimeMin) : runtimeMin;
+                }
+            }
+
+            return ref LclDesc;
+        }
+
+        return ref pDesc;
     }
 }

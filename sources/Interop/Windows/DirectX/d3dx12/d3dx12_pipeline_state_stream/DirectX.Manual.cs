@@ -3,6 +3,7 @@
 // Ported from d3dx12_pipeline_state_stream.h in microsoft/DirectX-Headers tag v1.620.2
 // Original source is Copyright © Microsoft. Licensed under the MIT license
 
+using System.Runtime.InteropServices;
 using TerraFX.Interop.Windows;
 using static TerraFX.Interop.DirectX.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE;
 using static TerraFX.Interop.Windows.E;
@@ -26,6 +27,7 @@ public static unsafe partial class DirectX
         }
 
         bool* SubobjectSeen = stackalloc bool[(int)(D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MAX_VALID)];
+        NativeMemory.Clear(SubobjectSeen, (nuint)(sizeof(bool) * (int)D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MAX_VALID));
         for (nuint CurOffset = 0, SizeOfSubobject = 0; CurOffset < Desc.SizeInBytes; CurOffset += SizeOfSubobject)
         {
             byte* pStream = (byte*)(Desc.pPipelineStateSubobjectStream) + CurOffset;
@@ -247,6 +249,13 @@ public static unsafe partial class DirectX
                 {
                     pCallbacks->SerializedRootSignatureCb(&((CD3DX12_PIPELINE_STATE_STREAM_SERIALIZED_ROOT_SIGNATURE*)(pStream))->Anonymous.pssInner);
                     SizeOfSubobject = (uint)(sizeof(CD3DX12_PIPELINE_STATE_STREAM_SERIALIZED_ROOT_SIGNATURE));
+                    break;
+                }
+
+                case D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_PSDB:
+                {
+                    pCallbacks->PsdbCb(&((CD3DX12_PIPELINE_STATE_STREAM_PSDB*)(pStream))->Anonymous.pssInner);
+                    SizeOfSubobject = (uint)(sizeof(CD3DX12_PIPELINE_STATE_STREAM_PSDB));
                     break;
                 }
 

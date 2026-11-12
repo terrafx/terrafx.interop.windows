@@ -314,4 +314,10 @@ public static unsafe partial class DirectX
 
     [NativeTypeName("D2D1_MATRIX_3X2_F")]
     public static ref readonly D2D_MATRIX_3X2_F IdentityMatrix => ref D2D_MATRIX_3X2_F.Identity;
+
+    public static D2D_MATRIX_3X2_F Matrix3x2F()
+        => default;
+
+    public static D2D_MATRIX_3X2_F Matrix3x2F(float m11, float m12, float m21, float m22, float m31, float m32)
+        => new(m11, m12, m21, m22, m31, m32);
 }

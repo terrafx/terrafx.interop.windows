@@ -258,8 +258,15 @@ public static unsafe partial class ResolveDllImportTests
                 case "D3D12SDKLayersGetInterface":
                 {
                     // These methods come from DirectX Agility SDK and may not be present
-                    // if all the latest updates aren't installed on the machine
+                    // if all the latest updates aren't installed on the machine.
 
+                    Assert.Warn($"Warn: {exception.Message}");
+                    break;
+                }
+
+                case "GetD3D11On12On7Interface":
+                {
+                    // The D3D11On12On7 runtime is an optional component and may not be installed.
                     Assert.Warn($"Warn: {exception.Message}");
                     break;
                 }
