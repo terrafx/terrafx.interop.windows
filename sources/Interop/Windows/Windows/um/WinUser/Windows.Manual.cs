@@ -13,6 +13,9 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static HCURSOR CopyCursor(HCURSOR pcur) => (HCURSOR)CopyIcon((HICON)pcur);
+
     public static int GUI_16BITTASK
     {
         get
@@ -37,6 +40,14 @@ public static unsafe partial class Windows
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("LPWSTR")]
     public static char* MAKEINTRESOURCE(ushort i) => (char*)(nuint)i;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [return: NativeTypeName("LPSTR")]
+    public static sbyte* MAKEINTRESOURCEA(ushort i) => (sbyte*)(nuint)i;
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [return: NativeTypeName("LPWSTR")]
+    public static char* MAKEINTRESOURCEW(ushort i) => (char*)(nuint)i;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static POINT POINTSTOPOINT(POINTS pts)
@@ -69,31 +80,31 @@ public static unsafe partial class Windows
     public static LRESULT MAKELRESULT(nint l, nint h) => unchecked(MAKELRESULT((nuint)(l), (nuint)(h)));
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static short GET_APPCOMMAND_LPARAM(LPARAM lParam) => unchecked((short)(HIWORD((uint)lParam) & ~FAPPCOMMAND_MASK));
+    public static short GET_APPCOMMAND_LPARAM(LPARAM lParam) => unchecked((short)(HIWORD(lParam.Value) & ~FAPPCOMMAND_MASK));
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ushort GET_DEVICE_LPARAM(LPARAM lParam) => unchecked((ushort)(HIWORD((uint)lParam) & FAPPCOMMAND_MASK));
+    public static ushort GET_DEVICE_LPARAM(LPARAM lParam) => unchecked((ushort)(HIWORD(lParam.Value) & FAPPCOMMAND_MASK));
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static ushort GET_MOUSEORKEY_LPARAM(LPARAM lParam) => GET_DEVICE_LPARAM(lParam);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ushort GET_FLAGS_LPARAM(LPARAM lParam) => LOWORD(unchecked((uint)lParam));
+    public static ushort GET_FLAGS_LPARAM(LPARAM lParam) => LOWORD(lParam.Value);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static ushort GET_KEYSTATE_LPARAM(LPARAM lParam) => GET_FLAGS_LPARAM(lParam);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static short GET_WHEEL_DELTA_WPARAM(WPARAM wParam) => unchecked((short)HIWORD((uint)wParam));
+    public static short GET_WHEEL_DELTA_WPARAM(WPARAM wParam) => unchecked((short)HIWORD(wParam.Value));
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ushort GET_KEYSTATE_WPARAM(WPARAM wParam) => LOWORD(unchecked((uint)wParam));
+    public static ushort GET_KEYSTATE_WPARAM(WPARAM wParam) => LOWORD(wParam.Value);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static short GET_NCHITTEST_WPARAM(WPARAM wParam) => unchecked((short)LOWORD((uint)wParam));
+    public static short GET_NCHITTEST_WPARAM(WPARAM wParam) => unchecked((short)LOWORD(wParam.Value));
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ushort GET_XBUTTON_WPARAM(WPARAM wParam) => HIWORD(unchecked((uint)wParam));
+    public static ushort GET_XBUTTON_WPARAM(WPARAM wParam) => HIWORD(wParam.Value);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static BOOL ExitWindows(uint dwReserved, int Code) => ExitWindowsEx(EWX_LOGOFF, 0xFFFFFFFF);
@@ -142,10 +153,10 @@ public static unsafe partial class Windows
     public static int TOUCH_COORD_TO_PIXEL(int l) => l / 100;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ushort GET_POINTERID_WPARAM(WPARAM wParam) => LOWORD(unchecked((uint)wParam));
+    public static ushort GET_POINTERID_WPARAM(WPARAM wParam) => LOWORD(wParam.Value);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static bool IS_POINTER_FLAG_SET_WPARAM(WPARAM wParam, uint flag) => (HIWORD(unchecked((uint)wParam)) & flag) == flag;
+    public static bool IS_POINTER_FLAG_SET_WPARAM(WPARAM wParam, uint flag) => (HIWORD(wParam.Value) & flag) == flag;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool IS_POINTER_NEW_WPARAM(WPARAM wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG_NEW);
@@ -329,7 +340,7 @@ public static unsafe partial class Windows
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static BOOL EnumTaskWindows(HTASK hTask, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<HWND, LPARAM, BOOL> lpfn, LPARAM lParam) => EnumThreadWindows((uint)hTask, lpfn, lParam);
+    public static BOOL EnumTaskWindows(HTASK hTask, [NativeTypeName("WNDENUMPROC")] delegate* unmanaged<HWND, LPARAM, BOOL> lpfn, LPARAM lParam) => EnumThreadWindows(unchecked((uint)(nuint)hTask), lpfn, lParam);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static HWND GetNextWindow(HWND hWnd, ushort wCmd) => GetWindow(hWnd, wCmd);
@@ -362,10 +373,10 @@ public static unsafe partial class Windows
     public static int RIDEV_EXMODE(int mode) => mode & RIDEV_EXMODEMASK;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ushort GET_DEVICE_CHANGE_WPARAM(WPARAM wParam) => LOWORD(unchecked((uint)wParam));
+    public static ushort GET_DEVICE_CHANGE_WPARAM(WPARAM wParam) => LOWORD(wParam.Value);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static ushort GET_DEVICE_CHANGE_LPARAM(LPARAM lParam) => LOWORD(unchecked((uint)lParam));
+    public static ushort GET_DEVICE_CHANGE_LPARAM(LPARAM lParam) => LOWORD(lParam.Value);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static ushort GID_ROTATE_ANGLE_TO_ARGUMENT(ushort _arg_) => (ushort)((_arg_ + (2.0 * 3.14159265)) / (4.0 * 3.14159265) * 65535.0);

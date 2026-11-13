@@ -124,6 +124,11 @@ public static unsafe partial class Windows
     [return: NativeTypeName("NTSTATUS")]
     public static extern int HidP_UsageListDifference([NativeTypeName("PUSAGE")] ushort* PreviousUsageList, [NativeTypeName("PUSAGE")] ushort* CurrentUsageList, [NativeTypeName("PUSAGE")] ushort* BreakUsageList, [NativeTypeName("PUSAGE")] ushort* MakeUsageList, [NativeTypeName("ULONG")] uint UsageListLength);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HidP_UsageAndPageListDifference"]/*' />
+    [DllImport("hid", ExactSpelling = true)]
+    [return: NativeTypeName("NTSTATUS")]
+    public static extern int HidP_UsageAndPageListDifference([NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* PreviousUsageList, [NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* CurrentUsageList, [NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* BreakUsageList, [NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* MakeUsageList, [NativeTypeName("ULONG")] uint UsageListLength);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.HidP_GetButtonArray"]/*' />
     [DllImport("hid", ExactSpelling = true)]
     [return: NativeTypeName("NTSTATUS")]
@@ -133,6 +138,11 @@ public static unsafe partial class Windows
     [DllImport("hid", ExactSpelling = true)]
     [return: NativeTypeName("NTSTATUS")]
     public static extern int HidP_SetButtonArray(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("USAGE")] ushort Usage, [NativeTypeName("PHIDP_BUTTON_ARRAY_DATA")] HIDP_BUTTON_ARRAY_DATA* ButtonData, ushort ButtonDataLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength);
+
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HidP_TranslateUsageAndPagesToI8042ScanCodes"]/*' />
+    [DllImport("hid", ExactSpelling = true)]
+    [return: NativeTypeName("NTSTATUS")]
+    public static extern int HidP_TranslateUsageAndPagesToI8042ScanCodes([NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* ChangedUsageList, [NativeTypeName("ULONG")] uint UsageListLength, HIDP_KEYBOARD_DIRECTION KeyAction, [NativeTypeName("PHIDP_KEYBOARD_MODIFIER_STATE")] HIDP_KEYBOARD_MODIFIER_STATE* ModifierState, [NativeTypeName("PHIDP_INSERT_SCANCODES")] delegate* unmanaged<void*, sbyte*, uint, byte> InsertCodesProcedure, [NativeTypeName("PVOID")] void* InsertCodesContext);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.HidP_TranslateUsagesToI8042ScanCodes"]/*' />
     [DllImport("hid", ExactSpelling = true)]
