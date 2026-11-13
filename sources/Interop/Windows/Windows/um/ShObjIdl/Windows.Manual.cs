@@ -9,6 +9,22 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    [return: NativeTypeName("#define ISDBLCLICK(x) (NSTCECT_DBLCLICK == ((x) & NSTCECT_DBLCLICK))")]
+    public static bool ISDBLCLICK(NSTCECLICKTYPE x)
+        => (x & NSTCECLICKTYPE.NSTCECT_DBLCLICK) == NSTCECLICKTYPE.NSTCECT_DBLCLICK;
+
+    [return: NativeTypeName("#define ISLBUTTON(x) (NSTCECT_LBUTTON == ((x) & NSTCECT_BUTTON))")]
+    public static bool ISLBUTTON(NSTCECLICKTYPE x)
+        => (x & NSTCECLICKTYPE.NSTCECT_BUTTON) == NSTCECLICKTYPE.NSTCECT_LBUTTON;
+
+    [return: NativeTypeName("#define ISMBUTTON(x) (NSTCECT_MBUTTON == ((x) & NSTCECT_BUTTON))")]
+    public static bool ISMBUTTON(NSTCECLICKTYPE x)
+        => (x & NSTCECLICKTYPE.NSTCECT_BUTTON) == NSTCECLICKTYPE.NSTCECT_MBUTTON;
+
+    [return: NativeTypeName("#define ISRBUTTON(x) (NSTCECT_RBUTTON == ((x) & NSTCECT_BUTTON))")]
+    public static bool ISRBUTTON(NSTCECLICKTYPE x)
+        => (x & NSTCECLICKTYPE.NSTCECT_BUTTON) == NSTCECLICKTYPE.NSTCECT_RBUTTON;
+
     public static HRESULT SHResolveFolderPathInLibrary(IShellLibrary* plib, [NativeTypeName("PCWSTR")] char* pszFolderPath, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("PWSTR *")] char** ppszResolvedPath)
     {
         *ppszResolvedPath = null;

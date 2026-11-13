@@ -26,6 +26,21 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("BOOLEAN")]
+    public static byte IN6_ARE_ADDR_EQUAL([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* x, [NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* y)
+        => IN6_ADDR_EQUAL(x, y);
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static ushort SS_PORT([NativeTypeName("SOCKADDR_STORAGE *")] SOCKADDR_STORAGE* address)
+        => ((SOCKADDR_IN*)address)->sin_port;
+
+    public static nuint IP_MSFILTER_SIZE(uint sourceCount)
+        => unchecked((nuint)(sizeof(IP_MSFILTER) - sizeof(IN_ADDR)) + ((nuint)sourceCount * (nuint)sizeof(IN_ADDR)));
+
+    public static nuint GROUP_FILTER_SIZE(uint sourceCount)
+        => unchecked((nuint)(sizeof(GROUP_FILTER) - sizeof(SOCKADDR_STORAGE)) + ((nuint)sourceCount * (nuint)sizeof(SOCKADDR_STORAGE)));
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    [return: NativeTypeName("BOOLEAN")]
     public static byte IN6_IS_ADDR_UNSPECIFIED([NativeTypeName("CONST IN6_ADDR *")] IN6_ADDR* a)
     {
         return (byte)(((a->s6_words[0] == 0) &&

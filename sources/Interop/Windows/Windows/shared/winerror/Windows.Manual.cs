@@ -4,6 +4,7 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using static TerraFX.Interop.Windows.FACILITY;
+using static TerraFX.Interop.Windows.E;
 
 namespace TerraFX.Interop.Windows;
 
@@ -69,8 +70,35 @@ public static partial class Windows
         return (x <= 0) ? x : ((x & 0x0000FFFF) | (FACILITY_WIN32 << 16) | unchecked((int)0x80000000));
     }
 
+    public static HRESULT __HRESULT_FROM_WIN32(int x) => HRESULT_FROM_WIN32(x);
+
+    public static HRESULT HRESULT_FROM_SETUPAPI(uint x)
+    {
+        const uint SetupApiErrorMask = 0xE0000000;
+
+        if ((x & SetupApiErrorMask) == SetupApiErrorMask)
+        {
+            return (HRESULT)((x & 0x0000FFFF) | (FACILITY_SETUPAPI << 16) | 0x80000000);
+        }
+
+        return HRESULT_FROM_WIN32(unchecked((int)x));
+    }
+
+    public static HRESULT __HRESULT_FROM_SETUPAPI(uint x) => HRESULT_FROM_SETUPAPI(x);
+
     public static HRESULT HRESULT_FROM_NT(int x)
     {
         return ((HRESULT)((x) | FACILITY_NT_BIT));
     }
+
+    public static HRESULT FILTER_HRESULT_FROM_FLT_NTSTATUS(int x)
+        => (HRESULT)unchecked(((uint)x & 0x8000FFFFu) | ((uint)FACILITY_USERMODE_FILTER_MANAGER << 16));
+
+    public static bool IS_CAMERA_ERROR_CODE(HRESULT xhr) => ((int)xhr >= E_CAMERA_ERROR_MIN) && ((int)xhr <= E_CAMERA_ERROR_MAX);
+
+    public static int GetScode(HRESULT hr) => hr;
+
+    public static HRESULT ResultFromScode(int sc) => sc;
+
+    public static HRESULT PropagateResult(HRESULT hrPrevious, int scBase) => scBase;
 }

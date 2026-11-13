@@ -1,0 +1,19 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/codecapi.h in the Windows SDK for Windows 10.0.28000.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using static TerraFX.Interop.Windows.IID;
+
+namespace TerraFX.Interop.Windows;
+
+/// <summary>Provides a managed identifier for the bandwidth processor utilization codec API.</summary>
+[Guid("0124BA9B-DC41-4826-B45F-18AC01B3D5A8")]
+public unsafe partial struct CODECAPI_AVEncStatBandwidthProcessorUtilitization : INativeGuid
+{
+    /// <summary>Gets a pointer to the identifier's GUID.</summary>
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncStatHardwareBandwidthUtilitization);
+}

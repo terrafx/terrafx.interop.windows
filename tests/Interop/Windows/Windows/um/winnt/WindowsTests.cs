@@ -25,4 +25,11 @@ public static partial class WindowsTests
     {
         Assert.That(ALL_POWERSCHEMES_GUID, Is.EqualTo(new Guid(0x68A1E95E, 0x13EA, 0x41E1, 0x80, 0x11, 0x0C, 0x49, 0x6C, 0xA4, 0x90, 0xB0)));
     }
+
+    /// <summary>Validates that <see cref="LANGIDFROMLCID" /> extracts the language identifier.</summary>
+    [Test]
+    public static void LANGIDFROMLCIDTest()
+    {
+        Assert.That(LANGIDFROMLCID(0x00010409), Is.EqualTo((ushort)0x0409));
+    }
 }

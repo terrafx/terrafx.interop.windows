@@ -12,7 +12,6 @@ GDIPLUS_MIN
 operator+
 operator-
 operator=
-operator==
 --file
 um-gdiplustypes.h
 --method-class-name

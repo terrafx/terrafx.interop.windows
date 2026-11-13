@@ -13,6 +13,14 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    [return: NativeTypeName("DWORD")]
+    public static uint STRSAFE_FILL_BYTE([NativeTypeName("DWORD")] uint value) => (value & 0x000000FF) | STRSAFE_FILL_BEHIND_NULL;
+
+    [return: NativeTypeName("DWORD")]
+    public static uint STRSAFE_FAILURE_BYTE([NativeTypeName("DWORD")] uint value) => (value & 0x000000FF) | STRSAFE_FILL_ON_FAILURE;
+
+    public static int STRSAFE_GET_FILL_PATTERN([NativeTypeName("DWORD")] uint dwFlags) => (int)(dwFlags & 0x000000FF);
+
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StringLengthWorkerA"]/*' />
     public static HRESULT StringLengthWorkerA([NativeTypeName("STRSAFE_PCNZCH")] sbyte* psz, [NativeTypeName("size_t")] nuint cchMax, [NativeTypeName("size_t *")] nuint* pcchLength)
     {
@@ -391,7 +399,7 @@ public static unsafe partial class Windows
                     break;
                 }
 
-                ch = (sbyte)(i);
+                ch = unchecked((sbyte)i);
                 if (ch == '\n')
                 {
                     break;

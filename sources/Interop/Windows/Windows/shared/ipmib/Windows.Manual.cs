@@ -4,41 +4,43 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    public static bool ICMP6_ISTYPEINFORMATIONAL([NativeTypeName("ICMP6_TYPE")] ICMP6_TYPE type)
+        => (((int)type & ICMP6_INFOMSG_MASK) != 0);
+
+    public static bool ICMP6_ISTYPEERROR([NativeTypeName("ICMP6_TYPE")] ICMP6_TYPE type)
+        => !ICMP6_ISTYPEINFORMATIONAL(type);
+
+    public static bool ICMP4_ISTYPEERROR([NativeTypeName("ICMP4_TYPE")] ICMP4_TYPE type)
+        => (type == ICMP4_TYPE.ICMP4_DST_UNREACH)
+        || (type == ICMP4_TYPE.ICMP4_SOURCE_QUENCH)
+        || (type == ICMP4_TYPE.ICMP4_REDIRECT)
+        || (type == ICMP4_TYPE.ICMP4_PARAM_PROB)
+        || (type == ICMP4_TYPE.ICMP4_TIME_EXCEEDED);
+
     [NativeTypeName("#define SIZEOF_BASIC_MIB_MFE (ULONG)(FIELD_OFFSET(MIB_IPMCAST_MFE, rgmioOutInfo[0]))")]
     public static uint SIZEOF_BASIC_MIB_MFE
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            Unsafe.SkipInit(out MIB_IPMCAST_MFE tmp);
-            return (uint)(&tmp.rgmioOutInfo) - (uint)(&tmp);
-        }
+        get => (uint)Marshal.OffsetOf<MIB_IPMCAST_MFE>("rgmioOutInfo").ToInt32();
     }
 
     [NativeTypeName("#define SIZEOF_BASIC_MIB_MFE_STATS (ULONG)(FIELD_OFFSET(MIB_IPMCAST_MFE_STATS, rgmiosOutStats[0]))")]
     public static uint SIZEOF_BASIC_MIB_MFE_STATS
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            Unsafe.SkipInit(out MIB_IPMCAST_MFE_STATS tmp);
-            return (uint)(&tmp.rgmiosOutStats) - (uint)(&tmp);
-        }
+        get => (uint)Marshal.OffsetOf<MIB_IPMCAST_MFE_STATS>("rgmiosOutStats").ToInt32();
     }
 
     [NativeTypeName("#define SIZEOF_BASIC_MIB_MFE_STATS_EX (ULONG)(FIELD_OFFSET(MIB_IPMCAST_MFE_STATS_EX, rgmiosOutStats[0]))")]
     public static uint SIZEOF_BASIC_MIB_MFE_STATS_EX
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
-        {
-            Unsafe.SkipInit(out MIB_IPMCAST_MFE_STATS_EX_XP tmp);
-            return (uint)(&tmp.rgmiosOutStats) - (uint)(&tmp);
-        }
+        get => (uint)Marshal.OffsetOf<MIB_IPMCAST_MFE_STATS_EX_XP>("rgmiosOutStats").ToInt32();
     }
 }

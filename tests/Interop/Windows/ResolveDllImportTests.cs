@@ -68,6 +68,96 @@ public static unsafe partial class ResolveDllImportTests
                     break;
                 }
 
+                case "RtlAddFunctionTable":
+                case "RtlDeleteFunctionTable":
+                case "RtlInstallFunctionTableCallback":
+                case "RtlLookupFunctionEntry":
+                case "RtlRestoreContext":
+                case "RtlUnwindEx":
+                case "RtlVirtualUnwind":
+                {
+                    if (RuntimeInformation.ProcessArchitecture == Architecture.X86)
+                    {
+                        Assert.Warn($"Warn: {exception.Message}");
+                    }
+                    else
+                    {
+                        goto default;
+                    }
+                    break;
+                }
+
+                case "RtlAddGrowableFunctionTable":
+                case "RtlGrowFunctionTable":
+                case "RtlDeleteGrowableFunctionTable":
+                {
+                    if ((RuntimeInformation.ProcessArchitecture == Architecture.X86)
+                        || !OperatingSystem.IsWindowsVersionAtLeast(6, 2))
+                    {
+                        Assert.Warn($"Warn: {exception.Message}");
+                    }
+                    else
+                    {
+                        goto default;
+                    }
+                    break;
+                }
+
+                case "RtlGetDeviceFamilyInfoEnum":
+                {
+                    if (!OperatingSystem.IsWindowsVersionAtLeast(10, 0, 10240, 0))
+                    {
+                        Assert.Warn($"Warn: {exception.Message}");
+                    }
+                    else
+                    {
+                        goto default;
+                    }
+                    break;
+                }
+
+                case "RtlIsEcCode":
+                {
+                    if (!OperatingSystem.IsWindowsVersionAtLeast(10, 0, 22000, 0))
+                    {
+                        Assert.Warn($"Warn: {exception.Message}");
+                    }
+                    else
+                    {
+                        goto default;
+                    }
+                    break;
+                }
+
+                case "RtlInitializeCorrelationVector":
+                case "RtlIncrementCorrelationVector":
+                case "RtlExtendCorrelationVector":
+                case "RtlValidateCorrelationVector":
+                {
+                    if (!OperatingSystem.IsWindowsVersionAtLeast(10, 0, 16299, 0))
+                    {
+                        Assert.Warn($"Warn: {exception.Message}");
+                    }
+                    else
+                    {
+                        goto default;
+                    }
+                    break;
+                }
+
+                case "RtlConvertDeviceFamilyInfoToString":
+                {
+                    if (!OperatingSystem.IsWindowsVersionAtLeast(10, 0, 18362, 0))
+                    {
+                        Assert.Warn($"Warn: {exception.Message}");
+                    }
+                    else
+                    {
+                        goto default;
+                    }
+                    break;
+                }
+
                 case "DavCancelConnectionsToServer":
                 case "DavGetTheLockOwnerOfTheFile":
                 case "DavInvalidateCache":
@@ -237,6 +327,8 @@ public static unsafe partial class ResolveDllImportTests
 
                 case "GetRuntimeAttestationReport":
                 case "ConvertPrimaryPointerToMouseDrag":
+                case "HidP_TranslateUsageAndPagesToI8042ScanCodes":
+                case "HidP_UsageAndPageListDifference":
                 {
                     if (!OperatingSystem.IsWindowsVersionAtLeast(10, 0, 28000, 0))
                     {
@@ -267,7 +359,7 @@ public static unsafe partial class ResolveDllImportTests
                 case "GetD3D11On12On7Interface":
                 {
                     // The D3D11On12On7 runtime is an optional component and may not be installed.
-                    Assert.Warn($"Warn: {exception.Message}");
+                    TestContext.Progress.WriteLine($"Skipping optional D3D11On12On7 entry point: {exception.Message}");
                     break;
                 }
 

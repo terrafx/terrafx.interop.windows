@@ -1,7 +1,5 @@
 @../../../settings.rsp
 @../../../remap.rsp
---exclude
-__MIDL___MIDL_itf_mfobjects_0000_0012_0001
 --file
 um-mfobjects.h
 --method-class-name

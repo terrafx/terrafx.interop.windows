@@ -39,11 +39,11 @@ public readonly partial struct BOOL : IComparable, IComparable<BOOL>, IEquatable
 
     public static implicit operator BOOL(byte value) => new BOOL(value);
 
-    public static explicit operator byte(BOOL value) => (byte)(value.Value);
+    public static explicit operator byte(BOOL value) => unchecked((byte)(value.Value));
 
     public static implicit operator BOOL(short value) => new BOOL(value);
 
-    public static explicit operator short(BOOL value) => (short)(value.Value);
+    public static explicit operator short(BOOL value) => unchecked((short)(value.Value));
 
     public static implicit operator BOOL(int value) => new BOOL(value);
 
@@ -59,23 +59,23 @@ public readonly partial struct BOOL : IComparable, IComparable<BOOL>, IEquatable
 
     public static implicit operator BOOL(sbyte value) => new BOOL(value);
 
-    public static explicit operator sbyte(BOOL value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(BOOL value) => unchecked((sbyte)(value.Value));
 
     public static implicit operator BOOL(ushort value) => new BOOL(value);
 
-    public static explicit operator ushort(BOOL value) => (ushort)(value.Value);
+    public static explicit operator ushort(BOOL value) => unchecked((ushort)(value.Value));
 
     public static explicit operator BOOL(uint value) => new BOOL(unchecked((int)(value)));
 
-    public static explicit operator uint(BOOL value) => (uint)(value.Value);
+    public static explicit operator uint(BOOL value) => unchecked((uint)(value.Value));
 
     public static explicit operator BOOL(ulong value) => new BOOL(unchecked((int)(value)));
 
-    public static explicit operator ulong(BOOL value) => (ulong)(value.Value);
+    public static explicit operator ulong(BOOL value) => unchecked((ulong)(value.Value));
 
     public static explicit operator BOOL(nuint value) => new BOOL(unchecked((int)(value)));
 
-    public static explicit operator nuint(BOOL value) => (nuint)(value.Value);
+    public static explicit operator nuint(BOOL value) => unchecked((nuint)(value.Value));
 
     public int CompareTo(object? obj)
     {
