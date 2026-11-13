@@ -1,0 +1,22 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/Sti.h in the Windows SDK for Windows 10.0.28000.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+namespace TerraFX.Interop.Windows;
+
+/// <include file='STI_DEVICE_MJ_TYPE.xml' path='doc/member[@name="STI_DEVICE_MJ_TYPE"]/*' />
+public enum STI_DEVICE_MJ_TYPE
+{
+    /// <include file='STI_DEVICE_MJ_TYPE.xml' path='doc/member[@name="STI_DEVICE_MJ_TYPE.StiDeviceTypeDefault"]/*' />
+    StiDeviceTypeDefault = 0,
+
+    /// <include file='STI_DEVICE_MJ_TYPE.xml' path='doc/member[@name="STI_DEVICE_MJ_TYPE.StiDeviceTypeScanner"]/*' />
+    StiDeviceTypeScanner = 1,
+
+    /// <include file='STI_DEVICE_MJ_TYPE.xml' path='doc/member[@name="STI_DEVICE_MJ_TYPE.StiDeviceTypeDigitalCamera"]/*' />
+    StiDeviceTypeDigitalCamera = 2,
+
+    /// <include file='STI_DEVICE_MJ_TYPE.xml' path='doc/member[@name="STI_DEVICE_MJ_TYPE.StiDeviceTypeStreamingVideo"]/*' />
+    StiDeviceTypeStreamingVideo = 3,
+}

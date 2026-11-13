@@ -1,0 +1,26 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+GET_STIDCOMMON_CAPS
+GET_STIDEVICE_SUBTYPE
+GET_STIDEVICE_TYPE
+GET_STIVENDOR_CAPS
+GET_STIVER_MAJOR
+GET_STIVER_MINOR
+--file
+um-Sti.h
+--method-class-name
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/Sti
+--test-output
+../../../../tests/Interop/Windows/Windows/um/Sti
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.28000.0/um/Sti.h
+--with-guid
+IStiDevice=6CFA5A80-2DC8-11D0-90EA-00AA0060F86C
+IStillImageW=641BD880-2DC8-11D0-90EA-00AA0060F86C
+--with-library-path
+StiCreateInstanceW=sti
