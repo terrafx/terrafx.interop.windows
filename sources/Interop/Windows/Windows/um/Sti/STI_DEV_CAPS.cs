@@ -1,0 +1,14 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/Sti.h in the Windows SDK for Windows 10.0.28000.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+namespace TerraFX.Interop.Windows;
+
+/// <include file='STI_DEV_CAPS.xml' path='doc/member[@name="STI_DEV_CAPS"]/*' />
+public partial struct STI_DEV_CAPS
+{
+    /// <include file='STI_DEV_CAPS.xml' path='doc/member[@name="STI_DEV_CAPS.dwGeneric"]/*' />
+    [NativeTypeName("DWORD")]
+    public uint dwGeneric;
+}

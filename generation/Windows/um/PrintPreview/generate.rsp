@@ -1,0 +1,17 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+um-PrintPreview.h
+--method-class-name
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/PrintPreview
+--test-output
+../../../../tests/Interop/Windows/Windows/um/PrintPreview
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.28000.0/um/PrintPreview.h
+--with-attribute
+IPrintPreviewDxgiPackageTarget=SupportedOSPlatform("windows6.2")
+PageCountType=SupportedOSPlatform("windows6.2")
