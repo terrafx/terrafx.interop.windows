@@ -118,8 +118,10 @@ public static unsafe partial class ResolveDllImportTests
 
                 case "RtlIsEcCode":
                 {
-                    if (!OperatingSystem.IsWindowsVersionAtLeast(10, 0, 22000, 0))
+                    if ((RuntimeInformation.ProcessArchitecture == Architecture.Arm64)
+                        || !OperatingSystem.IsWindowsVersionAtLeast(10, 0, 22000, 0))
                     {
+                        // This export is unavailable on the native ARM64 CI image.
                         Assert.Warn($"Warn: {exception.Message}");
                     }
                     else
