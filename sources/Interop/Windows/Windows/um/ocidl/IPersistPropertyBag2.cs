@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IPersist")]
 public unsafe partial struct IPersistPropertyBag2 : IPersistPropertyBag2.Interface, INativeGuid
 {
+    /// <include file='IPersistPropertyBag2.xml' path='doc/member[@name="IPersistPropertyBag2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPersistPropertyBag2);
 
     public void** lpVtbl;

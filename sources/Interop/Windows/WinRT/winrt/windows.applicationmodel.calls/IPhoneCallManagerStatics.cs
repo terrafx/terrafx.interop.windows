@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPhoneCallManagerStatics : IPhoneCallManagerStatics.Interface, INativeGuid
 {
+    /// <include file='IPhoneCallManagerStatics.xml' path='doc/member[@name="IPhoneCallManagerStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPhoneCallManagerStatics);
 
     public void** lpVtbl;

@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("29CE1D46-B481-4AA0-A08A-D3EBC8ACA402")]
 public unsafe partial struct AccessibilityDockingService : INativeGuid
 {
+    /// <include file='AccessibilityDockingService.xml' path='doc/member[@name="AccessibilityDockingService.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_AccessibilityDockingService);
 }

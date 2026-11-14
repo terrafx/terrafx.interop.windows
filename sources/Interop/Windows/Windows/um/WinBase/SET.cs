@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SET
 {
+    /// <include file='SET.xml' path='doc/member[@name="SET.SET_TAPE_MEDIA_INFORMATION"]/*' />
     [NativeTypeName("#define SET_TAPE_MEDIA_INFORMATION 0")]
     public const int SET_TAPE_MEDIA_INFORMATION = 0;
 
+    /// <include file='SET.xml' path='doc/member[@name="SET.SET_TAPE_DRIVE_INFORMATION"]/*' />
     [NativeTypeName("#define SET_TAPE_DRIVE_INFORMATION 1")]
     public const int SET_TAPE_DRIVE_INFORMATION = 1;
 }

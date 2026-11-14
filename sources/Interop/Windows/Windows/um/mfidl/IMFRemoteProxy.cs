@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFRemoteProxy : IMFRemoteProxy.Interface, INativeGuid
 {
+    /// <include file='IMFRemoteProxy.xml' path='doc/member[@name="IMFRemoteProxy.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFRemoteProxy);
 
     public void** lpVtbl;

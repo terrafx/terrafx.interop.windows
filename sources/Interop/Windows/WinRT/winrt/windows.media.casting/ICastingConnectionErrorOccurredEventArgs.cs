@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICastingConnectionErrorOccurredEventArgs : ICastingConnectionErrorOccurredEventArgs.Interface, INativeGuid
 {
+    /// <include file='ICastingConnectionErrorOccurredEventArgs.xml' path='doc/member[@name="ICastingConnectionErrorOccurredEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICastingConnectionErrorOccurredEventArgs);
 
     public void** lpVtbl;

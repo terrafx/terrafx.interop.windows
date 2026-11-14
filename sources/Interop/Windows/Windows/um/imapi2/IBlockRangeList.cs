@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IBlockRangeList : IBlockRangeList.Interface, INativeGuid
 {
+    /// <include file='IBlockRangeList.xml' path='doc/member[@name="IBlockRangeList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBlockRangeList);
 
     public void** lpVtbl;

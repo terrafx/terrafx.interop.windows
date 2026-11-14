@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IPreviewHandler : IPreviewHandler.Interface, INativeGuid
 {
+    /// <include file='IPreviewHandler.xml' path='doc/member[@name="IPreviewHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPreviewHandler);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMalloc : IMalloc.Interface, INativeGuid
 {
+    /// <include file='IMalloc.xml' path='doc/member[@name="IMalloc.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMalloc);
 
     public void** lpVtbl;

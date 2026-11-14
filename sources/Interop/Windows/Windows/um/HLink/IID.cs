@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IHlinkSource"]/*' />
     [NativeTypeName("#define IID_IHlinkSource IID_IHlinkTarget")]
     public static ref readonly Guid IID_IHlinkSource => ref IID_IHlinkTarget;
 

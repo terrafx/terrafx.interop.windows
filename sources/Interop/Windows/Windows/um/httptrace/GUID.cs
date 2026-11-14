@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GUID
 {
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_IIS_ALL_TRACE_PROVIDERS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_IIS_ALL_TRACE_PROVIDERS
     {
@@ -37,6 +38,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_IIS_WWW_SERVER_TRACE_PROVIDER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_IIS_WWW_SERVER_TRACE_PROVIDER
     {
@@ -62,6 +64,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_IIS_WWW_SERVER_V2_TRACE_PROVIDER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_IIS_WWW_SERVER_V2_TRACE_PROVIDER
     {
@@ -87,6 +90,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_IIS_ASPNET_TRACE_PROVIDER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_IIS_ASPNET_TRACE_PROVIDER
     {
@@ -112,6 +116,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_IIS_ASP_TRACE_TRACE_PROVIDER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_IIS_ASP_TRACE_TRACE_PROVIDER
     {
@@ -137,6 +142,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_IIS_WWW_GLOBAL_TRACE_PROVIDER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_IIS_WWW_GLOBAL_TRACE_PROVIDER
     {
@@ -162,6 +168,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_IIS_ISAPI_TRACE_PROVIDER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_IIS_ISAPI_TRACE_PROVIDER
     {

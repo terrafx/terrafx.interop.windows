@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IStatelessAppServiceResponse : IStatelessAppServiceResponse.Interface, INativeGuid
 {
+    /// <include file='IStatelessAppServiceResponse.xml' path='doc/member[@name="IStatelessAppServiceResponse.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IStatelessAppServiceResponse);
 
     public void** lpVtbl;

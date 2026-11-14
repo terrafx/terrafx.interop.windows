@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IRadialControllerButtonPressedEventArgs : IRadialControllerButtonPressedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IRadialControllerButtonPressedEventArgs.xml' path='doc/member[@name="IRadialControllerButtonPressedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRadialControllerButtonPressedEventArgs);
 
     public void** lpVtbl;

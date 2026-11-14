@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDGFS
 {
+    /// <include file='DDGFS.xml' path='doc/member[@name="DDGFS.DDGFS_CANFLIP"]/*' />
     [NativeTypeName("#define DDGFS_CANFLIP 0x00000001l")]
     public const int DDGFS_CANFLIP = 0x00000001;
 
+    /// <include file='DDGFS.xml' path='doc/member[@name="DDGFS.DDGFS_ISFLIPDONE"]/*' />
     [NativeTypeName("#define DDGFS_ISFLIPDONE 0x00000002l")]
     public const int DDGFS_ISFLIPDONE = 0x00000002;
 }

@@ -153,9 +153,11 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT SetPivotInteractionContext(HINTERACTIONCONTEXT interactionContext, float x, float y, float radius);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CROSS_SLIDE_THRESHOLD_INVALID_VALUE"]/*' />
     [NativeTypeName("#define CROSS_SLIDE_THRESHOLD_INVALID_VALUE FLT_MAX")]
     public const float CROSS_SLIDE_THRESHOLD_INVALID_VALUE = 3.402823466e+38F;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INERTIA_PARAMETER_INVALID_VALUE"]/*' />
     [NativeTypeName("#define INERTIA_PARAMETER_INVALID_VALUE FLT_MAX")]
     public const float INERTIA_PARAMETER_INVALID_VALUE = 3.402823466e+38F;
 }

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IOleWindow")]
 public unsafe partial struct IDeskBarClient : IDeskBarClient.Interface, INativeGuid
 {
+    /// <include file='IDeskBarClient.xml' path='doc/member[@name="IDeskBarClient.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDeskBarClient);
 
     public void** lpVtbl;

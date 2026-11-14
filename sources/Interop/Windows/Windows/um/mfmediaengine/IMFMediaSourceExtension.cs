@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.Interface, INativeGuid
 {
+    /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFMediaSourceExtension);
 
     public void** lpVtbl;

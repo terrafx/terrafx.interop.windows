@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("305105CE-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct SVGAnimatedPreserveAspectRatio : INativeGuid
 {
+    /// <include file='SVGAnimatedPreserveAspectRatio.xml' path='doc/member[@name="SVGAnimatedPreserveAspectRatio.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SVGAnimatedPreserveAspectRatio);
 }

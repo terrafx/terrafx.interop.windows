@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class EC
 {
+    /// <include file='EC.xml' path='doc/member[@name="EC.EC_LEFTMARGIN"]/*' />
     [NativeTypeName("#define EC_LEFTMARGIN 0x0001")]
     public const int EC_LEFTMARGIN = 0x0001;
 
+    /// <include file='EC.xml' path='doc/member[@name="EC.EC_RIGHTMARGIN"]/*' />
     [NativeTypeName("#define EC_RIGHTMARGIN 0x0002")]
     public const int EC_RIGHTMARGIN = 0x0002;
 
+    /// <include file='EC.xml' path='doc/member[@name="EC.EC_USEFONTINFO"]/*' />
     [NativeTypeName("#define EC_USEFONTINFO 0xffff")]
     public const int EC_USEFONTINFO = 0xffff;
 }

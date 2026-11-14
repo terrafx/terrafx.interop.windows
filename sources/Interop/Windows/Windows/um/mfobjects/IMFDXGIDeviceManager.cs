@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFDXGIDeviceManager : IMFDXGIDeviceManager.Interface, INativeGuid
 {
+    /// <include file='IMFDXGIDeviceManager.xml' path='doc/member[@name="IMFDXGIDeviceManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFDXGIDeviceManager);
 
     public void** lpVtbl;

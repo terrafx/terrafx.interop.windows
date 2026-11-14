@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IFrameExposureCompensationControl : IFrameExposureCompensationControl.Interface, INativeGuid
 {
+    /// <include file='IFrameExposureCompensationControl.xml' path='doc/member[@name="IFrameExposureCompensationControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFrameExposureCompensationControl);
 
     public void** lpVtbl;

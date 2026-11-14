@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IHTCPropertyBehavior : IHTCPropertyBehavior.Interface, INativeGuid
 {
+    /// <include file='IHTCPropertyBehavior.xml' path='doc/member[@name="IHTCPropertyBehavior.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHTCPropertyBehavior);
 
     public void** lpVtbl;

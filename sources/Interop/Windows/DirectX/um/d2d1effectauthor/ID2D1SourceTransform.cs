@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Transform")]
 public unsafe partial struct ID2D1SourceTransform : ID2D1SourceTransform.Interface, INativeGuid
 {
+    /// <include file='ID2D1SourceTransform.xml' path='doc/member[@name="ID2D1SourceTransform.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1SourceTransform);
 
     public void** lpVtbl;

@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class EVENT
 {
+    /// <include file='EVENT.xml' path='doc/member[@name="EVENT.EVENT_MODIFY_STATE"]/*' />
     [NativeTypeName("#define EVENT_MODIFY_STATE 0x0002")]
     public const int EVENT_MODIFY_STATE = 0x0002;
 
+    /// <include file='EVENT.xml' path='doc/member[@name="EVENT.EVENT_ALL_ACCESS"]/*' />
     [NativeTypeName("#define EVENT_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED|SYNCHRONIZE|0x3)")]
     public const int EVENT_ALL_ACCESS = ((0x000F0000) | (0x00100000) | 0x3);
 }

@@ -86,18 +86,23 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint ImmGetIMCCSize(HIMCC param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmRequestMessage"]/*' />
     [NativeTypeName("#define ImmRequestMessage ImmRequestMessageW")]
     public static delegate*<HIMC, WPARAM, LPARAM, LRESULT> ImmRequestMessage => &ImmRequestMessageW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMMGWL_IMC"]/*' />
     [NativeTypeName("#define IMMGWL_IMC 0")]
     public const int IMMGWL_IMC = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMMGWL_PRIVATE"]/*' />
     [NativeTypeName("#define IMMGWL_PRIVATE (sizeof(LONG))")]
     public const uint IMMGWL_PRIVATE = (4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMMGWLP_IMC"]/*' />
     [NativeTypeName("#define IMMGWLP_IMC 0")]
     public const int IMMGWLP_IMC = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IMMGWLP_PRIVATE"]/*' />
     [NativeTypeName("#define IMMGWLP_PRIVATE (sizeof(LONG_PTR))")]
     public static uint IMMGWLP_PRIVATE => unchecked((uint)((uint)(sizeof(nint))));
 }

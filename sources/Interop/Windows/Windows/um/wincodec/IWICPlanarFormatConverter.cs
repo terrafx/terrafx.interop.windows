@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IWICPlanarFormatConverter : IWICPlanarFormatConverter.Interface, INativeGuid
 {
+    /// <include file='IWICPlanarFormatConverter.xml' path='doc/member[@name="IWICPlanarFormatConverter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICPlanarFormatConverter);
 
     public void** lpVtbl;

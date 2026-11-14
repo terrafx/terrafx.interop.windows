@@ -7,9 +7,11 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Security_Cryptography_ICryptographicBufferStatics"]/*' />
     [NativeTypeName("const WCHAR[58]")]
     public const string InterfaceName_Windows_Security_Cryptography_ICryptographicBufferStatics = "Windows.Security.Cryptography.ICryptographicBufferStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Security_Cryptography_CryptographicBuffer"]/*' />
     [NativeTypeName("const WCHAR[50]")]
     public const string RuntimeClass_Windows_Security_Cryptography_CryptographicBuffer = "Windows.Security.Cryptography.CryptographicBuffer";
 }

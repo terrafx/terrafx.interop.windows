@@ -7,15 +7,19 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDOVERFX
 {
+    /// <include file='DDOVERFX.xml' path='doc/member[@name="DDOVERFX.DDOVERFX_ARITHSTRETCHY"]/*' />
     [NativeTypeName("#define DDOVERFX_ARITHSTRETCHY 0x00000001l")]
     public const int DDOVERFX_ARITHSTRETCHY = 0x00000001;
 
+    /// <include file='DDOVERFX.xml' path='doc/member[@name="DDOVERFX.DDOVERFX_MIRRORLEFTRIGHT"]/*' />
     [NativeTypeName("#define DDOVERFX_MIRRORLEFTRIGHT 0x00000002l")]
     public const int DDOVERFX_MIRRORLEFTRIGHT = 0x00000002;
 
+    /// <include file='DDOVERFX.xml' path='doc/member[@name="DDOVERFX.DDOVERFX_MIRRORUPDOWN"]/*' />
     [NativeTypeName("#define DDOVERFX_MIRRORUPDOWN 0x00000004l")]
     public const int DDOVERFX_MIRRORUPDOWN = 0x00000004;
 
+    /// <include file='DDOVERFX.xml' path='doc/member[@name="DDOVERFX.DDOVERFX_DEINTERLACE"]/*' />
     [NativeTypeName("#define DDOVERFX_DEINTERLACE 0x00000008l")]
     public const int DDOVERFX_DEINTERLACE = 0x00000008;
 }

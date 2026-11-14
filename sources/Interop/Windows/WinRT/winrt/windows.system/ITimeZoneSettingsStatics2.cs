@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ITimeZoneSettingsStatics2 : ITimeZoneSettingsStatics2.Interface, INativeGuid
 {
+    /// <include file='ITimeZoneSettingsStatics2.xml' path='doc/member[@name="ITimeZoneSettingsStatics2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITimeZoneSettingsStatics2);
 
     public void** lpVtbl;

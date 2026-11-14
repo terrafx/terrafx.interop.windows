@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class INET
 {
+    /// <include file='INET.xml' path='doc/member[@name="INET.INET_ADDRSTRLEN"]/*' />
     [NativeTypeName("#define INET_ADDRSTRLEN 22")]
     public const int INET_ADDRSTRLEN = 22;
 }

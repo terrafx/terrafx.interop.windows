@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IStreamSocketListenerControl2 : IStreamSocketListenerControl2.Interface, INativeGuid
 {
+    /// <include file='IStreamSocketListenerControl2.xml' path='doc/member[@name="IStreamSocketListenerControl2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IStreamSocketListenerControl2);
 
     public void** lpVtbl;

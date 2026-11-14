@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISmsMessageReceivedTriggerFactory : ISmsMessageReceivedTriggerFactory.Interface, INativeGuid
 {
+    /// <include file='ISmsMessageReceivedTriggerFactory.xml' path='doc/member[@name="ISmsMessageReceivedTriggerFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISmsMessageReceivedTriggerFactory);
 
     public void** lpVtbl;

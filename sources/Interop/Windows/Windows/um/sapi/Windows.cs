@@ -14,117 +14,155 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Speech_Default_Weight"]/*' />
     [NativeTypeName("const float")]
     public const float Speech_Default_Weight = (1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Speech_Max_Word_Length"]/*' />
     [NativeTypeName("const LONG")]
     public const int Speech_Max_Word_Length = (128);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Speech_Max_Pron_Length"]/*' />
     [NativeTypeName("const LONG")]
     public const int Speech_Max_Pron_Length = (384);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Speech_StreamPos_Asap"]/*' />
     [NativeTypeName("const LONG")]
     public const int Speech_StreamPos_Asap = (0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.Speech_StreamPos_RealTime"]/*' />
     [NativeTypeName("const LONG")]
     public const int Speech_StreamPos_RealTime = (-1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SpeechAllElements"]/*' />
     [NativeTypeName("const LONG")]
     public const int SpeechAllElements = (int)(SPPR_ALL_ELEMENTS);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows._SAPI_VER"]/*' />
     [NativeTypeName("#define _SAPI_VER 0x054")]
     public const int _SAPI_VER = 0x054;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCAT_AUDIOOUT"]/*' />
     [NativeTypeName("#define SPCAT_AUDIOOUT L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioOutput\"")]
     public const string SPCAT_AUDIOOUT = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioOutput";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCAT_AUDIOIN"]/*' />
     [NativeTypeName("#define SPCAT_AUDIOIN L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioInput\"")]
     public const string SPCAT_AUDIOIN = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioInput";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCAT_VOICES"]/*' />
     [NativeTypeName("#define SPCAT_VOICES L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\Voices\"")]
     public const string SPCAT_VOICES = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\Voices";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCAT_RECOGNIZERS"]/*' />
     [NativeTypeName("#define SPCAT_RECOGNIZERS L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\Recognizers\"")]
     public const string SPCAT_RECOGNIZERS = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\Recognizers";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCAT_APPLEXICONS"]/*' />
     [NativeTypeName("#define SPCAT_APPLEXICONS L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AppLexicons\"")]
     public const string SPCAT_APPLEXICONS = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AppLexicons";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCAT_PHONECONVERTERS"]/*' />
     [NativeTypeName("#define SPCAT_PHONECONVERTERS L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\PhoneConverters\"")]
     public const string SPCAT_PHONECONVERTERS = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\PhoneConverters";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCAT_TEXTNORMALIZERS"]/*' />
     [NativeTypeName("#define SPCAT_TEXTNORMALIZERS L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\TextNormalizers\"")]
     public const string SPCAT_TEXTNORMALIZERS = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\TextNormalizers";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCAT_RECOPROFILES"]/*' />
     [NativeTypeName("#define SPCAT_RECOPROFILES L\"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech\\RecoProfiles\"")]
     public const string SPCAT_RECOPROFILES = "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech\\RecoProfiles";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPMMSYS_AUDIO_IN_TOKEN_ID"]/*' />
     [NativeTypeName("#define SPMMSYS_AUDIO_IN_TOKEN_ID L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioInput\\TokenEnums\\MMAudioIn\"")]
     public const string SPMMSYS_AUDIO_IN_TOKEN_ID = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioInput\\TokenEnums\\MMAudioIn\\";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPMMSYS_AUDIO_OUT_TOKEN_ID"]/*' />
     [NativeTypeName("#define SPMMSYS_AUDIO_OUT_TOKEN_ID L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioOutput\\TokenEnums\\MMAudioOut\"")]
     public const string SPMMSYS_AUDIO_OUT_TOKEN_ID = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioOutput\\TokenEnums\\MMAudioOut\\";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCURRENT_USER_LEXICON_TOKEN_ID"]/*' />
     [NativeTypeName("#define SPCURRENT_USER_LEXICON_TOKEN_ID L\"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech\\CurrentUserLexicon\"")]
     public const string SPCURRENT_USER_LEXICON_TOKEN_ID = "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech\\CurrentUserLexicon";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPCURRENT_USER_SHORTCUT_TOKEN_ID"]/*' />
     [NativeTypeName("#define SPCURRENT_USER_SHORTCUT_TOKEN_ID L\"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech\\CurrentUserShortcut\"")]
     public const string SPCURRENT_USER_SHORTCUT_TOKEN_ID = "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech\\CurrentUserShortcut";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPTOKENVALUE_CLSID"]/*' />
     [NativeTypeName("#define SPTOKENVALUE_CLSID L\"CLSID\"")]
     public const string SPTOKENVALUE_CLSID = "CLSID";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPTOKENKEY_FILES"]/*' />
     [NativeTypeName("#define SPTOKENKEY_FILES L\"Files\"")]
     public const string SPTOKENKEY_FILES = "Files";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPTOKENKEY_UI"]/*' />
     [NativeTypeName("#define SPTOKENKEY_UI L\"UI\"")]
     public const string SPTOKENKEY_UI = "UI";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPTOKENKEY_ATTRIBUTES"]/*' />
     [NativeTypeName("#define SPTOKENKEY_ATTRIBUTES L\"Attributes\"")]
     public const string SPTOKENKEY_ATTRIBUTES = "Attributes";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPTOKENKEY_RETAINEDAUDIO"]/*' />
     [NativeTypeName("#define SPTOKENKEY_RETAINEDAUDIO L\"SecondsPerRetainedAudioEvent\"")]
     public const string SPTOKENKEY_RETAINEDAUDIO = "SecondsPerRetainedAudioEvent";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPTOKENKEY_AUDIO_LATENCY_WARNING"]/*' />
     [NativeTypeName("#define SPTOKENKEY_AUDIO_LATENCY_WARNING L\"LatencyWarningThreshold\"")]
     public const string SPTOKENKEY_AUDIO_LATENCY_WARNING = "LatencyWarningThreshold";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPTOKENKEY_AUDIO_LATENCY_TRUNCATE"]/*' />
     [NativeTypeName("#define SPTOKENKEY_AUDIO_LATENCY_TRUNCATE L\"LatencyTruncateThreshold\"")]
     public const string SPTOKENKEY_AUDIO_LATENCY_TRUNCATE = "LatencyTruncateThreshold";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPTOKENKEY_AUDIO_LATENCY_UPDATE_INTERVAL"]/*' />
     [NativeTypeName("#define SPTOKENKEY_AUDIO_LATENCY_UPDATE_INTERVAL L\"LatencyUpdateInterval\"")]
     public const string SPTOKENKEY_AUDIO_LATENCY_UPDATE_INTERVAL = "LatencyUpdateInterval";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPVOICECATEGORY_TTSRATE"]/*' />
     [NativeTypeName("#define SPVOICECATEGORY_TTSRATE L\"DefaultTTSRate\"")]
     public const string SPVOICECATEGORY_TTSRATE = "DefaultTTSRate";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPTOPIC_SPELLING"]/*' />
     [NativeTypeName("#define SPTOPIC_SPELLING L\"Spelling\"")]
     public const string SPTOPIC_SPELLING = "Spelling";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPWILDCARD"]/*' />
     [NativeTypeName("#define SPWILDCARD L\"...\"")]
     public const string SPWILDCARD = "...";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPDICTATION"]/*' />
     [NativeTypeName("#define SPDICTATION L\"*\"")]
     public const string SPDICTATION = "*";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPINFDICTATION"]/*' />
     [NativeTypeName("#define SPINFDICTATION L\"*+\"")]
     public const string SPINFDICTATION = "*+";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPFEI_FLAGCHECK"]/*' />
     [NativeTypeName("#define SPFEI_FLAGCHECK ( (1ui64 << SPEI_RESERVED1) | (1ui64 << SPEI_RESERVED2) )")]
-    public const ulong SPFEI_FLAGCHECK = ((1UL << (int)(SPEI_RESERVED1)) | (1UL << (int)(SPEI_RESERVED2)));
+    public const ulong SPFEI_FLAGCHECK = ((1UL << (int)((int)(SPEI_RESERVED1))) | (1UL << (int)((int)(SPEI_RESERVED2))));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPFEI_ALL_TTS_EVENTS"]/*' />
     [NativeTypeName("#define SPFEI_ALL_TTS_EVENTS (0x000000000000FFFEui64 | SPFEI_FLAGCHECK)")]
-    public const ulong SPFEI_ALL_TTS_EVENTS = (0x000000000000FFFEUL | ((1UL << (int)(SPEI_RESERVED1)) | (1UL << (int)(SPEI_RESERVED2))));
+    public const ulong SPFEI_ALL_TTS_EVENTS = (0x000000000000FFFEUL | ((1UL << (int)((int)(SPEI_RESERVED1))) | (1UL << (int)((int)(SPEI_RESERVED2)))));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPFEI_ALL_SR_EVENTS"]/*' />
     [NativeTypeName("#define SPFEI_ALL_SR_EVENTS (0x003FFFFC00000000ui64 | SPFEI_FLAGCHECK)")]
-    public const ulong SPFEI_ALL_SR_EVENTS = (0x003FFFFC00000000UL | ((1UL << (int)(SPEI_RESERVED1)) | (1UL << (int)(SPEI_RESERVED2))));
+    public const ulong SPFEI_ALL_SR_EVENTS = (0x003FFFFC00000000UL | ((1UL << (int)((int)(SPEI_RESERVED1))) | (1UL << (int)((int)(SPEI_RESERVED2)))));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPFEI_ALL_EVENTS"]/*' />
     [NativeTypeName("#define SPFEI_ALL_EVENTS 0xEFFFFFFFFFFFFFFFui64")]
     public const ulong SPFEI_ALL_EVENTS = 0xEFFFFFFFFFFFFFFFUL;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPRR_ALL_ELEMENTS"]/*' />
     [NativeTypeName("#define SPRR_ALL_ELEMENTS SPPR_ALL_ELEMENTS")]
     public const SPPHRASERNG SPRR_ALL_ELEMENTS = SPPR_ALL_ELEMENTS;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SPRP_NORMAL"]/*' />
     [NativeTypeName("#define SPRP_NORMAL 0")]
     public const int SPRP_NORMAL = 0;
 

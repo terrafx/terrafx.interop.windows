@@ -26,15 +26,15 @@ public partial struct JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2
     public LARGE_INTEGER PerJobUserTimeLimit;
 
     /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.Anonymous1"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L13805_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L14629_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.Anonymous2"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L13810_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L14634_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.Anonymous3"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L13815_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L14639_C5")]
     public _Anonymous3_e__Union Anonymous3;
 
     /// <include file='JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.xml' path='doc/member[@name="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION_2.LimitFlags"]/*' />

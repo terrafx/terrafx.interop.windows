@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IOpticalImageStabilizationControl : IOpticalImageStabilizationControl.Interface, INativeGuid
 {
+    /// <include file='IOpticalImageStabilizationControl.xml' path='doc/member[@name="IOpticalImageStabilizationControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IOpticalImageStabilizationControl);
 
     public void** lpVtbl;

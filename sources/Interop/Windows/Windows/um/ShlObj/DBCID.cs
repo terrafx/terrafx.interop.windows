@@ -7,10 +7,16 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DBCID
 {
+    /// <include file='DBCID.xml' path='doc/member[@name="DBCID.DBCID_EMPTY"]/*' />
     public const int DBCID_EMPTY = 0;
+    /// <include file='DBCID.xml' path='doc/member[@name="DBCID.DBCID_ONDRAG"]/*' />
     public const int DBCID_ONDRAG = 1;
+    /// <include file='DBCID.xml' path='doc/member[@name="DBCID.DBCID_CLSIDOFBAR"]/*' />
     public const int DBCID_CLSIDOFBAR = 2;
+    /// <include file='DBCID.xml' path='doc/member[@name="DBCID.DBCID_RESIZE"]/*' />
     public const int DBCID_RESIZE = 3;
+    /// <include file='DBCID.xml' path='doc/member[@name="DBCID.DBCID_GETBAR"]/*' />
     public const int DBCID_GETBAR = 4;
+    /// <include file='DBCID.xml' path='doc/member[@name="DBCID.DBCID_UPDATESIZE"]/*' />
     public const int DBCID_UPDATESIZE = 5;
 }

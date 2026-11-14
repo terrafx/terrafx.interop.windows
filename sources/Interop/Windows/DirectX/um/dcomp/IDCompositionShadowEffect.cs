@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDCompositionFilterEffect")]
 public unsafe partial struct IDCompositionShadowEffect : IDCompositionShadowEffect.Interface, INativeGuid
 {
+    /// <include file='IDCompositionShadowEffect.xml' path='doc/member[@name="IDCompositionShadowEffect.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDCompositionShadowEffect);
 
     public void** lpVtbl;

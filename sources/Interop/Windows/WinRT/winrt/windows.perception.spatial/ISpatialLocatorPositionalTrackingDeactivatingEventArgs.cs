@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISpatialLocatorPositionalTrackingDeactivatingEventArgs : ISpatialLocatorPositionalTrackingDeactivatingEventArgs.Interface, INativeGuid
 {
+    /// <include file='ISpatialLocatorPositionalTrackingDeactivatingEventArgs.xml' path='doc/member[@name="ISpatialLocatorPositionalTrackingDeactivatingEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpatialLocatorPositionalTrackingDeactivatingEventArgs);
 
     public void** lpVtbl;

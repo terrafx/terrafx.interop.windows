@@ -1573,582 +1573,775 @@ public static unsafe partial class Windows
     [DllImport("shlwapi", ExactSpelling = true)]
     public static extern BOOL IsInternetESCEnabled();
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STIF_DEFAULT"]/*' />
     [NativeTypeName("#define STIF_DEFAULT 0x00000000L")]
     public const int STIF_DEFAULT = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STIF_SUPPORT_HEX"]/*' />
     [NativeTypeName("#define STIF_SUPPORT_HEX 0x00000001L")]
     public const int STIF_SUPPORT_HEX = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRetToStr"]/*' />
     [NativeTypeName("#define StrRetToStr StrRetToStrW")]
     public static delegate*<STRRET*, ITEMIDLIST*, char**, HRESULT> StrRetToStr => &StrRetToStrW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRetToBuf"]/*' />
     [NativeTypeName("#define StrRetToBuf StrRetToBufW")]
     public static delegate*<STRRET*, ITEMIDLIST*, char*, uint, HRESULT> StrRetToBuf => &StrRetToBufW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHStrDup"]/*' />
     [NativeTypeName("#define SHStrDup SHStrDupW")]
     public static delegate*<char*, char**, HRESULT> SHStrDup => &SHStrDupW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHLocalStrDup"]/*' />
     [NativeTypeName("#define SHLocalStrDup SHLocalStrDupW")]
     public static delegate*<char*, char**, HRESULT> SHLocalStrDup => &SHLocalStrDupW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IsCharSpace"]/*' />
     [NativeTypeName("#define IsCharSpace IsCharSpaceW")]
     public static delegate*<char, BOOL> IsCharSpace => &IsCharSpaceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpC"]/*' />
     [NativeTypeName("#define StrCmpC StrCmpCW")]
     public static delegate*<char*, char*, int> StrCmpC => &StrCmpCW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpIC"]/*' />
     [NativeTypeName("#define StrCmpIC StrCmpICW")]
     public static delegate*<char*, char*, int> StrCmpIC => &StrCmpICW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrChr"]/*' />
     [NativeTypeName("#define StrChr StrChrW")]
     public static delegate*<char*, char, char*> StrChr => &StrChrW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRChr"]/*' />
     [NativeTypeName("#define StrRChr StrRChrW")]
     public static delegate*<char*, char*, char, char*> StrRChr => &StrRChrW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrChrI"]/*' />
     [NativeTypeName("#define StrChrI StrChrIW")]
     public static delegate*<char*, char, char*> StrChrI => &StrChrIW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRChrI"]/*' />
     [NativeTypeName("#define StrRChrI StrRChrIW")]
     public static delegate*<char*, char*, char, char*> StrRChrI => &StrRChrIW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpN"]/*' />
     [NativeTypeName("#define StrCmpN StrCmpNW")]
     public static delegate*<char*, char*, int, int> StrCmpN => &StrCmpNW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpNI"]/*' />
     [NativeTypeName("#define StrCmpNI StrCmpNIW")]
     public static delegate*<char*, char*, int, int> StrCmpNI => &StrCmpNIW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrStr"]/*' />
     [NativeTypeName("#define StrStr StrStrW")]
     public static delegate*<char*, char*, char*> StrStr => &StrStrW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrStrI"]/*' />
     [NativeTypeName("#define StrStrI StrStrIW")]
     public static delegate*<char*, char*, char*> StrStrI => &StrStrIW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrDup"]/*' />
     [NativeTypeName("#define StrDup StrDupW")]
     public static delegate*<char*, char*> StrDup => &StrDupW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrRStrI"]/*' />
     [NativeTypeName("#define StrRStrI StrRStrIW")]
     public static delegate*<char*, char*, char*, char*> StrRStrI => &StrRStrIW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCSpn"]/*' />
     [NativeTypeName("#define StrCSpn StrCSpnW")]
     public static delegate*<char*, char*, int> StrCSpn => &StrCSpnW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCSpnI"]/*' />
     [NativeTypeName("#define StrCSpnI StrCSpnIW")]
     public static delegate*<char*, char*, int> StrCSpnI => &StrCSpnIW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrSpn"]/*' />
     [NativeTypeName("#define StrSpn StrSpnW")]
     public static delegate*<char*, char*, int> StrSpn => &StrSpnW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrToInt"]/*' />
     [NativeTypeName("#define StrToInt StrToIntW")]
     public static delegate*<char*, int> StrToInt => &StrToIntW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrPBrk"]/*' />
     [NativeTypeName("#define StrPBrk StrPBrkW")]
     public static delegate*<char*, char*, char*> StrPBrk => &StrPBrkW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrToIntEx"]/*' />
     [NativeTypeName("#define StrToIntEx StrToIntExW")]
     public static delegate*<char*, int, int*, BOOL> StrToIntEx => &StrToIntExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrToInt64Ex"]/*' />
     [NativeTypeName("#define StrToInt64Ex StrToInt64ExW")]
     public static delegate*<char*, int, long*, BOOL> StrToInt64Ex => &StrToInt64ExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrFromTimeInterval"]/*' />
     [NativeTypeName("#define StrFromTimeInterval StrFromTimeIntervalW")]
     public static delegate*<char*, uint, uint, int, int> StrFromTimeInterval => &StrFromTimeIntervalW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrFormatByteSize"]/*' />
     [NativeTypeName("#define StrFormatByteSize StrFormatByteSizeW")]
     public static delegate*<long, char*, uint, char*> StrFormatByteSize => &StrFormatByteSizeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrFormatByteSize64"]/*' />
     [NativeTypeName("#define StrFormatByteSize64 StrFormatByteSizeW")]
     public static delegate*<long, char*, uint, char*> StrFormatByteSize64 => &StrFormatByteSizeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrFormatKBSize"]/*' />
     [NativeTypeName("#define StrFormatKBSize StrFormatKBSizeW")]
     public static delegate*<long, char*, uint, char*> StrFormatKBSize => &StrFormatKBSizeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrNCat"]/*' />
     [NativeTypeName("#define StrNCat StrNCatW")]
     public static delegate*<char*, char*, int, char*> StrNCat => &StrNCatW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrTrim"]/*' />
     [NativeTypeName("#define StrTrim StrTrimW")]
     public static delegate*<char*, char*, BOOL> StrTrim => &StrTrimW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCatBuff"]/*' />
     [NativeTypeName("#define StrCatBuff StrCatBuffW")]
     public static delegate*<char*, char*, int, char*> StrCatBuff => &StrCatBuffW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ChrCmpI"]/*' />
     [NativeTypeName("#define ChrCmpI ChrCmpIW")]
     public static delegate*<char, char, BOOL> ChrCmpI => &ChrCmpIW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.wvnsprintf"]/*' />
     [NativeTypeName("#define wvnsprintf wvnsprintfW")]
     public static delegate*<char*, int, char*, sbyte*, int> wvnsprintf => &wvnsprintfW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrIsIntlEqual"]/*' />
     [NativeTypeName("#define StrIsIntlEqual StrIsIntlEqualW")]
     public static delegate*<BOOL, char*, char*, int, BOOL> StrIsIntlEqual => &StrIsIntlEqualW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpNC"]/*' />
     [NativeTypeName("#define StrCmpNC StrCmpNCW")]
     public static delegate*<char*, char*, int, int> StrCmpNC => &StrCmpNCW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpNIC"]/*' />
     [NativeTypeName("#define StrCmpNIC StrCmpNICW")]
     public static delegate*<char*, char*, int, int> StrCmpNIC => &StrCmpNICW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCatA"]/*' />
     [NativeTypeName("#define StrCatA lstrcatA")]
     public static delegate*<sbyte*, sbyte*, sbyte*> StrCatA => &lstrcatA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpA"]/*' />
     [NativeTypeName("#define StrCmpA lstrcmpA")]
     public static delegate*<sbyte*, sbyte*, int> StrCmpA => &lstrcmpA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpIA"]/*' />
     [NativeTypeName("#define StrCmpIA lstrcmpiA")]
     public static delegate*<sbyte*, sbyte*, int> StrCmpIA => &lstrcmpiA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCpyA"]/*' />
     [NativeTypeName("#define StrCpyA lstrcpyA")]
     public static delegate*<sbyte*, sbyte*, sbyte*> StrCpyA => &lstrcpyA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCpyNA"]/*' />
     [NativeTypeName("#define StrCpyNA lstrcpynA")]
     public static delegate*<sbyte*, sbyte*, int, sbyte*> StrCpyNA => &lstrcpynA;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrToLong"]/*' />
     [NativeTypeName("#define StrToLong StrToInt")]
     public static delegate*<char*, int> StrToLong => &StrToIntW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrNCmp"]/*' />
     [NativeTypeName("#define StrNCmp StrCmpN")]
     public static delegate*<char*, char*, int, int> StrNCmp => &StrCmpNW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrNCmpI"]/*' />
     [NativeTypeName("#define StrNCmpI StrCmpNI")]
     public static delegate*<char*, char*, int, int> StrNCmpI => &StrCmpNIW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrNCpy"]/*' />
     [NativeTypeName("#define StrNCpy StrCpyN")]
     public static delegate*<char*, char*, int, char*> StrNCpy => &StrCpyNW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCatN"]/*' />
     [NativeTypeName("#define StrCatN StrNCat")]
     public static delegate*<char*, char*, int, char*> StrCatN => &StrNCatW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCat"]/*' />
     [NativeTypeName("#define StrCat StrCatW")]
     public static delegate*<char*, char*, char*> StrCat => &StrCatW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmp"]/*' />
     [NativeTypeName("#define StrCmp StrCmpW")]
     public static delegate*<char*, char*, int> StrCmp => &StrCmpW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCmpI"]/*' />
     [NativeTypeName("#define StrCmpI StrCmpIW")]
     public static delegate*<char*, char*, int> StrCmpI => &StrCmpIW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCpy"]/*' />
     [NativeTypeName("#define StrCpy StrCpyW")]
     public static delegate*<char*, char*, char*> StrCpy => &StrCpyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.StrCpyN"]/*' />
     [NativeTypeName("#define StrCpyN StrCpyNW")]
     public static delegate*<char*, char*, int, char*> StrCpyN => &StrCpyNW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathAddBackslash"]/*' />
     [NativeTypeName("#define PathAddBackslash PathAddBackslashW")]
     public static delegate*<char*, char*> PathAddBackslash => &PathAddBackslashW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathAddExtension"]/*' />
     [NativeTypeName("#define PathAddExtension PathAddExtensionW")]
     public static delegate*<char*, char*, BOOL> PathAddExtension => &PathAddExtensionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathBuildRoot"]/*' />
     [NativeTypeName("#define PathBuildRoot PathBuildRootW")]
     public static delegate*<char*, int, char*> PathBuildRoot => &PathBuildRootW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCombine"]/*' />
     [NativeTypeName("#define PathCombine PathCombineW")]
     public static delegate*<char*, char*, char*, char*> PathCombine => &PathCombineW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFileExists"]/*' />
     [NativeTypeName("#define PathFileExists PathFileExistsW")]
     public static delegate*<char*, BOOL> PathFileExists => &PathFileExistsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFindExtension"]/*' />
     [NativeTypeName("#define PathFindExtension PathFindExtensionW")]
     public static delegate*<char*, char*> PathFindExtension => &PathFindExtensionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFindFileName"]/*' />
     [NativeTypeName("#define PathFindFileName PathFindFileNameW")]
     public static delegate*<char*, char*> PathFindFileName => &PathFindFileNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFindNextComponent"]/*' />
     [NativeTypeName("#define PathFindNextComponent PathFindNextComponentW")]
     public static delegate*<char*, char*> PathFindNextComponent => &PathFindNextComponentW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFindSuffixArray"]/*' />
     [NativeTypeName("#define PathFindSuffixArray PathFindSuffixArrayW")]
     public static delegate*<char*, char**, int, char*> PathFindSuffixArray => &PathFindSuffixArrayW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathGetArgs"]/*' />
     [NativeTypeName("#define PathGetArgs PathGetArgsW")]
     public static delegate*<char*, char*> PathGetArgs => &PathGetArgsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsLFNFileSpec"]/*' />
     [NativeTypeName("#define PathIsLFNFileSpec PathIsLFNFileSpecW")]
     public static delegate*<char*, BOOL> PathIsLFNFileSpec => &PathIsLFNFileSpecW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GCT_INVALID"]/*' />
     [NativeTypeName("#define GCT_INVALID 0x0000")]
     public const int GCT_INVALID = 0x0000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GCT_LFNCHAR"]/*' />
     [NativeTypeName("#define GCT_LFNCHAR 0x0001")]
     public const int GCT_LFNCHAR = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GCT_SHORTCHAR"]/*' />
     [NativeTypeName("#define GCT_SHORTCHAR 0x0002")]
     public const int GCT_SHORTCHAR = 0x0002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GCT_WILD"]/*' />
     [NativeTypeName("#define GCT_WILD 0x0004")]
     public const int GCT_WILD = 0x0004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GCT_SEPARATOR"]/*' />
     [NativeTypeName("#define GCT_SEPARATOR 0x0008")]
     public const int GCT_SEPARATOR = 0x0008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathGetDriveNumber"]/*' />
     [NativeTypeName("#define PathGetDriveNumber PathGetDriveNumberW")]
     public static delegate*<char*, int> PathGetDriveNumber => &PathGetDriveNumberW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsDirectory"]/*' />
     [NativeTypeName("#define PathIsDirectory PathIsDirectoryW")]
     public static delegate*<char*, BOOL> PathIsDirectory => &PathIsDirectoryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsDirectoryEmpty"]/*' />
     [NativeTypeName("#define PathIsDirectoryEmpty PathIsDirectoryEmptyW")]
     public static delegate*<char*, BOOL> PathIsDirectoryEmpty => &PathIsDirectoryEmptyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsFileSpec"]/*' />
     [NativeTypeName("#define PathIsFileSpec PathIsFileSpecW")]
     public static delegate*<char*, BOOL> PathIsFileSpec => &PathIsFileSpecW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsPrefix"]/*' />
     [NativeTypeName("#define PathIsPrefix PathIsPrefixW")]
     public static delegate*<char*, char*, BOOL> PathIsPrefix => &PathIsPrefixW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsRelative"]/*' />
     [NativeTypeName("#define PathIsRelative PathIsRelativeW")]
     public static delegate*<char*, BOOL> PathIsRelative => &PathIsRelativeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsRoot"]/*' />
     [NativeTypeName("#define PathIsRoot PathIsRootW")]
     public static delegate*<char*, BOOL> PathIsRoot => &PathIsRootW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsSameRoot"]/*' />
     [NativeTypeName("#define PathIsSameRoot PathIsSameRootW")]
     public static delegate*<char*, char*, BOOL> PathIsSameRoot => &PathIsSameRootW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsUNC"]/*' />
     [NativeTypeName("#define PathIsUNC PathIsUNCW")]
     public static delegate*<char*, BOOL> PathIsUNC => &PathIsUNCW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsNetworkPath"]/*' />
     [NativeTypeName("#define PathIsNetworkPath PathIsNetworkPathW")]
     public static delegate*<char*, BOOL> PathIsNetworkPath => &PathIsNetworkPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsUNCServer"]/*' />
     [NativeTypeName("#define PathIsUNCServer PathIsUNCServerW")]
     public static delegate*<char*, BOOL> PathIsUNCServer => &PathIsUNCServerW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsUNCServerShare"]/*' />
     [NativeTypeName("#define PathIsUNCServerShare PathIsUNCServerShareW")]
     public static delegate*<char*, BOOL> PathIsUNCServerShare => &PathIsUNCServerShareW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsURL"]/*' />
     [NativeTypeName("#define PathIsURL PathIsURLW")]
     public static delegate*<char*, BOOL> PathIsURL => &PathIsURLW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PMSF_NORMAL"]/*' />
     [NativeTypeName("#define PMSF_NORMAL 0x00000000")]
     public const int PMSF_NORMAL = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PMSF_MULTIPLE"]/*' />
     [NativeTypeName("#define PMSF_MULTIPLE 0x00000001")]
     public const int PMSF_MULTIPLE = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PMSF_DONT_STRIP_SPACES"]/*' />
     [NativeTypeName("#define PMSF_DONT_STRIP_SPACES 0x00010000")]
     public const int PMSF_DONT_STRIP_SPACES = 0x00010000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRemoveBackslash"]/*' />
     [NativeTypeName("#define PathRemoveBackslash PathRemoveBackslashW")]
     public static delegate*<char*, char*> PathRemoveBackslash => &PathRemoveBackslashW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathSkipRoot"]/*' />
     [NativeTypeName("#define PathSkipRoot PathSkipRootW")]
     public static delegate*<char*, char*> PathSkipRoot => &PathSkipRootW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathStripPath"]/*' />
     [NativeTypeName("#define PathStripPath PathStripPathW")]
     public static delegate*<char*, void> PathStripPath => &PathStripPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathStripToRoot"]/*' />
     [NativeTypeName("#define PathStripToRoot PathStripToRootW")]
     public static delegate*<char*, BOOL> PathStripToRoot => &PathStripToRootW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathMakeSystemFolder"]/*' />
     [NativeTypeName("#define PathMakeSystemFolder PathMakeSystemFolderW")]
     public static delegate*<char*, BOOL> PathMakeSystemFolder => &PathMakeSystemFolderW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathUnmakeSystemFolder"]/*' />
     [NativeTypeName("#define PathUnmakeSystemFolder PathUnmakeSystemFolderW")]
     public static delegate*<char*, BOOL> PathUnmakeSystemFolder => &PathUnmakeSystemFolderW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsSystemFolder"]/*' />
     [NativeTypeName("#define PathIsSystemFolder PathIsSystemFolderW")]
     public static delegate*<char*, uint, BOOL> PathIsSystemFolder => &PathIsSystemFolderW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathUndecorate"]/*' />
     [NativeTypeName("#define PathUndecorate PathUndecorateW")]
     public static delegate*<char*, void> PathUndecorate => &PathUndecorateW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathUnExpandEnvStrings"]/*' />
     [NativeTypeName("#define PathUnExpandEnvStrings PathUnExpandEnvStringsW")]
     public static delegate*<char*, char*, uint, BOOL> PathUnExpandEnvStrings => &PathUnExpandEnvStringsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathAppend"]/*' />
     [NativeTypeName("#define PathAppend PathAppendW")]
     public static delegate*<char*, char*, BOOL> PathAppend => &PathAppendW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCanonicalize"]/*' />
     [NativeTypeName("#define PathCanonicalize PathCanonicalizeW")]
     public static delegate*<char*, char*, BOOL> PathCanonicalize => &PathCanonicalizeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCompactPath"]/*' />
     [NativeTypeName("#define PathCompactPath PathCompactPathW")]
     public static delegate*<HDC, char*, uint, BOOL> PathCompactPath => &PathCompactPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCompactPathEx"]/*' />
     [NativeTypeName("#define PathCompactPathEx PathCompactPathExW")]
     public static delegate*<char*, char*, uint, uint, BOOL> PathCompactPathEx => &PathCompactPathExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCommonPrefix"]/*' />
     [NativeTypeName("#define PathCommonPrefix PathCommonPrefixW")]
     public static delegate*<char*, char*, char*, int> PathCommonPrefix => &PathCommonPrefixW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathFindOnPath"]/*' />
     [NativeTypeName("#define PathFindOnPath PathFindOnPathW")]
     public static delegate*<char*, char**, BOOL> PathFindOnPath => &PathFindOnPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathGetCharType"]/*' />
     [NativeTypeName("#define PathGetCharType PathGetCharTypeW")]
     public static delegate*<char, uint> PathGetCharType => &PathGetCharTypeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathIsContentType"]/*' />
     [NativeTypeName("#define PathIsContentType PathIsContentTypeW")]
     public static delegate*<char*, char*, BOOL> PathIsContentType => &PathIsContentTypeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathMakePretty"]/*' />
     [NativeTypeName("#define PathMakePretty PathMakePrettyW")]
     public static delegate*<char*, BOOL> PathMakePretty => &PathMakePrettyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathMatchSpec"]/*' />
     [NativeTypeName("#define PathMatchSpec PathMatchSpecW")]
     public static delegate*<char*, char*, BOOL> PathMatchSpec => &PathMatchSpecW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathMatchSpecEx"]/*' />
     [NativeTypeName("#define PathMatchSpecEx PathMatchSpecExW")]
     public static delegate*<char*, char*, uint, HRESULT> PathMatchSpecEx => &PathMatchSpecExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathParseIconLocation"]/*' />
     [NativeTypeName("#define PathParseIconLocation PathParseIconLocationW")]
     public static delegate*<char*, int> PathParseIconLocation => &PathParseIconLocationW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathQuoteSpaces"]/*' />
     [NativeTypeName("#define PathQuoteSpaces PathQuoteSpacesW")]
     public static delegate*<char*, BOOL> PathQuoteSpaces => &PathQuoteSpacesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRelativePathTo"]/*' />
     [NativeTypeName("#define PathRelativePathTo PathRelativePathToW")]
     public static delegate*<char*, char*, uint, char*, uint, BOOL> PathRelativePathTo => &PathRelativePathToW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRemoveArgs"]/*' />
     [NativeTypeName("#define PathRemoveArgs PathRemoveArgsW")]
     public static delegate*<char*, void> PathRemoveArgs => &PathRemoveArgsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRemoveBlanks"]/*' />
     [NativeTypeName("#define PathRemoveBlanks PathRemoveBlanksW")]
     public static delegate*<char*, void> PathRemoveBlanks => &PathRemoveBlanksW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRemoveExtension"]/*' />
     [NativeTypeName("#define PathRemoveExtension PathRemoveExtensionW")]
     public static delegate*<char*, void> PathRemoveExtension => &PathRemoveExtensionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRemoveFileSpec"]/*' />
     [NativeTypeName("#define PathRemoveFileSpec PathRemoveFileSpecW")]
     public static delegate*<char*, BOOL> PathRemoveFileSpec => &PathRemoveFileSpecW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathRenameExtension"]/*' />
     [NativeTypeName("#define PathRenameExtension PathRenameExtensionW")]
     public static delegate*<char*, char*, BOOL> PathRenameExtension => &PathRenameExtensionW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathSearchAndQualify"]/*' />
     [NativeTypeName("#define PathSearchAndQualify PathSearchAndQualifyW")]
     public static delegate*<char*, char*, uint, BOOL> PathSearchAndQualify => &PathSearchAndQualifyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathSetDlgItemPath"]/*' />
     [NativeTypeName("#define PathSetDlgItemPath PathSetDlgItemPathW")]
     public static delegate*<HWND, int, char*, void> PathSetDlgItemPath => &PathSetDlgItemPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathUnquoteSpaces"]/*' />
     [NativeTypeName("#define PathUnquoteSpaces PathUnquoteSpacesW")]
     public static delegate*<char*, BOOL> PathUnquoteSpaces => &PathUnquoteSpacesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlCompare"]/*' />
     [NativeTypeName("#define UrlCompare UrlCompareW")]
     public static delegate*<char*, char*, BOOL, int> UrlCompare => &UrlCompareW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlCombine"]/*' />
     [NativeTypeName("#define UrlCombine UrlCombineW")]
     public static delegate*<char*, char*, char*, uint*, uint, HRESULT> UrlCombine => &UrlCombineW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlCanonicalize"]/*' />
     [NativeTypeName("#define UrlCanonicalize UrlCanonicalizeW")]
     public static delegate*<char*, char*, uint*, uint, HRESULT> UrlCanonicalize => &UrlCanonicalizeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlIsOpaque"]/*' />
     [NativeTypeName("#define UrlIsOpaque UrlIsOpaqueW")]
     public static delegate*<char*, BOOL> UrlIsOpaque => &UrlIsOpaqueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlGetLocation"]/*' />
     [NativeTypeName("#define UrlGetLocation UrlGetLocationW")]
     public static delegate*<char*, char*> UrlGetLocation => &UrlGetLocationW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlUnescape"]/*' />
     [NativeTypeName("#define UrlUnescape UrlUnescapeW")]
     public static delegate*<char*, char*, uint*, uint, HRESULT> UrlUnescape => &UrlUnescapeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlEscape"]/*' />
     [NativeTypeName("#define UrlEscape UrlEscapeW")]
     public static delegate*<char*, char*, uint*, uint, HRESULT> UrlEscape => &UrlEscapeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlCreateFromPath"]/*' />
     [NativeTypeName("#define UrlCreateFromPath UrlCreateFromPathW")]
     public static delegate*<char*, char*, uint*, uint, HRESULT> UrlCreateFromPath => &UrlCreateFromPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PathCreateFromUrl"]/*' />
     [NativeTypeName("#define PathCreateFromUrl PathCreateFromUrlW")]
     public static delegate*<char*, char*, uint*, uint, HRESULT> PathCreateFromUrl => &PathCreateFromUrlW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlHash"]/*' />
     [NativeTypeName("#define UrlHash UrlHashW")]
     public static delegate*<char*, byte*, uint, HRESULT> UrlHash => &UrlHashW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlGetPart"]/*' />
     [NativeTypeName("#define UrlGetPart UrlGetPartW")]
     public static delegate*<char*, char*, uint*, uint, uint, HRESULT> UrlGetPart => &UrlGetPartW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlApplyScheme"]/*' />
     [NativeTypeName("#define UrlApplyScheme UrlApplySchemeW")]
     public static delegate*<char*, char*, uint*, uint, HRESULT> UrlApplyScheme => &UrlApplySchemeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlIs"]/*' />
     [NativeTypeName("#define UrlIs UrlIsW")]
     public static delegate*<char*, URLIS, BOOL> UrlIs => &UrlIsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.UrlFixup"]/*' />
     [NativeTypeName("#define UrlFixup UrlFixupW")]
     public static delegate*<char*, char*, uint, HRESULT> UrlFixup => &UrlFixupW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ParseURL"]/*' />
     [NativeTypeName("#define ParseURL ParseURLW")]
     public static delegate*<char*, PARSEDURLW*, HRESULT> ParseURL => &ParseURLW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHDeleteEmptyKey"]/*' />
     [NativeTypeName("#define SHDeleteEmptyKey SHDeleteEmptyKeyW")]
     public static delegate*<HKEY, char*, int> SHDeleteEmptyKey => &SHDeleteEmptyKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHDeleteKey"]/*' />
     [NativeTypeName("#define SHDeleteKey SHDeleteKeyW")]
     public static delegate*<HKEY, char*, int> SHDeleteKey => &SHDeleteKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHDeleteValue"]/*' />
     [NativeTypeName("#define SHDeleteValue SHDeleteValueW")]
     public static delegate*<HKEY, char*, char*, int> SHDeleteValue => &SHDeleteValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetValue"]/*' />
     [NativeTypeName("#define SHGetValue SHGetValueW")]
     public static delegate*<HKEY, char*, char*, uint*, void*, uint*, int> SHGetValue => &SHGetValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHSetValue"]/*' />
     [NativeTypeName("#define SHSetValue SHSetValueW")]
     public static delegate*<HKEY, char*, char*, uint, void*, uint, int> SHSetValue => &SHSetValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegGetValue"]/*' />
     [NativeTypeName("#define SHRegGetValue SHRegGetValueW")]
     public static delegate*<HKEY, char*, char*, int, uint*, void*, uint*, int> SHRegGetValue => &SHRegGetValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHQueryValueEx"]/*' />
     [NativeTypeName("#define SHQueryValueEx SHQueryValueExW")]
     public static delegate*<HKEY, char*, uint*, uint*, void*, uint*, int> SHQueryValueEx => &SHQueryValueExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHEnumKeyEx"]/*' />
     [NativeTypeName("#define SHEnumKeyEx SHEnumKeyExW")]
     public static delegate*<HKEY, uint, char*, uint*, int> SHEnumKeyEx => &SHEnumKeyExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHEnumValue"]/*' />
     [NativeTypeName("#define SHEnumValue SHEnumValueW")]
     public static delegate*<HKEY, uint, char*, uint*, uint*, void*, uint*, int> SHEnumValue => &SHEnumValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHQueryInfoKey"]/*' />
     [NativeTypeName("#define SHQueryInfoKey SHQueryInfoKeyW")]
     public static delegate*<HKEY, uint*, uint*, uint*, uint*, int> SHQueryInfoKey => &SHQueryInfoKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCopyKey"]/*' />
     [NativeTypeName("#define SHCopyKey SHCopyKeyW")]
     public static delegate*<HKEY, char*, HKEY, uint, int> SHCopyKey => &SHCopyKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegGetPath"]/*' />
     [NativeTypeName("#define SHRegGetPath SHRegGetPathW")]
     public static delegate*<HKEY, char*, char*, char*, uint, int> SHRegGetPath => &SHRegGetPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegSetPath"]/*' />
     [NativeTypeName("#define SHRegSetPath SHRegSetPathW")]
     public static delegate*<HKEY, char*, char*, char*, uint, int> SHRegSetPath => &SHRegSetPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHREGSET_HKCU"]/*' />
     [NativeTypeName("#define SHREGSET_HKCU 0x00000001")]
     public const int SHREGSET_HKCU = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHREGSET_FORCE_HKCU"]/*' />
     [NativeTypeName("#define SHREGSET_FORCE_HKCU 0x00000002")]
     public const int SHREGSET_FORCE_HKCU = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHREGSET_HKLM"]/*' />
     [NativeTypeName("#define SHREGSET_HKLM 0x00000004")]
     public const int SHREGSET_HKLM = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHREGSET_FORCE_HKLM"]/*' />
     [NativeTypeName("#define SHREGSET_FORCE_HKLM 0x00000008")]
     public const int SHREGSET_FORCE_HKLM = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHREGSET_DEFAULT"]/*' />
     [NativeTypeName("#define SHREGSET_DEFAULT (SHREGSET_FORCE_HKCU | SHREGSET_HKLM)")]
     public const int SHREGSET_DEFAULT = (0x00000002 | 0x00000004);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegCreateUSKey"]/*' />
     [NativeTypeName("#define SHRegCreateUSKey SHRegCreateUSKeyW")]
     public static delegate*<char*, uint, HUSKEY, HUSKEY*, uint, int> SHRegCreateUSKey => &SHRegCreateUSKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegOpenUSKey"]/*' />
     [NativeTypeName("#define SHRegOpenUSKey SHRegOpenUSKeyW")]
     public static delegate*<char*, uint, HUSKEY, HUSKEY*, BOOL, int> SHRegOpenUSKey => &SHRegOpenUSKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegQueryUSValue"]/*' />
     [NativeTypeName("#define SHRegQueryUSValue SHRegQueryUSValueW")]
     public static delegate*<HUSKEY, char*, uint*, void*, uint*, BOOL, void*, uint, int> SHRegQueryUSValue => &SHRegQueryUSValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegWriteUSValue"]/*' />
     [NativeTypeName("#define SHRegWriteUSValue SHRegWriteUSValueW")]
     public static delegate*<HUSKEY, char*, uint, void*, uint, uint, int> SHRegWriteUSValue => &SHRegWriteUSValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegDeleteUSValue"]/*' />
     [NativeTypeName("#define SHRegDeleteUSValue SHRegDeleteUSValueW")]
     public static delegate*<HUSKEY, char*, SHREGDEL_FLAGS, int> SHRegDeleteUSValue => &SHRegDeleteUSValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegDeleteEmptyUSKey"]/*' />
     [NativeTypeName("#define SHRegDeleteEmptyUSKey SHRegDeleteEmptyUSKeyW")]
     public static delegate*<HUSKEY, char*, SHREGDEL_FLAGS, int> SHRegDeleteEmptyUSKey => &SHRegDeleteEmptyUSKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegEnumUSKey"]/*' />
     [NativeTypeName("#define SHRegEnumUSKey SHRegEnumUSKeyW")]
     public static delegate*<HUSKEY, uint, char*, uint*, SHREGENUM_FLAGS, int> SHRegEnumUSKey => &SHRegEnumUSKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegEnumUSValue"]/*' />
     [NativeTypeName("#define SHRegEnumUSValue SHRegEnumUSValueW")]
     public static delegate*<HUSKEY, uint, char*, uint*, uint*, void*, uint*, SHREGENUM_FLAGS, int> SHRegEnumUSValue => &SHRegEnumUSValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegQueryInfoUSKey"]/*' />
     [NativeTypeName("#define SHRegQueryInfoUSKey SHRegQueryInfoUSKeyW")]
     public static delegate*<HUSKEY, uint*, uint*, uint*, uint*, SHREGENUM_FLAGS, int> SHRegQueryInfoUSKey => &SHRegQueryInfoUSKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegGetUSValue"]/*' />
     [NativeTypeName("#define SHRegGetUSValue SHRegGetUSValueW")]
     public static delegate*<char*, char*, uint*, void*, uint*, BOOL, void*, uint, int> SHRegGetUSValue => &SHRegGetUSValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegSetUSValue"]/*' />
     [NativeTypeName("#define SHRegSetUSValue SHRegSetUSValueW")]
     public static delegate*<char*, char*, uint, void*, uint, uint, int> SHRegSetUSValue => &SHRegSetUSValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegGetInt"]/*' />
     [NativeTypeName("#define SHRegGetInt SHRegGetIntW")]
     public static delegate*<HKEY, char*, int, int> SHRegGetInt => &SHRegGetIntW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHRegGetBoolUSValue"]/*' />
     [NativeTypeName("#define SHRegGetBoolUSValue SHRegGetBoolUSValueW")]
     public static delegate*<char*, char*, BOOL, BOOL, BOOL> SHRegGetBoolUSValue => &SHRegGetBoolUSValueW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AssocQueryString"]/*' />
     [NativeTypeName("#define AssocQueryString AssocQueryStringW")]
     public static delegate*<uint, ASSOCSTR, char*, char*, char*, uint*, HRESULT> AssocQueryString => &AssocQueryStringW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AssocQueryStringByKey"]/*' />
     [NativeTypeName("#define AssocQueryStringByKey AssocQueryStringByKeyW")]
     public static delegate*<uint, ASSOCSTR, HKEY, char*, char*, uint*, HRESULT> AssocQueryStringByKey => &AssocQueryStringByKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AssocQueryKey"]/*' />
     [NativeTypeName("#define AssocQueryKey AssocQueryKeyW")]
     public static delegate*<uint, ASSOCKEY, char*, char*, HKEY*, HRESULT> AssocQueryKey => &AssocQueryKeyW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHOpenRegStream"]/*' />
     [NativeTypeName("#define SHOpenRegStream SHOpenRegStreamW")]
     public static delegate*<HKEY, char*, char*, uint, IStream*> SHOpenRegStream => &SHOpenRegStreamW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHOpenRegStream2"]/*' />
     [NativeTypeName("#define SHOpenRegStream2 SHOpenRegStream2W")]
     public static delegate*<HKEY, char*, char*, uint, IStream*> SHOpenRegStream2 => &SHOpenRegStream2W;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateStreamOnFile"]/*' />
     [NativeTypeName("#define SHCreateStreamOnFile SHCreateStreamOnFileW")]
     public static delegate*<char*, uint, IStream**, HRESULT> SHCreateStreamOnFile => &SHCreateStreamOnFileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAcceptLanguages"]/*' />
     [NativeTypeName("#define GetAcceptLanguages GetAcceptLanguagesW")]
     public static delegate*<char*, uint*, HRESULT> GetAcceptLanguages => &GetAcceptLanguagesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FDTF_SHORTTIME"]/*' />
     [NativeTypeName("#define FDTF_SHORTTIME 0x00000001")]
     public const int FDTF_SHORTTIME = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FDTF_SHORTDATE"]/*' />
     [NativeTypeName("#define FDTF_SHORTDATE 0x00000002")]
     public const int FDTF_SHORTDATE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FDTF_DEFAULT"]/*' />
     [NativeTypeName("#define FDTF_DEFAULT (FDTF_SHORTDATE | FDTF_SHORTTIME)")]
     public const int FDTF_DEFAULT = (0x00000002 | 0x00000001);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FDTF_LONGDATE"]/*' />
     [NativeTypeName("#define FDTF_LONGDATE 0x00000004")]
     public const int FDTF_LONGDATE = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FDTF_LONGTIME"]/*' />
     [NativeTypeName("#define FDTF_LONGTIME 0x00000008")]
     public const int FDTF_LONGTIME = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FDTF_RELATIVE"]/*' />
     [NativeTypeName("#define FDTF_RELATIVE 0x00000010")]
     public const int FDTF_RELATIVE = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FDTF_LTRDATE"]/*' />
     [NativeTypeName("#define FDTF_LTRDATE 0x00000100")]
     public const int FDTF_LTRDATE = 0x00000100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FDTF_RTLDATE"]/*' />
     [NativeTypeName("#define FDTF_RTLDATE 0x00000200")]
     public const int FDTF_RTLDATE = 0x00000200;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FDTF_NOAUTOREADINGORDER"]/*' />
     [NativeTypeName("#define FDTF_NOAUTOREADINGORDER 0x00000400")]
     public const int FDTF_NOAUTOREADINGORDER = 0x00000400;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHFormatDateTime"]/*' />
     [NativeTypeName("#define SHFormatDateTime SHFormatDateTimeW")]
     public static delegate*<FILETIME*, uint*, char*, uint, int> SHFormatDateTime => &SHFormatDateTimeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHMessageBoxCheck"]/*' />
     [NativeTypeName("#define SHMessageBoxCheck SHMessageBoxCheckW")]
     public static delegate*<HWND, char*, char*, uint, int, char*, int> SHMessageBoxCheck => &SHMessageBoxCheckW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHSendMessageBroadcast"]/*' />
     [NativeTypeName("#define SHSendMessageBroadcast SHSendMessageBroadcastW")]
     public static delegate*<uint, WPARAM, LPARAM, LRESULT> SHSendMessageBroadcast => &SHSendMessageBroadcastW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHStripMneumonic"]/*' />
     [NativeTypeName("#define SHStripMneumonic SHStripMneumonicW")]
     public static delegate*<char*, char> SHStripMneumonic => &SHStripMneumonicW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PLATFORM_UNKNOWN"]/*' />
     [NativeTypeName("#define PLATFORM_UNKNOWN 0")]
     public const int PLATFORM_UNKNOWN = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PLATFORM_IE3"]/*' />
     [NativeTypeName("#define PLATFORM_IE3 1")]
     public const int PLATFORM_IE3 = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PLATFORM_BROWSERONLY"]/*' />
     [NativeTypeName("#define PLATFORM_BROWSERONLY 1")]
     public const int PLATFORM_BROWSERONLY = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PLATFORM_INTEGRATED"]/*' />
     [NativeTypeName("#define PLATFORM_INTEGRATED 2")]
     public const int PLATFORM_INTEGRATED = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ILMM_IE4"]/*' />
     [NativeTypeName("#define ILMM_IE4 0")]
     public const int ILMM_IE4 = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DLLVER_PLATFORM_WINDOWS"]/*' />
     [NativeTypeName("#define DLLVER_PLATFORM_WINDOWS 0x00000001")]
     public const int DLLVER_PLATFORM_WINDOWS = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DLLVER_PLATFORM_NT"]/*' />
     [NativeTypeName("#define DLLVER_PLATFORM_NT 0x00000002")]
     public const int DLLVER_PLATFORM_NT = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DLLVER_MAJOR_MASK"]/*' />
     [NativeTypeName("#define DLLVER_MAJOR_MASK 0xFFFF000000000000")]
     public const ulong DLLVER_MAJOR_MASK = 0xFFFF000000000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DLLVER_MINOR_MASK"]/*' />
     [NativeTypeName("#define DLLVER_MINOR_MASK 0x0000FFFF00000000")]
     public const long DLLVER_MINOR_MASK = 0x0000FFFF00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DLLVER_BUILD_MASK"]/*' />
     [NativeTypeName("#define DLLVER_BUILD_MASK 0x00000000FFFF0000")]
     public const uint DLLVER_BUILD_MASK = 0x00000000FFFF0000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DLLVER_QFE_MASK"]/*' />
     [NativeTypeName("#define DLLVER_QFE_MASK 0x000000000000FFFF")]
     public const int DLLVER_QFE_MASK = 0x000000000000FFFF;
 }

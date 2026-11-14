@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAudioGraphUnrecoverableErrorOccurredEventArgs : IAudioGraphUnrecoverableErrorOccurredEventArgs.Interface, INativeGuid
 {
+    /// <include file='IAudioGraphUnrecoverableErrorOccurredEventArgs.xml' path='doc/member[@name="IAudioGraphUnrecoverableErrorOccurredEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioGraphUnrecoverableErrorOccurredEventArgs);
 
     public void** lpVtbl;

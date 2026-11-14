@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISensorQuaternion : ISensorQuaternion.Interface, INativeGuid
 {
+    /// <include file='ISensorQuaternion.xml' path='doc/member[@name="ISensorQuaternion.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISensorQuaternion);
 
     public void** lpVtbl;

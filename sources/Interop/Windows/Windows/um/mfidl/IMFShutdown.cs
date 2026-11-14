@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFShutdown : IMFShutdown.Interface, INativeGuid
 {
+    /// <include file='IMFShutdown.xml' path='doc/member[@name="IMFShutdown.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFShutdown);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IFsiNamedStreams : IFsiNamedStreams.Interface, INativeGuid
 {
+    /// <include file='IFsiNamedStreams.xml' path='doc/member[@name="IFsiNamedStreams.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFsiNamedStreams);
 
     public void** lpVtbl;

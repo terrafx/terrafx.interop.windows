@@ -7,18 +7,23 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GWLP
 {
+    /// <include file='GWLP.xml' path='doc/member[@name="GWLP.GWLP_WNDPROC"]/*' />
     [NativeTypeName("#define GWLP_WNDPROC (-4)")]
     public const int GWLP_WNDPROC = (-4);
 
+    /// <include file='GWLP.xml' path='doc/member[@name="GWLP.GWLP_HINSTANCE"]/*' />
     [NativeTypeName("#define GWLP_HINSTANCE (-6)")]
     public const int GWLP_HINSTANCE = (-6);
 
+    /// <include file='GWLP.xml' path='doc/member[@name="GWLP.GWLP_HWNDPARENT"]/*' />
     [NativeTypeName("#define GWLP_HWNDPARENT (-8)")]
     public const int GWLP_HWNDPARENT = (-8);
 
+    /// <include file='GWLP.xml' path='doc/member[@name="GWLP.GWLP_USERDATA"]/*' />
     [NativeTypeName("#define GWLP_USERDATA (-21)")]
     public const int GWLP_USERDATA = (-21);
 
+    /// <include file='GWLP.xml' path='doc/member[@name="GWLP.GWLP_ID"]/*' />
     [NativeTypeName("#define GWLP_ID (-12)")]
     public const int GWLP_ID = (-12);
 }

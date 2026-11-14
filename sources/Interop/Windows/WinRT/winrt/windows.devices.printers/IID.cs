@@ -252,6 +252,78 @@ public static unsafe partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IIppPrintDevice5
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xCA, 0x7F, 0x92, 0xEA,
+                0x73, 0xE0,
+                0xB4, 0x5D,
+                0x9A,
+                0xEE,
+                0x13,
+                0xDF,
+                0x71,
+                0x4E,
+                0x85,
+                0x3A
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IIppPrintDeviceInstallationResult
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xCC, 0x2F, 0x10, 0xFB,
+                0xBE, 0x87,
+                0xFF, 0x57,
+                0xA0,
+                0x86,
+                0x92,
+                0x27,
+                0x21,
+                0x48,
+                0xA2,
+                0x56
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IIppPrintDeviceManagerStatics
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x45, 0x1A, 0x71, 0x8F,
+                0xB9, 0xC1,
+                0xBB, 0x51,
+                0x80,
+                0xC8,
+                0x38,
+                0x96,
+                0x9C,
+                0x81,
+                0xF8,
+                0x00
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IIppPrintDeviceStatics
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -557,6 +629,30 @@ public static unsafe partial class IID
                 0x22,
                 0xA3,
                 0x5B
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IReplaceDevicePropertiesResult
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x4B, 0xCA, 0xFE, 0x12,
+                0x73, 0xD9,
+                0xE1, 0x57,
+                0x82,
+                0x6B,
+                0xF7,
+                0x5B,
+                0x95,
+                0x18,
+                0xA9,
+                0xF1
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

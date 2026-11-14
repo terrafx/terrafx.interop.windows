@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IXmlNamedNodeMap : IXmlNamedNodeMap.Interface, INativeGuid
 {
+    /// <include file='IXmlNamedNodeMap.xml' path='doc/member[@name="IXmlNamedNodeMap.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IXmlNamedNodeMap);
 
     public void** lpVtbl;

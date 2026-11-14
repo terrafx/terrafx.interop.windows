@@ -7,18 +7,23 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MULTICLASSINFO_GETTYPEINFO"]/*' />
     [NativeTypeName("#define MULTICLASSINFO_GETTYPEINFO 0x00000001")]
     public const int MULTICLASSINFO_GETTYPEINFO = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MULTICLASSINFO_GETNUMRESERVEDDISPIDS"]/*' />
     [NativeTypeName("#define MULTICLASSINFO_GETNUMRESERVEDDISPIDS 0x00000002")]
     public const int MULTICLASSINFO_GETNUMRESERVEDDISPIDS = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MULTICLASSINFO_GETIIDPRIMARY"]/*' />
     [NativeTypeName("#define MULTICLASSINFO_GETIIDPRIMARY 0x00000004")]
     public const int MULTICLASSINFO_GETIIDPRIMARY = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MULTICLASSINFO_GETIIDSOURCE"]/*' />
     [NativeTypeName("#define MULTICLASSINFO_GETIIDSOURCE 0x00000008")]
     public const int MULTICLASSINFO_GETIIDSOURCE = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TIFLAGS_EXTENDDISPATCHONLY"]/*' />
     [NativeTypeName("#define TIFLAGS_EXTENDDISPATCHONLY 0x00000001")]
     public const int TIFLAGS_EXTENDDISPATCHONLY = 0x00000001;
 }

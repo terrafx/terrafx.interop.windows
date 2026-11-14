@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IClockIdentifiersStatics : IClockIdentifiersStatics.Interface, INativeGuid
 {
+    /// <include file='IClockIdentifiersStatics.xml' path='doc/member[@name="IClockIdentifiersStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IClockIdentifiersStatics);
 
     public void** lpVtbl;

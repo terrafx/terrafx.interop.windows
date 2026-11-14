@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IChatMessageReceivedNotificationTrigger : IChatMessageReceivedNotificationTrigger.Interface, INativeGuid
 {
+    /// <include file='IChatMessageReceivedNotificationTrigger.xml' path='doc/member[@name="IChatMessageReceivedNotificationTrigger.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IChatMessageReceivedNotificationTrigger);
 
     public void** lpVtbl;

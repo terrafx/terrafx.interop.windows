@@ -45,15 +45,19 @@ public partial struct SID
         public Span<uint> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_REVISION"]/*' />
     [NativeTypeName("#define SID_REVISION (1)")]
     public const int SID_REVISION = (1);
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_MAX_SUB_AUTHORITIES"]/*' />
     [NativeTypeName("#define SID_MAX_SUB_AUTHORITIES (15)")]
     public const int SID_MAX_SUB_AUTHORITIES = (15);
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_RECOMMENDED_SUB_AUTHORITIES"]/*' />
     [NativeTypeName("#define SID_RECOMMENDED_SUB_AUTHORITIES (1)")]
     public const int SID_RECOMMENDED_SUB_AUTHORITIES = (1);
 
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_HASH_SIZE"]/*' />
     [NativeTypeName("#define SID_HASH_SIZE 32")]
     public const int SID_HASH_SIZE = 32;
 }

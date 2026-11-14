@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("D6277990-4C6A-11CF-8D87-00AA0060F5BF")]
 public unsafe partial struct ScheduledTasks : INativeGuid
 {
+    /// <include file='ScheduledTasks.xml' path='doc/member[@name="ScheduledTasks.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_ScheduledTasks);
 }

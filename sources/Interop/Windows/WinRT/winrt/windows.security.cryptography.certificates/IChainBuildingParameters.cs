@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IChainBuildingParameters : IChainBuildingParameters.Interface, INativeGuid
 {
+    /// <include file='IChainBuildingParameters.xml' path='doc/member[@name="IChainBuildingParameters.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IChainBuildingParameters);
 
     public void** lpVtbl;

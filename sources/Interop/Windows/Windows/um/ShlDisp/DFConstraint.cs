@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct DFConstraint : DFConstraint.Interface, INativeGuid
 {
+    /// <include file='DFConstraint.xml' path='doc/member[@name="DFConstraint.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DFConstraint);
 
     public void** lpVtbl;

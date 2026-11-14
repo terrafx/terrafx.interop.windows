@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct IProtectionPolicyManagerInterop : IProtectionPolicyManagerInterop.Interface, INativeGuid
 {
+    /// <include file='IProtectionPolicyManagerInterop.xml' path='doc/member[@name="IProtectionPolicyManagerInterop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IProtectionPolicyManagerInterop);
 
     public void** lpVtbl;

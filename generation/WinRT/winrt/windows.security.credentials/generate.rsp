@@ -8,7 +8,6 @@ ABI::Windows::Security::Credentials::IID_IKeyCredential2
 ABI::Windows::Security::Credentials::IID_IKeyCredentialAttestationResult
 ABI::Windows::Security::Credentials::IID_IKeyCredentialCacheConfiguration
 ABI::Windows::Security::Credentials::IID_IKeyCredentialCacheConfigurationFactory
-ABI::Windows::Security::Credentials::IID_IKeyCredentialManagerExtendedStatics
 ABI::Windows::Security::Credentials::IID_IKeyCredentialManagerStatics
 ABI::Windows::Security::Credentials::IID_IKeyCredentialOperationResult
 ABI::Windows::Security::Credentials::IID_IKeyCredentialRetrievalResult

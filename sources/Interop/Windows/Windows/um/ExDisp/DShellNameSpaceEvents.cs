@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct DShellNameSpaceEvents : DShellNameSpaceEvents.Interface, INativeGuid
 {
+    /// <include file='DShellNameSpaceEvents.xml' path='doc/member[@name="DShellNameSpaceEvents.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DShellNameSpaceEvents);
 
     public void** lpVtbl;

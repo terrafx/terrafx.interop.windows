@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGattReliableWriteTransaction2 : IGattReliableWriteTransaction2.Interface, INativeGuid
 {
+    /// <include file='IGattReliableWriteTransaction2.xml' path='doc/member[@name="IGattReliableWriteTransaction2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGattReliableWriteTransaction2);
 
     public void** lpVtbl;

@@ -7,78 +7,111 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SYSTEM
 {
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_AUDIT_ACE_TYPE"]/*' />
     [NativeTypeName("#define SYSTEM_AUDIT_ACE_TYPE (0x2)")]
     public const int SYSTEM_AUDIT_ACE_TYPE = (0x2);
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_ALARM_ACE_TYPE"]/*' />
     [NativeTypeName("#define SYSTEM_ALARM_ACE_TYPE (0x3)")]
     public const int SYSTEM_ALARM_ACE_TYPE = (0x3);
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_AUDIT_OBJECT_ACE_TYPE"]/*' />
     [NativeTypeName("#define SYSTEM_AUDIT_OBJECT_ACE_TYPE (0x7)")]
     public const int SYSTEM_AUDIT_OBJECT_ACE_TYPE = (0x7);
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_ALARM_OBJECT_ACE_TYPE"]/*' />
     [NativeTypeName("#define SYSTEM_ALARM_OBJECT_ACE_TYPE (0x8)")]
     public const int SYSTEM_ALARM_OBJECT_ACE_TYPE = (0x8);
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_AUDIT_CALLBACK_ACE_TYPE"]/*' />
     [NativeTypeName("#define SYSTEM_AUDIT_CALLBACK_ACE_TYPE (0xD)")]
     public const int SYSTEM_AUDIT_CALLBACK_ACE_TYPE = (0xD);
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_ALARM_CALLBACK_ACE_TYPE"]/*' />
     [NativeTypeName("#define SYSTEM_ALARM_CALLBACK_ACE_TYPE (0xE)")]
     public const int SYSTEM_ALARM_CALLBACK_ACE_TYPE = (0xE);
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_AUDIT_CALLBACK_OBJECT_ACE_TYPE"]/*' />
     [NativeTypeName("#define SYSTEM_AUDIT_CALLBACK_OBJECT_ACE_TYPE (0xF)")]
     public const int SYSTEM_AUDIT_CALLBACK_OBJECT_ACE_TYPE = (0xF);
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_ALARM_CALLBACK_OBJECT_ACE_TYPE"]/*' />
     [NativeTypeName("#define SYSTEM_ALARM_CALLBACK_OBJECT_ACE_TYPE (0x10)")]
     public const int SYSTEM_ALARM_CALLBACK_OBJECT_ACE_TYPE = (0x10);
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_MANDATORY_LABEL_ACE_TYPE"]/*' />
     [NativeTypeName("#define SYSTEM_MANDATORY_LABEL_ACE_TYPE (0x11)")]
     public const int SYSTEM_MANDATORY_LABEL_ACE_TYPE = (0x11);
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_RESOURCE_ATTRIBUTE_ACE_TYPE"]/*' />
     [NativeTypeName("#define SYSTEM_RESOURCE_ATTRIBUTE_ACE_TYPE (0x12)")]
     public const int SYSTEM_RESOURCE_ATTRIBUTE_ACE_TYPE = (0x12);
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_SCOPED_POLICY_ID_ACE_TYPE"]/*' />
     [NativeTypeName("#define SYSTEM_SCOPED_POLICY_ID_ACE_TYPE (0x13)")]
     public const int SYSTEM_SCOPED_POLICY_ID_ACE_TYPE = (0x13);
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_PROCESS_TRUST_LABEL_ACE_TYPE"]/*' />
     [NativeTypeName("#define SYSTEM_PROCESS_TRUST_LABEL_ACE_TYPE (0x14)")]
     public const int SYSTEM_PROCESS_TRUST_LABEL_ACE_TYPE = (0x14);
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_ACCESS_FILTER_ACE_TYPE"]/*' />
     [NativeTypeName("#define SYSTEM_ACCESS_FILTER_ACE_TYPE (0x15)")]
     public const int SYSTEM_ACCESS_FILTER_ACE_TYPE = (0x15);
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_MANDATORY_APP_ACCESS_ALLOWED_ACE_TYPE"]/*' />
+    [NativeTypeName("#define SYSTEM_MANDATORY_APP_ACCESS_ALLOWED_ACE_TYPE (0x16)")]
+    public const int SYSTEM_MANDATORY_APP_ACCESS_ALLOWED_ACE_TYPE = (0x16);
+
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_MANDATORY_ACCESS_ALLOWED_ACE_TYPE"]/*' />
+    [NativeTypeName("#define SYSTEM_MANDATORY_ACCESS_ALLOWED_ACE_TYPE (0x17)")]
+    public const int SYSTEM_MANDATORY_ACCESS_ALLOWED_ACE_TYPE = (0x17);
+
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_MANDATORY_LABEL_NO_WRITE_UP"]/*' />
     [NativeTypeName("#define SYSTEM_MANDATORY_LABEL_NO_WRITE_UP 0x1")]
     public const int SYSTEM_MANDATORY_LABEL_NO_WRITE_UP = 0x1;
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_MANDATORY_LABEL_NO_READ_UP"]/*' />
     [NativeTypeName("#define SYSTEM_MANDATORY_LABEL_NO_READ_UP 0x2")]
     public const int SYSTEM_MANDATORY_LABEL_NO_READ_UP = 0x2;
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_MANDATORY_LABEL_NO_EXECUTE_UP"]/*' />
     [NativeTypeName("#define SYSTEM_MANDATORY_LABEL_NO_EXECUTE_UP 0x4")]
     public const int SYSTEM_MANDATORY_LABEL_NO_EXECUTE_UP = 0x4;
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_MANDATORY_LABEL_VALID_MASK"]/*' />
     [NativeTypeName("#define SYSTEM_MANDATORY_LABEL_VALID_MASK (SYSTEM_MANDATORY_LABEL_NO_WRITE_UP   | \\\r\n                                           SYSTEM_MANDATORY_LABEL_NO_READ_UP    | \\\r\n                                           SYSTEM_MANDATORY_LABEL_NO_EXECUTE_UP)")]
     public const int SYSTEM_MANDATORY_LABEL_VALID_MASK = (0x1 | 0x2 | 0x4);
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_PROCESS_TRUST_LABEL_VALID_MASK"]/*' />
     [NativeTypeName("#define SYSTEM_PROCESS_TRUST_LABEL_VALID_MASK 0x00ffffff")]
     public const int SYSTEM_PROCESS_TRUST_LABEL_VALID_MASK = 0x00ffffff;
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_PROCESS_TRUST_NOCONSTRAINT_MASK"]/*' />
     [NativeTypeName("#define SYSTEM_PROCESS_TRUST_NOCONSTRAINT_MASK 0xffffffff")]
     public const uint SYSTEM_PROCESS_TRUST_NOCONSTRAINT_MASK = 0xffffffff;
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_ACCESS_FILTER_VALID_MASK"]/*' />
     [NativeTypeName("#define SYSTEM_ACCESS_FILTER_VALID_MASK 0x00ffffff")]
     public const int SYSTEM_ACCESS_FILTER_VALID_MASK = 0x00ffffff;
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_ACCESS_FILTER_NOCONSTRAINT_MASK"]/*' />
     [NativeTypeName("#define SYSTEM_ACCESS_FILTER_NOCONSTRAINT_MASK 0xffffffff")]
     public const uint SYSTEM_ACCESS_FILTER_NOCONSTRAINT_MASK = 0xffffffff;
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_CPU_SET_INFORMATION_PARKED"]/*' />
     [NativeTypeName("#define SYSTEM_CPU_SET_INFORMATION_PARKED 0x1")]
     public const int SYSTEM_CPU_SET_INFORMATION_PARKED = 0x1;
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_CPU_SET_INFORMATION_ALLOCATED"]/*' />
     [NativeTypeName("#define SYSTEM_CPU_SET_INFORMATION_ALLOCATED 0x2")]
     public const int SYSTEM_CPU_SET_INFORMATION_ALLOCATED = 0x2;
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_CPU_SET_INFORMATION_ALLOCATED_TO_TARGET_PROCESS"]/*' />
     [NativeTypeName("#define SYSTEM_CPU_SET_INFORMATION_ALLOCATED_TO_TARGET_PROCESS 0x4")]
     public const int SYSTEM_CPU_SET_INFORMATION_ALLOCATED_TO_TARGET_PROCESS = 0x4;
 
+    /// <include file='SYSTEM.xml' path='doc/member[@name="SYSTEM.SYSTEM_CPU_SET_INFORMATION_REALTIME"]/*' />
     [NativeTypeName("#define SYSTEM_CPU_SET_INFORMATION_REALTIME 0x8")]
     public const int SYSTEM_CPU_SET_INFORMATION_REALTIME = 0x8;
 }

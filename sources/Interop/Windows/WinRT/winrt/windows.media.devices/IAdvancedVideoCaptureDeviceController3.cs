@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAdvancedVideoCaptureDeviceController3 : IAdvancedVideoCaptureDeviceController3.Interface, INativeGuid
 {
+    /// <include file='IAdvancedVideoCaptureDeviceController3.xml' path='doc/member[@name="IAdvancedVideoCaptureDeviceController3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAdvancedVideoCaptureDeviceController3);
 
     public void** lpVtbl;

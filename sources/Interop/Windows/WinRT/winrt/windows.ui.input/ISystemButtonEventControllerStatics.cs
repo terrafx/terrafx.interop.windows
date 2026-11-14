@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISystemButtonEventControllerStatics : ISystemButtonEventControllerStatics.Interface, INativeGuid
 {
+    /// <include file='ISystemButtonEventControllerStatics.xml' path='doc/member[@name="ISystemButtonEventControllerStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISystemButtonEventControllerStatics);
 
     public void** lpVtbl;

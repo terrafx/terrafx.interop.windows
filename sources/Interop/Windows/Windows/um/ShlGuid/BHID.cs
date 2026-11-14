@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class BHID
 {
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_SFObject"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_SFObject
     {
@@ -37,6 +38,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_SFUIObject"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_SFUIObject
     {
@@ -62,6 +64,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_SFViewObject"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_SFViewObject
     {
@@ -87,6 +90,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_Storage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_Storage
     {
@@ -112,6 +116,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_Stream"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_Stream
     {
@@ -137,6 +142,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_RandomAccessStream"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_RandomAccessStream
     {
@@ -162,6 +168,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_LinkTargetItem"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_LinkTargetItem
     {
@@ -187,6 +194,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_StorageEnum"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_StorageEnum
     {
@@ -212,6 +220,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_Transfer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_Transfer
     {
@@ -237,6 +246,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_PropertyStore"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_PropertyStore
     {
@@ -262,6 +272,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_ThumbnailHandler"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_ThumbnailHandler
     {
@@ -287,6 +298,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_EnumItems"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_EnumItems
     {
@@ -312,6 +324,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_DataObject"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_DataObject
     {
@@ -337,6 +350,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_AssociationArray"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_AssociationArray
     {
@@ -362,6 +376,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_Filter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_Filter
     {
@@ -387,6 +402,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_EnumAssocHandlers"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_EnumAssocHandlers
     {
@@ -412,6 +428,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_StorageItem"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_StorageItem
     {
@@ -437,6 +454,7 @@ public static partial class BHID
         }
     }
 
+    /// <include file='BHID.xml' path='doc/member[@name="BHID.BHID_FilePlaceholder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid BHID_FilePlaceholder
     {

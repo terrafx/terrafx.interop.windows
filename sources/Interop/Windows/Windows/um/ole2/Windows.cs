@@ -272,48 +272,63 @@ public static unsafe partial class Windows
     [DllImport("ole32", ExactSpelling = true)]
     public static extern HRESULT OleConvertOLESTREAMToIStorageEx2([NativeTypeName("LPOLESTREAM")] OLESTREAM* polestm, [NativeTypeName("LPSTORAGE")] IStorage* pstg, [NativeTypeName("CLIPFORMAT *")] ushort* pcfFormat, [NativeTypeName("LONG *")] int* plwWidth, [NativeTypeName("LONG *")] int* plHeight, [NativeTypeName("DWORD *")] uint* pdwSize, [NativeTypeName("LPSTGMEDIUM")] STGMEDIUM* pmedium, [NativeTypeName("DWORD")] uint opt, [NativeTypeName("PVOID")] void* pvCallbackContext, [NativeTypeName("OLESTREAMQUERYCONVERTOLELINKCALLBACK")] delegate* unmanaged<Guid*, char*, char*, char*, char*, uint, void*, HRESULT> pQueryConvertOLELinkCallback);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DATA_E_FORMATETC"]/*' />
     [NativeTypeName("#define DATA_E_FORMATETC DV_E_FORMATETC")]
     public const int DATA_E_FORMATETC = unchecked((int)(0x80040064));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OLEIVERB_PRIMARY"]/*' />
     [NativeTypeName("#define OLEIVERB_PRIMARY (0L)")]
     public const int OLEIVERB_PRIMARY = (0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OLEIVERB_SHOW"]/*' />
     [NativeTypeName("#define OLEIVERB_SHOW (-1L)")]
     public const int OLEIVERB_SHOW = (-1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OLEIVERB_OPEN"]/*' />
     [NativeTypeName("#define OLEIVERB_OPEN (-2L)")]
     public const int OLEIVERB_OPEN = (-2);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OLEIVERB_HIDE"]/*' />
     [NativeTypeName("#define OLEIVERB_HIDE (-3L)")]
     public const int OLEIVERB_HIDE = (-3);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OLEIVERB_UIACTIVATE"]/*' />
     [NativeTypeName("#define OLEIVERB_UIACTIVATE (-4L)")]
     public const int OLEIVERB_UIACTIVATE = (-4);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OLEIVERB_INPLACEACTIVATE"]/*' />
     [NativeTypeName("#define OLEIVERB_INPLACEACTIVATE (-5L)")]
     public const int OLEIVERB_INPLACEACTIVATE = (-5);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OLEIVERB_DISCARDUNDOSTATE"]/*' />
     [NativeTypeName("#define OLEIVERB_DISCARDUNDOSTATE (-6L)")]
     public const int OLEIVERB_DISCARDUNDOSTATE = (-6);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EMBDHLP_INPROC_HANDLER"]/*' />
     [NativeTypeName("#define EMBDHLP_INPROC_HANDLER 0x0000L")]
     public const int EMBDHLP_INPROC_HANDLER = 0x0000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EMBDHLP_INPROC_SERVER"]/*' />
     [NativeTypeName("#define EMBDHLP_INPROC_SERVER 0x0001L")]
     public const int EMBDHLP_INPROC_SERVER = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EMBDHLP_CREATENOW"]/*' />
     [NativeTypeName("#define EMBDHLP_CREATENOW 0x00000000L")]
     public const int EMBDHLP_CREATENOW = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EMBDHLP_DELAYCREATE"]/*' />
     [NativeTypeName("#define EMBDHLP_DELAYCREATE 0x00010000L")]
     public const int EMBDHLP_DELAYCREATE = 0x00010000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OLECREATE_LEAVERUNNING"]/*' />
     [NativeTypeName("#define OLECREATE_LEAVERUNNING 0x00000001")]
     public const int OLECREATE_LEAVERUNNING = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OLESTREAM_CONVERSION_DEFAULT"]/*' />
     [NativeTypeName("#define OLESTREAM_CONVERSION_DEFAULT 0x00000000L")]
     public const int OLESTREAM_CONVERSION_DEFAULT = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.OLESTREAM_CONVERSION_DISABLEOLELINK"]/*' />
     [NativeTypeName("#define OLESTREAM_CONVERSION_DISABLEOLELINK 0x00000001L")]
     public const int OLESTREAM_CONVERSION_DISABLEOLELINK = 0x00000001;
 }

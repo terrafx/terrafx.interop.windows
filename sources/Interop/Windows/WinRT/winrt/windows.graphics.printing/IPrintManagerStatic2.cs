@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPrintManagerStatic2 : IPrintManagerStatic2.Interface, INativeGuid
 {
+    /// <include file='IPrintManagerStatic2.xml' path='doc/member[@name="IPrintManagerStatic2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPrintManagerStatic2);
 
     public void** lpVtbl;

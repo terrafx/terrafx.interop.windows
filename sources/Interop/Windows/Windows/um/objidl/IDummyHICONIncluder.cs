@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDummyHICONIncluder : IDummyHICONIncluder.Interface, INativeGuid
 {
+    /// <include file='IDummyHICONIncluder.xml' path='doc/member[@name="IDummyHICONIncluder.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDummyHICONIncluder);
 
     public void** lpVtbl;

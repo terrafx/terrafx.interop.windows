@@ -7,15 +7,19 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DIDBAM
 {
+    /// <include file='DIDBAM.xml' path='doc/member[@name="DIDBAM.DIDBAM_DEFAULT"]/*' />
     [NativeTypeName("#define DIDBAM_DEFAULT 0x00000000")]
     public const int DIDBAM_DEFAULT = 0x00000000;
 
+    /// <include file='DIDBAM.xml' path='doc/member[@name="DIDBAM.DIDBAM_PRESERVE"]/*' />
     [NativeTypeName("#define DIDBAM_PRESERVE 0x00000001")]
     public const int DIDBAM_PRESERVE = 0x00000001;
 
+    /// <include file='DIDBAM.xml' path='doc/member[@name="DIDBAM.DIDBAM_INITIALIZE"]/*' />
     [NativeTypeName("#define DIDBAM_INITIALIZE 0x00000002")]
     public const int DIDBAM_INITIALIZE = 0x00000002;
 
+    /// <include file='DIDBAM.xml' path='doc/member[@name="DIDBAM.DIDBAM_HWDEFAULTS"]/*' />
     [NativeTypeName("#define DIDBAM_HWDEFAULTS 0x00000004")]
     public const int DIDBAM_HWDEFAULTS = 0x00000004;
 }

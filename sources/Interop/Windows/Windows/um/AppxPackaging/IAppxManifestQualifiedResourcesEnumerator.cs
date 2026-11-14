@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAppxManifestQualifiedResourcesEnumerator : IAppxManifestQualifiedResourcesEnumerator.Interface, INativeGuid
 {
+    /// <include file='IAppxManifestQualifiedResourcesEnumerator.xml' path='doc/member[@name="IAppxManifestQualifiedResourcesEnumerator.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppxManifestQualifiedResourcesEnumerator);
 
     public void** lpVtbl;

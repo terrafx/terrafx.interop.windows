@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IWICDisplayAdaptationControl")]
 public unsafe partial struct IWICDisplayAdaptationControl2 : IWICDisplayAdaptationControl2.Interface, INativeGuid
 {
+    /// <include file='IWICDisplayAdaptationControl2.xml' path='doc/member[@name="IWICDisplayAdaptationControl2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICDisplayAdaptationControl2);
 
     public void** lpVtbl;

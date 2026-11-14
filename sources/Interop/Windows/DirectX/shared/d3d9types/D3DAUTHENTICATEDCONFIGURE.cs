@@ -12,6 +12,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DAUTHENTICATEDCONFIGURE
 {
+    /// <include file='D3DAUTHENTICATEDCONFIGURE.xml' path='doc/member[@name="D3DAUTHENTICATEDCONFIGURE.D3DAUTHENTICATEDCONFIGURE_INITIALIZE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDCONFIGURE_INITIALIZE
     {
@@ -37,6 +38,7 @@ public static partial class D3DAUTHENTICATEDCONFIGURE
         }
     }
 
+    /// <include file='D3DAUTHENTICATEDCONFIGURE.xml' path='doc/member[@name="D3DAUTHENTICATEDCONFIGURE.D3DAUTHENTICATEDCONFIGURE_PROTECTION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDCONFIGURE_PROTECTION
     {
@@ -62,6 +64,7 @@ public static partial class D3DAUTHENTICATEDCONFIGURE
         }
     }
 
+    /// <include file='D3DAUTHENTICATEDCONFIGURE.xml' path='doc/member[@name="D3DAUTHENTICATEDCONFIGURE.D3DAUTHENTICATEDCONFIGURE_CRYPTOSESSION"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDCONFIGURE_CRYPTOSESSION
     {
@@ -87,6 +90,7 @@ public static partial class D3DAUTHENTICATEDCONFIGURE
         }
     }
 
+    /// <include file='D3DAUTHENTICATEDCONFIGURE.xml' path='doc/member[@name="D3DAUTHENTICATEDCONFIGURE.D3DAUTHENTICATEDCONFIGURE_SHAREDRESOURCE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDCONFIGURE_SHAREDRESOURCE
     {
@@ -112,6 +116,7 @@ public static partial class D3DAUTHENTICATEDCONFIGURE
         }
     }
 
+    /// <include file='D3DAUTHENTICATEDCONFIGURE.xml' path='doc/member[@name="D3DAUTHENTICATEDCONFIGURE.D3DAUTHENTICATEDCONFIGURE_ENCRYPTIONWHENACCESSIBLE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid D3DAUTHENTICATEDCONFIGURE_ENCRYPTIONWHENACCESSIBLE
     {

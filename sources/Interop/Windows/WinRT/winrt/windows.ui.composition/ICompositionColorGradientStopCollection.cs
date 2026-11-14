@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICompositionColorGradientStopCollection : ICompositionColorGradientStopCollection.Interface, INativeGuid
 {
+    /// <include file='ICompositionColorGradientStopCollection.xml' path='doc/member[@name="ICompositionColorGradientStopCollection.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICompositionColorGradientStopCollection);
 
     public void** lpVtbl;

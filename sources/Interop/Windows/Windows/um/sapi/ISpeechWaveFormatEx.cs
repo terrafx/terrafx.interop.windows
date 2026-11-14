@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct ISpeechWaveFormatEx : ISpeechWaveFormatEx.Interface, INativeGuid
 {
+    /// <include file='ISpeechWaveFormatEx.xml' path='doc/member[@name="ISpeechWaveFormatEx.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpeechWaveFormatEx);
 
     public void** lpVtbl;

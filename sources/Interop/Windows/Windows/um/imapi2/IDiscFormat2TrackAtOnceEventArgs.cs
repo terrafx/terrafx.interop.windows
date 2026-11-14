@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IWriteEngine2EventArgs")]
 public unsafe partial struct IDiscFormat2TrackAtOnceEventArgs : IDiscFormat2TrackAtOnceEventArgs.Interface, INativeGuid
 {
+    /// <include file='IDiscFormat2TrackAtOnceEventArgs.xml' path='doc/member[@name="IDiscFormat2TrackAtOnceEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDiscFormat2TrackAtOnceEventArgs);
 
     public void** lpVtbl;

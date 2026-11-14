@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class URL
 {
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_MK_LEGACY"]/*' />
     [NativeTypeName("#define URL_MK_LEGACY 0")]
     public const int URL_MK_LEGACY = 0;
 
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_MK_UNIFORM"]/*' />
     [NativeTypeName("#define URL_MK_UNIFORM 1")]
     public const int URL_MK_UNIFORM = 1;
 
+    /// <include file='URL.xml' path='doc/member[@name="URL.URL_MK_NO_CANONICALIZE"]/*' />
     [NativeTypeName("#define URL_MK_NO_CANONICALIZE 2")]
     public const int URL_MK_NO_CANONICALIZE = 2;
 }

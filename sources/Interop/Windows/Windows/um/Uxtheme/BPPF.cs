@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class BPPF
 {
+    /// <include file='BPPF.xml' path='doc/member[@name="BPPF.BPPF_ERASE"]/*' />
     [NativeTypeName("#define BPPF_ERASE 0x0001")]
     public const int BPPF_ERASE = 0x0001;
 
+    /// <include file='BPPF.xml' path='doc/member[@name="BPPF.BPPF_NOCLIP"]/*' />
     [NativeTypeName("#define BPPF_NOCLIP 0x0002")]
     public const int BPPF_NOCLIP = 0x0002;
 
+    /// <include file='BPPF.xml' path='doc/member[@name="BPPF.BPPF_NONCLIENT"]/*' />
     [NativeTypeName("#define BPPF_NONCLIENT 0x0004")]
     public const int BPPF_NONCLIENT = 0x0004;
 }

@@ -29,18 +29,23 @@ public static unsafe partial class DirectX
     [DllImport("joy.cpl", ExactSpelling = true)]
     public static extern void ShowJoyCPL(HWND hWnd);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DIRECTINPUT_HEADER_VERSION"]/*' />
     [NativeTypeName("#define DIRECTINPUT_HEADER_VERSION 0x0800")]
     public const int DIRECTINPUT_HEADER_VERSION = 0x0800;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DIRECTINPUT_VERSION"]/*' />
     [NativeTypeName("#define DIRECTINPUT_VERSION DIRECTINPUT_HEADER_VERSION")]
     public const int DIRECTINPUT_VERSION = 0x0800;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DIPROPRANGE_NOMIN"]/*' />
     [NativeTypeName("#define DIPROPRANGE_NOMIN ((LONG)0x80000000)")]
     public const int DIPROPRANGE_NOMIN = unchecked((int)(0x80000000));
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DIPROPRANGE_NOMAX"]/*' />
     [NativeTypeName("#define DIPROPRANGE_NOMAX ((LONG)0x7FFFFFFF)")]
     public const int DIPROPRANGE_NOMAX = ((int)(0x7FFFFFFF));
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.MAXCPOINTSNUM"]/*' />
     [NativeTypeName("#define MAXCPOINTSNUM 8")]
     public const int MAXCPOINTSNUM = 8;
 }

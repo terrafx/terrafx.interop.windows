@@ -1,5 +1,7 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--remap
+PrintWorkflowPrinterJobStatusChangedEventArgs=IPrintWorkflowPrinterJobStatusChangedEventArgs
 --exclude
 ABI::Windows::Graphics::Printing::Workflow::IID_IPrintWorkflowBackgroundSession
 ABI::Windows::Graphics::Printing::Workflow::IID_IPrintWorkflowBackgroundSetupRequestedEventArgs

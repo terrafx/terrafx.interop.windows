@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPrintTaskCompletedEventArgs : IPrintTaskCompletedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IPrintTaskCompletedEventArgs.xml' path='doc/member[@name="IPrintTaskCompletedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPrintTaskCompletedEventArgs);
 
     public void** lpVtbl;

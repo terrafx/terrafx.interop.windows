@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISystemMemoryUsageReport : ISystemMemoryUsageReport.Interface, INativeGuid
 {
+    /// <include file='ISystemMemoryUsageReport.xml' path='doc/member[@name="ISystemMemoryUsageReport.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISystemMemoryUsageReport);
 
     public void** lpVtbl;

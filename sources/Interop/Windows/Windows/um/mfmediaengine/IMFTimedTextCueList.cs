@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFTimedTextCueList : IMFTimedTextCueList.Interface, INativeGuid
 {
+    /// <include file='IMFTimedTextCueList.xml' path='doc/member[@name="IMFTimedTextCueList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFTimedTextCueList);
 
     public void** lpVtbl;

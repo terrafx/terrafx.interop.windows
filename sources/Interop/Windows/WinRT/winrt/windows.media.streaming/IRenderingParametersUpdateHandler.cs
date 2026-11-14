@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IRenderingParametersUpdateHandler : IRenderingParametersUpdateHandler.Interface, INativeGuid
 {
+    /// <include file='IRenderingParametersUpdateHandler.xml' path='doc/member[@name="IRenderingParametersUpdateHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRenderingParametersUpdateHandler);
 
     public void** lpVtbl;

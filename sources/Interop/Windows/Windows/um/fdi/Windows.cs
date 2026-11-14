@@ -30,15 +30,19 @@ public static unsafe partial class Windows
     [DllImport("cabinet", ExactSpelling = true)]
     public static extern BOOL FDITruncateCabinet([NativeTypeName("HFDI")] void* hfdi, [NativeTypeName("LPSTR")] sbyte* pszCabinetName, ushort iFolderToDelete);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INCLUDED_FDI"]/*' />
     [NativeTypeName("#define INCLUDED_FDI 1")]
     public const int INCLUDED_FDI = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.cpuUNKNOWN"]/*' />
     [NativeTypeName("#define cpuUNKNOWN (-1)")]
     public const int cpuUNKNOWN = (-1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.cpu80286"]/*' />
     [NativeTypeName("#define cpu80286 (0)")]
     public const int cpu80286 = (0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.cpu80386"]/*' />
     [NativeTypeName("#define cpu80386 (1)")]
     public const int cpu80386 = (1);
 }

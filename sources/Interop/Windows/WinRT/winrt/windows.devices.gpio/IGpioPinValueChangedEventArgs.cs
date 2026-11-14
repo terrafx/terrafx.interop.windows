@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGpioPinValueChangedEventArgs : IGpioPinValueChangedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IGpioPinValueChangedEventArgs.xml' path='doc/member[@name="IGpioPinValueChangedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGpioPinValueChangedEventArgs);
 
     public void** lpVtbl;

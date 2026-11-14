@@ -7,75 +7,99 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Protection_IComponentLoadFailedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[55]")]
     public const string InterfaceName_Windows_Media_Protection_IComponentLoadFailedEventArgs = "Windows.Media.Protection.IComponentLoadFailedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Protection_IComponentRenewalStatics"]/*' />
     [NativeTypeName("const WCHAR[50]")]
     public const string InterfaceName_Windows_Media_Protection_IComponentRenewalStatics = "Windows.Media.Protection.IComponentRenewalStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Protection_IHdcpSession"]/*' />
     [NativeTypeName("const WCHAR[38]")]
     public const string InterfaceName_Windows_Media_Protection_IHdcpSession = "Windows.Media.Protection.IHdcpSession";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Protection_IMediaProtectionManager"]/*' />
     [NativeTypeName("const WCHAR[49]")]
     public const string InterfaceName_Windows_Media_Protection_IMediaProtectionManager = "Windows.Media.Protection.IMediaProtectionManager";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Protection_IMediaProtectionPMPServer"]/*' />
     [NativeTypeName("const WCHAR[51]")]
     public const string InterfaceName_Windows_Media_Protection_IMediaProtectionPMPServer = "Windows.Media.Protection.IMediaProtectionPMPServer";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Protection_IMediaProtectionPMPServerFactory"]/*' />
     [NativeTypeName("const WCHAR[58]")]
     public const string InterfaceName_Windows_Media_Protection_IMediaProtectionPMPServerFactory = "Windows.Media.Protection.IMediaProtectionPMPServerFactory";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Protection_IMediaProtectionServiceCompletion"]/*' />
     [NativeTypeName("const WCHAR[59]")]
     public const string InterfaceName_Windows_Media_Protection_IMediaProtectionServiceCompletion = "Windows.Media.Protection.IMediaProtectionServiceCompletion";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Protection_IMediaProtectionServiceRequest"]/*' />
     [NativeTypeName("const WCHAR[56]")]
     public const string InterfaceName_Windows_Media_Protection_IMediaProtectionServiceRequest = "Windows.Media.Protection.IMediaProtectionServiceRequest";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Protection_IProtectionCapabilities"]/*' />
     [NativeTypeName("const WCHAR[49]")]
     public const string InterfaceName_Windows_Media_Protection_IProtectionCapabilities = "Windows.Media.Protection.IProtectionCapabilities";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Protection_IRevocationAndRenewalInformation"]/*' />
     [NativeTypeName("const WCHAR[58]")]
     public const string InterfaceName_Windows_Media_Protection_IRevocationAndRenewalInformation = "Windows.Media.Protection.IRevocationAndRenewalInformation";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Protection_IRevocationAndRenewalItem"]/*' />
     [NativeTypeName("const WCHAR[51]")]
     public const string InterfaceName_Windows_Media_Protection_IRevocationAndRenewalItem = "Windows.Media.Protection.IRevocationAndRenewalItem";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Protection_IServiceRequestedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[52]")]
     public const string InterfaceName_Windows_Media_Protection_IServiceRequestedEventArgs = "Windows.Media.Protection.IServiceRequestedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Media_Protection_IServiceRequestedEventArgs2"]/*' />
     [NativeTypeName("const WCHAR[53]")]
     public const string InterfaceName_Windows_Media_Protection_IServiceRequestedEventArgs2 = "Windows.Media.Protection.IServiceRequestedEventArgs2";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Media_Protection_ComponentLoadFailedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[54]")]
     public const string RuntimeClass_Windows_Media_Protection_ComponentLoadFailedEventArgs = "Windows.Media.Protection.ComponentLoadFailedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Media_Protection_ComponentRenewal"]/*' />
     [NativeTypeName("const WCHAR[42]")]
     public const string RuntimeClass_Windows_Media_Protection_ComponentRenewal = "Windows.Media.Protection.ComponentRenewal";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Media_Protection_HdcpSession"]/*' />
     [NativeTypeName("const WCHAR[37]")]
     public const string RuntimeClass_Windows_Media_Protection_HdcpSession = "Windows.Media.Protection.HdcpSession";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Media_Protection_MediaProtectionManager"]/*' />
     [NativeTypeName("const WCHAR[48]")]
     public const string RuntimeClass_Windows_Media_Protection_MediaProtectionManager = "Windows.Media.Protection.MediaProtectionManager";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Media_Protection_MediaProtectionPMPServer"]/*' />
     [NativeTypeName("const WCHAR[50]")]
     public const string RuntimeClass_Windows_Media_Protection_MediaProtectionPMPServer = "Windows.Media.Protection.MediaProtectionPMPServer";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Media_Protection_MediaProtectionServiceCompletion"]/*' />
     [NativeTypeName("const WCHAR[58]")]
     public const string RuntimeClass_Windows_Media_Protection_MediaProtectionServiceCompletion = "Windows.Media.Protection.MediaProtectionServiceCompletion";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Media_Protection_ProtectionCapabilities"]/*' />
     [NativeTypeName("const WCHAR[48]")]
     public const string RuntimeClass_Windows_Media_Protection_ProtectionCapabilities = "Windows.Media.Protection.ProtectionCapabilities";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Media_Protection_RevocationAndRenewalInformation"]/*' />
     [NativeTypeName("const WCHAR[57]")]
     public const string RuntimeClass_Windows_Media_Protection_RevocationAndRenewalInformation = "Windows.Media.Protection.RevocationAndRenewalInformation";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Media_Protection_RevocationAndRenewalItem"]/*' />
     [NativeTypeName("const WCHAR[50]")]
     public const string RuntimeClass_Windows_Media_Protection_RevocationAndRenewalItem = "Windows.Media.Protection.RevocationAndRenewalItem";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Media_Protection_ServiceRequestedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[51]")]
     public const string RuntimeClass_Windows_Media_Protection_ServiceRequestedEventArgs = "Windows.Media.Protection.ServiceRequestedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION"]/*' />
     [NativeTypeName("#define WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION 0x10000")]
     public const int WINDOWS_MEDIA_PROTECTION_PROTECTIONRENEWALCONTRACT_VERSION = 0x10000;
 }

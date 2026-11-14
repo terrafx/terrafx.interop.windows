@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISearchBoxInfo : ISearchBoxInfo.Interface, INativeGuid
 {
+    /// <include file='ISearchBoxInfo.xml' path='doc/member[@name="ISearchBoxInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISearchBoxInfo);
 
     public void** lpVtbl;

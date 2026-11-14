@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IOleDocument : IOleDocument.Interface, INativeGuid
 {
+    /// <include file='IOleDocument.xml' path='doc/member[@name="IOleDocument.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IOleDocument);
 
     public void** lpVtbl;

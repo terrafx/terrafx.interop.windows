@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DM
 {
+    /// <include file='DM.xml' path='doc/member[@name="DM.DM_POINTERHITTEST"]/*' />
     [NativeTypeName("#define DM_POINTERHITTEST 0x0250")]
     public const int DM_POINTERHITTEST = 0x0250;
 
+    /// <include file='DM.xml' path='doc/member[@name="DM.DM_GETDEFID"]/*' />
     [NativeTypeName("#define DM_GETDEFID (WM_USER+0)")]
     public const int DM_GETDEFID = (0x0400 + 0);
 
+    /// <include file='DM.xml' path='doc/member[@name="DM.DM_SETDEFID"]/*' />
     [NativeTypeName("#define DM_SETDEFID (WM_USER+1)")]
     public const int DM_SETDEFID = (0x0400 + 1);
 
+    /// <include file='DM.xml' path='doc/member[@name="DM.DM_REPOSITION"]/*' />
     [NativeTypeName("#define DM_REPOSITION (WM_USER+2)")]
     public const int DM_REPOSITION = (0x0400 + 2);
 }

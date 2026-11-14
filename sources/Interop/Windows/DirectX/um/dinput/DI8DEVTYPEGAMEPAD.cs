@@ -7,12 +7,15 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DI8DEVTYPEGAMEPAD
 {
+    /// <include file='DI8DEVTYPEGAMEPAD.xml' path='doc/member[@name="DI8DEVTYPEGAMEPAD.DI8DEVTYPEGAMEPAD_LIMITED"]/*' />
     [NativeTypeName("#define DI8DEVTYPEGAMEPAD_LIMITED DI8DEVTYPE_LIMITEDGAMESUBTYPE")]
     public const int DI8DEVTYPEGAMEPAD_LIMITED = 1;
 
+    /// <include file='DI8DEVTYPEGAMEPAD.xml' path='doc/member[@name="DI8DEVTYPEGAMEPAD.DI8DEVTYPEGAMEPAD_STANDARD"]/*' />
     [NativeTypeName("#define DI8DEVTYPEGAMEPAD_STANDARD 2")]
     public const int DI8DEVTYPEGAMEPAD_STANDARD = 2;
 
+    /// <include file='DI8DEVTYPEGAMEPAD.xml' path='doc/member[@name="DI8DEVTYPEGAMEPAD.DI8DEVTYPEGAMEPAD_TILT"]/*' />
     [NativeTypeName("#define DI8DEVTYPEGAMEPAD_TILT 3")]
     public const int DI8DEVTYPEGAMEPAD_TILT = 3;
 }

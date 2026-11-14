@@ -10,7 +10,7 @@ public unsafe partial struct LPARAM
 
     public static explicit operator LPARAM(BOOL value) => new LPARAM(value.Value);
 
-    public static explicit operator BOOL(LPARAM value) => new BOOL((int)(value.Value));
+    public static explicit operator BOOL(LPARAM value) => new BOOL(unchecked((int)(value.Value)));
 
     public static explicit operator LPARAM(HANDLE value) => new LPARAM((nint)(value.Value));
 
@@ -82,5 +82,5 @@ public unsafe partial struct LPARAM
 
     public static explicit operator LPARAM(LRESULT value) => new LPARAM(value.Value);
 
-    public static explicit operator LPARAM(WPARAM value) => new LPARAM((nint)(value.Value));
+    public static explicit operator LPARAM(WPARAM value) => new LPARAM(unchecked((nint)(value.Value)));
 }

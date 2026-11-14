@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITimeAndNoticeControl : ITimeAndNoticeControl.Interface, INativeGuid
 {
+    /// <include file='ITimeAndNoticeControl.xml' path='doc/member[@name="ITimeAndNoticeControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITimeAndNoticeControl);
 
     public void** lpVtbl;

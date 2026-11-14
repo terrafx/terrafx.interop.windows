@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISmartCardPinResetHandler : ISmartCardPinResetHandler.Interface, INativeGuid
 {
+    /// <include file='ISmartCardPinResetHandler.xml' path='doc/member[@name="ISmartCardPinResetHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISmartCardPinResetHandler);
 
     public void** lpVtbl;

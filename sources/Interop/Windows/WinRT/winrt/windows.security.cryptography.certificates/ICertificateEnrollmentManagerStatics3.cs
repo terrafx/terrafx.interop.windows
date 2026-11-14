@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICertificateEnrollmentManagerStatics3 : ICertificateEnrollmentManagerStatics3.Interface, INativeGuid
 {
+    /// <include file='ICertificateEnrollmentManagerStatics3.xml' path='doc/member[@name="ICertificateEnrollmentManagerStatics3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICertificateEnrollmentManagerStatics3);
 
     public void** lpVtbl;

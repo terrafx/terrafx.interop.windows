@@ -171,36 +171,47 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint GetConsoleProcessList([NativeTypeName("LPDWORD")] uint* lpdwProcessList, [NativeTypeName("DWORD")] uint dwProcessCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HISTORY_NO_DUP_FLAG"]/*' />
     [NativeTypeName("#define HISTORY_NO_DUP_FLAG 0x1")]
     public const int HISTORY_NO_DUP_FLAG = 0x1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AddConsoleAlias"]/*' />
     [NativeTypeName("#define AddConsoleAlias AddConsoleAliasW")]
     public static delegate*<char*, char*, char*, BOOL> AddConsoleAlias => &AddConsoleAliasW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleAlias"]/*' />
     [NativeTypeName("#define GetConsoleAlias GetConsoleAliasW")]
     public static delegate*<char*, char*, uint, char*, uint> GetConsoleAlias => &GetConsoleAliasW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleAliasesLength"]/*' />
     [NativeTypeName("#define GetConsoleAliasesLength GetConsoleAliasesLengthW")]
     public static delegate*<char*, uint> GetConsoleAliasesLength => &GetConsoleAliasesLengthW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleAliasExesLength"]/*' />
     [NativeTypeName("#define GetConsoleAliasExesLength GetConsoleAliasExesLengthW")]
     public static delegate*<uint> GetConsoleAliasExesLength => &GetConsoleAliasExesLengthW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleAliases"]/*' />
     [NativeTypeName("#define GetConsoleAliases GetConsoleAliasesW")]
     public static delegate*<char*, uint, char*, uint> GetConsoleAliases => &GetConsoleAliasesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleAliasExes"]/*' />
     [NativeTypeName("#define GetConsoleAliasExes GetConsoleAliasExesW")]
     public static delegate*<char*, uint, uint> GetConsoleAliasExes => &GetConsoleAliasExesW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExpungeConsoleCommandHistory"]/*' />
     [NativeTypeName("#define ExpungeConsoleCommandHistory ExpungeConsoleCommandHistoryW")]
     public static delegate*<char*, void> ExpungeConsoleCommandHistory => &ExpungeConsoleCommandHistoryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleNumberOfCommands"]/*' />
     [NativeTypeName("#define SetConsoleNumberOfCommands SetConsoleNumberOfCommandsW")]
     public static delegate*<uint, char*, BOOL> SetConsoleNumberOfCommands => &SetConsoleNumberOfCommandsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleCommandHistoryLength"]/*' />
     [NativeTypeName("#define GetConsoleCommandHistoryLength GetConsoleCommandHistoryLengthW")]
     public static delegate*<char*, uint> GetConsoleCommandHistoryLength => &GetConsoleCommandHistoryLengthW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleCommandHistory"]/*' />
     [NativeTypeName("#define GetConsoleCommandHistory GetConsoleCommandHistoryW")]
     public static delegate*<char*, uint, char*, uint> GetConsoleCommandHistory => &GetConsoleCommandHistoryW;
 }

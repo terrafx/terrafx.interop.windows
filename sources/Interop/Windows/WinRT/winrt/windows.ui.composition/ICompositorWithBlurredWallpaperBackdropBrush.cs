@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICompositorWithBlurredWallpaperBackdropBrush : ICompositorWithBlurredWallpaperBackdropBrush.Interface, INativeGuid
 {
+    /// <include file='ICompositorWithBlurredWallpaperBackdropBrush.xml' path='doc/member[@name="ICompositorWithBlurredWallpaperBackdropBrush.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICompositorWithBlurredWallpaperBackdropBrush);
 
     public void** lpVtbl;

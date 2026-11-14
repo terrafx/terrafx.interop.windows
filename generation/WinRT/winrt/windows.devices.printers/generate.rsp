@@ -1,6 +1,7 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --remap
+IppPrintDeviceInstallationResult=IIppPrintDeviceInstallationResult
 VirtualPrinterInstallationResult=IVirtualPrinterInstallationResult
 VirtualPrinterSupportedFormat=IVirtualPrinterSupportedFormat
 --exclude

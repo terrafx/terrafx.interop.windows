@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IGlobalOptions : IGlobalOptions.Interface, INativeGuid
 {
+    /// <include file='IGlobalOptions.xml' path='doc/member[@name="IGlobalOptions.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGlobalOptions);
 
     public void** lpVtbl;

@@ -7,39 +7,51 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDLOCK
 {
+    /// <include file='DDLOCK.xml' path='doc/member[@name="DDLOCK.DDLOCK_SURFACEMEMORYPTR"]/*' />
     [NativeTypeName("#define DDLOCK_SURFACEMEMORYPTR 0x00000000L")]
     public const int DDLOCK_SURFACEMEMORYPTR = 0x00000000;
 
+    /// <include file='DDLOCK.xml' path='doc/member[@name="DDLOCK.DDLOCK_WAIT"]/*' />
     [NativeTypeName("#define DDLOCK_WAIT 0x00000001L")]
     public const int DDLOCK_WAIT = 0x00000001;
 
+    /// <include file='DDLOCK.xml' path='doc/member[@name="DDLOCK.DDLOCK_EVENT"]/*' />
     [NativeTypeName("#define DDLOCK_EVENT 0x00000002L")]
     public const int DDLOCK_EVENT = 0x00000002;
 
+    /// <include file='DDLOCK.xml' path='doc/member[@name="DDLOCK.DDLOCK_READONLY"]/*' />
     [NativeTypeName("#define DDLOCK_READONLY 0x00000010L")]
     public const int DDLOCK_READONLY = 0x00000010;
 
+    /// <include file='DDLOCK.xml' path='doc/member[@name="DDLOCK.DDLOCK_WRITEONLY"]/*' />
     [NativeTypeName("#define DDLOCK_WRITEONLY 0x00000020L")]
     public const int DDLOCK_WRITEONLY = 0x00000020;
 
+    /// <include file='DDLOCK.xml' path='doc/member[@name="DDLOCK.DDLOCK_NOSYSLOCK"]/*' />
     [NativeTypeName("#define DDLOCK_NOSYSLOCK 0x00000800L")]
     public const int DDLOCK_NOSYSLOCK = 0x00000800;
 
+    /// <include file='DDLOCK.xml' path='doc/member[@name="DDLOCK.DDLOCK_NOOVERWRITE"]/*' />
     [NativeTypeName("#define DDLOCK_NOOVERWRITE 0x00001000L")]
     public const int DDLOCK_NOOVERWRITE = 0x00001000;
 
+    /// <include file='DDLOCK.xml' path='doc/member[@name="DDLOCK.DDLOCK_DISCARDCONTENTS"]/*' />
     [NativeTypeName("#define DDLOCK_DISCARDCONTENTS 0x00002000L")]
     public const int DDLOCK_DISCARDCONTENTS = 0x00002000;
 
+    /// <include file='DDLOCK.xml' path='doc/member[@name="DDLOCK.DDLOCK_OKTOSWAP"]/*' />
     [NativeTypeName("#define DDLOCK_OKTOSWAP 0x00002000L")]
     public const int DDLOCK_OKTOSWAP = 0x00002000;
 
+    /// <include file='DDLOCK.xml' path='doc/member[@name="DDLOCK.DDLOCK_DONOTWAIT"]/*' />
     [NativeTypeName("#define DDLOCK_DONOTWAIT 0x00004000L")]
     public const int DDLOCK_DONOTWAIT = 0x00004000;
 
+    /// <include file='DDLOCK.xml' path='doc/member[@name="DDLOCK.DDLOCK_HASVOLUMETEXTUREBOXRECT"]/*' />
     [NativeTypeName("#define DDLOCK_HASVOLUMETEXTUREBOXRECT 0x00008000L")]
     public const int DDLOCK_HASVOLUMETEXTUREBOXRECT = 0x00008000;
 
+    /// <include file='DDLOCK.xml' path='doc/member[@name="DDLOCK.DDLOCK_NODIRTYUPDATE"]/*' />
     [NativeTypeName("#define DDLOCK_NODIRTYUPDATE 0x00010000L")]
     public const int DDLOCK_NODIRTYUPDATE = 0x00010000;
 }

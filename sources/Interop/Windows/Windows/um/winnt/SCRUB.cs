@@ -7,36 +7,47 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SCRUB
 {
+    /// <include file='SCRUB.xml' path='doc/member[@name="SCRUB.SCRUB_DATA_INPUT_FLAG_RESUME"]/*' />
     [NativeTypeName("#define SCRUB_DATA_INPUT_FLAG_RESUME 0x00000001")]
     public const int SCRUB_DATA_INPUT_FLAG_RESUME = 0x00000001;
 
+    /// <include file='SCRUB.xml' path='doc/member[@name="SCRUB.SCRUB_DATA_INPUT_FLAG_SKIP_IN_SYNC"]/*' />
     [NativeTypeName("#define SCRUB_DATA_INPUT_FLAG_SKIP_IN_SYNC 0x00000002")]
     public const int SCRUB_DATA_INPUT_FLAG_SKIP_IN_SYNC = 0x00000002;
 
+    /// <include file='SCRUB.xml' path='doc/member[@name="SCRUB.SCRUB_DATA_INPUT_FLAG_SKIP_NON_INTEGRITY_DATA"]/*' />
     [NativeTypeName("#define SCRUB_DATA_INPUT_FLAG_SKIP_NON_INTEGRITY_DATA 0x00000004")]
     public const int SCRUB_DATA_INPUT_FLAG_SKIP_NON_INTEGRITY_DATA = 0x00000004;
 
+    /// <include file='SCRUB.xml' path='doc/member[@name="SCRUB.SCRUB_DATA_INPUT_FLAG_IGNORE_REDUNDANCY"]/*' />
     [NativeTypeName("#define SCRUB_DATA_INPUT_FLAG_IGNORE_REDUNDANCY 0x00000008")]
     public const int SCRUB_DATA_INPUT_FLAG_IGNORE_REDUNDANCY = 0x00000008;
 
+    /// <include file='SCRUB.xml' path='doc/member[@name="SCRUB.SCRUB_DATA_INPUT_FLAG_SKIP_DATA"]/*' />
     [NativeTypeName("#define SCRUB_DATA_INPUT_FLAG_SKIP_DATA 0x00000010")]
     public const int SCRUB_DATA_INPUT_FLAG_SKIP_DATA = 0x00000010;
 
+    /// <include file='SCRUB.xml' path='doc/member[@name="SCRUB.SCRUB_DATA_INPUT_FLAG_SCRUB_BY_OBJECT_ID"]/*' />
     [NativeTypeName("#define SCRUB_DATA_INPUT_FLAG_SCRUB_BY_OBJECT_ID 0x00000020")]
     public const int SCRUB_DATA_INPUT_FLAG_SCRUB_BY_OBJECT_ID = 0x00000020;
 
+    /// <include file='SCRUB.xml' path='doc/member[@name="SCRUB.SCRUB_DATA_INPUT_FLAG_OPLOCK_NOT_ACQUIRED"]/*' />
     [NativeTypeName("#define SCRUB_DATA_INPUT_FLAG_OPLOCK_NOT_ACQUIRED 0x00000040")]
     public const int SCRUB_DATA_INPUT_FLAG_OPLOCK_NOT_ACQUIRED = 0x00000040;
 
+    /// <include file='SCRUB.xml' path='doc/member[@name="SCRUB.SCRUB_DATA_OUTPUT_FLAG_INCOMPLETE"]/*' />
     [NativeTypeName("#define SCRUB_DATA_OUTPUT_FLAG_INCOMPLETE 0x00000001")]
     public const int SCRUB_DATA_OUTPUT_FLAG_INCOMPLETE = 0x00000001;
 
+    /// <include file='SCRUB.xml' path='doc/member[@name="SCRUB.SCRUB_DATA_OUTPUT_FLAG_NON_USER_DATA_RANGE"]/*' />
     [NativeTypeName("#define SCRUB_DATA_OUTPUT_FLAG_NON_USER_DATA_RANGE 0x00010000")]
     public const int SCRUB_DATA_OUTPUT_FLAG_NON_USER_DATA_RANGE = 0x00010000;
 
+    /// <include file='SCRUB.xml' path='doc/member[@name="SCRUB.SCRUB_DATA_OUTPUT_FLAG_PARITY_EXTENT_DATA_RETURNED"]/*' />
     [NativeTypeName("#define SCRUB_DATA_OUTPUT_FLAG_PARITY_EXTENT_DATA_RETURNED 0x00020000")]
     public const int SCRUB_DATA_OUTPUT_FLAG_PARITY_EXTENT_DATA_RETURNED = 0x00020000;
 
+    /// <include file='SCRUB.xml' path='doc/member[@name="SCRUB.SCRUB_DATA_OUTPUT_FLAG_RESUME_CONTEXT_LENGTH_SPECIFIED"]/*' />
     [NativeTypeName("#define SCRUB_DATA_OUTPUT_FLAG_RESUME_CONTEXT_LENGTH_SPECIFIED 0x00040000")]
     public const int SCRUB_DATA_OUTPUT_FLAG_RESUME_CONTEXT_LENGTH_SPECIFIED = 0x00040000;
 }

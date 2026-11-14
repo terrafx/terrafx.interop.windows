@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("9D3ECD55-89E8-490A-970A-0C9548D5A56E")]
 public unsafe partial struct CODECAPI_AVEncCommonLowLatency : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncCommonLowLatency.xml' path='doc/member[@name="CODECAPI_AVEncCommonLowLatency.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncCommonLowLatency);
 }

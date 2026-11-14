@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMarkupTextFrags : IMarkupTextFrags.Interface, INativeGuid
 {
+    /// <include file='IMarkupTextFrags.xml' path='doc/member[@name="IMarkupTextFrags.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMarkupTextFrags);
 
     public void** lpVtbl;

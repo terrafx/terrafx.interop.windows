@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IIOCancelInformation : IIOCancelInformation.Interface, INativeGuid
 {
+    /// <include file='IIOCancelInformation.xml' path='doc/member[@name="IIOCancelInformation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IIOCancelInformation);
 
     public void** lpVtbl;

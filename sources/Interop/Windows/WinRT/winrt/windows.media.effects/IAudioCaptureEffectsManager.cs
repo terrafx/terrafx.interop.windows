@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAudioCaptureEffectsManager : IAudioCaptureEffectsManager.Interface, INativeGuid
 {
+    /// <include file='IAudioCaptureEffectsManager.xml' path='doc/member[@name="IAudioCaptureEffectsManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioCaptureEffectsManager);
 
     public void** lpVtbl;

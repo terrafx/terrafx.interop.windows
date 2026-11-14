@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Interface, INativeGuid
 {
+    /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUIAnimationStoryboard);
 
     public void** lpVtbl;

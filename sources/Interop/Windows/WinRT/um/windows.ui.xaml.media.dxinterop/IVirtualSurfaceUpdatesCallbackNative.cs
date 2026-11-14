@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IVirtualSurfaceUpdatesCallbackNative : IVirtualSurfaceUpdatesCallbackNative.Interface, INativeGuid
 {
+    /// <include file='IVirtualSurfaceUpdatesCallbackNative.xml' path='doc/member[@name="IVirtualSurfaceUpdatesCallbackNative.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVirtualSurfaceUpdatesCallbackNative);
 
     public void** lpVtbl;

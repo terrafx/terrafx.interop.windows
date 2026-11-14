@@ -7,18 +7,23 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDCKEY
 {
+    /// <include file='DDCKEY.xml' path='doc/member[@name="DDCKEY.DDCKEY_COLORSPACE"]/*' />
     [NativeTypeName("#define DDCKEY_COLORSPACE 0x00000001l")]
     public const int DDCKEY_COLORSPACE = 0x00000001;
 
+    /// <include file='DDCKEY.xml' path='doc/member[@name="DDCKEY.DDCKEY_DESTBLT"]/*' />
     [NativeTypeName("#define DDCKEY_DESTBLT 0x00000002l")]
     public const int DDCKEY_DESTBLT = 0x00000002;
 
+    /// <include file='DDCKEY.xml' path='doc/member[@name="DDCKEY.DDCKEY_DESTOVERLAY"]/*' />
     [NativeTypeName("#define DDCKEY_DESTOVERLAY 0x00000004l")]
     public const int DDCKEY_DESTOVERLAY = 0x00000004;
 
+    /// <include file='DDCKEY.xml' path='doc/member[@name="DDCKEY.DDCKEY_SRCBLT"]/*' />
     [NativeTypeName("#define DDCKEY_SRCBLT 0x00000008l")]
     public const int DDCKEY_SRCBLT = 0x00000008;
 
+    /// <include file='DDCKEY.xml' path='doc/member[@name="DDCKEY.DDCKEY_SRCOVERLAY"]/*' />
     [NativeTypeName("#define DDCKEY_SRCOVERLAY 0x00000010l")]
     public const int DDCKEY_SRCOVERLAY = 0x00000010;
 }

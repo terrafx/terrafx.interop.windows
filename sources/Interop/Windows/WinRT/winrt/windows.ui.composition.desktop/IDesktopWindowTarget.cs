@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IDesktopWindowTarget : IDesktopWindowTarget.Interface, INativeGuid
 {
+    /// <include file='IDesktopWindowTarget.xml' path='doc/member[@name="IDesktopWindowTarget.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDesktopWindowTarget);
 
     public void** lpVtbl;

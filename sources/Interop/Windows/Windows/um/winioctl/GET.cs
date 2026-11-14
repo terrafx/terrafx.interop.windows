@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GET
 {
+    /// <include file='GET.xml' path='doc/member[@name="GET.GET_VOLUME_BITMAP_FLAG_MASK_METADATA"]/*' />
     [NativeTypeName("#define GET_VOLUME_BITMAP_FLAG_MASK_METADATA 0x00000001")]
     public const int GET_VOLUME_BITMAP_FLAG_MASK_METADATA = 0x00000001;
 }

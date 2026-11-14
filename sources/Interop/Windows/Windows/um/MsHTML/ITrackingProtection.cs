@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITrackingProtection : ITrackingProtection.Interface, INativeGuid
 {
+    /// <include file='ITrackingProtection.xml' path='doc/member[@name="ITrackingProtection.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITrackingProtection);
 
     public void** lpVtbl;

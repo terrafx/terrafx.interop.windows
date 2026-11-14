@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_NetworkFolder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_NetworkFolder
     {
@@ -37,6 +38,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_ComputerFolder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_ComputerFolder
     {
@@ -62,6 +64,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_InternetFolder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_InternetFolder
     {
@@ -87,6 +90,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_ControlPanelFolder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_ControlPanelFolder
     {
@@ -112,6 +116,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_PrintersFolder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_PrintersFolder
     {
@@ -137,6 +142,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SyncManagerFolder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SyncManagerFolder
     {
@@ -162,6 +168,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SyncSetupFolder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SyncSetupFolder
     {
@@ -187,6 +194,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_ConflictFolder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_ConflictFolder
     {
@@ -212,6 +220,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SyncResultsFolder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SyncResultsFolder
     {
@@ -237,6 +246,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_RecycleBinFolder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_RecycleBinFolder
     {
@@ -262,6 +272,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_ConnectionsFolder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_ConnectionsFolder
     {
@@ -287,6 +298,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Fonts"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Fonts
     {
@@ -312,6 +324,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Desktop"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Desktop
     {
@@ -337,6 +350,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Startup"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Startup
     {
@@ -362,6 +376,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Programs"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Programs
     {
@@ -387,6 +402,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_StartMenu"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_StartMenu
     {
@@ -412,6 +428,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Recent"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Recent
     {
@@ -437,6 +454,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SendTo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SendTo
     {
@@ -462,6 +480,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Documents"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Documents
     {
@@ -487,6 +506,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Favorites"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Favorites
     {
@@ -512,6 +532,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_NetHood"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_NetHood
     {
@@ -537,6 +558,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_PrintHood"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_PrintHood
     {
@@ -562,6 +584,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Templates"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Templates
     {
@@ -587,6 +610,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_CommonStartup"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_CommonStartup
     {
@@ -612,6 +636,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_CommonPrograms"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_CommonPrograms
     {
@@ -637,6 +662,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_CommonStartMenu"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_CommonStartMenu
     {
@@ -662,6 +688,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_PublicDesktop"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_PublicDesktop
     {
@@ -687,6 +714,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_ProgramData"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_ProgramData
     {
@@ -712,6 +740,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_CommonTemplates"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_CommonTemplates
     {
@@ -737,6 +766,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_PublicDocuments"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_PublicDocuments
     {
@@ -762,6 +792,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_RoamingAppData"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_RoamingAppData
     {
@@ -787,6 +818,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_LocalAppData"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_LocalAppData
     {
@@ -812,6 +844,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_LocalAppDataLow"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_LocalAppDataLow
     {
@@ -837,6 +870,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_InternetCache"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_InternetCache
     {
@@ -862,6 +896,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Cookies"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Cookies
     {
@@ -887,6 +922,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_History"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_History
     {
@@ -912,6 +948,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_System"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_System
     {
@@ -937,6 +974,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SystemX86"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SystemX86
     {
@@ -962,6 +1000,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Windows"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Windows
     {
@@ -987,6 +1026,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Profile"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Profile
     {
@@ -1012,6 +1052,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Pictures"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Pictures
     {
@@ -1037,6 +1078,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_ProgramFilesX86"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_ProgramFilesX86
     {
@@ -1062,6 +1104,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_ProgramFilesCommonX86"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_ProgramFilesCommonX86
     {
@@ -1087,6 +1130,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_ProgramFilesX64"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_ProgramFilesX64
     {
@@ -1112,6 +1156,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_ProgramFilesCommonX64"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_ProgramFilesCommonX64
     {
@@ -1137,6 +1182,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_ProgramFiles"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_ProgramFiles
     {
@@ -1162,6 +1208,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_ProgramFilesCommon"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_ProgramFilesCommon
     {
@@ -1187,6 +1234,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_UserProgramFiles"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_UserProgramFiles
     {
@@ -1212,6 +1260,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_UserProgramFilesCommon"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_UserProgramFilesCommon
     {
@@ -1237,6 +1286,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_AdminTools"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_AdminTools
     {
@@ -1262,6 +1312,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_CommonAdminTools"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_CommonAdminTools
     {
@@ -1287,6 +1338,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Music"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Music
     {
@@ -1312,6 +1364,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Videos"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Videos
     {
@@ -1337,6 +1390,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Ringtones"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Ringtones
     {
@@ -1362,6 +1416,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_PublicPictures"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_PublicPictures
     {
@@ -1387,6 +1442,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_PublicMusic"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_PublicMusic
     {
@@ -1412,6 +1468,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_PublicVideos"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_PublicVideos
     {
@@ -1437,6 +1494,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_PublicRingtones"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_PublicRingtones
     {
@@ -1462,6 +1520,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_ResourceDir"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_ResourceDir
     {
@@ -1487,6 +1546,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_LocalizedResourcesDir"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_LocalizedResourcesDir
     {
@@ -1512,6 +1572,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_CommonOEMLinks"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_CommonOEMLinks
     {
@@ -1537,6 +1598,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_CDBurning"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_CDBurning
     {
@@ -1562,6 +1624,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_UserProfiles"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_UserProfiles
     {
@@ -1587,6 +1650,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Playlists"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Playlists
     {
@@ -1612,6 +1676,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SamplePlaylists"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SamplePlaylists
     {
@@ -1637,6 +1702,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SampleMusic"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SampleMusic
     {
@@ -1662,6 +1728,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SamplePictures"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SamplePictures
     {
@@ -1687,6 +1754,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SampleVideos"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SampleVideos
     {
@@ -1712,6 +1780,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_PhotoAlbums"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_PhotoAlbums
     {
@@ -1737,6 +1806,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Public"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Public
     {
@@ -1762,6 +1832,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_ChangeRemovePrograms"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_ChangeRemovePrograms
     {
@@ -1787,6 +1858,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_AppUpdates"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_AppUpdates
     {
@@ -1812,6 +1884,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_AddNewPrograms"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_AddNewPrograms
     {
@@ -1837,6 +1910,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Downloads"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Downloads
     {
@@ -1862,6 +1936,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_PublicDownloads"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_PublicDownloads
     {
@@ -1887,6 +1962,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SavedSearches"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SavedSearches
     {
@@ -1912,6 +1988,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_QuickLaunch"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_QuickLaunch
     {
@@ -1937,6 +2014,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Contacts"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Contacts
     {
@@ -1962,6 +2040,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SidebarParts"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SidebarParts
     {
@@ -1987,6 +2066,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SidebarDefaultParts"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SidebarDefaultParts
     {
@@ -2012,6 +2092,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_PublicGameTasks"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_PublicGameTasks
     {
@@ -2037,6 +2118,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_GameTasks"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_GameTasks
     {
@@ -2062,6 +2144,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SavedGames"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SavedGames
     {
@@ -2087,6 +2170,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Games"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Games
     {
@@ -2112,6 +2196,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SEARCH_MAPI"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SEARCH_MAPI
     {
@@ -2137,6 +2222,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SEARCH_CSC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SEARCH_CSC
     {
@@ -2162,6 +2248,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Links"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Links
     {
@@ -2187,6 +2274,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_UsersFiles"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_UsersFiles
     {
@@ -2212,6 +2300,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_UsersLibraries"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_UsersLibraries
     {
@@ -2237,6 +2326,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SearchHome"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SearchHome
     {
@@ -2262,6 +2352,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_OriginalImages"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_OriginalImages
     {
@@ -2287,6 +2378,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_DocumentsLibrary"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_DocumentsLibrary
     {
@@ -2312,6 +2404,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_MusicLibrary"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_MusicLibrary
     {
@@ -2337,6 +2430,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_PicturesLibrary"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_PicturesLibrary
     {
@@ -2362,6 +2456,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_VideosLibrary"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_VideosLibrary
     {
@@ -2387,6 +2482,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_RecordedTVLibrary"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_RecordedTVLibrary
     {
@@ -2412,6 +2508,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_HomeGroup"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_HomeGroup
     {
@@ -2437,6 +2534,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_HomeGroupCurrentUser"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_HomeGroupCurrentUser
     {
@@ -2462,6 +2560,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_DeviceMetadataStore"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_DeviceMetadataStore
     {
@@ -2487,6 +2586,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Libraries"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Libraries
     {
@@ -2512,6 +2612,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_PublicLibraries"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_PublicLibraries
     {
@@ -2537,6 +2638,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_UserPinned"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_UserPinned
     {
@@ -2562,6 +2664,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_ImplicitAppShortcuts"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_ImplicitAppShortcuts
     {
@@ -2587,6 +2690,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_AccountPictures"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_AccountPictures
     {
@@ -2612,6 +2716,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_PublicUserTiles"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_PublicUserTiles
     {
@@ -2637,6 +2742,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_AppsFolder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_AppsFolder
     {
@@ -2662,6 +2768,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_StartMenuAllPrograms"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_StartMenuAllPrograms
     {
@@ -2687,6 +2794,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_CommonStartMenuPlaces"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_CommonStartMenuPlaces
     {
@@ -2712,6 +2820,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_ApplicationShortcuts"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_ApplicationShortcuts
     {
@@ -2737,6 +2846,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_RoamingTiles"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_RoamingTiles
     {
@@ -2762,6 +2872,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_RoamedTileImages"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_RoamedTileImages
     {
@@ -2787,6 +2898,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Screenshots"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Screenshots
     {
@@ -2812,6 +2924,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_CameraRoll"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_CameraRoll
     {
@@ -2837,6 +2950,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SkyDrive"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SkyDrive
     {
@@ -2862,6 +2976,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_OneDrive"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_OneDrive
     {
@@ -2887,6 +3002,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SkyDriveDocuments"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SkyDriveDocuments
     {
@@ -2912,6 +3028,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SkyDrivePictures"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SkyDrivePictures
     {
@@ -2937,6 +3054,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SkyDriveMusic"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SkyDriveMusic
     {
@@ -2962,6 +3080,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SkyDriveCameraRoll"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SkyDriveCameraRoll
     {
@@ -2987,6 +3106,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SearchHistory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SearchHistory
     {
@@ -3012,6 +3132,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SearchTemplates"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SearchTemplates
     {
@@ -3037,6 +3158,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_CameraRollLibrary"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_CameraRollLibrary
     {
@@ -3062,6 +3184,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SavedPictures"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SavedPictures
     {
@@ -3087,6 +3210,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_SavedPicturesLibrary"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_SavedPicturesLibrary
     {
@@ -3112,6 +3236,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_RetailDemo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_RetailDemo
     {
@@ -3137,6 +3262,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Device"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Device
     {
@@ -3162,6 +3288,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_DevelopmentFiles"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_DevelopmentFiles
     {
@@ -3187,6 +3314,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_Objects3D"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_Objects3D
     {
@@ -3212,6 +3340,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_AppCaptures"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_AppCaptures
     {
@@ -3237,6 +3366,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_LocalDocuments"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_LocalDocuments
     {
@@ -3262,6 +3392,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_LocalPictures"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_LocalPictures
     {
@@ -3287,6 +3418,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_LocalVideos"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_LocalVideos
     {
@@ -3312,6 +3444,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_LocalMusic"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_LocalMusic
     {
@@ -3337,6 +3470,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_LocalDownloads"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_LocalDownloads
     {
@@ -3362,6 +3496,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_RecordedCalls"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_RecordedCalls
     {
@@ -3387,6 +3522,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_AllAppMods"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_AllAppMods
     {
@@ -3412,6 +3548,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_CurrentAppMods"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_CurrentAppMods
     {
@@ -3437,6 +3574,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_AppDataDesktop"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_AppDataDesktop
     {
@@ -3462,6 +3600,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_AppDataDocuments"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_AppDataDocuments
     {
@@ -3487,6 +3626,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_AppDataFavorites"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_AppDataFavorites
     {
@@ -3512,6 +3652,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_AppDataProgramData"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_AppDataProgramData
     {
@@ -3537,6 +3678,7 @@ public static partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FOLDERID_LocalStorage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid FOLDERID_LocalStorage
     {

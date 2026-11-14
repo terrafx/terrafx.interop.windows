@@ -44,7 +44,7 @@ public partial struct DRIVER_INFO_ENTRY
     public uint OemNameOffset;
 
     /// <include file='DRIVER_INFO_ENTRY.xml' path='doc/member[@name="DRIVER_INFO_ENTRY.Flags"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L15224_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L16057_C5")]
     public _Flags_e__Union Flags;
 
     /// <include file='DRIVER_INFO_ENTRY.xml' path='doc/member[@name="DRIVER_INFO_ENTRY.Padding"]/*' />
@@ -57,7 +57,7 @@ public partial struct DRIVER_INFO_ENTRY
     {
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L15225_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L16058_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Flags_e__Union.xml' path='doc/member[@name="_Flags_e__Union.AsUInt16"]/*' />

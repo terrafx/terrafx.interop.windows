@@ -7,21 +7,27 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class BI
 {
+    /// <include file='BI.xml' path='doc/member[@name="BI.BI_RGB"]/*' />
     [NativeTypeName("#define BI_RGB 0L")]
     public const int BI_RGB = 0;
 
+    /// <include file='BI.xml' path='doc/member[@name="BI.BI_RLE8"]/*' />
     [NativeTypeName("#define BI_RLE8 1L")]
     public const int BI_RLE8 = 1;
 
+    /// <include file='BI.xml' path='doc/member[@name="BI.BI_RLE4"]/*' />
     [NativeTypeName("#define BI_RLE4 2L")]
     public const int BI_RLE4 = 2;
 
+    /// <include file='BI.xml' path='doc/member[@name="BI.BI_BITFIELDS"]/*' />
     [NativeTypeName("#define BI_BITFIELDS 3L")]
     public const int BI_BITFIELDS = 3;
 
+    /// <include file='BI.xml' path='doc/member[@name="BI.BI_JPEG"]/*' />
     [NativeTypeName("#define BI_JPEG 4L")]
     public const int BI_JPEG = 4;
 
+    /// <include file='BI.xml' path='doc/member[@name="BI.BI_PNG"]/*' />
     [NativeTypeName("#define BI_PNG 5L")]
     public const int BI_PNG = 5;
 }

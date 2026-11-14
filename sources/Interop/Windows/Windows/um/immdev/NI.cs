@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class NI
 {
+    /// <include file='NI.xml' path='doc/member[@name="NI.NI_CONTEXTUPDATED"]/*' />
     [NativeTypeName("#define NI_CONTEXTUPDATED 0x0003")]
     public const int NI_CONTEXTUPDATED = 0x0003;
 }

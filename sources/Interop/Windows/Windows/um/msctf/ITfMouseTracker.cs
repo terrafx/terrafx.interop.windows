@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfMouseTracker : ITfMouseTracker.Interface, INativeGuid
 {
+    /// <include file='ITfMouseTracker.xml' path='doc/member[@name="ITfMouseTracker.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfMouseTracker);
 
     public void** lpVtbl;

@@ -26,7 +26,7 @@ public partial struct XSTATE_CONFIGURATION
     public uint Size;
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Anonymous1"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L14869_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L15702_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Features"]/*' />
@@ -62,7 +62,7 @@ public partial struct XSTATE_CONFIGURATION
     public uint AllNonLargeFeatureSize;
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Anonymous2"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L14903_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L15736_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='XSTATE_CONFIGURATION.xml' path='doc/member[@name="XSTATE_CONFIGURATION.Spare"]/*' />
@@ -232,7 +232,7 @@ public partial struct XSTATE_CONFIGURATION
 
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L14871_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L15704_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
@@ -299,12 +299,12 @@ public partial struct XSTATE_CONFIGURATION
     {
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Anonymous1"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L14905_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L15738_C9")]
         public _Anonymous1_e__Struct Anonymous1;
 
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Anonymous2"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L14910_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L15743_C9")]
         public _Anonymous2_e__Struct Anonymous2;
 
         /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct"]/*' />
@@ -338,7 +338,7 @@ public partial struct XSTATE_CONFIGURATION
             public ushort SmeZTRegisterCount;
 
             /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.Anonymous"]/*' />
-            [NativeTypeName("__AnonymousRecord_winnt_L14922_C13")]
+            [NativeTypeName("__AnonymousRecord_winnt_L15755_C13")]
             public _Anonymous_e__Union Anonymous;
 
             /// <include file='_Anonymous2_e__Struct.xml' path='doc/member[@name="_Anonymous2_e__Struct.SupportedSmeVectorLengths"]/*' />
@@ -359,7 +359,7 @@ public partial struct XSTATE_CONFIGURATION
 
                 /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
                 [FieldOffset(0)]
-                [NativeTypeName("__AnonymousRecord_winnt_L14924_C17")]
+                [NativeTypeName("__AnonymousRecord_winnt_L15757_C17")]
                 public _Anonymous_e__Struct Anonymous;
 
                 /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

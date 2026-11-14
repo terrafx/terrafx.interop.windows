@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("B5607793-24AC-44C7-82E2-831726AA6CB7")]
 public unsafe partial struct FreeSpaceCategorizer : INativeGuid
 {
+    /// <include file='FreeSpaceCategorizer.xml' path='doc/member[@name="FreeSpaceCategorizer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_FreeSpaceCategorizer);
 }

@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class PIN
 {
+    /// <include file='PIN.xml' path='doc/member[@name="PIN.PIN_CATEGORY_CAPTURE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PIN_CATEGORY_CAPTURE
     {
@@ -37,6 +38,7 @@ public static partial class PIN
         }
     }
 
+    /// <include file='PIN.xml' path='doc/member[@name="PIN.PIN_CATEGORY_PREVIEW"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PIN_CATEGORY_PREVIEW
     {
@@ -62,6 +64,7 @@ public static partial class PIN
         }
     }
 
+    /// <include file='PIN.xml' path='doc/member[@name="PIN.PIN_CATEGORY_ANALOGVIDEOIN"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PIN_CATEGORY_ANALOGVIDEOIN
     {
@@ -87,6 +90,7 @@ public static partial class PIN
         }
     }
 
+    /// <include file='PIN.xml' path='doc/member[@name="PIN.PIN_CATEGORY_VBI"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PIN_CATEGORY_VBI
     {
@@ -112,6 +116,7 @@ public static partial class PIN
         }
     }
 
+    /// <include file='PIN.xml' path='doc/member[@name="PIN.PIN_CATEGORY_VIDEOPORT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PIN_CATEGORY_VIDEOPORT
     {
@@ -137,6 +142,7 @@ public static partial class PIN
         }
     }
 
+    /// <include file='PIN.xml' path='doc/member[@name="PIN.PIN_CATEGORY_NABTS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PIN_CATEGORY_NABTS
     {
@@ -162,6 +168,7 @@ public static partial class PIN
         }
     }
 
+    /// <include file='PIN.xml' path='doc/member[@name="PIN.PIN_CATEGORY_EDS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PIN_CATEGORY_EDS
     {
@@ -187,6 +194,7 @@ public static partial class PIN
         }
     }
 
+    /// <include file='PIN.xml' path='doc/member[@name="PIN.PIN_CATEGORY_TELETEXT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PIN_CATEGORY_TELETEXT
     {
@@ -212,6 +220,7 @@ public static partial class PIN
         }
     }
 
+    /// <include file='PIN.xml' path='doc/member[@name="PIN.PIN_CATEGORY_CC"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PIN_CATEGORY_CC
     {
@@ -237,6 +246,7 @@ public static partial class PIN
         }
     }
 
+    /// <include file='PIN.xml' path='doc/member[@name="PIN.PIN_CATEGORY_STILL"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PIN_CATEGORY_STILL
     {
@@ -262,6 +272,7 @@ public static partial class PIN
         }
     }
 
+    /// <include file='PIN.xml' path='doc/member[@name="PIN.PIN_CATEGORY_TIMECODE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PIN_CATEGORY_TIMECODE
     {
@@ -287,6 +298,7 @@ public static partial class PIN
         }
     }
 
+    /// <include file='PIN.xml' path='doc/member[@name="PIN.PIN_CATEGORY_VIDEOPORT_VBI"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid PIN_CATEGORY_VIDEOPORT_VBI
     {

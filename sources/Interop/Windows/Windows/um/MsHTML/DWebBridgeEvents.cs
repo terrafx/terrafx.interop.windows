@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct DWebBridgeEvents : DWebBridgeEvents.Interface, INativeGuid
 {
+    /// <include file='DWebBridgeEvents.xml' path='doc/member[@name="DWebBridgeEvents.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DWebBridgeEvents);
 
     public void** lpVtbl;

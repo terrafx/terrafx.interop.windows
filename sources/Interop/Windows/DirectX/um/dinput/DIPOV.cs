@@ -7,15 +7,19 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DIPOV
 {
+    /// <include file='DIPOV.xml' path='doc/member[@name="DIPOV.DIPOV_ANY_1"]/*' />
     [NativeTypeName("#define DIPOV_ANY_1 0xFF004601")]
     public const uint DIPOV_ANY_1 = 0xFF004601;
 
+    /// <include file='DIPOV.xml' path='doc/member[@name="DIPOV.DIPOV_ANY_2"]/*' />
     [NativeTypeName("#define DIPOV_ANY_2 0xFF004602")]
     public const uint DIPOV_ANY_2 = 0xFF004602;
 
+    /// <include file='DIPOV.xml' path='doc/member[@name="DIPOV.DIPOV_ANY_3"]/*' />
     [NativeTypeName("#define DIPOV_ANY_3 0xFF004603")]
     public const uint DIPOV_ANY_3 = 0xFF004603;
 
+    /// <include file='DIPOV.xml' path='doc/member[@name="DIPOV.DIPOV_ANY_4"]/*' />
     [NativeTypeName("#define DIPOV_ANY_4 0xFF004604")]
     public const uint DIPOV_ANY_4 = 0xFF004604;
 }

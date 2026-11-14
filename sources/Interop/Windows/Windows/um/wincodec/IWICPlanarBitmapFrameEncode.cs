@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IWICPlanarBitmapFrameEncode : IWICPlanarBitmapFrameEncode.Interface, INativeGuid
 {
+    /// <include file='IWICPlanarBitmapFrameEncode.xml' path='doc/member[@name="IWICPlanarBitmapFrameEncode.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICPlanarBitmapFrameEncode);
 
     public void** lpVtbl;

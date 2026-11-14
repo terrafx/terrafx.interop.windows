@@ -7,18 +7,23 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3D9_RESOURCE_PRIORITY
 {
+    /// <include file='D3D9_RESOURCE_PRIORITY.xml' path='doc/member[@name="D3D9_RESOURCE_PRIORITY.D3D9_RESOURCE_PRIORITY_MINIMUM"]/*' />
     [NativeTypeName("#define D3D9_RESOURCE_PRIORITY_MINIMUM 0x28000000")]
     public const int D3D9_RESOURCE_PRIORITY_MINIMUM = 0x28000000;
 
+    /// <include file='D3D9_RESOURCE_PRIORITY.xml' path='doc/member[@name="D3D9_RESOURCE_PRIORITY.D3D9_RESOURCE_PRIORITY_LOW"]/*' />
     [NativeTypeName("#define D3D9_RESOURCE_PRIORITY_LOW 0x50000000")]
     public const int D3D9_RESOURCE_PRIORITY_LOW = 0x50000000;
 
+    /// <include file='D3D9_RESOURCE_PRIORITY.xml' path='doc/member[@name="D3D9_RESOURCE_PRIORITY.D3D9_RESOURCE_PRIORITY_NORMAL"]/*' />
     [NativeTypeName("#define D3D9_RESOURCE_PRIORITY_NORMAL 0x78000000")]
     public const int D3D9_RESOURCE_PRIORITY_NORMAL = 0x78000000;
 
+    /// <include file='D3D9_RESOURCE_PRIORITY.xml' path='doc/member[@name="D3D9_RESOURCE_PRIORITY.D3D9_RESOURCE_PRIORITY_HIGH"]/*' />
     [NativeTypeName("#define D3D9_RESOURCE_PRIORITY_HIGH 0xa0000000")]
     public const uint D3D9_RESOURCE_PRIORITY_HIGH = 0xa0000000;
 
+    /// <include file='D3D9_RESOURCE_PRIORITY.xml' path='doc/member[@name="D3D9_RESOURCE_PRIORITY.D3D9_RESOURCE_PRIORITY_MAXIMUM"]/*' />
     [NativeTypeName("#define D3D9_RESOURCE_PRIORITY_MAXIMUM 0xc8000000")]
     public const uint D3D9_RESOURCE_PRIORITY_MAXIMUM = 0xc8000000;
 }

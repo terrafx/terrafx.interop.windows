@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MIB
 {
+    /// <include file='MIB.xml' path='doc/member[@name="MIB.MIB_TCP_MAXCONN_DYNAMIC"]/*' />
     [NativeTypeName("#define MIB_TCP_MAXCONN_DYNAMIC ((ULONG)-1)")]
     public const uint MIB_TCP_MAXCONN_DYNAMIC = unchecked((uint)(-1));
 }

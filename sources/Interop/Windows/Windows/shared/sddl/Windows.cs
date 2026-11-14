@@ -49,15 +49,19 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern BOOL ConvertSecurityDescriptorToStringSecurityDescriptorW([NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("DWORD")] uint RequestedStringSDRevision, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("LPWSTR *")] char** StringSecurityDescriptor, [NativeTypeName("PULONG")] uint* StringSecurityDescriptorLen);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ConvertSidToStringSid"]/*' />
     [NativeTypeName("#define ConvertSidToStringSid ConvertSidToStringSidW")]
     public static delegate*<void*, char**, BOOL> ConvertSidToStringSid => &ConvertSidToStringSidW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ConvertStringSidToSid"]/*' />
     [NativeTypeName("#define ConvertStringSidToSid ConvertStringSidToSidW")]
     public static delegate*<char*, void**, BOOL> ConvertStringSidToSid => &ConvertStringSidToSidW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ConvertStringSecurityDescriptorToSecurityDescriptor"]/*' />
     [NativeTypeName("#define ConvertStringSecurityDescriptorToSecurityDescriptor ConvertStringSecurityDescriptorToSecurityDescriptorW")]
     public static delegate*<char*, uint, void**, uint*, BOOL> ConvertStringSecurityDescriptorToSecurityDescriptor => &ConvertStringSecurityDescriptorToSecurityDescriptorW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ConvertSecurityDescriptorToStringSecurityDescriptor"]/*' />
     [NativeTypeName("#define ConvertSecurityDescriptorToStringSecurityDescriptor ConvertSecurityDescriptorToStringSecurityDescriptorW")]
     public static delegate*<void*, uint, uint, char**, uint*, BOOL> ConvertSecurityDescriptorToStringSecurityDescriptor => &ConvertSecurityDescriptorToStringSecurityDescriptorW;
 }

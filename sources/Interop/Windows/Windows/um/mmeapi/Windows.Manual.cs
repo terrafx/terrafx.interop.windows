@@ -9,5 +9,5 @@ public static unsafe partial class Windows
 {
     public static byte MEVT_EVENTTYPE(uint x) => ((byte)(((x) >> 24) & 0xFF));
 
-    public static uint MEVT_EVENTPARM(byte x) => ((uint)((x) & 0x00FFFFFFL));
+    public static uint MEVT_EVENTPARM(uint x) => x & 0x00FFFFFFu;
 }

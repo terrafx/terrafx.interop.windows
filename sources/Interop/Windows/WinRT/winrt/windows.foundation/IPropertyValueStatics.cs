@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IPropertyValueStatics : IPropertyValueStatics.Interface, INativeGuid
 {
+    /// <include file='IPropertyValueStatics.xml' path='doc/member[@name="IPropertyValueStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPropertyValueStatics);
 
     public void** lpVtbl;

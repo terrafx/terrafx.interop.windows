@@ -7,12 +7,15 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DFVFCAPS
 {
+    /// <include file='D3DFVFCAPS.xml' path='doc/member[@name="D3DFVFCAPS.D3DFVFCAPS_TEXCOORDCOUNTMASK"]/*' />
     [NativeTypeName("#define D3DFVFCAPS_TEXCOORDCOUNTMASK 0x0000ffffL")]
     public const int D3DFVFCAPS_TEXCOORDCOUNTMASK = 0x0000ffff;
 
+    /// <include file='D3DFVFCAPS.xml' path='doc/member[@name="D3DFVFCAPS.D3DFVFCAPS_DONOTSTRIPELEMENTS"]/*' />
     [NativeTypeName("#define D3DFVFCAPS_DONOTSTRIPELEMENTS 0x00080000L")]
     public const int D3DFVFCAPS_DONOTSTRIPELEMENTS = 0x00080000;
 
+    /// <include file='D3DFVFCAPS.xml' path='doc/member[@name="D3DFVFCAPS.D3DFVFCAPS_PSIZE"]/*' />
     [NativeTypeName("#define D3DFVFCAPS_PSIZE 0x00100000L")]
     public const int D3DFVFCAPS_PSIZE = 0x00100000;
 }

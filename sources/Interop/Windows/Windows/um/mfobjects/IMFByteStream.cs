@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGuid
 {
+    /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFByteStream);
 
     public void** lpVtbl;

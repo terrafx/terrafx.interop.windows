@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IHttpCookiePairHeaderValueFactory : IHttpCookiePairHeaderValueFactory.Interface, INativeGuid
 {
+    /// <include file='IHttpCookiePairHeaderValueFactory.xml' path='doc/member[@name="IHttpCookiePairHeaderValueFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpCookiePairHeaderValueFactory);
 
     public void** lpVtbl;

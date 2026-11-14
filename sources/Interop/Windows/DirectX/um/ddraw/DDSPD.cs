@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDSPD
 {
+    /// <include file='DDSPD.xml' path='doc/member[@name="DDSPD.DDSPD_IUNKNOWNPOINTER"]/*' />
     [NativeTypeName("#define DDSPD_IUNKNOWNPOINTER 0x00000001L")]
     public const int DDSPD_IUNKNOWNPOINTER = 0x00000001;
 
+    /// <include file='DDSPD.xml' path='doc/member[@name="DDSPD.DDSPD_VOLATILE"]/*' />
     [NativeTypeName("#define DDSPD_VOLATILE 0x00000002L")]
     public const int DDSPD_VOLATILE = 0x00000002;
 }

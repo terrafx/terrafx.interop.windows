@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("9A653086-174F-11D2-B5F9-00104B703EFD")]
 public unsafe partial struct WbemClassObject : INativeGuid
 {
+    /// <include file='WbemClassObject.xml' path='doc/member[@name="WbemClassObject.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_WbemClassObject);
 }

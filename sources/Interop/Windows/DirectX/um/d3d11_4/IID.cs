@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11Device4"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11Device4
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11Device5"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11Device5
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11Multithread"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11Multithread
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11VideoContext2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11VideoContext2
     {
@@ -113,6 +117,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11VideoDevice2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11VideoDevice2
     {
@@ -138,6 +143,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11VideoContext3"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11VideoContext3
     {

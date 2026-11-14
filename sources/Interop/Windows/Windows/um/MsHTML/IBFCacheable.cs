@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IBFCacheable : IBFCacheable.Interface, INativeGuid
 {
+    /// <include file='IBFCacheable.xml' path='doc/member[@name="IBFCacheable.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBFCacheable);
 
     public void** lpVtbl;

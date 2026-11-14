@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IStorageProviderBanners : IStorageProviderBanners.Interface, INativeGuid
 {
+    /// <include file='IStorageProviderBanners.xml' path='doc/member[@name="IStorageProviderBanners.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IStorageProviderBanners);
 
     public void** lpVtbl;

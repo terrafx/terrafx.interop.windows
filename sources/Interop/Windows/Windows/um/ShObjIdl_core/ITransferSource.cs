@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITransferSource : ITransferSource.Interface, INativeGuid
 {
+    /// <include file='ITransferSource.xml' path='doc/member[@name="ITransferSource.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITransferSource);
 
     public void** lpVtbl;

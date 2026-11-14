@@ -102,4 +102,19 @@ public static unsafe partial class Windows
              (_Status) == STATUS_LOGON_TYPE_NOT_GRANTED ||
              (_Status) == HRESULT_FROM_NT(STATUS_LOGON_TYPE_NOT_GRANTED));
     }
+
+    public static uint CredAppendLogonTypeToFlags(ref uint Flags, SECURITY_LOGON_TYPE LogonType)
+    {
+        Flags |= unchecked((uint)LogonType << 12);
+        return Flags;
+    }
+
+    public static SECURITY_LOGON_TYPE CredGetLogonTypeFromFlags(uint Flags)
+        => (SECURITY_LOGON_TYPE)((Flags & (uint)CRED.CRED_LOGON_TYPES_MASK) >> 12);
+
+    public static uint CredRemoveLogonTypeFromFlags(ref uint Flags)
+    {
+        Flags &= ~(uint)CRED.CRED_LOGON_TYPES_MASK;
+        return Flags;
+    }
 }

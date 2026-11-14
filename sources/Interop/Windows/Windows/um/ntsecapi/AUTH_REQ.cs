@@ -7,42 +7,55 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class AUTH_REQ
 {
+    /// <include file='AUTH_REQ.xml' path='doc/member[@name="AUTH_REQ.AUTH_REQ_ALLOW_FORWARDABLE"]/*' />
     [NativeTypeName("#define AUTH_REQ_ALLOW_FORWARDABLE 0x00000001")]
     public const int AUTH_REQ_ALLOW_FORWARDABLE = 0x00000001;
 
+    /// <include file='AUTH_REQ.xml' path='doc/member[@name="AUTH_REQ.AUTH_REQ_ALLOW_PROXIABLE"]/*' />
     [NativeTypeName("#define AUTH_REQ_ALLOW_PROXIABLE 0x00000002")]
     public const int AUTH_REQ_ALLOW_PROXIABLE = 0x00000002;
 
+    /// <include file='AUTH_REQ.xml' path='doc/member[@name="AUTH_REQ.AUTH_REQ_ALLOW_POSTDATE"]/*' />
     [NativeTypeName("#define AUTH_REQ_ALLOW_POSTDATE 0x00000004")]
     public const int AUTH_REQ_ALLOW_POSTDATE = 0x00000004;
 
+    /// <include file='AUTH_REQ.xml' path='doc/member[@name="AUTH_REQ.AUTH_REQ_ALLOW_RENEWABLE"]/*' />
     [NativeTypeName("#define AUTH_REQ_ALLOW_RENEWABLE 0x00000008")]
     public const int AUTH_REQ_ALLOW_RENEWABLE = 0x00000008;
 
+    /// <include file='AUTH_REQ.xml' path='doc/member[@name="AUTH_REQ.AUTH_REQ_ALLOW_NOADDRESS"]/*' />
     [NativeTypeName("#define AUTH_REQ_ALLOW_NOADDRESS 0x00000010")]
     public const int AUTH_REQ_ALLOW_NOADDRESS = 0x00000010;
 
+    /// <include file='AUTH_REQ.xml' path='doc/member[@name="AUTH_REQ.AUTH_REQ_ALLOW_ENC_TKT_IN_SKEY"]/*' />
     [NativeTypeName("#define AUTH_REQ_ALLOW_ENC_TKT_IN_SKEY 0x00000020")]
     public const int AUTH_REQ_ALLOW_ENC_TKT_IN_SKEY = 0x00000020;
 
+    /// <include file='AUTH_REQ.xml' path='doc/member[@name="AUTH_REQ.AUTH_REQ_ALLOW_VALIDATE"]/*' />
     [NativeTypeName("#define AUTH_REQ_ALLOW_VALIDATE 0x00000040")]
     public const int AUTH_REQ_ALLOW_VALIDATE = 0x00000040;
 
+    /// <include file='AUTH_REQ.xml' path='doc/member[@name="AUTH_REQ.AUTH_REQ_VALIDATE_CLIENT"]/*' />
     [NativeTypeName("#define AUTH_REQ_VALIDATE_CLIENT 0x00000080")]
     public const int AUTH_REQ_VALIDATE_CLIENT = 0x00000080;
 
+    /// <include file='AUTH_REQ.xml' path='doc/member[@name="AUTH_REQ.AUTH_REQ_OK_AS_DELEGATE"]/*' />
     [NativeTypeName("#define AUTH_REQ_OK_AS_DELEGATE 0x00000100")]
     public const int AUTH_REQ_OK_AS_DELEGATE = 0x00000100;
 
+    /// <include file='AUTH_REQ.xml' path='doc/member[@name="AUTH_REQ.AUTH_REQ_PREAUTH_REQUIRED"]/*' />
     [NativeTypeName("#define AUTH_REQ_PREAUTH_REQUIRED 0x00000200")]
     public const int AUTH_REQ_PREAUTH_REQUIRED = 0x00000200;
 
+    /// <include file='AUTH_REQ.xml' path='doc/member[@name="AUTH_REQ.AUTH_REQ_TRANSITIVE_TRUST"]/*' />
     [NativeTypeName("#define AUTH_REQ_TRANSITIVE_TRUST 0x00000400")]
     public const int AUTH_REQ_TRANSITIVE_TRUST = 0x00000400;
 
+    /// <include file='AUTH_REQ.xml' path='doc/member[@name="AUTH_REQ.AUTH_REQ_ALLOW_S4U_DELEGATE"]/*' />
     [NativeTypeName("#define AUTH_REQ_ALLOW_S4U_DELEGATE 0x00000800")]
     public const int AUTH_REQ_ALLOW_S4U_DELEGATE = 0x00000800;
 
+    /// <include file='AUTH_REQ.xml' path='doc/member[@name="AUTH_REQ.AUTH_REQ_PER_USER_FLAGS"]/*' />
     [NativeTypeName("#define AUTH_REQ_PER_USER_FLAGS (AUTH_REQ_ALLOW_FORWARDABLE | \\\r\n                                         AUTH_REQ_ALLOW_PROXIABLE | \\\r\n                                         AUTH_REQ_ALLOW_POSTDATE | \\\r\n                                         AUTH_REQ_ALLOW_RENEWABLE | \\\r\n                                         AUTH_REQ_ALLOW_VALIDATE )")]
     public const int AUTH_REQ_PER_USER_FLAGS = (0x00000001 | 0x00000002 | 0x00000004 | 0x00000008 | 0x00000040);
 }

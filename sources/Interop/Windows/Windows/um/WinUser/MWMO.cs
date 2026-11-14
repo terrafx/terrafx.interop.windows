@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MWMO
 {
+    /// <include file='MWMO.xml' path='doc/member[@name="MWMO.MWMO_WAITALL"]/*' />
     [NativeTypeName("#define MWMO_WAITALL 0x0001")]
     public const int MWMO_WAITALL = 0x0001;
 
+    /// <include file='MWMO.xml' path='doc/member[@name="MWMO.MWMO_ALERTABLE"]/*' />
     [NativeTypeName("#define MWMO_ALERTABLE 0x0002")]
     public const int MWMO_ALERTABLE = 0x0002;
 
+    /// <include file='MWMO.xml' path='doc/member[@name="MWMO.MWMO_INPUTAVAILABLE"]/*' />
     [NativeTypeName("#define MWMO_INPUTAVAILABLE 0x0004")]
     public const int MWMO_INPUTAVAILABLE = 0x0004;
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IKeyStorageProviderNamesStatics2 : IKeyStorageProviderNamesStatics2.Interface, INativeGuid
 {
+    /// <include file='IKeyStorageProviderNamesStatics2.xml' path='doc/member[@name="IKeyStorageProviderNamesStatics2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IKeyStorageProviderNamesStatics2);
 
     public void** lpVtbl;

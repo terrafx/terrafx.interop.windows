@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("IFileSavePickerContinuationEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]
 public unsafe partial struct IFileSavePickerContinuationEventArgs : IFileSavePickerContinuationEventArgs.Interface, INativeGuid
 {
+    /// <include file='IFileSavePickerContinuationEventArgs.xml' path='doc/member[@name="IFileSavePickerContinuationEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFileSavePickerContinuationEventArgs);
 
     public void** lpVtbl;

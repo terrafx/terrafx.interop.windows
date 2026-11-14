@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IVideoTemporalDenoisingControl : IVideoTemporalDenoisingControl.Interface, INativeGuid
 {
+    /// <include file='IVideoTemporalDenoisingControl.xml' path='doc/member[@name="IVideoTemporalDenoisingControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVideoTemporalDenoisingControl);
 
     public void** lpVtbl;

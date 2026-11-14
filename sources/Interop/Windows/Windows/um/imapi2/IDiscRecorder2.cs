@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IDiscRecorder2 : IDiscRecorder2.Interface, INativeGuid
 {
+    /// <include file='IDiscRecorder2.xml' path='doc/member[@name="IDiscRecorder2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDiscRecorder2);
 
     public void** lpVtbl;

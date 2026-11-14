@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISmsDevice2 : ISmsDevice2.Interface, INativeGuid
 {
+    /// <include file='ISmsDevice2.xml' path='doc/member[@name="ISmsDevice2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISmsDevice2);
 
     public void** lpVtbl;

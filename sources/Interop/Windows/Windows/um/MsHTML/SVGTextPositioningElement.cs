@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("305105E0-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct SVGTextPositioningElement : INativeGuid
 {
+    /// <include file='SVGTextPositioningElement.xml' path='doc/member[@name="SVGTextPositioningElement.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SVGTextPositioningElement);
 }

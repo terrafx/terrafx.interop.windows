@@ -7,33 +7,43 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class WINSTA
 {
+    /// <include file='WINSTA.xml' path='doc/member[@name="WINSTA.WINSTA_ENUMDESKTOPS"]/*' />
     [NativeTypeName("#define WINSTA_ENUMDESKTOPS 0x0001L")]
     public const int WINSTA_ENUMDESKTOPS = 0x0001;
 
+    /// <include file='WINSTA.xml' path='doc/member[@name="WINSTA.WINSTA_READATTRIBUTES"]/*' />
     [NativeTypeName("#define WINSTA_READATTRIBUTES 0x0002L")]
     public const int WINSTA_READATTRIBUTES = 0x0002;
 
+    /// <include file='WINSTA.xml' path='doc/member[@name="WINSTA.WINSTA_ACCESSCLIPBOARD"]/*' />
     [NativeTypeName("#define WINSTA_ACCESSCLIPBOARD 0x0004L")]
     public const int WINSTA_ACCESSCLIPBOARD = 0x0004;
 
+    /// <include file='WINSTA.xml' path='doc/member[@name="WINSTA.WINSTA_CREATEDESKTOP"]/*' />
     [NativeTypeName("#define WINSTA_CREATEDESKTOP 0x0008L")]
     public const int WINSTA_CREATEDESKTOP = 0x0008;
 
+    /// <include file='WINSTA.xml' path='doc/member[@name="WINSTA.WINSTA_WRITEATTRIBUTES"]/*' />
     [NativeTypeName("#define WINSTA_WRITEATTRIBUTES 0x0010L")]
     public const int WINSTA_WRITEATTRIBUTES = 0x0010;
 
+    /// <include file='WINSTA.xml' path='doc/member[@name="WINSTA.WINSTA_ACCESSGLOBALATOMS"]/*' />
     [NativeTypeName("#define WINSTA_ACCESSGLOBALATOMS 0x0020L")]
     public const int WINSTA_ACCESSGLOBALATOMS = 0x0020;
 
+    /// <include file='WINSTA.xml' path='doc/member[@name="WINSTA.WINSTA_EXITWINDOWS"]/*' />
     [NativeTypeName("#define WINSTA_EXITWINDOWS 0x0040L")]
     public const int WINSTA_EXITWINDOWS = 0x0040;
 
+    /// <include file='WINSTA.xml' path='doc/member[@name="WINSTA.WINSTA_ENUMERATE"]/*' />
     [NativeTypeName("#define WINSTA_ENUMERATE 0x0100L")]
     public const int WINSTA_ENUMERATE = 0x0100;
 
+    /// <include file='WINSTA.xml' path='doc/member[@name="WINSTA.WINSTA_READSCREEN"]/*' />
     [NativeTypeName("#define WINSTA_READSCREEN 0x0200L")]
     public const int WINSTA_READSCREEN = 0x0200;
 
+    /// <include file='WINSTA.xml' path='doc/member[@name="WINSTA.WINSTA_ALL_ACCESS"]/*' />
     [NativeTypeName("#define WINSTA_ALL_ACCESS (WINSTA_ENUMDESKTOPS  | WINSTA_READATTRIBUTES  | WINSTA_ACCESSCLIPBOARD | \\\r\n                                     WINSTA_CREATEDESKTOP | WINSTA_WRITEATTRIBUTES | WINSTA_ACCESSGLOBALATOMS | \\\r\n                                     WINSTA_EXITWINDOWS   | WINSTA_ENUMERATE       | WINSTA_READSCREEN)")]
     public const int WINSTA_ALL_ACCESS = (0x0001 | 0x0002 | 0x0004 | 0x0008 | 0x0010 | 0x0020 | 0x0040 | 0x0100 | 0x0200);
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreTextLayoutBounds : ICoreTextLayoutBounds.Interface, INativeGuid
 {
+    /// <include file='ICoreTextLayoutBounds.xml' path='doc/member[@name="ICoreTextLayoutBounds.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreTextLayoutBounds);
 
     public void** lpVtbl;

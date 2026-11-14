@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("Not supported starting in windows 10")]
 public unsafe partial struct IAudioRenderEffectsManager2 : IAudioRenderEffectsManager2.Interface, INativeGuid
 {
+    /// <include file='IAudioRenderEffectsManager2.xml' path='doc/member[@name="IAudioRenderEffectsManager2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioRenderEffectsManager2);
 
     public void** lpVtbl;

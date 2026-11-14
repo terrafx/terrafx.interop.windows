@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICryptographicEngineStatics2 : ICryptographicEngineStatics2.Interface, INativeGuid
 {
+    /// <include file='ICryptographicEngineStatics2.xml' path='doc/member[@name="ICryptographicEngineStatics2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICryptographicEngineStatics2);
 
     public void** lpVtbl;

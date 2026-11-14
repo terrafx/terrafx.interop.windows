@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageCollection.Interface, INativeGuid
 {
+    /// <include file='IPrintPreviewPageCollection.xml' path='doc/member[@name="IPrintPreviewPageCollection.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPrintPreviewPageCollection);
 
     public void** lpVtbl;

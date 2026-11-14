@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IFileSinkFilter")]
 public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface, INativeGuid
 {
+    /// <include file='IFileSinkFilter2.xml' path='doc/member[@name="IFileSinkFilter2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFileSinkFilter2);
 
     public void** lpVtbl;

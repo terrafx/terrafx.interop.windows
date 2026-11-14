@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class UI
 {
+    /// <include file='UI.xml' path='doc/member[@name="UI.UI_CAP_2700"]/*' />
     [NativeTypeName("#define UI_CAP_2700 0x00000001")]
     public const int UI_CAP_2700 = 0x00000001;
 
+    /// <include file='UI.xml' path='doc/member[@name="UI.UI_CAP_ROT90"]/*' />
     [NativeTypeName("#define UI_CAP_ROT90 0x00000002")]
     public const int UI_CAP_ROT90 = 0x00000002;
 
+    /// <include file='UI.xml' path='doc/member[@name="UI.UI_CAP_ROTANY"]/*' />
     [NativeTypeName("#define UI_CAP_ROTANY 0x00000004")]
     public const int UI_CAP_ROTANY = 0x00000004;
 }

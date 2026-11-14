@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MPEG2DLNASink"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MPEG2DLNASink
     {

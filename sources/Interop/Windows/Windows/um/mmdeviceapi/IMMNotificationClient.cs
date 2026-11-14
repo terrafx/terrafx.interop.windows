@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMMNotificationClient : IMMNotificationClient.Interface, INativeGuid
 {
+    /// <include file='IMMNotificationClient.xml' path='doc/member[@name="IMMNotificationClient.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMMNotificationClient);
 
     public void** lpVtbl;

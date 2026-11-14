@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFMediaEngine : IMFMediaEngine.Interface, INativeGuid
 {
+    /// <include file='IMFMediaEngine.xml' path='doc/member[@name="IMFMediaEngine.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFMediaEngine);
 
     public void** lpVtbl;

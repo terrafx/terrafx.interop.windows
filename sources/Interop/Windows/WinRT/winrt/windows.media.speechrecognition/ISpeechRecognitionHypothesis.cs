@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISpeechRecognitionHypothesis : ISpeechRecognitionHypothesis.Interface, INativeGuid
 {
+    /// <include file='ISpeechRecognitionHypothesis.xml' path='doc/member[@name="ISpeechRecognitionHypothesis.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpeechRecognitionHypothesis);
 
     public void** lpVtbl;

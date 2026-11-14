@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISpeechRecognizerTimeouts : ISpeechRecognizerTimeouts.Interface, INativeGuid
 {
+    /// <include file='ISpeechRecognizerTimeouts.xml' path='doc/member[@name="ISpeechRecognizerTimeouts.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpeechRecognizerTimeouts);
 
     public void** lpVtbl;

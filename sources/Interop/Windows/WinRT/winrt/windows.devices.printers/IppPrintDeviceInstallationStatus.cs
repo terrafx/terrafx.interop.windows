@@ -8,4 +8,15 @@ namespace TerraFX.Interop.WinRT;
 /// <include file='IppPrintDeviceInstallationStatus.xml' path='doc/member[@name="IppPrintDeviceInstallationStatus"]/*' />
 public enum IppPrintDeviceInstallationStatus
 {
+    /// <include file='IppPrintDeviceInstallationStatus.xml' path='doc/member[@name="IppPrintDeviceInstallationStatus.IppPrintDeviceInstallationStatus_InstallationSucceeded"]/*' />
+    IppPrintDeviceInstallationStatus_InstallationSucceeded = 0,
+
+    /// <include file='IppPrintDeviceInstallationStatus.xml' path='doc/member[@name="IppPrintDeviceInstallationStatus.IppPrintDeviceInstallationStatus_PrinterAlreadyInstalled"]/*' />
+    IppPrintDeviceInstallationStatus_PrinterAlreadyInstalled = 1,
+
+    /// <include file='IppPrintDeviceInstallationStatus.xml' path='doc/member[@name="IppPrintDeviceInstallationStatus.IppPrintDeviceInstallationStatus_CommunicationError"]/*' />
+    IppPrintDeviceInstallationStatus_CommunicationError = 2,
+
+    /// <include file='IppPrintDeviceInstallationStatus.xml' path='doc/member[@name="IppPrintDeviceInstallationStatus.IppPrintDeviceInstallationStatus_OtherFailure"]/*' />
+    IppPrintDeviceInstallationStatus_OtherFailure = 3,
 }

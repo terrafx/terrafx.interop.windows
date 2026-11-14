@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IProcessLauncherResult : IProcessLauncherResult.Interface, INativeGuid
 {
+    /// <include file='IProcessLauncherResult.xml' path='doc/member[@name="IProcessLauncherResult.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IProcessLauncherResult);
 
     public void** lpVtbl;

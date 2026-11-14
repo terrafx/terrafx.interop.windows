@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DIES
 {
+    /// <include file='DIES.xml' path='doc/member[@name="DIES.DIES_SOLO"]/*' />
     [NativeTypeName("#define DIES_SOLO 0x00000001")]
     public const int DIES_SOLO = 0x00000001;
 
+    /// <include file='DIES.xml' path='doc/member[@name="DIES.DIES_NODOWNLOAD"]/*' />
     [NativeTypeName("#define DIES_NODOWNLOAD 0x80000000")]
     public const uint DIES_NODOWNLOAD = 0x80000000;
 }

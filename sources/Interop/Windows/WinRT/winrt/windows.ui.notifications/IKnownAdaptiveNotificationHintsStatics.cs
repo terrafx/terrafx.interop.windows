@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IKnownAdaptiveNotificationHintsStatics : IKnownAdaptiveNotificationHintsStatics.Interface, INativeGuid
 {
+    /// <include file='IKnownAdaptiveNotificationHintsStatics.xml' path='doc/member[@name="IKnownAdaptiveNotificationHintsStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IKnownAdaptiveNotificationHintsStatics);
 
     public void** lpVtbl;

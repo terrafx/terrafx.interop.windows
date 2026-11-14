@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IColorHelper : IColorHelper.Interface, INativeGuid
 {
+    /// <include file='IColorHelper.xml' path='doc/member[@name="IColorHelper.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IColorHelper);
 
     public void** lpVtbl;

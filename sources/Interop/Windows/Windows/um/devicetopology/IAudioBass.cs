@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IPerChannelDbLevel")]
 public unsafe partial struct IAudioBass : IAudioBass.Interface, INativeGuid
 {
+    /// <include file='IAudioBass.xml' path='doc/member[@name="IAudioBass.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioBass);
 
     public void** lpVtbl;

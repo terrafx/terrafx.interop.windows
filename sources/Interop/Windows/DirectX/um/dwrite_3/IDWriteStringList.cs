@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDWriteStringList : IDWriteStringList.Interface, INativeGuid
 {
+    /// <include file='IDWriteStringList.xml' path='doc/member[@name="IDWriteStringList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDWriteStringList);
 
     public void** lpVtbl;

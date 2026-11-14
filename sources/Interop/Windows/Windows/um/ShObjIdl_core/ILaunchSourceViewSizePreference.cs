@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct ILaunchSourceViewSizePreference : ILaunchSourceViewSizePreference.Interface, INativeGuid
 {
+    /// <include file='ILaunchSourceViewSizePreference.xml' path='doc/member[@name="ILaunchSourceViewSizePreference.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILaunchSourceViewSizePreference);
 
     public void** lpVtbl;

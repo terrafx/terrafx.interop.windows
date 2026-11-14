@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ITfInputScope"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ITfInputScope
     {
@@ -37,6 +38,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ITfInputScope2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ITfInputScope2
     {

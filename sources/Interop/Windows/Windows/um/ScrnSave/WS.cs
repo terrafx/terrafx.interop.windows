@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class WS
 {
+    /// <include file='WS.xml' path='doc/member[@name="WS.WS_GT"]/*' />
     [NativeTypeName("#define WS_GT (WS_GROUP | WS_TABSTOP)")]
     public const int WS_GT = (0x00020000 | 0x00010000);
 }

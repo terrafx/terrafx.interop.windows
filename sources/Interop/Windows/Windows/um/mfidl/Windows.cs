@@ -152,6 +152,7 @@ public static unsafe partial class Windows
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateTopoLoader(IMFTopoLoader** ppObj);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFENABLETYPE_WMDRMV1_LicenseAcquisition"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFENABLETYPE_WMDRMV1_LicenseAcquisition
     {
@@ -177,6 +178,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFENABLETYPE_WMDRMV7_LicenseAcquisition"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFENABLETYPE_WMDRMV7_LicenseAcquisition
     {
@@ -202,6 +204,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFENABLETYPE_WMDRMV7_Individualization"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFENABLETYPE_WMDRMV7_Individualization
     {
@@ -227,6 +230,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFENABLETYPE_MF_UpdateRevocationInformation"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFENABLETYPE_MF_UpdateRevocationInformation
     {
@@ -252,6 +256,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFENABLETYPE_MF_UpdateUntrustedComponent"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFENABLETYPE_MF_UpdateUntrustedComponent
     {
@@ -277,6 +282,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFENABLETYPE_MF_RebootRequired"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFENABLETYPE_MF_RebootRequired
     {
@@ -302,6 +308,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MR_POLICY_VOLUME_SERVICE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MR_POLICY_VOLUME_SERVICE
     {
@@ -327,6 +334,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MR_CAPTURE_POLICY_VOLUME_SERVICE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MR_CAPTURE_POLICY_VOLUME_SERVICE
     {
@@ -352,6 +360,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MR_STREAM_VOLUME_SERVICE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MR_STREAM_VOLUME_SERVICE
     {
@@ -377,6 +386,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MR_AUDIO_POLICY_SERVICE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MR_AUDIO_POLICY_SERVICE
     {
@@ -430,6 +440,7 @@ public static unsafe partial class Windows
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateProxyLocator([NativeTypeName("LPCWSTR")] char* pszProtocol, IPropertyStore* pProxyConfig, IMFNetProxyLocator** ppProxyLocator);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFNET_SAVEJOB_SERVICE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFNET_SAVEJOB_SERVICE
     {
@@ -459,6 +470,7 @@ public static unsafe partial class Windows
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateNetSchemePlugin([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPVOID *")] void** ppvHandler);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFPROTECTIONATTRIBUTE_BEST_EFFORT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTIONATTRIBUTE_BEST_EFFORT
     {
@@ -484,6 +496,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFPROTECTIONATTRIBUTE_FAIL_OVER"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTIONATTRIBUTE_FAIL_OVER
     {
@@ -509,6 +522,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFPROTECTIONATTRIBUTE_CONSTRICTVIDEO_IMAGESIZE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTIONATTRIBUTE_CONSTRICTVIDEO_IMAGESIZE
     {
@@ -534,6 +548,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFPROTECTIONATTRIBUTE_HDCP_SRM"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTIONATTRIBUTE_HDCP_SRM
     {
@@ -642,6 +657,7 @@ public static unsafe partial class Windows
     [DllImport("mf", ExactSpelling = true)]
     public static extern HRESULT MFCreateDeviceSourceActivate(IMFAttributes* pAttributes, IMFActivate** ppActivate);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_DeviceTimestamp"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFSampleExtension_DeviceTimestamp
     {
@@ -667,6 +683,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Spatial_CameraViewTransform"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFSampleExtension_Spatial_CameraViewTransform
     {
@@ -692,6 +709,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Spatial_CameraCoordinateSystem"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFSampleExtension_Spatial_CameraCoordinateSystem
     {
@@ -717,6 +735,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_Spatial_CameraProjectionTransform"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFSampleExtension_Spatial_CameraProjectionTransform
     {
@@ -801,6 +820,7 @@ public static unsafe partial class Windows
     [DllImport("mfsensorgroup", ExactSpelling = true)]
     public static extern HRESULT MFCreateSensorActivityMonitor(IMFSensorActivitiesReportCallback* pCallback, IMFSensorActivityMonitor** ppActivityMonitor);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFStreamExtension_ExtendedCameraIntrinsics"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFStreamExtension_ExtendedCameraIntrinsics
     {
@@ -826,6 +846,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_ExtendedCameraIntrinsics"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFSampleExtension_ExtendedCameraIntrinsics
     {
@@ -869,6 +890,7 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.22000.0")]
     public static extern HRESULT MFCreateCameraOcclusionStateMonitor([NativeTypeName("LPCWSTR")] char* symbolicLink, IMFCameraOcclusionStateReportCallback* callback, IMFCameraOcclusionStateMonitor** occlusionStateMonitor);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.KSPROPERTYSETID_ANYCAMERACONTROL"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid KSPROPERTYSETID_ANYCAMERACONTROL
     {
@@ -899,75 +921,99 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.22621.0")]
     public static extern HRESULT MFCreateCameraControlMonitor([NativeTypeName("LPCWSTR")] char* symbolicLink, IMFCameraControlNotify* callback, IMFCameraControlMonitor** ppCameraControlMonitor);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEDIASINK_FIXED_STREAMS"]/*' />
     [NativeTypeName("#define MEDIASINK_FIXED_STREAMS 0x00000001")]
     public const int MEDIASINK_FIXED_STREAMS = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEDIASINK_CANNOT_MATCH_CLOCK"]/*' />
     [NativeTypeName("#define MEDIASINK_CANNOT_MATCH_CLOCK 0x00000002")]
     public const int MEDIASINK_CANNOT_MATCH_CLOCK = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEDIASINK_RATELESS"]/*' />
     [NativeTypeName("#define MEDIASINK_RATELESS 0x00000004")]
     public const int MEDIASINK_RATELESS = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEDIASINK_CLOCK_REQUIRED"]/*' />
     [NativeTypeName("#define MEDIASINK_CLOCK_REQUIRED 0x00000008")]
     public const int MEDIASINK_CLOCK_REQUIRED = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEDIASINK_CAN_PREROLL"]/*' />
     [NativeTypeName("#define MEDIASINK_CAN_PREROLL 0x00000010")]
     public const int MEDIASINK_CAN_PREROLL = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MEDIASINK_REQUIRE_REFERENCE_MEDIATYPE"]/*' />
     [NativeTypeName("#define MEDIASINK_REQUIRE_REFERENCE_MEDIATYPE 0x00000020")]
     public const int MEDIASINK_REQUIRE_REFERENCE_MEDIATYPE = 0x00000020;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCLOCK_FREQUENCY_HNS"]/*' />
     [NativeTypeName("#define MFCLOCK_FREQUENCY_HNS 10000000")]
     public const int MFCLOCK_FREQUENCY_HNS = 10000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCLOCK_TOLERANCE_UNKNOWN"]/*' />
     [NativeTypeName("#define MFCLOCK_TOLERANCE_UNKNOWN 50000")]
     public const int MFCLOCK_TOLERANCE_UNKNOWN = 50000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCLOCK_JITTER_ISR"]/*' />
     [NativeTypeName("#define MFCLOCK_JITTER_ISR 1000")]
     public const int MFCLOCK_JITTER_ISR = 1000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCLOCK_JITTER_DPC"]/*' />
     [NativeTypeName("#define MFCLOCK_JITTER_DPC 4000")]
     public const int MFCLOCK_JITTER_DPC = 4000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCLOCK_JITTER_PASSIVE"]/*' />
     [NativeTypeName("#define MFCLOCK_JITTER_PASSIVE 10000")]
     public const int MFCLOCK_JITTER_PASSIVE = 10000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PRESENTATION_CURRENT_POSITION"]/*' />
     [NativeTypeName("#define PRESENTATION_CURRENT_POSITION 0x7fffffffffffffff")]
     public const long PRESENTATION_CURRENT_POSITION = 0x7fffffffffffffff;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFRR_INFO_VERSION"]/*' />
     [NativeTypeName("#define MFRR_INFO_VERSION 0")]
     public const int MFRR_INFO_VERSION = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHA_HASH_LEN"]/*' />
     [NativeTypeName("#define SHA_HASH_LEN 20")]
     public const int SHA_HASH_LEN = 20;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSEQUENCER_INVALID_ELEMENT_ID"]/*' />
     [NativeTypeName("#define MFSEQUENCER_INVALID_ELEMENT_ID ( 0xffffffff )")]
     public const uint MFSEQUENCER_INVALID_ELEMENT_ID = (0xffffffff);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFOUTPUTATTRIBUTE_DIGITAL"]/*' />
     [NativeTypeName("#define MFOUTPUTATTRIBUTE_DIGITAL ((DWORD) 0x00000001)")]
     public const uint MFOUTPUTATTRIBUTE_DIGITAL = ((uint)(0x00000001));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFOUTPUTATTRIBUTE_NONSTANDARDIMPLEMENTATION"]/*' />
     [NativeTypeName("#define MFOUTPUTATTRIBUTE_NONSTANDARDIMPLEMENTATION ((DWORD) 0x00000002)")]
     public const uint MFOUTPUTATTRIBUTE_NONSTANDARDIMPLEMENTATION = ((uint)(0x00000002));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFOUTPUTATTRIBUTE_VIDEO"]/*' />
     [NativeTypeName("#define MFOUTPUTATTRIBUTE_VIDEO ((DWORD) 0x00000004)")]
     public const uint MFOUTPUTATTRIBUTE_VIDEO = ((uint)(0x00000004));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFOUTPUTATTRIBUTE_COMPRESSED"]/*' />
     [NativeTypeName("#define MFOUTPUTATTRIBUTE_COMPRESSED ((DWORD) 0x00000008)")]
     public const uint MFOUTPUTATTRIBUTE_COMPRESSED = ((uint)(0x00000008));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFOUTPUTATTRIBUTE_SOFTWARE"]/*' />
     [NativeTypeName("#define MFOUTPUTATTRIBUTE_SOFTWARE ((DWORD) 0x00000010)")]
     public const uint MFOUTPUTATTRIBUTE_SOFTWARE = ((uint)(0x00000010));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFOUTPUTATTRIBUTE_BUS"]/*' />
     [NativeTypeName("#define MFOUTPUTATTRIBUTE_BUS ((DWORD) 0x00000020)")]
     public const uint MFOUTPUTATTRIBUTE_BUS = ((uint)(0x00000020));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFOUTPUTATTRIBUTE_BUSIMPLEMENTATION"]/*' />
     [NativeTypeName("#define MFOUTPUTATTRIBUTE_BUSIMPLEMENTATION ((DWORD) 0x0000FF00)")]
     public const uint MFOUTPUTATTRIBUTE_BUSIMPLEMENTATION = ((uint)(0x0000FF00));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCONTENTPROTECTIONDEVICE_FUNCTIONID_START"]/*' />
     [NativeTypeName("#define MFCONTENTPROTECTIONDEVICE_FUNCTIONID_START 0x04000000")]
     public const int MFCONTENTPROTECTIONDEVICE_FUNCTIONID_START = 0x04000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA_FUNCTIONID"]/*' />
     [NativeTypeName("#define MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA_FUNCTIONID MFCONTENTPROTECTIONDEVICE_FUNCTIONID_START")]
     public const int MFCONTENTPROTECTIONDEVICE_REALTIMECLIENT_DATA_FUNCTIONID = 0x04000000;
 }

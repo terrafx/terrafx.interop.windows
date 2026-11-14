@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IVideoCompositorDefinition : IVideoCompositorDefinition.Interface, INativeGuid
 {
+    /// <include file='IVideoCompositorDefinition.xml' path='doc/member[@name="IVideoCompositorDefinition.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVideoCompositorDefinition);
 
     public void** lpVtbl;

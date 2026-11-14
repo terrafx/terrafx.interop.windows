@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.14393.0")]
 public unsafe partial struct IRadialControllerConfigurationInterop : IRadialControllerConfigurationInterop.Interface, INativeGuid
 {
+    /// <include file='IRadialControllerConfigurationInterop.xml' path='doc/member[@name="IRadialControllerConfigurationInterop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRadialControllerConfigurationInterop);
 
     public void** lpVtbl;

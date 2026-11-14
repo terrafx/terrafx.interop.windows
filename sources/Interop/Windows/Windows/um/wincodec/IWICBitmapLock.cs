@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWICBitmapLock : IWICBitmapLock.Interface, INativeGuid
 {
+    /// <include file='IWICBitmapLock.xml' path='doc/member[@name="IWICBitmapLock.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICBitmapLock);
 
     public void** lpVtbl;

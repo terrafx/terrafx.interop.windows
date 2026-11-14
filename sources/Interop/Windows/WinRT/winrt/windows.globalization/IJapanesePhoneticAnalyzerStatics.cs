@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IJapanesePhoneticAnalyzerStatics : IJapanesePhoneticAnalyzerStatics.Interface, INativeGuid
 {
+    /// <include file='IJapanesePhoneticAnalyzerStatics.xml' path='doc/member[@name="IJapanesePhoneticAnalyzerStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IJapanesePhoneticAnalyzerStatics);
 
     public void** lpVtbl;

@@ -30,21 +30,27 @@ public static unsafe partial class Windows
     [DllImport("cabinet", ExactSpelling = true)]
     public static extern BOOL FCIDestroy([NativeTypeName("HFCI")] void* hfci);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.INCLUDED_FCI"]/*' />
     [NativeTypeName("#define INCLUDED_FCI 1")]
     public const int INCLUDED_FCI = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows._A_NAME_IS_UTF"]/*' />
     [NativeTypeName("#define _A_NAME_IS_UTF 0x80")]
     public const int _A_NAME_IS_UTF = 0x80;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows._A_EXEC"]/*' />
     [NativeTypeName("#define _A_EXEC 0x40")]
     public const int _A_EXEC = 0x40;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.statusFile"]/*' />
     [NativeTypeName("#define statusFile 0")]
     public const int statusFile = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.statusFolder"]/*' />
     [NativeTypeName("#define statusFolder 1")]
     public const int statusFolder = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.statusCabinet"]/*' />
     [NativeTypeName("#define statusCabinet 2")]
     public const int statusCabinet = 2;
 }

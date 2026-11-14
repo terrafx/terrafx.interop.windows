@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MFT
 {
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_END_STREAMING_AWARE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_END_STREAMING_AWARE
     {
@@ -37,6 +38,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_AUDIO_DECODER_AUDIO_ENDPOINT_ID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_AUDIO_DECODER_AUDIO_ENDPOINT_ID
     {
@@ -62,6 +64,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_AUDIO_DECODER_SPATIAL_METADATA_CLIENT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_AUDIO_DECODER_SPATIAL_METADATA_CLIENT
     {
@@ -87,6 +90,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_AUDIO_DECODER_AUDIO_ENDPOINT_FORMFACTOR"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_AUDIO_DECODER_AUDIO_ENDPOINT_FORMFACTOR
     {
@@ -112,6 +116,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_AUDIO_DECODER_AUDIO_ENDPOINT_IS_DIGITAL_STEREO_ONLY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_AUDIO_DECODER_AUDIO_ENDPOINT_IS_DIGITAL_STEREO_ONLY
     {
@@ -137,6 +142,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_SUPPORT_3DVIDEO"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_SUPPORT_3DVIDEO
     {
@@ -162,6 +168,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_DECODER_EXPOSE_OUTPUT_TYPES_IN_NATIVE_ORDER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_DECODER_EXPOSE_OUTPUT_TYPES_IN_NATIVE_ORDER
     {
@@ -187,6 +194,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_DECODER_QUALITY_MANAGEMENT_CUSTOM_CONTROL"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_DECODER_QUALITY_MANAGEMENT_CUSTOM_CONTROL
     {
@@ -212,6 +220,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_DECODER_QUALITY_MANAGEMENT_RECOVERY_WITHOUT_ARTIFACTS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_DECODER_QUALITY_MANAGEMENT_RECOVERY_WITHOUT_ARTIFACTS
     {
@@ -237,6 +246,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_DECODER_OPERATING_POINT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_DECODER_OPERATING_POINT
     {
@@ -262,6 +272,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_DECODER_AUTOMATIC_SOFTWARE_FALLBACK"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_DECODER_AUTOMATIC_SOFTWARE_FALLBACK
     {
@@ -287,6 +298,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_REMUX_MARK_I_PICTURE_AS_CLEAN_POINT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_REMUX_MARK_I_PICTURE_AS_CLEAN_POINT
     {
@@ -312,6 +324,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_DECODER_FINAL_VIDEO_RESOLUTION_HINT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_DECODER_FINAL_VIDEO_RESOLUTION_HINT
     {
@@ -337,6 +350,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_ENCODER_SUPPORTS_CONFIG_EVENT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_ENCODER_SUPPORTS_CONFIG_EVENT
     {
@@ -362,6 +376,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_ENUM_HARDWARE_VENDOR_ID_Attribute"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_ENUM_HARDWARE_VENDOR_ID_Attribute
     {
@@ -387,6 +402,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_TRANSFORM_CLSID_Attribute"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_TRANSFORM_CLSID_Attribute
     {
@@ -412,6 +428,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_INPUT_TYPES_Attributes"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_INPUT_TYPES_Attributes
     {
@@ -437,6 +454,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_OUTPUT_TYPES_Attributes"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_OUTPUT_TYPES_Attributes
     {
@@ -462,6 +480,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_ENUM_HARDWARE_URL_Attribute"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_ENUM_HARDWARE_URL_Attribute
     {
@@ -487,6 +506,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_FRIENDLY_NAME_Attribute"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_FRIENDLY_NAME_Attribute
     {
@@ -512,6 +532,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_CONNECTED_STREAM_ATTRIBUTE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_CONNECTED_STREAM_ATTRIBUTE
     {
@@ -537,6 +558,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_CONNECTED_TO_HW_STREAM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_CONNECTED_TO_HW_STREAM
     {
@@ -562,6 +584,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_PREFERRED_OUTPUTTYPE_Attribute"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_PREFERRED_OUTPUTTYPE_Attribute
     {
@@ -587,6 +610,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_PROCESS_LOCAL_Attribute"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_PROCESS_LOCAL_Attribute
     {
@@ -612,6 +636,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_PREFERRED_ENCODER_PROFILE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_PREFERRED_ENCODER_PROFILE
     {
@@ -637,6 +662,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_HW_TIMESTAMP_WITH_QPC_Attribute"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_HW_TIMESTAMP_WITH_QPC_Attribute
     {
@@ -662,6 +688,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_FIELDOFUSE_UNLOCK_Attribute"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_FIELDOFUSE_UNLOCK_Attribute
     {
@@ -687,6 +714,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_CODEC_MERIT_Attribute"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_CODEC_MERIT_Attribute
     {
@@ -712,6 +740,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_ENUM_TRANSCODE_ONLY_ATTRIBUTE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_ENUM_TRANSCODE_ONLY_ATTRIBUTE
     {
@@ -737,6 +766,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_AUDIO_DECODER_DEGRADATION_INFO_ATTRIBUTE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFT_AUDIO_DECODER_DEGRADATION_INFO_ATTRIBUTE
     {
@@ -762,6 +792,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_POLICY_SET_AWARE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_POLICY_SET_AWARE
     {
@@ -787,6 +818,7 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_USING_HARDWARE_DRM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MFT_USING_HARDWARE_DRM
     {
@@ -812,12 +844,15 @@ public static partial class MFT
         }
     }
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_STREAMS_UNLIMITED"]/*' />
     [NativeTypeName("#define MFT_STREAMS_UNLIMITED 0xFFFFFFFF")]
     public const uint MFT_STREAMS_UNLIMITED = 0xFFFFFFFF;
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_OUTPUT_BOUND_LOWER_UNBOUNDED"]/*' />
     [NativeTypeName("#define MFT_OUTPUT_BOUND_LOWER_UNBOUNDED MINLONGLONG")]
     public const long MFT_OUTPUT_BOUND_LOWER_UNBOUNDED = ((long)(~(0x7fffffffffffffff)));
 
+    /// <include file='MFT.xml' path='doc/member[@name="MFT.MFT_OUTPUT_BOUND_UPPER_UNBOUNDED"]/*' />
     [NativeTypeName("#define MFT_OUTPUT_BOUND_UPPER_UNBOUNDED MAXLONGLONG")]
     public const long MFT_OUTPUT_BOUND_UPPER_UNBOUNDED = (0x7fffffffffffffff);
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGattSessionStatusChangedEventArgs : IGattSessionStatusChangedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IGattSessionStatusChangedEventArgs.xml' path='doc/member[@name="IGattSessionStatusChangedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGattSessionStatusChangedEventArgs);
 
     public void** lpVtbl;

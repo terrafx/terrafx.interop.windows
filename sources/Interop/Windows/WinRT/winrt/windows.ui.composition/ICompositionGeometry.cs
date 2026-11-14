@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICompositionGeometry : ICompositionGeometry.Interface, INativeGuid
 {
+    /// <include file='ICompositionGeometry.xml' path='doc/member[@name="ICompositionGeometry.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICompositionGeometry);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFFieldOfUseMFTUnlock : IMFFieldOfUseMFTUnlock.Interface, INativeGuid
 {
+    /// <include file='IMFFieldOfUseMFTUnlock.xml' path='doc/member[@name="IMFFieldOfUseMFTUnlock.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFFieldOfUseMFTUnlock);
 
     public void** lpVtbl;

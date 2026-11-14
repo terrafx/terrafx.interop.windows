@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class QUERY
 {
+    /// <include file='QUERY.xml' path='doc/member[@name="QUERY.QUERY_ACTCTX_FLAG_USE_ACTIVE_ACTCTX"]/*' />
     [NativeTypeName("#define QUERY_ACTCTX_FLAG_USE_ACTIVE_ACTCTX (0x00000004)")]
     public const int QUERY_ACTCTX_FLAG_USE_ACTIVE_ACTCTX = (0x00000004);
 
+    /// <include file='QUERY.xml' path='doc/member[@name="QUERY.QUERY_ACTCTX_FLAG_ACTCTX_IS_HMODULE"]/*' />
     [NativeTypeName("#define QUERY_ACTCTX_FLAG_ACTCTX_IS_HMODULE (0x00000008)")]
     public const int QUERY_ACTCTX_FLAG_ACTCTX_IS_HMODULE = (0x00000008);
 
+    /// <include file='QUERY.xml' path='doc/member[@name="QUERY.QUERY_ACTCTX_FLAG_ACTCTX_IS_ADDRESS"]/*' />
     [NativeTypeName("#define QUERY_ACTCTX_FLAG_ACTCTX_IS_ADDRESS (0x00000010)")]
     public const int QUERY_ACTCTX_FLAG_ACTCTX_IS_ADDRESS = (0x00000010);
 
+    /// <include file='QUERY.xml' path='doc/member[@name="QUERY.QUERY_ACTCTX_FLAG_NO_ADDREF"]/*' />
     [NativeTypeName("#define QUERY_ACTCTX_FLAG_NO_ADDREF (0x80000000)")]
     public const uint QUERY_ACTCTX_FLAG_NO_ADDREF = (0x80000000);
 }

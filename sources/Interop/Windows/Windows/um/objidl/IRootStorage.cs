@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IRootStorage : IRootStorage.Interface, INativeGuid
 {
+    /// <include file='IRootStorage.xml' path='doc/member[@name="IRootStorage.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRootStorage);
 
     public void** lpVtbl;

@@ -7,27 +7,35 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DWM
 {
+    /// <include file='DWM.xml' path='doc/member[@name="DWM.DWM_E_COMPOSITIONDISABLED"]/*' />
     [NativeTypeName("#define DWM_E_COMPOSITIONDISABLED _HRESULT_TYPEDEF_(0x80263001L)")]
     public const int DWM_E_COMPOSITIONDISABLED = unchecked((int)(0x80263001));
 
+    /// <include file='DWM.xml' path='doc/member[@name="DWM.DWM_E_REMOTING_NOT_SUPPORTED"]/*' />
     [NativeTypeName("#define DWM_E_REMOTING_NOT_SUPPORTED _HRESULT_TYPEDEF_(0x80263002L)")]
     public const int DWM_E_REMOTING_NOT_SUPPORTED = unchecked((int)(0x80263002));
 
+    /// <include file='DWM.xml' path='doc/member[@name="DWM.DWM_E_NO_REDIRECTION_SURFACE_AVAILABLE"]/*' />
     [NativeTypeName("#define DWM_E_NO_REDIRECTION_SURFACE_AVAILABLE _HRESULT_TYPEDEF_(0x80263003L)")]
     public const int DWM_E_NO_REDIRECTION_SURFACE_AVAILABLE = unchecked((int)(0x80263003));
 
+    /// <include file='DWM.xml' path='doc/member[@name="DWM.DWM_E_NOT_QUEUING_PRESENTS"]/*' />
     [NativeTypeName("#define DWM_E_NOT_QUEUING_PRESENTS _HRESULT_TYPEDEF_(0x80263004L)")]
     public const int DWM_E_NOT_QUEUING_PRESENTS = unchecked((int)(0x80263004));
 
+    /// <include file='DWM.xml' path='doc/member[@name="DWM.DWM_E_ADAPTER_NOT_FOUND"]/*' />
     [NativeTypeName("#define DWM_E_ADAPTER_NOT_FOUND _HRESULT_TYPEDEF_(0x80263005L)")]
     public const int DWM_E_ADAPTER_NOT_FOUND = unchecked((int)(0x80263005));
 
+    /// <include file='DWM.xml' path='doc/member[@name="DWM.DWM_S_GDI_REDIRECTION_SURFACE"]/*' />
     [NativeTypeName("#define DWM_S_GDI_REDIRECTION_SURFACE _HRESULT_TYPEDEF_(0x00263005L)")]
     public const int DWM_S_GDI_REDIRECTION_SURFACE = ((int)(0x00263005));
 
+    /// <include file='DWM.xml' path='doc/member[@name="DWM.DWM_E_TEXTURE_TOO_LARGE"]/*' />
     [NativeTypeName("#define DWM_E_TEXTURE_TOO_LARGE _HRESULT_TYPEDEF_(0x80263007L)")]
     public const int DWM_E_TEXTURE_TOO_LARGE = unchecked((int)(0x80263007));
 
+    /// <include file='DWM.xml' path='doc/member[@name="DWM.DWM_S_GDI_REDIRECTION_SURFACE_BLT_VIA_GDI"]/*' />
     [NativeTypeName("#define DWM_S_GDI_REDIRECTION_SURFACE_BLT_VIA_GDI _HRESULT_TYPEDEF_(0x00263008L)")]
     public const int DWM_S_GDI_REDIRECTION_SURFACE_BLT_VIA_GDI = ((int)(0x00263008));
 }

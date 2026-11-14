@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISmartCardTriggerDetails2 : ISmartCardTriggerDetails2.Interface, INativeGuid
 {
+    /// <include file='ISmartCardTriggerDetails2.xml' path='doc/member[@name="ISmartCardTriggerDetails2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISmartCardTriggerDetails2);
 
     public void** lpVtbl;

@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("3C2654C6-7372-4F6B-B310-55D6128F49D2")]
 public unsafe partial struct AlphabeticalCategorizer : INativeGuid
 {
+    /// <include file='AlphabeticalCategorizer.xml' path='doc/member[@name="AlphabeticalCategorizer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_AlphabeticalCategorizer);
 }

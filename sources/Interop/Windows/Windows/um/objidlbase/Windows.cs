@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COLE_DEFAULT_PRINCIPAL"]/*' />
     [NativeTypeName("#define COLE_DEFAULT_PRINCIPAL ( ( OLECHAR * )( INT_PTR  )-1 )")]
     public static char* COLE_DEFAULT_PRINCIPAL => unchecked((char*)((nint)(-1)));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COLE_DEFAULT_AUTHINFO"]/*' />
     [NativeTypeName("#define COLE_DEFAULT_AUTHINFO ( ( void * )( INT_PTR  )-1 )")]
     public static void* COLE_DEFAULT_AUTHINFO => unchecked((void*)((nint)(-1)));
 }

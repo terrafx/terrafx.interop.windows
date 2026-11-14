@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ITfLangBarItem")]
 public unsafe partial struct ITfLangBarItemBalloon : ITfLangBarItemBalloon.Interface, INativeGuid
 {
+    /// <include file='ITfLangBarItemBalloon.xml' path='doc/member[@name="ITfLangBarItemBalloon.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfLangBarItemBalloon);
 
     public void** lpVtbl;

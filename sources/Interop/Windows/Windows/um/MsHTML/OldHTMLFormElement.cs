@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("0D04D285-6BEC-11CF-8B97-00AA00476DA6")]
 public unsafe partial struct OldHTMLFormElement : INativeGuid
 {
+    /// <include file='OldHTMLFormElement.xml' path='doc/member[@name="OldHTMLFormElement.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_OldHTMLFormElement);
 }

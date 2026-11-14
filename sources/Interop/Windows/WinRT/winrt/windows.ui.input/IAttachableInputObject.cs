@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAttachableInputObject : IAttachableInputObject.Interface, INativeGuid
 {
+    /// <include file='IAttachableInputObject.xml' path='doc/member[@name="IAttachableInputObject.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAttachableInputObject);
 
     public void** lpVtbl;

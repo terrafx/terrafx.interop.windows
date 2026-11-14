@@ -7,6 +7,8 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class WS_HTTP_RESPONSE_MAPPING_STATUS
 {
+    /// <include file='WS_HTTP_RESPONSE_MAPPING_STATUS.xml' path='doc/member[@name="WS_HTTP_RESPONSE_MAPPING_STATUS.WS_HTTP_RESPONSE_MAPPING_STATUS_CODE"]/*' />
     public const int WS_HTTP_RESPONSE_MAPPING_STATUS_CODE = 0x1;
+    /// <include file='WS_HTTP_RESPONSE_MAPPING_STATUS.xml' path='doc/member[@name="WS_HTTP_RESPONSE_MAPPING_STATUS.WS_HTTP_RESPONSE_MAPPING_STATUS_TEXT"]/*' />
     public const int WS_HTTP_RESPONSE_MAPPING_STATUS_TEXT = 0x2;
 }

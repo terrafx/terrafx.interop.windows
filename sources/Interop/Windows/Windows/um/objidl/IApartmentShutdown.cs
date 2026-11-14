@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IApartmentShutdown : IApartmentShutdown.Interface, INativeGuid
 {
+    /// <include file='IApartmentShutdown.xml' path='doc/member[@name="IApartmentShutdown.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IApartmentShutdown);
 
     public void** lpVtbl;

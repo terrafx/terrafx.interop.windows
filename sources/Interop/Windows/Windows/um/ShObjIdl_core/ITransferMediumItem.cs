@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IRelatedItem")]
 public unsafe partial struct ITransferMediumItem : ITransferMediumItem.Interface, INativeGuid
 {
+    /// <include file='ITransferMediumItem.xml' path='doc/member[@name="ITransferMediumItem.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITransferMediumItem);
 
     public void** lpVtbl;

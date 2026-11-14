@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IHTMLChangePlayback : IHTMLChangePlayback.Interface, INativeGuid
 {
+    /// <include file='IHTMLChangePlayback.xml' path='doc/member[@name="IHTMLChangePlayback.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHTMLChangePlayback);
 
     public void** lpVtbl;

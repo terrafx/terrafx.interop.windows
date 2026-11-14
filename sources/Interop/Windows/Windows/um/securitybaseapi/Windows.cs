@@ -535,45 +535,59 @@ public static unsafe partial class Windows
     [SetsLastSystemError]
     public static extern BOOL DeriveCapabilitySidsFromName([NativeTypeName("LPCWSTR")] char* CapName, [NativeTypeName("PSID **")] void*** CapabilityGroupSids, [NativeTypeName("DWORD *")] uint* CapabilityGroupSidCount, [NativeTypeName("PSID **")] void*** CapabilitySids, [NativeTypeName("DWORD *")] uint* CapabilitySidCount);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AccessCheckAndAuditAlarm"]/*' />
     [NativeTypeName("#define AccessCheckAndAuditAlarm AccessCheckAndAuditAlarmW")]
     public static delegate*<char*, void*, char*, char*, void*, uint, GENERIC_MAPPING*, BOOL, uint*, BOOL*, BOOL*, BOOL> AccessCheckAndAuditAlarm => &AccessCheckAndAuditAlarmW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AccessCheckByTypeAndAuditAlarm"]/*' />
     [NativeTypeName("#define AccessCheckByTypeAndAuditAlarm AccessCheckByTypeAndAuditAlarmW")]
     public static delegate*<char*, void*, char*, char*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, BOOL, uint*, BOOL*, BOOL*, BOOL> AccessCheckByTypeAndAuditAlarm => &AccessCheckByTypeAndAuditAlarmW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AccessCheckByTypeResultListAndAuditAlarm"]/*' />
     [NativeTypeName("#define AccessCheckByTypeResultListAndAuditAlarm AccessCheckByTypeResultListAndAuditAlarmW")]
     public static delegate*<char*, void*, char*, char*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, BOOL, uint*, uint*, BOOL*, BOOL> AccessCheckByTypeResultListAndAuditAlarm => &AccessCheckByTypeResultListAndAuditAlarmW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.AccessCheckByTypeResultListAndAuditAlarmByHandle"]/*' />
     [NativeTypeName("#define AccessCheckByTypeResultListAndAuditAlarmByHandle AccessCheckByTypeResultListAndAuditAlarmByHandleW")]
     public static delegate*<char*, void*, HANDLE, char*, char*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, BOOL, uint*, uint*, BOOL*, BOOL> AccessCheckByTypeResultListAndAuditAlarmByHandle => &AccessCheckByTypeResultListAndAuditAlarmByHandleW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetFileSecurity"]/*' />
     [NativeTypeName("#define GetFileSecurity GetFileSecurityW")]
     public static delegate*<char*, uint, void*, uint, uint*, BOOL> GetFileSecurity => &GetFileSecurityW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ObjectCloseAuditAlarm"]/*' />
     [NativeTypeName("#define ObjectCloseAuditAlarm ObjectCloseAuditAlarmW")]
     public static delegate*<char*, void*, BOOL, BOOL> ObjectCloseAuditAlarm => &ObjectCloseAuditAlarmW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ObjectDeleteAuditAlarm"]/*' />
     [NativeTypeName("#define ObjectDeleteAuditAlarm ObjectDeleteAuditAlarmW")]
     public static delegate*<char*, void*, BOOL, BOOL> ObjectDeleteAuditAlarm => &ObjectDeleteAuditAlarmW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ObjectOpenAuditAlarm"]/*' />
     [NativeTypeName("#define ObjectOpenAuditAlarm ObjectOpenAuditAlarmW")]
     public static delegate*<char*, void*, char*, char*, void*, HANDLE, uint, uint, PRIVILEGE_SET*, BOOL, BOOL, BOOL*, BOOL> ObjectOpenAuditAlarm => &ObjectOpenAuditAlarmW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ObjectPrivilegeAuditAlarm"]/*' />
     [NativeTypeName("#define ObjectPrivilegeAuditAlarm ObjectPrivilegeAuditAlarmW")]
     public static delegate*<char*, void*, HANDLE, uint, PRIVILEGE_SET*, BOOL, BOOL> ObjectPrivilegeAuditAlarm => &ObjectPrivilegeAuditAlarmW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PrivilegedServiceAuditAlarm"]/*' />
     [NativeTypeName("#define PrivilegedServiceAuditAlarm PrivilegedServiceAuditAlarmW")]
     public static delegate*<char*, char*, HANDLE, PRIVILEGE_SET*, BOOL, BOOL> PrivilegedServiceAuditAlarm => &PrivilegedServiceAuditAlarmW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetFileSecurity"]/*' />
     [NativeTypeName("#define SetFileSecurity SetFileSecurityW")]
     public static delegate*<char*, uint, void*, BOOL> SetFileSecurity => &SetFileSecurityW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIGNING_LEVEL_FILE_CACHE_FLAG_NOT_VALIDATED"]/*' />
     [NativeTypeName("#define SIGNING_LEVEL_FILE_CACHE_FLAG_NOT_VALIDATED 0x01")]
     public const int SIGNING_LEVEL_FILE_CACHE_FLAG_NOT_VALIDATED = 0x01;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIGNING_LEVEL_FILE_CACHE_FLAG_VALIDATE_ONLY"]/*' />
     [NativeTypeName("#define SIGNING_LEVEL_FILE_CACHE_FLAG_VALIDATE_ONLY 0x04")]
     public const int SIGNING_LEVEL_FILE_CACHE_FLAG_VALIDATE_ONLY = 0x04;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIGNING_LEVEL_MICROSOFT"]/*' />
     [NativeTypeName("#define SIGNING_LEVEL_MICROSOFT 8")]
     public const int SIGNING_LEVEL_MICROSOFT = 8;
 }

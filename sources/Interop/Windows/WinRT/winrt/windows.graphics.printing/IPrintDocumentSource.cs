@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPrintDocumentSource : IPrintDocumentSource.Interface, INativeGuid
 {
+    /// <include file='IPrintDocumentSource.xml' path='doc/member[@name="IPrintDocumentSource.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPrintDocumentSource);
 
     public void** lpVtbl;

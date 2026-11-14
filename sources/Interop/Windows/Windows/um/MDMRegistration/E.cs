@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class E
 {
+    /// <include file='E.xml' path='doc/member[@name="E.E_DATATYPE_MISMATCH"]/*' />
     [NativeTypeName("#define E_DATATYPE_MISMATCH HRESULT_FROM_WIN32(ERROR_DATATYPE_MISMATCH)")]
     public const int E_DATATYPE_MISMATCH = -2147023267;
 }

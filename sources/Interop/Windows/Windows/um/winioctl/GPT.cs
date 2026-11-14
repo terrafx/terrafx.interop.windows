@@ -7,36 +7,47 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GPT
 {
+    /// <include file='GPT.xml' path='doc/member[@name="GPT.GPT_ATTRIBUTE_PLATFORM_REQUIRED"]/*' />
     [NativeTypeName("#define GPT_ATTRIBUTE_PLATFORM_REQUIRED (0x0000000000000001)")]
     public const int GPT_ATTRIBUTE_PLATFORM_REQUIRED = (0x0000000000000001);
 
+    /// <include file='GPT.xml' path='doc/member[@name="GPT.GPT_ATTRIBUTE_NO_BLOCK_IO_PROTOCOL"]/*' />
     [NativeTypeName("#define GPT_ATTRIBUTE_NO_BLOCK_IO_PROTOCOL (0x0000000000000002)")]
     public const int GPT_ATTRIBUTE_NO_BLOCK_IO_PROTOCOL = (0x0000000000000002);
 
+    /// <include file='GPT.xml' path='doc/member[@name="GPT.GPT_ATTRIBUTE_LEGACY_BIOS_BOOTABLE"]/*' />
     [NativeTypeName("#define GPT_ATTRIBUTE_LEGACY_BIOS_BOOTABLE (0x0000000000000004)")]
     public const int GPT_ATTRIBUTE_LEGACY_BIOS_BOOTABLE = (0x0000000000000004);
 
+    /// <include file='GPT.xml' path='doc/member[@name="GPT.GPT_BASIC_DATA_ATTRIBUTE_NO_DRIVE_LETTER"]/*' />
     [NativeTypeName("#define GPT_BASIC_DATA_ATTRIBUTE_NO_DRIVE_LETTER (0x8000000000000000)")]
     public const ulong GPT_BASIC_DATA_ATTRIBUTE_NO_DRIVE_LETTER = (0x8000000000000000);
 
+    /// <include file='GPT.xml' path='doc/member[@name="GPT.GPT_BASIC_DATA_ATTRIBUTE_HIDDEN"]/*' />
     [NativeTypeName("#define GPT_BASIC_DATA_ATTRIBUTE_HIDDEN (0x4000000000000000)")]
     public const long GPT_BASIC_DATA_ATTRIBUTE_HIDDEN = (0x4000000000000000);
 
+    /// <include file='GPT.xml' path='doc/member[@name="GPT.GPT_BASIC_DATA_ATTRIBUTE_SHADOW_COPY"]/*' />
     [NativeTypeName("#define GPT_BASIC_DATA_ATTRIBUTE_SHADOW_COPY (0x2000000000000000)")]
     public const long GPT_BASIC_DATA_ATTRIBUTE_SHADOW_COPY = (0x2000000000000000);
 
+    /// <include file='GPT.xml' path='doc/member[@name="GPT.GPT_BASIC_DATA_ATTRIBUTE_READ_ONLY"]/*' />
     [NativeTypeName("#define GPT_BASIC_DATA_ATTRIBUTE_READ_ONLY (0x1000000000000000)")]
     public const long GPT_BASIC_DATA_ATTRIBUTE_READ_ONLY = (0x1000000000000000);
 
+    /// <include file='GPT.xml' path='doc/member[@name="GPT.GPT_BASIC_DATA_ATTRIBUTE_OFFLINE"]/*' />
     [NativeTypeName("#define GPT_BASIC_DATA_ATTRIBUTE_OFFLINE (0x0800000000000000)")]
     public const long GPT_BASIC_DATA_ATTRIBUTE_OFFLINE = (0x0800000000000000);
 
+    /// <include file='GPT.xml' path='doc/member[@name="GPT.GPT_BASIC_DATA_ATTRIBUTE_DAX"]/*' />
     [NativeTypeName("#define GPT_BASIC_DATA_ATTRIBUTE_DAX (0x0400000000000000)")]
     public const long GPT_BASIC_DATA_ATTRIBUTE_DAX = (0x0400000000000000);
 
+    /// <include file='GPT.xml' path='doc/member[@name="GPT.GPT_BASIC_DATA_ATTRIBUTE_SERVICE"]/*' />
     [NativeTypeName("#define GPT_BASIC_DATA_ATTRIBUTE_SERVICE (0x0200000000000000)")]
     public const long GPT_BASIC_DATA_ATTRIBUTE_SERVICE = (0x0200000000000000);
 
+    /// <include file='GPT.xml' path='doc/member[@name="GPT.GPT_SPACES_ATTRIBUTE_NO_METADATA"]/*' />
     [NativeTypeName("#define GPT_SPACES_ATTRIBUTE_NO_METADATA (0x8000000000000000)")]
     public const ulong GPT_SPACES_ATTRIBUTE_NO_METADATA = (0x8000000000000000);
 }

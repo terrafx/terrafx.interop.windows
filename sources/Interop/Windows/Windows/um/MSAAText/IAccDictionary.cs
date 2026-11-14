@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAccDictionary : IAccDictionary.Interface, INativeGuid
 {
+    /// <include file='IAccDictionary.xml' path='doc/member[@name="IAccDictionary.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAccDictionary);
 
     public void** lpVtbl;

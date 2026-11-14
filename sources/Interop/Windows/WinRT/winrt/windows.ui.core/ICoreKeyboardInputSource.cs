@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICoreKeyboardInputSource : ICoreKeyboardInputSource.Interface, INativeGuid
 {
+    /// <include file='ICoreKeyboardInputSource.xml' path='doc/member[@name="ICoreKeyboardInputSource.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICoreKeyboardInputSource);
 
     public void** lpVtbl;

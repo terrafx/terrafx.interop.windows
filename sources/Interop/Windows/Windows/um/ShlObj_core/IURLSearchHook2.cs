@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IURLSearchHook")]
 public unsafe partial struct IURLSearchHook2 : IURLSearchHook2.Interface, INativeGuid
 {
+    /// <include file='IURLSearchHook2.xml' path='doc/member[@name="IURLSearchHook2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IURLSearchHook2);
 
     public void** lpVtbl;

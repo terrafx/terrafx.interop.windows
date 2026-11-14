@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MEDIATYPE
 {
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_Video"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_Video
     {
@@ -37,6 +38,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_Audio"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_Audio
     {
@@ -62,6 +64,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_Text"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_Text
     {
@@ -87,6 +90,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_Midi"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_Midi
     {
@@ -112,6 +116,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_Stream"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_Stream
     {
@@ -137,6 +142,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_Interleaved"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_Interleaved
     {
@@ -162,6 +168,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_File"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_File
     {
@@ -187,6 +194,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_ScriptCommand"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_ScriptCommand
     {
@@ -212,6 +220,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_AUXLine21Data"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_AUXLine21Data
     {
@@ -237,6 +246,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_AUXTeletextPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_AUXTeletextPage
     {
@@ -262,6 +272,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_CC_CONTAINER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_CC_CONTAINER
     {
@@ -287,6 +298,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_DTVCCData"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_DTVCCData
     {
@@ -312,6 +324,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_MSTVCaption"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_MSTVCaption
     {
@@ -337,6 +350,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_VBI"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_VBI
     {
@@ -362,6 +376,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_Timecode"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_Timecode
     {
@@ -387,6 +402,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_LMRT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_LMRT
     {
@@ -412,6 +428,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_URL_STREAM"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_URL_STREAM
     {
@@ -437,6 +454,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_MPEG1SystemStream"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_MPEG1SystemStream
     {
@@ -462,6 +480,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_AnalogVideo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_AnalogVideo
     {
@@ -487,6 +506,7 @@ public static partial class MEDIATYPE
         }
     }
 
+    /// <include file='MEDIATYPE.xml' path='doc/member[@name="MEDIATYPE.MEDIATYPE_AnalogAudio"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid MEDIATYPE_AnalogAudio
     {

@@ -9,11 +9,16 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WS_MUST_UNDERSTAND_HEADER_ATTRIBUTE"]/*' />
     public const int WS_MUST_UNDERSTAND_HEADER_ATTRIBUTE = 0x1;
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WS_RELAY_HEADER_ATTRIBUTE"]/*' />
     public const int WS_RELAY_HEADER_ATTRIBUTE = 0x2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WS_URL_FLAGS_ALLOW_HOST_WILDCARDS"]/*' />
     public const int WS_URL_FLAGS_ALLOW_HOST_WILDCARDS = 0x1;
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WS_URL_FLAGS_NO_PATH_COLLAPSE"]/*' />
     public const int WS_URL_FLAGS_NO_PATH_COLLAPSE = 0x2;
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.WS_URL_FLAGS_ZERO_TERMINATE"]/*' />
     public const int WS_URL_FLAGS_ZERO_TERMINATE = 0x4;
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WsStartReaderCanonicalization"]/*' />

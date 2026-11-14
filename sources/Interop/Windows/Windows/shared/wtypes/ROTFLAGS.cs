@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ROTFLAGS
 {
+    /// <include file='ROTFLAGS.xml' path='doc/member[@name="ROTFLAGS.ROTFLAGS_REGISTRATIONKEEPSALIVE"]/*' />
     [NativeTypeName("#define ROTFLAGS_REGISTRATIONKEEPSALIVE 0x1")]
     public const int ROTFLAGS_REGISTRATIONKEEPSALIVE = 0x1;
 
+    /// <include file='ROTFLAGS.xml' path='doc/member[@name="ROTFLAGS.ROTFLAGS_ALLOWANYCLIENT"]/*' />
     [NativeTypeName("#define ROTFLAGS_ALLOWANYCLIENT 0x2")]
     public const int ROTFLAGS_ALLOWANYCLIENT = 0x2;
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDxcOptimizerPass : IDxcOptimizerPass.Interface, INativeGuid
 {
+    /// <include file='IDxcOptimizerPass.xml' path='doc/member[@name="IDxcOptimizerPass.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDxcOptimizerPass);
 
     public void** lpVtbl;

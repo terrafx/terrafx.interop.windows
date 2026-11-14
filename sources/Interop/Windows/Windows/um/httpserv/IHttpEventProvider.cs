@@ -14,6 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("6F3F657D-2FB8-43C6-A096-5064B41F0580")]
 public unsafe partial struct IHttpEventProvider : IHttpEventProvider.Interface, INativeGuid
 {
+    /// <include file='IHttpEventProvider.xml' path='doc/member[@name="IHttpEventProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpEventProvider);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IProtectedContainerImportResult : IProtectedContainerImportResult.Interface, INativeGuid
 {
+    /// <include file='IProtectedContainerImportResult.xml' path='doc/member[@name="IProtectedContainerImportResult.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IProtectedContainerImportResult);
 
     public void** lpVtbl;

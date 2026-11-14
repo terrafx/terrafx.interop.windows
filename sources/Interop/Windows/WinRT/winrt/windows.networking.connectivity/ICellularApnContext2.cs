@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICellularApnContext2 : ICellularApnContext2.Interface, INativeGuid
 {
+    /// <include file='ICellularApnContext2.xml' path='doc/member[@name="ICellularApnContext2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICellularApnContext2);
 
     public void** lpVtbl;

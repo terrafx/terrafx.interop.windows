@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IActiveIMMApp : IActiveIMMApp.Interface, INativeGuid
 {
+    /// <include file='IActiveIMMApp.xml' path='doc/member[@name="IActiveIMMApp.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IActiveIMMApp);
 
     public void** lpVtbl;

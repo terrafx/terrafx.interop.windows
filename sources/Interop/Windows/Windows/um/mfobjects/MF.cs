@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MF
 {
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_BYTESTREAM_ORIGIN_NAME"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_BYTESTREAM_ORIGIN_NAME
     {
@@ -37,6 +38,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_BYTESTREAM_CONTENT_TYPE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_BYTESTREAM_CONTENT_TYPE
     {
@@ -62,6 +64,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_BYTESTREAM_DURATION"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_BYTESTREAM_DURATION
     {
@@ -87,6 +90,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_BYTESTREAM_LAST_MODIFIED_TIME"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_BYTESTREAM_LAST_MODIFIED_TIME
     {
@@ -112,6 +116,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_BYTESTREAM_IFO_FILE_URI"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_BYTESTREAM_IFO_FILE_URI
     {
@@ -137,6 +142,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_BYTESTREAM_DLNA_PROFILE_ID"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_BYTESTREAM_DLNA_PROFILE_ID
     {
@@ -162,6 +168,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_BYTESTREAM_EFFECTIVE_URL"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_BYTESTREAM_EFFECTIVE_URL
     {
@@ -187,6 +194,7 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_BYTESTREAM_TRANSCODED"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MF_BYTESTREAM_TRANSCODED
     {
@@ -212,18 +220,23 @@ public static partial class MF
         }
     }
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIATYPE_EQUAL_MAJOR_TYPES"]/*' />
     [NativeTypeName("#define MF_MEDIATYPE_EQUAL_MAJOR_TYPES 0x00000001")]
     public const int MF_MEDIATYPE_EQUAL_MAJOR_TYPES = 0x00000001;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIATYPE_EQUAL_FORMAT_TYPES"]/*' />
     [NativeTypeName("#define MF_MEDIATYPE_EQUAL_FORMAT_TYPES 0x00000002")]
     public const int MF_MEDIATYPE_EQUAL_FORMAT_TYPES = 0x00000002;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIATYPE_EQUAL_FORMAT_DATA"]/*' />
     [NativeTypeName("#define MF_MEDIATYPE_EQUAL_FORMAT_DATA 0x00000004")]
     public const int MF_MEDIATYPE_EQUAL_FORMAT_DATA = 0x00000004;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_MEDIATYPE_EQUAL_FORMAT_USER_DATA"]/*' />
     [NativeTypeName("#define MF_MEDIATYPE_EQUAL_FORMAT_USER_DATA 0x00000008")]
     public const int MF_MEDIATYPE_EQUAL_FORMAT_USER_DATA = 0x00000008;
 
+    /// <include file='MF.xml' path='doc/member[@name="MF.MF_EVENT_FLAG_NO_WAIT"]/*' />
     [NativeTypeName("#define MF_EVENT_FLAG_NO_WAIT 0x00000001")]
     public const int MF_EVENT_FLAG_NO_WAIT = 0x00000001;
 }

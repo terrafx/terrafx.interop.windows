@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWaitMultiple : IWaitMultiple.Interface, INativeGuid
 {
+    /// <include file='IWaitMultiple.xml' path='doc/member[@name="IWaitMultiple.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWaitMultiple);
 
     public void** lpVtbl;

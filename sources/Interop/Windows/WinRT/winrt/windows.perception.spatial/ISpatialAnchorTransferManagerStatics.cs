@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("Use SpatialEntityStore instead of SpatialAnchorTransferManager. For more info, see MSDN.")]
 public unsafe partial struct ISpatialAnchorTransferManagerStatics : ISpatialAnchorTransferManagerStatics.Interface, INativeGuid
 {
+    /// <include file='ISpatialAnchorTransferManagerStatics.xml' path='doc/member[@name="ISpatialAnchorTransferManagerStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpatialAnchorTransferManagerStatics);
 
     public void** lpVtbl;

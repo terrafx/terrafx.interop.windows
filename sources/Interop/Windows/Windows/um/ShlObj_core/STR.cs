@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class STR
 {
+    /// <include file='STR.xml' path='doc/member[@name="STR.STR_PARSE_WITH_PROPERTIES"]/*' />
     [NativeTypeName("#define STR_PARSE_WITH_PROPERTIES L\"ParseWithProperties\"")]
     public const string STR_PARSE_WITH_PROPERTIES = "ParseWithProperties";
 
+    /// <include file='STR.xml' path='doc/member[@name="STR.STR_PARSE_PARTIAL_IDLIST"]/*' />
     [NativeTypeName("#define STR_PARSE_PARTIAL_IDLIST L\"ParseOriginalItem\"")]
     public const string STR_PARSE_PARTIAL_IDLIST = "ParseOriginalItem";
 }

@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IRectangleClip : IRectangleClip.Interface, INativeGuid
 {
+    /// <include file='IRectangleClip.xml' path='doc/member[@name="IRectangleClip.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRectangleClip);
 
     public void** lpVtbl;

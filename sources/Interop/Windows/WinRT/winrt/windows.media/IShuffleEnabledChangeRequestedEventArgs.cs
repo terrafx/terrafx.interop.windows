@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IShuffleEnabledChangeRequestedEventArgs : IShuffleEnabledChangeRequestedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IShuffleEnabledChangeRequestedEventArgs.xml' path='doc/member[@name="IShuffleEnabledChangeRequestedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IShuffleEnabledChangeRequestedEventArgs);
 
     public void** lpVtbl;

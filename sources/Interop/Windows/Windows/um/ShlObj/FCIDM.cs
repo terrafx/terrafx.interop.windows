@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FCIDM
 {
+    /// <include file='FCIDM.xml' path='doc/member[@name="FCIDM.FCIDM_TOOLBAR"]/*' />
     [NativeTypeName("#define FCIDM_TOOLBAR (FCIDM_BROWSERFIRST + 0)")]
     public const int FCIDM_TOOLBAR = (0xa000 + 0);
 
+    /// <include file='FCIDM.xml' path='doc/member[@name="FCIDM.FCIDM_STATUS"]/*' />
     [NativeTypeName("#define FCIDM_STATUS (FCIDM_BROWSERFIRST + 1)")]
     public const int FCIDM_STATUS = (0xa000 + 1);
 }

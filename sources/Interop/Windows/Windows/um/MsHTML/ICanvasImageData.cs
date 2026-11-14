@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct ICanvasImageData : ICanvasImageData.Interface, INativeGuid
 {
+    /// <include file='ICanvasImageData.xml' path='doc/member[@name="ICanvasImageData.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICanvasImageData);
 
     public void** lpVtbl;

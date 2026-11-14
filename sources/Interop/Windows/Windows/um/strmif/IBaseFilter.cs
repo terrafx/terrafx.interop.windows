@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMediaFilter")]
 public unsafe partial struct IBaseFilter : IBaseFilter.Interface, INativeGuid
 {
+    /// <include file='IBaseFilter.xml' path='doc/member[@name="IBaseFilter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBaseFilter);
 
     public void** lpVtbl;

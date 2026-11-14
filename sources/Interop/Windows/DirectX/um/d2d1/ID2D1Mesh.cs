@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Resource")]
 public unsafe partial struct ID2D1Mesh : ID2D1Mesh.Interface, INativeGuid
 {
+    /// <include file='ID2D1Mesh.xml' path='doc/member[@name="ID2D1Mesh.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1Mesh);
 
     public void** lpVtbl;

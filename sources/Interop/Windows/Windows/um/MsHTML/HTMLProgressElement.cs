@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F2D5-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct HTMLProgressElement : INativeGuid
 {
+    /// <include file='HTMLProgressElement.xml' path='doc/member[@name="HTMLProgressElement.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_HTMLProgressElement);
 }

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IPerPropertyBrowsing : IPerPropertyBrowsing.Interface, INativeGuid
 {
+    /// <include file='IPerPropertyBrowsing.xml' path='doc/member[@name="IPerPropertyBrowsing.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPerPropertyBrowsing);
 
     public void** lpVtbl;

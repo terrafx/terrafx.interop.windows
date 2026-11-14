@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("3CDC718F-B3E9-4EB6-A57F-CF1F1B321B87")]
 public unsafe partial struct CODECAPI_AVEncVideoPixelAspectRatio : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncVideoPixelAspectRatio.xml' path='doc/member[@name="CODECAPI_AVEncVideoPixelAspectRatio.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncVideoPixelAspectRatio);
 }

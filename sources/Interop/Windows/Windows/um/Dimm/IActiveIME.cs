@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IActiveIME : IActiveIME.Interface, INativeGuid
 {
+    /// <include file='IActiveIME.xml' path='doc/member[@name="IActiveIME.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IActiveIME);
 
     public void** lpVtbl;

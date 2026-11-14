@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ILowLevelDevicesAggregateProvider : ILowLevelDevicesAggregateProvider.Interface, INativeGuid
 {
+    /// <include file='ILowLevelDevicesAggregateProvider.xml' path='doc/member[@name="ILowLevelDevicesAggregateProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILowLevelDevicesAggregateProvider);
 
     public void** lpVtbl;

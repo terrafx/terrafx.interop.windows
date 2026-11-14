@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAppBroadcastBackgroundServiceSignInInfo : IAppBroadcastBackgroundServiceSignInInfo.Interface, INativeGuid
 {
+    /// <include file='IAppBroadcastBackgroundServiceSignInInfo.xml' path='doc/member[@name="IAppBroadcastBackgroundServiceSignInInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppBroadcastBackgroundServiceSignInInfo);
 
     public void** lpVtbl;

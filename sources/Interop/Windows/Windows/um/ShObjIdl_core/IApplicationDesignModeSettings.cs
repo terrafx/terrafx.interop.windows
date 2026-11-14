@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IApplicationDesignModeSettings : IApplicationDesignModeSettings.Interface, INativeGuid
 {
+    /// <include file='IApplicationDesignModeSettings.xml' path='doc/member[@name="IApplicationDesignModeSettings.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IApplicationDesignModeSettings);
 
     public void** lpVtbl;

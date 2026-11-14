@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("IFolderPickerContinuationEventArgs is deprecated and might not work on all platforms. For more info, see MSDN.")]
 public unsafe partial struct IFolderPickerContinuationEventArgs : IFolderPickerContinuationEventArgs.Interface, INativeGuid
 {
+    /// <include file='IFolderPickerContinuationEventArgs.xml' path='doc/member[@name="IFolderPickerContinuationEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFolderPickerContinuationEventArgs);
 
     public void** lpVtbl;

@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IP
 {
+    /// <include file='IP.xml' path='doc/member[@name="IP.IP_CURSOR_DOWN"]/*' />
     [NativeTypeName("#define IP_CURSOR_DOWN 0x00000001")]
     public const int IP_CURSOR_DOWN = 0x00000001;
 
+    /// <include file='IP.xml' path='doc/member[@name="IP.IP_INVERTED"]/*' />
     [NativeTypeName("#define IP_INVERTED 0x00000002")]
     public const int IP_INVERTED = 0x00000002;
 
+    /// <include file='IP.xml' path='doc/member[@name="IP.IP_MARGIN"]/*' />
     [NativeTypeName("#define IP_MARGIN 0x00000004")]
     public const int IP_MARGIN = 0x00000004;
 }

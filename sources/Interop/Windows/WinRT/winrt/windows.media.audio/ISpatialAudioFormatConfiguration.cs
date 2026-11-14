@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISpatialAudioFormatConfiguration : ISpatialAudioFormatConfiguration.Interface, INativeGuid
 {
+    /// <include file='ISpatialAudioFormatConfiguration.xml' path='doc/member[@name="ISpatialAudioFormatConfiguration.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpatialAudioFormatConfiguration);
 
     public void** lpVtbl;

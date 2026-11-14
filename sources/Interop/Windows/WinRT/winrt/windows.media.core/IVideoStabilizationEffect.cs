@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IVideoStabilizationEffect : IVideoStabilizationEffect.Interface, INativeGuid
 {
+    /// <include file='IVideoStabilizationEffect.xml' path='doc/member[@name="IVideoStabilizationEffect.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVideoStabilizationEffect);
 
     public void** lpVtbl;

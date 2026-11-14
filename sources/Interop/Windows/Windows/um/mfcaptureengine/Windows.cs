@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MFSampleExtension_DeviceReferenceSystemTime"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFSampleExtension_DeviceReferenceSystemTime
     {

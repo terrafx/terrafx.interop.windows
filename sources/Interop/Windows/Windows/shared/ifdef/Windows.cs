@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.IFI_UNSPECIFIED"]/*' />
     [NativeTypeName("#define IFI_UNSPECIFIED NET_IFINDEX_UNSPECIFIED")]
     public const uint IFI_UNSPECIFIED = (uint)(0);
 }

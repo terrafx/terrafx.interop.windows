@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ISpDataKey")]
 public unsafe partial struct ISpObjectToken : ISpObjectToken.Interface, INativeGuid
 {
+    /// <include file='ISpObjectToken.xml' path='doc/member[@name="ISpObjectToken.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpObjectToken);
 
     public void** lpVtbl;

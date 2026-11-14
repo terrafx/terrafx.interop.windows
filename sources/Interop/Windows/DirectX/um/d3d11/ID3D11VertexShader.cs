@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID3D11DeviceChild")]
 public unsafe partial struct ID3D11VertexShader : ID3D11VertexShader.Interface, INativeGuid
 {
+    /// <include file='ID3D11VertexShader.xml' path='doc/member[@name="ID3D11VertexShader.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D11VertexShader);
 
     public void** lpVtbl;

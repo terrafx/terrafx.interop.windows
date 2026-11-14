@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MFMediaSharingEngineClassFactory"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MFMediaSharingEngineClassFactory
     {
@@ -37,6 +38,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MFImageSharingEngineClassFactory"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_MFImageSharingEngineClassFactory
     {
@@ -62,6 +64,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_PlayToSourceClassFactory"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid CLSID_PlayToSourceClassFactory
     {

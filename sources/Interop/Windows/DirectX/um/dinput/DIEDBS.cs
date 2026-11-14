@@ -7,15 +7,19 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DIEDBS
 {
+    /// <include file='DIEDBS.xml' path='doc/member[@name="DIEDBS.DIEDBS_MAPPEDPRI1"]/*' />
     [NativeTypeName("#define DIEDBS_MAPPEDPRI1 0x00000001")]
     public const int DIEDBS_MAPPEDPRI1 = 0x00000001;
 
+    /// <include file='DIEDBS.xml' path='doc/member[@name="DIEDBS.DIEDBS_MAPPEDPRI2"]/*' />
     [NativeTypeName("#define DIEDBS_MAPPEDPRI2 0x00000002")]
     public const int DIEDBS_MAPPEDPRI2 = 0x00000002;
 
+    /// <include file='DIEDBS.xml' path='doc/member[@name="DIEDBS.DIEDBS_RECENTDEVICE"]/*' />
     [NativeTypeName("#define DIEDBS_RECENTDEVICE 0x00000010")]
     public const int DIEDBS_RECENTDEVICE = 0x00000010;
 
+    /// <include file='DIEDBS.xml' path='doc/member[@name="DIEDBS.DIEDBS_NEWDEVICE"]/*' />
     [NativeTypeName("#define DIEDBS_NEWDEVICE 0x00000020")]
     public const int DIEDBS_NEWDEVICE = 0x00000020;
 }

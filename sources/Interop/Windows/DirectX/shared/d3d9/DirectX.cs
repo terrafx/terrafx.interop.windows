@@ -47,18 +47,23 @@ public static unsafe partial class DirectX
     [DllImport("d3d9", ExactSpelling = true)]
     public static extern HRESULT Direct3DCreate9Ex(uint SDKVersion, IDirect3D9Ex** param1);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DIRECT3D_VERSION"]/*' />
     [NativeTypeName("#define DIRECT3D_VERSION 0x0900")]
     public const int DIRECT3D_VERSION = 0x0900;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3D9b_SDK_VERSION"]/*' />
     [NativeTypeName("#define D3D9b_SDK_VERSION 31")]
     public const int D3D9b_SDK_VERSION = 31;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DSPD_IUNKNOWN"]/*' />
     [NativeTypeName("#define D3DSPD_IUNKNOWN 0x00000001L")]
     public const int D3DSPD_IUNKNOWN = 0x00000001;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DADAPTER_DEFAULT"]/*' />
     [NativeTypeName("#define D3DADAPTER_DEFAULT 0")]
     public const int D3DADAPTER_DEFAULT = 0;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX._FACD3D"]/*' />
     [NativeTypeName("#define _FACD3D 0x876")]
     public const int _FACD3D = 0x876;
 }

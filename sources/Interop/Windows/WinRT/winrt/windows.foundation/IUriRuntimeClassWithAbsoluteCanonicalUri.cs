@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IUriRuntimeClassWithAbsoluteCanonicalUri : IUriRuntimeClassWithAbsoluteCanonicalUri.Interface, INativeGuid
 {
+    /// <include file='IUriRuntimeClassWithAbsoluteCanonicalUri.xml' path='doc/member[@name="IUriRuntimeClassWithAbsoluteCanonicalUri.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUriRuntimeClassWithAbsoluteCanonicalUri);
 
     public void** lpVtbl;

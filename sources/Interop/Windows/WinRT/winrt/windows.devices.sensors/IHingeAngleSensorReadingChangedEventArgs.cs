@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IHingeAngleSensorReadingChangedEventArgs : IHingeAngleSensorReadingChangedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IHingeAngleSensorReadingChangedEventArgs.xml' path='doc/member[@name="IHingeAngleSensorReadingChangedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHingeAngleSensorReadingChangedEventArgs);
 
     public void** lpVtbl;

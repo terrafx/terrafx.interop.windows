@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct DispApplicationCache : DispApplicationCache.Interface, INativeGuid
 {
+    /// <include file='DispApplicationCache.xml' path='doc/member[@name="DispApplicationCache.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DispApplicationCache);
 
     public void** lpVtbl;

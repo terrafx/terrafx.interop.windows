@@ -19,6 +19,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IPlayToSourceClassFactory : IPlayToSourceClassFactory.Interface, INativeGuid
 {
+    /// <include file='IPlayToSourceClassFactory.xml' path='doc/member[@name="IPlayToSourceClassFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPlayToSourceClassFactory);
 
     public void** lpVtbl;

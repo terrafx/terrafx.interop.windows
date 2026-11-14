@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class PROC
 {
+    /// <include file='PROC.xml' path='doc/member[@name="PROC.PROC_THREAD_ATTRIBUTE_REPLACE_VALUE"]/*' />
     [NativeTypeName("#define PROC_THREAD_ATTRIBUTE_REPLACE_VALUE 0x00000001")]
     public const int PROC_THREAD_ATTRIBUTE_REPLACE_VALUE = 0x00000001;
 }

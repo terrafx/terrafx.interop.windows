@@ -95,129 +95,171 @@ public static unsafe partial class Windows
     [DllImport("comdlg32", ExactSpelling = true)]
     public static extern BOOL PageSetupDlgW([NativeTypeName("LPPAGESETUPDLGW")] PAGESETUPDLGW* param0);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetOpenFileName"]/*' />
     [NativeTypeName("#define GetOpenFileName GetOpenFileNameW")]
     public static delegate*<OPENFILENAMEW*, BOOL> GetOpenFileName => &GetOpenFileNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSaveFileName"]/*' />
     [NativeTypeName("#define GetSaveFileName GetSaveFileNameW")]
     public static delegate*<OPENFILENAMEW*, BOOL> GetSaveFileName => &GetSaveFileNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetFileTitle"]/*' />
     [NativeTypeName("#define GetFileTitle GetFileTitleW")]
     public static delegate*<char*, char*, ushort, short> GetFileTitle => &GetFileTitleW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ChooseColor"]/*' />
     [NativeTypeName("#define ChooseColor ChooseColorW")]
     public static delegate*<CHOOSECOLORW*, BOOL> ChooseColor => &ChooseColorW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FindText"]/*' />
     [NativeTypeName("#define FindText FindTextW")]
     public static delegate*<FINDREPLACEW*, HWND> FindText => &FindTextW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ReplaceText"]/*' />
     [NativeTypeName("#define ReplaceText ReplaceTextW")]
     public static delegate*<FINDREPLACEW*, HWND> ReplaceText => &ReplaceTextW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ChooseFont"]/*' />
     [NativeTypeName("#define ChooseFont ChooseFontW")]
     public static delegate*<CHOOSEFONTW*, BOOL> ChooseFont => &ChooseFontW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIMULATED_FONTTYPE"]/*' />
     [NativeTypeName("#define SIMULATED_FONTTYPE 0x8000")]
     public const int SIMULATED_FONTTYPE = 0x8000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PRINTER_FONTTYPE"]/*' />
     [NativeTypeName("#define PRINTER_FONTTYPE 0x4000")]
     public const int PRINTER_FONTTYPE = 0x4000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SCREEN_FONTTYPE"]/*' />
     [NativeTypeName("#define SCREEN_FONTTYPE 0x2000")]
     public const int SCREEN_FONTTYPE = 0x2000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BOLD_FONTTYPE"]/*' />
     [NativeTypeName("#define BOLD_FONTTYPE 0x0100")]
     public const int BOLD_FONTTYPE = 0x0100;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ITALIC_FONTTYPE"]/*' />
     [NativeTypeName("#define ITALIC_FONTTYPE 0x0200")]
     public const int ITALIC_FONTTYPE = 0x0200;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.REGULAR_FONTTYPE"]/*' />
     [NativeTypeName("#define REGULAR_FONTTYPE 0x0400")]
     public const int REGULAR_FONTTYPE = 0x0400;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TT_OPENTYPE_FONTTYPE"]/*' />
     [NativeTypeName("#define TT_OPENTYPE_FONTTYPE 0x20000")]
     public const int TT_OPENTYPE_FONTTYPE = 0x20000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TYPE1_FONTTYPE"]/*' />
     [NativeTypeName("#define TYPE1_FONTTYPE 0x40000")]
     public const int TYPE1_FONTTYPE = 0x40000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SYMBOL_FONTTYPE"]/*' />
     [NativeTypeName("#define SYMBOL_FONTTYPE 0x80000")]
     public const int SYMBOL_FONTTYPE = 0x80000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LBSELCHSTRINGA"]/*' />
     [NativeTypeName("#define LBSELCHSTRINGA \"commdlg_LBSelChangedNotify\"")]
     public static ReadOnlySpan<byte> LBSELCHSTRINGA => "commdlg_LBSelChangedNotify"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHAREVISTRINGA"]/*' />
     [NativeTypeName("#define SHAREVISTRINGA \"commdlg_ShareViolation\"")]
     public static ReadOnlySpan<byte> SHAREVISTRINGA => "commdlg_ShareViolation"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FILEOKSTRINGA"]/*' />
     [NativeTypeName("#define FILEOKSTRINGA \"commdlg_FileNameOK\"")]
     public static ReadOnlySpan<byte> FILEOKSTRINGA => "commdlg_FileNameOK"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COLOROKSTRINGA"]/*' />
     [NativeTypeName("#define COLOROKSTRINGA \"commdlg_ColorOK\"")]
     public static ReadOnlySpan<byte> COLOROKSTRINGA => "commdlg_ColorOK"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SETRGBSTRINGA"]/*' />
     [NativeTypeName("#define SETRGBSTRINGA \"commdlg_SetRGBColor\"")]
     public static ReadOnlySpan<byte> SETRGBSTRINGA => "commdlg_SetRGBColor"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HELPMSGSTRINGA"]/*' />
     [NativeTypeName("#define HELPMSGSTRINGA \"commdlg_help\"")]
     public static ReadOnlySpan<byte> HELPMSGSTRINGA => "commdlg_help"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FINDMSGSTRINGA"]/*' />
     [NativeTypeName("#define FINDMSGSTRINGA \"commdlg_FindReplace\"")]
     public static ReadOnlySpan<byte> FINDMSGSTRINGA => "commdlg_FindReplace"u8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LBSELCHSTRINGW"]/*' />
     [NativeTypeName("#define LBSELCHSTRINGW L\"commdlg_LBSelChangedNotify\"")]
     public const string LBSELCHSTRINGW = "commdlg_LBSelChangedNotify";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHAREVISTRINGW"]/*' />
     [NativeTypeName("#define SHAREVISTRINGW L\"commdlg_ShareViolation\"")]
     public const string SHAREVISTRINGW = "commdlg_ShareViolation";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FILEOKSTRINGW"]/*' />
     [NativeTypeName("#define FILEOKSTRINGW L\"commdlg_FileNameOK\"")]
     public const string FILEOKSTRINGW = "commdlg_FileNameOK";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COLOROKSTRINGW"]/*' />
     [NativeTypeName("#define COLOROKSTRINGW L\"commdlg_ColorOK\"")]
     public const string COLOROKSTRINGW = "commdlg_ColorOK";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SETRGBSTRINGW"]/*' />
     [NativeTypeName("#define SETRGBSTRINGW L\"commdlg_SetRGBColor\"")]
     public const string SETRGBSTRINGW = "commdlg_SetRGBColor";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HELPMSGSTRINGW"]/*' />
     [NativeTypeName("#define HELPMSGSTRINGW L\"commdlg_help\"")]
     public const string HELPMSGSTRINGW = "commdlg_help";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FINDMSGSTRINGW"]/*' />
     [NativeTypeName("#define FINDMSGSTRINGW L\"commdlg_FindReplace\"")]
     public const string FINDMSGSTRINGW = "commdlg_FindReplace";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LBSELCHSTRING"]/*' />
     [NativeTypeName("#define LBSELCHSTRING LBSELCHSTRINGW")]
     public const string LBSELCHSTRING = "commdlg_LBSelChangedNotify";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SHAREVISTRING"]/*' />
     [NativeTypeName("#define SHAREVISTRING SHAREVISTRINGW")]
     public const string SHAREVISTRING = "commdlg_ShareViolation";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FILEOKSTRING"]/*' />
     [NativeTypeName("#define FILEOKSTRING FILEOKSTRINGW")]
     public const string FILEOKSTRING = "commdlg_FileNameOK";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COLOROKSTRING"]/*' />
     [NativeTypeName("#define COLOROKSTRING COLOROKSTRINGW")]
     public const string COLOROKSTRING = "commdlg_ColorOK";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SETRGBSTRING"]/*' />
     [NativeTypeName("#define SETRGBSTRING SETRGBSTRINGW")]
     public const string SETRGBSTRING = "commdlg_SetRGBColor";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HELPMSGSTRING"]/*' />
     [NativeTypeName("#define HELPMSGSTRING HELPMSGSTRINGW")]
     public const string HELPMSGSTRING = "commdlg_help";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FINDMSGSTRING"]/*' />
     [NativeTypeName("#define FINDMSGSTRING FINDMSGSTRINGW")]
     public const string FINDMSGSTRING = "commdlg_FindReplace";
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PrintDlg"]/*' />
     [NativeTypeName("#define PrintDlg PrintDlgW")]
     public static delegate*<PRINTDLGW*, BOOL> PrintDlg => &PrintDlgW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PrintDlgEx"]/*' />
     [NativeTypeName("#define PrintDlgEx PrintDlgExW")]
     public static delegate*<PRINTDLGEXW*, HRESULT> PrintDlgEx => &PrintDlgExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.START_PAGE_GENERAL"]/*' />
     [NativeTypeName("#define START_PAGE_GENERAL 0xffffffff")]
     public const uint START_PAGE_GENERAL = 0xffffffff;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DN_DEFAULTPRN"]/*' />
     [NativeTypeName("#define DN_DEFAULTPRN 0x0001")]
     public const int DN_DEFAULTPRN = 0x0001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PageSetupDlg"]/*' />
     [NativeTypeName("#define PageSetupDlg PageSetupDlgW")]
     public static delegate*<PAGESETUPDLGW*, BOOL> PageSetupDlg => &PageSetupDlgW;
 }

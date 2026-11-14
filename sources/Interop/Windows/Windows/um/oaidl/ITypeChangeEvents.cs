@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITypeChangeEvents : ITypeChangeEvents.Interface, INativeGuid
 {
+    /// <include file='ITypeChangeEvents.xml' path='doc/member[@name="ITypeChangeEvents.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITypeChangeEvents);
 
     public void** lpVtbl;

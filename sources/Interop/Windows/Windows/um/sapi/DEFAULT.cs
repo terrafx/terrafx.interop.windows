@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DEFAULT
 {
+    /// <include file='DEFAULT.xml' path='doc/member[@name="DEFAULT.DEFAULT_WEIGHT"]/*' />
     [NativeTypeName("#define DEFAULT_WEIGHT ( 1 )")]
     public const int DEFAULT_WEIGHT = (1);
 }

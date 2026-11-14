@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPhotoCapturedEventArgs : IPhotoCapturedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IPhotoCapturedEventArgs.xml' path='doc/member[@name="IPhotoCapturedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPhotoCapturedEventArgs);
 
     public void** lpVtbl;

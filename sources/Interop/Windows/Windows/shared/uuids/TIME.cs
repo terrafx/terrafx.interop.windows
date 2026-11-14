@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class TIME
 {
+    /// <include file='TIME.xml' path='doc/member[@name="TIME.TIME_FORMAT_NONE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid TIME_FORMAT_NONE
     {
@@ -37,6 +38,7 @@ public static partial class TIME
         }
     }
 
+    /// <include file='TIME.xml' path='doc/member[@name="TIME.TIME_FORMAT_FRAME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid TIME_FORMAT_FRAME
     {
@@ -62,6 +64,7 @@ public static partial class TIME
         }
     }
 
+    /// <include file='TIME.xml' path='doc/member[@name="TIME.TIME_FORMAT_BYTE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid TIME_FORMAT_BYTE
     {
@@ -87,6 +90,7 @@ public static partial class TIME
         }
     }
 
+    /// <include file='TIME.xml' path='doc/member[@name="TIME.TIME_FORMAT_SAMPLE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid TIME_FORMAT_SAMPLE
     {
@@ -112,6 +116,7 @@ public static partial class TIME
         }
     }
 
+    /// <include file='TIME.xml' path='doc/member[@name="TIME.TIME_FORMAT_FIELD"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid TIME_FORMAT_FIELD
     {
@@ -137,6 +142,7 @@ public static partial class TIME
         }
     }
 
+    /// <include file='TIME.xml' path='doc/member[@name="TIME.TIME_FORMAT_MEDIA_TIME"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid TIME_FORMAT_MEDIA_TIME
     {

@@ -133,37 +133,48 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     public static extern BOOL NeedCurrentDirectoryForExePathW([NativeTypeName("LPCWSTR")] char* ExeName);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetEnvironmentStrings"]/*' />
     [NativeTypeName("#define SetEnvironmentStrings SetEnvironmentStringsW")]
     [SupportedOSPlatform("windows10.0.19043.0")]
     public static delegate*<char*, BOOL> SetEnvironmentStrings => &SetEnvironmentStringsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCommandLine"]/*' />
     [NativeTypeName("#define GetCommandLine GetCommandLineW")]
     public static delegate*<char*> GetCommandLine => &GetCommandLineW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnvironmentStrings"]/*' />
     [NativeTypeName("#define GetEnvironmentStrings GetEnvironmentStringsW")]
     public static delegate*<char*> GetEnvironmentStrings => &GetEnvironmentStringsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FreeEnvironmentStrings"]/*' />
     [NativeTypeName("#define FreeEnvironmentStrings FreeEnvironmentStringsW")]
     public static delegate*<char*, BOOL> FreeEnvironmentStrings => &FreeEnvironmentStringsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnvironmentVariable"]/*' />
     [NativeTypeName("#define GetEnvironmentVariable GetEnvironmentVariableW")]
     public static delegate*<char*, char*, uint, uint> GetEnvironmentVariable => &GetEnvironmentVariableW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetEnvironmentVariable"]/*' />
     [NativeTypeName("#define SetEnvironmentVariable SetEnvironmentVariableW")]
     public static delegate*<char*, char*, BOOL> SetEnvironmentVariable => &SetEnvironmentVariableW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExpandEnvironmentStrings"]/*' />
     [NativeTypeName("#define ExpandEnvironmentStrings ExpandEnvironmentStringsW")]
     public static delegate*<char*, char*, uint, uint> ExpandEnvironmentStrings => &ExpandEnvironmentStringsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetCurrentDirectory"]/*' />
     [NativeTypeName("#define SetCurrentDirectory SetCurrentDirectoryW")]
     public static delegate*<char*, BOOL> SetCurrentDirectory => &SetCurrentDirectoryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCurrentDirectory"]/*' />
     [NativeTypeName("#define GetCurrentDirectory GetCurrentDirectoryW")]
     public static delegate*<uint, char*, uint> GetCurrentDirectory => &GetCurrentDirectoryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SearchPath"]/*' />
     [NativeTypeName("#define SearchPath SearchPathW")]
     public static delegate*<char*, char*, char*, uint, char*, char**, uint> SearchPath => &SearchPathW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.NeedCurrentDirectoryForExePath"]/*' />
     [NativeTypeName("#define NeedCurrentDirectoryForExePath NeedCurrentDirectoryForExePathW")]
     public static delegate*<char*, BOOL> NeedCurrentDirectoryForExePath => &NeedCurrentDirectoryForExePathW;
 }

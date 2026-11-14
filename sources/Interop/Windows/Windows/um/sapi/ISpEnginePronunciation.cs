@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISpEnginePronunciation : ISpEnginePronunciation.Interface, INativeGuid
 {
+    /// <include file='ISpEnginePronunciation.xml' path='doc/member[@name="ISpEnginePronunciation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpEnginePronunciation);
 
     public void** lpVtbl;

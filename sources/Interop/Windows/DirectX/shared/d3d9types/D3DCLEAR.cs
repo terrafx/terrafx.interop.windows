@@ -7,12 +7,15 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DCLEAR
 {
+    /// <include file='D3DCLEAR.xml' path='doc/member[@name="D3DCLEAR.D3DCLEAR_TARGET"]/*' />
     [NativeTypeName("#define D3DCLEAR_TARGET 0x00000001l")]
     public const int D3DCLEAR_TARGET = 0x00000001;
 
+    /// <include file='D3DCLEAR.xml' path='doc/member[@name="D3DCLEAR.D3DCLEAR_ZBUFFER"]/*' />
     [NativeTypeName("#define D3DCLEAR_ZBUFFER 0x00000002l")]
     public const int D3DCLEAR_ZBUFFER = 0x00000002;
 
+    /// <include file='D3DCLEAR.xml' path='doc/member[@name="D3DCLEAR.D3DCLEAR_STENCIL"]/*' />
     [NativeTypeName("#define D3DCLEAR_STENCIL 0x00000004l")]
     public const int D3DCLEAR_STENCIL = 0x00000004;
 }

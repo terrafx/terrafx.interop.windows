@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfSpeechUIServer : ITfSpeechUIServer.Interface, INativeGuid
 {
+    /// <include file='ITfSpeechUIServer.xml' path='doc/member[@name="ITfSpeechUIServer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfSpeechUIServer);
 
     public void** lpVtbl;

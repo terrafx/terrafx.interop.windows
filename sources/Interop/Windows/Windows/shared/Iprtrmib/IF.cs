@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IF
 {
+    /// <include file='IF.xml' path='doc/member[@name="IF.IF_NUMBER"]/*' />
     [NativeTypeName("#define IF_NUMBER 0")]
     public const int IF_NUMBER = 0;
 
+    /// <include file='IF.xml' path='doc/member[@name="IF.IF_TABLE"]/*' />
     [NativeTypeName("#define IF_TABLE (IF_NUMBER          + 1)")]
     public const int IF_TABLE = (0 + 1);
 
+    /// <include file='IF.xml' path='doc/member[@name="IF.IF_ROW"]/*' />
     [NativeTypeName("#define IF_ROW (IF_TABLE           + 1)")]
     public const int IF_ROW = ((0 + 1) + 1);
 
+    /// <include file='IF.xml' path='doc/member[@name="IF.IF_STATUS"]/*' />
     [NativeTypeName("#define IF_STATUS (MCAST_GLOBAL       + 1)")]
     public const int IF_STATUS = (((((((((((((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IJapanesePhoneme : IJapanesePhoneme.Interface, INativeGuid
 {
+    /// <include file='IJapanesePhoneme.xml' path='doc/member[@name="IJapanesePhoneme.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IJapanesePhoneme);
 
     public void** lpVtbl;

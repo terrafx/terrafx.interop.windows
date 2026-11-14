@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFTrackedSample : IMFTrackedSample.Interface, INativeGuid
 {
+    /// <include file='IMFTrackedSample.xml' path='doc/member[@name="IMFTrackedSample.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFTrackedSample);
 
     public void** lpVtbl;

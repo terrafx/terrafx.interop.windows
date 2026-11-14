@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAppCaptureMetadataWriter : IAppCaptureMetadataWriter.Interface, INativeGuid
 {
+    /// <include file='IAppCaptureMetadataWriter.xml' path='doc/member[@name="IAppCaptureMetadataWriter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppCaptureMetadataWriter);
 
     public void** lpVtbl;

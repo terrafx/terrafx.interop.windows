@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct DispHTMLMSCSSKeyframesRule : DispHTMLMSCSSKeyframesRule.Interface, INativeGuid
 {
+    /// <include file='DispHTMLMSCSSKeyframesRule.xml' path='doc/member[@name="DispHTMLMSCSSKeyframesRule.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DispHTMLMSCSSKeyframesRule);
 
     public void** lpVtbl;

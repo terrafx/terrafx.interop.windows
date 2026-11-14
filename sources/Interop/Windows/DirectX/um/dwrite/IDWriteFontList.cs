@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDWriteFontList : IDWriteFontList.Interface, INativeGuid
 {
+    /// <include file='IDWriteFontList.xml' path='doc/member[@name="IDWriteFontList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDWriteFontList);
 
     public void** lpVtbl;

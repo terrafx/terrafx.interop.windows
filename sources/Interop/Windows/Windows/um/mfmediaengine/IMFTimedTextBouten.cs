@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFTimedTextBouten : IMFTimedTextBouten.Interface, INativeGuid
 {
+    /// <include file='IMFTimedTextBouten.xml' path='doc/member[@name="IMFTimedTextBouten.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFTimedTextBouten);
 
     public void** lpVtbl;

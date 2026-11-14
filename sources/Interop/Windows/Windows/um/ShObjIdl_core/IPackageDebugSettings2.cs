@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IPackageDebugSettings")]
 public unsafe partial struct IPackageDebugSettings2 : IPackageDebugSettings2.Interface, INativeGuid
 {
+    /// <include file='IPackageDebugSettings2.xml' path='doc/member[@name="IPackageDebugSettings2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPackageDebugSettings2);
 
     public void** lpVtbl;

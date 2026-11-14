@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IConfigInterleaving : IConfigInterleaving.Interface, INativeGuid
 {
+    /// <include file='IConfigInterleaving.xml' path='doc/member[@name="IConfigInterleaving.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IConfigInterleaving);
 
     public void** lpVtbl;

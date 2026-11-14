@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMediaPlayerEffects2 : IMediaPlayerEffects2.Interface, INativeGuid
 {
+    /// <include file='IMediaPlayerEffects2.xml' path='doc/member[@name="IMediaPlayerEffects2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMediaPlayerEffects2);
 
     public void** lpVtbl;

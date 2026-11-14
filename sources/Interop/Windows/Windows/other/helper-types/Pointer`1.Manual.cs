@@ -36,19 +36,19 @@ public readonly unsafe partial struct Pointer<T> : IComparable, IComparable<Poin
 
     public static explicit operator Pointer<T>(byte value) => new Pointer<T>(unchecked((T*)(value)));
 
-    public static explicit operator byte(Pointer<T> value) => (byte)(value.Value);
+    public static explicit operator byte(Pointer<T> value) => unchecked((byte)(value.Value));
 
     public static explicit operator Pointer<T>(short value) => new Pointer<T>(unchecked((T*)(value)));
 
-    public static explicit operator short(Pointer<T> value) => (short)(value.Value);
+    public static explicit operator short(Pointer<T> value) => unchecked((short)(value.Value));
 
     public static explicit operator Pointer<T>(int value) => new Pointer<T>(unchecked((T*)(value)));
 
-    public static explicit operator int(Pointer<T> value) => (int)(value.Value);
+    public static explicit operator int(Pointer<T> value) => unchecked((int)(value.Value));
 
     public static explicit operator Pointer<T>(long value) => new Pointer<T>(unchecked((T*)(value)));
 
-    public static explicit operator long(Pointer<T> value) => (long)(value.Value);
+    public static explicit operator long(Pointer<T> value) => unchecked((long)(value.Value));
 
     public static explicit operator Pointer<T>(nint value) => new Pointer<T>(unchecked((T*)(value)));
 
@@ -56,19 +56,19 @@ public readonly unsafe partial struct Pointer<T> : IComparable, IComparable<Poin
 
     public static explicit operator Pointer<T>(sbyte value) => new Pointer<T>(unchecked((T*)(value)));
 
-    public static explicit operator sbyte(Pointer<T> value) => (sbyte)(value.Value);
+    public static explicit operator sbyte(Pointer<T> value) => unchecked((sbyte)(value.Value));
 
     public static explicit operator Pointer<T>(ushort value) => new Pointer<T>(unchecked((T*)(value)));
 
-    public static explicit operator ushort(Pointer<T> value) => (ushort)(value.Value);
+    public static explicit operator ushort(Pointer<T> value) => unchecked((ushort)(value.Value));
 
     public static explicit operator Pointer<T>(uint value) => new Pointer<T>(unchecked((T*)(value)));
 
-    public static explicit operator uint(Pointer<T> value) => (uint)(value.Value);
+    public static explicit operator uint(Pointer<T> value) => unchecked((uint)(value.Value));
 
     public static explicit operator Pointer<T>(ulong value) => new Pointer<T>(unchecked((T*)(value)));
 
-    public static explicit operator ulong(Pointer<T> value) => (ulong)(value.Value);
+    public static explicit operator ulong(Pointer<T> value) => unchecked((ulong)(value.Value));
 
     public static explicit operator Pointer<T>(nuint value) => new Pointer<T>(unchecked((T*)(value)));
 

@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public partial struct COLOR
 {
+    /// <include file='COLOR.xml' path='doc/member[@name="COLOR.COLOR_ADJ_MIN"]/*' />
     [NativeTypeName("#define COLOR_ADJ_MIN (SHORT)-100")]
     public const short COLOR_ADJ_MIN = (short)(-100);
 
+    /// <include file='COLOR.xml' path='doc/member[@name="COLOR.COLOR_ADJ_MAX"]/*' />
     [NativeTypeName("#define COLOR_ADJ_MAX (SHORT)100")]
     public const short COLOR_ADJ_MAX = (short)(100);
 }

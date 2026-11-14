@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISystemMediaTransportControlsButtonPressedEventArgs : ISystemMediaTransportControlsButtonPressedEventArgs.Interface, INativeGuid
 {
+    /// <include file='ISystemMediaTransportControlsButtonPressedEventArgs.xml' path='doc/member[@name="ISystemMediaTransportControlsButtonPressedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISystemMediaTransportControlsButtonPressedEventArgs);
 
     public void** lpVtbl;

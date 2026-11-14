@@ -39,9 +39,11 @@ public static unsafe partial class Windows
     [return: NativeTypeName("NTSTATUS")]
     public static extern int LsaLookupFreeMemory([NativeTypeName("PVOID")] void* Buffer);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOOKUP_VIEW_LOCAL_INFORMATION"]/*' />
     [NativeTypeName("#define LOOKUP_VIEW_LOCAL_INFORMATION 0x00000001")]
     public const int LOOKUP_VIEW_LOCAL_INFORMATION = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LOOKUP_TRANSLATE_NAMES"]/*' />
     [NativeTypeName("#define LOOKUP_TRANSLATE_NAMES 0x00000800")]
     public const int LOOKUP_TRANSLATE_NAMES = 0x00000800;
 }

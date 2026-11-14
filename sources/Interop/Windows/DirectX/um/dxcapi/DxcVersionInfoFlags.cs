@@ -7,12 +7,15 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DxcVersionInfoFlags
 {
+    /// <include file='DxcVersionInfoFlags.xml' path='doc/member[@name="DxcVersionInfoFlags.DxcVersionInfoFlags_None"]/*' />
     [NativeTypeName("const UINT32")]
     public const uint DxcVersionInfoFlags_None = 0;
 
+    /// <include file='DxcVersionInfoFlags.xml' path='doc/member[@name="DxcVersionInfoFlags.DxcVersionInfoFlags_Debug"]/*' />
     [NativeTypeName("const UINT32")]
     public const uint DxcVersionInfoFlags_Debug = 1;
 
+    /// <include file='DxcVersionInfoFlags.xml' path='doc/member[@name="DxcVersionInfoFlags.DxcVersionInfoFlags_Internal"]/*' />
     [NativeTypeName("const UINT32")]
     public const uint DxcVersionInfoFlags_Internal = 2;
 }

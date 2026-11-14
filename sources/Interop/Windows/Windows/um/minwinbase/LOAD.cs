@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class LOAD
 {
+    /// <include file='LOAD.xml' path='doc/member[@name="LOAD.LOAD_DLL_DEBUG_EVENT"]/*' />
     [NativeTypeName("#define LOAD_DLL_DEBUG_EVENT 6")]
     public const int LOAD_DLL_DEBUG_EVENT = 6;
 }

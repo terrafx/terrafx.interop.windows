@@ -63,24 +63,31 @@ public static unsafe partial class Windows
     [DllImport("davclnt", ExactSpelling = true)]
     public static extern void DavUnregisterAuthCallback([NativeTypeName("DWORD")] uint hCallback);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DAV_AUTHN_SCHEME_BASIC"]/*' />
     [NativeTypeName("#define DAV_AUTHN_SCHEME_BASIC 0x00000001")]
     public const int DAV_AUTHN_SCHEME_BASIC = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DAV_AUTHN_SCHEME_NTLM"]/*' />
     [NativeTypeName("#define DAV_AUTHN_SCHEME_NTLM 0x00000002")]
     public const int DAV_AUTHN_SCHEME_NTLM = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DAV_AUTHN_SCHEME_PASSPORT"]/*' />
     [NativeTypeName("#define DAV_AUTHN_SCHEME_PASSPORT 0x00000004")]
     public const int DAV_AUTHN_SCHEME_PASSPORT = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DAV_AUTHN_SCHEME_DIGEST"]/*' />
     [NativeTypeName("#define DAV_AUTHN_SCHEME_DIGEST 0x00000008")]
     public const int DAV_AUTHN_SCHEME_DIGEST = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DAV_AUTHN_SCHEME_NEGOTIATE"]/*' />
     [NativeTypeName("#define DAV_AUTHN_SCHEME_NEGOTIATE 0x00000010")]
     public const int DAV_AUTHN_SCHEME_NEGOTIATE = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DAV_AUTHN_SCHEME_CERT"]/*' />
     [NativeTypeName("#define DAV_AUTHN_SCHEME_CERT 0x00010000")]
     public const int DAV_AUTHN_SCHEME_CERT = 0x00010000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DAV_AUTHN_SCHEME_FBA"]/*' />
     [NativeTypeName("#define DAV_AUTHN_SCHEME_FBA 0x00100000")]
     public const int DAV_AUTHN_SCHEME_FBA = 0x00100000;
 }

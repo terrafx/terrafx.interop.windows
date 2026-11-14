@@ -15,6 +15,7 @@ namespace TerraFX.Interop.DirectX;
 [Guid("EB62D63D-93DD-4318-8AE8-C6F83AD371B8")]
 public unsafe partial struct ID3D11ShaderReflectionConstantBuffer : ID3D11ShaderReflectionConstantBuffer.Interface, INativeGuid
 {
+    /// <include file='ID3D11ShaderReflectionConstantBuffer.xml' path='doc/member[@name="ID3D11ShaderReflectionConstantBuffer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID3D11ShaderReflectionConstantBuffer);
 
     public void** lpVtbl;

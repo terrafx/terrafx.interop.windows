@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IPrintDocumentPackageTarget2 : IPrintDocumentPackageTarget2.Interface, INativeGuid
 {
+    /// <include file='IPrintDocumentPackageTarget2.xml' path='doc/member[@name="IPrintDocumentPackageTarget2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPrintDocumentPackageTarget2);
 
     public void** lpVtbl;

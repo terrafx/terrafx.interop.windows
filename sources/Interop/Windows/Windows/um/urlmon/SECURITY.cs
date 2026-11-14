@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SECURITY
 {
+    /// <include file='SECURITY.xml' path='doc/member[@name="SECURITY.SECURITY_IE_STATE_GREEN"]/*' />
     [NativeTypeName("#define SECURITY_IE_STATE_GREEN 0x00000000")]
     public const int SECURITY_IE_STATE_GREEN = 0x00000000;
 
+    /// <include file='SECURITY.xml' path='doc/member[@name="SECURITY.SECURITY_IE_STATE_RED"]/*' />
     [NativeTypeName("#define SECURITY_IE_STATE_RED 0x00000001")]
     public const int SECURITY_IE_STATE_RED = 0x00000001;
 }

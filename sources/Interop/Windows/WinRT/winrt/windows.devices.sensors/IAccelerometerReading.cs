@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAccelerometerReading : IAccelerometerReading.Interface, INativeGuid
 {
+    /// <include file='IAccelerometerReading.xml' path='doc/member[@name="IAccelerometerReading.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAccelerometerReading);
 
     public void** lpVtbl;

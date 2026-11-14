@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IAMCollection"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IAMCollection
     {
@@ -37,6 +38,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IMediaControl"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IMediaControl
     {
@@ -62,6 +64,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IMediaEvent"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IMediaEvent
     {
@@ -87,6 +90,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IMediaEventEx"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IMediaEventEx
     {
@@ -112,6 +116,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IMediaPosition"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IMediaPosition
     {
@@ -137,6 +142,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IBasicAudio"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IBasicAudio
     {
@@ -162,6 +168,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IVideoWindow"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IVideoWindow
     {
@@ -187,6 +194,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IBasicVideo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IBasicVideo
     {
@@ -212,6 +220,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IBasicVideo2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IBasicVideo2
     {
@@ -237,6 +246,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IDeferredCommand"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IDeferredCommand
     {
@@ -262,6 +272,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IQueueCommand"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IQueueCommand
     {
@@ -287,6 +298,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IFilterInfo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IFilterInfo
     {
@@ -312,6 +324,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IRegFilterInfo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IRegFilterInfo
     {
@@ -337,6 +350,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IMediaTypeInfo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IMediaTypeInfo
     {
@@ -362,6 +376,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IPinInfo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IPinInfo
     {
@@ -387,6 +402,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IAMStats"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_IAMStats
     {

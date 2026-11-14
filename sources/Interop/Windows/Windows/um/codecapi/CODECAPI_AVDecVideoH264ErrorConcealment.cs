@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("ECECACE8-3436-462C-9294-CD7BACD758A9")]
 public unsafe partial struct CODECAPI_AVDecVideoH264ErrorConcealment : INativeGuid
 {
+    /// <include file='CODECAPI_AVDecVideoH264ErrorConcealment.xml' path='doc/member[@name="CODECAPI_AVDecVideoH264ErrorConcealment.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVDecVideoH264ErrorConcealment);
 }

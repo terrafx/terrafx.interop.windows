@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IConnectivityInterval : IConnectivityInterval.Interface, INativeGuid
 {
+    /// <include file='IConnectivityInterval.xml' path='doc/member[@name="IConnectivityInterval.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IConnectivityInterval);
 
     public void** lpVtbl;

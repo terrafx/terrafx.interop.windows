@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IFileIsInUse : IFileIsInUse.Interface, INativeGuid
 {
+    /// <include file='IFileIsInUse.xml' path='doc/member[@name="IFileIsInUse.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFileIsInUse);
 
     public void** lpVtbl;

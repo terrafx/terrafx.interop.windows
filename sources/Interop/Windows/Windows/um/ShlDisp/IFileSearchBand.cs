@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IFileSearchBand : IFileSearchBand.Interface, INativeGuid
 {
+    /// <include file='IFileSearchBand.xml' path='doc/member[@name="IFileSearchBand.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFileSearchBand);
 
     public void** lpVtbl;

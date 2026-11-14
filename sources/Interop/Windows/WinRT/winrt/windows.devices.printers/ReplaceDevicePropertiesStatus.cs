@@ -8,4 +8,12 @@ namespace TerraFX.Interop.WinRT;
 /// <include file='ReplaceDevicePropertiesStatus.xml' path='doc/member[@name="ReplaceDevicePropertiesStatus"]/*' />
 public enum ReplaceDevicePropertiesStatus
 {
+    /// <include file='ReplaceDevicePropertiesStatus.xml' path='doc/member[@name="ReplaceDevicePropertiesStatus.ReplaceDevicePropertiesStatus_Succeeded"]/*' />
+    ReplaceDevicePropertiesStatus_Succeeded = 0,
+
+    /// <include file='ReplaceDevicePropertiesStatus.xml' path='doc/member[@name="ReplaceDevicePropertiesStatus.ReplaceDevicePropertiesStatus_AccessDenied"]/*' />
+    ReplaceDevicePropertiesStatus_AccessDenied = 1,
+
+    /// <include file='ReplaceDevicePropertiesStatus.xml' path='doc/member[@name="ReplaceDevicePropertiesStatus.ReplaceDevicePropertiesStatus_OtherFailure"]/*' />
+    ReplaceDevicePropertiesStatus_OtherFailure = 2,
 }

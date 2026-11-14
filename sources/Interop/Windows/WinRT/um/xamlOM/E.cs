@@ -9,6 +9,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class E
 {
+    /// <include file='E.xml' path='doc/member[@name="E.E_UNKNOWNTYPE"]/*' />
     [NativeTypeName("#define E_UNKNOWNTYPE MAKE_HRESULT(SEVERITY_ERROR, FACILITY_XAML, 40L)")]
     public const int E_UNKNOWNTYPE = unchecked((int)(((uint)(1) << 31) | ((uint)(43) << 16) | ((uint)(40))));
 }

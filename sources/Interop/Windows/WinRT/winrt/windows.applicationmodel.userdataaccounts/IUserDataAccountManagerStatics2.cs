@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IUserDataAccountManagerStatics2 : IUserDataAccountManagerStatics2.Interface, INativeGuid
 {
+    /// <include file='IUserDataAccountManagerStatics2.xml' path='doc/member[@name="IUserDataAccountManagerStatics2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUserDataAccountManagerStatics2);
 
     public void** lpVtbl;

@@ -20,6 +20,7 @@ public static unsafe partial class WinRT
     [SupportedOSPlatform("windows6.3")]
     public static extern HRESULT PdfCreateRenderer(IDXGIDevice* pDevice, IPdfRendererNative** ppRenderer);
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.sc_PdfRenderParamsDefaultSrcRect"]/*' />
     [NativeTypeName("const D2D_RECT_F")]
     public static ref readonly D2D_RECT_F sc_PdfRenderParamsDefaultSrcRect
     {
@@ -38,6 +39,7 @@ public static unsafe partial class WinRT
         }
     }
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.sc_PdfRenderParamsDefaultBkColor"]/*' />
     [NativeTypeName("const D2D_COLOR_F")]
     public static ref readonly DXGI_RGBA sc_PdfRenderParamsDefaultBkColor
     {

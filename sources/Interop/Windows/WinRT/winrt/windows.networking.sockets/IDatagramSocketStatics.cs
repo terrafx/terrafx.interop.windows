@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IDatagramSocketStatics : IDatagramSocketStatics.Interface, INativeGuid
 {
+    /// <include file='IDatagramSocketStatics.xml' path='doc/member[@name="IDatagramSocketStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDatagramSocketStatics);
 
     public void** lpVtbl;

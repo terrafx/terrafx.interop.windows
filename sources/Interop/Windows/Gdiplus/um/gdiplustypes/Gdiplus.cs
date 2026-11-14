@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Gdiplus;
 
 public static partial class Gdiplus
 {
+    /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.REAL_EPSILON"]/*' />
     [NativeTypeName("#define REAL_EPSILON 1.192092896e-07F")]
     public const float REAL_EPSILON = 1.192092896e-07F;
 }

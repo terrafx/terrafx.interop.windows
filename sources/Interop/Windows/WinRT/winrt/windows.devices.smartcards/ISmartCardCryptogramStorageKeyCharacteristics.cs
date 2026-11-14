@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISmartCardCryptogramStorageKeyCharacteristics : ISmartCardCryptogramStorageKeyCharacteristics.Interface, INativeGuid
 {
+    /// <include file='ISmartCardCryptogramStorageKeyCharacteristics.xml' path='doc/member[@name="ISmartCardCryptogramStorageKeyCharacteristics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISmartCardCryptogramStorageKeyCharacteristics);
 
     public void** lpVtbl;

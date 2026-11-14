@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMessageFilter : IMessageFilter.Interface, INativeGuid
 {
+    /// <include file='IMessageFilter.xml' path='doc/member[@name="IMessageFilter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMessageFilter);
 
     public void** lpVtbl;

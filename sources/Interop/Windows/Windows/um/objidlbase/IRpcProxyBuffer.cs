@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IRpcProxyBuffer : IRpcProxyBuffer.Interface, INativeGuid
 {
+    /// <include file='IRpcProxyBuffer.xml' path='doc/member[@name="IRpcProxyBuffer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRpcProxyBuffer);
 
     public void** lpVtbl;

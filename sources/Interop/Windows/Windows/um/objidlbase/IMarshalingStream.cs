@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMarshalingStream : IMarshalingStream.Interface, INativeGuid
 {
+    /// <include file='IMarshalingStream.xml' path='doc/member[@name="IMarshalingStream.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMarshalingStream);
 
     public void** lpVtbl;

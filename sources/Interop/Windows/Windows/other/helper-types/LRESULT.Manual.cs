@@ -10,7 +10,7 @@ public unsafe partial struct LRESULT
 
     public static explicit operator LRESULT(BOOL value) => new LRESULT(value.Value);
 
-    public static explicit operator BOOL(LRESULT value) => new BOOL((int)(value.Value));
+    public static explicit operator BOOL(LRESULT value) => new BOOL(unchecked((int)(value.Value)));
 
     public static explicit operator LRESULT(HANDLE value) => new LRESULT((nint)(value.Value));
 
@@ -82,5 +82,5 @@ public unsafe partial struct LRESULT
 
     public static explicit operator LRESULT(LPARAM value) => new LRESULT(value.Value);
 
-    public static explicit operator LRESULT(WPARAM value) => new LRESULT((nint)(value.Value));
+    public static explicit operator LRESULT(WPARAM value) => new LRESULT(unchecked((nint)(value.Value)));
 }

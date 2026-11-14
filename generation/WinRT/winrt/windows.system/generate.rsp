@@ -1,5 +1,7 @@
 @../../../settings.rsp
 @../../../remap.rsp
+--remap
+UserAgeRange=IUserAgeRange
 --exclude
 ABI::Windows::System::IID_IAppActivationResult
 ABI::Windows::System::IID_IAppDiagnosticInfo

@@ -7,15 +7,19 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DIPH
 {
+    /// <include file='DIPH.xml' path='doc/member[@name="DIPH.DIPH_DEVICE"]/*' />
     [NativeTypeName("#define DIPH_DEVICE 0")]
     public const int DIPH_DEVICE = 0;
 
+    /// <include file='DIPH.xml' path='doc/member[@name="DIPH.DIPH_BYOFFSET"]/*' />
     [NativeTypeName("#define DIPH_BYOFFSET 1")]
     public const int DIPH_BYOFFSET = 1;
 
+    /// <include file='DIPH.xml' path='doc/member[@name="DIPH.DIPH_BYID"]/*' />
     [NativeTypeName("#define DIPH_BYID 2")]
     public const int DIPH_BYID = 2;
 
+    /// <include file='DIPH.xml' path='doc/member[@name="DIPH.DIPH_BYUSAGE"]/*' />
     [NativeTypeName("#define DIPH_BYUSAGE 3")]
     public const int DIPH_BYUSAGE = 3;
 }

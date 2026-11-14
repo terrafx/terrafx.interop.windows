@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptimizations.Interface, INativeGuid
 {
+    /// <include file='IDMOVideoOutputOptimizations.xml' path='doc/member[@name="IDMOVideoOutputOptimizations.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDMOVideoOutputOptimizations);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IContentPrefetchTrigger : IContentPrefetchTrigger.Interface, INativeGuid
 {
+    /// <include file='IContentPrefetchTrigger.xml' path='doc/member[@name="IContentPrefetchTrigger.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IContentPrefetchTrigger);
 
     public void** lpVtbl;

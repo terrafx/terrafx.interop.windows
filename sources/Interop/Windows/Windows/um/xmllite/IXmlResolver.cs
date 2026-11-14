@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IXmlResolver : IXmlResolver.Interface, INativeGuid
 {
+    /// <include file='IXmlResolver.xml' path='doc/member[@name="IXmlResolver.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IXmlResolver);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface, INativeGuid
 {
+    /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDeviceTopology);
 
     public void** lpVtbl;

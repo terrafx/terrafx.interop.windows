@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISpeechRecognizerUIOptions : ISpeechRecognizerUIOptions.Interface, INativeGuid
 {
+    /// <include file='ISpeechRecognizerUIOptions.xml' path='doc/member[@name="ISpeechRecognizerUIOptions.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpeechRecognizerUIOptions);
 
     public void** lpVtbl;

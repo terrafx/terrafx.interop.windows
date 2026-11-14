@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ITimedMetadataEncodingPropertiesStatics : ITimedMetadataEncodingPropertiesStatics.Interface, INativeGuid
 {
+    /// <include file='ITimedMetadataEncodingPropertiesStatics.xml' path='doc/member[@name="ITimedMetadataEncodingPropertiesStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITimedMetadataEncodingPropertiesStatics);
 
     public void** lpVtbl;

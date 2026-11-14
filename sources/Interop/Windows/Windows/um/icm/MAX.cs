@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_COLOR_CHANNELS"]/*' />
     [NativeTypeName("#define MAX_COLOR_CHANNELS 8")]
     public const int MAX_COLOR_CHANNELS = 8;
 }

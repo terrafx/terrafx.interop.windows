@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISingleSelectMediaTrackList : ISingleSelectMediaTrackList.Interface, INativeGuid
 {
+    /// <include file='ISingleSelectMediaTrackList.xml' path='doc/member[@name="ISingleSelectMediaTrackList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISingleSelectMediaTrackList);
 
     public void** lpVtbl;

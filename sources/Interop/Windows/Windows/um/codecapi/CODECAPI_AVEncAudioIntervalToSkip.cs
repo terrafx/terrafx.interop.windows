@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("88C15F94-C38C-4796-A9E8-96E967983F26")]
 public unsafe partial struct CODECAPI_AVEncAudioIntervalToSkip : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncAudioIntervalToSkip.xml' path='doc/member[@name="CODECAPI_AVEncAudioIntervalToSkip.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncAudioIntervalToSkip);
 }

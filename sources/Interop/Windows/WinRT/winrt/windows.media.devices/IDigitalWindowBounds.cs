@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IDigitalWindowBounds : IDigitalWindowBounds.Interface, INativeGuid
 {
+    /// <include file='IDigitalWindowBounds.xml' path='doc/member[@name="IDigitalWindowBounds.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDigitalWindowBounds);
 
     public void** lpVtbl;

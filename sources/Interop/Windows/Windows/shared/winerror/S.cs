@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class S
 {
+    /// <include file='S.xml' path='doc/member[@name="S.S_OK"]/*' />
     [NativeTypeName("#define S_OK ((HRESULT)0L)")]
     public const int S_OK = ((int)(0));
 
+    /// <include file='S.xml' path='doc/member[@name="S.S_FALSE"]/*' />
     [NativeTypeName("#define S_FALSE ((HRESULT)1L)")]
     public const int S_FALSE = ((int)(1));
 
+    /// <include file='S.xml' path='doc/member[@name="S.S_STORE_LAUNCHED_FOR_REMEDIATION"]/*' />
     [NativeTypeName("#define S_STORE_LAUNCHED_FOR_REMEDIATION _HRESULT_TYPEDEF_(0x00270258L)")]
     public const int S_STORE_LAUNCHED_FOR_REMEDIATION = ((int)(0x00270258));
 
+    /// <include file='S.xml' path='doc/member[@name="S.S_APPLICATION_ACTIVATION_ERROR_HANDLED_BY_DIALOG"]/*' />
     [NativeTypeName("#define S_APPLICATION_ACTIVATION_ERROR_HANDLED_BY_DIALOG _HRESULT_TYPEDEF_(0x00270259L)")]
     public const int S_APPLICATION_ACTIVATION_ERROR_HANDLED_BY_DIALOG = ((int)(0x00270259));
 }

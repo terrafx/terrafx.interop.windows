@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAutoCompleteDropDown : IAutoCompleteDropDown.Interface, INativeGuid
 {
+    /// <include file='IAutoCompleteDropDown.xml' path='doc/member[@name="IAutoCompleteDropDown.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAutoCompleteDropDown);
 
     public void** lpVtbl;

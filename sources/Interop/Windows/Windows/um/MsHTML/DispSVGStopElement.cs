@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct DispSVGStopElement : DispSVGStopElement.Interface, INativeGuid
 {
+    /// <include file='DispSVGStopElement.xml' path='doc/member[@name="DispSVGStopElement.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DispSVGStopElement);
 
     public void** lpVtbl;

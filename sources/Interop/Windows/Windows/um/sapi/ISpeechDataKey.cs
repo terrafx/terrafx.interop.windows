@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct ISpeechDataKey : ISpeechDataKey.Interface, INativeGuid
 {
+    /// <include file='ISpeechDataKey.xml' path='doc/member[@name="ISpeechDataKey.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpeechDataKey);
 
     public void** lpVtbl;

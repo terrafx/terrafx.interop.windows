@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIDL_ANYSIZE_ARRAY"]/*' />
     [NativeTypeName("#define MIDL_ANYSIZE_ARRAY ANYSIZE_ARRAY")]
     public const int MIDL_ANYSIZE_ARRAY = 1;
 }

@@ -7,6 +7,8 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class BMICON
 {
+    /// <include file='BMICON.xml' path='doc/member[@name="BMICON.BMICON_LARGE"]/*' />
     public const int BMICON_LARGE = 0;
+    /// <include file='BMICON.xml' path='doc/member[@name="BMICON.BMICON_SMALL"]/*' />
     public const int BMICON_SMALL = 1;
 }

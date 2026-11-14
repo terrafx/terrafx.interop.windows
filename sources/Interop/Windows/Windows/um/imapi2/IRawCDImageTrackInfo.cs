@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IRawCDImageTrackInfo : IRawCDImageTrackInfo.Interface, INativeGuid
 {
+    /// <include file='IRawCDImageTrackInfo.xml' path='doc/member[@name="IRawCDImageTrackInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRawCDImageTrackInfo);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IShellMenuCallback : IShellMenuCallback.Interface, INativeGuid
 {
+    /// <include file='IShellMenuCallback.xml' path='doc/member[@name="IShellMenuCallback.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IShellMenuCallback);
 
     public void** lpVtbl;

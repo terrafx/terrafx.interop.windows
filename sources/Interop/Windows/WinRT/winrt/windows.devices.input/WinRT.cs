@@ -7,108 +7,143 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IKeyboardCapabilities"]/*' />
     [NativeTypeName("const WCHAR[44]")]
     public const string InterfaceName_Windows_Devices_Input_IKeyboardCapabilities = "Windows.Devices.Input.IKeyboardCapabilities";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IMouseCapabilities"]/*' />
     [NativeTypeName("const WCHAR[41]")]
     public const string InterfaceName_Windows_Devices_Input_IMouseCapabilities = "Windows.Devices.Input.IMouseCapabilities";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IMouseDevice"]/*' />
     [NativeTypeName("const WCHAR[35]")]
     public const string InterfaceName_Windows_Devices_Input_IMouseDevice = "Windows.Devices.Input.IMouseDevice";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IMouseDeviceStatics"]/*' />
     [NativeTypeName("const WCHAR[42]")]
     public const string InterfaceName_Windows_Devices_Input_IMouseDeviceStatics = "Windows.Devices.Input.IMouseDeviceStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IMouseEventArgs"]/*' />
     [NativeTypeName("const WCHAR[38]")]
     public const string InterfaceName_Windows_Devices_Input_IMouseEventArgs = "Windows.Devices.Input.IMouseEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IPenButtonListener"]/*' />
     [NativeTypeName("const WCHAR[41]")]
     public const string InterfaceName_Windows_Devices_Input_IPenButtonListener = "Windows.Devices.Input.IPenButtonListener";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IPenButtonListenerStatics"]/*' />
     [NativeTypeName("const WCHAR[48]")]
     public const string InterfaceName_Windows_Devices_Input_IPenButtonListenerStatics = "Windows.Devices.Input.IPenButtonListenerStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IPenDevice"]/*' />
     [NativeTypeName("const WCHAR[33]")]
     public const string InterfaceName_Windows_Devices_Input_IPenDevice = "Windows.Devices.Input.IPenDevice";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IPenDevice2"]/*' />
     [NativeTypeName("const WCHAR[34]")]
     public const string InterfaceName_Windows_Devices_Input_IPenDevice2 = "Windows.Devices.Input.IPenDevice2";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IPenDeviceStatics"]/*' />
     [NativeTypeName("const WCHAR[40]")]
     public const string InterfaceName_Windows_Devices_Input_IPenDeviceStatics = "Windows.Devices.Input.IPenDeviceStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IPenDockListener"]/*' />
     [NativeTypeName("const WCHAR[39]")]
     public const string InterfaceName_Windows_Devices_Input_IPenDockListener = "Windows.Devices.Input.IPenDockListener";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IPenDockListenerStatics"]/*' />
     [NativeTypeName("const WCHAR[46]")]
     public const string InterfaceName_Windows_Devices_Input_IPenDockListenerStatics = "Windows.Devices.Input.IPenDockListenerStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IPenDockedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[42]")]
     public const string InterfaceName_Windows_Devices_Input_IPenDockedEventArgs = "Windows.Devices.Input.IPenDockedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IPenTailButtonClickedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[53]")]
     public const string InterfaceName_Windows_Devices_Input_IPenTailButtonClickedEventArgs = "Windows.Devices.Input.IPenTailButtonClickedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IPenTailButtonDoubleClickedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[59]")]
     public const string InterfaceName_Windows_Devices_Input_IPenTailButtonDoubleClickedEventArgs = "Windows.Devices.Input.IPenTailButtonDoubleClickedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IPenTailButtonLongPressedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[57]")]
     public const string InterfaceName_Windows_Devices_Input_IPenTailButtonLongPressedEventArgs = "Windows.Devices.Input.IPenTailButtonLongPressedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IPenUndockedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[44]")]
     public const string InterfaceName_Windows_Devices_Input_IPenUndockedEventArgs = "Windows.Devices.Input.IPenUndockedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IPointerDevice"]/*' />
     [NativeTypeName("const WCHAR[37]")]
     public const string InterfaceName_Windows_Devices_Input_IPointerDevice = "Windows.Devices.Input.IPointerDevice";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IPointerDevice2"]/*' />
     [NativeTypeName("const WCHAR[38]")]
     public const string InterfaceName_Windows_Devices_Input_IPointerDevice2 = "Windows.Devices.Input.IPointerDevice2";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_IPointerDeviceStatics"]/*' />
     [NativeTypeName("const WCHAR[44]")]
     public const string InterfaceName_Windows_Devices_Input_IPointerDeviceStatics = "Windows.Devices.Input.IPointerDeviceStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Input_ITouchCapabilities"]/*' />
     [NativeTypeName("const WCHAR[41]")]
     public const string InterfaceName_Windows_Devices_Input_ITouchCapabilities = "Windows.Devices.Input.ITouchCapabilities";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Input_KeyboardCapabilities"]/*' />
     [NativeTypeName("const WCHAR[43]")]
     public const string RuntimeClass_Windows_Devices_Input_KeyboardCapabilities = "Windows.Devices.Input.KeyboardCapabilities";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Input_MouseCapabilities"]/*' />
     [NativeTypeName("const WCHAR[40]")]
     public const string RuntimeClass_Windows_Devices_Input_MouseCapabilities = "Windows.Devices.Input.MouseCapabilities";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Input_MouseDevice"]/*' />
     [NativeTypeName("const WCHAR[34]")]
     public const string RuntimeClass_Windows_Devices_Input_MouseDevice = "Windows.Devices.Input.MouseDevice";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Input_MouseEventArgs"]/*' />
     [NativeTypeName("const WCHAR[37]")]
     public const string RuntimeClass_Windows_Devices_Input_MouseEventArgs = "Windows.Devices.Input.MouseEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Input_PenButtonListener"]/*' />
     [NativeTypeName("const WCHAR[40]")]
     public const string RuntimeClass_Windows_Devices_Input_PenButtonListener = "Windows.Devices.Input.PenButtonListener";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Input_PenDevice"]/*' />
     [NativeTypeName("const WCHAR[32]")]
     public const string RuntimeClass_Windows_Devices_Input_PenDevice = "Windows.Devices.Input.PenDevice";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Input_PenDockListener"]/*' />
     [NativeTypeName("const WCHAR[38]")]
     public const string RuntimeClass_Windows_Devices_Input_PenDockListener = "Windows.Devices.Input.PenDockListener";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Input_PenDockedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[41]")]
     public const string RuntimeClass_Windows_Devices_Input_PenDockedEventArgs = "Windows.Devices.Input.PenDockedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Input_PenTailButtonClickedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[52]")]
     public const string RuntimeClass_Windows_Devices_Input_PenTailButtonClickedEventArgs = "Windows.Devices.Input.PenTailButtonClickedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Input_PenTailButtonDoubleClickedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[58]")]
     public const string RuntimeClass_Windows_Devices_Input_PenTailButtonDoubleClickedEventArgs = "Windows.Devices.Input.PenTailButtonDoubleClickedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Input_PenTailButtonLongPressedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[56]")]
     public const string RuntimeClass_Windows_Devices_Input_PenTailButtonLongPressedEventArgs = "Windows.Devices.Input.PenTailButtonLongPressedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Input_PenUndockedEventArgs"]/*' />
     [NativeTypeName("const WCHAR[43]")]
     public const string RuntimeClass_Windows_Devices_Input_PenUndockedEventArgs = "Windows.Devices.Input.PenUndockedEventArgs";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Input_PointerDevice"]/*' />
     [NativeTypeName("const WCHAR[36]")]
     public const string RuntimeClass_Windows_Devices_Input_PointerDevice = "Windows.Devices.Input.PointerDevice";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Input_TouchCapabilities"]/*' />
     [NativeTypeName("const WCHAR[40]")]
     public const string RuntimeClass_Windows_Devices_Input_TouchCapabilities = "Windows.Devices.Input.TouchCapabilities";
 }

@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("C63382BE-7933-48D0-9AC8-85FB46BE2FDD")]
 public unsafe partial struct DefFolderMenu : INativeGuid
 {
+    /// <include file='DefFolderMenu.xml' path='doc/member[@name="DefFolderMenu.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_DefFolderMenu);
 }

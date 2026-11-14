@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICompositionEffectBrush : ICompositionEffectBrush.Interface, INativeGuid
 {
+    /// <include file='ICompositionEffectBrush.xml' path='doc/member[@name="ICompositionEffectBrush.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICompositionEffectBrush);
 
     public void** lpVtbl;

@@ -12,39 +12,51 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IOInet"]/*' />
     [NativeTypeName("#define IID_IOInet IID_IInternet")]
     public static ref readonly Guid IID_IOInet => ref IID_IInternet;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IOInetBindInfo"]/*' />
     [NativeTypeName("#define IID_IOInetBindInfo IID_IInternetBindInfo")]
     public static ref readonly Guid IID_IOInetBindInfo => ref IID_IInternetBindInfo;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IOInetBindInfoEx"]/*' />
     [NativeTypeName("#define IID_IOInetBindInfoEx IID_IInternetBindInfoEx")]
     public static ref readonly Guid IID_IOInetBindInfoEx => ref IID_IInternetBindInfoEx;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IOInetProtocolRoot"]/*' />
     [NativeTypeName("#define IID_IOInetProtocolRoot IID_IInternetProtocolRoot")]
     public static ref readonly Guid IID_IOInetProtocolRoot => ref IID_IInternetProtocolRoot;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IOInetProtocol"]/*' />
     [NativeTypeName("#define IID_IOInetProtocol IID_IInternetProtocol")]
     public static ref readonly Guid IID_IOInetProtocol => ref IID_IInternetProtocol;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IOInetProtocolEx"]/*' />
     [NativeTypeName("#define IID_IOInetProtocolEx IID_IInternetProtocolEx")]
     public static ref readonly Guid IID_IOInetProtocolEx => ref IID_IInternetProtocolEx;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IOInetProtocolSink"]/*' />
     [NativeTypeName("#define IID_IOInetProtocolSink IID_IInternetProtocolSink")]
     public static ref readonly Guid IID_IOInetProtocolSink => ref IID_IInternetProtocolSink;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IOInetProtocolInfo"]/*' />
     [NativeTypeName("#define IID_IOInetProtocolInfo IID_IInternetProtocolInfo")]
     public static ref readonly Guid IID_IOInetProtocolInfo => ref IID_IInternetProtocolInfo;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IOInetSession"]/*' />
     [NativeTypeName("#define IID_IOInetSession IID_IInternetSession")]
     public static ref readonly Guid IID_IOInetSession => ref IID_IInternetSession;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IOInetPriority"]/*' />
     [NativeTypeName("#define IID_IOInetPriority IID_IInternetPriority")]
     public static ref readonly Guid IID_IOInetPriority => ref IID_IInternetPriority;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IOInetThreadSwitch"]/*' />
     [NativeTypeName("#define IID_IOInetThreadSwitch IID_IInternetThreadSwitch")]
     public static ref readonly Guid IID_IOInetThreadSwitch => ref IID_IInternetThreadSwitch;
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_IOInetProtocolSinkStackable"]/*' />
     [NativeTypeName("#define IID_IOInetProtocolSinkStackable IID_IInternetProtocolSinkStackable")]
     public static ref readonly Guid IID_IOInetProtocolSinkStackable => ref IID_IInternetProtocolSinkStackable;
 

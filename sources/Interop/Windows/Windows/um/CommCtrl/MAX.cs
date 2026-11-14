@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_LINKID_TEXT"]/*' />
     [NativeTypeName("#define MAX_LINKID_TEXT 48")]
     public const int MAX_LINKID_TEXT = 48;
 }

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ICurrentWorkingDirectory : ICurrentWorkingDirectory.Interface, INativeGuid
 {
+    /// <include file='ICurrentWorkingDirectory.xml' path='doc/member[@name="ICurrentWorkingDirectory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICurrentWorkingDirectory);
 
     public void** lpVtbl;

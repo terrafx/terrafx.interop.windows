@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DEFAULT
 {
+    /// <include file='DEFAULT.xml' path='doc/member[@name="DEFAULT.DEFAULT_MINIMUM_ENTITIES"]/*' />
     [NativeTypeName("#define DEFAULT_MINIMUM_ENTITIES 32")]
     public const int DEFAULT_MINIMUM_ENTITIES = 32;
 }

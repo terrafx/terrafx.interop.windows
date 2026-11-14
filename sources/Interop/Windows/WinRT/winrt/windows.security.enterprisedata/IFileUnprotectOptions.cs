@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IFileUnprotectOptions : IFileUnprotectOptions.Interface, INativeGuid
 {
+    /// <include file='IFileUnprotectOptions.xml' path='doc/member[@name="IFileUnprotectOptions.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFileUnprotectOptions);
 
     public void** lpVtbl;

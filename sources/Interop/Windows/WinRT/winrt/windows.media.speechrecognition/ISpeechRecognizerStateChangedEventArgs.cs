@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISpeechRecognizerStateChangedEventArgs : ISpeechRecognizerStateChangedEventArgs.Interface, INativeGuid
 {
+    /// <include file='ISpeechRecognizerStateChangedEventArgs.xml' path='doc/member[@name="ISpeechRecognizerStateChangedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpeechRecognizerStateChangedEventArgs);
 
     public void** lpVtbl;

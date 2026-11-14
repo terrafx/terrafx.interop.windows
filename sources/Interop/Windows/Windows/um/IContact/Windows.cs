@@ -7,21 +7,27 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CGD_DEFAULT"]/*' />
     [NativeTypeName("#define CGD_DEFAULT 0x00000000")]
     public const int CGD_DEFAULT = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CGD_UNKNOWN_PROPERTY"]/*' />
     [NativeTypeName("#define CGD_UNKNOWN_PROPERTY 0x00000000")]
     public const int CGD_UNKNOWN_PROPERTY = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CGD_STRING_PROPERTY"]/*' />
     [NativeTypeName("#define CGD_STRING_PROPERTY 0x00000001")]
     public const int CGD_STRING_PROPERTY = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CGD_DATE_PROPERTY"]/*' />
     [NativeTypeName("#define CGD_DATE_PROPERTY 0x00000002")]
     public const int CGD_DATE_PROPERTY = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CGD_BINARY_PROPERTY"]/*' />
     [NativeTypeName("#define CGD_BINARY_PROPERTY 0x00000004")]
     public const int CGD_BINARY_PROPERTY = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CGD_ARRAY_NODE"]/*' />
     [NativeTypeName("#define CGD_ARRAY_NODE 0x00000008")]
     public const int CGD_ARRAY_NODE = 0x00000008;
 }

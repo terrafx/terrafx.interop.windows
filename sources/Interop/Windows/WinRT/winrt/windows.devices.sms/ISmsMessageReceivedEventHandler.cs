@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("SmsMessageReceivedEventHandler may be altered or unavailable for releases after Windows 10.")]
 public unsafe partial struct ISmsMessageReceivedEventHandler : ISmsMessageReceivedEventHandler.Interface, INativeGuid
 {
+    /// <include file='ISmsMessageReceivedEventHandler.xml' path='doc/member[@name="ISmsMessageReceivedEventHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISmsMessageReceivedEventHandler);
 
     public void** lpVtbl;

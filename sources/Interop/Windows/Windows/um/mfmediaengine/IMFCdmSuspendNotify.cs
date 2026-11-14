@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IMFCdmSuspendNotify : IMFCdmSuspendNotify.Interface, INativeGuid
 {
+    /// <include file='IMFCdmSuspendNotify.xml' path='doc/member[@name="IMFCdmSuspendNotify.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFCdmSuspendNotify);
 
     public void** lpVtbl;

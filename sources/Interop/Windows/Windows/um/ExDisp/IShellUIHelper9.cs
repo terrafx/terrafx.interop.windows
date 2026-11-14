@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IShellUIHelper8")]
 public unsafe partial struct IShellUIHelper9 : IShellUIHelper9.Interface, INativeGuid
 {
+    /// <include file='IShellUIHelper9.xml' path='doc/member[@name="IShellUIHelper9.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IShellUIHelper9);
 
     public void** lpVtbl;

@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11Debug"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11Debug
     {
@@ -38,6 +39,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11SwitchToRef"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11SwitchToRef
     {
@@ -63,6 +65,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11TracingDevice"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11TracingDevice
     {
@@ -88,6 +91,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11RefTrackingOptions"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11RefTrackingOptions
     {
@@ -113,6 +117,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11RefDefaultTrackingOptions"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11RefDefaultTrackingOptions
     {
@@ -138,6 +143,7 @@ public static partial class IID
         }
     }
 
+    /// <include file='IID.xml' path='doc/member[@name="IID.IID_ID3D11InfoQueue"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid IID_ID3D11InfoQueue
     {

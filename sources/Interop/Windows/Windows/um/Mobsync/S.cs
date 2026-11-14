@@ -7,21 +7,27 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class S
 {
+    /// <include file='S.xml' path='doc/member[@name="S.S_SYNCMGR_MISSINGITEMS"]/*' />
     [NativeTypeName("#define S_SYNCMGR_MISSINGITEMS MAKE_SCODE(SEVERITY_SUCCESS,FACILITY_ITF,0x0201)")]
     public const int S_SYNCMGR_MISSINGITEMS = unchecked((int)(((uint)(0) << 31) | ((uint)(4) << 16) | ((uint)(0x0201))));
 
+    /// <include file='S.xml' path='doc/member[@name="S.S_SYNCMGR_RETRYSYNC"]/*' />
     [NativeTypeName("#define S_SYNCMGR_RETRYSYNC MAKE_SCODE(SEVERITY_SUCCESS,FACILITY_ITF,0x0202)")]
     public const int S_SYNCMGR_RETRYSYNC = unchecked((int)(((uint)(0) << 31) | ((uint)(4) << 16) | ((uint)(0x0202))));
 
+    /// <include file='S.xml' path='doc/member[@name="S.S_SYNCMGR_CANCELITEM"]/*' />
     [NativeTypeName("#define S_SYNCMGR_CANCELITEM MAKE_SCODE(SEVERITY_SUCCESS,FACILITY_ITF,0x0203)")]
     public const int S_SYNCMGR_CANCELITEM = unchecked((int)(((uint)(0) << 31) | ((uint)(4) << 16) | ((uint)(0x0203))));
 
+    /// <include file='S.xml' path='doc/member[@name="S.S_SYNCMGR_CANCELALL"]/*' />
     [NativeTypeName("#define S_SYNCMGR_CANCELALL MAKE_SCODE(SEVERITY_SUCCESS,FACILITY_ITF,0x0204)")]
     public const int S_SYNCMGR_CANCELALL = unchecked((int)(((uint)(0) << 31) | ((uint)(4) << 16) | ((uint)(0x0204))));
 
+    /// <include file='S.xml' path='doc/member[@name="S.S_SYNCMGR_ITEMDELETED"]/*' />
     [NativeTypeName("#define S_SYNCMGR_ITEMDELETED MAKE_SCODE(SEVERITY_SUCCESS,FACILITY_ITF,0x0210)")]
     public const int S_SYNCMGR_ITEMDELETED = unchecked((int)(((uint)(0) << 31) | ((uint)(4) << 16) | ((uint)(0x0210))));
 
+    /// <include file='S.xml' path='doc/member[@name="S.S_SYNCMGR_ENUMITEMS"]/*' />
     [NativeTypeName("#define S_SYNCMGR_ENUMITEMS MAKE_SCODE(SEVERITY_SUCCESS,FACILITY_ITF,0x0211)")]
     public const int S_SYNCMGR_ENUMITEMS = unchecked((int)(((uint)(0) << 31) | ((uint)(4) << 16) | ((uint)(0x0211))));
 }

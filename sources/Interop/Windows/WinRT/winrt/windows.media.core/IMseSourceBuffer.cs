@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMseSourceBuffer : IMseSourceBuffer.Interface, INativeGuid
 {
+    /// <include file='IMseSourceBuffer.xml' path='doc/member[@name="IMseSourceBuffer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMseSourceBuffer);
 
     public void** lpVtbl;

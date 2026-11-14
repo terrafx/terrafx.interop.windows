@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IGraphConfigCallback : IGraphConfigCallback.Interface, INativeGuid
 {
+    /// <include file='IGraphConfigCallback.xml' path='doc/member[@name="IGraphConfigCallback.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGraphConfigCallback);
 
     public void** lpVtbl;

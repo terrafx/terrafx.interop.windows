@@ -9,6 +9,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FACILITY
 {
+    /// <include file='FACILITY.xml' path='doc/member[@name="FACILITY.FACILITY_XAPO"]/*' />
     [NativeTypeName("#define FACILITY_XAPO 0x897")]
     public const int FACILITY_XAPO = 0x897;
 }

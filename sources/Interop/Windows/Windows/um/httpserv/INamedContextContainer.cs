@@ -14,6 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("16DB6F7C-1A94-47CA-A8E8-FEA6005FF3BA")]
 public unsafe partial struct INamedContextContainer : INamedContextContainer.Interface, INativeGuid
 {
+    /// <include file='INamedContextContainer.xml' path='doc/member[@name="INamedContextContainer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_INamedContextContainer);
 
     public void** lpVtbl;

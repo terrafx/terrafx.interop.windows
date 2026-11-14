@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDXGISwapChain3")]
 public unsafe partial struct IDXGISwapChain4 : IDXGISwapChain4.Interface, INativeGuid
 {
+    /// <include file='IDXGISwapChain4.xml' path='doc/member[@name="IDXGISwapChain4.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDXGISwapChain4);
 
     public void** lpVtbl;

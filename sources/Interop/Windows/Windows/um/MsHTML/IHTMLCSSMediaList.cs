@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IHTMLCSSMediaList : IHTMLCSSMediaList.Interface, INativeGuid
 {
+    /// <include file='IHTMLCSSMediaList.xml' path='doc/member[@name="IHTMLCSSMediaList.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHTMLCSSMediaList);
 
     public void** lpVtbl;

@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DS
 {
+    /// <include file='DS.xml' path='doc/member[@name="DS.DS_S_SUCCESS"]/*' />
     [NativeTypeName("#define DS_S_SUCCESS NO_ERROR")]
     public const int DS_S_SUCCESS = 0;
 }

@@ -179,15 +179,19 @@ public static unsafe partial class Windows
     [DllImport("ole32", ExactSpelling = true)]
     public static extern HRESULT CreateStdProgressIndicator(HWND hwndParent, [NativeTypeName("LPCOLESTR")] char* pszTitle, IBindStatusCallback* pIbscCaller, IBindStatusCallback** ppIbsc);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MARSHALINTERFACE_MIN"]/*' />
     [NativeTypeName("#define MARSHALINTERFACE_MIN 500")]
     public const int MARSHALINTERFACE_MIN = 500;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ASYNC_MODE_COMPATIBILITY"]/*' />
     [NativeTypeName("#define ASYNC_MODE_COMPATIBILITY 0x00000001L")]
     public const int ASYNC_MODE_COMPATIBILITY = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ASYNC_MODE_DEFAULT"]/*' />
     [NativeTypeName("#define ASYNC_MODE_DEFAULT 0x00000000L")]
     public const int ASYNC_MODE_DEFAULT = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.STGTY_REPEAT"]/*' />
     [NativeTypeName("#define STGTY_REPEAT 0x00000100L")]
     public const int STGTY_REPEAT = 0x00000100;
 }

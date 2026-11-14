@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("305105D6-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct SVGGradientElement : INativeGuid
 {
+    /// <include file='SVGGradientElement.xml' path='doc/member[@name="SVGGradientElement.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SVGGradientElement);
 }

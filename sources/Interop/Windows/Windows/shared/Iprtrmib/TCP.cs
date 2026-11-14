@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class TCP
 {
+    /// <include file='TCP.xml' path='doc/member[@name="TCP.TCP_STATS"]/*' />
     [NativeTypeName("#define TCP_STATS (ICMP_STATS         + 1)")]
     public const int TCP_STATS = ((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
 
+    /// <include file='TCP.xml' path='doc/member[@name="TCP.TCP_TABLE"]/*' />
     [NativeTypeName("#define TCP_TABLE (TCP_STATS          + 1)")]
     public const int TCP_TABLE = (((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
 
+    /// <include file='TCP.xml' path='doc/member[@name="TCP.TCP_ROW"]/*' />
     [NativeTypeName("#define TCP_ROW (TCP_TABLE          + 1)")]
     public const int TCP_ROW = ((((((((((((((0 + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1);
 }

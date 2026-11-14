@@ -20,4 +20,10 @@ public enum DataPackageOperation : uint
 
     /// <include file='DataPackageOperation.xml' path='doc/member[@name="DataPackageOperation.DataPackageOperation_Link"]/*' />
     DataPackageOperation_Link = 0x4,
+
+    /// <include file='DataPackageOperation.xml' path='doc/member[@name="DataPackageOperation.DataPackageOperation_NewTarget"]/*' />
+    DataPackageOperation_NewTarget = 0x40000000,
+
+    /// <include file='DataPackageOperation.xml' path='doc/member[@name="DataPackageOperation.DataPackageOperation_BackgroundTarget"]/*' />
+    DataPackageOperation_BackgroundTarget = 0x20000000,
 }

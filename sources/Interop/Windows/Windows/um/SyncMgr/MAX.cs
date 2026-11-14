@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_SYNCMGR_ID"]/*' />
     [NativeTypeName("#define MAX_SYNCMGR_ID ( 64 )")]
     public const int MAX_SYNCMGR_ID = (64);
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_SYNCMGR_PROGRESSTEXT"]/*' />
     [NativeTypeName("#define MAX_SYNCMGR_PROGRESSTEXT ( 260 )")]
     public const int MAX_SYNCMGR_PROGRESSTEXT = (260);
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_SYNCMGR_NAME"]/*' />
     [NativeTypeName("#define MAX_SYNCMGR_NAME ( 128 )")]
     public const int MAX_SYNCMGR_NAME = (128);
 }

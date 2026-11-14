@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface, INativeGuid
 {
+    /// <include file='IComThreadingInfo.xml' path='doc/member[@name="IComThreadingInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IComThreadingInfo);
 
     public void** lpVtbl;

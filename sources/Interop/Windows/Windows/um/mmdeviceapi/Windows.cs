@@ -14,6 +14,7 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DEVINTERFACE_AUDIO_RENDER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DEVINTERFACE_AUDIO_RENDER
     {
@@ -39,6 +40,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DEVINTERFACE_AUDIO_CAPTURE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DEVINTERFACE_AUDIO_CAPTURE
     {
@@ -64,6 +66,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DEVINTERFACE_MIDI_OUTPUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DEVINTERFACE_MIDI_OUTPUT
     {
@@ -89,6 +92,7 @@ public static unsafe partial class Windows
         }
     }
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DEVINTERFACE_MIDI_INPUT"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid DEVINTERFACE_MIDI_INPUT
     {
@@ -119,12 +123,15 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT ActivateAudioInterfaceAsync([NativeTypeName("LPCWSTR")] char* deviceInterfacePath, [NativeTypeName("const IID &")] Guid* riid, PROPVARIANT* activationParams, IActivateAudioInterfaceCompletionHandler* completionHandler, IActivateAudioInterfaceAsyncOperation** activationOperation);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENDPOINT_SYSFX_ENABLED"]/*' />
     [NativeTypeName("#define ENDPOINT_SYSFX_ENABLED 0x00000000")]
     public const int ENDPOINT_SYSFX_ENABLED = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ENDPOINT_SYSFX_DISABLED"]/*' />
     [NativeTypeName("#define ENDPOINT_SYSFX_DISABLED 0x00000001")]
     public const int ENDPOINT_SYSFX_DISABLED = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.HDMI"]/*' />
     [NativeTypeName("#define HDMI DigitalAudioDisplayDevice")]
     public const EndpointFormFactor HDMI = DigitalAudioDisplayDevice;
 }

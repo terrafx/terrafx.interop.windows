@@ -7,27 +7,35 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_ADAPTER_DESCRIPTION_LENGTH"]/*' />
     [NativeTypeName("#define MAX_ADAPTER_DESCRIPTION_LENGTH 128")]
     public const int MAX_ADAPTER_DESCRIPTION_LENGTH = 128;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_ADAPTER_NAME_LENGTH"]/*' />
     [NativeTypeName("#define MAX_ADAPTER_NAME_LENGTH 256")]
     public const int MAX_ADAPTER_NAME_LENGTH = 256;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_ADAPTER_ADDRESS_LENGTH"]/*' />
     [NativeTypeName("#define MAX_ADAPTER_ADDRESS_LENGTH 8")]
     public const int MAX_ADAPTER_ADDRESS_LENGTH = 8;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_HOSTNAME_LEN"]/*' />
     [NativeTypeName("#define MAX_HOSTNAME_LEN 128")]
     public const int MAX_HOSTNAME_LEN = 128;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_DOMAIN_NAME_LEN"]/*' />
     [NativeTypeName("#define MAX_DOMAIN_NAME_LEN 128")]
     public const int MAX_DOMAIN_NAME_LEN = 128;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_SCOPE_ID_LEN"]/*' />
     [NativeTypeName("#define MAX_SCOPE_ID_LEN 256")]
     public const int MAX_SCOPE_ID_LEN = 256;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_DHCPV6_DUID_LENGTH"]/*' />
     [NativeTypeName("#define MAX_DHCPV6_DUID_LENGTH 130")]
     public const int MAX_DHCPV6_DUID_LENGTH = 130;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_DNS_SUFFIX_STRING_LENGTH"]/*' />
     [NativeTypeName("#define MAX_DNS_SUFFIX_STRING_LENGTH 256")]
     public const int MAX_DNS_SUFFIX_STRING_LENGTH = 256;
 }

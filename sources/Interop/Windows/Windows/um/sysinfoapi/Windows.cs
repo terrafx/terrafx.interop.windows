@@ -246,43 +246,56 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     public static extern BOOL GetRuntimeAttestationReport([NativeTypeName("UCHAR *")] byte* Nonce, [NativeTypeName("UINT16")] ushort PackageVersion, [NativeTypeName("UINT64")] ulong ReportTypesBitmap, [NativeTypeName("PVOID")] void* ReportBuffer, [NativeTypeName("PUINT32")] uint* ReportBufferSize);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.USER_CET_ENVIRONMENT_WIN32_PROCESS"]/*' />
     [NativeTypeName("#define USER_CET_ENVIRONMENT_WIN32_PROCESS 0x00000000")]
     public const int USER_CET_ENVIRONMENT_WIN32_PROCESS = 0x00000000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.USER_CET_ENVIRONMENT_SGX2_ENCLAVE"]/*' />
     [NativeTypeName("#define USER_CET_ENVIRONMENT_SGX2_ENCLAVE 0x00000002")]
     public const int USER_CET_ENVIRONMENT_SGX2_ENCLAVE = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.USER_CET_ENVIRONMENT_VBS_ENCLAVE"]/*' />
     [NativeTypeName("#define USER_CET_ENVIRONMENT_VBS_ENCLAVE 0x00000010")]
     public const int USER_CET_ENVIRONMENT_VBS_ENCLAVE = 0x00000010;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.USER_CET_ENVIRONMENT_VBS_BASIC_ENCLAVE"]/*' />
     [NativeTypeName("#define USER_CET_ENVIRONMENT_VBS_BASIC_ENCLAVE 0x00000011")]
     public const int USER_CET_ENVIRONMENT_VBS_BASIC_ENCLAVE = 0x00000011;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemDirectory"]/*' />
     [NativeTypeName("#define GetSystemDirectory GetSystemDirectoryW")]
     public static delegate*<char*, uint, uint> GetSystemDirectory => &GetSystemDirectoryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetWindowsDirectory"]/*' />
     [NativeTypeName("#define GetWindowsDirectory GetWindowsDirectoryW")]
     public static delegate*<char*, uint, uint> GetWindowsDirectory => &GetWindowsDirectoryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemWindowsDirectory"]/*' />
     [NativeTypeName("#define GetSystemWindowsDirectory GetSystemWindowsDirectoryW")]
     public static delegate*<char*, uint, uint> GetSystemWindowsDirectory => &GetSystemWindowsDirectoryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetComputerNameEx"]/*' />
     [NativeTypeName("#define GetComputerNameEx GetComputerNameExW")]
     public static delegate*<COMPUTER_NAME_FORMAT, char*, uint*, BOOL> GetComputerNameEx => &GetComputerNameExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetComputerNameEx"]/*' />
     [NativeTypeName("#define SetComputerNameEx SetComputerNameExW")]
     public static delegate*<COMPUTER_NAME_FORMAT, char*, BOOL> SetComputerNameEx => &SetComputerNameExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetVersionEx"]/*' />
     [NativeTypeName("#define GetVersionEx GetVersionExW")]
     [Obsolete]
     public static delegate*<OSVERSIONINFOW*, BOOL> GetVersionEx => &GetVersionExW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SCEX2_ALT_NETBIOS_NAME"]/*' />
     [NativeTypeName("#define SCEX2_ALT_NETBIOS_NAME 0x00000001")]
     public const int SCEX2_ALT_NETBIOS_NAME = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetComputerNameEx2"]/*' />
     [NativeTypeName("#define SetComputerNameEx2 SetComputerNameEx2W")]
     public static delegate*<COMPUTER_NAME_FORMAT, uint, char*, BOOL> SetComputerNameEx2 => &SetComputerNameEx2W;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetComputerName"]/*' />
     [NativeTypeName("#define SetComputerName SetComputerNameW")]
     public static delegate*<char*, BOOL> SetComputerName => &SetComputerNameW;
 }

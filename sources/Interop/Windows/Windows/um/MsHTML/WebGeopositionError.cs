@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("305107CA-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct WebGeopositionError : INativeGuid
 {
+    /// <include file='WebGeopositionError.xml' path='doc/member[@name="WebGeopositionError.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_WebGeopositionError);
 }

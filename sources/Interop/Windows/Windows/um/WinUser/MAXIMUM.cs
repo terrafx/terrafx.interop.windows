@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class MAXIMUM
 {
+    /// <include file='MAXIMUM.xml' path='doc/member[@name="MAXIMUM.MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID"]/*' />
     [NativeTypeName("#define MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID MAKEINTRESOURCE(16 /*inclusive*/)")]
     public static char* MAXIMUM_RESERVED_MANIFEST_RESOURCE_ID => ((char*)((nuint)((ushort)(16))));
 }

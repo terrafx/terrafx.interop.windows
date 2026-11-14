@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISearchSuggestionsRequestDeferral : ISearchSuggestionsRequestDeferral.Interface, INativeGuid
 {
+    /// <include file='ISearchSuggestionsRequestDeferral.xml' path='doc/member[@name="ISearchSuggestionsRequestDeferral.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISearchSuggestionsRequestDeferral);
 
     public void** lpVtbl;

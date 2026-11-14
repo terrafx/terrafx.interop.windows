@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IMapPathProvider : IMapPathProvider.Interface, INativeGuid
 {
+    /// <include file='IMapPathProvider.xml' path='doc/member[@name="IMapPathProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMapPathProvider);
 
     public void** lpVtbl;

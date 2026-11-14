@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public partial struct HANDLE
 {
+    /// <include file='HANDLE.xml' path='doc/member[@name="HANDLE.HANDLE_FLAG_INHERIT"]/*' />
     [NativeTypeName("#define HANDLE_FLAG_INHERIT 0x00000001")]
     public const int HANDLE_FLAG_INHERIT = 0x00000001;
 
+    /// <include file='HANDLE.xml' path='doc/member[@name="HANDLE.HANDLE_FLAG_PROTECT_FROM_CLOSE"]/*' />
     [NativeTypeName("#define HANDLE_FLAG_PROTECT_FROM_CLOSE 0x00000002")]
     public const int HANDLE_FLAG_PROTECT_FROM_CLOSE = 0x00000002;
 }

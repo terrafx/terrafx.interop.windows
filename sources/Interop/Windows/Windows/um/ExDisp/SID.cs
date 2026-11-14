@@ -10,6 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 public partial struct SID
 {
+    /// <include file='SID.xml' path='doc/member[@name="SID.SID_SkipHung"]/*' />
     [NativeTypeName("#define SID_SkipHung IID_IEnumVARIANT")]
     public static ref readonly Guid SID_SkipHung => ref IID_IEnumVARIANT;
 }

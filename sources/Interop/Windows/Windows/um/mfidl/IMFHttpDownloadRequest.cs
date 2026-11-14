@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.15063.0")]
 public unsafe partial struct IMFHttpDownloadRequest : IMFHttpDownloadRequest.Interface, INativeGuid
 {
+    /// <include file='IMFHttpDownloadRequest.xml' path='doc/member[@name="IMFHttpDownloadRequest.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFHttpDownloadRequest);
 
     public void** lpVtbl;

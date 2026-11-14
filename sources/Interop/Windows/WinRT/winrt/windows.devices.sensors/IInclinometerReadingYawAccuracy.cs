@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IInclinometerReadingYawAccuracy : IInclinometerReadingYawAccuracy.Interface, INativeGuid
 {
+    /// <include file='IInclinometerReadingYawAccuracy.xml' path='doc/member[@name="IInclinometerReadingYawAccuracy.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInclinometerReadingYawAccuracy);
 
     public void** lpVtbl;

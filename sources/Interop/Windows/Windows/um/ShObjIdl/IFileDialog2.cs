@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IFileDialog")]
 public unsafe partial struct IFileDialog2 : IFileDialog2.Interface, INativeGuid
 {
+    /// <include file='IFileDialog2.xml' path='doc/member[@name="IFileDialog2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFileDialog2);
 
     public void** lpVtbl;

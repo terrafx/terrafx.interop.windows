@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct DispSVGPathSegClosePath : DispSVGPathSegClosePath.Interface, INativeGuid
 {
+    /// <include file='DispSVGPathSegClosePath.xml' path='doc/member[@name="DispSVGPathSegClosePath.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DispSVGPathSegClosePath);
 
     public void** lpVtbl;

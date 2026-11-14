@@ -8,9 +8,9 @@ public unsafe partial struct WPARAM
 
     public static implicit operator void*(WPARAM value) => (void*)(value.Value);
 
-    public static explicit operator WPARAM(BOOL value) => new WPARAM((nuint)(value.Value));
+    public static explicit operator WPARAM(BOOL value) => new WPARAM(unchecked((nuint)(value.Value)));
 
-    public static explicit operator BOOL(WPARAM value) => new BOOL((int)(value.Value));
+    public static explicit operator BOOL(WPARAM value) => new BOOL(unchecked((int)(value.Value)));
 
     public static explicit operator WPARAM(HANDLE value) => new WPARAM((nuint)(value.Value));
 
@@ -80,7 +80,7 @@ public unsafe partial struct WPARAM
 
     public static explicit operator HWND(WPARAM value) => new HWND((void*)(value.Value));
 
-    public static explicit operator WPARAM(LPARAM value) => new WPARAM((nuint)(value.Value));
+    public static explicit operator WPARAM(LPARAM value) => new WPARAM(unchecked((nuint)(value.Value)));
 
-    public static explicit operator WPARAM(LRESULT value) => new WPARAM((nuint)(value.Value));
+    public static explicit operator WPARAM(LRESULT value) => new WPARAM(unchecked((nuint)(value.Value)));
 }

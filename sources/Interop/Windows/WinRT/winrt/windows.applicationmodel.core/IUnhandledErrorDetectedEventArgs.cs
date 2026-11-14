@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IUnhandledErrorDetectedEventArgs : IUnhandledErrorDetectedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IUnhandledErrorDetectedEventArgs.xml' path='doc/member[@name="IUnhandledErrorDetectedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUnhandledErrorDetectedEventArgs);
 
     public void** lpVtbl;

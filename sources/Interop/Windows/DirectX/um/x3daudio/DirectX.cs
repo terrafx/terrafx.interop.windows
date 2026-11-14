@@ -13,6 +13,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static unsafe partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.X3DAudioDefault_DirectionalCone"]/*' />
     [NativeTypeName("const X3DAUDIO_CONE")]
     public static ref readonly X3DAUDIO_CONE X3DAudioDefault_DirectionalCone
     {

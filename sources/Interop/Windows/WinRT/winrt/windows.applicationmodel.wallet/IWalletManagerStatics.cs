@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [Obsolete("IWalletManagerStatics is deprecated and might not work on all platforms. For more info, see MSDN.")]
 public unsafe partial struct IWalletManagerStatics : IWalletManagerStatics.Interface, INativeGuid
 {
+    /// <include file='IWalletManagerStatics.xml' path='doc/member[@name="IWalletManagerStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWalletManagerStatics);
 
     public void** lpVtbl;

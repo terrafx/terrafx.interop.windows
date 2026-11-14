@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.3")]
 public unsafe partial struct IDevicePair : IDevicePair.Interface, INativeGuid
 {
+    /// <include file='IDevicePair.xml' path='doc/member[@name="IDevicePair.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDevicePair);
 
     public void** lpVtbl;

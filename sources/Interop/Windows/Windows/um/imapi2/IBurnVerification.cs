@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IBurnVerification : IBurnVerification.Interface, INativeGuid
 {
+    /// <include file='IBurnVerification.xml' path='doc/member[@name="IBurnVerification.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBurnVerification);
 
     public void** lpVtbl;

@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("2987123A-BA93-4704-B489-EC1E5F25292C")]
 public unsafe partial struct CODECAPI_AVEncVideoMaxKeyframeDistance : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncVideoMaxKeyframeDistance.xml' path='doc/member[@name="CODECAPI_AVEncVideoMaxKeyframeDistance.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncVideoMaxKeyframeDistance);
 }

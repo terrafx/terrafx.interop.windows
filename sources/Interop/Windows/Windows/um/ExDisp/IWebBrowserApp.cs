@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IWebBrowser")]
 public unsafe partial struct IWebBrowserApp : IWebBrowserApp.Interface, INativeGuid
 {
+    /// <include file='IWebBrowserApp.xml' path='doc/member[@name="IWebBrowserApp.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWebBrowserApp);
 
     public void** lpVtbl;

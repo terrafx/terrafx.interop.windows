@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IOnlookerDetectionOptions : IOnlookerDetectionOptions.Interface, INativeGuid
 {
+    /// <include file='IOnlookerDetectionOptions.xml' path='doc/member[@name="IOnlookerDetectionOptions.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IOnlookerDetectionOptions);
 
     public void** lpVtbl;

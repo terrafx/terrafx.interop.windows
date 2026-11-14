@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IVirtualPrinterSupportedFormat : IVirtualPrinterSupportedFormat.Interface, INativeGuid
 {
+    /// <include file='IVirtualPrinterSupportedFormat.xml' path='doc/member[@name="IVirtualPrinterSupportedFormat.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVirtualPrinterSupportedFormat);
 
     public void** lpVtbl;

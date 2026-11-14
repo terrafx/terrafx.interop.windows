@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFContentProtectionManager : IMFContentProtectionManager.Interface, INativeGuid
 {
+    /// <include file='IMFContentProtectionManager.xml' path='doc/member[@name="IMFContentProtectionManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFContentProtectionManager);
 
     public void** lpVtbl;

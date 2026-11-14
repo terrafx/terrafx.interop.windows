@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IWebAccountProviderDeleteAccountOperation : IWebAccountProviderDeleteAccountOperation.Interface, INativeGuid
 {
+    /// <include file='IWebAccountProviderDeleteAccountOperation.xml' path='doc/member[@name="IWebAccountProviderDeleteAccountOperation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWebAccountProviderDeleteAccountOperation);
 
     public void** lpVtbl;

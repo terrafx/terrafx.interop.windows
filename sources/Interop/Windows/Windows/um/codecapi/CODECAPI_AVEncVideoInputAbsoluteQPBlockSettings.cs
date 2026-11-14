@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("EF95A145-4F91-4DEA-8173-ACFF11434210")]
 public unsafe partial struct CODECAPI_AVEncVideoInputAbsoluteQPBlockSettings : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncVideoInputAbsoluteQPBlockSettings.xml' path='doc/member[@name="CODECAPI_AVEncVideoInputAbsoluteQPBlockSettings.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncVideoInputAbsoluteQPBlockSettings);
 }

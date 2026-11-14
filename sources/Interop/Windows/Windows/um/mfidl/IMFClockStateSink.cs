@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface, INativeGuid
 {
+    /// <include file='IMFClockStateSink.xml' path='doc/member[@name="IMFClockStateSink.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFClockStateSink);
 
     public void** lpVtbl;

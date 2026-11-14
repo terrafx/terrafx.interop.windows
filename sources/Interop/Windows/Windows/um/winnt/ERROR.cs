@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ERROR
 {
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_SEVERITY_SUCCESS"]/*' />
     [NativeTypeName("#define ERROR_SEVERITY_SUCCESS 0x00000000")]
     public const int ERROR_SEVERITY_SUCCESS = 0x00000000;
 
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_SEVERITY_INFORMATIONAL"]/*' />
     [NativeTypeName("#define ERROR_SEVERITY_INFORMATIONAL 0x40000000")]
     public const int ERROR_SEVERITY_INFORMATIONAL = 0x40000000;
 
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_SEVERITY_WARNING"]/*' />
     [NativeTypeName("#define ERROR_SEVERITY_WARNING 0x80000000")]
     public const uint ERROR_SEVERITY_WARNING = 0x80000000;
 
+    /// <include file='ERROR.xml' path='doc/member[@name="ERROR.ERROR_SEVERITY_ERROR"]/*' />
     [NativeTypeName("#define ERROR_SEVERITY_ERROR 0xC0000000")]
     public const uint ERROR_SEVERITY_ERROR = 0xC0000000;
 }

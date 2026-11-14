@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct IWebAuthenticationCoreManagerInterop : IWebAuthenticationCoreManagerInterop.Interface, INativeGuid
 {
+    /// <include file='IWebAuthenticationCoreManagerInterop.xml' path='doc/member[@name="IWebAuthenticationCoreManagerInterop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWebAuthenticationCoreManagerInterop);
 
     public void** lpVtbl;

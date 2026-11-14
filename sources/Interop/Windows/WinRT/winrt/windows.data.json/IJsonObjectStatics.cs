@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IJsonObjectStatics : IJsonObjectStatics.Interface, INativeGuid
 {
+    /// <include file='IJsonObjectStatics.xml' path='doc/member[@name="IJsonObjectStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IJsonObjectStatics);
 
     public void** lpVtbl;

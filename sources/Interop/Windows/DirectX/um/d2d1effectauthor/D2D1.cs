@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D2D1
 {
+    /// <include file='D2D1.xml' path='doc/member[@name="D2D1.D2D1_APPEND_ALIGNED_ELEMENT"]/*' />
     [NativeTypeName("#define D2D1_APPEND_ALIGNED_ELEMENT ( 0xffffffff )")]
     public const uint D2D1_APPEND_ALIGNED_ELEMENT = (0xffffffff);
 }

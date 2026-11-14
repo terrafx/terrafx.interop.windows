@@ -76,4 +76,13 @@ public enum PROC_THREAD_ATTRIBUTE_NUM
 
     /// <include file='PROC_THREAD_ATTRIBUTE_NUM.xml' path='doc/member[@name="PROC_THREAD_ATTRIBUTE_NUM.ProcThreadAttributeSmeVectorLength"]/*' />
     ProcThreadAttributeSmeVectorLength = 31,
+
+    /// <include file='PROC_THREAD_ATTRIBUTE_NUM.xml' path='doc/member[@name="PROC_THREAD_ATTRIBUTE_NUM.ProcThreadAttributeContainmentConfiguration"]/*' />
+    ProcThreadAttributeContainmentConfiguration = 33,
+
+    /// <include file='PROC_THREAD_ATTRIBUTE_NUM.xml' path='doc/member[@name="PROC_THREAD_ATTRIBUTE_NUM.ProcThreadAttributeDesktopAppIdentityPolicy"]/*' />
+    ProcThreadAttributeDesktopAppIdentityPolicy = 34,
+
+    /// <include file='PROC_THREAD_ATTRIBUTE_NUM.xml' path='doc/member[@name="PROC_THREAD_ATTRIBUTE_NUM.ProcThreadAttributeIsolationConfiguration"]/*' />
+    ProcThreadAttributeIsolationConfiguration = 36,
 }

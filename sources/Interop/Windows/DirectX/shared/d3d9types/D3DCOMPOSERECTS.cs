@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class D3DCOMPOSERECTS
 {
+    /// <include file='D3DCOMPOSERECTS.xml' path='doc/member[@name="D3DCOMPOSERECTS.D3DCOMPOSERECTS_MAXNUMRECTS"]/*' />
     [NativeTypeName("#define D3DCOMPOSERECTS_MAXNUMRECTS 0xFFFF")]
     public const int D3DCOMPOSERECTS_MAXNUMRECTS = 0xFFFF;
 }

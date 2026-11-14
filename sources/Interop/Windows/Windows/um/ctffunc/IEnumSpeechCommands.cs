@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IEnumSpeechCommands : IEnumSpeechCommands.Interface, INativeGuid
 {
+    /// <include file='IEnumSpeechCommands.xml' path='doc/member[@name="IEnumSpeechCommands.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEnumSpeechCommands);
 
     public void** lpVtbl;

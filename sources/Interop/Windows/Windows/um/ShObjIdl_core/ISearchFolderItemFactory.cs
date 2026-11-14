@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISearchFolderItemFactory : ISearchFolderItemFactory.Interface, INativeGuid
 {
+    /// <include file='ISearchFolderItemFactory.xml' path='doc/member[@name="ISearchFolderItemFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISearchFolderItemFactory);
 
     public void** lpVtbl;

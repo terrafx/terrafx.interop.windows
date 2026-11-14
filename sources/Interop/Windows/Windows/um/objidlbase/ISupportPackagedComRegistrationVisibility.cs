@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISupportPackagedComRegistrationVisibility : ISupportPackagedComRegistrationVisibility.Interface, INativeGuid
 {
+    /// <include file='ISupportPackagedComRegistrationVisibility.xml' path='doc/member[@name="ISupportPackagedComRegistrationVisibility.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISupportPackagedComRegistrationVisibility);
 
     public void** lpVtbl;

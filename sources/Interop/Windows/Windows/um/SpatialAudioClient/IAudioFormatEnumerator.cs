@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAudioFormatEnumerator : IAudioFormatEnumerator.Interface, INativeGuid
 {
+    /// <include file='IAudioFormatEnumerator.xml' path='doc/member[@name="IAudioFormatEnumerator.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioFormatEnumerator);
 
     public void** lpVtbl;

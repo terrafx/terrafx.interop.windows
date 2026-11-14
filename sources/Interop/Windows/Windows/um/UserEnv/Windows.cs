@@ -226,69 +226,91 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows6.2")]
     public static extern HRESULT DeriveAppContainerSidFromAppContainerName([NativeTypeName("PCWSTR")] char* pszAppContainerName, [NativeTypeName("PSID *")] void** ppsidAppContainerSid);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PI_NOUI"]/*' />
     [NativeTypeName("#define PI_NOUI 0x00000001")]
     public const int PI_NOUI = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PI_APPLYPOLICY"]/*' />
     [NativeTypeName("#define PI_APPLYPOLICY 0x00000002")]
     public const int PI_APPLYPOLICY = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LoadUserProfile"]/*' />
     [NativeTypeName("#define LoadUserProfile LoadUserProfileW")]
     public static delegate*<HANDLE, PROFILEINFOW*, BOOL> LoadUserProfile => &LoadUserProfileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetProfilesDirectory"]/*' />
     [NativeTypeName("#define GetProfilesDirectory GetProfilesDirectoryW")]
     public static delegate*<char*, uint*, BOOL> GetProfilesDirectory => &GetProfilesDirectoryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PT_TEMPORARY"]/*' />
     [NativeTypeName("#define PT_TEMPORARY 0x00000001")]
     public const int PT_TEMPORARY = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PT_ROAMING"]/*' />
     [NativeTypeName("#define PT_ROAMING 0x00000002")]
     public const int PT_ROAMING = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PT_MANDATORY"]/*' />
     [NativeTypeName("#define PT_MANDATORY 0x00000004")]
     public const int PT_MANDATORY = 0x00000004;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PT_ROAMING_PREEXISTING"]/*' />
     [NativeTypeName("#define PT_ROAMING_PREEXISTING 0x00000008")]
     public const int PT_ROAMING_PREEXISTING = 0x00000008;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteProfile"]/*' />
     [NativeTypeName("#define DeleteProfile DeleteProfileW")]
     public static delegate*<char*, char*, char*, BOOL> DeleteProfile => &DeleteProfileW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDefaultUserProfileDirectory"]/*' />
     [NativeTypeName("#define GetDefaultUserProfileDirectory GetDefaultUserProfileDirectoryW")]
     public static delegate*<char*, uint*, BOOL> GetDefaultUserProfileDirectory => &GetDefaultUserProfileDirectoryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAllUsersProfileDirectory"]/*' />
     [NativeTypeName("#define GetAllUsersProfileDirectory GetAllUsersProfileDirectoryW")]
     public static delegate*<char*, uint*, BOOL> GetAllUsersProfileDirectory => &GetAllUsersProfileDirectoryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetUserProfileDirectory"]/*' />
     [NativeTypeName("#define GetUserProfileDirectory GetUserProfileDirectoryW")]
     public static delegate*<HANDLE, char*, uint*, BOOL> GetUserProfileDirectory => &GetUserProfileDirectoryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ExpandEnvironmentStringsForUser"]/*' />
     [NativeTypeName("#define ExpandEnvironmentStringsForUser ExpandEnvironmentStringsForUserW")]
     public static delegate*<HANDLE, char*, char*, uint, BOOL> ExpandEnvironmentStringsForUser => &ExpandEnvironmentStringsForUserW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RP_FORCE"]/*' />
     [NativeTypeName("#define RP_FORCE 1")]
     public const int RP_FORCE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RP_SYNC"]/*' />
     [NativeTypeName("#define RP_SYNC 2")]
     public const int RP_SYNC = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GPC_BLOCK_POLICY"]/*' />
     [NativeTypeName("#define GPC_BLOCK_POLICY 0x00000001")]
     public const int GPC_BLOCK_POLICY = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetGPOList"]/*' />
     [NativeTypeName("#define GetGPOList GetGPOListW")]
     public static delegate*<HANDLE, char*, char*, char*, uint, GROUP_POLICY_OBJECTW**, BOOL> GetGPOList => &GetGPOListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FreeGPOList"]/*' />
     [NativeTypeName("#define FreeGPOList FreeGPOListW")]
     public static delegate*<GROUP_POLICY_OBJECTW*, BOOL> FreeGPOList => &FreeGPOListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAppliedGPOList"]/*' />
     [NativeTypeName("#define GetAppliedGPOList GetAppliedGPOListW")]
     public static delegate*<uint, char*, void*, Guid*, GROUP_POLICY_OBJECTW**, uint> GetAppliedGPOList => &GetAppliedGPOListW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RSOP_USER_ACCESS_DENIED"]/*' />
     [NativeTypeName("#define RSOP_USER_ACCESS_DENIED 0x00000001")]
     public const int RSOP_USER_ACCESS_DENIED = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RSOP_COMPUTER_ACCESS_DENIED"]/*' />
     [NativeTypeName("#define RSOP_COMPUTER_ACCESS_DENIED 0x00000002")]
     public const int RSOP_COMPUTER_ACCESS_DENIED = 0x00000002;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.RSOP_TEMPNAMESPACE_EXISTS"]/*' />
     [NativeTypeName("#define RSOP_TEMPNAMESPACE_EXISTS 0x00000004")]
     public const int RSOP_TEMPNAMESPACE_EXISTS = 0x00000004;
 }

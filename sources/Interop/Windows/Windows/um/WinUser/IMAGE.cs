@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IMAGE
 {
+    /// <include file='IMAGE.xml' path='doc/member[@name="IMAGE.IMAGE_BITMAP"]/*' />
     [NativeTypeName("#define IMAGE_BITMAP 0")]
     public const int IMAGE_BITMAP = 0;
 
+    /// <include file='IMAGE.xml' path='doc/member[@name="IMAGE.IMAGE_ICON"]/*' />
     [NativeTypeName("#define IMAGE_ICON 1")]
     public const int IMAGE_ICON = 1;
 
+    /// <include file='IMAGE.xml' path='doc/member[@name="IMAGE.IMAGE_CURSOR"]/*' />
     [NativeTypeName("#define IMAGE_CURSOR 2")]
     public const int IMAGE_CURSOR = 2;
 
+    /// <include file='IMAGE.xml' path='doc/member[@name="IMAGE.IMAGE_ENHMETAFILE"]/*' />
     [NativeTypeName("#define IMAGE_ENHMETAFILE 3")]
     public const int IMAGE_ENHMETAFILE = 3;
 }

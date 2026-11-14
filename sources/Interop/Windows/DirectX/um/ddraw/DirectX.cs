@@ -41,24 +41,31 @@ public static unsafe partial class DirectX
     [DllImport("ddraw", ExactSpelling = true)]
     public static extern HRESULT DirectDrawCreateClipper([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPDIRECTDRAWCLIPPER *")] IDirectDrawClipper** lplpDDClipper, IUnknown* pUnkOuter);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DIRECTDRAW_VERSION"]/*' />
     [NativeTypeName("#define DIRECTDRAW_VERSION 0x0700")]
     public const int DIRECTDRAW_VERSION = 0x0700;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX._FACDD"]/*' />
     [NativeTypeName("#define _FACDD 0x876")]
     public const int _FACDD = 0x876;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.FOURCC_DXT1"]/*' />
     [NativeTypeName("#define FOURCC_DXT1 (MAKEFOURCC('D','X','T','1'))")]
     public const uint FOURCC_DXT1 = (((uint)((byte)('D')) | ((uint)((byte)('X')) << 8) | ((uint)((byte)('T')) << 16) | ((uint)((byte)('1')) << 24)));
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.FOURCC_DXT2"]/*' />
     [NativeTypeName("#define FOURCC_DXT2 (MAKEFOURCC('D','X','T','2'))")]
     public const uint FOURCC_DXT2 = (((uint)((byte)('D')) | ((uint)((byte)('X')) << 8) | ((uint)((byte)('T')) << 16) | ((uint)((byte)('2')) << 24)));
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.FOURCC_DXT3"]/*' />
     [NativeTypeName("#define FOURCC_DXT3 (MAKEFOURCC('D','X','T','3'))")]
     public const uint FOURCC_DXT3 = (((uint)((byte)('D')) | ((uint)((byte)('X')) << 8) | ((uint)((byte)('T')) << 16) | ((uint)((byte)('3')) << 24)));
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.FOURCC_DXT4"]/*' />
     [NativeTypeName("#define FOURCC_DXT4 (MAKEFOURCC('D','X','T','4'))")]
     public const uint FOURCC_DXT4 = (((uint)((byte)('D')) | ((uint)((byte)('X')) << 8) | ((uint)((byte)('T')) << 16) | ((uint)((byte)('4')) << 24)));
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.FOURCC_DXT5"]/*' />
     [NativeTypeName("#define FOURCC_DXT5 (MAKEFOURCC('D','X','T','5'))")]
     public const uint FOURCC_DXT5 = (((uint)((byte)('D')) | ((uint)((byte)('X')) << 8) | ((uint)((byte)('T')) << 16) | ((uint)((byte)('5')) << 24)));
 
@@ -71,33 +78,43 @@ public static unsafe partial class DirectX
     [NativeTypeName("#define DirectDrawEnumerateEx DirectDrawEnumerateExW")]
     public static delegate*<delegate* unmanaged<Guid*, char*, char*, void*, HMONITOR, BOOL>, void*, uint, HRESULT> DirectDrawEnumerateEx => &DirectDrawEnumerateExW;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.REGSTR_KEY_DDHW_DESCRIPTION"]/*' />
     [NativeTypeName("#define REGSTR_KEY_DDHW_DESCRIPTION \"Description\"")]
     public static ReadOnlySpan<byte> REGSTR_KEY_DDHW_DESCRIPTION => "Description"u8;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.REGSTR_KEY_DDHW_DRIVERNAME"]/*' />
     [NativeTypeName("#define REGSTR_KEY_DDHW_DRIVERNAME \"DriverName\"")]
     public static ReadOnlySpan<byte> REGSTR_KEY_DDHW_DRIVERNAME => "DriverName"u8;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.REGSTR_PATH_DDHW"]/*' />
     [NativeTypeName("#define REGSTR_PATH_DDHW \"Hardware\\DirectDrawDrivers\"")]
     public static ReadOnlySpan<byte> REGSTR_PATH_DDHW => "Hardware\\DirectDrawDrivers"u8;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DD_ROP_SPACE"]/*' />
     [NativeTypeName("#define DD_ROP_SPACE (256/32)")]
     public const int DD_ROP_SPACE = (256 / 32);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DDGDI_GETHOSTIDENTIFIER"]/*' />
     [NativeTypeName("#define DDGDI_GETHOSTIDENTIFIER 0x00000001L")]
     public const int DDGDI_GETHOSTIDENTIFIER = 0x00000001;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DDSDM_STANDARDVGAMODE"]/*' />
     [NativeTypeName("#define DDSDM_STANDARDVGAMODE 0x00000001l")]
     public const int DDSDM_STANDARDVGAMODE = 0x00000001;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DDSGR_CALIBRATE"]/*' />
     [NativeTypeName("#define DDSGR_CALIBRATE 0x00000001L")]
     public const int DDSGR_CALIBRATE = 0x00000001;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DDSMT_ISTESTREQUIRED"]/*' />
     [NativeTypeName("#define DDSMT_ISTESTREQUIRED 0x00000001L")]
     public const int DDSMT_ISTESTREQUIRED = 0x00000001;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DD_OK"]/*' />
     [NativeTypeName("#define DD_OK S_OK")]
     public const int DD_OK = ((int)(0));
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DD_FALSE"]/*' />
     [NativeTypeName("#define DD_FALSE S_FALSE")]
     public const int DD_FALSE = ((int)(1));
 }

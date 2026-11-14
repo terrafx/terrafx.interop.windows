@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("BF426F7E-7A5E-44D6-830C-A390EA9462A3")]
 public unsafe partial struct DocWrap : INativeGuid
 {
+    /// <include file='DocWrap.xml' path='doc/member[@name="DocWrap.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_DocWrap);
 }

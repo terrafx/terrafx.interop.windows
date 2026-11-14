@@ -14,6 +14,7 @@ namespace TerraFX.Interop.Windows;
 [Guid("BDFC4C4A-12A4-4744-87D8-765EB320C59F")]
 public unsafe partial struct IHttpPerfCounterInfo : IHttpPerfCounterInfo.Interface, INativeGuid
 {
+    /// <include file='IHttpPerfCounterInfo.xml' path='doc/member[@name="IHttpPerfCounterInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpPerfCounterInfo);
 
     public void** lpVtbl;

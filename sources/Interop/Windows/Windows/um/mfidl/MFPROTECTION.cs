@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MFPROTECTION
 {
+    /// <include file='MFPROTECTION.xml' path='doc/member[@name="MFPROTECTION.MFPROTECTION_DISABLE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTION_DISABLE
     {
@@ -37,6 +38,7 @@ public static partial class MFPROTECTION
         }
     }
 
+    /// <include file='MFPROTECTION.xml' path='doc/member[@name="MFPROTECTION.MFPROTECTION_CONSTRICTVIDEO"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTION_CONSTRICTVIDEO
     {
@@ -62,6 +64,7 @@ public static partial class MFPROTECTION
         }
     }
 
+    /// <include file='MFPROTECTION.xml' path='doc/member[@name="MFPROTECTION.MFPROTECTION_CONSTRICTVIDEO_NOOPM"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTION_CONSTRICTVIDEO_NOOPM
     {
@@ -87,6 +90,7 @@ public static partial class MFPROTECTION
         }
     }
 
+    /// <include file='MFPROTECTION.xml' path='doc/member[@name="MFPROTECTION.MFPROTECTION_CONSTRICTAUDIO"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTION_CONSTRICTAUDIO
     {
@@ -112,6 +116,7 @@ public static partial class MFPROTECTION
         }
     }
 
+    /// <include file='MFPROTECTION.xml' path='doc/member[@name="MFPROTECTION.MFPROTECTION_TRUSTEDAUDIODRIVERS"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTION_TRUSTEDAUDIODRIVERS
     {
@@ -137,6 +142,7 @@ public static partial class MFPROTECTION
         }
     }
 
+    /// <include file='MFPROTECTION.xml' path='doc/member[@name="MFPROTECTION.MFPROTECTION_HDCP"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTION_HDCP
     {
@@ -162,6 +168,7 @@ public static partial class MFPROTECTION
         }
     }
 
+    /// <include file='MFPROTECTION.xml' path='doc/member[@name="MFPROTECTION.MFPROTECTION_CGMSA"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTION_CGMSA
     {
@@ -187,6 +194,7 @@ public static partial class MFPROTECTION
         }
     }
 
+    /// <include file='MFPROTECTION.xml' path='doc/member[@name="MFPROTECTION.MFPROTECTION_ACP"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTION_ACP
     {
@@ -212,6 +220,7 @@ public static partial class MFPROTECTION
         }
     }
 
+    /// <include file='MFPROTECTION.xml' path='doc/member[@name="MFPROTECTION.MFPROTECTION_WMDRMOTA"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTION_WMDRMOTA
     {
@@ -237,6 +246,7 @@ public static partial class MFPROTECTION
         }
     }
 
+    /// <include file='MFPROTECTION.xml' path='doc/member[@name="MFPROTECTION.MFPROTECTION_FFT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTION_FFT
     {
@@ -262,6 +272,7 @@ public static partial class MFPROTECTION
         }
     }
 
+    /// <include file='MFPROTECTION.xml' path='doc/member[@name="MFPROTECTION.MFPROTECTION_PROTECTED_SURFACE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTION_PROTECTED_SURFACE
     {
@@ -287,6 +298,7 @@ public static partial class MFPROTECTION
         }
     }
 
+    /// <include file='MFPROTECTION.xml' path='doc/member[@name="MFPROTECTION.MFPROTECTION_DISABLE_SCREEN_SCRAPE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTION_DISABLE_SCREEN_SCRAPE
     {
@@ -312,6 +324,7 @@ public static partial class MFPROTECTION
         }
     }
 
+    /// <include file='MFPROTECTION.xml' path='doc/member[@name="MFPROTECTION.MFPROTECTION_VIDEO_FRAMES"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTION_VIDEO_FRAMES
     {
@@ -337,6 +350,7 @@ public static partial class MFPROTECTION
         }
     }
 
+    /// <include file='MFPROTECTION.xml' path='doc/member[@name="MFPROTECTION.MFPROTECTION_HARDWARE"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTION_HARDWARE
     {
@@ -362,6 +376,7 @@ public static partial class MFPROTECTION
         }
     }
 
+    /// <include file='MFPROTECTION.xml' path='doc/member[@name="MFPROTECTION.MFPROTECTION_HDCP_WITH_TYPE_ENFORCEMENT"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTION_HDCP_WITH_TYPE_ENFORCEMENT
     {
@@ -387,6 +402,7 @@ public static partial class MFPROTECTION
         }
     }
 
+    /// <include file='MFPROTECTION.xml' path='doc/member[@name="MFPROTECTION.MFPROTECTION_GRAPHICS_TRANSFER_AES_ENCRYPTION"]/*' />
     [NativeTypeName("const IID")]
     public static ref readonly Guid MFPROTECTION_GRAPHICS_TRANSFER_AES_ENCRYPTION
     {

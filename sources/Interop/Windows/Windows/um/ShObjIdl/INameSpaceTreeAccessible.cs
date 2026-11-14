@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible.Interface, INativeGuid
 {
+    /// <include file='INameSpaceTreeAccessible.xml' path='doc/member[@name="INameSpaceTreeAccessible.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_INameSpaceTreeAccessible);
 
     public void** lpVtbl;

@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISupportCoAddComDependencyOnPackage : ISupportCoAddComDependencyOnPackage.Interface, INativeGuid
 {
+    /// <include file='ISupportCoAddComDependencyOnPackage.xml' path='doc/member[@name="ISupportCoAddComDependencyOnPackage.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISupportCoAddComDependencyOnPackage);
 
     public void** lpVtbl;

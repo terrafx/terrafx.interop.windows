@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("C23FC28D-C55F-4720-8B32-91F73C2BD5D1")]
 public unsafe partial struct SpPhraseInfoBuilder : INativeGuid
 {
+    /// <include file='SpPhraseInfoBuilder.xml' path='doc/member[@name="SpPhraseInfoBuilder.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_SpPhraseInfoBuilder);
 }

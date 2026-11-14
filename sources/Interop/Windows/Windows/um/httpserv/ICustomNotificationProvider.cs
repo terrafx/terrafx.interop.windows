@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct ICustomNotificationProvider : ICustomNotificationProvider.Interface, INativeGuid
 {
+    /// <include file='ICustomNotificationProvider.xml' path='doc/member[@name="ICustomNotificationProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICustomNotificationProvider);
 
     public void** lpVtbl;

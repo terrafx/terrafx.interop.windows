@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class OPEN
 {
+    /// <include file='OPEN.xml' path='doc/member[@name="OPEN.OPEN_EXISTING"]/*' />
     [NativeTypeName("#define OPEN_EXISTING 3")]
     public const int OPEN_EXISTING = 3;
 
+    /// <include file='OPEN.xml' path='doc/member[@name="OPEN.OPEN_ALWAYS"]/*' />
     [NativeTypeName("#define OPEN_ALWAYS 4")]
     public const int OPEN_ALWAYS = 4;
 }

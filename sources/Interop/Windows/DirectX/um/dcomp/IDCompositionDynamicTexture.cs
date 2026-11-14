@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDCompositionDynamicTexture : IDCompositionDynamicTexture.Interface, INativeGuid
 {
+    /// <include file='IDCompositionDynamicTexture.xml' path='doc/member[@name="IDCompositionDynamicTexture.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDCompositionDynamicTexture);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IInfraredTorchControl : IInfraredTorchControl.Interface, INativeGuid
 {
+    /// <include file='IInfraredTorchControl.xml' path='doc/member[@name="IInfraredTorchControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IInfraredTorchControl);
 
     public void** lpVtbl;

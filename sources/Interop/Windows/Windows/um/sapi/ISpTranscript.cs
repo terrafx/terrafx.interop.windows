@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ISpTranscript : ISpTranscript.Interface, INativeGuid
 {
+    /// <include file='ISpTranscript.xml' path='doc/member[@name="ISpTranscript.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpTranscript);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMediaStreamSampleStatics : IMediaStreamSampleStatics.Interface, INativeGuid
 {
+    /// <include file='IMediaStreamSampleStatics.xml' path='doc/member[@name="IMediaStreamSampleStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMediaStreamSampleStatics);
 
     public void** lpVtbl;

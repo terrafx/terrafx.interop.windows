@@ -46,7 +46,7 @@ public partial struct FILE_NOTIFY_EXTENDED_INFORMATION
     public uint FileAttributes;
 
     /// <include file='FILE_NOTIFY_EXTENDED_INFORMATION.xml' path='doc/member[@name="FILE_NOTIFY_EXTENDED_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L15934_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L16767_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='FILE_NOTIFY_EXTENDED_INFORMATION.xml' path='doc/member[@name="FILE_NOTIFY_EXTENDED_INFORMATION.FileId"]/*' />

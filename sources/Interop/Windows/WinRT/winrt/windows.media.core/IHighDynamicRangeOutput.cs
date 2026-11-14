@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IHighDynamicRangeOutput : IHighDynamicRangeOutput.Interface, INativeGuid
 {
+    /// <include file='IHighDynamicRangeOutput.xml' path='doc/member[@name="IHighDynamicRangeOutput.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHighDynamicRangeOutput);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct INetworkSecuritySettings : INetworkSecuritySettings.Interface, INativeGuid
 {
+    /// <include file='INetworkSecuritySettings.xml' path='doc/member[@name="INetworkSecuritySettings.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_INetworkSecuritySettings);
 
     public void** lpVtbl;

@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CaptureGraphBuilder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CaptureGraphBuilder
     {
@@ -37,6 +38,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CaptureGraphBuilder2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CaptureGraphBuilder2
     {
@@ -62,6 +64,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ProtoFilterGraph"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ProtoFilterGraph
     {
@@ -87,6 +90,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_SystemClock"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_SystemClock
     {
@@ -112,6 +116,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_FilterMapper"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_FilterMapper
     {
@@ -137,6 +142,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_FilterGraph"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_FilterGraph
     {
@@ -162,6 +168,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_FilterGraphNoThread"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_FilterGraphNoThread
     {
@@ -187,6 +194,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_FilterGraphPrivateThread"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_FilterGraphPrivateThread
     {
@@ -212,6 +220,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MPEG1Doc"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MPEG1Doc
     {
@@ -237,6 +246,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_FileSource"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_FileSource
     {
@@ -262,6 +272,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MPEG1PacketPlayer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MPEG1PacketPlayer
     {
@@ -287,6 +298,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MPEG1Splitter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MPEG1Splitter
     {
@@ -312,6 +324,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CMpegVideoCodec"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CMpegVideoCodec
     {
@@ -337,6 +350,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CMpegAudioCodec"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CMpegAudioCodec
     {
@@ -362,6 +376,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_TextRender"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_TextRender
     {
@@ -387,6 +402,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_InfTee"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_InfTee
     {
@@ -412,6 +428,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AviSplitter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AviSplitter
     {
@@ -437,6 +454,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AviReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AviReader
     {
@@ -462,6 +480,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VfwCapture"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_VfwCapture
     {
@@ -487,6 +506,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CaptureProperties"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CaptureProperties
     {
@@ -512,6 +532,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_FGControl"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_FGControl
     {
@@ -537,6 +558,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MOVReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MOVReader
     {
@@ -562,6 +584,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_QuickTimeParser"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_QuickTimeParser
     {
@@ -587,6 +610,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_QTDec"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_QTDec
     {
@@ -612,6 +636,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AVIDoc"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AVIDoc
     {
@@ -637,6 +662,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VideoRenderer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_VideoRenderer
     {
@@ -662,6 +688,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_Colour"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_Colour
     {
@@ -687,6 +714,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_Dither"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_Dither
     {
@@ -712,6 +740,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ModexRenderer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ModexRenderer
     {
@@ -737,6 +766,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AudioRender"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AudioRender
     {
@@ -762,6 +792,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AudioProperties"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AudioProperties
     {
@@ -787,6 +818,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DSoundRender"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DSoundRender
     {
@@ -812,6 +844,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AudioRecord"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AudioRecord
     {
@@ -837,6 +870,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AudioInputMixerProperties"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AudioInputMixerProperties
     {
@@ -862,6 +896,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AVIDec"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AVIDec
     {
@@ -887,6 +922,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AVIDraw"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AVIDraw
     {
@@ -912,6 +948,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ACMWrapper"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ACMWrapper
     {
@@ -937,6 +974,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AsyncReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AsyncReader
     {
@@ -962,6 +1000,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_URLReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_URLReader
     {
@@ -987,6 +1026,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_PersistMonikerPID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_PersistMonikerPID
     {
@@ -1012,6 +1052,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AVICo"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AVICo
     {
@@ -1037,6 +1078,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_FileWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_FileWriter
     {
@@ -1062,6 +1104,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AviDest"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AviDest
     {
@@ -1087,6 +1130,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AviMuxProptyPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AviMuxProptyPage
     {
@@ -1112,6 +1156,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AviMuxProptyPage1"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AviMuxProptyPage1
     {
@@ -1137,6 +1182,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AVIMIDIRender"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AVIMIDIRender
     {
@@ -1162,6 +1208,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WMAsfReader"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WMAsfReader
     {
@@ -1187,6 +1234,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WMAsfWriter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WMAsfWriter
     {
@@ -1212,6 +1260,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MPEG2Demultiplexer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MPEG2Demultiplexer
     {
@@ -1237,6 +1286,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MPEG2Demultiplexer_NoClock"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MPEG2Demultiplexer_NoClock
     {
@@ -1262,6 +1312,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MMSPLITTER"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MMSPLITTER
     {
@@ -1287,6 +1338,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_StreamBufferSink"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_StreamBufferSink
     {
@@ -1312,6 +1364,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_SBE2Sink"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_SBE2Sink
     {
@@ -1337,6 +1390,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_StreamBufferSource"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_StreamBufferSource
     {
@@ -1362,6 +1416,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_StreamBufferConfig"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_StreamBufferConfig
     {
@@ -1387,6 +1442,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_StreamBufferPropertyHandler"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_StreamBufferPropertyHandler
     {
@@ -1412,6 +1468,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_StreamBufferThumbnailHandler"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_StreamBufferThumbnailHandler
     {
@@ -1437,6 +1494,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_Mpeg2VideoStreamAnalyzer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_Mpeg2VideoStreamAnalyzer
     {
@@ -1462,6 +1520,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_StreamBufferRecordingAttributes"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_StreamBufferRecordingAttributes
     {
@@ -1487,6 +1546,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_StreamBufferComposeRecording"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_StreamBufferComposeRecording
     {
@@ -1512,6 +1572,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_SBE2File"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_SBE2File
     {
@@ -1537,6 +1598,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DVVideoCodec"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DVVideoCodec
     {
@@ -1562,6 +1624,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DVVideoEnc"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DVVideoEnc
     {
@@ -1587,6 +1650,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DVSplitter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DVSplitter
     {
@@ -1612,6 +1676,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DVMux"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DVMux
     {
@@ -1637,6 +1702,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_SeekingPassThru"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_SeekingPassThru
     {
@@ -1662,6 +1728,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_Line21Decoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_Line21Decoder
     {
@@ -1687,6 +1754,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_Line21Decoder2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_Line21Decoder2
     {
@@ -1712,6 +1780,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CCAFilter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CCAFilter
     {
@@ -1737,6 +1806,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_OverlayMixer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_OverlayMixer
     {
@@ -1762,6 +1832,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VBISurfaces"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_VBISurfaces
     {
@@ -1787,6 +1858,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WSTDecoder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WSTDecoder
     {
@@ -1812,6 +1884,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MjpegDec"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MjpegDec
     {
@@ -1837,6 +1910,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MJPGEnc"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MJPGEnc
     {
@@ -1862,6 +1936,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_SystemDeviceEnum"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_SystemDeviceEnum
     {
@@ -1887,6 +1962,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CDeviceMoniker"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CDeviceMoniker
     {
@@ -1912,6 +1988,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VideoInputDeviceCategory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_VideoInputDeviceCategory
     {
@@ -1937,6 +2014,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CVidCapClassManager"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CVidCapClassManager
     {
@@ -1962,6 +2040,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_LegacyAmFilterCategory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_LegacyAmFilterCategory
     {
@@ -1987,6 +2066,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CQzFilterClassManager"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CQzFilterClassManager
     {
@@ -2012,6 +2092,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VideoCompressorCategory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_VideoCompressorCategory
     {
@@ -2037,6 +2118,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CIcmCoClassManager"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CIcmCoClassManager
     {
@@ -2062,6 +2144,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AudioCompressorCategory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AudioCompressorCategory
     {
@@ -2087,6 +2170,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CAcmCoClassManager"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CAcmCoClassManager
     {
@@ -2112,6 +2196,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AudioInputDeviceCategory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AudioInputDeviceCategory
     {
@@ -2137,6 +2222,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CWaveinClassManager"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CWaveinClassManager
     {
@@ -2162,6 +2248,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AudioRendererCategory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AudioRendererCategory
     {
@@ -2187,6 +2274,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CWaveOutClassManager"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CWaveOutClassManager
     {
@@ -2212,6 +2300,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MidiRendererCategory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MidiRendererCategory
     {
@@ -2237,6 +2326,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CMidiOutClassManager"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CMidiOutClassManager
     {
@@ -2262,6 +2352,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_TransmitCategory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_TransmitCategory
     {
@@ -2287,6 +2378,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DeviceControlCategory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DeviceControlCategory
     {
@@ -2312,6 +2404,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ActiveMovieCategories"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ActiveMovieCategories
     {
@@ -2337,6 +2430,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DVDHWDecodersCategory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DVDHWDecodersCategory
     {
@@ -2362,6 +2456,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MediaEncoderCategory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MediaEncoderCategory
     {
@@ -2387,6 +2482,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MediaMultiplexerCategory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MediaMultiplexerCategory
     {
@@ -2412,6 +2508,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_FilterMapper2"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_FilterMapper2
     {
@@ -2437,6 +2534,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MemoryAllocator"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MemoryAllocator
     {
@@ -2462,6 +2560,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MediaPropertyBag"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MediaPropertyBag
     {
@@ -2487,6 +2586,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DvdGraphBuilder"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DvdGraphBuilder
     {
@@ -2512,6 +2612,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DVDNavigator"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DVDNavigator
     {
@@ -2537,6 +2638,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DVDState"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DVDState
     {
@@ -2562,6 +2664,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_SmartTee"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_SmartTee
     {
@@ -2587,6 +2690,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DtvCcFilter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DtvCcFilter
     {
@@ -2612,6 +2716,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CaptionsFilter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CaptionsFilter
     {
@@ -2637,6 +2742,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_SubtitlesFilter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_SubtitlesFilter
     {
@@ -2662,6 +2768,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DirectShowPluginControl"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DirectShowPluginControl
     {
@@ -2687,6 +2794,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DirectDrawProperties"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DirectDrawProperties
     {
@@ -2712,6 +2820,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_PerformanceProperties"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_PerformanceProperties
     {
@@ -2737,6 +2846,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_QualityProperties"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_QualityProperties
     {
@@ -2762,6 +2872,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VPObject"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_VPObject
     {
@@ -2787,6 +2898,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VPVBIObject"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_VPVBIObject
     {
@@ -2812,6 +2924,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ModexProperties"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ModexProperties
     {
@@ -2837,6 +2950,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DVDecPropertiesPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DVDecPropertiesPage
     {
@@ -2862,6 +2976,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DVEncPropertiesPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DVEncPropertiesPage
     {
@@ -2887,6 +3002,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DVMuxPropertyPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DVMuxPropertyPage
     {
@@ -2912,6 +3028,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_WstDecoderPropertyPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_WstDecoderPropertyPage
     {
@@ -2937,6 +3054,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_TVTunerFilterPropertyPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_TVTunerFilterPropertyPage
     {
@@ -2962,6 +3080,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CrossbarFilterPropertyPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CrossbarFilterPropertyPage
     {
@@ -2987,6 +3106,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_TVAudioFilterPropertyPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_TVAudioFilterPropertyPage
     {
@@ -3012,6 +3132,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VideoProcAmpPropertyPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_VideoProcAmpPropertyPage
     {
@@ -3037,6 +3158,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CameraControlPropertyPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CameraControlPropertyPage
     {
@@ -3062,6 +3184,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AnalogVideoDecoderPropertyPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AnalogVideoDecoderPropertyPage
     {
@@ -3087,6 +3210,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VideoStreamConfigPropertyPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_VideoStreamConfigPropertyPage
     {
@@ -3112,6 +3236,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AudioRendererAdvancedProperties"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AudioRendererAdvancedProperties
     {
@@ -3137,6 +3262,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VideoMixingRenderer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_VideoMixingRenderer
     {
@@ -3162,6 +3288,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VideoRendererDefault"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_VideoRendererDefault
     {
@@ -3187,6 +3314,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AllocPresenter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AllocPresenter
     {
@@ -3212,6 +3340,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AllocPresenterDDXclMode"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AllocPresenterDDXclMode
     {
@@ -3237,6 +3366,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VideoPortManager"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_VideoPortManager
     {
@@ -3262,6 +3392,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VideoMixingRenderer9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_VideoMixingRenderer9
     {
@@ -3287,6 +3418,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_EnhancedVideoRenderer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_EnhancedVideoRenderer
     {
@@ -3312,6 +3444,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MFVideoMixer9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MFVideoMixer9
     {
@@ -3337,6 +3470,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MFVideoPresenter9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MFVideoPresenter9
     {
@@ -3362,6 +3496,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_EVRTearlessWindowPresenter9"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_EVRTearlessWindowPresenter9
     {
@@ -3387,6 +3522,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_EVRPlaybackPipelineOptimizer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_EVRPlaybackPipelineOptimizer
     {
@@ -3412,6 +3548,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_NetworkProvider"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_NetworkProvider
     {
@@ -3437,6 +3574,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ATSCNetworkProvider"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ATSCNetworkProvider
     {
@@ -3462,6 +3600,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ATSCNetworkPropertyPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ATSCNetworkPropertyPage
     {
@@ -3487,6 +3626,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DVBSNetworkProvider"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DVBSNetworkProvider
     {
@@ -3512,6 +3652,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DVBTNetworkProvider"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DVBTNetworkProvider
     {
@@ -3537,6 +3678,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DVBCNetworkProvider"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DVBCNetworkProvider
     {
@@ -3562,6 +3704,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DShowTVEFilter"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DShowTVEFilter
     {
@@ -3587,6 +3730,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_TVEFilterTuneProperties"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_TVEFilterTuneProperties
     {
@@ -3612,6 +3756,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_TVEFilterCCProperties"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_TVEFilterCCProperties
     {
@@ -3637,6 +3782,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_TVEFilterStatsProperties"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_TVEFilterStatsProperties
     {
@@ -3662,6 +3808,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_IVideoEncoderProxy"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_IVideoEncoderProxy
     {
@@ -3687,6 +3834,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ICodecAPIProxy"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ICodecAPIProxy
     {
@@ -3712,6 +3860,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_IVideoEncoderCodecAPIProxy"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_IVideoEncoderCodecAPIProxy
     {
@@ -3737,6 +3886,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_SBE2MediaTypeProfile"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_SBE2MediaTypeProfile
     {
@@ -3762,6 +3912,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_SBE2FileScan"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_SBE2FileScan
     {

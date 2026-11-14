@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGraphicsEffectSource : IGraphicsEffectSource.Interface, INativeGuid
 {
+    /// <include file='IGraphicsEffectSource.xml' path='doc/member[@name="IGraphicsEffectSource.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGraphicsEffectSource);
 
     public void** lpVtbl;

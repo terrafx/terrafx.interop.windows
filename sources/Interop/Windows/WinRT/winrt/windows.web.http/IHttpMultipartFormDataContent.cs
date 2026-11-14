@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IHttpMultipartFormDataContent : IHttpMultipartFormDataContent.Interface, INativeGuid
 {
+    /// <include file='IHttpMultipartFormDataContent.xml' path='doc/member[@name="IHttpMultipartFormDataContent.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpMultipartFormDataContent);
 
     public void** lpVtbl;

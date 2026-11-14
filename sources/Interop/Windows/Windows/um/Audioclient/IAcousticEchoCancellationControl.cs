@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.22621.0")]
 public unsafe partial struct IAcousticEchoCancellationControl : IAcousticEchoCancellationControl.Interface, INativeGuid
 {
+    /// <include file='IAcousticEchoCancellationControl.xml' path='doc/member[@name="IAcousticEchoCancellationControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAcousticEchoCancellationControl);
 
     public void** lpVtbl;

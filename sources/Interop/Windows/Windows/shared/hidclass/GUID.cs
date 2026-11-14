@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class GUID
 {
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_DEVINTERFACE_HID"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_DEVINTERFACE_HID
     {
@@ -37,6 +38,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_HID_INTERFACE_NOTIFY"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_HID_INTERFACE_NOTIFY
     {
@@ -62,6 +64,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_HID_INTERFACE_HIDPARSE"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid GUID_HID_INTERFACE_HIDPARSE
     {
@@ -87,6 +90,7 @@ public static partial class GUID
         }
     }
 
+    /// <include file='GUID.xml' path='doc/member[@name="GUID.GUID_CLASS_INPUT"]/*' />
     [NativeTypeName("#define GUID_CLASS_INPUT GUID_DEVINTERFACE_HID")]
     public static ref readonly Guid GUID_CLASS_INPUT => ref GUID_DEVINTERFACE_HID;
 }

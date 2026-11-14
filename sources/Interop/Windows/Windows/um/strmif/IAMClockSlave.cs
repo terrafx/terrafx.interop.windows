@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAMClockSlave : IAMClockSlave.Interface, INativeGuid
 {
+    /// <include file='IAMClockSlave.xml' path='doc/member[@name="IAMClockSlave.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMClockSlave);
 
     public void** lpVtbl;

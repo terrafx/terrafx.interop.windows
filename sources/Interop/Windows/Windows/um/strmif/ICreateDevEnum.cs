@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ICreateDevEnum : ICreateDevEnum.Interface, INativeGuid
 {
+    /// <include file='ICreateDevEnum.xml' path='doc/member[@name="ICreateDevEnum.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICreateDevEnum);
 
     public void** lpVtbl;

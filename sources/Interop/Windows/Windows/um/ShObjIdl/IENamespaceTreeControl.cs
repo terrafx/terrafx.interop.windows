@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("ACE52D03-E5CD-4B20-82FF-E71B11BEAE1D")]
 public unsafe partial struct IENamespaceTreeControl : INativeGuid
 {
+    /// <include file='IENamespaceTreeControl.xml' path='doc/member[@name="IENamespaceTreeControl.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_IENamespaceTreeControl);
 }

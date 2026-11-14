@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IWebSocketServerCustomValidationRequestedEventArgs : IWebSocketServerCustomValidationRequestedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IWebSocketServerCustomValidationRequestedEventArgs.xml' path='doc/member[@name="IWebSocketServerCustomValidationRequestedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWebSocketServerCustomValidationRequestedEventArgs);
 
     public void** lpVtbl;

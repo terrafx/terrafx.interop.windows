@@ -7,66 +7,87 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class PS
 {
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_SOLID"]/*' />
     [NativeTypeName("#define PS_SOLID 0")]
     public const int PS_SOLID = 0;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_DASH"]/*' />
     [NativeTypeName("#define PS_DASH 1")]
     public const int PS_DASH = 1;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_DOT"]/*' />
     [NativeTypeName("#define PS_DOT 2")]
     public const int PS_DOT = 2;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_DASHDOT"]/*' />
     [NativeTypeName("#define PS_DASHDOT 3")]
     public const int PS_DASHDOT = 3;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_DASHDOTDOT"]/*' />
     [NativeTypeName("#define PS_DASHDOTDOT 4")]
     public const int PS_DASHDOTDOT = 4;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_NULL"]/*' />
     [NativeTypeName("#define PS_NULL 5")]
     public const int PS_NULL = 5;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_INSIDEFRAME"]/*' />
     [NativeTypeName("#define PS_INSIDEFRAME 6")]
     public const int PS_INSIDEFRAME = 6;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_USERSTYLE"]/*' />
     [NativeTypeName("#define PS_USERSTYLE 7")]
     public const int PS_USERSTYLE = 7;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_ALTERNATE"]/*' />
     [NativeTypeName("#define PS_ALTERNATE 8")]
     public const int PS_ALTERNATE = 8;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_STYLE_MASK"]/*' />
     [NativeTypeName("#define PS_STYLE_MASK 0x0000000F")]
     public const int PS_STYLE_MASK = 0x0000000F;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_ENDCAP_ROUND"]/*' />
     [NativeTypeName("#define PS_ENDCAP_ROUND 0x00000000")]
     public const int PS_ENDCAP_ROUND = 0x00000000;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_ENDCAP_SQUARE"]/*' />
     [NativeTypeName("#define PS_ENDCAP_SQUARE 0x00000100")]
     public const int PS_ENDCAP_SQUARE = 0x00000100;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_ENDCAP_FLAT"]/*' />
     [NativeTypeName("#define PS_ENDCAP_FLAT 0x00000200")]
     public const int PS_ENDCAP_FLAT = 0x00000200;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_ENDCAP_MASK"]/*' />
     [NativeTypeName("#define PS_ENDCAP_MASK 0x00000F00")]
     public const int PS_ENDCAP_MASK = 0x00000F00;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_JOIN_ROUND"]/*' />
     [NativeTypeName("#define PS_JOIN_ROUND 0x00000000")]
     public const int PS_JOIN_ROUND = 0x00000000;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_JOIN_BEVEL"]/*' />
     [NativeTypeName("#define PS_JOIN_BEVEL 0x00001000")]
     public const int PS_JOIN_BEVEL = 0x00001000;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_JOIN_MITER"]/*' />
     [NativeTypeName("#define PS_JOIN_MITER 0x00002000")]
     public const int PS_JOIN_MITER = 0x00002000;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_JOIN_MASK"]/*' />
     [NativeTypeName("#define PS_JOIN_MASK 0x0000F000")]
     public const int PS_JOIN_MASK = 0x0000F000;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_COSMETIC"]/*' />
     [NativeTypeName("#define PS_COSMETIC 0x00000000")]
     public const int PS_COSMETIC = 0x00000000;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_GEOMETRIC"]/*' />
     [NativeTypeName("#define PS_GEOMETRIC 0x00010000")]
     public const int PS_GEOMETRIC = 0x00010000;
 
+    /// <include file='PS.xml' path='doc/member[@name="PS.PS_TYPE_MASK"]/*' />
     [NativeTypeName("#define PS_TYPE_MASK 0x000F0000")]
     public const int PS_TYPE_MASK = 0x000F0000;
 }

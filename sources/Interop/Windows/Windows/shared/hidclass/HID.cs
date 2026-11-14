@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class HID
 {
+    /// <include file='HID.xml' path='doc/member[@name="HID.HID_REVISION"]/*' />
     [NativeTypeName("#define HID_REVISION 0x00000001")]
     public const int HID_REVISION = 0x00000001;
 }

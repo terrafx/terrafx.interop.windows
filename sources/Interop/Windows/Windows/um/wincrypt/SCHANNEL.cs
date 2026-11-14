@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SCHANNEL
 {
+    /// <include file='SCHANNEL.xml' path='doc/member[@name="SCHANNEL.SCHANNEL_MAC_KEY"]/*' />
     [NativeTypeName("#define SCHANNEL_MAC_KEY 0x00000000")]
     public const int SCHANNEL_MAC_KEY = 0x00000000;
 
+    /// <include file='SCHANNEL.xml' path='doc/member[@name="SCHANNEL.SCHANNEL_ENC_KEY"]/*' />
     [NativeTypeName("#define SCHANNEL_ENC_KEY 0x00000001")]
     public const int SCHANNEL_ENC_KEY = 0x00000001;
 }

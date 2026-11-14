@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IBufferByteAccess : IBufferByteAccess.Interface, INativeGuid
 {
+    /// <include file='IBufferByteAccess.xml' path='doc/member[@name="IBufferByteAccess.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBufferByteAccess);
 
     public void** lpVtbl;

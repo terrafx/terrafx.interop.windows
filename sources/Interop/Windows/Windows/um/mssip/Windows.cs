@@ -70,45 +70,59 @@ public static unsafe partial class Windows
     [DllImport("crypt32", ExactSpelling = true)]
     public static extern BOOL CryptSIPGetSealedDigest(SIP_SUBJECTINFO* pSubjectInfo, [NativeTypeName("const BYTE *")] byte* pSig, [NativeTypeName("DWORD")] uint dwSig, byte* pbDigest, [NativeTypeName("DWORD *")] uint* pcbDigest);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSSIP_FLAGS_PROHIBIT_RESIZE_ON_CREATE"]/*' />
     [NativeTypeName("#define MSSIP_FLAGS_PROHIBIT_RESIZE_ON_CREATE 0x00010000")]
     public const int MSSIP_FLAGS_PROHIBIT_RESIZE_ON_CREATE = 0x00010000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSSIP_FLAGS_USE_CATALOG"]/*' />
     [NativeTypeName("#define MSSIP_FLAGS_USE_CATALOG 0x00020000")]
     public const int MSSIP_FLAGS_USE_CATALOG = 0x00020000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSSIP_FLAGS_MULTI_HASH"]/*' />
     [NativeTypeName("#define MSSIP_FLAGS_MULTI_HASH 0x00040000")]
     public const int MSSIP_FLAGS_MULTI_HASH = 0x00040000;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSSIP_ADDINFO_NONE"]/*' />
     [NativeTypeName("#define MSSIP_ADDINFO_NONE 0")]
     public const int MSSIP_ADDINFO_NONE = 0;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSSIP_ADDINFO_FLAT"]/*' />
     [NativeTypeName("#define MSSIP_ADDINFO_FLAT 1")]
     public const int MSSIP_ADDINFO_FLAT = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSSIP_ADDINFO_CATMEMBER"]/*' />
     [NativeTypeName("#define MSSIP_ADDINFO_CATMEMBER 2")]
     public const int MSSIP_ADDINFO_CATMEMBER = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSSIP_ADDINFO_BLOB"]/*' />
     [NativeTypeName("#define MSSIP_ADDINFO_BLOB 3")]
     public const int MSSIP_ADDINFO_BLOB = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSSIP_ADDINFO_DETACHEDSIG"]/*' />
     [NativeTypeName("#define MSSIP_ADDINFO_DETACHEDSIG 4")]
     public const int MSSIP_ADDINFO_DETACHEDSIG = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MSSIP_ADDINFO_NONMSSIP"]/*' />
     [NativeTypeName("#define MSSIP_ADDINFO_NONMSSIP 500")]
     public const int MSSIP_ADDINFO_NONMSSIP = 500;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIP_CAP_SET_VERSION_2"]/*' />
     [NativeTypeName("#define SIP_CAP_SET_VERSION_2 2")]
     public const int SIP_CAP_SET_VERSION_2 = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIP_CAP_SET_VERSION_3"]/*' />
     [NativeTypeName("#define SIP_CAP_SET_VERSION_3 3")]
     public const int SIP_CAP_SET_VERSION_3 = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIP_CAP_SET_CUR_VER"]/*' />
     [NativeTypeName("#define SIP_CAP_SET_CUR_VER 3")]
     public const int SIP_CAP_SET_CUR_VER = 3;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIP_CAP_FLAG_SEALING"]/*' />
     [NativeTypeName("#define SIP_CAP_FLAG_SEALING 0x00000001")]
     public const int SIP_CAP_FLAG_SEALING = 0x00000001;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SIP_MAX_MAGIC_NUMBER"]/*' />
     [NativeTypeName("#define SIP_MAX_MAGIC_NUMBER 4")]
     public const int SIP_MAX_MAGIC_NUMBER = 4;
 }

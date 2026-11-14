@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IHttpRequestMessage2 : IHttpRequestMessage2.Interface, INativeGuid
 {
+    /// <include file='IHttpRequestMessage2.xml' path='doc/member[@name="IHttpRequestMessage2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHttpRequestMessage2);
 
     public void** lpVtbl;

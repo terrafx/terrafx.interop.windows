@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IIsoImageManager : IIsoImageManager.Interface, INativeGuid
 {
+    /// <include file='IIsoImageManager.xml' path='doc/member[@name="IIsoImageManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IIsoImageManager);
 
     public void** lpVtbl;

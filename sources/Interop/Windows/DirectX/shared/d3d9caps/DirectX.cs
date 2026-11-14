@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DirectX
 {
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DMIN30SHADERINSTRUCTIONS"]/*' />
     [NativeTypeName("#define D3DMIN30SHADERINSTRUCTIONS 512")]
     public const int D3DMIN30SHADERINSTRUCTIONS = 512;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DMAX30SHADERINSTRUCTIONS"]/*' />
     [NativeTypeName("#define D3DMAX30SHADERINSTRUCTIONS 32768")]
     public const int D3DMAX30SHADERINSTRUCTIONS = 32768;
 }

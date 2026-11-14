@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IContentPrefetcherTime : IContentPrefetcherTime.Interface, INativeGuid
 {
+    /// <include file='IContentPrefetcherTime.xml' path='doc/member[@name="IContentPrefetcherTime.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IContentPrefetcherTime);
 
     public void** lpVtbl;

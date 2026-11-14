@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.ANY_SIZE"]/*' />
     [NativeTypeName("#define ANY_SIZE 1")]
     public const int ANY_SIZE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MAXLEN_PHYSADDR"]/*' />
     [NativeTypeName("#define MAXLEN_PHYSADDR 8")]
     public const int MAXLEN_PHYSADDR = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MAXLEN_IFDESCR"]/*' />
     [NativeTypeName("#define MAXLEN_IFDESCR 256")]
     public const int MAXLEN_IFDESCR = 256;
 }

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPfxImportParameters : IPfxImportParameters.Interface, INativeGuid
 {
+    /// <include file='IPfxImportParameters.xml' path='doc/member[@name="IPfxImportParameters.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPfxImportParameters);
 
     public void** lpVtbl;

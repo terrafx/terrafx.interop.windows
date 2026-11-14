@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IDWritePixelSnapping")]
 public unsafe partial struct IDWriteTextRenderer : IDWriteTextRenderer.Interface, INativeGuid
 {
+    /// <include file='IDWriteTextRenderer.xml' path='doc/member[@name="IDWriteTextRenderer.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDWriteTextRenderer);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAppBroadcastCameraCaptureStateChangedEventArgs : IAppBroadcastCameraCaptureStateChangedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IAppBroadcastCameraCaptureStateChangedEventArgs.xml' path='doc/member[@name="IAppBroadcastCameraCaptureStateChangedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppBroadcastCameraCaptureStateChangedEventArgs);
 
     public void** lpVtbl;

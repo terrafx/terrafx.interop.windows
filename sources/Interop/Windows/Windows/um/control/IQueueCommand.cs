@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IQueueCommand : IQueueCommand.Interface, INativeGuid
 {
+    /// <include file='IQueueCommand.xml' path='doc/member[@name="IQueueCommand.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IQueueCommand);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICmsSignerInfo : ICmsSignerInfo.Interface, INativeGuid
 {
+    /// <include file='ICmsSignerInfo.xml' path='doc/member[@name="ICmsSignerInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICmsSignerInfo);
 
     public void** lpVtbl;

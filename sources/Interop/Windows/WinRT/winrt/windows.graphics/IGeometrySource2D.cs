@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGeometrySource2D : IGeometrySource2D.Interface, INativeGuid
 {
+    /// <include file='IGeometrySource2D.xml' path='doc/member[@name="IGeometrySource2D.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGeometrySource2D);
 
     public void** lpVtbl;

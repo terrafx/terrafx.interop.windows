@@ -37,12 +37,15 @@ public static unsafe partial class Windows
     [DllImport("url", ExactSpelling = true)]
     public static extern BOOL InetIsOffline([NativeTypeName("DWORD")] uint dwFlags);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TranslateURL"]/*' />
     [NativeTypeName("#define TranslateURL TranslateURLW")]
     public static delegate*<char*, uint, char**, HRESULT> TranslateURL => &TranslateURLW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.URLAssociationDialog"]/*' />
     [NativeTypeName("#define URLAssociationDialog URLAssociationDialogW")]
     public static delegate*<HWND, uint, char*, char*, char*, uint, HRESULT> URLAssociationDialog => &URLAssociationDialogW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.MIMEAssociationDialog"]/*' />
     [NativeTypeName("#define MIMEAssociationDialog MIMEAssociationDialogW")]
     public static delegate*<HWND, uint, char*, char*, char*, uint, HRESULT> MIMEAssociationDialog => &MIMEAssociationDialogW;
 }

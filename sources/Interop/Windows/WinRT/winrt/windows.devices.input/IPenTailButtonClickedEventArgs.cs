@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IPenTailButtonClickedEventArgs : IPenTailButtonClickedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IPenTailButtonClickedEventArgs.xml' path='doc/member[@name="IPenTailButtonClickedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPenTailButtonClickedEventArgs);
 
     public void** lpVtbl;

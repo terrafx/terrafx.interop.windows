@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IBackgroundTransferRangesDownloadedEventArgs : IBackgroundTransferRangesDownloadedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IBackgroundTransferRangesDownloadedEventArgs.xml' path='doc/member[@name="IBackgroundTransferRangesDownloadedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBackgroundTransferRangesDownloadedEventArgs);
 
     public void** lpVtbl;

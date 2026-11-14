@@ -7,9 +7,11 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DIDF
 {
+    /// <include file='DIDF.xml' path='doc/member[@name="DIDF.DIDF_ABSAXIS"]/*' />
     [NativeTypeName("#define DIDF_ABSAXIS 0x00000001")]
     public const int DIDF_ABSAXIS = 0x00000001;
 
+    /// <include file='DIDF.xml' path='doc/member[@name="DIDF.DIDF_RELAXIS"]/*' />
     [NativeTypeName("#define DIDF_RELAXIS 0x00000002")]
     public const int DIDF_RELAXIS = 0x00000002;
 }

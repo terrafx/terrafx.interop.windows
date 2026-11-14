@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("B0C8BF60-16F7-4951-A30B-1DB1609293D6")]
 public unsafe partial struct CODECAPI_AVEncNumWorkerThreads : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncNumWorkerThreads.xml' path='doc/member[@name="CODECAPI_AVEncNumWorkerThreads.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncNumWorkerThreads);
 }

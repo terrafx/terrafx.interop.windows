@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IUISettingsAnimationsEnabledChangedEventArgs : IUISettingsAnimationsEnabledChangedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IUISettingsAnimationsEnabledChangedEventArgs.xml' path='doc/member[@name="IUISettingsAnimationsEnabledChangedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUISettingsAnimationsEnabledChangedEventArgs);
 
     public void** lpVtbl;

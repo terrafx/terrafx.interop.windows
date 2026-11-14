@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.15063.0")]
 public unsafe partial struct ILanguageExceptionStackBackTrace : ILanguageExceptionStackBackTrace.Interface, INativeGuid
 {
+    /// <include file='ILanguageExceptionStackBackTrace.xml' path='doc/member[@name="ILanguageExceptionStackBackTrace.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILanguageExceptionStackBackTrace);
 
     public void** lpVtbl;

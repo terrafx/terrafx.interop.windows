@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IEdgeGestureStatics : IEdgeGestureStatics.Interface, INativeGuid
 {
+    /// <include file='IEdgeGestureStatics.xml' path='doc/member[@name="IEdgeGestureStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEdgeGestureStatics);
 
     public void** lpVtbl;

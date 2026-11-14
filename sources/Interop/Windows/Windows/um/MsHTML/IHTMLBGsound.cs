@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IHTMLBGsound : IHTMLBGsound.Interface, INativeGuid
 {
+    /// <include file='IHTMLBGsound.xml' path='doc/member[@name="IHTMLBGsound.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IHTMLBGsound);
 
     public void** lpVtbl;

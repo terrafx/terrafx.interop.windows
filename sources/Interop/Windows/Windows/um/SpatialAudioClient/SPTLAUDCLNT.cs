@@ -7,42 +7,55 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SPTLAUDCLNT
 {
+    /// <include file='SPTLAUDCLNT.xml' path='doc/member[@name="SPTLAUDCLNT.SPTLAUDCLNT_E_DESTROYED"]/*' />
     [NativeTypeName("#define SPTLAUDCLNT_E_DESTROYED AUDCLNT_ERR(0x0100)")]
     public const int SPTLAUDCLNT_E_DESTROYED = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x0100))));
 
+    /// <include file='SPTLAUDCLNT.xml' path='doc/member[@name="SPTLAUDCLNT.SPTLAUDCLNT_E_OUT_OF_ORDER"]/*' />
     [NativeTypeName("#define SPTLAUDCLNT_E_OUT_OF_ORDER AUDCLNT_ERR(0x0101)")]
     public const int SPTLAUDCLNT_E_OUT_OF_ORDER = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x0101))));
 
+    /// <include file='SPTLAUDCLNT.xml' path='doc/member[@name="SPTLAUDCLNT.SPTLAUDCLNT_E_RESOURCES_INVALIDATED"]/*' />
     [NativeTypeName("#define SPTLAUDCLNT_E_RESOURCES_INVALIDATED AUDCLNT_ERR(0x0102)")]
     public const int SPTLAUDCLNT_E_RESOURCES_INVALIDATED = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x0102))));
 
+    /// <include file='SPTLAUDCLNT.xml' path='doc/member[@name="SPTLAUDCLNT.SPTLAUDCLNT_E_NO_MORE_OBJECTS"]/*' />
     [NativeTypeName("#define SPTLAUDCLNT_E_NO_MORE_OBJECTS AUDCLNT_ERR(0x0103)")]
     public const int SPTLAUDCLNT_E_NO_MORE_OBJECTS = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x0103))));
 
+    /// <include file='SPTLAUDCLNT.xml' path='doc/member[@name="SPTLAUDCLNT.SPTLAUDCLNT_E_PROPERTY_NOT_SUPPORTED"]/*' />
     [NativeTypeName("#define SPTLAUDCLNT_E_PROPERTY_NOT_SUPPORTED AUDCLNT_ERR(0x0104)")]
     public const int SPTLAUDCLNT_E_PROPERTY_NOT_SUPPORTED = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x0104))));
 
+    /// <include file='SPTLAUDCLNT.xml' path='doc/member[@name="SPTLAUDCLNT.SPTLAUDCLNT_E_ERRORS_IN_OBJECT_CALLS"]/*' />
     [NativeTypeName("#define SPTLAUDCLNT_E_ERRORS_IN_OBJECT_CALLS AUDCLNT_ERR(0x0105)")]
     public const int SPTLAUDCLNT_E_ERRORS_IN_OBJECT_CALLS = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x0105))));
 
+    /// <include file='SPTLAUDCLNT.xml' path='doc/member[@name="SPTLAUDCLNT.SPTLAUDCLNT_E_METADATA_FORMAT_NOT_SUPPORTED"]/*' />
     [NativeTypeName("#define SPTLAUDCLNT_E_METADATA_FORMAT_NOT_SUPPORTED AUDCLNT_ERR(0x0106)")]
     public const int SPTLAUDCLNT_E_METADATA_FORMAT_NOT_SUPPORTED = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x0106))));
 
+    /// <include file='SPTLAUDCLNT.xml' path='doc/member[@name="SPTLAUDCLNT.SPTLAUDCLNT_E_STREAM_NOT_AVAILABLE"]/*' />
     [NativeTypeName("#define SPTLAUDCLNT_E_STREAM_NOT_AVAILABLE AUDCLNT_ERR(0x0107)")]
     public const int SPTLAUDCLNT_E_STREAM_NOT_AVAILABLE = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x0107))));
 
+    /// <include file='SPTLAUDCLNT.xml' path='doc/member[@name="SPTLAUDCLNT.SPTLAUDCLNT_E_INVALID_LICENSE"]/*' />
     [NativeTypeName("#define SPTLAUDCLNT_E_INVALID_LICENSE AUDCLNT_ERR(0x0108)")]
     public const int SPTLAUDCLNT_E_INVALID_LICENSE = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x0108))));
 
+    /// <include file='SPTLAUDCLNT.xml' path='doc/member[@name="SPTLAUDCLNT.SPTLAUDCLNT_E_STREAM_NOT_STOPPED"]/*' />
     [NativeTypeName("#define SPTLAUDCLNT_E_STREAM_NOT_STOPPED AUDCLNT_ERR(0x010a)")]
     public const int SPTLAUDCLNT_E_STREAM_NOT_STOPPED = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x010a))));
 
+    /// <include file='SPTLAUDCLNT.xml' path='doc/member[@name="SPTLAUDCLNT.SPTLAUDCLNT_E_STATIC_OBJECT_NOT_AVAILABLE"]/*' />
     [NativeTypeName("#define SPTLAUDCLNT_E_STATIC_OBJECT_NOT_AVAILABLE AUDCLNT_ERR(0x010b)")]
     public const int SPTLAUDCLNT_E_STATIC_OBJECT_NOT_AVAILABLE = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x010b))));
 
+    /// <include file='SPTLAUDCLNT.xml' path='doc/member[@name="SPTLAUDCLNT.SPTLAUDCLNT_E_OBJECT_ALREADY_ACTIVE"]/*' />
     [NativeTypeName("#define SPTLAUDCLNT_E_OBJECT_ALREADY_ACTIVE AUDCLNT_ERR(0x010c)")]
     public const int SPTLAUDCLNT_E_OBJECT_ALREADY_ACTIVE = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x010c))));
 
+    /// <include file='SPTLAUDCLNT.xml' path='doc/member[@name="SPTLAUDCLNT.SPTLAUDCLNT_E_INTERNAL"]/*' />
     [NativeTypeName("#define SPTLAUDCLNT_E_INTERNAL AUDCLNT_ERR(0x010d)")]
     public const int SPTLAUDCLNT_E_INTERNAL = unchecked((int)(((uint)(1) << 31) | ((uint)(2185) << 16) | ((uint)(0x010d))));
 }

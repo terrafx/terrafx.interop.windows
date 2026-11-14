@@ -7,33 +7,43 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MFBYTESTREAM
 {
+    /// <include file='MFBYTESTREAM.xml' path='doc/member[@name="MFBYTESTREAM.MFBYTESTREAM_IS_READABLE"]/*' />
     [NativeTypeName("#define MFBYTESTREAM_IS_READABLE 0x00000001")]
     public const int MFBYTESTREAM_IS_READABLE = 0x00000001;
 
+    /// <include file='MFBYTESTREAM.xml' path='doc/member[@name="MFBYTESTREAM.MFBYTESTREAM_IS_WRITABLE"]/*' />
     [NativeTypeName("#define MFBYTESTREAM_IS_WRITABLE 0x00000002")]
     public const int MFBYTESTREAM_IS_WRITABLE = 0x00000002;
 
+    /// <include file='MFBYTESTREAM.xml' path='doc/member[@name="MFBYTESTREAM.MFBYTESTREAM_IS_SEEKABLE"]/*' />
     [NativeTypeName("#define MFBYTESTREAM_IS_SEEKABLE 0x00000004")]
     public const int MFBYTESTREAM_IS_SEEKABLE = 0x00000004;
 
+    /// <include file='MFBYTESTREAM.xml' path='doc/member[@name="MFBYTESTREAM.MFBYTESTREAM_IS_REMOTE"]/*' />
     [NativeTypeName("#define MFBYTESTREAM_IS_REMOTE 0x00000008")]
     public const int MFBYTESTREAM_IS_REMOTE = 0x00000008;
 
+    /// <include file='MFBYTESTREAM.xml' path='doc/member[@name="MFBYTESTREAM.MFBYTESTREAM_IS_DIRECTORY"]/*' />
     [NativeTypeName("#define MFBYTESTREAM_IS_DIRECTORY 0x00000080")]
     public const int MFBYTESTREAM_IS_DIRECTORY = 0x00000080;
 
+    /// <include file='MFBYTESTREAM.xml' path='doc/member[@name="MFBYTESTREAM.MFBYTESTREAM_HAS_SLOW_SEEK"]/*' />
     [NativeTypeName("#define MFBYTESTREAM_HAS_SLOW_SEEK 0x00000100")]
     public const int MFBYTESTREAM_HAS_SLOW_SEEK = 0x00000100;
 
+    /// <include file='MFBYTESTREAM.xml' path='doc/member[@name="MFBYTESTREAM.MFBYTESTREAM_IS_PARTIALLY_DOWNLOADED"]/*' />
     [NativeTypeName("#define MFBYTESTREAM_IS_PARTIALLY_DOWNLOADED 0x00000200")]
     public const int MFBYTESTREAM_IS_PARTIALLY_DOWNLOADED = 0x00000200;
 
+    /// <include file='MFBYTESTREAM.xml' path='doc/member[@name="MFBYTESTREAM.MFBYTESTREAM_SHARE_WRITE"]/*' />
     [NativeTypeName("#define MFBYTESTREAM_SHARE_WRITE 0x00000400")]
     public const int MFBYTESTREAM_SHARE_WRITE = 0x00000400;
 
+    /// <include file='MFBYTESTREAM.xml' path='doc/member[@name="MFBYTESTREAM.MFBYTESTREAM_DOES_NOT_USE_NETWORK"]/*' />
     [NativeTypeName("#define MFBYTESTREAM_DOES_NOT_USE_NETWORK 0x00000800")]
     public const int MFBYTESTREAM_DOES_NOT_USE_NETWORK = 0x00000800;
 
+    /// <include file='MFBYTESTREAM.xml' path='doc/member[@name="MFBYTESTREAM.MFBYTESTREAM_SEEK_FLAG_CANCEL_PENDING_IO"]/*' />
     [NativeTypeName("#define MFBYTESTREAM_SEEK_FLAG_CANCEL_PENDING_IO 0x00000001")]
     public const int MFBYTESTREAM_SEEK_FLAG_CANCEL_PENDING_IO = 0x00000001;
 }

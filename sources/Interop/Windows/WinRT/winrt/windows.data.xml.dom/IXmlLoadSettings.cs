@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IXmlLoadSettings : IXmlLoadSettings.Interface, INativeGuid
 {
+    /// <include file='IXmlLoadSettings.xml' path='doc/member[@name="IXmlLoadSettings.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IXmlLoadSettings);
 
     public void** lpVtbl;

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IDataRequest : IDataRequest.Interface, INativeGuid
 {
+    /// <include file='IDataRequest.xml' path='doc/member[@name="IDataRequest.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDataRequest);
 
     public void** lpVtbl;

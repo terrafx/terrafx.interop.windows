@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("D3AF46B8-BF47-44BB-A283-69F0B0228FF9")]
 public unsafe partial struct CODECAPI_AVEncVideoIntraLayerPrediction : INativeGuid
 {
+    /// <include file='CODECAPI_AVEncVideoIntraLayerPrediction.xml' path='doc/member[@name="CODECAPI_AVEncVideoIntraLayerPrediction.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_CODECAPI_AVEncVideoIntraLayerPrediction);
 }

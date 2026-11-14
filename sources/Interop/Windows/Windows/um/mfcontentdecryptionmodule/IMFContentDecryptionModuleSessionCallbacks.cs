@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.19041.0")]
 public unsafe partial struct IMFContentDecryptionModuleSessionCallbacks : IMFContentDecryptionModuleSessionCallbacks.Interface, INativeGuid
 {
+    /// <include file='IMFContentDecryptionModuleSessionCallbacks.xml' path='doc/member[@name="IMFContentDecryptionModuleSessionCallbacks.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFContentDecryptionModuleSessionCallbacks);
 
     public void** lpVtbl;

@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.22000.0")]
 public unsafe partial struct IAudioEffectsManager : IAudioEffectsManager.Interface, INativeGuid
 {
+    /// <include file='IAudioEffectsManager.xml' path='doc/member[@name="IAudioEffectsManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioEffectsManager);
 
     public void** lpVtbl;

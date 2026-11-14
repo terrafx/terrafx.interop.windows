@@ -44,9 +44,11 @@ public static unsafe partial class DirectX
     [return: NativeTypeName("DWORD")]
     public static extern uint XInputGetKeystroke([NativeTypeName("DWORD")] uint dwUserIndex, [NativeTypeName("DWORD")] uint dwReserved, [NativeTypeName("PXINPUT_KEYSTROKE")] XINPUT_KEYSTROKE* pKeystroke);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.XUSER_MAX_COUNT"]/*' />
     [NativeTypeName("#define XUSER_MAX_COUNT 4")]
     public const int XUSER_MAX_COUNT = 4;
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX.XUSER_INDEX_ANY"]/*' />
     [NativeTypeName("#define XUSER_INDEX_ANY 0x000000FF")]
     public const int XUSER_INDEX_ANY = 0x000000FF;
 }

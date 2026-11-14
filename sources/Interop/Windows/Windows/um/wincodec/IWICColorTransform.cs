@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IWICBitmapSource")]
 public unsafe partial struct IWICColorTransform : IWICColorTransform.Interface, INativeGuid
 {
+    /// <include file='IWICColorTransform.xml' path='doc/member[@name="IWICColorTransform.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICColorTransform);
 
     public void** lpVtbl;

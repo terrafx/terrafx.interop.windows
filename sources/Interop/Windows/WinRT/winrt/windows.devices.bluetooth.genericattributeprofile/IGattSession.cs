@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IGattSession : IGattSession.Interface, INativeGuid
 {
+    /// <include file='IGattSession.xml' path='doc/member[@name="IGattSession.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGattSession);
 
     public void** lpVtbl;

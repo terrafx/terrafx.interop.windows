@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct INotificationBinding : INotificationBinding.Interface, INativeGuid
 {
+    /// <include file='INotificationBinding.xml' path='doc/member[@name="INotificationBinding.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_INotificationBinding);
 
     public void** lpVtbl;

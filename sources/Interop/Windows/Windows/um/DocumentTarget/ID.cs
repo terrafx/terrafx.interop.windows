@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ID
 {
+    /// <include file='ID.xml' path='doc/member[@name="ID.ID_DOCUMENTPACKAGETARGET_MSXPS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid ID_DOCUMENTPACKAGETARGET_MSXPS
     {
@@ -37,6 +38,7 @@ public static partial class ID
         }
     }
 
+    /// <include file='ID.xml' path='doc/member[@name="ID.ID_DOCUMENTPACKAGETARGET_OPENXPS"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid ID_DOCUMENTPACKAGETARGET_OPENXPS
     {
@@ -62,6 +64,7 @@ public static partial class ID
         }
     }
 
+    /// <include file='ID.xml' path='doc/member[@name="ID.ID_DOCUMENTPACKAGETARGET_OPENXPS_WITH_3D"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid ID_DOCUMENTPACKAGETARGET_OPENXPS_WITH_3D
     {

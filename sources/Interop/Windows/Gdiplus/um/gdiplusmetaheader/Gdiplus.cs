@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Gdiplus;
 
 public static partial class Gdiplus
 {
+    /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GDIP_EMFPLUSFLAGS_DISPLAY"]/*' />
     [NativeTypeName("#define GDIP_EMFPLUSFLAGS_DISPLAY 0x00000001")]
     public const int GDIP_EMFPLUSFLAGS_DISPLAY = 0x00000001;
 }

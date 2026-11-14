@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IWwwFormUrlDecoderEntry : IWwwFormUrlDecoderEntry.Interface, INativeGuid
 {
+    /// <include file='IWwwFormUrlDecoderEntry.xml' path='doc/member[@name="IWwwFormUrlDecoderEntry.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWwwFormUrlDecoderEntry);
 
     public void** lpVtbl;

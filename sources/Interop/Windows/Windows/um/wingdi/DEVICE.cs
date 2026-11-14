@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DEVICE
 {
+    /// <include file='DEVICE.xml' path='doc/member[@name="DEVICE.DEVICE_DEFAULT_FONT"]/*' />
     [NativeTypeName("#define DEVICE_DEFAULT_FONT 14")]
     public const int DEVICE_DEFAULT_FONT = 14;
 }

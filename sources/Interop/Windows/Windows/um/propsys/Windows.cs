@@ -281,12 +281,15 @@ public static unsafe partial class Windows
     [DllImport("propsys", ExactSpelling = true)]
     public static extern HRESULT PSPropertyBag_WritePropertyKey(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* value);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PDFF_PREFERFRIENDLY"]/*' />
     [NativeTypeName("#define PDFF_PREFERFRIENDLY static_cast<PROPDESC_FORMAT_FLAGS>(0x10000000)")]
     public const PROPDESC_FORMAT_FLAGS PDFF_PREFERFRIENDLY = (PROPDESC_FORMAT_FLAGS)(0x10000000);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GUIDSTRING_MAX"]/*' />
     [NativeTypeName("#define GUIDSTRING_MAX (1 + 8 + 1 + 4 + 1 + 4 + 1 + 4 + 1 + 12 + 1 + 1)")]
     public const int GUIDSTRING_MAX = (1 + 8 + 1 + 4 + 1 + 4 + 1 + 4 + 1 + 12 + 1 + 1);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.PKEYSTR_MAX"]/*' />
     [NativeTypeName("#define PKEYSTR_MAX (GUIDSTRING_MAX + 1 + PKEY_PIDSTR_MAX)")]
     public const int PKEYSTR_MAX = ((1 + 8 + 1 + 4 + 1 + 4 + 1 + 4 + 1 + 12 + 1 + 1) + 1 + 10);
 }

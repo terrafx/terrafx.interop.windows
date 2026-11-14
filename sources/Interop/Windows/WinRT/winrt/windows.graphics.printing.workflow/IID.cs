@@ -228,6 +228,30 @@ public static unsafe partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IPrintWorkflowJobBackgroundSession3
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x6C, 0x08, 0x57, 0x57,
+                0xCC, 0xED,
+                0x94, 0x5A,
+                0x90,
+                0xEC,
+                0xA0,
+                0xA8,
+                0x7C,
+                0x11,
+                0x15,
+                0xE7
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IPrintWorkflowJobIssueDetectedEventArgs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -396,6 +420,30 @@ public static unsafe partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IPrintWorkflowObjectModelProvider
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x83, 0xF8, 0xA9, 0xE3,
+                0x2D, 0x6A,
+                0x9B, 0x48,
+                0xBC,
+                0x1F,
+                0x7A,
+                0xAB,
+                0x44,
+                0x24,
+                0x96,
+                0x22
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IPrintWorkflowObjectModelSourceFileContent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -516,6 +564,30 @@ public static unsafe partial class IID
         }
     }
 
+    public static ref readonly Guid IID_IPrintWorkflowPdlConverter3
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0x4F, 0x6B, 0x55, 0x6B,
+                0x56, 0x37,
+                0xA6, 0x5D,
+                0xB1,
+                0xF7,
+                0x8F,
+                0x9E,
+                0x89,
+                0xF6,
+                0x29,
+                0xFB
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
     public static ref readonly Guid IID_IPrintWorkflowPdlDataAvailableEventArgs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -581,6 +653,30 @@ public static unsafe partial class IID
                 0xC1,
                 0x11,
                 0xC0
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IPrintWorkflowPdlModificationRequestedEventArgs3
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xD4, 0xA7, 0x50, 0x1F,
+                0x49, 0xDB,
+                0x3E, 0x5D,
+                0xBA,
+                0x27,
+                0xB3,
+                0x66,
+                0xCB,
+                0x25,
+                0xCD,
+                0x7E
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -701,6 +797,30 @@ public static unsafe partial class IID
                 0x76,
                 0x93,
                 0x68
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IPrintWorkflowPrinterJobStatusChangedEventArgs
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xB9, 0x75, 0x62, 0x4A,
+                0x67, 0xBE,
+                0x18, 0x57,
+                0x92,
+                0x1A,
+                0x34,
+                0x8C,
+                0x56,
+                0xF9,
+                0xD2,
+                0x5F
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
@@ -1037,6 +1157,30 @@ public static unsafe partial class IID
                 0x58,
                 0xE5,
                 0xB2
+            ];
+
+            Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
+            return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
+        }
+    }
+
+    public static ref readonly Guid IID_IPrintWorkflowXpsObjectModelProvider
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            ReadOnlySpan<byte> data = [
+                0xAD, 0xC1, 0xD8, 0x97,
+                0xD7, 0x96,
+                0xCC, 0x56,
+                0xB6,
+                0x60,
+                0xA7,
+                0x14,
+                0x95,
+                0x63,
+                0x2C,
+                0xEB
             ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());

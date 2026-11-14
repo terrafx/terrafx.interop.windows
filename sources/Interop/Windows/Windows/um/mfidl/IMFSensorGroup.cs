@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.14393.0")]
 public unsafe partial struct IMFSensorGroup : IMFSensorGroup.Interface, INativeGuid
 {
+    /// <include file='IMFSensorGroup.xml' path='doc/member[@name="IMFSensorGroup.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFSensorGroup);
 
     public void** lpVtbl;

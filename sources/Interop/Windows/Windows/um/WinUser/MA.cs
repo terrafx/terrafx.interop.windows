@@ -7,15 +7,19 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MA
 {
+    /// <include file='MA.xml' path='doc/member[@name="MA.MA_ACTIVATE"]/*' />
     [NativeTypeName("#define MA_ACTIVATE 1")]
     public const int MA_ACTIVATE = 1;
 
+    /// <include file='MA.xml' path='doc/member[@name="MA.MA_ACTIVATEANDEAT"]/*' />
     [NativeTypeName("#define MA_ACTIVATEANDEAT 2")]
     public const int MA_ACTIVATEANDEAT = 2;
 
+    /// <include file='MA.xml' path='doc/member[@name="MA.MA_NOACTIVATE"]/*' />
     [NativeTypeName("#define MA_NOACTIVATE 3")]
     public const int MA_NOACTIVATE = 3;
 
+    /// <include file='MA.xml' path='doc/member[@name="MA.MA_NOACTIVATEANDEAT"]/*' />
     [NativeTypeName("#define MA_NOACTIVATEANDEAT 4")]
     public const int MA_NOACTIVATEANDEAT = 4;
 }

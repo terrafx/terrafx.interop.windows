@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DEVICE
 {
+    /// <include file='DEVICE.xml' path='doc/member[@name="DEVICE.DEVICE_ENROLLER_FACILITY_CODE"]/*' />
     [NativeTypeName("#define DEVICE_ENROLLER_FACILITY_CODE 24")]
     public const int DEVICE_ENROLLER_FACILITY_CODE = 24;
 }

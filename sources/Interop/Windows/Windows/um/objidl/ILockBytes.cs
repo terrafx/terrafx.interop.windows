@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ILockBytes : ILockBytes.Interface, INativeGuid
 {
+    /// <include file='ILockBytes.xml' path='doc/member[@name="ILockBytes.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ILockBytes);
 
     public void** lpVtbl;

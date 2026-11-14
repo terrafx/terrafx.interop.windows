@@ -18,6 +18,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ICameraIntrinsics2 : ICameraIntrinsics2.Interface, INativeGuid
 {
+    /// <include file='ICameraIntrinsics2.xml' path='doc/member[@name="ICameraIntrinsics2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICameraIntrinsics2);
 
     public void** lpVtbl;

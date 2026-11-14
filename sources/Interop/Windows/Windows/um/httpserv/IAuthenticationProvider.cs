@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct IAuthenticationProvider : IAuthenticationProvider.Interface, INativeGuid
 {
+    /// <include file='IAuthenticationProvider.xml' path='doc/member[@name="IAuthenticationProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAuthenticationProvider);
 
     public void** lpVtbl;

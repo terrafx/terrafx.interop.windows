@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class LOAD
 {
+    /// <include file='LOAD.xml' path='doc/member[@name="LOAD.LOAD_TLB_AS_32BIT"]/*' />
     [NativeTypeName("#define LOAD_TLB_AS_32BIT 0x20")]
     public const int LOAD_TLB_AS_32BIT = 0x20;
 
+    /// <include file='LOAD.xml' path='doc/member[@name="LOAD.LOAD_TLB_AS_64BIT"]/*' />
     [NativeTypeName("#define LOAD_TLB_AS_64BIT 0x40")]
     public const int LOAD_TLB_AS_64BIT = 0x40;
 }

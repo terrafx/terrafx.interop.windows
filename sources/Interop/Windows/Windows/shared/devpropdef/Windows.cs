@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.DEVPROPID_FIRST_USABLE"]/*' />
     [NativeTypeName("#define DEVPROPID_FIRST_USABLE 2")]
     public const int DEVPROPID_FIRST_USABLE = 2;
 }

@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("30510780-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct HTMLDOMXmlSerializerFactory : INativeGuid
 {
+    /// <include file='HTMLDOMXmlSerializerFactory.xml' path='doc/member[@name="HTMLDOMXmlSerializerFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_HTMLDOMXmlSerializerFactory);
 }

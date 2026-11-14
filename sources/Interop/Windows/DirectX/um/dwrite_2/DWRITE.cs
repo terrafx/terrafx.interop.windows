@@ -7,6 +7,7 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DWRITE
 {
+    /// <include file='DWRITE.xml' path='doc/member[@name="DWRITE.DWRITE_NO_PALETTE_INDEX"]/*' />
     [NativeTypeName("#define DWRITE_NO_PALETTE_INDEX 0xFFFF")]
     public const int DWRITE_NO_PALETTE_INDEX = 0xFFFF;
 }

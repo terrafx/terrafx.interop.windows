@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("B507CA27-2204-11DD-966A-001AA01BBC58")]
 public unsafe partial struct BlockRange : INativeGuid
 {
+    /// <include file='BlockRange.xml' path='doc/member[@name="BlockRange.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_BlockRange);
 }

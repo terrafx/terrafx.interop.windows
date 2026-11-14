@@ -25,7 +25,7 @@ public partial struct XSAVE_ARM64_SVE_HEADER
     public uint PredicateRegisterOffset;
 
     /// <include file='XSAVE_ARM64_SVE_HEADER.xml' path='doc/member[@name="XSAVE_ARM64_SVE_HEADER.Anonymous"]/*' />
-    [NativeTypeName("__AnonymousRecord_winnt_L2783_C5")]
+    [NativeTypeName("__AnonymousRecord_winnt_L2807_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='XSAVE_ARM64_SVE_HEADER.xml' path='doc/member[@name="XSAVE_ARM64_SVE_HEADER.Reserved"]/*' />
@@ -86,7 +86,7 @@ public partial struct XSAVE_ARM64_SVE_HEADER
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("__AnonymousRecord_winnt_L2785_C9")]
+        [NativeTypeName("__AnonymousRecord_winnt_L2809_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

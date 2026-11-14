@@ -19,6 +19,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IWICImageEncoder : IWICImageEncoder.Interface, INativeGuid
 {
+    /// <include file='IWICImageEncoder.xml' path='doc/member[@name="IWICImageEncoder.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICImageEncoder);
 
     public void** lpVtbl;

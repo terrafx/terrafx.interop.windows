@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ITimedTextRuby : ITimedTextRuby.Interface, INativeGuid
 {
+    /// <include file='ITimedTextRuby.xml' path='doc/member[@name="ITimedTextRuby.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITimedTextRuby);
 
     public void** lpVtbl;

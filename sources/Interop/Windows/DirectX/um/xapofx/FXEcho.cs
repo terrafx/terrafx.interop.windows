@@ -13,32 +13,42 @@ namespace TerraFX.Interop.DirectX;
 [Guid("5039D740-F736-449A-84D3-A56202557B87")]
 public unsafe partial struct FXEcho : INativeGuid
 {
+    /// <include file='FXEcho.xml' path='doc/member[@name="FXEcho.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_FXEcho);
 
+    /// <include file='FXEcho.xml' path='doc/member[@name="FXEcho.FXECHO_MIN_WETDRYMIX"]/*' />
     [NativeTypeName("#define FXECHO_MIN_WETDRYMIX 0.0f")]
     public const float FXECHO_MIN_WETDRYMIX = 0.0f;
 
+    /// <include file='FXEcho.xml' path='doc/member[@name="FXEcho.FXECHO_MAX_WETDRYMIX"]/*' />
     [NativeTypeName("#define FXECHO_MAX_WETDRYMIX 1.0f")]
     public const float FXECHO_MAX_WETDRYMIX = 1.0f;
 
+    /// <include file='FXEcho.xml' path='doc/member[@name="FXEcho.FXECHO_DEFAULT_WETDRYMIX"]/*' />
     [NativeTypeName("#define FXECHO_DEFAULT_WETDRYMIX 0.5f")]
     public const float FXECHO_DEFAULT_WETDRYMIX = 0.5f;
 
+    /// <include file='FXEcho.xml' path='doc/member[@name="FXEcho.FXECHO_MIN_FEEDBACK"]/*' />
     [NativeTypeName("#define FXECHO_MIN_FEEDBACK 0.0f")]
     public const float FXECHO_MIN_FEEDBACK = 0.0f;
 
+    /// <include file='FXEcho.xml' path='doc/member[@name="FXEcho.FXECHO_MAX_FEEDBACK"]/*' />
     [NativeTypeName("#define FXECHO_MAX_FEEDBACK 1.0f")]
     public const float FXECHO_MAX_FEEDBACK = 1.0f;
 
+    /// <include file='FXEcho.xml' path='doc/member[@name="FXEcho.FXECHO_DEFAULT_FEEDBACK"]/*' />
     [NativeTypeName("#define FXECHO_DEFAULT_FEEDBACK 0.5f")]
     public const float FXECHO_DEFAULT_FEEDBACK = 0.5f;
 
+    /// <include file='FXEcho.xml' path='doc/member[@name="FXEcho.FXECHO_MIN_DELAY"]/*' />
     [NativeTypeName("#define FXECHO_MIN_DELAY 1.0f")]
     public const float FXECHO_MIN_DELAY = 1.0f;
 
+    /// <include file='FXEcho.xml' path='doc/member[@name="FXEcho.FXECHO_MAX_DELAY"]/*' />
     [NativeTypeName("#define FXECHO_MAX_DELAY 2000.0f")]
     public const float FXECHO_MAX_DELAY = 2000.0f;
 
+    /// <include file='FXEcho.xml' path='doc/member[@name="FXEcho.FXECHO_DEFAULT_DELAY"]/*' />
     [NativeTypeName("#define FXECHO_DEFAULT_DELAY 500.0f")]
     public const float FXECHO_DEFAULT_DELAY = 500.0f;
 }

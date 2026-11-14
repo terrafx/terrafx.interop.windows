@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IWebTokenRequest3 : IWebTokenRequest3.Interface, INativeGuid
 {
+    /// <include file='IWebTokenRequest3.xml' path='doc/member[@name="IWebTokenRequest3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWebTokenRequest3);
 
     public void** lpVtbl;

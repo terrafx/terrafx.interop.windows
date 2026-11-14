@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IFilterChain : IFilterChain.Interface, INativeGuid
 {
+    /// <include file='IFilterChain.xml' path='doc/member[@name="IFilterChain.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IFilterChain);
 
     public void** lpVtbl;

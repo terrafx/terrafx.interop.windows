@@ -13,6 +13,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VerticalIndicatorContent"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_VerticalIndicatorContent
     {
@@ -38,6 +39,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_HorizontalIndicatorContent"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_HorizontalIndicatorContent
     {
@@ -63,6 +65,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_VirtualViewportContent"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_VirtualViewportContent
     {
@@ -88,6 +91,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DragDropConfigurationBehavior"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DragDropConfigurationBehavior
     {
@@ -113,6 +117,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AutoScrollBehavior"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AutoScrollBehavior
     {
@@ -138,6 +143,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DeferContactService"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DeferContactService
     {

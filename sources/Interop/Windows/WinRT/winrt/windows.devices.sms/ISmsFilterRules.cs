@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISmsFilterRules : ISmsFilterRules.Interface, INativeGuid
 {
+    /// <include file='ISmsFilterRules.xml' path='doc/member[@name="ISmsFilterRules.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISmsFilterRules);
 
     public void** lpVtbl;

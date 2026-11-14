@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IStepEasingFunction : IStepEasingFunction.Interface, INativeGuid
 {
+    /// <include file='IStepEasingFunction.xml' path='doc/member[@name="IStepEasingFunction.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IStepEasingFunction);
 
     public void** lpVtbl;

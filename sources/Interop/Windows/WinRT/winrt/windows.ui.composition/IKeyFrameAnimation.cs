@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IKeyFrameAnimation : IKeyFrameAnimation.Interface, INativeGuid
 {
+    /// <include file='IKeyFrameAnimation.xml' path='doc/member[@name="IKeyFrameAnimation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IKeyFrameAnimation);
 
     public void** lpVtbl;

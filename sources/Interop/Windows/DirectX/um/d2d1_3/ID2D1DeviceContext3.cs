@@ -30,6 +30,7 @@ namespace TerraFX.Interop.DirectX;
 [SupportedOSPlatform("windows10.0")]
 public unsafe partial struct ID2D1DeviceContext3 : ID2D1DeviceContext3.Interface, INativeGuid
 {
+    /// <include file='ID2D1DeviceContext3.xml' path='doc/member[@name="ID2D1DeviceContext3.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1DeviceContext3);
 
     public void** lpVtbl;

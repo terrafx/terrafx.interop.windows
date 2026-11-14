@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct ITfIntegratableCandidateListUIElement : ITfIntegratableCandidateListUIElement.Interface, INativeGuid
 {
+    /// <include file='ITfIntegratableCandidateListUIElement.xml' path='doc/member[@name="ITfIntegratableCandidateListUIElement.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfIntegratableCandidateListUIElement);
 
     public void** lpVtbl;

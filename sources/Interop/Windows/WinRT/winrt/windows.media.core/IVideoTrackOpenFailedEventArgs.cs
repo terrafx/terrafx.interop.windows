@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IVideoTrackOpenFailedEventArgs : IVideoTrackOpenFailedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IVideoTrackOpenFailedEventArgs.xml' path='doc/member[@name="IVideoTrackOpenFailedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IVideoTrackOpenFailedEventArgs);
 
     public void** lpVtbl;

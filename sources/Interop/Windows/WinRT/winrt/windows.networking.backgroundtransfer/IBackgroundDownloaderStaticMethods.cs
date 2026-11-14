@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IBackgroundDownloaderStaticMethods : IBackgroundDownloaderStaticMethods.Interface, INativeGuid
 {
+    /// <include file='IBackgroundDownloaderStaticMethods.xml' path='doc/member[@name="IBackgroundDownloaderStaticMethods.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBackgroundDownloaderStaticMethods);
 
     public void** lpVtbl;

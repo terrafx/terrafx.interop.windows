@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IMemoryBufferFactory : IMemoryBufferFactory.Interface, INativeGuid
 {
+    /// <include file='IMemoryBufferFactory.xml' path='doc/member[@name="IMemoryBufferFactory.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMemoryBufferFactory);
 
     public void** lpVtbl;

@@ -19,6 +19,7 @@ namespace TerraFX.Interop.WinRT;
 [SupportedOSPlatform("windows10.0.19043.0")]
 public unsafe partial struct IUserActivityInterop : IUserActivityInterop.Interface, INativeGuid
 {
+    /// <include file='IUserActivityInterop.xml' path='doc/member[@name="IUserActivityInterop.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IUserActivityInterop);
 
     public void** lpVtbl;

@@ -164,6 +164,21 @@ public enum TOKEN_INFORMATION_CLASS
     /// <include file='TOKEN_INFORMATION_CLASS.xml' path='doc/member[@name="TOKEN_INFORMATION_CLASS.TokenIsInstaller"]/*' />
     TokenIsInstaller,
 
+    /// <include file='TOKEN_INFORMATION_CLASS.xml' path='doc/member[@name="TOKEN_INFORMATION_CLASS.TokenHasTamperProtection"]/*' />
+    TokenHasTamperProtection,
+
+    /// <include file='TOKEN_INFORMATION_CLASS.xml' path='doc/member[@name="TOKEN_INFORMATION_CLASS.TokenAppIdentitySid"]/*' />
+    TokenAppIdentitySid,
+
+    /// <include file='TOKEN_INFORMATION_CLASS.xml' path='doc/member[@name="TOKEN_INFORMATION_CLASS.TokenAppInstanceSid"]/*' />
+    TokenAppInstanceSid,
+
+    /// <include file='TOKEN_INFORMATION_CLASS.xml' path='doc/member[@name="TOKEN_INFORMATION_CLASS.TokenAppSuiteSid"]/*' />
+    TokenAppSuiteSid,
+
+    /// <include file='TOKEN_INFORMATION_CLASS.xml' path='doc/member[@name="TOKEN_INFORMATION_CLASS.TokenEntitlements"]/*' />
+    TokenEntitlements,
+
     /// <include file='TOKEN_INFORMATION_CLASS.xml' path='doc/member[@name="TOKEN_INFORMATION_CLASS.MaxTokenInfoClass"]/*' />
     MaxTokenInfoClass,
 }

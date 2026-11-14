@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CFSTR
 {
+    /// <include file='CFSTR.xml' path='doc/member[@name="CFSTR.CFSTR_ENTERPRISE_ID"]/*' />
     [NativeTypeName("#define CFSTR_ENTERPRISE_ID (TEXT(\"EnterpriseDataProtectionId\"))")]
     public const string CFSTR_ENTERPRISE_ID = ("EnterpriseDataProtectionId");
 }

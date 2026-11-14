@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("3051071B-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct CanvasImageData : INativeGuid
 {
+    /// <include file='CanvasImageData.xml' path='doc/member[@name="CanvasImageData.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_CanvasImageData);
 }

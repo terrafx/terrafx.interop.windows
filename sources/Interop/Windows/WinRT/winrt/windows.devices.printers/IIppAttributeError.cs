@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IIppAttributeError : IIppAttributeError.Interface, INativeGuid
 {
+    /// <include file='IIppAttributeError.xml' path='doc/member[@name="IIppAttributeError.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IIppAttributeError);
 
     public void** lpVtbl;

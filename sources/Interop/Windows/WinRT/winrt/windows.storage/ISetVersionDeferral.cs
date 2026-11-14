@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISetVersionDeferral : ISetVersionDeferral.Interface, INativeGuid
 {
+    /// <include file='ISetVersionDeferral.xml' path='doc/member[@name="ISetVersionDeferral.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISetVersionDeferral);
 
     public void** lpVtbl;

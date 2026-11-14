@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAudioTrackOpenFailedEventArgs : IAudioTrackOpenFailedEventArgs.Interface, INativeGuid
 {
+    /// <include file='IAudioTrackOpenFailedEventArgs.xml' path='doc/member[@name="IAudioTrackOpenFailedEventArgs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioTrackOpenFailedEventArgs);
 
     public void** lpVtbl;

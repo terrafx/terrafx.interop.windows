@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("ID2D1Brush")]
 public unsafe partial struct ID2D1SolidColorBrush : ID2D1SolidColorBrush.Interface, INativeGuid
 {
+    /// <include file='ID2D1SolidColorBrush.xml' path='doc/member[@name="ID2D1SolidColorBrush.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ID2D1SolidColorBrush);
 
     public void** lpVtbl;

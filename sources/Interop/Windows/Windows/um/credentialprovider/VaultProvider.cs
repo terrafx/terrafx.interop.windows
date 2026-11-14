@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("503739D0-4C5E-4CFD-B3BA-D881334F0DF2")]
 public unsafe partial struct VaultProvider : INativeGuid
 {
+    /// <include file='VaultProvider.xml' path='doc/member[@name="VaultProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_VaultProvider);
 }

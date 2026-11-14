@@ -7,6 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class ENUM
 {
+    /// <include file='ENUM.xml' path='doc/member[@name="ENUM.ENUM_TYPE_VERSION"]/*' />
     [NativeTypeName("#define ENUM_TYPE_VERSION 0x0300")]
     public const int ENUM_TYPE_VERSION = 0x0300;
 }

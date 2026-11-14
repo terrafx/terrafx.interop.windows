@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("3050F6B3-98B5-11CF-BB82-00AA00BDCE0B")]
 public unsafe partial struct CTemplatePrinter : INativeGuid
 {
+    /// <include file='CTemplatePrinter.xml' path='doc/member[@name="CTemplatePrinter.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_CTemplatePrinter);
 }

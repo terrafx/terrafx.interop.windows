@@ -86,9 +86,11 @@ public static unsafe partial class Windows
     [return: NativeTypeName("DWORD")]
     public static extern uint Wow64SuspendThread(HANDLE hThread);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemWow64Directory"]/*' />
     [NativeTypeName("#define GetSystemWow64Directory GetSystemWow64DirectoryW")]
     public static delegate*<char*, uint, uint> GetSystemWow64Directory => &GetSystemWow64DirectoryW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemWow64Directory2"]/*' />
     [NativeTypeName("#define GetSystemWow64Directory2 GetSystemWow64Directory2W")]
     [SupportedOSPlatform("windows10.0.10586.0")]
     public static delegate*<char*, uint, ushort, uint> GetSystemWow64Directory2 => &GetSystemWow64Directory2W;

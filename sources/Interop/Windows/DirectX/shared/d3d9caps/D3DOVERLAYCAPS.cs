@@ -16,27 +16,35 @@ public partial struct D3DOVERLAYCAPS
     /// <include file='D3DOVERLAYCAPS.xml' path='doc/member[@name="D3DOVERLAYCAPS.MaxOverlayDisplayHeight"]/*' />
     public uint MaxOverlayDisplayHeight;
 
+    /// <include file='D3DOVERLAYCAPS.xml' path='doc/member[@name="D3DOVERLAYCAPS.D3DOVERLAYCAPS_FULLRANGERGB"]/*' />
     [NativeTypeName("#define D3DOVERLAYCAPS_FULLRANGERGB 0x00000001")]
     public const int D3DOVERLAYCAPS_FULLRANGERGB = 0x00000001;
 
+    /// <include file='D3DOVERLAYCAPS.xml' path='doc/member[@name="D3DOVERLAYCAPS.D3DOVERLAYCAPS_LIMITEDRANGERGB"]/*' />
     [NativeTypeName("#define D3DOVERLAYCAPS_LIMITEDRANGERGB 0x00000002")]
     public const int D3DOVERLAYCAPS_LIMITEDRANGERGB = 0x00000002;
 
+    /// <include file='D3DOVERLAYCAPS.xml' path='doc/member[@name="D3DOVERLAYCAPS.D3DOVERLAYCAPS_YCbCr_BT601"]/*' />
     [NativeTypeName("#define D3DOVERLAYCAPS_YCbCr_BT601 0x00000004")]
     public const int D3DOVERLAYCAPS_YCbCr_BT601 = 0x00000004;
 
+    /// <include file='D3DOVERLAYCAPS.xml' path='doc/member[@name="D3DOVERLAYCAPS.D3DOVERLAYCAPS_YCbCr_BT709"]/*' />
     [NativeTypeName("#define D3DOVERLAYCAPS_YCbCr_BT709 0x00000008")]
     public const int D3DOVERLAYCAPS_YCbCr_BT709 = 0x00000008;
 
+    /// <include file='D3DOVERLAYCAPS.xml' path='doc/member[@name="D3DOVERLAYCAPS.D3DOVERLAYCAPS_YCbCr_BT601_xvYCC"]/*' />
     [NativeTypeName("#define D3DOVERLAYCAPS_YCbCr_BT601_xvYCC 0x00000010")]
     public const int D3DOVERLAYCAPS_YCbCr_BT601_xvYCC = 0x00000010;
 
+    /// <include file='D3DOVERLAYCAPS.xml' path='doc/member[@name="D3DOVERLAYCAPS.D3DOVERLAYCAPS_YCbCr_BT709_xvYCC"]/*' />
     [NativeTypeName("#define D3DOVERLAYCAPS_YCbCr_BT709_xvYCC 0x00000020")]
     public const int D3DOVERLAYCAPS_YCbCr_BT709_xvYCC = 0x00000020;
 
+    /// <include file='D3DOVERLAYCAPS.xml' path='doc/member[@name="D3DOVERLAYCAPS.D3DOVERLAYCAPS_STRETCHX"]/*' />
     [NativeTypeName("#define D3DOVERLAYCAPS_STRETCHX 0x00000040")]
     public const int D3DOVERLAYCAPS_STRETCHX = 0x00000040;
 
+    /// <include file='D3DOVERLAYCAPS.xml' path='doc/member[@name="D3DOVERLAYCAPS.D3DOVERLAYCAPS_STRETCHY"]/*' />
     [NativeTypeName("#define D3DOVERLAYCAPS_STRETCHY 0x00000080")]
     public const int D3DOVERLAYCAPS_STRETCHY = 0x00000080;
 }

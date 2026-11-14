@@ -24,9 +24,11 @@ public static unsafe partial class DirectX
     [DllImport("d3d11", ExactSpelling = true)]
     public static extern HRESULT D3D11CreateDeviceAndSwapChain(IDXGIAdapter* pAdapter, D3D_DRIVER_TYPE DriverType, HMODULE Software, uint Flags, [NativeTypeName("const D3D_FEATURE_LEVEL *")] D3D_FEATURE_LEVEL* pFeatureLevels, uint FeatureLevels, uint SDKVersion, [NativeTypeName("const DXGI_SWAP_CHAIN_DESC *")] DXGI_SWAP_CHAIN_DESC* pSwapChainDesc, IDXGISwapChain** ppSwapChain, ID3D11Device** ppDevice, D3D_FEATURE_LEVEL* pFeatureLevel, ID3D11DeviceContext** ppImmediateContext);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX._FACD3D11"]/*' />
     [NativeTypeName("#define _FACD3D11 ( 0x87c )")]
     public const int _FACD3D11 = (0x87c);
 
+    /// <include file='DirectX.xml' path='doc/member[@name="DirectX._FACD3D11DEBUG"]/*' />
     [NativeTypeName("#define _FACD3D11DEBUG ( ( _FACD3D11 + 1 )  )")]
     public const int _FACD3D11DEBUG = (((0x87c) + 1));
 }

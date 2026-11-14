@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFLocalMFTRegistration : IMFLocalMFTRegistration.Interface, INativeGuid
 {
+    /// <include file='IMFLocalMFTRegistration.xml' path='doc/member[@name="IMFLocalMFTRegistration.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFLocalMFTRegistration);
 
     public void** lpVtbl;

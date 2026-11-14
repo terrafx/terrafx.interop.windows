@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IEnumTravelLogEntry : IEnumTravelLogEntry.Interface, INativeGuid
 {
+    /// <include file='IEnumTravelLogEntry.xml' path='doc/member[@name="IEnumTravelLogEntry.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEnumTravelLogEntry);
 
     public void** lpVtbl;

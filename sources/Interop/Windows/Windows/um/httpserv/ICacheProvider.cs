@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IHttpEventProvider")]
 public unsafe partial struct ICacheProvider : ICacheProvider.Interface, INativeGuid
 {
+    /// <include file='ICacheProvider.xml' path='doc/member[@name="ICacheProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICacheProvider);
 
     public void** lpVtbl;

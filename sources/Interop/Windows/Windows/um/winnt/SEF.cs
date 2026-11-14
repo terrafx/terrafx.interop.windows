@@ -7,48 +7,63 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class SEF
 {
+    /// <include file='SEF.xml' path='doc/member[@name="SEF.SEF_DACL_AUTO_INHERIT"]/*' />
     [NativeTypeName("#define SEF_DACL_AUTO_INHERIT 0x01")]
     public const int SEF_DACL_AUTO_INHERIT = 0x01;
 
+    /// <include file='SEF.xml' path='doc/member[@name="SEF.SEF_SACL_AUTO_INHERIT"]/*' />
     [NativeTypeName("#define SEF_SACL_AUTO_INHERIT 0x02")]
     public const int SEF_SACL_AUTO_INHERIT = 0x02;
 
+    /// <include file='SEF.xml' path='doc/member[@name="SEF.SEF_DEFAULT_DESCRIPTOR_FOR_OBJECT"]/*' />
     [NativeTypeName("#define SEF_DEFAULT_DESCRIPTOR_FOR_OBJECT 0x04")]
     public const int SEF_DEFAULT_DESCRIPTOR_FOR_OBJECT = 0x04;
 
+    /// <include file='SEF.xml' path='doc/member[@name="SEF.SEF_AVOID_PRIVILEGE_CHECK"]/*' />
     [NativeTypeName("#define SEF_AVOID_PRIVILEGE_CHECK 0x08")]
     public const int SEF_AVOID_PRIVILEGE_CHECK = 0x08;
 
+    /// <include file='SEF.xml' path='doc/member[@name="SEF.SEF_AVOID_OWNER_CHECK"]/*' />
     [NativeTypeName("#define SEF_AVOID_OWNER_CHECK 0x10")]
     public const int SEF_AVOID_OWNER_CHECK = 0x10;
 
+    /// <include file='SEF.xml' path='doc/member[@name="SEF.SEF_DEFAULT_OWNER_FROM_PARENT"]/*' />
     [NativeTypeName("#define SEF_DEFAULT_OWNER_FROM_PARENT 0x20")]
     public const int SEF_DEFAULT_OWNER_FROM_PARENT = 0x20;
 
+    /// <include file='SEF.xml' path='doc/member[@name="SEF.SEF_DEFAULT_GROUP_FROM_PARENT"]/*' />
     [NativeTypeName("#define SEF_DEFAULT_GROUP_FROM_PARENT 0x40")]
     public const int SEF_DEFAULT_GROUP_FROM_PARENT = 0x40;
 
+    /// <include file='SEF.xml' path='doc/member[@name="SEF.SEF_MACL_NO_WRITE_UP"]/*' />
     [NativeTypeName("#define SEF_MACL_NO_WRITE_UP 0x100")]
     public const int SEF_MACL_NO_WRITE_UP = 0x100;
 
+    /// <include file='SEF.xml' path='doc/member[@name="SEF.SEF_MACL_NO_READ_UP"]/*' />
     [NativeTypeName("#define SEF_MACL_NO_READ_UP 0x200")]
     public const int SEF_MACL_NO_READ_UP = 0x200;
 
+    /// <include file='SEF.xml' path='doc/member[@name="SEF.SEF_MACL_NO_EXECUTE_UP"]/*' />
     [NativeTypeName("#define SEF_MACL_NO_EXECUTE_UP 0x400")]
     public const int SEF_MACL_NO_EXECUTE_UP = 0x400;
 
+    /// <include file='SEF.xml' path='doc/member[@name="SEF.SEF_AI_USE_EXTRA_PARAMS"]/*' />
     [NativeTypeName("#define SEF_AI_USE_EXTRA_PARAMS 0x800")]
     public const int SEF_AI_USE_EXTRA_PARAMS = 0x800;
 
+    /// <include file='SEF.xml' path='doc/member[@name="SEF.SEF_AVOID_OWNER_RESTRICTION"]/*' />
     [NativeTypeName("#define SEF_AVOID_OWNER_RESTRICTION 0x1000")]
     public const int SEF_AVOID_OWNER_RESTRICTION = 0x1000;
 
+    /// <include file='SEF.xml' path='doc/member[@name="SEF.SEF_FORCE_USER_MODE"]/*' />
     [NativeTypeName("#define SEF_FORCE_USER_MODE 0x2000")]
     public const int SEF_FORCE_USER_MODE = 0x2000;
 
+    /// <include file='SEF.xml' path='doc/member[@name="SEF.SEF_NORMALIZE_OUTPUT_DESCRIPTOR"]/*' />
     [NativeTypeName("#define SEF_NORMALIZE_OUTPUT_DESCRIPTOR 0x4000")]
     public const int SEF_NORMALIZE_OUTPUT_DESCRIPTOR = 0x4000;
 
+    /// <include file='SEF.xml' path='doc/member[@name="SEF.SEF_MACL_VALID_FLAGS"]/*' />
     [NativeTypeName("#define SEF_MACL_VALID_FLAGS (SEF_MACL_NO_WRITE_UP   | \\\r\n                                           SEF_MACL_NO_READ_UP    | \\\r\n                                           SEF_MACL_NO_EXECUTE_UP)")]
     public const int SEF_MACL_VALID_FLAGS = (0x100 | 0x200 | 0x400);
 }

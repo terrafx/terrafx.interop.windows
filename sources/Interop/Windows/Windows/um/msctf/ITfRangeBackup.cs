@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfRangeBackup : ITfRangeBackup.Interface, INativeGuid
 {
+    /// <include file='ITfRangeBackup.xml' path='doc/member[@name="ITfRangeBackup.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfRangeBackup);
 
     public void** lpVtbl;

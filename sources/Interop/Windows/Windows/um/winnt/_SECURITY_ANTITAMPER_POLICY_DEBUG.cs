@@ -1,0 +1,186 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from um/winnt.h in the Windows SDK for Windows 10.0.28000.0
+// Original source is Copyright © Microsoft. All rights reserved.
+
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+namespace TerraFX.Interop.Windows;
+
+/// <include file='_SECURITY_ANTITAMPER_POLICY_DEBUG.xml' path='doc/member[@name="_SECURITY_ANTITAMPER_POLICY_DEBUG"]/*' />
+public partial struct _SECURITY_ANTITAMPER_POLICY_DEBUG
+{
+    /// <include file='_SECURITY_ANTITAMPER_POLICY_DEBUG.xml' path='doc/member[@name="_SECURITY_ANTITAMPER_POLICY_DEBUG.Anonymous"]/*' />
+    [NativeTypeName("__AnonymousRecord_winnt_L13450_C5")]
+    public _Anonymous_e__Union Anonymous;
+
+    /// <include file='_SECURITY_ANTITAMPER_POLICY_DEBUG.xml' path='doc/member[@name="_SECURITY_ANTITAMPER_POLICY_DEBUG.Entitlement"]/*' />
+    [NativeTypeName("SECURITY_ANTITAMPER_ENTITLEMENT")]
+    public _SECURITY_ANTITAMPER_ENTITLEMENT Entitlement;
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
+    [UnscopedRef]
+    public ref uint Flags
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get
+        {
+            return ref Anonymous.Flags;
+        }
+    }
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AllowDebugging"]/*' />
+    public uint AllowDebugging
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        readonly get
+        {
+            return Anonymous.Anonymous.AllowDebugging;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.AllowDebugging = value;
+        }
+    }
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RequireEntitlement"]/*' />
+    public uint RequireEntitlement
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        readonly get
+        {
+            return Anonymous.Anonymous.RequireEntitlement;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.RequireEntitlement = value;
+        }
+    }
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.UseSpecificEntitlement"]/*' />
+    public uint UseSpecificEntitlement
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        readonly get
+        {
+            return Anonymous.Anonymous.UseSpecificEntitlement;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.UseSpecificEntitlement = value;
+        }
+    }
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
+    public uint Reserved
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        readonly get
+        {
+            return Anonymous.Anonymous.Reserved;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.Reserved = value;
+        }
+    }
+
+    /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _Anonymous_e__Union
+    {
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
+        [FieldOffset(0)]
+        [NativeTypeName("DWORD")]
+        public uint Flags;
+
+        /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
+        [FieldOffset(0)]
+        [NativeTypeName("__AnonymousRecord_winnt_L13452_C9")]
+        public _Anonymous_e__Struct Anonymous;
+
+        /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
+        public partial struct _Anonymous_e__Struct
+        {
+            public uint _bitfield;
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AllowDebugging"]/*' />
+            [NativeTypeName("DWORD : 1")]
+            public uint AllowDebugging
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                readonly get
+                {
+                    return _bitfield & 0x1u;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~0x1u) | (value & 0x1u);
+                }
+            }
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RequireEntitlement"]/*' />
+            [NativeTypeName("DWORD : 1")]
+            public uint RequireEntitlement
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                readonly get
+                {
+                    return (_bitfield >> 1) & 0x1u;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x1u << 1)) | ((value & 0x1u) << 1);
+                }
+            }
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.UseSpecificEntitlement"]/*' />
+            [NativeTypeName("DWORD : 1")]
+            public uint UseSpecificEntitlement
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                readonly get
+                {
+                    return (_bitfield >> 2) & 0x1u;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2);
+                }
+            }
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Reserved"]/*' />
+            [NativeTypeName("DWORD : 29")]
+            public uint Reserved
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                readonly get
+                {
+                    return (_bitfield >> 3) & 0x1FFFFFFFu;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x1FFFFFFFu << 3)) | ((value & 0x1FFFFFFFu) << 3);
+                }
+            }
+        }
+    }
+}

@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IComponentLoadFailedEventHandler : IComponentLoadFailedEventHandler.Interface, INativeGuid
 {
+    /// <include file='IComponentLoadFailedEventHandler.xml' path='doc/member[@name="IComponentLoadFailedEventHandler.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IComponentLoadFailedEventHandler);
 
     public void** lpVtbl;

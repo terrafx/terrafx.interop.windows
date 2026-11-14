@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IGetBindHandle : IGetBindHandle.Interface, INativeGuid
 {
+    /// <include file='IGetBindHandle.xml' path='doc/member[@name="IGetBindHandle.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IGetBindHandle);
 
     public void** lpVtbl;

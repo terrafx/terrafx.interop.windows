@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IPrintDialogServices : IPrintDialogServices.Interface, INativeGuid
 {
+    /// <include file='IPrintDialogServices.xml' path='doc/member[@name="IPrintDialogServices.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPrintDialogServices);
 
     public void** lpVtbl;

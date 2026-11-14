@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct DispCanvasImageData : DispCanvasImageData.Interface, INativeGuid
 {
+    /// <include file='DispCanvasImageData.xml' path='doc/member[@name="DispCanvasImageData.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_DispCanvasImageData);
 
     public void** lpVtbl;

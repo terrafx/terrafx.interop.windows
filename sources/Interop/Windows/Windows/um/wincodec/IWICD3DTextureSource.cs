@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IWICD3DTextureSource : IWICD3DTextureSource.Interface, INativeGuid
 {
+    /// <include file='IWICD3DTextureSource.xml' path='doc/member[@name="IWICD3DTextureSource.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWICD3DTextureSource);
 
     public void** lpVtbl;

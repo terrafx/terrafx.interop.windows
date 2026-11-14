@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAppointmentStoreNotificationTrigger : IAppointmentStoreNotificationTrigger.Interface, INativeGuid
 {
+    /// <include file='IAppointmentStoreNotificationTrigger.xml' path='doc/member[@name="IAppointmentStoreNotificationTrigger.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAppointmentStoreNotificationTrigger);
 
     public void** lpVtbl;

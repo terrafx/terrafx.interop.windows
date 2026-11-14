@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IApplicationActivationManager : IApplicationActivationManager.Interface, INativeGuid
 {
+    /// <include file='IApplicationActivationManager.xml' path='doc/member[@name="IApplicationActivationManager.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IApplicationActivationManager);
 
     public void** lpVtbl;

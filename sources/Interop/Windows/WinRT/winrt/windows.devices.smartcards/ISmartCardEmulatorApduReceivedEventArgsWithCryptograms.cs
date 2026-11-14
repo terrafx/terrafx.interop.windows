@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISmartCardEmulatorApduReceivedEventArgsWithCryptograms : ISmartCardEmulatorApduReceivedEventArgsWithCryptograms.Interface, INativeGuid
 {
+    /// <include file='ISmartCardEmulatorApduReceivedEventArgsWithCryptograms.xml' path='doc/member[@name="ISmartCardEmulatorApduReceivedEventArgsWithCryptograms.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISmartCardEmulatorApduReceivedEventArgsWithCryptograms);
 
     public void** lpVtbl;

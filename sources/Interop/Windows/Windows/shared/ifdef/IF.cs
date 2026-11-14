@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IF
 {
+    /// <include file='IF.xml' path='doc/member[@name="IF.IF_MAX_STRING_SIZE"]/*' />
     [NativeTypeName("#define IF_MAX_STRING_SIZE 256")]
     public const int IF_MAX_STRING_SIZE = 256;
 
+    /// <include file='IF.xml' path='doc/member[@name="IF.IF_MAX_PHYS_ADDRESS_LENGTH"]/*' />
     [NativeTypeName("#define IF_MAX_PHYS_ADDRESS_LENGTH 32")]
     public const int IF_MAX_PHYS_ADDRESS_LENGTH = 32;
 }

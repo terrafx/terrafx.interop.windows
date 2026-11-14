@@ -7,18 +7,23 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class Windows
 {
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.FACILTIY_MUI_ERROR_CODE"]/*' />
     [NativeTypeName("#define FACILTIY_MUI_ERROR_CODE 0xB")]
     public const int FACILTIY_MUI_ERROR_CODE = 0xB;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EPT_NT_INVALID_ENTRY"]/*' />
     [NativeTypeName("#define EPT_NT_INVALID_ENTRY ((NTSTATUS)0xC0020034L)")]
     public const int EPT_NT_INVALID_ENTRY = unchecked((int)(0xC0020034));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EPT_NT_CANT_PERFORM_OP"]/*' />
     [NativeTypeName("#define EPT_NT_CANT_PERFORM_OP ((NTSTATUS)0xC0020035L)")]
     public const int EPT_NT_CANT_PERFORM_OP = unchecked((int)(0xC0020035));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EPT_NT_NOT_REGISTERED"]/*' />
     [NativeTypeName("#define EPT_NT_NOT_REGISTERED ((NTSTATUS)0xC0020036L)")]
     public const int EPT_NT_NOT_REGISTERED = unchecked((int)(0xC0020036));
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.EPT_NT_CANT_CREATE"]/*' />
     [NativeTypeName("#define EPT_NT_CANT_CREATE ((NTSTATUS)0xC002004CL)")]
     public const int EPT_NT_CANT_CREATE = unchecked((int)(0xC002004C));
 }

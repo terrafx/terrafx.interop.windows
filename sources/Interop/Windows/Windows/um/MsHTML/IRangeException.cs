@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IRangeException : IRangeException.Interface, INativeGuid
 {
+    /// <include file='IRangeException.xml' path='doc/member[@name="IRangeException.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IRangeException);
 
     public void** lpVtbl;

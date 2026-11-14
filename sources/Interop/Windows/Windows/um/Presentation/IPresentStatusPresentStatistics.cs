@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IPresentStatistics")]
 public unsafe partial struct IPresentStatusPresentStatistics : IPresentStatusPresentStatistics.Interface, INativeGuid
 {
+    /// <include file='IPresentStatusPresentStatistics.xml' path='doc/member[@name="IPresentStatusPresentStatistics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IPresentStatusPresentStatistics);
 
     public void** lpVtbl;

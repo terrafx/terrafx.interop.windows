@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows10.0.22000.0")]
 public unsafe partial struct IAudioEffectsChangedNotificationClient : IAudioEffectsChangedNotificationClient.Interface, INativeGuid
 {
+    /// <include file='IAudioEffectsChangedNotificationClient.xml' path='doc/member[@name="IAudioEffectsChangedNotificationClient.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioEffectsChangedNotificationClient);
 
     public void** lpVtbl;

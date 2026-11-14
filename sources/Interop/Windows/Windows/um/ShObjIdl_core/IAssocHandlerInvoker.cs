@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAssocHandlerInvoker : IAssocHandlerInvoker.Interface, INativeGuid
 {
+    /// <include file='IAssocHandlerInvoker.xml' path='doc/member[@name="IAssocHandlerInvoker.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAssocHandlerInvoker);
 
     public void** lpVtbl;

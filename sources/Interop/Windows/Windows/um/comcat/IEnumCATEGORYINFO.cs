@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IEnumCATEGORYINFO : IEnumCATEGORYINFO.Interface, INativeGuid
 {
+    /// <include file='IEnumCATEGORYINFO.xml' path='doc/member[@name="IEnumCATEGORYINFO.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IEnumCATEGORYINFO);
 
     public void** lpVtbl;

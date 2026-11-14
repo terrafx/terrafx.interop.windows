@@ -7,12 +7,15 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class TAPE
 {
+    /// <include file='TAPE.xml' path='doc/member[@name="TAPE.TAPE_RETURN_STATISTICS"]/*' />
     [NativeTypeName("#define TAPE_RETURN_STATISTICS 0L")]
     public const int TAPE_RETURN_STATISTICS = 0;
 
+    /// <include file='TAPE.xml' path='doc/member[@name="TAPE.TAPE_RETURN_ENV_INFO"]/*' />
     [NativeTypeName("#define TAPE_RETURN_ENV_INFO 1L")]
     public const int TAPE_RETURN_ENV_INFO = 1;
 
+    /// <include file='TAPE.xml' path='doc/member[@name="TAPE.TAPE_RESET_STATISTICS"]/*' />
     [NativeTypeName("#define TAPE_RESET_STATISTICS 2L")]
     public const int TAPE_RESET_STATISTICS = 2;
 }

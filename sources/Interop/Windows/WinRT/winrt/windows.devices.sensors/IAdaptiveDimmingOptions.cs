@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IAdaptiveDimmingOptions : IAdaptiveDimmingOptions.Interface, INativeGuid
 {
+    /// <include file='IAdaptiveDimmingOptions.xml' path='doc/member[@name="IAdaptiveDimmingOptions.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAdaptiveDimmingOptions);
 
     public void** lpVtbl;

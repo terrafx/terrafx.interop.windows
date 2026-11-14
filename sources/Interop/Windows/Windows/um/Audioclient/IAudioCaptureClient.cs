@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAudioCaptureClient : IAudioCaptureClient.Interface, INativeGuid
 {
+    /// <include file='IAudioCaptureClient.xml' path='doc/member[@name="IAudioCaptureClient.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAudioCaptureClient);
 
     public void** lpVtbl;

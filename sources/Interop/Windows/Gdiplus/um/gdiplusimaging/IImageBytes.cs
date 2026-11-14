@@ -17,6 +17,7 @@ namespace TerraFX.Interop.Gdiplus;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IImageBytes : IImageBytes.Interface, INativeGuid
 {
+    /// <include file='IImageBytes.xml' path='doc/member[@name="IImageBytes.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IImageBytes);
 
     public void** lpVtbl;

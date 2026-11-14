@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FW
 {
+    /// <include file='FW.xml' path='doc/member[@name="FW.FW_ISSUEID_NO_ISSUE"]/*' />
     [NativeTypeName("#define FW_ISSUEID_NO_ISSUE 0x00000000")]
     public const int FW_ISSUEID_NO_ISSUE = 0x00000000;
 
+    /// <include file='FW.xml' path='doc/member[@name="FW.FW_ISSUEID_UNKNOWN"]/*' />
     [NativeTypeName("#define FW_ISSUEID_UNKNOWN 0xFFFFFFFF")]
     public const uint FW_ISSUEID_UNKNOWN = 0xFFFFFFFF;
 }

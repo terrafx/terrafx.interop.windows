@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IBackgroundWorkCostStatics : IBackgroundWorkCostStatics.Interface, INativeGuid
 {
+    /// <include file='IBackgroundWorkCostStatics.xml' path='doc/member[@name="IBackgroundWorkCostStatics.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBackgroundWorkCostStatics);
 
     public void** lpVtbl;

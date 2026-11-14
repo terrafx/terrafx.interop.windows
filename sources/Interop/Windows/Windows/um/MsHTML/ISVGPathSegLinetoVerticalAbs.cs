@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct ISVGPathSegLinetoVerticalAbs : ISVGPathSegLinetoVerticalAbs.Interface, INativeGuid
 {
+    /// <include file='ISVGPathSegLinetoVerticalAbs.xml' path='doc/member[@name="ISVGPathSegLinetoVerticalAbs.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISVGPathSegLinetoVerticalAbs);
 
     public void** lpVtbl;

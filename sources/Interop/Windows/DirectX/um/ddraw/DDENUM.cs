@@ -7,12 +7,15 @@ namespace TerraFX.Interop.DirectX;
 
 public static partial class DDENUM
 {
+    /// <include file='DDENUM.xml' path='doc/member[@name="DDENUM.DDENUM_ATTACHEDSECONDARYDEVICES"]/*' />
     [NativeTypeName("#define DDENUM_ATTACHEDSECONDARYDEVICES 0x00000001L")]
     public const int DDENUM_ATTACHEDSECONDARYDEVICES = 0x00000001;
 
+    /// <include file='DDENUM.xml' path='doc/member[@name="DDENUM.DDENUM_DETACHEDSECONDARYDEVICES"]/*' />
     [NativeTypeName("#define DDENUM_DETACHEDSECONDARYDEVICES 0x00000002L")]
     public const int DDENUM_DETACHEDSECONDARYDEVICES = 0x00000002;
 
+    /// <include file='DDENUM.xml' path='doc/member[@name="DDENUM.DDENUM_NONDISPLAYDEVICES"]/*' />
     [NativeTypeName("#define DDENUM_NONDISPLAYDEVICES 0x00000004L")]
     public const int DDENUM_NONDISPLAYDEVICES = 0x00000004;
 }

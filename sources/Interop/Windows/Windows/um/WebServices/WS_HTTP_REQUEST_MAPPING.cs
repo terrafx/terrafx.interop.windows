@@ -7,5 +7,6 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class WS_HTTP_REQUEST_MAPPING
 {
+    /// <include file='WS_HTTP_REQUEST_MAPPING.xml' path='doc/member[@name="WS_HTTP_REQUEST_MAPPING.WS_HTTP_REQUEST_MAPPING_VERB"]/*' />
     public const int WS_HTTP_REQUEST_MAPPING_VERB = 0x2;
 }

@@ -9,39 +9,51 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class VTBIT
 {
+    /// <include file='VTBIT.xml' path='doc/member[@name="VTBIT.VTBIT_I1"]/*' />
     [NativeTypeName("#define VTBIT_I1 (1 << VT_I1)")]
-    public const int VTBIT_I1 = (1 << (int)(VT_I1));
+    public const int VTBIT_I1 = (1 << (int)((int)(VT_I1)));
 
+    /// <include file='VTBIT.xml' path='doc/member[@name="VTBIT.VTBIT_UI1"]/*' />
     [NativeTypeName("#define VTBIT_UI1 (1 << VT_UI1)")]
-    public const int VTBIT_UI1 = (1 << (int)(VT_UI1));
+    public const int VTBIT_UI1 = (1 << (int)((int)(VT_UI1)));
 
+    /// <include file='VTBIT.xml' path='doc/member[@name="VTBIT.VTBIT_I2"]/*' />
     [NativeTypeName("#define VTBIT_I2 (1 << VT_I2)")]
-    public const int VTBIT_I2 = (1 << (int)(VT_I2));
+    public const int VTBIT_I2 = (1 << (int)((int)(VT_I2)));
 
+    /// <include file='VTBIT.xml' path='doc/member[@name="VTBIT.VTBIT_UI2"]/*' />
     [NativeTypeName("#define VTBIT_UI2 (1 << VT_UI2)")]
-    public const int VTBIT_UI2 = (1 << (int)(VT_UI2));
+    public const int VTBIT_UI2 = (1 << (int)((int)(VT_UI2)));
 
+    /// <include file='VTBIT.xml' path='doc/member[@name="VTBIT.VTBIT_I4"]/*' />
     [NativeTypeName("#define VTBIT_I4 (1 << VT_I4)")]
-    public const int VTBIT_I4 = (1 << (int)(VT_I4));
+    public const int VTBIT_I4 = (1 << (int)((int)(VT_I4)));
 
+    /// <include file='VTBIT.xml' path='doc/member[@name="VTBIT.VTBIT_UI4"]/*' />
     [NativeTypeName("#define VTBIT_UI4 (1 << VT_UI4)")]
-    public const int VTBIT_UI4 = (1 << (int)(VT_UI4));
+    public const int VTBIT_UI4 = (1 << (int)((int)(VT_UI4)));
 
+    /// <include file='VTBIT.xml' path='doc/member[@name="VTBIT.VTBIT_I8"]/*' />
     [NativeTypeName("#define VTBIT_I8 (1 << VT_I8)")]
-    public const int VTBIT_I8 = (1 << (int)(VT_I8));
+    public const int VTBIT_I8 = (1 << (int)((int)(VT_I8)));
 
+    /// <include file='VTBIT.xml' path='doc/member[@name="VTBIT.VTBIT_UI8"]/*' />
     [NativeTypeName("#define VTBIT_UI8 (1 << VT_UI8)")]
-    public const int VTBIT_UI8 = (1 << (int)(VT_UI8));
+    public const int VTBIT_UI8 = (1 << (int)((int)(VT_UI8)));
 
+    /// <include file='VTBIT.xml' path='doc/member[@name="VTBIT.VTBIT_R4"]/*' />
     [NativeTypeName("#define VTBIT_R4 (1 << VT_R4)")]
-    public const int VTBIT_R4 = (1 << (int)(VT_R4));
+    public const int VTBIT_R4 = (1 << (int)((int)(VT_R4)));
 
+    /// <include file='VTBIT.xml' path='doc/member[@name="VTBIT.VTBIT_R8"]/*' />
     [NativeTypeName("#define VTBIT_R8 (1 << VT_R8)")]
-    public const int VTBIT_R8 = (1 << (int)(VT_R8));
+    public const int VTBIT_R8 = (1 << (int)((int)(VT_R8)));
 
+    /// <include file='VTBIT.xml' path='doc/member[@name="VTBIT.VTBIT_CY"]/*' />
     [NativeTypeName("#define VTBIT_CY (1 << VT_CY)")]
-    public const int VTBIT_CY = (1 << (int)(VT_CY));
+    public const int VTBIT_CY = (1 << (int)((int)(VT_CY)));
 
+    /// <include file='VTBIT.xml' path='doc/member[@name="VTBIT.VTBIT_DECIMAL"]/*' />
     [NativeTypeName("#define VTBIT_DECIMAL (1 << VT_DECIMAL)")]
-    public const int VTBIT_DECIMAL = (1 << (int)(VT_DECIMAL));
+    public const int VTBIT_DECIMAL = (1 << (int)((int)(VT_DECIMAL)));
 }

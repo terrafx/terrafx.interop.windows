@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ICatRegister : ICatRegister.Interface, INativeGuid
 {
+    /// <include file='ICatRegister.xml' path='doc/member[@name="ICatRegister.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ICatRegister);
 
     public void** lpVtbl;

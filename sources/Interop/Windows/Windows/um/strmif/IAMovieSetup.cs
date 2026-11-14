@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IAMovieSetup : IAMovieSetup.Interface, INativeGuid
 {
+    /// <include file='IAMovieSetup.xml' path='doc/member[@name="IAMovieSetup.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IAMovieSetup);
 
     public void** lpVtbl;

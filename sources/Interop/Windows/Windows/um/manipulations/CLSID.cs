@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_InertiaProcessor"]/*' />
     [NativeTypeName("const CLSID")]
     public static ref readonly Guid CLSID_InertiaProcessor
     {
@@ -37,6 +38,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ManipulationProcessor"]/*' />
     [NativeTypeName("const CLSID")]
     public static ref readonly Guid CLSID_ManipulationProcessor
     {

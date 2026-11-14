@@ -7,36 +7,47 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class FLAG
 {
+    /// <include file='FLAG.xml' path='doc/member[@name="FLAG.FLAG_NO_GPO_FILTER"]/*' />
     [NativeTypeName("#define FLAG_NO_GPO_FILTER 0x80000000")]
     public const uint FLAG_NO_GPO_FILTER = 0x80000000;
 
+    /// <include file='FLAG.xml' path='doc/member[@name="FLAG.FLAG_NO_CSE_INVOKE"]/*' />
     [NativeTypeName("#define FLAG_NO_CSE_INVOKE 0x40000000")]
     public const int FLAG_NO_CSE_INVOKE = 0x40000000;
 
+    /// <include file='FLAG.xml' path='doc/member[@name="FLAG.FLAG_ASSUME_SLOW_LINK"]/*' />
     [NativeTypeName("#define FLAG_ASSUME_SLOW_LINK 0x20000000")]
     public const int FLAG_ASSUME_SLOW_LINK = 0x20000000;
 
+    /// <include file='FLAG.xml' path='doc/member[@name="FLAG.FLAG_LOOPBACK_MERGE"]/*' />
     [NativeTypeName("#define FLAG_LOOPBACK_MERGE 0x10000000")]
     public const int FLAG_LOOPBACK_MERGE = 0x10000000;
 
+    /// <include file='FLAG.xml' path='doc/member[@name="FLAG.FLAG_LOOPBACK_REPLACE"]/*' />
     [NativeTypeName("#define FLAG_LOOPBACK_REPLACE 0x08000000")]
     public const int FLAG_LOOPBACK_REPLACE = 0x08000000;
 
+    /// <include file='FLAG.xml' path='doc/member[@name="FLAG.FLAG_ASSUME_USER_WQLFILTER_TRUE"]/*' />
     [NativeTypeName("#define FLAG_ASSUME_USER_WQLFILTER_TRUE 0x04000000")]
     public const int FLAG_ASSUME_USER_WQLFILTER_TRUE = 0x04000000;
 
+    /// <include file='FLAG.xml' path='doc/member[@name="FLAG.FLAG_ASSUME_COMP_WQLFILTER_TRUE"]/*' />
     [NativeTypeName("#define FLAG_ASSUME_COMP_WQLFILTER_TRUE 0x02000000")]
     public const int FLAG_ASSUME_COMP_WQLFILTER_TRUE = 0x02000000;
 
+    /// <include file='FLAG.xml' path='doc/member[@name="FLAG.FLAG_PLANNING_MODE"]/*' />
     [NativeTypeName("#define FLAG_PLANNING_MODE 0x01000000")]
     public const int FLAG_PLANNING_MODE = 0x01000000;
 
+    /// <include file='FLAG.xml' path='doc/member[@name="FLAG.FLAG_NO_USER"]/*' />
     [NativeTypeName("#define FLAG_NO_USER 0x00000001")]
     public const int FLAG_NO_USER = 0x00000001;
 
+    /// <include file='FLAG.xml' path='doc/member[@name="FLAG.FLAG_NO_COMPUTER"]/*' />
     [NativeTypeName("#define FLAG_NO_COMPUTER 0x00000002")]
     public const int FLAG_NO_COMPUTER = 0x00000002;
 
+    /// <include file='FLAG.xml' path='doc/member[@name="FLAG.FLAG_FORCE_CREATENAMESPACE"]/*' />
     [NativeTypeName("#define FLAG_FORCE_CREATENAMESPACE 0x00000004")]
     public const int FLAG_FORCE_CREATENAMESPACE = 0x00000004;
 }

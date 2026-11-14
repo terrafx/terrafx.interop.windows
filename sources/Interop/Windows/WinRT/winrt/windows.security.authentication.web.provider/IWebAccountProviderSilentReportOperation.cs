@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct IWebAccountProviderSilentReportOperation : IWebAccountProviderSilentReportOperation.Interface, INativeGuid
 {
+    /// <include file='IWebAccountProviderSilentReportOperation.xml' path='doc/member[@name="IWebAccountProviderSilentReportOperation.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IWebAccountProviderSilentReportOperation);
 
     public void** lpVtbl;

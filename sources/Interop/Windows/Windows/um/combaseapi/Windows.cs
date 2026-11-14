@@ -366,36 +366,47 @@ public static unsafe partial class Windows
     [SupportedOSPlatform("windows10.0.19041.0")]
     public static extern HRESULT CoRevokeDeviceCatalog(CO_DEVICE_CATALOG_COOKIE cookie);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLSCTX_INPROC"]/*' />
     [NativeTypeName("#define CLSCTX_INPROC (CLSCTX_INPROC_SERVER|CLSCTX_INPROC_HANDLER)")]
     public const CLSCTX CLSCTX_INPROC = (CLSCTX_INPROC_SERVER | CLSCTX_INPROC_HANDLER);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLSCTX_ALL"]/*' />
     [NativeTypeName("#define CLSCTX_ALL (CLSCTX_INPROC_SERVER| \\\r\n                                 CLSCTX_INPROC_HANDLER| \\\r\n                                 CLSCTX_LOCAL_SERVER| \\\r\n                                 CLSCTX_REMOTE_SERVER)")]
     public const CLSCTX CLSCTX_ALL = (CLSCTX_INPROC_SERVER | CLSCTX_INPROC_HANDLER | CLSCTX_LOCAL_SERVER | CLSCTX_REMOTE_SERVER);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CLSCTX_SERVER"]/*' />
     [NativeTypeName("#define CLSCTX_SERVER (CLSCTX_INPROC_SERVER|CLSCTX_LOCAL_SERVER|CLSCTX_REMOTE_SERVER)")]
     public const CLSCTX CLSCTX_SERVER = (CLSCTX_INPROC_SERVER | CLSCTX_LOCAL_SERVER | CLSCTX_REMOTE_SERVER);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COM_RIGHTS_EXECUTE"]/*' />
     [NativeTypeName("#define COM_RIGHTS_EXECUTE 1")]
     public const int COM_RIGHTS_EXECUTE = 1;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COM_RIGHTS_EXECUTE_LOCAL"]/*' />
     [NativeTypeName("#define COM_RIGHTS_EXECUTE_LOCAL 2")]
     public const int COM_RIGHTS_EXECUTE_LOCAL = 2;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COM_RIGHTS_EXECUTE_REMOTE"]/*' />
     [NativeTypeName("#define COM_RIGHTS_EXECUTE_REMOTE 4")]
     public const int COM_RIGHTS_EXECUTE_REMOTE = 4;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COM_RIGHTS_ACTIVATE_LOCAL"]/*' />
     [NativeTypeName("#define COM_RIGHTS_ACTIVATE_LOCAL 8")]
     public const int COM_RIGHTS_ACTIVATE_LOCAL = 8;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COM_RIGHTS_ACTIVATE_REMOTE"]/*' />
     [NativeTypeName("#define COM_RIGHTS_ACTIVATE_REMOTE 16")]
     public const int COM_RIGHTS_ACTIVATE_REMOTE = 16;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COM_RIGHTS_RESERVED1"]/*' />
     [NativeTypeName("#define COM_RIGHTS_RESERVED1 32")]
     public const int COM_RIGHTS_RESERVED1 = 32;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.COM_RIGHTS_RESERVED2"]/*' />
     [NativeTypeName("#define COM_RIGHTS_RESERVED2 64")]
     public const int COM_RIGHTS_RESERVED2 = 64;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.CWMO_MAX_HANDLES"]/*' />
     [NativeTypeName("#define CWMO_MAX_HANDLES 56")]
     public const int CWMO_MAX_HANDLES = 56;
 }

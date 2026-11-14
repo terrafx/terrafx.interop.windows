@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Interface, INativeGuid
 {
+    /// <include file='IMFInputTrustAuthority.xml' path='doc/member[@name="IMFInputTrustAuthority.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFInputTrustAuthority);
 
     public void** lpVtbl;

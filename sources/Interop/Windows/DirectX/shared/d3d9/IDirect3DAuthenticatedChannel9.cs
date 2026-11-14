@@ -17,6 +17,7 @@ namespace TerraFX.Interop.DirectX;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct IDirect3DAuthenticatedChannel9 : IDirect3DAuthenticatedChannel9.Interface, INativeGuid
 {
+    /// <include file='IDirect3DAuthenticatedChannel9.xml' path='doc/member[@name="IDirect3DAuthenticatedChannel9.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IDirect3DAuthenticatedChannel9);
 
     public void** lpVtbl;

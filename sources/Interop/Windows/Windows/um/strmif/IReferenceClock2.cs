@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IReferenceClock")]
 public unsafe partial struct IReferenceClock2 : IReferenceClock2.Interface, INativeGuid
 {
+    /// <include file='IReferenceClock2.xml' path='doc/member[@name="IReferenceClock2.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IReferenceClock2);
 
     public void** lpVtbl;

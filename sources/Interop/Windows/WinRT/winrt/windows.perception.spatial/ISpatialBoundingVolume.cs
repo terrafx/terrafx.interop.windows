@@ -17,6 +17,7 @@ namespace TerraFX.Interop.WinRT;
 [NativeInheritance("IInspectable")]
 public unsafe partial struct ISpatialBoundingVolume : ISpatialBoundingVolume.Interface, INativeGuid
 {
+    /// <include file='ISpatialBoundingVolume.xml' path='doc/member[@name="ISpatialBoundingVolume.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpatialBoundingVolume);
 
     public void** lpVtbl;

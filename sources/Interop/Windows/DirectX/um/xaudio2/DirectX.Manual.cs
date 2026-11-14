@@ -39,7 +39,7 @@ public static unsafe partial class DirectX
 
     public static float XAudio2CutoffFrequencyToRadians(float CutoffFrequency, [NativeTypeName("UINT32")] uint SampleRate)
     {
-        if ((uint)(CutoffFrequency * 6.0f) >= SampleRate)
+        if (CutoffFrequency * 6.0f >= SampleRate)
         {
             return 1.0f;
         }
@@ -54,7 +54,7 @@ public static unsafe partial class DirectX
 
     public static float XAudio2CutoffFrequencyToOnePoleCoefficient(float CutoffFrequency, [NativeTypeName("UINT32")] uint SampleRate)
     {
-        if ((uint)CutoffFrequency >= SampleRate)
+        if (CutoffFrequency >= SampleRate)
         {
             return 1.0f;
         }

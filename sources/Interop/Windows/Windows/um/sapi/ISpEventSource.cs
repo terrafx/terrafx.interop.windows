@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("ISpNotifySource")]
 public unsafe partial struct ISpEventSource : ISpEventSource.Interface, INativeGuid
 {
+    /// <include file='ISpEventSource.xml' path='doc/member[@name="ISpEventSource.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ISpEventSource);
 
     public void** lpVtbl;

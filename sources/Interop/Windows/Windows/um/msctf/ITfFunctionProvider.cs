@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IUnknown")]
 public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface, INativeGuid
 {
+    /// <include file='ITfFunctionProvider.xml' path='doc/member[@name="ITfFunctionProvider.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_ITfFunctionProvider);
 
     public void** lpVtbl;

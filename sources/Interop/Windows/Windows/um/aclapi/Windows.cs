@@ -235,72 +235,95 @@ public static unsafe partial class Windows
     [return: NativeTypeName("PTRUSTEE_W")]
     public static extern TRUSTEE_W* GetMultipleTrusteeW([NativeTypeName("PTRUSTEE_W")] TRUSTEE_W* pTrustee);
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetEntriesInAcl"]/*' />
     [NativeTypeName("#define SetEntriesInAcl SetEntriesInAclW")]
     public static delegate*<uint, EXPLICIT_ACCESS_W*, ACL*, ACL**, uint> SetEntriesInAcl => &SetEntriesInAclW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetExplicitEntriesFromAcl"]/*' />
     [NativeTypeName("#define GetExplicitEntriesFromAcl GetExplicitEntriesFromAclW")]
     public static delegate*<ACL*, uint*, EXPLICIT_ACCESS_W**, uint> GetExplicitEntriesFromAcl => &GetExplicitEntriesFromAclW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEffectiveRightsFromAcl"]/*' />
     [NativeTypeName("#define GetEffectiveRightsFromAcl GetEffectiveRightsFromAclW")]
     public static delegate*<ACL*, TRUSTEE_W*, uint*, uint> GetEffectiveRightsFromAcl => &GetEffectiveRightsFromAclW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAuditedPermissionsFromAcl"]/*' />
     [NativeTypeName("#define GetAuditedPermissionsFromAcl GetAuditedPermissionsFromAclW")]
     public static delegate*<ACL*, TRUSTEE_W*, uint*, uint*, uint> GetAuditedPermissionsFromAcl => &GetAuditedPermissionsFromAclW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetNamedSecurityInfo"]/*' />
     [NativeTypeName("#define GetNamedSecurityInfo GetNamedSecurityInfoW")]
     public static delegate*<char*, SE_OBJECT_TYPE, uint, void**, void**, ACL**, ACL**, void**, uint> GetNamedSecurityInfo => &GetNamedSecurityInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.SetNamedSecurityInfo"]/*' />
     [NativeTypeName("#define SetNamedSecurityInfo SetNamedSecurityInfoW")]
     public static delegate*<char*, SE_OBJECT_TYPE, uint, void*, void*, ACL*, ACL*, uint> SetNamedSecurityInfo => &SetNamedSecurityInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetInheritanceSource"]/*' />
     [NativeTypeName("#define GetInheritanceSource GetInheritanceSourceW")]
     public static delegate*<char*, SE_OBJECT_TYPE, uint, BOOL, Guid**, uint, ACL*, FN_OBJECT_MGR_FUNCTS*, GENERIC_MAPPING*, INHERITED_FROMW*, uint> GetInheritanceSource => &GetInheritanceSourceW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TreeResetNamedSecurityInfo"]/*' />
     [NativeTypeName("#define TreeResetNamedSecurityInfo TreeResetNamedSecurityInfoW")]
     public static delegate*<char*, SE_OBJECT_TYPE, uint, void*, void*, ACL*, ACL*, BOOL, delegate* unmanaged<char*, uint, PROG_INVOKE_SETTING*, void*, BOOL, void>, PROG_INVOKE_SETTING, void*, uint> TreeResetNamedSecurityInfo => &TreeResetNamedSecurityInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.TreeSetNamedSecurityInfo"]/*' />
     [NativeTypeName("#define TreeSetNamedSecurityInfo TreeSetNamedSecurityInfoW")]
     public static delegate*<char*, SE_OBJECT_TYPE, uint, void*, void*, ACL*, ACL*, uint, delegate* unmanaged<char*, uint, PROG_INVOKE_SETTING*, void*, BOOL, void>, PROG_INVOKE_SETTING, void*, uint> TreeSetNamedSecurityInfo => &TreeSetNamedSecurityInfoW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BuildSecurityDescriptor"]/*' />
     [NativeTypeName("#define BuildSecurityDescriptor BuildSecurityDescriptorW")]
     public static delegate*<TRUSTEE_W*, TRUSTEE_W*, uint, EXPLICIT_ACCESS_W*, uint, EXPLICIT_ACCESS_W*, void*, uint*, void**, uint> BuildSecurityDescriptor => &BuildSecurityDescriptorW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.LookupSecurityDescriptorParts"]/*' />
     [NativeTypeName("#define LookupSecurityDescriptorParts LookupSecurityDescriptorPartsW")]
     public static delegate*<TRUSTEE_W**, TRUSTEE_W**, uint*, EXPLICIT_ACCESS_W**, uint*, EXPLICIT_ACCESS_W**, void*, uint> LookupSecurityDescriptorParts => &LookupSecurityDescriptorPartsW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BuildExplicitAccessWithName"]/*' />
     [NativeTypeName("#define BuildExplicitAccessWithName BuildExplicitAccessWithNameW")]
     public static delegate*<EXPLICIT_ACCESS_W*, char*, uint, ACCESS_MODE, uint, void> BuildExplicitAccessWithName => &BuildExplicitAccessWithNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BuildImpersonateExplicitAccessWithName"]/*' />
     [NativeTypeName("#define BuildImpersonateExplicitAccessWithName BuildImpersonateExplicitAccessWithNameW")]
     public static delegate*<EXPLICIT_ACCESS_W*, char*, TRUSTEE_W*, uint, ACCESS_MODE, uint, void> BuildImpersonateExplicitAccessWithName => &BuildImpersonateExplicitAccessWithNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BuildTrusteeWithName"]/*' />
     [NativeTypeName("#define BuildTrusteeWithName BuildTrusteeWithNameW")]
     public static delegate*<TRUSTEE_W*, char*, void> BuildTrusteeWithName => &BuildTrusteeWithNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BuildImpersonateTrustee"]/*' />
     [NativeTypeName("#define BuildImpersonateTrustee BuildImpersonateTrusteeW")]
     public static delegate*<TRUSTEE_W*, TRUSTEE_W*, void> BuildImpersonateTrustee => &BuildImpersonateTrusteeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BuildTrusteeWithSid"]/*' />
     [NativeTypeName("#define BuildTrusteeWithSid BuildTrusteeWithSidW")]
     public static delegate*<TRUSTEE_W*, void*, void> BuildTrusteeWithSid => &BuildTrusteeWithSidW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BuildTrusteeWithObjectsAndSid"]/*' />
     [NativeTypeName("#define BuildTrusteeWithObjectsAndSid BuildTrusteeWithObjectsAndSidW")]
     public static delegate*<TRUSTEE_W*, OBJECTS_AND_SID*, Guid*, Guid*, void*, void> BuildTrusteeWithObjectsAndSid => &BuildTrusteeWithObjectsAndSidW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.BuildTrusteeWithObjectsAndName"]/*' />
     [NativeTypeName("#define BuildTrusteeWithObjectsAndName BuildTrusteeWithObjectsAndNameW")]
     public static delegate*<TRUSTEE_W*, OBJECTS_AND_NAME_W*, SE_OBJECT_TYPE, char*, char*, char*, void> BuildTrusteeWithObjectsAndName => &BuildTrusteeWithObjectsAndNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTrusteeName"]/*' />
     [NativeTypeName("#define GetTrusteeName GetTrusteeNameW")]
     public static delegate*<TRUSTEE_W*, char*> GetTrusteeName => &GetTrusteeNameW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTrusteeType"]/*' />
     [NativeTypeName("#define GetTrusteeType GetTrusteeTypeW")]
     public static delegate*<TRUSTEE_W*, TRUSTEE_TYPE> GetTrusteeType => &GetTrusteeTypeW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTrusteeForm"]/*' />
     [NativeTypeName("#define GetTrusteeForm GetTrusteeFormW")]
     public static delegate*<TRUSTEE_W*, TRUSTEE_FORM> GetTrusteeForm => &GetTrusteeFormW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMultipleTrusteeOperation"]/*' />
     [NativeTypeName("#define GetMultipleTrusteeOperation GetMultipleTrusteeOperationW")]
     public static delegate*<TRUSTEE_W*, MULTIPLE_TRUSTEE_OPERATION> GetMultipleTrusteeOperation => &GetMultipleTrusteeOperationW;
 
+    /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMultipleTrustee"]/*' />
     [NativeTypeName("#define GetMultipleTrustee GetMultipleTrusteeW")]
     public static delegate*<TRUSTEE_W*, TRUSTEE_W*> GetMultipleTrustee => &GetMultipleTrusteeW;
 }

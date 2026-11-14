@@ -16,6 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IDispatch")]
 public unsafe partial struct IBlockFormats : IBlockFormats.Interface, INativeGuid
 {
+    /// <include file='IBlockFormats.xml' path='doc/member[@name="IBlockFormats.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IBlockFormats);
 
     public void** lpVtbl;

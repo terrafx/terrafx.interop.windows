@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class LWA
 {
+    /// <include file='LWA.xml' path='doc/member[@name="LWA.LWA_COLORKEY"]/*' />
     [NativeTypeName("#define LWA_COLORKEY 0x00000001")]
     public const int LWA_COLORKEY = 0x00000001;
 
+    /// <include file='LWA.xml' path='doc/member[@name="LWA.LWA_ALPHA"]/*' />
     [NativeTypeName("#define LWA_ALPHA 0x00000002")]
     public const int LWA_ALPHA = 0x00000002;
 }

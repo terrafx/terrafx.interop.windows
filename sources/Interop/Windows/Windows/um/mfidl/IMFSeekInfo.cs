@@ -18,6 +18,7 @@ namespace TerraFX.Interop.Windows;
 [SupportedOSPlatform("windows6.2")]
 public unsafe partial struct IMFSeekInfo : IMFSeekInfo.Interface, INativeGuid
 {
+    /// <include file='IMFSeekInfo.xml' path='doc/member[@name="IMFSeekInfo.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in IID_IMFSeekInfo);
 
     public void** lpVtbl;

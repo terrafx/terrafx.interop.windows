@@ -14,5 +14,6 @@ namespace TerraFX.Interop.Windows;
 [Guid("591209C7-767B-42B2-9FBA-44EE4615F2C7")]
 public unsafe partial struct ApplicationAssociationRegistration : INativeGuid
 {
+    /// <include file='ApplicationAssociationRegistration.xml' path='doc/member[@name="ApplicationAssociationRegistration.INativeGuid.NativeGuid"]/*' />
     static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(in CLSID_ApplicationAssociationRegistration);
 }

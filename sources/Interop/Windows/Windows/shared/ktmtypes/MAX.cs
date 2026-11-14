@@ -7,9 +7,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class MAX
 {
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_TRANSACTION_DESCRIPTION_LENGTH"]/*' />
     [NativeTypeName("#define MAX_TRANSACTION_DESCRIPTION_LENGTH 64")]
     public const int MAX_TRANSACTION_DESCRIPTION_LENGTH = 64;
 
+    /// <include file='MAX.xml' path='doc/member[@name="MAX.MAX_RESOURCEMANAGER_DESCRIPTION_LENGTH"]/*' />
     [NativeTypeName("#define MAX_RESOURCEMANAGER_DESCRIPTION_LENGTH 64")]
     public const int MAX_RESOURCEMANAGER_DESCRIPTION_LENGTH = 64;
 }

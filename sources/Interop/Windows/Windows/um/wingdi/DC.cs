@@ -7,114 +7,151 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class DC
 {
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_BRUSH"]/*' />
     [NativeTypeName("#define DC_BRUSH 18")]
     public const int DC_BRUSH = 18;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_PEN"]/*' />
     [NativeTypeName("#define DC_PEN 19")]
     public const int DC_PEN = 19;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_FIELDS"]/*' />
     [NativeTypeName("#define DC_FIELDS 1")]
     public const int DC_FIELDS = 1;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_PAPERS"]/*' />
     [NativeTypeName("#define DC_PAPERS 2")]
     public const int DC_PAPERS = 2;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_PAPERSIZE"]/*' />
     [NativeTypeName("#define DC_PAPERSIZE 3")]
     public const int DC_PAPERSIZE = 3;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_MINEXTENT"]/*' />
     [NativeTypeName("#define DC_MINEXTENT 4")]
     public const int DC_MINEXTENT = 4;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_MAXEXTENT"]/*' />
     [NativeTypeName("#define DC_MAXEXTENT 5")]
     public const int DC_MAXEXTENT = 5;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_BINS"]/*' />
     [NativeTypeName("#define DC_BINS 6")]
     public const int DC_BINS = 6;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_DUPLEX"]/*' />
     [NativeTypeName("#define DC_DUPLEX 7")]
     public const int DC_DUPLEX = 7;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_SIZE"]/*' />
     [NativeTypeName("#define DC_SIZE 8")]
     public const int DC_SIZE = 8;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_EXTRA"]/*' />
     [NativeTypeName("#define DC_EXTRA 9")]
     public const int DC_EXTRA = 9;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_VERSION"]/*' />
     [NativeTypeName("#define DC_VERSION 10")]
     public const int DC_VERSION = 10;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_DRIVER"]/*' />
     [NativeTypeName("#define DC_DRIVER 11")]
     public const int DC_DRIVER = 11;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_BINNAMES"]/*' />
     [NativeTypeName("#define DC_BINNAMES 12")]
     public const int DC_BINNAMES = 12;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_ENUMRESOLUTIONS"]/*' />
     [NativeTypeName("#define DC_ENUMRESOLUTIONS 13")]
     public const int DC_ENUMRESOLUTIONS = 13;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_FILEDEPENDENCIES"]/*' />
     [NativeTypeName("#define DC_FILEDEPENDENCIES 14")]
     public const int DC_FILEDEPENDENCIES = 14;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_TRUETYPE"]/*' />
     [NativeTypeName("#define DC_TRUETYPE 15")]
     public const int DC_TRUETYPE = 15;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_PAPERNAMES"]/*' />
     [NativeTypeName("#define DC_PAPERNAMES 16")]
     public const int DC_PAPERNAMES = 16;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_ORIENTATION"]/*' />
     [NativeTypeName("#define DC_ORIENTATION 17")]
     public const int DC_ORIENTATION = 17;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_COPIES"]/*' />
     [NativeTypeName("#define DC_COPIES 18")]
     public const int DC_COPIES = 18;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_BINADJUST"]/*' />
     [NativeTypeName("#define DC_BINADJUST 19")]
     public const int DC_BINADJUST = 19;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_EMF_COMPLIANT"]/*' />
     [NativeTypeName("#define DC_EMF_COMPLIANT 20")]
     public const int DC_EMF_COMPLIANT = 20;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_DATATYPE_PRODUCED"]/*' />
     [NativeTypeName("#define DC_DATATYPE_PRODUCED 21")]
     public const int DC_DATATYPE_PRODUCED = 21;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_COLLATE"]/*' />
     [NativeTypeName("#define DC_COLLATE 22")]
     public const int DC_COLLATE = 22;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_MANUFACTURER"]/*' />
     [NativeTypeName("#define DC_MANUFACTURER 23")]
     public const int DC_MANUFACTURER = 23;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_MODEL"]/*' />
     [NativeTypeName("#define DC_MODEL 24")]
     public const int DC_MODEL = 24;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_PERSONALITY"]/*' />
     [NativeTypeName("#define DC_PERSONALITY 25")]
     public const int DC_PERSONALITY = 25;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_PRINTRATE"]/*' />
     [NativeTypeName("#define DC_PRINTRATE 26")]
     public const int DC_PRINTRATE = 26;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_PRINTRATEUNIT"]/*' />
     [NativeTypeName("#define DC_PRINTRATEUNIT 27")]
     public const int DC_PRINTRATEUNIT = 27;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_PRINTERMEM"]/*' />
     [NativeTypeName("#define DC_PRINTERMEM 28")]
     public const int DC_PRINTERMEM = 28;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_MEDIAREADY"]/*' />
     [NativeTypeName("#define DC_MEDIAREADY 29")]
     public const int DC_MEDIAREADY = 29;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_STAPLE"]/*' />
     [NativeTypeName("#define DC_STAPLE 30")]
     public const int DC_STAPLE = 30;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_PRINTRATEPPM"]/*' />
     [NativeTypeName("#define DC_PRINTRATEPPM 31")]
     public const int DC_PRINTRATEPPM = 31;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_COLORDEVICE"]/*' />
     [NativeTypeName("#define DC_COLORDEVICE 32")]
     public const int DC_COLORDEVICE = 32;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_NUP"]/*' />
     [NativeTypeName("#define DC_NUP 33")]
     public const int DC_NUP = 33;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_MEDIATYPENAMES"]/*' />
     [NativeTypeName("#define DC_MEDIATYPENAMES 34")]
     public const int DC_MEDIATYPENAMES = 34;
 
+    /// <include file='DC.xml' path='doc/member[@name="DC.DC_MEDIATYPES"]/*' />
     [NativeTypeName("#define DC_MEDIATYPES 35")]
     public const int DC_MEDIATYPES = 35;
 }

@@ -7,21 +7,27 @@ namespace TerraFX.Interop.WinRT;
 
 public static partial class WinRT
 {
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Adc_IAdcChannel"]/*' />
     [NativeTypeName("const WCHAR[32]")]
     public const string InterfaceName_Windows_Devices_Adc_IAdcChannel = "Windows.Devices.Adc.IAdcChannel";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Adc_IAdcController"]/*' />
     [NativeTypeName("const WCHAR[35]")]
     public const string InterfaceName_Windows_Devices_Adc_IAdcController = "Windows.Devices.Adc.IAdcController";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Adc_IAdcControllerStatics"]/*' />
     [NativeTypeName("const WCHAR[42]")]
     public const string InterfaceName_Windows_Devices_Adc_IAdcControllerStatics = "Windows.Devices.Adc.IAdcControllerStatics";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.InterfaceName_Windows_Devices_Adc_IAdcControllerStatics2"]/*' />
     [NativeTypeName("const WCHAR[43]")]
     public const string InterfaceName_Windows_Devices_Adc_IAdcControllerStatics2 = "Windows.Devices.Adc.IAdcControllerStatics2";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Adc_AdcChannel"]/*' />
     [NativeTypeName("const WCHAR[31]")]
     public const string RuntimeClass_Windows_Devices_Adc_AdcChannel = "Windows.Devices.Adc.AdcChannel";
 
+    /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RuntimeClass_Windows_Devices_Adc_AdcController"]/*' />
     [NativeTypeName("const WCHAR[34]")]
     public const string RuntimeClass_Windows_Devices_Adc_AdcController = "Windows.Devices.Adc.AdcController";
 }

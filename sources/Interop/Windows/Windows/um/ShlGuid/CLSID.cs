@@ -12,6 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class CLSID
 {
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_NetworkDomain"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_NetworkDomain
     {
@@ -37,6 +38,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_NetworkServer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_NetworkServer
     {
@@ -62,6 +64,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_NetworkShare"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_NetworkShare
     {
@@ -87,6 +90,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MyComputer"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MyComputer
     {
@@ -112,6 +116,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_Internet"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_Internet
     {
@@ -137,6 +142,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_RecycleBin"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_RecycleBin
     {
@@ -162,6 +168,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ControlPanel"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ControlPanel
     {
@@ -187,6 +194,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_Printers"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_Printers
     {
@@ -212,6 +220,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MyDocuments"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MyDocuments
     {
@@ -237,6 +246,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_FolderShortcut"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_FolderShortcut
     {
@@ -262,6 +272,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CFSIconOverlayManager"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CFSIconOverlayManager
     {
@@ -287,6 +298,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MenuBand"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MenuBand
     {
@@ -312,6 +324,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CUrlHistory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CUrlHistory
     {
@@ -337,6 +350,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CUrlHistoryBoth"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CUrlHistoryBoth
     {
@@ -362,6 +376,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CURLSearchHook"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CURLSearchHook
     {
@@ -387,6 +402,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_AutoComplete"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_AutoComplete
     {
@@ -412,6 +428,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ACLHistory"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ACLHistory
     {
@@ -437,6 +454,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ACListISF"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ACListISF
     {
@@ -462,6 +480,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ACLMRU"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ACLMRU
     {
@@ -487,6 +506,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ACLMulti"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ACLMulti
     {
@@ -512,6 +532,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ACLCustomMRU"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ACLCustomMRU
     {
@@ -537,6 +558,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ProgressDialog"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ProgressDialog
     {
@@ -562,6 +584,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_FileTypes"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_FileTypes
     {
@@ -587,6 +610,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ActiveDesktop"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ActiveDesktop
     {
@@ -612,6 +636,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_QueryAssociations"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_QueryAssociations
     {
@@ -637,6 +662,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_LinkColumnProvider"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_LinkColumnProvider
     {
@@ -662,6 +688,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_InternetButtons"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_InternetButtons
     {
@@ -687,6 +714,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MSOButtons"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MSOButtons
     {
@@ -712,6 +740,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ToolbarExtButtons"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ToolbarExtButtons
     {
@@ -737,6 +766,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DarwinAppPublisher"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DarwinAppPublisher
     {
@@ -762,6 +792,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DocHostUIHandler"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DocHostUIHandler
     {
@@ -787,6 +818,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_HWShellExecute"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_HWShellExecute
     {
@@ -812,6 +844,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_DragDropHelper"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_DragDropHelper
     {
@@ -837,6 +870,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CAnchorBrowsePropertyPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CAnchorBrowsePropertyPage
     {
@@ -862,6 +896,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CImageBrowsePropertyPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CImageBrowsePropertyPage
     {
@@ -887,6 +922,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_CDocBrowsePropertyPage"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_CDocBrowsePropertyPage
     {
@@ -912,6 +948,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_FolderItem"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_FolderItem
     {
@@ -937,6 +974,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_FolderItemsMultiLevel"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_FolderItemsMultiLevel
     {
@@ -962,6 +1000,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_NewMenu"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_NewMenu
     {
@@ -987,6 +1026,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_QuickLinks"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_QuickLinks
     {
@@ -1012,6 +1052,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ISFBand"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ISFBand
     {
@@ -1037,6 +1078,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_ShellFldSetExt"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_ShellFldSetExt
     {
@@ -1062,6 +1104,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MenuToolbarBase"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MenuToolbarBase
     {
@@ -1087,6 +1130,7 @@ public static partial class CLSID
         }
     }
 
+    /// <include file='CLSID.xml' path='doc/member[@name="CLSID.CLSID_MenuBandSite"]/*' />
     [NativeTypeName("const GUID")]
     public static ref readonly Guid CLSID_MenuBandSite
     {
