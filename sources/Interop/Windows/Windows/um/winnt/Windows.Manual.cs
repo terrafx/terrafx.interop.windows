@@ -428,7 +428,7 @@ public static unsafe partial class Windows
     public static extern ushort RtlQueryDepthSList(void* ListHead);
 
     [SupportedOSPlatform("windows10.0.22000.0")]
-    [DllImport("ntdll", ExactSpelling = true)]
+    [DllImport("api-ms-win-core-rtlsupport-l1-2-2", ExactSpelling = true)]
     [return: NativeTypeName("BOOLEAN")]
     public static extern byte RtlIsEcCode(ulong CodePointer);
 

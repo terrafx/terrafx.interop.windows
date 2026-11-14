@@ -325,10 +325,15 @@ public static unsafe partial class ResolveDllImportTests
                     break;
                 }
 
-                case "GetRuntimeAttestationReport":
                 case "ConvertPrimaryPointerToMouseDrag":
+                case "GetRuntimeAttestationReport":
+                case "GetStagedPackageOrigin2":
                 case "HidP_TranslateUsageAndPagesToI8042ScanCodes":
                 case "HidP_UsageAndPageListDifference":
+                case "InjectTouchpadAction":
+                case "IsPackageFeatureSupported":
+                case "ReportWindowContentInertia":
+                case "WinHttpConnectionDeletePolicyEntriesByAppSid":
                 {
                     if (!OperatingSystem.IsWindowsVersionAtLeast(10, 0, 28000, 0))
                     {
